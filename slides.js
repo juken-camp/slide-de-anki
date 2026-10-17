@@ -26,6 +26,7 @@ const fields = {
 let lesson = null, screen = 'home', request = 0, imageToken = 0, ready = false, undo = null;
 let soundEnabled = data.neko.soundEnabled !== false, audio = null, lastTapSound = -1000;
 let playing = false, timer = null, remaining = 0, lastTick = 0;
+let catTaps=0, playfulParticles=0, lastPlaySound=-1000;
 let noticeTimer, suppressUntil = 0, navBusy = false;
 let browse = 'grade', catalogFilter = 'all';
 const selected = new Set(state.lessonIds);
@@ -37,7 +38,7 @@ function save() {
     order: state.order, shuffle: state.shuffle, finished: state.finished };
   data.neko.sound = soundEnabled; data.neko.soundEnabled = soundEnabled; data.neko.answerMode = state.answerMode;
   try { localStorage.setItem(KEY, JSON.stringify(data)); }
-  catch { $('saveWarning').hidden = false; $('saveWarning').textContent = '学習記録を保存できません。ブラウザーの空き容量・保存設定を確認してください。'; }
+  catch { $('saveWarning').hidden = false; $('saveWarning').textContent = '記録を保存できないにゃ。ブラウザーの空き容量や保存設定を確認してにゃ。'; }
 }
 function toast(s) { $('notice').textContent = s; $('notice').classList.add('show'); clearTimeout(noticeTimer); noticeTimer = setTimeout(() => $('notice').classList.remove('show'), 2600); }
 function unlockAudio() {
@@ -60,6 +61,9 @@ function beep(kind = 'tap') {
     move: [[430,550,0,.055,.025,'sine']],
     weak: [[440,390,0,.085,.028,'sine']],
     known: [[660,660,0,.095,.032,'triangle'],[880,880,.065,.1,.029,'triangle'],[1046,1046,.13,.14,.026,'sine']],
+    cat: [[720,1080,0,.11,.03,'sine'],[1080,620,.1,.16,.028,'sine']],
+    sparkle: [[1250,850,0,.17,.025,'sine']],
+    shuffle: [[420,780,0,.055,.026,'triangle'],[600,980,.065,.075,.024,'triangle']],
     milestone: [[523,523,0,.11,.032,'sine'],[659,659,.085,.11,.03,'sine'],[784,784,.17,.11,.029,'sine'],[1046,1046,.255,.18,.027,'sine']]
   }[kind] || [[620,420,0,.045,.027,'sine']];
   try {
@@ -79,13 +83,44 @@ function tapSpark(button,event) {
   particle.style.left=(event.clientX || rect.left+rect.width/2)+'px'; particle.style.top=(event.clientY || rect.top+rect.height/2)+'px';
   $('app').append(particle); setTimeout(() => particle.remove(),420);
 }
+// Little toys from Nekopon: bouncy cats, springy titles and scattered paws.
+// These reactions never change study records or the number of remembered questions.
+function bounce(element,className='neko-bounce',duration=780) {
+  if(reduced)return; element.classList.add('neko-has-played'); element.classList.remove(className); void element.offsetWidth; element.classList.add(className);
+  setTimeout(()=>element.classList.remove(className),duration);
+}
+function burst(element,icons=['🐾','✦','✨'],count=5) {
+  if(reduced||playfulParticles>=28)return;
+  const r=element.getBoundingClientRect();
+  for(let i=0;i<count&&playfulParticles<28;i++) {
+    const particle=document.createElement('span'); particle.className='neko-fun-particle'; particle.textContent=icons[i%icons.length];particle.setAttribute('aria-hidden','true');
+    particle.style.left=(r.left+r.width/2)+'px';particle.style.top=(r.top+r.height/2)+'px';
+    particle.style.setProperty('--dx',(Math.random()*120-60)+'px');particle.style.setProperty('--dy',(-35-Math.random()*85)+'px');particle.style.setProperty('--spin',(Math.random()*200-100)+'deg');
+    $('app').append(particle);playfulParticles++;setTimeout(()=>{particle.remove();playfulParticles--;},1000);
+  }
+}
+function sayAt(element,text) {
+  const r=element.getBoundingClientRect(),message=document.createElement('span');message.className='neko-fun-message';message.textContent=text;message.setAttribute('aria-hidden','true');
+  message.style.left=Math.max(90,Math.min((window.innerWidth||900)-90,r.left+r.width/2))+'px';message.style.top=Math.max(24,r.top-8)+'px';
+  $('app').append(message);setTimeout(()=>message.remove(),1350);
+}
+function playNeko(element,kind='cat') {
+  const now=performance.now();if(now-lastPlaySound>120){beep(kind);lastPlaySound=now;}
+  bounce(element,element===$('mascotPlay')?'neko-cat-bounce':'neko-bounce');burst(element);
+}
+function playWithCat() {
+  catTaps++;const special=catTaps%5===0;playNeko($('mascotPlay'),special?'milestone':'cat');
+  const messages=['にゃ〜ん♪','もふもふにゃ🐾','呼んだかにゃ？','いっしょに覚えるにゃ♪'];
+  sayAt($('mascotPlay'),special?'もふもふチャージ完了にゃ🐾':messages[(catTaps-1)%messages.length]);
+  if(special)burst($('mascotPlay'),['🐾','💛','✨','🌟'],9);
+}
 // Unlock sound inside a user gesture on iPhone as well as desktop browsers.
 document.addEventListener('pointerdown',unlockAudio,{passive:true});
 document.addEventListener('keydown',unlockAudio,{passive:true});
 document.addEventListener('click',event => {
   const control=event.target.closest('button,summary,a');
   if (!control || control.disabled) return;
-  if (!['knownButton','weakButton','prevButton','nextButton'].includes(control.id)) beep('tap');
+  if (!control.dataset.nekoStat && !['mascotPlay','homePlayCards','knownButton','weakButton','prevButton','nextButton'].includes(control.id)) beep('tap');
   tapSpark(control,event);
 },true);
 
@@ -127,7 +162,7 @@ function toggleGroup(items) {
 }
 function selectionSummary() {
   const choices = meta.filter(m => selected.has(m.id));
-  $('selectionSummary').textContent = choices.length ? `選択中 ${choices.length}教材 · ${choices.reduce((n,m) => n+m.count,0)}枚` : '教材を選んでください';
+  $('selectionSummary').textContent = choices.length ? `選択中 ${choices.length}教材 · ${choices.reduce((n,m) => n+m.count,0)}問` : '教材を選ぶにゃ';
   $('startStudy').disabled = !choices.length || state.loading; $('clearSelection').disabled = !choices.length;
   $('selectedLessons').replaceChildren();
   for (const m of choices) {
@@ -150,7 +185,7 @@ function renderCatalog() {
     b.onclick = () => { catalogFilter = key; renderCatalog(); }; $('catalogFilters').append(b);
   }
   const visible = visibleLessons(); $('visibleCount').textContent = `${visible.length}教材`;
-  $('selectVisible').hidden = !visible.length; $('selectVisible').textContent = visible.length && visible.every(m => selected.has(m.id)) ? '表示中の選択を外す' : '表示中をすべて選ぶ';
+  $('selectVisible').hidden = !visible.length; $('selectVisible').textContent = visible.length && visible.every(m => selected.has(m.id)) ? '選択を外すにゃ' : 'まとめて選ぶにゃ';
   $('catalogGroups').replaceChildren();
   for (const key of keys) {
     const items = visible.filter(m => groupKey(m) === key); if (!items.length) continue;
@@ -158,7 +193,7 @@ function renderCatalog() {
     const heading = document.createElement('div'); heading.className = 'group-heading';
     const h = document.createElement('h3'); h.textContent = `${groupIcon(key)} ${groupLabel(key)}`;
     const select = document.createElement('button'); select.className = 'link-button'; select.type = 'button';
-    const allSelected = items.every(m => selected.has(m.id)); select.textContent = allSelected ? 'まとめて解除' : 'まとめて選択'; select.setAttribute('aria-label',`${groupLabel(key)}を${allSelected ? 'すべて解除' : 'すべて選択'}`); select.onclick = () => toggleGroup(items);
+    const allSelected = items.every(m => selected.has(m.id)); select.textContent = allSelected ? 'まとめて外すにゃ' : 'まとめて選ぶにゃ'; select.setAttribute('aria-label',`${groupLabel(key)}を${allSelected ? 'すべて解除' : 'すべて選択'}`); select.onclick = () => toggleGroup(items);
     heading.append(h,select); section.append(heading);
     const list = document.createElement('div'); list.className = 'lesson-grid';
     for (const m of items) {
@@ -167,10 +202,10 @@ function renderCatalog() {
       const check = document.createElement('span'); check.className = 'choice-check'; check.textContent = on ? '✓' : ''; check.setAttribute('aria-hidden','true');
       const copy = document.createElement('span'); copy.className = 'choice-copy';
       const title = document.createElement('strong'); title.textContent = m.title;
-      const sub = document.createElement('span'); sub.className = 'choice-meta'; sub.textContent = `${m.grade || '学年共通'} · ${fields[m.field]?.[0] || 'その他'} · ${m.count}枚`;
+      const sub = document.createElement('span'); sub.className = 'choice-meta'; sub.textContent = `${m.grade || '学年共通'} · ${fields[m.field]?.[0] || 'その他'} · ${m.count}問`;
       const progress = document.createElement('span'); progress.className = 'choice-progress';
       const progressLine = document.createElement('i'); const known = knownFor(m); progressLine.style.width = `${m.count ? known/m.count*100 : 0}%`; progress.append(progressLine);
-      const record = document.createElement('span'); record.className = 'choice-record'; record.textContent = `おぼえた ${known} / ${m.count}`;
+      const record = document.createElement('span'); record.className = 'choice-record'; record.textContent = `おぼえた ${known} / ${m.count}問`;
       copy.append(title,sub,progress,record); row.append(check,copy);
       row.onclick = () => { if (selected.has(m.id)) selected.delete(m.id); else selected.add(m.id); renderCatalog(); };
       list.append(row);
@@ -178,8 +213,8 @@ function renderCatalog() {
     section.append(list); $('catalogGroups').append(section);
   }
   $('catalogEmpty').hidden = !!visible.length;
-  $('catalogEmptyTitle').textContent = all.length ? '該当する教材がありません' : `${state.subject === 'social' ? '社会' : '理科'}の教材は準備中です`;
-  $('catalogEmptyText').textContent = all.length ? '検索条件や絞り込みを変えてください。' : '「＋ 教材を追加」から画像ペアの教材を追加できます。';
+  $('catalogEmptyTitle').textContent = all.length ? 'その教材は見つからないにゃ' : `${state.subject === 'social' ? '社会' : '理科'}の教材は準備中にゃ`;
+  $('catalogEmptyText').textContent = all.length ? 'さがし方を変えてみてにゃ。' : '「＋ 教材追加にゃ」から新しい教材を入れられるにゃ。';
   selectionSummary(); $('returnToStudy').hidden = !lesson;
 }
 function sourceVideoURL(source) {
@@ -207,7 +242,7 @@ function markSeen() {
   const entries = data.neko.daily[dateKey()] ??= [];
   if (!entries.includes(c.id)) {
     entries.push(c.id); const days = Object.keys(data.neko.daily).sort(); for (const d of days.slice(0,-31)) delete data.neko.daily[d];
-    if (entries.length%10 === 0) { toast(`🐾 今日は${entries.length}枚の解答を確認しました！`); beep('milestone'); }
+    if (entries.length%10 === 0) { toast(`🐾 今日は${entries.length}問見たにゃ！えらいにゃ♪`); beep('milestone'); burst($('dailyCount'),['🐾','🌟','✨'],8); }
     save(); stats();
   }
 }
@@ -220,13 +255,13 @@ function scopeChoices() {
 function renderControls() {
   document.querySelectorAll('[data-face-mode]').forEach(b => { const on = (b.dataset.faceMode === 'answer') === state.answerMode; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
   document.querySelectorAll('[data-mode]').forEach(b => { const on = b.dataset.mode === state.mode; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
-  $('shuffleButton').classList.toggle('is-on',state.shuffle); $('shuffleButton').textContent = state.shuffle ? '🔀 シャッフル' : '🔀 順番'; $('shuffleButton').setAttribute('aria-pressed',String(state.shuffle));
+  $('shuffleButton').classList.toggle('is-on',state.shuffle); $('shuffleButton').textContent = state.shuffle ? '🔀 まぜるにゃ' : '🔀 順番にゃ'; $('shuffleButton').setAttribute('aria-pressed',String(state.shuffle));
   $('chapterChips').replaceChildren();
   for (const c of scopeChoices()) {
     const b = document.createElement('button'); b.textContent = c.title; b.classList.toggle('active',state.chapter === c.id); b.setAttribute('aria-pressed',String(state.chapter === c.id)); b.onclick = () => changeRange({chapter:c.id}); $('chapterChips').append(b);
   }
   const cards = base(), ct = counts(cards), n = cards.length, p = n ? Math.round(ct.known/n*100) : 0;
-  $('progressLabel').textContent = `おぼえた ${ct.known} / ${n}枚`; $('percentLabel').textContent = p+'%'; $('progressBar').style.width = p+'%'; $('progressTrack').setAttribute('aria-valuenow',p);
+  $('progressLabel').textContent = `おぼえた ${ct.known} / ${n}問`; $('percentLabel').textContent = p+'%'; $('progressBar').style.width = p+'%'; $('progressTrack').setAttribute('aria-valuenow',p);
   $('breakdown').textContent = `まだ ${ct.unmarked} · おぼえてない ${ct.weak} · おぼえた ${ct.known}`;
   const raw = loaded.get(current()?.lessonId); $('lessonGrade').textContent = raw?.grade || '';
   $('sessionSummary').textContent = state.lessonIds.length === 1 ? (loaded.get(state.lessonIds[0])?.title || '') : `${state.lessonIds.length}教材をまとめて学習`;
@@ -242,31 +277,31 @@ function render() {
   if (current()) state.lessonId = current().lessonId;
   renderControls(); $('loadingMessage').hidden = !state.loading; $('emptyState').hidden = true; $('stage').hidden = true;
   if (state.loading) return;
-  if (!lesson) { showEmpty('目次から教材を選んでください','複数の教材をまとめて選べます。'); return; }
-  if (state.finished) { showEmpty('選んだ範囲を一周しました',`今日見たカード ${(data.neko.daily[dateKey()] || []).length}枚 · この範囲の「おぼえた」 ${counts(base()).known} / ${base().length}枚`,{restart:true,review:counts(base()).weak>0,all:state.mode!=='all'}); save(); return; }
+  if (!lesson) { showEmpty('目次から教材を選ぶにゃ','好きな教材をまとめて選べるにゃ♪'); return; }
+  if (state.finished) { showEmpty('選んだ範囲を一周したにゃ🎉',`今日見た問題 ${(data.neko.daily[dateKey()] || []).length}問 · この範囲の「おぼえた」 ${counts(base()).known} / ${base().length}問`,{restart:true,review:counts(base()).weak>0,all:state.mode!=='all'}); save(); return; }
   const d = deck();
-  if (!d.length) { showEmpty(state.mode === 'all' ? 'この範囲にカードがありません' : 'この分類のカードはありません','分類を切り替えると、ほかのカードを確認できます。',{all:state.mode!=='all'}); save(); return; }
+  if (!d.length) { showEmpty(state.mode === 'all' ? 'この範囲には問題がないにゃ' : 'この分類には問題がないにゃ','分類を変えると、ほかの問題も見られるにゃ。',{all:state.mode!=='all'}); save(); return; }
   const c = current(), raw = loaded.get(c.lessonId); renderSource(c); $('stage').hidden = false;
   $('card').classList.toggle('is-back',state.flipped); $('faceLabel').textContent = state.flipped ? '解答' : '問題';
   const chapter = raw.chapters?.find(ch => ch.id === c.chapter)?.title || raw.title;
   $('cardUnit').textContent = `${state.lessonIds.length>1 ? raw.title+' / ' : ''}${chapter} · ${c.originalId}`;
-  $('cardStatus').textContent = labels[status(c)] || 'まだ'; $('cardPosition').textContent = `${d.findIndex(x => x.id === c.id)+1} / ${d.length}枚${state.mode !== 'all' ? ' · '+labels[state.mode] : ''}`;
+  $('cardStatus').textContent = labels[status(c)] || 'まだ'; $('cardPosition').textContent = `${d.findIndex(x => x.id === c.id)+1} / ${d.length}問${state.mode !== 'all' ? ' · '+labels[state.mode] : ''}`;
   $('slideTap').className = 'slide-wrap loading'; $('slideTap').setAttribute('aria-label',state.flipped ? 'タップして問題を見る' : 'タップして解答を見る');
   $('imageStatus').textContent = 'ちょっと待ってにゃ🐾'; $('knownButton').disabled = $('weakButton').disabled = true;
   const img = $('slideImage'); img.alt = `${raw.title} ${c.originalId} ${state.flipped ? '解答' : '問題'}`;
   img.onload = () => { if (token !== imageToken) return; ready = true; $('slideTap').classList.remove('loading'); $('knownButton').disabled = $('weakButton').disabled = !state.flipped; imageView.refresh(); markSeen(); resetTimer(); };
-  img.onerror = () => { if (token !== imageToken) return; ready = false; pause(); $('slideTap').className = 'slide-wrap error'; $('imageStatus').textContent = '画像を読み込めませんでした。タップして再読み込みしてください。'; };
+  img.onerror = () => { if (token !== imageToken) return; ready = false; pause(); $('slideTap').className = 'slide-wrap error'; $('imageStatus').textContent = '画像が開けなかったにゃ。もう一度タップしてにゃ。'; };
   imageView.setCard(c.id);
-  img.src = window.NekoImageURL(state.flipped ? c.answer : c.question); save(); updateTimerUI();
+  img.src = window.NekoImageURL(state.flipped ? c.answer : c.question); $('originalImage').href = img.src; save(); updateTimerUI();
 }
 async function getLesson(m) {
   if (loaded.has(m.id)) return loaded.get(m.id);
-  if (!pending.has(m.id)) pending.set(m.id,fetch(m.data).then(r => { if (!r.ok) throw Error('教材を読み込めませんでした'); return r.json(); }).then(raw => { loaded.set(m.id,raw); pending.delete(m.id); return raw; }).catch(e => { pending.delete(m.id); throw e; }));
+  if (!pending.has(m.id)) pending.set(m.id,fetch(m.data).then(r => { if (!r.ok) throw Error('教材が開けなかったにゃ'); return r.json(); }).then(raw => { loaded.set(m.id,raw); pending.delete(m.id); return raw; }).catch(e => { pending.delete(m.id); throw e; }));
   return pending.get(m.id);
 }
 async function selectLessons(ids,{resume=false} = {}) {
   pause(); const seq = ++request; const choices = meta.filter(m => ids.includes(m.id));
-  if (!choices.length) { toast('目次から教材を選んでください'); showScreen('catalog'); return; }
+  if (!choices.length) { toast('目次から教材を選ぶにゃ'); showScreen('catalog'); return; }
   lesson = null; state.lessonIds = choices.map(m => m.id); state.loading = true;
   selected.clear(); for (const id of state.lessonIds) selected.add(id);
   if (!resume) Object.assign(state,{chapter:'all',mode:'all',current:null,flipped:state.answerMode,order:[],finished:false});
@@ -282,7 +317,7 @@ async function selectLessons(ids,{resume=false} = {}) {
     render(); if (screen === 'catalog') renderCatalog(); $('resumeNote').hidden = !resume || !state.current;
   } catch (e) {
     if (seq !== request) return; state.loading = false; render();
-    showEmpty('教材を読み込めませんでした','通信を確認し、「教材の目次」から選び直してください。'); toast(e.message);
+    showEmpty('教材が開けなかったにゃ','通信を確認して、目次から選び直してにゃ。'); toast(e.message);
   }
 }
 function changeRange(patch) { pause(); Object.assign(state,patch,{finished:false,current:null,flipped:state.answerMode}); $('resumeNote').hidden = true; render(); }
@@ -305,16 +340,18 @@ function assess(nextStatus) {
   data.records[c.lessonId] ??= {}; data.records[c.lessonId][c.originalId] = {...prev,status:nextStatus,attempts:(prev?.attempts||0)+1,updated:new Date().toISOString()};
   beep(nextStatus === 'known' ? 'known' : 'weak'); const after = new Set(deck().map(c => c.id)), next = d.slice(i+1).find(x => after.has(x.id));
   state.flipped = state.answerMode; if (next) state.current = next.id; else state.finished = true;
-  render(); if (nextStatus === 'known') celebrate();
+  render(); if (nextStatus === 'known') celebrate(); else sayAt($('weakButton'),'もう一回いくにゃ🐾');
 }
 function celebrate() {
+  burst($('knownButton'),['🐾','✦','✨'],4);
+  const cheers=['おぼえたにゃ♪','ばっちりにゃ🐾','その調子にゃ🌟'];sayAt($('knownButton'),cheers[Math.floor(Math.random()*cheers.length)]);
   if (reduced) return;
   $('knownButton').classList.remove('celebrate'); requestAnimationFrame(() => $('knownButton').classList.add('celebrate')); setTimeout(() => $('knownButton').classList.remove('celebrate'),650); const node = document.createElement('span'); node.className = 'remembered-paw'; node.textContent = '🐾'; node.setAttribute('aria-hidden','true'); $('app').append(node); setTimeout(() => node.remove(),900);
 }
 function undoAssessment() {
   if (!undo) return; pause(); const u = undo; undo = null;
   if (u.previous) data.records[u.lessonId][u.cardId] = u.previous; else delete data.records[u.lessonId][u.cardId];
-  Object.assign(state,{current:u.current,chapter:u.chapter,mode:u.mode,flipped:true,finished:false}); render(); toast('直前の仕分けを戻しました');
+  Object.assign(state,{current:u.current,chapter:u.chapter,mode:u.mode,flipped:true,finished:false}); render(); toast('ひとつ前の仕分けに戻したにゃ🐾');
 }
 function seconds(face) { const v = Number(data.neko[face+'Seconds']); return Number.isFinite(v) && v>=.5 && v<=120 ? v : (face === 'question' ? 3 : 2); }
 function clearTimer() { if (timer) clearInterval(timer); timer = null; }
@@ -323,8 +360,8 @@ function tick() { if (document.hidden || !ready || screen !== 'study' || documen
 function pause() { playing = false; clearTimer(); updateTimerUI(); }
 function updateTimerUI() {
   const auto = $('autoMode').checked; $('timerOptions').hidden = $('timerTrack').hidden = $('playButton').hidden = !auto;
-  $('playButton').textContent = playing ? 'Ⅱ 一時停止' : '▶ 再生'; $('playButton').disabled = !lesson || state.loading || state.finished || !deck().length;
-  $('timerLabel').textContent = !auto ? '' : playing ? (ready ? `${state.flipped ? '解答' : '問題'} ${(remaining/1000).toFixed(1)}秒` : 'ちょっと待ってにゃ🐾') : '停止中';
+  $('playButton').textContent = playing ? 'Ⅱ 止めるにゃ' : '▶ めくるにゃ'; $('playButton').disabled = !lesson || state.loading || state.finished || !deck().length;
+  $('timerLabel').textContent = !auto ? '' : playing ? (ready ? `${state.flipped ? '解答' : '問題'} ${(remaining/1000).toFixed(1)}秒` : 'ちょっと待ってにゃ🐾') : '停止中にゃ';
   const total = seconds(state.flipped ? 'answer' : 'question')*1000; $('timerBar').style.width = (auto ? Math.max(0,Math.min(100,remaining/total*100)) : 0)+'%';
 }
 function register(raw) {
@@ -348,8 +385,17 @@ for (const b of document.querySelectorAll('[data-face-mode]')) b.onclick = () =>
   pause(); state.answerMode = b.dataset.faceMode === 'answer'; state.flipped = state.answerMode;
   if (lesson) render(); else save();
 };
+$('mascotPlay').onclick=playWithCat;
+$('homeTitle').onclick=()=>{playNeko($('homeTitle'),'milestone');sayAt($('homeTitle'),'Nekoponだにゃ〜♪');};
+$('homePlayCards').onclick=()=>{playNeko($('homePlayCards'),'shuffle');bounce($('homePlayCards'),'neko-card-shuffle');sayAt($('homePlayCards'),'めくめくにゃ♪');};
+for(const id of ['homeTitle','homePlayCards'])$(id).onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$(id).click();}};
+for(const button of document.querySelectorAll('[data-neko-stat]'))button.onclick=()=>{
+  const kind=button.dataset.nekoStat;playNeko(button,kind==='daily'?'sparkle':kind==='known'?'known':'milestone');
+  const message=kind==='daily'?`今日は${$('dailyCount').textContent}問見たにゃ🐾`:kind==='known'?`${$('knownCount').textContent}問おぼえたにゃ！すごいにゃ♪`:`Lv.${$('levelCount').textContent}にゃ！10問おぼえるとレベルアップにゃ🏅`;
+  toast(message);
+};
 // Screen navigation and the textbook-style table of contents.
-$('chooseLessons').onclick = () => showScreen('catalog'); $('brandHome').onclick = () => showScreen('home');
+$('chooseLessons').onclick = () => showScreen('catalog'); $('brandHome').onclick = () => {showScreen('home');playNeko($('mascotPlay'),'cat');sayAt($('mascotPlay'),'おかえりにゃ🐾');};
 $('resumeStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
 $('openCatalog').onclick = () => showScreen('catalog'); $('returnToStudy').onclick = () => showScreen('study');
 $('startStudy').onclick = () => selectLessons(meta.filter(m => selected.has(m.id)).map(m => m.id));
@@ -359,7 +405,7 @@ for (const b of document.querySelectorAll('[data-subject]')) b.onclick = () => {
 for (const b of document.querySelectorAll('[data-browse]')) b.onclick = () => { browse = b.dataset.browse; catalogFilter = 'all'; renderCatalog(); };
 $('slideTap').onclick = () => { if (performance.now()<suppressUntil || navBusy) return; flip(); };
 $('slideTap').onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } };
-for (const id of ['sourceVideo','sourceMoment']) $(id).addEventListener('click',() => { pause(); save(); });
+for (const id of ['sourceVideo','sourceMoment','originalImage']) $(id).addEventListener('click',() => { pause(); save(); });
 $('prevButton').onclick = () => { if (!navBusy) animateNav(-1); }; $('nextButton').onclick = () => { if (!navBusy) animateNav(1); };
 $('knownButton').onclick = () => assess('known'); $('weakButton').onclick = () => assess('weak'); $('undoButton').onclick = undoAssessment;
 for (const b of document.querySelectorAll('[data-mode]')) b.onclick = () => changeRange({mode:b.dataset.mode});
@@ -403,8 +449,8 @@ $('restoreInput').onchange = async e => {
         const old = data.records[id][cid]; if (!old || Date.parse(r.updated)>Date.parse(old.updated||0)) data.records[id][cid] = {status:r.status,attempts:Math.max(0,Number(r.attempts)||0),updated:r.updated};
       }
     }
-    undo = null; if (lesson) render(); save(); stats(); if (screen === 'catalog') renderCatalog(); toast('学習記録を読み込みました');
-  } catch (err) { toast(err.message || '読み込めませんでした'); } finally { e.target.value = ''; }
+    undo = null; if (lesson) render(); save(); stats(); if (screen === 'catalog') renderCatalog(); toast('学習記録を読み込んだにゃ🐾');
+  } catch (err) { toast(err.message || '読み込めなかったにゃ'); } finally { e.target.value = ''; }
 };
 showScreen('home');
 })();

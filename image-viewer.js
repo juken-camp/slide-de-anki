@@ -3,7 +3,9 @@
 // and horizontal card navigation remain available when the image is at 100%.
 window.createNekoImageView = function ({frame,image,resetButton,isReady,onTap,onNavigate,onPause,onDrag,onSnap,suppressClicks}) {
   const view={scale:1,x:0,y:0}, MAX=5;
-  let cardId=null,touch=null,pointer=null;
+  let cardId=null,touch=null,pointer=null,holdTimer=null;
+  function clearHold(){if(holdTimer)clearTimeout(holdTimer);holdTimer=null;}
+  function startHold(){clearHold();holdTimer=setTimeout(()=>{if(touch&&['pending','pan'].includes(touch.kind)){touch.kind='longpress';onPause();suppressClicks();}},420);}
   const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
   function geometry(){
     const r=frame.getBoundingClientRect(), ratio=(image.naturalWidth&&image.naturalHeight)?image.naturalWidth/image.naturalHeight:16/9;
@@ -17,13 +19,14 @@ window.createNekoImageView = function ({frame,image,resetButton,isReady,onTap,on
     image.style.transform=`translate(${view.x}px, ${view.y}px) scale(${view.scale})`;
     const zoomed=view.scale>1.015;
     frame.classList.toggle('is-zoomed',zoomed);resetButton.hidden=!zoomed;
-    resetButton.textContent=`${Math.round(view.scale*100)}% · 戻す`;
+    resetButton.textContent=`${Math.round(view.scale*100)}% · 戻すにゃ`;
   }
-  function reset(){view.scale=1;view.x=view.y=0;touch=pointer=null;draw();}
+  function reset(){clearHold();view.scale=1;view.x=view.y=0;touch=pointer=null;draw();}
   function setCard(id){if(id!==cardId){cardId=id;reset();}else draw();}
   function localPoint(x,y){const {r}=geometry();return {x:x-r.left-r.width/2,y:y-r.top-r.height/2};}
   function setScale(scale,at){const next=clamp(scale,1,MAX),ratio=next/view.scale;view.x=at.x-(at.x-view.x)*ratio;view.y=at.y-(at.y-view.y)*ratio;view.scale=next;draw();}
   function beginPinch(touches){
+    clearHold();
     const [a,b]=touches,point=localPoint((a.clientX+b.clientX)/2,(a.clientY+b.clientY)/2);
     touch={kind:'pinch',pinched:true,distance:Math.max(1,Math.hypot(b.clientX-a.clientX,b.clientY-a.clientY)),scale:view.scale,anchorX:(point.x-view.x)/view.scale,anchorY:(point.y-view.y)/view.scale};
     pointer=null;onSnap();onPause();suppressClicks();
@@ -33,7 +36,7 @@ window.createNekoImageView = function ({frame,image,resetButton,isReady,onTap,on
   frame.addEventListener('touchstart',e=>{
     if(!isReady())return;
     if(e.touches.length>=2){prevent(e);beginPinch(e.touches);return;}
-    if(e.touches.length===1){touch=beginSingle(e.touches[0]);if(touch.kind==='pan')onPause();}
+    if(e.touches.length===1){touch=beginSingle(e.touches[0]);onPause();startHold();}
   },{passive:false});
   frame.addEventListener('touchmove',e=>{
     if(!touch||!isReady())return;
@@ -46,13 +49,15 @@ window.createNekoImageView = function ({frame,image,resetButton,isReady,onTap,on
     if(e.touches.length!==1||touch.kind==='pinch')return;
     const t=e.touches[0];touch.lastX=t.clientX;touch.lastY=t.clientY;
     const dx=t.clientX-touch.startX,dy=t.clientY-touch.startY,ax=Math.abs(dx),ay=Math.abs(dy);
+    if(ax>6||ay>6)clearHold();
+    if(touch.kind==='longpress')return;
     if(touch.kind==='pan'){prevent(e);view.x=touch.x+dx;view.y=touch.y+dy;draw();return;}
     if(touch.kind==='blocked'){prevent(e);return;}
     if(touch.kind==='pending'&&(ax>6||ay>6)){touch.kind=ax>ay*1.1?'swipe':'scroll';if(touch.kind==='swipe')onPause();}
     if(touch.kind==='swipe'){prevent(e);onDrag(dx);}
   },{passive:false});
   function endTouch(e,cancelled=false){
-    if(!touch)return;
+    clearHold();if(!touch)return;
     if(e.touches.length>=2){prevent(e);beginPinch(e.touches);return;}
     if(e.touches.length===1){
       prevent(e);const pinched=touch.pinched||touch.kind==='pinch';touch=beginSingle(e.touches[0],pinched);
@@ -62,6 +67,7 @@ window.createNekoImageView = function ({frame,image,resetButton,isReady,onTap,on
     if(g.kind==='pinch'||g.kind==='blocked'||g.pinched){prevent(e);suppressClicks();onSnap();return;}
     const ended=[...(e.changedTouches||[])].find(t=>t.identifier===g.id);
     const dx=(ended?.clientX??g.lastX)-g.startX,dy=(ended?.clientY??g.lastY)-g.startY,ax=Math.abs(dx),ay=Math.abs(dy);
+    if(g.kind==='longpress'||(['pending','pan'].includes(g.kind)&&ax<8&&ay<8&&performance.now()-g.start>=420)){suppressClicks();onSnap();return;}
     if(cancelled){suppressClicks();onSnap();return;}
     if(g.kind==='pan'){prevent(e);suppressClicks();if(ax<7&&ay<7)onTap();return;}
     const horizontal=g.kind==='swipe'||(g.kind==='pending'&&ax>12&&ax>ay*1.3);
@@ -96,6 +102,7 @@ window.createNekoImageView = function ({frame,image,resetButton,isReady,onTap,on
     if(!pointer||pointer.id!==e.pointerId)return;
     const p=pointer;pointer=null;try{frame.releasePointerCapture(e.pointerId);}catch{}
     const dx=cancelled?p.dx:e.clientX-p.x,dy=cancelled?p.dy:e.clientY-p.y,ax=Math.abs(dx),ay=Math.abs(dy);
+    if(['pending','pan'].includes(p.kind)&&ax<8&&ay<8&&performance.now()-p.start>=420){suppressClicks();return;}
     if(p.kind==='pan'){if(ax>7||ay>7)suppressClicks();return;}
     if(p.kind==='swipe'||(p.kind==='pending'&&ax>12&&ax>ay*1.3)){
       suppressClicks();const velocity=ax/Math.max(1,performance.now()-p.start);
@@ -105,9 +112,10 @@ window.createNekoImageView = function ({frame,image,resetButton,isReady,onTap,on
   }
   window.addEventListener('pointerup',e=>endPointer(e));window.addEventListener('pointercancel',e=>endPointer(e,true));
   frame.addEventListener('wheel',e=>{if(!e.ctrlKey||!isReady())return;prevent(e);onPause();setScale(view.scale*Math.exp(-e.deltaY*.01),localPoint(e.clientX,e.clientY));suppressClicks();},{passive:false});
+  frame.addEventListener('contextmenu',()=>{clearHold();if(touch)touch.kind='longpress';pointer=null;onPause();suppressClicks();});
   image.addEventListener('dragstart',e=>e.preventDefault());
   resetButton.onclick=()=>{onPause();suppressClicks();reset();};
-  window.addEventListener('resize',()=>{touch=pointer=null;draw();});
-  window.addEventListener('blur',()=>{touch=pointer=null;onSnap();onPause();});
-  return {setCard,refresh:draw,reset,cancel:()=>{touch=pointer=null;onSnap();},get state(){return {...view};}};
+  window.addEventListener('resize',()=>{clearHold();touch=pointer=null;draw();});
+  window.addEventListener('blur',()=>{clearHold();touch=pointer=null;onSnap();onPause();});
+  return {setCard,refresh:draw,reset,cancel:()=>{clearHold();touch=pointer=null;onSnap();},get state(){return {...view};}};
 };

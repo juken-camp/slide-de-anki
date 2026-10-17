@@ -1,0 +1,370 @@
+{
+  "id": "science-moon-planets-grade3-01",
+  "subject": "science",
+  "field": "earth",
+  "title": "月と惑星の運動",
+  "grade": "中3理科",
+  "description": "月の公転・自転と満ち欠け、月と太陽の距離、日食・月食、太陽系と惑星の分類、金星の見え方、天動説と地動説を図解で学ぶ34問。",
+  "cover": "images_04/moon-planets/question_001.png",
+  "chapters": [
+    {
+      "id": "moon-motion",
+      "title": "月の運動と大きさ・距離"
+    },
+    {
+      "id": "moon-phases",
+      "title": "月の満ち欠けと見え方"
+    },
+    {
+      "id": "eclipses",
+      "title": "日食と月食"
+    },
+    {
+      "id": "planets",
+      "title": "太陽系と惑星・金星の見え方"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "moon-motion",
+      "question": "images_04/moon-planets/question_001.png",
+      "answer": "images_04/moon-planets/answer_001.png",
+      "sourceTimes": {
+        "question": 31.4,
+        "answer": 41.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "moon-motion",
+      "question": "images_04/moon-planets/question_002.png",
+      "answer": "images_04/moon-planets/answer_002.png",
+      "sourceTimes": {
+        "question": 48.6,
+        "answer": 60.6
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "moon-motion",
+      "question": "images_04/moon-planets/question_003.png",
+      "answer": "images_04/moon-planets/answer_003.png",
+      "sourceTimes": {
+        "question": 66.2,
+        "answer": 77.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "moon-motion",
+      "question": "images_04/moon-planets/question_004.png",
+      "answer": "images_04/moon-planets/answer_004.png",
+      "sourceTimes": {
+        "question": 87.0,
+        "answer": 97.4
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "moon-motion",
+      "question": "images_04/moon-planets/question_005.png",
+      "answer": "images_04/moon-planets/answer_005.png",
+      "sourceTimes": {
+        "question": 111.4,
+        "answer": 119.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "moon-motion",
+      "question": "images_04/moon-planets/question_006.png",
+      "answer": "images_04/moon-planets/answer_006.png",
+      "sourceTimes": {
+        "question": 135.6,
+        "answer": 149.2
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "moon-motion",
+      "question": "images_04/moon-planets/question_007.png",
+      "answer": "images_04/moon-planets/answer_007.png",
+      "sourceTimes": {
+        "question": 160.0,
+        "answer": 170.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "moon-motion",
+      "question": "images_04/moon-planets/question_008.png",
+      "answer": "images_04/moon-planets/answer_008.png",
+      "sourceTimes": {
+        "question": 181.4,
+        "answer": 192.4
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_009.png",
+      "answer": "images_04/moon-planets/answer_009.png",
+      "sourceTimes": {
+        "question": 203.8,
+        "answer": 214.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_010.png",
+      "answer": "images_04/moon-planets/answer_010.png",
+      "sourceTimes": {
+        "question": 222.4,
+        "answer": 230.8
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_011.png",
+      "answer": "images_04/moon-planets/answer_011.png",
+      "sourceTimes": {
+        "question": 241.0,
+        "answer": 251.4
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_012.png",
+      "answer": "images_04/moon-planets/answer_012.png",
+      "sourceTimes": {
+        "question": 260.8,
+        "answer": 270.8
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_013.png",
+      "answer": "images_04/moon-planets/answer_013.png",
+      "sourceTimes": {
+        "question": 279.6,
+        "answer": 308.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_014.png",
+      "answer": "images_04/moon-planets/answer_014.png",
+      "sourceTimes": {
+        "question": 320.6,
+        "answer": 330.8
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_015.png",
+      "answer": "images_04/moon-planets/answer_015.png",
+      "sourceTimes": {
+        "question": 345.4,
+        "answer": 363.8
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_016.png",
+      "answer": "images_04/moon-planets/answer_016.png",
+      "sourceTimes": {
+        "question": 379.4,
+        "answer": 396.6
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_017.png",
+      "answer": "images_04/moon-planets/answer_017.png",
+      "sourceTimes": {
+        "question": 413.2,
+        "answer": 433.4
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "moon-phases",
+      "question": "images_04/moon-planets/question_018.png",
+      "answer": "images_04/moon-planets/answer_018.png",
+      "sourceTimes": {
+        "question": 440.0,
+        "answer": 447.8
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "eclipses",
+      "question": "images_04/moon-planets/question_019.png",
+      "answer": "images_04/moon-planets/answer_019.png",
+      "sourceTimes": {
+        "question": 461.2,
+        "answer": 466.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "eclipses",
+      "question": "images_04/moon-planets/question_020.png",
+      "answer": "images_04/moon-planets/answer_020.png",
+      "sourceTimes": {
+        "question": 475.0,
+        "answer": 483.6
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "eclipses",
+      "question": "images_04/moon-planets/question_021.png",
+      "answer": "images_04/moon-planets/answer_021.png",
+      "sourceTimes": {
+        "question": 496.2,
+        "answer": 501.8
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "eclipses",
+      "question": "images_04/moon-planets/question_022.png",
+      "answer": "images_04/moon-planets/answer_022.png",
+      "sourceTimes": {
+        "question": 510.4,
+        "answer": 518.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "eclipses",
+      "question": "images_04/moon-planets/question_023.png",
+      "answer": "images_04/moon-planets/answer_023.png",
+      "sourceTimes": {
+        "question": 530.8,
+        "answer": 549.2
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "eclipses",
+      "question": "images_04/moon-planets/question_024.png",
+      "answer": "images_04/moon-planets/answer_024.png",
+      "sourceTimes": {
+        "question": 571.4,
+        "answer": 578.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_025.png",
+      "answer": "images_04/moon-planets/answer_025.png",
+      "sourceTimes": {
+        "question": 589.0,
+        "answer": 598.8
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_026.png",
+      "answer": "images_04/moon-planets/answer_026.png",
+      "sourceTimes": {
+        "question": 608.0,
+        "answer": 626.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_027.png",
+      "answer": "images_04/moon-planets/answer_027.png",
+      "sourceTimes": {
+        "question": 643.2,
+        "answer": 651.8
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_028.png",
+      "answer": "images_04/moon-planets/answer_028.png",
+      "sourceTimes": {
+        "question": 662.2,
+        "answer": 673.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_029.png",
+      "answer": "images_04/moon-planets/answer_029.png",
+      "sourceTimes": {
+        "question": 681.8,
+        "answer": 689.6
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_030.png",
+      "answer": "images_04/moon-planets/answer_030.png",
+      "sourceTimes": {
+        "question": 697.6,
+        "answer": 706.8
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_031.png",
+      "answer": "images_04/moon-planets/answer_031.png",
+      "sourceTimes": {
+        "question": 731.2,
+        "answer": 742.4
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_032.png",
+      "answer": "images_04/moon-planets/answer_032.png",
+      "sourceTimes": {
+        "question": 753.4,
+        "answer": 769.2
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_033.png",
+      "answer": "images_04/moon-planets/answer_033.png",
+      "sourceTimes": {
+        "question": 781.2,
+        "answer": 794.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "planets",
+      "question": "images_04/moon-planets/question_034.png",
+      "answer": "images_04/moon-planets/answer_034.png",
+      "sourceTimes": {
+        "question": 816.0,
+        "answer": 823.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=25se2-iQ80k"
+}

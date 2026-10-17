@@ -1,0 +1,428 @@
+{
+  "id": "science-celestial-daily-annual-motion-grade3-01",
+  "subject": "science",
+  "field": "earth",
+  "title": "天体の一日・一年の動き",
+  "grade": "中3理科",
+  "description": "太陽・地球・星の一日の動き、地軸と自転、公転、季節と南中高度、星の年周運動と黄道を図解で学ぶ39問。",
+  "cover": "images_04/celestial-motion/question_001.png",
+  "chapters": [
+    {
+      "id": "sun-daily",
+      "title": "太陽の一日の動きと天球"
+    },
+    {
+      "id": "earth-daily",
+      "title": "地球の一日の動き"
+    },
+    {
+      "id": "stars-daily",
+      "title": "星の一日の動き"
+    },
+    {
+      "id": "earth-annual",
+      "title": "地球の一年の動き"
+    },
+    {
+      "id": "seasons",
+      "title": "季節の変化と太陽の高度"
+    },
+    {
+      "id": "stars-annual",
+      "title": "星の一年の動きと黄道"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "sun-daily",
+      "question": "images_04/celestial-motion/question_001.png",
+      "answer": "images_04/celestial-motion/answer_001.png",
+      "sourceTimes": {
+        "question": 52.8,
+        "answer": 65.6
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "sun-daily",
+      "question": "images_04/celestial-motion/question_002.png",
+      "answer": "images_04/celestial-motion/answer_002.png",
+      "sourceTimes": {
+        "question": 79.0,
+        "answer": 90.2
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "sun-daily",
+      "question": "images_04/celestial-motion/question_003.png",
+      "answer": "images_04/celestial-motion/answer_003.png",
+      "sourceTimes": {
+        "question": 98.4,
+        "answer": 107.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "sun-daily",
+      "question": "images_04/celestial-motion/question_004.png",
+      "answer": "images_04/celestial-motion/answer_004.png",
+      "sourceTimes": {
+        "question": 117.0,
+        "answer": 133.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "sun-daily",
+      "question": "images_04/celestial-motion/question_005.png",
+      "answer": "images_04/celestial-motion/answer_005.png",
+      "sourceTimes": {
+        "question": 142.4,
+        "answer": 150.4
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "sun-daily",
+      "question": "images_04/celestial-motion/question_006.png",
+      "answer": "images_04/celestial-motion/answer_006.png",
+      "sourceTimes": {
+        "question": 205.0,
+        "answer": 210.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "sun-daily",
+      "question": "images_04/celestial-motion/question_007.png",
+      "answer": "images_04/celestial-motion/answer_007.png",
+      "sourceTimes": {
+        "question": 215.8,
+        "answer": 221.6
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "earth-daily",
+      "question": "images_04/celestial-motion/question_008.png",
+      "answer": "images_04/celestial-motion/answer_008.png",
+      "sourceTimes": {
+        "question": 234.4,
+        "answer": 239.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "earth-daily",
+      "question": "images_04/celestial-motion/question_009.png",
+      "answer": "images_04/celestial-motion/answer_009.png",
+      "sourceTimes": {
+        "question": 252.0,
+        "answer": 257.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "earth-daily",
+      "question": "images_04/celestial-motion/question_010.png",
+      "answer": "images_04/celestial-motion/answer_010.png",
+      "sourceTimes": {
+        "question": 267.6,
+        "answer": 274.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "earth-daily",
+      "question": "images_04/celestial-motion/question_011.png",
+      "answer": "images_04/celestial-motion/answer_011.png",
+      "sourceTimes": {
+        "question": 283.6,
+        "answer": 296.4
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "earth-daily",
+      "question": "images_04/celestial-motion/question_012.png",
+      "answer": "images_04/celestial-motion/answer_012.png",
+      "sourceTimes": {
+        "question": 313.6,
+        "answer": 322.4
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_013.png",
+      "answer": "images_04/celestial-motion/answer_013.png",
+      "sourceTimes": {
+        "question": 356.8,
+        "answer": 384.8
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_014.png",
+      "answer": "images_04/celestial-motion/answer_014.png",
+      "sourceTimes": {
+        "question": 394.4,
+        "answer": 417.2
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_015.png",
+      "answer": "images_04/celestial-motion/answer_015.png",
+      "sourceTimes": {
+        "question": 423.0,
+        "answer": 432.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_016.png",
+      "answer": "images_04/celestial-motion/answer_016.png",
+      "sourceTimes": {
+        "question": 440.4,
+        "answer": 453.2
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_017.png",
+      "answer": "images_04/celestial-motion/answer_017.png",
+      "sourceTimes": {
+        "question": 466.4,
+        "answer": 483.4
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_018.png",
+      "answer": "images_04/celestial-motion/answer_018.png",
+      "sourceTimes": {
+        "question": 504.6,
+        "answer": 516.2
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_019.png",
+      "answer": "images_04/celestial-motion/answer_019.png",
+      "sourceTimes": {
+        "question": 526.0,
+        "answer": 536.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_020.png",
+      "answer": "images_04/celestial-motion/answer_020.png",
+      "sourceTimes": {
+        "question": 547.6,
+        "answer": 564.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "stars-daily",
+      "question": "images_04/celestial-motion/question_021.png",
+      "answer": "images_04/celestial-motion/answer_021.png",
+      "sourceTimes": {
+        "question": 580.6,
+        "answer": 594.2
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "earth-annual",
+      "question": "images_04/celestial-motion/question_022.png",
+      "answer": "images_04/celestial-motion/answer_022.png",
+      "sourceTimes": {
+        "question": 648.8,
+        "answer": 665.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "earth-annual",
+      "question": "images_04/celestial-motion/question_023.png",
+      "answer": "images_04/celestial-motion/answer_023.png",
+      "sourceTimes": {
+        "question": 677.4,
+        "answer": 690.6
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "earth-annual",
+      "question": "images_04/celestial-motion/question_024.png",
+      "answer": "images_04/celestial-motion/answer_024.png",
+      "sourceTimes": {
+        "question": 699.0,
+        "answer": 713.2
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "earth-annual",
+      "question": "images_04/celestial-motion/question_025.png",
+      "answer": "images_04/celestial-motion/answer_025.png",
+      "sourceTimes": {
+        "question": 722.6,
+        "answer": 734.8
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "earth-annual",
+      "question": "images_04/celestial-motion/question_026.png",
+      "answer": "images_04/celestial-motion/answer_026.png",
+      "sourceTimes": {
+        "question": 746.0,
+        "answer": 763.2
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "seasons",
+      "question": "images_04/celestial-motion/question_027.png",
+      "answer": "images_04/celestial-motion/answer_027.png",
+      "sourceTimes": {
+        "question": 800.0,
+        "answer": 809.4
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "seasons",
+      "question": "images_04/celestial-motion/question_028.png",
+      "answer": "images_04/celestial-motion/answer_028.png",
+      "sourceTimes": {
+        "question": 826.6,
+        "answer": 842.8
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "seasons",
+      "question": "images_04/celestial-motion/question_029.png",
+      "answer": "images_04/celestial-motion/answer_029.png",
+      "sourceTimes": {
+        "question": 852.0,
+        "answer": 864.8
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "seasons",
+      "question": "images_04/celestial-motion/question_030.png",
+      "answer": "images_04/celestial-motion/answer_030.png",
+      "sourceTimes": {
+        "question": 882.6,
+        "answer": 891.2
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "seasons",
+      "question": "images_04/celestial-motion/question_031.png",
+      "answer": "images_04/celestial-motion/answer_031.png",
+      "sourceTimes": {
+        "question": 917.6,
+        "answer": 937.2
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "seasons",
+      "question": "images_04/celestial-motion/question_032.png",
+      "answer": "images_04/celestial-motion/answer_032.png",
+      "sourceTimes": {
+        "question": 959.2,
+        "answer": 967.8
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "stars-annual",
+      "question": "images_04/celestial-motion/question_033.png",
+      "answer": "images_04/celestial-motion/answer_033.png",
+      "sourceTimes": {
+        "question": 983.4,
+        "answer": 996.2
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "stars-annual",
+      "question": "images_04/celestial-motion/question_034.png",
+      "answer": "images_04/celestial-motion/answer_034.png",
+      "sourceTimes": {
+        "question": 1008.4,
+        "answer": 1017.6
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "stars-annual",
+      "question": "images_04/celestial-motion/question_035.png",
+      "answer": "images_04/celestial-motion/answer_035.png",
+      "sourceTimes": {
+        "question": 1029.4,
+        "answer": 1053.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "stars-annual",
+      "question": "images_04/celestial-motion/question_036.png",
+      "answer": "images_04/celestial-motion/answer_036.png",
+      "sourceTimes": {
+        "question": 1064.6,
+        "answer": 1074.4
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "stars-annual",
+      "question": "images_04/celestial-motion/question_037.png",
+      "answer": "images_04/celestial-motion/answer_037.png",
+      "sourceTimes": {
+        "question": 1085.0,
+        "answer": 1102.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "stars-annual",
+      "question": "images_04/celestial-motion/question_038.png",
+      "answer": "images_04/celestial-motion/answer_038.png",
+      "sourceTimes": {
+        "question": 1117.4,
+        "answer": 1126.6
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "stars-annual",
+      "question": "images_04/celestial-motion/question_039.png",
+      "answer": "images_04/celestial-motion/answer_039.png",
+      "sourceTimes": {
+        "question": 1143.0,
+        "answer": 1151.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=amayOcf-ks4"
+}

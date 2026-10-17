@@ -1,0 +1,454 @@
+{
+  "id": "science-growth-cell-division-reproduction-grade3-01",
+  "subject": "science",
+  "field": "biology",
+  "title": "生命・生物の成長・細胞分裂・生殖",
+  "grade": "中3理科",
+  "description": "生物の成長と細胞分裂の観察、無性生殖と有性生殖、植物・動物の受精と発生、減数分裂と染色体を図解で学ぶ42問。",
+  "cover": "images_03/growth-reproduction/question_001.png",
+  "chapters": [
+    {
+      "id": "growth-division",
+      "title": "生物の成長と細胞分裂"
+    },
+    {
+      "id": "reproduction",
+      "title": "生殖と生物のふえ方"
+    },
+    {
+      "id": "plant-reproduction",
+      "title": "植物の有性生殖"
+    },
+    {
+      "id": "animal-reproduction",
+      "title": "動物の有性生殖"
+    },
+    {
+      "id": "meiosis-chromosomes",
+      "title": "減数分裂と染色体"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_001.png",
+      "answer": "images_03/growth-reproduction/answer_001.png",
+      "sourceTimes": {
+        "question": 25.8,
+        "answer": 32.8
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_002.png",
+      "answer": "images_03/growth-reproduction/answer_002.png",
+      "sourceTimes": {
+        "question": 42.2,
+        "answer": 53.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_003.png",
+      "answer": "images_03/growth-reproduction/answer_003.png",
+      "sourceTimes": {
+        "question": 69.0,
+        "answer": 81.8
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_004.png",
+      "answer": "images_03/growth-reproduction/answer_004.png",
+      "sourceTimes": {
+        "question": 94.2,
+        "answer": 104.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_005.png",
+      "answer": "images_03/growth-reproduction/answer_005.png",
+      "sourceTimes": {
+        "question": 121.2,
+        "answer": 130.2
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_006.png",
+      "answer": "images_03/growth-reproduction/answer_006.png",
+      "sourceTimes": {
+        "question": 144.2,
+        "answer": 151.8
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_007.png",
+      "answer": "images_03/growth-reproduction/answer_007.png",
+      "sourceTimes": {
+        "question": 160.8,
+        "answer": 168.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_008.png",
+      "answer": "images_03/growth-reproduction/answer_008.png",
+      "sourceTimes": {
+        "question": 180.0,
+        "answer": 186.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_009.png",
+      "answer": "images_03/growth-reproduction/answer_009.png",
+      "sourceTimes": {
+        "question": 198.8,
+        "answer": 209.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_010.png",
+      "answer": "images_03/growth-reproduction/answer_010.png",
+      "sourceTimes": {
+        "question": 218.8,
+        "answer": 223.6
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_011.png",
+      "answer": "images_03/growth-reproduction/answer_011.png",
+      "sourceTimes": {
+        "question": 233.4,
+        "answer": 252.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_012.png",
+      "answer": "images_03/growth-reproduction/answer_012.png",
+      "sourceTimes": {
+        "question": 264.6,
+        "answer": 276.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "growth-division",
+      "question": "images_03/growth-reproduction/question_013.png",
+      "answer": "images_03/growth-reproduction/answer_013.png",
+      "sourceTimes": {
+        "question": 288.8,
+        "answer": 304.8
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "reproduction",
+      "question": "images_03/growth-reproduction/question_014.png",
+      "answer": "images_03/growth-reproduction/answer_014.png",
+      "sourceTimes": {
+        "question": 320.6,
+        "answer": 327.8
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "reproduction",
+      "question": "images_03/growth-reproduction/question_015.png",
+      "answer": "images_03/growth-reproduction/answer_015.png",
+      "sourceTimes": {
+        "question": 335.8,
+        "answer": 344.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "reproduction",
+      "question": "images_03/growth-reproduction/question_016.png",
+      "answer": "images_03/growth-reproduction/answer_016.png",
+      "sourceTimes": {
+        "question": 352.8,
+        "answer": 365.4
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "reproduction",
+      "question": "images_03/growth-reproduction/question_017.png",
+      "answer": "images_03/growth-reproduction/answer_017.png",
+      "sourceTimes": {
+        "question": 374.4,
+        "answer": 386.8
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "reproduction",
+      "question": "images_03/growth-reproduction/question_018.png",
+      "answer": "images_03/growth-reproduction/answer_018.png",
+      "sourceTimes": {
+        "question": 398.2,
+        "answer": 408.8
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "reproduction",
+      "question": "images_03/growth-reproduction/question_019.png",
+      "answer": "images_03/growth-reproduction/answer_019.png",
+      "sourceTimes": {
+        "question": 416.6,
+        "answer": 424.8
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "reproduction",
+      "question": "images_03/growth-reproduction/question_020.png",
+      "answer": "images_03/growth-reproduction/answer_020.png",
+      "sourceTimes": {
+        "question": 434.4,
+        "answer": 443.8
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "reproduction",
+      "question": "images_03/growth-reproduction/question_021.png",
+      "answer": "images_03/growth-reproduction/answer_021.png",
+      "sourceTimes": {
+        "question": 452.2,
+        "answer": 463.4
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_022.png",
+      "answer": "images_03/growth-reproduction/answer_022.png",
+      "sourceTimes": {
+        "question": 475.8,
+        "answer": 486.2
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_023.png",
+      "answer": "images_03/growth-reproduction/answer_023.png",
+      "sourceTimes": {
+        "question": 495.2,
+        "answer": 501.8
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_024.png",
+      "answer": "images_03/growth-reproduction/answer_024.png",
+      "sourceTimes": {
+        "question": 510.0,
+        "answer": 518.6
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_025.png",
+      "answer": "images_03/growth-reproduction/answer_025.png",
+      "sourceTimes": {
+        "question": 526.0,
+        "answer": 534.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_026.png",
+      "answer": "images_03/growth-reproduction/answer_026.png",
+      "sourceTimes": {
+        "question": 542.6,
+        "answer": 552.4
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_027.png",
+      "answer": "images_03/growth-reproduction/answer_027.png",
+      "sourceTimes": {
+        "question": 560.4,
+        "answer": 568.8
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_028.png",
+      "answer": "images_03/growth-reproduction/answer_028.png",
+      "sourceTimes": {
+        "question": 574.8,
+        "answer": 580.8
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_029.png",
+      "answer": "images_03/growth-reproduction/answer_029.png",
+      "sourceTimes": {
+        "question": 586.2,
+        "answer": 592.2
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "plant-reproduction",
+      "question": "images_03/growth-reproduction/question_030.png",
+      "answer": "images_03/growth-reproduction/answer_030.png",
+      "sourceTimes": {
+        "question": 602.6,
+        "answer": 608.2
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "animal-reproduction",
+      "question": "images_03/growth-reproduction/question_031.png",
+      "answer": "images_03/growth-reproduction/answer_031.png",
+      "sourceTimes": {
+        "question": 618.2,
+        "answer": 628.4
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "animal-reproduction",
+      "question": "images_03/growth-reproduction/question_032.png",
+      "answer": "images_03/growth-reproduction/answer_032.png",
+      "sourceTimes": {
+        "question": 633.4,
+        "answer": 639.2
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "animal-reproduction",
+      "question": "images_03/growth-reproduction/question_033.png",
+      "answer": "images_03/growth-reproduction/answer_033.png",
+      "sourceTimes": {
+        "question": 645.2,
+        "answer": 652.2
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "animal-reproduction",
+      "question": "images_03/growth-reproduction/question_034.png",
+      "answer": "images_03/growth-reproduction/answer_034.png",
+      "sourceTimes": {
+        "question": 659.0,
+        "answer": 667.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "animal-reproduction",
+      "question": "images_03/growth-reproduction/question_035.png",
+      "answer": "images_03/growth-reproduction/answer_035.png",
+      "sourceTimes": {
+        "question": 674.4,
+        "answer": 681.6
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "animal-reproduction",
+      "question": "images_03/growth-reproduction/question_036.png",
+      "answer": "images_03/growth-reproduction/answer_036.png",
+      "sourceTimes": {
+        "question": 688.6,
+        "answer": 695.8
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "animal-reproduction",
+      "question": "images_03/growth-reproduction/question_037.png",
+      "answer": "images_03/growth-reproduction/answer_037.png",
+      "sourceTimes": {
+        "question": 707.0,
+        "answer": 712.8
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "meiosis-chromosomes",
+      "question": "images_03/growth-reproduction/question_038.png",
+      "answer": "images_03/growth-reproduction/answer_038.png",
+      "sourceTimes": {
+        "question": 722.0,
+        "answer": 732.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "meiosis-chromosomes",
+      "question": "images_03/growth-reproduction/question_039.png",
+      "answer": "images_03/growth-reproduction/answer_039.png",
+      "sourceTimes": {
+        "question": 740.6,
+        "answer": 763.8
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "meiosis-chromosomes",
+      "question": "images_03/growth-reproduction/question_040.png",
+      "answer": "images_03/growth-reproduction/answer_040.png",
+      "sourceTimes": {
+        "question": 777.8,
+        "answer": 788.4
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "meiosis-chromosomes",
+      "question": "images_03/growth-reproduction/question_041.png",
+      "answer": "images_03/growth-reproduction/answer_041.png",
+      "sourceTimes": {
+        "question": 804.2,
+        "answer": 810.8
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "meiosis-chromosomes",
+      "question": "images_03/growth-reproduction/question_042.png",
+      "answer": "images_03/growth-reproduction/answer_042.png",
+      "sourceTimes": {
+        "question": 819.8,
+        "answer": 838.8
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=iYt2Zm5aTsE"
+}

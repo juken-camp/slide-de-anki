@@ -1,0 +1,391 @@
+{
+  "id": "science-work-mechanical-energy-grade3-01",
+  "subject": "science",
+  "field": "physics",
+  "title": "仕事とエネルギー・力学的エネルギー",
+  "grade": "中3理科",
+  "description": "仕事と仕事率、仕事の原理、運動・位置エネルギー、力学的エネルギーの保存、エネルギー変換と熱の伝わり方を図解で学ぶ35問。",
+  "cover": "images_03/work-energy/question_001.png",
+  "chapters": [
+    {
+      "id": "work",
+      "title": "仕事とエネルギー"
+    },
+    {
+      "id": "power",
+      "title": "仕事率と仕事の原理"
+    },
+    {
+      "id": "kinetic-potential",
+      "title": "運動エネルギー・位置エネルギー"
+    },
+    {
+      "id": "mechanical",
+      "title": "力学的エネルギー"
+    },
+    {
+      "id": "conversion",
+      "title": "エネルギーの移り変わり"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "work",
+      "question": "images_03/work-energy/question_001.png",
+      "answer": "images_03/work-energy/answer_001.png",
+      "sourceTimes": {
+        "question": 31.6,
+        "answer": 40.8
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "work",
+      "question": "images_03/work-energy/question_002.png",
+      "answer": "images_03/work-energy/answer_002.png",
+      "sourceTimes": {
+        "question": 51.8,
+        "answer": 64.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "work",
+      "question": "images_03/work-energy/question_003.png",
+      "answer": "images_03/work-energy/answer_003.png",
+      "sourceTimes": {
+        "question": 78.8,
+        "answer": 104.8
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "work",
+      "question": "images_03/work-energy/question_004.png?v=bc551c82b4cc4a8f",
+      "answer": "images_03/work-energy/answer_004.png?v=fbb5bc428cc53cc2",
+      "sourceTimes": {
+        "question": 117.4,
+        "answer": 135.8
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "005",
+      "chapter": "work",
+      "question": "images_03/work-energy/question_005.png",
+      "answer": "images_03/work-energy/answer_005.png",
+      "sourceTimes": {
+        "question": 165.0,
+        "answer": 190.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "work",
+      "question": "images_03/work-energy/question_006.png",
+      "answer": "images_03/work-energy/answer_006.png",
+      "sourceTimes": {
+        "question": 208.6,
+        "answer": 233.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "work",
+      "question": "images_03/work-energy/question_007.png",
+      "answer": "images_03/work-energy/answer_007.png",
+      "sourceTimes": {
+        "question": 253.0,
+        "answer": 259.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_008.png",
+      "answer": "images_03/work-energy/answer_008.png",
+      "sourceTimes": {
+        "question": 274.4,
+        "answer": 288.8
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_009.png",
+      "answer": "images_03/work-energy/answer_009.png",
+      "sourceTimes": {
+        "question": 304.8,
+        "answer": 316.2
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_010.png",
+      "answer": "images_03/work-energy/answer_010.png",
+      "sourceTimes": {
+        "question": 332.0,
+        "answer": 343.8
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_011.png",
+      "answer": "images_03/work-energy/answer_011.png",
+      "sourceTimes": {
+        "question": 366.0,
+        "answer": 378.8
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_012.png",
+      "answer": "images_03/work-energy/answer_012.png",
+      "sourceTimes": {
+        "question": 393.2,
+        "answer": 407.4
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_013.png",
+      "answer": "images_03/work-energy/answer_013.png",
+      "sourceTimes": {
+        "question": 420.2,
+        "answer": 430.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_014.png",
+      "answer": "images_03/work-energy/answer_014.png",
+      "sourceTimes": {
+        "question": 438.8,
+        "answer": 452.4
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_015.png",
+      "answer": "images_03/work-energy/answer_015.png",
+      "sourceTimes": {
+        "question": 464.4,
+        "answer": 493.2
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_016.png",
+      "answer": "images_03/work-energy/answer_016.png",
+      "sourceTimes": {
+        "question": 504.8,
+        "answer": 533.4
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "power",
+      "question": "images_03/work-energy/question_017.png",
+      "answer": "images_03/work-energy/answer_017.png",
+      "sourceTimes": {
+        "question": 568.8,
+        "answer": 599.2
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "kinetic-potential",
+      "question": "images_03/work-energy/question_018.png",
+      "answer": "images_03/work-energy/answer_018.png",
+      "sourceTimes": {
+        "question": 615.4,
+        "answer": 623.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "kinetic-potential",
+      "question": "images_03/work-energy/question_019.png",
+      "answer": "images_03/work-energy/answer_019.png",
+      "sourceTimes": {
+        "question": 628.6,
+        "answer": 639.8
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "kinetic-potential",
+      "question": "images_03/work-energy/question_020.png",
+      "answer": "images_03/work-energy/answer_020.png",
+      "sourceTimes": {
+        "question": 651.4,
+        "answer": 664.2
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "kinetic-potential",
+      "question": "images_03/work-energy/question_021.png",
+      "answer": "images_03/work-energy/answer_021.png",
+      "sourceTimes": {
+        "question": 673.6,
+        "answer": 686.8
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "kinetic-potential",
+      "question": "images_03/work-energy/question_022.png",
+      "answer": "images_03/work-energy/answer_022.png",
+      "sourceTimes": {
+        "question": 696.4,
+        "answer": 703.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "kinetic-potential",
+      "question": "images_03/work-energy/question_023.png",
+      "answer": "images_03/work-energy/answer_023.png",
+      "sourceTimes": {
+        "question": 710.4,
+        "answer": 718.4
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "kinetic-potential",
+      "question": "images_03/work-energy/question_024.png",
+      "answer": "images_03/work-energy/answer_024.png",
+      "sourceTimes": {
+        "question": 731.2,
+        "answer": 749.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "kinetic-potential",
+      "question": "images_03/work-energy/question_025.png",
+      "answer": "images_03/work-energy/answer_025.png",
+      "sourceTimes": {
+        "question": 766.2,
+        "answer": 782.2
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "mechanical",
+      "question": "images_03/work-energy/question_026.png",
+      "answer": "images_03/work-energy/answer_026.png",
+      "sourceTimes": {
+        "question": 800.2,
+        "answer": 814.2
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "mechanical",
+      "question": "images_03/work-energy/question_027.png",
+      "answer": "images_03/work-energy/answer_027.png",
+      "sourceTimes": {
+        "question": 825.4,
+        "answer": 834.2
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "mechanical",
+      "question": "images_03/work-energy/question_028.png",
+      "answer": "images_03/work-energy/answer_028.png",
+      "sourceTimes": {
+        "question": 844.0,
+        "answer": 854.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "conversion",
+      "question": "images_03/work-energy/question_029.png",
+      "answer": "images_03/work-energy/answer_029.png",
+      "sourceTimes": {
+        "question": 867.8,
+        "answer": 876.2
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "conversion",
+      "question": "images_03/work-energy/question_030.png",
+      "answer": "images_03/work-energy/answer_030.png",
+      "sourceTimes": {
+        "question": 887.8,
+        "answer": 900.6
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "conversion",
+      "question": "images_03/work-energy/question_031.png",
+      "answer": "images_03/work-energy/answer_031.png",
+      "sourceTimes": {
+        "question": 909.2,
+        "answer": 917.8
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "conversion",
+      "question": "images_03/work-energy/question_032.png",
+      "answer": "images_03/work-energy/answer_032.png?v=258574a8bc586d78",
+      "sourceTimes": {
+        "question": 926.2,
+        "answer": 947.6
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "033",
+      "chapter": "conversion",
+      "question": "images_03/work-energy/question_033.png",
+      "answer": "images_03/work-energy/answer_033.png",
+      "sourceTimes": {
+        "question": 967.8,
+        "answer": 976.6
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "conversion",
+      "question": "images_03/work-energy/question_034.png",
+      "answer": "images_03/work-energy/answer_034.png",
+      "sourceTimes": {
+        "question": 987.8,
+        "answer": 993.2
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "conversion",
+      "question": "images_03/work-energy/question_035.png",
+      "answer": "images_03/work-energy/answer_035.png",
+      "sourceTimes": {
+        "question": 1000.0,
+        "answer": 1008.2
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=bb4hH3aa0o4"
+}

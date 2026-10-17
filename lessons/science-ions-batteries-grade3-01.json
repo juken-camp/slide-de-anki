@@ -1,0 +1,260 @@
+{
+  "id": "science-ions-batteries-grade3-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "化学変化とイオンと電池",
+  "grade": "中3理科",
+  "description": "電解質と金属の復習、化学電池とイオン化傾向、電子の移動と水素の発生、レモン電池・二次電池・燃料電池を図解で学ぶ23問。",
+  "cover": "images_04/ions-batteries/question_001.png",
+  "chapters": [
+    {
+      "id": "review",
+      "title": "電解質・イオン・金属の復習"
+    },
+    {
+      "id": "chemical-batteries",
+      "title": "化学変化と電池"
+    },
+    {
+      "id": "battery-mechanism",
+      "title": "電池のしくみと電子の移動"
+    },
+    {
+      "id": "battery-types",
+      "title": "いろいろな電池"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "review",
+      "question": "images_04/ions-batteries/question_001.png",
+      "answer": "images_04/ions-batteries/answer_001.png",
+      "sourceTimes": {
+        "question": 31.6,
+        "answer": 39.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "review",
+      "question": "images_04/ions-batteries/question_002.png",
+      "answer": "images_04/ions-batteries/answer_002.png",
+      "sourceTimes": {
+        "question": 46.0,
+        "answer": 53.6
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "review",
+      "question": "images_04/ions-batteries/question_003.png",
+      "answer": "images_04/ions-batteries/answer_003.png",
+      "sourceTimes": {
+        "question": 59.6,
+        "answer": 69.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "review",
+      "question": "images_04/ions-batteries/question_004.png",
+      "answer": "images_04/ions-batteries/answer_004.png",
+      "sourceTimes": {
+        "question": 87.4,
+        "answer": 98.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "review",
+      "question": "images_04/ions-batteries/question_005.png",
+      "answer": "images_04/ions-batteries/answer_005.png",
+      "sourceTimes": {
+        "question": 116.4,
+        "answer": 136.2
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "chemical-batteries",
+      "question": "images_04/ions-batteries/question_006.png",
+      "answer": "images_04/ions-batteries/answer_006.png",
+      "sourceTimes": {
+        "question": 162.0,
+        "answer": 174.2
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "chemical-batteries",
+      "question": "images_04/ions-batteries/question_007.png",
+      "answer": "images_04/ions-batteries/answer_007.png",
+      "sourceTimes": {
+        "question": 189.2,
+        "answer": 199.4
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "chemical-batteries",
+      "question": "images_04/ions-batteries/question_008.png",
+      "answer": "images_04/ions-batteries/answer_008.png",
+      "sourceTimes": {
+        "question": 213.2,
+        "answer": 221.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "chemical-batteries",
+      "question": "images_04/ions-batteries/question_009.png",
+      "answer": "images_04/ions-batteries/answer_009.png",
+      "sourceTimes": {
+        "question": 230.6,
+        "answer": 237.8
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "chemical-batteries",
+      "question": "images_04/ions-batteries/question_010.png",
+      "answer": "images_04/ions-batteries/answer_010.png",
+      "sourceTimes": {
+        "question": 249.2,
+        "answer": 260.2
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "chemical-batteries",
+      "question": "images_04/ions-batteries/question_011.png",
+      "answer": "images_04/ions-batteries/answer_011.png",
+      "sourceTimes": {
+        "question": 272.8,
+        "answer": 294.4
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "chemical-batteries",
+      "question": "images_04/ions-batteries/question_012.png",
+      "answer": "images_04/ions-batteries/answer_012.png",
+      "sourceTimes": {
+        "question": 310.6,
+        "answer": 341.2
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "battery-mechanism",
+      "question": "images_04/ions-batteries/question_013.png",
+      "answer": "images_04/ions-batteries/answer_013.png",
+      "sourceTimes": {
+        "question": 360.0,
+        "answer": 368.6
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "battery-mechanism",
+      "question": "images_04/ions-batteries/question_014.png",
+      "answer": "images_04/ions-batteries/answer_014.png",
+      "sourceTimes": {
+        "question": 375.0,
+        "answer": 394.2
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "battery-mechanism",
+      "question": "images_04/ions-batteries/question_015.png",
+      "answer": "images_04/ions-batteries/answer_015.png",
+      "sourceTimes": {
+        "question": 407.2,
+        "answer": 421.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "battery-mechanism",
+      "question": "images_04/ions-batteries/question_016.png",
+      "answer": "images_04/ions-batteries/answer_016.png",
+      "sourceTimes": {
+        "question": 433.0,
+        "answer": 445.8
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "battery-mechanism",
+      "question": "images_04/ions-batteries/question_017.png",
+      "answer": "images_04/ions-batteries/answer_017.png",
+      "sourceTimes": {
+        "question": 463.6,
+        "answer": 471.8
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "battery-mechanism",
+      "question": "images_04/ions-batteries/question_018.png",
+      "answer": "images_04/ions-batteries/answer_018.png",
+      "sourceTimes": {
+        "question": 487.0,
+        "answer": 505.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "battery-types",
+      "question": "images_04/ions-batteries/question_019.png",
+      "answer": "images_04/ions-batteries/answer_019.png",
+      "sourceTimes": {
+        "question": 527.6,
+        "answer": 548.8
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "battery-types",
+      "question": "images_04/ions-batteries/question_020.png",
+      "answer": "images_04/ions-batteries/answer_020.png",
+      "sourceTimes": {
+        "question": 574.8,
+        "answer": 583.6
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "battery-types",
+      "question": "images_04/ions-batteries/question_021.png",
+      "answer": "images_04/ions-batteries/answer_021.png",
+      "sourceTimes": {
+        "question": 592.4,
+        "answer": 602.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "battery-types",
+      "question": "images_04/ions-batteries/question_022.png",
+      "answer": "images_04/ions-batteries/answer_022.png",
+      "sourceTimes": {
+        "question": 616.0,
+        "answer": 626.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "battery-types",
+      "question": "images_04/ions-batteries/question_023.png",
+      "answer": "images_04/ions-batteries/answer_023.png",
+      "sourceTimes": {
+        "question": 640.0,
+        "answer": 650.4
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=zfCDXNzp5QM"
+}

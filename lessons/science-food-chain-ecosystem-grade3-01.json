@@ -1,0 +1,216 @@
+{
+  "id": "science-food-chain-ecosystem-grade3-01",
+  "subject": "science",
+  "field": "biology",
+  "title": "自然界のつながり・食物連鎖・生態系",
+  "grade": "中3理科",
+  "description": "食物連鎖と食物網、生産者・消費者・分解者、微生物のはたらき、生物濃縮、持続可能な社会と環境を図解で学ぶ19問。",
+  "cover": "images_03/ecosystems/question_001.png",
+  "chapters": [
+    {
+      "id": "food-chain",
+      "title": "食物連鎖と生態系"
+    },
+    {
+      "id": "microorganisms",
+      "title": "微生物と分解者"
+    },
+    {
+      "id": "environment",
+      "title": "自然環境と持続可能な社会"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_001.png",
+      "answer": "images_03/ecosystems/answer_001.png",
+      "sourceTimes": {
+        "question": 34.4,
+        "answer": 43.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_002.png",
+      "answer": "images_03/ecosystems/answer_002.png",
+      "sourceTimes": {
+        "question": 50.6,
+        "answer": 58.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_003.png",
+      "answer": "images_03/ecosystems/answer_003.png",
+      "sourceTimes": {
+        "question": 71.6,
+        "answer": 82.4
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_004.png",
+      "answer": "images_03/ecosystems/answer_004.png",
+      "sourceTimes": {
+        "question": 91.4,
+        "answer": 99.2
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_005.png",
+      "answer": "images_03/ecosystems/answer_005.png",
+      "sourceTimes": {
+        "question": 107.8,
+        "answer": 116.2
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_006.png",
+      "answer": "images_03/ecosystems/answer_006.png",
+      "sourceTimes": {
+        "question": 125.6,
+        "answer": 136.2
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_007.png",
+      "answer": "images_03/ecosystems/answer_007.png",
+      "sourceTimes": {
+        "question": 153.8,
+        "answer": 168.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_008.png",
+      "answer": "images_03/ecosystems/answer_008.png",
+      "sourceTimes": {
+        "question": 183.0,
+        "answer": 188.2
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "food-chain",
+      "question": "images_03/ecosystems/question_009.png",
+      "answer": "images_03/ecosystems/answer_009.png",
+      "sourceTimes": {
+        "question": 198.2,
+        "answer": 214.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "microorganisms",
+      "question": "images_03/ecosystems/question_010.png",
+      "answer": "images_03/ecosystems/answer_010.png",
+      "sourceTimes": {
+        "question": 223.6,
+        "answer": 230.4
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "microorganisms",
+      "question": "images_03/ecosystems/question_011.png",
+      "answer": "images_03/ecosystems/answer_011.png",
+      "sourceTimes": {
+        "question": 241.4,
+        "answer": 255.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "microorganisms",
+      "question": "images_03/ecosystems/question_012.png",
+      "answer": "images_03/ecosystems/answer_012.png",
+      "sourceTimes": {
+        "question": 264.4,
+        "answer": 272.4
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "microorganisms",
+      "question": "images_03/ecosystems/question_013.png",
+      "answer": "images_03/ecosystems/answer_013.png",
+      "sourceTimes": {
+        "question": 279.0,
+        "answer": 290.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "microorganisms",
+      "question": "images_03/ecosystems/question_014.png",
+      "answer": "images_03/ecosystems/answer_014.png",
+      "sourceTimes": {
+        "question": 304.8,
+        "answer": 317.4
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "microorganisms",
+      "question": "images_03/ecosystems/question_015.png",
+      "answer": "images_03/ecosystems/answer_015.png",
+      "sourceTimes": {
+        "question": 329.8,
+        "answer": 342.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "microorganisms",
+      "question": "images_03/ecosystems/question_016.png",
+      "answer": "images_03/ecosystems/answer_016.png",
+      "sourceTimes": {
+        "question": 354.2,
+        "answer": 371.4
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "environment",
+      "question": "images_03/ecosystems/question_017.png",
+      "answer": "images_03/ecosystems/answer_017.png",
+      "sourceTimes": {
+        "question": 386.8,
+        "answer": 399.6
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "environment",
+      "question": "images_03/ecosystems/question_018.png",
+      "answer": "images_03/ecosystems/answer_018.png",
+      "sourceTimes": {
+        "question": 408.2,
+        "answer": 417.2
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "environment",
+      "question": "images_03/ecosystems/question_019.png",
+      "answer": "images_03/ecosystems/answer_019.png",
+      "sourceTimes": {
+        "question": 426.0,
+        "answer": 434.8
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=Cy6793iQrok"
+}

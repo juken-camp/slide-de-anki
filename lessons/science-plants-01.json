@@ -1,0 +1,460 @@
+{
+  "id": "science-plants-01",
+  "subject": "science",
+  "field": "biology",
+  "title": "植物のつくりと働き",
+  "grade": "中1理科",
+  "description": "花から光合成、植物の分類、実験器具まで。図といっしょに覚える41問。",
+  "source": "https://www.youtube.com/watch?v=k0AvlN-_twk",
+  "cover": "images_01/plants/question_001.png",
+  "chapters": [
+    {
+      "id": "flower",
+      "title": "花のつくり"
+    },
+    {
+      "id": "seed",
+      "title": "種子植物"
+    },
+    {
+      "id": "stem",
+      "title": "茎のつくり"
+    },
+    {
+      "id": "photosynthesis",
+      "title": "光合成と呼吸"
+    },
+    {
+      "id": "leaf",
+      "title": "葉・根のつくり"
+    },
+    {
+      "id": "spore",
+      "title": "種子をつくらない植物"
+    },
+    {
+      "id": "tools",
+      "title": "顕微鏡・実験器具"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "flower",
+      "question": "images_01/plants/question_001.png",
+      "answer": "images_01/plants/answer_001.png",
+      "sourceTimes": {
+        "question": 18.0,
+        "answer": 26.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "flower",
+      "question": "images_01/plants/question_002.png",
+      "answer": "images_01/plants/answer_002.png",
+      "sourceTimes": {
+        "question": 32.0,
+        "answer": 39.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "flower",
+      "question": "images_01/plants/question_003.png",
+      "answer": "images_01/plants/answer_003.png",
+      "sourceTimes": {
+        "question": 45.0,
+        "answer": 51.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "flower",
+      "question": "images_01/plants/question_004.png",
+      "answer": "images_01/plants/answer_004.png",
+      "sourceTimes": {
+        "question": 57.0,
+        "answer": 64.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "flower",
+      "question": "images_01/plants/question_005.png",
+      "answer": "images_01/plants/answer_005.png",
+      "sourceTimes": {
+        "question": 70.0,
+        "answer": 76.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "flower",
+      "question": "images_01/plants/question_006.png",
+      "answer": "images_01/plants/answer_006.png",
+      "sourceTimes": {
+        "question": 83.0,
+        "answer": 90.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "flower",
+      "question": "images_01/plants/question_007.png",
+      "answer": "images_01/plants/answer_007.png",
+      "sourceTimes": {
+        "question": 96.0,
+        "answer": 102.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "flower",
+      "question": "images_01/plants/question_008.png",
+      "answer": "images_01/plants/answer_008.png",
+      "sourceTimes": {
+        "question": 107.0,
+        "answer": 113.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "flower",
+      "question": "images_01/plants/question_009.png",
+      "answer": "images_01/plants/answer_009.png",
+      "sourceTimes": {
+        "question": 119.0,
+        "answer": 126.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "flower",
+      "question": "images_01/plants/question_010.png",
+      "answer": "images_01/plants/answer_010.png",
+      "sourceTimes": {
+        "question": 133.0,
+        "answer": 140.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "flower",
+      "question": "images_01/plants/question_011.png",
+      "answer": "images_01/plants/answer_011.png",
+      "sourceTimes": {
+        "question": 147.0,
+        "answer": 154.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "seed",
+      "question": "images_01/plants/question_012.png",
+      "answer": "images_01/plants/answer_012.png",
+      "sourceTimes": {
+        "question": 160.0,
+        "answer": 167.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "seed",
+      "question": "images_01/plants/question_013.png",
+      "answer": "images_01/plants/answer_013.png",
+      "sourceTimes": {
+        "question": 174.0,
+        "answer": 181.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "seed",
+      "question": "images_01/plants/question_014.png",
+      "answer": "images_01/plants/answer_014.png",
+      "sourceTimes": {
+        "question": 188.0,
+        "answer": 196.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "stem",
+      "question": "images_01/plants/question_015.png",
+      "answer": "images_01/plants/answer_015.png",
+      "sourceTimes": {
+        "question": 203.0,
+        "answer": 211.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "stem",
+      "question": "images_01/plants/question_016.png",
+      "answer": "images_01/plants/answer_016.png",
+      "sourceTimes": {
+        "question": 218.0,
+        "answer": 226.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "stem",
+      "question": "images_01/plants/question_017.png",
+      "answer": "images_01/plants/answer_017.png",
+      "sourceTimes": {
+        "question": 232.0,
+        "answer": 240.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "photosynthesis",
+      "question": "images_01/plants/question_018.png",
+      "answer": "images_01/plants/answer_018.png",
+      "sourceTimes": {
+        "question": 247.0,
+        "answer": 255.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "photosynthesis",
+      "question": "images_01/plants/question_019.png",
+      "answer": "images_01/plants/answer_019.png",
+      "sourceTimes": {
+        "question": 264.0,
+        "answer": 275.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "photosynthesis",
+      "question": "images_01/plants/question_020.png",
+      "answer": "images_01/plants/answer_020.png",
+      "sourceTimes": {
+        "question": 285.0,
+        "answer": 294.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "photosynthesis",
+      "question": "images_01/plants/question_021.png",
+      "answer": "images_01/plants/answer_021.png",
+      "sourceTimes": {
+        "question": 302.0,
+        "answer": 310.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "photosynthesis",
+      "question": "images_01/plants/question_022.png",
+      "answer": "images_01/plants/answer_022.png",
+      "sourceTimes": {
+        "question": 319.0,
+        "answer": 328.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_023.png",
+      "answer": "images_01/plants/answer_023.png",
+      "sourceTimes": {
+        "question": 333.0,
+        "answer": 338.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_024.png?v=b292a1f954a2fc17",
+      "answer": "images_01/plants/answer_024.png?v=1424a0d2216825ff",
+      "sourceTimes": {
+        "question": 345.0,
+        "answer": 353.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "025",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_025.png",
+      "answer": "images_01/plants/answer_025.png",
+      "sourceTimes": {
+        "question": 361.0,
+        "answer": 369.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_026.png",
+      "answer": "images_01/plants/answer_026.png",
+      "sourceTimes": {
+        "question": 376.0,
+        "answer": 384.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_027.png",
+      "answer": "images_01/plants/answer_027.png",
+      "sourceTimes": {
+        "question": 394.0,
+        "answer": 404.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_028.png",
+      "answer": "images_01/plants/answer_028.png",
+      "sourceTimes": {
+        "question": 412.0,
+        "answer": 421.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_029.png",
+      "answer": "images_01/plants/answer_029.png",
+      "sourceTimes": {
+        "question": 429.0,
+        "answer": 437.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_030.png",
+      "answer": "images_01/plants/answer_030.png",
+      "sourceTimes": {
+        "question": 444.0,
+        "answer": 453.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "leaf",
+      "question": "images_01/plants/question_031.png",
+      "answer": "images_01/plants/answer_031.png",
+      "sourceTimes": {
+        "question": 461.0,
+        "answer": 470.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "spore",
+      "question": "images_01/plants/question_032.png",
+      "answer": "images_01/plants/answer_032.png",
+      "sourceTimes": {
+        "question": 478.0,
+        "answer": 486.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "spore",
+      "question": "images_01/plants/question_033.png",
+      "answer": "images_01/plants/answer_033.png",
+      "sourceTimes": {
+        "question": 492.0,
+        "answer": 499.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "spore",
+      "question": "images_01/plants/question_034.png",
+      "answer": "images_01/plants/answer_034.png",
+      "sourceTimes": {
+        "question": 506.0,
+        "answer": 514.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "tools",
+      "question": "images_01/plants/question_035.png",
+      "answer": "images_01/plants/answer_035.png",
+      "sourceTimes": {
+        "question": 522.0,
+        "answer": 530.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "tools",
+      "question": "images_01/plants/question_036.png",
+      "answer": "images_01/plants/answer_036.png",
+      "sourceTimes": {
+        "question": 537.0,
+        "answer": 543.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "tools",
+      "question": "images_01/plants/question_037.png",
+      "answer": "images_01/plants/answer_037.png",
+      "sourceTimes": {
+        "question": 551.0,
+        "answer": 559.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "tools",
+      "question": "images_01/plants/question_038.png",
+      "answer": "images_01/plants/answer_038.png",
+      "sourceTimes": {
+        "question": 566.0,
+        "answer": 573.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "tools",
+      "question": "images_01/plants/question_039.png?v=c4cdaf6a6b175725",
+      "answer": "images_01/plants/answer_039.png?v=5b3fc2d425effc1f",
+      "sourceTimes": {
+        "question": 580.0,
+        "answer": 589.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "040",
+      "chapter": "tools",
+      "question": "images_01/plants/question_040.png",
+      "answer": "images_01/plants/answer_040.png",
+      "sourceTimes": {
+        "question": 597.0,
+        "answer": 605.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "tools",
+      "question": "images_01/plants/question_041.png",
+      "answer": "images_01/plants/answer_041.png",
+      "sourceTimes": {
+        "question": 612.0,
+        "answer": 619.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "id": "science-heredity-rules-grade3-01",
+  "subject": "science",
+  "field": "biology",
+  "title": "生命のつながり・遺伝の規則性",
+  "grade": "中3理科",
+  "description": "形質・遺伝・DNA、生殖と遺伝、メンデルの実験、優性・劣性、分離の法則、遺伝子の組み合わせを図解で学ぶ25問。",
+  "cover": "images_03/heredity/question_001.png",
+  "chapters": [
+    {
+      "id": "traits-genes",
+      "title": "形質・遺伝・遺伝子"
+    },
+    {
+      "id": "reproduction-heredity",
+      "title": "生殖と遺伝"
+    },
+    {
+      "id": "mendel",
+      "title": "メンデルの実験と形質"
+    },
+    {
+      "id": "chromosomes-laws",
+      "title": "染色体と遺伝の法則"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "traits-genes",
+      "question": "images_03/heredity/question_001.png",
+      "answer": "images_03/heredity/answer_001.png",
+      "sourceTimes": {
+        "question": 21.6,
+        "answer": 29.4
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "traits-genes",
+      "question": "images_03/heredity/question_002.png",
+      "answer": "images_03/heredity/answer_002.png",
+      "sourceTimes": {
+        "question": 37.4,
+        "answer": 45.6
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "traits-genes",
+      "question": "images_03/heredity/question_003.png",
+      "answer": "images_03/heredity/answer_003.png",
+      "sourceTimes": {
+        "question": 59.0,
+        "answer": 65.2
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "traits-genes",
+      "question": "images_03/heredity/question_004.png",
+      "answer": "images_03/heredity/answer_004.png",
+      "sourceTimes": {
+        "question": 73.8,
+        "answer": 92.4
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "reproduction-heredity",
+      "question": "images_03/heredity/question_005.png",
+      "answer": "images_03/heredity/answer_005.png",
+      "sourceTimes": {
+        "question": 106.8,
+        "answer": 116.8
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "reproduction-heredity",
+      "question": "images_03/heredity/question_006.png",
+      "answer": "images_03/heredity/answer_006.png",
+      "sourceTimes": {
+        "question": 125.8,
+        "answer": 135.8
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "reproduction-heredity",
+      "question": "images_03/heredity/question_007.png",
+      "answer": "images_03/heredity/answer_007.png",
+      "sourceTimes": {
+        "question": 150.8,
+        "answer": 158.6
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "reproduction-heredity",
+      "question": "images_03/heredity/question_008.png",
+      "answer": "images_03/heredity/answer_008.png",
+      "sourceTimes": {
+        "question": 173.6,
+        "answer": 181.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "reproduction-heredity",
+      "question": "images_03/heredity/question_009.png",
+      "answer": "images_03/heredity/answer_009.png",
+      "sourceTimes": {
+        "question": 191.8,
+        "answer": 201.8
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "reproduction-heredity",
+      "question": "images_03/heredity/question_010.png",
+      "answer": "images_03/heredity/answer_010.png",
+      "sourceTimes": {
+        "question": 212.6,
+        "answer": 225.6
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_011.png",
+      "answer": "images_03/heredity/answer_011.png",
+      "sourceTimes": {
+        "question": 234.8,
+        "answer": 246.4
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_012.png",
+      "answer": "images_03/heredity/answer_012.png",
+      "sourceTimes": {
+        "question": 257.4,
+        "answer": 265.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_013.png",
+      "answer": "images_03/heredity/answer_013.png",
+      "sourceTimes": {
+        "question": 276.2,
+        "answer": 283.2
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_014.png",
+      "answer": "images_03/heredity/answer_014.png",
+      "sourceTimes": {
+        "question": 295.8,
+        "answer": 307.4
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_015.png",
+      "answer": "images_03/heredity/answer_015.png",
+      "sourceTimes": {
+        "question": 318.0,
+        "answer": 326.2
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_016.png",
+      "answer": "images_03/heredity/answer_016.png",
+      "sourceTimes": {
+        "question": 336.6,
+        "answer": 348.4
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_017.png",
+      "answer": "images_03/heredity/answer_017.png?v=173eef1a440cc6b9",
+      "sourceTimes": {
+        "question": 359.0,
+        "answer": 374.6
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "018",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_018.png",
+      "answer": "images_03/heredity/answer_018.png?v=136dc92b433b249a",
+      "sourceTimes": {
+        "question": 386.8,
+        "answer": 400.4
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "019",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_019.png?v=af5613e911ac54ce",
+      "answer": "images_03/heredity/answer_019.png?v=d2df250a4e1a8817",
+      "sourceTimes": {
+        "question": 418.4,
+        "answer": 440.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "020",
+      "chapter": "mendel",
+      "question": "images_03/heredity/question_020.png?v=0f854e5ae31fe023",
+      "answer": "images_03/heredity/answer_020.png?v=6ab61155bfe2c1a4",
+      "sourceTimes": {
+        "question": 461.4,
+        "answer": 486.4
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "021",
+      "chapter": "chromosomes-laws",
+      "question": "images_03/heredity/question_021.png",
+      "answer": "images_03/heredity/answer_021.png",
+      "sourceTimes": {
+        "question": 502.8,
+        "answer": 519.2
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "chromosomes-laws",
+      "question": "images_03/heredity/question_022.png",
+      "answer": "images_03/heredity/answer_022.png",
+      "sourceTimes": {
+        "question": 531.8,
+        "answer": 539.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "chromosomes-laws",
+      "question": "images_03/heredity/question_023.png",
+      "answer": "images_03/heredity/answer_023.png",
+      "sourceTimes": {
+        "question": 552.6,
+        "answer": 559.8
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "chromosomes-laws",
+      "question": "images_03/heredity/question_024.png?v=e2c34151c8513f2a",
+      "answer": "images_03/heredity/answer_024.png?v=7e391740157f349e",
+      "sourceTimes": {
+        "question": 573.6,
+        "answer": 580.8
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "025",
+      "chapter": "chromosomes-laws",
+      "question": "images_03/heredity/question_025.png",
+      "answer": "images_03/heredity/answer_025.png?v=6030e0c9f57aeab3",
+      "sourceTimes": {
+        "question": 595.2,
+        "answer": 621.0
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=yN8BA_bsQWA"
+}

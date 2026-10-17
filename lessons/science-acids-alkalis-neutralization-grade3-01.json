@@ -1,0 +1,396 @@
+{
+  "id": "science-acids-alkalis-neutralization-grade3-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "酸性・アルカリ性とイオン（中和）",
+  "grade": "中3理科",
+  "description": "酸性・中性・アルカリ性、指示薬とpH、水素イオン・水酸化物イオン、中和による水と塩のでき方を図解で学ぶ37問。",
+  "cover": "images_04/neutralization/question_001.png",
+  "chapters": [
+    {
+      "id": "properties-indicators",
+      "title": "酸性・中性・アルカリ性と指示薬"
+    },
+    {
+      "id": "ions-ph",
+      "title": "酸性・アルカリ性の正体とイオン"
+    },
+    {
+      "id": "neutralization",
+      "title": "中和と水・塩のでき方"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_001.png",
+      "answer": "images_04/neutralization/answer_001.png",
+      "sourceTimes": {
+        "question": 30.6,
+        "answer": 37.8
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_002.png",
+      "answer": "images_04/neutralization/answer_002.png",
+      "sourceTimes": {
+        "question": 44.4,
+        "answer": 52.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_003.png",
+      "answer": "images_04/neutralization/answer_003.png",
+      "sourceTimes": {
+        "question": 59.4,
+        "answer": 67.8
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_004.png",
+      "answer": "images_04/neutralization/answer_004.png",
+      "sourceTimes": {
+        "question": 76.2,
+        "answer": 84.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_005.png",
+      "answer": "images_04/neutralization/answer_005.png",
+      "sourceTimes": {
+        "question": 92.6,
+        "answer": 109.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_006.png",
+      "answer": "images_04/neutralization/answer_006.png",
+      "sourceTimes": {
+        "question": 125.2,
+        "answer": 130.2
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_007.png",
+      "answer": "images_04/neutralization/answer_007.png",
+      "sourceTimes": {
+        "question": 140.6,
+        "answer": 162.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_008.png",
+      "answer": "images_04/neutralization/answer_008.png",
+      "sourceTimes": {
+        "question": 172.8,
+        "answer": 189.2
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_009.png",
+      "answer": "images_04/neutralization/answer_009.png",
+      "sourceTimes": {
+        "question": 198.6,
+        "answer": 206.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_010.png",
+      "answer": "images_04/neutralization/answer_010.png",
+      "sourceTimes": {
+        "question": 212.0,
+        "answer": 225.8
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_011.png",
+      "answer": "images_04/neutralization/answer_011.png",
+      "sourceTimes": {
+        "question": 236.2,
+        "answer": 258.4
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_012.png",
+      "answer": "images_04/neutralization/answer_012.png",
+      "sourceTimes": {
+        "question": 279.2,
+        "answer": 298.4
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_013.png",
+      "answer": "images_04/neutralization/answer_013.png",
+      "sourceTimes": {
+        "question": 310.0,
+        "answer": 318.2
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_014.png",
+      "answer": "images_04/neutralization/answer_014.png",
+      "sourceTimes": {
+        "question": 325.8,
+        "answer": 333.4
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_015.png",
+      "answer": "images_04/neutralization/answer_015.png",
+      "sourceTimes": {
+        "question": 343.6,
+        "answer": 353.8
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_016.png",
+      "answer": "images_04/neutralization/answer_016.png",
+      "sourceTimes": {
+        "question": 361.8,
+        "answer": 370.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_017.png",
+      "answer": "images_04/neutralization/answer_017.png",
+      "sourceTimes": {
+        "question": 376.4,
+        "answer": 384.6
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_018.png",
+      "answer": "images_04/neutralization/answer_018.png",
+      "sourceTimes": {
+        "question": 393.2,
+        "answer": 403.2
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_019.png",
+      "answer": "images_04/neutralization/answer_019.png",
+      "sourceTimes": {
+        "question": 412.8,
+        "answer": 420.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "properties-indicators",
+      "question": "images_04/neutralization/question_020.png",
+      "answer": "images_04/neutralization/answer_020.png",
+      "sourceTimes": {
+        "question": 426.8,
+        "answer": 440.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_021.png",
+      "answer": "images_04/neutralization/answer_021.png",
+      "sourceTimes": {
+        "question": 458.2,
+        "answer": 472.4
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_022.png",
+      "answer": "images_04/neutralization/answer_022.png",
+      "sourceTimes": {
+        "question": 481.4,
+        "answer": 491.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_023.png",
+      "answer": "images_04/neutralization/answer_023.png",
+      "sourceTimes": {
+        "question": 510.0,
+        "answer": 520.6
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_024.png",
+      "answer": "images_04/neutralization/answer_024.png",
+      "sourceTimes": {
+        "question": 534.0,
+        "answer": 554.8
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_025.png",
+      "answer": "images_04/neutralization/answer_025.png",
+      "sourceTimes": {
+        "question": 572.8,
+        "answer": 586.8
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_026.png",
+      "answer": "images_04/neutralization/answer_026.png",
+      "sourceTimes": {
+        "question": 597.0,
+        "answer": 609.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_027.png",
+      "answer": "images_04/neutralization/answer_027.png",
+      "sourceTimes": {
+        "question": 630.8,
+        "answer": 640.6
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_028.png",
+      "answer": "images_04/neutralization/answer_028.png",
+      "sourceTimes": {
+        "question": 655.8,
+        "answer": 673.8
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "ions-ph",
+      "question": "images_04/neutralization/question_029.png",
+      "answer": "images_04/neutralization/answer_029.png",
+      "sourceTimes": {
+        "question": 691.4,
+        "answer": 706.8
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "neutralization",
+      "question": "images_04/neutralization/question_030.png",
+      "answer": "images_04/neutralization/answer_030.png",
+      "sourceTimes": {
+        "question": 734.6,
+        "answer": 741.4
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "neutralization",
+      "question": "images_04/neutralization/question_031.png",
+      "answer": "images_04/neutralization/answer_031.png",
+      "sourceTimes": {
+        "question": 754.4,
+        "answer": 762.6
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "neutralization",
+      "question": "images_04/neutralization/question_032.png",
+      "answer": "images_04/neutralization/answer_032.png",
+      "sourceTimes": {
+        "question": 778.4,
+        "answer": 787.2
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "neutralization",
+      "question": "images_04/neutralization/question_033.png",
+      "answer": "images_04/neutralization/answer_033.png",
+      "sourceTimes": {
+        "question": 798.8,
+        "answer": 809.2
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "neutralization",
+      "question": "images_04/neutralization/question_034.png",
+      "answer": "images_04/neutralization/answer_034.png",
+      "sourceTimes": {
+        "question": 823.4,
+        "answer": 832.6
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "neutralization",
+      "question": "images_04/neutralization/question_035.png",
+      "answer": "images_04/neutralization/answer_035.png",
+      "sourceTimes": {
+        "question": 847.6,
+        "answer": 855.6
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "neutralization",
+      "question": "images_04/neutralization/question_036.png",
+      "answer": "images_04/neutralization/answer_036.png",
+      "sourceTimes": {
+        "question": 870.4,
+        "answer": 878.2
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "neutralization",
+      "question": "images_04/neutralization/question_037.png",
+      "answer": "images_04/neutralization/answer_037.png",
+      "sourceTimes": {
+        "question": 918.8,
+        "answer": 943.6
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=0xQicuZFj24"
+}

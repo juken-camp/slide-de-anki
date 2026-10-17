@@ -1,0 +1,506 @@
+{
+  "id": "science-physical-phenomena-01",
+  "subject": "science",
+  "field": "physics",
+  "title": "物理現象「光・音・力」",
+  "grade": "中1理科",
+  "description": "光の反射・屈折・凸レンズ、音の性質、力・圧力・水圧を図解で学ぶ48問。",
+  "cover": "images_01/physical/question_001.png",
+  "chapters": [
+    {
+      "id": "light",
+      "title": "光"
+    },
+    {
+      "id": "sound",
+      "title": "音"
+    },
+    {
+      "id": "force",
+      "title": "力"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "light",
+      "question": "images_01/physical/question_001.png",
+      "answer": "images_01/physical/answer_001.png",
+      "sourceTimes": {
+        "question": 28.4,
+        "answer": 36.2
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "light",
+      "question": "images_01/physical/question_002.png",
+      "answer": "images_01/physical/answer_002.png",
+      "sourceTimes": {
+        "question": 44.4,
+        "answer": 52.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "light",
+      "question": "images_01/physical/question_003.png",
+      "answer": "images_01/physical/answer_003.png",
+      "sourceTimes": {
+        "question": 59.6,
+        "answer": 66.8
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "light",
+      "question": "images_01/physical/question_004.png",
+      "answer": "images_01/physical/answer_004.png",
+      "sourceTimes": {
+        "question": 75.4,
+        "answer": 84.4
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "light",
+      "question": "images_01/physical/question_005.png",
+      "answer": "images_01/physical/answer_005.png",
+      "sourceTimes": {
+        "question": 92.6,
+        "answer": 101.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "light",
+      "question": "images_01/physical/question_006.png",
+      "answer": "images_01/physical/answer_006.png",
+      "sourceTimes": {
+        "question": 107.8,
+        "answer": 115.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "light",
+      "question": "images_01/physical/question_007.png",
+      "answer": "images_01/physical/answer_007.png",
+      "sourceTimes": {
+        "question": 122.4,
+        "answer": 130.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "light",
+      "question": "images_01/physical/question_008.png",
+      "answer": "images_01/physical/answer_008.png",
+      "sourceTimes": {
+        "question": 137.8,
+        "answer": 146.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "light",
+      "question": "images_01/physical/question_009.png",
+      "answer": "images_01/physical/answer_009.png",
+      "sourceTimes": {
+        "question": 157.4,
+        "answer": 168.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "light",
+      "question": "images_01/physical/question_010.png",
+      "answer": "images_01/physical/answer_010.png",
+      "sourceTimes": {
+        "question": 177.0,
+        "answer": 186.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "light",
+      "question": "images_01/physical/question_011.png",
+      "answer": "images_01/physical/answer_011.png",
+      "sourceTimes": {
+        "question": 196.6,
+        "answer": 207.2
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "light",
+      "question": "images_01/physical/question_012.png",
+      "answer": "images_01/physical/answer_012.png",
+      "sourceTimes": {
+        "question": 214.4,
+        "answer": 222.4
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "light",
+      "question": "images_01/physical/question_013.png",
+      "answer": "images_01/physical/answer_013.png",
+      "sourceTimes": {
+        "question": 232.0,
+        "answer": 241.8
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "light",
+      "question": "images_01/physical/question_014.png",
+      "answer": "images_01/physical/answer_014.png",
+      "sourceTimes": {
+        "question": 249.0,
+        "answer": 256.4
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "light",
+      "question": "images_01/physical/question_015.png",
+      "answer": "images_01/physical/answer_015.png",
+      "sourceTimes": {
+        "question": 265.2,
+        "answer": 274.4
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "light",
+      "question": "images_01/physical/question_016.png",
+      "answer": "images_01/physical/answer_016.png",
+      "sourceTimes": {
+        "question": 283.8,
+        "answer": 293.2
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "sound",
+      "question": "images_01/physical/question_017.png",
+      "answer": "images_01/physical/answer_017.png",
+      "sourceTimes": {
+        "question": 303.2,
+        "answer": 309.6
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "sound",
+      "question": "images_01/physical/question_018.png",
+      "answer": "images_01/physical/answer_018.png",
+      "sourceTimes": {
+        "question": 316.6,
+        "answer": 324.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "sound",
+      "question": "images_01/physical/question_019.png",
+      "answer": "images_01/physical/answer_019.png",
+      "sourceTimes": {
+        "question": 330.0,
+        "answer": 337.4
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "sound",
+      "question": "images_01/physical/question_020.png",
+      "answer": "images_01/physical/answer_020.png",
+      "sourceTimes": {
+        "question": 344.4,
+        "answer": 351.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "sound",
+      "question": "images_01/physical/question_021.png",
+      "answer": "images_01/physical/answer_021.png",
+      "sourceTimes": {
+        "question": 358.6,
+        "answer": 367.8
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "sound",
+      "question": "images_01/physical/question_022.png",
+      "answer": "images_01/physical/answer_022.png",
+      "sourceTimes": {
+        "question": 375.8,
+        "answer": 384.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "sound",
+      "question": "images_01/physical/question_023.png",
+      "answer": "images_01/physical/answer_023.png",
+      "sourceTimes": {
+        "question": 391.0,
+        "answer": 398.8
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "sound",
+      "question": "images_01/physical/question_024.png",
+      "answer": "images_01/physical/answer_024.png",
+      "sourceTimes": {
+        "question": 408.2,
+        "answer": 417.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "sound",
+      "question": "images_01/physical/question_025.png",
+      "answer": "images_01/physical/answer_025.png",
+      "sourceTimes": {
+        "question": 424.8,
+        "answer": 432.8
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "sound",
+      "question": "images_01/physical/question_026.png",
+      "answer": "images_01/physical/answer_026.png",
+      "sourceTimes": {
+        "question": 439.6,
+        "answer": 447.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "force",
+      "question": "images_01/physical/question_027.png",
+      "answer": "images_01/physical/answer_027.png",
+      "sourceTimes": {
+        "question": 462.8,
+        "answer": 474.4
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "force",
+      "question": "images_01/physical/question_028.png",
+      "answer": "images_01/physical/answer_028.png",
+      "sourceTimes": {
+        "question": 482.8,
+        "answer": 491.8
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "force",
+      "question": "images_01/physical/question_029.png",
+      "answer": "images_01/physical/answer_029.png",
+      "sourceTimes": {
+        "question": 500.6,
+        "answer": 509.4
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "force",
+      "question": "images_01/physical/question_030.png",
+      "answer": "images_01/physical/answer_030.png",
+      "sourceTimes": {
+        "question": 518.0,
+        "answer": 527.8
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "force",
+      "question": "images_01/physical/question_031.png",
+      "answer": "images_01/physical/answer_031.png",
+      "sourceTimes": {
+        "question": 535.6,
+        "answer": 542.8
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "force",
+      "question": "images_01/physical/question_032.png",
+      "answer": "images_01/physical/answer_032.png",
+      "sourceTimes": {
+        "question": 549.6,
+        "answer": 556.6
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "force",
+      "question": "images_01/physical/question_033.png",
+      "answer": "images_01/physical/answer_033.png",
+      "sourceTimes": {
+        "question": 563.0,
+        "answer": 570.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "force",
+      "question": "images_01/physical/question_034.png",
+      "answer": "images_01/physical/answer_034.png",
+      "sourceTimes": {
+        "question": 577.8,
+        "answer": 586.8
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "force",
+      "question": "images_01/physical/question_035.png",
+      "answer": "images_01/physical/answer_035.png",
+      "sourceTimes": {
+        "question": 594.8,
+        "answer": 603.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "force",
+      "question": "images_01/physical/question_036.png",
+      "answer": "images_01/physical/answer_036.png",
+      "sourceTimes": {
+        "question": 612.2,
+        "answer": 620.8
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "force",
+      "question": "images_01/physical/question_037.png",
+      "answer": "images_01/physical/answer_037.png",
+      "sourceTimes": {
+        "question": 630.0,
+        "answer": 638.6
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "force",
+      "question": "images_01/physical/question_038.png",
+      "answer": "images_01/physical/answer_038.png",
+      "sourceTimes": {
+        "question": 645.6,
+        "answer": 653.6
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "force",
+      "question": "images_01/physical/question_039.png",
+      "answer": "images_01/physical/answer_039.png",
+      "sourceTimes": {
+        "question": 663.8,
+        "answer": 673.6
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "force",
+      "question": "images_01/physical/question_040.png",
+      "answer": "images_01/physical/answer_040.png",
+      "sourceTimes": {
+        "question": 680.2,
+        "answer": 687.2
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "force",
+      "question": "images_01/physical/question_041.png",
+      "answer": "images_01/physical/answer_041.png",
+      "sourceTimes": {
+        "question": 693.4,
+        "answer": 700.2
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "force",
+      "question": "images_01/physical/question_042.png",
+      "answer": "images_01/physical/answer_042.png",
+      "sourceTimes": {
+        "question": 711.6,
+        "answer": 723.8
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "force",
+      "question": "images_01/physical/question_043.png",
+      "answer": "images_01/physical/answer_043.png",
+      "sourceTimes": {
+        "question": 732.6,
+        "answer": 743.6
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "force",
+      "question": "images_01/physical/question_044.png",
+      "answer": "images_01/physical/answer_044.png",
+      "sourceTimes": {
+        "question": 756.2,
+        "answer": 772.4
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "force",
+      "question": "images_01/physical/question_045.png",
+      "answer": "images_01/physical/answer_045.png",
+      "sourceTimes": {
+        "question": 785.8,
+        "answer": 795.2
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "force",
+      "question": "images_01/physical/question_046.png",
+      "answer": "images_01/physical/answer_046.png",
+      "sourceTimes": {
+        "question": 802.4,
+        "answer": 809.8
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "force",
+      "question": "images_01/physical/question_047.png",
+      "answer": "images_01/physical/answer_047.png",
+      "sourceTimes": {
+        "question": 818.8,
+        "answer": 827.6
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "force",
+      "question": "images_01/physical/question_048.png",
+      "answer": "images_01/physical/answer_048.png",
+      "sourceTimes": {
+        "question": 834.4,
+        "answer": 842.4
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=kptN4iyTK1I"
+}

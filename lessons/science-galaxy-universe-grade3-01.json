@@ -1,0 +1,166 @@
+{
+  "id": "science-galaxy-universe-grade3-01",
+  "subject": "science",
+  "field": "earth",
+  "title": "銀河系と宇宙の広がり",
+  "grade": "中3理科",
+  "description": "恒星と光年、銀河系と宇宙の広がり、恒星の明るさを元動画の画像で確認する一問一答。",
+  "cover": "images_04/galaxy-universe/question_001.png",
+  "chapters": [
+    {
+      "id": "stars-light-year",
+      "title": "恒星と光年"
+    },
+    {
+      "id": "galaxy-universe",
+      "title": "銀河系と宇宙"
+    },
+    {
+      "id": "star-brightness",
+      "title": "恒星の明るさ"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "stars-light-year",
+      "question": "images_04/galaxy-universe/question_001.png",
+      "answer": "images_04/galaxy-universe/answer_001.png",
+      "sourceTimes": {
+        "question": 22.6,
+        "answer": 29.8
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "stars-light-year",
+      "question": "images_04/galaxy-universe/question_002.png",
+      "answer": "images_04/galaxy-universe/answer_002.png",
+      "sourceTimes": {
+        "question": 39.4,
+        "answer": 48.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "stars-light-year",
+      "question": "images_04/galaxy-universe/question_003.png",
+      "answer": "images_04/galaxy-universe/answer_003.png",
+      "sourceTimes": {
+        "question": 58.6,
+        "answer": 71.4
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "stars-light-year",
+      "question": "images_04/galaxy-universe/question_004.png",
+      "answer": "images_04/galaxy-universe/answer_004.png",
+      "sourceTimes": {
+        "question": 84.0,
+        "answer": 94.2
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_005.png",
+      "answer": "images_04/galaxy-universe/answer_005.png",
+      "sourceTimes": {
+        "question": 108.6,
+        "answer": 116.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_006.png",
+      "answer": "images_04/galaxy-universe/answer_006.png",
+      "sourceTimes": {
+        "question": 135.8,
+        "answer": 146.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_007.png",
+      "answer": "images_04/galaxy-universe/answer_007.png",
+      "sourceTimes": {
+        "question": 160.2,
+        "answer": 167.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_008.png",
+      "answer": "images_04/galaxy-universe/answer_008.png",
+      "sourceTimes": {
+        "question": 183.0,
+        "answer": 194.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_009.png",
+      "answer": "images_04/galaxy-universe/answer_009.png",
+      "sourceTimes": {
+        "question": 211.4,
+        "answer": 223.2
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_010.png",
+      "answer": "images_04/galaxy-universe/answer_010.png",
+      "sourceTimes": {
+        "question": 232.6,
+        "answer": 244.6
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_011.png",
+      "answer": "images_04/galaxy-universe/answer_011.png",
+      "sourceTimes": {
+        "question": 252.6,
+        "answer": 263.2
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_012.png",
+      "answer": "images_04/galaxy-universe/answer_012.png",
+      "sourceTimes": {
+        "question": 274.4,
+        "answer": 282.8
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "galaxy-universe",
+      "question": "images_04/galaxy-universe/question_013.png",
+      "answer": "images_04/galaxy-universe/answer_013.png",
+      "sourceTimes": {
+        "question": 291.0,
+        "answer": 316.2
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "star-brightness",
+      "question": "images_04/galaxy-universe/question_014.png",
+      "answer": "images_04/galaxy-universe/answer_014.png",
+      "sourceTimes": {
+        "question": 327.6,
+        "answer": 337.8
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=H7KNR8X3F1A"
+}

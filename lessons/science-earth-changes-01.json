@@ -1,0 +1,456 @@
+{
+  "id": "science-earth-changes-01",
+  "subject": "science",
+  "field": "earth",
+  "title": "大地の変化「火山・地震・地層」",
+  "grade": "中1理科",
+  "description": "火山・火成岩、地震、地層・化石を図解で学ぶ43問。",
+  "cover": "images_01/earth/question_001.png",
+  "chapters": [
+    {
+      "id": "volcano",
+      "title": "火山"
+    },
+    {
+      "id": "earthquake",
+      "title": "地震"
+    },
+    {
+      "id": "strata",
+      "title": "地層"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_001.png",
+      "answer": "images_01/earth/answer_001.png",
+      "sourceTimes": {
+        "question": 27.2,
+        "answer": 35.2
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_002.png",
+      "answer": "images_01/earth/answer_002.png",
+      "sourceTimes": {
+        "question": 42.0,
+        "answer": 48.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_003.png",
+      "answer": "images_01/earth/answer_003.png",
+      "sourceTimes": {
+        "question": 55.8,
+        "answer": 63.2
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_004.png",
+      "answer": "images_01/earth/answer_004.png",
+      "sourceTimes": {
+        "question": 71.8,
+        "answer": 81.4
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_005.png",
+      "answer": "images_01/earth/answer_005.png",
+      "sourceTimes": {
+        "question": 87.6,
+        "answer": 93.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_006.png",
+      "answer": "images_01/earth/answer_006.png",
+      "sourceTimes": {
+        "question": 101.4,
+        "answer": 110.4
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_007.png",
+      "answer": "images_01/earth/answer_007.png",
+      "sourceTimes": {
+        "question": 118.2,
+        "answer": 126.2
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_008.png",
+      "answer": "images_01/earth/answer_008.png",
+      "sourceTimes": {
+        "question": 134.0,
+        "answer": 141.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_009.png",
+      "answer": "images_01/earth/answer_009.png",
+      "sourceTimes": {
+        "question": 149.4,
+        "answer": 157.4
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_010.png",
+      "answer": "images_01/earth/answer_010.png",
+      "sourceTimes": {
+        "question": 163.8,
+        "answer": 172.6
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_011.png",
+      "answer": "images_01/earth/answer_011.png",
+      "sourceTimes": {
+        "question": 181.8,
+        "answer": 192.6
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_012.png",
+      "answer": "images_01/earth/answer_012.png",
+      "sourceTimes": {
+        "question": 200.6,
+        "answer": 209.2
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_013.png",
+      "answer": "images_01/earth/answer_013.png",
+      "sourceTimes": {
+        "question": 217.6,
+        "answer": 226.4
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_014.png",
+      "answer": "images_01/earth/answer_014.png",
+      "sourceTimes": {
+        "question": 236.0,
+        "answer": 246.4
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_015.png",
+      "answer": "images_01/earth/answer_015.png",
+      "sourceTimes": {
+        "question": 256.2,
+        "answer": 266.8
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_016.png",
+      "answer": "images_01/earth/answer_016.png",
+      "sourceTimes": {
+        "question": 275.4,
+        "answer": 284.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_017.png",
+      "answer": "images_01/earth/answer_017.png",
+      "sourceTimes": {
+        "question": 290.6,
+        "answer": 298.4
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_018.png",
+      "answer": "images_01/earth/answer_018.png",
+      "sourceTimes": {
+        "question": 307.2,
+        "answer": 316.4
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "volcano",
+      "question": "images_01/earth/question_019.png",
+      "answer": "images_01/earth/answer_019.png",
+      "sourceTimes": {
+        "question": 324.2,
+        "answer": 332.4
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_020.png",
+      "answer": "images_01/earth/answer_020.png",
+      "sourceTimes": {
+        "question": 342.2,
+        "answer": 349.2
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_021.png",
+      "answer": "images_01/earth/answer_021.png",
+      "sourceTimes": {
+        "question": 355.2,
+        "answer": 361.6
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_022.png",
+      "answer": "images_01/earth/answer_022.png",
+      "sourceTimes": {
+        "question": 368.0,
+        "answer": 374.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_023.png",
+      "answer": "images_01/earth/answer_023.png",
+      "sourceTimes": {
+        "question": 384.6,
+        "answer": 395.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_024.png",
+      "answer": "images_01/earth/answer_024.png",
+      "sourceTimes": {
+        "question": 401.2,
+        "answer": 407.8
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_025.png",
+      "answer": "images_01/earth/answer_025.png",
+      "sourceTimes": {
+        "question": 414.6,
+        "answer": 421.4
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_026.png",
+      "answer": "images_01/earth/answer_026.png",
+      "sourceTimes": {
+        "question": 429.4,
+        "answer": 438.6
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_027.png",
+      "answer": "images_01/earth/answer_027.png",
+      "sourceTimes": {
+        "question": 448.2,
+        "answer": 457.8
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_028.png",
+      "answer": "images_01/earth/answer_028.png",
+      "sourceTimes": {
+        "question": 464.6,
+        "answer": 471.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_029.png",
+      "answer": "images_01/earth/answer_029.png",
+      "sourceTimes": {
+        "question": 477.8,
+        "answer": 485.4
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_030.png",
+      "answer": "images_01/earth/answer_030.png",
+      "sourceTimes": {
+        "question": 493.2,
+        "answer": 500.6
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_031.png",
+      "answer": "images_01/earth/answer_031.png",
+      "sourceTimes": {
+        "question": 507.0,
+        "answer": 514.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "earthquake",
+      "question": "images_01/earth/question_032.png",
+      "answer": "images_01/earth/answer_032.png",
+      "sourceTimes": {
+        "question": 522.8,
+        "answer": 532.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "strata",
+      "question": "images_01/earth/question_033.png",
+      "answer": "images_01/earth/answer_033.png",
+      "sourceTimes": {
+        "question": 543.0,
+        "answer": 551.4
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "strata",
+      "question": "images_01/earth/question_034.png",
+      "answer": "images_01/earth/answer_034.png",
+      "sourceTimes": {
+        "question": 557.8,
+        "answer": 565.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "strata",
+      "question": "images_01/earth/question_035.png",
+      "answer": "images_01/earth/answer_035.png",
+      "sourceTimes": {
+        "question": 571.6,
+        "answer": 578.4
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "strata",
+      "question": "images_01/earth/question_036.png",
+      "answer": "images_01/earth/answer_036.png",
+      "sourceTimes": {
+        "question": 584.2,
+        "answer": 591.4
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "strata",
+      "question": "images_01/earth/question_037.png",
+      "answer": "images_01/earth/answer_037.png",
+      "sourceTimes": {
+        "question": 600.0,
+        "answer": 608.8
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "strata",
+      "question": "images_01/earth/question_038.png",
+      "answer": "images_01/earth/answer_038.png",
+      "sourceTimes": {
+        "question": 616.2,
+        "answer": 624.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "strata",
+      "question": "images_01/earth/question_039.png",
+      "answer": "images_01/earth/answer_039.png",
+      "sourceTimes": {
+        "question": 631.4,
+        "answer": 639.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "strata",
+      "question": "images_01/earth/question_040.png",
+      "answer": "images_01/earth/answer_040.png",
+      "sourceTimes": {
+        "question": 646.0,
+        "answer": 653.6
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "strata",
+      "question": "images_01/earth/question_041.png",
+      "answer": "images_01/earth/answer_041.png",
+      "sourceTimes": {
+        "question": 662.2,
+        "answer": 671.6
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "strata",
+      "question": "images_01/earth/question_042.png",
+      "answer": "images_01/earth/answer_042.png",
+      "sourceTimes": {
+        "question": 678.6,
+        "answer": 686.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "strata",
+      "question": "images_01/earth/question_043.png",
+      "answer": "images_01/earth/answer_043.png",
+      "sourceTimes": {
+        "question": 693.6,
+        "answer": 700.6
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=PM_6r09I2qY"
+}

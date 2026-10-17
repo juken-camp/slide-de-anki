@@ -1,0 +1,473 @@
+{
+  "id": "science-chemical-changes-atoms-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "化学変化と原子・分子",
+  "grade": "中2理科",
+  "description": "物質の分解・化合、原子・分子、酸化・還元、熱と質量を図解で学ぶ44問。",
+  "cover": "images_02/chemical-changes/question_001.png",
+  "chapters": [
+    {
+      "id": "decomposition",
+      "title": "物質の分解"
+    },
+    {
+      "id": "combination",
+      "title": "物質の化合"
+    },
+    {
+      "id": "atoms-molecules",
+      "title": "原子・分子と物質の分類"
+    },
+    {
+      "id": "reactions",
+      "title": "化学反応と熱・質量"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_001.png",
+      "answer": "images_02/chemical-changes/answer_001.png",
+      "sourceTimes": {
+        "question": 23.6,
+        "answer": 35.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_002.png",
+      "answer": "images_02/chemical-changes/answer_002.png",
+      "sourceTimes": {
+        "question": 44.0,
+        "answer": 52.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_003.png",
+      "answer": "images_02/chemical-changes/answer_003.png",
+      "sourceTimes": {
+        "question": 59.6,
+        "answer": 68.2
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_004.png",
+      "answer": "images_02/chemical-changes/answer_004.png",
+      "sourceTimes": {
+        "question": 75.2,
+        "answer": 82.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_005.png",
+      "answer": "images_02/chemical-changes/answer_005.png",
+      "sourceTimes": {
+        "question": 89.2,
+        "answer": 96.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_006.png",
+      "answer": "images_02/chemical-changes/answer_006.png",
+      "sourceTimes": {
+        "question": 104.8,
+        "answer": 114.4
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_007.png",
+      "answer": "images_02/chemical-changes/answer_007.png",
+      "sourceTimes": {
+        "question": 122.8,
+        "answer": 131.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_008.png",
+      "answer": "images_02/chemical-changes/answer_008.png",
+      "sourceTimes": {
+        "question": 144.0,
+        "answer": 158.2
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_009.png",
+      "answer": "images_02/chemical-changes/answer_009.png",
+      "sourceTimes": {
+        "question": 170.4,
+        "answer": 183.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_010.png",
+      "answer": "images_02/chemical-changes/answer_010.png",
+      "sourceTimes": {
+        "question": 195.0,
+        "answer": 208.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_011.png",
+      "answer": "images_02/chemical-changes/answer_011.png",
+      "sourceTimes": {
+        "question": 218.4,
+        "answer": 225.2
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_012.png",
+      "answer": "images_02/chemical-changes/answer_012.png",
+      "sourceTimes": {
+        "question": 232.8,
+        "answer": 241.2
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_013.png",
+      "answer": "images_02/chemical-changes/answer_013.png",
+      "sourceTimes": {
+        "question": 248.2,
+        "answer": 256.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_014.png",
+      "answer": "images_02/chemical-changes/answer_014.png",
+      "sourceTimes": {
+        "question": 264.4,
+        "answer": 274.2
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "decomposition",
+      "question": "images_02/chemical-changes/question_015.png",
+      "answer": "images_02/chemical-changes/answer_015.png",
+      "sourceTimes": {
+        "question": 282.8,
+        "answer": 291.8
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "combination",
+      "question": "images_02/chemical-changes/question_016.png",
+      "answer": "images_02/chemical-changes/answer_016.png",
+      "sourceTimes": {
+        "question": 299.6,
+        "answer": 307.2
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "combination",
+      "question": "images_02/chemical-changes/question_017.png",
+      "answer": "images_02/chemical-changes/answer_017.png",
+      "sourceTimes": {
+        "question": 313.0,
+        "answer": 319.4
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "combination",
+      "question": "images_02/chemical-changes/question_018.png",
+      "answer": "images_02/chemical-changes/answer_018.png",
+      "sourceTimes": {
+        "question": 326.6,
+        "answer": 334.4
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_019.png",
+      "answer": "images_02/chemical-changes/answer_019.png",
+      "sourceTimes": {
+        "question": 341.0,
+        "answer": 348.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_020.png",
+      "answer": "images_02/chemical-changes/answer_020.png",
+      "sourceTimes": {
+        "question": 355.2,
+        "answer": 363.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_021.png",
+      "answer": "images_02/chemical-changes/answer_021.png",
+      "sourceTimes": {
+        "question": 371.0,
+        "answer": 380.4
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_022.png",
+      "answer": "images_02/chemical-changes/answer_022.png",
+      "sourceTimes": {
+        "question": 388.8,
+        "answer": 396.6
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_023.png",
+      "answer": "images_02/chemical-changes/answer_023.png",
+      "sourceTimes": {
+        "question": 402.2,
+        "answer": 407.8
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_024.png",
+      "answer": "images_02/chemical-changes/answer_024.png?v=cb26a4f78cb34206",
+      "sourceTimes": {
+        "question": 415.0,
+        "answer": 423.8
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "025",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_025.png",
+      "answer": "images_02/chemical-changes/answer_025.png",
+      "sourceTimes": {
+        "question": 432.8,
+        "answer": 441.8
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_026.png",
+      "answer": "images_02/chemical-changes/answer_026.png",
+      "sourceTimes": {
+        "question": 449.8,
+        "answer": 458.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_027.png",
+      "answer": "images_02/chemical-changes/answer_027.png",
+      "sourceTimes": {
+        "question": 465.4,
+        "answer": 473.4
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_028.png",
+      "answer": "images_02/chemical-changes/answer_028.png",
+      "sourceTimes": {
+        "question": 481.0,
+        "answer": 490.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_029.png",
+      "answer": "images_02/chemical-changes/answer_029.png",
+      "sourceTimes": {
+        "question": 500.0,
+        "answer": 509.4
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_030.png",
+      "answer": "images_02/chemical-changes/answer_030.png",
+      "sourceTimes": {
+        "question": 518.0,
+        "answer": 527.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_031.png",
+      "answer": "images_02/chemical-changes/answer_031.png",
+      "sourceTimes": {
+        "question": 535.0,
+        "answer": 544.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_032.png",
+      "answer": "images_02/chemical-changes/answer_032.png",
+      "sourceTimes": {
+        "question": 552.6,
+        "answer": 562.8
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "atoms-molecules",
+      "question": "images_02/chemical-changes/question_033.png",
+      "answer": "images_02/chemical-changes/answer_033.png",
+      "sourceTimes": {
+        "question": 580.6,
+        "answer": 597.8
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_034.png",
+      "answer": "images_02/chemical-changes/answer_034.png",
+      "sourceTimes": {
+        "question": 605.2,
+        "answer": 615.8
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_035.png",
+      "answer": "images_02/chemical-changes/answer_035.png",
+      "sourceTimes": {
+        "question": 625.6,
+        "answer": 632.6
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_036.png",
+      "answer": "images_02/chemical-changes/answer_036.png",
+      "sourceTimes": {
+        "question": 639.0,
+        "answer": 645.6
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_037.png",
+      "answer": "images_02/chemical-changes/answer_037.png",
+      "sourceTimes": {
+        "question": 653.0,
+        "answer": 660.4
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_038.png",
+      "answer": "images_02/chemical-changes/answer_038.png",
+      "sourceTimes": {
+        "question": 667.6,
+        "answer": 676.2
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_039.png",
+      "answer": "images_02/chemical-changes/answer_039.png",
+      "sourceTimes": {
+        "question": 684.2,
+        "answer": 691.2
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_040.png",
+      "answer": "images_02/chemical-changes/answer_040.png",
+      "sourceTimes": {
+        "question": 697.8,
+        "answer": 705.6
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_041.png",
+      "answer": "images_02/chemical-changes/answer_041.png",
+      "sourceTimes": {
+        "question": 713.4,
+        "answer": 721.6
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_042.png",
+      "answer": "images_02/chemical-changes/answer_042.png",
+      "sourceTimes": {
+        "question": 728.4,
+        "answer": 736.2
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_043.png",
+      "answer": "images_02/chemical-changes/answer_043.png",
+      "sourceTimes": {
+        "question": 743.2,
+        "answer": 750.8
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "reactions",
+      "question": "images_02/chemical-changes/question_044.png",
+      "answer": "images_02/chemical-changes/answer_044.png",
+      "sourceTimes": {
+        "question": 760.6,
+        "answer": 770.2
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=5Yt1q9k-37w"
+}

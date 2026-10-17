@@ -1,0 +1,509 @@
+{
+  "id": "science-solutions-ions-grade3-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "化学変化と水溶液とイオン",
+  "grade": "中3理科",
+  "description": "電解質・非電解質、塩酸と塩化銅水溶液の電気分解、原子の構造、原子番号、陽イオン・陰イオン、イオン式を図解で学ぶ46問。",
+  "cover": "images_04/solutions-ions/question_001.png",
+  "chapters": [
+    {
+      "id": "electrolytes",
+      "title": "電流が流れる水溶液"
+    },
+    {
+      "id": "electrolysis",
+      "title": "塩酸・塩化銅水溶液の電気分解"
+    },
+    {
+      "id": "dissociation",
+      "title": "水溶液とイオン・電離"
+    },
+    {
+      "id": "atomic-structure",
+      "title": "原子の構造と原子番号"
+    },
+    {
+      "id": "ion-formation",
+      "title": "イオンのでき方"
+    },
+    {
+      "id": "ion-formulas",
+      "title": "元素記号とイオン式"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "electrolytes",
+      "question": "images_04/solutions-ions/question_001.png",
+      "answer": "images_04/solutions-ions/answer_001.png",
+      "sourceTimes": {
+        "question": 33.4,
+        "answer": 41.4
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "electrolytes",
+      "question": "images_04/solutions-ions/question_002.png",
+      "answer": "images_04/solutions-ions/answer_002.png",
+      "sourceTimes": {
+        "question": 50.0,
+        "answer": 59.4
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "electrolytes",
+      "question": "images_04/solutions-ions/question_003.png",
+      "answer": "images_04/solutions-ions/answer_003.png",
+      "sourceTimes": {
+        "question": 68.6,
+        "answer": 78.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "electrolytes",
+      "question": "images_04/solutions-ions/question_004.png",
+      "answer": "images_04/solutions-ions/answer_004.png",
+      "sourceTimes": {
+        "question": 87.4,
+        "answer": 97.2
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "electrolytes",
+      "question": "images_04/solutions-ions/question_005.png?v=293faaaa64575994",
+      "answer": "images_04/solutions-ions/answer_005.png?v=dbcb80c6c7a981fd",
+      "sourceTimes": {
+        "question": 105.4,
+        "answer": 115.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "006",
+      "chapter": "electrolytes",
+      "question": "images_04/solutions-ions/question_006.png?v=a481137024afc627",
+      "answer": "images_04/solutions-ions/answer_006.png?v=d154c9f7f4044a5d",
+      "sourceTimes": {
+        "question": 124.4,
+        "answer": 134.8
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "007",
+      "chapter": "electrolytes",
+      "question": "images_04/solutions-ions/question_007.png",
+      "answer": "images_04/solutions-ions/answer_007.png",
+      "sourceTimes": {
+        "question": 149.8,
+        "answer": 161.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "electrolysis",
+      "question": "images_04/solutions-ions/question_008.png",
+      "answer": "images_04/solutions-ions/answer_008.png",
+      "sourceTimes": {
+        "question": 179.2,
+        "answer": 196.8
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "electrolysis",
+      "question": "images_04/solutions-ions/question_009.png",
+      "answer": "images_04/solutions-ions/answer_009.png",
+      "sourceTimes": {
+        "question": 212.0,
+        "answer": 233.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "electrolysis",
+      "question": "images_04/solutions-ions/question_010.png",
+      "answer": "images_04/solutions-ions/answer_010.png",
+      "sourceTimes": {
+        "question": 250.2,
+        "answer": 279.4
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "electrolysis",
+      "question": "images_04/solutions-ions/question_011.png",
+      "answer": "images_04/solutions-ions/answer_011.png",
+      "sourceTimes": {
+        "question": 292.8,
+        "answer": 311.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "electrolysis",
+      "question": "images_04/solutions-ions/question_012.png",
+      "answer": "images_04/solutions-ions/answer_012.png",
+      "sourceTimes": {
+        "question": 324.6,
+        "answer": 358.8
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "dissociation",
+      "question": "images_04/solutions-ions/question_013.png",
+      "answer": "images_04/solutions-ions/answer_013.png",
+      "sourceTimes": {
+        "question": 370.8,
+        "answer": 385.4
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "dissociation",
+      "question": "images_04/solutions-ions/question_014.png",
+      "answer": "images_04/solutions-ions/answer_014.png",
+      "sourceTimes": {
+        "question": 396.6,
+        "answer": 408.8
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "dissociation",
+      "question": "images_04/solutions-ions/question_015.png",
+      "answer": "images_04/solutions-ions/answer_015.png",
+      "sourceTimes": {
+        "question": 436.4,
+        "answer": 442.8
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "dissociation",
+      "question": "images_04/solutions-ions/question_016.png",
+      "answer": "images_04/solutions-ions/answer_016.png",
+      "sourceTimes": {
+        "question": 454.0,
+        "answer": 466.2
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "dissociation",
+      "question": "images_04/solutions-ions/question_017.png",
+      "answer": "images_04/solutions-ions/answer_017.png",
+      "sourceTimes": {
+        "question": 472.8,
+        "answer": 483.8
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "dissociation",
+      "question": "images_04/solutions-ions/question_018.png",
+      "answer": "images_04/solutions-ions/answer_018.png",
+      "sourceTimes": {
+        "question": 491.4,
+        "answer": 506.2
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "dissociation",
+      "question": "images_04/solutions-ions/question_019.png",
+      "answer": "images_04/solutions-ions/answer_019.png",
+      "sourceTimes": {
+        "question": 521.6,
+        "answer": 528.4
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "dissociation",
+      "question": "images_04/solutions-ions/question_020.png",
+      "answer": "images_04/solutions-ions/answer_020.png",
+      "sourceTimes": {
+        "question": 538.6,
+        "answer": 560.6
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_021.png",
+      "answer": "images_04/solutions-ions/answer_021.png",
+      "sourceTimes": {
+        "question": 576.2,
+        "answer": 582.6
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_022.png",
+      "answer": "images_04/solutions-ions/answer_022.png",
+      "sourceTimes": {
+        "question": 589.0,
+        "answer": 597.2
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_023.png",
+      "answer": "images_04/solutions-ions/answer_023.png",
+      "sourceTimes": {
+        "question": 606.8,
+        "answer": 613.2
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_024.png",
+      "answer": "images_04/solutions-ions/answer_024.png",
+      "sourceTimes": {
+        "question": 620.8,
+        "answer": 629.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_025.png",
+      "answer": "images_04/solutions-ions/answer_025.png",
+      "sourceTimes": {
+        "question": 637.0,
+        "answer": 645.2
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_026.png",
+      "answer": "images_04/solutions-ions/answer_026.png",
+      "sourceTimes": {
+        "question": 651.6,
+        "answer": 658.4
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_027.png",
+      "answer": "images_04/solutions-ions/answer_027.png",
+      "sourceTimes": {
+        "question": 666.6,
+        "answer": 681.2
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_028.png",
+      "answer": "images_04/solutions-ions/answer_028.png",
+      "sourceTimes": {
+        "question": 694.0,
+        "answer": 708.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_029.png",
+      "answer": "images_04/solutions-ions/answer_029.png",
+      "sourceTimes": {
+        "question": 722.2,
+        "answer": 736.8
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_030.png",
+      "answer": "images_04/solutions-ions/answer_030.png",
+      "sourceTimes": {
+        "question": 746.6,
+        "answer": 760.2
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_031.png",
+      "answer": "images_04/solutions-ions/answer_031.png",
+      "sourceTimes": {
+        "question": 770.2,
+        "answer": 781.8
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_032.png",
+      "answer": "images_04/solutions-ions/answer_032.png",
+      "sourceTimes": {
+        "question": 792.2,
+        "answer": 805.6
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_033.png",
+      "answer": "images_04/solutions-ions/answer_033.png?v=b3da2feb4d55c67a",
+      "sourceTimes": {
+        "question": 815.4,
+        "answer": 830.2
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "034",
+      "chapter": "atomic-structure",
+      "question": "images_04/solutions-ions/question_034.png",
+      "answer": "images_04/solutions-ions/answer_034.png",
+      "sourceTimes": {
+        "question": 843.6,
+        "answer": 855.6
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "ion-formation",
+      "question": "images_04/solutions-ions/question_035.png",
+      "answer": "images_04/solutions-ions/answer_035.png",
+      "sourceTimes": {
+        "question": 878.2,
+        "answer": 889.2
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "ion-formation",
+      "question": "images_04/solutions-ions/question_036.png",
+      "answer": "images_04/solutions-ions/answer_036.png",
+      "sourceTimes": {
+        "question": 899.0,
+        "answer": 905.4
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "ion-formation",
+      "question": "images_04/solutions-ions/question_037.png",
+      "answer": "images_04/solutions-ions/answer_037.png",
+      "sourceTimes": {
+        "question": 915.6,
+        "answer": 926.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "ion-formation",
+      "question": "images_04/solutions-ions/question_038.png",
+      "answer": "images_04/solutions-ions/answer_038.png",
+      "sourceTimes": {
+        "question": 938.2,
+        "answer": 950.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "ion-formation",
+      "question": "images_04/solutions-ions/question_039.png",
+      "answer": "images_04/solutions-ions/answer_039.png",
+      "sourceTimes": {
+        "question": 964.8,
+        "answer": 972.2
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "ion-formation",
+      "question": "images_04/solutions-ions/question_040.png",
+      "answer": "images_04/solutions-ions/answer_040.png",
+      "sourceTimes": {
+        "question": 985.6,
+        "answer": 994.8
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "ion-formation",
+      "question": "images_04/solutions-ions/question_041.png",
+      "answer": "images_04/solutions-ions/answer_041.png",
+      "sourceTimes": {
+        "question": 1007.8,
+        "answer": 1013.8
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "ion-formulas",
+      "question": "images_04/solutions-ions/question_042.png",
+      "answer": "images_04/solutions-ions/answer_042.png",
+      "sourceTimes": {
+        "question": 1022.6,
+        "answer": 1031.4
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "ion-formulas",
+      "question": "images_04/solutions-ions/question_043.png",
+      "answer": "images_04/solutions-ions/answer_043.png",
+      "sourceTimes": {
+        "question": 1040.2,
+        "answer": 1064.2
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "ion-formulas",
+      "question": "images_04/solutions-ions/question_044.png",
+      "answer": "images_04/solutions-ions/answer_044.png",
+      "sourceTimes": {
+        "question": 1079.4,
+        "answer": 1098.8
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "ion-formulas",
+      "question": "images_04/solutions-ions/question_045.png",
+      "answer": "images_04/solutions-ions/answer_045.png",
+      "sourceTimes": {
+        "question": 1115.8,
+        "answer": 1147.2
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "ion-formulas",
+      "question": "images_04/solutions-ions/question_046.png",
+      "answer": "images_04/solutions-ions/answer_046.png",
+      "sourceTimes": {
+        "question": 1163.4,
+        "answer": 1184.6
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=kRSVgyyqJs8"
+}

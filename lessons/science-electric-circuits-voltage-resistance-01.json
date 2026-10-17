@@ -1,0 +1,452 @@
+{
+  "id": "science-electric-circuits-voltage-resistance-01",
+  "subject": "science",
+  "field": "physics",
+  "title": "電流と回路・電圧・抵抗",
+  "grade": "中2理科",
+  "description": "電流と回路、電圧、抵抗、オームの法則、電力・熱量を図解で学ぶ42問。",
+  "cover": "images_02/electric-circuits/question_001.png",
+  "chapters": [
+    {
+      "id": "circuits",
+      "title": "電流と回路"
+    },
+    {
+      "id": "voltage",
+      "title": "電流と電圧"
+    },
+    {
+      "id": "resistance",
+      "title": "電流・電圧と抵抗"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_001.png",
+      "answer": "images_02/electric-circuits/answer_001.png",
+      "sourceTimes": {
+        "question": 28.4,
+        "answer": 35.4
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_002.png",
+      "answer": "images_02/electric-circuits/answer_002.png",
+      "sourceTimes": {
+        "question": 41.4,
+        "answer": 47.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_003.png",
+      "answer": "images_02/electric-circuits/answer_003.png",
+      "sourceTimes": {
+        "question": 55.2,
+        "answer": 62.8
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_004.png",
+      "answer": "images_02/electric-circuits/answer_004.png",
+      "sourceTimes": {
+        "question": 70.6,
+        "answer": 81.4
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_005.png",
+      "answer": "images_02/electric-circuits/answer_005.png",
+      "sourceTimes": {
+        "question": 91.2,
+        "answer": 100.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_006.png",
+      "answer": "images_02/electric-circuits/answer_006.png",
+      "sourceTimes": {
+        "question": 109.6,
+        "answer": 119.8
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_007.png",
+      "answer": "images_02/electric-circuits/answer_007.png",
+      "sourceTimes": {
+        "question": 128.4,
+        "answer": 136.4
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_008.png",
+      "answer": "images_02/electric-circuits/answer_008.png",
+      "sourceTimes": {
+        "question": 142.6,
+        "answer": 154.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_009.png",
+      "answer": "images_02/electric-circuits/answer_009.png",
+      "sourceTimes": {
+        "question": 163.2,
+        "answer": 171.4
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_010.png",
+      "answer": "images_02/electric-circuits/answer_010.png",
+      "sourceTimes": {
+        "question": 178.6,
+        "answer": 186.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_011.png",
+      "answer": "images_02/electric-circuits/answer_011.png",
+      "sourceTimes": {
+        "question": 194.8,
+        "answer": 204.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_012.png",
+      "answer": "images_02/electric-circuits/answer_012.png",
+      "sourceTimes": {
+        "question": 215.2,
+        "answer": 229.6
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_013.png",
+      "answer": "images_02/electric-circuits/answer_013.png",
+      "sourceTimes": {
+        "question": 240.8,
+        "answer": 255.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_014.png",
+      "answer": "images_02/electric-circuits/answer_014.png",
+      "sourceTimes": {
+        "question": 262.6,
+        "answer": 270.2
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_015.png",
+      "answer": "images_02/electric-circuits/answer_015.png",
+      "sourceTimes": {
+        "question": 278.8,
+        "answer": 289.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_016.png",
+      "answer": "images_02/electric-circuits/answer_016.png",
+      "sourceTimes": {
+        "question": 298.6,
+        "answer": 309.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_017.png",
+      "answer": "images_02/electric-circuits/answer_017.png",
+      "sourceTimes": {
+        "question": 317.6,
+        "answer": 324.8
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "circuits",
+      "question": "images_02/electric-circuits/question_018.png",
+      "answer": "images_02/electric-circuits/answer_018.png?v=81cd9f2ecf15a6f7",
+      "sourceTimes": {
+        "question": 332.0,
+        "answer": 340.0
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "019",
+      "chapter": "voltage",
+      "question": "images_02/electric-circuits/question_019.png",
+      "answer": "images_02/electric-circuits/answer_019.png",
+      "sourceTimes": {
+        "question": 352.4,
+        "answer": 364.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "voltage",
+      "question": "images_02/electric-circuits/question_020.png",
+      "answer": "images_02/electric-circuits/answer_020.png",
+      "sourceTimes": {
+        "question": 376.0,
+        "answer": 382.2
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "voltage",
+      "question": "images_02/electric-circuits/question_021.png",
+      "answer": "images_02/electric-circuits/answer_021.png",
+      "sourceTimes": {
+        "question": 390.4,
+        "answer": 402.8
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "voltage",
+      "question": "images_02/electric-circuits/question_022.png",
+      "answer": "images_02/electric-circuits/answer_022.png",
+      "sourceTimes": {
+        "question": 418.8,
+        "answer": 435.2
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "voltage",
+      "question": "images_02/electric-circuits/question_023.png",
+      "answer": "images_02/electric-circuits/answer_023.png",
+      "sourceTimes": {
+        "question": 448.0,
+        "answer": 458.8
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "voltage",
+      "question": "images_02/electric-circuits/question_024.png",
+      "answer": "images_02/electric-circuits/answer_024.png",
+      "sourceTimes": {
+        "question": 468.6,
+        "answer": 485.2
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_025.png",
+      "answer": "images_02/electric-circuits/answer_025.png",
+      "sourceTimes": {
+        "question": 498.0,
+        "answer": 508.8
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_026.png",
+      "answer": "images_02/electric-circuits/answer_026.png",
+      "sourceTimes": {
+        "question": 520.0,
+        "answer": 530.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_027.png",
+      "answer": "images_02/electric-circuits/answer_027.png",
+      "sourceTimes": {
+        "question": 539.2,
+        "answer": 548.2
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_028.png",
+      "answer": "images_02/electric-circuits/answer_028.png",
+      "sourceTimes": {
+        "question": 556.2,
+        "answer": 567.4
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_029.png",
+      "answer": "images_02/electric-circuits/answer_029.png",
+      "sourceTimes": {
+        "question": 577.8,
+        "answer": 587.8
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_030.png",
+      "answer": "images_02/electric-circuits/answer_030.png",
+      "sourceTimes": {
+        "question": 597.4,
+        "answer": 607.2
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_031.png",
+      "answer": "images_02/electric-circuits/answer_031.png",
+      "sourceTimes": {
+        "question": 616.8,
+        "answer": 628.4
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_032.png",
+      "answer": "images_02/electric-circuits/answer_032.png?v=a54c29e3d8753c8e",
+      "sourceTimes": {
+        "question": 638.6,
+        "answer": 649.6
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "033",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_033.png",
+      "answer": "images_02/electric-circuits/answer_033.png",
+      "sourceTimes": {
+        "question": 662.0,
+        "answer": 672.8
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_034.png",
+      "answer": "images_02/electric-circuits/answer_034.png",
+      "sourceTimes": {
+        "question": 683.0,
+        "answer": 697.6
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_035.png",
+      "answer": "images_02/electric-circuits/answer_035.png",
+      "sourceTimes": {
+        "question": 710.4,
+        "answer": 720.4
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_036.png",
+      "answer": "images_02/electric-circuits/answer_036.png",
+      "sourceTimes": {
+        "question": 732.0,
+        "answer": 743.2
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_037.png",
+      "answer": "images_02/electric-circuits/answer_037.png",
+      "sourceTimes": {
+        "question": 751.2,
+        "answer": 760.2
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_038.png",
+      "answer": "images_02/electric-circuits/answer_038.png",
+      "sourceTimes": {
+        "question": 767.2,
+        "answer": 774.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_039.png",
+      "answer": "images_02/electric-circuits/answer_039.png",
+      "sourceTimes": {
+        "question": 780.2,
+        "answer": 797.6
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_040.png",
+      "answer": "images_02/electric-circuits/answer_040.png",
+      "sourceTimes": {
+        "question": 811.4,
+        "answer": 820.4
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_041.png",
+      "answer": "images_02/electric-circuits/answer_041.png",
+      "sourceTimes": {
+        "question": 829.8,
+        "answer": 839.6
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "resistance",
+      "question": "images_02/electric-circuits/question_042.png",
+      "answer": "images_02/electric-circuits/answer_042.png",
+      "sourceTimes": {
+        "question": 846.4,
+        "answer": 864.4
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=EA1ESzlWpu4"
+}

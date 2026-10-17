@@ -1,0 +1,406 @@
+{
+  "id": "science-magnetism-current-electrons-01",
+  "subject": "science",
+  "field": "physics",
+  "title": "電流と磁界・電流の正体",
+  "grade": "中2理科",
+  "description": "磁界、電流と磁界の関係、モーター・電磁誘導、交流、静電気・電子を図解で学ぶ38問。",
+  "cover": "images_02/magnetism/question_001.png",
+  "chapters": [
+    {
+      "id": "magnetism",
+      "title": "電流と磁界"
+    },
+    {
+      "id": "electrons",
+      "title": "電流の正体"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_001.png",
+      "answer": "images_02/magnetism/answer_001.png",
+      "sourceTimes": {
+        "question": 29.8,
+        "answer": 36.8
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_002.png",
+      "answer": "images_02/magnetism/answer_002.png",
+      "sourceTimes": {
+        "question": 43.0,
+        "answer": 49.6
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_003.png",
+      "answer": "images_02/magnetism/answer_003.png",
+      "sourceTimes": {
+        "question": 56.8,
+        "answer": 69.6
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_004.png",
+      "answer": "images_02/magnetism/answer_004.png",
+      "sourceTimes": {
+        "question": 81.4,
+        "answer": 89.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_005.png",
+      "answer": "images_02/magnetism/answer_005.png",
+      "sourceTimes": {
+        "question": 98.2,
+        "answer": 106.8
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_006.png",
+      "answer": "images_02/magnetism/answer_006.png",
+      "sourceTimes": {
+        "question": 115.4,
+        "answer": 126.6
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_007.png",
+      "answer": "images_02/magnetism/answer_007.png",
+      "sourceTimes": {
+        "question": 136.2,
+        "answer": 148.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_008.png",
+      "answer": "images_02/magnetism/answer_008.png",
+      "sourceTimes": {
+        "question": 160.4,
+        "answer": 171.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_009.png",
+      "answer": "images_02/magnetism/answer_009.png",
+      "sourceTimes": {
+        "question": 181.6,
+        "answer": 198.4
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_010.png",
+      "answer": "images_02/magnetism/answer_010.png",
+      "sourceTimes": {
+        "question": 210.8,
+        "answer": 220.2
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_011.png",
+      "answer": "images_02/magnetism/answer_011.png",
+      "sourceTimes": {
+        "question": 233.0,
+        "answer": 246.8
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_012.png",
+      "answer": "images_02/magnetism/answer_012.png",
+      "sourceTimes": {
+        "question": 257.4,
+        "answer": 267.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_013.png",
+      "answer": "images_02/magnetism/answer_013.png",
+      "sourceTimes": {
+        "question": 290.0,
+        "answer": 305.8
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_014.png",
+      "answer": "images_02/magnetism/answer_014.png",
+      "sourceTimes": {
+        "question": 317.2,
+        "answer": 329.6
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_015.png",
+      "answer": "images_02/magnetism/answer_015.png",
+      "sourceTimes": {
+        "question": 338.8,
+        "answer": 348.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_016.png",
+      "answer": "images_02/magnetism/answer_016.png",
+      "sourceTimes": {
+        "question": 357.8,
+        "answer": 371.6
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_017.png?v=f6798cd334f5cfce",
+      "answer": "images_02/magnetism/answer_017.png?v=77074c505ec831b7",
+      "sourceTimes": {
+        "question": 385.6,
+        "answer": 395.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "018",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_018.png",
+      "answer": "images_02/magnetism/answer_018.png",
+      "sourceTimes": {
+        "question": 402.8,
+        "answer": 410.6
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_019.png",
+      "answer": "images_02/magnetism/answer_019.png",
+      "sourceTimes": {
+        "question": 419.4,
+        "answer": 428.4
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_020.png",
+      "answer": "images_02/magnetism/answer_020.png",
+      "sourceTimes": {
+        "question": 435.8,
+        "answer": 443.2
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_021.png",
+      "answer": "images_02/magnetism/answer_021.png",
+      "sourceTimes": {
+        "question": 450.0,
+        "answer": 459.6
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_022.png",
+      "answer": "images_02/magnetism/answer_022.png",
+      "sourceTimes": {
+        "question": 470.8,
+        "answer": 480.2
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_023.png",
+      "answer": "images_02/magnetism/answer_023.png",
+      "sourceTimes": {
+        "question": 489.0,
+        "answer": 498.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "magnetism",
+      "question": "images_02/magnetism/question_024.png",
+      "answer": "images_02/magnetism/answer_024.png",
+      "sourceTimes": {
+        "question": 504.2,
+        "answer": 510.6
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_025.png",
+      "answer": "images_02/magnetism/answer_025.png",
+      "sourceTimes": {
+        "question": 521.4,
+        "answer": 529.4
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_026.png",
+      "answer": "images_02/magnetism/answer_026.png",
+      "sourceTimes": {
+        "question": 540.2,
+        "answer": 553.4
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_027.png",
+      "answer": "images_02/magnetism/answer_027.png",
+      "sourceTimes": {
+        "question": 568.4,
+        "answer": 581.4
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_028.png",
+      "answer": "images_02/magnetism/answer_028.png",
+      "sourceTimes": {
+        "question": 589.0,
+        "answer": 600.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_029.png",
+      "answer": "images_02/magnetism/answer_029.png",
+      "sourceTimes": {
+        "question": 614.4,
+        "answer": 624.6
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_030.png",
+      "answer": "images_02/magnetism/answer_030.png",
+      "sourceTimes": {
+        "question": 635.2,
+        "answer": 646.6
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_031.png",
+      "answer": "images_02/magnetism/answer_031.png",
+      "sourceTimes": {
+        "question": 655.2,
+        "answer": 664.2
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_032.png",
+      "answer": "images_02/magnetism/answer_032.png",
+      "sourceTimes": {
+        "question": 671.8,
+        "answer": 681.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_033.png",
+      "answer": "images_02/magnetism/answer_033.png",
+      "sourceTimes": {
+        "question": 691.8,
+        "answer": 702.8
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_034.png",
+      "answer": "images_02/magnetism/answer_034.png",
+      "sourceTimes": {
+        "question": 712.2,
+        "answer": 720.8
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_035.png",
+      "answer": "images_02/magnetism/answer_035.png",
+      "sourceTimes": {
+        "question": 732.6,
+        "answer": 750.6
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_036.png",
+      "answer": "images_02/magnetism/answer_036.png",
+      "sourceTimes": {
+        "question": 766.8,
+        "answer": 779.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_037.png",
+      "answer": "images_02/magnetism/answer_037.png",
+      "sourceTimes": {
+        "question": 790.8,
+        "answer": 803.4
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "electrons",
+      "question": "images_02/magnetism/question_038.png",
+      "answer": "images_02/magnetism/answer_038.png",
+      "sourceTimes": {
+        "question": 813.0,
+        "answer": 826.6
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=upT1JHw7dMk"
+}

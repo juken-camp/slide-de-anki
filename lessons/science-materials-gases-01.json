@@ -1,0 +1,426 @@
+{
+  "id": "science-materials-gases-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "物質と気体の性質",
+  "grade": "中1理科",
+  "description": "物質の分類・密度・状態変化・蒸留・気体・水溶液を図解で学ぶ38問。",
+  "cover": "images_01/materials/question_001.png",
+  "chapters": [
+    {
+      "id": "classification",
+      "title": "物質の分類"
+    },
+    {
+      "id": "density",
+      "title": "密度"
+    },
+    {
+      "id": "state",
+      "title": "状態変化"
+    },
+    {
+      "id": "mixture",
+      "title": "純物質・混合物と蒸留"
+    },
+    {
+      "id": "gas",
+      "title": "気体の性質と集め方"
+    },
+    {
+      "id": "solution",
+      "title": "水溶液"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "classification",
+      "question": "images_01/materials/question_001.png",
+      "answer": "images_01/materials/answer_001.png",
+      "sourceTimes": {
+        "question": 23.0,
+        "answer": 30.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "classification",
+      "question": "images_01/materials/question_002.png",
+      "answer": "images_01/materials/answer_002.png",
+      "sourceTimes": {
+        "question": 39.0,
+        "answer": 48.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "classification",
+      "question": "images_01/materials/question_003.png",
+      "answer": "images_01/materials/answer_003.png",
+      "sourceTimes": {
+        "question": 55.0,
+        "answer": 64.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "classification",
+      "question": "images_01/materials/question_004.png",
+      "answer": "images_01/materials/answer_004.png",
+      "sourceTimes": {
+        "question": 73.0,
+        "answer": 80.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "classification",
+      "question": "images_01/materials/question_005.png",
+      "answer": "images_01/materials/answer_005.png",
+      "sourceTimes": {
+        "question": 89.0,
+        "answer": 98.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "classification",
+      "question": "images_01/materials/question_006.png",
+      "answer": "images_01/materials/answer_006.png",
+      "sourceTimes": {
+        "question": 104.0,
+        "answer": 111.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "classification",
+      "question": "images_01/materials/question_007.png",
+      "answer": "images_01/materials/answer_007.png",
+      "sourceTimes": {
+        "question": 119.0,
+        "answer": 127.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "classification",
+      "question": "images_01/materials/question_008.png",
+      "answer": "images_01/materials/answer_008.png",
+      "sourceTimes": {
+        "question": 136.0,
+        "answer": 145.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "classification",
+      "question": "images_01/materials/question_009.png",
+      "answer": "images_01/materials/answer_009.png",
+      "sourceTimes": {
+        "question": 153.0,
+        "answer": 161.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "density",
+      "question": "images_01/materials/question_010.png",
+      "answer": "images_01/materials/answer_010.png",
+      "sourceTimes": {
+        "question": 170.0,
+        "answer": 179.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "density",
+      "question": "images_01/materials/question_011.png",
+      "answer": "images_01/materials/answer_011.png",
+      "sourceTimes": {
+        "question": 188.0,
+        "answer": 198.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "density",
+      "question": "images_01/materials/question_012.png",
+      "answer": "images_01/materials/answer_012.png",
+      "sourceTimes": {
+        "question": 204.0,
+        "answer": 211.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "density",
+      "question": "images_01/materials/question_013.png?v=db71e7ae73ba272b",
+      "answer": "images_01/materials/answer_013.png?v=10ef47add1705ae1",
+      "sourceTimes": {
+        "question": 219.0,
+        "answer": 229.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "014",
+      "chapter": "state",
+      "question": "images_01/materials/question_014.png",
+      "answer": "images_01/materials/answer_014.png",
+      "sourceTimes": {
+        "question": 237.0,
+        "answer": 246.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "state",
+      "question": "images_01/materials/question_015.png",
+      "answer": "images_01/materials/answer_015.png",
+      "sourceTimes": {
+        "question": 254.0,
+        "answer": 262.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "state",
+      "question": "images_01/materials/question_016.png",
+      "answer": "images_01/materials/answer_016.png",
+      "sourceTimes": {
+        "question": 270.0,
+        "answer": 278.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "state",
+      "question": "images_01/materials/question_017.png",
+      "answer": "images_01/materials/answer_017.png",
+      "sourceTimes": {
+        "question": 286.0,
+        "answer": 294.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "state",
+      "question": "images_01/materials/question_018.png",
+      "answer": "images_01/materials/answer_018.png",
+      "sourceTimes": {
+        "question": 300.0,
+        "answer": 307.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "mixture",
+      "question": "images_01/materials/question_019.png",
+      "answer": "images_01/materials/answer_019.png",
+      "sourceTimes": {
+        "question": 314.0,
+        "answer": 323.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "mixture",
+      "question": "images_01/materials/question_020.png",
+      "answer": "images_01/materials/answer_020.png",
+      "sourceTimes": {
+        "question": 331.0,
+        "answer": 339.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "mixture",
+      "question": "images_01/materials/question_021.png",
+      "answer": "images_01/materials/answer_021.png",
+      "sourceTimes": {
+        "question": 347.0,
+        "answer": 356.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "mixture",
+      "question": "images_01/materials/question_022.png",
+      "answer": "images_01/materials/answer_022.png",
+      "sourceTimes": {
+        "question": 364.0,
+        "answer": 372.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "mixture",
+      "question": "images_01/materials/question_023.png",
+      "answer": "images_01/materials/answer_023.png",
+      "sourceTimes": {
+        "question": 381.0,
+        "answer": 391.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "gas",
+      "question": "images_01/materials/question_024.png",
+      "answer": "images_01/materials/answer_024.png",
+      "sourceTimes": {
+        "question": 399.0,
+        "answer": 407.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "gas",
+      "question": "images_01/materials/question_025.png",
+      "answer": "images_01/materials/answer_025.png",
+      "sourceTimes": {
+        "question": 413.0,
+        "answer": 420.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "gas",
+      "question": "images_01/materials/question_026.png",
+      "answer": "images_01/materials/answer_026.png",
+      "sourceTimes": {
+        "question": 428.0,
+        "answer": 436.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "gas",
+      "question": "images_01/materials/question_027.png",
+      "answer": "images_01/materials/answer_027.png",
+      "sourceTimes": {
+        "question": 447.0,
+        "answer": 459.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "gas",
+      "question": "images_01/materials/question_028.png?v=b79b738f66dfe20f",
+      "answer": "images_01/materials/answer_028.png?v=fc42570d623af58e",
+      "sourceTimes": {
+        "question": 467.0,
+        "answer": 476.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "029",
+      "chapter": "gas",
+      "question": "images_01/materials/question_029.png",
+      "answer": "images_01/materials/answer_029.png",
+      "sourceTimes": {
+        "question": 484.0,
+        "answer": 492.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "solution",
+      "question": "images_01/materials/question_030.png",
+      "answer": "images_01/materials/answer_030.png",
+      "sourceTimes": {
+        "question": 499.0,
+        "answer": 506.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "solution",
+      "question": "images_01/materials/question_031.png",
+      "answer": "images_01/materials/answer_031.png",
+      "sourceTimes": {
+        "question": 512.0,
+        "answer": 519.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "solution",
+      "question": "images_01/materials/question_032.png",
+      "answer": "images_01/materials/answer_032.png",
+      "sourceTimes": {
+        "question": 526.0,
+        "answer": 534.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "solution",
+      "question": "images_01/materials/question_033.png",
+      "answer": "images_01/materials/answer_033.png",
+      "sourceTimes": {
+        "question": 540.0,
+        "answer": 547.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "solution",
+      "question": "images_01/materials/question_034.png",
+      "answer": "images_01/materials/answer_034.png",
+      "sourceTimes": {
+        "question": 555.0,
+        "answer": 564.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "solution",
+      "question": "images_01/materials/question_035.png",
+      "answer": "images_01/materials/answer_035.png",
+      "sourceTimes": {
+        "question": 572.0,
+        "answer": 579.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "solution",
+      "question": "images_01/materials/question_036.png",
+      "answer": "images_01/materials/answer_036.png",
+      "sourceTimes": {
+        "question": 587.0,
+        "answer": 595.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "solution",
+      "question": "images_01/materials/question_037.png",
+      "answer": "images_01/materials/answer_037.png",
+      "sourceTimes": {
+        "question": 603.0,
+        "answer": 610.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "solution",
+      "question": "images_01/materials/question_038.png",
+      "answer": "images_01/materials/answer_038.png",
+      "sourceTimes": {
+        "question": 617.0,
+        "answer": 624.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=BkV_Ay2OTvc"
+}

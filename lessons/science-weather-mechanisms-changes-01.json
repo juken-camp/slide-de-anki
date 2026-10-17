@@ -1,0 +1,598 @@
+{
+  "id": "science-weather-mechanisms-changes-01",
+  "subject": "science",
+  "field": "earth",
+  "title": "気象のしくみと天気の変化",
+  "grade": "中2理科",
+  "description": "気象観測、水蒸気と雲、気圧と前線、日本の気象を図解で学ぶ56問。",
+  "cover": "images_02/weather/question_001.png",
+  "chapters": [
+    {
+      "id": "observation",
+      "title": "気象観測"
+    },
+    {
+      "id": "water-vapor",
+      "title": "大気中の水蒸気の変化"
+    },
+    {
+      "id": "pressure-fronts",
+      "title": "気圧・前線・天気"
+    },
+    {
+      "id": "japan-weather",
+      "title": "日本の気象"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "observation",
+      "question": "images_02/weather/question_001.png",
+      "answer": "images_02/weather/answer_001.png",
+      "sourceTimes": {
+        "question": 26.6,
+        "answer": 33.8
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "observation",
+      "question": "images_02/weather/question_002.png",
+      "answer": "images_02/weather/answer_002.png",
+      "sourceTimes": {
+        "question": 40.0,
+        "answer": 46.4
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "observation",
+      "question": "images_02/weather/question_003.png",
+      "answer": "images_02/weather/answer_003.png",
+      "sourceTimes": {
+        "question": 54.2,
+        "answer": 63.4
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "observation",
+      "question": "images_02/weather/question_004.png",
+      "answer": "images_02/weather/answer_004.png",
+      "sourceTimes": {
+        "question": 72.6,
+        "answer": 83.2
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "observation",
+      "question": "images_02/weather/question_005.png",
+      "answer": "images_02/weather/answer_005.png",
+      "sourceTimes": {
+        "question": 92.0,
+        "answer": 101.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "observation",
+      "question": "images_02/weather/question_006.png",
+      "answer": "images_02/weather/answer_006.png",
+      "sourceTimes": {
+        "question": 109.2,
+        "answer": 117.8
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "observation",
+      "question": "images_02/weather/question_007.png",
+      "answer": "images_02/weather/answer_007.png",
+      "sourceTimes": {
+        "question": 124.4,
+        "answer": 134.2
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "observation",
+      "question": "images_02/weather/question_008.png",
+      "answer": "images_02/weather/answer_008.png",
+      "sourceTimes": {
+        "question": 144.4,
+        "answer": 153.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "observation",
+      "question": "images_02/weather/question_009.png",
+      "answer": "images_02/weather/answer_009.png",
+      "sourceTimes": {
+        "question": 161.4,
+        "answer": 169.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "observation",
+      "question": "images_02/weather/question_010.png",
+      "answer": "images_02/weather/answer_010.png",
+      "sourceTimes": {
+        "question": 176.4,
+        "answer": 191.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "observation",
+      "question": "images_02/weather/question_011.png",
+      "answer": "images_02/weather/answer_011.png",
+      "sourceTimes": {
+        "question": 202.2,
+        "answer": 214.4
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "observation",
+      "question": "images_02/weather/question_012.png",
+      "answer": "images_02/weather/answer_012.png",
+      "sourceTimes": {
+        "question": 224.6,
+        "answer": 235.4
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "observation",
+      "question": "images_02/weather/question_013.png",
+      "answer": "images_02/weather/answer_013.png",
+      "sourceTimes": {
+        "question": 245.6,
+        "answer": 256.4
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "observation",
+      "question": "images_02/weather/question_014.png",
+      "answer": "images_02/weather/answer_014.png",
+      "sourceTimes": {
+        "question": 269.6,
+        "answer": 280.2
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_015.png",
+      "answer": "images_02/weather/answer_015.png",
+      "sourceTimes": {
+        "question": 294.2,
+        "answer": 303.8
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_016.png",
+      "answer": "images_02/weather/answer_016.png",
+      "sourceTimes": {
+        "question": 312.8,
+        "answer": 323.2
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_017.png",
+      "answer": "images_02/weather/answer_017.png",
+      "sourceTimes": {
+        "question": 333.2,
+        "answer": 343.8
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_018.png",
+      "answer": "images_02/weather/answer_018.png",
+      "sourceTimes": {
+        "question": 353.4,
+        "answer": 361.8
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_019.png",
+      "answer": "images_02/weather/answer_019.png",
+      "sourceTimes": {
+        "question": 375.6,
+        "answer": 390.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_020.png",
+      "answer": "images_02/weather/answer_020.png",
+      "sourceTimes": {
+        "question": 398.6,
+        "answer": 405.4
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_021.png",
+      "answer": "images_02/weather/answer_021.png",
+      "sourceTimes": {
+        "question": 413.4,
+        "answer": 425.8
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_022.png?v=4782a59b557db394",
+      "answer": "images_02/weather/answer_022.png?v=3911177bf3c66621",
+      "sourceTimes": {
+        "question": 437.0,
+        "answer": 446.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "023",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_023.png",
+      "answer": "images_02/weather/answer_023.png",
+      "sourceTimes": {
+        "question": 458.8,
+        "answer": 470.6
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_024.png",
+      "answer": "images_02/weather/answer_024.png",
+      "sourceTimes": {
+        "question": 476.8,
+        "answer": 483.2
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_025.png",
+      "answer": "images_02/weather/answer_025.png",
+      "sourceTimes": {
+        "question": 489.2,
+        "answer": 496.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_026.png",
+      "answer": "images_02/weather/answer_026.png",
+      "sourceTimes": {
+        "question": 506.4,
+        "answer": 520.4
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "water-vapor",
+      "question": "images_02/weather/question_027.png",
+      "answer": "images_02/weather/answer_027.png",
+      "sourceTimes": {
+        "question": 532.6,
+        "answer": 541.8
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_028.png",
+      "answer": "images_02/weather/answer_028.png",
+      "sourceTimes": {
+        "question": 555.6,
+        "answer": 563.2
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_029.png",
+      "answer": "images_02/weather/answer_029.png",
+      "sourceTimes": {
+        "question": 568.8,
+        "answer": 575.2
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_030.png",
+      "answer": "images_02/weather/answer_030.png",
+      "sourceTimes": {
+        "question": 581.2,
+        "answer": 589.4
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_031.png",
+      "answer": "images_02/weather/answer_031.png",
+      "sourceTimes": {
+        "question": 597.4,
+        "answer": 605.8
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_032.png",
+      "answer": "images_02/weather/answer_032.png",
+      "sourceTimes": {
+        "question": 618.8,
+        "answer": 633.2
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_033.png",
+      "answer": "images_02/weather/answer_033.png",
+      "sourceTimes": {
+        "question": 643.6,
+        "answer": 654.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_034.png",
+      "answer": "images_02/weather/answer_034.png",
+      "sourceTimes": {
+        "question": 661.6,
+        "answer": 680.4
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_035.png",
+      "answer": "images_02/weather/answer_035.png",
+      "sourceTimes": {
+        "question": 690.6,
+        "answer": 699.4
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_036.png",
+      "answer": "images_02/weather/answer_036.png",
+      "sourceTimes": {
+        "question": 711.2,
+        "answer": 723.2
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_037.png",
+      "answer": "images_02/weather/answer_037.png",
+      "sourceTimes": {
+        "question": 734.4,
+        "answer": 747.8
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_038.png",
+      "answer": "images_02/weather/answer_038.png",
+      "sourceTimes": {
+        "question": 757.4,
+        "answer": 764.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_039.png",
+      "answer": "images_02/weather/answer_039.png",
+      "sourceTimes": {
+        "question": 772.2,
+        "answer": 781.4
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_040.png",
+      "answer": "images_02/weather/answer_040.png",
+      "sourceTimes": {
+        "question": 790.4,
+        "answer": 800.4
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_041.png",
+      "answer": "images_02/weather/answer_041.png",
+      "sourceTimes": {
+        "question": 807.4,
+        "answer": 814.4
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_042.png",
+      "answer": "images_02/weather/answer_042.png",
+      "sourceTimes": {
+        "question": 822.2,
+        "answer": 830.6
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_043.png",
+      "answer": "images_02/weather/answer_043.png",
+      "sourceTimes": {
+        "question": 838.6,
+        "answer": 846.8
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_044.png",
+      "answer": "images_02/weather/answer_044.png",
+      "sourceTimes": {
+        "question": 856.2,
+        "answer": 868.2
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_045.png",
+      "answer": "images_02/weather/answer_045.png",
+      "sourceTimes": {
+        "question": 880.2,
+        "answer": 891.8
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_046.png",
+      "answer": "images_02/weather/answer_046.png",
+      "sourceTimes": {
+        "question": 901.4,
+        "answer": 909.4
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_047.png",
+      "answer": "images_02/weather/answer_047.png",
+      "sourceTimes": {
+        "question": 917.8,
+        "answer": 926.6
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "pressure-fronts",
+      "question": "images_02/weather/question_048.png",
+      "answer": "images_02/weather/answer_048.png",
+      "sourceTimes": {
+        "question": 936.0,
+        "answer": 945.4
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "japan-weather",
+      "question": "images_02/weather/question_049.png",
+      "answer": "images_02/weather/answer_049.png",
+      "sourceTimes": {
+        "question": 958.8,
+        "answer": 967.4
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "japan-weather",
+      "question": "images_02/weather/question_050.png",
+      "answer": "images_02/weather/answer_050.png",
+      "sourceTimes": {
+        "question": 974.4,
+        "answer": 982.6
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "japan-weather",
+      "question": "images_02/weather/question_051.png",
+      "answer": "images_02/weather/answer_051.png",
+      "sourceTimes": {
+        "question": 993.4,
+        "answer": 1004.4
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "japan-weather",
+      "question": "images_02/weather/question_052.png",
+      "answer": "images_02/weather/answer_052.png",
+      "sourceTimes": {
+        "question": 1018.4,
+        "answer": 1033.6
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "japan-weather",
+      "question": "images_02/weather/question_053.png",
+      "answer": "images_02/weather/answer_053.png",
+      "sourceTimes": {
+        "question": 1046.0,
+        "answer": 1059.2
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "japan-weather",
+      "question": "images_02/weather/question_054.png?v=3aa2d1d19f35ea07",
+      "answer": "images_02/weather/answer_054.png?v=31ed97777b2cc6f7",
+      "sourceTimes": {
+        "question": 1070.4,
+        "answer": 1081.4
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "055",
+      "chapter": "japan-weather",
+      "question": "images_02/weather/question_055.png",
+      "answer": "images_02/weather/answer_055.png",
+      "sourceTimes": {
+        "question": 1092.0,
+        "answer": 1103.2
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "japan-weather",
+      "question": "images_02/weather/question_056.png",
+      "answer": "images_02/weather/answer_056.png",
+      "sourceTimes": {
+        "question": 1113.4,
+        "answer": 1131.8
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=QNdD4PBEdIw"
+}

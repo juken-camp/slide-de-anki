@@ -27,7 +27,8 @@ let lesson = null, screen = 'home', request = 0, imageToken = 0, ready = false, 
 let soundEnabled = data.neko.soundEnabled !== false, audio = null, lastTapSound = -1000;
 let playing = false, timer = null, remaining = 0, lastTick = 0;
 let catTaps=0, playfulParticles=0, lastPlaySound=-1000;
-let noticeTimer, suppressUntil = 0, navBusy = false;
+let noticeTimer, imageWaitTimer, suppressUntil = 0, navBusy = false;
+const imageLoader = window.createNekoImageLoader();
 let browse = 'grade', catalogFilter = 'all';
 const selected = new Set(state.lessonIds);
 const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -144,7 +145,7 @@ function showScreen(next) {
   if (next === 'catalog') renderCatalog(); stats();
   window.scrollTo?.({ top: 0, behavior: 'instant' });
   if (next === 'catalog') $('catalogTitle').focus({ preventScroll: true });
-  if (next === 'study') markSeen();
+  if (next === 'study') { if (lesson && !state.loading) render(); else warmImages(); } else imageLoader.pause();
 }
 function gradeKey(m) { return String(m.grade || '').match(/中\s*([123])/)?.[1] || 'other'; }
 function groupKey(m) { return browse === 'grade' ? gradeKey(m) : (m.field || 'other'); }
@@ -236,6 +237,24 @@ function deck() {
   return base().filter(c => state.mode === 'all' || status(c) === state.mode).sort((a,b) => (rank.get(a.id) ?? 99999) - (rank.get(b.id) ?? 99999));
 }
 function current() { return deck().find(c => c.id === state.current) || null; }
+// Follow the actual filtered/shuffled deck, including answer-first mode and wraparound.
+function imageWindow() {
+  if (!lesson || state.loading || state.finished || screen !== 'study' || document.hidden) return [];
+  const cards=deck(), at=cards.findIndex(c => c.id===state.current);
+  if (at<0) return [];
+  const connection=navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const ahead=connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || '') ? 2 : 5;
+  const urls=[], add=(c,answerFirst) => {
+    for (const face of answerFirst ? ['answer','question'] : ['question','answer']) urls.push(window.NekoImageURL(c[face]));
+  };
+  add(cards[at],state.flipped);
+  for (let n=1;n<=Math.min(ahead,cards.length-1);n++) add(cards[(at+n)%cards.length],state.answerMode);
+  if (cards.length>1) add(cards[(at-1+cards.length)%cards.length],state.answerMode);
+  return [...new Set(urls)];
+}
+function warmImages() {
+  const urls=imageWindow(); if (urls.length) imageLoader.plan(urls); else imageLoader.pause();
+}
 function shuffle(ids) { for (let i = ids.length-1; i>0; i--) { const j = Math.floor(Math.random()*(i+1)); [ids[i],ids[j]] = [ids[j],ids[i]]; } return ids; }
 function markSeen() {
   const c = current(); if (screen !== 'study' || !state.flipped || !ready || !c || document.hidden) return;
@@ -268,15 +287,15 @@ function renderControls() {
   $('undoButton').disabled = !undo; stats();
 }
 function showEmpty(title,text,{restart=false,review=false,all=false} = {}) {
-  pause(); $('stage').hidden = true; $('emptyState').hidden = false; $('emptyTitle').textContent = title; $('emptyText').textContent = text;
+  pause(); imageLoader.pause(); $('stage').hidden = true; $('emptyState').hidden = false; $('emptyTitle').textContent = title; $('emptyText').textContent = text;
   $('restartButton').hidden = !restart; $('reviewButton').hidden = !review; $('allButton').hidden = !all;
 }
 function render() {
-  clearTimer(); ready = false; const token = ++imageToken; $('sourceLinks').hidden = true;
+  clearTimer(); clearTimeout(imageWaitTimer); imageWaitTimer=null; ready = false; const token = ++imageToken; $('sourceLinks').hidden = true;
   if (lesson && !state.finished) { const d = deck(); if (d.length && !d.some(c => c.id === state.current)) { state.current = d[0].id; state.flipped = state.answerMode; } }
   if (current()) state.lessonId = current().lessonId;
   renderControls(); $('loadingMessage').hidden = !state.loading; $('emptyState').hidden = true; $('stage').hidden = true;
-  if (state.loading) return;
+  if (state.loading) { imageLoader.pause(); return; }
   if (!lesson) { showEmpty('目次から教材を選ぶにゃ','好きな教材をまとめて選べるにゃ♪'); return; }
   if (state.finished) { showEmpty('選んだ範囲を一周したにゃ🎉',`今日見た問題 ${(data.neko.daily[dateKey()] || []).length}問 · この範囲の「おぼえた」 ${counts(base()).known} / ${base().length}問`,{restart:true,review:counts(base()).weak>0,all:state.mode!=='all'}); save(); return; }
   const d = deck();
@@ -286,13 +305,40 @@ function render() {
   const chapter = raw.chapters?.find(ch => ch.id === c.chapter)?.title || raw.title;
   $('cardUnit').textContent = `${state.lessonIds.length>1 ? raw.title+' / ' : ''}${chapter} · ${c.originalId}`;
   $('cardStatus').textContent = labels[status(c)] || 'まだ'; $('cardPosition').textContent = `${d.findIndex(x => x.id === c.id)+1} / ${d.length}問${state.mode !== 'all' ? ' · '+labels[state.mode] : ''}`;
-  $('slideTap').className = 'slide-wrap loading'; $('slideTap').setAttribute('aria-label',state.flipped ? 'タップして問題を見る' : 'タップして解答を見る');
-  $('imageStatus').textContent = 'ちょっと待ってにゃ🐾'; $('knownButton').disabled = $('weakButton').disabled = true;
-  const img = $('slideImage'); img.alt = `${raw.title} ${c.originalId} ${state.flipped ? '解答' : '問題'}`;
-  img.onload = () => { if (token !== imageToken) return; ready = true; $('slideTap').classList.remove('loading'); $('knownButton').disabled = $('weakButton').disabled = !state.flipped; imageView.refresh(); markSeen(); resetTimer(); };
-  img.onerror = () => { if (token !== imageToken) return; ready = false; pause(); $('slideTap').className = 'slide-wrap error'; $('imageStatus').textContent = '画像が開けなかったにゃ。もう一度タップしてにゃ。'; };
-  imageView.setCard(c.id);
-  img.src = window.NekoImageURL(state.flipped ? c.answer : c.question); $('originalImage').href = img.src; save(); updateTimerUI();
+  const url=window.NekoImageURL(state.flipped ? c.answer : c.question), cached=imageLoader.peek(url);
+  $('slideTap').className = cached ? 'slide-wrap' : 'slide-wrap loading';
+  $('slideTap').setAttribute('aria-label',state.flipped ? 'タップして問題を見る' : 'タップして解答を見る');
+  $('imageStatus').hidden=true; $('imageStatus').textContent='ちょっと待ってにゃ🐾';
+  $('knownButton').disabled = $('weakButton').disabled = true;
+  const img = $('slideImage'); img.onload=img.onerror=null;
+  img.alt = `${raw.title} ${c.originalId} ${state.flipped ? '解答' : '問題'}`;
+  let settled=false;
+  const fail=()=> {
+    if (token!==imageToken || settled) return; settled=true;
+    clearTimeout(imageWaitTimer); imageLoader.forget(url); ready=false; pause();
+    $('slideTap').className='slide-wrap error'; $('imageStatus').hidden=false;
+    $('imageStatus').textContent='画像が開けなかったにゃ。もう一度タップしてにゃ。';
+  };
+  const finish=()=> {
+    if (token!==imageToken || settled) return; settled=true;
+    clearTimeout(imageWaitTimer); ready=true; $('slideTap').classList.remove('loading'); $('imageStatus').hidden=true;
+    $('knownButton').disabled = $('weakButton').disabled = !state.flipped;
+    imageView.refresh(); markSeen(); resetTimer();
+  };
+  const display=e=> {
+    if (!e || token!==imageToken) return;
+    img.onload=finish; img.onerror=fail; img.fetchPriority='high';
+    if (img.src!==url) img.src=url;
+    if (img.complete && img.naturalWidth>0) finish();
+  };
+  imageView.setCard(c.id); $('originalImage').href=url;
+  // No loading-message flash for fast/cached transitions; keep a truthful fallback on slow links.
+  if (!cached) imageWaitTimer=setTimeout(()=> {
+    if (token===imageToken && !ready && !settled) $('imageStatus').hidden=false;
+  },300);
+  warmImages();
+  if (cached) display(cached); else imageLoader.get(url).then(display).catch(fail);
+  save(); updateTimerUI();
 }
 async function getLesson(m) {
   if (loaded.has(m.id)) return loaded.get(m.id);
@@ -361,7 +407,7 @@ function pause() { playing = false; clearTimer(); updateTimerUI(); }
 function updateTimerUI() {
   const auto = $('autoMode').checked; $('timerOptions').hidden = $('timerTrack').hidden = $('playButton').hidden = !auto;
   $('playButton').textContent = playing ? 'Ⅱ 止めるにゃ' : '▶ めくるにゃ'; $('playButton').disabled = !lesson || state.loading || state.finished || !deck().length;
-  $('timerLabel').textContent = !auto ? '' : playing ? (ready ? `${state.flipped ? '解答' : '問題'} ${(remaining/1000).toFixed(1)}秒` : 'ちょっと待ってにゃ🐾') : '停止中にゃ';
+  $('timerLabel').textContent = !auto ? '' : playing ? (ready ? `${state.flipped ? '解答' : '問題'} ${(remaining/1000).toFixed(1)}秒` : '') : '停止中にゃ';
   const total = seconds(state.flipped ? 'answer' : 'question')*1000; $('timerBar').style.width = (auto ? Math.max(0,Math.min(100,remaining/total*100)) : 0)+'%';
 }
 function register(raw) {
@@ -416,7 +462,7 @@ $('autoMode').checked = !!data.neko.auto; $('autoMode').onchange = () => { pause
 for (const face of ['question','answer']) { $(face+'Seconds').value = seconds(face); $(face+'Seconds').onchange = e => { pause(); const n = Number(e.target.value); data.neko[face+'Seconds'] = Number.isFinite(n) ? Math.round(Math.min(120,Math.max(.5,n))*10)/10 : (face==='question'?3:2); e.target.value = data.neko[face+'Seconds']; save(); resetTimer(); }; }
 $('playButton').onclick = () => { if (playing) pause(); else { playing = true; resetTimer(); } };
 for (const b of document.querySelectorAll('[data-close]')) b.onclick = () => $(b.dataset.close).close();
-document.addEventListener('visibilitychange',() => { if (document.hidden) pause(); else { stats(); markSeen(); } }); window.addEventListener('pagehide',save);
+document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause(); } else { stats(); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',save);
 document.addEventListener('keydown',e => {
   if (screen !== 'study' || navBusy || document.querySelector('dialog[open]') || ['INPUT','SELECT','TEXTAREA','BUTTON','A'].includes(e.target.tagName) || e.target === $('slideTap') || e.repeat) return;
   if (e.key === 'ArrowRight') { e.preventDefault(); animateNav(1); } else if (e.key === 'ArrowLeft') { e.preventDefault(); animateNav(-1); } else if (e.code === 'Space') { e.preventDefault(); flip(); }
@@ -454,3 +500,4 @@ $('restoreInput').onchange = async e => {
 };
 showScreen('home');
 })();
+

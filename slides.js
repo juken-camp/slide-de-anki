@@ -16,7 +16,7 @@ const state = {
   chapter: saved.chapter || 'all', mode: ['all','weak','known','unmarked'].includes(saved.mode) ? saved.mode : 'all',
   current: migrateKey(saved.current) || null, flipped: !!saved.flipped,
   order: Array.isArray(saved.order) ? saved.order.map(migrateKey) : [],
-  shuffle: !!saved.shuffle, finished: !!saved.finished, loading: false
+  answerMode: data.neko.answerMode === true, shuffle: !!saved.shuffle, finished: !!saved.finished, loading: false
 };
 const labels = { known: 'おぼえた', weak: 'おぼえてない', unmarked: 'まだ' };
 const fields = {
@@ -24,8 +24,8 @@ const fields = {
   integrated_science: ['総合','🔬'], geography: ['地理','🌏'], history: ['歴史','🏯'], civics: ['公民','⚖️']
 };
 let lesson = null, screen = 'home', request = 0, imageToken = 0, ready = false, undo = null;
-let sound = data.neko.sound === true, playing = false, timer = null, remaining = 0, lastTick = 0;
-let noticeTimer, audio, drag = null, suppressUntil = 0, navBusy = false;
+let playing = false, timer = null, remaining = 0, lastTick = 0;
+let noticeTimer, suppressUntil = 0, navBusy = false;
 let browse = 'grade', catalogFilter = 'all';
 const selected = new Set(state.lessonIds);
 const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -34,15 +34,13 @@ function save() {
   data.neko.resume = { subject: state.subject, lessonIds: state.lessonIds, lessonId: state.lessonId,
     chapter: state.chapter, mode: state.mode, current: state.current, flipped: state.flipped,
     order: state.order, shuffle: state.shuffle, finished: state.finished };
-  data.neko.sound = sound;
+  data.neko.sound = false; data.neko.answerMode = state.answerMode;
   try { localStorage.setItem(KEY, JSON.stringify(data)); }
   catch { $('saveWarning').hidden = false; $('saveWarning').textContent = '学習記録を保存できません。ブラウザーの空き容量・保存設定を確認してください。'; }
 }
 function toast(s) { $('notice').textContent = s; $('notice').classList.add('show'); clearTimeout(noticeTimer); noticeTimer = setTimeout(() => $('notice').classList.remove('show'), 2600); }
-function beep(high = false) {
-  if (!sound) return;
-  try { audio ??= new (window.AudioContext || window.webkitAudioContext)(); audio.resume(); const o = audio.createOscillator(), g = audio.createGain(); o.connect(g); g.connect(audio.destination); o.frequency.value = high ? 784 : 523; g.gain.setValueAtTime(.055, audio.currentTime); g.gain.exponentialRampToValueAtTime(.001, audio.currentTime+.1); o.start(); o.stop(audio.currentTime+.12); } catch {}
-}
+function beep() {}
+
 function status(c) { return data.records[c.lessonId]?.[c.originalId]?.status || 'unmarked'; }
 function counts(cards) { return cards.reduce((r,c) => { const s = status(c); r[s] = (r[s] || 0)+1; return r; }, { known: 0, weak: 0, unmarked: 0 }); }
 function knownFor(m) {
@@ -53,12 +51,10 @@ function stats() {
   const known = meta.reduce((n,m) => n + knownFor(m), 0);
   $('dailyCount').textContent = (data.neko.daily[dateKey()] || []).length;
   $('knownCount').textContent = known; $('levelCount').textContent = 1 + Math.floor(known/10);
-  $('soundButton').textContent = sound ? '🔊' : '🔇'; $('soundButton').setAttribute('aria-pressed', String(sound));
-  $('soundButton').setAttribute('aria-label', `効果音を${sound ? 'オフ' : 'オン'}にする`);
   $('resumeStudy').hidden = !state.lessonIds.some(id => meta.some(m => m.id === id)) || !state.current;
 }
 function showScreen(next) {
-  if (screen !== next) pause(); screen = next; $('app').dataset.screen = next;
+  if (screen !== next) { pause(); imageView.cancel(); } screen = next; $('app').dataset.screen = next;
   for (const name of ['home','catalog','study']) $(name+'Screen').hidden = name !== next;
   $('appHeader').hidden = next === 'home'; $('returnToStudy').hidden = !lesson;
   if (next === 'catalog') renderCatalog(); stats();
@@ -148,7 +144,7 @@ function renderSource(c) {
   const face = state.flipped ? 'answer' : 'question'; $('correctionNote').hidden = !c.correctedFaces?.includes(face);
   const time = c.sourceTimes?.[face], valid = typeof time === 'number' && Number.isFinite(time) && time >= 0;
   const moment = $('sourceMoment'); $('sourceVideo').href = baseURL; moment.hidden = !valid; moment.removeAttribute('href');
-  if (valid) { const sec = Math.floor(time), stamp = Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0'); moment.href = baseURL+'&t='+sec+'s'; moment.textContent = `この場面から見る（${state.flipped ? '解答' : '問題'} ${stamp}）↗`; }
+  if (valid) { const sec = Math.floor(time), stamp = Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0'); moment.href = baseURL+'&t='+sec+'s'; moment.textContent = `この場面 ${stamp} ↗`; moment.setAttribute('aria-label',`${state.flipped ? '解答' : '問題'}の場面をYouTubeで見る・${stamp}`); }
 }
 function base() { return lesson?.cards.filter(c => state.chapter === 'all' || (state.chapter.startsWith('lesson:') ? c.lessonId === state.chapter.slice(7) : c.chapterKey === state.chapter)) || []; }
 function deck() {
@@ -173,6 +169,7 @@ function scopeChoices() {
   return [{id:'all',title:'すべて'},...(raw?.chapters || []).filter(c => c.id !== 'all').map(ch => ({id:cardKey(raw.id,ch.id),title:ch.title}))];
 }
 function renderControls() {
+  document.querySelectorAll('[data-face-mode]').forEach(b => { const on = (b.dataset.faceMode === 'answer') === state.answerMode; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
   document.querySelectorAll('[data-mode]').forEach(b => { const on = b.dataset.mode === state.mode; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
   $('shuffleButton').classList.toggle('is-on',state.shuffle); $('shuffleButton').textContent = state.shuffle ? '🔀 シャッフル' : '🔀 順番'; $('shuffleButton').setAttribute('aria-pressed',String(state.shuffle));
   $('chapterChips').replaceChildren();
@@ -192,7 +189,7 @@ function showEmpty(title,text,{restart=false,review=false,all=false} = {}) {
 }
 function render() {
   clearTimer(); ready = false; const token = ++imageToken; $('sourceLinks').hidden = true;
-  if (lesson && !state.finished) { const d = deck(); if (d.length && !d.some(c => c.id === state.current)) { state.current = d[0].id; state.flipped = false; } }
+  if (lesson && !state.finished) { const d = deck(); if (d.length && !d.some(c => c.id === state.current)) { state.current = d[0].id; state.flipped = state.answerMode; } }
   if (current()) state.lessonId = current().lessonId;
   renderControls(); $('loadingMessage').hidden = !state.loading; $('emptyState').hidden = true; $('stage').hidden = true;
   if (state.loading) return;
@@ -206,11 +203,11 @@ function render() {
   $('cardUnit').textContent = `${state.lessonIds.length>1 ? raw.title+' / ' : ''}${chapter} · ${c.originalId}`;
   $('cardStatus').textContent = labels[status(c)] || 'まだ'; $('cardPosition').textContent = `${d.findIndex(x => x.id === c.id)+1} / ${d.length}枚${state.mode !== 'all' ? ' · '+labels[state.mode] : ''}`;
   $('slideTap').className = 'slide-wrap loading'; $('slideTap').setAttribute('aria-label',state.flipped ? 'タップして問題を見る' : 'タップして解答を見る');
-  $('imageStatus').textContent = '画像を読み込んでいます…'; $('knownButton').disabled = $('weakButton').disabled = $('zoomButton').disabled = true;
-  $('guide').textContent = state.flipped ? 'おぼえた／おぼえてないで次へ · 左右にスワイプでも移動' : 'タップで解答 · 左右にスワイプで移動';
+  $('imageStatus').textContent = 'ちょっと待ってにゃ🐾'; $('knownButton').disabled = $('weakButton').disabled = true;
   const img = $('slideImage'); img.alt = `${raw.title} ${c.originalId} ${state.flipped ? '解答' : '問題'}`;
-  img.onload = () => { if (token !== imageToken) return; ready = true; $('slideTap').classList.remove('loading'); $('knownButton').disabled = $('weakButton').disabled = !state.flipped; $('zoomButton').disabled = false; markSeen(); resetTimer(); };
+  img.onload = () => { if (token !== imageToken) return; ready = true; $('slideTap').classList.remove('loading'); $('knownButton').disabled = $('weakButton').disabled = !state.flipped; imageView.refresh(); markSeen(); resetTimer(); };
   img.onerror = () => { if (token !== imageToken) return; ready = false; pause(); $('slideTap').className = 'slide-wrap error'; $('imageStatus').textContent = '画像を読み込めませんでした。タップして再読み込みしてください。'; };
+  imageView.setCard(c.id);
   img.src = window.NekoImageURL(state.flipped ? c.answer : c.question); save(); updateTimerUI();
 }
 async function getLesson(m) {
@@ -223,7 +220,7 @@ async function selectLessons(ids,{resume=false} = {}) {
   if (!choices.length) { toast('目次から教材を選んでください'); showScreen('catalog'); return; }
   lesson = null; state.lessonIds = choices.map(m => m.id); state.loading = true;
   selected.clear(); for (const id of state.lessonIds) selected.add(id);
-  if (!resume) Object.assign(state,{chapter:'all',mode:'all',current:null,flipped:false,order:[],finished:false});
+  if (!resume) Object.assign(state,{chapter:'all',mode:'all',current:null,flipped:state.answerMode,order:[],finished:false});
   undo = null; showScreen('study'); render(); $('resumeNote').hidden = true;
   try {
     const raws = await Promise.all(choices.map(getLesson)); if (seq !== request) return;
@@ -239,18 +236,18 @@ async function selectLessons(ids,{resume=false} = {}) {
     showEmpty('教材を読み込めませんでした','通信を確認し、「教材の目次」から選び直してください。'); toast(e.message);
   }
 }
-function changeRange(patch) { pause(); Object.assign(state,patch,{finished:false,current:null,flipped:false}); $('resumeNote').hidden = true; render(); }
+function changeRange(patch) { pause(); Object.assign(state,patch,{finished:false,current:null,flipped:state.answerMode}); $('resumeNote').hidden = true; render(); }
 function flip() {
   if (!current() || state.loading || state.finished || screen !== 'study' || navBusy) return;
   if ($('slideTap').classList.contains('error')) { render(); return; }
   if (!ready) return; state.flipped = !state.flipped; beep(); render();
-  if (!reduced && $('slideImage').animate) $('slideImage').animate([{opacity:.55,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
+  if (!reduced && imageView.state.scale<=1.015 && $('slideImage').animate) $('slideImage').animate([{opacity:.55,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
 }
 function navigate(delta,{end=false} = {}) {
   if (!lesson || state.loading || state.finished) return;
   const d = deck(); if (!d.length) return; const i = d.findIndex(c => c.id === state.current);
   if (end && i === d.length-1) { state.finished = true; render(); return; }
-  state.current = d[(i+delta+d.length)%d.length].id; state.flipped = false; $('resumeNote').hidden = true; render();
+  state.current = d[(i+delta+d.length)%d.length].id; state.flipped = state.answerMode; $('resumeNote').hidden = true; render();
 }
 function assess(nextStatus) {
   if (!ready || !state.flipped || !current() || state.finished || navBusy) return;
@@ -258,7 +255,7 @@ function assess(nextStatus) {
   undo = {lessonId:c.lessonId,cardId:c.originalId,current:c.id,previous:prev ? {...prev} : null,chapter:state.chapter,mode:state.mode};
   data.records[c.lessonId] ??= {}; data.records[c.lessonId][c.originalId] = {...prev,status:nextStatus,attempts:(prev?.attempts||0)+1,updated:new Date().toISOString()};
   beep(nextStatus === 'known'); const after = new Set(deck().map(c => c.id)), next = d.slice(i+1).find(x => after.has(x.id));
-  state.flipped = false; if (next) state.current = next.id; else state.finished = true;
+  state.flipped = state.answerMode; if (next) state.current = next.id; else state.finished = true;
   render(); if (nextStatus === 'known') celebrate();
 }
 function celebrate() {
@@ -277,7 +274,7 @@ function pause() { playing = false; clearTimer(); updateTimerUI(); }
 function updateTimerUI() {
   const auto = $('autoMode').checked; $('timerOptions').hidden = $('timerTrack').hidden = $('playButton').hidden = !auto;
   $('playButton').textContent = playing ? 'Ⅱ 一時停止' : '▶ 再生'; $('playButton').disabled = !lesson || state.loading || state.finished || !deck().length;
-  $('timerLabel').textContent = !auto ? 'タップでめくる' : playing ? (ready ? `${state.flipped ? '解答' : '問題'} ${(remaining/1000).toFixed(1)}秒` : '画像を読み込み中') : '停止中';
+  $('timerLabel').textContent = !auto ? '' : playing ? (ready ? `${state.flipped ? '解答' : '問題'} ${(remaining/1000).toFixed(1)}秒` : 'ちょっと待ってにゃ🐾') : '停止中';
   const total = seconds(state.flipped ? 'answer' : 'question')*1000; $('timerBar').style.width = (auto ? Math.max(0,Math.min(100,remaining/total*100)) : 0)+'%';
 }
 function register(raw) {
@@ -290,8 +287,19 @@ window.NekoApp = {
   selectImported: async id => { state.subject = meta.find(m => m.id === id).subject; await selectLessons([id]); }, pause, toast,
   get state() { return {...state,lessonIds:[...state.lessonIds],order:[...state.order]}; }, get current() { return current(); }, get records() { return data.records; }
 };
+const imageView = window.createNekoImageView({
+  frame: $('slideTap'), image: $('slideImage'), resetButton: $('resetImageView'),
+  isReady: () => screen === 'study' && ready && !navBusy && !state.finished,
+  onTap: flip, onNavigate: animateNav, onPause: pause, onSnap: snapCard,
+  suppressClicks: () => { suppressUntil = performance.now()+500; },
+  onDrag: dx => { const el=$('card'); el.style.transition='none'; el.style.transform=`translateX(${dx}px) rotate(${Math.max(-7,Math.min(7,dx*.025))}deg)`; el.style.opacity=String(Math.max(.55,1-Math.abs(dx)/700)); }
+});
+for (const b of document.querySelectorAll('[data-face-mode]')) b.onclick = () => {
+  pause(); state.answerMode = b.dataset.faceMode === 'answer'; state.flipped = state.answerMode;
+  if (lesson) render(); else save();
+};
 // Screen navigation and the textbook-style table of contents.
-$('chooseLessons').onclick = () => showScreen('catalog'); $('homeButton').onclick = () => showScreen('home');
+$('chooseLessons').onclick = () => showScreen('catalog'); $('brandHome').onclick = () => showScreen('home');
 $('resumeStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
 $('openCatalog').onclick = () => showScreen('catalog'); $('returnToStudy').onclick = () => showScreen('study');
 $('startStudy').onclick = () => selectLessons(meta.filter(m => selected.has(m.id)).map(m => m.id));
@@ -307,12 +315,9 @@ $('knownButton').onclick = () => assess('known'); $('weakButton').onclick = () =
 for (const b of document.querySelectorAll('[data-mode]')) b.onclick = () => changeRange({mode:b.dataset.mode});
 $('shuffleButton').onclick = () => { state.shuffle = !state.shuffle; state.order = state.shuffle ? shuffle(lesson?.cards.map(c => c.id) || []) : lesson?.cards.map(c => c.id) || []; changeRange({}); };
 $('restartButton').onclick = () => changeRange({}); $('reviewButton').onclick = () => changeRange({mode:'weak'}); $('allButton').onclick = () => changeRange({mode:'all'});
-$('soundButton').onclick = () => { sound = !sound; save(); stats(); beep(); };
 $('autoMode').checked = !!data.neko.auto; $('autoMode').onchange = () => { pause(); data.neko.auto = $('autoMode').checked; save(); resetTimer(); };
 for (const face of ['question','answer']) { $(face+'Seconds').value = seconds(face); $(face+'Seconds').onchange = e => { pause(); const n = Number(e.target.value); data.neko[face+'Seconds'] = Number.isFinite(n) ? Math.round(Math.min(120,Math.max(.5,n))*10)/10 : (face==='question'?3:2); e.target.value = data.neko[face+'Seconds']; save(); resetTimer(); }; }
 $('playButton').onclick = () => { if (playing) pause(); else { playing = true; resetTimer(); } };
-$('zoomButton').onclick = () => { if (!ready) return; pause(); $('zoomImage').src = $('slideImage').src; $('zoomImage').alt = $('slideImage').alt; $('zoomTitle').textContent = $('slideImage').alt; $('zoomScroll').classList.remove('enlarged'); $('zoomSize').textContent = '原寸で見る'; $('zoomDialog').showModal(); };
-$('zoomSize').onclick = () => { const on = $('zoomScroll').classList.toggle('enlarged'); $('zoomSize').textContent = on ? '画面に合わせる' : '原寸で見る'; };
 for (const b of document.querySelectorAll('[data-close]')) b.onclick = () => $(b.dataset.close).close();
 document.addEventListener('visibilitychange',() => { if (document.hidden) pause(); else { stats(); markSeen(); } }); window.addEventListener('pagehide',save);
 document.addEventListener('keydown',e => {
@@ -332,42 +337,6 @@ function animateNav(direction) {
     requestAnimationFrame(() => requestAnimationFrame(() => { snapCard(); navBusy = false; }));
   },140);
 }
-$('card').addEventListener('pointerdown',e => {
-  if (screen !== 'study' || !ready || navBusy || e.isPrimary === false || (e.pointerType === 'mouse' && e.button !== 0) || e.target.closest('button,a,input')) return;
-  drag = {id:e.pointerId,x:e.clientX,y:e.clientY,dx:0,dy:0,peak:0,lock:null,start:performance.now()};
-});
-$('card').addEventListener('touchmove',e => {
-  if (!drag || e.touches.length !== 1) return;
-  const t = e.touches[0], dx = Math.abs(t.clientX-drag.x), dy = Math.abs(t.clientY-drag.y);
-  if (drag.lock === 'h' || (drag.lock === null && dx>4 && dx>dy*1.1)) { if (e.cancelable) e.preventDefault(); }
-},{passive:false});
-$('card').addEventListener('touchstart',e => { if (e.touches.length>1) { drag = null; snapCard(); } },{passive:true});
-window.addEventListener('pointermove',e => {
-  if (!drag || drag.id !== e.pointerId) return; drag.dx = e.clientX-drag.x; drag.dy = e.clientY-drag.y;
-  const ax = Math.abs(drag.dx), ay = Math.abs(drag.dy);
-  if (!drag.lock && (ax>6 || ay>6)) { drag.lock = ax>ay*1.1 ? 'h' : 'v'; if (drag.lock === 'h') { pause(); try { $('card').setPointerCapture(e.pointerId); } catch {} } }
-  if (drag.lock !== 'h') return; if (ax>Math.abs(drag.peak)) drag.peak = drag.dx;
-  const el = $('card'); el.style.transition = 'none'; el.style.transform = `translateX(${drag.dx}px) rotate(${Math.max(-7,Math.min(7,drag.dx*.025))}deg)`; el.style.opacity = String(Math.max(.55,1-ax/700));
-});
-function endDrag(e,cancelled=false) {
-  if (!drag || drag.id !== e.pointerId) return;
-  const d = drag; drag = null; try { $('card').releasePointerCapture(e.pointerId); } catch {}
-  // pointerup coordinates also cover quick flicks with few pointermove events.
-  const dx = cancelled ? d.dx : e.clientX-d.x, dy = cancelled ? d.dy : e.clientY-d.y;
-  const ax = Math.abs(dx), ay = Math.abs(dy), horizontal = d.lock === 'h' || (!d.lock && ax>12 && ax>ay*1.3);
-  if (horizontal) {
-    suppressUntil = performance.now()+500;
-    const velocity = ax/Math.max(1,performance.now()-d.start);
-    const pass = cancelled ? ax>36 && ax>ay*1.1 : (ax>=28 || (ax>=14 && velocity>.25)) && ax>ay*1.1;
-    if (pass) { animateNav(dx<0 ? 1 : -1); return; }
-  }
-  // Scrolling or a drag that did not travel far enough must never flip a card.
-  if (ax>8 || ay>8) suppressUntil = performance.now()+400;
-  snapCard();
-}
-window.addEventListener('pointerup',e => endDrag(e)); window.addEventListener('pointercancel',e => endDrag(e,true));
-window.addEventListener('blur',() => { drag = null; snapCard(); pause(); });
-$('slideImage').addEventListener('dragstart',e => e.preventDefault());
 $('backupButton').onclick = () => {
   const blob = new Blob([JSON.stringify({format:'nekopon-progress-v1',records:data.records,neko:data.neko},null,2)],{type:'application/json'}), url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = 'nekopon-progress-'+dateKey()+'.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url),1000);
 };

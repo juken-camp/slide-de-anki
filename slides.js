@@ -24,6 +24,7 @@ const fields = {
   integrated_science: ['総合','🔬'], geography: ['地理','🌏'], history: ['歴史','🏯'], civics: ['公民','⚖️']
 };
 let lesson = null, screen = 'home', request = 0, imageToken = 0, ready = false, undo = null;
+let soundEnabled = data.neko.soundEnabled !== false, audio = null, lastTapSound = -1000;
 let playing = false, timer = null, remaining = 0, lastTick = 0;
 let noticeTimer, suppressUntil = 0, navBusy = false;
 let browse = 'grade', catalogFilter = 'all';
@@ -34,12 +35,59 @@ function save() {
   data.neko.resume = { subject: state.subject, lessonIds: state.lessonIds, lessonId: state.lessonId,
     chapter: state.chapter, mode: state.mode, current: state.current, flipped: state.flipped,
     order: state.order, shuffle: state.shuffle, finished: state.finished };
-  data.neko.sound = false; data.neko.answerMode = state.answerMode;
+  data.neko.sound = soundEnabled; data.neko.soundEnabled = soundEnabled; data.neko.answerMode = state.answerMode;
   try { localStorage.setItem(KEY, JSON.stringify(data)); }
   catch { $('saveWarning').hidden = false; $('saveWarning').textContent = '学習記録を保存できません。ブラウザーの空き容量・保存設定を確認してください。'; }
 }
 function toast(s) { $('notice').textContent = s; $('notice').classList.add('show'); clearTimeout(noticeTimer); noticeTimer = setTimeout(() => $('notice').classList.remove('show'), 2600); }
-function beep() {}
+function unlockAudio() {
+  if (!soundEnabled) return null;
+  try {
+    if (!audio || audio.state === 'closed') { const Context = window.AudioContext || window.webkitAudioContext; if (!Context) return null; audio = new Context(); }
+    if (audio.state === 'suspended') audio.resume().catch(() => {});
+    return audio;
+  } catch { return null; }
+}
+function beep(kind = 'tap') {
+  if (!soundEnabled || document.hidden) return;
+  const context = unlockAudio(); if (!context) return;
+  const now = performance.now();
+  if (kind === 'tap' && now-lastTapSound < 45) return;
+  if (kind === 'tap') lastTapSound = now;
+  const notes = {
+    tap: [[620,420,0,.045,.027,'sine']],
+    flip: [[500,760,0,.075,.03,'triangle']],
+    move: [[430,550,0,.055,.025,'sine']],
+    weak: [[440,390,0,.085,.028,'sine']],
+    known: [[660,660,0,.095,.032,'triangle'],[880,880,.065,.1,.029,'triangle'],[1046,1046,.13,.14,.026,'sine']],
+    milestone: [[523,523,0,.11,.032,'sine'],[659,659,.085,.11,.03,'sine'],[784,784,.17,.11,.029,'sine'],[1046,1046,.255,.18,.027,'sine']]
+  }[kind] || [[620,420,0,.045,.027,'sine']];
+  try {
+    for (const [start,end,delay,duration,volume,type] of notes) {
+      const oscillator = context.createOscillator(), gain = context.createGain(), at = context.currentTime+delay;
+      oscillator.type = type; oscillator.frequency.setValueAtTime(start,at); oscillator.frequency.exponentialRampToValueAtTime(end,at+duration);
+      gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(volume,at+.006); gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
+      oscillator.connect(gain); gain.connect(context.destination); oscillator.start(at); oscillator.stop(at+duration+.015);
+      oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
+    }
+  } catch {}
+}
+function tapSpark(button,event) {
+  if (reduced) return;
+  const rect=button.getBoundingClientRect(), particle=document.createElement('span');
+  particle.className='neko-tap-ring'; particle.setAttribute('aria-hidden','true');
+  particle.style.left=(event.clientX || rect.left+rect.width/2)+'px'; particle.style.top=(event.clientY || rect.top+rect.height/2)+'px';
+  $('app').append(particle); setTimeout(() => particle.remove(),420);
+}
+// Unlock sound inside a user gesture on iPhone as well as desktop browsers.
+document.addEventListener('pointerdown',unlockAudio,{passive:true});
+document.addEventListener('keydown',unlockAudio,{passive:true});
+document.addEventListener('click',event => {
+  const control=event.target.closest('button,summary,a');
+  if (!control || control.disabled) return;
+  if (!['knownButton','weakButton','prevButton','nextButton'].includes(control.id)) beep('tap');
+  tapSpark(control,event);
+},true);
 
 function status(c) { return data.records[c.lessonId]?.[c.originalId]?.status || 'unmarked'; }
 function counts(cards) { return cards.reduce((r,c) => { const s = status(c); r[s] = (r[s] || 0)+1; return r; }, { known: 0, weak: 0, unmarked: 0 }); }
@@ -49,6 +97,7 @@ function knownFor(m) {
 }
 function stats() {
   const known = meta.reduce((n,m) => n + knownFor(m), 0);
+  $('soundToggle').checked = soundEnabled;
   $('dailyCount').textContent = (data.neko.daily[dateKey()] || []).length;
   $('knownCount').textContent = known; $('levelCount').textContent = 1 + Math.floor(known/10);
   $('resumeStudy').hidden = !state.lessonIds.some(id => meta.some(m => m.id === id)) || !state.current;
@@ -123,7 +172,7 @@ function renderCatalog() {
       const progressLine = document.createElement('i'); const known = knownFor(m); progressLine.style.width = `${m.count ? known/m.count*100 : 0}%`; progress.append(progressLine);
       const record = document.createElement('span'); record.className = 'choice-record'; record.textContent = `おぼえた ${known} / ${m.count}`;
       copy.append(title,sub,progress,record); row.append(check,copy);
-      row.onclick = () => { if (selected.has(m.id)) selected.delete(m.id); else selected.add(m.id); beep(); renderCatalog(); };
+      row.onclick = () => { if (selected.has(m.id)) selected.delete(m.id); else selected.add(m.id); renderCatalog(); };
       list.append(row);
     }
     section.append(list); $('catalogGroups').append(section);
@@ -158,7 +207,7 @@ function markSeen() {
   const entries = data.neko.daily[dateKey()] ??= [];
   if (!entries.includes(c.id)) {
     entries.push(c.id); const days = Object.keys(data.neko.daily).sort(); for (const d of days.slice(0,-31)) delete data.neko.daily[d];
-    if (entries.length%10 === 0) { toast(`🐾 今日は${entries.length}枚の解答を確認しました！`); beep(true); }
+    if (entries.length%10 === 0) { toast(`🐾 今日は${entries.length}枚の解答を確認しました！`); beep('milestone'); }
     save(); stats();
   }
 }
@@ -240,7 +289,7 @@ function changeRange(patch) { pause(); Object.assign(state,patch,{finished:false
 function flip() {
   if (!current() || state.loading || state.finished || screen !== 'study' || navBusy) return;
   if ($('slideTap').classList.contains('error')) { render(); return; }
-  if (!ready) return; state.flipped = !state.flipped; beep(); render();
+  if (!ready) return; state.flipped = !state.flipped; beep('flip'); render();
   if (!reduced && imageView.state.scale<=1.015 && $('slideImage').animate) $('slideImage').animate([{opacity:.55,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
 }
 function navigate(delta,{end=false} = {}) {
@@ -254,12 +303,13 @@ function assess(nextStatus) {
   const c = current(), d = deck(), i = d.findIndex(x => x.id === c.id), prev = data.records[c.lessonId]?.[c.originalId];
   undo = {lessonId:c.lessonId,cardId:c.originalId,current:c.id,previous:prev ? {...prev} : null,chapter:state.chapter,mode:state.mode};
   data.records[c.lessonId] ??= {}; data.records[c.lessonId][c.originalId] = {...prev,status:nextStatus,attempts:(prev?.attempts||0)+1,updated:new Date().toISOString()};
-  beep(nextStatus === 'known'); const after = new Set(deck().map(c => c.id)), next = d.slice(i+1).find(x => after.has(x.id));
+  beep(nextStatus === 'known' ? 'known' : 'weak'); const after = new Set(deck().map(c => c.id)), next = d.slice(i+1).find(x => after.has(x.id));
   state.flipped = state.answerMode; if (next) state.current = next.id; else state.finished = true;
   render(); if (nextStatus === 'known') celebrate();
 }
 function celebrate() {
-  if (reduced) return; const node = document.createElement('span'); node.className = 'remembered-paw'; node.textContent = '🐾'; node.setAttribute('aria-hidden','true'); $('app').append(node); setTimeout(() => node.remove(),900);
+  if (reduced) return;
+  $('knownButton').classList.remove('celebrate'); requestAnimationFrame(() => $('knownButton').classList.add('celebrate')); setTimeout(() => $('knownButton').classList.remove('celebrate'),650); const node = document.createElement('span'); node.className = 'remembered-paw'; node.textContent = '🐾'; node.setAttribute('aria-hidden','true'); $('app').append(node); setTimeout(() => node.remove(),900);
 }
 function undoAssessment() {
   if (!undo) return; pause(); const u = undo; undo = null;
@@ -315,6 +365,7 @@ $('knownButton').onclick = () => assess('known'); $('weakButton').onclick = () =
 for (const b of document.querySelectorAll('[data-mode]')) b.onclick = () => changeRange({mode:b.dataset.mode});
 $('shuffleButton').onclick = () => { state.shuffle = !state.shuffle; state.order = state.shuffle ? shuffle(lesson?.cards.map(c => c.id) || []) : lesson?.cards.map(c => c.id) || []; changeRange({}); };
 $('restartButton').onclick = () => changeRange({}); $('reviewButton').onclick = () => changeRange({mode:'weak'}); $('allButton').onclick = () => changeRange({mode:'all'});
+$('soundToggle').onchange = () => { soundEnabled = $('soundToggle').checked; save(); if (soundEnabled) beep('tap'); };
 $('autoMode').checked = !!data.neko.auto; $('autoMode').onchange = () => { pause(); data.neko.auto = $('autoMode').checked; save(); resetTimer(); };
 for (const face of ['question','answer']) { $(face+'Seconds').value = seconds(face); $(face+'Seconds').onchange = e => { pause(); const n = Number(e.target.value); data.neko[face+'Seconds'] = Number.isFinite(n) ? Math.round(Math.min(120,Math.max(.5,n))*10)/10 : (face==='question'?3:2); e.target.value = data.neko[face+'Seconds']; save(); resetTimer(); }; }
 $('playButton').onclick = () => { if (playing) pause(); else { playing = true; resetTimer(); } };
@@ -328,7 +379,7 @@ document.addEventListener('keydown',e => {
 function snapCard() { const el = $('card'); el.style.transition = reduced ? 'none' : 'transform .24s ease, opacity .24s ease'; el.style.transform = ''; el.style.opacity = ''; }
 function animateNav(direction) {
   if (!lesson || state.loading || state.finished || navBusy || deck().length < 2) { snapCard(); return; }
-  pause(); navBusy = true; const el = $('card');
+  beep('move'); pause(); navBusy = true; const el = $('card');
   if (reduced) { navigate(direction); snapCard(); navBusy = false; return; }
   const distance = Math.min(180, el.offsetWidth*.45 || 140);
   el.style.transition = 'transform .14s ease-in, opacity .14s ease-in'; el.style.transform = `translateX(${-direction*distance}px) rotate(${-direction*4}deg)`; el.style.opacity = '0';

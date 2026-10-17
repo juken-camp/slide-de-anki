@@ -692,5 +692,193 @@ window.QUIZ_CATALOG = [
     "count": 26,
     "data": "lessons/science-earth-future-grade3-01.json",
     "source": "https://www.youtube.com/watch?v=Z9h5DyPsFEs"
+  },
+  {
+    "id": "social-civics-modern-international-grade3-01",
+    "subject": "social",
+    "field": "civics",
+    "title": "現代社会と国際社会",
+    "grade": "中3社会",
+    "description": "現代社会の変化、情報社会、文化と社会生活、国際社会のしくみを図解で学ぶ教材。",
+    "cover": "images_05/modern-international/question_001.png",
+    "chapters": [
+      {
+        "id": "modern-society",
+        "title": "現代社会と私たちの生活"
+      },
+      {
+        "id": "international-society",
+        "title": "国際社会と国際協力"
+      },
+      {
+        "id": "global-issues",
+        "title": "地球環境と国際的課題"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=AvTxr9PRppM",
+    "count": 29,
+    "data": "lessons/social-civics-modern-international-grade3-01.json"
+  },
+  {
+    "id": "social-civics-japan-constitution-grade3-02",
+    "subject": "social",
+    "field": "civics",
+    "title": "日本国憲法",
+    "grade": "中3社会",
+    "description": "日本国憲法の成立と基本原理、基本的人権や国民の義務などを図解で学ぶ教材。",
+    "cover": "images_05/japan-constitution/question_001.png",
+    "chapters": [
+      {
+        "id": "constitution-history",
+        "title": "憲法の成立と役割"
+      },
+      {
+        "id": "basic-principles",
+        "title": "日本国憲法の基本原理"
+      },
+      {
+        "id": "human-rights",
+        "title": "基本的人権"
+      },
+      {
+        "id": "duties",
+        "title": "国民の義務"
+      },
+      {
+        "id": "new-rights",
+        "title": "新しい人権と世界人権宣言"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=HyCNJIHrnQE",
+    "count": 26,
+    "data": "lessons/social-civics-japan-constitution-grade3-02.json"
+  },
+  {
+    "id": "social-civics-politics-institutions-grade3-03",
+    "subject": "social",
+    "field": "civics",
+    "title": "政治・国会・内閣・裁判所・地方自治体",
+    "grade": "中3社会",
+    "description": "民主政治、選挙、国会と内閣、裁判所、地方自治などを図解で学ぶ教材。",
+    "cover": "images_05/politics-institutions/question_001.png",
+    "chapters": [
+      {
+        "id": "diet-elections-parties",
+        "title": "国会・選挙・政党"
+      },
+      {
+        "id": "powers-cabinet",
+        "title": "三権分立と内閣"
+      },
+      {
+        "id": "courts",
+        "title": "裁判所"
+      },
+      {
+        "id": "local-government",
+        "title": "地方自治"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=CsKYSCpK-tw",
+    "count": 27,
+    "data": "lessons/social-civics-politics-institutions-grade3-03.json"
+  },
+  {
+    "id": "social-civics-economy-consumption-welfare-grade3-04",
+    "subject": "social",
+    "field": "civics",
+    "title": "経済・消費・金融・市場・福祉",
+    "grade": "中3社会",
+    "description": "消費と流通、企業と労働、金融と税金、社会保障、環境と為替を図解で学ぶ教材。",
+    "cover": "images_05/economy-consumption-welfare/question_001.png",
+    "chapters": [
+      {
+        "id": "consumption-enterprises",
+        "title": "消費・企業・労働"
+      },
+      {
+        "id": "finance-tax",
+        "title": "金融と税金"
+      },
+      {
+        "id": "social-security",
+        "title": "社会保障と福祉"
+      },
+      {
+        "id": "environment",
+        "title": "環境と循環型社会"
+      },
+      {
+        "id": "foreign-exchange",
+        "title": "為替と円高"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=Lc9rt4CkIgo",
+    "count": 29,
+    "data": "lessons/social-civics-economy-consumption-welfare-grade3-04.json"
+  },
+  {
+    "id": "social-civics-constitution-politics-grade3-01",
+    "subject": "social",
+    "field": "civics",
+    "title": "公民 前編｜日本国憲法・国会と内閣・裁判所・地方自治",
+    "grade": "中3社会",
+    "description": "現代社会と私たちの生活、人権思想と日本国憲法、民主政治、国会と内閣、裁判所・三権分立、地方自治を図解で学ぶ111問。",
+    "cover": "images_05/civics-first-half/question_001.png",
+    "chapters": [
+      {
+        "id": "modern-society",
+        "title": "現代社会と私たちの生活"
+      },
+      {
+        "id": "constitution-rights",
+        "title": "人権思想と日本国憲法"
+      },
+      {
+        "id": "democracy",
+        "title": "現代の民主政治"
+      },
+      {
+        "id": "diet-cabinet",
+        "title": "国会と内閣"
+      },
+      {
+        "id": "courts-powers",
+        "title": "裁判所・三権分立"
+      },
+      {
+        "id": "local-government",
+        "title": "地方の政治と自治"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=UTXnqVR1v4w",
+    "count": 111,
+    "data": "lessons/social-civics-constitution-politics-grade3-01.json"
+  },
+  {
+    "id": "social-civics-economy-welfare-global-grade3-02",
+    "subject": "social",
+    "field": "civics",
+    "title": "公民 後編｜経済・福祉・地球社会",
+    "grade": "中3社会",
+    "description": "私たちの生活と経済、企業と金融、財政と社会保障、国際社会を図解で学ぶ教材。",
+    "cover": "images_05/civics-second-half/question_001.png",
+    "chapters": [
+      {
+        "id": "economy",
+        "title": "経済"
+      },
+      {
+        "id": "welfare",
+        "title": "福祉"
+      },
+      {
+        "id": "global-society",
+        "title": "地球社会"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=jXh-urpZd9Y",
+    "count": 82,
+    "data": "lessons/social-civics-economy-welfare-global-grade3-02.json"
   }
 ];

@@ -1,0 +1,300 @@
+{
+  "id": "social-civics-politics-institutions-grade3-03",
+  "subject": "social",
+  "field": "civics",
+  "title": "政治・国会・内閣・裁判所・地方自治体",
+  "grade": "中3社会",
+  "description": "民主政治、選挙、国会と内閣、裁判所、地方自治などを図解で学ぶ教材。",
+  "cover": "images_05/politics-institutions/question_001.png",
+  "chapters": [
+    {
+      "id": "diet-elections-parties",
+      "title": "国会・選挙・政党"
+    },
+    {
+      "id": "powers-cabinet",
+      "title": "三権分立と内閣"
+    },
+    {
+      "id": "courts",
+      "title": "裁判所"
+    },
+    {
+      "id": "local-government",
+      "title": "地方自治"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "diet-elections-parties",
+      "question": "images_05/politics-institutions/question_001.png",
+      "answer": "images_05/politics-institutions/answer_001.png",
+      "sourceTimes": {
+        "question": 20.7,
+        "answer": 28.2
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "diet-elections-parties",
+      "question": "images_05/politics-institutions/question_002.png",
+      "answer": "images_05/politics-institutions/answer_002.png",
+      "sourceTimes": {
+        "question": 35.5,
+        "answer": 43.9
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "diet-elections-parties",
+      "question": "images_05/politics-institutions/question_003.png",
+      "answer": "images_05/politics-institutions/answer_003.png",
+      "sourceTimes": {
+        "question": 50.7,
+        "answer": 58.3
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "diet-elections-parties",
+      "question": "images_05/politics-institutions/question_004.png",
+      "answer": "images_05/politics-institutions/answer_004.png",
+      "sourceTimes": {
+        "question": 65.8,
+        "answer": 74.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "diet-elections-parties",
+      "question": "images_05/politics-institutions/question_005.png",
+      "answer": "images_05/politics-institutions/answer_005.png",
+      "sourceTimes": {
+        "question": 79.6,
+        "answer": 85.9
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "diet-elections-parties",
+      "question": "images_05/politics-institutions/question_006.png",
+      "answer": "images_05/politics-institutions/answer_006.png",
+      "sourceTimes": {
+        "question": 92.7,
+        "answer": 100.7
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "diet-elections-parties",
+      "question": "images_05/politics-institutions/question_007.png",
+      "answer": "images_05/politics-institutions/answer_007.png",
+      "sourceTimes": {
+        "question": 107.1,
+        "answer": 114.7
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "diet-elections-parties",
+      "question": "images_05/politics-institutions/question_008.png",
+      "answer": "images_05/politics-institutions/answer_008.png",
+      "sourceTimes": {
+        "question": 123.5,
+        "answer": 134.3
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "powers-cabinet",
+      "question": "images_05/politics-institutions/question_009.png",
+      "answer": "images_05/politics-institutions/answer_009.png",
+      "sourceTimes": {
+        "question": 144.4,
+        "answer": 154.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "powers-cabinet",
+      "question": "images_05/politics-institutions/question_010.png",
+      "answer": "images_05/politics-institutions/answer_010.png",
+      "sourceTimes": {
+        "question": 162.3,
+        "answer": 170.4
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "powers-cabinet",
+      "question": "images_05/politics-institutions/question_011.png",
+      "answer": "images_05/politics-institutions/answer_011.png",
+      "sourceTimes": {
+        "question": 177.7,
+        "answer": 186.2
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "powers-cabinet",
+      "question": "images_05/politics-institutions/question_012.png",
+      "answer": "images_05/politics-institutions/answer_012.png",
+      "sourceTimes": {
+        "question": 194.3,
+        "answer": 203.3
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "powers-cabinet",
+      "question": "images_05/politics-institutions/question_013.png",
+      "answer": "images_05/politics-institutions/answer_013.png",
+      "sourceTimes": {
+        "question": 210.6,
+        "answer": 218.8
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "powers-cabinet",
+      "question": "images_05/politics-institutions/question_014.png",
+      "answer": "images_05/politics-institutions/answer_014.png",
+      "sourceTimes": {
+        "question": 227.1,
+        "answer": 236.8
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "powers-cabinet",
+      "question": "images_05/politics-institutions/question_015.png",
+      "answer": "images_05/politics-institutions/answer_015.png",
+      "sourceTimes": {
+        "question": 244.7,
+        "answer": 253.4
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "courts",
+      "question": "images_05/politics-institutions/question_016.png",
+      "answer": "images_05/politics-institutions/answer_016.png",
+      "sourceTimes": {
+        "question": 260.8,
+        "answer": 269.2
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "courts",
+      "question": "images_05/politics-institutions/question_017.png",
+      "answer": "images_05/politics-institutions/answer_017.png",
+      "sourceTimes": {
+        "question": 277.2,
+        "answer": 286.2
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "courts",
+      "question": "images_05/politics-institutions/question_018.png",
+      "answer": "images_05/politics-institutions/answer_018.png",
+      "sourceTimes": {
+        "question": 293.7,
+        "answer": 301.6
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "courts",
+      "question": "images_05/politics-institutions/question_019.png",
+      "answer": "images_05/politics-institutions/answer_019.png",
+      "sourceTimes": {
+        "question": 308.2,
+        "answer": 315.9
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "courts",
+      "question": "images_05/politics-institutions/question_020.png",
+      "answer": "images_05/politics-institutions/answer_020.png",
+      "sourceTimes": {
+        "question": 323.3,
+        "answer": 332.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "courts",
+      "question": "images_05/politics-institutions/question_021.png",
+      "answer": "images_05/politics-institutions/answer_021.png",
+      "sourceTimes": {
+        "question": 340.5,
+        "answer": 349.1
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "courts",
+      "question": "images_05/politics-institutions/question_022.png",
+      "answer": "images_05/politics-institutions/answer_022.png",
+      "sourceTimes": {
+        "question": 356.1,
+        "answer": 363.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "local-government",
+      "question": "images_05/politics-institutions/question_023.png",
+      "answer": "images_05/politics-institutions/answer_023.png",
+      "sourceTimes": {
+        "question": 372.1,
+        "answer": 381.1
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "local-government",
+      "question": "images_05/politics-institutions/question_024.png",
+      "answer": "images_05/politics-institutions/answer_024.png",
+      "sourceTimes": {
+        "question": 388.1,
+        "answer": 396.2
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "local-government",
+      "question": "images_05/politics-institutions/question_025.png",
+      "answer": "images_05/politics-institutions/answer_025.png",
+      "sourceTimes": {
+        "question": 404.4,
+        "answer": 413.6
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "local-government",
+      "question": "images_05/politics-institutions/question_026.png",
+      "answer": "images_05/politics-institutions/answer_026.png",
+      "sourceTimes": {
+        "question": 422.7,
+        "answer": 432.6
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "local-government",
+      "question": "images_05/politics-institutions/question_027.png",
+      "answer": "images_05/politics-institutions/answer_027.png",
+      "sourceTimes": {
+        "question": 440.8,
+        "answer": 449.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=CsKYSCpK-tw"
+}

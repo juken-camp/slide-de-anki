@@ -1,0 +1,294 @@
+{
+  "id": "social-civics-japan-constitution-grade3-02",
+  "subject": "social",
+  "field": "civics",
+  "title": "日本国憲法",
+  "grade": "中3社会",
+  "description": "日本国憲法の成立と基本原理、基本的人権や国民の義務などを図解で学ぶ教材。",
+  "cover": "images_05/japan-constitution/question_001.png",
+  "chapters": [
+    {
+      "id": "constitution-history",
+      "title": "憲法の成立と役割"
+    },
+    {
+      "id": "basic-principles",
+      "title": "日本国憲法の基本原理"
+    },
+    {
+      "id": "human-rights",
+      "title": "基本的人権"
+    },
+    {
+      "id": "duties",
+      "title": "国民の義務"
+    },
+    {
+      "id": "new-rights",
+      "title": "新しい人権と世界人権宣言"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "constitution-history",
+      "question": "images_05/japan-constitution/question_001.png",
+      "answer": "images_05/japan-constitution/answer_001.png",
+      "sourceTimes": {
+        "question": 19.1,
+        "answer": 25.6
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "constitution-history",
+      "question": "images_05/japan-constitution/question_002.png",
+      "answer": "images_05/japan-constitution/answer_002.png",
+      "sourceTimes": {
+        "question": 32.0,
+        "answer": 40.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "constitution-history",
+      "question": "images_05/japan-constitution/question_003.png",
+      "answer": "images_05/japan-constitution/answer_003.png",
+      "sourceTimes": {
+        "question": 48.7,
+        "answer": 58.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "constitution-history",
+      "question": "images_05/japan-constitution/question_004.png",
+      "answer": "images_05/japan-constitution/answer_004.png",
+      "sourceTimes": {
+        "question": 66.8,
+        "answer": 76.2
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "constitution-history",
+      "question": "images_05/japan-constitution/question_005.png",
+      "answer": "images_05/japan-constitution/answer_005.png",
+      "sourceTimes": {
+        "question": 83.7,
+        "answer": 92.2
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "constitution-history",
+      "question": "images_05/japan-constitution/question_006.png",
+      "answer": "images_05/japan-constitution/answer_006.png",
+      "sourceTimes": {
+        "question": 100.9,
+        "answer": 110.4
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "basic-principles",
+      "question": "images_05/japan-constitution/question_007.png",
+      "answer": "images_05/japan-constitution/answer_007.png",
+      "sourceTimes": {
+        "question": 118.9,
+        "answer": 128.4
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "basic-principles",
+      "question": "images_05/japan-constitution/question_008.png",
+      "answer": "images_05/japan-constitution/answer_008.png",
+      "sourceTimes": {
+        "question": 136.9,
+        "answer": 145.9
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "basic-principles",
+      "question": "images_05/japan-constitution/question_009.png",
+      "answer": "images_05/japan-constitution/answer_009.png",
+      "sourceTimes": {
+        "question": 154.1,
+        "answer": 164.1
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "basic-principles",
+      "question": "images_05/japan-constitution/question_010.png",
+      "answer": "images_05/japan-constitution/answer_010.png",
+      "sourceTimes": {
+        "question": 172.0,
+        "answer": 180.2
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "basic-principles",
+      "question": "images_05/japan-constitution/question_011.png",
+      "answer": "images_05/japan-constitution/answer_011.png",
+      "sourceTimes": {
+        "question": 189.0,
+        "answer": 199.4
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "basic-principles",
+      "question": "images_05/japan-constitution/question_012.png",
+      "answer": "images_05/japan-constitution/answer_012.png",
+      "sourceTimes": {
+        "question": 207.1,
+        "answer": 216.1
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "basic-principles",
+      "question": "images_05/japan-constitution/question_013.png",
+      "answer": "images_05/japan-constitution/answer_013.png",
+      "sourceTimes": {
+        "question": 224.3,
+        "answer": 234.9
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "basic-principles",
+      "question": "images_05/japan-constitution/question_014.png",
+      "answer": "images_05/japan-constitution/answer_014.png",
+      "sourceTimes": {
+        "question": 244.4,
+        "answer": 254.4
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "human-rights",
+      "question": "images_05/japan-constitution/question_015.png",
+      "answer": "images_05/japan-constitution/answer_015.png",
+      "sourceTimes": {
+        "question": 263.5,
+        "answer": 273.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "human-rights",
+      "question": "images_05/japan-constitution/question_016.png",
+      "answer": "images_05/japan-constitution/answer_016.png",
+      "sourceTimes": {
+        "question": 281.9,
+        "answer": 292.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "human-rights",
+      "question": "images_05/japan-constitution/question_017.png",
+      "answer": "images_05/japan-constitution/answer_017.png",
+      "sourceTimes": {
+        "question": 300.3,
+        "answer": 308.4
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "human-rights",
+      "question": "images_05/japan-constitution/question_018.png",
+      "answer": "images_05/japan-constitution/answer_018.png",
+      "sourceTimes": {
+        "question": 317.5,
+        "answer": 327.4
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "human-rights",
+      "question": "images_05/japan-constitution/question_019.png",
+      "answer": "images_05/japan-constitution/answer_019.png",
+      "sourceTimes": {
+        "question": 335.6,
+        "answer": 344.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "duties",
+      "question": "images_05/japan-constitution/question_020.png",
+      "answer": "images_05/japan-constitution/answer_020.png",
+      "sourceTimes": {
+        "question": 352.4,
+        "answer": 362.6
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "duties",
+      "question": "images_05/japan-constitution/question_021.png",
+      "answer": "images_05/japan-constitution/answer_021.png",
+      "sourceTimes": {
+        "question": 369.4,
+        "answer": 376.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "duties",
+      "question": "images_05/japan-constitution/question_022.png",
+      "answer": "images_05/japan-constitution/answer_022.png",
+      "sourceTimes": {
+        "question": 382.9,
+        "answer": 390.4
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "new-rights",
+      "question": "images_05/japan-constitution/question_023.png",
+      "answer": "images_05/japan-constitution/answer_023.png",
+      "sourceTimes": {
+        "question": 399.3,
+        "answer": 409.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "new-rights",
+      "question": "images_05/japan-constitution/question_024.png",
+      "answer": "images_05/japan-constitution/answer_024.png",
+      "sourceTimes": {
+        "question": 417.4,
+        "answer": 426.7
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "new-rights",
+      "question": "images_05/japan-constitution/question_025.png",
+      "answer": "images_05/japan-constitution/answer_025.png",
+      "sourceTimes": {
+        "question": 434.2,
+        "answer": 442.9
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "new-rights",
+      "question": "images_05/japan-constitution/question_026.png",
+      "answer": "images_05/japan-constitution/answer_026.png",
+      "sourceTimes": {
+        "question": 453.5,
+        "answer": 464.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=HyCNJIHrnQE"
+}

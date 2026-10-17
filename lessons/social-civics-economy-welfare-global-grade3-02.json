@@ -1,0 +1,846 @@
+{
+  "id": "social-civics-economy-welfare-global-grade3-02",
+  "subject": "social",
+  "field": "civics",
+  "title": "公民 後編｜経済・福祉・地球社会",
+  "grade": "中3社会",
+  "description": "私たちの生活と経済、企業と金融、財政と社会保障、国際社会を図解で学ぶ教材。",
+  "cover": "images_05/civics-second-half/question_001.png",
+  "chapters": [
+    {
+      "id": "economy",
+      "title": "経済"
+    },
+    {
+      "id": "welfare",
+      "title": "福祉"
+    },
+    {
+      "id": "global-society",
+      "title": "地球社会"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_001.png",
+      "answer": "images_05/civics-second-half/answer_001.png",
+      "sourceTimes": {
+        "question": 25.9,
+        "answer": 32.7
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_002.png",
+      "answer": "images_05/civics-second-half/answer_002.png",
+      "sourceTimes": {
+        "question": 40.7,
+        "answer": 49.3
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_003.png",
+      "answer": "images_05/civics-second-half/answer_003.png",
+      "sourceTimes": {
+        "question": 55.3,
+        "answer": 62.2
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_004.png",
+      "answer": "images_05/civics-second-half/answer_004.png",
+      "sourceTimes": {
+        "question": 68.3,
+        "answer": 74.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_005.png",
+      "answer": "images_05/civics-second-half/answer_005.png",
+      "sourceTimes": {
+        "question": 81.7,
+        "answer": 89.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_006.png",
+      "answer": "images_05/civics-second-half/answer_006.png",
+      "sourceTimes": {
+        "question": 97.3,
+        "answer": 105.8
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_007.png",
+      "answer": "images_05/civics-second-half/answer_007.png",
+      "sourceTimes": {
+        "question": 111.8,
+        "answer": 117.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_008.png",
+      "answer": "images_05/civics-second-half/answer_008.png",
+      "sourceTimes": {
+        "question": 123.0,
+        "answer": 128.4
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_009.png",
+      "answer": "images_05/civics-second-half/answer_009.png",
+      "sourceTimes": {
+        "question": 134.7,
+        "answer": 141.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_010.png",
+      "answer": "images_05/civics-second-half/answer_010.png",
+      "sourceTimes": {
+        "question": 151.3,
+        "answer": 161.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_011.png",
+      "answer": "images_05/civics-second-half/answer_011.png",
+      "sourceTimes": {
+        "question": 169.0,
+        "answer": 177.1
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_012.png",
+      "answer": "images_05/civics-second-half/answer_012.png",
+      "sourceTimes": {
+        "question": 183.0,
+        "answer": 189.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_013.png",
+      "answer": "images_05/civics-second-half/answer_013.png",
+      "sourceTimes": {
+        "question": 193.9,
+        "answer": 198.8
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_014.png",
+      "answer": "images_05/civics-second-half/answer_014.png",
+      "sourceTimes": {
+        "question": 205.6,
+        "answer": 212.6
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_015.png",
+      "answer": "images_05/civics-second-half/answer_015.png",
+      "sourceTimes": {
+        "question": 218.6,
+        "answer": 224.7
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_016.png",
+      "answer": "images_05/civics-second-half/answer_016.png",
+      "sourceTimes": {
+        "question": 231.0,
+        "answer": 237.8
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_017.png",
+      "answer": "images_05/civics-second-half/answer_017.png",
+      "sourceTimes": {
+        "question": 244.8,
+        "answer": 253.7
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_018.png",
+      "answer": "images_05/civics-second-half/answer_018.png",
+      "sourceTimes": {
+        "question": 262.7,
+        "answer": 271.8
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_019.png",
+      "answer": "images_05/civics-second-half/answer_019.png",
+      "sourceTimes": {
+        "question": 278.7,
+        "answer": 286.8
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_020.png",
+      "answer": "images_05/civics-second-half/answer_020.png",
+      "sourceTimes": {
+        "question": 293.6,
+        "answer": 300.8
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_021.png",
+      "answer": "images_05/civics-second-half/answer_021.png",
+      "sourceTimes": {
+        "question": 310.0,
+        "answer": 319.2
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_022.png",
+      "answer": "images_05/civics-second-half/answer_022.png",
+      "sourceTimes": {
+        "question": 327.5,
+        "answer": 336.3
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_023.png",
+      "answer": "images_05/civics-second-half/answer_023.png",
+      "sourceTimes": {
+        "question": 344.4,
+        "answer": 353.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_024.png",
+      "answer": "images_05/civics-second-half/answer_024.png",
+      "sourceTimes": {
+        "question": 361.2,
+        "answer": 369.1
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_025.png",
+      "answer": "images_05/civics-second-half/answer_025.png",
+      "sourceTimes": {
+        "question": 374.2,
+        "answer": 380.2
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_026.png",
+      "answer": "images_05/civics-second-half/answer_026.png",
+      "sourceTimes": {
+        "question": 384.8,
+        "answer": 390.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_027.png",
+      "answer": "images_05/civics-second-half/answer_027.png",
+      "sourceTimes": {
+        "question": 397.2,
+        "answer": 404.7
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_028.png",
+      "answer": "images_05/civics-second-half/answer_028.png",
+      "sourceTimes": {
+        "question": 411.2,
+        "answer": 417.4
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_029.png",
+      "answer": "images_05/civics-second-half/answer_029.png",
+      "sourceTimes": {
+        "question": 424.6,
+        "answer": 433.2
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_030.png",
+      "answer": "images_05/civics-second-half/answer_030.png",
+      "sourceTimes": {
+        "question": 439.1,
+        "answer": 445.1
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_031.png",
+      "answer": "images_05/civics-second-half/answer_031.png",
+      "sourceTimes": {
+        "question": 450.6,
+        "answer": 456.3
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_032.png",
+      "answer": "images_05/civics-second-half/answer_032.png",
+      "sourceTimes": {
+        "question": 465.2,
+        "answer": 474.4
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_033.png",
+      "answer": "images_05/civics-second-half/answer_033.png",
+      "sourceTimes": {
+        "question": 481.8,
+        "answer": 489.4
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_034.png",
+      "answer": "images_05/civics-second-half/answer_034.png",
+      "sourceTimes": {
+        "question": 494.5,
+        "answer": 500.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_035.png",
+      "answer": "images_05/civics-second-half/answer_035.png",
+      "sourceTimes": {
+        "question": 507.4,
+        "answer": 515.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_036.png",
+      "answer": "images_05/civics-second-half/answer_036.png",
+      "sourceTimes": {
+        "question": 520.9,
+        "answer": 527.8
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_037.png",
+      "answer": "images_05/civics-second-half/answer_037.png",
+      "sourceTimes": {
+        "question": 533.3,
+        "answer": 539.9
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_038.png",
+      "answer": "images_05/civics-second-half/answer_038.png",
+      "sourceTimes": {
+        "question": 545.0,
+        "answer": 550.3
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_039.png",
+      "answer": "images_05/civics-second-half/answer_039.png",
+      "sourceTimes": {
+        "question": 555.6,
+        "answer": 561.9
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_040.png",
+      "answer": "images_05/civics-second-half/answer_040.png",
+      "sourceTimes": {
+        "question": 567.2,
+        "answer": 572.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_041.png",
+      "answer": "images_05/civics-second-half/answer_041.png",
+      "sourceTimes": {
+        "question": 578.3,
+        "answer": 584.4
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_042.png",
+      "answer": "images_05/civics-second-half/answer_042.png",
+      "sourceTimes": {
+        "question": 590.8,
+        "answer": 598.1
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_043.png",
+      "answer": "images_05/civics-second-half/answer_043.png",
+      "sourceTimes": {
+        "question": 605.3,
+        "answer": 613.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_044.png",
+      "answer": "images_05/civics-second-half/answer_044.png",
+      "sourceTimes": {
+        "question": 619.8,
+        "answer": 626.7
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_045.png",
+      "answer": "images_05/civics-second-half/answer_045.png",
+      "sourceTimes": {
+        "question": 633.3,
+        "answer": 640.6
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_046.png",
+      "answer": "images_05/civics-second-half/answer_046.png",
+      "sourceTimes": {
+        "question": 647.7,
+        "answer": 656.4
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_047.png",
+      "answer": "images_05/civics-second-half/answer_047.png",
+      "sourceTimes": {
+        "question": 664.9,
+        "answer": 673.1
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "economy",
+      "question": "images_05/civics-second-half/question_048.png",
+      "answer": "images_05/civics-second-half/answer_048.png",
+      "sourceTimes": {
+        "question": 683.3,
+        "answer": 693.8
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "welfare",
+      "question": "images_05/civics-second-half/question_049.png",
+      "answer": "images_05/civics-second-half/answer_049.png",
+      "sourceTimes": {
+        "question": 704.8,
+        "answer": 712.5
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "welfare",
+      "question": "images_05/civics-second-half/question_050.png",
+      "answer": "images_05/civics-second-half/answer_050.png",
+      "sourceTimes": {
+        "question": 718.7,
+        "answer": 725.6
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "welfare",
+      "question": "images_05/civics-second-half/question_051.png",
+      "answer": "images_05/civics-second-half/answer_051.png",
+      "sourceTimes": {
+        "question": 732.1,
+        "answer": 740.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "welfare",
+      "question": "images_05/civics-second-half/question_052.png",
+      "answer": "images_05/civics-second-half/answer_052.png",
+      "sourceTimes": {
+        "question": 747.8,
+        "answer": 756.5
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "welfare",
+      "question": "images_05/civics-second-half/question_053.png",
+      "answer": "images_05/civics-second-half/answer_053.png",
+      "sourceTimes": {
+        "question": 762.8,
+        "answer": 770.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "welfare",
+      "question": "images_05/civics-second-half/question_054.png",
+      "answer": "images_05/civics-second-half/answer_054.png",
+      "sourceTimes": {
+        "question": 776.7,
+        "answer": 783.1
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_055.png",
+      "answer": "images_05/civics-second-half/answer_055.png",
+      "sourceTimes": {
+        "question": 796.6,
+        "answer": 806.8
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_056.png",
+      "answer": "images_05/civics-second-half/answer_056.png",
+      "sourceTimes": {
+        "question": 812.7,
+        "answer": 819.5
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_057.png",
+      "answer": "images_05/civics-second-half/answer_057.png",
+      "sourceTimes": {
+        "question": 824.1,
+        "answer": 829.3
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_058.png",
+      "answer": "images_05/civics-second-half/answer_058.png",
+      "sourceTimes": {
+        "question": 834.2,
+        "answer": 839.9
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_059.png",
+      "answer": "images_05/civics-second-half/answer_059.png",
+      "sourceTimes": {
+        "question": 847.9,
+        "answer": 857.2
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_060.png",
+      "answer": "images_05/civics-second-half/answer_060.png",
+      "sourceTimes": {
+        "question": 865.5,
+        "answer": 873.7
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_061.png",
+      "answer": "images_05/civics-second-half/answer_061.png",
+      "sourceTimes": {
+        "question": 879.4,
+        "answer": 885.1
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_062.png",
+      "answer": "images_05/civics-second-half/answer_062.png",
+      "sourceTimes": {
+        "question": 891.6,
+        "answer": 899.2
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_063.png",
+      "answer": "images_05/civics-second-half/answer_063.png",
+      "sourceTimes": {
+        "question": 905.8,
+        "answer": 912.5
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_064.png",
+      "answer": "images_05/civics-second-half/answer_064.png",
+      "sourceTimes": {
+        "question": 921.3,
+        "answer": 927.0
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_065.png",
+      "answer": "images_05/civics-second-half/answer_065.png",
+      "sourceTimes": {
+        "question": 937.3,
+        "answer": 943.1
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_066.png",
+      "answer": "images_05/civics-second-half/answer_066.png",
+      "sourceTimes": {
+        "question": 949.0,
+        "answer": 955.2
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_067.png",
+      "answer": "images_05/civics-second-half/answer_067.png",
+      "sourceTimes": {
+        "question": 962.9,
+        "answer": 972.9
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_068.png",
+      "answer": "images_05/civics-second-half/answer_068.png",
+      "sourceTimes": {
+        "question": 980.9,
+        "answer": 988.2
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_069.png",
+      "answer": "images_05/civics-second-half/answer_069.png",
+      "sourceTimes": {
+        "question": 999.4,
+        "answer": 1004.9
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_070.png",
+      "answer": "images_05/civics-second-half/answer_070.png",
+      "sourceTimes": {
+        "question": 1016.8,
+        "answer": 1022.0
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_071.png",
+      "answer": "images_05/civics-second-half/answer_071.png",
+      "sourceTimes": {
+        "question": 1028.4,
+        "answer": 1035.9
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_072.png",
+      "answer": "images_05/civics-second-half/answer_072.png",
+      "sourceTimes": {
+        "question": 1042.9,
+        "answer": 1049.5
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_073.png",
+      "answer": "images_05/civics-second-half/answer_073.png",
+      "sourceTimes": {
+        "question": 1057.3,
+        "answer": 1065.3
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_074.png",
+      "answer": "images_05/civics-second-half/answer_074.png",
+      "sourceTimes": {
+        "question": 1071.4,
+        "answer": 1078.0
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_075.png",
+      "answer": "images_05/civics-second-half/answer_075.png",
+      "sourceTimes": {
+        "question": 1089.2,
+        "answer": 1094.3
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_076.png",
+      "answer": "images_05/civics-second-half/answer_076.png",
+      "sourceTimes": {
+        "question": 1101.5,
+        "answer": 1110.1
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_077.png",
+      "answer": "images_05/civics-second-half/answer_077.png",
+      "sourceTimes": {
+        "question": 1117.8,
+        "answer": 1126.1
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_078.png",
+      "answer": "images_05/civics-second-half/answer_078.png",
+      "sourceTimes": {
+        "question": 1135.9,
+        "answer": 1142.9
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_079.png",
+      "answer": "images_05/civics-second-half/answer_079.png",
+      "sourceTimes": {
+        "question": 1154.4,
+        "answer": 1167.8
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_080.png",
+      "answer": "images_05/civics-second-half/answer_080.png",
+      "sourceTimes": {
+        "question": 1179.8,
+        "answer": 1182.6
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_081.png",
+      "answer": "images_05/civics-second-half/answer_081.png",
+      "sourceTimes": {
+        "question": 1189.6,
+        "answer": 1198.0
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "global-society",
+      "question": "images_05/civics-second-half/question_082.png",
+      "answer": "images_05/civics-second-half/answer_082.png",
+      "sourceTimes": {
+        "question": 1207.9,
+        "answer": 1216.9
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=jXh-urpZd9Y"
+}

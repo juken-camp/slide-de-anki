@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#8b4513"><meta name="application-name" content="Nekoponのスライドde暗記"><meta name="apple-mobile-web-app-title" content="Nekoponのスライドde暗記"><title>Nekoponのスライドde暗記</title><style>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#8b4513"><meta name="application-name" content="Nekoponのスライドで暗記"><meta name="apple-mobile-web-app-title" content="Nekoponのスライドで暗記"><title>Nekoponのスライドで暗記</title><style>
 *{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.45}button:focus-visible,select:focus-visible,input:focus-visible,[role=button]:focus-visible{outline:3px solid #27645b;outline-offset:3px}[hidden]{display:none!important}.app{max-width:900px;margin:auto;padding:12px 16px 30px}.brand{margin:auto}.subjects{display:flex;max-width:620px;margin:14px auto 12px}.subjects button{flex:1;font-weight:900}.neko-stats{flex-wrap:wrap}.progresscopy{display:flex;justify-content:space-between;gap:8px;margin:10px 0 5px}.track{border-radius:20px;overflow:hidden}.track i{display:block;height:100%;width:0}.modes{display:flex;padding:4px;background:white;flex:1}.modes button{border:0;flex:1;background:transparent;font-weight:800;font-size:12px;white-space:nowrap}.toolbar{display:flex;gap:8px;margin:14px 0 10px}.shuffle{padding:8px 12px;font-weight:800}.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}.chips button{flex:none;padding:7px 12px;border-radius:20px;font-size:12px}.card{position:relative;overflow:hidden;margin:12px 0 0;touch-action:pan-y}.card:before{content:'';display:block}.head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 14px}.badge{border-radius:12px;padding:3px 10px;font-weight:900;font-size:12px}.unit{font-size:12px;text-align:right}.guide{text-align:center;padding:10px 12px;font-size:12px;border-top:1px solid}.actions{display:flex;align-items:stretch}.actions button{padding:14px 8px;min-height:48px;font-weight:900}.actions .again,.actions .done{flex:1}.actions .arrow{width:48px;font-size:21px}.empty{text-align:center;padding:35px 16px;margin-top:15px;border-radius:22px}.empty button{color:white;border:0;padding:11px 22px;margin-top:10px}.stat-bubble{cursor:default}.stage{padding-bottom:18px}
 
 /* ===== NEKOPON QUIZ の見た目と手ざわり ===== */
@@ -430,9 +430,14 @@ button:disabled{opacity:.5}input[type=search],dialog input,dialog select{font-si
 @media(max-width:350px){#emptyText.finish-summary{font-size:12px}.finish-metric{gap:6px}.finish-metric b{font-size:13px}}
 @media(prefers-reduced-motion:reduce){#resultCatFace{animation:none!important;transform:none}}
 
+/* Let the individual action buttons define the group. */
+#app #studyScreen .actions{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;gap:8px;margin:10px 0 0}
+#app #studyScreen .actions .arrow{width:44px}
+@media(max-width:350px){#app #studyScreen .actions{gap:6px}#app #studyScreen .actions .arrow{width:40px}#app #studyScreen .actions button{font-size:12px;padding:10px 4px}}
+
 </style></head>
 <body><main id="app" class="app">
-<header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドde暗記 by JUKEN CAMP・猫とあそぶにゃ"><span id="headerCatFace" aria-hidden="true">🐱</span><span class="brand-lockup"><span class="brand-name">スライドde暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
+<header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・猫とあそぶにゃ"><span id="headerCatFace" aria-hidden="true">🐱</span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
   
   
 <nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navSettings" type="button">設定</button></nav></header>

@@ -435,9 +435,27 @@ button:disabled{opacity:.5}input[type=search],dialog input,dialog select{font-si
 #app #studyScreen .actions .arrow{width:44px}
 @media(max-width:350px){#app #studyScreen .actions{gap:6px}#app #studyScreen .actions .arrow{width:40px}#app #studyScreen .actions button{font-size:12px;padding:10px 4px}}
 
+/* Optional play controls; sensor movement belongs to the cats alone. */
+.settings-play{border-top:1px solid #eee3d7;padding:14px 0 12px}
+.settings-play h3{font-size:12px;margin:0 0 4px;font-weight:700;color:var(--ink)}
+.settings-play .sound-setting{display:flex;justify-content:space-between;gap:16px;max-width:none;min-height:44px;margin:0;padding:9px 0;border:0;border-radius:0;background:transparent;font-size:12px;font-weight:500}
+.settings-play .sound-setting input{flex:none}.settings-play #tiltPermission{width:100%;min-height:44px;margin:8px 0;padding:9px 12px;border-width:1px;border-radius:11px;background:#f8ecdd;font-size:12px}
+.settings-play #tiltStatus{font-size:11px;line-height:1.8;color:var(--muted);margin:6px 0 0;overflow-wrap:anywhere}
+.cat-tilt{display:inline-block;line-height:1;transform:rotate(var(--cat-tilt-angle,0deg));transform-origin:50% 55%;transition:transform .12s ease-out}
+.compact-header .brand-home>.cat-tilt{display:inline-block;margin:0;line-height:1}
+#app.neko-tilt-active #headerCatFace,#app.neko-tilt-active #mascotFace,#app.neko-tilt-active #resultCatFace{animation:none!important;transform:none}
+#app.neko-motion-off,#app.neko-motion-off *,#app.neko-motion-off *:before,#app.neko-motion-off *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+#app.neko-motion-off .cat-tilt{transform:none}
+.neko-tap-charm{position:fixed;z-index:9997;pointer-events:none;font-size:13px;color:#b06d31;animation:neko-tap-charm .65s ease-out forwards}
+@keyframes neko-tap-charm{0%{opacity:.9;transform:translate(-50%,-40%) scale(.65)}100%{opacity:0;transform:translate(-50%,-220%) rotate(18deg) scale(1.05)}}
+@media(prefers-reduced-motion:reduce){.cat-tilt{transform:none;transition:none}.neko-tap-charm{display:none}}
+
+.neko-playground .home-mascot>.cat-tilt{animation:none}
+#mascotFace{display:inline-block;animation:neko-home-cat-breathe 4.8s ease-in-out infinite}
+
 </style></head>
 <body><main id="app" class="app">
-<header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・猫とあそぶにゃ"><span id="headerCatFace" aria-hidden="true">🐱</span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
+<header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・猫とあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
   
   
 <nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navSettings" type="button">設定</button></nav></header>
@@ -469,9 +487,9 @@ button:disabled{opacity:.5}input[type=search],dialog input,dialog select{font-si
 <div class="face-mode" aria-label="カードの送り方"><button data-face-mode="normal" class="active" aria-pressed="true">問題から</button><button data-face-mode="answer" aria-pressed="false">解答で暗記</button></div>
 <div class="timer-panel"><div class="timer-top"><label><input type="checkbox" id="autoMode"> 自動めくり</label><span id="timerLabel"></span><button class="tool" id="playButton" hidden>▶ 再生</button></div><div id="timerOptions" class="timer-options" hidden><label>問題 <input type="number" id="questionSeconds" min="0.5" max="120" step="0.1" value="3"> 秒</label><label>解答 <input type="number" id="answerSeconds" min="0.5" max="120" step="0.1" value="2"> 秒</label></div><div class="timer-track" id="timerTrack" hidden><i id="timerBar"></i></div></div>
 </div></details></section>
-<div class="empty" id="emptyState" hidden tabindex="-1"><button aria-label="Nekoponをなでるにゃ" class="result-cat" type="button" id="resultCat"><span id="resultCatFace" aria-hidden="true">😸</span></button><p role="status" class="result-cat-reply" id="resultCatReply">おつかれさまにゃ。なでてにゃ🐾</p><h2 id="emptyTitle"></h2><p id="emptyText"></p><div id="resultCounts" class="result-counts" hidden><div><b id="resultKnown">0</b><span>おぼえた</span></div><div><b id="resultWeak">0</b><span>おぼえてない</span></div><div><b id="resultUnmarked">0</b><span>まだ仕分けてない</span></div></div><button id="restartButton">もう一周するにゃ</button><button id="reviewButton">おぼえてない問題を復習にゃ</button><button id="unmarkedReview" hidden>まだの問題に挑戦するにゃ</button><button id="allButton">ぜんぶ見るにゃ</button><button id="finishUndo" class="finish-undo" hidden>↶ 最後の仕分けを戻すにゃ</button></div>
+<div class="empty" id="emptyState" hidden tabindex="-1"><button aria-label="Nekoponをなでるにゃ" class="result-cat" type="button" id="resultCat"><span class="cat-tilt"><span id="resultCatFace" aria-hidden="true">😸</span></span></button><p role="status" class="result-cat-reply" id="resultCatReply">おつかれさまにゃ。なでてにゃ🐾</p><h2 id="emptyTitle"></h2><p id="emptyText"></p><div id="resultCounts" class="result-counts" hidden><div><b id="resultKnown">0</b><span>おぼえた</span></div><div><b id="resultWeak">0</b><span>おぼえてない</span></div><div><b id="resultUnmarked">0</b><span>まだ仕分けてない</span></div></div><button id="restartButton">もう一周するにゃ</button><button id="reviewButton">おぼえてない問題を復習にゃ</button><button id="unmarkedReview" hidden>まだの問題に挑戦するにゃ</button><button id="allButton">ぜんぶ見るにゃ</button><button id="finishUndo" class="finish-undo" hidden>↶ 最後の仕分けを戻すにゃ</button></div>
 </section></section>
-<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定・学習記録</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><a class="settings-image" id="originalImage" target="_blank" rel="noopener noreferrer"><span>画像を開くにゃ</span><span aria-hidden="true">↗</span></a><div class="settings-records"><p class="settings-label">学習記録のバックアップ</p><div class="record-tools"><button class="tool" id="backupButton" type="button">書き出すにゃ <span aria-hidden="true">↓</span></button><button class="tool" id="restoreButton" type="button">読み込むにゃ <span aria-hidden="true">↑</span></button></div><p class="settings-caption">記録はこのブラウザーに自動保存するにゃ。<br>大切な記録は、ときどき書き出しておくにゃ。</p></div></div></div><input type="file" id="restoreInput" accept="application/json,.json" hidden><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span id="mascotFace" aria-hidden="true">🐱</span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
+<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定・学習記録</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-play"><h3>猫とのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けて猫とあそぶ</span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><a class="settings-image" id="originalImage" target="_blank" rel="noopener noreferrer"><span>画像を開くにゃ</span><span aria-hidden="true">↗</span></a><div class="settings-records"><p class="settings-label">学習記録のバックアップ</p><div class="record-tools"><button class="tool" id="backupButton" type="button">書き出すにゃ <span aria-hidden="true">↓</span></button><button class="tool" id="restoreButton" type="button">読み込むにゃ <span aria-hidden="true">↑</span></button></div><p class="settings-caption">記録はこのブラウザーに自動保存するにゃ。<br>大切な記録は、ときどき書き出しておくにゃ。</p></div></div></div><input type="file" id="restoreInput" accept="application/json,.json" hidden><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
 </main><div class="neko-notice" id="notice" role="status" aria-live="polite"></div>
 <dialog id="importDialog"><button class="dialog-close" data-close="importDialog" aria-label="教材追加を閉じる">✕</button><h2>教材を追加</h2><p>教材ZIPか、問題・解答の画像を選ぶにゃ。<br><code>question_001.png</code> と <code>answer_001.png</code> をペアにするにゃ。</p><form id="importForm"><label>教材ファイル・画像（複数選択）<input type="file" id="importImages" accept=".zip,.png,.jpg,.jpeg,.webp" multiple required></label><label>教材名<input id="importTitle" maxlength="100" placeholder="例：地理 日本の地域" required></label><div class="import-taxonomy"><label>教科<input id="importSubject" list="subjectSuggestions" maxlength="60" value="理科" placeholder="例：英語・資格試験・趣味" required><datalist id="subjectSuggestions"></datalist></label><label>分野<input id="importField" list="fieldSuggestions" maxlength="60" value="生物" placeholder="例：英単語・ことわざ・仕事"><datalist id="fieldSuggestions"></datalist></label><label>学年・対象<input id="importGrade" list="gradeSuggestions" maxlength="60" value="学年共通" placeholder="例：小6・高校生・大人"><datalist id="gradeSuggestions"><option value="学年共通"></option><option value="中1"></option><option value="中2"></option><option value="中3"></option><option value="高校生"></option><option value="大人"></option></datalist></label></div><p class="import-freedom">教科も分野も、候補から選んでも自由に書いてもOKにゃ。</p><p>追加した教材は、このブラウザーに保存するにゃ。元のZIPも保管してにゃ。ほかの端末には自動で共有されないにゃ。</p><p id="importStatus" role="status"></p><div class="dialog-actions"><button type="button" class="tool" data-close="importDialog">閉じるにゃ</button><button class="tool done" id="importSubmit">追加するにゃ</button></div></form></dialog><noscript><p>このアプリを使うにはJavaScriptを有効にしてにゃ。</p></noscript>
 <dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">猫をタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><script src="asset-config.js"></script>
@@ -761,7 +779,10 @@ const reviewLessons = new Set([
   'social-history-edo-culture-bakumatsu-03', 'social-history-meiji-taisho-04', 'social-history-showa-heisei-05'
 ]);
 const selected = new Set(state.lessonIds);
-const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+let reduced = !!motionPreference?.matches || data.neko.decorativeMotion === false;
+const tapPlay = () => data.neko.tapPlay !== false;
+let tapCharm = 0;
 const dateKey = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; };
 function save() {
   if (!state.loading) data.neko.resume = { subject: state.subject, lessonIds: state.lessonIds, lessonId: state.lessonId,
@@ -826,20 +847,21 @@ function beep(kind = 'tap') {
   } catch {}
 }
 function tapSpark(button,event) {
-  if (reduced) return;
+  if (reduced || !tapPlay()) return;
   const rect=button.getBoundingClientRect(), particle=document.createElement('span');
   particle.className='neko-tap-ring'; particle.setAttribute('aria-hidden','true');
   particle.style.left=(event.clientX || rect.left+rect.width/2)+'px'; particle.style.top=(event.clientY || rect.top+rect.height/2)+'px';
   $('app').append(particle); setTimeout(() => particle.remove(),420);
+  if(playfulParticles<28){const charm=document.createElement('span');charm.className='neko-tap-charm';charm.textContent=['🐾','✦','♡','♪'][tapCharm++%4];charm.setAttribute('aria-hidden','true');charm.style.left=particle.style.left;charm.style.top=particle.style.top;$('app').append(charm);playfulParticles++;setTimeout(()=>{charm.remove();playfulParticles--;},650);}
 }
 // Little toys from Nekopon: bouncy cats, springy titles and scattered paws.
 // These reactions never change study records or the number of remembered questions.
 function bounce(element,className='neko-bounce',duration=780) {
-  if(reduced)return; element.classList.add('neko-has-played'); element.classList.remove(className); void element.offsetWidth; element.classList.add(className);
+  if(reduced || !tapPlay())return; element.classList.add('neko-has-played'); element.classList.remove(className); void element.offsetWidth; element.classList.add(className);
   setTimeout(()=>element.classList.remove(className),duration);
 }
 function burst(element,icons=['🐾','✦','✨'],count=5) {
-  if(reduced||playfulParticles>=28)return;
+  if(reduced||!tapPlay()||playfulParticles>=28)return;
   const r=element.getBoundingClientRect();
   for(let i=0;i<count&&playfulParticles<28;i++) {
     const particle=document.createElement('span'); particle.className='neko-fun-particle'; particle.textContent=icons[i%icons.length];particle.setAttribute('aria-hidden','true');
@@ -849,16 +871,19 @@ function burst(element,icons=['🐾','✦','✨'],count=5) {
   }
 }
 function sayAt(element,text) {
+  if(!tapPlay())return;
   playfulMessage?.remove();
   const r=element.getBoundingClientRect(),message=document.createElement('span');message.className='neko-fun-message';message.textContent=text;message.setAttribute('aria-hidden','true');
   message.style.left=Math.max(90,Math.min((window.innerWidth||900)-90,r.left+r.width/2))+'px';message.style.top=Math.max(24,r.top-8)+'px';
   $('app').append(message);playfulMessage=message;setTimeout(()=>{message.remove();if(playfulMessage===message)playfulMessage=null;},1350);
 }
 function playNeko(element,kind='cat') {
+  if(!tapPlay())return;
   const now=performance.now();if(now-lastPlaySound>120){beep(kind);lastPlaySound=now;}
   bounce(element,element===$('mascotPlay')?'neko-cat-bounce':'neko-bounce');burst(element);
 }
 function playWithCat(element = $('mascotPlay')) {
+  if(!tapPlay())return;
   const face = element === $('brandHome') ? $('headerCatFace') : element === $('resultCat') ? $('resultCatFace') : $('mascotFace');
   const idleFace = element === $('resultCat') ? '😸' : '🐱';
   catTaps++;const special=catTaps%5===0;playNeko(element,special?'milestone':'cat');
@@ -870,7 +895,7 @@ function playWithCat(element = $('mascotPlay')) {
     const cheers=state.finished?['最後まで進んだにゃ！えらいにゃ🐾','なでなで、うれしいにゃ〜♪','次は苦手をひとつ減らすにゃ🌱','ひと休みも大事にゃ。のび〜😸']:['ちょっとひと休みするにゃ🐾','なでなで、うれしいにゃ〜♪','次もいっしょに進むにゃ🌱','焦らず、自分のペースにゃ😸'];
     $('resultCatReply').textContent=special?'もふもふチャージ完了にゃ✨':cheers[(catTaps-1)%cheers.length];
   } else sayAt(element,special?'もふもふチャージ完了にゃ🐾':messages[(catTaps-1)%messages.length]);
-  if(special)burst(element,['🐾','💛','✨','🌟'],9);
+  if(special){burst(element,['🐾','💛','✨','🌟'],9);if(!reduced)face.animate?.([{transform:'rotate(0deg) scale(1)'},{transform:'rotate(180deg) scale(1.15)',offset:.5},{transform:'rotate(360deg) scale(1)'}],{duration:720,easing:'ease-in-out'});}
 }
 // Unlock sound inside a user gesture on iPhone as well as desktop browsers.
 document.addEventListener('pointerdown',unlockAudio,{passive:true});
@@ -878,7 +903,7 @@ document.addEventListener('keydown',unlockAudio,{passive:true});
 document.addEventListener('click',event => {
   const control=event.target.closest('button,summary,a');
   if (!control || control.disabled) return;
-  if (!control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','resumeStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
+  if (tapPlay() && !control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','resumeStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
   tapSpark(control,event);
 },true);
 
@@ -960,7 +985,7 @@ function selectionSummary() {
   const choices = meta.filter(m => selected.has(m.id));
   $('selectionSummary').textContent = choices.length ? `選択中 ${choices.length}教材 · ${choices.reduce((n,m) => n+m.count,0)}問` : '教材を選ぶにゃ';
   $('startStudy').disabled = !choices.length || state.loading; $('clearSelection').disabled = !choices.length;
-  if (choices.length && choices.length !== selectionCount && selectionCount >= 0 && !reduced && !document.hidden) {
+  if (choices.length && choices.length !== selectionCount && selectionCount >= 0 && tapPlay() && !reduced && !document.hidden) {
     $('startStudy').animate?.([{transform:'scale(1)'},{transform:'translateY(-3px) scale(1.025)'},{transform:'scale(1)'}],{duration:360,easing:'ease-out'});
   }
   selectionCount = choices.length;
@@ -1244,6 +1269,7 @@ function assess(nextStatus) {
   else if (!state.finished) sayAt($('studyHint'),'また挑戦するにゃ🐾');
 }
 function celebrate() {
+  if(!tapPlay())return;
   burst($('studyHint'),['🐾','✦','✨'],4);
   const cheers=['おぼえたにゃ♪','ばっちりにゃ🐾','その調子にゃ🌟'];sayAt($('studyHint'),cheers[Math.floor(Math.random()*cheers.length)]);
   if (reduced) return;
@@ -1290,7 +1316,7 @@ for (const b of document.querySelectorAll('[data-face-mode]')) b.onclick = () =>
 };
 $('mascotPlay').onclick=()=>playWithCat();
 $('resultCat').onclick=()=>playWithCat($('resultCat'));
-$('homePlayCards').onclick=()=>{cardTaps++;$('homeCardFace').textContent=['❔','💡','⭐','🐾'][(cardTaps-1)%4];playNeko($('homePlayCards'),'shuffle');bounce($('homePlayCards'),'neko-card-shuffle');sayAt($('homePlayCards'),['めくめくにゃ♪','ひらめいたにゃ💡','ばっちりにゃ⭐','肉球カードにゃ🐾'][(cardTaps-1)%4]);};
+$('homePlayCards').onclick=()=>{if(!tapPlay())return;cardTaps++;$('homeCardFace').textContent=['❔','💡','⭐','🐾'][(cardTaps-1)%4];playNeko($('homePlayCards'),'shuffle');bounce($('homePlayCards'),'neko-card-shuffle');sayAt($('homePlayCards'),['めくめくにゃ♪','ひらめいたにゃ💡','ばっちりにゃ⭐','肉球カードにゃ🐾'][(cardTaps-1)%4]);};
 for(const id of ['homePlayCards'])$(id).onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$(id).click();}};
 for(const button of document.querySelectorAll('[data-neko-stat]'))button.onclick=()=>{
   const kind=button.dataset.nekoStat;playNeko(button,kind==='daily'?'sparkle':kind==='known'?'known':'milestone');
@@ -1415,6 +1441,97 @@ for(const b of document.querySelectorAll('[data-sound-style]')) b.onclick = () =
 $('soundVolume').oninput = () => { data.neko.soundVolume=Number($('soundVolume').value)/100; soundSettingsUI(); };
 $('soundVolume').onchange = () => { save(); beep('tap'); };
 $('soundPreview').onclick = () => { beep('known'); burst($('soundPreview'),['♪','✦','🐾'],5); };
+// Sensor access is requested only by a settings gesture. There is no startup popup.
+const orientationAPI = window.DeviceOrientationEvent;
+let tiltGranted = !!orientationAPI && typeof orientationAPI.requestPermission !== 'function';
+let tiltListening = false, tiltRequesting = false, tiltSignal = false, tiltWatch = null, tiltFrame = null;
+let tiltLastRoll = null, tiltRotation = 0, tiltLastPaint = -Infinity, tiltNotice = '';
+const wantsTilt = () => data.neko.tiltEnabled !== false;
+const canTilt = () => !!orientationAPI && window.isSecureContext !== false;
+function resetTiltDrawing() {
+  if (tiltFrame !== null) window.cancelAnimationFrame?.(tiltFrame);
+  tiltFrame = null; tiltLastRoll = null; tiltRotation = 0; tiltLastPaint = -Infinity;
+  $('app').classList.remove('neko-tilt-active'); $('app').style.removeProperty('--cat-tilt-angle');
+}
+function detachTilt() {
+  window.removeEventListener('deviceorientation',onCatOrientation);
+  tiltListening=false; clearTimeout(tiltWatch); tiltWatch=null; resetTiltDrawing();
+}
+function tiltUI() {
+  $('tiltToggle').checked = canTilt() && wantsTilt();
+  $('tiltToggle').disabled = !canTilt() || tiltRequesting;
+  $('tiltPermission').hidden = !canTilt() || !wantsTilt() || (tiltGranted && !tiltNotice);
+  $('tiltPermission').disabled = tiltRequesting || reduced;
+  $('tiltPermission').textContent = tiltRequesting ? '確認しているにゃ…' : tiltGranted ? 'もう一度試すにゃ' : '傾きセンサーを許可するにゃ';
+  $('tiltStatus').textContent = !canTilt() ? 'この端末では傾きが使えないにゃ。タップであそべるにゃ🐾'
+    : reduced ? '動きを減らしているにゃ。飾りの動きをオンにすると傾きであそべるにゃ。'
+    : tiltNotice || (!wantsTilt() ? '傾きの遊びはお休みにゃ。' : !tiltGranted ? '上のボタンで動作・方向の利用を許可すると、猫がくるくるするにゃ。'
+    : tiltSignal ? 'スマホをゆっくり傾けるにゃ♪ 猫たちがくるくるついてくるにゃ。' : 'スマホを少し傾けてにゃ。センサーを待っているにゃ🐾');
+}
+function updateTilt() {
+  if (!canTilt() || !wantsTilt() || !tiltGranted || reduced || document.hidden) { detachTilt(); tiltUI(); return; }
+  if (!tiltListening) {
+    tiltListening=true; tiltSignal=false; tiltNotice='';
+    window.addEventListener('deviceorientation',onCatOrientation,{passive:true});
+    tiltWatch=setTimeout(()=>{
+      if (tiltListening && !tiltSignal) {tiltNotice='センサーを確認できないにゃ。ブラウザーの動作・方向の許可を確認してにゃ。';tiltUI();}
+    },4000);
+  }
+  tiltUI();
+}
+function onCatOrientation(event) {
+  if (!tiltListening || !wantsTilt() || reduced || document.hidden || !Number.isFinite(event.beta) || !Number.isFinite(event.gamma)) return;
+  if (!tiltSignal) { tiltSignal=true; tiltNotice=''; clearTimeout(tiltWatch); tiltWatch=null; $('app').classList.add('neko-tilt-active'); tiltUI(); }
+  const beta=event.beta*Math.PI/180, gamma=event.gamma*Math.PI/180;
+  // Project gravity onto the display plane; ignore the unstable, nearly-flat pose.
+  const x=Math.cos(beta)*Math.sin(gamma), y=Math.sin(beta);
+  if (Math.hypot(x,y)<.12) return;
+  const screenAngle=Number(window.screen?.orientation?.angle ?? window.orientation ?? 0);
+  const roll=Math.atan2(x,y)*180/Math.PI-(Number.isFinite(screenAngle)?screenAngle:0);
+  if (tiltLastRoll === null) { tiltLastRoll=roll; return; }
+  let delta=roll-tiltLastRoll;delta=((delta+180)%360+360)%360-180;
+  tiltLastRoll=roll;tiltRotation+=delta*3;
+  const now=performance.now();
+  if (tiltFrame!==null || now-tiltLastPaint<32) return;
+  tiltFrame=window.requestAnimationFrame(()=>{
+    tiltFrame=null;
+    if (!tiltListening || document.hidden || reduced || !wantsTilt()) return;
+    tiltLastPaint=performance.now();$('app').style.setProperty('--cat-tilt-angle',tiltRotation.toFixed(2)+'deg');
+  });
+}
+async function requestCatTilt() {
+  if (tiltRequesting || !canTilt() || reduced) { updateTilt(); return; }
+  tiltRequesting=true;tiltNotice='';tiltUI();
+  try {
+    const permission = typeof orientationAPI.requestPermission === 'function' ? await orientationAPI.requestPermission() : 'granted';
+    if (permission !== 'granted') { data.neko.tiltEnabled=false;tiltGranted=false;tiltNotice='許可しなくても、猫をタップしてあそべるにゃ🐾'; }
+    else { tiltGranted=true;data.neko.tiltEnabled=true;detachTilt(); }
+  } catch {
+    data.neko.tiltEnabled=false;tiltGranted=false;tiltNotice='許可を確認できなかったにゃ。もう一度オンにして試せるにゃ。';
+  } finally {tiltRequesting=false;save();updateTilt();}
+}
+function syncPlaySettings() {
+  reduced = !!motionPreference?.matches || data.neko.decorativeMotion === false;
+  $('app').classList.toggle('neko-motion-off',reduced);
+  $('tapPlayToggle').checked=tapPlay();$('motionToggle').checked=data.neko.decorativeMotion!==false;
+  updateTilt();
+}
+$('tapPlayToggle').onchange=()=>{data.neko.tapPlay=$('tapPlayToggle').checked;save();syncPlaySettings();};
+$('motionToggle').onchange=()=>{data.neko.decorativeMotion=$('motionToggle').checked;save();syncPlaySettings();};
+$('tiltToggle').onchange=()=>{
+  data.neko.tiltEnabled=$('tiltToggle').checked;tiltNotice='';save();
+  if (data.neko.tiltEnabled && !tiltGranted && !reduced) return requestCatTilt();
+  updateTilt();
+};
+$('tiltPermission').onclick=requestCatTilt;
+document.addEventListener('visibilitychange',updateTilt);
+window.addEventListener('pagehide',detachTilt);
+window.addEventListener('pageshow',updateTilt);
+window.addEventListener('orientationchange',()=>{tiltLastRoll=null;});
+window.screen?.orientation?.addEventListener?.('change',()=>{tiltLastRoll=null;});
+motionPreference?.addEventListener?.('change',syncPlaySettings);
+syncPlaySettings();
+
 showScreen('catalog');
 })();
 

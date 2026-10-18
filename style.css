@@ -176,3 +176,13 @@ button{line-height:1.5}input,select,textarea,.timer-options input,dialog input:n
 @media(prefers-reduced-motion:reduce){.neko-fun-particle{display:none}.neko-fun-message{animation:none!important;transform:translate(-50%,-15px)}}
 
 .home-mascot.neko-has-played:not(.neko-cat-bounce),.home-title.neko-has-played:not(.neko-bounce),.home-card-stack.neko-has-played:not(.neko-bounce):not(.neko-card-shuffle){animation:none}
+
+/* Keep the title legible and the study controls still when their labels change. */
+.brand-home>span{font-size:.78em;margin-bottom:5px}
+.home-title>span:first-child{font-size:.74em}
+.toolbar>.shuffle{flex:0 0 112px;width:112px;min-width:112px;white-space:nowrap;margin-left:auto}
+@media(max-width:600px){
+  .brand-home>span{font-size:18px}
+  .toolbar>.shuffle{flex-basis:104px;width:104px;min-width:104px}
+}
+

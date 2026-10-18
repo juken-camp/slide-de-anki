@@ -148,9 +148,10 @@ function showScreen(next) {
   if (next === 'study') { if (lesson && !state.loading) render(); else warmImages(); } else imageLoader.pause();
 }
 function gradeKey(m) { return String(m.grade || '').match(/中\s*([123])/)?.[1] || 'other'; }
-function groupKey(m) { return browse === 'grade' ? gradeKey(m) : (m.field || 'other'); }
-function groupLabel(key) { return browse === 'grade' ? (key === 'other' ? '学年共通' : `中${key}`) : (fields[key]?.[0] || 'その他'); }
-function groupIcon(key) { return browse === 'grade' ? '📖' : (fields[key]?.[1] || '📚'); }
+function usesGrades() { return state.subject !== 'social' && browse === 'grade'; }
+function groupKey(m) { return usesGrades() ? gradeKey(m) : (m.field || 'other'); }
+function groupLabel(key) { return usesGrades() ? (key === 'other' ? '学年共通' : `中${key}`) : (fields[key]?.[0] || 'その他'); }
+function groupIcon(key) { return usesGrades() ? '📖' : (fields[key]?.[1] || '📚'); }
 function catalogChoices() { return meta.filter(m => m.subject === state.subject); }
 function visibleLessons() {
   const query = $('catalogSearch').value.trim().toLocaleLowerCase();
@@ -173,14 +174,17 @@ function selectionSummary() {
   }
 }
 function renderCatalog() {
+  const social = state.subject === 'social';
+  $('browseSwitch').hidden = social;
   document.querySelectorAll('[data-subject]').forEach(b => { const on = b.dataset.subject === state.subject; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
   document.querySelectorAll('[data-browse]').forEach(b => { const on = b.dataset.browse === browse; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
-  const all = catalogChoices(), keys = [...new Set(all.map(groupKey))];
-  if (browse === 'grade') keys.sort((a,b) => (a === 'other' ? 9 : Number(a)) - (b === 'other' ? 9 : Number(b)));
+  const all = catalogChoices(), keys = social ? ['geography','history','civics'] : [...new Set(all.map(groupKey))];
+  if (usesGrades()) keys.sort((a,b) => (a === 'other' ? 9 : Number(a)) - (b === 'other' ? 9 : Number(b)));
   else keys.sort((a,b) => Object.keys(fields).indexOf(a) - Object.keys(fields).indexOf(b));
-  if (!keys.includes(catalogFilter)) catalogFilter = 'all';
+  if (!keys.includes(catalogFilter)) catalogFilter = social ? (keys.find(key => all.some(m => groupKey(m) === key)) || 'geography') : 'all';
   $('catalogFilters').replaceChildren();
-  for (const key of ['all',...keys]) {
+  $('catalogFilters').setAttribute('aria-label',social ? '地理・歴史・公民の切り替え' : '目次の絞り込み');
+  for (const key of social ? keys : ['all',...keys]) {
     const b = document.createElement('button'); b.type = 'button'; b.textContent = key === 'all' ? 'すべて' : groupLabel(key);
     b.className = catalogFilter === key ? 'active' : ''; b.setAttribute('aria-pressed',String(catalogFilter === key));
     b.onclick = () => { catalogFilter = key; renderCatalog(); }; $('catalogFilters').append(b);
@@ -193,9 +197,7 @@ function renderCatalog() {
     const section = document.createElement('section'); section.className = 'catalog-group';
     const heading = document.createElement('div'); heading.className = 'group-heading';
     const h = document.createElement('h3'); h.textContent = `${groupIcon(key)} ${groupLabel(key)}`;
-    const select = document.createElement('button'); select.className = 'link-button'; select.type = 'button';
-    const allSelected = items.every(m => selected.has(m.id)); select.textContent = allSelected ? 'まとめて外すにゃ' : 'まとめて選ぶにゃ'; select.setAttribute('aria-label',`${groupLabel(key)}を${allSelected ? 'すべて解除' : 'すべて選択'}`); select.onclick = () => toggleGroup(items);
-    heading.append(h,select); section.append(heading);
+    heading.append(h); section.append(heading);
     const list = document.createElement('div'); list.className = 'lesson-grid';
     for (const m of items) {
       const row = document.createElement('button'); row.type = 'button'; row.className = 'lesson-choice'; row.dataset.lesson = m.id;
@@ -203,7 +205,7 @@ function renderCatalog() {
       const check = document.createElement('span'); check.className = 'choice-check'; check.textContent = on ? '✓' : ''; check.setAttribute('aria-hidden','true');
       const copy = document.createElement('span'); copy.className = 'choice-copy';
       const title = document.createElement('strong'); title.textContent = m.title;
-      const sub = document.createElement('span'); sub.className = 'choice-meta'; sub.textContent = `${m.grade || '学年共通'} · ${fields[m.field]?.[0] || 'その他'} · ${m.count}問`;
+      const sub = document.createElement('span'); sub.className = 'choice-meta'; sub.textContent = social ? `${m.count}問` : `${m.grade || '学年共通'} · ${fields[m.field]?.[0] || 'その他'} · ${m.count}問`;
       const progress = document.createElement('span'); progress.className = 'choice-progress';
       const progressLine = document.createElement('i'); const known = knownFor(m); progressLine.style.width = `${m.count ? known/m.count*100 : 0}%`; progress.append(progressLine);
       const record = document.createElement('span'); record.className = 'choice-record'; record.textContent = `おぼえた ${known} / ${m.count}問`;
@@ -214,8 +216,9 @@ function renderCatalog() {
     section.append(list); $('catalogGroups').append(section);
   }
   $('catalogEmpty').hidden = !!visible.length;
-  $('catalogEmptyTitle').textContent = all.length ? 'その教材は見つからないにゃ' : `${state.subject === 'social' ? '社会' : '理科'}の教材は準備中にゃ`;
-  $('catalogEmptyText').textContent = all.length ? 'さがし方を変えてみてにゃ。' : '「＋ 教材追加にゃ」から新しい教材を入れられるにゃ。';
+  const preparing = social ? !all.some(m => groupKey(m) === catalogFilter) : !all.length;
+  $('catalogEmptyTitle').textContent = preparing ? `${social ? groupLabel(catalogFilter) : '理科'}の教材は準備中にゃ` : 'その教材は見つからないにゃ';
+  $('catalogEmptyText').textContent = preparing ? '「＋ 教材追加にゃ」から新しい教材を入れられるにゃ。' : 'さがし方を変えてみてにゃ。';
   selectionSummary(); $('returnToStudy').hidden = !lesson;
 }
 function sourceVideoURL(source) {
@@ -282,7 +285,7 @@ function renderControls() {
   const cards = base(), ct = counts(cards), n = cards.length, p = n ? Math.round(ct.known/n*100) : 0;
   $('progressLabel').textContent = `おぼえた ${ct.known} / ${n}問`; $('percentLabel').textContent = p+'%'; $('progressBar').style.width = p+'%'; $('progressTrack').setAttribute('aria-valuenow',p);
   $('breakdown').textContent = `まだ ${ct.unmarked} · おぼえてない ${ct.weak} · おぼえた ${ct.known}`;
-  const raw = loaded.get(current()?.lessonId); $('lessonGrade').textContent = raw?.grade || '';
+  const raw = loaded.get(current()?.lessonId); $('lessonGrade').textContent = raw?.subject === 'social' ? (fields[raw.field]?.[0] || '') : (raw?.grade || '');
   $('sessionSummary').textContent = state.lessonIds.length === 1 ? (loaded.get(state.lessonIds[0])?.title || '') : `${state.lessonIds.length}教材をまとめて学習`;
   $('undoButton').disabled = !undo; stats();
 }
@@ -500,4 +503,5 @@ $('restoreInput').onchange = async e => {
 };
 showScreen('home');
 })();
+
 

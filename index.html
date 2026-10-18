@@ -1,16 +1,15 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#8b4513"><meta name="application-name" content="Nekoponのスライドde暗記"><meta name="apple-mobile-web-app-title" content="Nekoponのスライドde暗記"><title>Nekoponのスライドde暗記</title><link rel="stylesheet" href="style.css?v=20261017-5"><script src="asset-config.js" defer></script><script src="asset-origin.js" defer></script><script src="catalog.js" defer></script><script src="image-viewer.js?v=20261017-5" defer></script><script src="image-preloader.js?v=20261017-prefetch1" defer></script><script src="slides.js?v=20261017-prefetch1" defer></script><script src="image-library.js?v=20261017-5" defer></script></head>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#8b4513"><meta name="application-name" content="Nekoponのスライドde暗記"><meta name="apple-mobile-web-app-title" content="Nekoponのスライドde暗記"><title>Nekoponのスライドde暗記</title><link rel="stylesheet" href="style.css?v=20261018-ui1"><script src="asset-config.js" defer></script><script src="asset-origin.js" defer></script><script src="catalog.js" defer></script><script src="image-viewer.js?v=20261017-5" defer></script><script src="image-preloader.js?v=20261017-prefetch1" defer></script><script src="slides.js?v=20261018-ui1" defer></script><script src="image-library.js?v=20261017-5" defer></script></head>
 <body><main id="app" class="app">
 <section id="homeScreen" class="home-screen" aria-labelledby="homeTitle">
   <div class="home-paws" aria-hidden="true"><span>🐾</span><span>🐾</span><span>🐾</span></div>
-  <p class="home-kicker">JUKEN CAMP</p>
   <button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span aria-hidden="true">🐱</span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button>
   <h1 id="homeTitle" class="home-title" role="button" tabindex="0" aria-label="タイトルであそぶにゃ"><span>Nekoponの</span>スライド<span class="title-de">de</span>暗記</h1>
   <div class="home-card-stack" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><div></div><div></div><div><span>🐾</span><i></i><i></i><i></i></div></div>
   <div class="home-actions"><button class="primary-button" id="chooseLessons">教材を選ぶにゃ <span aria-hidden="true">→</span></button><button class="secondary-button" id="resumeStudy" hidden>つづきからにゃ <span aria-hidden="true">▶</span></button></div>
 </section>
 <header id="appHeader" class="top" hidden>
-  <div class="brand-row"><div class="brand"><p class="neko-kicker">🐾 JUKEN CAMP</p><h1><button id="brandHome" class="brand-home" aria-label="Nekoponのスライドde暗記・タイトル画面へ"><span>Nekoponの</span>スライドde暗記</button></h1></div></div>
+  <div class="brand-row"><div class="brand"><h1><button id="brandHome" class="brand-home" aria-label="Nekoponのスライドde暗記・タイトル画面へ"><span>Nekoponの</span>スライドde暗記</button></h1></div></div>
   <div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div>
 </header>
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
@@ -18,7 +17,7 @@
   <div class="catalog-heading"><div><p class="section-kicker">CONTENTS</p><h2 id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加にゃ</button></div>
   <p class="catalog-help">学びたい教材を選ぶにゃ。いくつでも選べるにゃ♪</p>
   <nav class="subjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav>
-  <div class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年で見る</button><button data-browse="field" aria-pressed="false">分野で見る</button></div>
+  <div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年で見る</button><button data-browse="field" aria-pressed="false">分野で見る</button></div>
   <nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav>
   <div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div>
   <div class="catalog-list-tools"><span id="visibleCount"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
@@ -31,7 +30,7 @@
 <p class="resume-note" id="resumeNote" hidden>つづきから再開したにゃ🐾</p><p id="saveWarning" class="save-warning" hidden></p>
 <section id="studyArea" aria-label="暗記カード">
 <div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div>
-<div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番</button></div>
+<div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
 <nav class="chips" id="chapterChips" aria-label="単元"></nav>
 <div class="face-mode" aria-label="カードの送り方"><button data-face-mode="normal" class="active" aria-pressed="true">問題から</button><button data-face-mode="answer" aria-pressed="false">解答で暗記</button></div>
 <div class="timer-panel"><div class="timer-top"><label><input type="checkbox" id="autoMode"> 自動めくり</label><span id="timerLabel"></span><button class="tool" id="playButton" hidden>▶ 再生</button></div><div id="timerOptions" class="timer-options" hidden><label>問題 <input type="number" id="questionSeconds" min="0.5" max="120" step="0.1" value="3"> 秒</label><label>解答 <input type="number" id="answerSeconds" min="0.5" max="120" step="0.1" value="2"> 秒</label></div><div class="timer-track" id="timerTrack" hidden><i id="timerBar"></i></div></div>
@@ -43,4 +42,5 @@
 </main><div class="neko-notice" id="notice" role="status" aria-live="polite"></div>
 <dialog id="importDialog"><button class="dialog-close" data-close="importDialog" aria-label="教材追加を閉じる">✕</button><h2>教材を追加</h2><p>教材ZIPか、問題・解答の画像を選ぶにゃ。<br><code>question_001.png</code> と <code>answer_001.png</code> をペアにするにゃ。</p><form id="importForm"><label>教材ファイル・画像（複数選択）<input type="file" id="importImages" accept=".zip,.png,.jpg,.jpeg,.webp" multiple required></label><label>教材名<input id="importTitle" maxlength="100" placeholder="例：地理 日本の地域" required></label><label>教科<select id="importSubject"><option value="science">理科</option><option value="social">社会</option></select></label><label>学年<select id="importGrade"><option value="1">中1</option><option value="2">中2</option><option value="3">中3</option><option value="all" selected>学年共通</option></select></label><label>分野<select id="importField"></select></label><p>追加した教材は、このブラウザーに保存するにゃ。元のZIPも保管してにゃ。全端末に追加したい教材は、このチャットに渡してにゃ。</p><p id="importStatus" role="status"></p><div class="dialog-actions"><button type="button" class="tool" data-close="importDialog">閉じるにゃ</button><button class="tool done" id="importSubmit">追加するにゃ</button></div></form></dialog>
 </body></html>
+
 

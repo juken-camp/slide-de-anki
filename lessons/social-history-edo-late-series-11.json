@@ -66,12 +66,16 @@
     {
       "id": "006",
       "chapter": "edo-late",
-      "question": "images_07/edo-late-series-11/question_006.png",
-      "answer": "images_07/edo-late-series-11/answer_006.png",
+      "question": "images_07/edo-late-series-11/question_006.png?v=941d8a43bc6b97c0",
+      "answer": "images_07/edo-late-series-11/answer_006.png?v=25f64ab6b6f42d25",
       "sourceTimes": {
         "question": 125.5,
         "answer": 129.5
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "007",
@@ -137,11 +141,14 @@
       "id": "013",
       "chapter": "edo-late",
       "question": "images_07/edo-late-series-11/question_013.png",
-      "answer": "images_07/edo-late-series-11/answer_013.png",
+      "answer": "images_07/edo-late-series-11/answer_013.png?v=0f9bada769b3180c",
       "sourceTimes": {
         "question": 279.5,
         "answer": 284.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "014",

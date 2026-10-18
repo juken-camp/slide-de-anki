@@ -187,23 +187,29 @@
       "id": "018",
       "chapter": "meiji",
       "question": "images_07/meiji-series-12/question_018.png",
-      "answer": "images_07/meiji-series-12/answer_018.png",
+      "answer": "images_07/meiji-series-12/answer_018.png?v=5013ed3de5c9c7c5",
       "source_answer_visible": false,
       "requires_review": true,
       "sourceTimes": {
         "question": 406.5,
         "answer": 415.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "019",
       "chapter": "meiji",
       "question": "images_07/meiji-series-12/question_019.png",
-      "answer": "images_07/meiji-series-12/answer_019.png",
+      "answer": "images_07/meiji-series-12/answer_019.png?v=845675897f95979c",
       "sourceTimes": {
         "question": 429.5,
         "answer": 436.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "020",

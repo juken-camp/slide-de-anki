@@ -67,11 +67,14 @@
       "id": "006",
       "chapter": "paleolithic-kofun",
       "question": "images_07/paleolithic-kofun-series-01/question_006.png",
-      "answer": "images_07/paleolithic-kofun-series-01/answer_006.png",
+      "answer": "images_07/paleolithic-kofun-series-01/answer_006.png?v=67ae90343e3f3443",
       "sourceTimes": {
         "question": 114.5,
         "answer": 131.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "007",

@@ -27,11 +27,14 @@
       "id": "002",
       "chapter": "taisho",
       "question": "images_07/taisho-series-13/question_002.png",
-      "answer": "images_07/taisho-series-13/answer_002.png",
+      "answer": "images_07/taisho-series-13/answer_002.png?v=9a4571f7b49a078d",
       "sourceTimes": {
         "question": 46.0,
         "answer": 51.5
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "003",

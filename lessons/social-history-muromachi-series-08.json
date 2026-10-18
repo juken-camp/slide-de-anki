@@ -57,21 +57,28 @@
       "id": "005",
       "chapter": "muromachi",
       "question": "images_07/muromachi-series-08/question_005.png",
-      "answer": "images_07/muromachi-series-08/answer_005.png",
+      "answer": "images_07/muromachi-series-08/answer_005.png?v=69e75397c0f29dc9",
       "sourceTimes": {
         "question": 99.0,
         "answer": 112.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "006",
       "chapter": "muromachi",
-      "question": "images_07/muromachi-series-08/question_006.png",
-      "answer": "images_07/muromachi-series-08/answer_006.png",
+      "question": "images_07/muromachi-series-08/question_006.png?v=d3218fad95d188e2",
+      "answer": "images_07/muromachi-series-08/answer_006.png?v=205348442fe5a82a",
       "sourceTimes": {
         "question": 116.5,
         "answer": 129.0
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "007",
@@ -127,11 +134,14 @@
       "id": "012",
       "chapter": "muromachi",
       "question": "images_07/muromachi-series-08/question_012.png",
-      "answer": "images_07/muromachi-series-08/answer_012.png",
+      "answer": "images_07/muromachi-series-08/answer_012.png?v=eb2290801db7c2c3",
       "sourceTimes": {
         "question": 242.0,
         "answer": 262.5
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "013",
@@ -206,12 +216,16 @@
     {
       "id": "020",
       "chapter": "muromachi",
-      "question": "images_07/muromachi-series-08/question_020.png",
-      "answer": "images_07/muromachi-series-08/answer_020.png",
+      "question": "images_07/muromachi-series-08/question_020.png?v=dae89cc3cd23f810",
+      "answer": "images_07/muromachi-series-08/answer_020.png?v=91406a02c0260c52",
       "sourceTimes": {
         "question": 418.0,
         "answer": 437.5
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "021",

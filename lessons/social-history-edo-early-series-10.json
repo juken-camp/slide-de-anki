@@ -76,12 +76,16 @@
     {
       "id": "007",
       "chapter": "edo-early",
-      "question": "images_07/edo-early-series-10/question_007.png",
-      "answer": "images_07/edo-early-series-10/answer_007.png",
+      "question": "images_07/edo-early-series-10/question_007.png?v=d9ecddd7bec44c4d",
+      "answer": "images_07/edo-early-series-10/answer_007.png?v=a4f1d039b0ccc565",
       "sourceTimes": {
         "question": 150.0,
         "answer": 154.5
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "008",

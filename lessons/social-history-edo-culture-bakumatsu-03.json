@@ -261,11 +261,14 @@
       "id": "025",
       "chapter": "bakumatsu",
       "question": "images_07/edo-culture-bakumatsu-03/question_025.png",
-      "answer": "images_07/edo-culture-bakumatsu-03/answer_025.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_025.png?v=4f15e01a231ca123",
       "sourceTimes": {
         "question": 293.0,
         "answer": 303.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "026",

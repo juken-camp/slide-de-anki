@@ -127,11 +127,14 @@
       "id": "012",
       "chapter": "nara",
       "question": "images_07/nara-series-03/question_012.png",
-      "answer": "images_07/nara-series-03/answer_012.png",
+      "answer": "images_07/nara-series-03/answer_012.png?v=9911d57fabf0e688",
       "sourceTimes": {
         "question": 244.0,
         "answer": 257.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "013",

@@ -125,21 +125,27 @@
       "id": "011",
       "chapter": "muromachi",
       "question": "images_07/muromachi-edo-02/question_011.png",
-      "answer": "images_07/muromachi-edo-02/answer_011.png",
+      "answer": "images_07/muromachi-edo-02/answer_011.png?v=5f35488b8a12e4a8",
       "sourceTimes": {
         "question": 134.0,
         "answer": 143.5
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "012",
       "chapter": "muromachi",
       "question": "images_07/muromachi-edo-02/question_012.png",
-      "answer": "images_07/muromachi-edo-02/answer_012.png",
+      "answer": "images_07/muromachi-edo-02/answer_012.png?v=197121a14c66d2ee",
       "sourceTimes": {
         "question": 146.5,
         "answer": 154.5
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "013",
@@ -535,11 +541,14 @@
       "id": "052",
       "chapter": "edo",
       "question": "images_07/muromachi-edo-02/question_052.png",
-      "answer": "images_07/muromachi-edo-02/answer_052.png",
+      "answer": "images_07/muromachi-edo-02/answer_052.png?v=04a6b51892d2bb21",
       "sourceTimes": {
         "question": 650.5,
         "answer": 657.5
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "053",
@@ -825,11 +834,14 @@
       "id": "081",
       "chapter": "edo",
       "question": "images_07/muromachi-edo-02/question_081.png",
-      "answer": "images_07/muromachi-edo-02/answer_081.png",
+      "answer": "images_07/muromachi-edo-02/answer_081.png?v=1a8e282f517d031d",
       "sourceTimes": {
         "question": 990.5,
         "answer": 1000.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "082",

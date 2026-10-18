@@ -250,12 +250,16 @@
     {
       "id": "024",
       "chapter": "showa",
-      "question": "images_07/showa-heisei-series-14/question_024.png",
-      "answer": "images_07/showa-heisei-series-14/answer_024.png",
+      "question": "images_07/showa-heisei-series-14/question_024.png?v=b5ec533053a9f2f9",
+      "answer": "images_07/showa-heisei-series-14/answer_024.png?v=b848f3ac80726af5",
       "sourceTimes": {
         "question": 569.0,
         "answer": 574.5
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "025",

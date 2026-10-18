@@ -86,12 +86,16 @@
     {
       "id": "008",
       "chapter": "sengoku",
-      "question": "images_07/sengoku-series-09/question_008.png",
-      "answer": "images_07/sengoku-series-09/answer_008.png",
+      "question": "images_07/sengoku-series-09/question_008.png?v=cc7b4de132ec04d4",
+      "answer": "images_07/sengoku-series-09/answer_008.png?v=5a52b1de411912f8",
       "sourceTimes": {
         "question": 153.5,
         "answer": 168.5
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "009",
@@ -246,12 +250,16 @@
     {
       "id": "024",
       "chapter": "sengoku",
-      "question": "images_07/sengoku-series-09/question_024.png",
-      "answer": "images_07/sengoku-series-09/answer_024.png",
+      "question": "images_07/sengoku-series-09/question_024.png?v=0e0b1038961f6805",
+      "answer": "images_07/sengoku-series-09/answer_024.png?v=a58a87a3d3a1910a",
       "sourceTimes": {
         "question": 493.5,
         "answer": 508.5
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "025",

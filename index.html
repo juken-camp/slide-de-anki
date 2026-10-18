@@ -363,9 +363,34 @@ button:disabled{opacity:.5}input[type=search],dialog input,dialog select{font-si
 .neko-playground{display:flex;align-items:center;gap:12px;margin-top:24px;padding:16px;border:1px solid var(--line);border-radius:18px;background:#fffaf4}.neko-playground>div{flex:1}.neko-playground strong{font-size:13px}.neko-playground p{font-size:11px;line-height:1.7;color:var(--muted);margin:4px 0 0}.neko-playground .home-mascot{width:58px;height:58px;flex:none;margin:0;border-radius:18px;box-shadow:0 4px 0 #f0e2d4}.neko-playground .home-mascot>span{font-size:36px}.neko-playground .home-mascot i{display:none}.neko-play-card{display:grid;place-items:center;width:46px;height:58px;flex:none;border:1px solid #e3c5a5;border-radius:10px;background:#fff0d8;color:#80512e;font-size:25px;transform:rotate(7deg);cursor:pointer}
 @media(max-width:370px){.compact-header{gap:6px}.compact-header .brand-home{font-size:12px;gap:3px}.compact-header .app-navigation button{padding:6px;font-size:11px}.compact-header .app-navigation{flex-basis:230px}.app[data-screen=study] .head{padding:5px 8px}.neko-playground{gap:8px;padding:12px}.neko-playground p{font-size:10px}}
 
+/* Quieter navigation; one cohesive catalogue workspace. */
+.compact-header{gap:8px;margin-bottom:8px;min-height:46px}.compact-header .brand-home{font-size:15px;font-weight:800;letter-spacing:-.025em;min-width:0}.compact-header #headerCatFace{font-size:24px}
+.compact-header .app-navigation{flex:0 0 auto;display:flex;gap:1px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.compact-header .app-navigation button{min-height:40px;padding:8px 9px;border:0;border-bottom:2px solid transparent;border-radius:0;color:#876c5a;background:transparent;font-size:11px;font-weight:500;box-shadow:none}
+.compact-header .app-navigation button[aria-current=page]{border-bottom-color:#a65b2c;background:transparent;color:#6c4127;box-shadow:none;font-weight:700}
+#catalogScreen{margin-top:12px;padding-bottom:130px}#catalogScreen .catalog-heading{gap:10px}#catalogScreen .catalog-heading h2{font-size:21px;margin:0;line-height:1.5}#catalogScreen .catalog-heading .tool{min-height:38px;padding:7px 11px;border:1px solid #d7c3ae;border-radius:11px;background:#fffaf4;font-size:12px;box-shadow:none}#catalogScreen>.catalog-help{margin:6px 0 10px;font-size:12px;line-height:1.6}
+#catalogScreen .catalog-resume{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin:8px 0 12px;padding:0}#catalogScreen .catalog-resume>button{min-height:36px;padding:6px 10px;font-size:11px;border:1px solid #e4d6c7;border-radius:9px;background:#fffaf4}#catalogScreen .catalog-resume .resume-context{flex:1 1 120px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;margin:0}#catalogScreen .catalog-resume:not(:has(button:not([hidden]))){display:none}
+.catalog-search-panel{display:grid;gap:10px;padding:12px;border:1px solid #e2d5c7;border-radius:16px;background:#fffdf8;box-shadow:0 3px 15px #57331604}
+.catalog-search-panel .catalog-search{padding:0 10px;border:1px solid #e4d7c9;border-radius:10px;background:#fff;min-height:40px}.catalog-search-panel .catalog-search>span{font-size:24px}.catalog-search-panel .catalog-search input{min-height:40px;font-size:16px}.catalog-search-panel .catalog-search input::placeholder{font-size:12px}
+.catalog-search-panel #catalogSubjects{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;margin:0;padding:0 0 2px;scrollbar-width:thin}
+.catalog-search-panel #catalogSubjects button{flex:0 0 auto;min-width:0;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-height:38px;padding:7px 13px;border:1px solid #e0d0be;border-radius:10px;background:#fff;color:#75563d;font-size:13px;font-weight:700;box-shadow:none;transform:none}
+.catalog-search-panel #catalogSubjects button.active{background:#f7e7d5;border-color:#c89567;color:#743e1c;box-shadow:none;transform:none}
+.catalog-filter-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:8px;border-top:1px solid #eee4d8;min-width:0}
+.catalog-filter-row #browseSwitch{flex:0 0 auto;min-height:36px;margin:0;padding:2px;gap:2px;border:0;border-radius:9px;background:#f0e7dc}.catalog-filter-row #browseSwitch button{min-height:32px;padding:5px 10px;font-size:11px;border-radius:7px;font-weight:600}.catalog-filter-row #browseSwitch button.active{background:white;box-shadow:0 1px 3px #57331610}
+.catalog-filter-row #socialSwitch{flex:1 1 100%;display:flex;flex-wrap:nowrap;overflow-x:auto;gap:3px;min-height:36px;padding:2px;margin:0;border:0;border-radius:9px;background:#f3ebe0;scrollbar-width:thin}.catalog-filter-row #socialSwitch button{flex:0 0 auto;min-height:32px;padding:5px 12px;border-radius:7px;font-size:11px;font-weight:600;white-space:nowrap}
+.catalog-filter-row #catalogFilters{flex:1 1 140px;display:flex;flex-wrap:nowrap;overflow-x:auto;gap:5px;margin:0;padding:0;scrollbar-width:thin}.catalog-filter-row #catalogFilters button{flex:none;min-height:36px;padding:5px 11px;border:1px solid #e0d0be;border-radius:9px;background:transparent;font-size:11px;font-weight:500}.catalog-filter-row #catalogFilters button.active{background:#a65123;color:#fff;border-color:#a65123;font-weight:700}
+#catalogScreen .catalog-list-tools{margin:7px 0 0;font-size:11px;min-height:36px}#catalogScreen .catalog-list-tools .link-button{font-size:11px;min-height:36px}
+#catalogScreen .catalog-groups{margin-top:5px;gap:18px}#catalogScreen .group-heading{margin:0 0 8px}#catalogScreen .group-heading h3{font-size:15px}#catalogScreen .lesson-grid{gap:8px}
+#catalogScreen .lesson-choice{min-height:0;padding:12px;gap:10px;border:1px solid #dfcebc;border-radius:14px;box-shadow:none}#catalogScreen .lesson-choice.selected{padding:12px;border:1px solid #ac5d2c;background:#fff2df;box-shadow:inset 3px 0 #ac5d2c}
+#catalogScreen .choice-check{width:21px;height:21px;font-size:14px;border-width:1px;border-radius:7px}#catalogScreen .choice-copy{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center}#catalogScreen .choice-copy strong{grid-column:1/-1;font-size:13px;line-height:1.5}#catalogScreen .choice-meta{grid-column:1/-1;font-size:10px;line-height:1.5}#catalogScreen .choice-record{font-size:10px;line-height:1.5;white-space:nowrap}#catalogScreen .choice-progress{height:4px;margin:0}
+#catalogDock{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px 12px;border-radius:18px}#catalogDock .selection-top{min-width:0;margin:0;gap:5px}#catalogDock .selection-top details{min-width:0}#catalogDock #selectionSummary{min-height:36px;padding:4px 0;font-size:11px;line-height:1.7}#catalogDock:not(:has(details[open])) #clearSelection{display:none}#catalogDock #startStudy{width:auto;min-height:46px;min-width:135px;padding:9px 12px;font-size:12px;border-radius:12px;box-shadow:0 3px 0 #793810}#catalogDock:has(details[open]){grid-template-columns:1fr}#catalogDock:has(details[open]) #startStudy{width:100%}#catalogDock .selected-lessons{max-height:22dvh}#catalogDock .selected-lesson{font-size:11px;min-height:36px}
+@media(max-width:370px){.compact-header .brand-home{font-size:13px;gap:4px}.compact-header #headerCatFace{font-size:22px}.compact-header .app-navigation button{font-size:10px;padding:8px 7px}.catalog-search-panel{padding:10px;gap:8px}.catalog-filter-row #browseSwitch button{padding:5px 8px}.catalog-filter-row #catalogFilters button{padding:5px 9px}#catalogDock{gap:7px;padding:9px 10px}#catalogDock #startStudy{min-width:120px;padding:9px;font-size:11px}}
+.catalog-search-top{display:grid;grid-template-columns:minmax(95px,1fr) minmax(130px,1fr);align-items:center;gap:10px;min-width:0}.catalog-search-top .catalog-search{min-width:0}.catalog-search-top #catalogSubjects{min-width:0;padding:0}.catalog-search-top #catalogSubjects button{padding:7px 11px;font-size:12px}#catalogScreen .catalog-resume{margin:6px 0 10px}#catalogScreen .catalog-heading{margin-bottom:10px}#catalogScreen .catalog-list-tools,#catalogScreen .catalog-list-tools .link-button{min-height:32px}
+@media(min-width:650px){.catalog-search-top{grid-template-columns:minmax(220px,1.2fr) minmax(200px,1fr)}}
+
 </style></head>
 <body><main id="app" class="app">
-<header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="Nekoponとあそぶにゃ"><span id="headerCatFace" aria-hidden="true">🐱</span><span>Nekopon</span></button>
+<header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドde暗記・猫とあそぶにゃ"><span id="headerCatFace" aria-hidden="true">🐱</span><span>スライドde暗記</span></button>
   
   
 <nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navSettings" type="button">設定</button></nav></header>
@@ -373,20 +398,20 @@ button:disabled{opacity:.5}input[type=search],dialog input,dialog select{font-si
 
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
-  <div class="catalog-heading"><div><p class="section-kicker">CONTENTS</p><h2 id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加にゃ</button></div>
-  <p class="catalog-help">学びたい教材を選ぶにゃ。いくつでも選べるにゃ♪</p><div class="catalog-resume"><button class="secondary-button" id="resumeStudy" hidden>つづきからにゃ <span aria-hidden="true">▶</span></button><button class="secondary-button home-review" id="quickReview" hidden>苦手だけ復習するにゃ</button><p class="resume-context" id="resumeContext" hidden></p></div>
-  <nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav>
-  <div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年で見る</button><button data-browse="field" aria-pressed="false">分野で見る</button></div>
-  <div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div>
-  <nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav>
-  <div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div>
+  <div class="catalog-heading"><div><h2 id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加</button></div>
+  <div class="catalog-resume"><button class="secondary-button" id="resumeStudy" hidden>つづきから <span aria-hidden="true">▶</span></button><button class="secondary-button home-review" id="quickReview" hidden>苦手だけ復習するにゃ</button><p class="resume-context" id="resumeContext" hidden></p></div><div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div></div>
+  
+  
+  
+  
+  
   <div class="catalog-list-tools"><span id="visibleCount"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
   <div id="catalogGroups" class="catalog-groups"></div>
   <div id="catalogEmpty" class="catalog-empty" hidden><span aria-hidden="true">📚</span><h3 id="catalogEmptyTitle"></h3><p id="catalogEmptyText"></p></div>
-  <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><button class="primary-button" id="startStudy" disabled>この教材ではじめるにゃ <span aria-hidden="true">🐾</span></button></div>
+  <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><button class="primary-button" id="startStudy" disabled>はじめるにゃ <span aria-hidden="true">🐾</span></button></div>
 </section>
 <section id="studyScreen" aria-label="スライド学習" hidden>
-<div class="study-heading"><p id="sessionSummary"></p><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button><button id="quickSound" class="tool quick-sound" type="button" aria-pressed="true" aria-label="効果音をオフにする">🔊</button></div>
+<div class="study-heading"><p id="sessionSummary"></p><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden>つづきから再開したにゃ🐾</p><p id="saveWarning" class="save-warning" hidden></p>
 <section id="studyArea" aria-label="暗記カード">
 
@@ -819,9 +844,6 @@ function stats() {
   $('returnToStudy').disabled = !lesson && !state.lessonIds.some(id=>meta.some(m=>m.id===id));
   const known = meta.reduce((n,m) => n + knownFor(m), 0);
   $('soundToggle').checked = soundEnabled; soundSettingsUI();
-  $('quickSound').textContent = soundEnabled ? '🔊' : '🔇';
-  $('quickSound').setAttribute('aria-pressed', String(soundEnabled));
-  $('quickSound').setAttribute('aria-label', soundEnabled ? '効果音をオフにする' : '効果音をオンにする');
   const weakTotal = meta.reduce((n,m) => n + weakFor(m), 0);
   $('quickReview').hidden = weakTotal === 0;
   $('quickReview').textContent = `↻ 苦手${weakTotal}問を復習するにゃ`;
@@ -1218,7 +1240,6 @@ $('quickReview').onclick = () => {
   const ids = meta.filter(m => weakFor(m)>0).map(m=>m.id);
   beep('open'); return selectLessons(ids,{startMode:'weak'});
 };
-$('quickSound').onclick = () => { soundEnabled=!soundEnabled; save(); stats(); if(soundEnabled)beep('tap'); };
 $('quickPause').onclick = pause;
 $('brandHome').onclick = () => playWithCat($('brandHome'));
 $('navSettings').onclick = () => showScreen('settings');

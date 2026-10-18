@@ -1,0 +1,482 @@
+{
+  "id": "social-geography-europe-africa-grade1-03",
+  "subject": "social",
+  "field": "geography",
+  "title": "ヨーロッパ州・アフリカ州",
+  "grade": "中1社会",
+  "description": "ヨーロッパ州とアフリカ州の自然、文化、農業、工業や地域の特徴を図解で学ぶ教材。",
+  "cover": "images_06/europe-africa/question_001.png",
+  "chapters": [
+    {
+      "id": "europe",
+      "title": "ヨーロッパ州"
+    },
+    {
+      "id": "africa",
+      "title": "アフリカ州"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_001.png",
+      "answer": "images_06/europe-africa/answer_001.png",
+      "sourceTimes": {
+        "question": 22.8,
+        "answer": 27.4
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_002.png",
+      "answer": "images_06/europe-africa/answer_002.png",
+      "sourceTimes": {
+        "question": 30.9,
+        "answer": 35.2
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_003.png",
+      "answer": "images_06/europe-africa/answer_003.png",
+      "sourceTimes": {
+        "question": 39.7,
+        "answer": 44.7
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_004.png",
+      "answer": "images_06/europe-africa/answer_004.png",
+      "sourceTimes": {
+        "question": 49.9,
+        "answer": 56.1
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_005.png",
+      "answer": "images_06/europe-africa/answer_005.png",
+      "sourceTimes": {
+        "question": 64.2,
+        "answer": 73.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_006.png",
+      "answer": "images_06/europe-africa/answer_006.png",
+      "sourceTimes": {
+        "question": 80.8,
+        "answer": 89.2
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_007.png",
+      "answer": "images_06/europe-africa/answer_007.png",
+      "sourceTimes": {
+        "question": 97.4,
+        "answer": 106.1
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_008.png",
+      "answer": "images_06/europe-africa/answer_008.png",
+      "sourceTimes": {
+        "question": 114.1,
+        "answer": 122.7
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_009.png",
+      "answer": "images_06/europe-africa/answer_009.png",
+      "sourceTimes": {
+        "question": 132.1,
+        "answer": 142.1
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_010.png",
+      "answer": "images_06/europe-africa/answer_010.png",
+      "sourceTimes": {
+        "question": 149.6,
+        "answer": 158.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_011.png",
+      "answer": "images_06/europe-africa/answer_011.png",
+      "sourceTimes": {
+        "question": 166.9,
+        "answer": 176.4
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_012.png",
+      "answer": "images_06/europe-africa/answer_012.png",
+      "sourceTimes": {
+        "question": 186.8,
+        "answer": 196.7
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_013.png",
+      "answer": "images_06/europe-africa/answer_013.png",
+      "sourceTimes": {
+        "question": 206.6,
+        "answer": 217.9
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_014.png",
+      "answer": "images_06/europe-africa/answer_014.png",
+      "sourceTimes": {
+        "question": 226.9,
+        "answer": 236.6
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_015.png",
+      "answer": "images_06/europe-africa/answer_015.png",
+      "sourceTimes": {
+        "question": 244.9,
+        "answer": 252.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_016.png",
+      "answer": "images_06/europe-africa/answer_016.png",
+      "sourceTimes": {
+        "question": 258.7,
+        "answer": 267.4
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_017.png",
+      "answer": "images_06/europe-africa/answer_017.png",
+      "sourceTimes": {
+        "question": 275.4,
+        "answer": 284.2
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_018.png",
+      "answer": "images_06/europe-africa/answer_018.png",
+      "sourceTimes": {
+        "question": 293.5,
+        "answer": 299.8
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_019.png",
+      "answer": "images_06/europe-africa/answer_019.png",
+      "sourceTimes": {
+        "question": 310.4,
+        "answer": 318.7
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_020.png",
+      "answer": "images_06/europe-africa/answer_020.png",
+      "sourceTimes": {
+        "question": 330.1,
+        "answer": 337.9
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_021.png",
+      "answer": "images_06/europe-africa/answer_021.png",
+      "sourceTimes": {
+        "question": 346.2,
+        "answer": 355.9
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_022.png",
+      "answer": "images_06/europe-africa/answer_022.png",
+      "sourceTimes": {
+        "question": 363.0,
+        "answer": 372.4
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_023.png",
+      "answer": "images_06/europe-africa/answer_023.png",
+      "sourceTimes": {
+        "question": 381.9,
+        "answer": 392.2
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_024.png",
+      "answer": "images_06/europe-africa/answer_024.png",
+      "sourceTimes": {
+        "question": 401.2,
+        "answer": 410.2
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_025.png",
+      "answer": "images_06/europe-africa/answer_025.png",
+      "sourceTimes": {
+        "question": 421.2,
+        "answer": 429.6
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "europe",
+      "question": "images_06/europe-africa/question_026.png",
+      "answer": "images_06/europe-africa/answer_026.png",
+      "sourceTimes": {
+        "question": 439.6,
+        "answer": 452.6
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_027.png",
+      "answer": "images_06/europe-africa/answer_027.png",
+      "sourceTimes": {
+        "question": 465.5,
+        "answer": 471.2
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_028.png",
+      "answer": "images_06/europe-africa/answer_028.png",
+      "sourceTimes": {
+        "question": 476.1,
+        "answer": 481.9
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_029.png",
+      "answer": "images_06/europe-africa/answer_029.png",
+      "sourceTimes": {
+        "question": 489.3,
+        "answer": 497.3
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_030.png",
+      "answer": "images_06/europe-africa/answer_030.png",
+      "sourceTimes": {
+        "question": 503.7,
+        "answer": 511.1
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_031.png",
+      "answer": "images_06/europe-africa/answer_031.png",
+      "sourceTimes": {
+        "question": 519.5,
+        "answer": 528.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_032.png",
+      "answer": "images_06/europe-africa/answer_032.png",
+      "sourceTimes": {
+        "question": 533.6,
+        "answer": 540.6
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_033.png",
+      "answer": "images_06/europe-africa/answer_033.png",
+      "sourceTimes": {
+        "question": 550.0,
+        "answer": 560.2
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_034.png",
+      "answer": "images_06/europe-africa/answer_034.png",
+      "sourceTimes": {
+        "question": 568.8,
+        "answer": 578.1
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_035.png",
+      "answer": "images_06/europe-africa/answer_035.png",
+      "sourceTimes": {
+        "question": 587.1,
+        "answer": 597.3
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_036.png",
+      "answer": "images_06/europe-africa/answer_036.png",
+      "sourceTimes": {
+        "question": 605.6,
+        "answer": 614.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_037.png",
+      "answer": "images_06/europe-africa/answer_037.png",
+      "sourceTimes": {
+        "question": 623.7,
+        "answer": 635.9
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_038.png",
+      "answer": "images_06/europe-africa/answer_038.png",
+      "sourceTimes": {
+        "question": 643.1,
+        "answer": 652.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_039.png",
+      "answer": "images_06/europe-africa/answer_039.png",
+      "sourceTimes": {
+        "question": 660.2,
+        "answer": 669.3
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_040.png",
+      "answer": "images_06/europe-africa/answer_040.png",
+      "sourceTimes": {
+        "question": 678.2,
+        "answer": 687.3
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_041.png",
+      "answer": "images_06/europe-africa/answer_041.png",
+      "sourceTimes": {
+        "question": 693.7,
+        "answer": 700.9
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_042.png",
+      "answer": "images_06/europe-africa/answer_042.png",
+      "sourceTimes": {
+        "question": 710.4,
+        "answer": 718.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_043.png",
+      "answer": "images_06/europe-africa/answer_043.png",
+      "sourceTimes": {
+        "question": 729.8,
+        "answer": 737.3
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_044.png",
+      "answer": "images_06/europe-africa/answer_044.png",
+      "sourceTimes": {
+        "question": 748.3,
+        "answer": 760.7
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_045.png",
+      "answer": "images_06/europe-africa/answer_045.png",
+      "sourceTimes": {
+        "question": 770.9,
+        "answer": 781.8
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "africa",
+      "question": "images_06/europe-africa/question_046.png",
+      "answer": "images_06/europe-africa/answer_046.png",
+      "sourceTimes": {
+        "question": 792.0,
+        "answer": 806.4
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=WU1Jbtfbwm4"
+}

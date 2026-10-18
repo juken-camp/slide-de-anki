@@ -1,0 +1,1656 @@
+{
+  "id": "social-geography-world-review",
+  "subject": "social",
+  "field": "geography",
+  "title": "世界の地理総まとめ",
+  "grade": "中1社会",
+  "description": "世界の海・大陸・環境と、各州の自然、文化、産業の特徴を図解で学ぶ総まとめ教材。",
+  "cover": "images_06/world-review/question_001.png",
+  "chapters": [
+    {
+      "id": "world-names",
+      "title": "世界の地名"
+    },
+    {
+      "id": "world-environments",
+      "title": "世界の気候・環境"
+    },
+    {
+      "id": "asia",
+      "title": "アジア州"
+    },
+    {
+      "id": "europe",
+      "title": "ヨーロッパ州"
+    },
+    {
+      "id": "africa",
+      "title": "アフリカ州"
+    },
+    {
+      "id": "north-america",
+      "title": "北アメリカ州"
+    },
+    {
+      "id": "south-america",
+      "title": "南アメリカ州"
+    },
+    {
+      "id": "oceania",
+      "title": "オセアニア州"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_001.png",
+      "answer": "images_06/world-review/answer_001.png",
+      "sourceTimes": {
+        "question": 36.2,
+        "answer": 43.6
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_002.png",
+      "answer": "images_06/world-review/answer_002.png",
+      "sourceTimes": {
+        "question": 51.2,
+        "answer": 59.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_003.png",
+      "answer": "images_06/world-review/answer_003.png",
+      "sourceTimes": {
+        "question": 66.6,
+        "answer": 74.4
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_004.png",
+      "answer": "images_06/world-review/answer_004.png",
+      "sourceTimes": {
+        "question": 80.3,
+        "answer": 86.8
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_005.png",
+      "answer": "images_06/world-review/answer_005.png",
+      "sourceTimes": {
+        "question": 92.3,
+        "answer": 98.7
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_006.png",
+      "answer": "images_06/world-review/answer_006.png",
+      "sourceTimes": {
+        "question": 104.5,
+        "answer": 111.4
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_007.png",
+      "answer": "images_06/world-review/answer_007.png",
+      "sourceTimes": {
+        "question": 117.3,
+        "answer": 124.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_008.png",
+      "answer": "images_06/world-review/answer_008.png",
+      "sourceTimes": {
+        "question": 130.7,
+        "answer": 137.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_009.png",
+      "answer": "images_06/world-review/answer_009.png",
+      "sourceTimes": {
+        "question": 145.5,
+        "answer": 154.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_010.png",
+      "answer": "images_06/world-review/answer_010.png",
+      "sourceTimes": {
+        "question": 162.6,
+        "answer": 170.9
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_011.png",
+      "answer": "images_06/world-review/answer_011.png",
+      "sourceTimes": {
+        "question": 178.6,
+        "answer": 186.6
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_012.png",
+      "answer": "images_06/world-review/answer_012.png",
+      "sourceTimes": {
+        "question": 194.6,
+        "answer": 203.4
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_013.png",
+      "answer": "images_06/world-review/answer_013.png",
+      "sourceTimes": {
+        "question": 211.7,
+        "answer": 221.2
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_014.png",
+      "answer": "images_06/world-review/answer_014.png",
+      "sourceTimes": {
+        "question": 228.9,
+        "answer": 237.3
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_015.png",
+      "answer": "images_06/world-review/answer_015.png",
+      "sourceTimes": {
+        "question": 244.7,
+        "answer": 254.4
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_016.png",
+      "answer": "images_06/world-review/answer_016.png",
+      "sourceTimes": {
+        "question": 259.6,
+        "answer": 266.6
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_017.png",
+      "answer": "images_06/world-review/answer_017.png",
+      "sourceTimes": {
+        "question": 272.3,
+        "answer": 279.3
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_018.png",
+      "answer": "images_06/world-review/answer_018.png",
+      "sourceTimes": {
+        "question": 284.5,
+        "answer": 291.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_019.png",
+      "answer": "images_06/world-review/answer_019.png",
+      "sourceTimes": {
+        "question": 298.8,
+        "answer": 307.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_020.png",
+      "answer": "images_06/world-review/answer_020.png",
+      "sourceTimes": {
+        "question": 317.7,
+        "answer": 327.7
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_021.png",
+      "answer": "images_06/world-review/answer_021.png",
+      "sourceTimes": {
+        "question": 336.2,
+        "answer": 345.7
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_022.png",
+      "answer": "images_06/world-review/answer_022.png",
+      "sourceTimes": {
+        "question": 352.3,
+        "answer": 359.6
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_023.png",
+      "answer": "images_06/world-review/answer_023.png",
+      "sourceTimes": {
+        "question": 365.3,
+        "answer": 372.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_024.png",
+      "answer": "images_06/world-review/answer_024.png",
+      "sourceTimes": {
+        "question": 378.8,
+        "answer": 385.7
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_025.png",
+      "answer": "images_06/world-review/answer_025.png",
+      "sourceTimes": {
+        "question": 391.6,
+        "answer": 398.1
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_026.png",
+      "answer": "images_06/world-review/answer_026.png",
+      "sourceTimes": {
+        "question": 409.7,
+        "answer": 417.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "world-names",
+      "question": "images_06/world-review/question_027.png",
+      "answer": "images_06/world-review/answer_027.png",
+      "sourceTimes": {
+        "question": 426.8,
+        "answer": 436.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_028.png",
+      "answer": "images_06/world-review/answer_028.png",
+      "sourceTimes": {
+        "question": 450.0,
+        "answer": 458.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_029.png",
+      "answer": "images_06/world-review/answer_029.png",
+      "sourceTimes": {
+        "question": 467.7,
+        "answer": 473.9
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_030.png",
+      "answer": "images_06/world-review/answer_030.png",
+      "sourceTimes": {
+        "question": 484.8,
+        "answer": 494.4
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_031.png",
+      "answer": "images_06/world-review/answer_031.png",
+      "sourceTimes": {
+        "question": 509.9,
+        "answer": 514.4
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_032.png",
+      "answer": "images_06/world-review/answer_032.png",
+      "sourceTimes": {
+        "question": 523.8,
+        "answer": 531.8
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_033.png",
+      "answer": "images_06/world-review/answer_033.png",
+      "sourceTimes": {
+        "question": 542.2,
+        "answer": 553.1
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_034.png",
+      "answer": "images_06/world-review/answer_034.png",
+      "sourceTimes": {
+        "question": 563.7,
+        "answer": 570.9
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_035.png",
+      "answer": "images_06/world-review/answer_035.png",
+      "sourceTimes": {
+        "question": 581.5,
+        "answer": 593.4
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_036.png",
+      "answer": "images_06/world-review/answer_036.png",
+      "sourceTimes": {
+        "question": 602.9,
+        "answer": 612.6
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_037.png",
+      "answer": "images_06/world-review/answer_037.png",
+      "sourceTimes": {
+        "question": 622.3,
+        "answer": 633.5
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_038.png",
+      "answer": "images_06/world-review/answer_038.png",
+      "sourceTimes": {
+        "question": 643.5,
+        "answer": 653.6
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "world-environments",
+      "question": "images_06/world-review/question_039.png",
+      "answer": "images_06/world-review/answer_039.png",
+      "sourceTimes": {
+        "question": 661.1,
+        "answer": 669.1
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_040.png",
+      "answer": "images_06/world-review/answer_040.png",
+      "sourceTimes": {
+        "question": 681.3,
+        "answer": 689.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_041.png",
+      "answer": "images_06/world-review/answer_041.png",
+      "sourceTimes": {
+        "question": 693.5,
+        "answer": 699.4
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_042.png",
+      "answer": "images_06/world-review/answer_042.png",
+      "sourceTimes": {
+        "question": 708.9,
+        "answer": 716.6
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_043.png",
+      "answer": "images_06/world-review/answer_043.png",
+      "sourceTimes": {
+        "question": 725.1,
+        "answer": 734.9
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_044.png",
+      "answer": "images_06/world-review/answer_044.png",
+      "sourceTimes": {
+        "question": 740.7,
+        "answer": 747.6
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_045.png",
+      "answer": "images_06/world-review/answer_045.png",
+      "sourceTimes": {
+        "question": 754.5,
+        "answer": 762.3
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_046.png",
+      "answer": "images_06/world-review/answer_046.png",
+      "sourceTimes": {
+        "question": 774.0,
+        "answer": 782.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_047.png",
+      "answer": "images_06/world-review/answer_047.png",
+      "sourceTimes": {
+        "question": 790.5,
+        "answer": 800.3
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_048.png",
+      "answer": "images_06/world-review/answer_048.png",
+      "sourceTimes": {
+        "question": 808.4,
+        "answer": 817.4
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_049.png",
+      "answer": "images_06/world-review/answer_049.png",
+      "sourceTimes": {
+        "question": 826.1,
+        "answer": 836.1
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_050.png",
+      "answer": "images_06/world-review/answer_050.png",
+      "sourceTimes": {
+        "question": 841.9,
+        "answer": 849.8
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_051.png",
+      "answer": "images_06/world-review/answer_051.png",
+      "sourceTimes": {
+        "question": 855.0,
+        "answer": 861.8
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_052.png",
+      "answer": "images_06/world-review/answer_052.png",
+      "sourceTimes": {
+        "question": 870.8,
+        "answer": 880.1
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_053.png",
+      "answer": "images_06/world-review/answer_053.png",
+      "sourceTimes": {
+        "question": 889.5,
+        "answer": 897.4
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_054.png",
+      "answer": "images_06/world-review/answer_054.png",
+      "sourceTimes": {
+        "question": 905.9,
+        "answer": 915.1
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_055.png",
+      "answer": "images_06/world-review/answer_055.png",
+      "sourceTimes": {
+        "question": 924.4,
+        "answer": 934.7
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_056.png",
+      "answer": "images_06/world-review/answer_056.png",
+      "sourceTimes": {
+        "question": 942.7,
+        "answer": 952.3
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_057.png",
+      "answer": "images_06/world-review/answer_057.png",
+      "sourceTimes": {
+        "question": 961.2,
+        "answer": 970.2
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_058.png",
+      "answer": "images_06/world-review/answer_058.png",
+      "sourceTimes": {
+        "question": 977.1,
+        "answer": 985.7
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_059.png",
+      "answer": "images_06/world-review/answer_059.png",
+      "sourceTimes": {
+        "question": 993.3,
+        "answer": 1004.4
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_060.png",
+      "answer": "images_06/world-review/answer_060.png",
+      "sourceTimes": {
+        "question": 1011.0,
+        "answer": 1020.1
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_061.png",
+      "answer": "images_06/world-review/answer_061.png",
+      "sourceTimes": {
+        "question": 1026.9,
+        "answer": 1035.1
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_062.png",
+      "answer": "images_06/world-review/answer_062.png",
+      "sourceTimes": {
+        "question": 1042.4,
+        "answer": 1050.9
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_063.png",
+      "answer": "images_06/world-review/answer_063.png",
+      "sourceTimes": {
+        "question": 1057.7,
+        "answer": 1065.4
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_064.png",
+      "answer": "images_06/world-review/answer_064.png",
+      "sourceTimes": {
+        "question": 1074.4,
+        "answer": 1084.7
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_065.png",
+      "answer": "images_06/world-review/answer_065.png",
+      "sourceTimes": {
+        "question": 1092.5,
+        "answer": 1104.8
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_066.png",
+      "answer": "images_06/world-review/answer_066.png",
+      "sourceTimes": {
+        "question": 1112.7,
+        "answer": 1122.2
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_067.png",
+      "answer": "images_06/world-review/answer_067.png",
+      "sourceTimes": {
+        "question": 1132.3,
+        "answer": 1142.4
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_068.png",
+      "answer": "images_06/world-review/answer_068.png",
+      "sourceTimes": {
+        "question": 1150.7,
+        "answer": 1160.0
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_069.png",
+      "answer": "images_06/world-review/answer_069.png",
+      "sourceTimes": {
+        "question": 1170.2,
+        "answer": 1185.8
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_070.png",
+      "answer": "images_06/world-review/answer_070.png",
+      "sourceTimes": {
+        "question": 1194.4,
+        "answer": 1204.5
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_071.png",
+      "answer": "images_06/world-review/answer_071.png",
+      "sourceTimes": {
+        "question": 1212.7,
+        "answer": 1222.5
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_072.png",
+      "answer": "images_06/world-review/answer_072.png",
+      "sourceTimes": {
+        "question": 1231.6,
+        "answer": 1241.4
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_073.png",
+      "answer": "images_06/world-review/answer_073.png",
+      "sourceTimes": {
+        "question": 1249.1,
+        "answer": 1257.4
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_074.png",
+      "answer": "images_06/world-review/answer_074.png",
+      "sourceTimes": {
+        "question": 1266.1,
+        "answer": 1276.1
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_075.png",
+      "answer": "images_06/world-review/answer_075.png",
+      "sourceTimes": {
+        "question": 1284.5,
+        "answer": 1294.6
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_076.png",
+      "answer": "images_06/world-review/answer_076.png",
+      "sourceTimes": {
+        "question": 1301.1,
+        "answer": 1310.3
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_077.png",
+      "answer": "images_06/world-review/answer_077.png",
+      "sourceTimes": {
+        "question": 1319.7,
+        "answer": 1330.6
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_078.png",
+      "answer": "images_06/world-review/answer_078.png",
+      "sourceTimes": {
+        "question": 1340.2,
+        "answer": 1350.4
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "asia",
+      "question": "images_06/world-review/question_079.png",
+      "answer": "images_06/world-review/answer_079.png",
+      "sourceTimes": {
+        "question": 1357.5,
+        "answer": 1365.2
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_080.png",
+      "answer": "images_06/world-review/answer_080.png",
+      "sourceTimes": {
+        "question": 1374.7,
+        "answer": 1379.3
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_081.png",
+      "answer": "images_06/world-review/answer_081.png",
+      "sourceTimes": {
+        "question": 1385.8,
+        "answer": 1389.7
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_082.png",
+      "answer": "images_06/world-review/answer_082.png",
+      "sourceTimes": {
+        "question": 1394.0,
+        "answer": 1399.1
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_083.png",
+      "answer": "images_06/world-review/answer_083.png",
+      "sourceTimes": {
+        "question": 1405.6,
+        "answer": 1409.1
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_084.png",
+      "answer": "images_06/world-review/answer_084.png",
+      "sourceTimes": {
+        "question": 1419.1,
+        "answer": 1426.7
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_085.png",
+      "answer": "images_06/world-review/answer_085.png",
+      "sourceTimes": {
+        "question": 1435.5,
+        "answer": 1444.7
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_086.png",
+      "answer": "images_06/world-review/answer_086.png",
+      "sourceTimes": {
+        "question": 1452.7,
+        "answer": 1460.7
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_087.png",
+      "answer": "images_06/world-review/answer_087.png",
+      "sourceTimes": {
+        "question": 1467.5,
+        "answer": 1475.8
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_088.png",
+      "answer": "images_06/world-review/answer_088.png",
+      "sourceTimes": {
+        "question": 1484.7,
+        "answer": 1493.6
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_089.png",
+      "answer": "images_06/world-review/answer_089.png",
+      "sourceTimes": {
+        "question": 1502.0,
+        "answer": 1512.0
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_090.png",
+      "answer": "images_06/world-review/answer_090.png",
+      "sourceTimes": {
+        "question": 1519.3,
+        "answer": 1527.9
+      }
+    },
+    {
+      "id": "091",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_091.png",
+      "answer": "images_06/world-review/answer_091.png",
+      "sourceTimes": {
+        "question": 1539.8,
+        "answer": 1549.7
+      }
+    },
+    {
+      "id": "092",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_092.png",
+      "answer": "images_06/world-review/answer_092.png",
+      "sourceTimes": {
+        "question": 1559.0,
+        "answer": 1570.4
+      }
+    },
+    {
+      "id": "093",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_093.png",
+      "answer": "images_06/world-review/answer_093.png",
+      "sourceTimes": {
+        "question": 1578.4,
+        "answer": 1587.7
+      }
+    },
+    {
+      "id": "094",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_094.png",
+      "answer": "images_06/world-review/answer_094.png",
+      "sourceTimes": {
+        "question": 1598.0,
+        "answer": 1604.4
+      }
+    },
+    {
+      "id": "095",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_095.png",
+      "answer": "images_06/world-review/answer_095.png",
+      "sourceTimes": {
+        "question": 1610.5,
+        "answer": 1619.9
+      }
+    },
+    {
+      "id": "096",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_096.png",
+      "answer": "images_06/world-review/answer_096.png",
+      "sourceTimes": {
+        "question": 1627.2,
+        "answer": 1636.3
+      }
+    },
+    {
+      "id": "097",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_097.png",
+      "answer": "images_06/world-review/answer_097.png",
+      "sourceTimes": {
+        "question": 1644.0,
+        "answer": 1651.2
+      }
+    },
+    {
+      "id": "098",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_098.png",
+      "answer": "images_06/world-review/answer_098.png",
+      "sourceTimes": {
+        "question": 1659.8,
+        "answer": 1669.4
+      }
+    },
+    {
+      "id": "099",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_099.png",
+      "answer": "images_06/world-review/answer_099.png",
+      "sourceTimes": {
+        "question": 1679.2,
+        "answer": 1687.0
+      }
+    },
+    {
+      "id": "100",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_100.png",
+      "answer": "images_06/world-review/answer_100.png",
+      "sourceTimes": {
+        "question": 1696.3,
+        "answer": 1706.2
+      }
+    },
+    {
+      "id": "101",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_101.png",
+      "answer": "images_06/world-review/answer_101.png",
+      "sourceTimes": {
+        "question": 1713.8,
+        "answer": 1722.1
+      }
+    },
+    {
+      "id": "102",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_102.png",
+      "answer": "images_06/world-review/answer_102.png",
+      "sourceTimes": {
+        "question": 1730.7,
+        "answer": 1739.9
+      }
+    },
+    {
+      "id": "103",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_103.png",
+      "answer": "images_06/world-review/answer_103.png",
+      "sourceTimes": {
+        "question": 1749.5,
+        "answer": 1757.3
+      }
+    },
+    {
+      "id": "104",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_104.png",
+      "answer": "images_06/world-review/answer_104.png",
+      "sourceTimes": {
+        "question": 1766.6,
+        "answer": 1776.7
+      }
+    },
+    {
+      "id": "105",
+      "chapter": "europe",
+      "question": "images_06/world-review/question_105.png",
+      "answer": "images_06/world-review/answer_105.png",
+      "sourceTimes": {
+        "question": 1786.0,
+        "answer": 1796.8
+      }
+    },
+    {
+      "id": "106",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_106.png",
+      "answer": "images_06/world-review/answer_106.png",
+      "sourceTimes": {
+        "question": 1808.2,
+        "answer": 1813.5
+      }
+    },
+    {
+      "id": "107",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_107.png",
+      "answer": "images_06/world-review/answer_107.png",
+      "sourceTimes": {
+        "question": 1818.3,
+        "answer": 1823.8
+      }
+    },
+    {
+      "id": "108",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_108.png",
+      "answer": "images_06/world-review/answer_108.png",
+      "sourceTimes": {
+        "question": 1831.8,
+        "answer": 1837.1
+      }
+    },
+    {
+      "id": "109",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_109.png",
+      "answer": "images_06/world-review/answer_109.png",
+      "sourceTimes": {
+        "question": 1844.1,
+        "answer": 1851.1
+      }
+    },
+    {
+      "id": "110",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_110.png",
+      "answer": "images_06/world-review/answer_110.png",
+      "sourceTimes": {
+        "question": 1859.8,
+        "answer": 1868.1
+      }
+    },
+    {
+      "id": "111",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_111.png",
+      "answer": "images_06/world-review/answer_111.png",
+      "sourceTimes": {
+        "question": 1874.6,
+        "answer": 1881.6
+      }
+    },
+    {
+      "id": "112",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_112.png",
+      "answer": "images_06/world-review/answer_112.png",
+      "sourceTimes": {
+        "question": 1890.7,
+        "answer": 1899.8
+      }
+    },
+    {
+      "id": "113",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_113.png",
+      "answer": "images_06/world-review/answer_113.png",
+      "sourceTimes": {
+        "question": 1907.5,
+        "answer": 1916.0
+      }
+    },
+    {
+      "id": "114",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_114.png",
+      "answer": "images_06/world-review/answer_114.png",
+      "sourceTimes": {
+        "question": 1925.0,
+        "answer": 1934.8
+      }
+    },
+    {
+      "id": "115",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_115.png",
+      "answer": "images_06/world-review/answer_115.png",
+      "sourceTimes": {
+        "question": 1943.1,
+        "answer": 1951.8
+      }
+    },
+    {
+      "id": "116",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_116.png",
+      "answer": "images_06/world-review/answer_116.png",
+      "sourceTimes": {
+        "question": 1961.1,
+        "answer": 1971.1
+      }
+    },
+    {
+      "id": "117",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_117.png",
+      "answer": "images_06/world-review/answer_117.png",
+      "sourceTimes": {
+        "question": 1979.0,
+        "answer": 1987.6
+      }
+    },
+    {
+      "id": "118",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_118.png",
+      "answer": "images_06/world-review/answer_118.png",
+      "sourceTimes": {
+        "question": 1995.3,
+        "answer": 2003.7
+      }
+    },
+    {
+      "id": "119",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_119.png",
+      "answer": "images_06/world-review/answer_119.png",
+      "sourceTimes": {
+        "question": 2011.0,
+        "answer": 2019.8
+      }
+    },
+    {
+      "id": "120",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_120.png",
+      "answer": "images_06/world-review/answer_120.png",
+      "sourceTimes": {
+        "question": 2027.8,
+        "answer": 2034.8
+      }
+    },
+    {
+      "id": "121",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_121.png",
+      "answer": "images_06/world-review/answer_121.png",
+      "sourceTimes": {
+        "question": 2044.0,
+        "answer": 2051.9
+      }
+    },
+    {
+      "id": "122",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_122.png",
+      "answer": "images_06/world-review/answer_122.png",
+      "sourceTimes": {
+        "question": 2060.8,
+        "answer": 2069.9
+      }
+    },
+    {
+      "id": "123",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_123.png",
+      "answer": "images_06/world-review/answer_123.png",
+      "sourceTimes": {
+        "question": 2080.9,
+        "answer": 2091.0
+      }
+    },
+    {
+      "id": "124",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_124.png",
+      "answer": "images_06/world-review/answer_124.png",
+      "sourceTimes": {
+        "question": 2100.3,
+        "answer": 2110.1
+      }
+    },
+    {
+      "id": "125",
+      "chapter": "africa",
+      "question": "images_06/world-review/question_125.png",
+      "answer": "images_06/world-review/answer_125.png",
+      "sourceTimes": {
+        "question": 2120.2,
+        "answer": 2134.7
+      }
+    },
+    {
+      "id": "126",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_126.png",
+      "answer": "images_06/world-review/answer_126.png",
+      "sourceTimes": {
+        "question": 2146.5,
+        "answer": 2155.1
+      }
+    },
+    {
+      "id": "127",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_127.png",
+      "answer": "images_06/world-review/answer_127.png",
+      "sourceTimes": {
+        "question": 2160.3,
+        "answer": 2165.8
+      }
+    },
+    {
+      "id": "128",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_128.png",
+      "answer": "images_06/world-review/answer_128.png",
+      "sourceTimes": {
+        "question": 2175.5,
+        "answer": 2184.7
+      }
+    },
+    {
+      "id": "129",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_129.png",
+      "answer": "images_06/world-review/answer_129.png",
+      "sourceTimes": {
+        "question": 2195.9,
+        "answer": 2205.2
+      }
+    },
+    {
+      "id": "130",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_130.png",
+      "answer": "images_06/world-review/answer_130.png",
+      "sourceTimes": {
+        "question": 2215.1,
+        "answer": 2224.3
+      }
+    },
+    {
+      "id": "131",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_131.png",
+      "answer": "images_06/world-review/answer_131.png",
+      "sourceTimes": {
+        "question": 2231.2,
+        "answer": 2240.5
+      }
+    },
+    {
+      "id": "132",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_132.png",
+      "answer": "images_06/world-review/answer_132.png",
+      "sourceTimes": {
+        "question": 2248.5,
+        "answer": 2255.9
+      }
+    },
+    {
+      "id": "133",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_133.png",
+      "answer": "images_06/world-review/answer_133.png",
+      "sourceTimes": {
+        "question": 2263.7,
+        "answer": 2271.5
+      }
+    },
+    {
+      "id": "134",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_134.png",
+      "answer": "images_06/world-review/answer_134.png",
+      "sourceTimes": {
+        "question": 2279.6,
+        "answer": 2289.5
+      }
+    },
+    {
+      "id": "135",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_135.png",
+      "answer": "images_06/world-review/answer_135.png",
+      "sourceTimes": {
+        "question": 2295.9,
+        "answer": 2304.7
+      }
+    },
+    {
+      "id": "136",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_136.png",
+      "answer": "images_06/world-review/answer_136.png",
+      "sourceTimes": {
+        "question": 2311.0,
+        "answer": 2318.8
+      }
+    },
+    {
+      "id": "137",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_137.png",
+      "answer": "images_06/world-review/answer_137.png",
+      "sourceTimes": {
+        "question": 2327.2,
+        "answer": 2336.7
+      }
+    },
+    {
+      "id": "138",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_138.png",
+      "answer": "images_06/world-review/answer_138.png",
+      "sourceTimes": {
+        "question": 2346.7,
+        "answer": 2356.6
+      }
+    },
+    {
+      "id": "139",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_139.png",
+      "answer": "images_06/world-review/answer_139.png",
+      "sourceTimes": {
+        "question": 2365.5,
+        "answer": 2374.6
+      }
+    },
+    {
+      "id": "140",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_140.png",
+      "answer": "images_06/world-review/answer_140.png",
+      "sourceTimes": {
+        "question": 2384.4,
+        "answer": 2392.2
+      }
+    },
+    {
+      "id": "141",
+      "chapter": "north-america",
+      "question": "images_06/world-review/question_141.png",
+      "answer": "images_06/world-review/answer_141.png",
+      "sourceTimes": {
+        "question": 2400.1,
+        "answer": 2408.5
+      }
+    },
+    {
+      "id": "142",
+      "chapter": "south-america",
+      "question": "images_06/world-review/question_142.png",
+      "answer": "images_06/world-review/answer_142.png",
+      "sourceTimes": {
+        "question": 2423.1,
+        "answer": 2430.2
+      }
+    },
+    {
+      "id": "143",
+      "chapter": "south-america",
+      "question": "images_06/world-review/question_143.png",
+      "answer": "images_06/world-review/answer_143.png",
+      "sourceTimes": {
+        "question": 2437.5,
+        "answer": 2445.9
+      }
+    },
+    {
+      "id": "144",
+      "chapter": "south-america",
+      "question": "images_06/world-review/question_144.png",
+      "answer": "images_06/world-review/answer_144.png",
+      "sourceTimes": {
+        "question": 2453.3,
+        "answer": 2461.2
+      }
+    },
+    {
+      "id": "145",
+      "chapter": "south-america",
+      "question": "images_06/world-review/question_145.png",
+      "answer": "images_06/world-review/answer_145.png",
+      "sourceTimes": {
+        "question": 2470.0,
+        "answer": 2477.8
+      }
+    },
+    {
+      "id": "146",
+      "chapter": "south-america",
+      "question": "images_06/world-review/question_146.png",
+      "answer": "images_06/world-review/answer_146.png",
+      "sourceTimes": {
+        "question": 2486.0,
+        "answer": 2495.7
+      }
+    },
+    {
+      "id": "147",
+      "chapter": "south-america",
+      "question": "images_06/world-review/question_147.png",
+      "answer": "images_06/world-review/answer_147.png",
+      "sourceTimes": {
+        "question": 2502.2,
+        "answer": 2509.4
+      }
+    },
+    {
+      "id": "148",
+      "chapter": "south-america",
+      "question": "images_06/world-review/question_148.png",
+      "answer": "images_06/world-review/answer_148.png",
+      "sourceTimes": {
+        "question": 2515.7,
+        "answer": 2523.9
+      }
+    },
+    {
+      "id": "149",
+      "chapter": "south-america",
+      "question": "images_06/world-review/question_149.png",
+      "answer": "images_06/world-review/answer_149.png",
+      "sourceTimes": {
+        "question": 2533.6,
+        "answer": 2541.4
+      }
+    },
+    {
+      "id": "150",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_150.png",
+      "answer": "images_06/world-review/answer_150.png",
+      "sourceTimes": {
+        "question": 2554.0,
+        "answer": 2560.7
+      }
+    },
+    {
+      "id": "151",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_151.png",
+      "answer": "images_06/world-review/answer_151.png",
+      "sourceTimes": {
+        "question": 2566.2,
+        "answer": 2572.6
+      }
+    },
+    {
+      "id": "152",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_152.png",
+      "answer": "images_06/world-review/answer_152.png",
+      "sourceTimes": {
+        "question": 2583.0,
+        "answer": 2594.4
+      }
+    },
+    {
+      "id": "153",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_153.png",
+      "answer": "images_06/world-review/answer_153.png",
+      "sourceTimes": {
+        "question": 2602.8,
+        "answer": 2612.0
+      }
+    },
+    {
+      "id": "154",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_154.png",
+      "answer": "images_06/world-review/answer_154.png",
+      "sourceTimes": {
+        "question": 2619.8,
+        "answer": 2627.7
+      }
+    },
+    {
+      "id": "155",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_155.png",
+      "answer": "images_06/world-review/answer_155.png",
+      "sourceTimes": {
+        "question": 2636.1,
+        "answer": 2645.4
+      }
+    },
+    {
+      "id": "156",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_156.png",
+      "answer": "images_06/world-review/answer_156.png",
+      "sourceTimes": {
+        "question": 2654.3,
+        "answer": 2664.8
+      }
+    },
+    {
+      "id": "157",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_157.png",
+      "answer": "images_06/world-review/answer_157.png",
+      "sourceTimes": {
+        "question": 2674.0,
+        "answer": 2681.3
+      }
+    },
+    {
+      "id": "158",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_158.png",
+      "answer": "images_06/world-review/answer_158.png",
+      "sourceTimes": {
+        "question": 2690.4,
+        "answer": 2699.5
+      }
+    },
+    {
+      "id": "159",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_159.png",
+      "answer": "images_06/world-review/answer_159.png",
+      "sourceTimes": {
+        "question": 2709.8,
+        "answer": 2718.1
+      }
+    },
+    {
+      "id": "160",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_160.png",
+      "answer": "images_06/world-review/answer_160.png",
+      "sourceTimes": {
+        "question": 2729.8,
+        "answer": 2732.6
+      }
+    },
+    {
+      "id": "161",
+      "chapter": "oceania",
+      "question": "images_06/world-review/question_161.png",
+      "answer": "images_06/world-review/answer_161.png",
+      "sourceTimes": {
+        "question": 2740.2,
+        "answer": 2748.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=daF34FWwQfQ"
+}

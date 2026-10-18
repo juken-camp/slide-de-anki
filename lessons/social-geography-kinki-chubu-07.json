@@ -1,0 +1,382 @@
+{
+  "id": "social-geography-kinki-chubu-07",
+  "subject": "social",
+  "field": "geography",
+  "title": "近畿地方・中部地方",
+  "grade": "中2社会",
+  "description": "近畿地方と中部地方の自然、都市、産業や地域の特徴を図解で学ぶ教材。",
+  "cover": "images_06/kinki-chubu/question_001.png",
+  "chapters": [
+    {
+      "id": "kinki",
+      "title": "近畿地方"
+    },
+    {
+      "id": "chubu",
+      "title": "中部地方"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_001.png",
+      "answer": "images_06/kinki-chubu/answer_001.png",
+      "sourceTimes": {
+        "question": 26.0,
+        "answer": 34.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_002.png",
+      "answer": "images_06/kinki-chubu/answer_002.png",
+      "sourceTimes": {
+        "question": 42.1,
+        "answer": 50.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_003.png",
+      "answer": "images_06/kinki-chubu/answer_003.png",
+      "sourceTimes": {
+        "question": 58.6,
+        "answer": 67.4
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_004.png",
+      "answer": "images_06/kinki-chubu/answer_004.png",
+      "sourceTimes": {
+        "question": 75.3,
+        "answer": 84.1
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_005.png",
+      "answer": "images_06/kinki-chubu/answer_005.png",
+      "sourceTimes": {
+        "question": 91.6,
+        "answer": 100.4
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_006.png",
+      "answer": "images_06/kinki-chubu/answer_006.png",
+      "sourceTimes": {
+        "question": 110.0,
+        "answer": 120.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_007.png",
+      "answer": "images_06/kinki-chubu/answer_007.png",
+      "sourceTimes": {
+        "question": 129.7,
+        "answer": 139.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_008.png",
+      "answer": "images_06/kinki-chubu/answer_008.png",
+      "sourceTimes": {
+        "question": 147.9,
+        "answer": 156.7
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_009.png",
+      "answer": "images_06/kinki-chubu/answer_009.png",
+      "sourceTimes": {
+        "question": 166.7,
+        "answer": 177.9
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_010.png",
+      "answer": "images_06/kinki-chubu/answer_010.png",
+      "sourceTimes": {
+        "question": 187.4,
+        "answer": 197.9
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_011.png",
+      "answer": "images_06/kinki-chubu/answer_011.png",
+      "sourceTimes": {
+        "question": 207.2,
+        "answer": 217.3
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_012.png",
+      "answer": "images_06/kinki-chubu/answer_012.png",
+      "sourceTimes": {
+        "question": 225.7,
+        "answer": 234.6
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_013.png",
+      "answer": "images_06/kinki-chubu/answer_013.png",
+      "sourceTimes": {
+        "question": 246.0,
+        "answer": 259.3
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_014.png",
+      "answer": "images_06/kinki-chubu/answer_014.png",
+      "sourceTimes": {
+        "question": 270.7,
+        "answer": 281.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "kinki",
+      "question": "images_06/kinki-chubu/question_015.png",
+      "answer": "images_06/kinki-chubu/answer_015.png",
+      "sourceTimes": {
+        "question": 290.3,
+        "answer": 299.7
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_016.png",
+      "answer": "images_06/kinki-chubu/answer_016.png",
+      "sourceTimes": {
+        "question": 315.5,
+        "answer": 327.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_017.png",
+      "answer": "images_06/kinki-chubu/answer_017.png",
+      "sourceTimes": {
+        "question": 334.9,
+        "answer": 344.6
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_018.png",
+      "answer": "images_06/kinki-chubu/answer_018.png",
+      "sourceTimes": {
+        "question": 354.3,
+        "answer": 364.1
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_019.png",
+      "answer": "images_06/kinki-chubu/answer_019.png",
+      "sourceTimes": {
+        "question": 372.3,
+        "answer": 381.1
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_020.png",
+      "answer": "images_06/kinki-chubu/answer_020.png",
+      "sourceTimes": {
+        "question": 391.5,
+        "answer": 402.4
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_021.png",
+      "answer": "images_06/kinki-chubu/answer_021.png",
+      "sourceTimes": {
+        "question": 412.1,
+        "answer": 422.1
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_022.png",
+      "answer": "images_06/kinki-chubu/answer_022.png",
+      "sourceTimes": {
+        "question": 429.9,
+        "answer": 439.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_023.png",
+      "answer": "images_06/kinki-chubu/answer_023.png",
+      "sourceTimes": {
+        "question": 448.0,
+        "answer": 458.4
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_024.png",
+      "answer": "images_06/kinki-chubu/answer_024.png",
+      "sourceTimes": {
+        "question": 467.3,
+        "answer": 476.9
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_025.png",
+      "answer": "images_06/kinki-chubu/answer_025.png",
+      "sourceTimes": {
+        "question": 486.2,
+        "answer": 496.3
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_026.png",
+      "answer": "images_06/kinki-chubu/answer_026.png",
+      "sourceTimes": {
+        "question": 504.7,
+        "answer": 513.9
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_027.png",
+      "answer": "images_06/kinki-chubu/answer_027.png",
+      "sourceTimes": {
+        "question": 521.5,
+        "answer": 530.4
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_028.png",
+      "answer": "images_06/kinki-chubu/answer_028.png",
+      "sourceTimes": {
+        "question": 539.0,
+        "answer": 548.8
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_029.png",
+      "answer": "images_06/kinki-chubu/answer_029.png",
+      "sourceTimes": {
+        "question": 558.5,
+        "answer": 569.4
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_030.png",
+      "answer": "images_06/kinki-chubu/answer_030.png",
+      "sourceTimes": {
+        "question": 578.8,
+        "answer": 588.2
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_031.png",
+      "answer": "images_06/kinki-chubu/answer_031.png",
+      "sourceTimes": {
+        "question": 598.6,
+        "answer": 611.8
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_032.png",
+      "answer": "images_06/kinki-chubu/answer_032.png",
+      "sourceTimes": {
+        "question": 621.8,
+        "answer": 633.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_033.png",
+      "answer": "images_06/kinki-chubu/answer_033.png",
+      "sourceTimes": {
+        "question": 644.6,
+        "answer": 651.7
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_034.png",
+      "answer": "images_06/kinki-chubu/answer_034.png",
+      "sourceTimes": {
+        "question": 661.5,
+        "answer": 671.9
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_035.png",
+      "answer": "images_06/kinki-chubu/answer_035.png",
+      "sourceTimes": {
+        "question": 680.7,
+        "answer": 690.8
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "chubu",
+      "question": "images_06/kinki-chubu/question_036.png",
+      "answer": "images_06/kinki-chubu/answer_036.png",
+      "sourceTimes": {
+        "question": 701.1,
+        "answer": 711.6
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=EWlWmiEmd20"
+}

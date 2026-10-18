@@ -1,0 +1,386 @@
+{
+  "id": "social-geography-kyushu-chugoku-shikoku-06",
+  "subject": "social",
+  "field": "geography",
+  "title": "九州地方・中国地方・四国地方",
+  "grade": "中2社会",
+  "description": "九州地方、中国地方、四国地方の自然、都市、産業や地域の特徴を図解で学ぶ教材。",
+  "cover": "images_06/kyushu-chugoku-shikoku/question_001.png",
+  "chapters": [
+    {
+      "id": "kyushu",
+      "title": "九州地方"
+    },
+    {
+      "id": "chugoku",
+      "title": "中国地方"
+    },
+    {
+      "id": "shikoku",
+      "title": "四国地方"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_001.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_001.png",
+      "sourceTimes": {
+        "question": 28.5,
+        "answer": 38.3
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_002.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_002.png",
+      "sourceTimes": {
+        "question": 45.8,
+        "answer": 54.1
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_003.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_003.png",
+      "sourceTimes": {
+        "question": 64.2,
+        "answer": 74.8
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_004.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_004.png",
+      "sourceTimes": {
+        "question": 82.7,
+        "answer": 91.9
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_005.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_005.png",
+      "sourceTimes": {
+        "question": 100.2,
+        "answer": 108.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_006.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_006.png",
+      "sourceTimes": {
+        "question": 117.5,
+        "answer": 127.4
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_007.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_007.png",
+      "sourceTimes": {
+        "question": 134.5,
+        "answer": 142.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_008.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_008.png",
+      "sourceTimes": {
+        "question": 150.5,
+        "answer": 159.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_009.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_009.png",
+      "sourceTimes": {
+        "question": 167.6,
+        "answer": 176.7
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_010.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_010.png",
+      "sourceTimes": {
+        "question": 185.6,
+        "answer": 195.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_011.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_011.png",
+      "sourceTimes": {
+        "question": 204.0,
+        "answer": 213.3
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_012.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_012.png",
+      "sourceTimes": {
+        "question": 222.1,
+        "answer": 231.7
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_013.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_013.png",
+      "sourceTimes": {
+        "question": 240.3,
+        "answer": 249.3
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_014.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_014.png",
+      "sourceTimes": {
+        "question": 259.0,
+        "answer": 269.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_015.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_015.png",
+      "sourceTimes": {
+        "question": 276.6,
+        "answer": 284.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_016.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_016.png",
+      "sourceTimes": {
+        "question": 293.7,
+        "answer": 304.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "kyushu",
+      "question": "images_06/kyushu-chugoku-shikoku/question_017.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_017.png",
+      "sourceTimes": {
+        "question": 313.4,
+        "answer": 323.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_018.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_018.png",
+      "sourceTimes": {
+        "question": 335.7,
+        "answer": 344.4
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_019.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_019.png",
+      "sourceTimes": {
+        "question": 352.7,
+        "answer": 360.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_020.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_020.png",
+      "sourceTimes": {
+        "question": 367.3,
+        "answer": 374.9
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_021.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_021.png",
+      "sourceTimes": {
+        "question": 381.7,
+        "answer": 389.1
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_022.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_022.png",
+      "sourceTimes": {
+        "question": 396.3,
+        "answer": 404.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_023.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_023.png",
+      "sourceTimes": {
+        "question": 414.4,
+        "answer": 425.9
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_024.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_024.png",
+      "sourceTimes": {
+        "question": 432.7,
+        "answer": 441.1
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_025.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_025.png",
+      "sourceTimes": {
+        "question": 449.9,
+        "answer": 461.3
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_026.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_026.png",
+      "sourceTimes": {
+        "question": 470.4,
+        "answer": 479.9
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_027.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_027.png",
+      "sourceTimes": {
+        "question": 489.0,
+        "answer": 498.8
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "chugoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_028.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_028.png",
+      "sourceTimes": {
+        "question": 507.7,
+        "answer": 516.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "shikoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_029.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_029.png",
+      "sourceTimes": {
+        "question": 528.2,
+        "answer": 536.1
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "shikoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_030.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_030.png",
+      "sourceTimes": {
+        "question": 544.3,
+        "answer": 553.2
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "shikoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_031.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_031.png",
+      "sourceTimes": {
+        "question": 560.3,
+        "answer": 568.6
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "shikoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_032.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_032.png",
+      "sourceTimes": {
+        "question": 577.2,
+        "answer": 586.1
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "shikoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_033.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_033.png",
+      "sourceTimes": {
+        "question": 595.2,
+        "answer": 605.3
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "shikoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_034.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_034.png",
+      "sourceTimes": {
+        "question": 613.6,
+        "answer": 622.9
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "shikoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_035.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_035.png",
+      "sourceTimes": {
+        "question": 630.8,
+        "answer": 639.9
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "shikoku",
+      "question": "images_06/kyushu-chugoku-shikoku/question_036.png",
+      "answer": "images_06/kyushu-chugoku-shikoku/answer_036.png",
+      "sourceTimes": {
+        "question": 648.0,
+        "answer": 656.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=Oe03e4FyT6w"
+}

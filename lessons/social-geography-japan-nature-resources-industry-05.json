@@ -1,0 +1,490 @@
+{
+  "id": "social-geography-japan-nature-resources-industry-05",
+  "subject": "social",
+  "field": "geography",
+  "title": "日本の自然・環境・資源・産業",
+  "grade": "中2社会",
+  "description": "日本の自然、環境、資源、農業、工業や産業の特徴を図解で学ぶ教材。",
+  "cover": "images_06/japan-nature-resources-industry/question_001.png",
+  "chapters": [
+    {
+      "id": "japan-location",
+      "title": "世界の中の日本の位置"
+    },
+    {
+      "id": "japan-territory",
+      "title": "日本の領域・領土"
+    },
+    {
+      "id": "japan-nature-environment",
+      "title": "日本の自然・環境・人口"
+    },
+    {
+      "id": "japan-resources-industry",
+      "title": "日本の資源と産業"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "japan-location",
+      "question": "images_06/japan-nature-resources-industry/question_001.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_001.png",
+      "sourceTimes": {
+        "question": 23.8,
+        "answer": 29.1
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "japan-location",
+      "question": "images_06/japan-nature-resources-industry/question_002.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_002.png",
+      "sourceTimes": {
+        "question": 35.9,
+        "answer": 42.9
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "japan-location",
+      "question": "images_06/japan-nature-resources-industry/question_003.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_003.png",
+      "sourceTimes": {
+        "question": 49.5,
+        "answer": 57.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "japan-location",
+      "question": "images_06/japan-nature-resources-industry/question_004.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_004.png",
+      "sourceTimes": {
+        "question": 65.6,
+        "answer": 75.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "japan-location",
+      "question": "images_06/japan-nature-resources-industry/question_005.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_005.png",
+      "sourceTimes": {
+        "question": 83.1,
+        "answer": 91.3
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "japan-location",
+      "question": "images_06/japan-nature-resources-industry/question_006.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_006.png",
+      "sourceTimes": {
+        "question": 97.2,
+        "answer": 103.3
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "japan-location",
+      "question": "images_06/japan-nature-resources-industry/question_007.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_007.png",
+      "sourceTimes": {
+        "question": 110.6,
+        "answer": 119.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_008.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_008.png",
+      "sourceTimes": {
+        "question": 134.8,
+        "answer": 145.3
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_009.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_009.png",
+      "sourceTimes": {
+        "question": 153.2,
+        "answer": 162.4
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_010.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_010.png",
+      "sourceTimes": {
+        "question": 170.1,
+        "answer": 178.1
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_011.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_011.png",
+      "sourceTimes": {
+        "question": 185.2,
+        "answer": 193.1
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_012.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_012.png",
+      "sourceTimes": {
+        "question": 204.0,
+        "answer": 210.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_013.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_013.png",
+      "sourceTimes": {
+        "question": 219.4,
+        "answer": 226.1
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_014.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_014.png",
+      "sourceTimes": {
+        "question": 233.9,
+        "answer": 240.9
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_015.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_015.png",
+      "sourceTimes": {
+        "question": 248.4,
+        "answer": 259.3
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_016.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_016.png",
+      "sourceTimes": {
+        "question": 265.4,
+        "answer": 272.9
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "japan-territory",
+      "question": "images_06/japan-nature-resources-industry/question_017.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_017.png",
+      "sourceTimes": {
+        "question": 282.8,
+        "answer": 292.9
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_018.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_018.png",
+      "sourceTimes": {
+        "question": 307.0,
+        "answer": 316.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_019.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_019.png",
+      "sourceTimes": {
+        "question": 325.3,
+        "answer": 335.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_020.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_020.png",
+      "sourceTimes": {
+        "question": 345.3,
+        "answer": 352.8
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_021.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_021.png",
+      "sourceTimes": {
+        "question": 360.9,
+        "answer": 368.8
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_022.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_022.png",
+      "sourceTimes": {
+        "question": 381.3,
+        "answer": 390.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_023.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_023.png",
+      "sourceTimes": {
+        "question": 400.5,
+        "answer": 408.4
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_024.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_024.png",
+      "sourceTimes": {
+        "question": 419.0,
+        "answer": 425.6
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_025.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_025.png",
+      "sourceTimes": {
+        "question": 434.0,
+        "answer": 443.9
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_026.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_026.png",
+      "sourceTimes": {
+        "question": 453.0,
+        "answer": 463.3
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_027.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_027.png",
+      "sourceTimes": {
+        "question": 472.3,
+        "answer": 481.3
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_028.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_028.png",
+      "sourceTimes": {
+        "question": 492.8,
+        "answer": 505.9
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_029.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_029.png",
+      "sourceTimes": {
+        "question": 515.2,
+        "answer": 524.8
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_030.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_030.png",
+      "sourceTimes": {
+        "question": 533.8,
+        "answer": 542.4
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_031.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_031.png",
+      "sourceTimes": {
+        "question": 549.8,
+        "answer": 559.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_032.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_032.png",
+      "sourceTimes": {
+        "question": 570.0,
+        "answer": 581.7
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_033.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_033.png",
+      "sourceTimes": {
+        "question": 593.2,
+        "answer": 604.6
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_034.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_034.png",
+      "sourceTimes": {
+        "question": 613.8,
+        "answer": 624.4
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_035.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_035.png",
+      "sourceTimes": {
+        "question": 636.6,
+        "answer": 646.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "japan-nature-environment",
+      "question": "images_06/japan-nature-resources-industry/question_036.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_036.png",
+      "sourceTimes": {
+        "question": 655.0,
+        "answer": 663.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_037.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_037.png",
+      "sourceTimes": {
+        "question": 676.5,
+        "answer": 685.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_038.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_038.png",
+      "sourceTimes": {
+        "question": 693.1,
+        "answer": 702.3
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_039.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_039.png",
+      "sourceTimes": {
+        "question": 712.8,
+        "answer": 723.1
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_040.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_040.png",
+      "sourceTimes": {
+        "question": 731.3,
+        "answer": 739.9
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_041.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_041.png",
+      "sourceTimes": {
+        "question": 750.1,
+        "answer": 758.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_042.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_042.png",
+      "sourceTimes": {
+        "question": 774.6,
+        "answer": 792.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_043.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_043.png",
+      "sourceTimes": {
+        "question": 802.2,
+        "answer": 812.2
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_044.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_044.png",
+      "sourceTimes": {
+        "question": 822.4,
+        "answer": 833.3
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_045.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_045.png",
+      "sourceTimes": {
+        "question": 846.1,
+        "answer": 859.8
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "japan-resources-industry",
+      "question": "images_06/japan-nature-resources-industry/question_046.png",
+      "answer": "images_06/japan-nature-resources-industry/answer_046.png",
+      "sourceTimes": {
+        "question": 869.8,
+        "answer": 879.4
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=SghZmV72ezM"
+}

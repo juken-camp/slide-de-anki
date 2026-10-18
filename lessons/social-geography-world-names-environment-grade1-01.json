@@ -1,0 +1,451 @@
+{
+  "id": "social-geography-world-names-environment-grade1-01",
+  "subject": "social",
+  "field": "geography",
+  "title": "世界の海・大陸・環境・気候",
+  "grade": "中1社会",
+  "description": "世界の海・大陸・州、国と位置の表し方、世界の環境と気候を図解で学ぶ教材。",
+  "cover": "images_06/world-names-environment/question_001.png",
+  "chapters": [
+    {
+      "id": "world-names",
+      "title": "世界の海・大陸・州と位置"
+    },
+    {
+      "id": "world-environments",
+      "title": "世界の環境・気候"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_001.png",
+      "answer": "images_06/world-names-environment/answer_001.png",
+      "sourceTimes": {
+        "question": 21.9,
+        "answer": 28.6
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_002.png",
+      "answer": "images_06/world-names-environment/answer_002.png",
+      "sourceTimes": {
+        "question": 35.6,
+        "answer": 43.2
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_003.png",
+      "answer": "images_06/world-names-environment/answer_003.png",
+      "sourceTimes": {
+        "question": 49.8,
+        "answer": 57.0
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_004.png",
+      "answer": "images_06/world-names-environment/answer_004.png",
+      "sourceTimes": {
+        "question": 62.4,
+        "answer": 68.7
+      },
+      "sourceQuestionNumber": 5
+    },
+    {
+      "id": "005",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_005.png",
+      "answer": "images_06/world-names-environment/answer_005.png",
+      "sourceTimes": {
+        "question": 77.1,
+        "answer": 82.0
+      },
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "006",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_006.png",
+      "answer": "images_06/world-names-environment/answer_006.png",
+      "sourceTimes": {
+        "question": 88.6,
+        "answer": 95.6
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "007",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_007.png",
+      "answer": "images_06/world-names-environment/answer_007.png",
+      "sourceTimes": {
+        "question": 101.8,
+        "answer": 108.5
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "008",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_008.png",
+      "answer": "images_06/world-names-environment/answer_008.png",
+      "sourceTimes": {
+        "question": 117.3,
+        "answer": 122.7
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "009",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_009.png",
+      "answer": "images_06/world-names-environment/answer_009.png",
+      "sourceTimes": {
+        "question": 131.3,
+        "answer": 139.9
+      },
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "010",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_010.png",
+      "answer": "images_06/world-names-environment/answer_010.png",
+      "sourceTimes": {
+        "question": 147.1,
+        "answer": 154.9
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "011",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_011.png",
+      "answer": "images_06/world-names-environment/answer_011.png",
+      "sourceTimes": {
+        "question": 162.3,
+        "answer": 170.1
+      },
+      "sourceQuestionNumber": 12
+    },
+    {
+      "id": "012",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_012.png",
+      "answer": "images_06/world-names-environment/answer_012.png",
+      "sourceTimes": {
+        "question": 177.6,
+        "answer": 186.6
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "013",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_013.png",
+      "answer": "images_06/world-names-environment/answer_013.png",
+      "sourceTimes": {
+        "question": 194.5,
+        "answer": 203.1
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "014",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_014.png",
+      "answer": "images_06/world-names-environment/answer_014.png",
+      "sourceTimes": {
+        "question": 211.2,
+        "answer": 220.0
+      },
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "015",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_015.png",
+      "answer": "images_06/world-names-environment/answer_015.png",
+      "sourceTimes": {
+        "question": 227.7,
+        "answer": 237.1
+      },
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "016",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_016.png",
+      "answer": "images_06/world-names-environment/answer_016.png",
+      "sourceTimes": {
+        "question": 243.9,
+        "answer": 251.2
+      },
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "017",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_017.png",
+      "answer": "images_06/world-names-environment/answer_017.png",
+      "sourceTimes": {
+        "question": 257.4,
+        "answer": 267.1
+      },
+      "sourceQuestionNumber": 18
+    },
+    {
+      "id": "018",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_018.png",
+      "answer": "images_06/world-names-environment/answer_018.png",
+      "sourceTimes": {
+        "question": 274.8,
+        "answer": 282.1
+      },
+      "sourceQuestionNumber": 19
+    },
+    {
+      "id": "019",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_019.png",
+      "answer": "images_06/world-names-environment/answer_019.png",
+      "sourceTimes": {
+        "question": 289.4,
+        "answer": 300.4
+      },
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "020",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_020.png",
+      "answer": "images_06/world-names-environment/answer_020.png",
+      "sourceTimes": {
+        "question": 308.8,
+        "answer": 319.1
+      },
+      "sourceQuestionNumber": 21
+    },
+    {
+      "id": "021",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_021.png",
+      "answer": "images_06/world-names-environment/answer_021.png",
+      "sourceTimes": {
+        "question": 327.5,
+        "answer": 336.5
+      },
+      "sourceQuestionNumber": 22
+    },
+    {
+      "id": "022",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_022.png",
+      "answer": "images_06/world-names-environment/answer_022.png",
+      "sourceTimes": {
+        "question": 343.7,
+        "answer": 351.2
+      },
+      "sourceQuestionNumber": 23
+    },
+    {
+      "id": "023",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_023.png",
+      "answer": "images_06/world-names-environment/answer_023.png",
+      "sourceTimes": {
+        "question": 357.5,
+        "answer": 364.3
+      },
+      "sourceQuestionNumber": 24
+    },
+    {
+      "id": "024",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_024.png",
+      "answer": "images_06/world-names-environment/answer_024.png",
+      "sourceTimes": {
+        "question": 370.3,
+        "answer": 377.2
+      },
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "025",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_025.png",
+      "answer": "images_06/world-names-environment/answer_025.png",
+      "sourceTimes": {
+        "question": 383.2,
+        "answer": 389.7
+      },
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "026",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_026.png",
+      "answer": "images_06/world-names-environment/answer_026.png",
+      "sourceTimes": {
+        "question": 401.5,
+        "answer": 410.9
+      },
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "027",
+      "chapter": "world-names",
+      "question": "images_06/world-names-environment/question_027.png",
+      "answer": "images_06/world-names-environment/answer_027.png",
+      "sourceTimes": {
+        "question": 420.1,
+        "answer": 430.5
+      },
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "028",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_028.png",
+      "answer": "images_06/world-names-environment/answer_028.png",
+      "sourceTimes": {
+        "question": 444.0,
+        "answer": 450.4
+      },
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "029",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_029.png",
+      "answer": "images_06/world-names-environment/answer_029.png",
+      "sourceTimes": {
+        "question": 458.6,
+        "answer": 464.9
+      },
+      "sourceQuestionNumber": 30
+    },
+    {
+      "id": "030",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_030.png",
+      "answer": "images_06/world-names-environment/answer_030.png",
+      "sourceTimes": {
+        "question": 474.9,
+        "answer": 482.7
+      },
+      "sourceQuestionNumber": 31
+    },
+    {
+      "id": "031",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_031.png",
+      "answer": "images_06/world-names-environment/answer_031.png",
+      "sourceTimes": {
+        "question": 491.4,
+        "answer": 500.4
+      },
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "032",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_032.png",
+      "answer": "images_06/world-names-environment/answer_032.png",
+      "sourceTimes": {
+        "question": 510.1,
+        "answer": 518.0
+      },
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "033",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_033.png",
+      "answer": "images_06/world-names-environment/answer_033.png",
+      "sourceTimes": {
+        "question": 529.8,
+        "answer": 537.0
+      },
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "034",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_034.png",
+      "answer": "images_06/world-names-environment/answer_034.png",
+      "sourceTimes": {
+        "question": 544.0,
+        "answer": 551.0
+      },
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "035",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_035.png",
+      "answer": "images_06/world-names-environment/answer_035.png",
+      "sourceTimes": {
+        "question": 560.6,
+        "answer": 572.3
+      },
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "036",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_036.png",
+      "answer": "images_06/world-names-environment/answer_036.png",
+      "sourceTimes": {
+        "question": 581.4,
+        "answer": 590.6
+      },
+      "sourceQuestionNumber": 37
+    },
+    {
+      "id": "037",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_037.png",
+      "answer": "images_06/world-names-environment/answer_037.png",
+      "sourceTimes": {
+        "question": 599.9,
+        "answer": 611.0
+      },
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "038",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_038.png",
+      "answer": "images_06/world-names-environment/answer_038.png",
+      "sourceTimes": {
+        "question": 620.8,
+        "answer": 630.1
+      },
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "039",
+      "chapter": "world-environments",
+      "question": "images_06/world-names-environment/question_039.png",
+      "answer": "images_06/world-names-environment/answer_039.png",
+      "sourceTimes": {
+        "question": 637.1,
+        "answer": 644.5
+      },
+      "sourceQuestionNumber": 40
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=aw8Ja0lSCew"
+}

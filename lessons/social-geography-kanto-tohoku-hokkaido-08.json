@@ -1,0 +1,655 @@
+{
+  "id": "social-geography-kanto-tohoku-hokkaido-08",
+  "subject": "social",
+  "field": "geography",
+  "title": "関東地方・東北地方・北海道",
+  "grade": "中2社会",
+  "description": "関東地方、東北地方、北海道の自然、都市、産業や地域の特徴を図解で学ぶ教材。",
+  "cover": "images_06/kanto-tohoku-hokkaido/question_001.png",
+  "chapters": [
+    {
+      "id": "kanto",
+      "title": "関東地方"
+    },
+    {
+      "id": "tohoku",
+      "title": "東北地方"
+    },
+    {
+      "id": "hokkaido",
+      "title": "北海道"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_001.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_001.png",
+      "sourceTimes": {
+        "question": 29.0,
+        "answer": 38.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_002.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_002.png",
+      "sourceTimes": {
+        "question": 45.7,
+        "answer": 54.1
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_003.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_003.png",
+      "sourceTimes": {
+        "question": 62.4,
+        "answer": 71.7
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_004.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_004.png",
+      "sourceTimes": {
+        "question": 80.1,
+        "answer": 88.7
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_005.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_005.png",
+      "sourceTimes": {
+        "question": 96.9,
+        "answer": 108.2
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_006.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_006.png",
+      "sourceTimes": {
+        "question": 116.6,
+        "answer": 125.7
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_007.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_007.png",
+      "sourceTimes": {
+        "question": 134.5,
+        "answer": 144.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_008.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_008.png",
+      "sourceTimes": {
+        "question": 152.6,
+        "answer": 162.9
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_009.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_009.png",
+      "sourceTimes": {
+        "question": 168.2,
+        "answer": 176.9
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_010.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_010.png",
+      "sourceTimes": {
+        "question": 185.0,
+        "answer": 198.9
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_011.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_011.png",
+      "sourceTimes": {
+        "question": 207.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_012.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_012.png",
+      "sourceTimes": {
+        "question": 220.4,
+        "answer": 232.7
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_013.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_013.png",
+      "sourceTimes": {
+        "question": 243.3,
+        "answer": 255.6
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_014.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_014.png",
+      "sourceTimes": {
+        "question": 263.7,
+        "answer": 274.9
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_015.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_015.png",
+      "sourceTimes": {
+        "question": 282.9,
+        "answer": 292.9
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_016.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_016.png",
+      "sourceTimes": {
+        "question": 302.3,
+        "answer": 312.2
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_017.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_017.png",
+      "sourceTimes": {
+        "question": 321.3,
+        "answer": 331.8
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_018.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_018.png",
+      "sourceTimes": {
+        "question": 339.9,
+        "answer": 349.3
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_019.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_019.png",
+      "sourceTimes": {
+        "question": 358.4,
+        "answer": 368.4
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_020.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_020.png",
+      "sourceTimes": {
+        "question": 383.7,
+        "answer": 390.1
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_021.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_021.png",
+      "sourceTimes": {
+        "question": 398.9,
+        "answer": 411.1
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_022.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_022.png",
+      "sourceTimes": {
+        "question": 420.0,
+        "answer": 430.4
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_023.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_023.png",
+      "sourceTimes": {
+        "question": 439.9,
+        "answer": 450.1
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_024.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_024.png",
+      "sourceTimes": {
+        "question": 461.2,
+        "answer": 473.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_025.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_025.png",
+      "sourceTimes": {
+        "question": 490.5,
+        "answer": 497.4
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_026.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_026.png",
+      "sourceTimes": {
+        "question": 506.9,
+        "answer": 516.7
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "kanto",
+      "question": "images_06/kanto-tohoku-hokkaido/question_027.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_027.png",
+      "sourceTimes": {
+        "question": 525.2,
+        "answer": 534.8
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_028.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_028.png",
+      "sourceTimes": {
+        "question": 549.3,
+        "answer": 558.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_029.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_029.png",
+      "sourceTimes": {
+        "question": 566.8,
+        "answer": 576.4
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_030.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_030.png",
+      "sourceTimes": {
+        "question": 584.8,
+        "answer": 593.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_031.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_031.png",
+      "sourceTimes": {
+        "question": 601.0,
+        "answer": 610.8
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_032.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_032.png",
+      "sourceTimes": {
+        "question": 617.8,
+        "answer": 626.8
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_033.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_033.png",
+      "sourceTimes": {
+        "question": 636.3,
+        "answer": 646.6
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_034.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_034.png",
+      "sourceTimes": {
+        "question": 654.6,
+        "answer": 663.2
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_035.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_035.png",
+      "sourceTimes": {
+        "question": 675.1,
+        "answer": 688.4
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_036.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_036.png",
+      "sourceTimes": {
+        "question": 699.3,
+        "answer": 711.7
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_037.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_037.png",
+      "sourceTimes": {
+        "question": 720.5,
+        "answer": 729.9
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_038.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_038.png",
+      "sourceTimes": {
+        "question": 737.3,
+        "answer": 746.3
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_039.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_039.png",
+      "sourceTimes": {
+        "question": 756.9,
+        "answer": 768.3
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_040.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_040.png",
+      "sourceTimes": {
+        "question": 779.2,
+        "answer": 789.6
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_041.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_041.png",
+      "sourceTimes": {
+        "question": 797.4,
+        "answer": 805.5
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_042.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_042.png",
+      "sourceTimes": {
+        "question": 815.8,
+        "answer": 827.3
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_043.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_043.png",
+      "sourceTimes": {
+        "question": 834.5,
+        "answer": 842.6
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_044.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_044.png",
+      "sourceTimes": {
+        "question": 859.8,
+        "answer": 866.7
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "tohoku",
+      "question": "images_06/kanto-tohoku-hokkaido/question_045.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_045.png",
+      "sourceTimes": {
+        "question": 876.4,
+        "answer": 886.3
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_046.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_046.png",
+      "sourceTimes": {
+        "question": 901.2,
+        "answer": 911.2
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_047.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_047.png",
+      "sourceTimes": {
+        "question": 918.9,
+        "answer": 927.3
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_048.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_048.png",
+      "sourceTimes": {
+        "question": 936.0,
+        "answer": 945.6
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_049.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_049.png",
+      "sourceTimes": {
+        "question": 953.9,
+        "answer": 964.9
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_050.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_050.png",
+      "sourceTimes": {
+        "question": 972.1,
+        "answer": 982.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_051.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_051.png",
+      "sourceTimes": {
+        "question": 992.6,
+        "answer": 1004.5
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_052.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_052.png",
+      "sourceTimes": {
+        "question": 1013.3,
+        "answer": 1022.1
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_053.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_053.png",
+      "sourceTimes": {
+        "question": 1032.0,
+        "answer": 1043.5
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_054.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_054.png",
+      "sourceTimes": {
+        "question": 1053.5,
+        "answer": 1065.3
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_055.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_055.png",
+      "sourceTimes": {
+        "question": 1073.9,
+        "answer": 1081.9
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_056.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_056.png",
+      "sourceTimes": {
+        "question": 1089.7,
+        "answer": 1099.1
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_057.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_057.png",
+      "sourceTimes": {
+        "question": 1106.6,
+        "answer": 1115.2
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_058.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_058.png",
+      "sourceTimes": {
+        "question": 1123.6,
+        "answer": 1133.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_059.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_059.png",
+      "sourceTimes": {
+        "question": 1141.1,
+        "answer": 1151.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_060.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_060.png",
+      "sourceTimes": {
+        "question": 1159.5,
+        "answer": 1169.0
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_061.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_061.png",
+      "sourceTimes": {
+        "question": 1178.0,
+        "answer": 1188.3
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_062.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_062.png",
+      "sourceTimes": {
+        "question": 1198.1,
+        "answer": 1207.9
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "hokkaido",
+      "question": "images_06/kanto-tohoku-hokkaido/question_063.png",
+      "answer": "images_06/kanto-tohoku-hokkaido/answer_063.png",
+      "sourceTimes": {
+        "question": 1217.4,
+        "answer": 1228.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=X8OGCLgexoo"
+}

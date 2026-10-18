@@ -880,5 +880,310 @@ window.QUIZ_CATALOG = [
     "source": "https://www.youtube.com/watch?v=jXh-urpZd9Y",
     "count": 82,
     "data": "lessons/social-civics-economy-welfare-global-grade3-02.json"
+  },
+  {
+    "id": "social-geography-world-names-environment-grade1-01",
+    "subject": "social",
+    "field": "geography",
+    "title": "世界の海・大陸・環境・気候",
+    "grade": "中1社会",
+    "description": "世界の海・大陸・州、国と位置の表し方、世界の環境と気候を図解で学ぶ教材。",
+    "cover": "images_06/world-names-environment/question_001.png",
+    "chapters": [
+      {
+        "id": "world-names",
+        "title": "世界の海・大陸・州と位置"
+      },
+      {
+        "id": "world-environments",
+        "title": "世界の環境・気候"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=aw8Ja0lSCew",
+    "count": 39,
+    "data": "lessons/social-geography-world-names-environment-grade1-01.json"
+  },
+  {
+    "id": "social-geography-asia-grade1-02",
+    "subject": "social",
+    "field": "geography",
+    "title": "アジア州",
+    "grade": "中1社会",
+    "description": "アジア州の自然、人口、文化、農業、工業や地域の特徴を図解で学ぶ教材。",
+    "cover": "images_06/asia/question_001.png",
+    "chapters": [
+      {
+        "id": "asia-nature-places",
+        "title": "アジアの自然・国と都市"
+      },
+      {
+        "id": "asia-living-industry",
+        "title": "アジアの生活・文化・産業"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=xaeZsLFe4t4",
+    "count": 40,
+    "data": "lessons/social-geography-asia-grade1-02.json"
+  },
+  {
+    "id": "social-geography-europe-africa-grade1-03",
+    "subject": "social",
+    "field": "geography",
+    "title": "ヨーロッパ州・アフリカ州",
+    "grade": "中1社会",
+    "description": "ヨーロッパ州とアフリカ州の自然、文化、農業、工業や地域の特徴を図解で学ぶ教材。",
+    "cover": "images_06/europe-africa/question_001.png",
+    "chapters": [
+      {
+        "id": "europe",
+        "title": "ヨーロッパ州"
+      },
+      {
+        "id": "africa",
+        "title": "アフリカ州"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=WU1Jbtfbwm4",
+    "count": 46,
+    "data": "lessons/social-geography-europe-africa-grade1-03.json"
+  },
+  {
+    "id": "social-geography-americas-oceania-grade1-04",
+    "subject": "social",
+    "field": "geography",
+    "title": "北と南アメリカ州・オセアニア州",
+    "grade": "中1社会",
+    "description": "北アメリカ州、南アメリカ州、オセアニア州の自然、文化、農業、工業や地域の特徴を図解で学ぶ教材。",
+    "cover": "images_06/americas-oceania/question_001.png",
+    "chapters": [
+      {
+        "id": "north-america",
+        "title": "北アメリカ州"
+      },
+      {
+        "id": "south-america",
+        "title": "南アメリカ州"
+      },
+      {
+        "id": "oceania",
+        "title": "オセアニア州"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=LNl-_NPXM98",
+    "count": 36,
+    "data": "lessons/social-geography-americas-oceania-grade1-04.json"
+  },
+  {
+    "id": "social-geography-japan-nature-resources-industry-05",
+    "subject": "social",
+    "field": "geography",
+    "title": "日本の自然・環境・資源・産業",
+    "grade": "中2社会",
+    "description": "日本の自然、環境、資源、農業、工業や産業の特徴を図解で学ぶ教材。",
+    "cover": "images_06/japan-nature-resources-industry/question_001.png",
+    "chapters": [
+      {
+        "id": "japan-location",
+        "title": "世界の中の日本の位置"
+      },
+      {
+        "id": "japan-territory",
+        "title": "日本の領域・領土"
+      },
+      {
+        "id": "japan-nature-environment",
+        "title": "日本の自然・環境・人口"
+      },
+      {
+        "id": "japan-resources-industry",
+        "title": "日本の資源と産業"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=SghZmV72ezM",
+    "count": 46,
+    "data": "lessons/social-geography-japan-nature-resources-industry-05.json"
+  },
+  {
+    "id": "social-geography-kyushu-chugoku-shikoku-06",
+    "subject": "social",
+    "field": "geography",
+    "title": "九州地方・中国地方・四国地方",
+    "grade": "中2社会",
+    "description": "九州地方、中国地方、四国地方の自然、都市、産業や地域の特徴を図解で学ぶ教材。",
+    "cover": "images_06/kyushu-chugoku-shikoku/question_001.png",
+    "chapters": [
+      {
+        "id": "kyushu",
+        "title": "九州地方"
+      },
+      {
+        "id": "chugoku",
+        "title": "中国地方"
+      },
+      {
+        "id": "shikoku",
+        "title": "四国地方"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=Oe03e4FyT6w",
+    "count": 36,
+    "data": "lessons/social-geography-kyushu-chugoku-shikoku-06.json"
+  },
+  {
+    "id": "social-geography-kinki-chubu-07",
+    "subject": "social",
+    "field": "geography",
+    "title": "近畿地方・中部地方",
+    "grade": "中2社会",
+    "description": "近畿地方と中部地方の自然、都市、産業や地域の特徴を図解で学ぶ教材。",
+    "cover": "images_06/kinki-chubu/question_001.png",
+    "chapters": [
+      {
+        "id": "kinki",
+        "title": "近畿地方"
+      },
+      {
+        "id": "chubu",
+        "title": "中部地方"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=EWlWmiEmd20",
+    "count": 36,
+    "data": "lessons/social-geography-kinki-chubu-07.json"
+  },
+  {
+    "id": "social-geography-kanto-tohoku-hokkaido-08",
+    "subject": "social",
+    "field": "geography",
+    "title": "関東地方・東北地方・北海道",
+    "grade": "中2社会",
+    "description": "関東地方、東北地方、北海道の自然、都市、産業や地域の特徴を図解で学ぶ教材。",
+    "cover": "images_06/kanto-tohoku-hokkaido/question_001.png",
+    "chapters": [
+      {
+        "id": "kanto",
+        "title": "関東地方"
+      },
+      {
+        "id": "tohoku",
+        "title": "東北地方"
+      },
+      {
+        "id": "hokkaido",
+        "title": "北海道"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=X8OGCLgexoo",
+    "count": 63,
+    "data": "lessons/social-geography-kanto-tohoku-hokkaido-08.json"
+  },
+  {
+    "id": "social-geography-world-review",
+    "subject": "social",
+    "field": "geography",
+    "title": "世界の地理総まとめ",
+    "grade": "中1社会",
+    "description": "世界の海・大陸・環境と、各州の自然、文化、産業の特徴を図解で学ぶ総まとめ教材。",
+    "cover": "images_06/world-review/question_001.png",
+    "chapters": [
+      {
+        "id": "world-names",
+        "title": "世界の地名"
+      },
+      {
+        "id": "world-environments",
+        "title": "世界の気候・環境"
+      },
+      {
+        "id": "asia",
+        "title": "アジア州"
+      },
+      {
+        "id": "europe",
+        "title": "ヨーロッパ州"
+      },
+      {
+        "id": "africa",
+        "title": "アフリカ州"
+      },
+      {
+        "id": "north-america",
+        "title": "北アメリカ州"
+      },
+      {
+        "id": "south-america",
+        "title": "南アメリカ州"
+      },
+      {
+        "id": "oceania",
+        "title": "オセアニア州"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=daF34FWwQfQ",
+    "count": 161,
+    "data": "lessons/social-geography-world-review.json"
+  },
+  {
+    "id": "social-geography-japan-review",
+    "subject": "social",
+    "field": "geography",
+    "title": "日本の地理総まとめ",
+    "grade": "中2社会",
+    "description": "日本の位置・領域・自然・人口・資源・産業と、各地方の特徴を図解で学ぶ総まとめ教材。",
+    "cover": "images_06/japan-review/question_001.png",
+    "chapters": [
+      {
+        "id": "location",
+        "title": "世界の中の日本の位置"
+      },
+      {
+        "id": "territory",
+        "title": "日本の領土"
+      },
+      {
+        "id": "nature-environment",
+        "title": "日本の自然と環境"
+      },
+      {
+        "id": "resources-industry",
+        "title": "日本の資源と産業"
+      },
+      {
+        "id": "kyushu",
+        "title": "九州地方"
+      },
+      {
+        "id": "chugoku",
+        "title": "中国地方"
+      },
+      {
+        "id": "shikoku",
+        "title": "四国地方"
+      },
+      {
+        "id": "kinki",
+        "title": "近畿地方"
+      },
+      {
+        "id": "chubu",
+        "title": "中部地方"
+      },
+      {
+        "id": "kanto",
+        "title": "関東地方"
+      },
+      {
+        "id": "tohoku",
+        "title": "東北地方"
+      },
+      {
+        "id": "hokkaido",
+        "title": "北海道"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=G22P_vxMtkQ",
+    "count": 176,
+    "data": "lessons/social-geography-japan-review.json"
   }
 ];
+

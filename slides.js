@@ -26,7 +26,7 @@ const fields = {
 let lesson = null, screen = 'home', request = 0, imageToken = 0, ready = false, undo = null;
 let soundEnabled = data.neko.soundEnabled !== false, audio = null, lastTapSound = -1000;
 let playing = false, timer = null, remaining = 0, lastTick = 0;
-let catTaps=0, playfulParticles=0, lastPlaySound=-1000;
+let catTaps=0, titleTaps=0, cardTaps=0, playfulParticles=0, lastPlaySound=-1000, playfulMessage=null;
 let noticeTimer, imageWaitTimer, suppressUntil = 0, navBusy = false;
 const imageLoader = window.createNekoImageLoader();
 let browse = 'grade', catalogFilter = 'all';
@@ -72,6 +72,7 @@ function beep(kind = 'tap') {
     cat: [[720,1080,0,.11,.03,'sine'],[1080,620,.1,.16,.028,'sine']],
     sparkle: [[1250,850,0,.17,.025,'sine']],
     shuffle: [[420,780,0,.055,.026,'triangle'],[600,980,.065,.075,.024,'triangle']],
+    open: [[523,523,0,.075,.025,'sine'],[659,659,.065,.09,.024,'sine'],[784,784,.13,.12,.022,'triangle']],
     milestone: [[523,523,0,.11,.032,'sine'],[659,659,.085,.11,.03,'sine'],[784,784,.17,.11,.029,'sine'],[1046,1046,.255,.18,.027,'sine']]
   }[kind] || [[620,420,0,.045,.027,'sine']];
   try {
@@ -108,9 +109,10 @@ function burst(element,icons=['🐾','✦','✨'],count=5) {
   }
 }
 function sayAt(element,text) {
+  playfulMessage?.remove();
   const r=element.getBoundingClientRect(),message=document.createElement('span');message.className='neko-fun-message';message.textContent=text;message.setAttribute('aria-hidden','true');
   message.style.left=Math.max(90,Math.min((window.innerWidth||900)-90,r.left+r.width/2))+'px';message.style.top=Math.max(24,r.top-8)+'px';
-  $('app').append(message);setTimeout(()=>message.remove(),1350);
+  $('app').append(message);playfulMessage=message;setTimeout(()=>{message.remove();if(playfulMessage===message)playfulMessage=null;},1350);
 }
 function playNeko(element,kind='cat') {
   const now=performance.now();if(now-lastPlaySound>120){beep(kind);lastPlaySound=now;}
@@ -118,6 +120,8 @@ function playNeko(element,kind='cat') {
 }
 function playWithCat() {
   catTaps++;const special=catTaps%5===0;playNeko($('mascotPlay'),special?'milestone':'cat');
+  const tap=catTaps;$('mascotFace').textContent=special?'😻':['😺','😸','😽','😼'][(catTaps-1)%4];
+  setTimeout(()=>{if(catTaps===tap)$('mascotFace').textContent='🐱';},1100);
   const messages=['にゃ〜ん♪','もふもふにゃ🐾','呼んだかにゃ？','いっしょに覚えるにゃ♪'];
   sayAt($('mascotPlay'),special?'もふもふチャージ完了にゃ🐾':messages[(catTaps-1)%messages.length]);
   if(special)burst($('mascotPlay'),['🐾','💛','✨','🌟'],9);
@@ -128,7 +132,7 @@ document.addEventListener('keydown',unlockAudio,{passive:true});
 document.addEventListener('click',event => {
   const control=event.target.closest('button,summary,a');
   if (!control || control.disabled) return;
-  if (!control.dataset.nekoStat && !['mascotPlay','homePlayCards','knownButton','weakButton','prevButton','nextButton'].includes(control.id)) beep('tap');
+  if (!control.dataset.nekoStat && !['mascotPlay','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','resumeStudy','brandHome'].includes(control.id)) beep('tap');
   tapSpark(control,event);
 },true);
 
@@ -455,8 +459,8 @@ for (const b of document.querySelectorAll('[data-face-mode]')) b.onclick = () =>
   if (lesson) render(); else save();
 };
 $('mascotPlay').onclick=playWithCat;
-$('homeTitle').onclick=()=>{playNeko($('homeTitle'),'milestone');sayAt($('homeTitle'),'Nekoponだにゃ〜♪');};
-$('homePlayCards').onclick=()=>{playNeko($('homePlayCards'),'shuffle');bounce($('homePlayCards'),'neko-card-shuffle');sayAt($('homePlayCards'),'めくめくにゃ♪');};
+$('homeTitle').onclick=()=>{titleTaps++;playNeko($('homeTitle'),'milestone');sayAt($('homeTitle'),titleTaps%3===0?'きらきらチャージにゃ✨':'Nekoponだにゃ〜♪');if(titleTaps%3===0)burst($('homeTitle'),['✦','🐾','💛'],8);};
+$('homePlayCards').onclick=()=>{cardTaps++;$('homeCardFace').textContent=['❔','💡','⭐','🐾'][(cardTaps-1)%4];playNeko($('homePlayCards'),'shuffle');bounce($('homePlayCards'),'neko-card-shuffle');sayAt($('homePlayCards'),['めくめくにゃ♪','ひらめいたにゃ💡','ばっちりにゃ⭐','肉球カードにゃ🐾'][(cardTaps-1)%4]);};
 for(const id of ['homeTitle','homePlayCards'])$(id).onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$(id).click();}};
 for(const button of document.querySelectorAll('[data-neko-stat]'))button.onclick=()=>{
   const kind=button.dataset.nekoStat;playNeko(button,kind==='daily'?'sparkle':kind==='known'?'known':'milestone');
@@ -464,10 +468,10 @@ for(const button of document.querySelectorAll('[data-neko-stat]'))button.onclick
   toast(message);
 };
 // Screen navigation and the textbook-style table of contents.
-$('chooseLessons').onclick = () => showScreen('catalog'); $('brandHome').onclick = () => {showScreen('home');playNeko($('mascotPlay'),'cat');sayAt($('mascotPlay'),'おかえりにゃ🐾');};
-$('resumeStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
+$('chooseLessons').onclick = () => {beep('open');showScreen('catalog');if(!reduced)$('catalogTitle').animate?.([{opacity:0,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:320,easing:'ease-out'});}; $('brandHome').onclick = () => {showScreen('home');playNeko($('mascotPlay'),'cat');sayAt($('mascotPlay'),'おかえりにゃ🐾');};
+$('resumeStudy').onclick = () => {beep('open');return lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});};
 $('openCatalog').onclick = () => showScreen('catalog'); $('returnToStudy').onclick = () => showScreen('study');
-$('startStudy').onclick = () => selectLessons(meta.filter(m => selected.has(m.id)).map(m => m.id));
+$('startStudy').onclick = () => {beep('open');return selectLessons(meta.filter(m => selected.has(m.id)).map(m => m.id));};
 $('clearSelection').onclick = () => { selected.clear(); renderCatalog(); };
 $('selectVisible').onclick = () => toggleGroup(visibleLessons()); $('catalogSearch').oninput = renderCatalog;
 for (const b of document.querySelectorAll('[data-subject]')) b.onclick = () => { state.subject = b.dataset.subject; catalogFilter = 'all'; $('catalogSearch').value = ''; renderCatalog(); };
@@ -524,6 +528,7 @@ $('restoreInput').onchange = async e => {
 };
 showScreen('home');
 })();
+
 
 
 

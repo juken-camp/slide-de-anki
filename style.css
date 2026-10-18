@@ -200,4 +200,30 @@ button{line-height:1.5}input,select,textarea,.timer-options input,dialog input:n
 @media(prefers-reduced-motion:reduce){.catalog-dock,.catalog-dock .primary-button>span{animation:none!important}}
 @media(max-width:360px){.catalog-dock .primary-button{font-size:13px}}
 
+/* A living title screen: quiet motion in cream, brown and orange. */
+.home-screen:before{content:'';position:absolute;z-index:-1;pointer-events:none;width:min(380px,90%);aspect-ratio:1;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-58%);background:radial-gradient(circle,#ffe4bf80 0%,#ffeddc40 52%,transparent 72%)}
+.home-title .title-main{display:block;transform-origin:center;animation:neko-home-title-drift 5s ease-in-out infinite}
+.home-mascot>span{animation:neko-home-cat-breathe 4.8s ease-in-out infinite;transform-origin:center bottom}
+.home-mascot.neko-cat-bounce>span{animation-play-state:paused}
+.home-mascot i{animation:neko-home-star 3.4s ease-in-out infinite}
+.home-mascot i:last-child{animation-delay:1.2s}
+.home-card-stack>div:first-child{animation:neko-home-card-left 6s ease-in-out infinite}
+.home-card-stack>div:nth-child(2){animation:neko-home-card-right 6s ease-in-out infinite}
+.home-card-stack>div:last-child>span{display:inline-block;animation:neko-home-card-paw 4.4s ease-in-out infinite}
+.home-paws span{animation:neko-home-paw-drift 7s ease-in-out infinite;--tilt:-20deg}
+.home-paws span:nth-child(2){animation-delay:-2.5s;--tilt:22deg}
+.home-paws span:last-child{animation-delay:-4.5s}
+.home-actions .primary-button>span{animation:neko-home-invite 3.8s ease-in-out infinite}
+.home-screen[hidden] *{animation-play-state:paused!important}
+@keyframes neko-home-title-drift{0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-5px) rotate(.5deg)}}
+@keyframes neko-home-cat-breathe{0%,100%{transform:translateY(0) rotate(0) scale(1)}50%{transform:translateY(-4px) rotate(4deg) scale(1.045)}}
+@keyframes neko-home-star{0%,100%{opacity:.45;transform:scale(.85) rotate(-12deg)}50%{opacity:1;transform:scale(1.12) rotate(12deg)}}
+@keyframes neko-home-card-left{0%,100%{transform:rotate(-11deg)}50%{transform:translateX(-5px) rotate(-16deg)}}
+@keyframes neko-home-card-right{0%,100%{transform:rotate(8deg)}50%{transform:translateX(5px) rotate(13deg)}}
+@keyframes neko-home-card-paw{0%,65%,100%{transform:rotate(0) scale(1)}78%{transform:rotate(-10deg) scale(1.12)}88%{transform:rotate(8deg) scale(1.06)}}
+@keyframes neko-home-paw-drift{0%,100%{opacity:.07;transform:translateY(0) rotate(var(--tilt))}50%{opacity:.14;transform:translateY(-12px) rotate(var(--tilt))}}
+@keyframes neko-home-invite{0%,65%,100%{transform:translateX(0)}80%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.home-screen *{animation:none!important}.home-title .title-main{transform:none}}
+
+
 

@@ -1,0 +1,382 @@
+{
+  "id": "social-history-edo-culture-bakumatsu-03",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史③ 江戸時代の文化～幕末",
+  "grade": "中学社会",
+  "description": "江戸時代の文化から幕末までの歴史一問一答36問。動画から抽出した問題・解答画像を順に学ぶ教材。",
+  "cover": "images_07/edo-culture-bakumatsu-03/question_001.png",
+  "chapters": [
+    {
+      "id": "edo-culture",
+      "title": "江戸時代の文化"
+    },
+    {
+      "id": "bakumatsu",
+      "title": "幕末"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_001.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_001.png",
+      "sourceTimes": {
+        "question": 19.5,
+        "answer": 28.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_002.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_002.png",
+      "sourceTimes": {
+        "question": 32.0,
+        "answer": 38.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_003.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_003.png",
+      "sourceTimes": {
+        "question": 41.5,
+        "answer": 48.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_004.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_004.png",
+      "sourceTimes": {
+        "question": 52.0,
+        "answer": 58.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_005.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_005.png",
+      "sourceTimes": {
+        "question": 61.5,
+        "answer": 70.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_006.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_006.png",
+      "sourceTimes": {
+        "question": 73.5,
+        "answer": 80.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_007.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_007.png",
+      "sourceTimes": {
+        "question": 83.5,
+        "answer": 89.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_008.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_008.png",
+      "sourceTimes": {
+        "question": 93.0,
+        "answer": 99.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_009.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_009.png",
+      "sourceTimes": {
+        "question": 103.0,
+        "answer": 108.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_010.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_010.png",
+      "sourceTimes": {
+        "question": 112.0,
+        "answer": 119.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_011.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_011.png",
+      "sourceTimes": {
+        "question": 122.5,
+        "answer": 128.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_012.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_012.png",
+      "sourceTimes": {
+        "question": 131.5,
+        "answer": 136.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_013.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_013.png",
+      "sourceTimes": {
+        "question": 140.0,
+        "answer": 145.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_014.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_014.png",
+      "sourceTimes": {
+        "question": 148.5,
+        "answer": 160.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_015.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_015.png",
+      "sourceTimes": {
+        "question": 163.5,
+        "answer": 171.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_016.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_016.png",
+      "sourceTimes": {
+        "question": 174.5,
+        "answer": 183.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "edo-culture",
+      "question": "images_07/edo-culture-bakumatsu-03/question_017.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_017.png",
+      "sourceTimes": {
+        "question": 186.5,
+        "answer": 195.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_018.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_018.png",
+      "sourceTimes": {
+        "question": 203.5,
+        "answer": 211.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_019.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_019.png",
+      "sourceTimes": {
+        "question": 214.5,
+        "answer": 222.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_020.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_020.png",
+      "sourceTimes": {
+        "question": 225.5,
+        "answer": 232.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_021.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_021.png",
+      "sourceTimes": {
+        "question": 235.5,
+        "answer": 244.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_022.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_022.png",
+      "sourceTimes": {
+        "question": 248.0,
+        "answer": 259.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_023.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_023.png",
+      "sourceTimes": {
+        "question": 263.0,
+        "answer": 277.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_024.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_024.png",
+      "sourceTimes": {
+        "question": 281.0,
+        "answer": 289.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_025.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_025.png",
+      "sourceTimes": {
+        "question": 293.0,
+        "answer": 303.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_026.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_026.png",
+      "sourceTimes": {
+        "question": 306.5,
+        "answer": 318.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_027.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_027.png",
+      "sourceTimes": {
+        "question": 322.0,
+        "answer": 329.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_028.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_028.png",
+      "sourceTimes": {
+        "question": 333.0,
+        "answer": 342.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_029.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_029.png",
+      "sourceTimes": {
+        "question": 346.0,
+        "answer": 357.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_030.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_030.png",
+      "sourceTimes": {
+        "question": 361.0,
+        "answer": 370.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_031.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_031.png",
+      "sourceTimes": {
+        "question": 373.5,
+        "answer": 380.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_032.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_032.png",
+      "sourceTimes": {
+        "question": 383.5,
+        "answer": 390.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_033.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_033.png",
+      "sourceTimes": {
+        "question": 393.5,
+        "answer": 403.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_034.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_034.png",
+      "sourceTimes": {
+        "question": 406.5,
+        "answer": 416.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_035.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_035.png",
+      "sourceTimes": {
+        "question": 419.5,
+        "answer": 431.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "bakumatsu",
+      "question": "images_07/edo-culture-bakumatsu-03/question_036.png",
+      "answer": "images_07/edo-culture-bakumatsu-03/answer_036.png",
+      "sourceTimes": {
+        "question": 435.0,
+        "answer": 446.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=L2r9p8w7y2w"
+}

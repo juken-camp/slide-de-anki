@@ -1,0 +1,290 @@
+{
+  "id": "social-history-meiji-series-12",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ⑫ 明治時代",
+  "grade": "中学社会",
+  "description": "中学社会歴史・明治時代の一問一答。元映像から確認できた27問（動画タイトルは29問）。18番の解答は元映像に表示なし。",
+  "cover": "images_07/meiji-series-12/question_001.png",
+  "chapters": [
+    {
+      "id": "meiji",
+      "title": "明治時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_001.png",
+      "answer": "images_07/meiji-series-12/answer_001.png",
+      "sourceTimes": {
+        "question": 32.0,
+        "answer": 37.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_002.png",
+      "answer": "images_07/meiji-series-12/answer_002.png",
+      "sourceTimes": {
+        "question": 51.0,
+        "answer": 56.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_003.png",
+      "answer": "images_07/meiji-series-12/answer_003.png",
+      "sourceTimes": {
+        "question": 74.5,
+        "answer": 80.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_004.png",
+      "answer": "images_07/meiji-series-12/answer_004.png",
+      "sourceTimes": {
+        "question": 97.5,
+        "answer": 103.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_005.png",
+      "answer": "images_07/meiji-series-12/answer_005.png",
+      "sourceTimes": {
+        "question": 119.0,
+        "answer": 125.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_006.png",
+      "answer": "images_07/meiji-series-12/answer_006.png",
+      "sourceTimes": {
+        "question": 145.0,
+        "answer": 151.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_007.png",
+      "answer": "images_07/meiji-series-12/answer_007.png",
+      "sourceTimes": {
+        "question": 169.5,
+        "answer": 176.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_008.png",
+      "answer": "images_07/meiji-series-12/answer_008.png",
+      "sourceTimes": {
+        "question": 193.0,
+        "answer": 199.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_009.png",
+      "answer": "images_07/meiji-series-12/answer_009.png",
+      "sourceTimes": {
+        "question": 217.0,
+        "answer": 223.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_010.png",
+      "answer": "images_07/meiji-series-12/answer_010.png",
+      "sourceTimes": {
+        "question": 237.5,
+        "answer": 243.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_011.png",
+      "answer": "images_07/meiji-series-12/answer_011.png",
+      "sourceTimes": {
+        "question": 259.0,
+        "answer": 265.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_012.png",
+      "answer": "images_07/meiji-series-12/answer_012.png",
+      "sourceTimes": {
+        "question": 278.0,
+        "answer": 284.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_013.png",
+      "answer": "images_07/meiji-series-12/answer_013.png",
+      "sourceTimes": {
+        "question": 301.0,
+        "answer": 307.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_014.png",
+      "answer": "images_07/meiji-series-12/answer_014.png",
+      "sourceTimes": {
+        "question": 328.0,
+        "answer": 334.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_015.png",
+      "answer": "images_07/meiji-series-12/answer_015.png",
+      "sourceTimes": {
+        "question": 350.5,
+        "answer": 357.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_016.png",
+      "answer": "images_07/meiji-series-12/answer_016.png",
+      "sourceTimes": {
+        "question": 372.0,
+        "answer": 378.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_017.png",
+      "answer": "images_07/meiji-series-12/answer_017.png",
+      "sourceTimes": {
+        "question": 393.5,
+        "answer": 400.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_018.png",
+      "answer": "images_07/meiji-series-12/answer_018.png",
+      "source_answer_visible": false,
+      "requires_review": true,
+      "sourceTimes": {
+        "question": 406.5,
+        "answer": 415.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_019.png",
+      "answer": "images_07/meiji-series-12/answer_019.png",
+      "sourceTimes": {
+        "question": 429.5,
+        "answer": 436.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_020.png",
+      "answer": "images_07/meiji-series-12/answer_020.png",
+      "sourceTimes": {
+        "question": 452.0,
+        "answer": 458.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_021.png",
+      "answer": "images_07/meiji-series-12/answer_021.png",
+      "sourceTimes": {
+        "question": 476.0,
+        "answer": 482.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_022.png",
+      "answer": "images_07/meiji-series-12/answer_022.png",
+      "sourceTimes": {
+        "question": 499.0,
+        "answer": 505.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_023.png",
+      "answer": "images_07/meiji-series-12/answer_023.png",
+      "sourceTimes": {
+        "question": 523.0,
+        "answer": 529.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_024.png",
+      "answer": "images_07/meiji-series-12/answer_024.png",
+      "sourceTimes": {
+        "question": 546.0,
+        "answer": 552.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_025.png",
+      "answer": "images_07/meiji-series-12/answer_025.png",
+      "sourceTimes": {
+        "question": 569.5,
+        "answer": 576.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_026.png",
+      "answer": "images_07/meiji-series-12/answer_026.png",
+      "sourceTimes": {
+        "question": 591.0,
+        "answer": 597.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "meiji",
+      "question": "images_07/meiji-series-12/question_027.png",
+      "answer": "images_07/meiji-series-12/answer_027.png",
+      "sourceTimes": {
+        "question": 611.5,
+        "answer": 617.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=SOoH63VIKRg"
+}

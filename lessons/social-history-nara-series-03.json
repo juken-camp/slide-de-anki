@@ -1,0 +1,208 @@
+{
+  "id": "social-history-nara-series-03",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ③ 奈良時代",
+  "grade": "中学社会",
+  "description": "中学社会歴史・奈良時代の一問一答。全19問。",
+  "cover": "images_07/nara-series-03/question_001.png",
+  "chapters": [
+    {
+      "id": "nara",
+      "title": "奈良時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_001.png",
+      "answer": "images_07/nara-series-03/answer_001.png",
+      "sourceTimes": {
+        "question": 19.5,
+        "answer": 33.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_002.png",
+      "answer": "images_07/nara-series-03/answer_002.png",
+      "sourceTimes": {
+        "question": 38.0,
+        "answer": 53.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_003.png",
+      "answer": "images_07/nara-series-03/answer_003.png",
+      "sourceTimes": {
+        "question": 58.5,
+        "answer": 74.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_004.png",
+      "answer": "images_07/nara-series-03/answer_004.png",
+      "sourceTimes": {
+        "question": 79.0,
+        "answer": 95.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_005.png",
+      "answer": "images_07/nara-series-03/answer_005.png",
+      "sourceTimes": {
+        "question": 100.0,
+        "answer": 117.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_006.png",
+      "answer": "images_07/nara-series-03/answer_006.png",
+      "sourceTimes": {
+        "question": 122.5,
+        "answer": 140.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_007.png",
+      "answer": "images_07/nara-series-03/answer_007.png",
+      "sourceTimes": {
+        "question": 145.0,
+        "answer": 161.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_008.png",
+      "answer": "images_07/nara-series-03/answer_008.png",
+      "sourceTimes": {
+        "question": 166.0,
+        "answer": 179.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_009.png",
+      "answer": "images_07/nara-series-03/answer_009.png",
+      "sourceTimes": {
+        "question": 184.5,
+        "answer": 197.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_010.png",
+      "answer": "images_07/nara-series-03/answer_010.png",
+      "sourceTimes": {
+        "question": 202.5,
+        "answer": 221.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_011.png",
+      "answer": "images_07/nara-series-03/answer_011.png",
+      "sourceTimes": {
+        "question": 226.5,
+        "answer": 239.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_012.png",
+      "answer": "images_07/nara-series-03/answer_012.png",
+      "sourceTimes": {
+        "question": 244.0,
+        "answer": 257.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_013.png",
+      "answer": "images_07/nara-series-03/answer_013.png",
+      "sourceTimes": {
+        "question": 262.0,
+        "answer": 279.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_014.png",
+      "answer": "images_07/nara-series-03/answer_014.png",
+      "sourceTimes": {
+        "question": 284.5,
+        "answer": 305.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_015.png",
+      "answer": "images_07/nara-series-03/answer_015.png",
+      "sourceTimes": {
+        "question": 310.5,
+        "answer": 330.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_016.png",
+      "answer": "images_07/nara-series-03/answer_016.png",
+      "sourceTimes": {
+        "question": 335.5,
+        "answer": 354.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_017.png",
+      "answer": "images_07/nara-series-03/answer_017.png",
+      "sourceTimes": {
+        "question": 359.5,
+        "answer": 379.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_018.png",
+      "answer": "images_07/nara-series-03/answer_018.png",
+      "sourceTimes": {
+        "question": 384.5,
+        "answer": 404.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "nara",
+      "question": "images_07/nara-series-03/question_019.png",
+      "answer": "images_07/nara-series-03/answer_019.png",
+      "sourceTimes": {
+        "question": 409.0,
+        "answer": 428.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=QVgoBiLSgXk"
+}

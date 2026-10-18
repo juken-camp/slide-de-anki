@@ -1,0 +1,298 @@
+{
+  "id": "social-history-kamakura-series-06",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ⑥ 鎌倉時代",
+  "grade": "中学社会",
+  "description": "中学社会歴史・鎌倉時代の一問一答。全28問。",
+  "cover": "images_07/kamakura-series-06/question_001.png",
+  "chapters": [
+    {
+      "id": "kamakura",
+      "title": "鎌倉時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_001.png",
+      "answer": "images_07/kamakura-series-06/answer_001.png",
+      "sourceTimes": {
+        "question": 22.5,
+        "answer": 40.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_002.png",
+      "answer": "images_07/kamakura-series-06/answer_002.png",
+      "sourceTimes": {
+        "question": 44.5,
+        "answer": 62.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_003.png",
+      "answer": "images_07/kamakura-series-06/answer_003.png",
+      "sourceTimes": {
+        "question": 66.5,
+        "answer": 81.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_004.png",
+      "answer": "images_07/kamakura-series-06/answer_004.png",
+      "sourceTimes": {
+        "question": 86.0,
+        "answer": 101.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_005.png",
+      "answer": "images_07/kamakura-series-06/answer_005.png",
+      "sourceTimes": {
+        "question": 105.5,
+        "answer": 121.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_006.png",
+      "answer": "images_07/kamakura-series-06/answer_006.png",
+      "sourceTimes": {
+        "question": 125.5,
+        "answer": 144.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_007.png",
+      "answer": "images_07/kamakura-series-06/answer_007.png",
+      "sourceTimes": {
+        "question": 148.5,
+        "answer": 168.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_008.png",
+      "answer": "images_07/kamakura-series-06/answer_008.png",
+      "sourceTimes": {
+        "question": 172.5,
+        "answer": 187.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_009.png",
+      "answer": "images_07/kamakura-series-06/answer_009.png",
+      "sourceTimes": {
+        "question": 191.5,
+        "answer": 203.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_010.png",
+      "answer": "images_07/kamakura-series-06/answer_010.png",
+      "sourceTimes": {
+        "question": 207.0,
+        "answer": 221.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_011.png",
+      "answer": "images_07/kamakura-series-06/answer_011.png",
+      "sourceTimes": {
+        "question": 225.5,
+        "answer": 249.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_012.png",
+      "answer": "images_07/kamakura-series-06/answer_012.png",
+      "sourceTimes": {
+        "question": 254.0,
+        "answer": 264.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_013.png",
+      "answer": "images_07/kamakura-series-06/answer_013.png",
+      "sourceTimes": {
+        "question": 268.5,
+        "answer": 281.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_014.png",
+      "answer": "images_07/kamakura-series-06/answer_014.png",
+      "sourceTimes": {
+        "question": 285.5,
+        "answer": 300.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_015.png",
+      "answer": "images_07/kamakura-series-06/answer_015.png",
+      "sourceTimes": {
+        "question": 305.0,
+        "answer": 316.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_016.png",
+      "answer": "images_07/kamakura-series-06/answer_016.png",
+      "sourceTimes": {
+        "question": 320.5,
+        "answer": 330.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_017.png",
+      "answer": "images_07/kamakura-series-06/answer_017.png",
+      "sourceTimes": {
+        "question": 335.0,
+        "answer": 346.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_018.png",
+      "answer": "images_07/kamakura-series-06/answer_018.png",
+      "sourceTimes": {
+        "question": 351.0,
+        "answer": 368.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_019.png",
+      "answer": "images_07/kamakura-series-06/answer_019.png",
+      "sourceTimes": {
+        "question": 372.5,
+        "answer": 389.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_020.png",
+      "answer": "images_07/kamakura-series-06/answer_020.png",
+      "sourceTimes": {
+        "question": 394.0,
+        "answer": 409.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_021.png",
+      "answer": "images_07/kamakura-series-06/answer_021.png",
+      "sourceTimes": {
+        "question": 413.5,
+        "answer": 432.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_022.png",
+      "answer": "images_07/kamakura-series-06/answer_022.png",
+      "sourceTimes": {
+        "question": 436.5,
+        "answer": 456.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_023.png",
+      "answer": "images_07/kamakura-series-06/answer_023.png",
+      "sourceTimes": {
+        "question": 460.5,
+        "answer": 480.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_024.png",
+      "answer": "images_07/kamakura-series-06/answer_024.png",
+      "sourceTimes": {
+        "question": 485.0,
+        "answer": 504.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_025.png",
+      "answer": "images_07/kamakura-series-06/answer_025.png",
+      "sourceTimes": {
+        "question": 509.0,
+        "answer": 526.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_026.png",
+      "answer": "images_07/kamakura-series-06/answer_026.png",
+      "sourceTimes": {
+        "question": 530.5,
+        "answer": 543.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_027.png",
+      "answer": "images_07/kamakura-series-06/answer_027.png",
+      "sourceTimes": {
+        "question": 547.5,
+        "answer": 561.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "kamakura",
+      "question": "images_07/kamakura-series-06/question_028.png",
+      "answer": "images_07/kamakura-series-06/answer_028.png",
+      "sourceTimes": {
+        "question": 566.0,
+        "answer": 581.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=6YHQAMOOKEs"
+}

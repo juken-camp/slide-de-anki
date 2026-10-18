@@ -1,0 +1,268 @@
+{
+  "id": "social-history-edo-early-series-10",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ⑩ 江戸時代（前編）",
+  "grade": "中学社会",
+  "description": "中学社会歴史・江戸時代（前編）の一問一答。全25問。",
+  "cover": "images_07/edo-early-series-10/question_001.png",
+  "chapters": [
+    {
+      "id": "edo-early",
+      "title": "江戸時代（前編）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_001.png",
+      "answer": "images_07/edo-early-series-10/answer_001.png",
+      "sourceTimes": {
+        "question": 21.0,
+        "answer": 25.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_002.png",
+      "answer": "images_07/edo-early-series-10/answer_002.png",
+      "sourceTimes": {
+        "question": 40.0,
+        "answer": 46.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_003.png",
+      "answer": "images_07/edo-early-series-10/answer_003.png",
+      "sourceTimes": {
+        "question": 63.0,
+        "answer": 68.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_004.png",
+      "answer": "images_07/edo-early-series-10/answer_004.png",
+      "sourceTimes": {
+        "question": 79.0,
+        "answer": 84.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_005.png",
+      "answer": "images_07/edo-early-series-10/answer_005.png",
+      "sourceTimes": {
+        "question": 101.5,
+        "answer": 109.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_006.png",
+      "answer": "images_07/edo-early-series-10/answer_006.png",
+      "sourceTimes": {
+        "question": 124.5,
+        "answer": 133.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_007.png",
+      "answer": "images_07/edo-early-series-10/answer_007.png",
+      "sourceTimes": {
+        "question": 150.0,
+        "answer": 154.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_008.png",
+      "answer": "images_07/edo-early-series-10/answer_008.png",
+      "sourceTimes": {
+        "question": 172.5,
+        "answer": 179.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_009.png",
+      "answer": "images_07/edo-early-series-10/answer_009.png",
+      "sourceTimes": {
+        "question": 196.5,
+        "answer": 202.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_010.png",
+      "answer": "images_07/edo-early-series-10/answer_010.png",
+      "sourceTimes": {
+        "question": 215.0,
+        "answer": 220.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_011.png",
+      "answer": "images_07/edo-early-series-10/answer_011.png",
+      "sourceTimes": {
+        "question": 240.5,
+        "answer": 247.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_012.png",
+      "answer": "images_07/edo-early-series-10/answer_012.png",
+      "sourceTimes": {
+        "question": 262.5,
+        "answer": 269.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_013.png",
+      "answer": "images_07/edo-early-series-10/answer_013.png",
+      "sourceTimes": {
+        "question": 287.5,
+        "answer": 295.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_014.png",
+      "answer": "images_07/edo-early-series-10/answer_014.png",
+      "sourceTimes": {
+        "question": 312.0,
+        "answer": 318.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_015.png",
+      "answer": "images_07/edo-early-series-10/answer_015.png",
+      "sourceTimes": {
+        "question": 340.0,
+        "answer": 346.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_016.png",
+      "answer": "images_07/edo-early-series-10/answer_016.png",
+      "sourceTimes": {
+        "question": 368.5,
+        "answer": 374.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_017.png",
+      "answer": "images_07/edo-early-series-10/answer_017.png",
+      "sourceTimes": {
+        "question": 394.0,
+        "answer": 400.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_018.png",
+      "answer": "images_07/edo-early-series-10/answer_018.png",
+      "sourceTimes": {
+        "question": 417.0,
+        "answer": 423.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_019.png",
+      "answer": "images_07/edo-early-series-10/answer_019.png",
+      "sourceTimes": {
+        "question": 441.5,
+        "answer": 448.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_020.png",
+      "answer": "images_07/edo-early-series-10/answer_020.png",
+      "sourceTimes": {
+        "question": 469.5,
+        "answer": 477.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_021.png",
+      "answer": "images_07/edo-early-series-10/answer_021.png",
+      "sourceTimes": {
+        "question": 499.0,
+        "answer": 506.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_022.png",
+      "answer": "images_07/edo-early-series-10/answer_022.png",
+      "sourceTimes": {
+        "question": 524.0,
+        "answer": 529.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_023.png",
+      "answer": "images_07/edo-early-series-10/answer_023.png",
+      "sourceTimes": {
+        "question": 542.5,
+        "answer": 547.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_024.png",
+      "answer": "images_07/edo-early-series-10/answer_024.png",
+      "sourceTimes": {
+        "question": 566.0,
+        "answer": 570.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "edo-early",
+      "question": "images_07/edo-early-series-10/question_025.png",
+      "answer": "images_07/edo-early-series-10/answer_025.png",
+      "sourceTimes": {
+        "question": 588.0,
+        "answer": 593.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=vpQUYsZr55c"
+}

@@ -1,0 +1,482 @@
+{
+  "id": "social-history-showa-heisei-05",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史⑤ 昭和～平成時代",
+  "grade": "中学社会",
+  "description": "昭和時代から平成時代までの歴史一問一答46問。動画から抽出した問題・解答画像を順に学ぶ教材。",
+  "cover": "images_07/showa-heisei-05/question_001.png",
+  "chapters": [
+    {
+      "id": "showa",
+      "title": "昭和時代"
+    },
+    {
+      "id": "heisei",
+      "title": "平成時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_001.png",
+      "answer": "images_07/showa-heisei-05/answer_001.png",
+      "sourceTimes": {
+        "question": 16.0,
+        "answer": 27.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_002.png",
+      "answer": "images_07/showa-heisei-05/answer_002.png",
+      "sourceTimes": {
+        "question": 30.5,
+        "answer": 41.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_003.png",
+      "answer": "images_07/showa-heisei-05/answer_003.png",
+      "sourceTimes": {
+        "question": 44.5,
+        "answer": 57.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_004.png",
+      "answer": "images_07/showa-heisei-05/answer_004.png",
+      "sourceTimes": {
+        "question": 60.5,
+        "answer": 71.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_005.png",
+      "answer": "images_07/showa-heisei-05/answer_005.png",
+      "sourceTimes": {
+        "question": 75.0,
+        "answer": 87.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_006.png",
+      "answer": "images_07/showa-heisei-05/answer_006.png",
+      "sourceTimes": {
+        "question": 90.5,
+        "answer": 100.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_007.png",
+      "answer": "images_07/showa-heisei-05/answer_007.png",
+      "sourceTimes": {
+        "question": 104.0,
+        "answer": 116.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_008.png",
+      "answer": "images_07/showa-heisei-05/answer_008.png",
+      "sourceTimes": {
+        "question": 119.5,
+        "answer": 127.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_009.png",
+      "answer": "images_07/showa-heisei-05/answer_009.png",
+      "sourceTimes": {
+        "question": 131.0,
+        "answer": 144.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_010.png",
+      "answer": "images_07/showa-heisei-05/answer_010.png",
+      "sourceTimes": {
+        "question": 147.5,
+        "answer": 161.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_011.png",
+      "answer": "images_07/showa-heisei-05/answer_011.png",
+      "sourceTimes": {
+        "question": 164.5,
+        "answer": 173.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_012.png",
+      "answer": "images_07/showa-heisei-05/answer_012.png",
+      "sourceTimes": {
+        "question": 176.5,
+        "answer": 186.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_013.png",
+      "answer": "images_07/showa-heisei-05/answer_013.png",
+      "sourceTimes": {
+        "question": 189.5,
+        "answer": 200.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_014.png",
+      "answer": "images_07/showa-heisei-05/answer_014.png",
+      "sourceTimes": {
+        "question": 204.0,
+        "answer": 214.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_015.png",
+      "answer": "images_07/showa-heisei-05/answer_015.png",
+      "sourceTimes": {
+        "question": 217.5,
+        "answer": 230.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_016.png",
+      "answer": "images_07/showa-heisei-05/answer_016.png",
+      "sourceTimes": {
+        "question": 233.5,
+        "answer": 243.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_017.png",
+      "answer": "images_07/showa-heisei-05/answer_017.png",
+      "sourceTimes": {
+        "question": 246.5,
+        "answer": 257.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_018.png",
+      "answer": "images_07/showa-heisei-05/answer_018.png",
+      "sourceTimes": {
+        "question": 261.0,
+        "answer": 272.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_019.png",
+      "answer": "images_07/showa-heisei-05/answer_019.png",
+      "sourceTimes": {
+        "question": 275.5,
+        "answer": 287.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_020.png",
+      "answer": "images_07/showa-heisei-05/answer_020.png",
+      "sourceTimes": {
+        "question": 290.5,
+        "answer": 303.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_021.png",
+      "answer": "images_07/showa-heisei-05/answer_021.png",
+      "sourceTimes": {
+        "question": 307.0,
+        "answer": 321.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_022.png",
+      "answer": "images_07/showa-heisei-05/answer_022.png",
+      "sourceTimes": {
+        "question": 325.0,
+        "answer": 333.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_023.png",
+      "answer": "images_07/showa-heisei-05/answer_023.png",
+      "sourceTimes": {
+        "question": 337.0,
+        "answer": 352.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_024.png",
+      "answer": "images_07/showa-heisei-05/answer_024.png",
+      "sourceTimes": {
+        "question": 355.5,
+        "answer": 367.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_025.png",
+      "answer": "images_07/showa-heisei-05/answer_025.png",
+      "sourceTimes": {
+        "question": 371.0,
+        "answer": 380.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_026.png",
+      "answer": "images_07/showa-heisei-05/answer_026.png",
+      "sourceTimes": {
+        "question": 383.5,
+        "answer": 393.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_027.png",
+      "answer": "images_07/showa-heisei-05/answer_027.png",
+      "sourceTimes": {
+        "question": 397.0,
+        "answer": 410.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_028.png",
+      "answer": "images_07/showa-heisei-05/answer_028.png",
+      "sourceTimes": {
+        "question": 413.5,
+        "answer": 426.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_029.png",
+      "answer": "images_07/showa-heisei-05/answer_029.png",
+      "sourceTimes": {
+        "question": 430.0,
+        "answer": 437.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_030.png",
+      "answer": "images_07/showa-heisei-05/answer_030.png",
+      "sourceTimes": {
+        "question": 441.0,
+        "answer": 450.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_031.png",
+      "answer": "images_07/showa-heisei-05/answer_031.png",
+      "sourceTimes": {
+        "question": 453.5,
+        "answer": 463.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_032.png",
+      "answer": "images_07/showa-heisei-05/answer_032.png",
+      "sourceTimes": {
+        "question": 467.0,
+        "answer": 478.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_033.png",
+      "answer": "images_07/showa-heisei-05/answer_033.png",
+      "sourceTimes": {
+        "question": 482.0,
+        "answer": 489.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_034.png",
+      "answer": "images_07/showa-heisei-05/answer_034.png",
+      "sourceTimes": {
+        "question": 493.0,
+        "answer": 503.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_035.png",
+      "answer": "images_07/showa-heisei-05/answer_035.png",
+      "sourceTimes": {
+        "question": 506.5,
+        "answer": 516.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_036.png",
+      "answer": "images_07/showa-heisei-05/answer_036.png",
+      "sourceTimes": {
+        "question": 519.5,
+        "answer": 532.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_037.png",
+      "answer": "images_07/showa-heisei-05/answer_037.png",
+      "sourceTimes": {
+        "question": 535.5,
+        "answer": 548.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_038.png",
+      "answer": "images_07/showa-heisei-05/answer_038.png",
+      "sourceTimes": {
+        "question": 551.5,
+        "answer": 566.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "showa",
+      "question": "images_07/showa-heisei-05/question_039.png",
+      "answer": "images_07/showa-heisei-05/answer_039.png",
+      "sourceTimes": {
+        "question": 570.0,
+        "answer": 581.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "heisei",
+      "question": "images_07/showa-heisei-05/question_040.png",
+      "answer": "images_07/showa-heisei-05/answer_040.png",
+      "sourceTimes": {
+        "question": 588.0,
+        "answer": 597.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "heisei",
+      "question": "images_07/showa-heisei-05/question_041.png",
+      "answer": "images_07/showa-heisei-05/answer_041.png",
+      "sourceTimes": {
+        "question": 601.0,
+        "answer": 610.5
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "heisei",
+      "question": "images_07/showa-heisei-05/question_042.png",
+      "answer": "images_07/showa-heisei-05/answer_042.png",
+      "sourceTimes": {
+        "question": 614.0,
+        "answer": 627.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "heisei",
+      "question": "images_07/showa-heisei-05/question_043.png",
+      "answer": "images_07/showa-heisei-05/answer_043.png",
+      "sourceTimes": {
+        "question": 630.5,
+        "answer": 643.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "heisei",
+      "question": "images_07/showa-heisei-05/question_044.png",
+      "answer": "images_07/showa-heisei-05/answer_044.png",
+      "sourceTimes": {
+        "question": 647.0,
+        "answer": 660.5
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "heisei",
+      "question": "images_07/showa-heisei-05/question_045.png",
+      "answer": "images_07/showa-heisei-05/answer_045.png",
+      "sourceTimes": {
+        "question": 664.0,
+        "answer": 677.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "heisei",
+      "question": "images_07/showa-heisei-05/question_046.png",
+      "answer": "images_07/showa-heisei-05/answer_046.png",
+      "sourceTimes": {
+        "question": 680.5,
+        "answer": 693.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=hVnO920kVAs"
+}

@@ -1,0 +1,1068 @@
+{
+  "id": "social-history-jomon-kamakura-01",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史① 縄文～鎌倉時代",
+  "grade": "中学社会",
+  "description": "縄文時代から鎌倉時代までの歴史一問一答105問。動画から抽出した問題・解答画像を順に学ぶ教材。",
+  "cover": "images_07/jomon-kamakura-01/question_001.png",
+  "chapters": [
+    {
+      "id": "jomon-kamakura",
+      "title": "縄文～鎌倉時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_001.png",
+      "answer": "images_07/jomon-kamakura-01/answer_001.png",
+      "sourceTimes": {
+        "question": 17.0,
+        "answer": 22.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_002.png",
+      "answer": "images_07/jomon-kamakura-01/answer_002.png",
+      "sourceTimes": {
+        "question": 25.5,
+        "answer": 32.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_003.png",
+      "answer": "images_07/jomon-kamakura-01/answer_003.png",
+      "sourceTimes": {
+        "question": 35.0,
+        "answer": 41.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_004.png",
+      "answer": "images_07/jomon-kamakura-01/answer_004.png",
+      "sourceTimes": {
+        "question": 44.0,
+        "answer": 51.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_005.png",
+      "answer": "images_07/jomon-kamakura-01/answer_005.png",
+      "sourceTimes": {
+        "question": 54.5,
+        "answer": 59.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_006.png",
+      "answer": "images_07/jomon-kamakura-01/answer_006.png",
+      "sourceTimes": {
+        "question": 62.5,
+        "answer": 68.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_007.png",
+      "answer": "images_07/jomon-kamakura-01/answer_007.png",
+      "sourceTimes": {
+        "question": 71.0,
+        "answer": 77.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_008.png",
+      "answer": "images_07/jomon-kamakura-01/answer_008.png",
+      "sourceTimes": {
+        "question": 80.5,
+        "answer": 86.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_009.png",
+      "answer": "images_07/jomon-kamakura-01/answer_009.png",
+      "sourceTimes": {
+        "question": 89.0,
+        "answer": 95.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_010.png",
+      "answer": "images_07/jomon-kamakura-01/answer_010.png",
+      "sourceTimes": {
+        "question": 98.0,
+        "answer": 107.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_011.png",
+      "answer": "images_07/jomon-kamakura-01/answer_011.png",
+      "sourceTimes": {
+        "question": 110.5,
+        "answer": 115.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_012.png",
+      "answer": "images_07/jomon-kamakura-01/answer_012.png",
+      "sourceTimes": {
+        "question": 118.0,
+        "answer": 124.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_013.png",
+      "answer": "images_07/jomon-kamakura-01/answer_013.png",
+      "sourceTimes": {
+        "question": 127.0,
+        "answer": 136.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_014.png",
+      "answer": "images_07/jomon-kamakura-01/answer_014.png",
+      "sourceTimes": {
+        "question": 139.5,
+        "answer": 146.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_015.png",
+      "answer": "images_07/jomon-kamakura-01/answer_015.png",
+      "sourceTimes": {
+        "question": 149.0,
+        "answer": 160.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_016.png",
+      "answer": "images_07/jomon-kamakura-01/answer_016.png",
+      "sourceTimes": {
+        "question": 163.0,
+        "answer": 172.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_017.png",
+      "answer": "images_07/jomon-kamakura-01/answer_017.png",
+      "sourceTimes": {
+        "question": 175.0,
+        "answer": 183.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_018.png",
+      "answer": "images_07/jomon-kamakura-01/answer_018.png",
+      "sourceTimes": {
+        "question": 186.5,
+        "answer": 197.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_019.png",
+      "answer": "images_07/jomon-kamakura-01/answer_019.png",
+      "sourceTimes": {
+        "question": 200.0,
+        "answer": 208.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_020.png",
+      "answer": "images_07/jomon-kamakura-01/answer_020.png",
+      "sourceTimes": {
+        "question": 211.0,
+        "answer": 219.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_021.png",
+      "answer": "images_07/jomon-kamakura-01/answer_021.png",
+      "sourceTimes": {
+        "question": 222.0,
+        "answer": 230.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_022.png",
+      "answer": "images_07/jomon-kamakura-01/answer_022.png",
+      "sourceTimes": {
+        "question": 233.5,
+        "answer": 240.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_023.png",
+      "answer": "images_07/jomon-kamakura-01/answer_023.png",
+      "sourceTimes": {
+        "question": 243.5,
+        "answer": 249.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_024.png",
+      "answer": "images_07/jomon-kamakura-01/answer_024.png",
+      "sourceTimes": {
+        "question": 252.5,
+        "answer": 259.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_025.png",
+      "answer": "images_07/jomon-kamakura-01/answer_025.png",
+      "sourceTimes": {
+        "question": 262.5,
+        "answer": 273.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_026.png",
+      "answer": "images_07/jomon-kamakura-01/answer_026.png",
+      "sourceTimes": {
+        "question": 276.5,
+        "answer": 286.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_027.png",
+      "answer": "images_07/jomon-kamakura-01/answer_027.png",
+      "sourceTimes": {
+        "question": 289.5,
+        "answer": 300.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_028.png",
+      "answer": "images_07/jomon-kamakura-01/answer_028.png",
+      "sourceTimes": {
+        "question": 303.5,
+        "answer": 309.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_029.png",
+      "answer": "images_07/jomon-kamakura-01/answer_029.png",
+      "sourceTimes": {
+        "question": 312.5,
+        "answer": 320.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_030.png",
+      "answer": "images_07/jomon-kamakura-01/answer_030.png",
+      "sourceTimes": {
+        "question": 323.5,
+        "answer": 330.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_031.png",
+      "answer": "images_07/jomon-kamakura-01/answer_031.png",
+      "sourceTimes": {
+        "question": 333.5,
+        "answer": 345.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_032.png",
+      "answer": "images_07/jomon-kamakura-01/answer_032.png",
+      "sourceTimes": {
+        "question": 348.0,
+        "answer": 359.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_033.png",
+      "answer": "images_07/jomon-kamakura-01/answer_033.png",
+      "sourceTimes": {
+        "question": 362.0,
+        "answer": 371.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_034.png",
+      "answer": "images_07/jomon-kamakura-01/answer_034.png",
+      "sourceTimes": {
+        "question": 374.5,
+        "answer": 385.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_035.png",
+      "answer": "images_07/jomon-kamakura-01/answer_035.png",
+      "sourceTimes": {
+        "question": 388.5,
+        "answer": 396.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_036.png",
+      "answer": "images_07/jomon-kamakura-01/answer_036.png",
+      "sourceTimes": {
+        "question": 399.5,
+        "answer": 408.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_037.png",
+      "answer": "images_07/jomon-kamakura-01/answer_037.png",
+      "sourceTimes": {
+        "question": 411.5,
+        "answer": 422.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_038.png",
+      "answer": "images_07/jomon-kamakura-01/answer_038.png",
+      "sourceTimes": {
+        "question": 425.0,
+        "answer": 434.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_039.png",
+      "answer": "images_07/jomon-kamakura-01/answer_039.png",
+      "sourceTimes": {
+        "question": 437.5,
+        "answer": 447.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_040.png",
+      "answer": "images_07/jomon-kamakura-01/answer_040.png",
+      "sourceTimes": {
+        "question": 450.5,
+        "answer": 458.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_041.png",
+      "answer": "images_07/jomon-kamakura-01/answer_041.png",
+      "sourceTimes": {
+        "question": 461.0,
+        "answer": 469.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_042.png",
+      "answer": "images_07/jomon-kamakura-01/answer_042.png",
+      "sourceTimes": {
+        "question": 472.0,
+        "answer": 484.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_043.png",
+      "answer": "images_07/jomon-kamakura-01/answer_043.png",
+      "sourceTimes": {
+        "question": 487.0,
+        "answer": 496.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_044.png",
+      "answer": "images_07/jomon-kamakura-01/answer_044.png",
+      "sourceTimes": {
+        "question": 499.0,
+        "answer": 510.5
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_045.png",
+      "answer": "images_07/jomon-kamakura-01/answer_045.png",
+      "sourceTimes": {
+        "question": 513.5,
+        "answer": 523.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_046.png",
+      "answer": "images_07/jomon-kamakura-01/answer_046.png",
+      "sourceTimes": {
+        "question": 526.0,
+        "answer": 537.5
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_047.png",
+      "answer": "images_07/jomon-kamakura-01/answer_047.png",
+      "sourceTimes": {
+        "question": 540.5,
+        "answer": 552.5
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_048.png",
+      "answer": "images_07/jomon-kamakura-01/answer_048.png",
+      "sourceTimes": {
+        "question": 555.5,
+        "answer": 566.5
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_049.png",
+      "answer": "images_07/jomon-kamakura-01/answer_049.png",
+      "sourceTimes": {
+        "question": 569.5,
+        "answer": 577.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_050.png",
+      "answer": "images_07/jomon-kamakura-01/answer_050.png",
+      "sourceTimes": {
+        "question": 580.0,
+        "answer": 589.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_051.png",
+      "answer": "images_07/jomon-kamakura-01/answer_051.png",
+      "sourceTimes": {
+        "question": 592.0,
+        "answer": 600.5
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_052.png",
+      "answer": "images_07/jomon-kamakura-01/answer_052.png",
+      "sourceTimes": {
+        "question": 603.5,
+        "answer": 611.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_053.png",
+      "answer": "images_07/jomon-kamakura-01/answer_053.png",
+      "sourceTimes": {
+        "question": 614.0,
+        "answer": 622.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_054.png",
+      "answer": "images_07/jomon-kamakura-01/answer_054.png",
+      "sourceTimes": {
+        "question": 625.0,
+        "answer": 634.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_055.png",
+      "answer": "images_07/jomon-kamakura-01/answer_055.png",
+      "sourceTimes": {
+        "question": 637.0,
+        "answer": 647.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_056.png",
+      "answer": "images_07/jomon-kamakura-01/answer_056.png",
+      "sourceTimes": {
+        "question": 650.0,
+        "answer": 663.5
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_057.png",
+      "answer": "images_07/jomon-kamakura-01/answer_057.png",
+      "sourceTimes": {
+        "question": 666.5,
+        "answer": 675.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_058.png",
+      "answer": "images_07/jomon-kamakura-01/answer_058.png",
+      "sourceTimes": {
+        "question": 678.0,
+        "answer": 683.5
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_059.png",
+      "answer": "images_07/jomon-kamakura-01/answer_059.png",
+      "sourceTimes": {
+        "question": 686.5,
+        "answer": 696.5
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_060.png",
+      "answer": "images_07/jomon-kamakura-01/answer_060.png",
+      "sourceTimes": {
+        "question": 699.5,
+        "answer": 710.5
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_061.png",
+      "answer": "images_07/jomon-kamakura-01/answer_061.png",
+      "sourceTimes": {
+        "question": 713.5,
+        "answer": 721.5
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_062.png",
+      "answer": "images_07/jomon-kamakura-01/answer_062.png",
+      "sourceTimes": {
+        "question": 724.5,
+        "answer": 732.0
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_063.png",
+      "answer": "images_07/jomon-kamakura-01/answer_063.png",
+      "sourceTimes": {
+        "question": 735.0,
+        "answer": 741.0
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_064.png",
+      "answer": "images_07/jomon-kamakura-01/answer_064.png",
+      "sourceTimes": {
+        "question": 744.0,
+        "answer": 751.0
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_065.png",
+      "answer": "images_07/jomon-kamakura-01/answer_065.png",
+      "sourceTimes": {
+        "question": 754.0,
+        "answer": 761.0
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_066.png",
+      "answer": "images_07/jomon-kamakura-01/answer_066.png",
+      "sourceTimes": {
+        "question": 764.0,
+        "answer": 773.0
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_067.png",
+      "answer": "images_07/jomon-kamakura-01/answer_067.png",
+      "sourceTimes": {
+        "question": 776.0,
+        "answer": 786.5
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_068.png",
+      "answer": "images_07/jomon-kamakura-01/answer_068.png",
+      "sourceTimes": {
+        "question": 789.5,
+        "answer": 796.0
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_069.png",
+      "answer": "images_07/jomon-kamakura-01/answer_069.png",
+      "sourceTimes": {
+        "question": 799.0,
+        "answer": 806.0
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_070.png",
+      "answer": "images_07/jomon-kamakura-01/answer_070.png",
+      "sourceTimes": {
+        "question": 809.0,
+        "answer": 818.5
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_071.png",
+      "answer": "images_07/jomon-kamakura-01/answer_071.png",
+      "sourceTimes": {
+        "question": 821.5,
+        "answer": 829.5
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_072.png",
+      "answer": "images_07/jomon-kamakura-01/answer_072.png",
+      "sourceTimes": {
+        "question": 832.5,
+        "answer": 845.0
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_073.png",
+      "answer": "images_07/jomon-kamakura-01/answer_073.png",
+      "sourceTimes": {
+        "question": 848.0,
+        "answer": 858.0
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_074.png",
+      "answer": "images_07/jomon-kamakura-01/answer_074.png",
+      "sourceTimes": {
+        "question": 861.0,
+        "answer": 873.0
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_075.png",
+      "answer": "images_07/jomon-kamakura-01/answer_075.png",
+      "sourceTimes": {
+        "question": 876.0,
+        "answer": 886.0
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_076.png",
+      "answer": "images_07/jomon-kamakura-01/answer_076.png",
+      "sourceTimes": {
+        "question": 889.0,
+        "answer": 899.0
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_077.png",
+      "answer": "images_07/jomon-kamakura-01/answer_077.png",
+      "sourceTimes": {
+        "question": 902.0,
+        "answer": 908.0
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_078.png",
+      "answer": "images_07/jomon-kamakura-01/answer_078.png",
+      "sourceTimes": {
+        "question": 911.0,
+        "answer": 922.5
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_079.png",
+      "answer": "images_07/jomon-kamakura-01/answer_079.png",
+      "sourceTimes": {
+        "question": 925.5,
+        "answer": 939.0
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_080.png",
+      "answer": "images_07/jomon-kamakura-01/answer_080.png",
+      "sourceTimes": {
+        "question": 942.0,
+        "answer": 948.5
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_081.png",
+      "answer": "images_07/jomon-kamakura-01/answer_081.png",
+      "sourceTimes": {
+        "question": 951.5,
+        "answer": 959.0
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_082.png",
+      "answer": "images_07/jomon-kamakura-01/answer_082.png",
+      "sourceTimes": {
+        "question": 962.0,
+        "answer": 971.0
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_083.png",
+      "answer": "images_07/jomon-kamakura-01/answer_083.png",
+      "sourceTimes": {
+        "question": 974.0,
+        "answer": 981.0
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_084.png",
+      "answer": "images_07/jomon-kamakura-01/answer_084.png",
+      "sourceTimes": {
+        "question": 984.0,
+        "answer": 991.5
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_085.png",
+      "answer": "images_07/jomon-kamakura-01/answer_085.png",
+      "sourceTimes": {
+        "question": 994.5,
+        "answer": 1002.5
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_086.png",
+      "answer": "images_07/jomon-kamakura-01/answer_086.png",
+      "sourceTimes": {
+        "question": 1005.5,
+        "answer": 1012.0
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_087.png",
+      "answer": "images_07/jomon-kamakura-01/answer_087.png",
+      "sourceTimes": {
+        "question": 1015.0,
+        "answer": 1024.0
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_088.png",
+      "answer": "images_07/jomon-kamakura-01/answer_088.png",
+      "sourceTimes": {
+        "question": 1027.0,
+        "answer": 1036.5
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_089.png",
+      "answer": "images_07/jomon-kamakura-01/answer_089.png",
+      "sourceTimes": {
+        "question": 1039.5,
+        "answer": 1047.5
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_090.png",
+      "answer": "images_07/jomon-kamakura-01/answer_090.png",
+      "sourceTimes": {
+        "question": 1050.5,
+        "answer": 1061.0
+      }
+    },
+    {
+      "id": "091",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_091.png",
+      "answer": "images_07/jomon-kamakura-01/answer_091.png",
+      "sourceTimes": {
+        "question": 1064.0,
+        "answer": 1075.0
+      }
+    },
+    {
+      "id": "092",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_092.png",
+      "answer": "images_07/jomon-kamakura-01/answer_092.png",
+      "sourceTimes": {
+        "question": 1078.0,
+        "answer": 1085.0
+      }
+    },
+    {
+      "id": "093",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_093.png",
+      "answer": "images_07/jomon-kamakura-01/answer_093.png",
+      "sourceTimes": {
+        "question": 1088.0,
+        "answer": 1095.5
+      }
+    },
+    {
+      "id": "094",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_094.png",
+      "answer": "images_07/jomon-kamakura-01/answer_094.png",
+      "sourceTimes": {
+        "question": 1098.5,
+        "answer": 1108.5
+      }
+    },
+    {
+      "id": "095",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_095.png",
+      "answer": "images_07/jomon-kamakura-01/answer_095.png",
+      "sourceTimes": {
+        "question": 1111.5,
+        "answer": 1120.0
+      }
+    },
+    {
+      "id": "096",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_096.png",
+      "answer": "images_07/jomon-kamakura-01/answer_096.png",
+      "sourceTimes": {
+        "question": 1123.0,
+        "answer": 1130.5
+      }
+    },
+    {
+      "id": "097",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_097.png",
+      "answer": "images_07/jomon-kamakura-01/answer_097.png",
+      "sourceTimes": {
+        "question": 1133.5,
+        "answer": 1147.5
+      }
+    },
+    {
+      "id": "098",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_098.png",
+      "answer": "images_07/jomon-kamakura-01/answer_098.png",
+      "sourceTimes": {
+        "question": 1150.5,
+        "answer": 1161.5
+      }
+    },
+    {
+      "id": "099",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_099.png",
+      "answer": "images_07/jomon-kamakura-01/answer_099.png",
+      "sourceTimes": {
+        "question": 1164.5,
+        "answer": 1173.5
+      }
+    },
+    {
+      "id": "100",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_100.png",
+      "answer": "images_07/jomon-kamakura-01/answer_100.png",
+      "sourceTimes": {
+        "question": 1176.5,
+        "answer": 1185.0
+      }
+    },
+    {
+      "id": "101",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_101.png",
+      "answer": "images_07/jomon-kamakura-01/answer_101.png",
+      "sourceTimes": {
+        "question": 1188.0,
+        "answer": 1195.5
+      }
+    },
+    {
+      "id": "102",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_102.png",
+      "answer": "images_07/jomon-kamakura-01/answer_102.png",
+      "sourceTimes": {
+        "question": 1198.5,
+        "answer": 1207.0
+      }
+    },
+    {
+      "id": "103",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_103.png",
+      "answer": "images_07/jomon-kamakura-01/answer_103.png",
+      "sourceTimes": {
+        "question": 1210.0,
+        "answer": 1215.5
+      }
+    },
+    {
+      "id": "104",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_104.png",
+      "answer": "images_07/jomon-kamakura-01/answer_104.png",
+      "sourceTimes": {
+        "question": 1218.5,
+        "answer": 1227.5
+      }
+    },
+    {
+      "id": "105",
+      "chapter": "jomon-kamakura",
+      "question": "images_07/jomon-kamakura-01/question_105.png",
+      "answer": "images_07/jomon-kamakura-01/answer_105.png",
+      "sourceTimes": {
+        "question": 1230.5,
+        "answer": 1241.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=eGNJ1wBYSW8"
+}

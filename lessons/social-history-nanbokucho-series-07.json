@@ -1,0 +1,118 @@
+{
+  "id": "social-history-nanbokucho-series-07",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ⑦ 南北朝時代",
+  "grade": "中学社会",
+  "description": "中学社会歴史・南北朝時代の一問一答。全10問。",
+  "cover": "images_07/nanbokucho-series-07/question_001.png",
+  "chapters": [
+    {
+      "id": "nanbokucho",
+      "title": "南北朝時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_001.png",
+      "answer": "images_07/nanbokucho-series-07/answer_001.png",
+      "sourceTimes": {
+        "question": 19.0,
+        "answer": 39.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_002.png",
+      "answer": "images_07/nanbokucho-series-07/answer_002.png",
+      "sourceTimes": {
+        "question": 44.0,
+        "answer": 57.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_003.png",
+      "answer": "images_07/nanbokucho-series-07/answer_003.png",
+      "sourceTimes": {
+        "question": 61.5,
+        "answer": 73.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_004.png",
+      "answer": "images_07/nanbokucho-series-07/answer_004.png",
+      "sourceTimes": {
+        "question": 78.0,
+        "answer": 95.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_005.png",
+      "answer": "images_07/nanbokucho-series-07/answer_005.png",
+      "sourceTimes": {
+        "question": 99.5,
+        "answer": 119.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_006.png",
+      "answer": "images_07/nanbokucho-series-07/answer_006.png",
+      "sourceTimes": {
+        "question": 123.5,
+        "answer": 147.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_007.png",
+      "answer": "images_07/nanbokucho-series-07/answer_007.png",
+      "sourceTimes": {
+        "question": 151.5,
+        "answer": 168.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_008.png",
+      "answer": "images_07/nanbokucho-series-07/answer_008.png",
+      "sourceTimes": {
+        "question": 173.0,
+        "answer": 190.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_009.png",
+      "answer": "images_07/nanbokucho-series-07/answer_009.png",
+      "sourceTimes": {
+        "question": 194.5,
+        "answer": 209.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "nanbokucho",
+      "question": "images_07/nanbokucho-series-07/question_010.png",
+      "answer": "images_07/nanbokucho-series-07/answer_010.png",
+      "sourceTimes": {
+        "question": 213.5,
+        "answer": 230.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=4njAXoffmzQ"
+}

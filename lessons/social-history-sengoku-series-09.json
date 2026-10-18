@@ -1,0 +1,288 @@
+{
+  "id": "social-history-sengoku-series-09",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ⑨ 戦国時代",
+  "grade": "中学社会",
+  "description": "中学社会歴史・戦国時代の一問一答。全27問。",
+  "cover": "images_07/sengoku-series-09/question_001.png",
+  "chapters": [
+    {
+      "id": "sengoku",
+      "title": "戦国時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_001.png",
+      "answer": "images_07/sengoku-series-09/answer_001.png",
+      "sourceTimes": {
+        "question": 21.5,
+        "answer": 35.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_002.png",
+      "answer": "images_07/sengoku-series-09/answer_002.png",
+      "sourceTimes": {
+        "question": 40.5,
+        "answer": 56.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_003.png",
+      "answer": "images_07/sengoku-series-09/answer_003.png",
+      "sourceTimes": {
+        "question": 61.0,
+        "answer": 74.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_004.png",
+      "answer": "images_07/sengoku-series-09/answer_004.png",
+      "sourceTimes": {
+        "question": 79.0,
+        "answer": 91.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_005.png",
+      "answer": "images_07/sengoku-series-09/answer_005.png",
+      "sourceTimes": {
+        "question": 96.5,
+        "answer": 109.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_006.png",
+      "answer": "images_07/sengoku-series-09/answer_006.png",
+      "sourceTimes": {
+        "question": 114.5,
+        "answer": 129.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_007.png",
+      "answer": "images_07/sengoku-series-09/answer_007.png",
+      "sourceTimes": {
+        "question": 134.0,
+        "answer": 148.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_008.png",
+      "answer": "images_07/sengoku-series-09/answer_008.png",
+      "sourceTimes": {
+        "question": 153.5,
+        "answer": 168.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_009.png",
+      "answer": "images_07/sengoku-series-09/answer_009.png",
+      "sourceTimes": {
+        "question": 173.5,
+        "answer": 186.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_010.png",
+      "answer": "images_07/sengoku-series-09/answer_010.png",
+      "sourceTimes": {
+        "question": 191.0,
+        "answer": 205.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_011.png",
+      "answer": "images_07/sengoku-series-09/answer_011.png",
+      "sourceTimes": {
+        "question": 210.0,
+        "answer": 230.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_012.png",
+      "answer": "images_07/sengoku-series-09/answer_012.png",
+      "sourceTimes": {
+        "question": 235.0,
+        "answer": 254.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_013.png",
+      "answer": "images_07/sengoku-series-09/answer_013.png",
+      "sourceTimes": {
+        "question": 259.0,
+        "answer": 276.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_014.png",
+      "answer": "images_07/sengoku-series-09/answer_014.png",
+      "sourceTimes": {
+        "question": 281.0,
+        "answer": 296.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_015.png",
+      "answer": "images_07/sengoku-series-09/answer_015.png",
+      "sourceTimes": {
+        "question": 301.0,
+        "answer": 318.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_016.png",
+      "answer": "images_07/sengoku-series-09/answer_016.png",
+      "sourceTimes": {
+        "question": 323.0,
+        "answer": 337.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_017.png",
+      "answer": "images_07/sengoku-series-09/answer_017.png",
+      "sourceTimes": {
+        "question": 342.5,
+        "answer": 357.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_018.png",
+      "answer": "images_07/sengoku-series-09/answer_018.png",
+      "sourceTimes": {
+        "question": 362.0,
+        "answer": 377.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_019.png",
+      "answer": "images_07/sengoku-series-09/answer_019.png",
+      "sourceTimes": {
+        "question": 382.5,
+        "answer": 400.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_020.png",
+      "answer": "images_07/sengoku-series-09/answer_020.png",
+      "sourceTimes": {
+        "question": 405.5,
+        "answer": 421.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_021.png",
+      "answer": "images_07/sengoku-series-09/answer_021.png",
+      "sourceTimes": {
+        "question": 426.0,
+        "answer": 445.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_022.png",
+      "answer": "images_07/sengoku-series-09/answer_022.png",
+      "sourceTimes": {
+        "question": 450.0,
+        "answer": 466.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_023.png",
+      "answer": "images_07/sengoku-series-09/answer_023.png",
+      "sourceTimes": {
+        "question": 471.5,
+        "answer": 488.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_024.png",
+      "answer": "images_07/sengoku-series-09/answer_024.png",
+      "sourceTimes": {
+        "question": 493.5,
+        "answer": 508.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_025.png",
+      "answer": "images_07/sengoku-series-09/answer_025.png",
+      "sourceTimes": {
+        "question": 513.5,
+        "answer": 527.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_026.png",
+      "answer": "images_07/sengoku-series-09/answer_026.png",
+      "sourceTimes": {
+        "question": 532.5,
+        "answer": 549.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "sengoku",
+      "question": "images_07/sengoku-series-09/question_027.png",
+      "answer": "images_07/sengoku-series-09/answer_027.png",
+      "sourceTimes": {
+        "question": 554.5,
+        "answer": 570.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=gwKDjxyr4E4"
+}

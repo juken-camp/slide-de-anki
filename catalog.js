@@ -1184,6 +1184,371 @@ window.QUIZ_CATALOG = [
     "source": "https://www.youtube.com/watch?v=G22P_vxMtkQ",
     "count": 176,
     "data": "lessons/social-geography-japan-review.json"
+  },
+  {
+    "id": "social-history-paleolithic-kofun-series-01",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ① 旧石器～古墳時代",
+    "grade": "中学社会",
+    "description": "旧石器時代から古墳時代までの歴史一問一答。元動画冒頭には「全35問」と表示されますが、映像上で問題と解答が確認できた独立した組は34問です。",
+    "cover": "images_07/paleolithic-kofun-series-01/question_001.png",
+    "chapters": [
+      {
+        "id": "paleolithic-kofun",
+        "title": "旧石器時代～古墳時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=WbATDaC226A",
+    "count": 34,
+    "data": "lessons/social-history-paleolithic-kofun-series-01.json"
+  },
+  {
+    "id": "social-history-asuka-series-02",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ② 飛鳥時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・飛鳥時代の一問一答。全29問。",
+    "cover": "images_07/asuka-series-02/question_001.png",
+    "chapters": [
+      {
+        "id": "asuka",
+        "title": "飛鳥時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=PD2u4OkfZ2U",
+    "count": 29,
+    "data": "lessons/social-history-asuka-series-02.json"
+  },
+  {
+    "id": "social-history-nara-series-03",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ③ 奈良時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・奈良時代の一問一答。全19問。",
+    "cover": "images_07/nara-series-03/question_001.png",
+    "chapters": [
+      {
+        "id": "nara",
+        "title": "奈良時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=QVgoBiLSgXk",
+    "count": 19,
+    "data": "lessons/social-history-nara-series-03.json"
+  },
+  {
+    "id": "social-history-heian-early-series-04",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ④ 平安時代（前編）",
+    "grade": "中学社会",
+    "description": "中学社会歴史・平安時代（前編）の一問一答。全30問。",
+    "cover": "images_07/heian-early-series-04/question_001.png",
+    "chapters": [
+      {
+        "id": "heian-early",
+        "title": "平安時代（前編）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=0qYb4EOmZO8",
+    "count": 30,
+    "data": "lessons/social-history-heian-early-series-04.json"
+  },
+  {
+    "id": "social-history-heian-late-series-05",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑤ 平安時代（後編）",
+    "grade": "中学社会",
+    "description": "中学社会歴史・平安時代（後編）の一問一答。全17問。",
+    "cover": "images_07/heian-late-series-05/question_001.png",
+    "chapters": [
+      {
+        "id": "heian-late",
+        "title": "平安時代（後編）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=Y0SWQk7R-60",
+    "count": 17,
+    "data": "lessons/social-history-heian-late-series-05.json"
+  },
+  {
+    "id": "social-history-kamakura-series-06",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑥ 鎌倉時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・鎌倉時代の一問一答。全28問。",
+    "cover": "images_07/kamakura-series-06/question_001.png",
+    "chapters": [
+      {
+        "id": "kamakura",
+        "title": "鎌倉時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=6YHQAMOOKEs",
+    "count": 28,
+    "data": "lessons/social-history-kamakura-series-06.json"
+  },
+  {
+    "id": "social-history-nanbokucho-series-07",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑦ 南北朝時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・南北朝時代の一問一答。全10問。",
+    "cover": "images_07/nanbokucho-series-07/question_001.png",
+    "chapters": [
+      {
+        "id": "nanbokucho",
+        "title": "南北朝時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=4njAXoffmzQ",
+    "count": 10,
+    "data": "lessons/social-history-nanbokucho-series-07.json"
+  },
+  {
+    "id": "social-history-muromachi-series-08",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑧ 室町時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・室町時代の一問一答。全24問。",
+    "cover": "images_07/muromachi-series-08/question_001.png",
+    "chapters": [
+      {
+        "id": "muromachi",
+        "title": "室町時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=vW4lRP3JmAw",
+    "count": 24,
+    "data": "lessons/social-history-muromachi-series-08.json"
+  },
+  {
+    "id": "social-history-sengoku-series-09",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑨ 戦国時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・戦国時代の一問一答。全27問。",
+    "cover": "images_07/sengoku-series-09/question_001.png",
+    "chapters": [
+      {
+        "id": "sengoku",
+        "title": "戦国時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=gwKDjxyr4E4",
+    "count": 27,
+    "data": "lessons/social-history-sengoku-series-09.json"
+  },
+  {
+    "id": "social-history-edo-early-series-10",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑩ 江戸時代（前編）",
+    "grade": "中学社会",
+    "description": "中学社会歴史・江戸時代（前編）の一問一答。全25問。",
+    "cover": "images_07/edo-early-series-10/question_001.png",
+    "chapters": [
+      {
+        "id": "edo-early",
+        "title": "江戸時代（前編）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=vpQUYsZr55c",
+    "count": 25,
+    "data": "lessons/social-history-edo-early-series-10.json"
+  },
+  {
+    "id": "social-history-edo-late-series-11",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑪ 江戸時代（後編）",
+    "grade": "中学社会",
+    "description": "中学社会歴史・江戸時代（後編）の一問一答。全30問。",
+    "cover": "images_07/edo-late-series-11/question_001.png",
+    "chapters": [
+      {
+        "id": "edo-late",
+        "title": "江戸時代（後編）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=SVuL-MAgsdU",
+    "count": 30,
+    "data": "lessons/social-history-edo-late-series-11.json"
+  },
+  {
+    "id": "social-history-meiji-series-12",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑫ 明治時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・明治時代の一問一答。元映像から確認できた27問（動画タイトルは29問）。18番の解答は元映像に表示なし。",
+    "cover": "images_07/meiji-series-12/question_001.png",
+    "chapters": [
+      {
+        "id": "meiji",
+        "title": "明治時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=SOoH63VIKRg",
+    "count": 27,
+    "data": "lessons/social-history-meiji-series-12.json"
+  },
+  {
+    "id": "social-history-taisho-series-13",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑬ 大正時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・大正時代の一問一答。全19問。",
+    "cover": "images_07/taisho-series-13/question_001.png",
+    "chapters": [
+      {
+        "id": "taisho",
+        "title": "大正時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=94jw6Qt34sE",
+    "count": 19,
+    "data": "lessons/social-history-taisho-series-13.json"
+  },
+  {
+    "id": "social-history-showa-heisei-series-14",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史 別シリーズ⑭ 昭和・平成時代",
+    "grade": "中学社会",
+    "description": "中学社会歴史・昭和時代から平成時代までの一問一答。全27問。",
+    "cover": "images_07/showa-heisei-series-14/question_001.png",
+    "chapters": [
+      {
+        "id": "showa",
+        "title": "昭和時代"
+      },
+      {
+        "id": "heisei",
+        "title": "平成時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=MEt7EPOx4XM",
+    "count": 27,
+    "data": "lessons/social-history-showa-heisei-series-14.json"
+  },
+  {
+    "id": "social-history-jomon-kamakura-01",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史① 縄文～鎌倉時代",
+    "grade": "中学社会",
+    "description": "縄文時代から鎌倉時代までの歴史一問一答105問。動画から抽出した問題・解答画像を順に学ぶ教材。",
+    "cover": "images_07/jomon-kamakura-01/question_001.png",
+    "chapters": [
+      {
+        "id": "jomon-kamakura",
+        "title": "縄文～鎌倉時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=eGNJ1wBYSW8",
+    "count": 105,
+    "data": "lessons/social-history-jomon-kamakura-01.json"
+  },
+  {
+    "id": "social-history-muromachi-edo-02",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史② 室町～江戸時代",
+    "grade": "中学社会",
+    "description": "室町時代（南北朝を含む）から戦国時代、江戸時代までの歴史一問一答86問。動画から抽出した問題・解答画像を順に学ぶ教材。",
+    "cover": "images_07/muromachi-edo-02/question_001.png",
+    "chapters": [
+      {
+        "id": "muromachi",
+        "title": "室町時代（南北朝を含む）"
+      },
+      {
+        "id": "sengoku",
+        "title": "戦国時代（安土桃山時代を含む）"
+      },
+      {
+        "id": "edo",
+        "title": "江戸時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=8eUm3Its9Aw",
+    "count": 86,
+    "data": "lessons/social-history-muromachi-edo-02.json"
+  },
+  {
+    "id": "social-history-edo-culture-bakumatsu-03",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史③ 江戸時代の文化～幕末",
+    "grade": "中学社会",
+    "description": "江戸時代の文化から幕末までの歴史一問一答36問。動画から抽出した問題・解答画像を順に学ぶ教材。",
+    "cover": "images_07/edo-culture-bakumatsu-03/question_001.png",
+    "chapters": [
+      {
+        "id": "edo-culture",
+        "title": "江戸時代の文化"
+      },
+      {
+        "id": "bakumatsu",
+        "title": "幕末"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=L2r9p8w7y2w",
+    "count": 36,
+    "data": "lessons/social-history-edo-culture-bakumatsu-03.json"
+  },
+  {
+    "id": "social-history-meiji-taisho-04",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史④ 明治～大正時代",
+    "grade": "中学社会",
+    "description": "明治時代から大正時代までの歴史一問一答60問。動画から抽出した問題・解答画像を順に学ぶ教材。",
+    "cover": "images_07/meiji-taisho-04/question_001.png",
+    "chapters": [
+      {
+        "id": "meiji",
+        "title": "明治時代"
+      },
+      {
+        "id": "taisho",
+        "title": "大正時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=PCMsq39HBsM",
+    "count": 60,
+    "data": "lessons/social-history-meiji-taisho-04.json"
+  },
+  {
+    "id": "social-history-showa-heisei-05",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史⑤ 昭和～平成時代",
+    "grade": "中学社会",
+    "description": "昭和時代から平成時代までの歴史一問一答46問。動画から抽出した問題・解答画像を順に学ぶ教材。",
+    "cover": "images_07/showa-heisei-05/question_001.png",
+    "chapters": [
+      {
+        "id": "showa",
+        "title": "昭和時代"
+      },
+      {
+        "id": "heisei",
+        "title": "平成時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=hVnO920kVAs",
+    "count": 46,
+    "data": "lessons/social-history-showa-heisei-05.json"
   }
 ];
-

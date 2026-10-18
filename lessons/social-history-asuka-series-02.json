@@ -1,0 +1,308 @@
+{
+  "id": "social-history-asuka-series-02",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ② 飛鳥時代",
+  "grade": "中学社会",
+  "description": "中学社会歴史・飛鳥時代の一問一答。全29問。",
+  "cover": "images_07/asuka-series-02/question_001.png",
+  "chapters": [
+    {
+      "id": "asuka",
+      "title": "飛鳥時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_001.png",
+      "answer": "images_07/asuka-series-02/answer_001.png",
+      "sourceTimes": {
+        "question": 19.0,
+        "answer": 33.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_002.png",
+      "answer": "images_07/asuka-series-02/answer_002.png",
+      "sourceTimes": {
+        "question": 37.0,
+        "answer": 52.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_003.png",
+      "answer": "images_07/asuka-series-02/answer_003.png",
+      "sourceTimes": {
+        "question": 55.5,
+        "answer": 69.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_004.png",
+      "answer": "images_07/asuka-series-02/answer_004.png",
+      "sourceTimes": {
+        "question": 73.0,
+        "answer": 90.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_005.png",
+      "answer": "images_07/asuka-series-02/answer_005.png",
+      "sourceTimes": {
+        "question": 94.0,
+        "answer": 106.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_006.png",
+      "answer": "images_07/asuka-series-02/answer_006.png",
+      "sourceTimes": {
+        "question": 109.5,
+        "answer": 124.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_007.png",
+      "answer": "images_07/asuka-series-02/answer_007.png",
+      "sourceTimes": {
+        "question": 127.5,
+        "answer": 144.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_008.png",
+      "answer": "images_07/asuka-series-02/answer_008.png",
+      "sourceTimes": {
+        "question": 148.0,
+        "answer": 165.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_009.png",
+      "answer": "images_07/asuka-series-02/answer_009.png",
+      "sourceTimes": {
+        "question": 168.5,
+        "answer": 183.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_010.png",
+      "answer": "images_07/asuka-series-02/answer_010.png",
+      "sourceTimes": {
+        "question": 187.0,
+        "answer": 201.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_011.png",
+      "answer": "images_07/asuka-series-02/answer_011.png",
+      "sourceTimes": {
+        "question": 204.5,
+        "answer": 221.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_012.png",
+      "answer": "images_07/asuka-series-02/answer_012.png",
+      "sourceTimes": {
+        "question": 224.5,
+        "answer": 241.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_013.png",
+      "answer": "images_07/asuka-series-02/answer_013.png",
+      "sourceTimes": {
+        "question": 244.5,
+        "answer": 261.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_014.png",
+      "answer": "images_07/asuka-series-02/answer_014.png",
+      "sourceTimes": {
+        "question": 264.5,
+        "answer": 279.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_015.png",
+      "answer": "images_07/asuka-series-02/answer_015.png",
+      "sourceTimes": {
+        "question": 283.0,
+        "answer": 297.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_016.png",
+      "answer": "images_07/asuka-series-02/answer_016.png",
+      "sourceTimes": {
+        "question": 300.5,
+        "answer": 314.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_017.png",
+      "answer": "images_07/asuka-series-02/answer_017.png",
+      "sourceTimes": {
+        "question": 318.0,
+        "answer": 330.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_018.png",
+      "answer": "images_07/asuka-series-02/answer_018.png",
+      "sourceTimes": {
+        "question": 334.0,
+        "answer": 353.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_019.png",
+      "answer": "images_07/asuka-series-02/answer_019.png",
+      "sourceTimes": {
+        "question": 357.0,
+        "answer": 379.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_020.png",
+      "answer": "images_07/asuka-series-02/answer_020.png",
+      "sourceTimes": {
+        "question": 382.5,
+        "answer": 406.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_021.png",
+      "answer": "images_07/asuka-series-02/answer_021.png",
+      "sourceTimes": {
+        "question": 409.5,
+        "answer": 429.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_022.png",
+      "answer": "images_07/asuka-series-02/answer_022.png",
+      "sourceTimes": {
+        "question": 433.0,
+        "answer": 457.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_023.png",
+      "answer": "images_07/asuka-series-02/answer_023.png",
+      "sourceTimes": {
+        "question": 460.5,
+        "answer": 478.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_024.png",
+      "answer": "images_07/asuka-series-02/answer_024.png",
+      "sourceTimes": {
+        "question": 481.5,
+        "answer": 498.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_025.png",
+      "answer": "images_07/asuka-series-02/answer_025.png",
+      "sourceTimes": {
+        "question": 502.0,
+        "answer": 514.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_026.png",
+      "answer": "images_07/asuka-series-02/answer_026.png",
+      "sourceTimes": {
+        "question": 517.5,
+        "answer": 528.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_027.png",
+      "answer": "images_07/asuka-series-02/answer_027.png",
+      "sourceTimes": {
+        "question": 531.5,
+        "answer": 549.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_028.png",
+      "answer": "images_07/asuka-series-02/answer_028.png",
+      "sourceTimes": {
+        "question": 552.5,
+        "answer": 572.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "asuka",
+      "question": "images_07/asuka-series-02/question_029.png",
+      "answer": "images_07/asuka-series-02/answer_029.png",
+      "sourceTimes": {
+        "question": 576.0,
+        "answer": 589.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=PD2u4OkfZ2U"
+}

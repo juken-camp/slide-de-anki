@@ -1,0 +1,258 @@
+{
+  "id": "social-history-muromachi-series-08",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ⑧ 室町時代",
+  "grade": "中学社会",
+  "description": "中学社会歴史・室町時代の一問一答。全24問。",
+  "cover": "images_07/muromachi-series-08/question_001.png",
+  "chapters": [
+    {
+      "id": "muromachi",
+      "title": "室町時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_001.png",
+      "answer": "images_07/muromachi-series-08/answer_001.png",
+      "sourceTimes": {
+        "question": 21.0,
+        "answer": 37.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_002.png",
+      "answer": "images_07/muromachi-series-08/answer_002.png",
+      "sourceTimes": {
+        "question": 42.0,
+        "answer": 55.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_003.png",
+      "answer": "images_07/muromachi-series-08/answer_003.png",
+      "sourceTimes": {
+        "question": 60.0,
+        "answer": 74.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_004.png",
+      "answer": "images_07/muromachi-series-08/answer_004.png",
+      "sourceTimes": {
+        "question": 79.0,
+        "answer": 94.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_005.png",
+      "answer": "images_07/muromachi-series-08/answer_005.png",
+      "sourceTimes": {
+        "question": 99.0,
+        "answer": 112.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_006.png",
+      "answer": "images_07/muromachi-series-08/answer_006.png",
+      "sourceTimes": {
+        "question": 116.5,
+        "answer": 129.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_007.png",
+      "answer": "images_07/muromachi-series-08/answer_007.png",
+      "sourceTimes": {
+        "question": 133.5,
+        "answer": 149.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_008.png",
+      "answer": "images_07/muromachi-series-08/answer_008.png",
+      "sourceTimes": {
+        "question": 154.0,
+        "answer": 170.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_009.png",
+      "answer": "images_07/muromachi-series-08/answer_009.png",
+      "sourceTimes": {
+        "question": 175.0,
+        "answer": 196.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_010.png",
+      "answer": "images_07/muromachi-series-08/answer_010.png",
+      "sourceTimes": {
+        "question": 200.5,
+        "answer": 215.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_011.png",
+      "answer": "images_07/muromachi-series-08/answer_011.png",
+      "sourceTimes": {
+        "question": 219.5,
+        "answer": 237.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_012.png",
+      "answer": "images_07/muromachi-series-08/answer_012.png",
+      "sourceTimes": {
+        "question": 242.0,
+        "answer": 262.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_013.png",
+      "answer": "images_07/muromachi-series-08/answer_013.png",
+      "sourceTimes": {
+        "question": 267.0,
+        "answer": 283.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_014.png",
+      "answer": "images_07/muromachi-series-08/answer_014.png",
+      "sourceTimes": {
+        "question": 288.0,
+        "answer": 304.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_015.png",
+      "answer": "images_07/muromachi-series-08/answer_015.png",
+      "sourceTimes": {
+        "question": 309.0,
+        "answer": 326.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_016.png",
+      "answer": "images_07/muromachi-series-08/answer_016.png",
+      "sourceTimes": {
+        "question": 330.5,
+        "answer": 351.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_017.png",
+      "answer": "images_07/muromachi-series-08/answer_017.png",
+      "sourceTimes": {
+        "question": 355.5,
+        "answer": 367.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_018.png",
+      "answer": "images_07/muromachi-series-08/answer_018.png",
+      "sourceTimes": {
+        "question": 372.0,
+        "answer": 389.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_019.png",
+      "answer": "images_07/muromachi-series-08/answer_019.png",
+      "sourceTimes": {
+        "question": 394.0,
+        "answer": 413.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_020.png",
+      "answer": "images_07/muromachi-series-08/answer_020.png",
+      "sourceTimes": {
+        "question": 418.0,
+        "answer": 437.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_021.png",
+      "answer": "images_07/muromachi-series-08/answer_021.png",
+      "sourceTimes": {
+        "question": 442.0,
+        "answer": 458.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_022.png",
+      "answer": "images_07/muromachi-series-08/answer_022.png",
+      "sourceTimes": {
+        "question": 462.5,
+        "answer": 478.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_023.png",
+      "answer": "images_07/muromachi-series-08/answer_023.png",
+      "sourceTimes": {
+        "question": 483.0,
+        "answer": 499.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "muromachi",
+      "question": "images_07/muromachi-series-08/question_024.png",
+      "answer": "images_07/muromachi-series-08/answer_024.png",
+      "sourceTimes": {
+        "question": 503.5,
+        "answer": 520.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=vW4lRP3JmAw"
+}

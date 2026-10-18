@@ -1,0 +1,188 @@
+{
+  "id": "social-history-heian-late-series-05",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史 別シリーズ⑤ 平安時代（後編）",
+  "grade": "中学社会",
+  "description": "中学社会歴史・平安時代（後編）の一問一答。全17問。",
+  "cover": "images_07/heian-late-series-05/question_001.png",
+  "chapters": [
+    {
+      "id": "heian-late",
+      "title": "平安時代（後編）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_001.png",
+      "answer": "images_07/heian-late-series-05/answer_001.png",
+      "sourceTimes": {
+        "question": 20.5,
+        "answer": 36.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_002.png",
+      "answer": "images_07/heian-late-series-05/answer_002.png",
+      "sourceTimes": {
+        "question": 41.0,
+        "answer": 55.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_003.png",
+      "answer": "images_07/heian-late-series-05/answer_003.png",
+      "sourceTimes": {
+        "question": 60.0,
+        "answer": 77.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_004.png",
+      "answer": "images_07/heian-late-series-05/answer_004.png",
+      "sourceTimes": {
+        "question": 81.5,
+        "answer": 99.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_005.png",
+      "answer": "images_07/heian-late-series-05/answer_005.png",
+      "sourceTimes": {
+        "question": 104.0,
+        "answer": 126.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_006.png",
+      "answer": "images_07/heian-late-series-05/answer_006.png",
+      "sourceTimes": {
+        "question": 131.0,
+        "answer": 149.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_007.png",
+      "answer": "images_07/heian-late-series-05/answer_007.png",
+      "sourceTimes": {
+        "question": 153.5,
+        "answer": 168.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_008.png",
+      "answer": "images_07/heian-late-series-05/answer_008.png",
+      "sourceTimes": {
+        "question": 172.5,
+        "answer": 190.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_009.png",
+      "answer": "images_07/heian-late-series-05/answer_009.png",
+      "sourceTimes": {
+        "question": 194.5,
+        "answer": 217.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_010.png",
+      "answer": "images_07/heian-late-series-05/answer_010.png",
+      "sourceTimes": {
+        "question": 222.0,
+        "answer": 238.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_011.png",
+      "answer": "images_07/heian-late-series-05/answer_011.png",
+      "sourceTimes": {
+        "question": 243.0,
+        "answer": 266.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_012.png",
+      "answer": "images_07/heian-late-series-05/answer_012.png",
+      "sourceTimes": {
+        "question": 270.5,
+        "answer": 288.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_013.png",
+      "answer": "images_07/heian-late-series-05/answer_013.png",
+      "sourceTimes": {
+        "question": 292.5,
+        "answer": 307.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_014.png",
+      "answer": "images_07/heian-late-series-05/answer_014.png",
+      "sourceTimes": {
+        "question": 312.0,
+        "answer": 329.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_015.png",
+      "answer": "images_07/heian-late-series-05/answer_015.png",
+      "sourceTimes": {
+        "question": 333.5,
+        "answer": 355.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_016.png",
+      "answer": "images_07/heian-late-series-05/answer_016.png",
+      "sourceTimes": {
+        "question": 359.5,
+        "answer": 382.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "heian-late",
+      "question": "images_07/heian-late-series-05/question_017.png",
+      "answer": "images_07/heian-late-series-05/answer_017.png",
+      "sourceTimes": {
+        "question": 386.5,
+        "answer": 400.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=Y0SWQk7R-60"
+}

@@ -662,7 +662,7 @@ window.QUIZ_CATALOG = [
   {
     "id": "science-earth-future-grade3-01",
     "subject": "science",
-    "field": "integrated_science",
+    "field": "biology",
     "title": "地球の明るい未来のために",
     "grade": "中3理科",
     "description": "自然環境の保全、自然災害と自然のめぐみ、科学技術とエネルギー資源を元動画の画像で確認する一問一答。",
@@ -1552,3 +1552,4 @@ window.QUIZ_CATALOG = [
     "data": "lessons/social-history-showa-heisei-05.json"
   }
 ];
+

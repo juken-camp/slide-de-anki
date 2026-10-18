@@ -186,3 +186,18 @@ button{line-height:1.5}input,select,textarea,.timer-options input,dialog input:n
   .toolbar>.shuffle{flex-basis:104px;width:104px;min-width:104px}
 }
 
+/* Both subjects keep two compact rows above the search box. */
+.catalog-filters{flex-wrap:nowrap;min-height:38px;overflow-x:auto;scrollbar-width:none}
+.catalog-filters::-webkit-scrollbar{display:none}
+.catalog-filters button{flex:0 0 auto;white-space:nowrap}
+.browse-switch{min-height:52px}
+/* A smaller floating dock leaves the lesson cards visible at both sides. */
+.catalog-dock{width:min(560px,calc(100% - 64px));border:2px solid #d99a65;background:#fff7e9;box-shadow:0 12px 32px #69340c40,0 0 0 4px #fffaf0d9;backdrop-filter:none;-webkit-backdrop-filter:none;animation:neko-dock-float 4s ease-in-out infinite}
+.catalog-dock .primary-button{gap:10px;padding-left:14px;padding-right:14px}
+.catalog-dock .primary-button:not(:disabled)>span{animation:neko-start-paw 2.6s ease-in-out infinite}
+@keyframes neko-dock-float{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-4px)}}
+@keyframes neko-start-paw{0%,65%,100%{transform:rotate(0)}75%{transform:rotate(-15deg)}85%{transform:rotate(12deg)}}
+@media(prefers-reduced-motion:reduce){.catalog-dock,.catalog-dock .primary-button>span{animation:none!important}}
+@media(max-width:360px){.catalog-dock .primary-button{font-size:13px}}
+
+

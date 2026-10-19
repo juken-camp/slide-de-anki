@@ -521,6 +521,68 @@ body.slide-focus #notice.show{opacity:1;transform:translate(-50%,0)}
 .focus-destinations{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}#focusNormal{display:block;width:100%;margin-top:10px;min-height:40px;border:0;background:transparent;color:#805c44;text-decoration:underline;font-size:11px}
 @media(max-height:350px){body.slide-focus #app #studyScreen .card{height:calc(100% - 54px - env(safe-area-inset-bottom,0px))}body.slide-focus #app #studyScreen .actions{bottom:calc(5px + env(safe-area-inset-bottom,0px))}body.slide-focus #app:after{height:calc(54px + env(safe-area-inset-bottom,0px))}body.slide-focus #app #studyScreen .head{bottom:-46px}}
 
+/* Soft, consistent depth: every choice lifts vertically and presses into its base. */
+:root{--neko-edge:#ccaa8b;--neko-base:#e6cfb8;--neko-picked:#ae602f;--neko-picked-base:#b56c38}
+.compact-header .brand-name{font-weight:900;letter-spacing:-.035em;-webkit-text-stroke:.32px currentColor;text-shadow:0 1px 0 #fff5df}
+.home-title .title-main{font-weight:900;-webkit-text-stroke:.4px currentColor;text-shadow:0 2px 0 #fff4dc}
+
+/* The border occupies the same space in both states, so labels never jump. */
+#catalogSeries{gap:7px;padding:5px 1px 7px}
+#catalogSeries button{min-height:64px;padding:7px 3px;border:3px solid var(--neko-edge);border-radius:16px;background:#fffaf1;box-shadow:0 4px 0 var(--neko-base);transform:none;transition:transform .14s ease-out,box-shadow .14s ease-out,background .14s,border-color .14s}
+#catalogSeries button.active{border-color:var(--neko-picked);background:#ffe5bd;color:#6d3619;box-shadow:0 5px 0 var(--neko-picked-base),0 8px 12px #8b451314;transform:translateY(-2px)}
+#catalogSeries .series-name{font-weight:900}
+#catalogSeries .series-count{color:#805b3c}
+#catalogScreen .lesson-grid{gap:13px;padding:3px 1px 7px}
+#catalogScreen .lesson-choice,#catalogScreen .lesson-choice.selected{padding:12px;gap:10px;border:3px solid var(--neko-edge);border-radius:19px;box-shadow:0 4px 0 var(--neko-base),0 7px 12px #8b451308;background:#fffdf8;transform:none;transition:transform .14s ease-out,box-shadow .14s ease-out,background .14s,border-color .14s}
+#catalogScreen .lesson-choice.selected{border-color:var(--neko-picked);background:#fff0d6;box-shadow:0 5px 0 var(--neko-picked-base),0 9px 16px #8b451314;transform:translateY(-2px)}
+#catalogScreen .choice-check{border:2px solid #be9a79;border-radius:8px;background:#fffaf2;box-shadow:inset 0 2px 0 #ecdcc9;transition:background .14s,box-shadow .14s}
+#catalogScreen .selected .choice-check{border-color:#a24e1b;background:#ad551e;color:white;box-shadow:0 2px 0 #854016}
+#catalogScreen .choice-copy strong{font-weight:800}
+
+/* Smaller switches use the same cushion-like rim, without changing their widths. */
+.catalog-search-panel #catalogSubjects{padding:3px 1px 5px}
+.catalog-search-panel #catalogSubjects button{min-height:42px;padding:6px 10px;border:2px solid var(--neko-edge);border-radius:13px;background:#fffdf9;box-shadow:0 3px 0 var(--neko-base);transform:none;transition:transform .14s,box-shadow .14s,background .14s}
+.catalog-search-panel #catalogSubjects button.active{border-color:var(--neko-picked);background:#ffe7c8;box-shadow:0 3px 0 var(--neko-picked-base);transform:translateY(-1px)}
+.catalog-filter-row #browseSwitch,#catalogScreen #socialSwitch{padding:5px;gap:5px;border:2px solid #e3cfb9;border-radius:15px;background:#f1e6d7;overflow:visible}
+.catalog-filter-row #browseSwitch button,#catalogScreen #socialSwitch button{min-height:36px;padding:5px 8px;border:2px solid transparent;border-radius:10px;color:#805b40;box-shadow:none;transform:none;font-weight:800;transition:transform .14s,box-shadow .14s,background .14s}
+.catalog-filter-row #browseSwitch button.active,#catalogScreen #socialSwitch button.active{border-color:#c99465;background:#fffaf2;color:#783b1c;box-shadow:0 3px 0 #d5b08d;transform:translateY(-1px)}
+.catalog-filter-row #catalogFilters{padding:3px 1px 5px;min-height:46px}
+.catalog-filter-row #catalogFilters button{min-height:38px;border:2px solid #d5b99b;border-radius:12px;background:#fffaf2;box-shadow:0 3px 0 #ead9c5;font-weight:700;transition:transform .14s,box-shadow .14s}
+.catalog-filter-row #catalogFilters button.active{border-color:#a65123;box-shadow:0 3px 0 #7f3a16;transform:translateY(-1px)}
+
+/* Main actions, study modes and settings also acknowledge a press. */
+#app .primary-button{border-width:3px;border-radius:17px;font-weight:900;box-shadow:0 5px 0 #793810,0 8px 16px #8b45131a;transition:transform .14s,box-shadow .14s,background .14s}
+#catalogDock #startStudy{border-width:3px;box-shadow:0 4px 0 #793810;border-radius:15px}
+.compact-header .app-navigation{gap:4px}
+.compact-header .app-navigation button{padding:6px 8px;border:2px solid transparent;border-radius:12px;font-weight:700;transition:transform .14s,box-shadow .14s,background .14s}
+.compact-header .app-navigation button[aria-current=page]{border-color:#d6b390;background:#fff0d8;box-shadow:0 3px 0 #e1c4a6;font-weight:900}
+.face-mode{padding:5px;gap:6px;border:2px solid #e3cfb9;border-radius:16px}
+.face-mode button{border:2px solid transparent;border-radius:11px;transition:transform .14s,box-shadow .14s}
+.face-mode button.active{border-color:#c99567;box-shadow:0 3px 0 #dfbd99;background:#fffaf2}
+.face-mode button[data-face-mode=answer].active{border-color:#d18aa7;box-shadow:0 3px 0 #dbabc0;background:#ffe0eb}
+.modes{gap:4px;padding:5px;border:2px solid #e3cfb9;border-radius:15px}
+.modes button{border:2px solid transparent;border-radius:10px;transition:transform .14s,box-shadow .14s}
+.modes button.active{border-color:#cc9b70;box-shadow:0 2px 0 #dfbd99}
+.chips{padding-top:3px;padding-bottom:6px}
+.chips button{border-width:2px;box-shadow:0 3px 0 #e5c5a8;transition:transform .14s,box-shadow .14s}
+.shuffle{box-shadow:0 3px 0 #793810;transition:transform .14s,box-shadow .14s}
+body:not(.slide-focus) .actions button{border-width:2px;box-shadow:0 3px 0 #dac1aa;transition:transform .14s,box-shadow .14s}
+body:not(.slide-focus) .actions .reveal{box-shadow:0 3px 0 #793810}
+body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
+#app .tool:not(:disabled),#app .secondary-button:not(:disabled),.settings-goal,.source-links a,.sound-presets button,.home-sound-button{transition:transform .14s,box-shadow .14s,background .14s}
+#app .tool:not(:disabled):is(:active,.neko-pressing),#app .secondary-button:not(:disabled):is(:active,.neko-pressing),.settings-goal:is(:active,.neko-pressing),.source-links a:is(:active,.neko-pressing),.sound-presets button:is(:active,.neko-pressing),.home-sound-button:is(:active,.neko-pressing){transform:translateY(2px);box-shadow:inset 0 2px 4px #8b45131a;background-color:#f6e4cc}
+
+@media(hover:hover){
+  #catalogSeries button:not(.active):hover,#catalogScreen .lesson-choice:not(.selected):hover{transform:translateY(-2px);border-color:#b78050;box-shadow:0 6px 0 var(--neko-base),0 9px 15px #8b451310}
+}
+#catalogSeries button:not(:disabled):is(:active,.neko-pressing),#catalogScreen .lesson-choice:not(:disabled):is(:active,.neko-pressing),.catalog-search-panel #catalogSubjects button:not(:disabled):is(:active,.neko-pressing),.catalog-filter-row #browseSwitch button:not(:disabled):is(:active,.neko-pressing),#catalogScreen #socialSwitch button:not(:disabled):is(:active,.neko-pressing),.catalog-filter-row #catalogFilters button:not(:disabled):is(:active,.neko-pressing){transform:translateY(2px);box-shadow:0 1px 0 #c59b76}
+#app .primary-button:not(:disabled):is(:active,.neko-pressing),#catalogDock #startStudy:not(:disabled):is(:active,.neko-pressing){transform:translateY(3px);box-shadow:0 1px 0 #793810}
+.compact-header .app-navigation button:not(:disabled):is(:active,.neko-pressing),.face-mode button:not(:disabled):is(:active,.neko-pressing),.modes button:not(:disabled):is(:active,.neko-pressing),.chips button:not(:disabled):is(:active,.neko-pressing),.shuffle:not(:disabled):is(:active,.neko-pressing),body:not(.slide-focus) .actions button:not(:disabled):is(:active,.neko-pressing){transform:translateY(2px);box-shadow:0 1px 0 #b9906c}
+@media(max-width:370px){#catalogSeries{gap:5px}#catalogSeries button{padding:7px 1px;border-radius:14px}#catalogSeries .series-name{font-size:10px}.compact-header .app-navigation{gap:2px}.compact-header .app-navigation button{padding:6px}.compact-header .brand-name{font-size:16px}}
+/* Respect both the OS preference and the app's existing motion switch. */
+#app.neko-motion-off #catalogSeries button,#app.neko-motion-off #catalogScreen .lesson-choice,#app.neko-motion-off #catalogSubjects button,#app.neko-motion-off #browseSwitch button,#app.neko-motion-off #socialSwitch button,#app.neko-motion-off #catalogFilters button,#app.neko-motion-off .primary-button:is(:active,.neko-pressing),#app.neko-motion-off button:is(:active,.neko-pressing){transform:none!important}
+@media(prefers-reduced-motion:reduce){#catalogSeries button,#catalogScreen .lesson-choice,#catalogSubjects button,#browseSwitch button,#socialSwitch button,#catalogFilters button,#app button:is(:active,.neko-pressing){transform:none!important}}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
@@ -1783,6 +1845,40 @@ $('importSubject').oninput=()=>{const next=subjectId($('importSubject').value);i
 $('importImages').onchange=()=>{const generation=++selectionGeneration;$('importStatus').textContent='ファイルを確認するにゃ🐾';selected=inspect([...$('importImages').files]);selected.then(bundle=>{if(generation!==selectionGeneration)return;const m=bundle.manifest;if(m){$('importTitle').value=String(m.title||'').slice(0,100);$('importSubject').value=clean(m.subjectLabel)||subjectName(m.subject).replace(/^custom:/,'');$('importGrade').value=clean(m.grade)||'学年共通';$('importField').value=clean(m.fieldLabel)||fieldChoices(m.subject)?.find(([id])=>id===m.field)?.[1]||String(m.field||'').replace(/^custom:/,'');previousSubject=subjectId($('importSubject').value);fillFields();}$('importStatus').textContent=bundle.pairs.length+'問分の画像がそろったにゃ。';}).catch(e=>{if(generation===selectionGeneration)$('importStatus').textContent=e.message;});};
 $('importForm').onsubmit=async e=>{e.preventDefault();const button=$('importSubmit');button.disabled=true;try{if(!selected)throw Error('教材ファイルを選択してください。');const bundle=await selected,title=$('importTitle').value.trim();if(!title)throw Error('教材名を入力してください。');const classification=taxonomy();$('importStatus').textContent='画像を保存しているにゃ🐾';for(const[,pair]of bundle.pairs)await Promise.all([validateImage(pair.question),validateImage(pair.answer)]);const raw=prepareRaw(bundle,title,classification),db=await database();await new Promise((resolve,reject)=>{const t=db.transaction('lessons','readwrite');t.objectStore('lessons').put(raw);t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error);});app.register(materialize(raw));$('importDialog').close();$('importForm').reset();selected=null;await app.selectImported(raw.id);app.toast(raw.cards.length+'問の教材を追加したにゃ♪');}catch(e){$('importStatus').textContent=e?.name==='QuotaExceededError'?'保存容量が足りないにゃ。端末の空き容量を確認してにゃ。':e?.message||'保存できなかったにゃ。';}finally{button.disabled=false;}};
 (async()=>{try{const db=await database();const rows=await new Promise((resolve,reject)=>{const r=db.transaction('lessons','readonly').objectStore('lessons').getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});for(const raw of rows){if(typeof raw.subject==='string' && raw.subject.trim())app.register(materialize(raw));}}catch{}finally{await app.finishImports();}})();
+})();
+
+</script><script>
+// Visual feedback only: never dispatch a click, play audio or touch learning data.
+(() => {
+  let pressed = null, pointer = null, origin = null;
+  const clear = () => {
+    pressed?.classList.remove('neko-pressing');
+    pressed = null; pointer = null; origin = null;
+  };
+  const control = target => target instanceof Element ? target.closest('button:not(:disabled),summary,a[href]') : null;
+  document.addEventListener('pointerdown', event => {
+    if (!event.isPrimary || event.button !== 0) return;
+    clear(); pressed = control(event.target);
+    if (!pressed) return;
+    pointer = event.pointerId; origin = [event.clientX,event.clientY];
+    pressed.classList.add('neko-pressing');
+  }, {capture:true,passive:true});
+  document.addEventListener('pointermove', event => {
+    if (event.pointerId !== pointer || !origin) return;
+    if (Math.hypot(event.clientX-origin[0],event.clientY-origin[1]) > 12) clear();
+  }, {capture:true,passive:true});
+  for (const name of ['pointerup','pointercancel','lostpointercapture']) {
+    document.addEventListener(name,event => { if (event.pointerId === pointer) clear(); },{capture:true,passive:true});
+  }
+  document.addEventListener('keydown',event => {
+    if (event.repeat || !['Enter',' '].includes(event.key)) return;
+    const button = control(event.target); if (!button) return;
+    clear(); pressed = button; pressed.classList.add('neko-pressing');
+  });
+  document.addEventListener('keyup',event => { if (['Enter',' '].includes(event.key)) clear(); });
+  document.addEventListener('focusout',event => { if (event.target === pressed) clear(); });
+  window.addEventListener('blur',clear);
+  document.addEventListener('visibilitychange',() => { if (document.hidden) clear(); });
 })();
 
 </script></body></html>

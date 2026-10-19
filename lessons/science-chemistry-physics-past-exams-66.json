@@ -1,0 +1,828 @@
+{
+  "id": "science-chemistry-physics-past-exams-66",
+  "subject": "science",
+  "field": "general",
+  "title": "化学・物理の入試過去問",
+  "grade": "中学理科",
+  "description": "高校入試の過去問を図解とともに学ぶ、化学37問・物理30問の一問一答。銅と亜鉛の化学式を別々の問題として収録。",
+  "cover": "images_08/science-chemistry-physics-past-exams-66/question_001.png",
+  "chapters": [
+    {
+      "id": "chemistry",
+      "title": "化学（37問）"
+    },
+    {
+      "id": "physics",
+      "title": "物理（30問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_001.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_001.png",
+      "sourceTimes": {
+        "question": 24.0,
+        "answer": 31.0
+      },
+      "displayNumber": "001",
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_002.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_002.png",
+      "sourceTimes": {
+        "question": 53.0,
+        "answer": 60.0
+      },
+      "displayNumber": "002",
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_003.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_003.png",
+      "sourceTimes": {
+        "question": 85.0,
+        "answer": 95.0
+      },
+      "displayNumber": "003",
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_004.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_004.png",
+      "sourceTimes": {
+        "question": 127.0,
+        "answer": 133.0
+      },
+      "displayNumber": "004",
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_005.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_005.png",
+      "sourceTimes": {
+        "question": 151.0,
+        "answer": 157.0
+      },
+      "displayNumber": "005",
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "006",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_006.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_006.png",
+      "sourceTimes": {
+        "question": 175.0,
+        "answer": 182.0
+      },
+      "displayNumber": "006",
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "007",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_007.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_007.png",
+      "sourceTimes": {
+        "question": 200.0,
+        "answer": 206.0
+      },
+      "displayNumber": "007",
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "008",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_008.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_008.png",
+      "sourceTimes": {
+        "question": 226.0,
+        "answer": 232.0
+      },
+      "displayNumber": "008",
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "009",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_009.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_009.png",
+      "sourceTimes": {
+        "question": 276.0,
+        "answer": 285.0
+      },
+      "displayNumber": "009",
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "010",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_010.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_010.png",
+      "sourceTimes": {
+        "question": 315.0,
+        "answer": 321.0
+      },
+      "displayNumber": "010",
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "011",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_011.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_011.png",
+      "sourceTimes": {
+        "question": 339.0,
+        "answer": 348.0
+      },
+      "displayNumber": "011",
+      "sourceQuestionNumber": 12
+    },
+    {
+      "id": "012",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_012.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_012.png",
+      "sourceTimes": {
+        "question": 374.0,
+        "answer": 381.0
+      },
+      "displayNumber": "012",
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "013",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_013.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_013.png",
+      "sourceTimes": {
+        "question": 401.0,
+        "answer": 408.0
+      },
+      "displayNumber": "013",
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "014",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_014.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_014.png",
+      "sourceTimes": {
+        "question": 431.0,
+        "answer": 437.0
+      },
+      "displayNumber": "014",
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "015",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_015.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_015.png",
+      "sourceTimes": {
+        "question": 454.0,
+        "answer": 460.0
+      },
+      "displayNumber": "015",
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "016",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_016.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_016.png",
+      "sourceTimes": {
+        "question": 484.0,
+        "answer": 490.0
+      },
+      "displayNumber": "016",
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "017",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_017.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_017.png",
+      "sourceTimes": {
+        "question": 523.0,
+        "answer": 532.0
+      },
+      "displayNumber": "017",
+      "sourceQuestionNumber": 18
+    },
+    {
+      "id": "018",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_018.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_018.png",
+      "sourceTimes": {
+        "question": 566.0,
+        "answer": 576.0
+      },
+      "displayNumber": "018",
+      "sourceQuestionNumber": 19
+    },
+    {
+      "id": "019",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_019.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_019.png",
+      "sourceTimes": {
+        "question": 599.0,
+        "answer": 612.0
+      },
+      "displayNumber": "019",
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "020",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_020.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_020.png",
+      "sourceTimes": {
+        "question": 634.0,
+        "answer": 644.0
+      },
+      "displayNumber": "020",
+      "sourceQuestionNumber": 21
+    },
+    {
+      "id": "021",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_021.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_021.png",
+      "sourceTimes": {
+        "question": 666.0,
+        "answer": 677.0
+      },
+      "displayNumber": "021",
+      "sourceQuestionNumber": 22
+    },
+    {
+      "id": "022",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_022.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_022.png",
+      "sourceTimes": {
+        "question": 700.0,
+        "answer": 711.0
+      },
+      "displayNumber": "022",
+      "sourceQuestionNumber": 23
+    },
+    {
+      "id": "023",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_023.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_023.png",
+      "sourceTimes": {
+        "question": 729.0,
+        "answer": 740.0
+      },
+      "displayNumber": "023",
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "024",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_024.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_024.png",
+      "sourceTimes": {
+        "question": 762.0,
+        "answer": 771.0
+      },
+      "displayNumber": "024",
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "025",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_025.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_025.png",
+      "sourceTimes": {
+        "question": 799.0,
+        "answer": 806.0
+      },
+      "displayNumber": "025",
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "026",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_026.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_026.png",
+      "sourceTimes": {
+        "question": 851.0,
+        "answer": 873.0
+      },
+      "displayNumber": "026",
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "027",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_027.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_027.png",
+      "sourceTimes": {
+        "question": 902.0,
+        "answer": 912.0
+      },
+      "displayNumber": "027",
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "028",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_028.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_028.png",
+      "sourceTimes": {
+        "question": 934.0,
+        "answer": 940.0
+      },
+      "displayNumber": "028",
+      "sourceQuestionNumber": 30
+    },
+    {
+      "id": "029",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_029.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_029.png",
+      "sourceTimes": {
+        "question": 950.0,
+        "answer": 956.0
+      },
+      "displayNumber": "029",
+      "sourceQuestionNumber": 31
+    },
+    {
+      "id": "029b",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_029b.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_029b.png",
+      "sourceTimes": {
+        "question": 965.0,
+        "answer": 973.0
+      },
+      "displayNumber": "030",
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "030",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_030.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_030.png",
+      "sourceTimes": {
+        "question": 990.0,
+        "answer": 997.0
+      },
+      "displayNumber": "031",
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "031",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_031.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_031.png",
+      "sourceTimes": {
+        "question": 1025.0,
+        "answer": 1034.0
+      },
+      "displayNumber": "032",
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "032",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_032.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_032.png",
+      "sourceTimes": {
+        "question": 1059.0,
+        "answer": 1064.0
+      },
+      "displayNumber": "033",
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "033",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_033.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_033.png",
+      "sourceTimes": {
+        "question": 1099.0,
+        "answer": 1107.0
+      },
+      "displayNumber": "034",
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "034",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_034.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_034.png",
+      "sourceTimes": {
+        "question": 1128.0,
+        "answer": 1132.0
+      },
+      "displayNumber": "035",
+      "sourceQuestionNumber": 37
+    },
+    {
+      "id": "035",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_035.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_035.png",
+      "sourceTimes": {
+        "question": 1160.0,
+        "answer": 1168.0
+      },
+      "displayNumber": "036",
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "036",
+      "chapter": "chemistry",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_036.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_036.png",
+      "sourceTimes": {
+        "question": 1185.0,
+        "answer": 1194.0
+      },
+      "displayNumber": "037",
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "037",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_037.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_037.png",
+      "sourceTimes": {
+        "question": 1211.0,
+        "answer": 1215.0
+      },
+      "displayNumber": "038",
+      "sourceQuestionNumber": 41
+    },
+    {
+      "id": "038",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_038.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_038.png",
+      "sourceTimes": {
+        "question": 1253.0,
+        "answer": 1258.0
+      },
+      "displayNumber": "039",
+      "sourceQuestionNumber": 42
+    },
+    {
+      "id": "039",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_039.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_039.png",
+      "sourceTimes": {
+        "question": 1284.0,
+        "answer": 1292.0
+      },
+      "displayNumber": "040",
+      "sourceQuestionNumber": 43
+    },
+    {
+      "id": "040",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_040.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_040.png",
+      "sourceTimes": {
+        "question": 1326.0,
+        "answer": 1335.0
+      },
+      "displayNumber": "041",
+      "sourceQuestionNumber": 44
+    },
+    {
+      "id": "041",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_041.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_041.png",
+      "sourceTimes": {
+        "question": 1359.0,
+        "answer": 1364.0
+      },
+      "displayNumber": "042",
+      "sourceQuestionNumber": 46
+    },
+    {
+      "id": "042",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_042.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_042.png",
+      "sourceTimes": {
+        "question": 1391.0,
+        "answer": 1395.0
+      },
+      "displayNumber": "043",
+      "sourceQuestionNumber": 47
+    },
+    {
+      "id": "043",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_043.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_043.png",
+      "sourceTimes": {
+        "question": 1424.0,
+        "answer": 1429.0
+      },
+      "displayNumber": "044",
+      "sourceQuestionNumber": 48
+    },
+    {
+      "id": "044",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_044.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_044.png",
+      "sourceTimes": {
+        "question": 1446.0,
+        "answer": 1451.0
+      },
+      "displayNumber": "045",
+      "sourceQuestionNumber": 49
+    },
+    {
+      "id": "045",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_045.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_045.png",
+      "sourceTimes": {
+        "question": 1496.0,
+        "answer": 1501.0
+      },
+      "displayNumber": "046",
+      "sourceQuestionNumber": 50
+    },
+    {
+      "id": "046",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_046.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_046.png",
+      "sourceTimes": {
+        "question": 1520.0,
+        "answer": 1527.0
+      },
+      "displayNumber": "047",
+      "sourceQuestionNumber": 51
+    },
+    {
+      "id": "047",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_047.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_047.png",
+      "sourceTimes": {
+        "question": 1547.0,
+        "answer": 1553.0
+      },
+      "displayNumber": "048",
+      "sourceQuestionNumber": 52
+    },
+    {
+      "id": "048",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_048.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_048.png",
+      "sourceTimes": {
+        "question": 1585.0,
+        "answer": 1590.0
+      },
+      "displayNumber": "049",
+      "sourceQuestionNumber": 53
+    },
+    {
+      "id": "049",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_049.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_049.png",
+      "sourceTimes": {
+        "question": 1604.0,
+        "answer": 1611.0
+      },
+      "displayNumber": "050",
+      "sourceQuestionNumber": 54
+    },
+    {
+      "id": "050",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_050.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_050.png",
+      "sourceTimes": {
+        "question": 1640.0,
+        "answer": 1650.0
+      },
+      "displayNumber": "051",
+      "sourceQuestionNumber": 55
+    },
+    {
+      "id": "051",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_051.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_051.png",
+      "sourceTimes": {
+        "question": 1668.0,
+        "answer": 1673.0
+      },
+      "displayNumber": "052",
+      "sourceQuestionNumber": 56
+    },
+    {
+      "id": "052",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_052.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_052.png",
+      "sourceTimes": {
+        "question": 1691.0,
+        "answer": 1696.0
+      },
+      "displayNumber": "053",
+      "sourceQuestionNumber": 58
+    },
+    {
+      "id": "053",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_053.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_053.png",
+      "sourceTimes": {
+        "question": 1719.0,
+        "answer": 1723.0
+      },
+      "displayNumber": "054",
+      "sourceQuestionNumber": 59
+    },
+    {
+      "id": "054",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_054.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_054.png",
+      "sourceTimes": {
+        "question": 1746.0,
+        "answer": 1755.0
+      },
+      "displayNumber": "055",
+      "sourceQuestionNumber": 60
+    },
+    {
+      "id": "055",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_055.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_055.png",
+      "sourceTimes": {
+        "question": 1770.0,
+        "answer": 1774.0
+      },
+      "displayNumber": "056",
+      "sourceQuestionNumber": 61
+    },
+    {
+      "id": "056",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_056.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_056.png",
+      "sourceTimes": {
+        "question": 1798.0,
+        "answer": 1804.0
+      },
+      "displayNumber": "057",
+      "sourceQuestionNumber": 62
+    },
+    {
+      "id": "057",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_057.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_057.png",
+      "sourceTimes": {
+        "question": 1825.0,
+        "answer": 1831.0
+      },
+      "displayNumber": "058",
+      "sourceQuestionNumber": 63
+    },
+    {
+      "id": "058",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_058.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_058.png",
+      "sourceTimes": {
+        "question": 1864.0,
+        "answer": 1872.0
+      },
+      "displayNumber": "059",
+      "sourceQuestionNumber": 64
+    },
+    {
+      "id": "059",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_059.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_059.png",
+      "sourceTimes": {
+        "question": 1902.0,
+        "answer": 1908.0
+      },
+      "displayNumber": "060",
+      "sourceQuestionNumber": 65
+    },
+    {
+      "id": "060",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_060.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_060.png",
+      "sourceTimes": {
+        "question": 1931.0,
+        "answer": 1936.0
+      },
+      "displayNumber": "061",
+      "sourceQuestionNumber": 66
+    },
+    {
+      "id": "061",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_061.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_061.png",
+      "sourceTimes": {
+        "question": 1960.0,
+        "answer": 1974.0
+      },
+      "displayNumber": "062",
+      "sourceQuestionNumber": 67
+    },
+    {
+      "id": "062",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_062.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_062.png",
+      "sourceTimes": {
+        "question": 2007.0,
+        "answer": 2016.0
+      },
+      "displayNumber": "063",
+      "sourceQuestionNumber": 68
+    },
+    {
+      "id": "063",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_063.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_063.png",
+      "sourceTimes": {
+        "question": 2037.0,
+        "answer": 2045.0
+      },
+      "displayNumber": "064",
+      "sourceQuestionNumber": 69
+    },
+    {
+      "id": "064",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_064.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_064.png",
+      "sourceTimes": {
+        "question": 2089.0,
+        "answer": 2095.0
+      },
+      "displayNumber": "065",
+      "sourceQuestionNumber": 70
+    },
+    {
+      "id": "065",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_065.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_065.png",
+      "sourceTimes": {
+        "question": 2124.0,
+        "answer": 2132.0
+      },
+      "displayNumber": "066",
+      "sourceQuestionNumber": 71
+    },
+    {
+      "id": "066",
+      "chapter": "physics",
+      "question": "images_08/science-chemistry-physics-past-exams-66/question_066.png",
+      "answer": "images_08/science-chemistry-physics-past-exams-66/answer_066.png",
+      "sourceTimes": {
+        "question": 2177.0,
+        "answer": 2184.0
+      },
+      "displayNumber": "067",
+      "sourceQuestionNumber": 72
+    }
+  ],
+  "series": "past",
+  "source": "https://www.youtube.com/watch?v=vUuyBpXYF0A",
+  "fieldLabel": "分野横断"
+}

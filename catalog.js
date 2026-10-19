@@ -170,7 +170,7 @@ window.QUIZ_CATALOG = [
     "id": "science-element-symbols-mnemonic-01",
     "subject": "science",
     "field": "chemistry",
-    "title": "元素記号を覚える一問一答",
+    "title": "元素記号",
     "grade": "中2理科",
     "description": "元素名から元素記号を覚える全22問。元動画の問題画像・解答画像を収録。元素周期表と語呂合わせの補足2枚付き。",
     "cover": "images_08/element-symbols-mnemonic/question_001.png",
@@ -189,7 +189,7 @@ window.QUIZ_CATALOG = [
     "id": "science-chemical-formulas-01",
     "subject": "science",
     "field": "chemistry",
-    "title": "化学式を覚える一問一答",
+    "title": "化学式",
     "grade": "中2理科",
     "description": "単体の化学式10問・化合物の化学式15問の計25問。元動画の問題・解答画像を収録。化学式の分類図の補足1枚付き。",
     "cover": "images_08/chemical-formulas/question_001.png",
@@ -212,7 +212,7 @@ window.QUIZ_CATALOG = [
     "id": "science-chemical-reaction-equations-01",
     "subject": "science",
     "field": "chemistry",
-    "title": "化学反応式を覚える一問一答",
+    "title": "化学反応式（10問版）",
     "grade": "中2理科",
     "description": "よく出る化学反応式10問。前半の模型を使った詳しい解説は補足画像10枚として別収録。",
     "cover": "images_08/chemical-reaction-equations/question_001.png",
@@ -568,7 +568,7 @@ window.QUIZ_CATALOG = [
     "id": "science-ion-formulas-01",
     "subject": "science",
     "field": "chemistry",
-    "title": "イオン式を覚える一問一答",
+    "title": "イオン式",
     "grade": "中3理科",
     "description": "陽イオン13問、陰イオン10問の計23問。動画中の問題・解答フレームと、イオンの仕組みを説明する補足画像7枚を収録。",
     "cover": "images_08/ion-formulas/question_001.png",
@@ -804,7 +804,7 @@ window.QUIZ_CATALOG = [
     "id": "science-jhs1-important-terms-56",
     "subject": "science",
     "field": "general",
-    "title": "中1理科の重要用語 一問一答56語",
+    "title": "中1理科の重要用語",
     "grade": "中1理科",
     "description": "中1理科の重要用語を、植物19問・物質9問・物理10問・大地18問の計56問で確認。",
     "cover": "images_08/jhs1-important-terms-56/question_001.png",
@@ -837,7 +837,7 @@ window.QUIZ_CATALOG = [
     "id": "science-jhs2-important-terms-67",
     "subject": "science",
     "field": "general",
-    "title": "中2理科の重要用語 一問一答67語",
+    "title": "中2理科の重要用語",
     "grade": "中2理科",
     "description": "中2理科の重要用語を化学11問・生物30問・物理15問・地学11問の計67問で確認。",
     "cover": "images_08/jhs2-important-terms-67/question_001.png",
@@ -870,7 +870,7 @@ window.QUIZ_CATALOG = [
     "id": "science-jhs3-important-terms-68",
     "subject": "science",
     "field": "general",
-    "title": "中3理科の重要用語 一問一答68語",
+    "title": "中3理科の重要用語",
     "grade": "中3理科",
     "description": "中3理科の重要用語を運動とエネルギー9問・生命22問・化学変化とイオン14問・地球と宇宙19問・エネルギー資源4問の計68問で確認。",
     "cover": "images_08/jhs3-important-terms-68/question_001.png",
@@ -907,7 +907,7 @@ window.QUIZ_CATALOG = [
     "id": "science-jhs-lab-observation-tools-44",
     "subject": "science",
     "field": "general",
-    "title": "中学理科 実験・観察器具 一問一答44問",
+    "title": "実験・観察器具",
     "grade": "中学理科",
     "description": "顕微鏡・ガスバーナー・てんびん・気体の捕集・実験操作・電気・指示薬などの器具と操作を図解で確認する一問一答44組。",
     "cover": "images_08/jhs-lab-observation-tools-44/question_001.png",
@@ -952,7 +952,7 @@ window.QUIZ_CATALOG = [
     "id": "science-jhs-laws-11",
     "subject": "science",
     "field": "general",
-    "title": "中学理科 ○○の法則 一問一答11問",
+    "title": "理科の法則",
     "grade": "中学理科",
     "description": "図解で確認する中学理科11の法則。一問一答11問。",
     "cover": "images_08/jhs-laws-11/question_001.png",
@@ -973,7 +973,7 @@ window.QUIZ_CATALOG = [
     "id": "science-jhs-formula-calculation-26",
     "subject": "science",
     "field": "general",
-    "title": "中学理科 公式を使った計算問題 一問一答26問",
+    "title": "公式を使った計算問題",
     "grade": "中学理科",
     "description": "圧力・密度・質量パーセント濃度・電流と回路・湿度・速さ・仕事・仕事率の公式と計算を確認する一問一答26組。",
     "cover": "images_08/jhs-formula-calculation-26/question_001.png",
@@ -1216,7 +1216,7 @@ window.QUIZ_CATALOG = [
     "id": "civics-entrance-exam-frequent-71",
     "subject": "social",
     "field": "civics",
-    "title": "公民のよく出る問題｜高校受験対策 71問",
+    "title": "公民のよく出る問題｜高校入試対策",
     "grade": "中学社会・高校受験",
     "description": "高校入試頻出の公民71問。現代社会、日本国憲法、人権、民主政治、経済、国際社会を扱う。動画から問題画面と解答画面を無加工で収録。",
     "cover": "images_05/civics-entrance-exam-frequent-71/question_001.png",
@@ -1321,7 +1321,7 @@ window.QUIZ_CATALOG = [
     "id": "social-geography-americas-oceania-grade1-04",
     "subject": "social",
     "field": "geography",
-    "title": "北と南アメリカ州・オセアニア州",
+    "title": "北アメリカ州・南アメリカ州・オセアニア州",
     "grade": "中1社会",
     "description": "北アメリカ州、南アメリカ州、オセアニア州の自然、文化、農業、工業や地域の特徴を図解で学ぶ教材。",
     "cover": "images_06/americas-oceania/question_001.png",
@@ -1566,7 +1566,7 @@ window.QUIZ_CATALOG = [
     "id": "geography-entrance-exam-frequent-46",
     "subject": "social",
     "field": "geography",
-    "title": "地理のよく出る問題｜高校受験対策 46問",
+    "title": "地理のよく出る問題｜高校入試対策",
     "grade": "中学社会・高校受験",
     "description": "高校入試によく出る地理46問。世界地理26問と日本地理20問。動画の問題・解答画面を無加工で収録。",
     "cover": "images_06/geography-entrance-exam-frequent-46/question_001.png",
@@ -1860,7 +1860,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-jomon-kamakura-01",
     "subject": "social",
     "field": "history",
-    "title": "歴史まとめ① 縄文～鎌倉時代",
+    "title": "歴史まとめ①｜縄文～鎌倉時代",
     "grade": "中学社会",
     "description": "縄文時代から鎌倉時代までの歴史一問一答105問。動画から抽出した問題・解答画像を順に学ぶ教材。",
     "cover": "images_07/jomon-kamakura-01/question_001.png",
@@ -1879,7 +1879,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-muromachi-edo-02",
     "subject": "social",
     "field": "history",
-    "title": "歴史まとめ② 室町～江戸時代",
+    "title": "歴史まとめ②｜室町～江戸時代",
     "grade": "中学社会",
     "description": "室町時代（南北朝を含む）から戦国時代、江戸時代までの歴史一問一答86問。動画から抽出した問題・解答画像を順に学ぶ教材。",
     "cover": "images_07/muromachi-edo-02/question_001.png",
@@ -1906,7 +1906,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-edo-culture-bakumatsu-03",
     "subject": "social",
     "field": "history",
-    "title": "歴史まとめ③ 江戸時代の文化～幕末",
+    "title": "歴史まとめ③｜江戸時代の文化～幕末",
     "grade": "中学社会",
     "description": "江戸時代の文化から幕末までの歴史一問一答36問。動画から抽出した問題・解答画像を順に学ぶ教材。",
     "cover": "images_07/edo-culture-bakumatsu-03/question_001.png",
@@ -1929,7 +1929,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-meiji-taisho-04",
     "subject": "social",
     "field": "history",
-    "title": "歴史まとめ④ 明治～大正時代",
+    "title": "歴史まとめ④｜明治～大正時代",
     "grade": "中学社会",
     "description": "明治時代から大正時代までの歴史一問一答60問。動画から抽出した問題・解答画像を順に学ぶ教材。",
     "cover": "images_07/meiji-taisho-04/question_001.png",
@@ -1952,7 +1952,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-showa-heisei-05",
     "subject": "social",
     "field": "history",
-    "title": "歴史まとめ⑤ 昭和～平成時代",
+    "title": "歴史まとめ⑤｜昭和～平成時代",
     "grade": "中学社会",
     "description": "昭和時代から平成時代までの歴史一問一答46問。動画から抽出した問題・解答画像を順に学ぶ教材。",
     "cover": "images_07/showa-heisei-05/question_001.png",
@@ -2412,7 +2412,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-world-part1-ancient-earlymodern",
     "subject": "social",
     "field": "history",
-    "title": "世界史① 前編（四大文明・宗教・大航海時代など）",
+    "title": "世界史①｜四大文明・宗教・大航海時代など",
     "grade": "中学歴史",
     "description": "人類の進化、四大文明、中国王朝、宗教、ルネサンス、大航海時代、宗教改革、革命と産業革命などを学ぶ一問一答47問。",
     "cover": "images_07/social-history-world-part1-ancient-earlymodern/question_001.png",
@@ -2431,7 +2431,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-world-part2-18c-20c",
     "subject": "social",
     "field": "history",
-    "title": "世界史② 後編（18世紀～20世紀）",
+    "title": "世界史②｜18世紀～20世紀",
     "grade": "中学歴史",
     "description": "18世紀のフランス革命から20世紀の国際情勢までを学ぶ、一問一答形式の全54問教材。",
     "cover": "images_07/social-history-world-part2-18c-20c/question_001.png",
@@ -2450,7 +2450,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-japan-and-world-timeline-90",
     "subject": "social",
     "field": "history",
-    "title": "歴史｜日本史と覚える世界史（重要用語90選）",
+    "title": "日本史と覚える世界史",
     "grade": "中学歴史",
     "description": "日本史の年表と世界史の出来事を結び付けて覚える一問一答・全90問。",
     "cover": "images_07/social-history-japan-and-world-timeline-90/question_001.png",
@@ -2469,7 +2469,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-japan-battles-rebellions-wars",
     "subject": "social",
     "field": "history",
-    "title": "歴史｜戦いの名前（反乱・戦・一揆・戦争）",
+    "title": "戦いの名前（反乱・戦・一揆・戦争）",
     "grade": "中学歴史",
     "description": "日本史の飛鳥時代から昭和時代まで、歴史上の反乱・戦・一揆・戦争などを学ぶ一問一答39問。",
     "cover": "images_07/social-history-japan-battles-rebellions-wars/question_001.png",
@@ -2559,7 +2559,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-japan-visual-quiz-53",
     "subject": "social",
     "field": "history",
-    "title": "歴史の画像一問一答（日本史でよく見る画像53選）",
+    "title": "歴史の画像問題（日本史）",
     "grade": "中学歴史",
     "description": "日本史の重要な遺跡・建築物・肖像画・文化財・史料などの画像を見て答える全53問。",
     "cover": "images_07/social-history-japan-visual-quiz-53/question_001.png",
@@ -2578,7 +2578,7 @@ window.QUIZ_CATALOG = [
     "id": "social-history-japan-historical-places-prefectures",
     "subject": "social",
     "field": "history",
-    "title": "歴史｜歴史の舞台（出来事が起こった場所・名所）",
+    "title": "歴史の舞台（出来事が起こった場所・名所）",
     "grade": "中学歴史",
     "description": "日本史の歴史上有名な出来事が起こった場所や名所を、都道府県と結び付けて覚える一問一答24問。",
     "cover": "images_07/social-history-japan-historical-places-prefectures/question_001.png",
@@ -2643,7 +2643,7 @@ window.QUIZ_CATALOG = [
     "id": "social-civics-written-answer-20",
     "subject": "social",
     "field": "civics",
-    "title": "公民の記述問題20問",
+    "title": "公民の記述問題",
     "grade": "中学公民",
     "description": "定期テスト・高校入試対策向け、公民の頻出記述問題20問。元動画の問題・解答画面を無加工PNGで収録。",
     "cover": "images_05/social-civics-written-answer-20/question_001.png",
@@ -2673,6 +2673,168 @@ window.QUIZ_CATALOG = [
     "series": "written",
     "count": 20,
     "data": "lessons/social-civics-written-answer-20.json"
+  },
+  {
+    "id": "science-grade1-description-short-answer-60",
+    "subject": "science",
+    "field": "general",
+    "title": "中1理科の記述問題",
+    "grade": "中1理科",
+    "description": "中学1年理科の頻出記述式問題60問。元動画から問題・解答の画像をそのまま抽出した教材。",
+    "cover": "images_08/science-grade1-description-short-answer-60/question_001.png",
+    "chapters": [
+      {
+        "id": "biology",
+        "title": "生命・植物（23問）"
+      },
+      {
+        "id": "earth",
+        "title": "地球・大地（13問）"
+      },
+      {
+        "id": "matter",
+        "title": "身のまわりの物質（18問）"
+      },
+      {
+        "id": "light_sound_force",
+        "title": "光・音・力による現象（6問）"
+      }
+    ],
+    "series": "written",
+    "source": "https://www.youtube.com/watch?v=PBRnNVa22QU",
+    "fieldLabel": "分野横断",
+    "count": 60,
+    "data": "lessons/science-grade1-description-short-answer-60.json"
+  },
+  {
+    "id": "science-grade2-description-short-answer-70",
+    "subject": "science",
+    "field": "general",
+    "title": "中2理科の記述問題",
+    "grade": "中2理科",
+    "description": "中学2年理科の頻出記述式問題70問。元動画から問題・解答の画像をそのまま抽出した教材。",
+    "cover": "images_08/science-grade2-description-short-answer-70/question_001.png",
+    "chapters": [
+      {
+        "id": "biology",
+        "title": "生物の体のつくりとはたらき（27問）"
+      },
+      {
+        "id": "weather",
+        "title": "地球の大気と天気の変化（15問）"
+      },
+      {
+        "id": "chemistry",
+        "title": "化学変化と原子・分子（21問）"
+      },
+      {
+        "id": "electricity",
+        "title": "電流とその利用（7問）"
+      }
+    ],
+    "series": "written",
+    "source": "https://www.youtube.com/watch?v=W7JEA-Q7qL8",
+    "fieldLabel": "分野横断",
+    "count": 70,
+    "data": "lessons/science-grade2-description-short-answer-70.json"
+  },
+  {
+    "id": "science-grade3-description-short-answer-60",
+    "subject": "science",
+    "field": "general",
+    "title": "中3理科の記述問題",
+    "grade": "中3理科",
+    "description": "中学3年理科の頻出記述式問題60問。元動画から問題・解答画像をそのまま抽出した教材。",
+    "cover": "images_08/science-grade3-description-short-answer-60/question_001.png",
+    "chapters": [
+      {
+        "id": "biology",
+        "title": "生物の成長・生殖・遺伝（19問）"
+      },
+      {
+        "id": "physics",
+        "title": "運動とエネルギー（8問）"
+      },
+      {
+        "id": "chemistry",
+        "title": "化学変化とイオン（12問）"
+      },
+      {
+        "id": "earth",
+        "title": "地球と宇宙・自然環境（21問）"
+      }
+    ],
+    "series": "written",
+    "source": "https://www.youtube.com/watch?v=yKqxw2OHH74",
+    "fieldLabel": "分野横断",
+    "count": 60,
+    "data": "lessons/science-grade3-description-short-answer-60.json"
+  },
+  {
+    "id": "science-chemical-reaction-equations-13",
+    "subject": "science",
+    "field": "chemistry",
+    "title": "化学反応式（13問版）",
+    "grade": "中学理科",
+    "description": "高校入試・定期テスト対策。化学反応式12式を13問で学ぶ一問一答。元動画の問題・解答を各13枚で収録。",
+    "cover": "images_08/science-chemical-reaction-equations-13/question_001.png",
+    "chapters": [
+      {
+        "id": "chemical-reaction-equations",
+        "title": "化学反応式（13問）"
+      }
+    ],
+    "series": "symbols",
+    "source": "https://www.youtube.com/watch?v=Si1uW1VmNvw",
+    "count": 13,
+    "data": "lessons/science-chemical-reaction-equations-13.json"
+  },
+  {
+    "id": "science-biology-earth-science-past-exams-101",
+    "subject": "science",
+    "field": "general",
+    "title": "生物・地学の入試過去問",
+    "grade": "中学理科",
+    "description": "高校入試の過去問を図とともに学ぶ生物58組・地学43組の一問一答。動画タイトルは「102語暗記」ですが、実映像に収録される異なる設問は101組（元動画の問題番号1～109のうち10・12・23・62・81・83・85・96が欠番）。",
+    "cover": "images_08/science-biology-earth-science-past-exams-101/question_001.png",
+    "chapters": [
+      {
+        "id": "biology",
+        "title": "生物（58組）"
+      },
+      {
+        "id": "earth-science",
+        "title": "地学（43組）"
+      }
+    ],
+    "series": "past",
+    "source": "https://www.youtube.com/watch?v=18Cf-bS4KAc",
+    "fieldLabel": "分野横断",
+    "count": 101,
+    "data": "lessons/science-biology-earth-science-past-exams-101.json"
+  },
+  {
+    "id": "science-chemistry-physics-past-exams-66",
+    "subject": "science",
+    "field": "general",
+    "title": "化学・物理の入試過去問",
+    "grade": "中学理科",
+    "description": "高校入試の過去問を図解とともに学ぶ、化学37問・物理30問の一問一答。銅と亜鉛の化学式を別々の問題として収録。",
+    "cover": "images_08/science-chemistry-physics-past-exams-66/question_001.png",
+    "chapters": [
+      {
+        "id": "chemistry",
+        "title": "化学（37問）"
+      },
+      {
+        "id": "physics",
+        "title": "物理（30問）"
+      }
+    ],
+    "series": "past",
+    "source": "https://www.youtube.com/watch?v=vUuyBpXYF0A",
+    "fieldLabel": "分野横断",
+    "count": 67,
+    "data": "lessons/science-chemistry-physics-past-exams-66.json"
   }
 ];
-

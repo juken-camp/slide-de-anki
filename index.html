@@ -589,9 +589,17 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 .study-options .modes button,#focusMenu .modes button{min-width:0;min-height:42px;padding:7px 4px;font-size:12px;white-space:nowrap;line-height:1.5}
 .study-options .toolbar>.shuffle,#focusMenu .toolbar>.shuffle{flex:0 0 112px;min-width:112px;width:112px;max-width:100%;min-height:42px;white-space:nowrap;margin-left:auto}
 /* The two new civics series have their own space and selection scope. */
-#catalogSeries:has(button:nth-child(5)){grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:12px}
+
 @media(max-width:600px){.study-options .toolbar>.shuffle,#focusMenu .toolbar>.shuffle{flex-basis:104px;min-width:104px;width:104px}}
 @media(max-width:380px){.study-options .modes button,#focusMenu .modes button{font-size:11px;padding:7px 3px}}
+
+/* Every subject uses the same four-card width, with more series off to the right. */
+#catalogSeries{--series-gap:7px;display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:calc((100% - 3 * var(--series-gap)) / 4);gap:var(--series-gap);min-width:0;width:100%;padding:5px 1px 10px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scroll-padding-inline:1px;scrollbar-width:thin;scrollbar-color:#cfaa87 transparent;-webkit-overflow-scrolling:touch}
+#catalogSeries button{min-width:0;scroll-snap-align:start}
+#catalogSeries::-webkit-scrollbar{height:4px}
+#catalogSeries::-webkit-scrollbar-thumb{background:#cfaa87;border-radius:10px}
+#catalogSeries::-webkit-scrollbar-track{background:#f5ecdf;border-radius:10px}
+@media(max-width:370px){#catalogSeries{--series-gap:5px}}
 
 </style></head>
 <body><main id="app" class="app">
@@ -1113,7 +1121,7 @@ function groupLabel(key) { return usesGrades() ? (key === 'other' ? '学年共�
 function groupIcon(key) { return usesGrades() ? '📖' : (fields[key]?.[1] || '📚'); }
 function catalogChoices() { return meta.filter(m => m.subject === catalogSubject); }
 function lessonSeries(m) {
-  if ((m.subject === 'science' ? ['unit','symbols','terms','themes'] : ['unit','review','frequent','themes','selection','written']).includes(m.series)) return m.series;
+  if ((m.subject === 'science' ? ['unit','symbols','terms','themes','written','past'] : ['unit','review','frequent','themes','selection','written']).includes(m.series)) return m.series;
   if (m.subject === 'science') {
     if (['science-element-symbols-mnemonic-01','science-chemical-formulas-01','science-chemical-reaction-equations-01','science-ion-formulas-01'].includes(m.id)) return 'symbols';
     if (/^science-jhs[123]-important-terms-/.test(m.id)) return 'terms';
@@ -1125,7 +1133,7 @@ function lessonSeries(m) {
 function catalogScopeKey() { return catalogSubject === 'social' ? `social:${socialField}` : catalogSubject; }
 function seriesDefinitions() {
   return catalogSubject === 'science'
-    ? [{id:'unit',label:'単元別'},{id:'symbols',label:'記号・式'},{id:'terms',label:'重要用語'},{id:'themes',label:'テーマ別'}]
+    ? [{id:'unit',label:'単元別'},{id:'symbols',label:'記号・式'},{id:'terms',label:'重要用語'},{id:'themes',label:'テーマ別'},{id:'written',label:'記述問題'},{id:'past',label:'入試過去問'}]
     : [{id:'unit',label:socialField==='history'?'時代別':socialField==='geography'?'地域別':'単元別'},{id:'review',label:'まとめ'},{id:'frequent',label:'よく出る'},{id:'themes',label:'テーマ別'},{id:'selection',label:'選択問題'},{id:'written',label:'記述問題'}];
 }
 function catalogScopeLessons() { return catalogChoices().filter(m => catalogSubject !== 'social' || m.field === socialField); }
@@ -1186,6 +1194,15 @@ function selectionSummary() {
     b.onclick = () => { selected.delete(m.id); renderCatalog(); }; $('selectedLessons').append(b);
   }
 }
+function revealSelectedSeries() {
+  const nav = $('catalogSeries'), button = nav.querySelector('button.active');
+  if (!button || !nav.clientWidth) return;
+  const bounds = nav.getBoundingClientRect(), item = button.getBoundingClientRect();
+  const gap = 2;
+  if (item.left < bounds.left + gap) nav.scrollLeft += item.left - bounds.left - gap;
+  else if (item.right > bounds.right - gap) nav.scrollLeft += item.right - bounds.right + gap;
+}
+window.addEventListener('resize',() => requestAnimationFrame(revealSelectedSeries),{passive:true});
 function renderCatalog() {
   normalizeCatalogScope();
   const focusedLesson = document.activeElement?.dataset?.lesson;
@@ -1269,6 +1286,7 @@ function renderCatalog() {
   if (focusedFilter) [...$('catalogFilters').children].find(b => b.textContent === focusedFilter)?.focus({preventScroll:true});
   if (focusedSeries) [...$('catalogSeries').children].find(b => b.dataset.series === focusedSeries)?.focus({preventScroll:true});
   if (focusedField) [...$('socialSwitch').children].find(b => b.dataset.socialField === focusedField)?.focus({preventScroll:true});
+  requestAnimationFrame(revealSelectedSeries);
 
 }
 function sourceVideoURL(source) {
@@ -1392,7 +1410,7 @@ function render() {
   const c = current(), raw = loaded.get(c.lessonId); renderSource(c); renderSupplements(raw); $('stage').hidden = false;
   $('card').classList.toggle('is-back',state.flipped); $('faceLabel').textContent = state.flipped ? '解答' : '問題';
   const chapter = raw.chapters?.find(ch => ch.id === c.chapter)?.title || raw.title;
-  $('cardUnit').textContent = `${state.lessonIds.length>1 ? raw.title+' / ' : ''}${chapter} · ${c.originalId}`;
+  $('cardUnit').textContent = `${state.lessonIds.length>1 ? raw.title+' / ' : ''}${chapter} · ${c.displayNumber || c.originalId}`;
   $('focusPosition').textContent = `${d.findIndex(x=>x.id===c.id)+1} / ${d.length}`;
   $('cardStatus').textContent = labels[status(c)] || 'まだ'; $('cardPosition').textContent = `${d.findIndex(x => x.id === c.id)+1} / ${d.length}問${state.mode !== 'all' ? ' · '+labels[state.mode] : ''}`;
   const url=window.NekoImageURL(state.flipped ? c.answer : c.question), cached=imageLoader.peek(url);
@@ -1401,7 +1419,7 @@ function render() {
   $('imageStatus').hidden=true; $('imageStatus').textContent='ちょっと待ってにゃ🐾';
   $('knownButton').disabled = $('weakButton').disabled = true;
   const img = $('slideImage'); img.onload=img.onerror=null;
-  img.alt = `${raw.title} ${c.originalId} ${state.flipped ? '解答' : '問題'}`;
+  img.alt = `${raw.title} ${c.displayNumber || c.originalId} ${state.flipped ? '解答' : '問題'}`;
   let settled=false;
   const fail=()=> {
     if (token!==imageToken || settled) return; settled=true;
@@ -1892,4 +1910,5 @@ $('importForm').onsubmit=async e=>{e.preventDefault();const button=$('importSubm
 })();
 
 </script></body></html>
+
 

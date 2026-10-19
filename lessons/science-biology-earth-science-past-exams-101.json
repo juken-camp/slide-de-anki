@@ -1,0 +1,1135 @@
+{
+  "id": "science-biology-earth-science-past-exams-101",
+  "subject": "science",
+  "field": "general",
+  "title": "生物・地学の入試過去問",
+  "grade": "中学理科",
+  "description": "高校入試の過去問を図とともに学ぶ生物58組・地学43組の一問一答。動画タイトルは「102語暗記」ですが、実映像に収録される異なる設問は101組（元動画の問題番号1～109のうち10・12・23・62・81・83・85・96が欠番）。",
+  "cover": "images_08/science-biology-earth-science-past-exams-101/question_001.png",
+  "chapters": [
+    {
+      "id": "biology",
+      "title": "生物（58組）"
+    },
+    {
+      "id": "earth-science",
+      "title": "地学（43組）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_001.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_001.png",
+      "sourceTimes": {
+        "question": 19.0,
+        "answer": 26.0
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_002.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_002.png",
+      "sourceTimes": {
+        "question": 37.0,
+        "answer": 49.0
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_003.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_003.png",
+      "sourceTimes": {
+        "question": 60.0,
+        "answer": 77.0
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_004.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_004.png",
+      "sourceTimes": {
+        "question": 88.0,
+        "answer": 104.0
+      },
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_005.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_005.png",
+      "sourceTimes": {
+        "question": 115.0,
+        "answer": 134.0
+      },
+      "sourceQuestionNumber": 5
+    },
+    {
+      "id": "006",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_006.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_006.png",
+      "sourceTimes": {
+        "question": 145.0,
+        "answer": 168.0
+      },
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "007",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_007.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_007.png",
+      "sourceTimes": {
+        "question": 179.0,
+        "answer": 193.0
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "008",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_008.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_008.png",
+      "sourceTimes": {
+        "question": 204.0,
+        "answer": 224.0
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "009",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_009.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_009.png",
+      "sourceTimes": {
+        "question": 235.0,
+        "answer": 259.0
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "010",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_010.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_010.png",
+      "sourceTimes": {
+        "question": 270.0,
+        "answer": 287.0
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "011",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_011.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_011.png",
+      "sourceTimes": {
+        "question": 298.0,
+        "answer": 340.0
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "012",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_012.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_012.png",
+      "sourceTimes": {
+        "question": 351.0,
+        "answer": 370.0
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "013",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_013.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_013.png",
+      "sourceTimes": {
+        "question": 381.0,
+        "answer": 397.0
+      },
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "014",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_014.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_014.png",
+      "sourceTimes": {
+        "question": 408.0,
+        "answer": 432.0
+      },
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "015",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_015.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_015.png",
+      "sourceTimes": {
+        "question": 443.0,
+        "answer": 463.0
+      },
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "016",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_016.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_016.png",
+      "sourceTimes": {
+        "question": 474.0,
+        "answer": 488.0
+      },
+      "sourceQuestionNumber": 18
+    },
+    {
+      "id": "017",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_017.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_017.png",
+      "sourceTimes": {
+        "question": 499.0,
+        "answer": 515.0
+      },
+      "sourceQuestionNumber": 19
+    },
+    {
+      "id": "018",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_018.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_018.png",
+      "sourceTimes": {
+        "question": 526.0,
+        "answer": 548.0
+      },
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "019",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_019.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_019.png",
+      "sourceTimes": {
+        "question": 559.0,
+        "answer": 576.0
+      },
+      "sourceQuestionNumber": 21
+    },
+    {
+      "id": "020",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_020.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_020.png",
+      "sourceTimes": {
+        "question": 587.0,
+        "answer": 603.0
+      },
+      "sourceQuestionNumber": 22
+    },
+    {
+      "id": "021",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_021.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_021.png",
+      "sourceTimes": {
+        "question": 614.0,
+        "answer": 631.0
+      },
+      "sourceQuestionNumber": 24
+    },
+    {
+      "id": "022",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_022.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_022.png",
+      "sourceTimes": {
+        "question": 642.0,
+        "answer": 663.0
+      },
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "023",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_023.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_023.png",
+      "sourceTimes": {
+        "question": 674.0,
+        "answer": 699.0
+      },
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "024",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_024.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_024.png",
+      "sourceTimes": {
+        "question": 710.0,
+        "answer": 750.0
+      },
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "025",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_025.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_025.png",
+      "sourceTimes": {
+        "question": 761.0,
+        "answer": 790.0
+      },
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "026",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_026.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_026.png",
+      "sourceTimes": {
+        "question": 807.0,
+        "answer": 823.0
+      },
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "027",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_027.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_027.png",
+      "sourceTimes": {
+        "question": 834.0,
+        "answer": 844.0
+      },
+      "sourceQuestionNumber": 30
+    },
+    {
+      "id": "028",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_028.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_028.png",
+      "sourceTimes": {
+        "question": 855.0,
+        "answer": 883.0
+      },
+      "sourceQuestionNumber": 31
+    },
+    {
+      "id": "029",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_029.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_029.png",
+      "sourceTimes": {
+        "question": 894.0,
+        "answer": 919.0
+      },
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "030",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_030.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_030.png",
+      "sourceTimes": {
+        "question": 930.0,
+        "answer": 941.0
+      },
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "031",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_031.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_031.png",
+      "sourceTimes": {
+        "question": 952.0,
+        "answer": 977.0
+      },
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "032",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_032.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_032.png",
+      "sourceTimes": {
+        "question": 988.0,
+        "answer": 1016.0
+      },
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "033",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_033.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_033.png",
+      "sourceTimes": {
+        "question": 1027.0,
+        "answer": 1057.0
+      },
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "034",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_034.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_034.png",
+      "sourceTimes": {
+        "question": 1068.0,
+        "answer": 1087.0
+      },
+      "sourceQuestionNumber": 37
+    },
+    {
+      "id": "035",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_035.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_035.png",
+      "sourceTimes": {
+        "question": 1098.0,
+        "answer": 1118.0
+      },
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "036",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_036.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_036.png",
+      "sourceTimes": {
+        "question": 1129.0,
+        "answer": 1153.0
+      },
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "037",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_037.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_037.png",
+      "sourceTimes": {
+        "question": 1164.0,
+        "answer": 1183.0
+      },
+      "sourceQuestionNumber": 40
+    },
+    {
+      "id": "038",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_038.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_038.png",
+      "sourceTimes": {
+        "question": 1194.0,
+        "answer": 1210.0
+      },
+      "sourceQuestionNumber": 41
+    },
+    {
+      "id": "039",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_039.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_039.png",
+      "sourceTimes": {
+        "question": 1221.0,
+        "answer": 1256.0
+      },
+      "sourceQuestionNumber": 42
+    },
+    {
+      "id": "040",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_040.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_040.png",
+      "sourceTimes": {
+        "question": 1267.0,
+        "answer": 1281.0
+      },
+      "sourceQuestionNumber": 43
+    },
+    {
+      "id": "041",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_041.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_041.png",
+      "sourceTimes": {
+        "question": 1292.0,
+        "answer": 1306.0
+      },
+      "sourceQuestionNumber": 44
+    },
+    {
+      "id": "042",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_042.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_042.png",
+      "sourceTimes": {
+        "question": 1317.0,
+        "answer": 1334.0
+      },
+      "sourceQuestionNumber": 45
+    },
+    {
+      "id": "043",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_043.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_043.png",
+      "sourceTimes": {
+        "question": 1345.0,
+        "answer": 1383.0
+      },
+      "sourceQuestionNumber": 46
+    },
+    {
+      "id": "044",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_044.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_044.png",
+      "sourceTimes": {
+        "question": 1394.0,
+        "answer": 1417.0
+      },
+      "sourceQuestionNumber": 47
+    },
+    {
+      "id": "045",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_045.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_045.png",
+      "sourceTimes": {
+        "question": 1428.0,
+        "answer": 1442.0
+      },
+      "sourceQuestionNumber": 48
+    },
+    {
+      "id": "046",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_046.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_046.png",
+      "sourceTimes": {
+        "question": 1453.0,
+        "answer": 1471.0
+      },
+      "sourceQuestionNumber": 49
+    },
+    {
+      "id": "047",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_047.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_047.png",
+      "sourceTimes": {
+        "question": 1482.0,
+        "answer": 1500.0
+      },
+      "sourceQuestionNumber": 50
+    },
+    {
+      "id": "048",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_048.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_048.png",
+      "sourceTimes": {
+        "question": 1511.0,
+        "answer": 1530.0
+      },
+      "sourceQuestionNumber": 51
+    },
+    {
+      "id": "049",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_049.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_049.png",
+      "sourceTimes": {
+        "question": 1541.0,
+        "answer": 1564.0
+      },
+      "sourceQuestionNumber": 52
+    },
+    {
+      "id": "050",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_050.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_050.png",
+      "sourceTimes": {
+        "question": 1575.0,
+        "answer": 1590.0
+      },
+      "sourceQuestionNumber": 53
+    },
+    {
+      "id": "051",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_051.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_051.png",
+      "sourceTimes": {
+        "question": 1601.0,
+        "answer": 1629.0
+      },
+      "sourceQuestionNumber": 54
+    },
+    {
+      "id": "052",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_052.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_052.png",
+      "sourceTimes": {
+        "question": 1640.0,
+        "answer": 1676.0
+      },
+      "sourceQuestionNumber": 55
+    },
+    {
+      "id": "053",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_053.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_053.png",
+      "sourceTimes": {
+        "question": 1687.0,
+        "answer": 1705.0
+      },
+      "sourceQuestionNumber": 56
+    },
+    {
+      "id": "054",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_054.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_054.png",
+      "sourceTimes": {
+        "question": 1716.0,
+        "answer": 1738.0
+      },
+      "sourceQuestionNumber": 57
+    },
+    {
+      "id": "055",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_055.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_055.png",
+      "sourceTimes": {
+        "question": 1749.0,
+        "answer": 1772.0
+      },
+      "sourceQuestionNumber": 58
+    },
+    {
+      "id": "056",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_056.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_056.png",
+      "sourceTimes": {
+        "question": 1783.0,
+        "answer": 1809.0
+      },
+      "sourceQuestionNumber": 59
+    },
+    {
+      "id": "057",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_057.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_057.png",
+      "sourceTimes": {
+        "question": 1820.0,
+        "answer": 1835.0
+      },
+      "sourceQuestionNumber": 60
+    },
+    {
+      "id": "058",
+      "chapter": "biology",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_058.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_058.png",
+      "sourceTimes": {
+        "question": 1846.0,
+        "answer": 1863.0
+      },
+      "sourceQuestionNumber": 61
+    },
+    {
+      "id": "059",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_059.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_059.png",
+      "sourceTimes": {
+        "question": 1878.0,
+        "answer": 1888.0
+      },
+      "sourceQuestionNumber": 63
+    },
+    {
+      "id": "060",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_060.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_060.png",
+      "sourceTimes": {
+        "question": 1899.0,
+        "answer": 1917.0
+      },
+      "sourceQuestionNumber": 64
+    },
+    {
+      "id": "061",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_061.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_061.png",
+      "sourceTimes": {
+        "question": 1928.0,
+        "answer": 1951.0
+      },
+      "sourceQuestionNumber": 65
+    },
+    {
+      "id": "062",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_062.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_062.png",
+      "sourceTimes": {
+        "question": 1962.0,
+        "answer": 1985.0
+      },
+      "sourceQuestionNumber": 66
+    },
+    {
+      "id": "063",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_063.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_063.png",
+      "sourceTimes": {
+        "question": 1996.0,
+        "answer": 2009.0
+      },
+      "sourceQuestionNumber": 67
+    },
+    {
+      "id": "064",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_064.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_064.png",
+      "sourceTimes": {
+        "question": 2020.0,
+        "answer": 2033.0
+      },
+      "sourceQuestionNumber": 68
+    },
+    {
+      "id": "065",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_065.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_065.png",
+      "sourceTimes": {
+        "question": 2044.0,
+        "answer": 2058.0
+      },
+      "sourceQuestionNumber": 69
+    },
+    {
+      "id": "066",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_066.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_066.png",
+      "sourceTimes": {
+        "question": 2069.0,
+        "answer": 2082.0
+      },
+      "sourceQuestionNumber": 70
+    },
+    {
+      "id": "067",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_067.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_067.png",
+      "sourceTimes": {
+        "question": 2093.0,
+        "answer": 2110.0
+      },
+      "sourceQuestionNumber": 71
+    },
+    {
+      "id": "068",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_068.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_068.png",
+      "sourceTimes": {
+        "question": 2121.0,
+        "answer": 2134.0
+      },
+      "sourceQuestionNumber": 72
+    },
+    {
+      "id": "069",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_069.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_069.png",
+      "sourceTimes": {
+        "question": 2145.0,
+        "answer": 2162.0
+      },
+      "sourceQuestionNumber": 73
+    },
+    {
+      "id": "070",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_070.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_070.png",
+      "sourceTimes": {
+        "question": 2173.0,
+        "answer": 2193.0
+      },
+      "sourceQuestionNumber": 74
+    },
+    {
+      "id": "071",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_071.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_071.png",
+      "sourceTimes": {
+        "question": 2204.0,
+        "answer": 2221.0
+      },
+      "sourceQuestionNumber": 75
+    },
+    {
+      "id": "072",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_072.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_072.png",
+      "sourceTimes": {
+        "question": 2232.0,
+        "answer": 2246.0
+      },
+      "sourceQuestionNumber": 76
+    },
+    {
+      "id": "073",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_073.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_073.png",
+      "sourceTimes": {
+        "question": 2257.0,
+        "answer": 2275.0
+      },
+      "sourceQuestionNumber": 77
+    },
+    {
+      "id": "074",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_074.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_074.png",
+      "sourceTimes": {
+        "question": 2286.0,
+        "answer": 2315.0
+      },
+      "sourceQuestionNumber": 78
+    },
+    {
+      "id": "075",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_075.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_075.png",
+      "sourceTimes": {
+        "question": 2326.0,
+        "answer": 2345.0
+      },
+      "sourceQuestionNumber": 79
+    },
+    {
+      "id": "076",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_076.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_076.png",
+      "sourceTimes": {
+        "question": 2356.0,
+        "answer": 2368.0
+      },
+      "sourceQuestionNumber": 80
+    },
+    {
+      "id": "077",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_077.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_077.png",
+      "sourceTimes": {
+        "question": 2379.0,
+        "answer": 2400.0
+      },
+      "sourceQuestionNumber": 82
+    },
+    {
+      "id": "078",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_078.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_078.png",
+      "sourceTimes": {
+        "question": 2411.0,
+        "answer": 2447.0
+      },
+      "sourceQuestionNumber": 84
+    },
+    {
+      "id": "079",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_079.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_079.png",
+      "sourceTimes": {
+        "question": 2458.0,
+        "answer": 2483.0
+      },
+      "sourceQuestionNumber": 86
+    },
+    {
+      "id": "080",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_080.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_080.png",
+      "sourceTimes": {
+        "question": 2494.0,
+        "answer": 2512.0
+      },
+      "sourceQuestionNumber": 87
+    },
+    {
+      "id": "081",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_081.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_081.png",
+      "sourceTimes": {
+        "question": 2523.0,
+        "answer": 2553.0
+      },
+      "sourceQuestionNumber": 88
+    },
+    {
+      "id": "082",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_082.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_082.png",
+      "sourceTimes": {
+        "question": 2564.0,
+        "answer": 2611.0
+      },
+      "sourceQuestionNumber": 89
+    },
+    {
+      "id": "083",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_083.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_083.png",
+      "sourceTimes": {
+        "question": 2622.0,
+        "answer": 2640.0
+      },
+      "sourceQuestionNumber": 90
+    },
+    {
+      "id": "084",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_084.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_084.png",
+      "sourceTimes": {
+        "question": 2651.0,
+        "answer": 2666.0
+      },
+      "sourceQuestionNumber": 91
+    },
+    {
+      "id": "085",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_085.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_085.png",
+      "sourceTimes": {
+        "question": 2677.0,
+        "answer": 2726.0
+      },
+      "sourceQuestionNumber": 92
+    },
+    {
+      "id": "086",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_086.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_086.png",
+      "sourceTimes": {
+        "question": 2737.0,
+        "answer": 2757.0
+      },
+      "sourceQuestionNumber": 93
+    },
+    {
+      "id": "087",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_087.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_087.png",
+      "sourceTimes": {
+        "question": 2768.0,
+        "answer": 2777.0
+      },
+      "sourceQuestionNumber": 94
+    },
+    {
+      "id": "088",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_088.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_088.png",
+      "sourceTimes": {
+        "question": 2788.0,
+        "answer": 2818.0
+      },
+      "sourceQuestionNumber": 95
+    },
+    {
+      "id": "089",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_089.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_089.png",
+      "sourceTimes": {
+        "question": 2829.0,
+        "answer": 2849.0
+      },
+      "sourceQuestionNumber": 97
+    },
+    {
+      "id": "090",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_090.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_090.png",
+      "sourceTimes": {
+        "question": 2860.0,
+        "answer": 2869.0
+      },
+      "sourceQuestionNumber": 98
+    },
+    {
+      "id": "091",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_091.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_091.png",
+      "sourceTimes": {
+        "question": 2880.0,
+        "answer": 2902.0
+      },
+      "sourceQuestionNumber": 99
+    },
+    {
+      "id": "092",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_092.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_092.png",
+      "sourceTimes": {
+        "question": 2913.0,
+        "answer": 2928.0
+      },
+      "sourceQuestionNumber": 100
+    },
+    {
+      "id": "093",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_093.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_093.png",
+      "sourceTimes": {
+        "question": 2939.0,
+        "answer": 2962.0
+      },
+      "sourceQuestionNumber": 101
+    },
+    {
+      "id": "094",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_094.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_094.png",
+      "sourceTimes": {
+        "question": 2973.0,
+        "answer": 2991.0
+      },
+      "sourceQuestionNumber": 102
+    },
+    {
+      "id": "095",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_095.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_095.png",
+      "sourceTimes": {
+        "question": 3002.0,
+        "answer": 3014.0
+      },
+      "sourceQuestionNumber": 103
+    },
+    {
+      "id": "096",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_096.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_096.png",
+      "sourceTimes": {
+        "question": 3025.0,
+        "answer": 3041.0
+      },
+      "sourceQuestionNumber": 104
+    },
+    {
+      "id": "097",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_097.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_097.png",
+      "sourceTimes": {
+        "question": 3052.0,
+        "answer": 3077.0
+      },
+      "sourceQuestionNumber": 105
+    },
+    {
+      "id": "098",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_098.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_098.png",
+      "sourceTimes": {
+        "question": 3088.0,
+        "answer": 3107.0
+      },
+      "sourceQuestionNumber": 106
+    },
+    {
+      "id": "099",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_099.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_099.png",
+      "sourceTimes": {
+        "question": 3118.0,
+        "answer": 3137.0
+      },
+      "sourceQuestionNumber": 107
+    },
+    {
+      "id": "100",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_100.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_100.png",
+      "sourceTimes": {
+        "question": 3148.0,
+        "answer": 3162.0
+      },
+      "sourceQuestionNumber": 108
+    },
+    {
+      "id": "101",
+      "chapter": "earth-science",
+      "question": "images_08/science-biology-earth-science-past-exams-101/question_101.png",
+      "answer": "images_08/science-biology-earth-science-past-exams-101/answer_101.png",
+      "sourceTimes": {
+        "question": 3173.0,
+        "answer": 3190.0
+      },
+      "sourceQuestionNumber": 109
+    }
+  ],
+  "series": "past",
+  "source": "https://www.youtube.com/watch?v=18Cf-bS4KAc",
+  "fieldLabel": "分野横断"
+}

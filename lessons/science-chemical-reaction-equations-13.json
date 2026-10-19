@@ -1,0 +1,149 @@
+{
+  "id": "science-chemical-reaction-equations-13",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "化学反応式（13問版）",
+  "grade": "中学理科",
+  "description": "高校入試・定期テスト対策。化学反応式12式を13問で学ぶ一問一答。元動画の問題・解答を各13枚で収録。",
+  "cover": "images_08/science-chemical-reaction-equations-13/question_001.png",
+  "chapters": [
+    {
+      "id": "chemical-reaction-equations",
+      "title": "化学反応式（13問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_001.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_001.png",
+      "sourceTimes": {
+        "question": 54.0,
+        "answer": 67.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_002.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_002.png",
+      "sourceTimes": {
+        "question": 94.0,
+        "answer": 109.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_003.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_003.png",
+      "sourceTimes": {
+        "question": 131.0,
+        "answer": 145.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_004.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_004.png",
+      "sourceTimes": {
+        "question": 171.0,
+        "answer": 186.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_005.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_005.png",
+      "sourceTimes": {
+        "question": 212.0,
+        "answer": 227.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_006.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_006.png",
+      "sourceTimes": {
+        "question": 255.0,
+        "answer": 279.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_007.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_007.png",
+      "sourceTimes": {
+        "question": 305.0,
+        "answer": 330.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_008.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_008.png",
+      "sourceTimes": {
+        "question": 353.0,
+        "answer": 372.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_009.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_009.png",
+      "sourceTimes": {
+        "question": 408.0,
+        "answer": 424.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_010.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_010.png",
+      "sourceTimes": {
+        "question": 451.0,
+        "answer": 473.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_011.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_011.png",
+      "sourceTimes": {
+        "question": 505.0,
+        "answer": 525.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_012.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_012.png",
+      "sourceTimes": {
+        "question": 570.0,
+        "answer": 588.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "chemical-reaction-equations",
+      "question": "images_08/science-chemical-reaction-equations-13/question_013.png",
+      "answer": "images_08/science-chemical-reaction-equations-13/answer_013.png",
+      "sourceTimes": {
+        "question": 636.0,
+        "answer": 654.0
+      }
+    }
+  ],
+  "series": "symbols",
+  "source": "https://www.youtube.com/watch?v=Si1uW1VmNvw"
+}

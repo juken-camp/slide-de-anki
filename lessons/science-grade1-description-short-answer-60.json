@@ -1,0 +1,632 @@
+{
+  "id": "science-grade1-description-short-answer-60",
+  "subject": "science",
+  "field": "general",
+  "title": "中1理科の記述問題",
+  "grade": "中1理科",
+  "description": "中学1年理科の頻出記述式問題60問。元動画から問題・解答の画像をそのまま抽出した教材。",
+  "cover": "images_08/science-grade1-description-short-answer-60/question_001.png",
+  "chapters": [
+    {
+      "id": "biology",
+      "title": "生命・植物（23問）"
+    },
+    {
+      "id": "earth",
+      "title": "地球・大地（13問）"
+    },
+    {
+      "id": "matter",
+      "title": "身のまわりの物質（18問）"
+    },
+    {
+      "id": "light_sound_force",
+      "title": "光・音・力による現象（6問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_001.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_001.png",
+      "sourceTimes": {
+        "question": 28.0,
+        "answer": 40.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_002.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_002.png",
+      "sourceTimes": {
+        "question": 48.0,
+        "answer": 55.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_003.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_003.png",
+      "sourceTimes": {
+        "question": 62.0,
+        "answer": 68.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_004.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_004.png",
+      "sourceTimes": {
+        "question": 76.0,
+        "answer": 86.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_005.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_005.png",
+      "sourceTimes": {
+        "question": 94.0,
+        "answer": 106.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_006.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_006.png",
+      "sourceTimes": {
+        "question": 114.0,
+        "answer": 122.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_007.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_007.png",
+      "sourceTimes": {
+        "question": 130.0,
+        "answer": 138.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_008.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_008.png",
+      "sourceTimes": {
+        "question": 146.0,
+        "answer": 170.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_009.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_009.png",
+      "sourceTimes": {
+        "question": 178.0,
+        "answer": 198.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_010.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_010.png",
+      "sourceTimes": {
+        "question": 206.0,
+        "answer": 216.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_011.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_011.png",
+      "sourceTimes": {
+        "question": 224.0,
+        "answer": 233.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_012.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_012.png",
+      "sourceTimes": {
+        "question": 240.0,
+        "answer": 258.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_013.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_013.png",
+      "sourceTimes": {
+        "question": 266.0,
+        "answer": 284.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_014.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_014.png",
+      "sourceTimes": {
+        "question": 292.0,
+        "answer": 312.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_015.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_015.png",
+      "sourceTimes": {
+        "question": 320.0,
+        "answer": 330.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_016.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_016.png",
+      "sourceTimes": {
+        "question": 338.0,
+        "answer": 354.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_017.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_017.png",
+      "sourceTimes": {
+        "question": 362.0,
+        "answer": 400.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_018.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_018.png",
+      "sourceTimes": {
+        "question": 408.0,
+        "answer": 416.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_019.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_019.png",
+      "sourceTimes": {
+        "question": 424.0,
+        "answer": 450.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_020.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_020.png",
+      "sourceTimes": {
+        "question": 458.0,
+        "answer": 472.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_021.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_021.png",
+      "sourceTimes": {
+        "question": 480.0,
+        "answer": 504.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_022.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_022.png",
+      "sourceTimes": {
+        "question": 512.0,
+        "answer": 524.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "biology",
+      "question": "images_08/science-grade1-description-short-answer-60/question_023.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_023.png",
+      "sourceTimes": {
+        "question": 532.0,
+        "answer": 554.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_024.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_024.png",
+      "sourceTimes": {
+        "question": 568.0,
+        "answer": 590.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_025.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_025.png",
+      "sourceTimes": {
+        "question": 598.0,
+        "answer": 616.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_026.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_026.png",
+      "sourceTimes": {
+        "question": 624.0,
+        "answer": 644.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_027.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_027.png",
+      "sourceTimes": {
+        "question": 652.0,
+        "answer": 672.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_028.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_028.png",
+      "sourceTimes": {
+        "question": 680.0,
+        "answer": 700.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_029.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_029.png",
+      "sourceTimes": {
+        "question": 708.0,
+        "answer": 716.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_030.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_030.png",
+      "sourceTimes": {
+        "question": 724.0,
+        "answer": 738.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_031.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_031.png",
+      "sourceTimes": {
+        "question": 746.0,
+        "answer": 764.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_032.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_032.png",
+      "sourceTimes": {
+        "question": 772.0,
+        "answer": 788.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_033.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_033.png",
+      "sourceTimes": {
+        "question": 796.0,
+        "answer": 806.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_034.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_034.png",
+      "sourceTimes": {
+        "question": 814.0,
+        "answer": 826.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_035.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_035.png",
+      "sourceTimes": {
+        "question": 834.0,
+        "answer": 852.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "earth",
+      "question": "images_08/science-grade1-description-short-answer-60/question_036.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_036.png",
+      "sourceTimes": {
+        "question": 860.0,
+        "answer": 876.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_037.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_037.png",
+      "sourceTimes": {
+        "question": 890.0,
+        "answer": 900.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_038.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_038.png",
+      "sourceTimes": {
+        "question": 908.0,
+        "answer": 919.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_039.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_039.png",
+      "sourceTimes": {
+        "question": 926.0,
+        "answer": 942.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_040.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_040.png",
+      "sourceTimes": {
+        "question": 950.0,
+        "answer": 966.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_041.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_041.png",
+      "sourceTimes": {
+        "question": 974.0,
+        "answer": 996.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_042.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_042.png",
+      "sourceTimes": {
+        "question": 1004.0,
+        "answer": 1030.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_043.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_043.png",
+      "sourceTimes": {
+        "question": 1038.0,
+        "answer": 1064.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_044.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_044.png",
+      "sourceTimes": {
+        "question": 1072.0,
+        "answer": 1086.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_045.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_045.png",
+      "sourceTimes": {
+        "question": 1094.0,
+        "answer": 1108.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_046.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_046.png",
+      "sourceTimes": {
+        "question": 1116.0,
+        "answer": 1142.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_047.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_047.png",
+      "sourceTimes": {
+        "question": 1150.0,
+        "answer": 1166.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_048.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_048.png",
+      "sourceTimes": {
+        "question": 1174.0,
+        "answer": 1202.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_049.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_049.png",
+      "sourceTimes": {
+        "question": 1210.0,
+        "answer": 1232.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_050.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_050.png",
+      "sourceTimes": {
+        "question": 1240.0,
+        "answer": 1274.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_051.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_051.png",
+      "sourceTimes": {
+        "question": 1282.0,
+        "answer": 1298.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_052.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_052.png",
+      "sourceTimes": {
+        "question": 1306.0,
+        "answer": 1332.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_053.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_053.png",
+      "sourceTimes": {
+        "question": 1340.0,
+        "answer": 1364.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "matter",
+      "question": "images_08/science-grade1-description-short-answer-60/question_054.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_054.png",
+      "sourceTimes": {
+        "question": 1372.0,
+        "answer": 1390.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "light_sound_force",
+      "question": "images_08/science-grade1-description-short-answer-60/question_055.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_055.png",
+      "sourceTimes": {
+        "question": 1406.0,
+        "answer": 1420.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "light_sound_force",
+      "question": "images_08/science-grade1-description-short-answer-60/question_056.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_056.png",
+      "sourceTimes": {
+        "question": 1428.0,
+        "answer": 1446.0
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "light_sound_force",
+      "question": "images_08/science-grade1-description-short-answer-60/question_057.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_057.png",
+      "sourceTimes": {
+        "question": 1454.0,
+        "answer": 1488.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "light_sound_force",
+      "question": "images_08/science-grade1-description-short-answer-60/question_058.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_058.png",
+      "sourceTimes": {
+        "question": 1496.0,
+        "answer": 1526.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "light_sound_force",
+      "question": "images_08/science-grade1-description-short-answer-60/question_059.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_059.png",
+      "sourceTimes": {
+        "question": 1534.0,
+        "answer": 1558.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "light_sound_force",
+      "question": "images_08/science-grade1-description-short-answer-60/question_060.png",
+      "answer": "images_08/science-grade1-description-short-answer-60/answer_060.png",
+      "sourceTimes": {
+        "question": 1566.0,
+        "answer": 1588.0
+      }
+    }
+  ],
+  "series": "written",
+  "source": "https://www.youtube.com/watch?v=PBRnNVa22QU",
+  "fieldLabel": "分野横断"
+}

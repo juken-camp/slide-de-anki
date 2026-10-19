@@ -145,11 +145,14 @@
       "id": "011",
       "chapter": "electric",
       "question": "images_08/jhs-formula-calculation-26/question_011.png",
-      "answer": "images_08/jhs-formula-calculation-26/answer_011.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_011.png?v=a61a7e8dcf74bf21",
       "sourceTimes": {
         "question": 431.0,
         "answer": 448.0
-      }
+      },
+      "correctedFaces": [
+        "answer"
+      ]
     },
     {
       "id": "012",
@@ -309,7 +312,7 @@
     "notes": [
       {
         "card": "011",
-        "text": "オームの法則の関係図にある「上に入るのは何？」の答えは、動画中に独立した正答表示がなく、answer_011.pngは説明画面の最終フレーム（記号「？」が残った状態）。動画にない正答は画像に追加していない。"
+        "text": "元動画で「？」のままの解答図に、画像生成で赤字の「電圧」「V」を補った。問題画像と元動画・取得時刻は変更なし。"
       }
     ],
     "timestamp_note": "captureは実際に保存した元動画フレームの表示PTS（秒）。frame_indexは30fpsのPTSから算出した0始まりの番号。start_approx/end_approxは1秒間隔のプレビューと各場面変化から判断したおおよその表示範囲。questionは問題文が表示され、まだ解答欄が埋められていない段階。answerは原則として数値・公式・図解が完成した時点。元動画の1920×1080フレームをリサイズ・再描画せずPNG保存。"

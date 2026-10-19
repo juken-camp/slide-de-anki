@@ -2597,7 +2597,7 @@ window.QUIZ_CATALOG = [
     "id": "social-civics-entrance-multiple-choice-01-61",
     "subject": "social",
     "field": "civics",
-    "title": "高校入試対策・公民選択問題①（61問）",
+    "title": "公民選択問題①｜高校入試対策",
     "grade": "中学公民",
     "description": "高校入試の公民選択問題。元動画で実際に出題される61問を問題画像・解答画像で学ぶ教材。元動画の画面番号4・58・60は出題されないため除外。",
     "cover": "images_05/social-civics-entrance-multiple-choice-01-61/question_001.png",
@@ -2624,7 +2624,7 @@ window.QUIZ_CATALOG = [
     "id": "social-civics-exam-selection-02-58",
     "subject": "social",
     "field": "civics",
-    "title": "公民選択問題②（図解あり・高校入試対策58問）",
+    "title": "公民選択問題②｜高校入試対策",
     "grade": "中学公民",
     "description": "高校入試対策・公民選択問題②。元動画の問題・解答を各58枚に整理。動画内の設問番号は1～60で18・57が欠番。",
     "cover": "images_05/social-civics-exam-selection-02-58/question_001.png",
@@ -2675,3 +2675,4 @@ window.QUIZ_CATALOG = [
     "data": "lessons/social-civics-written-answer-20.json"
   }
 ];
+

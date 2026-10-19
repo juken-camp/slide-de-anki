@@ -601,6 +601,79 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 #catalogSeries::-webkit-scrollbar-track{background:#f5ecdf;border-radius:10px}
 @media(max-width:370px){#catalogSeries{--series-gap:5px}}
 
+/* Personal collections keep the everyday subject catalogue quiet. */
+.catalog-search-top{grid-template-columns:minmax(140px,1fr) auto}
+.catalog-search-top #catalogSubjects button{font-size:12px;padding:6px 9px}
+#myCollectionsPanel{padding:10px 0 22px}
+.my-collection-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 16px}
+.my-collection-heading h3{margin:0;font-size:16px}.my-collection-heading .tool{flex:none}
+.my-collection-empty{padding:30px 16px;text-align:center;color:var(--muted);line-height:1.8}
+.my-collection-empty p{margin:6px 0;font-size:12px}.my-collection-empty .paw{font-size:30px}
+.my-collection-card{padding:16px;margin:0 1px 18px;border:3px solid var(--neko-edge);border-radius:20px;background:#fffdf7;box-shadow:0 5px 0 var(--neko-base)}
+.my-collection-card h3{font-size:16px;margin:0 0 6px;overflow-wrap:anywhere}.my-collection-card p{font-size:12px;color:var(--muted);margin:5px 0 13px}.my-collection-actions{display:flex;gap:10px;align-items:center}.my-collection-actions .primary-button{flex:1;min-height:44px;padding:8px}.my-collection-actions .tool{min-height:44px;flex:none}
+#collectionDialog{width:min(900px,calc(100% - 20px));max-width:none;max-height:calc(100dvh - 22px);padding:0;border:2px solid #d4ad85;border-radius:23px;color:var(--ink);background:#fffaf2;box-sizing:border-box;overflow:hidden}
+#collectionDialog[open]{display:flex;flex-direction:column}
+.collection-editor-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px 12px;border-bottom:1px solid #ecdbc5;flex:none}
+.collection-editor-head h2{margin:0;font-size:18px}.collection-editor-head button{min-width:42px;min-height:42px;border:2px solid #d3b08e;border-radius:13px;background:#fffdf8;color:var(--ink);font-size:18px}
+.collection-editor-body{padding:16px 18px;overflow-y:auto;overscroll-behavior:contain;min-height:0;flex:1;scrollbar-width:thin}
+.collection-name-label{display:block;font-size:12px;font-weight:800;margin-bottom:6px}
+.collection-editor-body input,.collection-editor-body select{width:100%;min-width:0;min-height:44px;border:2px solid #dcc1a4;border-radius:12px;background:#fff;color:var(--ink);padding:9px 10px;font:inherit;font-size:14px;box-sizing:border-box}
+.collection-editor-body input:focus,.collection-editor-body select:focus{outline:3px solid #ecc48e;outline-offset:2px}
+.collection-editor-body input[aria-invalid=true]{border-color:#b34242}
+#collectionName{font-size:16px}
+.collection-picker{margin-top:14px;border:2px solid #e1c7aa;border-radius:15px;padding:12px;background:#fffdf9}
+.collection-picker summary{cursor:pointer;font-weight:800;font-size:13px;min-height:30px}
+.collection-picker-controls{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px;margin:9px 0}
+.collection-picker select[size]{height:145px;padding:4px;border-radius:9px;font-size:13px}
+.collection-picker option{padding:8px 5px}.collection-picker optgroup{font-style:normal}
+.collection-picker-actions{display:flex;gap:8px;margin-top:10px}.collection-picker-actions button{flex:1;min-height:44px;font-size:12px}
+.collection-lesson-tabs{display:flex;overflow-x:auto;gap:8px;margin:15px 0 8px;padding:3px 1px 8px;scrollbar-width:thin}
+.collection-lesson-tabs button{flex:0 0 auto;max-width:245px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:2px solid #d3ad86;border-radius:12px;min-height:40px;padding:8px 10px;background:#fff9ee;color:var(--ink);font-size:12px;box-shadow:0 3px 0 #e6cfb8}
+.collection-lesson-tabs button[aria-pressed=true]{background:#ffe6bd;border-color:#ae602f;box-shadow:0 3px 0 #b56c38;font-weight:800}
+.collection-active-heading{display:flex;align-items:flex-start;gap:10px;justify-content:space-between;margin-top:12px}.collection-active-heading h3{font-size:14px;margin:0;overflow-wrap:anywhere}.collection-active-heading button{flex:none;font-size:11px}
+.collection-grid-count{font-size:12px;margin:6px 0 10px;color:#8f603f}
+.collection-range{display:flex;gap:7px;align-items:stretch}.collection-range input{flex:1}.collection-range button{flex:none;font-size:12px;white-space:nowrap}
+.collection-range-label{display:block;font-size:11px;color:var(--muted);margin:10px 0 5px}
+.collection-grid-tools{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}.collection-grid-tools button{min-height:38px;padding:6px 9px;font-size:11px}
+.collection-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;padding:3px 1px 8px}
+.collection-tile{position:relative;min-width:0}.collection-tile .collection-check{width:100%;padding:0 0 7px;border:3px solid #d7b390;border-radius:13px;background:#fff;box-shadow:0 3px 0 #ead6c1;overflow:hidden;color:var(--ink);text-align:left;transition:transform .14s,background .14s}
+.collection-tile .collection-check[aria-pressed=true]{border-color:#b4602b;background:#fff0d5;box-shadow:0 4px 0 #bd7b46}
+.collection-tile img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#fff;font-size:10px;color:#956a4a}
+.collection-tile-label{display:flex;align-items:center;justify-content:space-between;padding:7px 37px 0 8px;font-size:12px;font-weight:800}
+.collection-tile-tick{display:grid;place-items:center;width:20px;height:20px;border:2px solid #cfab86;border-radius:7px;background:#fff8ec;flex:none;font-size:12px}
+[aria-pressed=true] .collection-tile-tick{color:white;background:#b4602b;border-color:#b4602b}
+.collection-tile .collection-zoom{position:absolute;bottom:5px;right:4px;width:36px;height:35px;border:0;background:transparent;color:#8c552d;font-size:21px}
+.collection-tile .collection-check:active{transform:translateY(2px);box-shadow:0 1px 0 #d6b697}
+.collection-editor-foot{padding:10px 18px max(12px,env(safe-area-inset-bottom));border-top:1px solid #e7d0b6;display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#fff5e5;flex:none}
+.collection-editor-foot .collection-total{flex:1;font-size:13px;font-weight:800}.collection-editor-foot .primary-button{padding:9px 16px;min-height:44px}
+#collectionEditorStatus{width:100%;font-size:12px;color:#a14431;line-height:1.5;margin:0;overflow-wrap:anywhere}#collectionEditorStatus:empty{display:none}
+.collection-storage-note{font-size:11px;color:var(--muted);margin:8px 0 0}
+#collectionPreview{padding:12px;width:min(960px,calc(100% - 18px));max-width:none;max-height:calc(100dvh - 18px);box-sizing:border-box;border:2px solid #d4ad85;border-radius:20px;background:#fffaf2;color:var(--ink);overflow-y:auto}
+.collection-preview-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px}.collection-preview-head h3{font-size:13px;overflow-wrap:anywhere;margin:0}
+#collectionPreviewImage{display:block;width:100%;max-height:calc(100dvh - 190px);min-height:100px;object-fit:contain;background:white}
+.collection-preview-actions{display:flex;gap:8px;margin-top:12px}.collection-preview-actions button{flex:1;min-height:44px;font-size:12px}
+.collection-preview-help{font-size:11px;color:var(--muted);margin:9px 0 0}
+@media(max-width:560px){.catalog-search-top{grid-template-columns:minmax(0,1fr);gap:8px}.catalog-search-top #catalogSubjects{overflow:visible;display:flex;gap:7px}.catalog-search-top #catalogSubjects button{flex:1;max-width:none;font-size:12px;padding:6px}.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.collection-editor-body{padding:12px}.collection-editor-head{padding:10px 12px}.collection-editor-foot{padding:10px 12px max(12px,env(safe-area-inset-bottom))}.collection-editor-head h2{font-size:16px}.collection-picker{padding:9px}.collection-range{flex-wrap:wrap}.collection-range input{flex-basis:160px}.collection-range button{flex:1}.collection-picker-actions button{padding:7px 5px}.collection-storage-note{font-size:10px}}
+#collectionDialog.motion-off .collection-check:active{transform:none}
+@media(prefers-reduced-motion:reduce){.collection-check{transition:none!important}.collection-check:active{transform:none!important}}
+
+
+/* Edge shading and compact controls make the remaining series explicit. */
+.series-scroller{position:relative;min-width:0}
+.series-scroller::before,.series-scroller::after{content:'';position:absolute;top:1px;bottom:39px;width:20px;z-index:2;pointer-events:none;opacity:0;transition:opacity .15s}
+.series-scroller::before{left:-1px;background:linear-gradient(90deg,#8e542b32,rgba(255,251,244,.76) 35%,transparent);border-radius:14px 0 0 14px}
+.series-scroller::after{right:-1px;background:linear-gradient(270deg,#8e542b32,rgba(255,251,244,.76) 35%,transparent);border-radius:0 14px 14px 0}
+.series-scroller.has-left::before,.series-scroller.has-right::after{opacity:1}
+.series-scroll-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px;margin:0 0 4px}
+.series-scroll-tools button{display:flex;align-items:center;gap:5px;min-height:30px;padding:3px 10px;border:1px solid #d7b695;border-radius:18px;background:#fff5e5;box-shadow:0 2px 0 #e7cbae;color:#925323;font-size:11px;font-weight:800;white-space:nowrap;transition:transform .14s,box-shadow .14s}
+.series-scroll-tools button:active{transform:translateY(2px);box-shadow:none}
+.series-scroll-tools button:disabled{visibility:hidden;pointer-events:none}
+.series-scroll-tools button span{font-size:19px;line-height:1}
+#seriesNext{margin-left:auto;background:#ffedcf;border-color:#cc965c;color:#89431b}
+.series-scroller #catalogSeries{margin-bottom:0}
+#app.neko-motion-off .series-scroll-tools button:active{transform:none}
+@media(prefers-reduced-motion:reduce){.series-scroller::before,.series-scroller::after,.series-scroll-tools button{transition:none}.series-scroll-tools button:active{transform:none}}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
@@ -612,13 +685,14 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
   <div class="catalog-heading page-heading"><div><h2 class="screen-title" id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加</button></div>
-  <div class="catalog-resume"><button class="secondary-button" id="resumeStudy" hidden>つづきから <span aria-hidden="true">▶</span></button><button class="secondary-button home-review" id="quickReview" hidden>苦手だけ復習するにゃ</button><p class="resume-context" id="resumeContext" hidden></p></div><div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div>
+  <div class="catalog-resume"><button class="secondary-button" id="resumeStudy" hidden>つづきから <span aria-hidden="true">▶</span></button><button class="secondary-button home-review" id="quickReview" hidden>苦手だけ復習するにゃ</button><p class="resume-context" id="resumeContext" hidden></p></div><div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav><div id="seriesScrollTools" class="series-scroll-tools" hidden><button id="seriesPrev" type="button" aria-label="前のカテゴリを見る" aria-controls="catalogSeries" disabled><span aria-hidden="true">‹</span> 前にもあるにゃ</button><button id="seriesNext" type="button" aria-label="右に続くカテゴリを見る" aria-controls="catalogSeries" disabled>右にもあるにゃ <span aria-hidden="true">›</span></button></div></div></div>
   
   
   
   
   
   <div class="catalog-list-tools"><span id="visibleCount"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
+  <section id="myCollectionsPanel" hidden aria-labelledby="myCollectionsTitle"><div class="my-collection-heading"><h3 id="myCollectionsTitle">マイまとめ</h3><button class="tool" type="button" id="newMyCollection">＋ 作るにゃ</button></div><div id="myCollectionList"></div></section>
   <div id="catalogGroups" class="catalog-groups"></div>
   <div id="catalogEmpty" class="catalog-empty" hidden><span aria-hidden="true">📚</span><h3 id="catalogEmptyTitle"></h3><p id="catalogEmptyText"></p></div>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><button class="primary-button" id="startStudy" disabled>はじめるにゃ <span aria-hidden="true">🐾</span></button></div>
@@ -646,6 +720,35 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 <dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">Nekoponをタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
 <script src="catalog.js?v=20261019-history-places-link"></script>
+<dialog id="collectionDialog" aria-labelledby="collectionDialogTitle">
+ <div class="collection-editor-head"><h2 id="collectionDialogTitle">マイまとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ">×</button></div>
+ <div class="collection-editor-body" id="collectionEditorBody">
+  <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="例：定期テスト対策、苦手リスト" autocomplete="off">
+  <details class="collection-picker" id="collectionPicker" open><summary>＋ 教材を入れるにゃ</summary>
+   <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
+   <select id="collectionLessonPicker" size="5" aria-label="追加する教材"></select>
+   <div class="collection-picker-actions"><button class="secondary-button" id="collectionAddWhole" type="button">丸ごと入れるにゃ</button><button class="secondary-button" id="collectionPickCards" type="button">問題を選ぶにゃ</button></div>
+  </details>
+  <nav id="collectionLessonTabs" class="collection-lesson-tabs" aria-label="編集中の教材"></nav>
+  <div id="collectionActive" hidden>
+   <div class="collection-active-heading"><h3 id="collectionActiveTitle"></h3><button class="link-button" id="collectionRemoveLesson" type="button">この教材を外すにゃ</button></div>
+   <p class="collection-grid-count" id="collectionGridCount" aria-live="polite"></p>
+   <label for="collectionNumbers" class="collection-range-label">番号でまとめて選ぶにゃ（画面の番号）</label>
+   <div class="collection-range"><input id="collectionNumbers" placeholder="例：1-10, 15, 20-25" inputmode="text" autocomplete="off"><button class="tool" id="collectionApplyNumbers" type="button">追加で選ぶにゃ</button></div>
+   <div class="collection-grid-tools"><button class="tool" id="collectionSelectAll" type="button">ぜんぶ選ぶにゃ</button><button class="tool" id="collectionSelectWeak" type="button">苦手を選ぶにゃ</button><button class="tool" id="collectionClearCards" type="button">選択を外すにゃ</button></div>
+   <div class="collection-grid" id="collectionGrid" aria-label="問題画像をタップして複数選択"></div>
+  </div>
+  <p class="collection-storage-note">この端末・ブラウザーに保存するにゃ。問題と解答はセットにゃ🐾</p>
+ </div>
+ <div class="collection-editor-foot"><p id="collectionEditorStatus" role="status"></p><span class="collection-total" id="collectionTotal" aria-live="polite">0問</span><button class="tool" id="collectionEditorCancel" type="button">やめるにゃ</button><button class="primary-button" id="collectionSave" type="button">保存するにゃ 🐾</button></div>
+</dialog>
+<dialog id="collectionPreview" aria-labelledby="collectionPreviewTitle">
+ <div class="collection-preview-head"><h3 id="collectionPreviewTitle"></h3><button id="collectionPreviewClose" type="button" class="tool" aria-label="画像一覧に戻るにゃ">閉じるにゃ ×</button></div>
+ <img id="collectionPreviewImage" alt="">
+ <div class="collection-preview-actions"><button class="secondary-button" id="collectionPreviewFlip" type="button">解答を見るにゃ</button><button class="secondary-button" id="collectionPreviewSelect" type="button">選ぶにゃ ✓</button></div>
+ <p class="collection-preview-help">確認用の画像にゃ。学習数や「おぼえた」は増えないにゃ。</p>
+</dialog>
+
 <script>
 // image-viewer.js
 'use strict';
@@ -876,6 +979,8 @@ if (!isObject(data.neko.daily)) data.neko.daily = {};
 for (const [day, entries] of Object.entries(data.neko.daily)) if (!Array.isArray(entries)) delete data.neko.daily[day];
 data.records ||= {}; data.neko ||= {}; data.neko.daily ||= {};
 const meta = [...window.QUIZ_CATALOG], loaded = new Map(), pending = new Map();
+let resolveImportedLessons;
+const importedLessonsReady=new Promise(resolve=>{resolveImportedLessons=resolve;});
 const saved = data.neko.resume || {};
 const savedIds = Array.isArray(saved.lessonIds) ? saved.lessonIds : saved.lessonId ? [saved.lessonId] : [];
 const cardKey = (lessonId, id) => `${lessonId}/${id}`;
@@ -883,6 +988,7 @@ const migrateKey = id => id && !id.includes('/') && saved.lessonId ? cardKey(sav
 const state = {
   subject: typeof saved.subject === 'string' && saved.subject.trim() ? saved.subject : 'science',
   lessonIds: [...new Set(savedIds)], lessonId: saved.lessonId || null,
+  collection: isObject(saved.collection) && typeof saved.collection.name === 'string' && Array.isArray(saved.collection.cardKeys) ? {id:saved.collection.id,name:saved.collection.name,cardKeys:[...new Set(saved.collection.cardKeys.filter(k=>typeof k==='string'))]} : null,
   chapter: saved.chapter || 'all', mode: ['all','weak','known','unmarked'].includes(saved.mode) ? saved.mode : 'all',
   current: migrateKey(saved.current) || null, flipped: !!saved.flipped,
   order: Array.isArray(saved.order) ? saved.order.map(migrateKey) : [],
@@ -943,7 +1049,7 @@ let tapCharm = 0;
 const dateKey = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; };
 function save() {
   if (!state.loading) data.neko.resume = { subject: state.subject, lessonIds: state.lessonIds, lessonId: state.lessonId,
-    chapter: state.chapter, mode: state.mode, current: state.current, flipped: state.flipped,
+    collection: state.collection, chapter: state.chapter, mode: state.mode, current: state.current, flipped: state.flipped,
     order: state.order, shuffle: state.shuffle, finished: state.finished };
   data.neko.sound = soundEnabled; data.neko.soundEnabled = soundEnabled; data.neko.answerMode = state.answerMode;
   try { localStorage.setItem(KEY, JSON.stringify(data)); }
@@ -1094,7 +1200,7 @@ function stats() {
   $('resumeStudy').hidden = !state.lessonIds.some(id => meta.some(m => m.id === id)) || !state.current;
   $('resumeContext').hidden = $('resumeStudy').hidden;
   const titles = state.lessonIds.map(id => meta.find(m=>m.id===id)?.title).filter(Boolean);
-  $('resumeContext').textContent = titles.length ? `前回：${titles[0]}${titles.length>1 ? ` ほか${titles.length-1}教材` : ''}` : '';
+  $('resumeContext').textContent = state.collection ? `前回：${state.collection.name}` : titles.length ? `前回：${titles[0]}${titles.length>1 ? ` ほか${titles.length-1}教材` : ''}` : '';
 
 }
 function showScreen(next) {
@@ -1152,6 +1258,8 @@ function normalizeCatalogScope() {
   for (const id of selected) if (!allowed.has(id)) selected.delete(id);
 }
 function setCatalogContext({subject=catalogSubject,field=socialField,series} = {}) {
+  if(catalogIsCollections) $('catalogSearch').value='';
+  catalogIsCollections=false;
   const previous = `${catalogScopeKey()}:${catalogSeries}`;
   seriesMemory.set(catalogScopeKey(),catalogSeries);
   catalogSubject = subject; socialField = field;
@@ -1161,6 +1269,7 @@ function setCatalogContext({subject=catalogSubject,field=socialField,series} = {
   renderCatalog();
 }
 function renderSeriesReview() {
+  if(catalogIsCollections){$('quickReview').hidden=true;return;}
   const weak = catalogSeriesLessons().reduce((n,m) => n + weakFor(m),0);
   $('quickReview').hidden = weak === 0;
   $('quickReview').textContent = `↻ このシリーズの苦手${weak}問にゃ`;
@@ -1194,17 +1303,37 @@ function selectionSummary() {
     b.onclick = () => { selected.delete(m.id); renderCatalog(); }; $('selectedLessons').append(b);
   }
 }
+let seriesEdgeFrame=0;
+function updateSeriesEdges() {
+  seriesEdgeFrame=0;
+  const nav=$('catalogSeries'),wrap=$('seriesScroller'),visible=!wrap.hidden && nav.clientWidth>0;
+  const max=nav.scrollWidth-nav.clientWidth,hasOverflow=visible && max>3;
+  const left=hasOverflow && nav.scrollLeft>3,right=hasOverflow && nav.scrollLeft<max-3;
+  wrap.classList.toggle('has-left',left);wrap.classList.toggle('has-right',right);
+  $('seriesScrollTools').hidden=!hasOverflow;$('seriesPrev').disabled=!left;$('seriesNext').disabled=!right;
+}
+function scheduleSeriesEdges() { if(!seriesEdgeFrame)seriesEdgeFrame=requestAnimationFrame(updateSeriesEdges); }
+function scrollSeriesPage(direction) {
+  const nav=$('catalogSeries');
+  nav.scrollBy({left:direction*Math.max(1,nav.clientWidth*.76),behavior:reduced?'instant':'smooth'});
+  scheduleSeriesEdges();
+}
+$('seriesPrev').onclick=()=>scrollSeriesPage(-1);$('seriesNext').onclick=()=>scrollSeriesPage(1);
+$('catalogSeries').addEventListener('scroll',scheduleSeriesEdges,{passive:true});
+if(typeof ResizeObserver!=='undefined')new ResizeObserver(scheduleSeriesEdges).observe($('catalogSeries'));
 function revealSelectedSeries() {
   const nav = $('catalogSeries'), button = nav.querySelector('button.active');
-  if (!button || !nav.clientWidth) return;
+  if (!button || !nav.clientWidth) {updateSeriesEdges();return;}
   const bounds = nav.getBoundingClientRect(), item = button.getBoundingClientRect();
   const gap = 2;
   if (item.left < bounds.left + gap) nav.scrollLeft += item.left - bounds.left - gap;
   else if (item.right > bounds.right - gap) nav.scrollLeft += item.right - bounds.right + gap;
+  updateSeriesEdges();
 }
-window.addEventListener('resize',() => requestAnimationFrame(revealSelectedSeries),{passive:true});
+window.addEventListener('resize',scheduleSeriesEdges,{passive:true});
 function renderCatalog() {
-  normalizeCatalogScope();
+  if(!catalogIsCollections) normalizeCatalogScope();
+  syncCollectionCatalog();
   const focusedLesson = document.activeElement?.dataset?.lesson;
   const focusedFilter = document.activeElement?.parentElement?.id === 'catalogFilters' ? document.activeElement.textContent : null;
   const focusedSeries = document.activeElement?.closest('[data-series]')?.dataset.series;
@@ -1221,7 +1350,10 @@ function renderCatalog() {
     b.onclick=()=>setCatalogContext({subject:id});
     $('catalogSubjects').append(b);
   }
+  const mine=collectionButton('🐾 マイまとめ','',openMyCollections);mine.dataset.collectionTab='true';mine.setAttribute('aria-pressed',String(catalogIsCollections));mine.classList.toggle('active',catalogIsCollections);$('catalogSubjects').append(mine);
+  if(catalogIsCollections) [...$('catalogSubjects').querySelectorAll('[data-subject]')].forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
   if(subjectFocus) [...$('catalogSubjects').children].find(b=>b.dataset.subject===subjectFocus)?.focus({preventScroll:true});
+  if(catalogIsCollections){renderMyCollections();return;}
   $('socialSwitch').replaceChildren();
   for(const id of [...new Set(['geography','history','civics',...catalogChoices().map(m=>m.field)])]) {
     if (!social) break;
@@ -1354,9 +1486,9 @@ function markSeen() {
 }
 function scopeChoices() {
   if (!lesson) return [{id:'all',title:'すべて'}];
-  if (state.lessonIds.length > 1) return [{id:'all',title:'選んだ教材すべて'}, ...state.lessonIds.map(id => ({id:'lesson:'+id,title:loaded.get(id)?.title || ''}))];
+  if (state.lessonIds.length > 1) return [{id:'all',title:state.collection?'まとめのすべて':'選んだ教材すべて'}, ...state.lessonIds.map(id => ({id:'lesson:'+id,title:loaded.get(id)?.title || ''}))];
   const raw = loaded.get(state.lessonIds[0]);
-  return [{id:'all',title:'すべて'},...(raw?.chapters || []).filter(c => c.id !== 'all').map(ch => ({id:cardKey(raw.id,ch.id),title:ch.title}))];
+  return [{id:'all',title:state.collection?'まとめのすべて':'すべて'},...(raw?.chapters || []).filter(c => c.id !== 'all').map(ch => ({id:cardKey(raw.id,ch.id),title:ch.title}))];
 }
 function renderControls() {
   document.querySelectorAll('[data-face-mode]').forEach(b => { const on = (b.dataset.faceMode === 'answer') === state.answerMode; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
@@ -1370,7 +1502,7 @@ function renderControls() {
   $('progressLabel').textContent = `おぼえた ${ct.known} / ${n}問`; $('percentLabel').textContent = p+'%'; $('progressBar').style.width = p+'%'; $('progressTrack').setAttribute('aria-valuenow',p);
   $('breakdown').textContent = `まだ ${ct.unmarked} · おぼえてない ${ct.weak} · おぼえた ${ct.known}`;
   const raw = loaded.get(current()?.lessonId); $('lessonGrade').textContent = raw?.subject === 'social' ? fieldLabel(raw.field,raw.subject) : (raw?.grade || '');
-  $('sessionSummary').textContent = state.lessonIds.length === 1 ? (loaded.get(state.lessonIds[0])?.title || '') : `${state.lessonIds.length}教材をまとめて学習`;
+  $('sessionSummary').textContent = state.collection ? state.collection.name : state.lessonIds.length === 1 ? (loaded.get(state.lessonIds[0])?.title || '') : `${state.lessonIds.length}教材をまとめて学習`;
   $('undoButton').disabled = !undo; $('finishUndo').hidden = !undo;
   $('undoButton').textContent = undoHistory.length > 1 ? `↶ ひとつ戻すにゃ（${undoHistory.length}）` : '↶ ひとつ戻すにゃ';
   const scope = scopeChoices().find(c => c.id === state.chapter)?.title || 'すべて';
@@ -1410,7 +1542,7 @@ function render() {
   const c = current(), raw = loaded.get(c.lessonId); renderSource(c); renderSupplements(raw); $('stage').hidden = false;
   $('card').classList.toggle('is-back',state.flipped); $('faceLabel').textContent = state.flipped ? '解答' : '問題';
   const chapter = raw.chapters?.find(ch => ch.id === c.chapter)?.title || raw.title;
-  $('cardUnit').textContent = `${state.lessonIds.length>1 ? raw.title+' / ' : ''}${chapter} · ${c.displayNumber || c.originalId}`;
+  $('cardUnit').textContent = `${state.lessonIds.length>1 || state.collection ? raw.title+' / ' : ''}${chapter} · ${c.displayNumber || c.originalId}`;
   $('focusPosition').textContent = `${d.findIndex(x=>x.id===c.id)+1} / ${d.length}`;
   $('cardStatus').textContent = labels[status(c)] || 'まだ'; $('cardPosition').textContent = `${d.findIndex(x => x.id === c.id)+1} / ${d.length}問${state.mode !== 'all' ? ' · '+labels[state.mode] : ''}`;
   const url=window.NekoImageURL(state.flipped ? c.answer : c.question), cached=imageLoader.peek(url);
@@ -1454,17 +1586,24 @@ async function getLesson(m) {
   if (!pending.has(m.id)) pending.set(m.id,fetch(m.data).then(r => { if (!r.ok) throw Error('教材が開けなかったにゃ'); return r.json(); }).then(raw => { loaded.set(m.id,raw); pending.delete(m.id); return raw; }).catch(e => { pending.delete(m.id); throw e; }));
   return pending.get(m.id);
 }
-async function selectLessons(ids,{resume=false,startMode='all'} = {}) {
-  pause(); const seq = ++request; const choices = meta.filter(m => ids.includes(m.id));
+async function selectLessons(ids,{resume=false,startMode='all',collection=resume?state.collection:null} = {}) {
+  pause(); const seq=++request;
+  if(collection && ids.some(id=>!meta.some(m=>m.id===id))) await importedLessonsReady;
+  if(seq!==request)return; const choices = meta.filter(m => ids.includes(m.id));
   const previousState = {...state,lessonIds:[...state.lessonIds],order:[...state.order]}, previousLesson = lesson, previousUndo = undo, previousHistory = [...undoHistory];
   if (!choices.length) { toast('目次から教材を選ぶにゃ'); showScreen('catalog'); return; }
-  lesson = null; state.lessonIds = choices.map(m => m.id); state.loading = true;
+  lesson = null; state.lessonIds = choices.map(m => m.id); state.collection=collection; state.loading = true;
   selected.clear(); for (const id of state.lessonIds) selected.add(id);
   if (!resume) { if(startMode === 'weak') state.answerMode = false; Object.assign(state,{chapter:'all',mode:startMode,current:null,flipped:state.answerMode,order:[],finished:false}); }
   undo = null; undoHistory.length = 0; assessmentLockUntil = 0; showScreen('study'); render(); $('resumeNote').hidden = true;
   try {
     const raws = await Promise.all(choices.map(getLesson)); if (seq !== request) return;
     lesson = { cards: raws.flatMap(raw => raw.cards.map(c => ({...c, id:cardKey(raw.id,c.id), originalId:c.id, lessonId:raw.id, chapterKey:cardKey(raw.id,c.chapter)}))) };
+    if(state.collection){
+      const ranks=new Map(state.collection.cardKeys.map((id,i)=>[id,i]));
+      lesson.cards=lesson.cards.filter(c=>ranks.has(c.id)).sort((a,b)=>ranks.get(a.id)-ranks.get(b.id));
+      if(lesson.cards.length!==ranks.size)toast('一部の問題は元の教材が見つからないにゃ。');
+    }
     state.loading = false; const allIds = lesson.cards.map(c => c.id);
     if (!resume || !state.order.length) state.order = state.shuffle ? shuffle([...allIds]) : allIds;
     else { const valid = new Set(allIds); state.order = [...new Set([...state.order.filter(id => valid.has(id)), ...allIds])]; }
@@ -1537,8 +1676,225 @@ function register(raw) {
   const item = {...raw,count:raw.cards.length}, index = meta.findIndex(m => m.id === raw.id); if (index>=0) meta[index] = item; else meta.push(item);
   loaded.set(raw.id,raw); stats(); if (screen === 'catalog') renderCatalog();
 }
+// Named sets store references to original cards; images and learning records stay shared.
+const COLLECTION_KEY = 'jc-image-quiz-collections-v1';
+let catalogIsCollections = false, collectionEditor = null, collectionEditSequence = 0, collectionPreviewCard = null, collectionPreviewAnswer = false, collectionThumbObserver = null;
+function collectionNode(tag,text,className='') { const e=document.createElement(tag); if(text!==undefined)e.textContent=text; if(className)e.className=className; return e; }
+function collectionButton(text,className,action) { const b=collectionNode('button',text,className);b.type='button';b.onclick=action;return b; }
+function readCollections() {
+  try {
+    const stored=JSON.parse(localStorage.getItem(COLLECTION_KEY)||'{"collections":[]}');
+    if (!Array.isArray(stored.collections)) return [];
+    const ids=new Set();
+    return stored.collections.filter(c=>c && typeof c.id==='string' && !ids.has(c.id) && ids.add(c.id) && typeof c.name==='string' && Array.isArray(c.cards)).map(c=>{
+      const seen=new Set();
+      const cards=c.cards.filter(r=>r && typeof r.lessonId==='string' && typeof r.cardId==='string' && !seen.has(cardKey(r.lessonId,r.cardId)) && seen.add(cardKey(r.lessonId,r.cardId))).map(r=>({lessonId:r.lessonId,cardId:r.cardId}));
+      return {id:c.id,name:c.name.slice(0,50),cards,updated:c.updated};
+    });
+  } catch {return [];}
+}
+function writeCollections(items) {
+  try { localStorage.setItem(COLLECTION_KEY,JSON.stringify({version:1,collections:items})); return true; }
+  catch { $('collectionEditorStatus').textContent='保存できなかったにゃ。端末の空き容量とブラウザーの保存設定を確認してにゃ。';return false; }
+}
+function collectionSnapshot(c) {return {id:c.id,name:c.name,cardKeys:c.cards.map(r=>cardKey(r.lessonId,r.cardId))};}
+function collectionKnown(c) {return c.cards.filter(r=>data.records[r.lessonId]?.[r.cardId]?.status==='known').length;}
+function syncCollectionCatalog() {
+  const on=catalogIsCollections;
+  $('myCollectionsPanel').hidden=!on;
+  document.querySelector('#catalogScreen .catalog-filter-row').hidden=on;
+  $('seriesScroller').hidden=on; $('catalogSeries').hidden=on; $('catalogDock').hidden=on;
+  document.querySelector('#catalogScreen .catalog-list-tools').hidden=on;
+  $('catalogGroups').hidden=on; if(on)$('catalogEmpty').hidden=true;
+  $('openImport').hidden=on;
+  $('catalogSearch').placeholder=on?'まとめをさがすにゃ':'教材をさがすにゃ';
+  $('catalogSearch').setAttribute('aria-label',on?'マイまとめを検索':'教材名で検索');
+  if(on)$('quickReview').hidden=true;
+  $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
+}
+function openMyCollections() {catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();}
+function renderMyCollections() {
+  const root=$('myCollectionList');root.replaceChildren();
+  const q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=readCollections();
+  const items=all.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q));
+  if (!items.length) {
+    const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'そのまとめは見つからないにゃ':'自分だけのまとめを作るにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'「定期テスト対策」「苦手リスト」など、好きな名前でまとめられるにゃ。'));root.append(e);return;
+  }
+  for(const c of items) {
+    const box=collectionNode('article',undefined,'my-collection-card'),ids=[...new Set(c.cards.map(r=>r.lessonId))];
+    box.dataset.collection=c.id;box.append(collectionNode('h3',c.name),collectionNode('p',`${ids.length}教材から ${c.cards.length}問 · おぼえた ${collectionKnown(c)}問`));
+    const buttons=collectionNode('div',undefined,'my-collection-actions');
+    buttons.append(collectionButton('はじめるにゃ 🐾','primary-button',()=>startCollection(c.id)),collectionButton('編集にゃ','tool',()=>openCollectionEditor(c.id)),collectionButton('削除','link-button',()=>{
+      if(!confirm(`「${c.name}」を削除するにゃ？ 元の教材や学習記録は残るにゃ。`))return;
+      if(writeCollections(readCollections().filter(x=>x.id!==c.id))){renderMyCollections();toast('まとめを削除したにゃ');}else toast('まとめを削除できなかったにゃ');
+    }));box.append(buttons);root.append(box);
+  }
+}
+async function startCollection(id) {
+  const c=readCollections().find(c=>c.id===id);if(!c?.cards.length){toast('問題を選んで保存してにゃ');return;}
+  const ids=[...new Set(c.cards.map(r=>r.lessonId))];
+  if(!ids.some(id=>meta.some(m=>m.id===id))){toast('元の教材が見つからないにゃ。教材を読み込んでにゃ。');return;}
+  beep('open');return selectLessons(ids,{collection:collectionSnapshot(c)});
+}
+function collectionEditorRefs() {
+  const cards=[];if(!collectionEditor)return cards;
+  for(const [lessonId,ids] of collectionEditor.cards) {
+    const raw=loaded.get(lessonId), ordered=raw ? raw.cards.filter(c=>ids.has(c.id)).map(c=>c.id) : [...ids];
+    const found=new Set(ordered);
+    for(const cardId of [...ordered,...[...ids].filter(id=>!found.has(id))])cards.push({lessonId,cardId});
+  }
+  return cards;
+}
+function collectionSignature() {return JSON.stringify({name:$('collectionName').value.trim(),cards:collectionEditorRefs()});}
+function fillCollectionSubjects() {
+  const select=$('collectionSubject'),value=select.value;select.replaceChildren();
+  for(const [id,label] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const option=collectionNode('option',label);option.value=id;select.append(option);}
+  select.value=[...select.options].some(o=>o.value===value)?value:'all';fillCollectionLessons();
+}
+function fillCollectionLessons() {
+  const select=$('collectionLessonPicker'),previous=select.value,subject=$('collectionSubject').value;
+  const q=$('collectionLessonSearch').value.normalize('NFKC').trim().toLocaleLowerCase();select.replaceChildren();
+  for(const sub of [...new Set(meta.map(m=>m.subject))]) {
+    if(subject!=='all' && subject!==sub)continue;
+    const group=collectionNode('optgroup');group.label=subjectLabel(sub);
+    for(const m of meta.filter(m=>m.subject===sub && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)))) {
+      const option=collectionNode('option',`${m.title}（${m.count}問）`);option.value=m.id;group.append(option);
+    }
+    if(group.children.length)select.append(group);
+  }
+  const options=[...select.options];select.value=options.some(o=>o.value===previous)?previous:(options[0]?.value||'');
+  $('collectionAddWhole').disabled=$('collectionPickCards').disabled=!options.length;
+}
+function editorStatus(message='') {$('collectionEditorStatus').textContent=message;}
+function updateCollectionTotal() {
+  const refs=collectionEditorRefs();$('collectionTotal').textContent=`${new Set(refs.map(r=>r.lessonId)).size}教材 · ${refs.length}問`;
+  if(collectionEditor?.activeRaw){const raw=collectionEditor.activeRaw,chosen=collectionEditor.cards.get(raw.id)||new Set();$('collectionGridCount').textContent=`${raw.cards.length}問のうち ${raw.cards.filter(c=>chosen.has(c.id)).length}問を選択中にゃ`;
+    for(const e of $('collectionGrid').querySelectorAll('[data-collection-card]')){const on=chosen.has(e.dataset.collectionCard);e.setAttribute('aria-pressed',String(on));e.querySelector('.collection-tile-tick').textContent=on?'✓':'';}
+  }
+}
+function renderCollectionTabs() {
+  const nav=$('collectionLessonTabs');nav.replaceChildren();if(!collectionEditor)return;
+  for(const [id,chosen] of collectionEditor.cards) {
+    const m=meta.find(m=>m.id===id),b=collectionButton(`${m?.title||'元の教材が見つからないにゃ'} · ${chosen.size}問`,'',()=>loadCollectionGrid(id));
+    b.dataset.collectionLesson=id;b.setAttribute('aria-pressed',String(collectionEditor.activeId===id));nav.append(b);
+  }
+}
+async function openCollectionEditor(id=null) {
+  const existing=readCollections().find(c=>c.id===id);if(id&&!existing){toast('まとめが見つからないにゃ');return;}
+  pause();collectionEditSequence++;
+  collectionEditor={id:existing?.id||null,updated:existing?.updated,cards:new Map(),activeId:null,activeRaw:null};
+  for(const r of existing?.cards||[]){if(!collectionEditor.cards.has(r.lessonId))collectionEditor.cards.set(r.lessonId,new Set());collectionEditor.cards.get(r.lessonId).add(r.cardId);}
+  $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';
+  $('collectionDialogTitle').textContent=existing?'マイまとめを編集するにゃ':'マイまとめを作るにゃ';
+  $('collectionSave').disabled=false;$('collectionActive').inert=false;$('collectionActive').hidden=true;$('collectionGrid').replaceChildren();$('collectionPicker').open=!existing?.cards.length;editorStatus();fillCollectionSubjects();renderCollectionTabs();updateCollectionTotal();
+  collectionEditor.signature=collectionSignature();$('collectionDialog').classList.toggle('motion-off',reduced);$('collectionDialog').showModal();$('collectionEditorBody').scrollTop=0;$('collectionName').focus();
+  if(existing?.cards.length)await loadCollectionGrid(existing.cards[0].lessonId);
+}
+function closeCollectionEditor() {
+  if(collectionEditor && collectionSignature()!==collectionEditor.signature && !confirm('まだ保存していないにゃ。編集をやめるにゃ？'))return;
+  collectionEditSequence++;collectionThumbObserver?.disconnect();$('collectionPreview').close();$('collectionDialog').close();collectionEditor=null;
+}
+async function loadCollectionGrid(id,{whole=false}={}) {
+  if(!collectionEditor)return;
+  const editor=collectionEditor,seq=++collectionEditSequence,m=meta.find(m=>m.id===id);
+  if(!m){editor.activeId=id;editor.activeRaw=null;$('collectionSave').disabled=false;$('collectionActive').inert=false;$('collectionActive').hidden=false;$('collectionActiveTitle').textContent='元の教材が見つからないにゃ';$('collectionGrid').replaceChildren();$('collectionGridCount').textContent='元の教材を読み込むか、この教材を外してにゃ。';editorStatus();fillCollectionLessons();renderCollectionTabs();return;}
+  editorStatus('ちょっと待ってにゃ🐾');$('collectionAddWhole').disabled=$('collectionPickCards').disabled=$('collectionSave').disabled=true;$('collectionActive').inert=true;
+  try {
+    const raw=await getLesson(m);if(collectionEditor!==editor || seq!==collectionEditSequence)return;
+    if(!editor.cards.has(id))editor.cards.set(id,new Set());editor.activeId=id;editor.activeRaw=raw;
+    if(whole)editor.cards.set(id,new Set(raw.cards.map(c=>c.id)));
+    $('collectionActive').hidden=false;$('collectionActiveTitle').textContent=raw.title;$('collectionNumbers').value='';$('collectionNumbers').removeAttribute('aria-invalid');$('collectionPicker').open=false;
+    renderCollectionTabs();renderCollectionGrid();editorStatus();
+    $('collectionActiveTitle').scrollIntoView({block:'nearest',behavior:'instant'});
+  } catch {if(collectionEditor===editor && seq===collectionEditSequence)editorStatus('教材が開けなかったにゃ。通信を確認して、もう一度選んでにゃ。');}
+  finally{if(collectionEditor===editor && seq===collectionEditSequence){fillCollectionLessons();$('collectionSave').disabled=false;$('collectionActive').inert=false;}}
+}
+function renderCollectionGrid() {
+  collectionThumbObserver?.disconnect();
+  collectionThumbObserver=typeof IntersectionObserver==='function' ? new IntersectionObserver(entries=>{
+    for(const entry of entries)if(entry.isIntersecting){const img=entry.target;if(img.dataset.src){img.src=img.dataset.src;delete img.dataset.src;}collectionThumbObserver.unobserve(img);}
+  },{root:$('collectionEditorBody'),rootMargin:'200px 0px'}) : null;
+  const root=$('collectionGrid');root.replaceChildren();const raw=collectionEditor?.activeRaw;if(!raw)return;
+  for(const c of raw.cards) {
+    const tile=collectionNode('div',undefined,'collection-tile'),number=String(c.displayNumber||c.id);
+    const b=collectionButton('', 'collection-check',()=>toggleCollectionCard(c.id));b.dataset.collectionCard=c.id;b.setAttribute('aria-label',`第${number}問を選択`);
+    const img=collectionNode('img');img.loading='lazy';img.decoding='async';img.alt=`第${number}問`;img.width=320;img.height=180;
+    if(collectionThumbObserver){img.dataset.src=window.NekoImageURL(c.question);collectionThumbObserver.observe(img);}else img.src=window.NekoImageURL(c.question);
+    const label=collectionNode('span',undefined,'collection-tile-label');label.append(collectionNode('span',number),collectionNode('span','','collection-tile-tick'));
+    b.append(img,label);const zoom=collectionButton('⤢','collection-zoom',()=>openCollectionPreview(c.id));zoom.setAttribute('aria-label',`第${number}問の画像を拡大`);tile.append(b,zoom);root.append(tile);
+  }
+  updateCollectionTotal();
+}
+function toggleCollectionCard(id) {
+  const editor=collectionEditor;if(!editor?.activeRaw)return;
+  const chosen=editor.cards.get(editor.activeRaw.id);if(chosen.has(id))chosen.delete(id);else chosen.add(id);
+  editorStatus();updateCollectionTotal();renderCollectionTabs();syncCollectionPreview();
+}
+function modifyCollectionCards(action) {
+  const editor=collectionEditor,raw=editor?.activeRaw;if(!raw)return;
+  const chosen=editor.cards.get(raw.id);
+  if(action==='all')for(const c of raw.cards)chosen.add(c.id);
+  if(action==='weak')for(const c of raw.cards)if(data.records[raw.id]?.[c.id]?.status==='weak')chosen.add(c.id);
+  if(action==='clear')chosen.clear();
+  editorStatus(action==='weak'?'いま「おぼえてない」の問題を追加で選んだにゃ。保存後の自動更新はしないにゃ。':'');updateCollectionTotal();renderCollectionTabs();syncCollectionPreview();
+}
+function applyCollectionNumbers() {
+  const raw=collectionEditor?.activeRaw;if(!raw)return;
+  const input=$('collectionNumbers'),tokens=input.value.normalize('NFKC').replace(/[〜～~–—－]/g,'-').replace(/\s*-\s*/g,'-').split(/[,、，\s]+/).filter(Boolean),numbers=new Set();
+  try {
+    if(!tokens.length)throw Error('番号を入れてにゃ。例：1-10, 15, 20-25');
+    for(const t of tokens){const m=t.match(/^(\d+)(?:-(\d+))?$/);if(!m)throw Error('番号は「1-10, 15」の形で入れてにゃ。');const a=Number(m[1]),b=Number(m[2]||m[1]);if(!Number.isSafeInteger(a)||!Number.isSafeInteger(b)||a<1||b<a||b-a>10000)throw Error('番号の範囲を確認してにゃ。');for(let n=a;n<=b;n++)numbers.add(n);}
+    const byNumber=new Map();for(const c of raw.cards){const label=String(c.displayNumber||c.id);if(/^\d+$/.test(label))byNumber.set(Number(label),c.id);}
+    const missing=[...numbers].filter(n=>!byNumber.has(n));if(missing.length)throw Error(`この教材にない番号にゃ：${missing.slice(0,8).join('、')}${missing.length>8?'…':''}`);
+    const chosen=collectionEditor.cards.get(raw.id);for(const n of numbers)chosen.add(byNumber.get(n));input.removeAttribute('aria-invalid');editorStatus();updateCollectionTotal();renderCollectionTabs();
+  } catch(e){input.setAttribute('aria-invalid','true');editorStatus(e.message);input.focus();}
+}
+function openCollectionPreview(id) {
+  const raw=collectionEditor?.activeRaw,c=raw?.cards.find(c=>c.id===id);if(!c)return;
+  collectionPreviewCard=c;collectionPreviewAnswer=false;syncCollectionPreview();$('collectionPreview').showModal();
+}
+function syncCollectionPreview() {
+  const c=collectionPreviewCard,raw=collectionEditor?.activeRaw;if(!c||!raw)return;
+  const face=collectionPreviewAnswer?'answer':'question',number=String(c.displayNumber||c.id);
+  $('collectionPreviewTitle').textContent=`${raw.title} · ${number} · ${collectionPreviewAnswer?'解答':'問題'}`;
+  $('collectionPreviewImage').src=window.NekoImageURL(c[face]);$('collectionPreviewImage').alt=`第${number}問の${collectionPreviewAnswer?'解答':'問題'}`;
+  $('collectionPreviewFlip').textContent=collectionPreviewAnswer?'問題を見るにゃ':'解答を見るにゃ';
+  const on=collectionEditor.cards.get(raw.id)?.has(c.id);$('collectionPreviewSelect').textContent=on?'選択を外すにゃ':'選ぶにゃ ✓';$('collectionPreviewSelect').setAttribute('aria-pressed',String(!!on));
+}
+function saveCollectionEditor() {
+  if(!collectionEditor)return;
+  const name=$('collectionName').value.trim(),refs=collectionEditorRefs();
+  if(!name){$('collectionName').setAttribute('aria-invalid','true');editorStatus('まとめの名前を入れてにゃ。');$('collectionName').focus();return;}
+  if(!refs.length){editorStatus('問題を1問以上選んでにゃ。');return;}
+  const items=readCollections(),existing=items.find(c=>c.id===collectionEditor.id);
+  if(collectionEditor.id && (!existing || existing.updated!==collectionEditor.updated)){editorStatus('別の画面で変更されたにゃ。一度閉じて、編集し直してにゃ。');return;}
+  const c={id:collectionEditor.id||'collection-'+(crypto.randomUUID?.()||Date.now().toString(36)),name,cards:refs,updated:new Date().toISOString()};
+  const at=items.findIndex(x=>x.id===c.id);if(at<0)items.push(c);else items[at]=c;
+  if(!writeCollections(items))return;
+  collectionEditSequence++;collectionThumbObserver?.disconnect();$('collectionDialog').close();collectionEditor=null;catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問のまとめを保存したにゃ🐾`);
+}
+$('newMyCollection').onclick=()=>openCollectionEditor();
+$('collectionSubject').onchange=fillCollectionLessons;$('collectionLessonSearch').oninput=fillCollectionLessons;
+$('collectionAddWhole').onclick=()=>loadCollectionGrid($('collectionLessonPicker').value,{whole:true});
+$('collectionPickCards').onclick=()=>loadCollectionGrid($('collectionLessonPicker').value);
+$('collectionEditorClose').onclick=$('collectionEditorCancel').onclick=closeCollectionEditor;
+$('collectionDialog').addEventListener('cancel',e=>{e.preventDefault();closeCollectionEditor();});
+$('collectionSave').onclick=saveCollectionEditor;
+$('collectionApplyNumbers').onclick=applyCollectionNumbers;
+$('collectionNumbers').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();applyCollectionNumbers();}});
+$('collectionSelectAll').onclick=()=>modifyCollectionCards('all');$('collectionSelectWeak').onclick=()=>modifyCollectionCards('weak');$('collectionClearCards').onclick=()=>modifyCollectionCards('clear');
+$('collectionRemoveLesson').onclick=()=>{
+  if(!collectionEditor)return;collectionEditSequence++;collectionEditor.cards.delete(collectionEditor.activeId);collectionEditor.activeId=null;collectionEditor.activeRaw=null;$('collectionActive').hidden=true;$('collectionGrid').replaceChildren();renderCollectionTabs();updateCollectionTotal();editorStatus();
+  const id=collectionEditor.cards.keys().next().value;if(id)loadCollectionGrid(id);else $('collectionPicker').open=true;
+};
+$('collectionPreviewClose').onclick=()=>$('collectionPreview').close();
+$('collectionPreviewFlip').onclick=()=>{collectionPreviewAnswer=!collectionPreviewAnswer;syncCollectionPreview();};
+$('collectionPreviewSelect').onclick=()=>{if(collectionPreviewCard)toggleCollectionCard(collectionPreviewCard.id);};
+$('collectionPreview').addEventListener('close',()=>{collectionPreviewCard=null;$('collectionPreviewImage').removeAttribute('src');});
+window.addEventListener('storage',e=>{if(e.key===COLLECTION_KEY && catalogIsCollections && !collectionEditor)renderMyCollections();});
+
 window.NekoApp = {
-  register, finishImports: async () => { stats(); if (screen === 'catalog') renderCatalog(); },
+  register, finishImports: async () => { resolveImportedLessons(); stats(); if (screen === 'catalog') renderCatalog(); },
   selectImported: async id => { catalogSubject = state.subject = meta.find(m => m.id === id).subject; await selectLessons([id]); }, pause, toast,
   get catalog() { return meta.map(({cards,...m})=>({...m})); },
   get state() { return {...state,lessonIds:[...state.lessonIds],order:[...state.order]}; }, get current() { return current(); }, get records() { return data.records; }
@@ -1649,7 +2005,7 @@ $('studyOptions').addEventListener('toggle',()=>{ if ($('studyOptions').open) pa
 $('zoomImage').onclick = () => { pause(); imageView.zoom(); };
 if (typeof ResizeObserver !== 'undefined') {
   new ResizeObserver(() => {
-    if (!$('catalogScreen').hidden) $('catalogScreen').style.paddingBottom = ($('catalogDock').offsetHeight + 48) + 'px';
+    if (!$('catalogScreen').hidden && !catalogIsCollections) $('catalogScreen').style.paddingBottom = ($('catalogDock').offsetHeight + 48) + 'px';
   }).observe($('catalogDock'));
 }
 
@@ -1910,5 +2266,6 @@ $('importForm').onsubmit=async e=>{e.preventDefault();const button=$('importSubm
 })();
 
 </script></body></html>
+
 
 

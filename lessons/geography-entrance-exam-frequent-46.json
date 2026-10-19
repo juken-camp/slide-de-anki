@@ -1,0 +1,543 @@
+{
+  "id": "geography-entrance-exam-frequent-46",
+  "subject": "social",
+  "field": "geography",
+  "title": "地理のよく出る問題｜高校受験対策 46問",
+  "grade": "中学社会・高校受験",
+  "description": "高校入試によく出る地理46問。世界地理26問と日本地理20問。動画の問題・解答画面を無加工で収録。",
+  "cover": "images_06/geography-entrance-exam-frequent-46/question_001.png",
+  "chapters": [
+    {
+      "id": "world",
+      "title": "世界の地理"
+    },
+    {
+      "id": "japan",
+      "title": "日本の地理"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_001.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_001.png?v=7a4746a189b6a229",
+      "sourceTimes": {
+        "question": 16,
+        "answer": 30
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_002.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_002.png",
+      "sourceTimes": {
+        "question": 36,
+        "answer": 48
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_003.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_003.png?v=ccab791cc2d92f35",
+      "sourceTimes": {
+        "question": 56,
+        "answer": 70
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_004.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_004.png",
+      "sourceTimes": {
+        "question": 80,
+        "answer": 96
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_005.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_005.png",
+      "sourceTimes": {
+        "question": 108,
+        "answer": 124
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_006.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_006.png",
+      "sourceTimes": {
+        "question": 136,
+        "answer": 148
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_007.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_007.png",
+      "sourceTimes": {
+        "question": 160,
+        "answer": 172
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_008.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_008.png",
+      "sourceTimes": {
+        "question": 184,
+        "answer": 204
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_009.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_009.png?v=f805906c9843100f",
+      "sourceTimes": {
+        "question": 216,
+        "answer": 230
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_010.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_010.png",
+      "sourceTimes": {
+        "question": 240,
+        "answer": 276
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_011.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_011.png",
+      "sourceTimes": {
+        "question": 292,
+        "answer": 316
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_012.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_012.png",
+      "sourceTimes": {
+        "question": 328,
+        "answer": 352
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_013.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_013.png",
+      "sourceTimes": {
+        "question": 368,
+        "answer": 380
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_014.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_014.png",
+      "sourceTimes": {
+        "question": 392,
+        "answer": 408
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_015.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_015.png?v=e4c6e4010194db79",
+      "sourceTimes": {
+        "question": 420,
+        "answer": 434
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_016.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_016.png",
+      "sourceTimes": {
+        "question": 444,
+        "answer": 456
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_017.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_017.png?v=ee5aa0460e4af116",
+      "sourceTimes": {
+        "question": 468,
+        "answer": 483
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_018.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_018.png",
+      "sourceTimes": {
+        "question": 492,
+        "answer": 504
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_019.png?v=462684b33171fef7",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_019.png",
+      "sourceTimes": {
+        "question": 536,
+        "answer": 576
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_020.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_020.png",
+      "sourceTimes": {
+        "question": 592,
+        "answer": 612
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_021.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_021.png",
+      "sourceTimes": {
+        "question": 624,
+        "answer": 648
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_022.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_022.png",
+      "sourceTimes": {
+        "question": 664,
+        "answer": 680
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_023.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_023.png",
+      "sourceTimes": {
+        "question": 692,
+        "answer": 708
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_024.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_024.png",
+      "sourceTimes": {
+        "question": 716,
+        "answer": 728
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_025.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_025.png",
+      "sourceTimes": {
+        "question": 740,
+        "answer": 756
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "world",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_026.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_026.png",
+      "sourceTimes": {
+        "question": 768,
+        "answer": 808
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_027.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_027.png",
+      "sourceTimes": {
+        "question": 824,
+        "answer": 836
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_028.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_028.png",
+      "sourceTimes": {
+        "question": 848,
+        "answer": 872
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_029.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_029.png",
+      "sourceTimes": {
+        "question": 888,
+        "answer": 900
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_030.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_030.png",
+      "sourceTimes": {
+        "question": 912,
+        "answer": 936
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_031.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_031.png",
+      "sourceTimes": {
+        "question": 952,
+        "answer": 980
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_032.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_032.png",
+      "sourceTimes": {
+        "question": 992,
+        "answer": 1004
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_033.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_033.png",
+      "sourceTimes": {
+        "question": 1012,
+        "answer": 1024
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_034.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_034.png",
+      "sourceTimes": {
+        "question": 1036,
+        "answer": 1052
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_035.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_035.png",
+      "sourceTimes": {
+        "question": 1064,
+        "answer": 1076
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_036.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_036.png",
+      "sourceTimes": {
+        "question": 1088,
+        "answer": 1100
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_037.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_037.png",
+      "sourceTimes": {
+        "question": 1112,
+        "answer": 1124
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_038.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_038.png?v=708bf2d41d0069fb",
+      "sourceTimes": {
+        "question": 1136,
+        "answer": 1164
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_039.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_039.png",
+      "sourceTimes": {
+        "question": 1176,
+        "answer": 1188
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_040.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_040.png",
+      "sourceTimes": {
+        "question": 1200,
+        "answer": 1212
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_041.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_041.png",
+      "sourceTimes": {
+        "question": 1224,
+        "answer": 1236
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_042.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_042.png",
+      "sourceTimes": {
+        "question": 1248,
+        "answer": 1272
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_043.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_043.png?v=888b1f01dc19fb4a",
+      "sourceTimes": {
+        "question": 1280,
+        "answer": 1294
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_044.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_044.png",
+      "sourceTimes": {
+        "question": 1300,
+        "answer": 1312
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_045.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_045.png",
+      "sourceTimes": {
+        "question": 1324,
+        "answer": 1340
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "japan",
+      "question": "images_06/geography-entrance-exam-frequent-46/question_046.png",
+      "answer": "images_06/geography-entrance-exam-frequent-46/answer_046.png?v=746a12494c6fc6ec",
+      "sourceTimes": {
+        "question": 1352,
+        "answer": 1372
+      }
+    }
+  ],
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=3x13bUMSBEc",
+  "extractionNotes": {
+    "timestamp_note": "時刻は元動画から画像を取り出すために指定した秒数。無加工の元動画フレームをフルHDのPNGで保存。動画の時刻表示はフレーム単位の精度のため少数秒のずれが生じうる。",
+    "capture_review": "全46問のペア一覧を目視照合。第11問は2つ目の答えまで表示された画面へ、第21問の問題は初期状態へ、第26問は世界編最終解説で次章の案内を回避、第42問は答え表示完了後に調整。",
+    "verifiedReextractions": [
+      {
+        "filename": "answer_001.png",
+        "sourceTime": 30,
+        "sha256": "7a4746a189b6a2296c26dfb32c6b40c5b5421f1d1c9b8e638e7672e9b4b63052",
+        "reason": "正答表示前の画像を正答表示後へ"
+      },
+      {
+        "filename": "answer_003.png",
+        "sourceTime": 70,
+        "sha256": "ccab791cc2d92f35dd8d55e7ad87ea49fcd92bd16f401e5de024e28dcccd2039",
+        "reason": "正答表示前の画像を正答表示後へ"
+      },
+      {
+        "filename": "answer_009.png",
+        "sourceTime": 230,
+        "sha256": "f805906c9843100f737d7f75a8ffcf69de10e281705614b5ddc7136571e426d2",
+        "reason": "正答表示前の画像を正答表示後へ"
+      },
+      {
+        "filename": "answer_015.png",
+        "sourceTime": 434,
+        "sha256": "e4c6e4010194db791d5df971f68db35690dc4c2849105188b670eb549e10ff15",
+        "reason": "正答表示前の画像を正答表示後へ"
+      },
+      {
+        "filename": "answer_017.png",
+        "sourceTime": 483,
+        "sha256": "ee5aa0460e4af1162288437c96f5189d7fcbc763ef37e1da6bfb04d3da6f716c",
+        "reason": "正答表示前の画像を正答表示後へ"
+      },
+      {
+        "filename": "question_019.png",
+        "sourceTime": 536,
+        "sha256": "462684b33171fef71d1548633d3a855afca44ffc764f07cbc84ce2df2d7c0382",
+        "reason": "地域記号と資料写真がそろった問題場面へ"
+      },
+      {
+        "filename": "answer_038.png",
+        "sourceTime": 1164,
+        "sha256": "708bf2d41d0069fb1f377c24fd4f4dd13f395b77cbecb7511cf81d310b481d64",
+        "reason": "3つの海流名がそろった解答場面へ"
+      },
+      {
+        "filename": "answer_043.png",
+        "sourceTime": 1294,
+        "sha256": "888b1f01dc19fb4ab2adcd0eea68f3f4f8b70c8912f5c632cf5df093b25ccb45",
+        "reason": "正答表示前の画像を正答表示後へ"
+      },
+      {
+        "filename": "answer_046.png",
+        "sourceTime": 1372,
+        "sha256": "746a12494c6fc6ec6123b4e8e067b51aa7a43a62a25c45a9c0849459437fd23d",
+        "reason": "4つの島の正答がそろった場面へ"
+      }
+    ]
+  }
+}

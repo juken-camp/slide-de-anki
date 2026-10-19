@@ -1,0 +1,773 @@
+{
+  "id": "civics-entrance-exam-frequent-71",
+  "subject": "social",
+  "field": "civics",
+  "title": "公民のよく出る問題｜高校受験対策 71問",
+  "grade": "中学社会・高校受験",
+  "description": "高校入試頻出の公民71問。現代社会、日本国憲法、人権、民主政治、経済、国際社会を扱う。動画から問題画面と解答画面を無加工で収録。",
+  "cover": "images_05/civics-entrance-exam-frequent-71/question_001.png",
+  "chapters": [
+    {
+      "id": "modern",
+      "title": "現代社会と私たち"
+    },
+    {
+      "id": "rights",
+      "title": "個人の尊重と日本国憲法"
+    },
+    {
+      "id": "politics",
+      "title": "現代の民主政治と社会"
+    },
+    {
+      "id": "economy",
+      "title": "私たちの暮らしと経済"
+    },
+    {
+      "id": "international",
+      "title": "地球社会と私たち"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "modern",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_001.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_001.png",
+      "sourceTimes": {
+        "question": 19.0,
+        "answer": 29.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "modern",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_002.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_002.png",
+      "sourceTimes": {
+        "question": 35.8,
+        "answer": 49.4
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_003.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_003.png",
+      "sourceTimes": {
+        "question": 63.5,
+        "answer": 90.3
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_004.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_004.png",
+      "sourceTimes": {
+        "question": 97.6,
+        "answer": 151.1
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_005.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_005.png",
+      "sourceTimes": {
+        "question": 158.4,
+        "answer": 205.8
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_006.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_006.png",
+      "sourceTimes": {
+        "question": 213.1,
+        "answer": 265.4
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_007.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_007.png",
+      "sourceTimes": {
+        "question": 272.8,
+        "answer": 292.9
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_008.png?v=80a914d42ae4fa36",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_008.png?v=b4926add0d640bfd",
+      "sourceTimes": {
+        "question": 300.1,
+        "answer": 349.4
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "009",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_009.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_009.png",
+      "sourceTimes": {
+        "question": 356.8,
+        "answer": 383.9
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_010.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_010.png",
+      "sourceTimes": {
+        "question": 391.2,
+        "answer": 410.4
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_011.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_011.png",
+      "sourceTimes": {
+        "question": 417.5,
+        "answer": 454.8
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_012.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_012.png",
+      "sourceTimes": {
+        "question": 462.1,
+        "answer": 486.3
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_013.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_013.png",
+      "sourceTimes": {
+        "question": 493.6,
+        "answer": 511.7
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_014.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_014.png",
+      "sourceTimes": {
+        "question": 518.3,
+        "answer": 532.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_015.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_015.png",
+      "sourceTimes": {
+        "question": 537.6,
+        "answer": 549.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_016.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_016.png",
+      "sourceTimes": {
+        "question": 555.5,
+        "answer": 569.2
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_017.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_017.png",
+      "sourceTimes": {
+        "question": 575.8,
+        "answer": 596.6
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_018.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_018.png",
+      "sourceTimes": {
+        "question": 603.9,
+        "answer": 622.3
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_019.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_019.png",
+      "sourceTimes": {
+        "question": 629.4,
+        "answer": 646.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "rights",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_020.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_020.png",
+      "sourceTimes": {
+        "question": 653.4,
+        "answer": 667.4
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_021.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_021.png",
+      "sourceTimes": {
+        "question": 680.4,
+        "answer": 701.6
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_022.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_022.png",
+      "sourceTimes": {
+        "question": 708.9,
+        "answer": 741.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_023.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_023.png",
+      "sourceTimes": {
+        "question": 748.2,
+        "answer": 771.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_024.png?v=9ea2d754548a8a14",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_024.png",
+      "sourceTimes": {
+        "question": 802,
+        "answer": 822.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_025.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_025.png",
+      "sourceTimes": {
+        "question": 829.2,
+        "answer": 846.3
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_026.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_026.png",
+      "sourceTimes": {
+        "question": 853.2,
+        "answer": 870.7
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_027.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_027.png",
+      "sourceTimes": {
+        "question": 877.6,
+        "answer": 896.1
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_028.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_028.png",
+      "sourceTimes": {
+        "question": 903.1,
+        "answer": 925.8
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_029.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_029.png",
+      "sourceTimes": {
+        "question": 933.133,
+        "answer": 962.2
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_030.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_030.png",
+      "sourceTimes": {
+        "question": 969.5,
+        "answer": 1000.1
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_031.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_031.png",
+      "sourceTimes": {
+        "question": 1007.4,
+        "answer": 1025.8
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_032.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_032.png",
+      "sourceTimes": {
+        "question": 1031.8,
+        "answer": 1043.7
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_033.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_033.png",
+      "sourceTimes": {
+        "question": 1049.0,
+        "answer": 1060.6
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_034.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_034.png",
+      "sourceTimes": {
+        "question": 1065.8,
+        "answer": 1077.2
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_035.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_035.png",
+      "sourceTimes": {
+        "question": 1083.5,
+        "answer": 1104.7
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_036.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_036.png",
+      "sourceTimes": {
+        "question": 1112.0,
+        "answer": 1127.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_037.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_037.png",
+      "sourceTimes": {
+        "question": 1133.8,
+        "answer": 1152.6
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_038.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_038.png",
+      "sourceTimes": {
+        "question": 1159.6,
+        "answer": 1179.8
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_039.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_039.png",
+      "sourceTimes": {
+        "question": 1186.2,
+        "answer": 1198.9
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_040.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_040.png",
+      "sourceTimes": {
+        "question": 1205.0,
+        "answer": 1218.7
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_041.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_041.png",
+      "sourceTimes": {
+        "question": 1225.2,
+        "answer": 1243.4
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_042.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_042.png",
+      "sourceTimes": {
+        "question": 1248.7,
+        "answer": 1258.4
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_043.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_043.png",
+      "sourceTimes": {
+        "question": 1264.6,
+        "answer": 1284.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_044.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_044.png",
+      "sourceTimes": {
+        "question": 1290.9,
+        "answer": 1303.9
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "politics",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_045.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_045.png",
+      "sourceTimes": {
+        "question": 1310.4,
+        "answer": 1338.6
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_046.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_046.png",
+      "sourceTimes": {
+        "question": 1351.2,
+        "answer": 1384.1
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_047.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_047.png",
+      "sourceTimes": {
+        "question": 1391.4,
+        "answer": 1408.1
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_048.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_048.png",
+      "sourceTimes": {
+        "question": 1415.0,
+        "answer": 1446.7
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_049.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_049.png",
+      "sourceTimes": {
+        "question": 1454.0,
+        "answer": 1476.3
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_050.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_050.png",
+      "sourceTimes": {
+        "question": 1483.6,
+        "answer": 1506.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_051.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_051.png",
+      "sourceTimes": {
+        "question": 1513.2,
+        "answer": 1536.7
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_052.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_052.png",
+      "sourceTimes": {
+        "question": 1544.0,
+        "answer": 1560.7
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_053.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_053.png",
+      "sourceTimes": {
+        "question": 1567.6,
+        "answer": 1588.2
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_054.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_054.png",
+      "sourceTimes": {
+        "question": 1595.0,
+        "answer": 1608.7
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_055.png?v=144ecb9716af6afa",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_055.png",
+      "sourceTimes": {
+        "question": 1626,
+        "answer": 1638.7
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_056.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_056.png",
+      "sourceTimes": {
+        "question": 1646.0,
+        "answer": 1667.2
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_057.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_057.png",
+      "sourceTimes": {
+        "question": 1674.5,
+        "answer": 1694.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_058.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_058.png",
+      "sourceTimes": {
+        "question": 1701.1,
+        "answer": 1721.3
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_059.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_059.png",
+      "sourceTimes": {
+        "question": 1728.5,
+        "answer": 1752.3
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_060.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_060.png",
+      "sourceTimes": {
+        "question": 1759.6,
+        "answer": 1781.6
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_061.png?v=00efd6d7687eb6ec",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_061.png",
+      "sourceTimes": {
+        "question": 1805,
+        "answer": 1818.7
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_062.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_062.png",
+      "sourceTimes": {
+        "question": 1826.0,
+        "answer": 1848.3
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_063.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_063.png",
+      "sourceTimes": {
+        "question": 1855.6,
+        "answer": 1880.7
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_064.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_064.png",
+      "sourceTimes": {
+        "question": 1888.0,
+        "answer": 1912.7
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_065.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_065.png",
+      "sourceTimes": {
+        "question": 1918.7,
+        "answer": 1929.7
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_066.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_066.png",
+      "sourceTimes": {
+        "question": 1936.0,
+        "answer": 1950.3
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "economy",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_067.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_067.png",
+      "sourceTimes": {
+        "question": 1956.5,
+        "answer": 1973.8
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "international",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_068.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_068.png",
+      "sourceTimes": {
+        "question": 1987.2,
+        "answer": 2003.0
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "international",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_069.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_069.png",
+      "sourceTimes": {
+        "question": 2009.8,
+        "answer": 2032.5
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "international",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_070.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_070.png",
+      "sourceTimes": {
+        "question": 2039.8,
+        "answer": 2057.9
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "international",
+      "question": "images_05/civics-entrance-exam-frequent-71/question_071.png",
+      "answer": "images_05/civics-entrance-exam-frequent-71/answer_071.png",
+      "sourceTimes": {
+        "question": 2064.9,
+        "answer": 2083.0
+      }
+    }
+  ],
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=NlRdKXVm9DA",
+  "extractionNotes": {
+    "timestamp_note": "問題・解答の画像取得時刻は元動画のデコードフレームのPTSに基づく。動画中の番号1～71を12秒間隔の全体レビューと、番号変更付近の絞り込みで検出。問題は解答表示前、解答は原則として解答表示後の完成フレームを採用。フレームは再作画・トリミング・リサイズ・文字変更を一切行わず、全体をPNGに可逆保存。",
+    "capture_review": "71組を問題/解答並列一覧で目視確認。章間案内画面の混入を防ぐため2,20,45,67番の解答を修正。64～67番は社会保障の表の段階的表示を別々に収録。66番と67番の切り替えを微調整。",
+    "verifiedReextractions": [
+      {
+        "filename": "question_024.png",
+        "sourceTime": 802,
+        "sha256": "9ea2d754548a8a14fd99bbc40d553e7919f619d7c0a6463224db44f159685a57",
+        "reason": "資料1の任期・解散の表が表示された問題場面へ"
+      },
+      {
+        "filename": "question_055.png",
+        "sourceTime": 1626,
+        "sha256": "144ecb9716af6afa9184e5e185f46ca01466ea75244faecb7c1e3981b57e4e5a",
+        "reason": "価格Pの補助線が表示された問題場面へ"
+      },
+      {
+        "filename": "question_061.png",
+        "sourceTime": 1805,
+        "sha256": "00efd6d7687eb6ecd5c0ff34136ea4b455ad61b22457c10d7dffb2bf3625d815",
+        "reason": "円安・円高を選ぶ設問が表示された問題場面へ"
+      }
+    ]
+  }
+}

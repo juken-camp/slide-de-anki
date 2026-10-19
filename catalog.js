@@ -39,7 +39,8 @@ window.QUIZ_CATALOG = [
       }
     ],
     "count": 41,
-    "data": "lessons/science-plants-01.json"
+    "data": "lessons/science-plants-01.json",
+    "series": "unit"
   },
   {
     "id": "science-materials-gases-01",
@@ -77,7 +78,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 38,
     "data": "lessons/science-materials-gases-01.json",
-    "source": "https://www.youtube.com/watch?v=BkV_Ay2OTvc"
+    "source": "https://www.youtube.com/watch?v=BkV_Ay2OTvc",
+    "series": "unit"
   },
   {
     "id": "science-physical-phenomena-01",
@@ -103,7 +105,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 48,
     "data": "lessons/science-physical-phenomena-01.json",
-    "source": "https://www.youtube.com/watch?v=kptN4iyTK1I"
+    "source": "https://www.youtube.com/watch?v=kptN4iyTK1I",
+    "series": "unit"
   },
   {
     "id": "science-earth-changes-01",
@@ -129,7 +132,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 43,
     "data": "lessons/science-earth-changes-01.json",
-    "source": "https://www.youtube.com/watch?v=PM_6r09I2qY"
+    "source": "https://www.youtube.com/watch?v=PM_6r09I2qY",
+    "series": "unit"
   },
   {
     "id": "science-chemical-changes-atoms-01",
@@ -159,7 +163,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 44,
     "data": "lessons/science-chemical-changes-atoms-01.json",
-    "source": "https://www.youtube.com/watch?v=5Yt1q9k-37w"
+    "source": "https://www.youtube.com/watch?v=5Yt1q9k-37w",
+    "series": "unit"
   },
   {
     "id": "science-element-symbols-mnemonic-01",
@@ -177,7 +182,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=Mk4-IBmfqIY",
     "count": 22,
-    "data": "lessons/science-element-symbols-mnemonic-01.json"
+    "data": "lessons/science-element-symbols-mnemonic-01.json",
+    "series": "symbols"
   },
   {
     "id": "science-chemical-formulas-01",
@@ -199,7 +205,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=5spu9hM_RCI",
     "count": 25,
-    "data": "lessons/science-chemical-formulas-01.json"
+    "data": "lessons/science-chemical-formulas-01.json",
+    "series": "symbols"
   },
   {
     "id": "science-chemical-reaction-equations-01",
@@ -217,7 +224,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=VzfBnzG1hYg",
     "count": 10,
-    "data": "lessons/science-chemical-reaction-equations-01.json"
+    "data": "lessons/science-chemical-reaction-equations-01.json",
+    "series": "symbols"
   },
   {
     "id": "science-cells-respiration-blood-digestion-01",
@@ -247,7 +255,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 51,
     "data": "lessons/science-cells-respiration-blood-digestion-01.json",
-    "source": "https://www.youtube.com/watch?v=60HKHVuHdXU"
+    "source": "https://www.youtube.com/watch?v=60HKHVuHdXU",
+    "series": "unit"
   },
   {
     "id": "science-excretion-senses-motion-animals-evolution-01",
@@ -281,7 +290,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 41,
     "data": "lessons/science-excretion-senses-motion-animals-evolution-01.json",
-    "source": "https://www.youtube.com/watch?v=O9mOgutocxY"
+    "source": "https://www.youtube.com/watch?v=O9mOgutocxY",
+    "series": "unit"
   },
   {
     "id": "science-electric-circuits-voltage-resistance-01",
@@ -307,7 +317,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 42,
     "data": "lessons/science-electric-circuits-voltage-resistance-01.json",
-    "source": "https://www.youtube.com/watch?v=EA1ESzlWpu4"
+    "source": "https://www.youtube.com/watch?v=EA1ESzlWpu4",
+    "series": "unit"
   },
   {
     "id": "science-magnetism-current-electrons-01",
@@ -329,7 +340,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 38,
     "data": "lessons/science-magnetism-current-electrons-01.json",
-    "source": "https://www.youtube.com/watch?v=upT1JHw7dMk"
+    "source": "https://www.youtube.com/watch?v=upT1JHw7dMk",
+    "series": "unit"
   },
   {
     "id": "science-weather-mechanisms-changes-01",
@@ -359,7 +371,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 56,
     "data": "lessons/science-weather-mechanisms-changes-01.json",
-    "source": "https://www.youtube.com/watch?v=QNdD4PBEdIw"
+    "source": "https://www.youtube.com/watch?v=QNdD4PBEdIw",
+    "series": "unit"
   },
   {
     "id": "science-forces-motion-grade3-01",
@@ -381,7 +394,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 34,
     "data": "lessons/science-forces-motion-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=_aAjQQPy7rg"
+    "source": "https://www.youtube.com/watch?v=_aAjQQPy7rg",
+    "series": "unit"
   },
   {
     "id": "science-work-mechanical-energy-grade3-01",
@@ -415,7 +429,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 35,
     "data": "lessons/science-work-mechanical-energy-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=bb4hH3aa0o4"
+    "source": "https://www.youtube.com/watch?v=bb4hH3aa0o4",
+    "series": "unit"
   },
   {
     "id": "science-growth-cell-division-reproduction-grade3-01",
@@ -449,7 +464,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 42,
     "data": "lessons/science-growth-cell-division-reproduction-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=iYt2Zm5aTsE"
+    "source": "https://www.youtube.com/watch?v=iYt2Zm5aTsE",
+    "series": "unit"
   },
   {
     "id": "science-heredity-rules-grade3-01",
@@ -479,7 +495,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 25,
     "data": "lessons/science-heredity-rules-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=yN8BA_bsQWA"
+    "source": "https://www.youtube.com/watch?v=yN8BA_bsQWA",
+    "series": "unit"
   },
   {
     "id": "science-food-chain-ecosystem-grade3-01",
@@ -505,7 +522,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 19,
     "data": "lessons/science-food-chain-ecosystem-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=Cy6793iQrok"
+    "source": "https://www.youtube.com/watch?v=Cy6793iQrok",
+    "series": "unit"
   },
   {
     "id": "science-solutions-ions-grade3-01",
@@ -543,7 +561,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 46,
     "data": "lessons/science-solutions-ions-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=kRSVgyyqJs8"
+    "source": "https://www.youtube.com/watch?v=kRSVgyyqJs8",
+    "series": "unit"
   },
   {
     "id": "science-ion-formulas-01",
@@ -565,7 +584,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=cOYwj-LSOsY",
     "count": 23,
-    "data": "lessons/science-ion-formulas-01.json"
+    "data": "lessons/science-ion-formulas-01.json",
+    "series": "symbols"
   },
   {
     "id": "science-ions-batteries-grade3-01",
@@ -595,7 +615,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 23,
     "data": "lessons/science-ions-batteries-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=zfCDXNzp5QM"
+    "source": "https://www.youtube.com/watch?v=zfCDXNzp5QM",
+    "series": "unit"
   },
   {
     "id": "science-acids-alkalis-neutralization-grade3-01",
@@ -621,7 +642,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 37,
     "data": "lessons/science-acids-alkalis-neutralization-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=0xQicuZFj24"
+    "source": "https://www.youtube.com/watch?v=0xQicuZFj24",
+    "series": "unit"
   },
   {
     "id": "science-celestial-daily-annual-motion-grade3-01",
@@ -659,7 +681,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 39,
     "data": "lessons/science-celestial-daily-annual-motion-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=amayOcf-ks4"
+    "source": "https://www.youtube.com/watch?v=amayOcf-ks4",
+    "series": "unit"
   },
   {
     "id": "science-moon-planets-grade3-01",
@@ -689,7 +712,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 34,
     "data": "lessons/science-moon-planets-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=25se2-iQ80k"
+    "source": "https://www.youtube.com/watch?v=25se2-iQ80k",
+    "series": "unit"
   },
   {
     "id": "science-solar-system-grade3-01",
@@ -711,7 +735,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 32,
     "data": "lessons/science-solar-system-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=TJbutyqcw-M"
+    "source": "https://www.youtube.com/watch?v=TJbutyqcw-M",
+    "series": "unit"
   },
   {
     "id": "science-galaxy-universe-grade3-01",
@@ -737,7 +762,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 14,
     "data": "lessons/science-galaxy-universe-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=H7KNR8X3F1A"
+    "source": "https://www.youtube.com/watch?v=H7KNR8X3F1A",
+    "series": "unit"
   },
   {
     "id": "science-earth-future-grade3-01",
@@ -771,7 +797,8 @@ window.QUIZ_CATALOG = [
     ],
     "count": 26,
     "data": "lessons/science-earth-future-grade3-01.json",
-    "source": "https://www.youtube.com/watch?v=Z9h5DyPsFEs"
+    "source": "https://www.youtube.com/watch?v=Z9h5DyPsFEs",
+    "series": "unit"
   },
   {
     "id": "science-jhs1-important-terms-56",
@@ -803,7 +830,8 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=mWGtoOjI-iU",
     "count": 56,
-    "data": "lessons/science-jhs1-important-terms-56.json"
+    "data": "lessons/science-jhs1-important-terms-56.json",
+    "series": "terms"
   },
   {
     "id": "science-jhs2-important-terms-67",
@@ -835,7 +863,8 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=8JChvA-nW80",
     "count": 67,
-    "data": "lessons/science-jhs2-important-terms-67.json"
+    "data": "lessons/science-jhs2-important-terms-67.json",
+    "series": "terms"
   },
   {
     "id": "science-jhs3-important-terms-68",
@@ -871,7 +900,8 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=b5lIkNzyGJ4",
     "count": 68,
-    "data": "lessons/science-jhs3-important-terms-68.json"
+    "data": "lessons/science-jhs3-important-terms-68.json",
+    "series": "terms"
   },
   {
     "id": "science-jhs-lab-observation-tools-44",
@@ -915,7 +945,8 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=SoNBrweupcw",
     "count": 44,
-    "data": "lessons/science-jhs-lab-observation-tools-44.json"
+    "data": "lessons/science-jhs-lab-observation-tools-44.json",
+    "series": "themes"
   },
   {
     "id": "science-jhs-laws-11",
@@ -935,7 +966,8 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=iX_peSZ8pLU",
     "count": 11,
-    "data": "lessons/science-jhs-laws-11.json"
+    "data": "lessons/science-jhs-laws-11.json",
+    "series": "themes"
   },
   {
     "id": "science-jhs-formula-calculation-26",
@@ -983,7 +1015,8 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=G86IXodKILY",
     "count": 26,
-    "data": "lessons/science-jhs-formula-calculation-26.json"
+    "data": "lessons/science-jhs-formula-calculation-26.json",
+    "series": "themes"
   },
   {
     "id": "social-civics-modern-international-grade3-01",
@@ -1009,7 +1042,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=AvTxr9PRppM",
     "count": 29,
-    "data": "lessons/social-civics-modern-international-grade3-01.json"
+    "data": "lessons/social-civics-modern-international-grade3-01.json",
+    "series": "unit"
   },
   {
     "id": "social-civics-japan-constitution-grade3-02",
@@ -1043,7 +1077,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=HyCNJIHrnQE",
     "count": 26,
-    "data": "lessons/social-civics-japan-constitution-grade3-02.json"
+    "data": "lessons/social-civics-japan-constitution-grade3-02.json",
+    "series": "unit"
   },
   {
     "id": "social-civics-politics-institutions-grade3-03",
@@ -1073,7 +1108,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=CsKYSCpK-tw",
     "count": 27,
-    "data": "lessons/social-civics-politics-institutions-grade3-03.json"
+    "data": "lessons/social-civics-politics-institutions-grade3-03.json",
+    "series": "unit"
   },
   {
     "id": "social-civics-economy-consumption-welfare-grade3-04",
@@ -1107,7 +1143,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=Lc9rt4CkIgo",
     "count": 29,
-    "data": "lessons/social-civics-economy-consumption-welfare-grade3-04.json"
+    "data": "lessons/social-civics-economy-consumption-welfare-grade3-04.json",
+    "series": "unit"
   },
   {
     "id": "social-civics-constitution-politics-grade3-01",
@@ -1145,7 +1182,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=UTXnqVR1v4w",
     "count": 111,
-    "data": "lessons/social-civics-constitution-politics-grade3-01.json"
+    "data": "lessons/social-civics-constitution-politics-grade3-01.json",
+    "series": "review"
   },
   {
     "id": "social-civics-economy-welfare-global-grade3-02",
@@ -1171,7 +1209,44 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=jXh-urpZd9Y",
     "count": 82,
-    "data": "lessons/social-civics-economy-welfare-global-grade3-02.json"
+    "data": "lessons/social-civics-economy-welfare-global-grade3-02.json",
+    "series": "review"
+  },
+  {
+    "id": "civics-entrance-exam-frequent-71",
+    "subject": "social",
+    "field": "civics",
+    "title": "公民のよく出る問題｜高校受験対策 71問",
+    "grade": "中学社会・高校受験",
+    "description": "高校入試頻出の公民71問。現代社会、日本国憲法、人権、民主政治、経済、国際社会を扱う。動画から問題画面と解答画面を無加工で収録。",
+    "cover": "images_05/civics-entrance-exam-frequent-71/question_001.png",
+    "chapters": [
+      {
+        "id": "modern",
+        "title": "現代社会と私たち"
+      },
+      {
+        "id": "rights",
+        "title": "個人の尊重と日本国憲法"
+      },
+      {
+        "id": "politics",
+        "title": "現代の民主政治と社会"
+      },
+      {
+        "id": "economy",
+        "title": "私たちの暮らしと経済"
+      },
+      {
+        "id": "international",
+        "title": "地球社会と私たち"
+      }
+    ],
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=NlRdKXVm9DA",
+    "count": 71,
+    "data": "lessons/civics-entrance-exam-frequent-71.json",
+    "series": "frequent"
   },
   {
     "id": "social-geography-world-names-environment-grade1-01",
@@ -1193,7 +1268,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=aw8Ja0lSCew",
     "count": 39,
-    "data": "lessons/social-geography-world-names-environment-grade1-01.json"
+    "data": "lessons/social-geography-world-names-environment-grade1-01.json",
+    "series": "unit"
   },
   {
     "id": "social-geography-asia-grade1-02",
@@ -1215,7 +1291,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=xaeZsLFe4t4",
     "count": 40,
-    "data": "lessons/social-geography-asia-grade1-02.json"
+    "data": "lessons/social-geography-asia-grade1-02.json",
+    "series": "unit"
   },
   {
     "id": "social-geography-europe-africa-grade1-03",
@@ -1237,7 +1314,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=WU1Jbtfbwm4",
     "count": 46,
-    "data": "lessons/social-geography-europe-africa-grade1-03.json"
+    "data": "lessons/social-geography-europe-africa-grade1-03.json",
+    "series": "unit"
   },
   {
     "id": "social-geography-americas-oceania-grade1-04",
@@ -1263,7 +1341,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=LNl-_NPXM98",
     "count": 36,
-    "data": "lessons/social-geography-americas-oceania-grade1-04.json"
+    "data": "lessons/social-geography-americas-oceania-grade1-04.json",
+    "series": "unit"
   },
   {
     "id": "social-geography-japan-nature-resources-industry-05",
@@ -1293,7 +1372,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=SghZmV72ezM",
     "count": 46,
-    "data": "lessons/social-geography-japan-nature-resources-industry-05.json"
+    "data": "lessons/social-geography-japan-nature-resources-industry-05.json",
+    "series": "unit"
   },
   {
     "id": "social-geography-kyushu-chugoku-shikoku-06",
@@ -1319,7 +1399,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=Oe03e4FyT6w",
     "count": 36,
-    "data": "lessons/social-geography-kyushu-chugoku-shikoku-06.json"
+    "data": "lessons/social-geography-kyushu-chugoku-shikoku-06.json",
+    "series": "unit"
   },
   {
     "id": "social-geography-kinki-chubu-07",
@@ -1341,7 +1422,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=EWlWmiEmd20",
     "count": 36,
-    "data": "lessons/social-geography-kinki-chubu-07.json"
+    "data": "lessons/social-geography-kinki-chubu-07.json",
+    "series": "unit"
   },
   {
     "id": "social-geography-kanto-tohoku-hokkaido-08",
@@ -1367,7 +1449,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=X8OGCLgexoo",
     "count": 63,
-    "data": "lessons/social-geography-kanto-tohoku-hokkaido-08.json"
+    "data": "lessons/social-geography-kanto-tohoku-hokkaido-08.json",
+    "series": "unit"
   },
   {
     "id": "social-geography-world-review",
@@ -1413,7 +1496,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=daF34FWwQfQ",
     "count": 161,
-    "data": "lessons/social-geography-world-review.json"
+    "data": "lessons/social-geography-world-review.json",
+    "series": "review"
   },
   {
     "id": "social-geography-japan-review",
@@ -1475,7 +1559,32 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=G22P_vxMtkQ",
     "count": 176,
-    "data": "lessons/social-geography-japan-review.json"
+    "data": "lessons/social-geography-japan-review.json",
+    "series": "review"
+  },
+  {
+    "id": "geography-entrance-exam-frequent-46",
+    "subject": "social",
+    "field": "geography",
+    "title": "地理のよく出る問題｜高校受験対策 46問",
+    "grade": "中学社会・高校受験",
+    "description": "高校入試によく出る地理46問。世界地理26問と日本地理20問。動画の問題・解答画面を無加工で収録。",
+    "cover": "images_06/geography-entrance-exam-frequent-46/question_001.png",
+    "chapters": [
+      {
+        "id": "world",
+        "title": "世界の地理"
+      },
+      {
+        "id": "japan",
+        "title": "日本の地理"
+      }
+    ],
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=3x13bUMSBEc",
+    "count": 46,
+    "data": "lessons/geography-entrance-exam-frequent-46.json",
+    "series": "frequent"
   },
   {
     "id": "social-history-paleolithic-kofun-series-01",
@@ -1493,7 +1602,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=WbATDaC226A",
     "count": 34,
-    "data": "lessons/social-history-paleolithic-kofun-series-01.json"
+    "data": "lessons/social-history-paleolithic-kofun-series-01.json",
+    "series": "unit"
   },
   {
     "id": "social-history-asuka-series-02",
@@ -1511,7 +1621,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=PD2u4OkfZ2U",
     "count": 29,
-    "data": "lessons/social-history-asuka-series-02.json"
+    "data": "lessons/social-history-asuka-series-02.json",
+    "series": "unit"
   },
   {
     "id": "social-history-nara-series-03",
@@ -1529,7 +1640,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=QVgoBiLSgXk",
     "count": 19,
-    "data": "lessons/social-history-nara-series-03.json"
+    "data": "lessons/social-history-nara-series-03.json",
+    "series": "unit"
   },
   {
     "id": "social-history-heian-early-series-04",
@@ -1547,7 +1659,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=0qYb4EOmZO8",
     "count": 30,
-    "data": "lessons/social-history-heian-early-series-04.json"
+    "data": "lessons/social-history-heian-early-series-04.json",
+    "series": "unit"
   },
   {
     "id": "social-history-heian-late-series-05",
@@ -1565,7 +1678,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=Y0SWQk7R-60",
     "count": 17,
-    "data": "lessons/social-history-heian-late-series-05.json"
+    "data": "lessons/social-history-heian-late-series-05.json",
+    "series": "unit"
   },
   {
     "id": "social-history-kamakura-series-06",
@@ -1583,7 +1697,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=6YHQAMOOKEs",
     "count": 28,
-    "data": "lessons/social-history-kamakura-series-06.json"
+    "data": "lessons/social-history-kamakura-series-06.json",
+    "series": "unit"
   },
   {
     "id": "social-history-nanbokucho-series-07",
@@ -1601,7 +1716,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=4njAXoffmzQ",
     "count": 10,
-    "data": "lessons/social-history-nanbokucho-series-07.json"
+    "data": "lessons/social-history-nanbokucho-series-07.json",
+    "series": "unit"
   },
   {
     "id": "social-history-muromachi-series-08",
@@ -1619,7 +1735,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=vW4lRP3JmAw",
     "count": 24,
-    "data": "lessons/social-history-muromachi-series-08.json"
+    "data": "lessons/social-history-muromachi-series-08.json",
+    "series": "unit"
   },
   {
     "id": "social-history-sengoku-series-09",
@@ -1637,7 +1754,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=gwKDjxyr4E4",
     "count": 27,
-    "data": "lessons/social-history-sengoku-series-09.json"
+    "data": "lessons/social-history-sengoku-series-09.json",
+    "series": "unit"
   },
   {
     "id": "social-history-edo-early-series-10",
@@ -1655,7 +1773,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=vpQUYsZr55c",
     "count": 25,
-    "data": "lessons/social-history-edo-early-series-10.json"
+    "data": "lessons/social-history-edo-early-series-10.json",
+    "series": "unit"
   },
   {
     "id": "social-history-edo-late-series-11",
@@ -1673,7 +1792,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=SVuL-MAgsdU",
     "count": 30,
-    "data": "lessons/social-history-edo-late-series-11.json"
+    "data": "lessons/social-history-edo-late-series-11.json",
+    "series": "unit"
   },
   {
     "id": "social-history-meiji-series-12",
@@ -1691,7 +1811,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=SOoH63VIKRg",
     "count": 27,
-    "data": "lessons/social-history-meiji-series-12.json"
+    "data": "lessons/social-history-meiji-series-12.json",
+    "series": "unit"
   },
   {
     "id": "social-history-taisho-series-13",
@@ -1709,7 +1830,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=94jw6Qt34sE",
     "count": 19,
-    "data": "lessons/social-history-taisho-series-13.json"
+    "data": "lessons/social-history-taisho-series-13.json",
+    "series": "unit"
   },
   {
     "id": "social-history-showa-heisei-series-14",
@@ -1731,7 +1853,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=MEt7EPOx4XM",
     "count": 27,
-    "data": "lessons/social-history-showa-heisei-series-14.json"
+    "data": "lessons/social-history-showa-heisei-series-14.json",
+    "series": "unit"
   },
   {
     "id": "social-history-jomon-kamakura-01",
@@ -1749,7 +1872,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=eGNJ1wBYSW8",
     "count": 105,
-    "data": "lessons/social-history-jomon-kamakura-01.json"
+    "data": "lessons/social-history-jomon-kamakura-01.json",
+    "series": "review"
   },
   {
     "id": "social-history-muromachi-edo-02",
@@ -1775,7 +1899,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=8eUm3Its9Aw",
     "count": 86,
-    "data": "lessons/social-history-muromachi-edo-02.json"
+    "data": "lessons/social-history-muromachi-edo-02.json",
+    "series": "review"
   },
   {
     "id": "social-history-edo-culture-bakumatsu-03",
@@ -1797,7 +1922,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=L2r9p8w7y2w",
     "count": 36,
-    "data": "lessons/social-history-edo-culture-bakumatsu-03.json"
+    "data": "lessons/social-history-edo-culture-bakumatsu-03.json",
+    "series": "review"
   },
   {
     "id": "social-history-meiji-taisho-04",
@@ -1819,7 +1945,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=PCMsq39HBsM",
     "count": 60,
-    "data": "lessons/social-history-meiji-taisho-04.json"
+    "data": "lessons/social-history-meiji-taisho-04.json",
+    "series": "review"
   },
   {
     "id": "social-history-showa-heisei-05",
@@ -1841,7 +1968,8 @@ window.QUIZ_CATALOG = [
     ],
     "source": "https://www.youtube.com/watch?v=hVnO920kVAs",
     "count": 46,
-    "data": "lessons/social-history-showa-heisei-05.json"
+    "data": "lessons/social-history-showa-heisei-05.json",
+    "series": "review"
   },
   {
     "id": "history-jomon-azuchimomoyama-entrance-60",
@@ -1872,7 +2000,8 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=iHCc22WkJQw",
     "count": 60,
-    "data": "lessons/history-jomon-azuchimomoyama-entrance-60.json"
+    "data": "lessons/history-jomon-azuchimomoyama-entrance-60.json",
+    "series": "frequent"
   },
   {
     "id": "history-edo-meiji-entrance-50",
@@ -1899,7 +2028,8 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=rrs37MhueAw",
     "count": 50,
-    "data": "lessons/history-edo-meiji-entrance-50.json"
+    "data": "lessons/history-edo-meiji-entrance-50.json",
+    "series": "frequent"
   },
   {
     "id": "history-taisho-reiwa-entrance-38",
@@ -1930,6 +2060,7 @@ window.QUIZ_CATALOG = [
     "collection": "review",
     "source": "https://www.youtube.com/watch?v=qVd5wU662vo",
     "count": 38,
-    "data": "lessons/history-taisho-reiwa-entrance-38.json"
+    "data": "lessons/history-taisho-reiwa-entrance-38.json",
+    "series": "frequent"
   }
 ];

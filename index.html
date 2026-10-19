@@ -823,13 +823,24 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 .catalog-search-top.is-collections{grid-template-columns:minmax(0,1fr)}
 /* A dialog's initial reading focus is not an interactive selection. */
 .homework-setup .homework-setup-head h2:focus{outline:none;box-shadow:none}
+.my-page-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 22px}
+.my-page-actions .tool{min-width:0;min-height:42px;padding:8px 5px;font-size:12px;border:1.5px solid #d2ae88;border-radius:12px;background:#fff7e8;color:#86512e;box-shadow:0 2px 0 #e3c7a8;line-height:1.5}
+.my-added-section{margin:24px 0 8px}
+.my-added-card{position:relative;padding-right:135px;min-height:80px}
+.my-added-card>.primary-button{position:absolute;right:13px;top:50%;transform:translateY(-50%);min-height:38px;padding:7px 10px;font-size:11px;border-radius:11px}
+.my-library-empty{margin:8px 0 0;font-size:11px;line-height:1.7;color:#a18064}
+#myCollectionsPanel .my-collection-empty{padding:18px 12px}
+#myCollectionsPanel .my-collection-empty .paw{font-size:22px}
+#myCollectionsPanel .my-collection-empty h3{font-size:13px;line-height:1.5}
+#myCollectionsPanel .my-collection-empty p{font-size:11px;line-height:1.7}
+@media(max-width:350px){.my-page-actions .tool{font-size:11px}.my-added-card{padding-right:110px}.my-added-card>.primary-button{padding:7px;font-size:10px;right:10px}}
 
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
   
   
-<nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navCollections" type="button">まとめ</button><button id="navRecords" type="button">記録</button><button id="navSettings" type="button">設定</button></nav></header>
+<nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navCollections" type="button">マイ</button><button id="navRecords" type="button">記録</button><button id="navSettings" type="button">設定</button></nav></header>
 
 
 
@@ -842,7 +853,11 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
   
   
   <div class="catalog-list-tools"><span id="visibleCount"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
-  <section id="myCollectionsPanel" hidden aria-labelledby="myCollectionsTitle"><div class="my-collection-heading"><h3 id="myCollectionsTitle">保存したまとめ</h3><button class="tool" type="button" id="newMyCollection">＋ 作るにゃ</button></div><div id="myCollectionList"></div></section>
+  <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
+ <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection">＋ まとめを作るにゃ</button><button class="tool" type="button" id="myAddLesson">＋ 教材を追加するにゃ</button></div>
+ <div class="my-collection-heading"><h3 id="myCollectionsTitle">保存したまとめ</h3></div><div id="myCollectionList"></div>
+ <section class="my-added-section" aria-labelledby="myAddedTitle"><div class="my-collection-heading"><h3 id="myAddedTitle">追加した教材</h3></div><div id="myAddedLessons"></div></section>
+</section>
   <div id="catalogGroups" class="catalog-groups"></div>
   <div id="catalogEmpty" class="catalog-empty" hidden><span aria-hidden="true">📚</span><h3 id="catalogEmptyTitle"></h3><p id="catalogEmptyText"></p></div>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><button class="primary-button" id="startStudy" disabled>はじめるにゃ <span aria-hidden="true">🐾</span></button></div>
@@ -1930,20 +1945,30 @@ function collectionSnapshot(c) {return {id:c.id,name:c.name,cardKeys:c.cards.map
 function collectionKnown(c) {return c.cards.filter(r=>data.records[r.lessonId]?.[r.cardId]?.status==='known').length;}
 function syncMainNavigation(){if(screen!=='catalog')return;$('openCatalog').toggleAttribute('aria-current',!catalogIsCollections);$('navCollections').toggleAttribute('aria-current',catalogIsCollections);if(!catalogIsCollections)$('openCatalog').setAttribute('aria-current','page');else $('navCollections').setAttribute('aria-current','page');}
 function syncCollectionCatalog() {
-  const on=catalogIsCollections;syncMainNavigation();$('catalogTitle').textContent=on?'まとめ':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
+  const on=catalogIsCollections;syncMainNavigation();$('catalogTitle').textContent=on?'マイ':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
   $('myCollectionsPanel').hidden=!on;
   document.querySelector('#catalogScreen .catalog-filter-row').hidden=on;
   $('seriesScroller').hidden=on; $('catalogSeries').hidden=on; $('catalogDock').hidden=on;
   document.querySelector('#catalogScreen .catalog-list-tools').hidden=on;
   $('catalogGroups').hidden=on; if(on)$('catalogEmpty').hidden=true;
-  $('openImport').hidden=on;
-  $('catalogSearch').placeholder=on?'まとめをさがすにゃ':'教材をさがすにゃ';
-  $('catalogSearch').setAttribute('aria-label',on?'まとめを検索':'教材名で検索');
+  $('openImport').hidden=true;
+  $('catalogSearch').placeholder=on?'自分の教材をさがすにゃ':'教材をさがすにゃ';
+  $('catalogSearch').setAttribute('aria-label',on?'保存したまとめ・追加教材を検索':'教材名で検索');
   if(on)$('quickReview').hidden=true;
   $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
 }
 function openMyCollections() {catalogIsCollections=true;$('catalogSearch').value='';showScreen('catalog');}
+function renderMyAddedLessons(){
+ const root=$('myAddedLessons'),q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase();root.replaceChildren();
+ const all=meta.filter(m=>m.imported),items=all.filter(m=>m.title.normalize('NFKC').toLocaleLowerCase().includes(q));
+ if(!items.length){root.append(collectionNode('p',all.length?'その教材は見つからないにゃ。':'追加した教材は、ここに並ぶにゃ。','my-library-empty'));return;}
+ for(const m of items){const box=collectionNode('article',undefined,'my-collection-card my-added-card');box.dataset.myLesson=m.id;
+ box.append(collectionNode('h3',m.title),collectionNode('p',[`${m.count}問`,subjectLabel(m.subject),m.fieldLabel||''].filter(Boolean).join(' · ')));
+ box.append(collectionButton('はじめるにゃ 🐾','primary-button',()=>NekoApp.selectImported(m.id)));root.append(box);}
+}
+
 function renderMyCollections() {
+  renderMyAddedLessons();
   const root=$('myCollectionList');root.replaceChildren();
   const q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=readCollections();
   const items=all.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q));
@@ -2152,6 +2177,7 @@ function saveCollectionEditor() {
   if(!writeCollections(items))return;
   collectionEditSequence++;collectionThumbObserver?.disconnect();$('collectionDialog').close();collectionEditor=null;catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問のまとめを保存したにゃ🐾`);
 }
+$('myAddLesson').onclick=()=>$('openImport').click();
 $('newMyCollection').onclick=()=>openCollectionEditor();
 $('collectionSubject').onchange=fillCollectionLessons;$('collectionLessonSearch').oninput=fillCollectionLessons;
 $('collectionAddWhole').onclick=()=>loadCollectionGrid($('collectionLessonPicker').dataset.value,{whole:true});

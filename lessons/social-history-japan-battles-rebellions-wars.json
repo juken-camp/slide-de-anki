@@ -1,0 +1,446 @@
+{
+  "id": "social-history-japan-battles-rebellions-wars",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史｜戦いの名前（反乱・戦・一揆・戦争）",
+  "grade": "中学歴史",
+  "description": "日本史の飛鳥時代から昭和時代まで、歴史上の反乱・戦・一揆・戦争などを学ぶ一問一答39問。",
+  "cover": "images_07/social-history-japan-battles-rebellions-wars/question_001.png",
+  "chapters": [
+    {
+      "id": "battles-asuka",
+      "title": "飛鳥時代"
+    },
+    {
+      "id": "battles-heian",
+      "title": "平安時代"
+    },
+    {
+      "id": "battles-kamakura",
+      "title": "鎌倉時代"
+    },
+    {
+      "id": "battles-muromachi",
+      "title": "室町時代"
+    },
+    {
+      "id": "battles-sengoku",
+      "title": "戦国・安土桃山時代"
+    },
+    {
+      "id": "battles-edo",
+      "title": "江戸時代"
+    },
+    {
+      "id": "battles-meiji",
+      "title": "明治時代"
+    },
+    {
+      "id": "battles-taisho",
+      "title": "大正時代"
+    },
+    {
+      "id": "battles-showa",
+      "title": "昭和時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "battles-asuka",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_001.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_001.png",
+      "sourceTimes": {
+        "question": 29.5,
+        "answer": 37.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "battles-asuka",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_002.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_002.png",
+      "sourceTimes": {
+        "question": 44.5,
+        "answer": 55.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "battles-heian",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_003.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_003.png",
+      "sourceTimes": {
+        "question": 64.5,
+        "answer": 80.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "battles-heian",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_004.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_004.png",
+      "sourceTimes": {
+        "question": 87.5,
+        "answer": 98.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "battles-heian",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_005.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_005.png",
+      "sourceTimes": {
+        "question": 105.5,
+        "answer": 115.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "battles-heian",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_006.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_006.png",
+      "sourceTimes": {
+        "question": 122.5,
+        "answer": 129.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "battles-heian",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_007.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_007.png",
+      "sourceTimes": {
+        "question": 136.5,
+        "answer": 146.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "battles-heian",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_008.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_008.png",
+      "sourceTimes": {
+        "question": 153.5,
+        "answer": 163.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "battles-kamakura",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_009.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_009.png",
+      "sourceTimes": {
+        "question": 173.5,
+        "answer": 179.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "battles-kamakura",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_010.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_010.png",
+      "sourceTimes": {
+        "question": 186.5,
+        "answer": 197.4
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "battles-muromachi",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_011.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_011.png",
+      "sourceTimes": {
+        "question": 207.5,
+        "answer": 217.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "battles-muromachi",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_012.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_012.png",
+      "sourceTimes": {
+        "question": 224.5,
+        "answer": 229.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "battles-muromachi",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_013.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_013.png",
+      "sourceTimes": {
+        "question": 236.5,
+        "answer": 242.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "battles-muromachi",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_014.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_014.png",
+      "sourceTimes": {
+        "question": 249.5,
+        "answer": 258.2
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "battles-sengoku",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_015.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_015.png",
+      "sourceTimes": {
+        "question": 268.5,
+        "answer": 278.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "battles-sengoku",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_016.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_016.png",
+      "sourceTimes": {
+        "question": 285.5,
+        "answer": 296.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "battles-sengoku",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_017.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_017.png",
+      "sourceTimes": {
+        "question": 303.5,
+        "answer": 314.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "battles-sengoku",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_018.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_018.png",
+      "sourceTimes": {
+        "question": 321.5,
+        "answer": 328.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "battles-sengoku",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_019.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_019.png",
+      "sourceTimes": {
+        "question": 335.5,
+        "answer": 337.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "battles-sengoku",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_020.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_020.png",
+      "sourceTimes": {
+        "question": 344.5,
+        "answer": 351.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "battles-sengoku",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_021.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_021.png",
+      "sourceTimes": {
+        "question": 358.5,
+        "answer": 362.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "battles-sengoku",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_022.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_022.png",
+      "sourceTimes": {
+        "question": 369.5,
+        "answer": 377.2
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "battles-edo",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_023.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_023.png",
+      "sourceTimes": {
+        "question": 386.5,
+        "answer": 393.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "battles-edo",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_024.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_024.png",
+      "sourceTimes": {
+        "question": 400.5,
+        "answer": 409.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "battles-edo",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_025.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_025.png",
+      "sourceTimes": {
+        "question": 416.5,
+        "answer": 427.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "battles-edo",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_026.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_026.png",
+      "sourceTimes": {
+        "question": 434.5,
+        "answer": 445.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "battles-edo",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_027.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_027.png",
+      "sourceTimes": {
+        "question": 452.5,
+        "answer": 461.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "battles-edo",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_028.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_028.png",
+      "sourceTimes": {
+        "question": 468.5,
+        "answer": 475.3
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "battles-meiji",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_029.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_029.png",
+      "sourceTimes": {
+        "question": 484.5,
+        "answer": 494.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "battles-meiji",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_030.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_030.png",
+      "sourceTimes": {
+        "question": 501.5,
+        "answer": 510.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "battles-meiji",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_031.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_031.png",
+      "sourceTimes": {
+        "question": 517.5,
+        "answer": 527.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "battles-meiji",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_032.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_032.png",
+      "sourceTimes": {
+        "question": 534.5,
+        "answer": 541.4
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "battles-taisho",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_033.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_033.png",
+      "sourceTimes": {
+        "question": 550.5,
+        "answer": 563.4
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "battles-showa",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_034.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_034.png",
+      "sourceTimes": {
+        "question": 573.5,
+        "answer": 582.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "battles-showa",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_035.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_035.png",
+      "sourceTimes": {
+        "question": 588.5,
+        "answer": 599.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "battles-showa",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_036.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_036.png",
+      "sourceTimes": {
+        "question": 606.5,
+        "answer": 613.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "battles-showa",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_037.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_037.png",
+      "sourceTimes": {
+        "question": 620.5,
+        "answer": 628.5
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "battles-showa",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_038.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_038.png",
+      "sourceTimes": {
+        "question": 635.5,
+        "answer": 645.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "battles-showa",
+      "question": "images_07/social-history-japan-battles-rebellions-wars/question_039.png",
+      "answer": "images_07/social-history-japan-battles-rebellions-wars/answer_039.png",
+      "sourceTimes": {
+        "question": 652.5,
+        "answer": 658.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=lIhEWOGunSk",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【戦いの名前一問一答】日本の歴史上有名な反乱・戦・一揆・戦争.f399.mp4",
+    "sourceSha256": "3765f2b50c24e784863cae240af8bc41c57ce098213c606189c7e014052ce5c1",
+    "timestampNote": "captureは元動画で選択したフレームの時刻（秒）、frame_indexは0始まり30fps換算。start_approxは毎秒フレーム解析による問題表示開始の目安であり厳密なシーン切替点ではありません。問題は赤い解答文字の表示前、解答は赤字が完成した状態で、章見出し・切替演出を除外しました。"
+  }
+}

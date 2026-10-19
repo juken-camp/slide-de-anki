@@ -2062,5 +2062,535 @@ window.QUIZ_CATALOG = [
     "count": 38,
     "data": "lessons/history-taisho-reiwa-entrance-38.json",
     "series": "frequent"
+  },
+  {
+    "id": "social-geography-world-climates",
+    "subject": "social",
+    "field": "geography",
+    "title": "世界各地の気候帯・気候区分",
+    "grade": "中学地理",
+    "description": "世界各地の気候帯と気候区分、雨温図、暮らしや農業の特色を学ぶ一問一答44問。",
+    "cover": "images_06/social-geography-world-climates/question_001.png",
+    "chapters": [
+      {
+        "id": "climate-zones",
+        "title": "気候帯の基礎"
+      },
+      {
+        "id": "climate-regions",
+        "title": "気候区分の基礎"
+      },
+      {
+        "id": "polar-climate",
+        "title": "寒帯"
+      },
+      {
+        "id": "subarctic-climate",
+        "title": "冷帯（亜寒帯）"
+      },
+      {
+        "id": "temperate-climate",
+        "title": "温帯"
+      },
+      {
+        "id": "dry-climate",
+        "title": "乾燥帯"
+      },
+      {
+        "id": "tropical-climate",
+        "title": "熱帯"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=M4Kx8y4hjGg",
+    "series": "themes",
+    "count": 44,
+    "data": "lessons/social-geography-world-climates.json"
+  },
+  {
+    "id": "social-geography-mountains-ranges-highlands-japan-world",
+    "subject": "social",
+    "field": "geography",
+    "title": "山・山脈・山地・高地・高原",
+    "grade": "中学地理",
+    "description": "日本の山・山地・高原20問、世界の山・山脈・高地18問を元動画から抽出した問題と解答の画像で学ぶ一問一答教材。",
+    "cover": "images_06/social-geography-mountains-ranges-highlands-japan-world/question_001.png",
+    "chapters": [
+      {
+        "id": "japan",
+        "title": "日本の山・山地・高原（20問）"
+      },
+      {
+        "id": "world",
+        "title": "世界の山・山脈・高地（18問）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=ARBpxQ9xFZo",
+    "series": "themes",
+    "count": 38,
+    "data": "lessons/social-geography-mountains-ranges-highlands-japan-world.json"
+  },
+  {
+    "id": "social-geography-seas-rivers-lakes-bays-canals",
+    "subject": "social",
+    "field": "geography",
+    "title": "海・川・湖・湾・運河",
+    "grade": "中学地理",
+    "description": "日本と世界の有名な海・川・湖・湾・運河を、元動画から抽出した51組の問題・解答画像で学習する一問一答教材。元の第38問（死海に関する設問）は削除済み。",
+    "cover": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_001.png",
+    "chapters": [
+      {
+        "id": "japan",
+        "title": "日本の海・川・湖・湾（23問）"
+      },
+      {
+        "id": "world",
+        "title": "世界の海・川・湖・湾・運河（28問）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=AjFHQfvYXkM",
+    "series": "themes",
+    "count": 51,
+    "data": "lessons/social-geography-seas-rivers-lakes-bays-canals.json"
+  },
+  {
+    "id": "social-geography-topographic-maps-map-symbols",
+    "subject": "social",
+    "field": "geography",
+    "title": "地形図と地図記号",
+    "grade": "中学地理",
+    "description": "地形図の方位・縮尺・等高線8問と、地図記号28問の一問一答。",
+    "cover": "images_06/social-geography-topographic-maps-map-symbols/question_001.png",
+    "chapters": [
+      {
+        "id": "topographic-maps",
+        "title": "地形図（方位・縮尺・等高線）"
+      },
+      {
+        "id": "map-symbols",
+        "title": "地図記号"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=5t3qmpHxOYg",
+    "series": "themes",
+    "count": 36,
+    "data": "lessons/social-geography-topographic-maps-map-symbols.json"
+  },
+  {
+    "id": "social-geography-industrial-belts-regions",
+    "subject": "social",
+    "field": "geography",
+    "title": "工業地帯・工業地域",
+    "grade": "中学地理",
+    "description": "日本の工業地帯・工業地域の特徴や工業の特色を学ぶ一問一答21問。",
+    "cover": "images_06/social-geography-industrial-belts-regions/question_001.png",
+    "chapters": [
+      {
+        "id": "industrial-belts",
+        "title": "工業地帯"
+      },
+      {
+        "id": "industrial-regions",
+        "title": "工業地域"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=Qsnr8ex7gRo",
+    "series": "themes",
+    "count": 21,
+    "data": "lessons/social-geography-industrial-belts-regions.json"
+  },
+  {
+    "id": "social-geography-world-capitals-20",
+    "subject": "social",
+    "field": "geography",
+    "title": "有名な国の首都",
+    "grade": "中学地理",
+    "description": "世界20か国の首都を、国旗や位置を示す地図を使って覚える一問一答20問。元動画のスライドを無加工で保存。",
+    "cover": "images_06/social-geography-world-capitals-20/question_001.png",
+    "chapters": [
+      {
+        "id": "world-capitals",
+        "title": "世界の首都"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=lFT3oQahOqk",
+    "series": "themes",
+    "count": 20,
+    "data": "lessons/social-geography-world-capitals-20.json"
+  },
+  {
+    "id": "social-geography-prefectural-capitals-47",
+    "subject": "social",
+    "field": "geography",
+    "title": "47都道府県の県庁所在地",
+    "grade": "中学地理",
+    "description": "47都道府県の県庁所在地を地域別に覚える一問一答教材。問題47枚・解答47枚を元動画のまま収録。",
+    "cover": "images_06/social-geography-prefectural-capitals-47/question_001.png",
+    "chapters": [
+      {
+        "id": "hokkaido-tohoku",
+        "title": "北海道・東北地方（7問）"
+      },
+      {
+        "id": "kanto",
+        "title": "関東地方（7問）"
+      },
+      {
+        "id": "chubu",
+        "title": "中部地方（9問）"
+      },
+      {
+        "id": "kinki",
+        "title": "近畿地方（7問）"
+      },
+      {
+        "id": "chugoku",
+        "title": "中国地方（5問）"
+      },
+      {
+        "id": "shikoku",
+        "title": "四国地方（4問）"
+      },
+      {
+        "id": "kyushu-okinawa",
+        "title": "九州・沖縄地方（8問）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=l_0BDt7k2lQ",
+    "series": "themes",
+    "count": 47,
+    "data": "lessons/social-geography-prefectural-capitals-47.json"
+  },
+  {
+    "id": "social-geography-47-prefectures-features",
+    "subject": "social",
+    "field": "geography",
+    "title": "47都道府県の特徴",
+    "grade": "中学地理",
+    "description": "47都道府県の地理的特徴・名産品・地名・名物料理などを一問一答で覚える教材。",
+    "cover": "images_06/social-geography-47-prefectures-features/question_001.png",
+    "chapters": [
+      {
+        "id": "prefectures",
+        "title": "47都道府県"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=57238m6LgEM",
+    "series": "themes",
+    "variantLabel": "地図・名物料理",
+    "count": 47,
+    "data": "lessons/social-geography-47-prefectures-features.json"
+  },
+  {
+    "id": "social-geography-prefecture-features-47",
+    "subject": "social",
+    "field": "geography",
+    "title": "47都道府県の特徴",
+    "grade": "中学地理",
+    "description": "47都道府県の産業・地形・農業・観光・文化などの重要キーワードから都道府県を当てる一問一答47問。",
+    "cover": "images_06/social-geography-prefecture-features-47/question_001.png",
+    "chapters": [
+      {
+        "id": "prefecture-features",
+        "title": "47都道府県の特徴"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=peTMt6wXOlQ",
+    "series": "themes",
+    "variantLabel": "重要キーワード",
+    "count": 47,
+    "data": "lessons/social-geography-prefecture-features-47.json"
+  },
+  {
+    "id": "social-geography-japan-firsts-29",
+    "subject": "social",
+    "field": "geography",
+    "title": "いろいろな日本一",
+    "grade": "中学地理",
+    "description": "日本の都道府県や地理・産業・文化に関するさまざまな「日本一」を学ぶ一問一答29問。動画は2021年公開時点の内容です。 2021年公開の動画に基づく内容。順位・数値は動画公開時点。",
+    "cover": "images_06/social-geography-japan-firsts-29/question_001.png",
+    "chapters": [
+      {
+        "id": "japan-firsts",
+        "title": "いろいろな日本一"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=XVvrgy0ooY4",
+    "series": "themes",
+    "variantLabel": "2021年の動画",
+    "count": 29,
+    "data": "lessons/social-geography-japan-firsts-29.json"
+  },
+  {
+    "id": "social-civics-sdgs-61",
+    "subject": "social",
+    "field": "civics",
+    "title": "SDGsがわかる一問一答",
+    "grade": "中学公民",
+    "description": "SDGsの意味・背景、17の目標を61問の一問一答で学習する教材。動画の解答表示前後を原寸で抽出。 数値・統計は2022年公開の動画で用いられた資料による。",
+    "cover": "images_05/social-civics-sdgs-61/question_001.png",
+    "chapters": [
+      {
+        "id": "basics",
+        "title": "SDGsの基本知識"
+      },
+      {
+        "id": "goal01",
+        "title": "目標01：貧困をなくそう"
+      },
+      {
+        "id": "goal02",
+        "title": "目標02：飢餓をゼロに"
+      },
+      {
+        "id": "goal03",
+        "title": "目標03：すべての人に健康と福祉を"
+      },
+      {
+        "id": "goal04",
+        "title": "目標04：質の高い教育をみんなに"
+      },
+      {
+        "id": "goal05",
+        "title": "目標05：ジェンダー平等を実現しよう"
+      },
+      {
+        "id": "goal06",
+        "title": "目標06：安全な水とトイレを世界中に"
+      },
+      {
+        "id": "goal07",
+        "title": "目標07：エネルギーをみんなに そしてクリーンに"
+      },
+      {
+        "id": "goal08",
+        "title": "目標08：働きがいも経済成長も"
+      },
+      {
+        "id": "goal09",
+        "title": "目標09：産業と技術革新の基盤をつくろう"
+      },
+      {
+        "id": "goal10",
+        "title": "目標10：人や国の不平等をなくそう"
+      },
+      {
+        "id": "goal11",
+        "title": "目標11：住み続けられるまちづくりを"
+      },
+      {
+        "id": "goal12",
+        "title": "目標12：つくる責任 つかう責任"
+      },
+      {
+        "id": "goal13",
+        "title": "目標13：気候変動に具体的な対策を"
+      },
+      {
+        "id": "goal14",
+        "title": "目標14：海の豊かさを守ろう"
+      },
+      {
+        "id": "goal15",
+        "title": "目標15：陸の豊かさも守ろう"
+      },
+      {
+        "id": "goal16",
+        "title": "目標16：平和と公正をすべての人に"
+      },
+      {
+        "id": "goal17",
+        "title": "目標17：パートナーシップで目標を達成しよう"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=x4QuGeTVPXs",
+    "series": "themes",
+    "variantLabel": "2022年の動画",
+    "count": 61,
+    "data": "lessons/social-civics-sdgs-61.json"
+  },
+  {
+    "id": "social-history-world-part1-ancient-earlymodern",
+    "subject": "social",
+    "field": "history",
+    "title": "世界史① 前編（四大文明・宗教・大航海時代など）",
+    "grade": "中学歴史",
+    "description": "人類の進化、四大文明、中国王朝、宗教、ルネサンス、大航海時代、宗教改革、革命と産業革命などを学ぶ一問一答47問。",
+    "cover": "images_07/social-history-world-part1-ancient-earlymodern/question_001.png",
+    "chapters": [
+      {
+        "id": "world-history-part1-ancient-to-industrial",
+        "title": "世界史・前編（古代文明～産業革命）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=zN0Smc91lZs",
+    "series": "themes",
+    "count": 47,
+    "data": "lessons/social-history-world-part1-ancient-earlymodern.json"
+  },
+  {
+    "id": "social-history-world-part2-18c-20c",
+    "subject": "social",
+    "field": "history",
+    "title": "世界史② 後編（18世紀～20世紀）",
+    "grade": "中学歴史",
+    "description": "18世紀のフランス革命から20世紀の国際情勢までを学ぶ、一問一答形式の全54問教材。",
+    "cover": "images_07/social-history-world-part2-18c-20c/question_001.png",
+    "chapters": [
+      {
+        "id": "world-history-modern-late",
+        "title": "世界史・後編（18世紀～20世紀）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=fsPo_hi2ANs",
+    "series": "themes",
+    "count": 54,
+    "data": "lessons/social-history-world-part2-18c-20c.json"
+  },
+  {
+    "id": "social-history-japan-and-world-timeline-90",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史｜日本史と覚える世界史（重要用語90選）",
+    "grade": "中学歴史",
+    "description": "日本史の年表と世界史の出来事を結び付けて覚える一問一答・全90問。",
+    "cover": "images_07/social-history-japan-and-world-timeline-90/question_001.png",
+    "chapters": [
+      {
+        "id": "japan-history-world-history-timeline-90",
+        "title": "日本史と覚える世界史"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=bY3P-N9ROWE",
+    "series": "themes",
+    "count": 90,
+    "data": "lessons/social-history-japan-and-world-timeline-90.json"
+  },
+  {
+    "id": "social-history-japan-battles-rebellions-wars",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史｜戦いの名前（反乱・戦・一揆・戦争）",
+    "grade": "中学歴史",
+    "description": "日本史の飛鳥時代から昭和時代まで、歴史上の反乱・戦・一揆・戦争などを学ぶ一問一答39問。",
+    "cover": "images_07/social-history-japan-battles-rebellions-wars/question_001.png",
+    "chapters": [
+      {
+        "id": "battles-asuka",
+        "title": "飛鳥時代"
+      },
+      {
+        "id": "battles-heian",
+        "title": "平安時代"
+      },
+      {
+        "id": "battles-kamakura",
+        "title": "鎌倉時代"
+      },
+      {
+        "id": "battles-muromachi",
+        "title": "室町時代"
+      },
+      {
+        "id": "battles-sengoku",
+        "title": "戦国・安土桃山時代"
+      },
+      {
+        "id": "battles-edo",
+        "title": "江戸時代"
+      },
+      {
+        "id": "battles-meiji",
+        "title": "明治時代"
+      },
+      {
+        "id": "battles-taisho",
+        "title": "大正時代"
+      },
+      {
+        "id": "battles-showa",
+        "title": "昭和時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=lIhEWOGunSk",
+    "series": "themes",
+    "count": 39,
+    "data": "lessons/social-history-japan-battles-rebellions-wars.json"
+  },
+  {
+    "id": "social-history-religion-review",
+    "subject": "social",
+    "field": "history",
+    "title": "宗教まとめ（宗教・宗派・開祖・寺）",
+    "grade": "中学歴史",
+    "description": "古墳・飛鳥時代から江戸時代まで、主な宗教・宗派・開祖・寺院を学ぶ一問一答教材（全38問）。",
+    "cover": "images_07/social-history-religion-review/question_001.png",
+    "chapters": [
+      {
+        "id": "kofun-asuka",
+        "title": "古墳・飛鳥時代"
+      },
+      {
+        "id": "nara",
+        "title": "奈良時代"
+      },
+      {
+        "id": "heian",
+        "title": "平安時代"
+      },
+      {
+        "id": "kamakura",
+        "title": "鎌倉時代"
+      },
+      {
+        "id": "muromachi-sengoku",
+        "title": "室町・戦国時代"
+      },
+      {
+        "id": "edo",
+        "title": "江戸時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=J6bvl2Rnn8Q",
+    "series": "themes",
+    "count": 38,
+    "data": "lessons/social-history-religion-review.json"
+  },
+  {
+    "id": "social-history-japan-visual-quiz-53",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史の画像一問一答（日本史でよく見る画像53選）",
+    "grade": "中学歴史",
+    "description": "日本史の重要な遺跡・建築物・肖像画・文化財・史料などの画像を見て答える全53問。",
+    "cover": "images_07/social-history-japan-visual-quiz-53/question_001.png",
+    "chapters": [
+      {
+        "id": "history-japan-visual-quiz-53",
+        "title": "日本史の重要画像53選"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=BEVJORDAtog",
+    "series": "themes",
+    "count": 53,
+    "data": "lessons/social-history-japan-visual-quiz-53.json"
+  },
+  {
+    "id": "social-history-japan-historical-places-prefectures",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史｜歴史の舞台（出来事が起こった場所・名所）",
+    "grade": "中学歴史",
+    "description": "日本史の歴史上有名な出来事が起こった場所や名所を、都道府県と結び付けて覚える一問一答24問。",
+    "cover": "images_07/social-history-japan-historical-places-prefectures/question_001.png",
+    "chapters": [
+      {
+        "id": "history-japan-sites-prefectures",
+        "title": "歴史の舞台・都道府県"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=UERz5ZKkMEQ",
+    "series": "themes",
+    "count": 24,
+    "data": "lessons/social-history-japan-historical-places-prefectures.json"
   }
 ];

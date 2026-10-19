@@ -1,0 +1,388 @@
+{
+  "id": "social-geography-topographic-maps-map-symbols",
+  "subject": "social",
+  "field": "geography",
+  "title": "地形図と地図記号",
+  "grade": "中学地理",
+  "description": "地形図の方位・縮尺・等高線8問と、地図記号28問の一問一答。",
+  "cover": "images_06/social-geography-topographic-maps-map-symbols/question_001.png",
+  "chapters": [
+    {
+      "id": "topographic-maps",
+      "title": "地形図（方位・縮尺・等高線）"
+    },
+    {
+      "id": "map-symbols",
+      "title": "地図記号"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "topographic-maps",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_001.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_001.png",
+      "sourceTimes": {
+        "question": 27.3,
+        "answer": 31.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "topographic-maps",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_002.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_002.png",
+      "sourceTimes": {
+        "question": 43.8,
+        "answer": 47.266667
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "topographic-maps",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_003.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_003.png",
+      "sourceTimes": {
+        "question": 57.8,
+        "answer": 61.266667
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "topographic-maps",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_004.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_004.png",
+      "sourceTimes": {
+        "question": 74.3,
+        "answer": 78.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "topographic-maps",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_005.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_005.png",
+      "sourceTimes": {
+        "question": 98.3,
+        "answer": 103.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "topographic-maps",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_006.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_006.png",
+      "sourceTimes": {
+        "question": 119.3,
+        "answer": 133.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "topographic-maps",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_007.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_007.png",
+      "sourceTimes": {
+        "question": 144.3,
+        "answer": 148.266667
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "topographic-maps",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_008.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_008.png",
+      "sourceTimes": {
+        "question": 163.3,
+        "answer": 167.266667
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_009.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_009.png",
+      "sourceTimes": {
+        "question": 180.8,
+        "answer": 184.266667
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_010.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_010.png",
+      "sourceTimes": {
+        "question": 190.8,
+        "answer": 194.733333
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_011.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_011.png",
+      "sourceTimes": {
+        "question": 202.3,
+        "answer": 206.266667
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_012.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_012.png",
+      "sourceTimes": {
+        "question": 213.3,
+        "answer": 217.266667
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_013.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_013.png",
+      "sourceTimes": {
+        "question": 225.3,
+        "answer": 229.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_014.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_014.png",
+      "sourceTimes": {
+        "question": 236.8,
+        "answer": 240.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_015.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_015.png",
+      "sourceTimes": {
+        "question": 248.8,
+        "answer": 252.733333
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_016.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_016.png",
+      "sourceTimes": {
+        "question": 260.3,
+        "answer": 264.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_017.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_017.png",
+      "sourceTimes": {
+        "question": 271.3,
+        "answer": 276.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_018.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_018.png",
+      "sourceTimes": {
+        "question": 283.3,
+        "answer": 287.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_019.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_019.png",
+      "sourceTimes": {
+        "question": 295.8,
+        "answer": 299.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_020.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_020.png",
+      "sourceTimes": {
+        "question": 307.3,
+        "answer": 311.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_021.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_021.png",
+      "sourceTimes": {
+        "question": 317.8,
+        "answer": 321.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_022.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_022.png",
+      "sourceTimes": {
+        "question": 327.3,
+        "answer": 331.266667
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_023.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_023.png",
+      "sourceTimes": {
+        "question": 338.8,
+        "answer": 343.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_024.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_024.png",
+      "sourceTimes": {
+        "question": 351.3,
+        "answer": 355.733333
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_025.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_025.png",
+      "sourceTimes": {
+        "question": 363.3,
+        "answer": 367.266667
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_026.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_026.png",
+      "sourceTimes": {
+        "question": 376.8,
+        "answer": 380.733333
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_027.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_027.png",
+      "sourceTimes": {
+        "question": 388.3,
+        "answer": 393.733333
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_028.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_028.png",
+      "sourceTimes": {
+        "question": 403.3,
+        "answer": 407.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_029.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_029.png",
+      "sourceTimes": {
+        "question": 415.3,
+        "answer": 419.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_030.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_030.png",
+      "sourceTimes": {
+        "question": 427.8,
+        "answer": 432.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_031.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_031.png",
+      "sourceTimes": {
+        "question": 440.8,
+        "answer": 444.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_032.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_032.png",
+      "sourceTimes": {
+        "question": 452.3,
+        "answer": 456.733333
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_033.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_033.png",
+      "sourceTimes": {
+        "question": 465.8,
+        "answer": 470.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_034.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_034.png",
+      "sourceTimes": {
+        "question": 478.8,
+        "answer": 482.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_035.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_035.png",
+      "sourceTimes": {
+        "question": 491.8,
+        "answer": 495.733333
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "map-symbols",
+      "question": "images_06/social-geography-topographic-maps-map-symbols/question_036.png",
+      "answer": "images_06/social-geography-topographic-maps-map-symbols/answer_036.png",
+      "sourceTimes": {
+        "question": 504.3,
+        "answer": 508.266667
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=5t3qmpHxOYg",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【地図記号一問一答】地形図と地図記号を覚える方法／社会地理.f399.mp4",
+    "sourceSha256": "7f3e38a465aa8fd7dfe0308437637f0b0d05d0cc5b191be8b9ee24440c173d9c",
+    "timestampNote": "captureは選択した元フレームの実際のPTS（秒）。frame_indexは0始まりのデコード順。start_approx/end_approxは0.5秒間隔の差分・赤字表示解析による概算。画像は元動画のフレームを無加工・原寸でPNG保存。"
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "id": "social-history-japan-historical-places-prefectures",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史｜歴史の舞台（出来事が起こった場所・名所）",
+  "grade": "中学歴史",
+  "description": "日本史の歴史上有名な出来事が起こった場所や名所を、都道府県と結び付けて覚える一問一答24問。",
+  "cover": "images_07/social-history-japan-historical-places-prefectures/question_001.png",
+  "chapters": [
+    {
+      "id": "history-japan-sites-prefectures",
+      "title": "歴史の舞台・都道府県"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_001.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_001.png",
+      "sourceTimes": {
+        "question": 22.5,
+        "answer": 30.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_002.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_002.png",
+      "sourceTimes": {
+        "question": 37.5,
+        "answer": 43.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_003.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_003.png",
+      "sourceTimes": {
+        "question": 50.5,
+        "answer": 59.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_004.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_004.png",
+      "sourceTimes": {
+        "question": 66.5,
+        "answer": 76.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_005.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_005.png",
+      "sourceTimes": {
+        "question": 83.5,
+        "answer": 92.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_006.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_006.png",
+      "sourceTimes": {
+        "question": 99.5,
+        "answer": 108.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_007.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_007.png",
+      "sourceTimes": {
+        "question": 115.5,
+        "answer": 124.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_008.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_008.png",
+      "sourceTimes": {
+        "question": 131.5,
+        "answer": 141.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_009.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_009.png",
+      "sourceTimes": {
+        "question": 148.5,
+        "answer": 157.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_010.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_010.png",
+      "sourceTimes": {
+        "question": 164.5,
+        "answer": 172.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_011.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_011.png",
+      "sourceTimes": {
+        "question": 179.5,
+        "answer": 189.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_012.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_012.png?v=755fec75c47f6d30",
+      "sourceTimes": {
+        "question": 196.5,
+        "answer": 210.5
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "013",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_013.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_013.png",
+      "sourceTimes": {
+        "question": 217.5,
+        "answer": 225.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_014.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_014.png",
+      "sourceTimes": {
+        "question": 232.5,
+        "answer": 241.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_015.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_015.png",
+      "sourceTimes": {
+        "question": 248.5,
+        "answer": 259.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_016.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_016.png",
+      "sourceTimes": {
+        "question": 266.5,
+        "answer": 274.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_017.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_017.png",
+      "sourceTimes": {
+        "question": 281.5,
+        "answer": 290.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_018.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_018.png",
+      "sourceTimes": {
+        "question": 297.5,
+        "answer": 305.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_019.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_019.png",
+      "sourceTimes": {
+        "question": 312.5,
+        "answer": 323.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_020.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_020.png",
+      "sourceTimes": {
+        "question": 330.5,
+        "answer": 343.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_021.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_021.png",
+      "sourceTimes": {
+        "question": 350.5,
+        "answer": 361.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_022.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_022.png",
+      "sourceTimes": {
+        "question": 368.5,
+        "answer": 379.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_023.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_023.png",
+      "sourceTimes": {
+        "question": 386.5,
+        "answer": 397.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "history-japan-sites-prefectures",
+      "question": "images_07/social-history-japan-historical-places-prefectures/question_024.png",
+      "answer": "images_07/social-history-japan-historical-places-prefectures/answer_024.png",
+      "sourceTimes": {
+        "question": 404.5,
+        "answer": 411.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=UERz5ZKkMEQ",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【歴史の舞台一問一答】歴史上有名な出来事が起こった場所・名所／聞き流し.f137.mp4",
+    "sourceSha256": "5abf461a301ccef9bacc95e7cf63591cf7ecafa2ce8f08aa9cf1502532bafd90",
+    "timestampNote": "captureは元動画で選択したフレーム時刻（秒）、frame_indexは0始まり30fps換算。start_approxおよび解答表示開始の目安は毎秒サンプルによる概算です。問題は赤字の解答がない状態、解答は赤字がすべて表示された状態。オープニング・エンディングは除外しました。",
+    "suppliedCorrections": [
+      {
+        "filename": "answer_012.png",
+        "sha256": "755fec75c47f6d305667a7fe8d2d675345db2a2dd069a99770231b563cfb1a67"
+      }
+    ]
+  }
+}

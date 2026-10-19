@@ -1,0 +1,636 @@
+{
+  "id": "social-geography-prefectural-capitals-47",
+  "subject": "social",
+  "field": "geography",
+  "title": "47都道府県の県庁所在地",
+  "grade": "中学地理",
+  "description": "47都道府県の県庁所在地を地域別に覚える一問一答教材。問題47枚・解答47枚を元動画のまま収録。",
+  "cover": "images_06/social-geography-prefectural-capitals-47/question_001.png",
+  "chapters": [
+    {
+      "id": "hokkaido-tohoku",
+      "title": "北海道・東北地方（7問）"
+    },
+    {
+      "id": "kanto",
+      "title": "関東地方（7問）"
+    },
+    {
+      "id": "chubu",
+      "title": "中部地方（9問）"
+    },
+    {
+      "id": "kinki",
+      "title": "近畿地方（7問）"
+    },
+    {
+      "id": "chugoku",
+      "title": "中国地方（5問）"
+    },
+    {
+      "id": "shikoku",
+      "title": "四国地方（4問）"
+    },
+    {
+      "id": "kyushu-okinawa",
+      "title": "九州・沖縄地方（8問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "hokkaido-tohoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_001.png?v=779e4567a7bd7319",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_001.png?v=adbcc022fbfeef9d",
+      "sourceTimes": {
+        "question": 24.0,
+        "answer": 29.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "002",
+      "chapter": "hokkaido-tohoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_002.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_002.png",
+      "sourceTimes": {
+        "question": 35.0,
+        "answer": 41.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "hokkaido-tohoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_003.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_003.png",
+      "sourceTimes": {
+        "question": 47.0,
+        "answer": 53.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "hokkaido-tohoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_004.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_004.png",
+      "sourceTimes": {
+        "question": 59.0,
+        "answer": 64.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "hokkaido-tohoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_005.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_005.png?v=4da753a4750ad3c2",
+      "sourceTimes": {
+        "question": 70.0,
+        "answer": 76.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "hokkaido-tohoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_006.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_006.png?v=7c805c1943650275",
+      "sourceTimes": {
+        "question": 81.0,
+        "answer": 87.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "hokkaido-tohoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_007.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_007.png",
+      "sourceTimes": {
+        "question": 92.0,
+        "answer": 98.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "kanto",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_008.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_008.png",
+      "sourceTimes": {
+        "question": 108.0,
+        "answer": 114.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "kanto",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_009.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_009.png",
+      "sourceTimes": {
+        "question": 120.0,
+        "answer": 125.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "kanto",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_010.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_010.png",
+      "sourceTimes": {
+        "question": 131.0,
+        "answer": 138.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "kanto",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_011.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_011.png",
+      "sourceTimes": {
+        "question": 144.0,
+        "answer": 151.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "kanto",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_012.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_012.png?v=88d964a03950ceaf",
+      "sourceTimes": {
+        "question": 157.0,
+        "answer": 163.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "kanto",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_013.png?v=41d5be9871102d4c",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_013.png?v=0f3141d856f56ff4",
+      "sourceTimes": {
+        "question": 168.0,
+        "answer": 177.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "014",
+      "chapter": "kanto",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_014.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_014.png",
+      "sourceTimes": {
+        "question": 183.0,
+        "answer": 190.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_015.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_015.png?v=e3392f8acd156da3",
+      "sourceTimes": {
+        "question": 200.0,
+        "answer": 206.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_016.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_016.png?v=abd33344734b8426",
+      "sourceTimes": {
+        "question": 211.0,
+        "answer": 217.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_017.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_017.png",
+      "sourceTimes": {
+        "question": 222.0,
+        "answer": 230.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_018.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_018.png",
+      "sourceTimes": {
+        "question": 235.0,
+        "answer": 241.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_019.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_019.png",
+      "sourceTimes": {
+        "question": 247.0,
+        "answer": 254.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_020.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_020.png",
+      "sourceTimes": {
+        "question": 260.0,
+        "answer": 268.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_021.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_021.png",
+      "sourceTimes": {
+        "question": 274.0,
+        "answer": 280.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_022.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_022.png",
+      "sourceTimes": {
+        "question": 286.0,
+        "answer": 293.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "chubu",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_023.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_023.png",
+      "sourceTimes": {
+        "question": 298.0,
+        "answer": 307.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "kinki",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_024.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_024.png",
+      "sourceTimes": {
+        "question": 318.0,
+        "answer": 325.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "kinki",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_025.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_025.png",
+      "sourceTimes": {
+        "question": 330.0,
+        "answer": 338.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "kinki",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_026.png?v=199f12f67761c33c",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_026.png?v=be82499cd47b6cc1",
+      "sourceTimes": {
+        "question": 344.0,
+        "answer": 350.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "027",
+      "chapter": "kinki",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_027.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_027.png?v=59d33778660b90d5",
+      "sourceTimes": {
+        "question": 356.0,
+        "answer": 362.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "kinki",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_028.png?v=f6b257472e5467a9",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_028.png?v=4cce9e59b25109a0",
+      "sourceTimes": {
+        "question": 367.0,
+        "answer": 373.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "029",
+      "chapter": "kinki",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_029.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_029.png",
+      "sourceTimes": {
+        "question": 379.0,
+        "answer": 387.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "kinki",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_030.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_030.png",
+      "sourceTimes": {
+        "question": 393.0,
+        "answer": 398.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "chugoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_031.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_031.png",
+      "sourceTimes": {
+        "question": 409.0,
+        "answer": 414.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "chugoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_032.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_032.png",
+      "sourceTimes": {
+        "question": 420.0,
+        "answer": 428.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "chugoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_033.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_033.png",
+      "sourceTimes": {
+        "question": 434.0,
+        "answer": 438.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "chugoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_034.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_034.png?v=09cb856b65580555",
+      "sourceTimes": {
+        "question": 444.0,
+        "answer": 448.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "chugoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_035.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_035.png",
+      "sourceTimes": {
+        "question": 453.0,
+        "answer": 459.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "shikoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_036.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_036.png",
+      "sourceTimes": {
+        "question": 470.0,
+        "answer": 475.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "shikoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_037.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_037.png",
+      "sourceTimes": {
+        "question": 481.0,
+        "answer": 489.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "shikoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_038.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_038.png",
+      "sourceTimes": {
+        "question": 495.0,
+        "answer": 502.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "shikoku",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_039.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_039.png",
+      "sourceTimes": {
+        "question": 508.0,
+        "answer": 514.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "kyushu-okinawa",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_040.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_040.png?v=f2126a040ff1c8c0",
+      "sourceTimes": {
+        "question": 525.0,
+        "answer": 530.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "kyushu-okinawa",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_041.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_041.png?v=957aa50f1cdf45d1",
+      "sourceTimes": {
+        "question": 535.0,
+        "answer": 540.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "kyushu-okinawa",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_042.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_042.png",
+      "sourceTimes": {
+        "question": 545.0,
+        "answer": 550.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "kyushu-okinawa",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_043.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_043.png?v=2e250dc54d35a12f",
+      "sourceTimes": {
+        "question": 556.0,
+        "answer": 562.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "kyushu-okinawa",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_044.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_044.png",
+      "sourceTimes": {
+        "question": 567.0,
+        "answer": 573.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "kyushu-okinawa",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_045.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_045.png",
+      "sourceTimes": {
+        "question": 579.0,
+        "answer": 584.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "kyushu-okinawa",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_046.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_046.png?v=9cc047414d1fb9cc",
+      "sourceTimes": {
+        "question": 590.0,
+        "answer": 596.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "kyushu-okinawa",
+      "question": "images_06/social-geography-prefectural-capitals-47/question_047.png",
+      "answer": "images_06/social-geography-prefectural-capitals-47/answer_047.png",
+      "sourceTimes": {
+        "question": 601.0,
+        "answer": 607.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=l_0BDt7k2lQ",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【県庁所在地を覚える一問一答】47都道府県の県庁所在地の暗記法／聞き流し／地理.f399.mp4",
+    "sourceSha256": "4ee8b63c5eddbdbea384855a3a94991ba72eac29d92d6de742b8859e2ab19c6c",
+    "timestampNote": "capture は元動画の指定秒に相当するフレームを抽出。30fpsの映像で秒数×30が0始まりのフレーム番号。表示開始の目安は1秒ごとのサンプルを基準にした推定値（最大約1秒程度の誤差）。",
+    "suppliedCorrections": [
+      {
+        "filename": "answer_001.png",
+        "sha256": "adbcc022fbfeef9d5a00ff5ec0b9db4dbb706b13bd313c4b845fd4bd695c4982"
+      },
+      {
+        "filename": "answer_013.png",
+        "sha256": "0f3141d856f56ff4496ebc3026f4925aaff085a47f9dd9a6e3481fb1d6e01b7a"
+      },
+      {
+        "filename": "answer_026.png",
+        "sha256": "be82499cd47b6cc191fe29d444dc058a7c6851b26f41791de745c8813e70387a"
+      },
+      {
+        "filename": "answer_028.png",
+        "sha256": "4cce9e59b25109a0f58b7dee5789921c6ca25706749e8756199790ccafed7f63"
+      },
+      {
+        "filename": "question_001.png",
+        "sha256": "779e4567a7bd7319d940bfe114f70964b2184bd27bba6e1702d93c87813e9677"
+      },
+      {
+        "filename": "question_013.png",
+        "sha256": "41d5be9871102d4c0df18346e21c0b3f7156843e55caf96360d5c6a9f5dfd5f9"
+      },
+      {
+        "filename": "question_026.png",
+        "sha256": "199f12f67761c33c3de9927aa6f8b4fd1f8eebc12bdf369c5d204b9e27c0306c"
+      },
+      {
+        "filename": "question_028.png",
+        "sha256": "f6b257472e5467a9db5861724e7bc68ecdcddac77946206bed33de98d8f512bc"
+      }
+    ],
+    "verifiedReextractions": [
+      {
+        "filename": "answer_005.png",
+        "sourceTime": 76.0,
+        "sha256": "4da753a4750ad3c28ea86f03c15702959c4efa7ab47d213223548ff5d2278fee",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_006.png",
+        "sourceTime": 87.0,
+        "sha256": "7c805c1943650275cc398f9d65879d66cc669bac08c6217ceb89f399e1318e01",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_012.png",
+        "sourceTime": 163.0,
+        "sha256": "88d964a03950ceaf24720d57115e4dbc90628ab45493c88fd11a661a2201b8ba",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_015.png",
+        "sourceTime": 206.0,
+        "sha256": "e3392f8acd156da3a2ffb7514f44da75936a7f885d85e5c8302f3a7769cdf2cf",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_016.png",
+        "sourceTime": 217.0,
+        "sha256": "abd33344734b8426840ca29b9bacfa1a30c26c7eaf761fbf0a49bf97993e450d",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_027.png",
+        "sourceTime": 362.0,
+        "sha256": "59d33778660b90d51b917c96286292513a77d613874bb443d4f15e6dc69bbf24",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_034.png",
+        "sourceTime": 448.0,
+        "sha256": "09cb856b655805551b03bfd336bb700d38a700dbac0c1b74d02ddadd8988b20d",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_040.png",
+        "sourceTime": 530.0,
+        "sha256": "f2126a040ff1c8c0adc8bef2a2e087a2923b2ca88d07dc4508cb686ebcd133de",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_041.png",
+        "sourceTime": 540.0,
+        "sha256": "957aa50f1cdf45d1390d2aabeab00ed7e9dd3c653726d52850a8ee892a5b0027",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_043.png",
+        "sourceTime": 562.0,
+        "sha256": "2e250dc54d35a12f9bf8295159619cc9ce75ae114223c1be86483076341b9686",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      },
+      {
+        "filename": "answer_046.png",
+        "sourceTime": 596.0,
+        "sha256": "9cc047414d1fb9ccb68fc2e1b944072bebdb438179afe96cb3953766e3cc8521",
+        "reason": "解答文字がはっきり表示された元動画フレームへ"
+      }
+    ]
+  }
+}

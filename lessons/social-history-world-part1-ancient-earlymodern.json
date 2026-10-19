@@ -1,0 +1,510 @@
+{
+  "id": "social-history-world-part1-ancient-earlymodern",
+  "subject": "social",
+  "field": "history",
+  "title": "世界史① 前編（四大文明・宗教・大航海時代など）",
+  "grade": "中学歴史",
+  "description": "人類の進化、四大文明、中国王朝、宗教、ルネサンス、大航海時代、宗教改革、革命と産業革命などを学ぶ一問一答47問。",
+  "cover": "images_07/social-history-world-part1-ancient-earlymodern/question_001.png",
+  "chapters": [
+    {
+      "id": "world-history-part1-ancient-to-industrial",
+      "title": "世界史・前編（古代文明～産業革命）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_001.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_001.png",
+      "sourceTimes": {
+        "question": 28.5,
+        "answer": 33.7
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_002.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_002.png",
+      "sourceTimes": {
+        "question": 47.5,
+        "answer": 51.8
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_003.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_003.png",
+      "sourceTimes": {
+        "question": 64.5,
+        "answer": 68.8
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_004.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_004.png",
+      "sourceTimes": {
+        "question": 79.5,
+        "answer": 83.8
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_005.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_005.png",
+      "sourceTimes": {
+        "question": 96.5,
+        "answer": 101.7
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_006.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_006.png",
+      "sourceTimes": {
+        "question": 111.5,
+        "answer": 115.8
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_007.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_007.png",
+      "sourceTimes": {
+        "question": 126.5,
+        "answer": 130.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_008.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_008.png",
+      "sourceTimes": {
+        "question": 138.5,
+        "answer": 142.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_009.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_009.png",
+      "sourceTimes": {
+        "question": 155.5,
+        "answer": 159.8
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_010.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_010.png",
+      "sourceTimes": {
+        "question": 170.5,
+        "answer": 175.7
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_011.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_011.png",
+      "sourceTimes": {
+        "question": 190.5,
+        "answer": 195.7
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_012.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_012.png",
+      "sourceTimes": {
+        "question": 205.5,
+        "answer": 209.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_013.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_013.png",
+      "sourceTimes": {
+        "question": 220.5,
+        "answer": 224.8
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_014.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_014.png",
+      "sourceTimes": {
+        "question": 235.5,
+        "answer": 240.7
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_015.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_015.png",
+      "sourceTimes": {
+        "question": 252.5,
+        "answer": 256.8
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_016.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_016.png",
+      "sourceTimes": {
+        "question": 268.5,
+        "answer": 273.7
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_017.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_017.png",
+      "sourceTimes": {
+        "question": 288.5,
+        "answer": 293.7
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_018.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_018.png",
+      "sourceTimes": {
+        "question": 306.5,
+        "answer": 313.7
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_019.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_019.png",
+      "sourceTimes": {
+        "question": 328.5,
+        "answer": 332.8
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_020.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_020.png",
+      "sourceTimes": {
+        "question": 349.5,
+        "answer": 353.8
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_021.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_021.png",
+      "sourceTimes": {
+        "question": 369.5,
+        "answer": 373.8
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_022.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_022.png",
+      "sourceTimes": {
+        "question": 384.5,
+        "answer": 388.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_023.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_023.png",
+      "sourceTimes": {
+        "question": 401.5,
+        "answer": 405.8
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_024.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_024.png",
+      "sourceTimes": {
+        "question": 420.5,
+        "answer": 426.7
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_025.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_025.png",
+      "sourceTimes": {
+        "question": 441.5,
+        "answer": 449.7
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_026.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_026.png",
+      "sourceTimes": {
+        "question": 462.5,
+        "answer": 468.7
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_027.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_027.png",
+      "sourceTimes": {
+        "question": 483.5,
+        "answer": 488.7
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_028.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_028.png",
+      "sourceTimes": {
+        "question": 503.5,
+        "answer": 507.8
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_029.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_029.png",
+      "sourceTimes": {
+        "question": 522.5,
+        "answer": 526.8
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_030.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_030.png",
+      "sourceTimes": {
+        "question": 540.5,
+        "answer": 545.7
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_031.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_031.png",
+      "sourceTimes": {
+        "question": 559.5,
+        "answer": 564.7
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_032.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_032.png?v=d1c8c402bc2ea87d",
+      "sourceTimes": {
+        "question": 577.5,
+        "answer": 581.8
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "033",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_033.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_033.png",
+      "sourceTimes": {
+        "question": 595.5,
+        "answer": 599.8
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_034.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_034.png",
+      "sourceTimes": {
+        "question": 613.5,
+        "answer": 617.8
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_035.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_035.png?v=82b7ecc5ef10807c",
+      "sourceTimes": {
+        "question": 631.5,
+        "answer": 636.7
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "036",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_036.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_036.png",
+      "sourceTimes": {
+        "question": 649.5,
+        "answer": 653.8
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_037.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_037.png",
+      "sourceTimes": {
+        "question": 667.5,
+        "answer": 673.7
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_038.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_038.png",
+      "sourceTimes": {
+        "question": 691.5,
+        "answer": 695.8
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_039.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_039.png",
+      "sourceTimes": {
+        "question": 711.5,
+        "answer": 715.8
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_040.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_040.png",
+      "sourceTimes": {
+        "question": 732.5,
+        "answer": 740.7
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_041.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_041.png",
+      "sourceTimes": {
+        "question": 749.5,
+        "answer": 753.8
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_042.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_042.png",
+      "sourceTimes": {
+        "question": 770.5,
+        "answer": 774.8
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_043.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_043.png",
+      "sourceTimes": {
+        "question": 790.5,
+        "answer": 795.7
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_044.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_044.png",
+      "sourceTimes": {
+        "question": 811.5,
+        "answer": 815.8
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_045.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_045.png",
+      "sourceTimes": {
+        "question": 829.5,
+        "answer": 834.7
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_046.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_046.png",
+      "sourceTimes": {
+        "question": 849.5,
+        "answer": 854.7
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "world-history-part1-ancient-to-industrial",
+      "question": "images_07/social-history-world-part1-ancient-earlymodern/question_047.png",
+      "answer": "images_07/social-history-world-part1-ancient-earlymodern/answer_047.png",
+      "sourceTimes": {
+        "question": 869.5,
+        "answer": 873.8
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=zN0Smc91lZs",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【世界史一問一答】四大文明・宗教・大航海時代など／中学社会／聞き流し／高校入試対策.f137.mp4",
+    "sourceSha256": "85abedb5e556eab126b0894e7f3ad3ae61a6083b8a5427ad26a7ebd45b53462d",
+    "timestampNote": "capture は元動画から抽出したフレームの動画内位置（秒）。frame_index は30fps換算の0始まりの対応フレーム位置。start_approx は1秒間隔の映像解析による表示開始のおおよその秒数。問題は赤字解答表示前、解答は赤字および追加される関連写真・図を含んだ安定状態を選びました。",
+    "suppliedCorrections": [
+      {
+        "filename": "answer_032.png",
+        "sha256": "d1c8c402bc2ea87da51c93d7caa4d63e1c209b49f4ea76f88f852f206e96e4fb"
+      },
+      {
+        "filename": "answer_035.png",
+        "sha256": "82b7ecc5ef10807cfd4c7597138ffd68a31b5208ba8f6c9c357d6aeae8f47428"
+      }
+    ]
+  }
+}

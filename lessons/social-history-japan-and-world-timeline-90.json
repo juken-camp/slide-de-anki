@@ -1,0 +1,924 @@
+{
+  "id": "social-history-japan-and-world-timeline-90",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史｜日本史と覚える世界史（重要用語90選）",
+  "grade": "中学歴史",
+  "description": "日本史の年表と世界史の出来事を結び付けて覚える一問一答・全90問。",
+  "cover": "images_07/social-history-japan-and-world-timeline-90/question_001.png",
+  "chapters": [
+    {
+      "id": "japan-history-world-history-timeline-90",
+      "title": "日本史と覚える世界史"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_001.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_001.png",
+      "sourceTimes": {
+        "question": 11.5,
+        "answer": 23.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_002.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_002.png",
+      "sourceTimes": {
+        "question": 31.5,
+        "answer": 41.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_003.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_003.png",
+      "sourceTimes": {
+        "question": 49.5,
+        "answer": 61.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_004.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_004.png",
+      "sourceTimes": {
+        "question": 69.5,
+        "answer": 78.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_005.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_005.png",
+      "sourceTimes": {
+        "question": 86.5,
+        "answer": 98.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_006.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_006.png",
+      "sourceTimes": {
+        "question": 106.5,
+        "answer": 117.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_007.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_007.png",
+      "sourceTimes": {
+        "question": 125.5,
+        "answer": 137.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_008.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_008.png",
+      "sourceTimes": {
+        "question": 145.5,
+        "answer": 154.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_009.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_009.png",
+      "sourceTimes": {
+        "question": 162.5,
+        "answer": 174.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_010.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_010.png",
+      "sourceTimes": {
+        "question": 182.5,
+        "answer": 191.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_011.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_011.png",
+      "sourceTimes": {
+        "question": 199.5,
+        "answer": 210.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_012.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_012.png",
+      "sourceTimes": {
+        "question": 218.5,
+        "answer": 227.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_013.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_013.png",
+      "sourceTimes": {
+        "question": 235.5,
+        "answer": 248.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_014.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_014.png",
+      "sourceTimes": {
+        "question": 256.5,
+        "answer": 269.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_015.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_015.png",
+      "sourceTimes": {
+        "question": 277.5,
+        "answer": 287.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_016.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_016.png",
+      "sourceTimes": {
+        "question": 295.5,
+        "answer": 306.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_017.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_017.png",
+      "sourceTimes": {
+        "question": 314.5,
+        "answer": 327.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_018.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_018.png",
+      "sourceTimes": {
+        "question": 335.5,
+        "answer": 346.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_019.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_019.png",
+      "sourceTimes": {
+        "question": 354.5,
+        "answer": 371.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_020.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_020.png",
+      "sourceTimes": {
+        "question": 379.5,
+        "answer": 391.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_021.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_021.png",
+      "sourceTimes": {
+        "question": 399.5,
+        "answer": 413.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_022.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_022.png",
+      "sourceTimes": {
+        "question": 421.5,
+        "answer": 433.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_023.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_023.png",
+      "sourceTimes": {
+        "question": 441.5,
+        "answer": 453.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_024.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_024.png",
+      "sourceTimes": {
+        "question": 461.5,
+        "answer": 479.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_025.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_025.png",
+      "sourceTimes": {
+        "question": 487.5,
+        "answer": 503.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_026.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_026.png",
+      "sourceTimes": {
+        "question": 511.5,
+        "answer": 522.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_027.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_027.png",
+      "sourceTimes": {
+        "question": 530.5,
+        "answer": 540.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_028.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_028.png",
+      "sourceTimes": {
+        "question": 548.5,
+        "answer": 561.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_029.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_029.png",
+      "sourceTimes": {
+        "question": 569.5,
+        "answer": 585.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_030.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_030.png",
+      "sourceTimes": {
+        "question": 593.5,
+        "answer": 605.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_031.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_031.png",
+      "sourceTimes": {
+        "question": 613.5,
+        "answer": 626.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_032.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_032.png",
+      "sourceTimes": {
+        "question": 634.5,
+        "answer": 650.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_033.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_033.png",
+      "sourceTimes": {
+        "question": 658.5,
+        "answer": 669.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_034.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_034.png",
+      "sourceTimes": {
+        "question": 677.5,
+        "answer": 692.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_035.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_035.png",
+      "sourceTimes": {
+        "question": 700.5,
+        "answer": 713.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_036.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_036.png",
+      "sourceTimes": {
+        "question": 721.5,
+        "answer": 733.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_037.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_037.png",
+      "sourceTimes": {
+        "question": 741.5,
+        "answer": 757.5
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_038.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_038.png",
+      "sourceTimes": {
+        "question": 765.5,
+        "answer": 774.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_039.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_039.png",
+      "sourceTimes": {
+        "question": 782.5,
+        "answer": 795.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_040.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_040.png",
+      "sourceTimes": {
+        "question": 803.5,
+        "answer": 815.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_041.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_041.png",
+      "sourceTimes": {
+        "question": 823.5,
+        "answer": 834.5
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_042.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_042.png",
+      "sourceTimes": {
+        "question": 842.5,
+        "answer": 861.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_043.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_043.png",
+      "sourceTimes": {
+        "question": 869.5,
+        "answer": 883.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_044.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_044.png",
+      "sourceTimes": {
+        "question": 891.5,
+        "answer": 901.5
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_045.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_045.png",
+      "sourceTimes": {
+        "question": 909.5,
+        "answer": 919.5
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_046.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_046.png",
+      "sourceTimes": {
+        "question": 927.5,
+        "answer": 937.5
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_047.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_047.png",
+      "sourceTimes": {
+        "question": 945.5,
+        "answer": 957.5
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_048.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_048.png",
+      "sourceTimes": {
+        "question": 965.5,
+        "answer": 979.5
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_049.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_049.png",
+      "sourceTimes": {
+        "question": 987.5,
+        "answer": 1001.5
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_050.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_050.png",
+      "sourceTimes": {
+        "question": 1009.5,
+        "answer": 1018.5
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_051.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_051.png",
+      "sourceTimes": {
+        "question": 1026.5,
+        "answer": 1039.5
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_052.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_052.png",
+      "sourceTimes": {
+        "question": 1047.5,
+        "answer": 1059.5
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_053.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_053.png",
+      "sourceTimes": {
+        "question": 1067.5,
+        "answer": 1080.5
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_054.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_054.png",
+      "sourceTimes": {
+        "question": 1088.5,
+        "answer": 1098.5
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_055.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_055.png",
+      "sourceTimes": {
+        "question": 1106.5,
+        "answer": 1120.5
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_056.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_056.png",
+      "sourceTimes": {
+        "question": 1128.5,
+        "answer": 1141.5
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_057.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_057.png",
+      "sourceTimes": {
+        "question": 1149.5,
+        "answer": 1161.5
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_058.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_058.png",
+      "sourceTimes": {
+        "question": 1169.5,
+        "answer": 1181.5
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_059.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_059.png",
+      "sourceTimes": {
+        "question": 1189.5,
+        "answer": 1203.5
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_060.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_060.png",
+      "sourceTimes": {
+        "question": 1211.5,
+        "answer": 1223.5
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_061.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_061.png",
+      "sourceTimes": {
+        "question": 1231.5,
+        "answer": 1243.5
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_062.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_062.png",
+      "sourceTimes": {
+        "question": 1251.5,
+        "answer": 1265.5
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_063.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_063.png",
+      "sourceTimes": {
+        "question": 1273.5,
+        "answer": 1289.5
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_064.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_064.png",
+      "sourceTimes": {
+        "question": 1297.5,
+        "answer": 1310.5
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_065.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_065.png",
+      "sourceTimes": {
+        "question": 1318.5,
+        "answer": 1330.5
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_066.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_066.png",
+      "sourceTimes": {
+        "question": 1338.5,
+        "answer": 1349.5
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_067.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_067.png",
+      "sourceTimes": {
+        "question": 1357.5,
+        "answer": 1368.5
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_068.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_068.png",
+      "sourceTimes": {
+        "question": 1376.5,
+        "answer": 1390.5
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_069.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_069.png",
+      "sourceTimes": {
+        "question": 1398.5,
+        "answer": 1413.5
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_070.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_070.png",
+      "sourceTimes": {
+        "question": 1421.5,
+        "answer": 1435.5
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_071.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_071.png",
+      "sourceTimes": {
+        "question": 1443.5,
+        "answer": 1460.5
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_072.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_072.png",
+      "sourceTimes": {
+        "question": 1468.5,
+        "answer": 1488.5
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_073.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_073.png",
+      "sourceTimes": {
+        "question": 1496.5,
+        "answer": 1508.5
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_074.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_074.png",
+      "sourceTimes": {
+        "question": 1516.5,
+        "answer": 1528.5
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_075.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_075.png",
+      "sourceTimes": {
+        "question": 1536.5,
+        "answer": 1546.5
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_076.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_076.png",
+      "sourceTimes": {
+        "question": 1554.5,
+        "answer": 1569.5
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_077.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_077.png",
+      "sourceTimes": {
+        "question": 1577.5,
+        "answer": 1593.5
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_078.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_078.png",
+      "sourceTimes": {
+        "question": 1601.5,
+        "answer": 1614.5
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_079.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_079.png",
+      "sourceTimes": {
+        "question": 1622.5,
+        "answer": 1638.5
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_080.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_080.png",
+      "sourceTimes": {
+        "question": 1646.5,
+        "answer": 1662.5
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_081.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_081.png",
+      "sourceTimes": {
+        "question": 1670.5,
+        "answer": 1686.5
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_082.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_082.png",
+      "sourceTimes": {
+        "question": 1694.5,
+        "answer": 1710.5
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_083.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_083.png",
+      "sourceTimes": {
+        "question": 1718.5,
+        "answer": 1736.5
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_084.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_084.png",
+      "sourceTimes": {
+        "question": 1744.5,
+        "answer": 1755.5
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_085.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_085.png",
+      "sourceTimes": {
+        "question": 1763.5,
+        "answer": 1779.5
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_086.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_086.png",
+      "sourceTimes": {
+        "question": 1787.5,
+        "answer": 1799.5
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_087.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_087.png",
+      "sourceTimes": {
+        "question": 1807.5,
+        "answer": 1816.5
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_088.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_088.png",
+      "sourceTimes": {
+        "question": 1824.5,
+        "answer": 1836.5
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_089.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_089.png",
+      "sourceTimes": {
+        "question": 1844.5,
+        "answer": 1860.5
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "japan-history-world-history-timeline-90",
+      "question": "images_07/social-history-japan-and-world-timeline-90/question_090.png",
+      "answer": "images_07/social-history-japan-and-world-timeline-90/answer_090.png",
+      "sourceTimes": {
+        "question": 1868.5,
+        "answer": 1877.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=bY3P-N9ROWE",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "日本史と覚える世界史一問一答｜90語暗記｜中学歴史で出てくる重要用語90選！.f399.mp4",
+    "sourceSha256": "f3108ae08ff157d4016c5694a098e0387c22e53eacfc624d70b4c0022033e2de",
+    "timestampNote": "captureは元動画中から選んだ画像の時刻（秒）です。画面下の設問番号と問題テキストの変化を毎秒サンプリングして、90問を抽出しました。問題画像は解答表示前、解答画像は解答・図の表示が完成した後。番組の冒頭・エンディングは除外。"
+  }
+}

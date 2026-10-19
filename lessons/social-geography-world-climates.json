@@ -1,0 +1,488 @@
+{
+  "id": "social-geography-world-climates",
+  "subject": "social",
+  "field": "geography",
+  "title": "世界各地の気候帯・気候区分",
+  "grade": "中学地理",
+  "description": "世界各地の気候帯と気候区分、雨温図、暮らしや農業の特色を学ぶ一問一答44問。",
+  "cover": "images_06/social-geography-world-climates/question_001.png",
+  "chapters": [
+    {
+      "id": "climate-zones",
+      "title": "気候帯の基礎"
+    },
+    {
+      "id": "climate-regions",
+      "title": "気候区分の基礎"
+    },
+    {
+      "id": "polar-climate",
+      "title": "寒帯"
+    },
+    {
+      "id": "subarctic-climate",
+      "title": "冷帯（亜寒帯）"
+    },
+    {
+      "id": "temperate-climate",
+      "title": "温帯"
+    },
+    {
+      "id": "dry-climate",
+      "title": "乾燥帯"
+    },
+    {
+      "id": "tropical-climate",
+      "title": "熱帯"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "climate-zones",
+      "question": "images_06/social-geography-world-climates/question_001.png",
+      "answer": "images_06/social-geography-world-climates/answer_001.png",
+      "sourceTimes": {
+        "question": 45.5,
+        "answer": 56.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "climate-zones",
+      "question": "images_06/social-geography-world-climates/question_002.png",
+      "answer": "images_06/social-geography-world-climates/answer_002.png",
+      "sourceTimes": {
+        "question": 61.5,
+        "answer": 72.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "climate-zones",
+      "question": "images_06/social-geography-world-climates/question_003.png",
+      "answer": "images_06/social-geography-world-climates/answer_003.png",
+      "sourceTimes": {
+        "question": 77.5,
+        "answer": 88.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "climate-zones",
+      "question": "images_06/social-geography-world-climates/question_004.png",
+      "answer": "images_06/social-geography-world-climates/answer_004.png",
+      "sourceTimes": {
+        "question": 93.5,
+        "answer": 108.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "climate-zones",
+      "question": "images_06/social-geography-world-climates/question_005.png",
+      "answer": "images_06/social-geography-world-climates/answer_005.png",
+      "sourceTimes": {
+        "question": 113.5,
+        "answer": 123.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "climate-zones",
+      "question": "images_06/social-geography-world-climates/question_006.png",
+      "answer": "images_06/social-geography-world-climates/answer_006.png",
+      "sourceTimes": {
+        "question": 128.5,
+        "answer": 139.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "climate-zones",
+      "question": "images_06/social-geography-world-climates/question_007.png",
+      "answer": "images_06/social-geography-world-climates/answer_007.png",
+      "sourceTimes": {
+        "question": 144.5,
+        "answer": 157.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "climate-zones",
+      "question": "images_06/social-geography-world-climates/question_008.png",
+      "answer": "images_06/social-geography-world-climates/answer_008.png",
+      "sourceTimes": {
+        "question": 162.5,
+        "answer": 171.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_009.png",
+      "answer": "images_06/social-geography-world-climates/answer_009.png",
+      "sourceTimes": {
+        "question": 182.5,
+        "answer": 196.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_010.png",
+      "answer": "images_06/social-geography-world-climates/answer_010.png",
+      "sourceTimes": {
+        "question": 201.5,
+        "answer": 216.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_011.png",
+      "answer": "images_06/social-geography-world-climates/answer_011.png",
+      "sourceTimes": {
+        "question": 221.5,
+        "answer": 232.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_012.png",
+      "answer": "images_06/social-geography-world-climates/answer_012.png",
+      "sourceTimes": {
+        "question": 237.5,
+        "answer": 252.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_013.png",
+      "answer": "images_06/social-geography-world-climates/answer_013.png",
+      "sourceTimes": {
+        "question": 257.5,
+        "answer": 272.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_014.png",
+      "answer": "images_06/social-geography-world-climates/answer_014.png",
+      "sourceTimes": {
+        "question": 277.5,
+        "answer": 293.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_015.png",
+      "answer": "images_06/social-geography-world-climates/answer_015.png",
+      "sourceTimes": {
+        "question": 298.5,
+        "answer": 314.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_016.png",
+      "answer": "images_06/social-geography-world-climates/answer_016.png",
+      "sourceTimes": {
+        "question": 319.5,
+        "answer": 334.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_017.png",
+      "answer": "images_06/social-geography-world-climates/answer_017.png",
+      "sourceTimes": {
+        "question": 339.5,
+        "answer": 352.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "climate-regions",
+      "question": "images_06/social-geography-world-climates/question_018.png",
+      "answer": "images_06/social-geography-world-climates/answer_018.png",
+      "sourceTimes": {
+        "question": 357.5,
+        "answer": 371.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "polar-climate",
+      "question": "images_06/social-geography-world-climates/question_019.png",
+      "answer": "images_06/social-geography-world-climates/answer_019.png",
+      "sourceTimes": {
+        "question": 382.5,
+        "answer": 397.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "polar-climate",
+      "question": "images_06/social-geography-world-climates/question_020.png",
+      "answer": "images_06/social-geography-world-climates/answer_020.png",
+      "sourceTimes": {
+        "question": 402.5,
+        "answer": 414.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "polar-climate",
+      "question": "images_06/social-geography-world-climates/question_021.png",
+      "answer": "images_06/social-geography-world-climates/answer_021.png",
+      "sourceTimes": {
+        "question": 419.5,
+        "answer": 434.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "polar-climate",
+      "question": "images_06/social-geography-world-climates/question_022.png",
+      "answer": "images_06/social-geography-world-climates/answer_022.png",
+      "sourceTimes": {
+        "question": 439.5,
+        "answer": 455.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "subarctic-climate",
+      "question": "images_06/social-geography-world-climates/question_023.png",
+      "answer": "images_06/social-geography-world-climates/answer_023.png",
+      "sourceTimes": {
+        "question": 467.5,
+        "answer": 479.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "subarctic-climate",
+      "question": "images_06/social-geography-world-climates/question_024.png",
+      "answer": "images_06/social-geography-world-climates/answer_024.png",
+      "sourceTimes": {
+        "question": 484.5,
+        "answer": 494.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "subarctic-climate",
+      "question": "images_06/social-geography-world-climates/question_025.png",
+      "answer": "images_06/social-geography-world-climates/answer_025.png",
+      "sourceTimes": {
+        "question": 499.5,
+        "answer": 517.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "subarctic-climate",
+      "question": "images_06/social-geography-world-climates/question_026.png",
+      "answer": "images_06/social-geography-world-climates/answer_026.png",
+      "sourceTimes": {
+        "question": 522.5,
+        "answer": 533.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "temperate-climate",
+      "question": "images_06/social-geography-world-climates/question_027.png",
+      "answer": "images_06/social-geography-world-climates/answer_027.png",
+      "sourceTimes": {
+        "question": 543.5,
+        "answer": 564.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "temperate-climate",
+      "question": "images_06/social-geography-world-climates/question_028.png",
+      "answer": "images_06/social-geography-world-climates/answer_028.png",
+      "sourceTimes": {
+        "question": 569.5,
+        "answer": 583.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "temperate-climate",
+      "question": "images_06/social-geography-world-climates/question_029.png",
+      "answer": "images_06/social-geography-world-climates/answer_029.png",
+      "sourceTimes": {
+        "question": 588.5,
+        "answer": 602.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "temperate-climate",
+      "question": "images_06/social-geography-world-climates/question_030.png",
+      "answer": "images_06/social-geography-world-climates/answer_030.png",
+      "sourceTimes": {
+        "question": 607.5,
+        "answer": 619.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "temperate-climate",
+      "question": "images_06/social-geography-world-climates/question_031.png",
+      "answer": "images_06/social-geography-world-climates/answer_031.png",
+      "sourceTimes": {
+        "question": 624.5,
+        "answer": 640.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "temperate-climate",
+      "question": "images_06/social-geography-world-climates/question_032.png",
+      "answer": "images_06/social-geography-world-climates/answer_032.png",
+      "sourceTimes": {
+        "question": 645.5,
+        "answer": 664.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "temperate-climate",
+      "question": "images_06/social-geography-world-climates/question_033.png",
+      "answer": "images_06/social-geography-world-climates/answer_033.png",
+      "sourceTimes": {
+        "question": 669.5,
+        "answer": 682.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "temperate-climate",
+      "question": "images_06/social-geography-world-climates/question_034.png",
+      "answer": "images_06/social-geography-world-climates/answer_034.png",
+      "sourceTimes": {
+        "question": 687.5,
+        "answer": 702.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "dry-climate",
+      "question": "images_06/social-geography-world-climates/question_035.png",
+      "answer": "images_06/social-geography-world-climates/answer_035.png",
+      "sourceTimes": {
+        "question": 713.5,
+        "answer": 728.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "dry-climate",
+      "question": "images_06/social-geography-world-climates/question_036.png",
+      "answer": "images_06/social-geography-world-climates/answer_036.png",
+      "sourceTimes": {
+        "question": 733.5,
+        "answer": 746.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "dry-climate",
+      "question": "images_06/social-geography-world-climates/question_037.png",
+      "answer": "images_06/social-geography-world-climates/answer_037.png",
+      "sourceTimes": {
+        "question": 751.5,
+        "answer": 763.5
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "dry-climate",
+      "question": "images_06/social-geography-world-climates/question_038.png",
+      "answer": "images_06/social-geography-world-climates/answer_038.png",
+      "sourceTimes": {
+        "question": 768.5,
+        "answer": 782.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "dry-climate",
+      "question": "images_06/social-geography-world-climates/question_039.png",
+      "answer": "images_06/social-geography-world-climates/answer_039.png",
+      "sourceTimes": {
+        "question": 787.5,
+        "answer": 798.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "dry-climate",
+      "question": "images_06/social-geography-world-climates/question_040.png",
+      "answer": "images_06/social-geography-world-climates/answer_040.png",
+      "sourceTimes": {
+        "question": 803.5,
+        "answer": 821.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "dry-climate",
+      "question": "images_06/social-geography-world-climates/question_041.png",
+      "answer": "images_06/social-geography-world-climates/answer_041.png",
+      "sourceTimes": {
+        "question": 826.5,
+        "answer": 842.5
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "tropical-climate",
+      "question": "images_06/social-geography-world-climates/question_042.png",
+      "answer": "images_06/social-geography-world-climates/answer_042.png",
+      "sourceTimes": {
+        "question": 852.5,
+        "answer": 863.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "tropical-climate",
+      "question": "images_06/social-geography-world-climates/question_043.png",
+      "answer": "images_06/social-geography-world-climates/answer_043.png",
+      "sourceTimes": {
+        "question": 868.5,
+        "answer": 881.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "tropical-climate",
+      "question": "images_06/social-geography-world-climates/question_044.png",
+      "answer": "images_06/social-geography-world-climates/answer_044.png",
+      "sourceTimes": {
+        "question": 886.5,
+        "answer": 901.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=M4Kx8y4hjGg",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【地理・気候の一問一答】世界各地の気候帯・気候区分／聞き流し／図解あり.f616.mp4",
+    "sourceSha256": "4f828b50b72bdb7bc20569f657751dc588ed2e834f21d42d90027cb9b090941e",
+    "timestampNote": "captureは元動画の実際のタイムスタンプ（秒）、ptsは元動画のtime_base（1/1000秒）単位、frame_indexは0始まりのデコード順。start_approx/end_approxは1秒間隔の画面変化から得た目安で、厳密な切替時刻ではありません。PNGは元動画のフレームを無加工・原寸で抽出。"
+  }
+}

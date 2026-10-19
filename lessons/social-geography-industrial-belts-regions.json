@@ -1,0 +1,245 @@
+{
+  "id": "social-geography-industrial-belts-regions",
+  "subject": "social",
+  "field": "geography",
+  "title": "工業地帯・工業地域",
+  "grade": "中学地理",
+  "description": "日本の工業地帯・工業地域の特徴や工業の特色を学ぶ一問一答21問。",
+  "cover": "images_06/social-geography-industrial-belts-regions/question_001.png",
+  "chapters": [
+    {
+      "id": "industrial-belts",
+      "title": "工業地帯"
+    },
+    {
+      "id": "industrial-regions",
+      "title": "工業地域"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_001.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_001.png",
+      "sourceTimes": {
+        "question": 39.0,
+        "answer": 48.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_002.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_002.png",
+      "sourceTimes": {
+        "question": 57.0,
+        "answer": 67.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_003.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_003.png",
+      "sourceTimes": {
+        "question": 74.0,
+        "answer": 84.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_004.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_004.png",
+      "sourceTimes": {
+        "question": 94.0,
+        "answer": 104.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_005.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_005.png",
+      "sourceTimes": {
+        "question": 111.0,
+        "answer": 120.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_006.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_006.png",
+      "sourceTimes": {
+        "question": 128.0,
+        "answer": 138.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_007.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_007.png",
+      "sourceTimes": {
+        "question": 149.0,
+        "answer": 158.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_008.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_008.png",
+      "sourceTimes": {
+        "question": 168.0,
+        "answer": 178.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "industrial-belts",
+      "question": "images_06/social-geography-industrial-belts-regions/question_009.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_009.png",
+      "sourceTimes": {
+        "question": 188.0,
+        "answer": 198.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_010.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_010.png",
+      "sourceTimes": {
+        "question": 208.0,
+        "answer": 218.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_011.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_011.png",
+      "sourceTimes": {
+        "question": 228.0,
+        "answer": 240.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_012.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_012.png",
+      "sourceTimes": {
+        "question": 250.0,
+        "answer": 260.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_013.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_013.png",
+      "sourceTimes": {
+        "question": 267.0,
+        "answer": 274.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_014.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_014.png",
+      "sourceTimes": {
+        "question": 282.0,
+        "answer": 292.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_015.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_015.png",
+      "sourceTimes": {
+        "question": 300.0,
+        "answer": 310.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_016.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_016.png",
+      "sourceTimes": {
+        "question": 320.0,
+        "answer": 332.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_017.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_017.png",
+      "sourceTimes": {
+        "question": 341.0,
+        "answer": 352.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_018.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_018.png",
+      "sourceTimes": {
+        "question": 361.0,
+        "answer": 372.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_019.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_019.png",
+      "sourceTimes": {
+        "question": 383.0,
+        "answer": 392.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_020.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_020.png",
+      "sourceTimes": {
+        "question": 403.0,
+        "answer": 412.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "industrial-regions",
+      "question": "images_06/social-geography-industrial-belts-regions/question_021.png",
+      "answer": "images_06/social-geography-industrial-belts-regions/answer_021.png",
+      "sourceTimes": {
+        "question": 421.0,
+        "answer": 432.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=Qsnr8ex7gRo",
+  "series": "themes",
+  "supplements": [
+    {
+      "title": "ヒント：工業地帯・工業地域の全体関係図",
+      "image": "images_06/social-geography-industrial-belts-regions/supplement_001.png",
+      "sourceTime": 27.0
+    }
+  ],
+  "extractionNotes": {
+    "sourceFilename": "【地理・工業地帯一問一答】工業地帯・工業地域を覚える／中学社会地理／聞き流し.f399.mp4",
+    "sourceSha256": "dd384460db1013c49c22b31552c59a75007e765b34319f35c5c9e242cea64566",
+    "timestampNote": "captureは元動画のフレーム番号を30fpsで換算した実際の表示時刻（秒）。ptsは15360分の1秒単位（30fpsにつき512増加）。start_approx/end_approxは2秒間隔の映像確認による切替の目安であり厳密な切替フレームではありません。PNGは元動画のフレームを原寸・無加工で保存。"
+  }
+}

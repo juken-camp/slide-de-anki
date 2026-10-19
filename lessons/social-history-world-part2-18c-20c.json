@@ -1,0 +1,573 @@
+{
+  "id": "social-history-world-part2-18c-20c",
+  "subject": "social",
+  "field": "history",
+  "title": "世界史② 後編（18世紀～20世紀）",
+  "grade": "中学歴史",
+  "description": "18世紀のフランス革命から20世紀の国際情勢までを学ぶ、一問一答形式の全54問教材。",
+  "cover": "images_07/social-history-world-part2-18c-20c/question_001.png",
+  "chapters": [
+    {
+      "id": "world-history-modern-late",
+      "title": "世界史・後編（18世紀～20世紀）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_001.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_001.png",
+      "sourceTimes": {
+        "question": 17.5,
+        "answer": 21.6
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_002.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_002.png",
+      "sourceTimes": {
+        "question": 31.5,
+        "answer": 36.1
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_003.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_003.png",
+      "sourceTimes": {
+        "question": 43.5,
+        "answer": 48.1
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_004.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_004.png",
+      "sourceTimes": {
+        "question": 59.5,
+        "answer": 63.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_005.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_005.png",
+      "sourceTimes": {
+        "question": 79.5,
+        "answer": 83.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_006.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_006.png",
+      "sourceTimes": {
+        "question": 93.5,
+        "answer": 97.6
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_007.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_007.png",
+      "sourceTimes": {
+        "question": 115.5,
+        "answer": 120.1
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_008.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_008.png",
+      "sourceTimes": {
+        "question": 132.5,
+        "answer": 137.1
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_009.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_009.png?v=599023a814301167",
+      "sourceTimes": {
+        "question": 149.5,
+        "answer": 153.6
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "010",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_010.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_010.png",
+      "sourceTimes": {
+        "question": 169.5,
+        "answer": 174.1
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_011.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_011.png",
+      "sourceTimes": {
+        "question": 185.5,
+        "answer": 189.6
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_012.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_012.png",
+      "sourceTimes": {
+        "question": 202.5,
+        "answer": 207.1
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_013.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_013.png",
+      "sourceTimes": {
+        "question": 216.5,
+        "answer": 220.6
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_014.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_014.png",
+      "sourceTimes": {
+        "question": 240.5,
+        "answer": 244.6
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_015.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_015.png",
+      "sourceTimes": {
+        "question": 254.5,
+        "answer": 258.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_016.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_016.png",
+      "sourceTimes": {
+        "question": 267.5,
+        "answer": 272.1
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_017.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_017.png",
+      "sourceTimes": {
+        "question": 283.5,
+        "answer": 288.1
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_018.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_018.png",
+      "sourceTimes": {
+        "question": 300.5,
+        "answer": 304.6
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_019.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_019.png",
+      "sourceTimes": {
+        "question": 318.5,
+        "answer": 322.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_020.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_020.png",
+      "sourceTimes": {
+        "question": 336.5,
+        "answer": 341.1
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_021.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_021.png",
+      "sourceTimes": {
+        "question": 350.5,
+        "answer": 355.1
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_022.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_022.png",
+      "sourceTimes": {
+        "question": 367.5,
+        "answer": 372.1
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_023.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_023.png",
+      "sourceTimes": {
+        "question": 385.5,
+        "answer": 390.1
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_024.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_024.png",
+      "sourceTimes": {
+        "question": 405.5,
+        "answer": 410.1
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_025.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_025.png",
+      "sourceTimes": {
+        "question": 423.5,
+        "answer": 428.1
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_026.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_026.png",
+      "sourceTimes": {
+        "question": 440.5,
+        "answer": 445.1
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_027.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_027.png",
+      "sourceTimes": {
+        "question": 455.5,
+        "answer": 460.1
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_028.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_028.png",
+      "sourceTimes": {
+        "question": 471.5,
+        "answer": 476.1
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_029.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_029.png",
+      "sourceTimes": {
+        "question": 485.5,
+        "answer": 490.1
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_030.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_030.png",
+      "sourceTimes": {
+        "question": 499.5,
+        "answer": 504.1
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_031.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_031.png",
+      "sourceTimes": {
+        "question": 514.5,
+        "answer": 519.1
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_032.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_032.png",
+      "sourceTimes": {
+        "question": 533.5,
+        "answer": 537.6
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_033.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_033.png",
+      "sourceTimes": {
+        "question": 550.5,
+        "answer": 554.6
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_034.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_034.png",
+      "sourceTimes": {
+        "question": 569.5,
+        "answer": 574.1
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_035.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_035.png",
+      "sourceTimes": {
+        "question": 583.5,
+        "answer": 587.6
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_036.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_036.png",
+      "sourceTimes": {
+        "question": 598.5,
+        "answer": 603.1
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_037.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_037.png",
+      "sourceTimes": {
+        "question": 611.5,
+        "answer": 616.1
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_038.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_038.png",
+      "sourceTimes": {
+        "question": 625.5,
+        "answer": 629.6
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_039.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_039.png",
+      "sourceTimes": {
+        "question": 637.5,
+        "answer": 642.1
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_040.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_040.png",
+      "sourceTimes": {
+        "question": 655.5,
+        "answer": 659.6
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_041.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_041.png",
+      "sourceTimes": {
+        "question": 670.5,
+        "answer": 675.1
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_042.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_042.png",
+      "sourceTimes": {
+        "question": 687.5,
+        "answer": 692.1
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_043.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_043.png",
+      "sourceTimes": {
+        "question": 707.5,
+        "answer": 711.6
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_044.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_044.png",
+      "sourceTimes": {
+        "question": 723.5,
+        "answer": 728.1
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_045.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_045.png",
+      "sourceTimes": {
+        "question": 742.5,
+        "answer": 747.1
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_046.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_046.png",
+      "sourceTimes": {
+        "question": 759.5,
+        "answer": 764.1
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_047.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_047.png",
+      "sourceTimes": {
+        "question": 774.5,
+        "answer": 779.1
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_048.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_048.png",
+      "sourceTimes": {
+        "question": 786.5,
+        "answer": 791.1
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_049.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_049.png",
+      "sourceTimes": {
+        "question": 801.5,
+        "answer": 806.1
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_050.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_050.png",
+      "sourceTimes": {
+        "question": 817.5,
+        "answer": 822.1
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_051.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_051.png",
+      "sourceTimes": {
+        "question": 836.5,
+        "answer": 841.1
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_052.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_052.png",
+      "sourceTimes": {
+        "question": 855.5,
+        "answer": 859.6
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_053.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_053.png",
+      "sourceTimes": {
+        "question": 871.5,
+        "answer": 876.1
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "world-history-modern-late",
+      "question": "images_07/social-history-world-part2-18c-20c/question_054.png",
+      "answer": "images_07/social-history-world-part2-18c-20c/answer_054.png",
+      "sourceTimes": {
+        "question": 887.5,
+        "answer": 892.1
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=fsPo_hi2ANs",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【世界史一問一答】後編／18世紀～20世紀頃まで／聞き流し暗記法！.f399.mp4",
+    "sourceSha256": "20167f4d04dd911fddc1dca48c97e8d33fa5b0818c5b5bfbebef25abf930d3b8",
+    "timestampNote": "capture は元動画から抽出したフレームの動画内位置（秒）。frame_index は30fps換算の0始まりの対応フレーム位置。start_approx は1秒間隔の映像解析による表示開始のおおよその秒数。問題は赤字の答えの表示前、解答は赤字と関連図が表示された安定状態を選びました。",
+    "suppliedCorrections": [
+      {
+        "filename": "answer_009.png",
+        "sha256": "599023a814301167d5424ea847f4648e05dfbb35f7ddd2550b991cd51e783100"
+      }
+    ]
+  }
+}

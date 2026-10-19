@@ -1,0 +1,224 @@
+{
+  "id": "social-geography-world-capitals-20",
+  "subject": "social",
+  "field": "geography",
+  "title": "有名な国の首都",
+  "grade": "中学地理",
+  "description": "世界20か国の首都を、国旗や位置を示す地図を使って覚える一問一答20問。元動画のスライドを無加工で保存。",
+  "cover": "images_06/social-geography-world-capitals-20/question_001.png",
+  "chapters": [
+    {
+      "id": "world-capitals",
+      "title": "世界の首都"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_001.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_001.png",
+      "sourceTimes": {
+        "question": 21.5,
+        "answer": 26.1
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_002.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_002.png",
+      "sourceTimes": {
+        "question": 32.5,
+        "answer": 37.1
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_003.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_003.png",
+      "sourceTimes": {
+        "question": 43.5,
+        "answer": 48.1
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_004.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_004.png",
+      "sourceTimes": {
+        "question": 55.0,
+        "answer": 59.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_005.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_005.png",
+      "sourceTimes": {
+        "question": 65.0,
+        "answer": 69.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_006.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_006.png",
+      "sourceTimes": {
+        "question": 77.0,
+        "answer": 81.6
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_007.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_007.png",
+      "sourceTimes": {
+        "question": 87.733333,
+        "answer": 92.333333
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_008.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_008.png",
+      "sourceTimes": {
+        "question": 97.733333,
+        "answer": 102.333333
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_009.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_009.png",
+      "sourceTimes": {
+        "question": 108.266667,
+        "answer": 112.866667
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_010.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_010.png",
+      "sourceTimes": {
+        "question": 118.733333,
+        "answer": 123.333333
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_011.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_011.png",
+      "sourceTimes": {
+        "question": 129.0,
+        "answer": 133.6
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_012.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_012.png",
+      "sourceTimes": {
+        "question": 140.0,
+        "answer": 144.6
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_013.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_013.png",
+      "sourceTimes": {
+        "question": 150.5,
+        "answer": 155.1
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_014.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_014.png",
+      "sourceTimes": {
+        "question": 159.266667,
+        "answer": 163.866667
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_015.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_015.png",
+      "sourceTimes": {
+        "question": 170.0,
+        "answer": 174.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_016.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_016.png",
+      "sourceTimes": {
+        "question": 181.266667,
+        "answer": 185.866667
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_017.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_017.png",
+      "sourceTimes": {
+        "question": 192.266667,
+        "answer": 196.866667
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_018.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_018.png",
+      "sourceTimes": {
+        "question": 202.733333,
+        "answer": 207.333333
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_019.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_019.png",
+      "sourceTimes": {
+        "question": 214.266667,
+        "answer": 218.866667
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "world-capitals",
+      "question": "images_06/social-geography-world-capitals-20/question_020.png",
+      "answer": "images_06/social-geography-world-capitals-20/answer_020.png",
+      "sourceTimes": {
+        "question": 223.266667,
+        "answer": 227.333333
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=lFT3oQahOqk",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【首都一問一答】有名な国の『首都』を覚える／社会地理／聞き流し.f137.mp4",
+    "sourceSha256": "517ef40d8210b211bd0c8d4ea9b5bbac772adc3ac7c956dbc737f92c659429ae",
+    "timestampNote": "元動画のデコードフレームを1920×1080 PNGで無加工保存。時刻は動画先頭からの秒数。解答表示の開始は0.25秒間隔の色変化検出による目安で、フレーム取得時刻は30fpsの元動画から得ています。問題側は赤字の答えの出現前、解答側は赤字および地図表示後の安定フレームを選択。テキストや図表の追加・変更は一切していません。"
+  }
+}

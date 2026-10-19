@@ -1,0 +1,547 @@
+{
+  "id": "social-geography-seas-rivers-lakes-bays-canals",
+  "subject": "social",
+  "field": "geography",
+  "title": "海・川・湖・湾・運河",
+  "grade": "中学地理",
+  "description": "日本と世界の有名な海・川・湖・湾・運河を、元動画から抽出した51組の問題・解答画像で学習する一問一答教材。元の第38問（死海に関する設問）は削除済み。",
+  "cover": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_001.png",
+  "chapters": [
+    {
+      "id": "japan",
+      "title": "日本の海・川・湖・湾（23問）"
+    },
+    {
+      "id": "world",
+      "title": "世界の海・川・湖・湾・運河（28問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_001.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_001.png",
+      "sourceTimes": {
+        "question": 27.0,
+        "answer": 34.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_002.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_002.png",
+      "sourceTimes": {
+        "question": 39.0,
+        "answer": 49.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_003.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_003.png",
+      "sourceTimes": {
+        "question": 54.0,
+        "answer": 62.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_004.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_004.png",
+      "sourceTimes": {
+        "question": 66.0,
+        "answer": 76.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_005.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_005.png",
+      "sourceTimes": {
+        "question": 81.0,
+        "answer": 93.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_006.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_006.png",
+      "sourceTimes": {
+        "question": 98.0,
+        "answer": 110.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_007.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_007.png",
+      "sourceTimes": {
+        "question": 115.0,
+        "answer": 125.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_008.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_008.png",
+      "sourceTimes": {
+        "question": 130.0,
+        "answer": 142.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_009.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_009.png",
+      "sourceTimes": {
+        "question": 147.0,
+        "answer": 159.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_010.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_010.png",
+      "sourceTimes": {
+        "question": 164.0,
+        "answer": 177.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_011.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_011.png",
+      "sourceTimes": {
+        "question": 182.0,
+        "answer": 196.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_012.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_012.png",
+      "sourceTimes": {
+        "question": 201.0,
+        "answer": 211.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_013.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_013.png",
+      "sourceTimes": {
+        "question": 216.0,
+        "answer": 227.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_014.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_014.png",
+      "sourceTimes": {
+        "question": 232.0,
+        "answer": 243.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_015.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_015.png",
+      "sourceTimes": {
+        "question": 249.0,
+        "answer": 260.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_016.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_016.png",
+      "sourceTimes": {
+        "question": 265.0,
+        "answer": 277.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_017.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_017.png",
+      "sourceTimes": {
+        "question": 284.0,
+        "answer": 294.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_018.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_018.png",
+      "sourceTimes": {
+        "question": 301.0,
+        "answer": 311.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_019.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_019.png",
+      "sourceTimes": {
+        "question": 317.0,
+        "answer": 329.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_020.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_020.png",
+      "sourceTimes": {
+        "question": 334.0,
+        "answer": 345.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_021.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_021.png",
+      "sourceTimes": {
+        "question": 351.0,
+        "answer": 361.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_022.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_022.png",
+      "sourceTimes": {
+        "question": 366.0,
+        "answer": 379.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "japan",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_023.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_023.png",
+      "sourceTimes": {
+        "question": 385.0,
+        "answer": 397.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_024.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_024.png",
+      "sourceTimes": {
+        "question": 406.0,
+        "answer": 418.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_025.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_025.png",
+      "sourceTimes": {
+        "question": 422.0,
+        "answer": 429.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_026.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_026.png",
+      "sourceTimes": {
+        "question": 433.0,
+        "answer": 446.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_027.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_027.png",
+      "sourceTimes": {
+        "question": 451.0,
+        "answer": 462.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_028.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_028.png",
+      "sourceTimes": {
+        "question": 467.0,
+        "answer": 477.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_029.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_029.png",
+      "sourceTimes": {
+        "question": 482.0,
+        "answer": 495.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_030.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_030.png",
+      "sourceTimes": {
+        "question": 500.0,
+        "answer": 509.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_031.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_031.png",
+      "sourceTimes": {
+        "question": 514.0,
+        "answer": 522.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_032.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_032.png",
+      "sourceTimes": {
+        "question": 528.0,
+        "answer": 538.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_033.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_033.png",
+      "sourceTimes": {
+        "question": 543.0,
+        "answer": 554.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_034.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_034.png",
+      "sourceTimes": {
+        "question": 558.0,
+        "answer": 569.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_035.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_035.png",
+      "sourceTimes": {
+        "question": 574.0,
+        "answer": 582.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_036.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_036.png",
+      "sourceTimes": {
+        "question": 589.0,
+        "answer": 600.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_037.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_037.png",
+      "sourceTimes": {
+        "question": 606.0,
+        "answer": 616.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_038.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_038.png",
+      "sourceTimes": {
+        "question": 639.0,
+        "answer": 649.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_039.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_039.png",
+      "sourceTimes": {
+        "question": 654.0,
+        "answer": 666.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_040.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_040.png",
+      "sourceTimes": {
+        "question": 671.0,
+        "answer": 684.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_041.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_041.png",
+      "sourceTimes": {
+        "question": 689.0,
+        "answer": 702.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_042.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_042.png",
+      "sourceTimes": {
+        "question": 707.0,
+        "answer": 719.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_043.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_043.png",
+      "sourceTimes": {
+        "question": 725.0,
+        "answer": 737.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_044.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_044.png",
+      "sourceTimes": {
+        "question": 742.0,
+        "answer": 752.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_045.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_045.png",
+      "sourceTimes": {
+        "question": 757.0,
+        "answer": 768.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_046.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_046.png",
+      "sourceTimes": {
+        "question": 773.0,
+        "answer": 785.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_047.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_047.png",
+      "sourceTimes": {
+        "question": 790.0,
+        "answer": 801.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_048.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_048.png",
+      "sourceTimes": {
+        "question": 807.0,
+        "answer": 818.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_049.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_049.png",
+      "sourceTimes": {
+        "question": 824.0,
+        "answer": 837.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_050.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_050.png",
+      "sourceTimes": {
+        "question": 842.0,
+        "answer": 858.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "world",
+      "question": "images_06/social-geography-seas-rivers-lakes-bays-canals/question_051.png",
+      "answer": "images_06/social-geography-seas-rivers-lakes-bays-canals/answer_051.png",
+      "sourceTimes": {
+        "question": 863.0,
+        "answer": 875.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=AjFHQfvYXkM",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【海・川・湖・湾一問一答】地理／日本と世界の有名な「川・海・湖・湾・運河」を覚える.f399.mp4",
+    "sourceSha256": "9fa01ec305713f2b408ab34bf4a13f7eda522c51661b9ed9f0686ca32fd66f19",
+    "timestampNote": "capture は元動画の指定秒のフレーム。元動画は30fps一定で、秒数×30が取得フレーム番号(0始まり)。表示開始の目安は1秒間隔で解析した推定値であり、最大約1秒程度の誤差がある。",
+    "omittedPair": {
+      "original_pair_id": "038",
+      "question": "question_038.png",
+      "answer": "answer_038.png",
+      "original_question_capture_sec": 621,
+      "original_answer_capture_sec": 634,
+      "reason": "ユーザーの指示により問題を省略"
+    },
+    "numberingNote": "旧001〜037は変更なし、旧038は削除、旧039〜052は新038〜051。"
+  }
+}

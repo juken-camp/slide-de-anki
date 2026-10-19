@@ -1,0 +1,495 @@
+{
+  "id": "social-geography-prefecture-features-47",
+  "subject": "social",
+  "field": "geography",
+  "title": "47都道府県の特徴",
+  "grade": "中学地理",
+  "description": "47都道府県の産業・地形・農業・観光・文化などの重要キーワードから都道府県を当てる一問一答47問。",
+  "cover": "images_06/social-geography-prefecture-features-47/question_001.png",
+  "chapters": [
+    {
+      "id": "prefecture-features",
+      "title": "47都道府県の特徴"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_001.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_001.png",
+      "sourceTimes": {
+        "question": 49.0,
+        "answer": 55.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_002.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_002.png",
+      "sourceTimes": {
+        "question": 82.0,
+        "answer": 88.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_003.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_003.png",
+      "sourceTimes": {
+        "question": 120.0,
+        "answer": 126.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_004.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_004.png",
+      "sourceTimes": {
+        "question": 153.0,
+        "answer": 159.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_005.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_005.png",
+      "sourceTimes": {
+        "question": 184.0,
+        "answer": 190.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_006.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_006.png",
+      "sourceTimes": {
+        "question": 217.0,
+        "answer": 223.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_007.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_007.png",
+      "sourceTimes": {
+        "question": 255.0,
+        "answer": 261.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_008.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_008.png",
+      "sourceTimes": {
+        "question": 293.0,
+        "answer": 299.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_009.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_009.png",
+      "sourceTimes": {
+        "question": 333.0,
+        "answer": 339.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_010.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_010.png",
+      "sourceTimes": {
+        "question": 373.0,
+        "answer": 379.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_011.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_011.png",
+      "sourceTimes": {
+        "question": 415.0,
+        "answer": 421.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_012.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_012.png",
+      "sourceTimes": {
+        "question": 453.0,
+        "answer": 459.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_013.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_013.png",
+      "sourceTimes": {
+        "question": 487.0,
+        "answer": 493.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_014.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_014.png",
+      "sourceTimes": {
+        "question": 524.0,
+        "answer": 530.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_015.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_015.png",
+      "sourceTimes": {
+        "question": 568.0,
+        "answer": 574.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_016.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_016.png",
+      "sourceTimes": {
+        "question": 613.0,
+        "answer": 619.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_017.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_017.png",
+      "sourceTimes": {
+        "question": 662.0,
+        "answer": 668.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_018.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_018.png",
+      "sourceTimes": {
+        "question": 706.0,
+        "answer": 712.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_019.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_019.png",
+      "sourceTimes": {
+        "question": 752.0,
+        "answer": 758.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_020.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_020.png",
+      "sourceTimes": {
+        "question": 793.0,
+        "answer": 799.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_021.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_021.png",
+      "sourceTimes": {
+        "question": 837.0,
+        "answer": 843.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_022.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_022.png",
+      "sourceTimes": {
+        "question": 881.0,
+        "answer": 887.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_023.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_023.png",
+      "sourceTimes": {
+        "question": 921.0,
+        "answer": 927.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_024.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_024.png",
+      "sourceTimes": {
+        "question": 961.0,
+        "answer": 967.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_025.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_025.png",
+      "sourceTimes": {
+        "question": 1010.0,
+        "answer": 1016.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_026.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_026.png",
+      "sourceTimes": {
+        "question": 1053.0,
+        "answer": 1059.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_027.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_027.png",
+      "sourceTimes": {
+        "question": 1096.0,
+        "answer": 1102.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_028.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_028.png",
+      "sourceTimes": {
+        "question": 1138.0,
+        "answer": 1144.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_029.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_029.png",
+      "sourceTimes": {
+        "question": 1178.0,
+        "answer": 1184.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_030.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_030.png",
+      "sourceTimes": {
+        "question": 1223.0,
+        "answer": 1229.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_031.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_031.png",
+      "sourceTimes": {
+        "question": 1267.0,
+        "answer": 1273.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_032.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_032.png",
+      "sourceTimes": {
+        "question": 1316.0,
+        "answer": 1322.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_033.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_033.png",
+      "sourceTimes": {
+        "question": 1356.0,
+        "answer": 1362.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_034.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_034.png",
+      "sourceTimes": {
+        "question": 1396.0,
+        "answer": 1402.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_035.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_035.png",
+      "sourceTimes": {
+        "question": 1435.0,
+        "answer": 1441.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_036.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_036.png",
+      "sourceTimes": {
+        "question": 1484.0,
+        "answer": 1490.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_037.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_037.png",
+      "sourceTimes": {
+        "question": 1526.0,
+        "answer": 1532.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_038.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_038.png",
+      "sourceTimes": {
+        "question": 1567.0,
+        "answer": 1573.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_039.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_039.png",
+      "sourceTimes": {
+        "question": 1607.0,
+        "answer": 1613.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_040.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_040.png",
+      "sourceTimes": {
+        "question": 1649.0,
+        "answer": 1655.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_041.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_041.png",
+      "sourceTimes": {
+        "question": 1694.0,
+        "answer": 1700.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_042.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_042.png",
+      "sourceTimes": {
+        "question": 1738.0,
+        "answer": 1744.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_043.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_043.png",
+      "sourceTimes": {
+        "question": 1777.0,
+        "answer": 1783.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_044.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_044.png",
+      "sourceTimes": {
+        "question": 1814.0,
+        "answer": 1820.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_045.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_045.png",
+      "sourceTimes": {
+        "question": 1855.0,
+        "answer": 1861.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_046.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_046.png",
+      "sourceTimes": {
+        "question": 1892.0,
+        "answer": 1898.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "prefecture-features",
+      "question": "images_06/social-geography-prefecture-features-47/question_047.png",
+      "answer": "images_06/social-geography-prefecture-features-47/answer_047.png",
+      "sourceTimes": {
+        "question": 1932.0,
+        "answer": 1938.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=peTMt6wXOlQ",
+  "series": "themes",
+  "variantLabel": "重要キーワード",
+  "extractionNotes": {
+    "sourceFilename": "【地理一問一答】47都道府県の特徴を覚える｜重要キーワード暗記🔑（資料の読み取り問題対策）.f616.mp4",
+    "sourceSha256": "abb18c2364cb883979b41c1643e1549109287dc44221a1411aaa313a684cc999",
+    "timestampNote": "各captureは元動画30fpsに基づいて選択したデコードフレームの概算時刻（秒）。frame_indexは0始まりのフレーム番号。start_approx/end_approxは1秒間隔の表示・赤字領域検出から推定した切替時刻の目安。元動画の1920×1080フレームを無加工・原寸のPNGとして保存。"
+  }
+}

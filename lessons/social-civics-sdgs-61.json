@@ -1,0 +1,703 @@
+{
+  "id": "social-civics-sdgs-61",
+  "subject": "social",
+  "field": "civics",
+  "title": "SDGsがわかる一問一答",
+  "grade": "中学公民",
+  "description": "SDGsの意味・背景、17の目標を61問の一問一答で学習する教材。動画の解答表示前後を原寸で抽出。 数値・統計は2022年公開の動画で用いられた資料による。",
+  "cover": "images_05/social-civics-sdgs-61/question_001.png",
+  "chapters": [
+    {
+      "id": "basics",
+      "title": "SDGsの基本知識"
+    },
+    {
+      "id": "goal01",
+      "title": "目標01：貧困をなくそう"
+    },
+    {
+      "id": "goal02",
+      "title": "目標02：飢餓をゼロに"
+    },
+    {
+      "id": "goal03",
+      "title": "目標03：すべての人に健康と福祉を"
+    },
+    {
+      "id": "goal04",
+      "title": "目標04：質の高い教育をみんなに"
+    },
+    {
+      "id": "goal05",
+      "title": "目標05：ジェンダー平等を実現しよう"
+    },
+    {
+      "id": "goal06",
+      "title": "目標06：安全な水とトイレを世界中に"
+    },
+    {
+      "id": "goal07",
+      "title": "目標07：エネルギーをみんなに そしてクリーンに"
+    },
+    {
+      "id": "goal08",
+      "title": "目標08：働きがいも経済成長も"
+    },
+    {
+      "id": "goal09",
+      "title": "目標09：産業と技術革新の基盤をつくろう"
+    },
+    {
+      "id": "goal10",
+      "title": "目標10：人や国の不平等をなくそう"
+    },
+    {
+      "id": "goal11",
+      "title": "目標11：住み続けられるまちづくりを"
+    },
+    {
+      "id": "goal12",
+      "title": "目標12：つくる責任 つかう責任"
+    },
+    {
+      "id": "goal13",
+      "title": "目標13：気候変動に具体的な対策を"
+    },
+    {
+      "id": "goal14",
+      "title": "目標14：海の豊かさを守ろう"
+    },
+    {
+      "id": "goal15",
+      "title": "目標15：陸の豊かさも守ろう"
+    },
+    {
+      "id": "goal16",
+      "title": "目標16：平和と公正をすべての人に"
+    },
+    {
+      "id": "goal17",
+      "title": "目標17：パートナーシップで目標を達成しよう"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_001.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_001.png",
+      "sourceTimes": {
+        "question": 27.0,
+        "answer": 39.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_002.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_002.png",
+      "sourceTimes": {
+        "question": 45.0,
+        "answer": 54.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_003.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_003.png",
+      "sourceTimes": {
+        "question": 60.0,
+        "answer": 66.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_004.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_004.png",
+      "sourceTimes": {
+        "question": 72.0,
+        "answer": 75.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_005.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_005.png",
+      "sourceTimes": {
+        "question": 81.0,
+        "answer": 93.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_006.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_006.png",
+      "sourceTimes": {
+        "question": 99.0,
+        "answer": 105.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_007.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_007.png",
+      "sourceTimes": {
+        "question": 111.0,
+        "answer": 129.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_008.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_008.png",
+      "sourceTimes": {
+        "question": 135.0,
+        "answer": 144.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "basics",
+      "question": "images_05/social-civics-sdgs-61/question_009.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_009.png",
+      "sourceTimes": {
+        "question": 150.0,
+        "answer": 165.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "goal01",
+      "question": "images_05/social-civics-sdgs-61/question_010.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_010.png",
+      "sourceTimes": {
+        "question": 186.0,
+        "answer": 213.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "goal01",
+      "question": "images_05/social-civics-sdgs-61/question_011.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_011.png",
+      "sourceTimes": {
+        "question": 222.0,
+        "answer": 234.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "goal01",
+      "question": "images_05/social-civics-sdgs-61/question_012.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_012.png",
+      "sourceTimes": {
+        "question": 243.0,
+        "answer": 258.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "goal02",
+      "question": "images_05/social-civics-sdgs-61/question_013.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_013.png",
+      "sourceTimes": {
+        "question": 270.0,
+        "answer": 285.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "goal02",
+      "question": "images_05/social-civics-sdgs-61/question_014.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_014.png",
+      "sourceTimes": {
+        "question": 294.0,
+        "answer": 309.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "goal02",
+      "question": "images_05/social-civics-sdgs-61/question_015.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_015.png",
+      "sourceTimes": {
+        "question": 318.0,
+        "answer": 336.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "goal02",
+      "question": "images_05/social-civics-sdgs-61/question_016.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_016.png",
+      "sourceTimes": {
+        "question": 345.0,
+        "answer": 369.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "goal03",
+      "question": "images_05/social-civics-sdgs-61/question_017.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_017.png",
+      "sourceTimes": {
+        "question": 378.0,
+        "answer": 402.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "goal03",
+      "question": "images_05/social-civics-sdgs-61/question_018.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_018.png",
+      "sourceTimes": {
+        "question": 411.0,
+        "answer": 420.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "goal03",
+      "question": "images_05/social-civics-sdgs-61/question_019.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_019.png",
+      "sourceTimes": {
+        "question": 429.0,
+        "answer": 444.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "goal04",
+      "question": "images_05/social-civics-sdgs-61/question_020.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_020.png",
+      "sourceTimes": {
+        "question": 453.0,
+        "answer": 468.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "goal04",
+      "question": "images_05/social-civics-sdgs-61/question_021.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_021.png",
+      "sourceTimes": {
+        "question": 477.0,
+        "answer": 486.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "goal04",
+      "question": "images_05/social-civics-sdgs-61/question_022.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_022.png",
+      "sourceTimes": {
+        "question": 495.0,
+        "answer": 501.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "goal05",
+      "question": "images_05/social-civics-sdgs-61/question_023.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_023.png",
+      "sourceTimes": {
+        "question": 513.0,
+        "answer": 534.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "goal05",
+      "question": "images_05/social-civics-sdgs-61/question_024.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_024.png",
+      "sourceTimes": {
+        "question": 543.0,
+        "answer": 555.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "goal05",
+      "question": "images_05/social-civics-sdgs-61/question_025.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_025.png",
+      "sourceTimes": {
+        "question": 564.0,
+        "answer": 579.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "goal06",
+      "question": "images_05/social-civics-sdgs-61/question_026.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_026.png",
+      "sourceTimes": {
+        "question": 591.0,
+        "answer": 612.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "goal06",
+      "question": "images_05/social-civics-sdgs-61/question_027.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_027.png",
+      "sourceTimes": {
+        "question": 621.0,
+        "answer": 645.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "goal06",
+      "question": "images_05/social-civics-sdgs-61/question_028.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_028.png",
+      "sourceTimes": {
+        "question": 654.0,
+        "answer": 666.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "goal07",
+      "question": "images_05/social-civics-sdgs-61/question_029.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_029.png",
+      "sourceTimes": {
+        "question": 675.0,
+        "answer": 699.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "goal07",
+      "question": "images_05/social-civics-sdgs-61/question_030.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_030.png",
+      "sourceTimes": {
+        "question": 708.0,
+        "answer": 726.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "goal07",
+      "question": "images_05/social-civics-sdgs-61/question_031.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_031.png",
+      "sourceTimes": {
+        "question": 735.0,
+        "answer": 747.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "goal08",
+      "question": "images_05/social-civics-sdgs-61/question_032.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_032.png",
+      "sourceTimes": {
+        "question": 759.0,
+        "answer": 777.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "goal08",
+      "question": "images_05/social-civics-sdgs-61/question_033.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_033.png",
+      "sourceTimes": {
+        "question": 786.0,
+        "answer": 807.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "goal08",
+      "question": "images_05/social-civics-sdgs-61/question_034.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_034.png",
+      "sourceTimes": {
+        "question": 816.0,
+        "answer": 831.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "goal09",
+      "question": "images_05/social-civics-sdgs-61/question_035.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_035.png",
+      "sourceTimes": {
+        "question": 843.0,
+        "answer": 864.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "goal09",
+      "question": "images_05/social-civics-sdgs-61/question_036.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_036.png",
+      "sourceTimes": {
+        "question": 873.0,
+        "answer": 900.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "goal09",
+      "question": "images_05/social-civics-sdgs-61/question_037.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_037.png",
+      "sourceTimes": {
+        "question": 909.0,
+        "answer": 921.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "goal10",
+      "question": "images_05/social-civics-sdgs-61/question_038.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_038.png",
+      "sourceTimes": {
+        "question": 930.0,
+        "answer": 957.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "goal10",
+      "question": "images_05/social-civics-sdgs-61/question_039.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_039.png",
+      "sourceTimes": {
+        "question": 966.0,
+        "answer": 987.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "goal10",
+      "question": "images_05/social-civics-sdgs-61/question_040.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_040.png",
+      "sourceTimes": {
+        "question": 996.0,
+        "answer": 1014.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "goal11",
+      "question": "images_05/social-civics-sdgs-61/question_041.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_041.png",
+      "sourceTimes": {
+        "question": 1026.0,
+        "answer": 1044.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "goal11",
+      "question": "images_05/social-civics-sdgs-61/question_042.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_042.png",
+      "sourceTimes": {
+        "question": 1053.0,
+        "answer": 1071.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "goal11",
+      "question": "images_05/social-civics-sdgs-61/question_043.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_043.png",
+      "sourceTimes": {
+        "question": 1080.0,
+        "answer": 1101.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "goal12",
+      "question": "images_05/social-civics-sdgs-61/question_044.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_044.png",
+      "sourceTimes": {
+        "question": 1110.0,
+        "answer": 1125.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "goal12",
+      "question": "images_05/social-civics-sdgs-61/question_045.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_045.png",
+      "sourceTimes": {
+        "question": 1134.0,
+        "answer": 1158.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "goal12",
+      "question": "images_05/social-civics-sdgs-61/question_046.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_046.png",
+      "sourceTimes": {
+        "question": 1167.0,
+        "answer": 1179.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "goal13",
+      "question": "images_05/social-civics-sdgs-61/question_047.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_047.png",
+      "sourceTimes": {
+        "question": 1188.0,
+        "answer": 1209.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "goal13",
+      "question": "images_05/social-civics-sdgs-61/question_048.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_048.png",
+      "sourceTimes": {
+        "question": 1218.0,
+        "answer": 1245.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "goal13",
+      "question": "images_05/social-civics-sdgs-61/question_049.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_049.png",
+      "sourceTimes": {
+        "question": 1254.0,
+        "answer": 1272.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "goal14",
+      "question": "images_05/social-civics-sdgs-61/question_050.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_050.png",
+      "sourceTimes": {
+        "question": 1281.0,
+        "answer": 1314.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "goal14",
+      "question": "images_05/social-civics-sdgs-61/question_051.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_051.png",
+      "sourceTimes": {
+        "question": 1323.0,
+        "answer": 1344.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "goal14",
+      "question": "images_05/social-civics-sdgs-61/question_052.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_052.png",
+      "sourceTimes": {
+        "question": 1353.0,
+        "answer": 1375.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "goal15",
+      "question": "images_05/social-civics-sdgs-61/question_053.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_053.png",
+      "sourceTimes": {
+        "question": 1386.0,
+        "answer": 1410.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "goal15",
+      "question": "images_05/social-civics-sdgs-61/question_054.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_054.png",
+      "sourceTimes": {
+        "question": 1419.0,
+        "answer": 1440.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "goal15",
+      "question": "images_05/social-civics-sdgs-61/question_055.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_055.png",
+      "sourceTimes": {
+        "question": 1449.0,
+        "answer": 1482.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "goal16",
+      "question": "images_05/social-civics-sdgs-61/question_056.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_056.png",
+      "sourceTimes": {
+        "question": 1491.0,
+        "answer": 1518.0
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "goal16",
+      "question": "images_05/social-civics-sdgs-61/question_057.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_057.png",
+      "sourceTimes": {
+        "question": 1527.0,
+        "answer": 1554.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "goal16",
+      "question": "images_05/social-civics-sdgs-61/question_058.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_058.png",
+      "sourceTimes": {
+        "question": 1563.0,
+        "answer": 1593.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "goal17",
+      "question": "images_05/social-civics-sdgs-61/question_059.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_059.png",
+      "sourceTimes": {
+        "question": 1602.0,
+        "answer": 1641.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "goal17",
+      "question": "images_05/social-civics-sdgs-61/question_060.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_060.png",
+      "sourceTimes": {
+        "question": 1650.0,
+        "answer": 1662.0
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "goal17",
+      "question": "images_05/social-civics-sdgs-61/question_061.png",
+      "answer": "images_05/social-civics-sdgs-61/answer_061.png",
+      "sourceTimes": {
+        "question": 1671.0,
+        "answer": 1680.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=x4QuGeTVPXs",
+  "series": "themes",
+  "variantLabel": "2022年の動画",
+  "extractionNotes": {
+    "sourceFilename": "【SDGsがわかる一問一答】なぜSDGsが必要なのか！17の目標とは？SDGsをわかりやすく解説.f399.mp4",
+    "sourceSha256": "fc160b077852f1edc2e644a01fc3b898fa9d60f9aa0c67032c60cd8ff656c03d",
+    "timestampNote": "capture は画像抽出時に指定した動画内時刻(秒)。frame_index_approx は30fpsを前提とした概算フレーム番号。start_approx は3秒間隔の解析および目視によるおおよその表示開始時刻。"
+  }
+}

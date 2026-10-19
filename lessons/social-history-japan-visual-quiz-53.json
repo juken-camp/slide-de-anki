@@ -1,0 +1,563 @@
+{
+  "id": "social-history-japan-visual-quiz-53",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史の画像一問一答（日本史でよく見る画像53選）",
+  "grade": "中学歴史",
+  "description": "日本史の重要な遺跡・建築物・肖像画・文化財・史料などの画像を見て答える全53問。",
+  "cover": "images_07/social-history-japan-visual-quiz-53/question_001.png",
+  "chapters": [
+    {
+      "id": "history-japan-visual-quiz-53",
+      "title": "日本史の重要画像53選"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_001.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_001.png",
+      "sourceTimes": {
+        "question": 28.367,
+        "answer": 36.367
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_002.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_002.png",
+      "sourceTimes": {
+        "question": 42.366,
+        "answer": 50.366
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_003.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_003.png",
+      "sourceTimes": {
+        "question": 56.366,
+        "answer": 65.367
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_004.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_004.png",
+      "sourceTimes": {
+        "question": 71.367,
+        "answer": 79.367
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_005.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_005.png",
+      "sourceTimes": {
+        "question": 84.366,
+        "answer": 93.366
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_006.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_006.png",
+      "sourceTimes": {
+        "question": 98.366,
+        "answer": 107.366
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_007.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_007.png",
+      "sourceTimes": {
+        "question": 113.367,
+        "answer": 124.366
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_008.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_008.png",
+      "sourceTimes": {
+        "question": 130.367,
+        "answer": 139.367
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_009.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_009.png",
+      "sourceTimes": {
+        "question": 144.367,
+        "answer": 153.367
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_010.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_010.png",
+      "sourceTimes": {
+        "question": 160.366,
+        "answer": 170.367
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_011.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_011.png",
+      "sourceTimes": {
+        "question": 177.366,
+        "answer": 188.367
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_012.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_012.png",
+      "sourceTimes": {
+        "question": 194.367,
+        "answer": 204.367
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_013.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_013.png",
+      "sourceTimes": {
+        "question": 210.367,
+        "answer": 220.367
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_014.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_014.png",
+      "sourceTimes": {
+        "question": 225.367,
+        "answer": 233.367
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_015.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_015.png",
+      "sourceTimes": {
+        "question": 238.367,
+        "answer": 246.367
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_016.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_016.png",
+      "sourceTimes": {
+        "question": 252.367,
+        "answer": 260.367
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_017.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_017.png",
+      "sourceTimes": {
+        "question": 265.367,
+        "answer": 275.367
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_018.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_018.png",
+      "sourceTimes": {
+        "question": 280.367,
+        "answer": 289.367
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_019.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_019.png",
+      "sourceTimes": {
+        "question": 295.367,
+        "answer": 304.367
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_020.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_020.png",
+      "sourceTimes": {
+        "question": 309.367,
+        "answer": 318.367
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_021.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_021.png",
+      "sourceTimes": {
+        "question": 323.367,
+        "answer": 331.367
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_022.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_022.png?v=eb4e098a4fa0f0e8",
+      "sourceTimes": {
+        "question": 336.367,
+        "answer": 345.367
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "023",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_023.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_023.png",
+      "sourceTimes": {
+        "question": 351.367,
+        "answer": 361.367
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_024.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_024.png",
+      "sourceTimes": {
+        "question": 367.367,
+        "answer": 377.367
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_025.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_025.png",
+      "sourceTimes": {
+        "question": 383.367,
+        "answer": 391.367
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_026.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_026.png",
+      "sourceTimes": {
+        "question": 397.367,
+        "answer": 406.367
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_027.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_027.png",
+      "sourceTimes": {
+        "question": 411.367,
+        "answer": 419.367
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_028.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_028.png",
+      "sourceTimes": {
+        "question": 424.367,
+        "answer": 433.367
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_029.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_029.png",
+      "sourceTimes": {
+        "question": 439.367,
+        "answer": 448.367
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_030.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_030.png",
+      "sourceTimes": {
+        "question": 454.366,
+        "answer": 466.366
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_031.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_031.png",
+      "sourceTimes": {
+        "question": 471.367,
+        "answer": 479.367
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_032.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_032.png",
+      "sourceTimes": {
+        "question": 484.367,
+        "answer": 492.367
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_033.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_033.png",
+      "sourceTimes": {
+        "question": 497.367,
+        "answer": 507.367
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_034.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_034.png",
+      "sourceTimes": {
+        "question": 514.367,
+        "answer": 525.367
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_035.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_035.png",
+      "sourceTimes": {
+        "question": 531.367,
+        "answer": 540.366
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_036.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_036.png",
+      "sourceTimes": {
+        "question": 545.367,
+        "answer": 555.367
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_037.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_037.png",
+      "sourceTimes": {
+        "question": 560.367,
+        "answer": 569.366
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_038.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_038.png",
+      "sourceTimes": {
+        "question": 575.367,
+        "answer": 585.367
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_039.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_039.png",
+      "sourceTimes": {
+        "question": 590.367,
+        "answer": 599.367
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_040.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_040.png",
+      "sourceTimes": {
+        "question": 604.367,
+        "answer": 615.367
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_041.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_041.png",
+      "sourceTimes": {
+        "question": 621.367,
+        "answer": 632.367
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_042.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_042.png",
+      "sourceTimes": {
+        "question": 639.367,
+        "answer": 651.367
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_043.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_043.png",
+      "sourceTimes": {
+        "question": 657.367,
+        "answer": 667.366
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_044.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_044.png",
+      "sourceTimes": {
+        "question": 674.367,
+        "answer": 686.367
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_045.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_045.png",
+      "sourceTimes": {
+        "question": 691.367,
+        "answer": 701.366
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_046.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_046.png",
+      "sourceTimes": {
+        "question": 706.366,
+        "answer": 716.334
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_047.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_047.png",
+      "sourceTimes": {
+        "question": 722.334,
+        "answer": 734.333
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_048.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_048.png",
+      "sourceTimes": {
+        "question": 739.333,
+        "answer": 749.333
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_049.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_049.png",
+      "sourceTimes": {
+        "question": 754.333,
+        "answer": 764.333
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_050.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_050.png",
+      "sourceTimes": {
+        "question": 770.333,
+        "answer": 783.333
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_051.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_051.png",
+      "sourceTimes": {
+        "question": 789.333,
+        "answer": 799.334
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_052.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_052.png",
+      "sourceTimes": {
+        "question": 805.333,
+        "answer": 815.333
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "history-japan-visual-quiz-53",
+      "question": "images_07/social-history-japan-visual-quiz-53/question_053.png",
+      "answer": "images_07/social-history-japan-visual-quiz-53/answer_053.png",
+      "sourceTimes": {
+        "question": 821.333,
+        "answer": 833.333
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=BEVJORDAtog",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【絵・画像だけを見て答える歴史の一問一答】日本史でよく見る画像53選！.f616.mp4",
+    "sourceSha256": "7537f9513b5431e55e274f87f98d7410cd1067e7d7bacd51a8b2e0330ac86ec3",
+    "timestampNote": "capture は元動画から取得した映像フレームの取得位置（秒）。frame_index はOpenCV読取フレームの0始まりの番号。表示開始の目安は毎秒サンプルから推定した概数。問題画像は赤字解答の出現前、解答画像は赤字および青背景の説明文が表示された状態を選択。",
+    "suppliedCorrections": [
+      {
+        "filename": "answer_022.png",
+        "sha256": "eb4e098a4fa0f0e875ec1de49f563031e5ac466615ae592ad132c3e1e47b9318"
+      }
+    ]
+  }
+}

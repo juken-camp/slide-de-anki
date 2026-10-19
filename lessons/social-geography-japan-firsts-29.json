@@ -1,0 +1,315 @@
+{
+  "id": "social-geography-japan-firsts-29",
+  "subject": "social",
+  "field": "geography",
+  "title": "いろいろな日本一",
+  "grade": "中学地理",
+  "description": "日本の都道府県や地理・産業・文化に関するさまざまな「日本一」を学ぶ一問一答29問。動画は2021年公開時点の内容です。 2021年公開の動画に基づく内容。順位・数値は動画公開時点。",
+  "cover": "images_06/social-geography-japan-firsts-29/question_001.png",
+  "chapters": [
+    {
+      "id": "japan-firsts",
+      "title": "いろいろな日本一"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_001.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_001.png",
+      "sourceTimes": {
+        "question": 20.0,
+        "answer": 29.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_002.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_002.png",
+      "sourceTimes": {
+        "question": 34.0,
+        "answer": 42.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_003.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_003.png",
+      "sourceTimes": {
+        "question": 47.0,
+        "answer": 57.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_004.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_004.png",
+      "sourceTimes": {
+        "question": 62.0,
+        "answer": 72.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_005.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_005.png",
+      "sourceTimes": {
+        "question": 77.0,
+        "answer": 87.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_006.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_006.png",
+      "sourceTimes": {
+        "question": 92.0,
+        "answer": 101.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_007.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_007.png",
+      "sourceTimes": {
+        "question": 106.0,
+        "answer": 117.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_008.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_008.png",
+      "sourceTimes": {
+        "question": 123.0,
+        "answer": 133.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_009.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_009.png",
+      "sourceTimes": {
+        "question": 140.0,
+        "answer": 150.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_010.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_010.png",
+      "sourceTimes": {
+        "question": 156.0,
+        "answer": 165.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_011.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_011.png",
+      "sourceTimes": {
+        "question": 170.0,
+        "answer": 179.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_012.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_012.png",
+      "sourceTimes": {
+        "question": 185.0,
+        "answer": 196.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_013.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_013.png",
+      "sourceTimes": {
+        "question": 201.0,
+        "answer": 211.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_014.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_014.png",
+      "sourceTimes": {
+        "question": 216.0,
+        "answer": 226.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_015.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_015.png",
+      "sourceTimes": {
+        "question": 231.0,
+        "answer": 240.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_016.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_016.png",
+      "sourceTimes": {
+        "question": 245.0,
+        "answer": 256.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_017.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_017.png",
+      "sourceTimes": {
+        "question": 261.0,
+        "answer": 270.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_018.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_018.png",
+      "sourceTimes": {
+        "question": 275.0,
+        "answer": 286.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_019.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_019.png",
+      "sourceTimes": {
+        "question": 293.0,
+        "answer": 304.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_020.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_020.png",
+      "sourceTimes": {
+        "question": 309.0,
+        "answer": 318.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_021.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_021.png",
+      "sourceTimes": {
+        "question": 323.0,
+        "answer": 330.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_022.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_022.png",
+      "sourceTimes": {
+        "question": 335.0,
+        "answer": 344.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_023.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_023.png",
+      "sourceTimes": {
+        "question": 350.0,
+        "answer": 359.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_024.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_024.png",
+      "sourceTimes": {
+        "question": 364.0,
+        "answer": 373.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_025.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_025.png",
+      "sourceTimes": {
+        "question": 378.0,
+        "answer": 388.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_026.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_026.png",
+      "sourceTimes": {
+        "question": 393.0,
+        "answer": 404.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_027.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_027.png",
+      "sourceTimes": {
+        "question": 410.0,
+        "answer": 419.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_028.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_028.png",
+      "sourceTimes": {
+        "question": 424.0,
+        "answer": 435.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "japan-firsts",
+      "question": "images_06/social-geography-japan-firsts-29/question_029.png",
+      "answer": "images_06/social-geography-japan-firsts-29/answer_029.png",
+      "sourceTimes": {
+        "question": 440.0,
+        "answer": 446.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=XVvrgy0ooY4",
+  "series": "themes",
+  "variantLabel": "2021年の動画",
+  "extractionNotes": {
+    "sourceFilename": "【日本一を当てる一問一答】いろいろな日本一／ベスト1.2.3発表／2021.f137.mp4",
+    "sourceSha256": "7138e0f5a67ff6961733a9e0076776c7649963b2fed6f2e7e1d37c9d2d981a68",
+    "timestampNote": "各PNGは元動画1920×1080フレームをそのまま切り出してPNG保存したもの。取得秒数は元動画の先頭からの秒数。start_approx/end_approxは1秒間隔の動画差分から求めた表示切替の目安（1秒未満の誤差あり）。画像の校正・修正は行っていません。2021年当時の順位・統計情報です。"
+  }
+}

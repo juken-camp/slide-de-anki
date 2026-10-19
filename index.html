@@ -521,7 +521,7 @@ button:disabled{opacity:.5}input[type=search],dialog input,dialog select{font-si
 <dialog id="importDialog"><button class="dialog-close" data-close="importDialog" aria-label="教材追加を閉じる">✕</button><h2>教材を追加</h2><p>教材ZIPか、問題・解答の画像を選ぶにゃ。<br><code>question_001.png</code> と <code>answer_001.png</code> をペアにするにゃ。</p><form id="importForm"><label>教材ファイル・画像（複数選択）<input type="file" id="importImages" accept=".zip,.png,.jpg,.jpeg,.webp" multiple required></label><label>教材名<input id="importTitle" maxlength="100" placeholder="例：地理 日本の地域" required></label><div class="import-taxonomy"><label>教科<input id="importSubject" list="subjectSuggestions" maxlength="60" value="理科" placeholder="例：英語・資格試験・趣味" required><datalist id="subjectSuggestions"></datalist></label><label>分野<input id="importField" list="fieldSuggestions" maxlength="60" value="生物" placeholder="例：英単語・ことわざ・仕事"><datalist id="fieldSuggestions"></datalist></label><label>学年・対象<input id="importGrade" list="gradeSuggestions" maxlength="60" value="学年共通" placeholder="例：小6・高校生・大人"><datalist id="gradeSuggestions"><option value="学年共通"></option><option value="中1"></option><option value="中2"></option><option value="中3"></option><option value="高校生"></option><option value="大人"></option></datalist></label></div><p class="import-freedom">教科も分野も、候補から選んでも自由に書いてもOKにゃ。</p><p>追加した教材は、このブラウザーに保存するにゃ。元のZIPも保管してにゃ。ほかの端末には自動で共有されないにゃ。</p><p id="importStatus" role="status"></p><div class="dialog-actions"><button type="button" class="tool" data-close="importDialog">閉じるにゃ</button><button class="tool done" id="importSubmit">追加するにゃ</button></div></form></dialog><noscript><p>このアプリを使うにはJavaScriptを有効にしてにゃ。</p></noscript>
 <dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">Nekoponをタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
-<script src="catalog.js?v=20261019-series"></script>
+<script src="catalog.js?v=20261019-history-places-link"></script>
 <script>
 // image-viewer.js
 'use strict';
@@ -996,7 +996,7 @@ function groupLabel(key) { return usesGrades() ? (key === 'other' ? '学年共�
 function groupIcon(key) { return usesGrades() ? '📖' : (fields[key]?.[1] || '📚'); }
 function catalogChoices() { return meta.filter(m => m.subject === catalogSubject); }
 function lessonSeries(m) {
-  if ((m.subject === 'science' ? ['unit','symbols','terms','themes'] : ['unit','review','frequent']).includes(m.series)) return m.series;
+  if ((m.subject === 'science' ? ['unit','symbols','terms','themes'] : ['unit','review','frequent','themes']).includes(m.series)) return m.series;
   if (m.subject === 'science') {
     if (['science-element-symbols-mnemonic-01','science-chemical-formulas-01','science-chemical-reaction-equations-01','science-ion-formulas-01'].includes(m.id)) return 'symbols';
     if (/^science-jhs[123]-important-terms-/.test(m.id)) return 'terms';
@@ -1009,7 +1009,7 @@ function catalogScopeKey() { return catalogSubject === 'social' ? `social:${soci
 function seriesDefinitions() {
   return catalogSubject === 'science'
     ? [{id:'unit',label:'単元別'},{id:'symbols',label:'記号・式'},{id:'terms',label:'重要用語'},{id:'themes',label:'テーマ別'}]
-    : [{id:'unit',label:socialField==='history'?'時代別':socialField==='geography'?'地域別':'単元別'},{id:'review',label:'まとめ'},{id:'frequent',label:'よく出る問題'}];
+    : [{id:'unit',label:socialField==='history'?'時代別':socialField==='geography'?'地域別':'単元別'},{id:'review',label:'まとめ'},{id:'frequent',label:'よく出る問題'},{id:'themes',label:'テーマ別'}];
 }
 function catalogScopeLessons() { return catalogChoices().filter(m => catalogSubject !== 'social' || m.field === socialField); }
 function availableSeries() {
@@ -1133,7 +1133,7 @@ function renderCatalog() {
       const check = document.createElement('span'); check.className = 'choice-check'; check.textContent = on ? '✓' : ''; check.setAttribute('aria-hidden','true');
       const copy = document.createElement('span'); copy.className = 'choice-copy';
       const title = document.createElement('strong'); title.textContent = m.title;
-      const sub = document.createElement('span'); sub.className = 'choice-meta'; sub.textContent = social ? `${m.count}問` : `${m.grade || '学年共通'} · ${fieldLabel(m.field,m.subject)} · ${m.count}問`;
+      const sub = document.createElement('span'); sub.className = 'choice-meta'; sub.textContent = social ? `${m.variantLabel ? m.variantLabel+' · ' : ''}${m.count}問` : `${m.grade || '学年共通'} · ${fieldLabel(m.field,m.subject)} · ${m.count}問`;
       const progress = document.createElement('span'); progress.className = 'choice-progress';
       const progressLine = document.createElement('i'); const known = knownFor(m); progressLine.style.width = `${m.count ? known/m.count*100 : 0}%`; progress.append(progressLine);
       const record = document.createElement('span'); record.className = 'choice-record'; record.textContent = `おぼえた ${known} / ${m.count}問`;
@@ -1675,5 +1675,3 @@ $('importForm').onsubmit=async e=>{e.preventDefault();const button=$('importSubm
 })();
 
 </script></body></html>
-
-

@@ -1,0 +1,433 @@
+{
+  "id": "social-history-religion-review",
+  "subject": "social",
+  "field": "history",
+  "title": "宗教まとめ（宗教・宗派・開祖・寺）",
+  "grade": "中学歴史",
+  "description": "古墳・飛鳥時代から江戸時代まで、主な宗教・宗派・開祖・寺院を学ぶ一問一答教材（全38問）。",
+  "cover": "images_07/social-history-religion-review/question_001.png",
+  "chapters": [
+    {
+      "id": "kofun-asuka",
+      "title": "古墳・飛鳥時代"
+    },
+    {
+      "id": "nara",
+      "title": "奈良時代"
+    },
+    {
+      "id": "heian",
+      "title": "平安時代"
+    },
+    {
+      "id": "kamakura",
+      "title": "鎌倉時代"
+    },
+    {
+      "id": "muromachi-sengoku",
+      "title": "室町・戦国時代"
+    },
+    {
+      "id": "edo",
+      "title": "江戸時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "kofun-asuka",
+      "question": "images_07/social-history-religion-review/question_001.png",
+      "answer": "images_07/social-history-religion-review/answer_001.png",
+      "sourceTimes": {
+        "question": 37.0,
+        "answer": 44.6
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "kofun-asuka",
+      "question": "images_07/social-history-religion-review/question_002.png",
+      "answer": "images_07/social-history-religion-review/answer_002.png",
+      "sourceTimes": {
+        "question": 49.0,
+        "answer": 57.6
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "kofun-asuka",
+      "question": "images_07/social-history-religion-review/question_003.png",
+      "answer": "images_07/social-history-religion-review/answer_003.png",
+      "sourceTimes": {
+        "question": 62.0,
+        "answer": 70.6
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "kofun-asuka",
+      "question": "images_07/social-history-religion-review/question_004.png",
+      "answer": "images_07/social-history-religion-review/answer_004.png",
+      "sourceTimes": {
+        "question": 75.0,
+        "answer": 84.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "kofun-asuka",
+      "question": "images_07/social-history-religion-review/question_005.png",
+      "answer": "images_07/social-history-religion-review/answer_005.png",
+      "sourceTimes": {
+        "question": 90.0,
+        "answer": 98.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "nara",
+      "question": "images_07/social-history-religion-review/question_006.png",
+      "answer": "images_07/social-history-religion-review/answer_006.png",
+      "sourceTimes": {
+        "question": 106.0,
+        "answer": 113.6
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "nara",
+      "question": "images_07/social-history-religion-review/question_007.png",
+      "answer": "images_07/social-history-religion-review/answer_007.png",
+      "sourceTimes": {
+        "question": 118.0,
+        "answer": 127.6
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "nara",
+      "question": "images_07/social-history-religion-review/question_008.png",
+      "answer": "images_07/social-history-religion-review/answer_008.png",
+      "sourceTimes": {
+        "question": 132.0,
+        "answer": 138.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "nara",
+      "question": "images_07/social-history-religion-review/question_009.png",
+      "answer": "images_07/social-history-religion-review/answer_009.png",
+      "sourceTimes": {
+        "question": 143.0,
+        "answer": 154.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "nara",
+      "question": "images_07/social-history-religion-review/question_010.png",
+      "answer": "images_07/social-history-religion-review/answer_010.png",
+      "sourceTimes": {
+        "question": 159.0,
+        "answer": 168.6
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "nara",
+      "question": "images_07/social-history-religion-review/question_011.png",
+      "answer": "images_07/social-history-religion-review/answer_011.png",
+      "sourceTimes": {
+        "question": 173.0,
+        "answer": 178.6
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "nara",
+      "question": "images_07/social-history-religion-review/question_012.png",
+      "answer": "images_07/social-history-religion-review/answer_012.png",
+      "sourceTimes": {
+        "question": 184.0,
+        "answer": 192.6
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "nara",
+      "question": "images_07/social-history-religion-review/question_013.png",
+      "answer": "images_07/social-history-religion-review/answer_013.png",
+      "sourceTimes": {
+        "question": 198.0,
+        "answer": 206.6
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_014.png",
+      "answer": "images_07/social-history-religion-review/answer_014.png?v=0a819c2184a21159",
+      "sourceTimes": {
+        "question": 215.0,
+        "answer": 222.6
+      },
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "015",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_015.png",
+      "answer": "images_07/social-history-religion-review/answer_015.png",
+      "sourceTimes": {
+        "question": 227.0,
+        "answer": 231.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_016.png",
+      "answer": "images_07/social-history-religion-review/answer_016.png",
+      "sourceTimes": {
+        "question": 236.0,
+        "answer": 242.6
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_017.png",
+      "answer": "images_07/social-history-religion-review/answer_017.png",
+      "sourceTimes": {
+        "question": 248.0,
+        "answer": 255.6
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_018.png",
+      "answer": "images_07/social-history-religion-review/answer_018.png",
+      "sourceTimes": {
+        "question": 260.0,
+        "answer": 265.6
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_019.png",
+      "answer": "images_07/social-history-religion-review/answer_019.png",
+      "sourceTimes": {
+        "question": 270.0,
+        "answer": 277.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_020.png",
+      "answer": "images_07/social-history-religion-review/answer_020.png",
+      "sourceTimes": {
+        "question": 282.0,
+        "answer": 296.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_021.png",
+      "answer": "images_07/social-history-religion-review/answer_021.png",
+      "sourceTimes": {
+        "question": 301.0,
+        "answer": 307.6
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "heian",
+      "question": "images_07/social-history-religion-review/question_022.png",
+      "answer": "images_07/social-history-religion-review/answer_022.png",
+      "sourceTimes": {
+        "question": 313.0,
+        "answer": 322.6
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_023.png",
+      "answer": "images_07/social-history-religion-review/answer_023.png",
+      "sourceTimes": {
+        "question": 332.0,
+        "answer": 337.6
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_024.png",
+      "answer": "images_07/social-history-religion-review/answer_024.png",
+      "sourceTimes": {
+        "question": 342.0,
+        "answer": 351.6
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_025.png",
+      "answer": "images_07/social-history-religion-review/answer_025.png",
+      "sourceTimes": {
+        "question": 357.0,
+        "answer": 362.6
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_026.png",
+      "answer": "images_07/social-history-religion-review/answer_026.png",
+      "sourceTimes": {
+        "question": 367.0,
+        "answer": 372.6
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_027.png",
+      "answer": "images_07/social-history-religion-review/answer_027.png",
+      "sourceTimes": {
+        "question": 378.0,
+        "answer": 388.6
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_028.png",
+      "answer": "images_07/social-history-religion-review/answer_028.png",
+      "sourceTimes": {
+        "question": 393.0,
+        "answer": 397.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_029.png",
+      "answer": "images_07/social-history-religion-review/answer_029.png",
+      "sourceTimes": {
+        "question": 403.0,
+        "answer": 408.6
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_030.png",
+      "answer": "images_07/social-history-religion-review/answer_030.png",
+      "sourceTimes": {
+        "question": 413.0,
+        "answer": 422.6
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "kamakura",
+      "question": "images_07/social-history-religion-review/question_031.png",
+      "answer": "images_07/social-history-religion-review/answer_031.png",
+      "sourceTimes": {
+        "question": 427.0,
+        "answer": 434.6
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "muromachi-sengoku",
+      "question": "images_07/social-history-religion-review/question_032.png",
+      "answer": "images_07/social-history-religion-review/answer_032.png",
+      "sourceTimes": {
+        "question": 444.0,
+        "answer": 454.6
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "muromachi-sengoku",
+      "question": "images_07/social-history-religion-review/question_033.png",
+      "answer": "images_07/social-history-religion-review/answer_033.png",
+      "sourceTimes": {
+        "question": 459.0,
+        "answer": 466.6
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "muromachi-sengoku",
+      "question": "images_07/social-history-religion-review/question_034.png",
+      "answer": "images_07/social-history-religion-review/answer_034.png",
+      "sourceTimes": {
+        "question": 471.0,
+        "answer": 480.6
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "muromachi-sengoku",
+      "question": "images_07/social-history-religion-review/question_035.png",
+      "answer": "images_07/social-history-religion-review/answer_035.png",
+      "sourceTimes": {
+        "question": 485.0,
+        "answer": 493.6
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "edo",
+      "question": "images_07/social-history-religion-review/question_036.png",
+      "answer": "images_07/social-history-religion-review/answer_036.png",
+      "sourceTimes": {
+        "question": 503.0,
+        "answer": 514.6
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "edo",
+      "question": "images_07/social-history-religion-review/question_037.png",
+      "answer": "images_07/social-history-religion-review/answer_037.png",
+      "sourceTimes": {
+        "question": 519.0,
+        "answer": 527.6
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "edo",
+      "question": "images_07/social-history-religion-review/question_038.png",
+      "answer": "images_07/social-history-religion-review/answer_038.png",
+      "sourceTimes": {
+        "question": 532.0,
+        "answer": 540.6
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=J6bvl2Rnn8Q",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【宗教一問一答】歴史上有名な「宗教・宗派・開祖・寺など」テスト対策.f137.mp4",
+    "sourceSha256": "c0c64fb0f0f5d5fd87a0871a2f300b2c129d84d23dc72df16bc8297532b9ed27",
+    "timestampNote": "capture は保存した元フレームの取得位置（デコード順フレーム番号÷30fps）。frame_index は0始まり。start_approx は1秒間隔で行った切替の確認による表示開始の目安です。動画内の切替演出を避け、安定した問題・解答状態を選びました。",
+    "suppliedCorrections": [
+      {
+        "filename": "answer_014.png",
+        "sha256": "0a819c2184a211594c146adabd90ab2db7047cef77bcb40b20aa2abb12902505"
+      }
+    ]
+  }
+}

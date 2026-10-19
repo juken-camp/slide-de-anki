@@ -660,19 +660,50 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 
 /* Edge shading and compact controls make the remaining series explicit. */
 .series-scroller{position:relative;min-width:0}
-.series-scroller::before,.series-scroller::after{content:'';position:absolute;top:1px;bottom:39px;width:20px;z-index:2;pointer-events:none;opacity:0;transition:opacity .15s}
+.series-scroller::before,.series-scroller::after{content:'';position:absolute;top:1px;bottom:7px;width:20px;z-index:2;pointer-events:none;opacity:0;transition:opacity .15s}
 .series-scroller::before{left:-1px;background:linear-gradient(90deg,#8e542b32,rgba(255,251,244,.76) 35%,transparent);border-radius:14px 0 0 14px}
 .series-scroller::after{right:-1px;background:linear-gradient(270deg,#8e542b32,rgba(255,251,244,.76) 35%,transparent);border-radius:0 14px 14px 0}
 .series-scroller.has-left::before,.series-scroller.has-right::after{opacity:1}
-.series-scroll-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px;margin:0 0 4px}
-.series-scroll-tools button{display:flex;align-items:center;gap:5px;min-height:30px;padding:3px 10px;border:1px solid #d7b695;border-radius:18px;background:#fff5e5;box-shadow:0 2px 0 #e7cbae;color:#925323;font-size:11px;font-weight:800;white-space:nowrap;transition:transform .14s,box-shadow .14s}
-.series-scroll-tools button:active{transform:translateY(2px);box-shadow:none}
-.series-scroll-tools button:disabled{visibility:hidden;pointer-events:none}
-.series-scroll-tools button span{font-size:19px;line-height:1}
-#seriesNext{margin-left:auto;background:#ffedcf;border-color:#cc965c;color:#89431b}
 .series-scroller #catalogSeries{margin-bottom:0}
-#app.neko-motion-off .series-scroll-tools button:active{transform:none}
-@media(prefers-reduced-motion:reduce){.series-scroller::before,.series-scroller::after,.series-scroll-tools button{transition:none}.series-scroll-tools button:active{transform:none}}
+
+/* Give the editor a real scrollable middle row, including above a phone keyboard. */
+#collectionDialog{position:fixed;inset:auto;left:50%;top:calc(var(--collection-visible-top,0px) + var(--collection-visible-height,100dvh) / 2);transform:translate(-50%,-50%);margin:0;width:min(900px,calc(100% - 24px));height:min(760px,calc(var(--collection-visible-height,100dvh) - 24px));max-height:calc(var(--collection-visible-height,100dvh) - 24px);min-height:0;padding:0;border-radius:20px;overflow:hidden}
+#collectionDialog[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+#collectionDialog .collection-editor-head{min-width:0;padding:10px 14px;gap:10px;min-height:56px}
+#collectionDialog .collection-editor-head h2{font-size:16px;line-height:1.4;min-width:0;margin:0;outline:none}
+#collectionDialog .collection-editor-head button{min-width:36px;width:36px;min-height:36px;height:36px;flex:none;border-radius:11px;font-size:18px;padding:0}
+#collectionDialog .collection-editor-body{min-width:0;min-height:0;padding:14px 16px 18px;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scroll-padding:12px;flex:none}
+#collectionDialog .collection-editor-body .collection-name-label{margin:0 0 6px;font-size:12px;line-height:1.5}
+#collectionDialog .collection-editor-body input,#collectionDialog .collection-editor-body select{box-sizing:border-box;max-width:100%;min-width:0;margin:0;border:1.5px solid #d9b99a;border-radius:11px;box-shadow:none}
+#collectionDialog .collection-editor-body input{min-height:42px;padding:9px 11px}
+#collectionDialog .collection-editor-body input:focus,#collectionDialog .collection-editor-body select:focus{border-color:#ad622e;outline:2px solid #efcfaa;outline-offset:1px}
+#collectionDialog .collection-editor-body input[aria-invalid=true]{border-color:#b34242}
+#collectionDialog #collectionName{width:100%;font-size:16px;line-height:1.5}
+#collectionDialog .collection-picker{padding:0;margin-top:14px;border:1.5px solid #d1a57b;border-radius:13px;background:#fffdf8;overflow:hidden}
+#collectionDialog .collection-picker>summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;min-height:44px;margin:0;list-style:none;background:#fff0d9;color:#8e481f;font-size:13px;font-weight:800;cursor:pointer;box-shadow:0 2px 0 #eed5b7}
+#collectionDialog .collection-picker>summary::-webkit-details-marker{display:none}
+#collectionDialog .collection-picker>summary::after{content:'⌄';font-size:16px;font-weight:800}
+#collectionDialog .collection-picker[open]>summary::after{content:'⌃'}
+#collectionDialog .collection-picker-controls{grid-template-columns:94px minmax(0,1fr);margin:12px 10px 9px;gap:8px}
+#collectionDialog #collectionLessonPicker{width:calc(100% - 20px);margin:0 10px;height:146px;min-height:44px;padding:4px;border-radius:10px;font-size:13px}
+#collectionDialog .collection-picker-actions{margin:10px;gap:8px}
+#collectionDialog .collection-picker-actions button{min-width:0;min-height:40px;padding:7px 5px;font-size:12px;line-height:1.4;border-width:1.5px;border-radius:11px;box-shadow:0 2px 0 #e6ceb4}
+#collectionDialog .collection-editor-foot{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid #e7d0b6;min-width:0;flex:none}
+#collectionDialog #collectionTotal{font-size:11px;line-height:1.5;min-width:0;font-weight:700;overflow-wrap:anywhere}
+#collectionDialog #collectionEditorStatus{grid-column:1/-1;font-size:12px;line-height:1.5;margin:0}
+#collectionDialog #collectionEditorCancel,#collectionDialog #collectionSave{min-height:38px;height:auto;width:auto;min-width:0;padding:7px 10px;font-size:12px;line-height:1.5;white-space:nowrap;border-width:1.5px;border-radius:11px;font-weight:800;box-shadow:0 2px 0 #dfb894;transform:none}
+#collectionDialog #collectionSave{background:#ad5724;border-color:#995020;color:#fff;box-shadow:0 2px 0 #7d3f1e}
+#collectionDialog #collectionEditorCancel{background:#fffaf2;border-color:#d0ac89;color:#8b512c}
+#collectionDialog #collectionSave:active,#collectionDialog #collectionEditorCancel:active{transform:translateY(1px);box-shadow:none}
+#collectionDialog.motion-off #collectionSave:active,#collectionDialog.motion-off #collectionEditorCancel:active{transform:none}
+@media(max-width:370px){#collectionDialog .collection-editor-body{padding:12px}#collectionDialog .collection-editor-head,#collectionDialog .collection-editor-foot{padding:9px 12px}#collectionDialog .collection-editor-foot{gap:6px}#collectionDialog #collectionTotal{font-size:10px}#collectionDialog #collectionSave,#collectionDialog #collectionEditorCancel{padding:7px 8px}}
+@media(pointer:coarse){#collectionDialog .collection-editor-body input,#collectionDialog .collection-editor-body select,#collectionDialog #collectionLessonPicker{font-size:16px}}
+@media(prefers-reduced-motion:reduce){#collectionDialog #collectionSave:active,#collectionDialog #collectionEditorCancel:active{transform:none}}
+/* Start compact, then give the image grid more room once a lesson is opened. */
+#collectionDialog{height:min(600px,calc(var(--collection-visible-height,100dvh) - 24px))}
+#collectionDialog.has-grid{height:min(760px,calc(var(--collection-visible-height,100dvh) - 24px))}
+#collectionPreview{position:fixed;inset:auto;left:50%;top:calc(var(--collection-visible-top,0px) + var(--collection-visible-height,100dvh) / 2);transform:translate(-50%,-50%);margin:0;width:min(960px,calc(100% - 24px));max-height:calc(var(--collection-visible-height,100dvh) - 24px)}
+#collectionPreviewImage{max-height:calc(var(--collection-visible-height,100dvh) - 190px)}
 
 </style></head>
 <body><main id="app" class="app">
@@ -685,7 +716,7 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
   <div class="catalog-heading page-heading"><div><h2 class="screen-title" id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加</button></div>
-  <div class="catalog-resume"><button class="secondary-button" id="resumeStudy" hidden>つづきから <span aria-hidden="true">▶</span></button><button class="secondary-button home-review" id="quickReview" hidden>苦手だけ復習するにゃ</button><p class="resume-context" id="resumeContext" hidden></p></div><div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav><div id="seriesScrollTools" class="series-scroll-tools" hidden><button id="seriesPrev" type="button" aria-label="前のカテゴリを見る" aria-controls="catalogSeries" disabled><span aria-hidden="true">‹</span> 前にもあるにゃ</button><button id="seriesNext" type="button" aria-label="右に続くカテゴリを見る" aria-controls="catalogSeries" disabled>右にもあるにゃ <span aria-hidden="true">›</span></button></div></div></div>
+  <div class="catalog-resume"><button class="secondary-button" id="resumeStudy" hidden>つづきから <span aria-hidden="true">▶</span></button><button class="secondary-button home-review" id="quickReview" hidden>苦手だけ復習するにゃ</button><p class="resume-context" id="resumeContext" hidden></p></div><div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div></div>
   
   
   
@@ -721,14 +752,14 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 <script src="asset-origin.js"></script>
 <script src="catalog.js?v=20261019-history-places-link"></script>
 <dialog id="collectionDialog" aria-labelledby="collectionDialogTitle">
- <div class="collection-editor-head"><h2 id="collectionDialogTitle">マイまとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ">×</button></div>
+ <div class="collection-editor-head"><h2 id="collectionDialogTitle" tabindex="-1">マイまとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ">×</button></div>
  <div class="collection-editor-body" id="collectionEditorBody">
-  <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="例：定期テスト対策、苦手リスト" autocomplete="off">
-  <details class="collection-picker" id="collectionPicker" open><summary>＋ 教材を入れるにゃ</summary>
+  <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="まとめの名前を入れるにゃ" autocomplete="off">
+  <details class="collection-picker" id="collectionPicker" open><summary id="collectionPickerToggle" role="button" aria-controls="collectionPickerContent">＋ 教材をえらぶにゃ</summary><div id="collectionPickerContent">
    <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
    <select id="collectionLessonPicker" size="5" aria-label="追加する教材"></select>
    <div class="collection-picker-actions"><button class="secondary-button" id="collectionAddWhole" type="button">丸ごと入れるにゃ</button><button class="secondary-button" id="collectionPickCards" type="button">問題を選ぶにゃ</button></div>
-  </details>
+  </div></details>
   <nav id="collectionLessonTabs" class="collection-lesson-tabs" aria-label="編集中の教材"></nav>
   <div id="collectionActive" hidden>
    <div class="collection-active-heading"><h3 id="collectionActiveTitle"></h3><button class="link-button" id="collectionRemoveLesson" type="button">この教材を外すにゃ</button></div>
@@ -740,7 +771,7 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
   </div>
   <p class="collection-storage-note">この端末・ブラウザーに保存するにゃ。問題と解答はセットにゃ🐾</p>
  </div>
- <div class="collection-editor-foot"><p id="collectionEditorStatus" role="status"></p><span class="collection-total" id="collectionTotal" aria-live="polite">0問</span><button class="tool" id="collectionEditorCancel" type="button">やめるにゃ</button><button class="primary-button" id="collectionSave" type="button">保存するにゃ 🐾</button></div>
+ <div class="collection-editor-foot"><p id="collectionEditorStatus" role="status"></p><span class="collection-total" id="collectionTotal" aria-live="polite">0問</span><button class="tool" id="collectionEditorCancel" type="button">やめるにゃ</button><button class="primary-button" id="collectionSave" type="button">保存するにゃ</button></div>
 </dialog>
 <dialog id="collectionPreview" aria-labelledby="collectionPreviewTitle">
  <div class="collection-preview-head"><h3 id="collectionPreviewTitle"></h3><button id="collectionPreviewClose" type="button" class="tool" aria-label="画像一覧に戻るにゃ">閉じるにゃ ×</button></div>
@@ -1310,15 +1341,8 @@ function updateSeriesEdges() {
   const max=nav.scrollWidth-nav.clientWidth,hasOverflow=visible && max>3;
   const left=hasOverflow && nav.scrollLeft>3,right=hasOverflow && nav.scrollLeft<max-3;
   wrap.classList.toggle('has-left',left);wrap.classList.toggle('has-right',right);
-  $('seriesScrollTools').hidden=!hasOverflow;$('seriesPrev').disabled=!left;$('seriesNext').disabled=!right;
 }
 function scheduleSeriesEdges() { if(!seriesEdgeFrame)seriesEdgeFrame=requestAnimationFrame(updateSeriesEdges); }
-function scrollSeriesPage(direction) {
-  const nav=$('catalogSeries');
-  nav.scrollBy({left:direction*Math.max(1,nav.clientWidth*.76),behavior:reduced?'instant':'smooth'});
-  scheduleSeriesEdges();
-}
-$('seriesPrev').onclick=()=>scrollSeriesPage(-1);$('seriesNext').onclick=()=>scrollSeriesPage(1);
 $('catalogSeries').addEventListener('scroll',scheduleSeriesEdges,{passive:true});
 if(typeof ResizeObserver!=='undefined')new ResizeObserver(scheduleSeriesEdges).observe($('catalogSeries'));
 function revealSelectedSeries() {
@@ -1718,7 +1742,7 @@ function renderMyCollections() {
   const q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=readCollections();
   const items=all.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q));
   if (!items.length) {
-    const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'そのまとめは見つからないにゃ':'自分だけのまとめを作るにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'「定期テスト対策」「苦手リスト」など、好きな名前でまとめられるにゃ。'));root.append(e);return;
+    const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'そのまとめは見つからないにゃ':'自分だけのまとめを作るにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'好きな問題を選んで、名前をつけて保存するにゃ。'));root.append(e);return;
   }
   for(const c of items) {
     const box=collectionNode('article',undefined,'my-collection-card'),ids=[...new Set(c.cards.map(r=>r.lessonId))];
@@ -1767,6 +1791,7 @@ function fillCollectionLessons() {
 }
 function editorStatus(message='') {$('collectionEditorStatus').textContent=message;}
 function updateCollectionTotal() {
+  $('collectionDialog').classList.toggle('has-grid',!!collectionEditor?.activeRaw);
   const refs=collectionEditorRefs();$('collectionTotal').textContent=`${new Set(refs.map(r=>r.lessonId)).size}教材 · ${refs.length}問`;
   if(collectionEditor?.activeRaw){const raw=collectionEditor.activeRaw,chosen=collectionEditor.cards.get(raw.id)||new Set();$('collectionGridCount').textContent=`${raw.cards.length}問のうち ${raw.cards.filter(c=>chosen.has(c.id)).length}問を選択中にゃ`;
     for(const e of $('collectionGrid').querySelectorAll('[data-collection-card]')){const on=chosen.has(e.dataset.collectionCard);e.setAttribute('aria-pressed',String(on));e.querySelector('.collection-tile-tick').textContent=on?'✓':'';}
@@ -1779,6 +1804,32 @@ function renderCollectionTabs() {
     b.dataset.collectionLesson=id;b.setAttribute('aria-pressed',String(collectionEditor.activeId===id));nav.append(b);
   }
 }
+let collectionViewportFrame=0;
+function updateCollectionViewport() {
+  collectionViewportFrame=0;
+  const dialog=$('collectionDialog');if(!dialog.open)return;
+  const viewport=window.visualViewport;
+  for(const panel of [dialog,$('collectionPreview')]){
+    panel.style.setProperty('--collection-visible-height',Math.round(viewport?.height || window.innerHeight)+'px');
+    panel.style.setProperty('--collection-visible-top',Math.round(viewport?.offsetTop || 0)+'px');
+  }
+  const field=document.activeElement,body=$('collectionEditorBody');
+  if(field && body.contains(field) && field.matches('input,select'))requestAnimationFrame(()=>{
+    if(!dialog.open || document.activeElement!==field)return;
+    const bounds=body.getBoundingClientRect(),item=field.getBoundingClientRect();
+    if(item.top<bounds.top+8)body.scrollTop+=item.top-bounds.top-8;
+    else if(item.bottom>bounds.bottom-8)body.scrollTop+=item.bottom-bounds.bottom+8;
+  });
+}
+function scheduleCollectionViewport(){if(!collectionViewportFrame)collectionViewportFrame=requestAnimationFrame(updateCollectionViewport);}
+window.visualViewport?.addEventListener('resize',scheduleCollectionViewport,{passive:true});
+window.visualViewport?.addEventListener('scroll',scheduleCollectionViewport,{passive:true});
+window.addEventListener('resize',scheduleCollectionViewport,{passive:true});
+$('collectionPicker').addEventListener('toggle',()=>{$('collectionPickerToggle').setAttribute('aria-expanded',String($('collectionPicker').open));});
+$('collectionPickerToggle').addEventListener('click',()=>{
+  const field=document.activeElement;if(field && $('collectionDialog').contains(field) && field.matches('input,select'))field.blur();
+});
+
 async function openCollectionEditor(id=null) {
   const existing=readCollections().find(c=>c.id===id);if(id&&!existing){toast('まとめが見つからないにゃ');return;}
   pause();collectionEditSequence++;
@@ -1787,7 +1838,7 @@ async function openCollectionEditor(id=null) {
   $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';
   $('collectionDialogTitle').textContent=existing?'マイまとめを編集するにゃ':'マイまとめを作るにゃ';
   $('collectionSave').disabled=false;$('collectionActive').inert=false;$('collectionActive').hidden=true;$('collectionGrid').replaceChildren();$('collectionPicker').open=!existing?.cards.length;editorStatus();fillCollectionSubjects();renderCollectionTabs();updateCollectionTotal();
-  collectionEditor.signature=collectionSignature();$('collectionDialog').classList.toggle('motion-off',reduced);$('collectionDialog').showModal();$('collectionEditorBody').scrollTop=0;$('collectionName').focus();
+  collectionEditor.signature=collectionSignature();$('collectionDialog').classList.toggle('motion-off',reduced);$('collectionDialog').showModal();updateCollectionViewport();$('collectionEditorBody').scrollTop=0;$('collectionDialogTitle').focus({preventScroll:true});
   if(existing?.cards.length)await loadCollectionGrid(existing.cards[0].lessonId);
 }
 function closeCollectionEditor() {
@@ -1851,7 +1902,7 @@ function applyCollectionNumbers() {
 }
 function openCollectionPreview(id) {
   const raw=collectionEditor?.activeRaw,c=raw?.cards.find(c=>c.id===id);if(!c)return;
-  collectionPreviewCard=c;collectionPreviewAnswer=false;syncCollectionPreview();$('collectionPreview').showModal();
+  collectionPreviewCard=c;collectionPreviewAnswer=false;syncCollectionPreview();$('collectionPreview').showModal();updateCollectionViewport();
 }
 function syncCollectionPreview() {
   const c=collectionPreviewCard,raw=collectionEditor?.activeRaw;if(!c||!raw)return;

@@ -1,0 +1,180 @@
+{
+  "id": "science-chemical-reaction-equations-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "化学反応式を覚える一問一答",
+  "grade": "中2理科",
+  "description": "よく出る化学反応式10問。前半の模型を使った詳しい解説は補足画像10枚として別収録。",
+  "cover": "images_08/chemical-reaction-equations/question_001.png",
+  "chapters": [
+    {
+      "id": "chemical-reactions",
+      "title": "化学反応式10問"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_001.png",
+      "answer": "images_08/chemical-reaction-equations/answer_001.png",
+      "sourceTimes": {
+        "question": 444.0,
+        "answer": 451.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_002.png",
+      "answer": "images_08/chemical-reaction-equations/answer_002.png",
+      "sourceTimes": {
+        "question": 463.0,
+        "answer": 474.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_003.png",
+      "answer": "images_08/chemical-reaction-equations/answer_003.png",
+      "sourceTimes": {
+        "question": 485.0,
+        "answer": 499.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_004.png",
+      "answer": "images_08/chemical-reaction-equations/answer_004.png",
+      "sourceTimes": {
+        "question": 512.0,
+        "answer": 524.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_005.png",
+      "answer": "images_08/chemical-reaction-equations/answer_005.png",
+      "sourceTimes": {
+        "question": 534.0,
+        "answer": 546.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_006.png",
+      "answer": "images_08/chemical-reaction-equations/answer_006.png",
+      "sourceTimes": {
+        "question": 559.0,
+        "answer": 571.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_007.png",
+      "answer": "images_08/chemical-reaction-equations/answer_007.png",
+      "sourceTimes": {
+        "question": 585.0,
+        "answer": 601.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_008.png",
+      "answer": "images_08/chemical-reaction-equations/answer_008.png",
+      "sourceTimes": {
+        "question": 615.0,
+        "answer": 628.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_009.png",
+      "answer": "images_08/chemical-reaction-equations/answer_009.png",
+      "sourceTimes": {
+        "question": 642.0,
+        "answer": 651.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "chemical-reactions",
+      "question": "images_08/chemical-reaction-equations/question_010.png",
+      "answer": "images_08/chemical-reaction-equations/answer_010.png",
+      "sourceTimes": {
+        "question": 661.0,
+        "answer": 674.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=VzfBnzG1hYg",
+  "supplements": [
+    {
+      "id": "001",
+      "title": "水の電気分解：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_001.png",
+      "sourceTime": 82.0
+    },
+    {
+      "id": "002",
+      "title": "酸化銀の熱分解：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_002.png",
+      "sourceTime": 119.0
+    },
+    {
+      "id": "003",
+      "title": "炭酸水素ナトリウムの熱分解：反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_003.png",
+      "sourceTime": 168.0
+    },
+    {
+      "id": "004",
+      "title": "炭素の燃焼：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_004.png",
+      "sourceTime": 198.0
+    },
+    {
+      "id": "005",
+      "title": "水素の燃焼：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_005.png",
+      "sourceTime": 238.0
+    },
+    {
+      "id": "006",
+      "title": "メタンの燃焼：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_006.png",
+      "sourceTime": 278.0
+    },
+    {
+      "id": "007",
+      "title": "マグネシウムの燃焼：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_007.png",
+      "sourceTime": 316.0
+    },
+    {
+      "id": "008",
+      "title": "銅の酸化：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_008.png",
+      "sourceTime": 351.0
+    },
+    {
+      "id": "009",
+      "title": "鉄の硫化：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_009.png",
+      "sourceTime": 385.0
+    },
+    {
+      "id": "010",
+      "title": "酸化銅の炭素による還元：模型図と反応式",
+      "image": "images_08/chemical-reaction-equations/supplement_010.png",
+      "sourceTime": 426.0
+    }
+  ]
+}

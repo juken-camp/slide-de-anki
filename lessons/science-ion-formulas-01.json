@@ -1,0 +1,296 @@
+{
+  "id": "science-ion-formulas-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "イオン式を覚える一問一答",
+  "grade": "中3理科",
+  "description": "陽イオン13問、陰イオン10問の計23問。動画中の問題・解答フレームと、イオンの仕組みを説明する補足画像7枚を収録。",
+  "cover": "images_08/ion-formulas/question_001.png",
+  "chapters": [
+    {
+      "id": "positive",
+      "title": "陽イオン"
+    },
+    {
+      "id": "negative",
+      "title": "陰イオン"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_001.png",
+      "answer": "images_08/ion-formulas/answer_001.png",
+      "sourceTimes": {
+        "question": 285,
+        "answer": 295
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_002.png",
+      "answer": "images_08/ion-formulas/answer_002.png",
+      "sourceTimes": {
+        "question": 310,
+        "answer": 315
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_003.png",
+      "answer": "images_08/ion-formulas/answer_003.png",
+      "sourceTimes": {
+        "question": 325,
+        "answer": 330
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_004.png",
+      "answer": "images_08/ion-formulas/answer_004.png",
+      "sourceTimes": {
+        "question": 340,
+        "answer": 350
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_005.png",
+      "answer": "images_08/ion-formulas/answer_005.png",
+      "sourceTimes": {
+        "question": 365,
+        "answer": 370
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_006.png",
+      "answer": "images_08/ion-formulas/answer_006.png",
+      "sourceTimes": {
+        "question": 380,
+        "answer": 390
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_007.png",
+      "answer": "images_08/ion-formulas/answer_007.png",
+      "sourceTimes": {
+        "question": 400,
+        "answer": 410
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_008.png",
+      "answer": "images_08/ion-formulas/answer_008.png",
+      "sourceTimes": {
+        "question": 420,
+        "answer": 425
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_009.png",
+      "answer": "images_08/ion-formulas/answer_009.png",
+      "sourceTimes": {
+        "question": 440,
+        "answer": 445
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_010.png",
+      "answer": "images_08/ion-formulas/answer_010.png",
+      "sourceTimes": {
+        "question": 460,
+        "answer": 470
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_011.png",
+      "answer": "images_08/ion-formulas/answer_011.png",
+      "sourceTimes": {
+        "question": 480,
+        "answer": 490
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_012.png",
+      "answer": "images_08/ion-formulas/answer_012.png",
+      "sourceTimes": {
+        "question": 500,
+        "answer": 510
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "positive",
+      "question": "images_08/ion-formulas/question_013.png",
+      "answer": "images_08/ion-formulas/answer_013.png",
+      "sourceTimes": {
+        "question": 520,
+        "answer": 525
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_014.png",
+      "answer": "images_08/ion-formulas/answer_014.png",
+      "sourceTimes": {
+        "question": 535,
+        "answer": 545
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_015.png",
+      "answer": "images_08/ion-formulas/answer_015.png",
+      "sourceTimes": {
+        "question": 560,
+        "answer": 565
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_016.png",
+      "answer": "images_08/ion-formulas/answer_016.png",
+      "sourceTimes": {
+        "question": 575,
+        "answer": 585
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_017.png",
+      "answer": "images_08/ion-formulas/answer_017.png",
+      "sourceTimes": {
+        "question": 595,
+        "answer": 605
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_018.png",
+      "answer": "images_08/ion-formulas/answer_018.png",
+      "sourceTimes": {
+        "question": 620,
+        "answer": 625
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_019.png",
+      "answer": "images_08/ion-formulas/answer_019.png",
+      "sourceTimes": {
+        "question": 640,
+        "answer": 645
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_020.png",
+      "answer": "images_08/ion-formulas/answer_020.png",
+      "sourceTimes": {
+        "question": 660,
+        "answer": 670
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_021.png",
+      "answer": "images_08/ion-formulas/answer_021.png",
+      "sourceTimes": {
+        "question": 685,
+        "answer": 690
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_022.png",
+      "answer": "images_08/ion-formulas/answer_022.png",
+      "sourceTimes": {
+        "question": 705,
+        "answer": 715
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "negative",
+      "question": "images_08/ion-formulas/question_023.png",
+      "answer": "images_08/ion-formulas/answer_023.png",
+      "sourceTimes": {
+        "question": 725,
+        "answer": 735
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=cOYwj-LSOsY",
+  "supplements": [
+    {
+      "id": "001",
+      "title": "イオンとは：食塩水と電離の図",
+      "image": "images_08/ion-formulas/supplement_001.png",
+      "sourceTime": 67.0
+    },
+    {
+      "id": "002",
+      "title": "陽イオン：電子を失って正の電気を帯びる",
+      "image": "images_08/ion-formulas/supplement_002.png",
+      "sourceTime": 96.0
+    },
+    {
+      "id": "003",
+      "title": "陰イオン：電子を受け取って負の電気を帯びる",
+      "image": "images_08/ion-formulas/supplement_003.png",
+      "sourceTime": 124.0
+    },
+    {
+      "id": "004",
+      "title": "カルシウムイオン：元素記号と価数の書き方",
+      "image": "images_08/ion-formulas/supplement_004.png",
+      "sourceTime": 164.0
+    },
+    {
+      "id": "005",
+      "title": "水素イオン・塩化物イオン：電子のやり取り",
+      "image": "images_08/ion-formulas/supplement_005.png",
+      "sourceTime": 189.0
+    },
+    {
+      "id": "006",
+      "title": "亜鉛イオン・塩化物イオン：価数の説明",
+      "image": "images_08/ion-formulas/supplement_006.png",
+      "sourceTime": 229.0
+    },
+    {
+      "id": "007",
+      "title": "塩化水素が電離するイオン式",
+      "image": "images_08/ion-formulas/supplement_007.png",
+      "sourceTime": 273.0
+    }
+  ]
+}

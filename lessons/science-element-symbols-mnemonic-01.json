@@ -1,0 +1,253 @@
+{
+  "id": "science-element-symbols-mnemonic-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "元素記号を覚える一問一答",
+  "grade": "中2理科",
+  "description": "元素名から元素記号を覚える全22問。元動画の問題画像・解答画像を収録。元素周期表と語呂合わせの補足2枚付き。",
+  "cover": "images_08/element-symbols-mnemonic/question_001.png",
+  "chapters": [
+    {
+      "id": "elements",
+      "title": "元素記号"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_001.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_001.png",
+      "sourceTimes": {
+        "question": 26.5,
+        "answer": 32.267
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_002.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_002.png",
+      "sourceTimes": {
+        "question": 37.267,
+        "answer": 41.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_003.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_003.png",
+      "sourceTimes": {
+        "question": 46.5,
+        "answer": 51.267
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_004.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_004.png",
+      "sourceTimes": {
+        "question": 57.0,
+        "answer": 61.733
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_005.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_005.png",
+      "sourceTimes": {
+        "question": 66.267,
+        "answer": 70.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_006.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_006.png",
+      "sourceTimes": {
+        "question": 75.5,
+        "answer": 80.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_007.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_007.png",
+      "sourceTimes": {
+        "question": 85.0,
+        "answer": 89.733
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_008.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_008.png",
+      "sourceTimes": {
+        "question": 95.0,
+        "answer": 99.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_009.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_009.png",
+      "sourceTimes": {
+        "question": 105.0,
+        "answer": 110.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_010.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_010.png",
+      "sourceTimes": {
+        "question": 116.733,
+        "answer": 122.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_011.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_011.png",
+      "sourceTimes": {
+        "question": 127.5,
+        "answer": 132.267
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_012.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_012.png",
+      "sourceTimes": {
+        "question": 137.267,
+        "answer": 141.733
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_013.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_013.png",
+      "sourceTimes": {
+        "question": 146.733,
+        "answer": 151.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_014.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_014.png",
+      "sourceTimes": {
+        "question": 157.267,
+        "answer": 162.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_015.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_015.png",
+      "sourceTimes": {
+        "question": 167.733,
+        "answer": 172.733
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_016.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_016.png",
+      "sourceTimes": {
+        "question": 178.267,
+        "answer": 183.267
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_017.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_017.png",
+      "sourceTimes": {
+        "question": 189.0,
+        "answer": 193.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_018.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_018.png",
+      "sourceTimes": {
+        "question": 198.267,
+        "answer": 203.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_019.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_019.png",
+      "sourceTimes": {
+        "question": 208.733,
+        "answer": 214.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_020.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_020.png",
+      "sourceTimes": {
+        "question": 220.267,
+        "answer": 225.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_021.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_021.png",
+      "sourceTimes": {
+        "question": 230.267,
+        "answer": 234.267
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "elements",
+      "question": "images_08/element-symbols-mnemonic/question_022.png",
+      "answer": "images_08/element-symbols-mnemonic/answer_022.png",
+      "sourceTimes": {
+        "question": 238.5,
+        "answer": 242.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=Mk4-IBmfqIY",
+  "supplements": [
+    {
+      "id": "001",
+      "title": "周期表",
+      "image": "images_08/element-symbols-mnemonic/supplement_001.png?v=81691723c5a0fe09",
+      "sourceTime": 20.5,
+      "corrected": true
+    },
+    {
+      "id": "002",
+      "title": "元素記号の語呂合わせ（完成画面）",
+      "image": "images_08/element-symbols-mnemonic/supplement_002.png",
+      "sourceTime": 280.0
+    }
+  ]
+}

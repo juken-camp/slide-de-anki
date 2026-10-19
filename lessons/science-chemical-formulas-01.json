@@ -1,0 +1,280 @@
+{
+  "id": "science-chemical-formulas-01",
+  "subject": "science",
+  "field": "chemistry",
+  "title": "化学式を覚える一問一答",
+  "grade": "中2理科",
+  "description": "単体の化学式10問・化合物の化学式15問の計25問。元動画の問題・解答画像を収録。化学式の分類図の補足1枚付き。",
+  "cover": "images_08/chemical-formulas/question_001.png",
+  "chapters": [
+    {
+      "id": "single",
+      "title": "単体の化学式"
+    },
+    {
+      "id": "compound",
+      "title": "化合物の化学式"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_001.png",
+      "answer": "images_08/chemical-formulas/answer_001.png",
+      "sourceTimes": {
+        "question": 35.267,
+        "answer": 40.267
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_002.png",
+      "answer": "images_08/chemical-formulas/answer_002.png",
+      "sourceTimes": {
+        "question": 45.0,
+        "answer": 49.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_003.png",
+      "answer": "images_08/chemical-formulas/answer_003.png",
+      "sourceTimes": {
+        "question": 54.267,
+        "answer": 59.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_004.png",
+      "answer": "images_08/chemical-formulas/answer_004.png",
+      "sourceTimes": {
+        "question": 64.5,
+        "answer": 69.267
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_005.png",
+      "answer": "images_08/chemical-formulas/answer_005.png",
+      "sourceTimes": {
+        "question": 74.267,
+        "answer": 79.733
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_006.png",
+      "answer": "images_08/chemical-formulas/answer_006.png",
+      "sourceTimes": {
+        "question": 84.733,
+        "answer": 89.733
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_007.png",
+      "answer": "images_08/chemical-formulas/answer_007.png",
+      "sourceTimes": {
+        "question": 95.267,
+        "answer": 100.267
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_008.png",
+      "answer": "images_08/chemical-formulas/answer_008.png",
+      "sourceTimes": {
+        "question": 105.267,
+        "answer": 110.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_009.png",
+      "answer": "images_08/chemical-formulas/answer_009.png",
+      "sourceTimes": {
+        "question": 115.5,
+        "answer": 120.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "single",
+      "question": "images_08/chemical-formulas/question_010.png",
+      "answer": "images_08/chemical-formulas/answer_010.png",
+      "sourceTimes": {
+        "question": 125.733,
+        "answer": 130.267
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_011.png",
+      "answer": "images_08/chemical-formulas/answer_011.png",
+      "sourceTimes": {
+        "question": 145.5,
+        "answer": 150.267
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_012.png",
+      "answer": "images_08/chemical-formulas/answer_012.png",
+      "sourceTimes": {
+        "question": 155.267,
+        "answer": 161.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_013.png",
+      "answer": "images_08/chemical-formulas/answer_013.png",
+      "sourceTimes": {
+        "question": 166.733,
+        "answer": 172.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_014.png",
+      "answer": "images_08/chemical-formulas/answer_014.png",
+      "sourceTimes": {
+        "question": 177.733,
+        "answer": 184.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_015.png",
+      "answer": "images_08/chemical-formulas/answer_015.png",
+      "sourceTimes": {
+        "question": 190.0,
+        "answer": 199.267
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_016.png",
+      "answer": "images_08/chemical-formulas/answer_016.png",
+      "sourceTimes": {
+        "question": 208.733,
+        "answer": 217.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_017.png",
+      "answer": "images_08/chemical-formulas/answer_017.png",
+      "sourceTimes": {
+        "question": 226.267,
+        "answer": 232.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_018.png",
+      "answer": "images_08/chemical-formulas/answer_018.png",
+      "sourceTimes": {
+        "question": 239.267,
+        "answer": 245.733
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_019.png",
+      "answer": "images_08/chemical-formulas/answer_019.png",
+      "sourceTimes": {
+        "question": 251.733,
+        "answer": 258.733
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_020.png",
+      "answer": "images_08/chemical-formulas/answer_020.png",
+      "sourceTimes": {
+        "question": 265.733,
+        "answer": 272.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_021.png",
+      "answer": "images_08/chemical-formulas/answer_021.png",
+      "sourceTimes": {
+        "question": 279.0,
+        "answer": 285.267
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_022.png",
+      "answer": "images_08/chemical-formulas/answer_022.png",
+      "sourceTimes": {
+        "question": 291.733,
+        "answer": 298.733
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_023.png",
+      "answer": "images_08/chemical-formulas/answer_023.png",
+      "sourceTimes": {
+        "question": 305.733,
+        "answer": 312.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_024.png",
+      "answer": "images_08/chemical-formulas/answer_024.png",
+      "sourceTimes": {
+        "question": 319.0,
+        "answer": 327.267
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "compound",
+      "question": "images_08/chemical-formulas/question_025.png",
+      "answer": "images_08/chemical-formulas/answer_025.png",
+      "sourceTimes": {
+        "question": 335.5,
+        "answer": 343.267
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=5spu9hM_RCI",
+  "supplements": [
+    {
+      "id": "001",
+      "title": "化学式の分類（単体・化合物）",
+      "image": "images_08/chemical-formulas/supplement_001.png",
+      "sourceTime": 25.0
+    }
+  ]
+}

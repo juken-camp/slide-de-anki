@@ -162,6 +162,64 @@ window.QUIZ_CATALOG = [
     "source": "https://www.youtube.com/watch?v=5Yt1q9k-37w"
   },
   {
+    "id": "science-element-symbols-mnemonic-01",
+    "subject": "science",
+    "field": "chemistry",
+    "title": "元素記号を覚える一問一答",
+    "grade": "中2理科",
+    "description": "元素名から元素記号を覚える全22問。元動画の問題画像・解答画像を収録。元素周期表と語呂合わせの補足2枚付き。",
+    "cover": "images_08/element-symbols-mnemonic/question_001.png",
+    "chapters": [
+      {
+        "id": "elements",
+        "title": "元素記号"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=Mk4-IBmfqIY",
+    "count": 22,
+    "data": "lessons/science-element-symbols-mnemonic-01.json"
+  },
+  {
+    "id": "science-chemical-formulas-01",
+    "subject": "science",
+    "field": "chemistry",
+    "title": "化学式を覚える一問一答",
+    "grade": "中2理科",
+    "description": "単体の化学式10問・化合物の化学式15問の計25問。元動画の問題・解答画像を収録。化学式の分類図の補足1枚付き。",
+    "cover": "images_08/chemical-formulas/question_001.png",
+    "chapters": [
+      {
+        "id": "single",
+        "title": "単体の化学式"
+      },
+      {
+        "id": "compound",
+        "title": "化合物の化学式"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=5spu9hM_RCI",
+    "count": 25,
+    "data": "lessons/science-chemical-formulas-01.json"
+  },
+  {
+    "id": "science-chemical-reaction-equations-01",
+    "subject": "science",
+    "field": "chemistry",
+    "title": "化学反応式を覚える一問一答",
+    "grade": "中2理科",
+    "description": "よく出る化学反応式10問。前半の模型を使った詳しい解説は補足画像10枚として別収録。",
+    "cover": "images_08/chemical-reaction-equations/question_001.png",
+    "chapters": [
+      {
+        "id": "chemical-reactions",
+        "title": "化学反応式10問"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=VzfBnzG1hYg",
+    "count": 10,
+    "data": "lessons/science-chemical-reaction-equations-01.json"
+  },
+  {
     "id": "science-cells-respiration-blood-digestion-01",
     "subject": "science",
     "field": "biology",
@@ -486,6 +544,28 @@ window.QUIZ_CATALOG = [
     "count": 46,
     "data": "lessons/science-solutions-ions-grade3-01.json",
     "source": "https://www.youtube.com/watch?v=kRSVgyyqJs8"
+  },
+  {
+    "id": "science-ion-formulas-01",
+    "subject": "science",
+    "field": "chemistry",
+    "title": "イオン式を覚える一問一答",
+    "grade": "中3理科",
+    "description": "陽イオン13問、陰イオン10問の計23問。動画中の問題・解答フレームと、イオンの仕組みを説明する補足画像7枚を収録。",
+    "cover": "images_08/ion-formulas/question_001.png",
+    "chapters": [
+      {
+        "id": "positive",
+        "title": "陽イオン"
+      },
+      {
+        "id": "negative",
+        "title": "陰イオン"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=cOYwj-LSOsY",
+    "count": 23,
+    "data": "lessons/science-ion-formulas-01.json"
   },
   {
     "id": "science-ions-batteries-grade3-01",
@@ -1552,5 +1632,3 @@ window.QUIZ_CATALOG = [
     "data": "lessons/social-history-showa-heisei-05.json"
   }
 ];
-
-

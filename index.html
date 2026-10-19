@@ -753,6 +753,41 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 @media(pointer:coarse){#importDialog input:not([type=file]){font-size:16px}}
 @media(max-width:370px){#importBody{padding:12px}#importDialog .import-head,#importDialog .dialog-actions{padding:9px 12px}#importDialog .dialog-actions{gap:6px}}
 
+.homework-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:560px;margin:0 0 15px;padding:14px;border:2px solid #d3b08e;border-radius:17px;background:#fff4df;box-shadow:0 3px 0 #e6c8a6;color:#774324;text-align:left}
+.homework-entry strong{display:block;font-size:14px}.homework-entry small{display:block;font-size:11px;font-weight:400;color:#997050;margin-top:5px}.homework-entry>span:last-child{font-size:23px}
+#app .homework-screen{max-width:620px;width:100%;margin:12px auto 24px}.homework-heading{gap:12px;align-items:center}.homework-heading h2{font-size:19px;margin:0;min-width:0}.homework-heading .tool{min-height:38px;padding:6px 10px;font-size:11px;flex:none}
+.homework-note{font-size:11px;line-height:1.6;color:#9c7658;margin:7px 0;overflow-wrap:anywhere}.homework-note:empty{display:none}
+.report-controls{margin:12px 0}.report-presets{display:flex;gap:6px;padding:4px;border:1px solid #e1c8ad;border-radius:14px;background:#f3e7d7}.report-presets button{flex:1;min-width:0;min-height:38px;padding:6px;border:1px solid transparent;border-radius:10px;background:transparent;color:#8c6141;font-size:12px;font-weight:700}.report-presets button[aria-pressed=true]{background:#fffaf1;border-color:#c99667;box-shadow:0 2px 0 #dfbf9e;color:#834015}
+.homework-dates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0}.homework-dates label,.homework-field,.test-filter-grid label{display:block;min-width:0;font-size:11px;font-weight:700;color:#8a6041}
+#app .homework-dates input,.homework-setup .homework-dates input,.homework-setup select,#reportNameInput{display:block;box-sizing:border-box;min-width:0;max-width:100%;width:100%;height:42px;margin:5px 0 0;padding:8px;border:1.5px solid #d6b491;border-radius:10px;background:#fffdf8;color:#754b2f;font-size:13px;line-height:1.4}
+.homework-dates input::-webkit-date-and-time-value{text-align:center;min-width:0}
+.report-person{margin:9px 2px;font-size:11px;color:#9a7556}.report-person summary{cursor:pointer;min-height:25px;line-height:25px}.report-person input{max-width:280px!important}
+.report-card{border:2px solid #d0ab86;border-radius:21px;box-shadow:0 4px 0 #e1c4a7;background:#fffdf6;padding:16px;color:#704529;overflow:hidden}
+.report-card-head{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}.report-brand{font-size:12px;color:#9b663e;font-weight:800}.report-card-head>strong{font-size:16px;overflow-wrap:anywhere}.report-card-head>strong:empty{display:none}.report-card-head h3{font-size:17px;line-height:1.4;margin:0}.report-card-head time,.report-card-head p{font-size:10px;color:#a38165;margin:0;line-height:1.5}
+.report-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.report-metrics>div{min-width:0;display:flex;flex-direction:column;gap:4px;padding:12px 10px;border:1.5px solid #e4c8a6;border-radius:15px;background:#fff0d3}.report-metrics span{font-size:11px;font-weight:700}.report-metrics strong{font-size:28px;line-height:1.15;letter-spacing:-.03em;font-weight:900}.report-metrics small{font-size:9px;line-height:1.45;color:#aa7c52}.report-metrics .report-pink{background:#ffedf1;border-color:#e6c0cb}.report-pink strong{color:#a34d6a}
+.report-paws{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin:15px 0 12px}.report-paw{min-width:0;display:flex;align-items:center;flex-direction:column;gap:4px;font-size:9px;color:#ac8a6c}.report-paw i{font-style:normal;display:grid;place-items:center;width:30px;height:30px;border:1px dashed #dcc4ab;border-radius:50%;background:#fff9ed;font-size:16px;color:#c9b198}.report-paw.active i{border-style:solid;background:#ffe1b2;border-color:#cb945d;color:#9d511e}
+.report-chart-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.report-chart-head h4{font-size:11px;margin:0;font-weight:800}.report-chart-head span{font-size:9px;color:#a18065}
+.report-chart{display:flex;align-items:stretch;gap:6px;height:104px;margin:7px 0 10px;padding:0 0 2px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#cea47c transparent}.report-chart-day{display:flex;flex:1 0 24px;min-width:24px;max-width:90px;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px}.report-chart-day b{font-size:9px;color:#a06a42;font-weight:600}.report-chart-day i{display:block;min-height:2px;width:65%;max-width:24px;background:#dc9c5d;border-radius:6px 6px 2px 2px;box-shadow:inset 0 -3px 0 #bd7939}.report-chart-day span{font-size:9px;color:#aa8869;white-space:nowrap}
+.report-materials{border-top:1px solid #eddbc5;padding-top:9px;display:flex;flex-direction:column;gap:5px}.report-materials>div{display:flex;align-items:baseline;justify-content:space-between;gap:9px;font-size:10px;line-height:1.5}.report-materials>div span{min-width:0;overflow-wrap:anywhere}.report-materials b{flex:none;font-size:10px;color:#9c6b42;font-weight:700}.report-cheer{font-size:12px;font-weight:800;text-align:center;color:#ac662e;margin:12px 0 0}.report-card .homework-note{font-size:9px;line-height:1.5}
+.report-main-actions{display:flex;gap:9px;margin:17px 0;align-items:stretch}.report-main-actions button{flex:1;min-width:0;min-height:42px;font-size:12px;padding:9px 7px!important;border-radius:13px!important;line-height:1.5}
+.homework-tests{margin:24px 0 12px}.homework-tests h3{font-size:14px;margin:0 0 10px}.homework-test-history-item{display:flex;align-items:center;gap:10px;padding:12px;margin-bottom:10px;border:1.5px solid #dbc0a3;border-radius:14px;background:#fffaf2}.homework-test-history-item button{flex:1;min-width:0;text-align:left;border:0;background:transparent;color:#805332;padding:0}.homework-test-history-item strong{display:block;font-size:13px}.homework-test-history-item small{display:block;font-size:10px;color:#a17d60;margin-top:5px}.homework-test-history-item .link-button{flex:none;font-size:10px;min-height:36px;padding:0 6px}.history-management{margin:23px 0;font-size:11px;color:#9a7658}.history-management summary{min-height:35px;line-height:35px;cursor:pointer}.history-management>div{display:flex;flex-wrap:wrap;gap:10px}.history-management small{display:block;font-size:10px;margin-top:7px;line-height:1.5}
+#resumeHomeworkTest{width:100%;margin:0 0 12px;font-size:12px;min-height:42px}
+.homework-setup{width:min(500px,calc(100% - 24px));padding:0;max-height:calc(100dvh - 24px);border:2px solid #d4ad85;border-radius:20px;background:#fffaf2;color:#75472b;overflow:auto}
+.homework-setup-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-bottom:1px solid #eddbc5}.homework-setup-head h2{font-size:16px;margin:0;outline:none}.homework-setup-head .tool{min-height:35px;width:35px;font-size:17px;padding:0;border:1px solid #d3ae89;border-radius:10px}
+.homework-setup-body{padding:13px 15px}.homework-setup label{margin:0;font-size:11px}.homework-check{display:flex!important;align-items:center;gap:8px;min-height:36px}.homework-check input{width:16px;height:16px;accent-color:#af602c}.test-filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:13px 0}.homework-setup .homework-field{margin:10px 0}.homework-setup input[type=date],.homework-setup select{margin-top:5px!important;border-width:1.5px!important;min-width:0!important}.test-candidate-count{font-size:15px;font-weight:800;color:#a55b28;margin:15px 0 0}.homework-setup-foot{padding:11px 15px;border-top:1px solid #e8d0b2;background:#fff4df}.homework-setup-foot .primary-button{width:100%;min-height:42px;font-size:13px;border:2px solid #a35522;border-radius:13px;background:#ae5d2a;color:#fff;box-shadow:0 3px 0 #7d3c18;padding:8px}
+.test-progress-copy,.test-under{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;color:#986946;margin:11px 0 7px}.test-progress-track{background:#eedbc5;height:5px}.test-progress-track i{background:#cf8a47;border-radius:4px;transition:width .2s}
+#testCard{border:2px solid #cba17a;border-radius:18px;background:#fff;box-shadow:0 3px 0 #e4c7a8}#testCard .head{min-height:40px;border-bottom:1px solid #ecd8bf;background:#fff0d7}#testCard.is-back .head{background:#ffe4ed;border-color:#e4b4c6}#testCard .unit{font-size:10px;max-width:74%;overflow-wrap:anywhere}#testFace{background:#ad602c;color:#fff;font-size:11px}#testCard.is-back #testFace{background:#b35e7e}
+#testSlideTap::before{padding-top:calc(56.25% + 34px)}.test-actions{display:flex;gap:7px;align-items:stretch;margin:15px 0 8px}.test-actions button{min-height:44px;min-width:0;padding:8px 5px;font-size:13px;border-radius:12px!important}.test-actions #testReveal{flex:1}.test-actions #testPass,.test-actions #testRetry{flex:1}.test-actions #testPrev,.test-actions #testNext{flex:none;width:34px;font-size:19px;border:1px solid #d5b18b;background:#fff8ed;box-shadow:0 2px 0 #e5ceb4}.test-actions #testPass{background:#ae5b7b;border-color:#a24b6c;box-shadow:0 3px 0 #873b59}.test-actions #testRetry{border:2px solid #cfa880;background:#fff1db;color:#885127}.test-under{font-size:10px}.test-under .link-button{font-size:10px;white-space:nowrap;padding:0;min-height:36px}.test-separate-note{font-size:10px}
+.test-score{display:flex;align-items:baseline;justify-content:center;gap:12px;padding:15px 0}.test-score strong{font-size:40px;font-weight:900;color:#a15b2e;line-height:1.2}.test-score span{font-size:18px;font-weight:800;color:#b56680}.test-result-breakdown{display:flex;justify-content:center;gap:18px;font-size:12px;font-weight:800;margin:4px 0 15px}.test-result-card>.homework-note{text-align:center;margin:0 0 12px}.test-result-tools{display:flex;align-items:center;justify-content:space-between;gap:10px}.test-result-tools button{font-size:11px}.test-wrong-details{margin:18px 0;font-size:12px;color:#97623e}.test-wrong-details summary{min-height:38px;line-height:38px;cursor:pointer}.test-wrong-details p{font-size:11px;padding:8px 0;margin:0;border-bottom:1px solid #ecdece;line-height:1.6}
+.capture-exit{font-size:11px;min-height:34px;padding:5px 10px;margin-bottom:10px}
+body.homework-capture #appHeader,body.homework-capture [data-capture-hide]{display:none!important}body.homework-capture .capture-exit{display:inline-block!important}body.homework-capture #app{padding-top:8px;max-width:560px}body.homework-capture .homework-screen{margin-top:0!important}body.homework-capture #reportNotice{display:none!important}body.homework-capture .report-card{box-shadow:none}body.homework-capture .report-card-head{margin-bottom:10px}
+@media(max-width:370px){.report-card{padding:12px}.report-metrics>div{padding:10px 8px}.report-metrics strong{font-size:25px}.report-metrics span{font-size:10px}.report-metrics small{font-size:8px}.report-card-head h3{font-size:15px}.report-main-actions button{font-size:11px}.test-under{flex-wrap:wrap}}
+@media(pointer:coarse){#app .homework-dates input,.homework-setup .homework-dates input,.homework-setup select,#reportNameInput{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.test-progress-track i{transition:none}}
+/* Screenshot mode keeps transient tap messages out of the dated evidence. */
+body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homework-capture .neko-fun-particle,body.homework-capture .neko-tap-ring,body.homework-capture .neko-tap-charm,body.homework-capture .remembered-paw{display:none!important}
+@media(max-height:500px) and (orientation:landscape){#testSlideTap::before{padding-top:40vh}}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
@@ -791,9 +826,67 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 </div></details></section>
 <div class="empty" id="emptyState" hidden tabindex="-1"><button aria-label="Nekoponをなでるにゃ" class="result-cat" type="button" id="resultCat"><span class="cat-tilt"><span id="resultCatFace" aria-hidden="true">😸</span></span></button><p role="status" class="result-cat-reply" id="resultCatReply">おつかれさまにゃ。なでてにゃ🐾</p><h2 id="emptyTitle"></h2><p id="emptyText"></p><div id="resultCounts" class="result-counts" hidden><div><b id="resultKnown">0</b><span>おぼえた</span></div><div><b id="resultWeak">0</b><span>おぼえてない</span></div><div><b id="resultUnmarked">0</b><span>まだ仕分けてない</span></div></div><button id="restartButton">もう一周するにゃ</button><button id="reviewButton">おぼえてない問題を復習にゃ</button><button id="unmarkedReview" hidden>まだの問題に挑戦するにゃ</button><button id="allButton">ぜんぶ見るにゃ</button><button id="finishUndo" class="finish-undo" hidden>↶ 最後の仕分けを戻すにゃ</button></div>
 </section></section>
-<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定・学習記録</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
+<section id="reportScreen" class="homework-screen" aria-labelledby="reportTitle" hidden>
+ <div class="page-heading homework-heading" data-capture-hide><h2 id="reportTitle" class="screen-title" tabindex="-1">学習レポート</h2><button class="tool" id="reportBack" type="button">設定へ</button></div>
+ <button class="tool capture-exit" type="button" hidden>戻るにゃ</button>
+ <div class="report-controls" data-capture-hide>
+  <div class="report-presets" aria-label="集計期間"><button type="button" data-report-period="today">今日</button><button type="button" data-report-period="week">直近7日</button><button type="button" data-report-period="custom">期間指定</button></div>
+  <div id="reportDates" class="homework-dates" hidden><label>開始日<input type="date" id="reportFrom"></label><label>終了日<input type="date" id="reportTo"></label></div>
+  <details class="report-person"><summary>表示名を入れるにゃ（任意）</summary><input id="reportNameInput" maxlength="24" placeholder="表示名" autocomplete="off" aria-label="レポートに載せる名前"></details>
+ </div>
+ <p id="reportNotice" class="homework-note" role="status"></p>
+ <article id="reportCard" class="report-card" aria-label="期間の学習成果">
+  <header class="report-card-head"><span class="report-brand">🐾 Nekoponの学習レポート</span><strong id="reportName"></strong><h3 id="reportRange"></h3><time id="reportGenerated"></time></header>
+  <div class="report-metrics">
+   <div><span>学習した日</span><strong id="reportDays">0日</strong><small id="reportDaysCaption"></small></div>
+   <div><span>学習した問題</span><strong id="reportQuestions">0問</strong><small>同じ問題は1日1問</small></div>
+   <div class="report-pink"><span>思い出せた割合</span><strong id="reportRecall">—</strong><small id="reportRecallCaption">自己判定</small></div>
+   <div><span>苦手から前進</span><strong id="reportImproved">0問</strong><small>期間内の問題・重複なし</small></div>
+  </div>
+  <div id="reportPaws" class="report-paws" aria-label="直近7日間の学習日"></div>
+  <div class="report-chart-head"><h4>日ごとの学習量</h4><span id="reportChartNote"></span></div><div id="reportChart" class="report-chart" aria-label="日別の学習した問題数"></div>
+  <div id="reportMaterials" class="report-materials"></div><p id="reportLegacy" class="homework-note"></p>
+  <p id="reportCheer" class="report-cheer"></p>
+ </article>
+ <div class="report-main-actions" data-capture-hide><button id="showReportShot" class="secondary-button" type="button">成果を見せるにゃ</button><button id="openTestSetup" class="primary-button" type="button">確認テストにゃ 🐾</button></div>
+ <section class="homework-tests" data-capture-hide><h3>確認テストの記録</h3><button id="resumeHomeworkTest" class="secondary-button" type="button" hidden></button><div id="homeworkTestHistory"></div></section>
+ <details class="history-management" data-capture-hide><summary>履歴の管理にゃ</summary><div><button id="resetReportHistory" class="link-button" type="button">日別レポートを消すにゃ</button><button id="resetTestHistory" class="link-button" type="button">テスト履歴を消すにゃ</button></div><small>元の教材・「おぼえた」・マイまとめは残るにゃ。</small></details>
+</section>
+<section id="testScreen" class="homework-screen" aria-labelledby="testTitle" hidden>
+ <div class="page-heading homework-heading" data-capture-hide><h2 id="testTitle" class="screen-title" tabindex="-1">確認テスト</h2><button id="testBack" class="tool" type="button">レポートへ</button></div>
+ <button class="tool capture-exit" type="button" hidden>戻るにゃ</button>
+ <p id="testNotice" class="homework-note" role="status"></p>
+ <div id="testPlay" hidden>
+  <div class="test-progress-copy"><span id="testPosition"></span><span id="testJudged"></span></div><div class="track test-progress-track"><i id="testProgress"></i></div>
+  <article class="card" id="testCard"><div class="head"><span class="badge" id="testFace">問題</span><span class="unit" id="testUnit"></span><button id="testZoom" class="link-button" type="button" aria-label="テスト画像を拡大する">⤢</button></div><div class="image-frame"><div id="testSlideTap" class="slide-wrap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="testSlideImage" alt="" draggable="false" decoding="async"><div id="testImageStatus" class="image-status" role="status" hidden>ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="testResetImage" type="button" hidden>100%に戻すにゃ</button></div></article>
+  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題">‹</button><button id="testReveal" class="primary-button" type="button">答えを見るにゃ</button><button id="testRetry" class="secondary-button" type="button" hidden>もう一度</button><button id="testPass" class="primary-button" type="button" hidden>できた</button><button id="testNext" class="tool" type="button" aria-label="次の問題">›</button></div>
+  <div class="test-under"><span id="testGradeHint">口頭や紙で答えてから、解答を開くにゃ。</span><button id="testUndo" class="link-button" type="button" disabled>ひとつ戻すにゃ</button></div>
+  <div class="source-links" id="testSourceLinks" hidden><a id="testSourceVideo" target="_blank" rel="noopener noreferrer">▶ 元動画 ↗</a><a id="testSourceMoment" target="_blank" rel="noopener noreferrer" hidden></a></div>
+  <p class="homework-note test-separate-note">テストの判定は、通常学習の「おぼえた」と分けて保存するにゃ。</p>
+ </div>
+ <div id="testResult" hidden>
+  <article class="report-card test-result-card" id="testResultCard"><header class="report-card-head"><span class="report-brand">🐾 Nekoponの確認テスト</span><strong id="testResultName"></strong><h3 id="testResultDate"></h3><p id="testResultScope"></p></header><div class="test-score"><strong id="testScore"></strong><span id="testScorePercent"></span></div><div class="test-result-breakdown"><span id="testResultPass"></span><span id="testResultRetry"></span></div><p class="homework-note">解答を開いて「できた／もう一度」で判定した結果</p><div id="testResultMaterials" class="report-materials"></div><p id="testResultCheer" class="report-cheer"></p></article>
+  <div class="report-main-actions" data-capture-hide><button id="showTestShot" class="secondary-button" type="button">結果を見せるにゃ</button><button id="testReviewWrong" class="primary-button" type="button">もう一度を復習にゃ</button></div>
+  <details id="testWrongDetails" class="test-wrong-details" data-capture-hide><summary id="testWrongSummary"></summary><div id="testWrongList"></div></details>
+  <div class="test-result-tools" data-capture-hide><button id="testResultUndo" class="link-button" type="button">最後の判定を戻すにゃ</button><button id="testResultBack" class="tool" type="button">レポートへ</button></div>
+ </div>
+</section>
+
+<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定・学習記録</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><button id="openHomeworkReport" class="homework-entry" type="button"><span><strong>🐾 学習レポート・確認テスト</strong><small>日付で振り返って、成果を見せるにゃ</small></span><span aria-hidden="true">›</span></button><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
 </main><div class="neko-notice" id="notice" role="status" aria-live="polite"></div>
 <dialog id="focusMenu" aria-labelledby="focusMenuTitle"><div class="focus-menu-header"><h2 id="focusMenuTitle">操作にゃ 🐾</h2><button id="focusClose" type="button" aria-label="スライドに戻るにゃ" autofocus>×</button></div><p id="focusContext"></p><div class="focus-navigation"><button id="focusPrev" type="button">‹ 前へ</button><button id="focusFlip" type="button">解答を見るにゃ</button><button id="focusNext" type="button">次へ ›</button></div><div class="focus-extra"><button id="focusZoom" type="button">拡大するにゃ ⤢</button><div id="focusUndoSlot"></div></div><div id="focusSourceSlot"></div><div id="focusOptionsSlot"></div><div class="focus-destinations"><button id="focusCatalog" type="button">教材を選ぶにゃ</button><button id="focusSettings" type="button">設定を開くにゃ</button></div><button id="focusNormal" type="button">横向きでも通常表示にするにゃ</button></dialog>
+
+<dialog id="homeworkSetup" class="homework-setup" aria-labelledby="homeworkSetupTitle">
+ <div class="homework-setup-head"><h2 id="homeworkSetupTitle" tabindex="-1">おぼえた問題で確認にゃ</h2><button id="closeHomeworkSetup" class="tool" type="button" aria-label="テスト設定を閉じる">×</button></div>
+ <div class="homework-setup-body">
+  <label class="homework-check"><input id="testAllDates" type="checkbox">記録日を指定しない</label>
+  <div class="homework-dates"><label>開始日<input type="date" id="testFrom"></label><label>終了日<input type="date" id="testTo"></label></div>
+  <p class="homework-note">期間内に「おぼえた」を記録し、いまも「おぼえた」の問題から出すにゃ。</p>
+  <div class="test-filter-grid"><label>教科<select id="testSubject"></select></label><label>問題数<select id="testCount"><option value="5">5問</option><option value="10" selected>10問</option><option value="20">20問</option></select></label></div>
+  <label class="homework-field">教材<select id="testLesson"></select></label>
+  <p id="testCandidateCount" class="test-candidate-count" aria-live="polite"></p><p id="testSetupNotice" class="homework-note" role="status"></p>
+ </div><div class="homework-setup-foot"><button id="startHomeworkTest" class="primary-button" type="button" disabled>テストをはじめるにゃ</button></div>
+</dialog>
 
 <dialog id="importDialog" aria-labelledby="importDialogTitle">
  <header class="import-head"><h2 id="importDialogTitle" tabindex="-1">教材を追加するにゃ</h2><button type="button" class="dialog-close" data-close="importDialog" aria-label="教材追加を閉じる">×</button></header>
@@ -1301,18 +1394,20 @@ function stats() {
 
 }
 function showScreen(next) {
-  if (screen !== next) { pause(); imageView.cancel(); } screen = next; $('app').dataset.screen = next;
-  for (const name of ['catalog','study','settings']) $(name+'Screen').hidden = name !== next;
+  if (screen !== next) { pause(); imageView.cancel(); homeworkImageView.cancel(); homeworkImageLoader.pause(); ++testImageToken; } if(next!=='report'&&next!=='test')toggleHomeworkCapture(false);screen = next; $('app').dataset.screen = next;
+  for (const name of ['catalog','study','settings','report','test']) $(name+'Screen').hidden = name !== next;
   $('appHeader').hidden = false;
   $('returnToStudy').disabled = !lesson && !state.lessonIds.some(id=>meta.some(m=>m.id===id));
   for (const [id,target] of [['openCatalog','catalog'],['returnToStudy','study'],['navSettings','settings']]) {
-    if (next===target) $(id).setAttribute('aria-current','page'); else $(id).removeAttribute('aria-current');
+    if (next===target || (next==='report'||next==='test')&&target==='settings') $(id).setAttribute('aria-current','page'); else $(id).removeAttribute('aria-current');
   }
   syncLandscape();
   if (next === 'catalog') renderCatalog(); stats();
   window.scrollTo?.({ top: 0, behavior: 'instant' });
   if (next === 'catalog') $('catalogTitle').focus({ preventScroll: true });
   if (next === 'settings') $('settingsTitle').focus({preventScroll:true});
+  if (next === 'report') {toggleHomeworkCapture(false);setReportPreset(reportPreset);renderLearningReport();$('reportTitle').focus({preventScroll:true});}
+  if (next === 'test') $('testTitle').focus({preventScroll:true});
   if (next === 'study') { if (lesson && !state.loading) render(); else warmImages(); } else imageLoader.pause();
 }
 function gradeKey(m) { return String(m.grade || '').match(/中\s*([123])/)?.[1] || 'other'; }
@@ -1567,6 +1662,7 @@ function warmImages() {
 function shuffle(ids) { for (let i = ids.length-1; i>0; i--) { const j = Math.floor(Math.random()*(i+1)); [ids[i],ids[j]] = [ids[j],ids[i]]; } return ids; }
 function markSeen() {
   const c = current(); if (screen !== 'study' || !state.flipped || !ready || !c || document.hidden) return;
+  trackStudySeen(c);
   const entries = data.neko.daily[dateKey()] ??= [];
   if (!entries.includes(c.id)) {
     entries.push(c.id); const days = Object.keys(data.neko.daily).sort(); for (const d of days.slice(0,-31)) delete data.neko.daily[d];
@@ -1724,6 +1820,7 @@ function assess(nextStatus) {
   assessmentLockUntil = performance.now()+350;
   const c = current(), d = deck(), i = d.findIndex(x => x.id === c.id), prev = data.records[c.lessonId]?.[c.originalId];
   undo = {lessonId:c.lessonId,cardId:c.originalId,current:c.id,previous:prev ? {...prev} : null,chapter:state.chapter,mode:state.mode};
+  undo.historyToken=trackStudyAssessment(c,nextStatus,prev?.status);
   undoHistory.push(undo); if(undoHistory.length>20) undoHistory.shift();
   data.records[c.lessonId] ??= {}; data.records[c.lessonId][c.originalId] = {...prev,status:nextStatus,attempts:(prev?.attempts||0)+1,updated:new Date().toISOString()};
   const after = new Set(deck().map(c => c.id)), next = d.slice(i+1).find(x => after.has(x.id));
@@ -1746,6 +1843,7 @@ function celebrate() {
 }
 function undoAssessment() {
   if (!undo) return; pause(); const u = undoHistory.pop(); undo = undoHistory.at(-1) || null; assessmentLockUntil = 0;
+  undoStudyAssessment(u.historyToken);
   if (u.previous) data.records[u.lessonId][u.cardId] = u.previous; else delete data.records[u.lessonId][u.cardId];
   Object.assign(state,{current:u.current,chapter:u.chapter,mode:u.mode,flipped:true,finished:false}); render(); toast('ひとつ前の仕分けに戻したにゃ🐾');
 }
@@ -2032,7 +2130,218 @@ $('collectionPreviewSelect').onclick=()=>{if(collectionPreviewCard)toggleCollect
 $('collectionPreview').addEventListener('close',()=>{collectionPreviewCard=null;$('collectionPreviewImage').removeAttribute('src');});
 window.addEventListener('storage',e=>{if(e.key===COLLECTION_KEY && catalogIsCollections && !collectionEditor)renderMyCollections();});
 
+// Dated activity lives beside, never in place of, the original records or image database.
+const historyDatabaseName='jc-image-quiz-study-log',historyFallbackKey='jc-image-quiz-study-log-v1';
+const hClone=v=>JSON.parse(JSON.stringify(v));
+function hDay(value=new Date()){const d=value instanceof Date?value:new Date(value);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+function hDaysBack(n){const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-n);return hDay(d);}
+function hDayDate(day){return new Date(day+'T12:00:00');}
+function hStamp(value){const d=new Date(value);return `${hDay(d).replaceAll('-','/')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;}
+function hShort(day){return day.slice(5).replace('-','/');}
+function hValidDay(day){return typeof day==='string' && /^\d{4}-\d{2}-\d{2}$/.test(day) && hDay(hDayDate(day))===day;}
+function hRange(from,to){if(!hValidDay(from)||!hValidDay(to)||from>to)throw Error('開始日と終了日を確認してにゃ。');const days=[];const d=hDayDate(from);while(hDay(d)<=to&&days.length<=366){days.push(hDay(d));d.setDate(d.getDate()+1);}if(days.length>366)throw Error('期間は366日以内で選んでにゃ。');return days;}
+function hSplit(key){const at=key.lastIndexOf('/');return {lessonId:key.slice(0,at),cardId:key.slice(at+1)};}
+function hFresh(){return {version:1,migrated:true,recordedFrom:dateKey(),name:'',days:{},tests:[],activeTest:null};}
+let studyHistory=hFresh(),historyLoaded=false,historyQueue=[],historyWrite=Promise.resolve(),historyDatabasePromise=null,historyFallback=false,historyError='',historyUndoSnapshots=new Map();
+function historyDB(){return historyDatabasePromise ||= new Promise((resolve,reject)=>{if(!window.indexedDB){reject(Error('IndexedDB unavailable'));return;}const r=indexedDB.open(historyDatabaseName,1);r.onupgradeneeded=()=>r.result.createObjectStore('state');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+function persistStudyHistory(){
+ const snapshot=hClone(studyHistory);
+ historyWrite=historyWrite.catch(()=>{}).then(async()=>{
+  if(historyFallback){localStorage.setItem(historyFallbackKey,JSON.stringify(snapshot));return;}
+  const db=await historyDB();await new Promise((resolve,reject)=>{const t=db.transaction('state','readwrite');t.objectStore('state').put(snapshot,'history');t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error);});
+ }).then(()=>{historyError='';}).catch(()=>{historyError='学習レポートを端末に保存できていないにゃ。空き容量や保存設定を確認してにゃ。';if(screen==='report')$('reportNotice').textContent=historyError;if(screen==='test')$('testNotice').textContent=historyError;});
+ return historyWrite;
+}
+function changeStudyHistory(fn){if(!historyLoaded){historyQueue.push(fn);return;}if(fn(studyHistory)!==false)persistStudyHistory();}
+const studyHistoryReady=(async()=>{
+ let stored=null;
+ try{const db=await historyDB();stored=await new Promise((resolve,reject)=>{const r=db.transaction('state','readonly').objectStore('state').get('history');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+ catch{historyFallback=true;try{stored=JSON.parse(localStorage.getItem(historyFallbackKey)||'null');}catch{}}
+ if(isObject(stored)&&stored.version===1){studyHistory={...hFresh(),...stored};if(!isObject(studyHistory.days))studyHistory.days={};if(!Array.isArray(studyHistory.tests))studyHistory.tests=[];studyHistory.tests=studyHistory.tests.filter(t=>t&&Array.isArray(t.refs)&&t.refs.length&&isObject(t.answers));}
+ else{
+  for(const [day,keys] of Object.entries(data.neko.daily))if(hValidDay(day)&&Array.isArray(keys)){const rows={};for(const key of new Set(keys.filter(k=>typeof k==='string')))rows[key]={v:1,l:1};studyHistory.days[day]=rows;}
+ }
+ historyLoaded=true;for(const fn of historyQueue)fn(studyHistory);historyQueue=[];await persistStudyHistory();return studyHistory;
+})();
+function trackStudySeen(c){const day=dateKey(),key=c.id;changeStudyHistory(log=>{const rows=log.days[day] ||= {};const row=rows[key] ||= {};if(row.v)return false;row.v=1;});}
+function trackStudyAssessment(c,nextStatus,previousStatus){
+ const token='h-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8),day=dateKey(),key=c.id,at=Date.now();
+ changeStudyHistory(log=>{
+  const rows=log.days[day] ||= {},before=rows[key]?hClone(rows[key]):null;
+  historyUndoSnapshots.set(token,{day,key,before});while(historyUndoSnapshots.size>25)historyUndoSnapshots.delete(historyUndoSnapshots.keys().next().value);
+  const row=rows[key] ||= {};row.v=1;row.s=nextStatus==='known'?'k':'w';row.t=at;if(nextStatus==='known'){row.k=1;if(previousStatus==='weak')row.i=1;}
+ });return token;
+}
+function undoStudyAssessment(token){if(!token)return;changeStudyHistory(log=>{const s=historyUndoSnapshots.get(token);if(!s)return false;if(s.before)log.days[s.day][s.key]=s.before;else if(log.days[s.day])delete log.days[s.day][s.key];historyUndoSnapshots.delete(token);});}
+let reportPreset='week',reportOpenRequest=0,testHistoryVisible=10;
+$('reportFrom').value=hDaysBack(6);$('reportTo').value=dateKey();
+function reportDates(){return {from:$('reportFrom').value,to:$('reportTo').value};}
+function setReportPreset(preset){reportPreset=preset;if(preset!=='custom'){$('reportFrom').value=preset==='today'?dateKey():hDaysBack(6);$('reportTo').value=dateKey();}$('reportDates').hidden=preset!=='custom';document.querySelectorAll('[data-report-period]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.reportPeriod===preset)));}
+function historyCardTitle(key){const r=hSplit(key),m=meta.find(m=>m.id===r.lessonId),c=loaded.get(r.lessonId)?.cards.find(c=>c.id===r.cardId);return `${m?.title||'端末内の教材'} · ${c?.displayNumber||r.cardId}`;}
+function materialRows(target,countsByLesson,limit=5){target.replaceChildren();const entries=[...countsByLesson].sort((a,b)=>b[1]-a[1]);for(const [id,count] of entries.slice(0,limit)){const row=collectionNode('div');row.append(collectionNode('span',meta.find(m=>m.id===id)?.title||'端末内の教材'),collectionNode('b',`${count}問`));target.append(row);}if(entries.length>limit)target.append(collectionNode('div',`ほか${entries.length-limit}教材`));}
+async function openLearningReport(){showScreen('report');}
+async function renderLearningReport(){
+ const seq=++reportOpenRequest;$('showReportShot').disabled=$('openTestSetup').disabled=true;$('reportNotice').textContent=historyLoaded?historyError:'ちょっと待ってにゃ🐾';await studyHistoryReady;if(seq!==reportOpenRequest||screen!=='report')return;
+ let days;const {from,to}=reportDates();try{days=hRange(from,to);}catch(e){$('reportNotice').textContent=e.message;$('reportCard').hidden=true;$('showReportShot').disabled=$('openTestSetup').disabled=true;return;}
+ $('reportCard').hidden=false;$('showReportShot').disabled=$('openTestSetup').disabled=false;$('reportNotice').textContent=historyError;
+ const sums=[],byLesson=new Map(),latest=new Map(),improved=new Set();let total=0,active=0,known=0,judged=0,legacy=false;
+ for(const day of days){let count=0;for(const [key,row] of Object.entries(studyHistory.days[day]||{})){
+  if(row.v){count++;const id=hSplit(key).lessonId;if(meta.some(m=>m.id===id))byLesson.set(id,(byLesson.get(id)||0)+1);}
+  if(row.s==='k'||row.s==='w'){judged++;if(row.s==='k')known++;latest.set(key,row.s);}else if(row.v&&row.l)legacy=true;
+  if(row.i)improved.add(key);
+ }sums.push(count);total+=count;if(count)active++;}
+ const advanced=[...improved].filter(k=>latest.get(k)==='k').length;
+ $('reportNameInput').value=studyHistory.name||'';$('reportName').textContent=studyHistory.name||'';$('reportRange').textContent=from===to?from.replaceAll('-','/'):`${from.replaceAll('-','/')} 〜 ${to.replaceAll('-','/')}`;$('reportGenerated').textContent='集計 '+hStamp(Date.now());
+ $('reportDays').textContent=`${active}日`;$('reportDaysCaption').textContent=`${days.length}日間の取り組み`;$('reportQuestions').textContent=`${total}問`;$('reportRecall').textContent=judged?`${Math.round(known/judged*100)}%`:'—';$('reportRecallCaption').textContent=judged?`${known} / ${judged}問・自己判定`:'判定した問題はまだないにゃ';$('reportImproved').textContent=`${advanced}問`;
+ $('reportPaws').replaceChildren();const pawDays=days.slice(-7);$('reportPaws').style.gridTemplateColumns=`repeat(${pawDays.length},minmax(0,1fr))`;for(const day of pawDays){const on=Object.values(studyHistory.days[day]||{}).some(r=>r.v),paw=collectionNode('div',undefined,'report-paw'+(on?' active':''));paw.append(collectionNode('i',on?'🐾':'·'),collectionNode('span',hShort(day)));paw.setAttribute('aria-label',`${day} ${on?'学習あり':'学習なし'}`);$('reportPaws').append(paw);}
+ const show=days.slice(-14),heights=sums.slice(-14),max=Math.max(1,...heights);$('reportChartNote').textContent=days.length>14?'直近14日を表示':'日ごとの合計（問）';$('reportChart').replaceChildren();
+ show.forEach((day,i)=>{const col=collectionNode('div',undefined,'report-chart-day'),bar=collectionNode('i');bar.style.height=Math.max(2,Math.round(heights[i]/max*60))+'px';col.append(collectionNode('b',String(heights[i])),bar,collectionNode('span',hShort(day)));col.setAttribute('aria-label',`${day} ${heights[i]}問`);$('reportChart').append(col);});
+ materialRows($('reportMaterials'),byLesson);$('reportLegacy').textContent=(legacy||from<studyHistory.recordedFrom)?'以前の学習分は、端末に残っている問数だけを引き継いでいるにゃ。':'';
+ $('reportCheer').textContent=!total?'まずは1問から、いっしょに進むにゃ🐾':advanced?`苦手から${advanced}問前進したにゃ！🐾`:active>=3?`${active}日分の積み重ね、ばっちりにゃ🐾`:'取り組んだ分が、ちゃんと残るにゃ🐾';renderHomeworkTestHistory();
+}
+function renderHomeworkTestHistory(){
+ const active=studyHistory.activeTest;$('resumeHomeworkTest').hidden=!active||!!active.finishedAt;$('resumeHomeworkTest').textContent=active?`つづきから確認にゃ · ${Object.keys(active.answers||{}).length} / ${active.refs.length}問`:'';
+ const list=$('homeworkTestHistory');list.replaceChildren();const tests=[...studyHistory.tests].sort((a,b)=>b.finishedAt-a.finishedAt);
+ if(!tests.length){list.append(collectionNode('p','確認した結果を、ここに残すにゃ。','homework-note'));return;}
+ for(const t of tests.slice(0,testHistoryVisible)){const item=collectionNode('div',undefined,'homework-test-history-item'),pass=Object.values(t.answers).filter(v=>v==='pass').length;
+ const view=collectionButton('','',()=>openSavedHomeworkResult(t.id));view.append(collectionNode('strong',`${pass} / ${t.refs.length}問できた`),collectionNode('small',`${hStamp(t.finishedAt)} · ${t.allDates?'記録日指定なし':hShort(t.from)+'〜'+hShort(t.to)}`));
+ item.append(view,collectionButton('削除','link-button',()=>{if(!confirm('このテスト結果を削除するにゃ？'))return;studyHistory.tests=studyHistory.tests.filter(s=>s.id!==t.id);persistStudyHistory();renderHomeworkTestHistory();}));list.append(item);}
+ if(tests.length>testHistoryVisible)list.append(collectionButton('前の記録も見るにゃ','link-button',()=>{testHistoryVisible+=10;renderHomeworkTestHistory();}));
+}
+function toggleHomeworkCapture(on){document.body.classList.toggle('homework-capture',on);document.querySelectorAll('.capture-exit').forEach(b=>b.hidden=!on);window.scrollTo({top:0,behavior:'instant'});}
+$('openHomeworkReport').onclick=openLearningReport;$('reportBack').onclick=()=>showScreen('settings');
+for(const b of document.querySelectorAll('[data-report-period]'))b.onclick=()=>{setReportPreset(b.dataset.reportPeriod);renderLearningReport();};
+for(const id of ['reportFrom','reportTo'])$(id).onchange=()=>renderLearningReport();
+$('reportNameInput').onchange=()=>{studyHistory.name=$('reportNameInput').value.trim().slice(0,24);persistStudyHistory();renderLearningReport();};
+$('showReportShot').onclick=()=>{renderLearningReport();toggleHomeworkCapture(true);};for(const b of document.querySelectorAll('.capture-exit'))b.onclick=()=>toggleHomeworkCapture(false);
+$('resetReportHistory').onclick=()=>{if(!confirm('日別レポートだけを消すにゃ？ 元の学習記録とテスト結果は残るにゃ。'))return;studyHistory.days={};studyHistory.recordedFrom=dateKey();historyUndoSnapshots.clear();persistStudyHistory();renderLearningReport();};
+$('resetTestHistory').onclick=()=>{if(!confirm('確認テストの結果と途中のテストを消すにゃ？ 元の学習記録は残るにゃ。'))return;studyHistory.tests=[];studyHistory.activeTest=null;testSession=null;persistStudyHistory();renderLearningReport();};
+
+let testSession=null,testCards=[],testReady=false,testLoading=false,testFaceAnswer=false,testImageToken=0,testSuppressedUntil=0,testGradeLock=0,testLoadRequest=0;
+const homeworkImageLoader=window.createNekoImageLoader();
+function homeworkCandidates(){
+ const all=$('testAllDates').checked,from=$('testFrom').value,to=$('testTo').value,subject=$('testSubject').value,unit=$('testLesson').value;
+ if(!all)hRange(from,to);
+ const dated=new Set();if(!all)for(const [day,rows] of Object.entries(studyHistory.days))if(day>=from&&day<=to)for(const [key,row] of Object.entries(rows))if(row.k)dated.add(key);
+ const keys=[];
+ for(const m of meta){if(subject!=='all'&&m.subject!==subject||unit!=='all'&&m.id!==unit)continue;
+  const valid=loaded.has(m.id)?new Set(loaded.get(m.id).cards.map(c=>c.id)):null;
+  for(const [id,r] of Object.entries(data.records[m.id]||{})){if(r?.status!=='known'||valid&&!valid.has(id))continue;
+   const key=cardKey(m.id,id),lastDay=r.updated?hDay(r.updated):'';
+   if(all||dated.has(key)||hValidDay(lastDay)&&lastDay>=from&&lastDay<=to)keys.push(key);
+  }
+ }return [...new Set(keys)];
+}
+function fillHomeworkTestLessons(){
+ const select=$('testLesson'),previous=select.value,sub=$('testSubject').value;select.replaceChildren();
+ const all=collectionNode('option','すべての教材');all.value='all';select.append(all);
+ for(const m of meta.filter(m=>sub==='all'||m.subject===sub)){const option=collectionNode('option',m.title);option.value=m.id;select.append(option);}
+ select.value=[...select.options].some(o=>o.value===previous)?previous:'all';updateHomeworkCandidates();
+}
+function updateHomeworkCandidates(){
+ $('testFrom').disabled=$('testTo').disabled=$('testAllDates').checked;
+ try{const count=homeworkCandidates().length,n=Math.min(count,Number($('testCount').value));$('testCandidateCount').textContent=`候補 ${count}問`;$('testSetupNotice').textContent=count?'同じ問題は重複させず、ランダムに選ぶにゃ。':'「おぼえた」の問題がないにゃ。期間や教材を変えてみてにゃ。';$('startHomeworkTest').disabled=count===0||testLoading;$('startHomeworkTest').textContent=n?`${n}問でテストをはじめるにゃ`:'テストをはじめるにゃ';}
+ catch(e){$('testCandidateCount').textContent='';$('testSetupNotice').textContent=e.message;$('startHomeworkTest').disabled=true;}
+}
+async function openHomeworkSetup(){
+ await Promise.all([studyHistoryReady,importedLessonsReady]);if(screen!=='report')return;
+ const range=reportDates();$('testFrom').value=range.from;$('testTo').value=range.to;$('testAllDates').checked=false;
+ $('testSubject').replaceChildren();for(const [id,title] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const option=collectionNode('option',title);option.value=id;$('testSubject').append(option);}
+ $('testSubject').value='all';fillHomeworkTestLessons();$('homeworkSetup').showModal();$('homeworkSetupTitle').focus({preventScroll:true});
+}
+function packedTestCard(raw,c){return {...c,id:cardKey(raw.id,c.id),lessonId:raw.id,originalId:c.id,lessonTitle:raw.title,source:raw.source};}
+async function startHomeworkTest(){
+ if(testLoading)return;
+ if(studyHistory.activeTest&&!confirm('途中のテストがあるにゃ。新しいテストを始めるにゃ？'))return;
+ let candidates;try{candidates=shuffle(homeworkCandidates());}catch(e){$('testSetupNotice').textContent=e.message;return;}
+ const wanted=Math.min(Number($('testCount').value),candidates.length);if(!wanted)return;
+ const launch=++testLoadRequest,scope={from:$('testFrom').value,to:$('testTo').value,allDates:$('testAllDates').checked,subject:$('testSubject').value,lesson:$('testLesson').value};
+ const previousActive=studyHistory.activeTest?hClone(studyHistory.activeTest):null,previousSession=testSession,previousCards=testCards;
+ for(const id of ['testFrom','testTo','testAllDates','testSubject','testLesson','testCount'])$(id).disabled=true;
+ testLoading=true;updateHomeworkCandidates();$('testSetupNotice').textContent='ちょっと待ってにゃ🐾';
+ try{
+  const picked=[];
+  for(const key of candidates){if(picked.length>=wanted)break;const ref=hSplit(key),m=meta.find(m=>m.id===ref.lessonId);if(!m)continue;const raw=await getLesson(m),c=raw.cards.find(c=>c.id===ref.cardId);if(c)picked.push(packedTestCard(raw,c));}
+  if(launch!==testLoadRequest||screen!=='report'||!$('homeworkSetup').open)return;
+  if(!picked.length)throw Error('出題できる問題が見つからないにゃ。元の教材を確認してにゃ。');
+  testSession={id:'test-'+(crypto.randomUUID?.()||Date.now().toString(36)),createdAt:Date.now(),...scope,refs:picked.map(c=>c.id),answers:{},index:0,undo:[],finishedAt:null,titles:Object.fromEntries(picked.map(c=>[c.lessonId,c.lessonTitle]))};
+  testCards=picked;studyHistory.activeTest=hClone(testSession);await persistStudyHistory();if(launch!==testLoadRequest||screen!=='report'||!$('homeworkSetup').open){studyHistory.activeTest=previousActive;testSession=previousSession;testCards=previousCards;persistStudyHistory();return;}$('homeworkSetup').close();testFaceAnswer=false;showScreen('test');renderHomeworkTest();beep('open');
+ }catch(e){$('testSetupNotice').textContent=e?.message||'教材が開けなかったにゃ。通信を確認してにゃ。';}
+ finally{testLoading=false;for(const id of ['testAllDates','testSubject','testLesson','testCount'])$(id).disabled=false;updateHomeworkCandidates();}
+}
+function persistHomeworkSession(){
+ if(!testSession)return;
+ if(testSession.finishedAt){const at=studyHistory.tests.findIndex(t=>t.id===testSession.id);if(at<0)studyHistory.tests.push(hClone(testSession));else studyHistory.tests[at]=hClone(testSession);if(studyHistory.activeTest?.id===testSession.id)studyHistory.activeTest=null;}
+ else{studyHistory.activeTest=hClone(testSession);studyHistory.tests=studyHistory.tests.filter(t=>t.id!==testSession.id);}
+ return persistStudyHistory();
+}
+async function resumeHomeworkTest(){
+ await Promise.all([studyHistoryReady,importedLessonsReady]);const stored=studyHistory.activeTest;if(!stored)return;
+ const seq=++testLoadRequest;showScreen('test');testReady=false;$('testNotice').textContent='ちょっと待ってにゃ🐾';$('testPlay').hidden=$('testResult').hidden=true;
+ try{const cards=[];for(const key of stored.refs){const r=hSplit(key),m=meta.find(m=>m.id===r.lessonId);if(!m)throw Error('元の教材が見つからないにゃ。教材を読み込んでから再開してにゃ。');const raw=await getLesson(m),c=raw.cards.find(c=>c.id===r.cardId);if(!c)throw Error('元の問題が見つからないにゃ。教材を確認してにゃ。');cards.push(packedTestCard(raw,c));}
+  if(seq!==testLoadRequest||screen!=='test')return;testSession=hClone(stored);testSession.undo ||= [];testCards=cards;testFaceAnswer=false;renderHomeworkTest();
+ }catch(e){if(seq===testLoadRequest)$('testNotice').textContent=e.message;}
+}
+function updateHomeworkTestActions(){
+ const c=testCards[testSession?.index||0],answer=testFaceAnswer;
+ $('testReveal').hidden=answer;$('testPass').hidden=$('testRetry').hidden=!answer;
+ $('testReveal').disabled=!testReady;$('testPass').disabled=$('testRetry').disabled=!testReady||!answer||performance.now()<testGradeLock;
+ $('testPrev').disabled=$('testNext').disabled=testCards.length<2;
+ $('testZoom').disabled=!testReady;$('testUndo').disabled=!testSession?.undo?.length;
+ $('testGradeHint').textContent=!testReady?'画像を準備しているにゃ…':answer?'答えを確認して、判定するにゃ。':'口頭や紙で答えてから、解答を開くにゃ。';
+ if(c){$('testSlideTap').setAttribute('aria-label',answer?'タップして問題を見る':'タップして解答を見る');$('testSlideTap').setAttribute('aria-busy',String(!testReady));}
+}
+function renderHomeworkTest(){
+ if(!testSession||screen!=='test')return;
+ if(testSession.finishedAt){showHomeworkResult();return;}
+ $('testPlay').hidden=false;$('testResult').hidden=true;$('testNotice').textContent=historyError;testReady=false;const token=++testImageToken;
+ testSession.index=Math.max(0,Math.min(testSession.refs.length-1,testSession.index||0));const c=testCards[testSession.index];if(!c){$('testNotice').textContent='元の問題を読み込んでから再開してにゃ。';$('testPlay').hidden=true;return;}
+ const graded=Object.keys(testSession.answers).length;$('testPosition').textContent=`${testSession.index+1} / ${testSession.refs.length}問`;$('testJudged').textContent=`判定 ${graded}問`;$('testProgress').style.width=(graded/testSession.refs.length*100)+'%';
+ $('testFace').textContent=testFaceAnswer?'解答':'問題';$('testCard').classList.toggle('is-back',testFaceAnswer);$('testUnit').textContent=`${c.lessonTitle} · ${c.displayNumber||c.originalId}`;
+ const source=sourceVideoURL(c.source),time=c.sourceTimes?.[testFaceAnswer?'answer':'question'];$('testSourceLinks').hidden=!source;$('testSourceMoment').hidden=true;$('testSourceMoment').removeAttribute('href');if(source){$('testSourceVideo').href=source;if(typeof time==='number'&&Number.isFinite(time)&&time>=0){$('testSourceMoment').hidden=false;$('testSourceMoment').href=source+'&t='+Math.floor(time)+'s';$('testSourceMoment').textContent=`この場面 ${Math.floor(time/60)}:${String(Math.floor(time)%60).padStart(2,'0')} ↗`;}}
+ const frame=$('testSlideTap'),image=$('testSlideImage'),url=window.NekoImageURL(c[testFaceAnswer?'answer':'question']);frame.className='slide-wrap loading';$('testImageStatus').hidden=true;$('testImageStatus').textContent='ちょっと待ってにゃ🐾';image.alt=`${c.lessonTitle} ${c.displayNumber||c.originalId} ${testFaceAnswer?'解答':'問題'}`;homeworkImageView.setCard(c.id);updateHomeworkTestActions();
+ const urls=[];for(let n=0;n<Math.min(4,testCards.length);n++){const card=testCards[(testSession.index+n)%testCards.length];urls.push(window.NekoImageURL(card.question),window.NekoImageURL(card.answer));}homeworkImageLoader.plan(urls);
+ let done=false;const finish=()=>{if(token!==testImageToken||screen!=='test'||done)return;done=true;testReady=true;frame.classList.remove('loading');$('testImageStatus').hidden=true;homeworkImageView.refresh();updateHomeworkTestActions();setTimeout(()=>{if(token===testImageToken&&screen==='test')updateHomeworkTestActions();},Math.max(0,testGradeLock-performance.now())+12);};
+ const fail=()=>{if(token!==testImageToken||screen!=='test'||done)return;done=true;frame.className='slide-wrap error';$('testImageStatus').hidden=false;$('testImageStatus').textContent='画像が開けないにゃ。タップして読み直してにゃ。';$('testReveal').disabled=false;$('testReveal').textContent='読み直すにゃ ↻';};
+ $('testReveal').textContent='答えを見るにゃ';setTimeout(()=>{if(!done&&token===testImageToken&&screen==='test')$('testImageStatus').hidden=false;},300);
+ homeworkImageLoader.get(url).then(()=>{if(token!==testImageToken||screen!=='test')return;image.onload=finish;image.onerror=fail;image.src=url;if(image.complete&&image.naturalWidth)finish();}).catch(fail);
+}
+function flipHomeworkTest(){if(screen!=='test'||!testSession||testSession.finishedAt)return;if($('testSlideTap').classList.contains('error')){homeworkImageLoader.forget(window.NekoImageURL(testCards[testSession.index][testFaceAnswer?'answer':'question']));renderHomeworkTest();return;}if(!testReady||performance.now()<testSuppressedUntil)return;testFaceAnswer=!testFaceAnswer;beep('flip');renderHomeworkTest();}
+function navigateHomeworkTest(delta){if(screen!=='test'||!testSession||testSession.finishedAt||testCards.length<2)return;testSession.index=(testSession.index+delta+testCards.length)%testCards.length;testFaceAnswer=false;persistHomeworkSession();renderHomeworkTest();beep('move');}
+function gradeHomeworkTest(outcome){
+ if(screen!=='test'||!testSession||testSession.finishedAt||!testFaceAnswer||!testReady||performance.now()<testGradeLock)return;
+ testGradeLock=performance.now()+350;const key=testSession.refs[testSession.index];testSession.undo ||= [];testSession.undo.push({key,previous:testSession.answers[key]||null,index:testSession.index});if(testSession.undo.length>40)testSession.undo.shift();testSession.answers[key]=outcome;
+ if(testSession.refs.every(key=>testSession.answers[key])){testSession.finishedAt=Date.now();persistHomeworkSession();beep('finish');showHomeworkResult();return;}
+ let next=-1;for(let n=1;n<=testSession.refs.length;n++){const i=(testSession.index+n)%testSession.refs.length;if(!testSession.answers[testSession.refs[i]]){next=i;break;}}
+ testSession.index=next;testFaceAnswer=false;persistHomeworkSession();beep(outcome==='pass'?'known':'weak');renderHomeworkTest();
+}
+function undoHomeworkGrade(){
+ if(!testSession?.undo?.length)return;const u=testSession.undo.pop();if(u.previous)testSession.answers[u.key]=u.previous;else delete testSession.answers[u.key];testSession.finishedAt=null;testSession.index=u.index;testGradeLock=0;testFaceAnswer=true;persistHomeworkSession();renderHomeworkTest();toast('判定をひとつ戻したにゃ');
+}
+function showHomeworkResult(){
+ if(!testSession)return;testReady=false;++testImageToken;homeworkImageLoader.pause();$('testPlay').hidden=true;$('testResult').hidden=false;$('testNotice').textContent=historyError;
+ const pass=testSession.refs.filter(k=>testSession.answers[k]==='pass').length,retry=testSession.refs.filter(k=>testSession.answers[k]==='retry');
+ $('testResultName').textContent=studyHistory.name||'';$('testResultDate').textContent=hStamp(testSession.finishedAt);$('testResultScope').textContent='対象：'+(testSession.allDates?'記録日指定なし':testSession.from.replaceAll('-','/')+' 〜 '+testSession.to.replaceAll('-','/'));
+ $('testScore').textContent=`${pass} / ${testSession.refs.length}問`;$('testScorePercent').textContent=Math.round(pass/testSession.refs.length*100)+'%';$('testResultPass').textContent=`できた ${pass}問`;$('testResultRetry').textContent=`もう一度 ${retry.length}問`;
+ const byLesson=new Map();for(const key of testSession.refs){const id=hSplit(key).lessonId;byLesson.set(id,(byLesson.get(id)||0)+1);}materialRows($('testResultMaterials'),byLesson);
+ $('testResultCheer').textContent=retry.length?'次に復習する問題が見つかったにゃ🐾':'全部できたにゃ！積み重ねの成果にゃ🐾';
+ $('testReviewWrong').disabled=!retry.length;$('testWrongDetails').hidden=!retry.length;$('testWrongSummary').textContent=`もう一度の問題 ${retry.length}問`;$('testWrongList').replaceChildren();for(const key of retry)$('testWrongList').append(collectionNode('p',historyCardTitle(key)));
+ $('testResultUndo').disabled=!testSession.undo?.length;$('testResultUndo').hidden=!testSession.undo?.length;
+}
+function openSavedHomeworkResult(id){const t=studyHistory.tests.find(t=>t.id===id);if(!t)return;testSession=hClone(t);testSession.undo=[];testCards=[];showScreen('test');showHomeworkResult();}
+function reviewHomeworkWrong(){if(!testSession)return;const keys=testSession.refs.filter(k=>testSession.answers[k]==='retry');if(!keys.length)return;const ids=[...new Set(keys.map(k=>hSplit(k).lessonId))];toggleHomeworkCapture(false);return selectLessons(ids,{collection:{id:'review-'+testSession.id,name:'確認テストの復習',cardKeys:keys}});}
+const homeworkImageView=window.createNekoImageView({frame:$('testSlideTap'),image:$('testSlideImage'),resetButton:$('testResetImage'),isReady:()=>screen==='test'&&testReady&&!testSession?.finishedAt,onTap:flipHomeworkTest,onNavigate:navigateHomeworkTest,onPause:()=>{},onDrag:()=>{},onSnap:()=>{},suppressClicks:()=>{testSuppressedUntil=performance.now()+500;}});
+$('testSlideTap').onclick=flipHomeworkTest;$('testSlideTap').onkeydown=e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();flipHomeworkTest();}};
+$('testReveal').onclick=flipHomeworkTest;$('testPass').onclick=()=>gradeHomeworkTest('pass');$('testRetry').onclick=()=>gradeHomeworkTest('retry');$('testPrev').onclick=()=>navigateHomeworkTest(-1);$('testNext').onclick=()=>navigateHomeworkTest(1);$('testUndo').onclick=$('testResultUndo').onclick=undoHomeworkGrade;
+$('testZoom').onclick=()=>homeworkImageView.zoom();$('testReviewWrong').onclick=reviewHomeworkWrong;
+$('openTestSetup').onclick=openHomeworkSetup;$('closeHomeworkSetup').onclick=()=>$('homeworkSetup').close();$('startHomeworkTest').onclick=startHomeworkTest;
+$('homeworkSetup').addEventListener('close',()=>{++testLoadRequest;});
+$('testSubject').onchange=fillHomeworkTestLessons;for(const id of ['testLesson','testCount','testFrom','testTo','testAllDates'])$(id).onchange=updateHomeworkCandidates;
+$('resumeHomeworkTest').onclick=resumeHomeworkTest;$('testBack').onclick=$('testResultBack').onclick=()=>showScreen('report');$('showTestShot').onclick=()=>toggleHomeworkCapture(true);
+window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();});
+
 window.NekoApp = {
+  flushStudyHistory:async()=>{await studyHistoryReady;await historyWrite;},
   register, finishImports: async () => { resolveImportedLessons(); stats(); if (screen === 'catalog') renderCatalog(); },
   selectImported: async id => { catalogSubject = state.subject = meta.find(m => m.id === id).subject; await selectLessons([id]); }, pause, toast,
   get catalog() { return meta.map(({cards,...m})=>({...m})); },

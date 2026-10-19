@@ -803,12 +803,25 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 .report-chart-single .is-active .report-day-status{color:#9a612d}
 @media(max-width:350px){.homework-dates{grid-template-columns:minmax(0,1fr);gap:7px}.homework-dates>label{display:grid;grid-template-columns:46px minmax(0,1fr);align-items:center;gap:6px}#app .homework-dates input[type=date],.homework-setup .homework-dates input[type=date]{margin-top:0}.report-card-head h3{font-size:14px}}
 
+/* Five equal destinations sit below the brand at narrow widths. */
+.compact-header{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-bottom:14px}
+.compact-header .brand-home{justify-self:start}
+.compact-header .app-navigation{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;width:100%;min-width:0;padding:4px;border:1px solid #e4d1ba;border-radius:14px;background:#fffaf3;box-shadow:0 2px 0 #ead7bf}
+.compact-header .app-navigation button{min-width:0;min-height:42px;padding:6px 3px;font-size:12px;border-radius:10px;white-space:nowrap;line-height:1.3}
+.report-period-dialog{width:min(420px,calc(100% - 24px))}
+.report-period-actions{display:flex;gap:10px;align-items:stretch}
+.report-period-actions button{flex:1;min-width:0;min-height:42px;font-size:12px;line-height:1.5;padding:8px!important;border-radius:11px!important}
+.report-period-actions .primary-button{width:auto;flex:1.6}
+@media(min-width:760px){.compact-header{grid-template-columns:minmax(210px,1fr) minmax(360px,460px);gap:18px}.compact-header .app-navigation{justify-self:end}}
+
+.catalog-search-top.is-collections{grid-template-columns:minmax(0,1fr)}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
   
   
-<nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navSettings" type="button">設定</button></nav></header>
+<nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navCollections" type="button">まとめ</button><button id="navRecords" type="button">記録</button><button id="navSettings" type="button">設定</button></nav></header>
 
 
 
@@ -821,7 +834,7 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
   
   
   <div class="catalog-list-tools"><span id="visibleCount"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
-  <section id="myCollectionsPanel" hidden aria-labelledby="myCollectionsTitle"><div class="my-collection-heading"><h3 id="myCollectionsTitle">マイまとめ</h3><button class="tool" type="button" id="newMyCollection">＋ 作るにゃ</button></div><div id="myCollectionList"></div></section>
+  <section id="myCollectionsPanel" hidden aria-labelledby="myCollectionsTitle"><div class="my-collection-heading"><h3 id="myCollectionsTitle">保存したまとめ</h3><button class="tool" type="button" id="newMyCollection">＋ 作るにゃ</button></div><div id="myCollectionList"></div></section>
   <div id="catalogGroups" class="catalog-groups"></div>
   <div id="catalogEmpty" class="catalog-empty" hidden><span aria-hidden="true">📚</span><h3 id="catalogEmptyTitle"></h3><p id="catalogEmptyText"></p></div>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><button class="primary-button" id="startStudy" disabled>はじめるにゃ <span aria-hidden="true">🐾</span></button></div>
@@ -842,11 +855,10 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 <div class="empty" id="emptyState" hidden tabindex="-1"><button aria-label="Nekoponをなでるにゃ" class="result-cat" type="button" id="resultCat"><span class="cat-tilt"><span id="resultCatFace" aria-hidden="true">😸</span></span></button><p role="status" class="result-cat-reply" id="resultCatReply">おつかれさまにゃ。なでてにゃ🐾</p><h2 id="emptyTitle"></h2><p id="emptyText"></p><div id="resultCounts" class="result-counts" hidden><div><b id="resultKnown">0</b><span>おぼえた</span></div><div><b id="resultWeak">0</b><span>おぼえてない</span></div><div><b id="resultUnmarked">0</b><span>まだ仕分けてない</span></div></div><button id="restartButton">もう一周するにゃ</button><button id="reviewButton">おぼえてない問題を復習にゃ</button><button id="unmarkedReview" hidden>まだの問題に挑戦するにゃ</button><button id="allButton">ぜんぶ見るにゃ</button><button id="finishUndo" class="finish-undo" hidden>↶ 最後の仕分けを戻すにゃ</button></div>
 </section></section>
 <section id="reportScreen" class="homework-screen" aria-labelledby="reportTitle" hidden>
- <div class="page-heading homework-heading" data-capture-hide><h2 id="reportTitle" class="screen-title" tabindex="-1">学習レポート</h2><button class="tool" id="reportBack" type="button">設定へ</button></div>
+ <div class="page-heading homework-heading" data-capture-hide><h2 id="reportTitle" class="screen-title" tabindex="-1">学習レポート</h2></div>
  <button class="tool capture-exit" type="button" hidden>戻るにゃ</button>
  <div class="report-controls" data-capture-hide>
-  <div class="report-presets" aria-label="集計期間"><button type="button" data-report-period="today">今日</button><button type="button" data-report-period="week">直近7日</button><button type="button" data-report-period="custom">期間指定</button></div>
-  <div id="reportDates" class="homework-dates" hidden><label>開始日<input type="date" id="reportFrom"></label><label>終了日<input type="date" id="reportTo"></label></div>
+  <div class="report-presets" aria-label="集計期間"><button type="button" data-report-period="today">今日</button><button type="button" data-report-period="week">直近7日間</button><button type="button" data-report-period="custom">期間指定</button></div>
   <details class="report-person"><summary>表示名を入れるにゃ（任意）</summary><input id="reportNameInput" maxlength="24" placeholder="表示名" autocomplete="off" aria-label="レポートに載せる名前"></details>
  </div>
  <p id="reportNotice" class="homework-note" role="status"></p>
@@ -865,7 +877,7 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
  </article>
  <div class="report-main-actions" data-capture-hide><button id="showReportShot" class="secondary-button" type="button">成果を見せるにゃ</button><button id="openTestSetup" class="primary-button" type="button">確認テストにゃ 🐾</button></div>
  <section class="homework-tests" data-capture-hide><h3>確認テストの記録</h3><button id="resumeHomeworkTest" class="secondary-button" type="button" hidden></button><div id="homeworkTestHistory"></div></section>
- <details class="history-management" data-capture-hide><summary>履歴の管理にゃ</summary><div><button id="resetReportHistory" class="link-button" type="button">日別レポートを消すにゃ</button><button id="resetTestHistory" class="link-button" type="button">テスト履歴を消すにゃ</button></div><small>元の教材・「おぼえた」・マイまとめは残るにゃ。</small></details>
+ <details class="history-management" data-capture-hide><summary>履歴の管理にゃ</summary><div><button id="resetReportHistory" class="link-button" type="button">日別レポートを消すにゃ</button><button id="resetTestHistory" class="link-button" type="button">テスト履歴を消すにゃ</button></div><small>元の教材・「おぼえた」・まとめは残るにゃ。</small></details>
 </section>
 <section id="testScreen" class="homework-screen" aria-labelledby="testTitle" hidden>
  <div class="page-heading homework-heading" data-capture-hide><h2 id="testTitle" class="screen-title" tabindex="-1">確認テスト</h2><button id="testBack" class="tool" type="button">レポートへ</button></div>
@@ -887,7 +899,7 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
  </div>
 </section>
 
-<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定・学習記録</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><button id="openHomeworkReport" class="homework-entry" type="button"><span><strong>🐾 学習レポート・確認テスト</strong><small>日付で振り返って、成果を見せるにゃ</small></span><span aria-hidden="true">›</span></button><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
+<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定・学習記録</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
 </main><div class="neko-notice" id="notice" role="status" aria-live="polite"></div>
 <dialog id="focusMenu" aria-labelledby="focusMenuTitle"><div class="focus-menu-header"><h2 id="focusMenuTitle">操作にゃ 🐾</h2><button id="focusClose" type="button" aria-label="スライドに戻るにゃ" autofocus>×</button></div><p id="focusContext"></p><div class="focus-navigation"><button id="focusPrev" type="button">‹ 前へ</button><button id="focusFlip" type="button">解答を見るにゃ</button><button id="focusNext" type="button">次へ ›</button></div><div class="focus-extra"><button id="focusZoom" type="button">拡大するにゃ ⤢</button><div id="focusUndoSlot"></div></div><div id="focusSourceSlot"></div><div id="focusOptionsSlot"></div><div class="focus-destinations"><button id="focusCatalog" type="button">教材を選ぶにゃ</button><button id="focusSettings" type="button">設定を開くにゃ</button></div><button id="focusNormal" type="button">横向きでも通常表示にするにゃ</button></dialog>
 
@@ -901,6 +913,12 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
   <label class="homework-field">教材<select id="testLesson"></select></label>
   <p id="testCandidateCount" class="test-candidate-count" aria-live="polite"></p><p id="testSetupNotice" class="homework-note" role="status"></p>
  </div><div class="homework-setup-foot"><button id="startHomeworkTest" class="primary-button" type="button" disabled>テストをはじめるにゃ</button></div>
+</dialog>
+
+<dialog id="reportPeriodDialog" class="homework-setup report-period-dialog" aria-labelledby="reportPeriodTitle">
+ <div class="homework-setup-head"><h2 id="reportPeriodTitle" tabindex="-1">期間をえらぶにゃ</h2><button id="closeReportPeriod" class="tool" type="button" aria-label="期間指定を閉じる">×</button></div>
+ <div class="homework-setup-body"><div id="reportDates" class="homework-dates"><label>開始日<input type="date" id="reportFrom"></label><label>終了日<input type="date" id="reportTo"></label></div><p id="reportPeriodNotice" class="homework-note" role="status"></p></div>
+ <div class="homework-setup-foot report-period-actions"><button id="cancelReportPeriod" class="secondary-button" type="button">やめるにゃ</button><button id="applyReportPeriod" class="primary-button" type="button">この期間にするにゃ</button></div>
 </dialog>
 
 <dialog id="importDialog" aria-labelledby="importDialogTitle">
@@ -926,7 +944,7 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 <script src="asset-origin.js"></script>
 <script src="catalog.js?v=20261019-history-places-link"></script>
 <dialog id="collectionDialog" aria-labelledby="collectionDialogTitle">
- <div class="collection-editor-head"><h2 id="collectionDialogTitle" tabindex="-1">マイまとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ">×</button></div>
+ <div class="collection-editor-head"><h2 id="collectionDialogTitle" tabindex="-1">まとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ">×</button></div>
  <div class="collection-editor-body" id="collectionEditorBody">
   <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="まとめの名前を入れるにゃ" autocomplete="off">
   <details class="collection-picker" id="collectionPicker" open><summary id="collectionPickerToggle" role="button" aria-controls="collectionPickerContent">＋ 教材をえらぶにゃ</summary><div id="collectionPickerContent">
@@ -1413,8 +1431,8 @@ function showScreen(next) {
   for (const name of ['catalog','study','settings','report','test']) $(name+'Screen').hidden = name !== next;
   $('appHeader').hidden = false;
   $('returnToStudy').disabled = !lesson && !state.lessonIds.some(id=>meta.some(m=>m.id===id));
-  for (const [id,target] of [['openCatalog','catalog'],['returnToStudy','study'],['navSettings','settings']]) {
-    if (next===target || (next==='report'||next==='test')&&target==='settings') $(id).setAttribute('aria-current','page'); else $(id).removeAttribute('aria-current');
+  for (const [id,target] of [['openCatalog','catalog'],['returnToStudy','study'],['navCollections','collections'],['navRecords','report'],['navSettings','settings']]) {
+    if (next===target && (target!=='catalog'||!catalogIsCollections) || target==='collections'&&next==='catalog'&&catalogIsCollections || target==='report'&&next==='test') $(id).setAttribute('aria-current','page'); else $(id).removeAttribute('aria-current');
   }
   syncLandscape();
   if (next === 'catalog') renderCatalog(); stats();
@@ -1550,7 +1568,7 @@ function renderCatalog() {
     b.onclick=()=>setCatalogContext({subject:id});
     $('catalogSubjects').append(b);
   }
-  const mine=collectionButton('🐾 マイまとめ','',openMyCollections);mine.dataset.collectionTab='true';mine.setAttribute('aria-pressed',String(catalogIsCollections));mine.classList.toggle('active',catalogIsCollections);$('catalogSubjects').append(mine);
+
   if(catalogIsCollections) [...$('catalogSubjects').querySelectorAll('[data-subject]')].forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
   if(subjectFocus) [...$('catalogSubjects').children].find(b=>b.dataset.subject===subjectFocus)?.focus({preventScroll:true});
   if(catalogIsCollections){renderMyCollections();return;}
@@ -1902,8 +1920,9 @@ function writeCollections(items) {
 }
 function collectionSnapshot(c) {return {id:c.id,name:c.name,cardKeys:c.cards.map(r=>cardKey(r.lessonId,r.cardId))};}
 function collectionKnown(c) {return c.cards.filter(r=>data.records[r.lessonId]?.[r.cardId]?.status==='known').length;}
+function syncMainNavigation(){if(screen!=='catalog')return;$('openCatalog').toggleAttribute('aria-current',!catalogIsCollections);$('navCollections').toggleAttribute('aria-current',catalogIsCollections);if(!catalogIsCollections)$('openCatalog').setAttribute('aria-current','page');else $('navCollections').setAttribute('aria-current','page');}
 function syncCollectionCatalog() {
-  const on=catalogIsCollections;
+  const on=catalogIsCollections;syncMainNavigation();$('catalogTitle').textContent=on?'まとめ':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
   $('myCollectionsPanel').hidden=!on;
   document.querySelector('#catalogScreen .catalog-filter-row').hidden=on;
   $('seriesScroller').hidden=on; $('catalogSeries').hidden=on; $('catalogDock').hidden=on;
@@ -1911,11 +1930,11 @@ function syncCollectionCatalog() {
   $('catalogGroups').hidden=on; if(on)$('catalogEmpty').hidden=true;
   $('openImport').hidden=on;
   $('catalogSearch').placeholder=on?'まとめをさがすにゃ':'教材をさがすにゃ';
-  $('catalogSearch').setAttribute('aria-label',on?'マイまとめを検索':'教材名で検索');
+  $('catalogSearch').setAttribute('aria-label',on?'まとめを検索':'教材名で検索');
   if(on)$('quickReview').hidden=true;
   $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
 }
-function openMyCollections() {catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();}
+function openMyCollections() {catalogIsCollections=true;$('catalogSearch').value='';showScreen('catalog');}
 function renderMyCollections() {
   const root=$('myCollectionList');root.replaceChildren();
   const q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=readCollections();
@@ -2037,7 +2056,7 @@ async function openCollectionEditor(id=null) {
   collectionEditor={id:existing?.id||null,updated:existing?.updated,cards:new Map(),activeId:null,activeRaw:null};
   for(const r of existing?.cards||[]){if(!collectionEditor.cards.has(r.lessonId))collectionEditor.cards.set(r.lessonId,new Set());collectionEditor.cards.get(r.lessonId).add(r.cardId);}
   $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';
-  $('collectionDialogTitle').textContent=existing?'マイまとめを編集するにゃ':'マイまとめを作るにゃ';
+  $('collectionDialogTitle').textContent=existing?'まとめを編集するにゃ':'まとめを作るにゃ';
   $('collectionSave').disabled=false;$('collectionActive').inert=false;$('collectionActive').hidden=true;$('collectionGrid').replaceChildren();$('collectionPicker').open=!existing?.cards.length;editorStatus();fillCollectionSubjects();renderCollectionTabs();updateCollectionTotal();
   collectionEditor.signature=collectionSignature();$('collectionDialog').classList.toggle('motion-off',reduced);$('collectionDialog').showModal();updateCollectionViewport();$('collectionEditorBody').scrollTop=0;$('collectionDialogTitle').focus({preventScroll:true});
   if(existing?.cards.length)await loadCollectionGrid(existing.cards[0].lessonId);
@@ -2189,9 +2208,13 @@ function trackStudyAssessment(c,nextStatus,previousStatus){
 }
 function undoStudyAssessment(token){if(!token)return;changeStudyHistory(log=>{const s=historyUndoSnapshots.get(token);if(!s)return false;if(s.before)log.days[s.day][s.key]=s.before;else if(log.days[s.day])delete log.days[s.day][s.key];historyUndoSnapshots.delete(token);});}
 let reportPreset='week',reportOpenRequest=0,testHistoryVisible=10;
-$('reportFrom').value=hDaysBack(6);$('reportTo').value=dateKey();
-function reportDates(){return {from:$('reportFrom').value,to:$('reportTo').value};}
-function setReportPreset(preset){reportPreset=preset;if(preset!=='custom'){$('reportFrom').value=preset==='today'?dateKey():hDaysBack(6);$('reportTo').value=dateKey();}$('reportDates').hidden=preset!=='custom';document.querySelectorAll('[data-report-period]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.reportPeriod===preset)));}
+let reportPeriod={from:hDaysBack(6),to:dateKey()};
+$('reportFrom').value=reportPeriod.from;$('reportTo').value=reportPeriod.to;
+function reportDates(){return {...reportPeriod};}
+function setReportPreset(preset){reportPreset=preset;if(preset!=='custom')reportPeriod={from:preset==='today'?dateKey():hDaysBack(6),to:dateKey()};document.querySelectorAll('[data-report-period]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.reportPeriod===preset)));}
+function openReportPeriod(){const d=reportDates();$('reportFrom').value=d.from;$('reportTo').value=d.to;$('reportPeriodNotice').textContent='';$('reportPeriodDialog').showModal();$('reportPeriodTitle').focus({preventScroll:true});}
+$('closeReportPeriod').onclick=$('cancelReportPeriod').onclick=()=>$('reportPeriodDialog').close();
+$('applyReportPeriod').onclick=()=>{const from=$('reportFrom').value,to=$('reportTo').value;try{hRange(from,to);}catch(e){$('reportPeriodNotice').textContent=e.message;return;}reportPeriod={from,to};setReportPreset('custom');$('reportPeriodDialog').close();renderLearningReport();};
 function historyCardTitle(key){const r=hSplit(key),m=meta.find(m=>m.id===r.lessonId),c=loaded.get(r.lessonId)?.cards.find(c=>c.id===r.cardId);return `${m?.title||'端末内の教材'} · ${c?.displayNumber||r.cardId}`;}
 function materialRows(target,countsByLesson,limit=5){target.replaceChildren();const entries=[...countsByLesson].sort((a,b)=>b[1]-a[1]);for(const [id,count] of entries.slice(0,limit)){const row=collectionNode('div');row.append(collectionNode('span',meta.find(m=>m.id===id)?.title||'端末内の教材'),collectionNode('b',`${count}問`));target.append(row);}if(entries.length>limit)target.append(collectionNode('div',`ほか${entries.length-limit}教材`));}
 async function openLearningReport(){showScreen('report');}
@@ -2227,9 +2250,9 @@ function renderHomeworkTestHistory(){
  if(tests.length>testHistoryVisible)list.append(collectionButton('前の記録も見るにゃ','link-button',()=>{testHistoryVisible+=10;renderHomeworkTestHistory();}));
 }
 function toggleHomeworkCapture(on){document.body.classList.toggle('homework-capture',on);document.querySelectorAll('.capture-exit').forEach(b=>b.hidden=!on);window.scrollTo({top:0,behavior:'instant'});}
-$('openHomeworkReport').onclick=openLearningReport;$('reportBack').onclick=()=>showScreen('settings');
-for(const b of document.querySelectorAll('[data-report-period]'))b.onclick=()=>{setReportPreset(b.dataset.reportPeriod);renderLearningReport();};
-for(const id of ['reportFrom','reportTo'])$(id).onchange=()=>renderLearningReport();
+$('navRecords').onclick=openLearningReport;
+for(const b of document.querySelectorAll('[data-report-period]'))b.onclick=()=>{if(b.dataset.reportPeriod==='custom'){openReportPeriod();return;}setReportPreset(b.dataset.reportPeriod);renderLearningReport();};
+for(const id of ['reportFrom','reportTo'])$(id).onchange=()=>{$('reportPeriodNotice').textContent='';};
 $('reportNameInput').onchange=()=>{studyHistory.name=$('reportNameInput').value.trim().slice(0,24);persistStudyHistory();renderLearningReport();};
 $('showReportShot').onclick=()=>{renderLearningReport();toggleHomeworkCapture(true);};for(const b of document.querySelectorAll('.capture-exit'))b.onclick=()=>toggleHomeworkCapture(false);
 $('resetReportHistory').onclick=()=>{if(!confirm('日別レポートだけを消すにゃ？ 元の学習記録とテスト結果は残るにゃ。'))return;studyHistory.days={};studyHistory.recordedFrom=dateKey();historyUndoSnapshots.clear();persistStudyHistory();renderLearningReport();};
@@ -2394,7 +2417,7 @@ $('quickPause').onclick = pause;
 $('brandHome').onclick = () => playWithCat($('brandHome'));
 $('navSettings').onclick = () => showScreen('settings');
 $('resumeStudy').onclick = () => {beep('open');return lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});};
-$('openCatalog').onclick = () => showScreen('catalog'); $('returnToStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
+$('openCatalog').onclick = () => {catalogIsCollections=false;showScreen('catalog');};$('navCollections').onclick=openMyCollections; $('returnToStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
 $('startStudy').onclick = () => {state.subject = catalogSubject; beep('open');return selectLessons(catalogSeriesLessons().filter(m => selected.has(m.id)).map(m => m.id));};
 $('clearSelection').onclick = () => { selected.clear(); renderCatalog(); };
 $('selectVisible').onclick = () => toggleGroup(visibleLessons()); $('catalogSearch').oninput = renderCatalog;
@@ -2641,7 +2664,7 @@ $('focusNext').onclick=()=>{closeFocusMenu();animateNav(1);};
 $('focusFlip').onclick=()=>{closeFocusMenu();flip();};
 $('focusZoom').onclick=()=>{closeFocusMenu();imageView.zoom();};
 $('focusPause').onclick=pause;
-$('focusCatalog').onclick=()=>{closeFocusMenu();showScreen('catalog');};
+$('focusCatalog').onclick=()=>{closeFocusMenu();catalogIsCollections=false;showScreen('catalog');};
 $('focusSettings').onclick=()=>{closeFocusMenu();showScreen('settings');};
 $('focusNormal').onclick=()=>{closeFocusMenu();data.neko.landscapeFocus=false;save();syncLandscape();};
 $('landscapeToggle').onchange=()=>{data.neko.landscapeFocus=$('landscapeToggle').checked;save();syncLandscape();};

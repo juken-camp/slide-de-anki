@@ -837,6 +837,11 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 
 #myCollectionsPanel .my-collection-empty{border:1px dashed #e0c9ad;border-radius:13px;background:#fffaf580}
 
+#catalogScreen .catalog-search-panel.is-my-page{padding:0;border:0;background:transparent;box-shadow:none;border-radius:0;gap:0}
+#myCollectionsPanel .my-empty-action{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+#myCollectionsPanel .my-empty-action:active{background:#fff1db;border-color:#c49a6d}
+#myCollectionsPanel .my-empty-action:focus-visible{outline:2px solid #b27545;outline-offset:3px}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
@@ -1947,7 +1952,7 @@ function collectionSnapshot(c) {return {id:c.id,name:c.name,cardKeys:c.cards.map
 function collectionKnown(c) {return c.cards.filter(r=>data.records[r.lessonId]?.[r.cardId]?.status==='known').length;}
 function syncMainNavigation(){if(screen!=='catalog')return;$('openCatalog').toggleAttribute('aria-current',!catalogIsCollections);$('navCollections').toggleAttribute('aria-current',catalogIsCollections);if(!catalogIsCollections)$('openCatalog').setAttribute('aria-current','page');else $('navCollections').setAttribute('aria-current','page');}
 function syncCollectionCatalog() {
-  const on=catalogIsCollections;syncMainNavigation();$('catalogTitle').textContent=on?'マイページ':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
+  const on=catalogIsCollections;syncMainNavigation();$('catalogTitle').textContent=on?'マイページ':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('is-my-page',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
   $('myCollectionsPanel').hidden=!on;
   document.querySelector('#catalogScreen .catalog-filter-row').hidden=on;
   $('seriesScroller').hidden=on; $('catalogSeries').hidden=on; $('catalogDock').hidden=on;
@@ -1960,10 +1965,14 @@ function syncCollectionCatalog() {
   $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
 }
 function openMyCollections() {catalogIsCollections=true;$('catalogSearch').value='';showScreen('catalog');}
+function makeMyEmptyAction(element,action,label){
+ element.classList.add('my-empty-action');element.setAttribute('role','button');element.tabIndex=0;element.setAttribute('aria-label',label);element.onclick=action;
+ element.onkeydown=e=>{if(e.target===element&&(e.key==='Enter'||e.key===' ')){e.preventDefault();if(!e.repeat)action();}};
+}
 function renderMyAddedLessons(){
  const root=$('myAddedLessons'),q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase();root.replaceChildren();
  const all=meta.filter(m=>m.imported),items=all.filter(m=>m.title.normalize('NFKC').toLocaleLowerCase().includes(q));
- if(!items.length){const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'その教材は見つからないにゃ':'自分の教材を追加するにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'問題と解答の画像を取り込んで、この端末に保存するにゃ。'));root.append(e);return;}
+ if(!items.length){const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'その教材は見つからないにゃ':'自分の教材を追加するにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'問題と解答の画像を取り込んで、この端末に保存するにゃ。'));if(!all.length)makeMyEmptyAction(e,()=>$('myAddLesson').click(),'教材を追加するにゃ');root.append(e);return;}
  for(const m of items){const box=collectionNode('article',undefined,'my-collection-card my-added-card');box.dataset.myLesson=m.id;
  box.append(collectionNode('h3',m.title),collectionNode('p',[`${m.count}問`,subjectLabel(m.subject),m.fieldLabel||''].filter(Boolean).join(' · ')));
  box.append(collectionButton('はじめるにゃ 🐾','primary-button',()=>NekoApp.selectImported(m.id)));root.append(box);}
@@ -1975,7 +1984,7 @@ function renderMyCollections() {
   const q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=readCollections();
   const items=all.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q));
   if (!items.length) {
-    const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'そのまとめは見つからないにゃ':'自分だけのまとめを作るにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'好きな問題を選んで、名前をつけて保存するにゃ。'));root.append(e);return;
+    const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'そのまとめは見つからないにゃ':'自分だけのまとめを作るにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'好きな問題を選んで、名前をつけて保存するにゃ。'));if(!all.length)makeMyEmptyAction(e,()=>openCollectionEditor(),'まとめを作るにゃ');root.append(e);return;
   }
   for(const c of items) {
     const box=collectionNode('article',undefined,'my-collection-card'),ids=[...new Set(c.cards.map(r=>r.lessonId))];

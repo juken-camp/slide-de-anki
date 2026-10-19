@@ -1,0 +1,696 @@
+{
+  "id": "history-jomon-azuchimomoyama-entrance-60",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史のよく出る問題｜縄文～安土桃山編",
+  "grade": "中学社会・高校受験",
+  "description": "高校入試対策の古代～安土桃山時代と関連する世界史の60組。動画内の設問番号31は欠番で、32～61を教材31～60に対応。",
+  "cover": "images_07/jomon-azuchimomoyama-entrance-60/question_001.png",
+  "chapters": [
+    {
+      "id": "ancient",
+      "title": "世界の古代文明・古代日本"
+    },
+    {
+      "id": "nara_heian",
+      "title": "奈良・平安時代"
+    },
+    {
+      "id": "kamakura_muromachi",
+      "title": "鎌倉・室町時代"
+    },
+    {
+      "id": "momoyama_world",
+      "title": "戦国・安土桃山と世界の動き"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_001.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_001.png",
+      "sourceTimes": {
+        "question": 25.0,
+        "answer": 39.0
+      },
+      "videoDisplayNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_002.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_002.png",
+      "sourceTimes": {
+        "question": 62.0,
+        "answer": 71.0
+      },
+      "videoDisplayNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_003.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_003.png",
+      "sourceTimes": {
+        "question": 85.0,
+        "answer": 103.0
+      },
+      "videoDisplayNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_004.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_004.png",
+      "sourceTimes": {
+        "question": 118.0,
+        "answer": 135.0
+      },
+      "videoDisplayNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_005.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_005.png",
+      "sourceTimes": {
+        "question": 162.0,
+        "answer": 175.0
+      },
+      "videoDisplayNumber": 5
+    },
+    {
+      "id": "006",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_006.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_006.png",
+      "sourceTimes": {
+        "question": 186.0,
+        "answer": 195.0
+      },
+      "videoDisplayNumber": 6
+    },
+    {
+      "id": "007",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_007.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_007.png",
+      "sourceTimes": {
+        "question": 208.0,
+        "answer": 223.0
+      },
+      "videoDisplayNumber": 7
+    },
+    {
+      "id": "008",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_008.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_008.png",
+      "sourceTimes": {
+        "question": 239.0,
+        "answer": 271.0
+      },
+      "videoDisplayNumber": 8
+    },
+    {
+      "id": "009",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_009.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_009.png",
+      "sourceTimes": {
+        "question": 286.0,
+        "answer": 307.0
+      },
+      "videoDisplayNumber": 9
+    },
+    {
+      "id": "010",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_010.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_010.png",
+      "sourceTimes": {
+        "question": 321.0,
+        "answer": 339.0
+      },
+      "videoDisplayNumber": 10
+    },
+    {
+      "id": "011",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_011.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_011.png",
+      "sourceTimes": {
+        "question": 355.0,
+        "answer": 423.0
+      },
+      "videoDisplayNumber": 11
+    },
+    {
+      "id": "012",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_012.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_012.png",
+      "sourceTimes": {
+        "question": 439.0,
+        "answer": 491.0
+      },
+      "videoDisplayNumber": 12
+    },
+    {
+      "id": "013",
+      "chapter": "ancient",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_013.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_013.png",
+      "sourceTimes": {
+        "question": 515.0,
+        "answer": 555.0
+      },
+      "videoDisplayNumber": 13
+    },
+    {
+      "id": "014",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_014.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_014.png",
+      "sourceTimes": {
+        "question": 584.0,
+        "answer": 591.0
+      },
+      "videoDisplayNumber": 14
+    },
+    {
+      "id": "015",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_015.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_015.png",
+      "sourceTimes": {
+        "question": 606.0,
+        "answer": 627.0
+      },
+      "videoDisplayNumber": 15
+    },
+    {
+      "id": "016",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_016.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_016.png",
+      "sourceTimes": {
+        "question": 650.0,
+        "answer": 659.0
+      },
+      "videoDisplayNumber": 16
+    },
+    {
+      "id": "017",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_017.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_017.png",
+      "sourceTimes": {
+        "question": 674.0,
+        "answer": 695.0
+      },
+      "videoDisplayNumber": 17
+    },
+    {
+      "id": "018",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_018.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_018.png",
+      "sourceTimes": {
+        "question": 711.0,
+        "answer": 739.0
+      },
+      "videoDisplayNumber": 18
+    },
+    {
+      "id": "019",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_019.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_019.png",
+      "sourceTimes": {
+        "question": 752.0,
+        "answer": 767.0
+      },
+      "videoDisplayNumber": 19
+    },
+    {
+      "id": "020",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_020.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_020.png",
+      "sourceTimes": {
+        "question": 782.0,
+        "answer": 803.0
+      },
+      "videoDisplayNumber": 20
+    },
+    {
+      "id": "021",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_021.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_021.png",
+      "sourceTimes": {
+        "question": 819.0,
+        "answer": 851.0
+      },
+      "videoDisplayNumber": 21
+    },
+    {
+      "id": "022",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_022.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_022.png",
+      "sourceTimes": {
+        "question": 867.0,
+        "answer": 891.0
+      },
+      "videoDisplayNumber": 22
+    },
+    {
+      "id": "023",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_023.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_023.png",
+      "sourceTimes": {
+        "question": 907.0,
+        "answer": 939.0
+      },
+      "videoDisplayNumber": 23
+    },
+    {
+      "id": "024",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_024.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_024.png",
+      "sourceTimes": {
+        "question": 954.0,
+        "answer": 975.0
+      },
+      "videoDisplayNumber": 24
+    },
+    {
+      "id": "025",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_025.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_025.png",
+      "sourceTimes": {
+        "question": 991.0,
+        "answer": 1023.0
+      },
+      "videoDisplayNumber": 25
+    },
+    {
+      "id": "026",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_026.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_026.png",
+      "sourceTimes": {
+        "question": 1039.0,
+        "answer": 1067.0
+      },
+      "videoDisplayNumber": 26
+    },
+    {
+      "id": "027",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_027.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_027.png",
+      "sourceTimes": {
+        "question": 1083.0,
+        "answer": 1111.0
+      },
+      "videoDisplayNumber": 27
+    },
+    {
+      "id": "028",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_028.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_028.png",
+      "sourceTimes": {
+        "question": 1126.0,
+        "answer": 1147.0
+      },
+      "videoDisplayNumber": 28
+    },
+    {
+      "id": "029",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_029.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_029.png",
+      "sourceTimes": {
+        "question": 1163.0,
+        "answer": 1207.0
+      },
+      "videoDisplayNumber": 29
+    },
+    {
+      "id": "030",
+      "chapter": "nara_heian",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_030.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_030.png",
+      "sourceTimes": {
+        "question": 1223.0,
+        "answer": 1259.0
+      },
+      "videoDisplayNumber": 30
+    },
+    {
+      "id": "031",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_031.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_031.png",
+      "sourceTimes": {
+        "question": 1275.0,
+        "answer": 1312.0
+      },
+      "videoDisplayNumber": 32
+    },
+    {
+      "id": "032",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_032.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_032.png",
+      "sourceTimes": {
+        "question": 1334.0,
+        "answer": 1355.0
+      },
+      "videoDisplayNumber": 33
+    },
+    {
+      "id": "033",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_033.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_033.png",
+      "sourceTimes": {
+        "question": 1370.0,
+        "answer": 1391.0
+      },
+      "videoDisplayNumber": 34
+    },
+    {
+      "id": "034",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_034.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_034.png",
+      "sourceTimes": {
+        "question": 1407.0,
+        "answer": 1443.0
+      },
+      "videoDisplayNumber": 35
+    },
+    {
+      "id": "035",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_035.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_035.png",
+      "sourceTimes": {
+        "question": 1459.0,
+        "answer": 1487.0
+      },
+      "videoDisplayNumber": 36
+    },
+    {
+      "id": "036",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_036.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_036.png",
+      "sourceTimes": {
+        "question": 1503.0,
+        "answer": 1535.0
+      },
+      "videoDisplayNumber": 37
+    },
+    {
+      "id": "037",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_037.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_037.png",
+      "sourceTimes": {
+        "question": 1547.0,
+        "answer": 1559.0
+      },
+      "videoDisplayNumber": 38
+    },
+    {
+      "id": "038",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_038.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_038.png",
+      "sourceTimes": {
+        "question": 1575.0,
+        "answer": 1619.0
+      },
+      "videoDisplayNumber": 39
+    },
+    {
+      "id": "039",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_039.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_039.png",
+      "sourceTimes": {
+        "question": 1633.0,
+        "answer": 1651.0
+      },
+      "videoDisplayNumber": 40
+    },
+    {
+      "id": "040",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_040.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_040.png",
+      "sourceTimes": {
+        "question": 1667.0,
+        "answer": 1704.0
+      },
+      "videoDisplayNumber": 41
+    },
+    {
+      "id": "041",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_041.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_041.png",
+      "sourceTimes": {
+        "question": 1727.0,
+        "answer": 1763.0
+      },
+      "videoDisplayNumber": 42
+    },
+    {
+      "id": "042",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_042.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_042.png",
+      "sourceTimes": {
+        "question": 1779.0,
+        "answer": 1827.0
+      },
+      "videoDisplayNumber": 43
+    },
+    {
+      "id": "043",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_043.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_043.png",
+      "sourceTimes": {
+        "question": 1838.0,
+        "answer": 1847.0
+      },
+      "videoDisplayNumber": 44
+    },
+    {
+      "id": "044",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_044.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_044.png",
+      "sourceTimes": {
+        "question": 1863.0,
+        "answer": 1899.0
+      },
+      "videoDisplayNumber": 45
+    },
+    {
+      "id": "045",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_045.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_045.png",
+      "sourceTimes": {
+        "question": 1921.0,
+        "answer": 1950.0
+      },
+      "videoDisplayNumber": 46
+    },
+    {
+      "id": "046",
+      "chapter": "kamakura_muromachi",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_046.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_046.png",
+      "sourceTimes": {
+        "question": 1971.0,
+        "answer": 1995.0
+      },
+      "videoDisplayNumber": 47
+    },
+    {
+      "id": "047",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_047.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_047.png",
+      "sourceTimes": {
+        "question": 2009.0,
+        "answer": 2027.0
+      },
+      "videoDisplayNumber": 48
+    },
+    {
+      "id": "048",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_048.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_048.png",
+      "sourceTimes": {
+        "question": 2039.0,
+        "answer": 2051.0
+      },
+      "videoDisplayNumber": 49
+    },
+    {
+      "id": "049",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_049.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_049.png",
+      "sourceTimes": {
+        "question": 2066.0,
+        "answer": 2087.0
+      },
+      "videoDisplayNumber": 50
+    },
+    {
+      "id": "050",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_050.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_050.png",
+      "sourceTimes": {
+        "question": 2103.0,
+        "answer": 2135.0
+      },
+      "videoDisplayNumber": 51
+    },
+    {
+      "id": "051",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_051.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_051.png",
+      "sourceTimes": {
+        "question": 2149.0,
+        "answer": 2167.0
+      },
+      "videoDisplayNumber": 52
+    },
+    {
+      "id": "052",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_052.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_052.png",
+      "sourceTimes": {
+        "question": 2181.0,
+        "answer": 2199.0
+      },
+      "videoDisplayNumber": 53
+    },
+    {
+      "id": "053",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_053.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_053.png",
+      "sourceTimes": {
+        "question": 2215.0,
+        "answer": 2263.0
+      },
+      "videoDisplayNumber": 54
+    },
+    {
+      "id": "054",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_054.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_054.png",
+      "sourceTimes": {
+        "question": 2275.0,
+        "answer": 2287.0
+      },
+      "videoDisplayNumber": 55
+    },
+    {
+      "id": "055",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_055.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_055.png",
+      "sourceTimes": {
+        "question": 2298.0,
+        "answer": 2307.0
+      },
+      "videoDisplayNumber": 56
+    },
+    {
+      "id": "056",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_056.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_056.png",
+      "sourceTimes": {
+        "question": 2320.0,
+        "answer": 2335.0
+      },
+      "videoDisplayNumber": 57
+    },
+    {
+      "id": "057",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_057.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_057.png",
+      "sourceTimes": {
+        "question": 2371.0,
+        "answer": 2387.0
+      },
+      "videoDisplayNumber": 58
+    },
+    {
+      "id": "058",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_058.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_058.png",
+      "sourceTimes": {
+        "question": 2403.0,
+        "answer": 2463.0
+      },
+      "videoDisplayNumber": 59
+    },
+    {
+      "id": "059",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_059.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_059.png",
+      "sourceTimes": {
+        "question": 2479.0,
+        "answer": 2531.0
+      },
+      "videoDisplayNumber": 60
+    },
+    {
+      "id": "060",
+      "chapter": "momoyama_world",
+      "question": "images_07/jomon-azuchimomoyama-entrance-60/question_060.png",
+      "answer": "images_07/jomon-azuchimomoyama-entrance-60/answer_060.png",
+      "sourceTimes": {
+        "question": 2546.0,
+        "answer": 2567.0
+      },
+      "videoDisplayNumber": 61
+    }
+  ],
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=iHCc22WkJQw",
+  "extractionNotes": {
+    "numbering_note": "元動画では設問番号30の次が32で31が欠番。末尾は61。合計60組をアプリ用連番001～060に詰めて、元の画面表示番号をvideo_number_map.csvに記録。",
+    "last_slide_note": "動画末尾で表示番号61のスライドは桃山文化についての資料紹介であり、通常の空欄形式の設問ではない。前半の資料表示をquestion_060、資料の追加表示後をanswer_060として元映像どおり保存。",
+    "capture_policy": "元動画のフルHD動画フレームを描き直し・切り抜き・サイズ変更・文字訂正することなくPNGとして保存。"
+  }
+}

@@ -1,0 +1,414 @@
+{
+  "id": "history-taisho-reiwa-entrance-38",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史のよく出る問題｜大正～令和編",
+  "grade": "中学社会・高校受験",
+  "description": "高校入試対策の大正時代から令和時代までの歴史38問。",
+  "cover": "images_07/taisho-reiwa-entrance-38/question_001.png",
+  "chapters": [
+    {
+      "id": "taisho",
+      "title": "大正時代"
+    },
+    {
+      "id": "showa_early",
+      "title": "昭和前期・世界大戦"
+    },
+    {
+      "id": "showa_postwar",
+      "title": "戦後の日本・昭和後期"
+    },
+    {
+      "id": "heisei_reiwa",
+      "title": "平成・令和"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_001.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_001.png",
+      "sourceTimes": {
+        "question": 27.0,
+        "answer": 68.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_002.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_002.png",
+      "sourceTimes": {
+        "question": 82.0,
+        "answer": 116.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_003.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_003.png",
+      "sourceTimes": {
+        "question": 130.0,
+        "answer": 178.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_004.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_004.png",
+      "sourceTimes": {
+        "question": 235.0,
+        "answer": 245.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_005.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_005.png",
+      "sourceTimes": {
+        "question": 258.0,
+        "answer": 291.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_006.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_006.png",
+      "sourceTimes": {
+        "question": 305.0,
+        "answer": 341.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_007.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_007.png",
+      "sourceTimes": {
+        "question": 355.0,
+        "answer": 389.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_008.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_008.png",
+      "sourceTimes": {
+        "question": 403.0,
+        "answer": 458.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_009.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_009.png",
+      "sourceTimes": {
+        "question": 471.0,
+        "answer": 497.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_010.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_010.png",
+      "sourceTimes": {
+        "question": 511.0,
+        "answer": 560.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_011.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_011.png",
+      "sourceTimes": {
+        "question": 591.0,
+        "answer": 600.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_012.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_012.png",
+      "sourceTimes": {
+        "question": 608.0,
+        "answer": 629.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_013.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_013.png",
+      "sourceTimes": {
+        "question": 640.0,
+        "answer": 663.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_014.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_014.png",
+      "sourceTimes": {
+        "question": 672.0,
+        "answer": 688.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_015.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_015.png",
+      "sourceTimes": {
+        "question": 700.0,
+        "answer": 740.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "taisho",
+      "question": "images_07/taisho-reiwa-entrance-38/question_016.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_016.png",
+      "sourceTimes": {
+        "question": 798.0,
+        "answer": 822.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_017.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_017.png",
+      "sourceTimes": {
+        "question": 833.0,
+        "answer": 885.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_018.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_018.png",
+      "sourceTimes": {
+        "question": 915.0,
+        "answer": 949.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_019.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_019.png",
+      "sourceTimes": {
+        "question": 995.0,
+        "answer": 1008.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_020.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_020.png",
+      "sourceTimes": {
+        "question": 1020.0,
+        "answer": 1055.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_021.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_021.png",
+      "sourceTimes": {
+        "question": 1069.0,
+        "answer": 1104.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_022.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_022.png",
+      "sourceTimes": {
+        "question": 1117.0,
+        "answer": 1142.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_023.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_023.png",
+      "sourceTimes": {
+        "question": 1153.0,
+        "answer": 1174.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_024.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_024.png",
+      "sourceTimes": {
+        "question": 1187.0,
+        "answer": 1235.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "showa_early",
+      "question": "images_07/taisho-reiwa-entrance-38/question_025.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_025.png",
+      "sourceTimes": {
+        "question": 1249.0,
+        "answer": 1303.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "showa_postwar",
+      "question": "images_07/taisho-reiwa-entrance-38/question_026.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_026.png",
+      "sourceTimes": {
+        "question": 1317.0,
+        "answer": 1409.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "showa_postwar",
+      "question": "images_07/taisho-reiwa-entrance-38/question_027.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_027.png",
+      "sourceTimes": {
+        "question": 1430.0,
+        "answer": 1497.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "showa_postwar",
+      "question": "images_07/taisho-reiwa-entrance-38/question_028.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_028.png",
+      "sourceTimes": {
+        "question": 1533.0,
+        "answer": 1552.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "showa_postwar",
+      "question": "images_07/taisho-reiwa-entrance-38/question_029.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_029.png",
+      "sourceTimes": {
+        "question": 1564.0,
+        "answer": 1615.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "showa_postwar",
+      "question": "images_07/taisho-reiwa-entrance-38/question_030.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_030.png",
+      "sourceTimes": {
+        "question": 1629.0,
+        "answer": 1678.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "showa_postwar",
+      "question": "images_07/taisho-reiwa-entrance-38/question_031.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_031.png",
+      "sourceTimes": {
+        "question": 1735.0,
+        "answer": 1777.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "showa_postwar",
+      "question": "images_07/taisho-reiwa-entrance-38/question_032.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_032.png",
+      "sourceTimes": {
+        "question": 1835.0,
+        "answer": 1874.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "showa_postwar",
+      "question": "images_07/taisho-reiwa-entrance-38/question_033.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_033.png",
+      "sourceTimes": {
+        "question": 1923.0,
+        "answer": 1957.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "heisei_reiwa",
+      "question": "images_07/taisho-reiwa-entrance-38/question_034.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_034.png",
+      "sourceTimes": {
+        "question": 1990.0,
+        "answer": 2008.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "heisei_reiwa",
+      "question": "images_07/taisho-reiwa-entrance-38/question_035.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_035.png",
+      "sourceTimes": {
+        "question": 2018.0,
+        "answer": 2038.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "heisei_reiwa",
+      "question": "images_07/taisho-reiwa-entrance-38/question_036.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_036.png",
+      "sourceTimes": {
+        "question": 2051.0,
+        "answer": 2098.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "heisei_reiwa",
+      "question": "images_07/taisho-reiwa-entrance-38/question_037.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_037.png",
+      "sourceTimes": {
+        "question": 2110.0,
+        "answer": 2135.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "heisei_reiwa",
+      "question": "images_07/taisho-reiwa-entrance-38/question_038.png",
+      "answer": "images_07/taisho-reiwa-entrance-38/answer_038.png",
+      "sourceTimes": {
+        "question": 2151.0,
+        "answer": 2164.0
+      }
+    }
+  ],
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=qVd5wU662vo",
+  "extractionNotes": {
+    "capture_policy": "元動画のフルHDフレームを切り抜き・描き直し・サイズ変更せずPNG保存。複数設問を順次表示する問題では、元動画で設問が全て出そろい、かつ正答表示前の時刻を優先している。"
+  }
+}

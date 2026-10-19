@@ -1630,5 +1630,94 @@ window.QUIZ_CATALOG = [
     "source": "https://www.youtube.com/watch?v=hVnO920kVAs",
     "count": 46,
     "data": "lessons/social-history-showa-heisei-05.json"
+  },
+  {
+    "id": "history-jomon-azuchimomoyama-entrance-60",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史のよく出る問題｜縄文～安土桃山編",
+    "grade": "中学社会・高校受験",
+    "description": "高校入試対策の古代～安土桃山時代と関連する世界史の60組。動画内の設問番号31は欠番で、32～61を教材31～60に対応。",
+    "cover": "images_07/jomon-azuchimomoyama-entrance-60/question_001.png",
+    "chapters": [
+      {
+        "id": "ancient",
+        "title": "世界の古代文明・古代日本"
+      },
+      {
+        "id": "nara_heian",
+        "title": "奈良・平安時代"
+      },
+      {
+        "id": "kamakura_muromachi",
+        "title": "鎌倉・室町時代"
+      },
+      {
+        "id": "momoyama_world",
+        "title": "戦国・安土桃山と世界の動き"
+      }
+    ],
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=iHCc22WkJQw",
+    "count": 60,
+    "data": "lessons/history-jomon-azuchimomoyama-entrance-60.json"
+  },
+  {
+    "id": "history-edo-meiji-entrance-50",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史のよく出る問題｜江戸～明治編",
+    "grade": "中学社会・高校受験",
+    "description": "高校入試頻出の江戸時代から明治時代までの歴史50問。",
+    "cover": "images_07/edo-meiji-entrance-50/question_001.png",
+    "chapters": [
+      {
+        "id": "edo",
+        "title": "江戸時代・幕末"
+      },
+      {
+        "id": "thought",
+        "title": "近代の人権思想"
+      },
+      {
+        "id": "meiji",
+        "title": "明治時代"
+      }
+    ],
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=rrs37MhueAw",
+    "count": 50,
+    "data": "lessons/history-edo-meiji-entrance-50.json"
+  },
+  {
+    "id": "history-taisho-reiwa-entrance-38",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史のよく出る問題｜大正～令和編",
+    "grade": "中学社会・高校受験",
+    "description": "高校入試対策の大正時代から令和時代までの歴史38問。",
+    "cover": "images_07/taisho-reiwa-entrance-38/question_001.png",
+    "chapters": [
+      {
+        "id": "taisho",
+        "title": "大正時代"
+      },
+      {
+        "id": "showa_early",
+        "title": "昭和前期・世界大戦"
+      },
+      {
+        "id": "showa_postwar",
+        "title": "戦後の日本・昭和後期"
+      },
+      {
+        "id": "heisei_reiwa",
+        "title": "平成・令和"
+      }
+    ],
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=qVd5wU662vo",
+    "count": 38,
+    "data": "lessons/history-taisho-reiwa-entrance-38.json"
   }
 ];

@@ -1,0 +1,527 @@
+{
+  "id": "history-edo-meiji-entrance-50",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史のよく出る問題｜江戸～明治編",
+  "grade": "中学社会・高校受験",
+  "description": "高校入試頻出の江戸時代から明治時代までの歴史50問。",
+  "cover": "images_07/edo-meiji-entrance-50/question_001.png",
+  "chapters": [
+    {
+      "id": "edo",
+      "title": "江戸時代・幕末"
+    },
+    {
+      "id": "thought",
+      "title": "近代の人権思想"
+    },
+    {
+      "id": "meiji",
+      "title": "明治時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_001.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_001.png",
+      "sourceTimes": {
+        "question": 26.0,
+        "answer": 78.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_002.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_002.png",
+      "sourceTimes": {
+        "question": 90.0,
+        "answer": 130.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_003.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_003.png",
+      "sourceTimes": {
+        "question": 142.0,
+        "answer": 166.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_004.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_004.png",
+      "sourceTimes": {
+        "question": 178.0,
+        "answer": 210.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_005.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_005.png",
+      "sourceTimes": {
+        "question": 222.0,
+        "answer": 265.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_006.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_006.png",
+      "sourceTimes": {
+        "question": 277.0,
+        "answer": 303.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_007.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_007.png",
+      "sourceTimes": {
+        "question": 315.0,
+        "answer": 350.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_008.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_008.png",
+      "sourceTimes": {
+        "question": 362.0,
+        "answer": 394.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_009.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_009.png",
+      "sourceTimes": {
+        "question": 419.0,
+        "answer": 436.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_010.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_010.png",
+      "sourceTimes": {
+        "question": 448.0,
+        "answer": 477.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_011.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_011.png",
+      "sourceTimes": {
+        "question": 489.0,
+        "answer": 530.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_012.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_012.png",
+      "sourceTimes": {
+        "question": 540.0,
+        "answer": 559.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_013.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_013.png",
+      "sourceTimes": {
+        "question": 570.0,
+        "answer": 625.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_014.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_014.png",
+      "sourceTimes": {
+        "question": 637.0,
+        "answer": 665.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_015.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_015.png",
+      "sourceTimes": {
+        "question": 677.0,
+        "answer": 699.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_016.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_016.png",
+      "sourceTimes": {
+        "question": 711.0,
+        "answer": 753.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_017.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_017.png",
+      "sourceTimes": {
+        "question": 765.0,
+        "answer": 803.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_018.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_018.png",
+      "sourceTimes": {
+        "question": 813.0,
+        "answer": 831.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_019.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_019.png",
+      "sourceTimes": {
+        "question": 842.0,
+        "answer": 885.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_020.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_020.png",
+      "sourceTimes": {
+        "question": 896.0,
+        "answer": 917.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_021.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_021.png",
+      "sourceTimes": {
+        "question": 925.0,
+        "answer": 938.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_022.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_022.png",
+      "sourceTimes": {
+        "question": 948.0,
+        "answer": 971.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_023.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_023.png",
+      "sourceTimes": {
+        "question": 999.0,
+        "answer": 1007.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_024.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_024.png",
+      "sourceTimes": {
+        "question": 1019.0,
+        "answer": 1064.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_025.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_025.png",
+      "sourceTimes": {
+        "question": 1076.0,
+        "answer": 1112.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_026.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_026.png",
+      "sourceTimes": {
+        "question": 1124.0,
+        "answer": 1168.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_027.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_027.png",
+      "sourceTimes": {
+        "question": 1178.0330000000001,
+        "answer": 1194.0330000000001
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_028.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_028.png",
+      "sourceTimes": {
+        "question": 1218.0,
+        "answer": 1238.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_029.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_029.png",
+      "sourceTimes": {
+        "question": 1250.0,
+        "answer": 1287.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_030.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_030.png",
+      "sourceTimes": {
+        "question": 1299.0,
+        "answer": 1339.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "edo",
+      "question": "images_07/edo-meiji-entrance-50/question_031.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_031.png",
+      "sourceTimes": {
+        "question": 1347.0,
+        "answer": 1359.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "thought",
+      "question": "images_07/edo-meiji-entrance-50/question_032.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_032.png",
+      "sourceTimes": {
+        "question": 1369.0,
+        "answer": 1418.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_033.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_033.png",
+      "sourceTimes": {
+        "question": 1435.0,
+        "answer": 1479.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_034.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_034.png",
+      "sourceTimes": {
+        "question": 1491.0,
+        "answer": 1544.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_035.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_035.png",
+      "sourceTimes": {
+        "question": 1556.0,
+        "answer": 1601.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_036.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_036.png",
+      "sourceTimes": {
+        "question": 1613.0,
+        "answer": 1640.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_037.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_037.png",
+      "sourceTimes": {
+        "question": 1652.0,
+        "answer": 1687.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_038.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_038.png",
+      "sourceTimes": {
+        "question": 1707.0,
+        "answer": 1727.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_039.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_039.png",
+      "sourceTimes": {
+        "question": 1737.0,
+        "answer": 1754.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_040.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_040.png",
+      "sourceTimes": {
+        "question": 1765.0,
+        "answer": 1812.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_041.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_041.png",
+      "sourceTimes": {
+        "question": 1822.0,
+        "answer": 1837.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_042.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_042.png",
+      "sourceTimes": {
+        "question": 1844.0,
+        "answer": 1855.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_043.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_043.png",
+      "sourceTimes": {
+        "question": 1863.0,
+        "answer": 1881.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_044.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_044.png",
+      "sourceTimes": {
+        "question": 1892.0,
+        "answer": 1923.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_045.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_045.png",
+      "sourceTimes": {
+        "question": 1934.0,
+        "answer": 1953.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_046.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_046.png",
+      "sourceTimes": {
+        "question": 1963.0,
+        "answer": 1979.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_047.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_047.png",
+      "sourceTimes": {
+        "question": 2013.0,
+        "answer": 2026.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_048.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_048.png",
+      "sourceTimes": {
+        "question": 2038.0,
+        "answer": 2085.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_049.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_049.png",
+      "sourceTimes": {
+        "question": 2097.0,
+        "answer": 2132.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "meiji",
+      "question": "images_07/edo-meiji-entrance-50/question_050.png",
+      "answer": "images_07/edo-meiji-entrance-50/answer_050.png",
+      "sourceTimes": {
+        "question": 2182.0,
+        "answer": 2206.0
+      }
+    }
+  ],
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=rrs37MhueAw"
+}

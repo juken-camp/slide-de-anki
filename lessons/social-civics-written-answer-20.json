@@ -1,0 +1,235 @@
+{
+  "id": "social-civics-written-answer-20",
+  "subject": "social",
+  "field": "civics",
+  "title": "公民の記述問題20問",
+  "grade": "中学公民",
+  "description": "定期テスト・高校入試対策向け、公民の頻出記述問題20問。元動画の問題・解答画面を無加工PNGで収録。",
+  "cover": "images_05/social-civics-written-answer-20/question_001.png",
+  "chapters": [
+    {
+      "id": "modern-society",
+      "title": "現代社会と私たち"
+    },
+    {
+      "id": "individual-rights",
+      "title": "個人の尊重と日本国憲法"
+    },
+    {
+      "id": "democracy-and-politics",
+      "title": "現代の民主政治と社会"
+    },
+    {
+      "id": "economy-and-life",
+      "title": "私たちの暮らしと経済"
+    },
+    {
+      "id": "global-society",
+      "title": "地球社会と私たち"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "modern-society",
+      "question": "images_05/social-civics-written-answer-20/question_001.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_001.png",
+      "sourceTimes": {
+        "question": 29.0,
+        "answer": 39.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "modern-society",
+      "question": "images_05/social-civics-written-answer-20/question_002.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_002.png",
+      "sourceTimes": {
+        "question": 49.5,
+        "answer": 56.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "modern-society",
+      "question": "images_05/social-civics-written-answer-20/question_003.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_003.png",
+      "sourceTimes": {
+        "question": 74.0,
+        "answer": 84.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "modern-society",
+      "question": "images_05/social-civics-written-answer-20/question_004.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_004.png",
+      "sourceTimes": {
+        "question": 100.0,
+        "answer": 111.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "modern-society",
+      "question": "images_05/social-civics-written-answer-20/question_005.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_005.png",
+      "sourceTimes": {
+        "question": 136.0,
+        "answer": 145.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "individual-rights",
+      "question": "images_05/social-civics-written-answer-20/question_006.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_006.png",
+      "sourceTimes": {
+        "question": 169.0,
+        "answer": 180.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "democracy-and-politics",
+      "question": "images_05/social-civics-written-answer-20/question_007.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_007.png",
+      "sourceTimes": {
+        "question": 208.5,
+        "answer": 220.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "democracy-and-politics",
+      "question": "images_05/social-civics-written-answer-20/question_008.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_008.png",
+      "sourceTimes": {
+        "question": 238.0,
+        "answer": 248.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "democracy-and-politics",
+      "question": "images_05/social-civics-written-answer-20/question_009.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_009.png",
+      "sourceTimes": {
+        "question": 269.0,
+        "answer": 283.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "democracy-and-politics",
+      "question": "images_05/social-civics-written-answer-20/question_010.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_010.png",
+      "sourceTimes": {
+        "question": 298.5,
+        "answer": 310.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "democracy-and-politics",
+      "question": "images_05/social-civics-written-answer-20/question_011.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_011.png",
+      "sourceTimes": {
+        "question": 329.5,
+        "answer": 340.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "democracy-and-politics",
+      "question": "images_05/social-civics-written-answer-20/question_012.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_012.png",
+      "sourceTimes": {
+        "question": 361.0,
+        "answer": 370.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "democracy-and-politics",
+      "question": "images_05/social-civics-written-answer-20/question_013.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_013.png",
+      "sourceTimes": {
+        "question": 385.0,
+        "answer": 391.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "economy-and-life",
+      "question": "images_05/social-civics-written-answer-20/question_014.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_014.png",
+      "sourceTimes": {
+        "question": 421.5,
+        "answer": 439.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "economy-and-life",
+      "question": "images_05/social-civics-written-answer-20/question_015.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_015.png",
+      "sourceTimes": {
+        "question": 458.0,
+        "answer": 472.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "economy-and-life",
+      "question": "images_05/social-civics-written-answer-20/question_016.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_016.png",
+      "sourceTimes": {
+        "question": 502.0,
+        "answer": 508.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "economy-and-life",
+      "question": "images_05/social-civics-written-answer-20/question_017.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_017.png",
+      "sourceTimes": {
+        "question": 530.0,
+        "answer": 541.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "economy-and-life",
+      "question": "images_05/social-civics-written-answer-20/question_018.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_018.png",
+      "sourceTimes": {
+        "question": 565.0,
+        "answer": 571.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "economy-and-life",
+      "question": "images_05/social-civics-written-answer-20/question_019.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_019.png",
+      "sourceTimes": {
+        "question": 592.0,
+        "answer": 601.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "global-society",
+      "question": "images_05/social-civics-written-answer-20/question_020.png",
+      "answer": "images_05/social-civics-written-answer-20/answer_020.png",
+      "sourceTimes": {
+        "question": 637.0,
+        "answer": 646.5
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=syGvLKwqNm8",
+  "series": "written"
+}

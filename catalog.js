@@ -2592,5 +2592,86 @@ window.QUIZ_CATALOG = [
     "series": "themes",
     "count": 24,
     "data": "lessons/social-history-japan-historical-places-prefectures.json"
+  },
+  {
+    "id": "social-civics-entrance-multiple-choice-01-61",
+    "subject": "social",
+    "field": "civics",
+    "title": "高校入試対策・公民選択問題①（61問）",
+    "grade": "中学公民",
+    "description": "高校入試の公民選択問題。元動画で実際に出題される61問を問題画像・解答画像で学ぶ教材。元動画の画面番号4・58・60は出題されないため除外。",
+    "cover": "images_05/social-civics-entrance-multiple-choice-01-61/question_001.png",
+    "chapters": [
+      {
+        "id": "modern_society",
+        "title": "現代社会（3問）"
+      },
+      {
+        "id": "constitution_rights",
+        "title": "日本国憲法と基本的人権（29問）"
+      },
+      {
+        "id": "politics_local",
+        "title": "民主政治・裁判・地方自治（29問）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=axLM2JfhveY",
+    "series": "selection",
+    "count": 61,
+    "data": "lessons/social-civics-entrance-multiple-choice-01-61.json"
+  },
+  {
+    "id": "social-civics-exam-selection-02-58",
+    "subject": "social",
+    "field": "civics",
+    "title": "公民選択問題②（図解あり・高校入試対策58問）",
+    "grade": "中学公民",
+    "description": "高校入試対策・公民選択問題②。元動画の問題・解答を各58枚に整理。動画内の設問番号は1～60で18・57が欠番。",
+    "cover": "images_05/social-civics-exam-selection-02-58/question_001.png",
+    "chapters": [
+      {
+        "id": "civics-selection-02",
+        "title": "公民選択問題②（58組）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=3ZohEgwXJck",
+    "series": "selection",
+    "count": 58,
+    "data": "lessons/social-civics-exam-selection-02-58.json"
+  },
+  {
+    "id": "social-civics-written-answer-20",
+    "subject": "social",
+    "field": "civics",
+    "title": "公民の記述問題20問",
+    "grade": "中学公民",
+    "description": "定期テスト・高校入試対策向け、公民の頻出記述問題20問。元動画の問題・解答画面を無加工PNGで収録。",
+    "cover": "images_05/social-civics-written-answer-20/question_001.png",
+    "chapters": [
+      {
+        "id": "modern-society",
+        "title": "現代社会と私たち"
+      },
+      {
+        "id": "individual-rights",
+        "title": "個人の尊重と日本国憲法"
+      },
+      {
+        "id": "democracy-and-politics",
+        "title": "現代の民主政治と社会"
+      },
+      {
+        "id": "economy-and-life",
+        "title": "私たちの暮らしと経済"
+      },
+      {
+        "id": "global-society",
+        "title": "地球社会と私たち"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=syGvLKwqNm8",
+    "series": "written",
+    "count": 20,
+    "data": "lessons/social-civics-written-answer-20.json"
   }
 ];

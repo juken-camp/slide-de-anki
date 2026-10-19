@@ -1,0 +1,657 @@
+{
+  "id": "social-civics-exam-selection-02-58",
+  "subject": "social",
+  "field": "civics",
+  "title": "公民選択問題②（図解あり・高校入試対策58問）",
+  "grade": "中学公民",
+  "description": "高校入試対策・公民選択問題②。元動画の問題・解答を各58枚に整理。動画内の設問番号は1～60で18・57が欠番。",
+  "cover": "images_05/social-civics-exam-selection-02-58/question_001.png",
+  "chapters": [
+    {
+      "id": "civics-selection-02",
+      "title": "公民選択問題②（58組）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_001.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_001.png",
+      "sourceTimes": {
+        "question": 31.25,
+        "answer": 58.25
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_002.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_002.png",
+      "sourceTimes": {
+        "question": 73.25,
+        "answer": 119.25
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_003.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_003.png",
+      "sourceTimes": {
+        "question": 134.25,
+        "answer": 180.25
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_004.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_004.png",
+      "sourceTimes": {
+        "question": 195.25,
+        "answer": 227.25
+      },
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_005.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_005.png",
+      "sourceTimes": {
+        "question": 242.25,
+        "answer": 268.25
+      },
+      "sourceQuestionNumber": 5
+    },
+    {
+      "id": "006",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_006.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_006.png",
+      "sourceTimes": {
+        "question": 282.25,
+        "answer": 333.25
+      },
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "007",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_007.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_007.png",
+      "sourceTimes": {
+        "question": 348.25,
+        "answer": 380.25
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "008",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_008.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_008.png",
+      "sourceTimes": {
+        "question": 395.25,
+        "answer": 461.25
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "009",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_009.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_009.png",
+      "sourceTimes": {
+        "question": 476.25,
+        "answer": 508.25
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "010",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_010.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_010.png",
+      "sourceTimes": {
+        "question": 522.25,
+        "answer": 548.25
+      },
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "011",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_011.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_011.png",
+      "sourceTimes": {
+        "question": 562.25,
+        "answer": 595.25
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "012",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_012.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_012.png",
+      "sourceTimes": {
+        "question": 610.25,
+        "answer": 665.25
+      },
+      "sourceQuestionNumber": 12
+    },
+    {
+      "id": "013",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_013.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_013.png",
+      "sourceTimes": {
+        "question": 680.25,
+        "answer": 717.25
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "014",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_014.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_014.png",
+      "sourceTimes": {
+        "question": 729.25,
+        "answer": 750.25
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "015",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_015.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_015.png",
+      "sourceTimes": {
+        "question": 763.25,
+        "answer": 804.25
+      },
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "016",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_016.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_016.png",
+      "sourceTimes": {
+        "question": 819.25,
+        "answer": 859.25
+      },
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "017",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_017.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_017.png",
+      "sourceTimes": {
+        "question": 874.25,
+        "answer": 919.25
+      },
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "018",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_018.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_018.png",
+      "sourceTimes": {
+        "question": 934.25,
+        "answer": 990.25
+      },
+      "sourceQuestionNumber": 19
+    },
+    {
+      "id": "019",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_019.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_019.png",
+      "sourceTimes": {
+        "question": 1005.25,
+        "answer": 1062.25
+      },
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "020",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_020.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_020.png",
+      "sourceTimes": {
+        "question": 1077.25,
+        "answer": 1115.25
+      },
+      "sourceQuestionNumber": 21
+    },
+    {
+      "id": "021",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_021.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_021.png",
+      "sourceTimes": {
+        "question": 1130.25,
+        "answer": 1176.25
+      },
+      "sourceQuestionNumber": 22
+    },
+    {
+      "id": "022",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_022.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_022.png",
+      "sourceTimes": {
+        "question": 1191.25,
+        "answer": 1299.25
+      },
+      "sourceQuestionNumber": 23
+    },
+    {
+      "id": "023",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_023.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_023.png",
+      "sourceTimes": {
+        "question": 1314.25,
+        "answer": 1351.25
+      },
+      "sourceQuestionNumber": 24
+    },
+    {
+      "id": "024",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_024.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_024.png",
+      "sourceTimes": {
+        "question": 1366.25,
+        "answer": 1408.25
+      },
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "025",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_025.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_025.png",
+      "sourceTimes": {
+        "question": 1423.25,
+        "answer": 1477.25
+      },
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "026",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_026.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_026.png",
+      "sourceTimes": {
+        "question": 1492.25,
+        "answer": 1526.25
+      },
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "027",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_027.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_027.png",
+      "sourceTimes": {
+        "question": 1541.25,
+        "answer": 1575.25
+      },
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "028",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_028.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_028.png",
+      "sourceTimes": {
+        "question": 1590.25,
+        "answer": 1644.25
+      },
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "029",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_029.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_029.png",
+      "sourceTimes": {
+        "question": 1659.25,
+        "answer": 1707.25
+      },
+      "sourceQuestionNumber": 30
+    },
+    {
+      "id": "030",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_030.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_030.png",
+      "sourceTimes": {
+        "question": 1722.25,
+        "answer": 1767.25
+      },
+      "sourceQuestionNumber": 31
+    },
+    {
+      "id": "031",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_031.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_031.png",
+      "sourceTimes": {
+        "question": 1782.25,
+        "answer": 1827.25
+      },
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "032",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_032.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_032.png",
+      "sourceTimes": {
+        "question": 1842.25,
+        "answer": 1895.25
+      },
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "033",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_033.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_033.png",
+      "sourceTimes": {
+        "question": 1902.25,
+        "answer": 1909.25
+      },
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "034",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_034.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_034.png",
+      "sourceTimes": {
+        "question": 1922.25,
+        "answer": 1962.25
+      },
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "035",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_035.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_035.png",
+      "sourceTimes": {
+        "question": 1975.25,
+        "answer": 1996.25
+      },
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "036",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_036.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_036.png",
+      "sourceTimes": {
+        "question": 2001.25,
+        "answer": 2015.25
+      },
+      "sourceQuestionNumber": 37
+    },
+    {
+      "id": "037",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_037.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_037.png",
+      "sourceTimes": {
+        "question": 2027.25,
+        "answer": 2078.25
+      },
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "038",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_038.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_038.png",
+      "sourceTimes": {
+        "question": 2093.25,
+        "answer": 2163.25
+      },
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "039",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_039.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_039.png",
+      "sourceTimes": {
+        "question": 2178.25,
+        "answer": 2251.25
+      },
+      "sourceQuestionNumber": 40
+    },
+    {
+      "id": "040",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_040.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_040.png",
+      "sourceTimes": {
+        "question": 2266.25,
+        "answer": 2339.25
+      },
+      "sourceQuestionNumber": 41
+    },
+    {
+      "id": "041",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_041.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_041.png",
+      "sourceTimes": {
+        "question": 2354.25,
+        "answer": 2399.25
+      },
+      "sourceQuestionNumber": 42
+    },
+    {
+      "id": "042",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_042.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_042.png",
+      "sourceTimes": {
+        "question": 2414.25,
+        "answer": 2453.25
+      },
+      "sourceQuestionNumber": 43
+    },
+    {
+      "id": "043",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_043.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_043.png",
+      "sourceTimes": {
+        "question": 2468.25,
+        "answer": 2532.25
+      },
+      "sourceQuestionNumber": 44
+    },
+    {
+      "id": "044",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_044.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_044.png",
+      "sourceTimes": {
+        "question": 2547.25,
+        "answer": 2594.25
+      },
+      "sourceQuestionNumber": 45
+    },
+    {
+      "id": "045",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_045.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_045.png",
+      "sourceTimes": {
+        "question": 2615.25,
+        "answer": 2642.25
+      },
+      "sourceQuestionNumber": 46
+    },
+    {
+      "id": "046",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_046.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_046.png",
+      "sourceTimes": {
+        "question": 2657.25,
+        "answer": 2726.25
+      },
+      "sourceQuestionNumber": 47
+    },
+    {
+      "id": "047",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_047.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_047.png",
+      "sourceTimes": {
+        "question": 2741.25,
+        "answer": 2813.25
+      },
+      "sourceQuestionNumber": 48
+    },
+    {
+      "id": "048",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_048.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_048.png",
+      "sourceTimes": {
+        "question": 2828.25,
+        "answer": 2880.25
+      },
+      "sourceQuestionNumber": 49
+    },
+    {
+      "id": "049",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_049.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_049.png",
+      "sourceTimes": {
+        "question": 2895.25,
+        "answer": 2941.25
+      },
+      "sourceQuestionNumber": 50
+    },
+    {
+      "id": "050",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_050.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_050.png",
+      "sourceTimes": {
+        "question": 2956.25,
+        "answer": 2993.25
+      },
+      "sourceQuestionNumber": 51
+    },
+    {
+      "id": "051",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_051.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_051.png",
+      "sourceTimes": {
+        "question": 3008.25,
+        "answer": 3047.25
+      },
+      "sourceQuestionNumber": 52
+    },
+    {
+      "id": "052",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_052.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_052.png",
+      "sourceTimes": {
+        "question": 3062.25,
+        "answer": 3094.25
+      },
+      "sourceQuestionNumber": 53
+    },
+    {
+      "id": "053",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_053.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_053.png",
+      "sourceTimes": {
+        "question": 3109.25,
+        "answer": 3161.25
+      },
+      "sourceQuestionNumber": 54
+    },
+    {
+      "id": "054",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_054.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_054.png",
+      "sourceTimes": {
+        "question": 3176.25,
+        "answer": 3216.25
+      },
+      "sourceQuestionNumber": 55
+    },
+    {
+      "id": "055",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_055.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_055.png",
+      "sourceTimes": {
+        "question": 3228.25,
+        "answer": 3248.25
+      },
+      "sourceQuestionNumber": 56
+    },
+    {
+      "id": "056",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_056.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_056.png",
+      "sourceTimes": {
+        "question": 3261.25,
+        "answer": 3334.25
+      },
+      "sourceQuestionNumber": 58
+    },
+    {
+      "id": "057",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_057.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_057.png",
+      "sourceTimes": {
+        "question": 3349.25,
+        "answer": 3395.25
+      },
+      "sourceQuestionNumber": 59
+    },
+    {
+      "id": "058",
+      "chapter": "civics-selection-02",
+      "question": "images_05/social-civics-exam-selection-02-58/question_058.png",
+      "answer": "images_05/social-civics-exam-selection-02-58/answer_058.png",
+      "sourceTimes": {
+        "question": 3410.25,
+        "answer": 3484.25
+      },
+      "sourceQuestionNumber": 60
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=3ZohEgwXJck",
+  "series": "selection"
+}

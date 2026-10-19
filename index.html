@@ -583,6 +583,16 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 #app.neko-motion-off #catalogSeries button,#app.neko-motion-off #catalogScreen .lesson-choice,#app.neko-motion-off #catalogSubjects button,#app.neko-motion-off #browseSwitch button,#app.neko-motion-off #socialSwitch button,#app.neko-motion-off #catalogFilters button,#app.neko-motion-off .primary-button:is(:active,.neko-pressing),#app.neko-motion-off button:is(:active,.neko-pressing){transform:none!important}
 @media(prefers-reduced-motion:reduce){#catalogSeries button,#catalogScreen .lesson-choice,#catalogSubjects button,#browseSwitch button,#socialSwitch button,#catalogFilters button,#app button:is(:active,.neko-pressing){transform:none!important}}
 
+/* Four readable filters; shuffle wraps as one fixed-width control. */
+.study-options .toolbar,#focusMenu .toolbar{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px}
+.study-options .modes,#focusMenu .modes{display:grid;grid-template-columns:1fr .9fr 1.7fr 1.25fr;gap:4px;flex:1 1 320px;min-width:0;max-width:100%;width:auto}
+.study-options .modes button,#focusMenu .modes button{min-width:0;min-height:42px;padding:7px 4px;font-size:12px;white-space:nowrap;line-height:1.5}
+.study-options .toolbar>.shuffle,#focusMenu .toolbar>.shuffle{flex:0 0 112px;min-width:112px;width:112px;max-width:100%;min-height:42px;white-space:nowrap;margin-left:auto}
+/* The two new civics series have their own space and selection scope. */
+#catalogSeries:has(button:nth-child(5)){grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:12px}
+@media(max-width:600px){.study-options .toolbar>.shuffle,#focusMenu .toolbar>.shuffle{flex-basis:104px;min-width:104px;width:104px}}
+@media(max-width:380px){.study-options .modes button,#focusMenu .modes button{font-size:11px;padding:7px 3px}}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
@@ -1103,7 +1113,7 @@ function groupLabel(key) { return usesGrades() ? (key === 'other' ? '学年共�
 function groupIcon(key) { return usesGrades() ? '📖' : (fields[key]?.[1] || '📚'); }
 function catalogChoices() { return meta.filter(m => m.subject === catalogSubject); }
 function lessonSeries(m) {
-  if ((m.subject === 'science' ? ['unit','symbols','terms','themes'] : ['unit','review','frequent','themes']).includes(m.series)) return m.series;
+  if ((m.subject === 'science' ? ['unit','symbols','terms','themes'] : ['unit','review','frequent','themes','selection','written']).includes(m.series)) return m.series;
   if (m.subject === 'science') {
     if (['science-element-symbols-mnemonic-01','science-chemical-formulas-01','science-chemical-reaction-equations-01','science-ion-formulas-01'].includes(m.id)) return 'symbols';
     if (/^science-jhs[123]-important-terms-/.test(m.id)) return 'terms';
@@ -1116,7 +1126,7 @@ function catalogScopeKey() { return catalogSubject === 'social' ? `social:${soci
 function seriesDefinitions() {
   return catalogSubject === 'science'
     ? [{id:'unit',label:'単元別'},{id:'symbols',label:'記号・式'},{id:'terms',label:'重要用語'},{id:'themes',label:'テーマ別'}]
-    : [{id:'unit',label:socialField==='history'?'時代別':socialField==='geography'?'地域別':'単元別'},{id:'review',label:'まとめ'},{id:'frequent',label:'よく出る問題'},{id:'themes',label:'テーマ別'}];
+    : [{id:'unit',label:socialField==='history'?'時代別':socialField==='geography'?'地域別':'単元別'},{id:'review',label:'まとめ'},{id:'frequent',label:'よく出る'},{id:'themes',label:'テーマ別'},{id:'selection',label:'選択問題'},{id:'written',label:'記述問題'}];
 }
 function catalogScopeLessons() { return catalogChoices().filter(m => catalogSubject !== 'social' || m.field === socialField); }
 function availableSeries() {
@@ -1882,3 +1892,4 @@ $('importForm').onsubmit=async e=>{e.preventDefault();const button=$('importSubm
 })();
 
 </script></body></html>
+

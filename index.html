@@ -705,6 +705,54 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 #collectionPreview{position:fixed;inset:auto;left:50%;top:calc(var(--collection-visible-top,0px) + var(--collection-visible-height,100dvh) / 2);transform:translate(-50%,-50%);margin:0;width:min(960px,calc(100% - 24px));max-height:calc(var(--collection-visible-height,100dvh) - 24px)}
 #collectionPreviewImage{max-height:calc(var(--collection-visible-height,100dvh) - 190px)}
 
+/* A real list stays a list on phones, rather than a tall native single-choice picker. */
+#collectionDialog #collectionLessonPicker{display:block;width:calc(100% - 20px);height:182px;min-height:0;max-height:none;margin:0 10px;padding:4px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;border:1.5px solid #d9b99a;border-radius:11px;background:#fff;scrollbar-width:thin;scrollbar-color:#cda57c #fff8ed;box-shadow:inset 0 -7px 9px -9px #8c542c55;scroll-padding:5px}
+#collectionDialog #collectionLessonPicker:focus-visible{outline:2px solid #efcfaa;outline-offset:1px}
+.collection-list-subject{margin:0;padding:5px 8px 3px;font-size:10px;font-weight:800;color:#9a775b;line-height:1.4}
+#collectionDialog .collection-material-row{display:flex;align-items:center;gap:8px;width:100%;min-height:46px;margin:3px 0;padding:8px 9px;border:1.5px solid transparent;border-radius:9px;background:#fff;color:#69422c;text-align:left;font-size:12px;line-height:1.45;box-shadow:none;white-space:normal}
+#collectionDialog .collection-material-row[aria-selected=true]{background:#fff0d8;border-color:#bd7c48;color:#803e19;box-shadow:0 1px 0 #e8c7a4}
+.collection-material-title{flex:1;min-width:0;overflow-wrap:anywhere;font-weight:700}
+.collection-material-count{flex:none;font-size:10px;color:#95704f;white-space:nowrap}
+.collection-material-tick{flex:none;width:18px;height:18px;display:grid;place-items:center;border:1.5px solid #d0ad8a;border-radius:6px;background:#fffaf1;font-size:10px;color:#fff}
+[aria-selected=true] .collection-material-tick{border-color:#b36732;background:#b36732}
+.collection-material-empty{padding:20px 8px;font-size:12px;text-align:center;color:#956f52}
+.collection-footer-info{min-width:0}
+#collectionDialog .collection-footer-info #collectionTotal{display:block}
+#collectionDialog .collection-footer-info .collection-storage-note{display:block;margin:2px 0 0;padding:0;font-size:9px;line-height:1.3;color:#9b7658;white-space:nowrap}
+@media(hover:hover){#collectionDialog .collection-material-row:hover{background:#fff6e8}}
+#collectionDialog .collection-material-row:active{background:#ffebcb}
+
+/* Import and collection dialogs share a compact, calm scale. */
+#importDialog{position:fixed;inset:auto;left:50%;top:calc(var(--import-visible-top,0px) + var(--import-visible-height,100dvh) / 2);transform:translate(-50%,-50%);margin:0;width:min(560px,calc(100% - 24px));height:min(620px,calc(var(--import-visible-height,100dvh) - 24px));max-height:calc(var(--import-visible-height,100dvh) - 24px);min-height:0;padding:0;overflow:hidden;border:2px solid #d4ad85;border-radius:20px;background:#fffaf2;color:#69422c}
+#importDialog[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
+#importDialog .import-head{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:10px 14px;border-bottom:1px solid #ecdbc5}
+#importDialog .import-head h2{font-size:16px;font-weight:800;line-height:1.4;min-width:0;margin:0;outline:none}
+#importDialog .dialog-close{display:grid;place-items:center;float:none;flex:none;min-width:36px;width:36px;min-height:36px;height:36px;padding:0;border:1.5px solid #d3b08e;border-radius:11px;background:#fffdf8;color:#86532e;font-size:18px}
+#importForm{display:grid;grid-template-rows:minmax(0,1fr) auto;min-width:0;min-height:0;margin:0;overflow:hidden}
+#importBody{padding:14px 16px 16px;overflow-x:hidden;overflow-y:auto;min-width:0;min-height:0;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scroll-padding:12px}
+#importDialog p{font-size:11px;line-height:1.7;margin:0 0 12px;color:#967052}
+#importDialog .import-intro{font-size:12px;color:#805637}
+#importDialog label{display:block;min-width:0;font-size:12px;line-height:1.5;font-weight:700;margin:0 0 13px}
+#importDialog input{display:block;box-sizing:border-box;max-width:100%;min-width:0;width:100%;min-height:42px;margin:6px 0 0;padding:9px 11px;font-size:14px;line-height:1.5;border:1.5px solid #d9b99a;border-radius:11px;background:#fff;color:#69422c;box-shadow:none}
+#importDialog input:focus{border-color:#ad622e;outline:2px solid #efcfaa;outline-offset:1px}
+#importDialog #importImages{min-height:44px;padding:6px;font-size:11px;font-weight:400;line-height:1.7;overflow:hidden}
+#importImages::file-selector-button{min-height:30px;padding:5px 9px;margin-right:8px;border:1px solid #dfc09e;border-radius:8px;background:#fff0db;color:#875029;font-size:12px;font-weight:700}
+#importDialog .import-file-label{margin-bottom:6px}
+#importDialog .import-pair-note{font-size:10px;margin-bottom:14px;overflow-wrap:anywhere;color:#a28065}
+#importDialog .import-pair-note code{font-size:10px}
+#importDialog .import-taxonomy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:13px 0 0;border-top:1px solid #ecddc9;border-radius:0;background:transparent}
+#importDialog .import-taxonomy label{margin:0}
+#importDialog .import-grade-label{grid-column:1/-1}
+#importDialog .import-freedom{font-size:10px;margin:11px 0 0;color:#a18065}
+#importDialog .dialog-actions{position:static;bottom:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;margin:0;padding:10px 14px;border-top:1px solid #e7d0b6;background:#fff5e5}
+#importDialog .dialog-actions small{flex:1;font-size:9px;line-height:1.4;color:#9b7658}
+#importDialog .dialog-actions button{flex:none;min-width:0;width:auto;min-height:38px;padding:7px 10px;border:1.5px solid #d0ac89;border-radius:11px;background:#fffaf2;color:#8b512c;font-size:12px;font-weight:800;line-height:1.5;white-space:nowrap;box-shadow:0 2px 0 #dfb894}
+#importDialog .dialog-actions #importSubmit{border-color:#995020;background:#ad5724;color:#fff;box-shadow:0 2px 0 #7d3f1e}
+#importDialog #importStatus{flex-basis:100%;min-width:0;font-size:12px;margin:0;line-height:1.5;color:#a14431;overflow-wrap:anywhere}
+#importDialog #importStatus:empty{display:none}
+@media(pointer:coarse){#importDialog input:not([type=file]){font-size:16px}}
+@media(max-width:370px){#importBody{padding:12px}#importDialog .import-head,#importDialog .dialog-actions{padding:9px 12px}#importDialog .dialog-actions{gap:6px}}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name">スライドで暗記</span><span class="brand-credit">by JUKEN CAMP</span></span></button>
@@ -747,7 +795,25 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 </main><div class="neko-notice" id="notice" role="status" aria-live="polite"></div>
 <dialog id="focusMenu" aria-labelledby="focusMenuTitle"><div class="focus-menu-header"><h2 id="focusMenuTitle">操作にゃ 🐾</h2><button id="focusClose" type="button" aria-label="スライドに戻るにゃ" autofocus>×</button></div><p id="focusContext"></p><div class="focus-navigation"><button id="focusPrev" type="button">‹ 前へ</button><button id="focusFlip" type="button">解答を見るにゃ</button><button id="focusNext" type="button">次へ ›</button></div><div class="focus-extra"><button id="focusZoom" type="button">拡大するにゃ ⤢</button><div id="focusUndoSlot"></div></div><div id="focusSourceSlot"></div><div id="focusOptionsSlot"></div><div class="focus-destinations"><button id="focusCatalog" type="button">教材を選ぶにゃ</button><button id="focusSettings" type="button">設定を開くにゃ</button></div><button id="focusNormal" type="button">横向きでも通常表示にするにゃ</button></dialog>
 
-<dialog id="importDialog"><button class="dialog-close" data-close="importDialog" aria-label="教材追加を閉じる">✕</button><h2>教材を追加</h2><p>教材ZIPか、問題・解答の画像を選ぶにゃ。<br><code>question_001.png</code> と <code>answer_001.png</code> をペアにするにゃ。</p><form id="importForm"><label>教材ファイル・画像（複数選択）<input type="file" id="importImages" accept=".zip,.png,.jpg,.jpeg,.webp" multiple required></label><label>教材名<input id="importTitle" maxlength="100" placeholder="例：地理 日本の地域" required></label><div class="import-taxonomy"><label>教科<input id="importSubject" list="subjectSuggestions" maxlength="60" value="理科" placeholder="例：英語・資格試験・趣味" required><datalist id="subjectSuggestions"></datalist></label><label>分野<input id="importField" list="fieldSuggestions" maxlength="60" value="生物" placeholder="例：英単語・ことわざ・仕事"><datalist id="fieldSuggestions"></datalist></label><label>学年・対象<input id="importGrade" list="gradeSuggestions" maxlength="60" value="学年共通" placeholder="例：小6・高校生・大人"><datalist id="gradeSuggestions"><option value="学年共通"></option><option value="中1"></option><option value="中2"></option><option value="中3"></option><option value="高校生"></option><option value="大人"></option></datalist></label></div><p class="import-freedom">教科も分野も、候補から選んでも自由に書いてもOKにゃ。</p><p>追加した教材は、このブラウザーに保存するにゃ。元のZIPも保管してにゃ。ほかの端末には自動で共有されないにゃ。</p><p id="importStatus" role="status"></p><div class="dialog-actions"><button type="button" class="tool" data-close="importDialog">閉じるにゃ</button><button class="tool done" id="importSubmit">追加するにゃ</button></div></form></dialog><noscript><p>このアプリを使うにはJavaScriptを有効にしてにゃ。</p></noscript>
+<dialog id="importDialog" aria-labelledby="importDialogTitle">
+ <header class="import-head"><h2 id="importDialogTitle" tabindex="-1">教材を追加するにゃ</h2><button type="button" class="dialog-close" data-close="importDialog" aria-label="教材追加を閉じる">×</button></header>
+ <form id="importForm">
+  <div class="import-body" id="importBody">
+   <p class="import-intro">教材ZIPか、問題・解答の画像を選ぶにゃ。</p>
+   <label class="import-file-label">教材ファイル・画像<input type="file" id="importImages" accept=".zip,.png,.jpg,.jpeg,.webp" multiple required></label>
+   <p class="import-pair-note"><code>question_001.png</code> と <code>answer_001.png</code> をペアにするにゃ。</p>
+   <label>教材名<input id="importTitle" maxlength="100" placeholder="教材名を入れるにゃ" autocomplete="off" required></label>
+   <div class="import-taxonomy">
+    <label>教科<input id="importSubject" list="subjectSuggestions" maxlength="60" value="理科" placeholder="教科" required><datalist id="subjectSuggestions"></datalist></label>
+    <label>分野<input id="importField" list="fieldSuggestions" maxlength="60" value="生物" placeholder="分野"><datalist id="fieldSuggestions"></datalist></label>
+    <label class="import-grade-label">学年・対象<input id="importGrade" list="gradeSuggestions" maxlength="60" value="学年共通" placeholder="学年・対象"><datalist id="gradeSuggestions"><option value="学年共通"></option><option value="中1"></option><option value="中2"></option><option value="中3"></option><option value="高校生"></option><option value="大人"></option></datalist></label>
+   </div>
+   <p class="import-freedom">教科・分野は自由に入力できるにゃ。元のZIPも保管してにゃ。</p>
+  </div>
+  <footer class="dialog-actions"><p id="importStatus" role="status"></p><small title="この端末・ブラウザーに保存するにゃ">この端末に保存にゃ</small><button type="button" class="tool" data-close="importDialog">やめるにゃ</button><button class="tool done" id="importSubmit" type="submit">追加するにゃ</button></footer>
+ </form>
+</dialog>
+<noscript><p>このアプリを使うにはJavaScriptを有効にしてにゃ。</p></noscript>
 <dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">Nekoponをタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
 <script src="catalog.js?v=20261019-history-places-link"></script>
@@ -757,7 +823,7 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
   <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="まとめの名前を入れるにゃ" autocomplete="off">
   <details class="collection-picker" id="collectionPicker" open><summary id="collectionPickerToggle" role="button" aria-controls="collectionPickerContent">＋ 教材をえらぶにゃ</summary><div id="collectionPickerContent">
    <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
-   <select id="collectionLessonPicker" size="5" aria-label="追加する教材"></select>
+   <div id="collectionLessonPicker" role="listbox" tabindex="0" aria-label="追加する教材の一覧"></div>
    <div class="collection-picker-actions"><button class="secondary-button" id="collectionAddWhole" type="button">丸ごと入れるにゃ</button><button class="secondary-button" id="collectionPickCards" type="button">問題を選ぶにゃ</button></div>
   </div></details>
   <nav id="collectionLessonTabs" class="collection-lesson-tabs" aria-label="編集中の教材"></nav>
@@ -769,9 +835,9 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
    <div class="collection-grid-tools"><button class="tool" id="collectionSelectAll" type="button">ぜんぶ選ぶにゃ</button><button class="tool" id="collectionSelectWeak" type="button">苦手を選ぶにゃ</button><button class="tool" id="collectionClearCards" type="button">選択を外すにゃ</button></div>
    <div class="collection-grid" id="collectionGrid" aria-label="問題画像をタップして複数選択"></div>
   </div>
-  <p class="collection-storage-note">この端末・ブラウザーに保存するにゃ。問題と解答はセットにゃ🐾</p>
+
  </div>
- <div class="collection-editor-foot"><p id="collectionEditorStatus" role="status"></p><span class="collection-total" id="collectionTotal" aria-live="polite">0問</span><button class="tool" id="collectionEditorCancel" type="button">やめるにゃ</button><button class="primary-button" id="collectionSave" type="button">保存するにゃ</button></div>
+ <div class="collection-editor-foot"><p id="collectionEditorStatus" role="status"></p><div class="collection-footer-info"><span class="collection-total" id="collectionTotal" aria-live="polite">0問</span><small class="collection-storage-note" title="この端末・ブラウザーに保存するにゃ">この端末に保存にゃ</small></div><button class="tool" id="collectionEditorCancel" type="button">やめるにゃ</button><button class="primary-button" id="collectionSave" type="button">保存するにゃ</button></div>
 </dialog>
 <dialog id="collectionPreview" aria-labelledby="collectionPreviewTitle">
  <div class="collection-preview-head"><h3 id="collectionPreviewTitle"></h3><button id="collectionPreviewClose" type="button" class="tool" aria-label="画像一覧に戻るにゃ">閉じるにゃ ×</button></div>
@@ -1775,20 +1841,42 @@ function fillCollectionSubjects() {
   for(const [id,label] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const option=collectionNode('option',label);option.value=id;select.append(option);}
   select.value=[...select.options].some(o=>o.value===value)?value:'all';fillCollectionLessons();
 }
+function chooseCollectionMaterial(id,{focus=false}={}) {
+  const list=$('collectionLessonPicker');list.dataset.value=id || '';
+  for(const row of list.querySelectorAll('[data-collection-material]')) {
+    const on=row.dataset.collectionMaterial===id;
+    row.setAttribute('aria-selected',String(on));row.tabIndex=on?0:-1;
+    row.querySelector('.collection-material-tick').textContent=on?'✓':'';
+    if(on && focus){row.focus({preventScroll:true});row.scrollIntoView({block:'nearest',behavior:'instant'});}
+  }
+}
 function fillCollectionLessons() {
-  const select=$('collectionLessonPicker'),previous=select.value,subject=$('collectionSubject').value;
-  const q=$('collectionLessonSearch').value.normalize('NFKC').trim().toLocaleLowerCase();select.replaceChildren();
+  const list=$('collectionLessonPicker'),previous=list.dataset.value,subject=$('collectionSubject').value;
+  const q=$('collectionLessonSearch').value.normalize('NFKC').trim().toLocaleLowerCase();list.replaceChildren();
+  const matches=[];
   for(const sub of [...new Set(meta.map(m=>m.subject))]) {
     if(subject!=='all' && subject!==sub)continue;
-    const group=collectionNode('optgroup');group.label=subjectLabel(sub);
-    for(const m of meta.filter(m=>m.subject===sub && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)))) {
-      const option=collectionNode('option',`${m.title}（${m.count}問）`);option.value=m.id;group.append(option);
+    const items=meta.filter(m=>m.subject===sub && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
+    if(!items.length)continue;
+    if(subject==='all'){const heading=collectionNode('div',subjectLabel(sub),'collection-list-subject');heading.setAttribute('role','presentation');list.append(heading);}
+    for(const m of items) {
+      matches.push(m.id);
+      const row=collectionButton('','collection-material-row',()=>chooseCollectionMaterial(m.id));row.dataset.collectionMaterial=m.id;row.setAttribute('role','option');
+      const tick=collectionNode('span','','collection-material-tick');tick.setAttribute('aria-hidden','true');
+      row.append(tick,collectionNode('span',m.title,'collection-material-title'),collectionNode('span',`${m.count}問`,'collection-material-count'));list.append(row);
     }
-    if(group.children.length)select.append(group);
   }
-  const options=[...select.options];select.value=options.some(o=>o.value===previous)?previous:(options[0]?.value||'');
-  $('collectionAddWhole').disabled=$('collectionPickCards').disabled=!options.length;
+  chooseCollectionMaterial(matches.includes(previous)?previous:matches[0]);
+  list.tabIndex=matches.length?-1:0;
+  if(!matches.length)list.append(collectionNode('p','その教材は見つからないにゃ','collection-material-empty'));
+  $('collectionAddWhole').disabled=$('collectionPickCards').disabled=!matches.length;
 }
+$('collectionLessonPicker').addEventListener('keydown',e=>{
+  const list=$('collectionLessonPicker'),rows=[...list.querySelectorAll('[data-collection-material]')];if(!rows.length || !['ArrowDown','ArrowUp','Home','End'].includes(e.key))return;
+  e.preventDefault();const at=Math.max(0,rows.findIndex(b=>b.dataset.collectionMaterial===list.dataset.value));
+  const next=e.key==='Home'?0:e.key==='End'?rows.length-1:Math.max(0,Math.min(rows.length-1,at+(e.key==='ArrowDown'?1:-1)));
+  chooseCollectionMaterial(rows[next].dataset.collectionMaterial,{focus:true});
+});
 function editorStatus(message='') {$('collectionEditorStatus').textContent=message;}
 function updateCollectionTotal() {
   $('collectionDialog').classList.toggle('has-grid',!!collectionEditor?.activeRaw);
@@ -1926,8 +2014,8 @@ function saveCollectionEditor() {
 }
 $('newMyCollection').onclick=()=>openCollectionEditor();
 $('collectionSubject').onchange=fillCollectionLessons;$('collectionLessonSearch').oninput=fillCollectionLessons;
-$('collectionAddWhole').onclick=()=>loadCollectionGrid($('collectionLessonPicker').value,{whole:true});
-$('collectionPickCards').onclick=()=>loadCollectionGrid($('collectionLessonPicker').value);
+$('collectionAddWhole').onclick=()=>loadCollectionGrid($('collectionLessonPicker').dataset.value,{whole:true});
+$('collectionPickCards').onclick=()=>loadCollectionGrid($('collectionLessonPicker').dataset.value);
 $('collectionEditorClose').onclick=$('collectionEditorCancel').onclick=closeCollectionEditor;
 $('collectionDialog').addEventListener('cancel',e=>{e.preventDefault();closeCollectionEditor();});
 $('collectionSave').onclick=saveCollectionEditor;
@@ -2275,7 +2363,23 @@ async function unpack(file){if(file.size>250e6)throw Error('ZIPは250MB以下に
 async function inspect(files){let entries=files;if(files.some(f=>/\.zip$/i.test(f.name))){if(files.length!==1)throw Error('ZIPは1教材ずつ選択してください。');entries=await unpack(files[0]);}const pairs=parsePairs(entries),manifestFile=entries.find(f=>f.name.toLowerCase()==='lesson.json');let manifest=null;if(manifestFile){try{manifest=JSON.parse(await manifestFile.text());}catch{throw Error('lesson.json を読み込めません。');}if(typeof manifest.subject!=='string'||!manifest.subject.trim())throw Error('lesson.json の教科を確認してにゃ。');}return {pairs,manifest,entries};}
 async function validateImage(file){const url=URL.createObjectURL(file);try{await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>im.naturalWidth?resolve():reject(Error(file.name+' を読み込めません。'));im.onerror=()=>reject(Error(file.name+' を読み込めません。'));im.src=url;});}finally{URL.revokeObjectURL(url);}}
 function prepareRaw(bundle,title,classification){const {pairs,manifest,entries}=bundle;let cards,chapters=[{id:'all',title}];if(manifest){if(!Array.isArray(manifest.cards)||manifest.cards.length!==pairs.length)throw Error('lesson.json と画像の枚数が一致しません。');const byName=new Map(entries.map(f=>[f.name,f])),ids=new Set();chapters=Array.isArray(manifest.chapters)&&manifest.chapters.length?manifest.chapters.map(c=>({id:String(c.id),title:String(c.title)})):chapters;cards=manifest.cards.map(c=>{const id=String(c.id),q=byName.get(c.question),a=byName.get(c.answer);if(!/^[\w-]{1,100}$/.test(id)||ids.has(id)||!q||!a)throw Error('lesson.json の画像ペアまたは番号を確認してください。');ids.add(id);if(!chapters.some(ch=>ch.id===c.chapter))throw Error('lesson.json の単元を確認してください。');return {id,chapter:c.chapter,sourceTimes:c.sourceTimes,correctedFaces:c.correctedFaces,questionBlob:q,answerBlob:a};});}else cards=pairs.map(([n,p])=>({id:String(n).padStart(3,'0'),chapter:'all',questionBlob:p.question,answerBlob:p.answer}));return {id:'custom-'+(crypto.randomUUID?.()||Date.now().toString(36)),title,...classification,grade:clean($('importGrade').value)||'学年共通',description:'',source:typeof manifest?.source==='string'?manifest.source:null,chapters,cards,imported:true};}
-$('openImport').onclick=()=>{app.pause();$('importDialog').showModal();fillFields();};let previousSubject='science';
+let importViewportFrame=0;
+function updateImportViewport(){
+ importViewportFrame=0;const dialog=$('importDialog');if(!dialog.open)return;
+ const viewport=window.visualViewport;
+ dialog.style.setProperty('--import-visible-height',Math.round(viewport?.height||window.innerHeight)+'px');
+ dialog.style.setProperty('--import-visible-top',Math.round(viewport?.offsetTop||0)+'px');
+ const field=document.activeElement,body=$('importBody');
+ if(field && body.contains(field) && field.matches('input'))requestAnimationFrame(()=>{
+  if(!dialog.open || document.activeElement!==field)return;const bounds=body.getBoundingClientRect(),item=field.getBoundingClientRect();
+  if(item.top<bounds.top+8)body.scrollTop+=item.top-bounds.top-8;else if(item.bottom>bounds.bottom-8)body.scrollTop+=item.bottom-bounds.bottom+8;
+ });
+}
+function scheduleImportViewport(){if(!importViewportFrame)importViewportFrame=requestAnimationFrame(updateImportViewport);}
+window.visualViewport?.addEventListener('resize',scheduleImportViewport,{passive:true});
+window.visualViewport?.addEventListener('scroll',scheduleImportViewport,{passive:true});
+window.addEventListener('resize',scheduleImportViewport,{passive:true});
+$('openImport').onclick=()=>{app.pause();$('importDialog').showModal();fillFields();updateImportViewport();$('importBody').scrollTop=0;$('importDialogTitle').focus({preventScroll:true});};let previousSubject='science';
 $('importSubject').oninput=()=>{const next=subjectId($('importSubject').value);if(next!==previousSubject && fieldChoices(previousSubject)?.some(([id,name])=>[$('importField').value].includes(name)||$('importField').value===id))$('importField').value='';previousSubject=next;fillFields();};
 $('importImages').onchange=()=>{const generation=++selectionGeneration;$('importStatus').textContent='ファイルを確認するにゃ🐾';selected=inspect([...$('importImages').files]);selected.then(bundle=>{if(generation!==selectionGeneration)return;const m=bundle.manifest;if(m){$('importTitle').value=String(m.title||'').slice(0,100);$('importSubject').value=clean(m.subjectLabel)||subjectName(m.subject).replace(/^custom:/,'');$('importGrade').value=clean(m.grade)||'学年共通';$('importField').value=clean(m.fieldLabel)||fieldChoices(m.subject)?.find(([id])=>id===m.field)?.[1]||String(m.field||'').replace(/^custom:/,'');previousSubject=subjectId($('importSubject').value);fillFields();}$('importStatus').textContent=bundle.pairs.length+'問分の画像がそろったにゃ。';}).catch(e=>{if(generation===selectionGeneration)$('importStatus').textContent=e.message;});};
 $('importForm').onsubmit=async e=>{e.preventDefault();const button=$('importSubmit');button.disabled=true;try{if(!selected)throw Error('教材ファイルを選択してください。');const bundle=await selected,title=$('importTitle').value.trim();if(!title)throw Error('教材名を入力してください。');const classification=taxonomy();$('importStatus').textContent='画像を保存しているにゃ🐾';for(const[,pair]of bundle.pairs)await Promise.all([validateImage(pair.question),validateImage(pair.answer)]);const raw=prepareRaw(bundle,title,classification),db=await database();await new Promise((resolve,reject)=>{const t=db.transaction('lessons','readwrite');t.objectStore('lessons').put(raw);t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error);});app.register(materialize(raw));$('importDialog').close();$('importForm').reset();selected=null;await app.selectImported(raw.id);app.toast(raw.cards.length+'問の教材を追加したにゃ♪');}catch(e){$('importStatus').textContent=e?.name==='QuotaExceededError'?'保存容量が足りないにゃ。端末の空き容量を確認してにゃ。':e?.message||'保存できなかったにゃ。';}finally{button.disabled=false;}};

@@ -1,0 +1,133 @@
+{
+  "id": "science-jhs-laws-11",
+  "subject": "science",
+  "field": "general",
+  "title": "中学理科 ○○の法則 一問一答11問",
+  "grade": "中学理科",
+  "description": "図解で確認する中学理科11の法則。一問一答11問。",
+  "cover": "images_08/jhs-laws-11/question_001.png",
+  "chapters": [
+    {
+      "id": "laws",
+      "title": "中学理科の11の法則"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_001.png",
+      "answer": "images_08/jhs-laws-11/answer_001.png",
+      "sourceTimes": {
+        "question": 27.0,
+        "answer": 35.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_002.png",
+      "answer": "images_08/jhs-laws-11/answer_002.png",
+      "sourceTimes": {
+        "question": 48.0,
+        "answer": 52.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_003.png",
+      "answer": "images_08/jhs-laws-11/answer_003.png",
+      "sourceTimes": {
+        "question": 67.0,
+        "answer": 73.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_004.png",
+      "answer": "images_08/jhs-laws-11/answer_004.png",
+      "sourceTimes": {
+        "question": 89.0,
+        "answer": 96.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_005.png",
+      "answer": "images_08/jhs-laws-11/answer_005.png",
+      "sourceTimes": {
+        "question": 109.0,
+        "answer": 113.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_006.png",
+      "answer": "images_08/jhs-laws-11/answer_006.png",
+      "sourceTimes": {
+        "question": 129.5,
+        "answer": 139.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_007.png",
+      "answer": "images_08/jhs-laws-11/answer_007.png",
+      "sourceTimes": {
+        "question": 155.0,
+        "answer": 161.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_008.png",
+      "answer": "images_08/jhs-laws-11/answer_008.png",
+      "sourceTimes": {
+        "question": 187.0,
+        "answer": 190.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_009.png",
+      "answer": "images_08/jhs-laws-11/answer_009.png",
+      "sourceTimes": {
+        "question": 211.0,
+        "answer": 216.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_010.png",
+      "answer": "images_08/jhs-laws-11/answer_010.png",
+      "sourceTimes": {
+        "question": 230.0,
+        "answer": 250.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "laws",
+      "question": "images_08/jhs-laws-11/question_011.png",
+      "answer": "images_08/jhs-laws-11/answer_011.png",
+      "sourceTimes": {
+        "question": 268.0,
+        "answer": 276.0
+      }
+    }
+  ],
+  "fieldLabel": "分野横断",
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=iX_peSZ8pLU",
+  "extractionNotes": {
+    "timestamp_note": "capture は保存した元動画のフレーム表示PTS（秒）。frame_index は30fpsのPTSから算出した0始まりの番号。start_approx/end_approx は0.5秒間隔で場面を解析したおおよその表示区間。question は赤字の正答が現れる前、answer は法則名と図解が完成した後の段階。図中のアニメーションは繰り返し動作を含み、解答画像はその中の1フレームを保存。元動画の1920×1080フレームをリサイズ・再描画せずPNGとして保存。"
+  }
+}

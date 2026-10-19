@@ -1,0 +1,493 @@
+{
+  "id": "science-jhs-lab-observation-tools-44",
+  "subject": "science",
+  "field": "general",
+  "title": "中学理科 実験・観察器具 一問一答44問",
+  "grade": "中学理科",
+  "description": "顕微鏡・ガスバーナー・てんびん・気体の捕集・実験操作・電気・指示薬などの器具と操作を図解で確認する一問一答44組。",
+  "cover": "images_08/jhs-lab-observation-tools-44/question_001.png",
+  "chapters": [
+    {
+      "id": "microscope",
+      "title": "ルーペ・顕微鏡"
+    },
+    {
+      "id": "burner",
+      "title": "ガスバーナー"
+    },
+    {
+      "id": "measurement",
+      "title": "てんびん・メスシリンダー"
+    },
+    {
+      "id": "gas_collection",
+      "title": "気体の集め方"
+    },
+    {
+      "id": "experiment_methods",
+      "title": "実験操作・安全"
+    },
+    {
+      "id": "electric",
+      "title": "電気・放電の実験"
+    },
+    {
+      "id": "indicator",
+      "title": "指示薬・こまごめピペット"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_001.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_001.png",
+      "sourceTimes": {
+        "question": 20.0,
+        "answer": 33.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_002.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_002.png",
+      "sourceTimes": {
+        "question": 38.0,
+        "answer": 46.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_003.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_003.png",
+      "sourceTimes": {
+        "question": 51.0,
+        "answer": 59.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_004.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_004.png",
+      "sourceTimes": {
+        "question": 64.0,
+        "answer": 71.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_005.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_005.png",
+      "sourceTimes": {
+        "question": 76.0,
+        "answer": 85.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_006.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_006.png",
+      "sourceTimes": {
+        "question": 90.0,
+        "answer": 101.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_007.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_007.png",
+      "sourceTimes": {
+        "question": 106.0,
+        "answer": 116.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_008.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_008.png",
+      "sourceTimes": {
+        "question": 121.0,
+        "answer": 130.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_009.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_009.png",
+      "sourceTimes": {
+        "question": 135.0,
+        "answer": 145.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_010.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_010.png",
+      "sourceTimes": {
+        "question": 150.0,
+        "answer": 176.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_011.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_011.png",
+      "sourceTimes": {
+        "question": 181.0,
+        "answer": 191.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_012.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_012.png",
+      "sourceTimes": {
+        "question": 196.0,
+        "answer": 209.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_013.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_013.png",
+      "sourceTimes": {
+        "question": 214.0,
+        "answer": 225.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "microscope",
+      "question": "images_08/jhs-lab-observation-tools-44/question_014.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_014.png",
+      "sourceTimes": {
+        "question": 230.0,
+        "answer": 241.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "burner",
+      "question": "images_08/jhs-lab-observation-tools-44/question_015.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_015.png",
+      "sourceTimes": {
+        "question": 246.0,
+        "answer": 261.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "burner",
+      "question": "images_08/jhs-lab-observation-tools-44/question_016.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_016.png",
+      "sourceTimes": {
+        "question": 266.0,
+        "answer": 279.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "burner",
+      "question": "images_08/jhs-lab-observation-tools-44/question_017.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_017.png",
+      "sourceTimes": {
+        "question": 284.0,
+        "answer": 299.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "burner",
+      "question": "images_08/jhs-lab-observation-tools-44/question_018.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_018.png",
+      "sourceTimes": {
+        "question": 304.0,
+        "answer": 322.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "measurement",
+      "question": "images_08/jhs-lab-observation-tools-44/question_019.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_019.png",
+      "sourceTimes": {
+        "question": 327.0,
+        "answer": 334.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "measurement",
+      "question": "images_08/jhs-lab-observation-tools-44/question_020.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_020.png",
+      "sourceTimes": {
+        "question": 339.0,
+        "answer": 350.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "measurement",
+      "question": "images_08/jhs-lab-observation-tools-44/question_021.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_021.png",
+      "sourceTimes": {
+        "question": 355.0,
+        "answer": 372.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "measurement",
+      "question": "images_08/jhs-lab-observation-tools-44/question_022.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_022.png",
+      "sourceTimes": {
+        "question": 377.0,
+        "answer": 393.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "gas_collection",
+      "question": "images_08/jhs-lab-observation-tools-44/question_023.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_023.png",
+      "sourceTimes": {
+        "question": 409.0,
+        "answer": 421.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "gas_collection",
+      "question": "images_08/jhs-lab-observation-tools-44/question_024.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_024.png",
+      "sourceTimes": {
+        "question": 426.0,
+        "answer": 440.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "gas_collection",
+      "question": "images_08/jhs-lab-observation-tools-44/question_025.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_025.png",
+      "sourceTimes": {
+        "question": 445.0,
+        "answer": 464.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "experiment_methods",
+      "question": "images_08/jhs-lab-observation-tools-44/question_026.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_026.png",
+      "sourceTimes": {
+        "question": 469.0,
+        "answer": 486.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "experiment_methods",
+      "question": "images_08/jhs-lab-observation-tools-44/question_027.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_027.png",
+      "sourceTimes": {
+        "question": 491.0,
+        "answer": 512.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "experiment_methods",
+      "question": "images_08/jhs-lab-observation-tools-44/question_028.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_028.png",
+      "sourceTimes": {
+        "question": 517.0,
+        "answer": 538.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "experiment_methods",
+      "question": "images_08/jhs-lab-observation-tools-44/question_029.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_029.png",
+      "sourceTimes": {
+        "question": 543.0,
+        "answer": 568.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_030.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_030.png",
+      "sourceTimes": {
+        "question": 573.0,
+        "answer": 581.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_031.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_031.png",
+      "sourceTimes": {
+        "question": 586.0,
+        "answer": 593.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_032.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_032.png",
+      "sourceTimes": {
+        "question": 598.0,
+        "answer": 609.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_033.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_033.png",
+      "sourceTimes": {
+        "question": 614.0,
+        "answer": 620.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_034.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_034.png",
+      "sourceTimes": {
+        "question": 625.0,
+        "answer": 643.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_035.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_035.png",
+      "sourceTimes": {
+        "question": 648.0,
+        "answer": 672.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_036.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_036.png",
+      "sourceTimes": {
+        "question": 677.0,
+        "answer": 690.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_037.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_037.png",
+      "sourceTimes": {
+        "question": 695.0,
+        "answer": 705.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "electric",
+      "question": "images_08/jhs-lab-observation-tools-44/question_038.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_038.png",
+      "sourceTimes": {
+        "question": 710.0,
+        "answer": 723.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "indicator",
+      "question": "images_08/jhs-lab-observation-tools-44/question_039.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_039.png",
+      "sourceTimes": {
+        "question": 728.0,
+        "answer": 754.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "indicator",
+      "question": "images_08/jhs-lab-observation-tools-44/question_040.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_040.png",
+      "sourceTimes": {
+        "question": 759.0,
+        "answer": 766.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "indicator",
+      "question": "images_08/jhs-lab-observation-tools-44/question_041.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_041.png",
+      "sourceTimes": {
+        "question": 771.0,
+        "answer": 791.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "indicator",
+      "question": "images_08/jhs-lab-observation-tools-44/question_042.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_042.png",
+      "sourceTimes": {
+        "question": 796.0,
+        "answer": 813.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "indicator",
+      "question": "images_08/jhs-lab-observation-tools-44/question_043.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_043.png",
+      "sourceTimes": {
+        "question": 818.0,
+        "answer": 834.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "indicator",
+      "question": "images_08/jhs-lab-observation-tools-44/question_044.png",
+      "answer": "images_08/jhs-lab-observation-tools-44/answer_044.png",
+      "sourceTimes": {
+        "question": 839.0,
+        "answer": 857.0
+      }
+    }
+  ],
+  "fieldLabel": "分野横断",
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=SoNBrweupcw",
+  "extractionNotes": {
+    "notes": [
+      {
+        "card": "031",
+        "description": "「電流の大きさをはかる器具」では、器具の図は赤字の正答と同じタイミングで表示される。問題画像では器具図がなく、解答画像に器具図が含まれる。動画内容は変更しない。"
+      }
+    ],
+    "capture_note": "時刻は元動画の再生位置(秒)。questionは問題表示中、answerは正答・説明や図が表示された後のフレーム。すべて元動画フレームの無加工・原寸PNG。開始時刻は1秒間隔のプレビューから判断した目安。"
+  }
+}

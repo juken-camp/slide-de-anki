@@ -774,6 +774,218 @@ window.QUIZ_CATALOG = [
     "source": "https://www.youtube.com/watch?v=Z9h5DyPsFEs"
   },
   {
+    "id": "science-jhs1-important-terms-56",
+    "subject": "science",
+    "field": "general",
+    "title": "中1理科の重要用語 一問一答56語",
+    "grade": "中1理科",
+    "description": "中1理科の重要用語を、植物19問・物質9問・物理10問・大地18問の計56問で確認。",
+    "cover": "images_08/jhs1-important-terms-56/question_001.png",
+    "chapters": [
+      {
+        "id": "plants",
+        "title": "植物の生活と種類"
+      },
+      {
+        "id": "matter",
+        "title": "物質のすがた"
+      },
+      {
+        "id": "physics",
+        "title": "身近な物理現象"
+      },
+      {
+        "id": "earth",
+        "title": "大地の変化"
+      }
+    ],
+    "fieldLabel": "分野横断",
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=mWGtoOjI-iU",
+    "count": 56,
+    "data": "lessons/science-jhs1-important-terms-56.json"
+  },
+  {
+    "id": "science-jhs2-important-terms-67",
+    "subject": "science",
+    "field": "general",
+    "title": "中2理科の重要用語 一問一答67語",
+    "grade": "中2理科",
+    "description": "中2理科の重要用語を化学11問・生物30問・物理15問・地学11問の計67問で確認。",
+    "cover": "images_08/jhs2-important-terms-67/question_001.png",
+    "chapters": [
+      {
+        "id": "chemistry",
+        "title": "化学変化と原子・分子"
+      },
+      {
+        "id": "biology",
+        "title": "動物の生活と生物の進化"
+      },
+      {
+        "id": "physics",
+        "title": "電流とその利用"
+      },
+      {
+        "id": "earth",
+        "title": "気象のしくみと天気の変化"
+      }
+    ],
+    "fieldLabel": "分野横断",
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=8JChvA-nW80",
+    "count": 67,
+    "data": "lessons/science-jhs2-important-terms-67.json"
+  },
+  {
+    "id": "science-jhs3-important-terms-68",
+    "subject": "science",
+    "field": "general",
+    "title": "中3理科の重要用語 一問一答68語",
+    "grade": "中3理科",
+    "description": "中3理科の重要用語を運動とエネルギー9問・生命22問・化学変化とイオン14問・地球と宇宙19問・エネルギー資源4問の計68問で確認。",
+    "cover": "images_08/jhs3-important-terms-68/question_001.png",
+    "chapters": [
+      {
+        "id": "physics",
+        "title": "運動とエネルギー"
+      },
+      {
+        "id": "biology",
+        "title": "生命の連続性・自然界のつながり"
+      },
+      {
+        "id": "chemistry",
+        "title": "化学変化とイオン"
+      },
+      {
+        "id": "earth",
+        "title": "地球と宇宙"
+      },
+      {
+        "id": "energy",
+        "title": "科学技術とエネルギー"
+      }
+    ],
+    "fieldLabel": "分野横断",
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=b5lIkNzyGJ4",
+    "count": 68,
+    "data": "lessons/science-jhs3-important-terms-68.json"
+  },
+  {
+    "id": "science-jhs-lab-observation-tools-44",
+    "subject": "science",
+    "field": "general",
+    "title": "中学理科 実験・観察器具 一問一答44問",
+    "grade": "中学理科",
+    "description": "顕微鏡・ガスバーナー・てんびん・気体の捕集・実験操作・電気・指示薬などの器具と操作を図解で確認する一問一答44組。",
+    "cover": "images_08/jhs-lab-observation-tools-44/question_001.png",
+    "chapters": [
+      {
+        "id": "microscope",
+        "title": "ルーペ・顕微鏡"
+      },
+      {
+        "id": "burner",
+        "title": "ガスバーナー"
+      },
+      {
+        "id": "measurement",
+        "title": "てんびん・メスシリンダー"
+      },
+      {
+        "id": "gas_collection",
+        "title": "気体の集め方"
+      },
+      {
+        "id": "experiment_methods",
+        "title": "実験操作・安全"
+      },
+      {
+        "id": "electric",
+        "title": "電気・放電の実験"
+      },
+      {
+        "id": "indicator",
+        "title": "指示薬・こまごめピペット"
+      }
+    ],
+    "fieldLabel": "分野横断",
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=SoNBrweupcw",
+    "count": 44,
+    "data": "lessons/science-jhs-lab-observation-tools-44.json"
+  },
+  {
+    "id": "science-jhs-laws-11",
+    "subject": "science",
+    "field": "general",
+    "title": "中学理科 ○○の法則 一問一答11問",
+    "grade": "中学理科",
+    "description": "図解で確認する中学理科11の法則。一問一答11問。",
+    "cover": "images_08/jhs-laws-11/question_001.png",
+    "chapters": [
+      {
+        "id": "laws",
+        "title": "中学理科の11の法則"
+      }
+    ],
+    "fieldLabel": "分野横断",
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=iX_peSZ8pLU",
+    "count": 11,
+    "data": "lessons/science-jhs-laws-11.json"
+  },
+  {
+    "id": "science-jhs-formula-calculation-26",
+    "subject": "science",
+    "field": "general",
+    "title": "中学理科 公式を使った計算問題 一問一答26問",
+    "grade": "中学理科",
+    "description": "圧力・密度・質量パーセント濃度・電流と回路・湿度・速さ・仕事・仕事率の公式と計算を確認する一問一答26組。",
+    "cover": "images_08/jhs-formula-calculation-26/question_001.png",
+    "chapters": [
+      {
+        "id": "pressure",
+        "title": "圧力"
+      },
+      {
+        "id": "density",
+        "title": "密度"
+      },
+      {
+        "id": "concentration",
+        "title": "質量パーセント濃度"
+      },
+      {
+        "id": "electric",
+        "title": "電流と回路・オームの法則"
+      },
+      {
+        "id": "humidity",
+        "title": "湿度"
+      },
+      {
+        "id": "motion",
+        "title": "速さと距離"
+      },
+      {
+        "id": "work",
+        "title": "仕事"
+      },
+      {
+        "id": "power",
+        "title": "仕事率"
+      }
+    ],
+    "fieldLabel": "分野横断",
+    "collection": "review",
+    "source": "https://www.youtube.com/watch?v=G86IXodKILY",
+    "count": 26,
+    "data": "lessons/science-jhs-formula-calculation-26.json"
+  },
+  {
     "id": "social-civics-modern-international-grade3-01",
     "subject": "social",
     "field": "civics",

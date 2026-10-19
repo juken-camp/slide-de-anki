@@ -1,0 +1,595 @@
+{
+  "id": "science-jhs1-important-terms-56",
+  "subject": "science",
+  "field": "general",
+  "title": "中1理科の重要用語 一問一答56語",
+  "grade": "中1理科",
+  "description": "中1理科の重要用語を、植物19問・物質9問・物理10問・大地18問の計56問で確認。",
+  "cover": "images_08/jhs1-important-terms-56/question_001.png",
+  "chapters": [
+    {
+      "id": "plants",
+      "title": "植物の生活と種類"
+    },
+    {
+      "id": "matter",
+      "title": "物質のすがた"
+    },
+    {
+      "id": "physics",
+      "title": "身近な物理現象"
+    },
+    {
+      "id": "earth",
+      "title": "大地の変化"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_001.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_001.png",
+      "sourceTimes": {
+        "question": 28.5,
+        "answer": 36.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_002.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_002.png",
+      "sourceTimes": {
+        "question": 42.5,
+        "answer": 50.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_003.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_003.png",
+      "sourceTimes": {
+        "question": 56.5,
+        "answer": 63.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_004.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_004.png",
+      "sourceTimes": {
+        "question": 69.0,
+        "answer": 75.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_005.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_005.png",
+      "sourceTimes": {
+        "question": 81.5,
+        "answer": 90.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_006.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_006.png",
+      "sourceTimes": {
+        "question": 96.0,
+        "answer": 103.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_007.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_007.png",
+      "sourceTimes": {
+        "question": 109.5,
+        "answer": 117.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_008.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_008.png",
+      "sourceTimes": {
+        "question": 123.5,
+        "answer": 129.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_009.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_009.png",
+      "sourceTimes": {
+        "question": 135.5,
+        "answer": 142.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_010.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_010.png",
+      "sourceTimes": {
+        "question": 148.0,
+        "answer": 157.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_011.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_011.png",
+      "sourceTimes": {
+        "question": 163.0,
+        "answer": 174.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_012.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_012.png",
+      "sourceTimes": {
+        "question": 180.5,
+        "answer": 187.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_013.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_013.png",
+      "sourceTimes": {
+        "question": 193.5,
+        "answer": 199.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_014.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_014.png",
+      "sourceTimes": {
+        "question": 205.0,
+        "answer": 212.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_015.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_015.png",
+      "sourceTimes": {
+        "question": 218.5,
+        "answer": 224.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_016.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_016.png",
+      "sourceTimes": {
+        "question": 230.0,
+        "answer": 239.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_017.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_017.png",
+      "sourceTimes": {
+        "question": 245.0,
+        "answer": 252.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_018.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_018.png",
+      "sourceTimes": {
+        "question": 258.5,
+        "answer": 266.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "plants",
+      "question": "images_08/jhs1-important-terms-56/question_019.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_019.png",
+      "sourceTimes": {
+        "question": 272.0,
+        "answer": 279.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_020.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_020.png",
+      "sourceTimes": {
+        "question": 290.0,
+        "answer": 302.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_021.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_021.png",
+      "sourceTimes": {
+        "question": 308.0,
+        "answer": 318.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_022.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_022.png",
+      "sourceTimes": {
+        "question": 324.0,
+        "answer": 332.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_023.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_023.png",
+      "sourceTimes": {
+        "question": 338.0,
+        "answer": 345.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_024.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_024.png",
+      "sourceTimes": {
+        "question": 351.5,
+        "answer": 361.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_025.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_025.png",
+      "sourceTimes": {
+        "question": 367.5,
+        "answer": 383.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_026.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_026.png",
+      "sourceTimes": {
+        "question": 389.0,
+        "answer": 395.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_027.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_027.png",
+      "sourceTimes": {
+        "question": 401.5,
+        "answer": 410.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "matter",
+      "question": "images_08/jhs1-important-terms-56/question_028.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_028.png",
+      "sourceTimes": {
+        "question": 416.5,
+        "answer": 424.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_029.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_029.png",
+      "sourceTimes": {
+        "question": 435.5,
+        "answer": 443.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_030.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_030.png",
+      "sourceTimes": {
+        "question": 449.5,
+        "answer": 462.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_031.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_031.png",
+      "sourceTimes": {
+        "question": 468.5,
+        "answer": 480.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_032.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_032.png",
+      "sourceTimes": {
+        "question": 486.0,
+        "answer": 497.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_033.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_033.png",
+      "sourceTimes": {
+        "question": 503.0,
+        "answer": 513.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_034.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_034.png",
+      "sourceTimes": {
+        "question": 519.5,
+        "answer": 526.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_035.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_035.png",
+      "sourceTimes": {
+        "question": 532.0,
+        "answer": 538.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_036.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_036.png",
+      "sourceTimes": {
+        "question": 544.0,
+        "answer": 551.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_037.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_037.png",
+      "sourceTimes": {
+        "question": 557.5,
+        "answer": 566.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "physics",
+      "question": "images_08/jhs1-important-terms-56/question_038.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_038.png",
+      "sourceTimes": {
+        "question": 572.0,
+        "answer": 578.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_039.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_039.png",
+      "sourceTimes": {
+        "question": 589.5,
+        "answer": 598.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_040.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_040.png",
+      "sourceTimes": {
+        "question": 604.5,
+        "answer": 612.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_041.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_041.png",
+      "sourceTimes": {
+        "question": 618.5,
+        "answer": 628.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_042.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_042.png",
+      "sourceTimes": {
+        "question": 634.0,
+        "answer": 643.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_043.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_043.png",
+      "sourceTimes": {
+        "question": 649.0,
+        "answer": 656.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_044.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_044.png",
+      "sourceTimes": {
+        "question": 662.5,
+        "answer": 675.5
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_045.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_045.png",
+      "sourceTimes": {
+        "question": 681.5,
+        "answer": 690.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_046.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_046.png",
+      "sourceTimes": {
+        "question": 696.0,
+        "answer": 702.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_047.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_047.png",
+      "sourceTimes": {
+        "question": 708.0,
+        "answer": 713.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_048.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_048.png",
+      "sourceTimes": {
+        "question": 719.0,
+        "answer": 725.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_049.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_049.png",
+      "sourceTimes": {
+        "question": 731.0,
+        "answer": 741.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_050.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_050.png",
+      "sourceTimes": {
+        "question": 747.0,
+        "answer": 755.5
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_051.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_051.png",
+      "sourceTimes": {
+        "question": 761.5,
+        "answer": 767.5
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_052.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_052.png",
+      "sourceTimes": {
+        "question": 773.5,
+        "answer": 784.5
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_053.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_053.png",
+      "sourceTimes": {
+        "question": 790.5,
+        "answer": 798.5
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_054.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_054.png",
+      "sourceTimes": {
+        "question": 804.5,
+        "answer": 812.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_055.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_055.png",
+      "sourceTimes": {
+        "question": 818.0,
+        "answer": 827.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "earth",
+      "question": "images_08/jhs1-important-terms-56/question_056.png",
+      "answer": "images_08/jhs1-important-terms-56/answer_056.png",
+      "sourceTimes": {
+        "question": 833.0,
+        "answer": 840.0
+      }
+    }
+  ],
+  "fieldLabel": "分野横断",
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=mWGtoOjI-iU",
+  "extractionNotes": {
+    "timestamp_note": "capture は抽出した元動画フレームの表示PTS（秒）。frame_index は30fpsのPTSから算出した0始まりの番号。start_approxは0.5秒間隔のスライド切り替わり解析による表示開始の目安。問題は解答出現前、解答は赤字の正答や追加表示が完成したフレームを選択。切り替え演出・章扉・冒頭/末尾の案内は除外。"
+  }
+}

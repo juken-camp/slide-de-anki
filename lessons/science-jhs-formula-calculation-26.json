@@ -1,0 +1,317 @@
+{
+  "id": "science-jhs-formula-calculation-26",
+  "subject": "science",
+  "field": "general",
+  "title": "中学理科 公式を使った計算問題 一問一答26問",
+  "grade": "中学理科",
+  "description": "圧力・密度・質量パーセント濃度・電流と回路・湿度・速さ・仕事・仕事率の公式と計算を確認する一問一答26組。",
+  "cover": "images_08/jhs-formula-calculation-26/question_001.png",
+  "chapters": [
+    {
+      "id": "pressure",
+      "title": "圧力"
+    },
+    {
+      "id": "density",
+      "title": "密度"
+    },
+    {
+      "id": "concentration",
+      "title": "質量パーセント濃度"
+    },
+    {
+      "id": "electric",
+      "title": "電流と回路・オームの法則"
+    },
+    {
+      "id": "humidity",
+      "title": "湿度"
+    },
+    {
+      "id": "motion",
+      "title": "速さと距離"
+    },
+    {
+      "id": "work",
+      "title": "仕事"
+    },
+    {
+      "id": "power",
+      "title": "仕事率"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "pressure",
+      "question": "images_08/jhs-formula-calculation-26/question_001.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_001.png",
+      "sourceTimes": {
+        "question": 43.0,
+        "answer": 70.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "pressure",
+      "question": "images_08/jhs-formula-calculation-26/question_002.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_002.png",
+      "sourceTimes": {
+        "question": 88.0,
+        "answer": 124.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "pressure",
+      "question": "images_08/jhs-formula-calculation-26/question_003.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_003.png",
+      "sourceTimes": {
+        "question": 134.0,
+        "answer": 184.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "pressure",
+      "question": "images_08/jhs-formula-calculation-26/question_004.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_004.png",
+      "sourceTimes": {
+        "question": 196.0,
+        "answer": 243.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "density",
+      "question": "images_08/jhs-formula-calculation-26/question_005.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_005.png",
+      "sourceTimes": {
+        "question": 260.0,
+        "answer": 285.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "density",
+      "question": "images_08/jhs-formula-calculation-26/question_006.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_006.png",
+      "sourceTimes": {
+        "question": 298.0,
+        "answer": 320.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "concentration",
+      "question": "images_08/jhs-formula-calculation-26/question_007.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_007.png",
+      "sourceTimes": {
+        "question": 331.0,
+        "answer": 348.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "concentration",
+      "question": "images_08/jhs-formula-calculation-26/question_008.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_008.png",
+      "sourceTimes": {
+        "question": 354.0,
+        "answer": 369.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "concentration",
+      "question": "images_08/jhs-formula-calculation-26/question_009.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_009.png",
+      "sourceTimes": {
+        "question": 377.0,
+        "answer": 394.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "electric",
+      "question": "images_08/jhs-formula-calculation-26/question_010.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_010.png",
+      "sourceTimes": {
+        "question": 411.0,
+        "answer": 425.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "electric",
+      "question": "images_08/jhs-formula-calculation-26/question_011.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_011.png",
+      "sourceTimes": {
+        "question": 431.0,
+        "answer": 448.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "electric",
+      "question": "images_08/jhs-formula-calculation-26/question_012.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_012.png",
+      "sourceTimes": {
+        "question": 454.0,
+        "answer": 473.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "electric",
+      "question": "images_08/jhs-formula-calculation-26/question_013.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_013.png",
+      "sourceTimes": {
+        "question": 479.0,
+        "answer": 492.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "electric",
+      "question": "images_08/jhs-formula-calculation-26/question_014.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_014.png",
+      "sourceTimes": {
+        "question": 498.0,
+        "answer": 514.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "humidity",
+      "question": "images_08/jhs-formula-calculation-26/question_015.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_015.png",
+      "sourceTimes": {
+        "question": 530.0,
+        "answer": 545.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "humidity",
+      "question": "images_08/jhs-formula-calculation-26/question_016.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_016.png",
+      "sourceTimes": {
+        "question": 554.0,
+        "answer": 579.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "humidity",
+      "question": "images_08/jhs-formula-calculation-26/question_017.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_017.png",
+      "sourceTimes": {
+        "question": 587.0,
+        "answer": 610.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "motion",
+      "question": "images_08/jhs-formula-calculation-26/question_018.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_018.png",
+      "sourceTimes": {
+        "question": 625.0,
+        "answer": 650.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "motion",
+      "question": "images_08/jhs-formula-calculation-26/question_019.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_019.png",
+      "sourceTimes": {
+        "question": 660.0,
+        "answer": 678.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "work",
+      "question": "images_08/jhs-formula-calculation-26/question_020.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_020.png",
+      "sourceTimes": {
+        "question": 687.0,
+        "answer": 713.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "work",
+      "question": "images_08/jhs-formula-calculation-26/question_021.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_021.png",
+      "sourceTimes": {
+        "question": 724.0,
+        "answer": 751.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "work",
+      "question": "images_08/jhs-formula-calculation-26/question_022.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_022.png",
+      "sourceTimes": {
+        "question": 763.0,
+        "answer": 798.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "work",
+      "question": "images_08/jhs-formula-calculation-26/question_023.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_023.png",
+      "sourceTimes": {
+        "question": 806.0,
+        "answer": 832.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "power",
+      "question": "images_08/jhs-formula-calculation-26/question_024.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_024.png",
+      "sourceTimes": {
+        "question": 841.0,
+        "answer": 855.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "power",
+      "question": "images_08/jhs-formula-calculation-26/question_025.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_025.png",
+      "sourceTimes": {
+        "question": 861.0,
+        "answer": 891.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "power",
+      "question": "images_08/jhs-formula-calculation-26/question_026.png",
+      "answer": "images_08/jhs-formula-calculation-26/answer_026.png",
+      "sourceTimes": {
+        "question": 900.0,
+        "answer": 962.0
+      }
+    }
+  ],
+  "fieldLabel": "分野横断",
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=G86IXodKILY",
+  "extractionNotes": {
+    "notes": [
+      {
+        "card": "011",
+        "text": "オームの法則の関係図にある「上に入るのは何？」の答えは、動画中に独立した正答表示がなく、answer_011.pngは説明画面の最終フレーム（記号「？」が残った状態）。動画にない正答は画像に追加していない。"
+      }
+    ],
+    "timestamp_note": "captureは実際に保存した元動画フレームの表示PTS（秒）。frame_indexは30fpsのPTSから算出した0始まりの番号。start_approx/end_approxは1秒間隔のプレビューと各場面変化から判断したおおよその表示範囲。questionは問題文が表示され、まだ解答欄が埋められていない段階。answerは原則として数値・公式・図解が完成した時点。元動画の1920×1080フレームをリサイズ・再描画せずPNG保存。"
+  }
+}

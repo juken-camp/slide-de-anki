@@ -1,0 +1,713 @@
+{
+  "id": "science-jhs2-important-terms-67",
+  "subject": "science",
+  "field": "general",
+  "title": "中2理科の重要用語 一問一答67語",
+  "grade": "中2理科",
+  "description": "中2理科の重要用語を化学11問・生物30問・物理15問・地学11問の計67問で確認。",
+  "cover": "images_08/jhs2-important-terms-67/question_001.png",
+  "chapters": [
+    {
+      "id": "chemistry",
+      "title": "化学変化と原子・分子"
+    },
+    {
+      "id": "biology",
+      "title": "動物の生活と生物の進化"
+    },
+    {
+      "id": "physics",
+      "title": "電流とその利用"
+    },
+    {
+      "id": "earth",
+      "title": "気象のしくみと天気の変化"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_001.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_001.png",
+      "sourceTimes": {
+        "question": 27.5,
+        "answer": 32.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_002.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_002.png",
+      "sourceTimes": {
+        "question": 39.0,
+        "answer": 47.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_003.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_003.png",
+      "sourceTimes": {
+        "question": 54.0,
+        "answer": 61.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_004.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_004.png",
+      "sourceTimes": {
+        "question": 67.5,
+        "answer": 76.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_005.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_005.png",
+      "sourceTimes": {
+        "question": 82.5,
+        "answer": 89.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_006.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_006.png",
+      "sourceTimes": {
+        "question": 96.0,
+        "answer": 102.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_007.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_007.png",
+      "sourceTimes": {
+        "question": 109.0,
+        "answer": 114.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_008.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_008.png",
+      "sourceTimes": {
+        "question": 120.5,
+        "answer": 127.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_009.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_009.png",
+      "sourceTimes": {
+        "question": 134.0,
+        "answer": 140.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_010.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_010.png",
+      "sourceTimes": {
+        "question": 147.0,
+        "answer": 154.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "chemistry",
+      "question": "images_08/jhs2-important-terms-67/question_011.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_011.png",
+      "sourceTimes": {
+        "question": 160.5,
+        "answer": 171.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_012.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_012.png",
+      "sourceTimes": {
+        "question": 184.5,
+        "answer": 190.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_013.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_013.png",
+      "sourceTimes": {
+        "question": 197.0,
+        "answer": 207.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_014.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_014.png",
+      "sourceTimes": {
+        "question": 213.5,
+        "answer": 218.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_015.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_015.png",
+      "sourceTimes": {
+        "question": 225.0,
+        "answer": 234.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_016.png?v=9d2e6974f171758b",
+      "answer": "images_08/jhs2-important-terms-67/answer_016.png?v=aa0e1ed4ed1c4276",
+      "sourceTimes": {
+        "question": 240.5,
+        "answer": 249.5
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "017",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_017.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_017.png",
+      "sourceTimes": {
+        "question": 256.0,
+        "answer": 265.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_018.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_018.png",
+      "sourceTimes": {
+        "question": 271.5,
+        "answer": 280.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_019.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_019.png",
+      "sourceTimes": {
+        "question": 287.0,
+        "answer": 293.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_020.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_020.png",
+      "sourceTimes": {
+        "question": 300.0,
+        "answer": 307.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_021.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_021.png",
+      "sourceTimes": {
+        "question": 313.5,
+        "answer": 322.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_022.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_022.png",
+      "sourceTimes": {
+        "question": 329.0,
+        "answer": 336.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_023.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_023.png",
+      "sourceTimes": {
+        "question": 343.0,
+        "answer": 351.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_024.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_024.png",
+      "sourceTimes": {
+        "question": 357.5,
+        "answer": 366.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_025.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_025.png",
+      "sourceTimes": {
+        "question": 372.5,
+        "answer": 378.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_026.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_026.png",
+      "sourceTimes": {
+        "question": 385.0,
+        "answer": 391.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_027.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_027.png",
+      "sourceTimes": {
+        "question": 398.0,
+        "answer": 406.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_028.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_028.png",
+      "sourceTimes": {
+        "question": 412.5,
+        "answer": 418.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_029.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_029.png",
+      "sourceTimes": {
+        "question": 425.0,
+        "answer": 434.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_030.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_030.png",
+      "sourceTimes": {
+        "question": 441.0,
+        "answer": 451.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_031.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_031.png",
+      "sourceTimes": {
+        "question": 458.0,
+        "answer": 468.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_032.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_032.png",
+      "sourceTimes": {
+        "question": 474.5,
+        "answer": 484.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_033.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_033.png",
+      "sourceTimes": {
+        "question": 491.0,
+        "answer": 497.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_034.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_034.png",
+      "sourceTimes": {
+        "question": 503.5,
+        "answer": 509.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_035.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_035.png",
+      "sourceTimes": {
+        "question": 516.0,
+        "answer": 522.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_036.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_036.png",
+      "sourceTimes": {
+        "question": 528.5,
+        "answer": 539.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_037.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_037.png",
+      "sourceTimes": {
+        "question": 545.5,
+        "answer": 556.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_038.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_038.png",
+      "sourceTimes": {
+        "question": 562.5,
+        "answer": 570.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_039.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_039.png",
+      "sourceTimes": {
+        "question": 577.0,
+        "answer": 585.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_040.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_040.png",
+      "sourceTimes": {
+        "question": 591.5,
+        "answer": 597.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "biology",
+      "question": "images_08/jhs2-important-terms-67/question_041.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_041.png",
+      "sourceTimes": {
+        "question": 604.0,
+        "answer": 615.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_042.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_042.png",
+      "sourceTimes": {
+        "question": 626.5,
+        "answer": 631.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_043.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_043.png",
+      "sourceTimes": {
+        "question": 638.0,
+        "answer": 643.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_044.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_044.png",
+      "sourceTimes": {
+        "question": 649.5,
+        "answer": 656.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_045.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_045.png",
+      "sourceTimes": {
+        "question": 662.5,
+        "answer": 671.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_046.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_046.png",
+      "sourceTimes": {
+        "question": 677.5,
+        "answer": 682.5
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_047.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_047.png",
+      "sourceTimes": {
+        "question": 689.0,
+        "answer": 697.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_048.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_048.png",
+      "sourceTimes": {
+        "question": 703.5,
+        "answer": 710.5
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_049.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_049.png",
+      "sourceTimes": {
+        "question": 717.0,
+        "answer": 723.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_050.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_050.png",
+      "sourceTimes": {
+        "question": 729.5,
+        "answer": 734.5
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_051.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_051.png",
+      "sourceTimes": {
+        "question": 741.0,
+        "answer": 754.5
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_052.png?v=1ea5921623530fbd",
+      "answer": "images_08/jhs2-important-terms-67/answer_052.png?v=6df4be658fb07e3b",
+      "sourceTimes": {
+        "question": 761.0,
+        "answer": 769.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "053",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_053.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_053.png",
+      "sourceTimes": {
+        "question": 775.5,
+        "answer": 780.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_054.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_054.png",
+      "sourceTimes": {
+        "question": 786.5,
+        "answer": 799.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_055.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_055.png",
+      "sourceTimes": {
+        "question": 805.5,
+        "answer": 815.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "physics",
+      "question": "images_08/jhs2-important-terms-67/question_056.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_056.png",
+      "sourceTimes": {
+        "question": 821.5,
+        "answer": 828.0
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_057.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_057.png",
+      "sourceTimes": {
+        "question": 840.0,
+        "answer": 848.5
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_058.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_058.png",
+      "sourceTimes": {
+        "question": 855.0,
+        "answer": 864.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_059.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_059.png",
+      "sourceTimes": {
+        "question": 870.5,
+        "answer": 884.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_060.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_060.png",
+      "sourceTimes": {
+        "question": 890.5,
+        "answer": 904.0
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_061.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_061.png",
+      "sourceTimes": {
+        "question": 910.5,
+        "answer": 918.0
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_062.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_062.png",
+      "sourceTimes": {
+        "question": 924.5,
+        "answer": 930.5
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_063.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_063.png",
+      "sourceTimes": {
+        "question": 937.0,
+        "answer": 947.5
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_064.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_064.png",
+      "sourceTimes": {
+        "question": 954.0,
+        "answer": 960.5
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_065.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_065.png",
+      "sourceTimes": {
+        "question": 967.0,
+        "answer": 984.5
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_066.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_066.png",
+      "sourceTimes": {
+        "question": 991.0,
+        "answer": 1006.5
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "earth",
+      "question": "images_08/jhs2-important-terms-67/question_067.png",
+      "answer": "images_08/jhs2-important-terms-67/answer_067.png",
+      "sourceTimes": {
+        "question": 1013.0,
+        "answer": 1024.0
+      }
+    }
+  ],
+  "fieldLabel": "分野横断",
+  "collection": "review",
+  "source": "https://www.youtube.com/watch?v=8JChvA-nW80",
+  "extractionNotes": {
+    "timestamp_note": "capture は抽出した元動画のフレーム表示PTS（秒）。frame_index は30fpsのPTSから算出した0始まりの番号。start_approx/end_approx は0.5秒間隔のスライド切替解析による概算。問題は答え出現前、解答は表示と図の追加が完了した段階。タイトル画面、章扉、エンディングは除外。元動画フレームを無加工1920×1080 PNGで保存。"
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "id": "social-geography-japan-selection-01",
+  "subject": "social",
+  "field": "geography",
+  "title": "高校入試 過去問｜地理 選択問題 日本編",
+  "grade": "中学地理",
+  "description": "高校入試対策の日本地理選択問題。北海道から愛知県までの21問を図解つきで学ぶ。",
+  "cover": "images_09/social-geography-japan-selection-01/question_001.png",
+  "chapters": [
+    {
+      "id": "japan",
+      "title": "日本の地理"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_001.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_001.png",
+      "sourceTimes": {
+        "question": 16.0,
+        "answer": 64.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_002.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_002.png",
+      "sourceTimes": {
+        "question": 80.0,
+        "answer": 144.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_003.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_003.png",
+      "sourceTimes": {
+        "question": 160.0,
+        "answer": 216.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_004.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_004.png",
+      "sourceTimes": {
+        "question": 232.0,
+        "answer": 248.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_005.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_005.png",
+      "sourceTimes": {
+        "question": 268.0,
+        "answer": 312.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_006.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_006.png",
+      "sourceTimes": {
+        "question": 328.0,
+        "answer": 408.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_007.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_007.png",
+      "sourceTimes": {
+        "question": 424.0,
+        "answer": 480.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_008.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_008.png",
+      "sourceTimes": {
+        "question": 500.0,
+        "answer": 592.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_009.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_009.png",
+      "sourceTimes": {
+        "question": 608.0,
+        "answer": 688.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_010.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_010.png",
+      "sourceTimes": {
+        "question": 704.0,
+        "answer": 768.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_011.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_011.png",
+      "sourceTimes": {
+        "question": 784.0,
+        "answer": 840.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_012.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_012.png",
+      "sourceTimes": {
+        "question": 856.0,
+        "answer": 984.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_013.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_013.png",
+      "sourceTimes": {
+        "question": 1000.0,
+        "answer": 1032.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_014.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_014.png",
+      "sourceTimes": {
+        "question": 1048.0,
+        "answer": 1120.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_015.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_015.png",
+      "sourceTimes": {
+        "question": 1136.0,
+        "answer": 1224.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_016.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_016.png",
+      "sourceTimes": {
+        "question": 1240.0,
+        "answer": 1280.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_017.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_017.png",
+      "sourceTimes": {
+        "question": 1296.0,
+        "answer": 1320.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_018.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_018.png",
+      "sourceTimes": {
+        "question": 1336.0,
+        "answer": 1400.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_019.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_019.png",
+      "sourceTimes": {
+        "question": 1432.0,
+        "answer": 1472.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_020.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_020.png",
+      "sourceTimes": {
+        "question": 1488.0,
+        "answer": 1536.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "japan",
+      "question": "images_09/social-geography-japan-selection-01/question_021.png",
+      "answer": "images_09/social-geography-japan-selection-01/answer_021.png",
+      "sourceTimes": {
+        "question": 1552.0,
+        "answer": 1642.0
+      }
+    }
+  ],
+  "series": "past",
+  "source": "https://www.youtube.com/watch?v=_Lu_7Ub4Y3Q",
+  "sourceTitle": "地理選択問題・日本編",
+  "count": 21,
+  "supplements": [
+    {
+      "id": "018",
+      "title": "日本の気候区分の図解",
+      "image": "images_09/social-geography-japan-selection-01/supplement_018.png",
+      "sourceTime": 1416.0
+    },
+    {
+      "id": "021",
+      "title": "SDGsの全17目標の図解",
+      "image": "images_09/social-geography-japan-selection-01/supplement_021.png",
+      "sourceTime": 1592.0
+    }
+  ]
+}

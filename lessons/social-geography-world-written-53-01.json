@@ -1,0 +1,604 @@
+{
+  "id": "social-geography-world-written-53-01",
+  "subject": "social",
+  "field": "geography",
+  "title": "地理の記述問題｜世界編",
+  "grade": "中学地理",
+  "description": "世界地理の記述問題を53問の問題・解答画像で学ぶ。",
+  "cover": "images_09/social-geography-world-written-53-01/question_001.png",
+  "chapters": [
+    {
+      "id": "world-written",
+      "title": "世界地理・記述問題"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_001.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_001.png",
+      "sourceTimes": {
+        "question": 37.333333,
+        "answer": 48.0
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_002.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_002.png",
+      "sourceTimes": {
+        "question": 62.666667,
+        "answer": 74.666667
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_003.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_003.png",
+      "sourceTimes": {
+        "question": 90.666667,
+        "answer": 98.666667
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_004.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_004.png",
+      "sourceTimes": {
+        "question": 117.333333,
+        "answer": 128.0
+      },
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_005.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_005.png",
+      "sourceTimes": {
+        "question": 149.333333,
+        "answer": 160.0
+      },
+      "sourceQuestionNumber": 5
+    },
+    {
+      "id": "006",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_006.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_006.png",
+      "sourceTimes": {
+        "question": 174.666667,
+        "answer": 181.333333
+      },
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "007",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_007.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_007.png",
+      "sourceTimes": {
+        "question": 197.333333,
+        "answer": 208.0
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "008",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_008.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_008.png",
+      "sourceTimes": {
+        "question": 234.666667,
+        "answer": 240.0
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "009",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_009.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_009.png",
+      "sourceTimes": {
+        "question": 260.0,
+        "answer": 272.0
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "010",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_010.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_010.png",
+      "sourceTimes": {
+        "question": 293.333333,
+        "answer": 298.666667
+      },
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "011",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_011.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_011.png",
+      "sourceTimes": {
+        "question": 314.666667,
+        "answer": 325.333333
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "012",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_012.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_012.png",
+      "sourceTimes": {
+        "question": 346.666667,
+        "answer": 361.333333
+      },
+      "sourceQuestionNumber": 12
+    },
+    {
+      "id": "013",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_013.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_013.png",
+      "sourceTimes": {
+        "question": 384.0,
+        "answer": 394.666667
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "014",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_014.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_014.png",
+      "sourceTimes": {
+        "question": 410.666667,
+        "answer": 421.333333
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "015",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_015.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_015.png",
+      "sourceTimes": {
+        "question": 432.0,
+        "answer": 440.0
+      },
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "016",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_016.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_016.png",
+      "sourceTimes": {
+        "question": 453.333333,
+        "answer": 464.0
+      },
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "017",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_017.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_017.png",
+      "sourceTimes": {
+        "question": 478.666667,
+        "answer": 489.333333
+      },
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "018",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_018.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_018.png",
+      "sourceTimes": {
+        "question": 501.333333,
+        "answer": 512.0
+      },
+      "sourceQuestionNumber": 18
+    },
+    {
+      "id": "019",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_019.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_019.png",
+      "sourceTimes": {
+        "question": 528.0,
+        "answer": 528.7
+      },
+      "sourceQuestionNumber": 19
+    },
+    {
+      "id": "020",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_020.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_020.png",
+      "sourceTimes": {
+        "question": 544.0,
+        "answer": 554.666667
+      },
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "021",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_021.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_021.png",
+      "sourceTimes": {
+        "question": 565.333333,
+        "answer": 570.666667
+      },
+      "sourceQuestionNumber": 21
+    },
+    {
+      "id": "022",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_022.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_022.png",
+      "sourceTimes": {
+        "question": 588.0,
+        "answer": 597.333333
+      },
+      "sourceQuestionNumber": 22
+    },
+    {
+      "id": "023",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_023.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_023.png",
+      "sourceTimes": {
+        "question": 621.333333,
+        "answer": 637.333333
+      },
+      "sourceQuestionNumber": 23
+    },
+    {
+      "id": "024",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_024.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_024.png",
+      "sourceTimes": {
+        "question": 650.666667,
+        "answer": 656.0
+      },
+      "sourceQuestionNumber": 24
+    },
+    {
+      "id": "025",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_025.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_025.png",
+      "sourceTimes": {
+        "question": 666.666667,
+        "answer": 688.0
+      },
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "026",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_026.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_026.png",
+      "sourceTimes": {
+        "question": 714.666667,
+        "answer": 730.666667
+      },
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "027",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_027.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_027.png",
+      "sourceTimes": {
+        "question": 746.666667,
+        "answer": 758.666667
+      },
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "028",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_028.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_028.png",
+      "sourceTimes": {
+        "question": 776.0,
+        "answer": 789.333333
+      },
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "029",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_029.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_029.png",
+      "sourceTimes": {
+        "question": 805.333333,
+        "answer": 818.666667
+      },
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "030",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_030.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_030.png",
+      "sourceTimes": {
+        "question": 837.333333,
+        "answer": 850.666667
+      },
+      "sourceQuestionNumber": 30
+    },
+    {
+      "id": "031",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_031.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_031.png",
+      "sourceTimes": {
+        "question": 874.666667,
+        "answer": 885.333333
+      },
+      "sourceQuestionNumber": 31
+    },
+    {
+      "id": "032",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_032.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_032.png",
+      "sourceTimes": {
+        "question": 901.333333,
+        "answer": 912.0
+      },
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "033",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_033.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_033.png",
+      "sourceTimes": {
+        "question": 928.0,
+        "answer": 944.0
+      },
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "034",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_034.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_034.png",
+      "sourceTimes": {
+        "question": 960.0,
+        "answer": 970.666667
+      },
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "035",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_035.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_035.png",
+      "sourceTimes": {
+        "question": 986.666667,
+        "answer": 1002.666667
+      },
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "036",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_036.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_036.png",
+      "sourceTimes": {
+        "question": 1018.666667,
+        "answer": 1029.333333
+      },
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "037",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_037.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_037.png",
+      "sourceTimes": {
+        "question": 1048.0,
+        "answer": 1056.0
+      },
+      "sourceQuestionNumber": 37
+    },
+    {
+      "id": "038",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_038.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_038.png",
+      "sourceTimes": {
+        "question": 1077.333333,
+        "answer": 1088.0
+      },
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "039",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_039.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_039.png",
+      "sourceTimes": {
+        "question": 1104.0,
+        "answer": 1114.666667
+      },
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "040",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_040.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_040.png",
+      "sourceTimes": {
+        "question": 1125.333333,
+        "answer": 1136.0
+      },
+      "sourceQuestionNumber": 40
+    },
+    {
+      "id": "041",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_041.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_041.png",
+      "sourceTimes": {
+        "question": 1152.0,
+        "answer": 1157.333333
+      },
+      "sourceQuestionNumber": 41
+    },
+    {
+      "id": "042",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_042.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_042.png",
+      "sourceTimes": {
+        "question": 1173.333333,
+        "answer": 1182.666667
+      },
+      "sourceQuestionNumber": 42
+    },
+    {
+      "id": "043",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_043.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_043.png",
+      "sourceTimes": {
+        "question": 1200.0,
+        "answer": 1210.666667
+      },
+      "sourceQuestionNumber": 43
+    },
+    {
+      "id": "044",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_044.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_044.png",
+      "sourceTimes": {
+        "question": 1237.333333,
+        "answer": 1248.0
+      },
+      "sourceQuestionNumber": 44
+    },
+    {
+      "id": "045",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_045.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_045.png",
+      "sourceTimes": {
+        "question": 1273.333333,
+        "answer": 1285.333333
+      },
+      "sourceQuestionNumber": 45
+    },
+    {
+      "id": "046",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_046.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_046.png",
+      "sourceTimes": {
+        "question": 1318.666667,
+        "answer": 1329.333333
+      },
+      "sourceQuestionNumber": 46
+    },
+    {
+      "id": "047",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_047.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_047.png",
+      "sourceTimes": {
+        "question": 1349.333333,
+        "answer": 1360.0
+      },
+      "sourceQuestionNumber": 47
+    },
+    {
+      "id": "048",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_048.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_048.png",
+      "sourceTimes": {
+        "question": 1376.0,
+        "answer": 1392.0
+      },
+      "sourceQuestionNumber": 48
+    },
+    {
+      "id": "049",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_049.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_049.png",
+      "sourceTimes": {
+        "question": 1413.333333,
+        "answer": 1418.666667
+      },
+      "sourceQuestionNumber": 49
+    },
+    {
+      "id": "050",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_050.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_050.png",
+      "sourceTimes": {
+        "question": 1440.0,
+        "answer": 1449.333333
+      },
+      "sourceQuestionNumber": 50
+    },
+    {
+      "id": "051",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_051.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_051.png",
+      "sourceTimes": {
+        "question": 1465.333333,
+        "answer": 1472.0
+      },
+      "sourceQuestionNumber": 51
+    },
+    {
+      "id": "052",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_052.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_052.png",
+      "sourceTimes": {
+        "question": 1493.333333,
+        "answer": 1504.0
+      },
+      "sourceQuestionNumber": 52
+    },
+    {
+      "id": "053",
+      "chapter": "world-written",
+      "question": "images_09/social-geography-world-written-53-01/question_053.png",
+      "answer": "images_09/social-geography-world-written-53-01/answer_053.png",
+      "sourceTimes": {
+        "question": 1537.333333,
+        "answer": 1548.0
+      },
+      "sourceQuestionNumber": 53
+    }
+  ],
+  "series": "written",
+  "source": "https://www.youtube.com/watch?v=-KpSImIXiZo",
+  "sourceTitle": "【中学地理 記述問題一問一答】世界編53問｜定期テスト・高校受験対策｜苦手克服",
+  "count": 53
+}

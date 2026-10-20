@@ -1,0 +1,261 @@
+{
+  "id": "social-geography-world-selection-02",
+  "subject": "social",
+  "field": "geography",
+  "title": "高校入試 過去問｜地理 選択問題 世界編②",
+  "grade": "中学地理",
+  "description": "全国高校入試の世界地理選択問題。問題と図解つき解答24問。",
+  "cover": "images_09/social-geography-world-selection-02/question_001.png",
+  "chapters": [
+    {
+      "id": "world",
+      "title": "世界の地理"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_001.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_001.png",
+      "sourceTimes": {
+        "question": 20.0,
+        "answer": 80.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_002.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_002.png",
+      "sourceTimes": {
+        "question": 94.0,
+        "answer": 139.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_003.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_003.png",
+      "sourceTimes": {
+        "question": 148.0,
+        "answer": 186.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_004.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_004.png",
+      "sourceTimes": {
+        "question": 199.0,
+        "answer": 257.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_005.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_005.png",
+      "sourceTimes": {
+        "question": 268.0,
+        "answer": 329.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_006.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_006.png",
+      "sourceTimes": {
+        "question": 341.0,
+        "answer": 409.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_007.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_007.png",
+      "sourceTimes": {
+        "question": 420.0,
+        "answer": 468.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_008.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_008.png",
+      "sourceTimes": {
+        "question": 478.0,
+        "answer": 599.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_009.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_009.png",
+      "sourceTimes": {
+        "question": 611.0,
+        "answer": 660.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_010.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_010.png",
+      "sourceTimes": {
+        "question": 673.0,
+        "answer": 716.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_011.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_011.png",
+      "sourceTimes": {
+        "question": 728.0,
+        "answer": 777.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_012.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_012.png",
+      "sourceTimes": {
+        "question": 794.0,
+        "answer": 890.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_013.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_013.png",
+      "sourceTimes": {
+        "question": 900.0,
+        "answer": 952.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_014.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_014.png",
+      "sourceTimes": {
+        "question": 962.0,
+        "answer": 997.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_015.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_015.png",
+      "sourceTimes": {
+        "question": 1007.0,
+        "answer": 1061.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_016.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_016.png",
+      "sourceTimes": {
+        "question": 1069.0,
+        "answer": 1093.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_017.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_017.png",
+      "sourceTimes": {
+        "question": 1101.0,
+        "answer": 1187.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_018.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_018.png",
+      "sourceTimes": {
+        "question": 1196.0,
+        "answer": 1255.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_019.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_019.png",
+      "sourceTimes": {
+        "question": 1268.0,
+        "answer": 1419.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_020.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_020.png",
+      "sourceTimes": {
+        "question": 1428.0,
+        "answer": 1471.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_021.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_021.png",
+      "sourceTimes": {
+        "question": 1484.0,
+        "answer": 1530.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_022.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_022.png",
+      "sourceTimes": {
+        "question": 1540.0,
+        "answer": 1619.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_023.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_023.png",
+      "sourceTimes": {
+        "question": 1628.0,
+        "answer": 1695.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "world",
+      "question": "images_09/social-geography-world-selection-02/question_024.png",
+      "answer": "images_09/social-geography-world-selection-02/answer_024.png",
+      "sourceTimes": {
+        "question": 1708.0,
+        "answer": 1744.0
+      }
+    }
+  ],
+  "series": "past",
+  "source": "https://www.youtube.com/watch?v=GF5n3m2JZ_U",
+  "sourceTitle": "地理選択問題・世界編②",
+  "count": 24
+}

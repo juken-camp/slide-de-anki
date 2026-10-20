@@ -1,0 +1,621 @@
+{
+  "id": "history-descriptive-edo-heisei-60",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史の記述問題（後編）｜江戸～平成",
+  "grade": "中学歴史",
+  "description": "江戸時代から平成までの記述問題60問。元動画の問題画面と解答画面で学習します。",
+  "cover": "images_09/history-descriptive-edo-heisei-60/question_001.png",
+  "chapters": [
+    {
+      "id": "history-late",
+      "title": "江戸～平成"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_001.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_001.png",
+      "sourceTimes": {
+        "question": 30.0,
+        "answer": 40.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_002.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_002.png",
+      "sourceTimes": {
+        "question": 55.0,
+        "answer": 65.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_003.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_003.png",
+      "sourceTimes": {
+        "question": 75.0,
+        "answer": 80.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_004.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_004.png",
+      "sourceTimes": {
+        "question": 95.0,
+        "answer": 105.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_005.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_005.png",
+      "sourceTimes": {
+        "question": 115.0,
+        "answer": 120.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_006.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_006.png",
+      "sourceTimes": {
+        "question": 135.0,
+        "answer": 140.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_007.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_007.png",
+      "sourceTimes": {
+        "question": 155.0,
+        "answer": 165.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_008.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_008.png",
+      "sourceTimes": {
+        "question": 180.0,
+        "answer": 190.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_009.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_009.png",
+      "sourceTimes": {
+        "question": 200.0,
+        "answer": 205.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_010.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_010.png",
+      "sourceTimes": {
+        "question": 220.0,
+        "answer": 230.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_011.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_011.png",
+      "sourceTimes": {
+        "question": 240.0,
+        "answer": 245.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_012.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_012.png",
+      "sourceTimes": {
+        "question": 255.0,
+        "answer": 265.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_013.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_013.png",
+      "sourceTimes": {
+        "question": 285.0,
+        "answer": 295.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_014.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_014.png",
+      "sourceTimes": {
+        "question": 315.0,
+        "answer": 325.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_015.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_015.png",
+      "sourceTimes": {
+        "question": 340.0,
+        "answer": 350.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_016.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_016.png",
+      "sourceTimes": {
+        "question": 375.0,
+        "answer": 385.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_017.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_017.png",
+      "sourceTimes": {
+        "question": 400.0,
+        "answer": 410.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_018.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_018.png",
+      "sourceTimes": {
+        "question": 425.0,
+        "answer": 435.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_019.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_019.png",
+      "sourceTimes": {
+        "question": 455.0,
+        "answer": 465.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_020.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_020.png",
+      "sourceTimes": {
+        "question": 475.0,
+        "answer": 485.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_021.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_021.png",
+      "sourceTimes": {
+        "question": 500.0,
+        "answer": 515.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_022.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_022.png",
+      "sourceTimes": {
+        "question": 530.0,
+        "answer": 535.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_023.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_023.png",
+      "sourceTimes": {
+        "question": 555.0,
+        "answer": 565.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_024.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_024.png",
+      "sourceTimes": {
+        "question": 575.0,
+        "answer": 585.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_025.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_025.png",
+      "sourceTimes": {
+        "question": 605.0,
+        "answer": 615.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_026.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_026.png",
+      "sourceTimes": {
+        "question": 635.0,
+        "answer": 650.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_027.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_027.png",
+      "sourceTimes": {
+        "question": 670.0,
+        "answer": 680.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_028.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_028.png",
+      "sourceTimes": {
+        "question": 695.0,
+        "answer": 705.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_029.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_029.png",
+      "sourceTimes": {
+        "question": 720.0,
+        "answer": 725.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_030.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_030.png",
+      "sourceTimes": {
+        "question": 740.0,
+        "answer": 745.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_031.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_031.png",
+      "sourceTimes": {
+        "question": 760.0,
+        "answer": 770.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_032.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_032.png",
+      "sourceTimes": {
+        "question": 785.0,
+        "answer": 795.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_033.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_033.png",
+      "sourceTimes": {
+        "question": 810.0,
+        "answer": 820.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_034.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_034.png",
+      "sourceTimes": {
+        "question": 835.0,
+        "answer": 840.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_035.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_035.png",
+      "sourceTimes": {
+        "question": 860.0,
+        "answer": 870.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_036.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_036.png",
+      "sourceTimes": {
+        "question": 885.0,
+        "answer": 895.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_037.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_037.png",
+      "sourceTimes": {
+        "question": 910.0,
+        "answer": 920.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_038.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_038.png",
+      "sourceTimes": {
+        "question": 930.0,
+        "answer": 940.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_039.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_039.png",
+      "sourceTimes": {
+        "question": 965.0,
+        "answer": 975.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_040.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_040.png",
+      "sourceTimes": {
+        "question": 990.0,
+        "answer": 1000.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_041.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_041.png",
+      "sourceTimes": {
+        "question": 1010.0,
+        "answer": 1020.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_042.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_042.png",
+      "sourceTimes": {
+        "question": 1040.0,
+        "answer": 1050.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_043.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_043.png",
+      "sourceTimes": {
+        "question": 1065.0,
+        "answer": 1075.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_044.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_044.png",
+      "sourceTimes": {
+        "question": 1090.0,
+        "answer": 1100.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_045.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_045.png",
+      "sourceTimes": {
+        "question": 1115.0,
+        "answer": 1130.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_046.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_046.png",
+      "sourceTimes": {
+        "question": 1150.0,
+        "answer": 1160.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_047.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_047.png",
+      "sourceTimes": {
+        "question": 1175.0,
+        "answer": 1185.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_048.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_048.png",
+      "sourceTimes": {
+        "question": 1200.0,
+        "answer": 1205.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_049.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_049.png",
+      "sourceTimes": {
+        "question": 1220.0,
+        "answer": 1230.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_050.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_050.png",
+      "sourceTimes": {
+        "question": 1250.0,
+        "answer": 1260.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_051.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_051.png",
+      "sourceTimes": {
+        "question": 1280.0,
+        "answer": 1295.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_052.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_052.png",
+      "sourceTimes": {
+        "question": 1315.0,
+        "answer": 1320.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_053.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_053.png",
+      "sourceTimes": {
+        "question": 1335.0,
+        "answer": 1345.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_054.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_054.png",
+      "sourceTimes": {
+        "question": 1360.0,
+        "answer": 1370.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_055.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_055.png",
+      "sourceTimes": {
+        "question": 1395.0,
+        "answer": 1405.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_056.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_056.png",
+      "sourceTimes": {
+        "question": 1425.0,
+        "answer": 1435.0
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_057.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_057.png",
+      "sourceTimes": {
+        "question": 1450.0,
+        "answer": 1455.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_058.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_058.png",
+      "sourceTimes": {
+        "question": 1475.0,
+        "answer": 1480.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_059.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_059.png",
+      "sourceTimes": {
+        "question": 1500.0,
+        "answer": 1510.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "history-late",
+      "question": "images_09/history-descriptive-edo-heisei-60/question_060.png",
+      "answer": "images_09/history-descriptive-edo-heisei-60/answer_060.png",
+      "sourceTimes": {
+        "question": 1525.0,
+        "answer": 1535.0
+      }
+    }
+  ],
+  "series": "written",
+  "source": "https://www.youtube.com/watch?v=8V3Q37TTEf0",
+  "sourceTitle": "中学歴史・記述問題一問一答 後編「江戸～平成」",
+  "count": 60
+}

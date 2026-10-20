@@ -1,0 +1,825 @@
+{
+  "id": "social-geography-japan-frequent-questions-71-01",
+  "subject": "social",
+  "field": "geography",
+  "title": "高校入試 頻出問題｜地理 日本編",
+  "grade": "中学地理",
+  "description": "高校入試対策の日本地理。元動画の設問番号1〜71のうち欠番37を除いた、実収録70問。問題・正解と図解を画像で学ぶ。",
+  "cover": "images_09/social-geography-japan-frequent-questions-71-01/question_001.png",
+  "chapters": [
+    {
+      "id": "japan-basics",
+      "title": "日本の国土・産業・地図"
+    },
+    {
+      "id": "kyushu",
+      "title": "九州地方"
+    },
+    {
+      "id": "chugoku-shikoku",
+      "title": "中国・四国地方"
+    },
+    {
+      "id": "kinki",
+      "title": "近畿地方"
+    },
+    {
+      "id": "chubu",
+      "title": "中部地方"
+    },
+    {
+      "id": "kanto",
+      "title": "関東地方"
+    },
+    {
+      "id": "tohoku",
+      "title": "東北地方"
+    },
+    {
+      "id": "hokkaido",
+      "title": "北海道地方"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_001.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_001.png",
+      "sourceTimes": {
+        "question": 35.0,
+        "answer": 60.0
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_002.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_002.png",
+      "sourceTimes": {
+        "question": 70.0,
+        "answer": 85.0
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_003.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_003.png",
+      "sourceTimes": {
+        "question": 95.0,
+        "answer": 110.0
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_004.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_004.png",
+      "sourceTimes": {
+        "question": 125.0,
+        "answer": 135.0
+      },
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_005.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_005.png",
+      "sourceTimes": {
+        "question": 145.0,
+        "answer": 155.0
+      },
+      "sourceQuestionNumber": 5
+    },
+    {
+      "id": "006",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_006.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_006.png",
+      "sourceTimes": {
+        "question": 170.0,
+        "answer": 200.0
+      },
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "007",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_007.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_007.png",
+      "sourceTimes": {
+        "question": 210.0,
+        "answer": 230.0
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "008",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_008.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_008.png",
+      "sourceTimes": {
+        "question": 245.0,
+        "answer": 270.0
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "009",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_009.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_009.png",
+      "sourceTimes": {
+        "question": 280.0,
+        "answer": 295.0
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "010",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_010.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_010.png",
+      "sourceTimes": {
+        "question": 310.0,
+        "answer": 335.0
+      },
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "011",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_011.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_011.png",
+      "sourceTimes": {
+        "question": 350.0,
+        "answer": 380.0
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "012",
+      "chapter": "japan-basics",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_012.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_012.png",
+      "sourceTimes": {
+        "question": 395.0,
+        "answer": 410.0
+      },
+      "sourceQuestionNumber": 12
+    },
+    {
+      "id": "013",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_013.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_013.png",
+      "sourceTimes": {
+        "question": 425.0,
+        "answer": 440.0
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "014",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_014.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_014.png",
+      "sourceTimes": {
+        "question": 450.0,
+        "answer": 465.0
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "015",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_015.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_015.png",
+      "sourceTimes": {
+        "question": 475.0,
+        "answer": 490.0
+      },
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "016",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_016.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_016.png",
+      "sourceTimes": {
+        "question": 500.0,
+        "answer": 510.0
+      },
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "017",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_017.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_017.png",
+      "sourceTimes": {
+        "question": 520.0,
+        "answer": 535.0
+      },
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "018",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_018.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_018.png",
+      "sourceTimes": {
+        "question": 550.0,
+        "answer": 570.0
+      },
+      "sourceQuestionNumber": 18
+    },
+    {
+      "id": "019",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_019.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_019.png",
+      "sourceTimes": {
+        "question": 585.0,
+        "answer": 620.0
+      },
+      "sourceQuestionNumber": 19
+    },
+    {
+      "id": "020",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_020.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_020.png",
+      "sourceTimes": {
+        "question": 635.0,
+        "answer": 650.0
+      },
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "021",
+      "chapter": "kyushu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_021.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_021.png",
+      "sourceTimes": {
+        "question": 660.0,
+        "answer": 675.0
+      },
+      "sourceQuestionNumber": 21
+    },
+    {
+      "id": "022",
+      "chapter": "chugoku-shikoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_022.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_022.png",
+      "sourceTimes": {
+        "question": 690.0,
+        "answer": 705.0
+      },
+      "sourceQuestionNumber": 22
+    },
+    {
+      "id": "023",
+      "chapter": "chugoku-shikoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_023.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_023.png",
+      "sourceTimes": {
+        "question": 720.0,
+        "answer": 745.0
+      },
+      "sourceQuestionNumber": 23
+    },
+    {
+      "id": "024",
+      "chapter": "chugoku-shikoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_024.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_024.png",
+      "sourceTimes": {
+        "question": 760.0,
+        "answer": 820.0
+      },
+      "sourceQuestionNumber": 24
+    },
+    {
+      "id": "025",
+      "chapter": "chugoku-shikoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_025.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_025.png",
+      "sourceTimes": {
+        "question": 835.0,
+        "answer": 885.0
+      },
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "026",
+      "chapter": "chugoku-shikoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_026.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_026.png",
+      "sourceTimes": {
+        "question": 900.0,
+        "answer": 925.0
+      },
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "027",
+      "chapter": "chugoku-shikoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_027.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_027.png",
+      "sourceTimes": {
+        "question": 940.0,
+        "answer": 965.0
+      },
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "028",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_028.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_028.png",
+      "sourceTimes": {
+        "question": 980.0,
+        "answer": 1015.0
+      },
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "029",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_029.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_029.png",
+      "sourceTimes": {
+        "question": 1025.0,
+        "answer": 1040.0
+      },
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "030",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_030.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_030.png",
+      "sourceTimes": {
+        "question": 1055.0,
+        "answer": 1070.0
+      },
+      "sourceQuestionNumber": 30,
+      "correctedFaces": [
+        "answer"
+      ]
+    },
+    {
+      "id": "031",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_031.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_031.png",
+      "sourceTimes": {
+        "question": 1080.0,
+        "answer": 1100.0
+      },
+      "sourceQuestionNumber": 31
+    },
+    {
+      "id": "032",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_032.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_032.png",
+      "sourceTimes": {
+        "question": 1110.0,
+        "answer": 1120.0
+      },
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "033",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_033.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_033.png",
+      "sourceTimes": {
+        "question": 1135.0,
+        "answer": 1170.0
+      },
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "034",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_034.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_034.png",
+      "sourceTimes": {
+        "question": 1180.0,
+        "answer": 1185.0
+      },
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "035",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_035.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_035.png",
+      "sourceTimes": {
+        "question": 1205.0,
+        "answer": 1235.0
+      },
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "036",
+      "chapter": "kinki",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_036.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_036.png",
+      "sourceTimes": {
+        "question": 1255.0,
+        "answer": 1275.0
+      },
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "037",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_037.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_037.png",
+      "sourceTimes": {
+        "question": 1295.0,
+        "answer": 1315.0
+      },
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "038",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_038.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_038.png",
+      "sourceTimes": {
+        "question": 1330.0,
+        "answer": 1350.0
+      },
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "039",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_039.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_039.png",
+      "sourceTimes": {
+        "question": 1365.0,
+        "answer": 1380.0
+      },
+      "sourceQuestionNumber": 40
+    },
+    {
+      "id": "040",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_040.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_040.png",
+      "sourceTimes": {
+        "question": 1395.0,
+        "answer": 1430.0
+      },
+      "sourceQuestionNumber": 41
+    },
+    {
+      "id": "041",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_041.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_041.png",
+      "sourceTimes": {
+        "question": 1450.0,
+        "answer": 1470.0
+      },
+      "sourceQuestionNumber": 42
+    },
+    {
+      "id": "042",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_042.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_042.png",
+      "sourceTimes": {
+        "question": 1485.0,
+        "answer": 1515.0
+      },
+      "sourceQuestionNumber": 43
+    },
+    {
+      "id": "043",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_043.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_043.png",
+      "sourceTimes": {
+        "question": 1525.0,
+        "answer": 1540.0
+      },
+      "sourceQuestionNumber": 44
+    },
+    {
+      "id": "044",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_044.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_044.png",
+      "sourceTimes": {
+        "question": 1555.0,
+        "answer": 1585.0
+      },
+      "sourceQuestionNumber": 45
+    },
+    {
+      "id": "045",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_045.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_045.png",
+      "sourceTimes": {
+        "question": 1600.0,
+        "answer": 1620.0
+      },
+      "sourceQuestionNumber": 46
+    },
+    {
+      "id": "046",
+      "chapter": "chubu",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_046.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_046.png",
+      "sourceTimes": {
+        "question": 1630.0,
+        "answer": 1645.0
+      },
+      "sourceQuestionNumber": 47
+    },
+    {
+      "id": "047",
+      "chapter": "kanto",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_047.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_047.png",
+      "sourceTimes": {
+        "question": 1660.0,
+        "answer": 1680.0
+      },
+      "sourceQuestionNumber": 48
+    },
+    {
+      "id": "048",
+      "chapter": "kanto",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_048.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_048.png",
+      "sourceTimes": {
+        "question": 1690.0,
+        "answer": 1700.0
+      },
+      "sourceQuestionNumber": 49
+    },
+    {
+      "id": "049",
+      "chapter": "kanto",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_049.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_049.png",
+      "sourceTimes": {
+        "question": 1710.0,
+        "answer": 1725.0
+      },
+      "sourceQuestionNumber": 50
+    },
+    {
+      "id": "050",
+      "chapter": "kanto",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_050.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_050.png",
+      "sourceTimes": {
+        "question": 1735.0,
+        "answer": 1750.0
+      },
+      "sourceQuestionNumber": 51
+    },
+    {
+      "id": "051",
+      "chapter": "kanto",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_051.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_051.png",
+      "sourceTimes": {
+        "question": 1760.0,
+        "answer": 1780.0
+      },
+      "sourceQuestionNumber": 52
+    },
+    {
+      "id": "052",
+      "chapter": "kanto",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_052.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_052.png",
+      "sourceTimes": {
+        "question": 1790.0,
+        "answer": 1805.0
+      },
+      "sourceQuestionNumber": 53
+    },
+    {
+      "id": "053",
+      "chapter": "kanto",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_053.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_053.png",
+      "sourceTimes": {
+        "question": 1820.0,
+        "answer": 1845.0
+      },
+      "sourceQuestionNumber": 54
+    },
+    {
+      "id": "054",
+      "chapter": "kanto",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_054.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_054.png",
+      "sourceTimes": {
+        "question": 1860.0,
+        "answer": 1880.0
+      },
+      "sourceQuestionNumber": 55
+    },
+    {
+      "id": "055",
+      "chapter": "tohoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_055.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_055.png",
+      "sourceTimes": {
+        "question": 1895.0,
+        "answer": 1915.0
+      },
+      "sourceQuestionNumber": 56
+    },
+    {
+      "id": "056",
+      "chapter": "tohoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_056.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_056.png",
+      "sourceTimes": {
+        "question": 1925.0,
+        "answer": 1935.0
+      },
+      "sourceQuestionNumber": 57
+    },
+    {
+      "id": "057",
+      "chapter": "tohoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_057.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_057.png",
+      "sourceTimes": {
+        "question": 1945.0,
+        "answer": 1960.0
+      },
+      "sourceQuestionNumber": 58
+    },
+    {
+      "id": "058",
+      "chapter": "tohoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_058.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_058.png",
+      "sourceTimes": {
+        "question": 1970.0,
+        "answer": 1985.0
+      },
+      "sourceQuestionNumber": 59
+    },
+    {
+      "id": "059",
+      "chapter": "tohoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_059.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_059.png",
+      "sourceTimes": {
+        "question": 2000.0,
+        "answer": 2040.0
+      },
+      "sourceQuestionNumber": 60
+    },
+    {
+      "id": "060",
+      "chapter": "tohoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_060.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_060.png",
+      "sourceTimes": {
+        "question": 2050.0,
+        "answer": 2070.0
+      },
+      "sourceQuestionNumber": 61
+    },
+    {
+      "id": "061",
+      "chapter": "tohoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_061.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_061.png",
+      "sourceTimes": {
+        "question": 2080.0,
+        "answer": 2089.0
+      },
+      "sourceQuestionNumber": 62
+    },
+    {
+      "id": "062",
+      "chapter": "tohoku",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_062.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_062.png",
+      "sourceTimes": {
+        "question": 2100.0,
+        "answer": 2110.0
+      },
+      "sourceQuestionNumber": 63
+    },
+    {
+      "id": "063",
+      "chapter": "hokkaido",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_063.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_063.png",
+      "sourceTimes": {
+        "question": 2130.0,
+        "answer": 2140.0
+      },
+      "sourceQuestionNumber": 64
+    },
+    {
+      "id": "064",
+      "chapter": "hokkaido",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_064.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_064.png",
+      "sourceTimes": {
+        "question": 2155.0,
+        "answer": 2185.0
+      },
+      "sourceQuestionNumber": 65
+    },
+    {
+      "id": "065",
+      "chapter": "hokkaido",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_065.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_065.png",
+      "sourceTimes": {
+        "question": 2195.0,
+        "answer": 2210.0
+      },
+      "sourceQuestionNumber": 66
+    },
+    {
+      "id": "066",
+      "chapter": "hokkaido",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_066.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_066.png",
+      "sourceTimes": {
+        "question": 2225.0,
+        "answer": 2250.0
+      },
+      "sourceQuestionNumber": 67
+    },
+    {
+      "id": "067",
+      "chapter": "hokkaido",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_067.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_067.png",
+      "sourceTimes": {
+        "question": 2265.0,
+        "answer": 2295.0
+      },
+      "sourceQuestionNumber": 68
+    },
+    {
+      "id": "068",
+      "chapter": "hokkaido",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_068.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_068.png",
+      "sourceTimes": {
+        "question": 2310.0,
+        "answer": 2340.0
+      },
+      "sourceQuestionNumber": 69
+    },
+    {
+      "id": "069",
+      "chapter": "hokkaido",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_069.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_069.png",
+      "sourceTimes": {
+        "question": 2345.1,
+        "answer": 2370.0
+      },
+      "sourceQuestionNumber": 70
+    },
+    {
+      "id": "070",
+      "chapter": "hokkaido",
+      "question": "images_09/social-geography-japan-frequent-questions-71-01/question_070.png",
+      "answer": "images_09/social-geography-japan-frequent-questions-71-01/answer_070.png",
+      "sourceTimes": {
+        "question": 2385.0,
+        "answer": 2399.5
+      },
+      "sourceQuestionNumber": 71
+    }
+  ],
+  "series": "frequent",
+  "source": "https://www.youtube.com/watch?v=CSTPhJrvLGY",
+  "sourceTitle": "【地理一問一答】日本編｜高校入試対策71問｜よく出る問題と、よく出る問題を解くための知識を増やす動画！",
+  "count": 70,
+  "sourceMissingNumbers": [
+    37
+  ]
+}

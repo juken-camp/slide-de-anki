@@ -1,0 +1,571 @@
+{
+  "id": "history-jomon-heian-choice-01",
+  "subject": "social",
+  "field": "history",
+  "title": "高校入試 過去問｜歴史 選択問題① 縄文～平安",
+  "grade": "中学歴史",
+  "description": "高校入試過去問から、縄文～平安までの歴史選択問題50問を図解とともに学ぶ。",
+  "cover": "images_10/history-jomon-heian-choice-01/question_001.png",
+  "chapters": [
+    {
+      "id": "history",
+      "title": "縄文～平安"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_001.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_001.png",
+      "sourceTimes": {
+        "question": 35.0,
+        "answer": 65.0
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_002.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_002.png",
+      "sourceTimes": {
+        "question": 80.0,
+        "answer": 120.0
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_003.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_003.png",
+      "sourceTimes": {
+        "question": 130.0,
+        "answer": 205.0
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_004.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_004.png",
+      "sourceTimes": {
+        "question": 215.0,
+        "answer": 270.0
+      },
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_005.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_005.png",
+      "sourceTimes": {
+        "question": 280.0,
+        "answer": 345.0
+      },
+      "sourceQuestionNumber": 5
+    },
+    {
+      "id": "006",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_006.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_006.png",
+      "sourceTimes": {
+        "question": 355.0,
+        "answer": 415.0
+      },
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "007",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_007.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_007.png",
+      "sourceTimes": {
+        "question": 425.0,
+        "answer": 470.0
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "008",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_008.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_008.png",
+      "sourceTimes": {
+        "question": 480.0,
+        "answer": 510.0
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "009",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_009.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_009.png",
+      "sourceTimes": {
+        "question": 520.0,
+        "answer": 570.0
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "010",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_010.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_010.png",
+      "sourceTimes": {
+        "question": 580.0,
+        "answer": 625.0
+      },
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "011",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_011.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_011.png",
+      "sourceTimes": {
+        "question": 635.0,
+        "answer": 700.0
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "012",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_012.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_012.png",
+      "sourceTimes": {
+        "question": 710.0,
+        "answer": 785.0
+      },
+      "sourceQuestionNumber": 12
+    },
+    {
+      "id": "013",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_013.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_013.png",
+      "sourceTimes": {
+        "question": 795.0,
+        "answer": 860.0
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "014",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_014.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_014.png",
+      "sourceTimes": {
+        "question": 870.0,
+        "answer": 920.0
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "015",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_015.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_015.png",
+      "sourceTimes": {
+        "question": 935.0,
+        "answer": 980.0
+      },
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "016",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_016.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_016.png",
+      "sourceTimes": {
+        "question": 990.0,
+        "answer": 1015.0
+      },
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "017",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_017.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_017.png",
+      "sourceTimes": {
+        "question": 1025.0,
+        "answer": 1095.0
+      },
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "018",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_018.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_018.png",
+      "sourceTimes": {
+        "question": 1110.0,
+        "answer": 1185.0
+      },
+      "sourceQuestionNumber": 18
+    },
+    {
+      "id": "019",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_019.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_019.png",
+      "sourceTimes": {
+        "question": 1195.0,
+        "answer": 1235.0
+      },
+      "sourceQuestionNumber": 19
+    },
+    {
+      "id": "020",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_020.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_020.png",
+      "sourceTimes": {
+        "question": 1245.0,
+        "answer": 1330.0
+      },
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "021",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_021.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_021.png",
+      "sourceTimes": {
+        "question": 1340.0,
+        "answer": 1415.0
+      },
+      "sourceQuestionNumber": 21
+    },
+    {
+      "id": "022",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_022.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_022.png",
+      "sourceTimes": {
+        "question": 1425.0,
+        "answer": 1460.0
+      },
+      "sourceQuestionNumber": 22
+    },
+    {
+      "id": "023",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_023.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_023.png",
+      "sourceTimes": {
+        "question": 1475.0,
+        "answer": 1530.0
+      },
+      "sourceQuestionNumber": 23
+    },
+    {
+      "id": "024",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_024.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_024.png",
+      "sourceTimes": {
+        "question": 1540.0,
+        "answer": 1565.0
+      },
+      "sourceQuestionNumber": 24
+    },
+    {
+      "id": "025",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_025.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_025.png",
+      "sourceTimes": {
+        "question": 1575.0,
+        "answer": 1640.0
+      },
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "026",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_026.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_026.png",
+      "sourceTimes": {
+        "question": 1650.0,
+        "answer": 1700.0
+      },
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "027",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_027.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_027.png",
+      "sourceTimes": {
+        "question": 1710.0,
+        "answer": 1765.0
+      },
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "028",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_028.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_028.png",
+      "sourceTimes": {
+        "question": 1775.0,
+        "answer": 1805.0
+      },
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "029",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_029.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_029.png",
+      "sourceTimes": {
+        "question": 1815.0,
+        "answer": 1875.0
+      },
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "030",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_030.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_030.png",
+      "sourceTimes": {
+        "question": 1890.0,
+        "answer": 1935.0
+      },
+      "sourceQuestionNumber": 30
+    },
+    {
+      "id": "031",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_031.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_031.png",
+      "sourceTimes": {
+        "question": 1945.0,
+        "answer": 2010.0
+      },
+      "sourceQuestionNumber": 31
+    },
+    {
+      "id": "032",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_032.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_032.png",
+      "sourceTimes": {
+        "question": 2020.0,
+        "answer": 2065.0
+      },
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "033",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_033.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_033.png",
+      "sourceTimes": {
+        "question": 2075.0,
+        "answer": 2170.0
+      },
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "034",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_034.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_034.png",
+      "sourceTimes": {
+        "question": 2185.0,
+        "answer": 2250.0
+      },
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "035",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_035.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_035.png",
+      "sourceTimes": {
+        "question": 2260.0,
+        "answer": 2325.0
+      },
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "036",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_036.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_036.png",
+      "sourceTimes": {
+        "question": 2345.0,
+        "answer": 2375.0
+      },
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "037",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_037.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_037.png",
+      "sourceTimes": {
+        "question": 2385.0,
+        "answer": 2455.0
+      },
+      "sourceQuestionNumber": 37
+    },
+    {
+      "id": "038",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_038.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_038.png",
+      "sourceTimes": {
+        "question": 2465.0,
+        "answer": 2535.0
+      },
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "039",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_039.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_039.png",
+      "sourceTimes": {
+        "question": 2550.0,
+        "answer": 2610.0
+      },
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "040",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_040.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_040.png",
+      "sourceTimes": {
+        "question": 2620.0,
+        "answer": 2675.0
+      },
+      "sourceQuestionNumber": 40
+    },
+    {
+      "id": "041",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_041.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_041.png",
+      "sourceTimes": {
+        "question": 2685.0,
+        "answer": 2750.0
+      },
+      "sourceQuestionNumber": 41
+    },
+    {
+      "id": "042",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_042.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_042.png",
+      "sourceTimes": {
+        "question": 2760.0,
+        "answer": 2815.0
+      },
+      "sourceQuestionNumber": 42
+    },
+    {
+      "id": "043",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_043.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_043.png",
+      "sourceTimes": {
+        "question": 2825.0,
+        "answer": 2875.0
+      },
+      "sourceQuestionNumber": 43
+    },
+    {
+      "id": "044",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_044.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_044.png",
+      "sourceTimes": {
+        "question": 2885.0,
+        "answer": 2930.0
+      },
+      "sourceQuestionNumber": 44
+    },
+    {
+      "id": "045",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_045.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_045.png",
+      "sourceTimes": {
+        "question": 2940.0,
+        "answer": 3020.0
+      },
+      "sourceQuestionNumber": 45
+    },
+    {
+      "id": "046",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_046.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_046.png",
+      "sourceTimes": {
+        "question": 3030.0,
+        "answer": 3080.0
+      },
+      "sourceQuestionNumber": 46
+    },
+    {
+      "id": "047",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_047.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_047.png",
+      "sourceTimes": {
+        "question": 3090.0,
+        "answer": 3170.0
+      },
+      "sourceQuestionNumber": 47
+    },
+    {
+      "id": "048",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_048.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_048.png",
+      "sourceTimes": {
+        "question": 3180.0,
+        "answer": 3220.0
+      },
+      "sourceQuestionNumber": 48
+    },
+    {
+      "id": "049",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_049.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_049.png",
+      "sourceTimes": {
+        "question": 3230.0,
+        "answer": 3295.0
+      },
+      "sourceQuestionNumber": 49
+    },
+    {
+      "id": "050",
+      "chapter": "history",
+      "question": "images_10/history-jomon-heian-choice-01/question_050.png",
+      "answer": "images_10/history-jomon-heian-choice-01/answer_050.png",
+      "sourceTimes": {
+        "question": 3305.0,
+        "answer": 3370.0
+      },
+      "sourceQuestionNumber": 50
+    }
+  ],
+  "series": "past",
+  "count": 50,
+  "source": "https://www.youtube.com/watch?v=tHiylsJog_Q",
+  "sourceTitle": "歴史選択問題① 縄文～平安"
+}

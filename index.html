@@ -995,7 +995,22 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 <noscript><p>このアプリを使うにはJavaScriptを有効にしてにゃ。</p></noscript>
 <dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><span class="volume-slider" id="soundVolumeTrack"><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></span></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">Nekoponをタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
-<script src="catalog.js?v=20261020-exam-categories"></script>
+<script>
+// Keep registered image paths stable while refreshing these replaced R2 objects.
+(() => {
+  const resolveImageURL = window.NekoImageURL;
+  const revisions = {
+  "images_09/social-geography-japan-frequent-questions-71-01/answer_030.png": "98b4ddb86d7db853",
+  "images_09/social-geography-world-frequent-questions-75-01/answer_050.png": "30576e9d90086b40",
+  "images_09/social-geography-world-frequent-questions-75-01/answer_072.png": "cb8034c6766bc93f"
+};
+  window.NekoImageURL = path => {
+    const url = resolveImageURL(path), revision = revisions[path];
+    return revision ? url + (url.includes('?') ? '&' : '?') + 'v=' + revision : url;
+  };
+})();
+</script>
+<script src="catalog.js?v=20261020-history7-5092-sources"></script>
 <dialog id="collectionDialog" aria-labelledby="collectionDialogTitle">
  <div class="collection-editor-head"><h2 id="collectionDialogTitle" tabindex="-1">まとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ">×</button></div>
  <div class="collection-editor-body" id="collectionEditorBody">
@@ -1733,8 +1748,11 @@ function renderSupplements(raw) {
   }
 }
 function renderSource(c) {
-  const raw = loaded.get(c.lessonId), baseURL = sourceVideoURL(raw?.source); $('sourceLinks').hidden = !baseURL; if (!baseURL) return;
-  const face = state.flipped ? 'answer' : 'question'; $('correctionNote').hidden = !c.correctedFaces?.includes(face);
+  const raw = loaded.get(c.lessonId), baseURL = sourceVideoURL(raw?.source);
+  const face = state.flipped ? 'answer' : 'question', corrected = !!c.correctedFaces?.includes(face);
+  $('correctionNote').hidden = !corrected; $('sourceLinks').hidden = !baseURL && !corrected;
+  $('sourceVideo').hidden = !baseURL;
+  if (!baseURL) { $('sourceVideo').removeAttribute('href'); $('sourceMoment').hidden = true; $('sourceMoment').removeAttribute('href'); return; }
   const time = c.sourceTimes?.[face], valid = typeof time === 'number' && Number.isFinite(time) && time >= 0;
   const moment = $('sourceMoment'); $('sourceVideo').href = baseURL; moment.hidden = !valid; moment.removeAttribute('href');
   if (valid) { const sec = Math.floor(time), stamp = Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0'); moment.href = baseURL+'&t='+sec+'s'; moment.textContent = `この場面 ${stamp} ↗`; moment.setAttribute('aria-label',`${state.flipped ? '解答' : '問題'}の場面をYouTubeで見る・${stamp}`); }

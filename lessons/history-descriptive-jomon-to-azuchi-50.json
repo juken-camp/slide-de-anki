@@ -1,0 +1,525 @@
+{
+  "id": "history-descriptive-jomon-to-azuchi-50",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史の記述問題（前編）｜縄文～安土桃山",
+  "grade": "中学歴史",
+  "description": "縄文時代から安土桃山時代の記述式問題50問。問題画面・完成した解答画面で学習できます。",
+  "cover": "images_09/history-descriptive-jomon-to-azuchi-50/question_001.png",
+  "chapters": [
+    {
+      "id": "jomon-to-azuchi",
+      "title": "縄文～安土桃山"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_001.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_001.png",
+      "sourceTimes": {
+        "question": 30.0,
+        "answer": 35.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_002.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_002.png",
+      "sourceTimes": {
+        "question": 50.0,
+        "answer": 60.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_003.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_003.png",
+      "sourceTimes": {
+        "question": 62.367,
+        "answer": 80.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_004.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_004.png",
+      "sourceTimes": {
+        "question": 95.0,
+        "answer": 95.833
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_005.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_005.png",
+      "sourceTimes": {
+        "question": 120.0,
+        "answer": 130.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_006.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_006.png",
+      "sourceTimes": {
+        "question": 150.0,
+        "answer": 155.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_007.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_007.png",
+      "sourceTimes": {
+        "question": 170.0,
+        "answer": 180.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_008.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_008.png",
+      "sourceTimes": {
+        "question": 195.0,
+        "answer": 200.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_009.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_009.png",
+      "sourceTimes": {
+        "question": 215.0,
+        "answer": 220.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_010.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_010.png",
+      "sourceTimes": {
+        "question": 230.0,
+        "answer": 240.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_011.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_011.png",
+      "sourceTimes": {
+        "question": 260.0,
+        "answer": 270.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_012.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_012.png",
+      "sourceTimes": {
+        "question": 280.0,
+        "answer": 290.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_013.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_013.png",
+      "sourceTimes": {
+        "question": 310.0,
+        "answer": 315.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_014.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_014.png",
+      "sourceTimes": {
+        "question": 325.0,
+        "answer": 335.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_015.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_015.png",
+      "correctedFaces": [
+        "question",
+        "answer"
+      ],
+      "sourceTimes": {
+        "question": 350.0,
+        "answer": 360.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_016.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_016.png",
+      "sourceTimes": {
+        "question": 375.0,
+        "answer": 380.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_017.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_017.png",
+      "sourceTimes": {
+        "question": 400.0,
+        "answer": 410.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_018.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_018.png",
+      "sourceTimes": {
+        "question": 430.0,
+        "answer": 435.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_019.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_019.png",
+      "sourceTimes": {
+        "question": 450.0,
+        "answer": 460.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_020.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_020.png",
+      "sourceTimes": {
+        "question": 470.0,
+        "answer": 480.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_021.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_021.png",
+      "sourceTimes": {
+        "question": 495.0,
+        "answer": 510.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_022.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_022.png",
+      "sourceTimes": {
+        "question": 520.0,
+        "answer": 535.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_023.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_023.png",
+      "sourceTimes": {
+        "question": 545.0,
+        "answer": 555.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_024.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_024.png",
+      "sourceTimes": {
+        "question": 570.0,
+        "answer": 580.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_025.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_025.png",
+      "sourceTimes": {
+        "question": 595.0,
+        "answer": 610.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_026.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_026.png",
+      "sourceTimes": {
+        "question": 625.0,
+        "answer": 635.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_027.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_027.png",
+      "sourceTimes": {
+        "question": 645.0,
+        "answer": 655.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_028.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_028.png",
+      "sourceTimes": {
+        "question": 670.0,
+        "answer": 675.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_029.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_029.png",
+      "sourceTimes": {
+        "question": 690.0,
+        "answer": 695.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_030.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_030.png",
+      "sourceTimes": {
+        "question": 710.0,
+        "answer": 720.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_031.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_031.png",
+      "sourceTimes": {
+        "question": 740.0,
+        "answer": 745.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_032.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_032.png",
+      "sourceTimes": {
+        "question": 760.0,
+        "answer": 765.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_033.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_033.png",
+      "sourceTimes": {
+        "question": 795.0,
+        "answer": 800.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_034.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_034.png",
+      "sourceTimes": {
+        "question": 820.0,
+        "answer": 830.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_035.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_035.png",
+      "sourceTimes": {
+        "question": 850.0,
+        "answer": 865.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_036.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_036.png",
+      "sourceTimes": {
+        "question": 880.0,
+        "answer": 890.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_037.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_037.png",
+      "sourceTimes": {
+        "question": 905.0,
+        "answer": 910.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_038.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_038.png",
+      "sourceTimes": {
+        "question": 930.0,
+        "answer": 935.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_039.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_039.png",
+      "sourceTimes": {
+        "question": 945.0,
+        "answer": 955.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_040.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_040.png",
+      "sourceTimes": {
+        "question": 975.0,
+        "answer": 980.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_041.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_041.png",
+      "sourceTimes": {
+        "question": 1010.0,
+        "answer": 1015.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_042.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_042.png",
+      "sourceTimes": {
+        "question": 1025.0,
+        "answer": 1035.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_043.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_043.png",
+      "sourceTimes": {
+        "question": 1050.0,
+        "answer": 1060.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_044.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_044.png",
+      "sourceTimes": {
+        "question": 1075.0,
+        "answer": 1085.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_045.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_045.png",
+      "sourceTimes": {
+        "question": 1100.0,
+        "answer": 1110.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_046.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_046.png",
+      "sourceTimes": {
+        "question": 1120.0,
+        "answer": 1125.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_047.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_047.png",
+      "sourceTimes": {
+        "question": 1135.0,
+        "answer": 1145.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_048.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_048.png",
+      "sourceTimes": {
+        "question": 1155.0,
+        "answer": 1165.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_049.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_049.png",
+      "sourceTimes": {
+        "question": 1185.0,
+        "answer": 1195.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "jomon-to-azuchi",
+      "question": "images_09/history-descriptive-jomon-to-azuchi-50/question_050.png",
+      "answer": "images_09/history-descriptive-jomon-to-azuchi-50/answer_050.png",
+      "sourceTimes": {
+        "question": 1210.0,
+        "answer": 1220.0
+      }
+    }
+  ],
+  "series": "written",
+  "source": "https://www.youtube.com/watch?v=l74CPG1FBjE",
+  "sourceTitle": "中学歴史・記述問題一問一答 前編「縄文～安土桃山」",
+  "count": 50
+}

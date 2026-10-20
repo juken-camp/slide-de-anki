@@ -1,0 +1,880 @@
+{
+  "id": "social-geography-world-frequent-questions-75-01",
+  "subject": "social",
+  "field": "geography",
+  "title": "高校入試 頻出問題｜地理 世界編",
+  "grade": "中学地理",
+  "description": "高校入試対策の世界地理。元動画の設問番号1〜75のうち、欠番6を除いた実収録74問を図解とともに学ぶ。",
+  "cover": "images_09/social-geography-world-frequent-questions-75-01/question_001.png",
+  "chapters": [
+    {
+      "id": "basics",
+      "title": "世界地図・地球と時差"
+    },
+    {
+      "id": "climate",
+      "title": "世界の気候"
+    },
+    {
+      "id": "religion",
+      "title": "世界の宗教"
+    },
+    {
+      "id": "asia",
+      "title": "アジア州"
+    },
+    {
+      "id": "europe",
+      "title": "ヨーロッパ州"
+    },
+    {
+      "id": "africa",
+      "title": "アフリカ州"
+    },
+    {
+      "id": "north-america",
+      "title": "北アメリカ州"
+    },
+    {
+      "id": "south-america",
+      "title": "南アメリカ州"
+    },
+    {
+      "id": "oceania",
+      "title": "オセアニア州"
+    },
+    {
+      "id": "entrance",
+      "title": "高校入試の応用問題"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_001.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_001.png",
+      "sourceTimes": {
+        "question": 40.2,
+        "answer": 48.2
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_002.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_002.png",
+      "sourceTimes": {
+        "question": 60.2,
+        "answer": 76.2
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_003.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_003.png",
+      "sourceTimes": {
+        "question": 88.2,
+        "answer": 96.2
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_004.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_004.png",
+      "sourceTimes": {
+        "question": 112.2,
+        "answer": 124.2
+      },
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_005.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_005.png",
+      "sourceTimes": {
+        "question": 140.2,
+        "answer": 152.2
+      },
+      "sourceQuestionNumber": 5
+    },
+    {
+      "id": "006",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_006.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_006.png",
+      "sourceTimes": {
+        "question": 164.2,
+        "answer": 172.2
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "007",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_007.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_007.png",
+      "sourceTimes": {
+        "question": 184.2,
+        "answer": 200.2
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "008",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_008.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_008.png",
+      "sourceTimes": {
+        "question": 216.2,
+        "answer": 228.2
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "009",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_009.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_009.png",
+      "sourceTimes": {
+        "question": 240.2,
+        "answer": 280.2
+      },
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "010",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_010.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_010.png",
+      "sourceTimes": {
+        "question": 292.2,
+        "answer": 304.2
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "011",
+      "chapter": "basics",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_011.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_011.png",
+      "sourceTimes": {
+        "question": 316.2,
+        "answer": 332.2
+      },
+      "sourceQuestionNumber": 12
+    },
+    {
+      "id": "012",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_012.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_012.png",
+      "sourceTimes": {
+        "question": 352.2,
+        "answer": 368.2
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "013",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_013.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_013.png",
+      "sourceTimes": {
+        "question": 376.2,
+        "answer": 396.2
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "014",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_014.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_014.png",
+      "sourceTimes": {
+        "question": 404.2,
+        "answer": 420.2
+      },
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "015",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_015.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_015.png",
+      "sourceTimes": {
+        "question": 428.2,
+        "answer": 448.2
+      },
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "016",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_016.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_016.png",
+      "sourceTimes": {
+        "question": 456.2,
+        "answer": 476.2
+      },
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "017",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_017.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_017.png",
+      "sourceTimes": {
+        "question": 484.2,
+        "answer": 504.2
+      },
+      "sourceQuestionNumber": 18
+    },
+    {
+      "id": "018",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_018.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_018.png",
+      "sourceTimes": {
+        "question": 512.2,
+        "answer": 528.2
+      },
+      "sourceQuestionNumber": 19
+    },
+    {
+      "id": "019",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_019.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_019.png",
+      "sourceTimes": {
+        "question": 536.2,
+        "answer": 564.2
+      },
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "020",
+      "chapter": "climate",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_020.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_020.png",
+      "sourceTimes": {
+        "question": 580.2,
+        "answer": 588.2
+      },
+      "sourceQuestionNumber": 21
+    },
+    {
+      "id": "021",
+      "chapter": "religion",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_021.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_021.png",
+      "sourceTimes": {
+        "question": 608.2,
+        "answer": 616.2
+      },
+      "sourceQuestionNumber": 22
+    },
+    {
+      "id": "022",
+      "chapter": "religion",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_022.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_022.png",
+      "sourceTimes": {
+        "question": 632.2,
+        "answer": 636.2
+      },
+      "sourceQuestionNumber": 23
+    },
+    {
+      "id": "023",
+      "chapter": "religion",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_023.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_023.png",
+      "sourceTimes": {
+        "question": 652.2,
+        "answer": 660.2
+      },
+      "sourceQuestionNumber": 24
+    },
+    {
+      "id": "024",
+      "chapter": "religion",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_024.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_024.png",
+      "sourceTimes": {
+        "question": 672.2,
+        "answer": 684.2
+      },
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "025",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_025.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_025.png",
+      "sourceTimes": {
+        "question": 704.2,
+        "answer": 716.2
+      },
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "026",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_026.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_026.png",
+      "sourceTimes": {
+        "question": 732.2,
+        "answer": 744.2
+      },
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "027",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_027.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_027.png",
+      "sourceTimes": {
+        "question": 760.2,
+        "answer": 768.2
+      },
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "028",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_028.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_028.png",
+      "sourceTimes": {
+        "question": 788.2,
+        "answer": 812.2
+      },
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "029",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_029.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_029.png",
+      "sourceTimes": {
+        "question": 824.2,
+        "answer": 828.2
+      },
+      "sourceQuestionNumber": 30
+    },
+    {
+      "id": "030",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_030.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_030.png",
+      "sourceTimes": {
+        "question": 840.2,
+        "answer": 852.2
+      },
+      "sourceQuestionNumber": 31
+    },
+    {
+      "id": "031",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_031.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_031.png",
+      "sourceTimes": {
+        "question": 864.2,
+        "answer": 900.2
+      },
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "032",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_032.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_032.png",
+      "sourceTimes": {
+        "question": 920.2,
+        "answer": 932.2
+      },
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "033",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_033.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_033.png",
+      "sourceTimes": {
+        "question": 944.2,
+        "answer": 960.2
+      },
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "034",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_034.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_034.png",
+      "sourceTimes": {
+        "question": 972.2,
+        "answer": 992.2
+      },
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "035",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_035.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_035.png",
+      "sourceTimes": {
+        "question": 1008.2,
+        "answer": 1016.2
+      },
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "036",
+      "chapter": "asia",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_036.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_036.png",
+      "sourceTimes": {
+        "question": 1028.2,
+        "answer": 1040.2
+      },
+      "sourceQuestionNumber": 37
+    },
+    {
+      "id": "037",
+      "chapter": "europe",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_037.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_037.png",
+      "sourceTimes": {
+        "question": 1068.2,
+        "answer": 1084.2
+      },
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "038",
+      "chapter": "europe",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_038.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_038.png",
+      "sourceTimes": {
+        "question": 1100.2,
+        "answer": 1108.2
+      },
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "039",
+      "chapter": "europe",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_039.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_039.png",
+      "sourceTimes": {
+        "question": 1124.2,
+        "answer": 1148.2
+      },
+      "sourceQuestionNumber": 40
+    },
+    {
+      "id": "040",
+      "chapter": "europe",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_040.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_040.png",
+      "sourceTimes": {
+        "question": 1164.2,
+        "answer": 1172.2
+      },
+      "sourceQuestionNumber": 41
+    },
+    {
+      "id": "041",
+      "chapter": "europe",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_041.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_041.png",
+      "sourceTimes": {
+        "question": 1192.2,
+        "answer": 1200.2
+      },
+      "sourceQuestionNumber": 42
+    },
+    {
+      "id": "042",
+      "chapter": "europe",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_042.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_042.png",
+      "sourceTimes": {
+        "question": 1220.2,
+        "answer": 1232.2
+      },
+      "sourceQuestionNumber": 43
+    },
+    {
+      "id": "043",
+      "chapter": "europe",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_043.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_043.png",
+      "sourceTimes": {
+        "question": 1248.2,
+        "answer": 1256.2
+      },
+      "sourceQuestionNumber": 44
+    },
+    {
+      "id": "044",
+      "chapter": "europe",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_044.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_044.png",
+      "sourceTimes": {
+        "question": 1280.2,
+        "answer": 1308.2
+      },
+      "sourceQuestionNumber": 45
+    },
+    {
+      "id": "045",
+      "chapter": "africa",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_045.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_045.png",
+      "sourceTimes": {
+        "question": 1324.2,
+        "answer": 1336.2
+      },
+      "sourceQuestionNumber": 46
+    },
+    {
+      "id": "046",
+      "chapter": "africa",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_046.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_046.png",
+      "sourceTimes": {
+        "question": 1348.2,
+        "answer": 1364.2
+      },
+      "sourceQuestionNumber": 47
+    },
+    {
+      "id": "047",
+      "chapter": "africa",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_047.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_047.png",
+      "sourceTimes": {
+        "question": 1376.2,
+        "answer": 1384.2
+      },
+      "sourceQuestionNumber": 48
+    },
+    {
+      "id": "048",
+      "chapter": "africa",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_048.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_048.png",
+      "sourceTimes": {
+        "question": 1400.2,
+        "answer": 1412.2
+      },
+      "sourceQuestionNumber": 49
+    },
+    {
+      "id": "049",
+      "chapter": "africa",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_049.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_049.png",
+      "sourceTimes": {
+        "question": 1428.2,
+        "answer": 1436.2
+      },
+      "sourceQuestionNumber": 50
+    },
+    {
+      "id": "050",
+      "chapter": "africa",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_050.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_050.png",
+      "correctedFaces": [
+        "answer"
+      ],
+      "sourceTimes": {
+        "question": 1452.2,
+        "answer": 1484.2
+      },
+      "sourceQuestionNumber": 51
+    },
+    {
+      "id": "051",
+      "chapter": "north-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_051.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_051.png",
+      "sourceTimes": {
+        "question": 1520.2,
+        "answer": 1536.2
+      },
+      "sourceQuestionNumber": 52
+    },
+    {
+      "id": "052",
+      "chapter": "north-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_052.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_052.png",
+      "sourceTimes": {
+        "question": 1552.2,
+        "answer": 1560.2
+      },
+      "sourceQuestionNumber": 53
+    },
+    {
+      "id": "053",
+      "chapter": "north-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_053.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_053.png",
+      "sourceTimes": {
+        "question": 1576.2,
+        "answer": 1584.2
+      },
+      "sourceQuestionNumber": 54
+    },
+    {
+      "id": "054",
+      "chapter": "north-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_054.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_054.png",
+      "sourceTimes": {
+        "question": 1604.2,
+        "answer": 1628.2
+      },
+      "sourceQuestionNumber": 55
+    },
+    {
+      "id": "055",
+      "chapter": "north-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_055.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_055.png",
+      "sourceTimes": {
+        "question": 1636.2,
+        "answer": 1676.2
+      },
+      "sourceQuestionNumber": 56
+    },
+    {
+      "id": "056",
+      "chapter": "north-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_056.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_056.png",
+      "sourceTimes": {
+        "question": 1688.2,
+        "answer": 1696.2
+      },
+      "sourceQuestionNumber": 57
+    },
+    {
+      "id": "057",
+      "chapter": "north-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_057.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_057.png",
+      "sourceTimes": {
+        "question": 1712.2,
+        "answer": 1720.2
+      },
+      "sourceQuestionNumber": 58
+    },
+    {
+      "id": "058",
+      "chapter": "south-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_058.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_058.png",
+      "sourceTimes": {
+        "question": 1736.2,
+        "answer": 1748.2
+      },
+      "sourceQuestionNumber": 59
+    },
+    {
+      "id": "059",
+      "chapter": "south-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_059.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_059.png",
+      "sourceTimes": {
+        "question": 1756.2,
+        "answer": 1776.2
+      },
+      "sourceQuestionNumber": 60
+    },
+    {
+      "id": "060",
+      "chapter": "south-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_060.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_060.png",
+      "sourceTimes": {
+        "question": 1788.2,
+        "answer": 1792.2
+      },
+      "sourceQuestionNumber": 61
+    },
+    {
+      "id": "061",
+      "chapter": "south-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_061.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_061.png",
+      "sourceTimes": {
+        "question": 1808.2,
+        "answer": 1828.2
+      },
+      "sourceQuestionNumber": 62
+    },
+    {
+      "id": "062",
+      "chapter": "south-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_062.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_062.png",
+      "sourceTimes": {
+        "question": 1840.2,
+        "answer": 1852.2
+      },
+      "sourceQuestionNumber": 63
+    },
+    {
+      "id": "063",
+      "chapter": "south-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_063.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_063.png",
+      "sourceTimes": {
+        "question": 1860.2,
+        "answer": 1872.2
+      },
+      "sourceQuestionNumber": 64
+    },
+    {
+      "id": "064",
+      "chapter": "south-america",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_064.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_064.png",
+      "sourceTimes": {
+        "question": 1888.2,
+        "answer": 1900.2
+      },
+      "sourceQuestionNumber": 65
+    },
+    {
+      "id": "065",
+      "chapter": "oceania",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_065.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_065.png",
+      "sourceTimes": {
+        "question": 1920.2,
+        "answer": 1932.2
+      },
+      "sourceQuestionNumber": 66
+    },
+    {
+      "id": "066",
+      "chapter": "oceania",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_066.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_066.png",
+      "sourceTimes": {
+        "question": 1948.2,
+        "answer": 1984.2
+      },
+      "sourceQuestionNumber": 67
+    },
+    {
+      "id": "067",
+      "chapter": "oceania",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_067.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_067.png",
+      "sourceTimes": {
+        "question": 2008.2,
+        "answer": 2040.2
+      },
+      "sourceQuestionNumber": 68
+    },
+    {
+      "id": "068",
+      "chapter": "oceania",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_068.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_068.png",
+      "sourceTimes": {
+        "question": 2072.2,
+        "answer": 2100.2
+      },
+      "sourceQuestionNumber": 69
+    },
+    {
+      "id": "069",
+      "chapter": "oceania",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_069.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_069.png",
+      "sourceTimes": {
+        "question": 2112.2,
+        "answer": 2120.2
+      },
+      "sourceQuestionNumber": 70
+    },
+    {
+      "id": "070",
+      "chapter": "oceania",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_070.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_070.png",
+      "sourceTimes": {
+        "question": 2136.2,
+        "answer": 2140.2
+      },
+      "sourceQuestionNumber": 71
+    },
+    {
+      "id": "071",
+      "chapter": "entrance",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_071.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_071.png",
+      "sourceTimes": {
+        "question": 2156.2,
+        "answer": 2168.2
+      },
+      "sourceQuestionNumber": 72
+    },
+    {
+      "id": "072",
+      "chapter": "entrance",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_072.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_072.png",
+      "correctedFaces": [
+        "answer"
+      ],
+      "sourceTimes": {
+        "question": 2200.2,
+        "answer": 2224.2
+      },
+      "sourceQuestionNumber": 73
+    },
+    {
+      "id": "073",
+      "chapter": "entrance",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_073.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_073.png",
+      "sourceTimes": {
+        "question": 2252.2,
+        "answer": 2288.2
+      },
+      "sourceQuestionNumber": 74
+    },
+    {
+      "id": "074",
+      "chapter": "entrance",
+      "question": "images_09/social-geography-world-frequent-questions-75-01/question_074.png",
+      "answer": "images_09/social-geography-world-frequent-questions-75-01/answer_074.png",
+      "sourceTimes": {
+        "question": 2300.2,
+        "answer": 2344.2
+      },
+      "sourceQuestionNumber": 75
+    }
+  ],
+  "series": "frequent",
+  "source": "https://www.youtube.com/watch?v=nXz0aHiTiCc",
+  "sourceTitle": "【地理一問一答】世界編｜高校入試対策75問｜よく出る問題と、よく出る問題を解くための知識を増やす動画！",
+  "count": 74,
+  "sourceMissingNumbers": [
+    6
+  ]
+}

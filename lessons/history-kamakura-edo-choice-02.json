@@ -1,0 +1,568 @@
+{
+  "id": "history-kamakura-edo-choice-02",
+  "subject": "social",
+  "field": "history",
+  "title": "高校入試 過去問｜歴史 選択問題② 鎌倉～江戸",
+  "grade": "中学歴史",
+  "description": "高校入試過去問の歴史選択問題（鎌倉～江戸）。元動画では第55問まで番号があるが、欠番6問を除く実収録49問。",
+  "cover": "images_10/history-kamakura-edo-choice-02/question_001.png",
+  "chapters": [
+    {
+      "id": "history",
+      "title": "鎌倉～江戸"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_001.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_001.png",
+      "sourceTimes": {
+        "question": 28.0,
+        "answer": 76.0
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_002.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_002.png",
+      "sourceTimes": {
+        "question": 88.0,
+        "answer": 120.0
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_003.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_003.png",
+      "sourceTimes": {
+        "question": 132.0,
+        "answer": 168.0
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_004.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_004.png",
+      "sourceTimes": {
+        "question": 180.0,
+        "answer": 252.0
+      },
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_005.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_005.png",
+      "sourceTimes": {
+        "question": 264.0,
+        "answer": 304.0
+      },
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "006",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_006.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_006.png",
+      "sourceTimes": {
+        "question": 316.0,
+        "answer": 356.0
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "007",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_007.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_007.png",
+      "sourceTimes": {
+        "question": 368.0,
+        "answer": 412.0
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "008",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_008.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_008.png",
+      "sourceTimes": {
+        "question": 424.0,
+        "answer": 464.0
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "009",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_009.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_009.png",
+      "sourceTimes": {
+        "question": 476.0,
+        "answer": 552.0
+      },
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "010",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_010.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_010.png",
+      "sourceTimes": {
+        "question": 564.0,
+        "answer": 608.0
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "011",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_011.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_011.png",
+      "sourceTimes": {
+        "question": 620.0,
+        "answer": 684.0
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "012",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_012.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_012.png",
+      "sourceTimes": {
+        "question": 696.0,
+        "answer": 736.0
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "013",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_013.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_013.png",
+      "sourceTimes": {
+        "question": 748.0,
+        "answer": 784.0
+      },
+      "sourceQuestionNumber": 15
+    },
+    {
+      "id": "014",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_014.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_014.png",
+      "sourceTimes": {
+        "question": 796.0,
+        "answer": 848.0
+      },
+      "sourceQuestionNumber": 16
+    },
+    {
+      "id": "015",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_015.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_015.png",
+      "sourceTimes": {
+        "question": 860.0,
+        "answer": 916.0
+      },
+      "sourceQuestionNumber": 17
+    },
+    {
+      "id": "016",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_016.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_016.png",
+      "sourceTimes": {
+        "question": 928.0,
+        "answer": 968.0
+      },
+      "sourceQuestionNumber": 18
+    },
+    {
+      "id": "017",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_017.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_017.png",
+      "sourceTimes": {
+        "question": 980.0,
+        "answer": 1036.0
+      },
+      "sourceQuestionNumber": 20
+    },
+    {
+      "id": "018",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_018.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_018.png",
+      "sourceTimes": {
+        "question": 1048.0,
+        "answer": 1072.0
+      },
+      "sourceQuestionNumber": 23
+    },
+    {
+      "id": "019",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_019.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_019.png",
+      "sourceTimes": {
+        "question": 1092.0,
+        "answer": 1168.0
+      },
+      "sourceQuestionNumber": 24
+    },
+    {
+      "id": "020",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_020.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_020.png",
+      "sourceTimes": {
+        "question": 1180.0,
+        "answer": 1248.0
+      },
+      "sourceQuestionNumber": 25
+    },
+    {
+      "id": "021",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_021.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_021.png",
+      "sourceTimes": {
+        "question": 1260.0,
+        "answer": 1328.0
+      },
+      "sourceQuestionNumber": 26
+    },
+    {
+      "id": "022",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_022.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_022.png",
+      "sourceTimes": {
+        "question": 1340.0,
+        "answer": 1380.0
+      },
+      "sourceQuestionNumber": 27
+    },
+    {
+      "id": "023",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_023.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_023.png",
+      "sourceTimes": {
+        "question": 1392.0,
+        "answer": 1444.0
+      },
+      "sourceQuestionNumber": 28
+    },
+    {
+      "id": "024",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_024.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_024.png",
+      "sourceTimes": {
+        "question": 1456.0,
+        "answer": 1512.0
+      },
+      "sourceQuestionNumber": 29
+    },
+    {
+      "id": "025",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_025.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_025.png",
+      "sourceTimes": {
+        "question": 1524.0,
+        "answer": 1592.0
+      },
+      "sourceQuestionNumber": 30
+    },
+    {
+      "id": "026",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_026.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_026.png",
+      "sourceTimes": {
+        "question": 1604.0,
+        "answer": 1664.0
+      },
+      "sourceQuestionNumber": 32
+    },
+    {
+      "id": "027",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_027.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_027.png",
+      "sourceTimes": {
+        "question": 1676.0,
+        "answer": 1740.0
+      },
+      "sourceQuestionNumber": 33
+    },
+    {
+      "id": "028",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_028.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_028.png",
+      "sourceTimes": {
+        "question": 1752.0,
+        "answer": 1804.0
+      },
+      "sourceQuestionNumber": 34
+    },
+    {
+      "id": "029",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_029.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_029.png",
+      "sourceTimes": {
+        "question": 1816.0,
+        "answer": 1868.0
+      },
+      "sourceQuestionNumber": 35
+    },
+    {
+      "id": "030",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_030.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_030.png",
+      "sourceTimes": {
+        "question": 1880.0,
+        "answer": 1932.0
+      },
+      "sourceQuestionNumber": 36
+    },
+    {
+      "id": "031",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_031.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_031.png",
+      "sourceTimes": {
+        "question": 1944.0,
+        "answer": 2000.0
+      },
+      "sourceQuestionNumber": 37
+    },
+    {
+      "id": "032",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_032.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_032.png",
+      "sourceTimes": {
+        "question": 2012.0,
+        "answer": 2036.0
+      },
+      "sourceQuestionNumber": 38
+    },
+    {
+      "id": "033",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_033.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_033.png",
+      "sourceTimes": {
+        "question": 2048.0,
+        "answer": 2096.0
+      },
+      "sourceQuestionNumber": 39
+    },
+    {
+      "id": "034",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_034.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_034.png",
+      "sourceTimes": {
+        "question": 2108.0,
+        "answer": 2152.0
+      },
+      "sourceQuestionNumber": 40
+    },
+    {
+      "id": "035",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_035.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_035.png",
+      "sourceTimes": {
+        "question": 2164.0,
+        "answer": 2248.0
+      },
+      "sourceQuestionNumber": 41
+    },
+    {
+      "id": "036",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_036.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_036.png",
+      "sourceTimes": {
+        "question": 2260.0,
+        "answer": 2332.0
+      },
+      "sourceQuestionNumber": 42
+    },
+    {
+      "id": "037",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_037.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_037.png",
+      "sourceTimes": {
+        "question": 2344.0,
+        "answer": 2408.0
+      },
+      "sourceQuestionNumber": 43
+    },
+    {
+      "id": "038",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_038.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_038.png",
+      "sourceTimes": {
+        "question": 2420.0,
+        "answer": 2464.0
+      },
+      "sourceQuestionNumber": 44
+    },
+    {
+      "id": "039",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_039.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_039.png",
+      "sourceTimes": {
+        "question": 2476.0,
+        "answer": 2500.0
+      },
+      "sourceQuestionNumber": 45
+    },
+    {
+      "id": "040",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_040.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_040.png",
+      "sourceTimes": {
+        "question": 2512.0,
+        "answer": 2536.0
+      },
+      "sourceQuestionNumber": 46
+    },
+    {
+      "id": "041",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_041.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_041.png",
+      "sourceTimes": {
+        "question": 2548.0,
+        "answer": 2572.0
+      },
+      "sourceQuestionNumber": 47
+    },
+    {
+      "id": "042",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_042.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_042.png",
+      "sourceTimes": {
+        "question": 2584.0,
+        "answer": 2632.0
+      },
+      "sourceQuestionNumber": 48
+    },
+    {
+      "id": "043",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_043.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_043.png",
+      "sourceTimes": {
+        "question": 2644.0,
+        "answer": 2684.0
+      },
+      "sourceQuestionNumber": 49
+    },
+    {
+      "id": "044",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_044.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_044.png",
+      "sourceTimes": {
+        "question": 2696.0,
+        "answer": 2768.0
+      },
+      "sourceQuestionNumber": 50
+    },
+    {
+      "id": "045",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_045.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_045.png",
+      "sourceTimes": {
+        "question": 2780.0,
+        "answer": 2868.0
+      },
+      "sourceQuestionNumber": 51
+    },
+    {
+      "id": "046",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_046.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_046.png",
+      "sourceTimes": {
+        "question": 2880.0,
+        "answer": 2944.0
+      },
+      "sourceQuestionNumber": 52
+    },
+    {
+      "id": "047",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_047.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_047.png",
+      "sourceTimes": {
+        "question": 2956.0,
+        "answer": 3016.0
+      },
+      "sourceQuestionNumber": 53
+    },
+    {
+      "id": "048",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_048.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_048.png",
+      "sourceTimes": {
+        "question": 3028.0,
+        "answer": 3076.0
+      },
+      "sourceQuestionNumber": 54
+    },
+    {
+      "id": "049",
+      "chapter": "history",
+      "question": "images_10/history-kamakura-edo-choice-02/question_049.png",
+      "answer": "images_10/history-kamakura-edo-choice-02/answer_049.png",
+      "sourceTimes": {
+        "question": 3088.0,
+        "answer": 3128.0
+      },
+      "sourceQuestionNumber": 55
+    }
+  ],
+  "series": "past",
+  "count": 49,
+  "source": "https://www.youtube.com/watch?v=eG66qLoRLxw",
+  "sourceTitle": "歴史選択問題② 鎌倉～江戸",
+  "sourceMissingNumbers": [
+    5,
+    12,
+    19,
+    21,
+    22,
+    31
+  ]
+}

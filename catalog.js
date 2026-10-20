@@ -2836,5 +2836,373 @@ window.QUIZ_CATALOG = [
     "fieldLabel": "分野横断",
     "count": 67,
     "data": "lessons/science-chemistry-physics-past-exams-66.json"
+  },
+  {
+    "id": "social-geography-world-written-53-01",
+    "subject": "social",
+    "field": "geography",
+    "title": "地理の記述問題｜世界編",
+    "grade": "中学地理",
+    "description": "世界地理の記述問題を53問の問題・解答画像で学ぶ。",
+    "cover": "images_09/social-geography-world-written-53-01/question_001.png",
+    "chapters": [
+      {
+        "id": "world-written",
+        "title": "世界地理・記述問題"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=-KpSImIXiZo",
+    "series": "written",
+    "count": 53,
+    "data": "lessons/social-geography-world-written-53-01.json"
+  },
+  {
+    "id": "social-geography-japan-written-65-01",
+    "subject": "social",
+    "field": "geography",
+    "title": "地理の記述問題｜日本編",
+    "grade": "中学地理",
+    "description": "日本地理の記述問題を65問の問題・解答画像で学ぶ。",
+    "cover": "images_09/social-geography-japan-written-65-01/question_001.png",
+    "chapters": [
+      {
+        "id": "japan-written",
+        "title": "日本地理・記述問題"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=-7bTZSZybyo",
+    "series": "written",
+    "count": 65,
+    "data": "lessons/social-geography-japan-written-65-01.json"
+  },
+  {
+    "id": "history-descriptive-jomon-to-azuchi-50",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史の記述問題（前編）｜縄文～安土桃山",
+    "grade": "中学歴史",
+    "description": "縄文時代から安土桃山時代の記述式問題50問。問題画面・完成した解答画面で学習できます。",
+    "cover": "images_09/history-descriptive-jomon-to-azuchi-50/question_001.png",
+    "chapters": [
+      {
+        "id": "jomon-to-azuchi",
+        "title": "縄文～安土桃山"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=l74CPG1FBjE",
+    "series": "written",
+    "count": 50,
+    "data": "lessons/history-descriptive-jomon-to-azuchi-50.json"
+  },
+  {
+    "id": "history-descriptive-edo-heisei-60",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史の記述問題（後編）｜江戸～平成",
+    "grade": "中学歴史",
+    "description": "江戸時代から平成までの記述問題60問。元動画の問題画面と解答画面で学習します。",
+    "cover": "images_09/history-descriptive-edo-heisei-60/question_001.png",
+    "chapters": [
+      {
+        "id": "history-late",
+        "title": "江戸～平成"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=8V3Q37TTEf0",
+    "series": "written",
+    "count": 60,
+    "data": "lessons/history-descriptive-edo-heisei-60.json"
+  },
+  {
+    "id": "social-geography-world-frequent-questions-75-01",
+    "subject": "social",
+    "field": "geography",
+    "title": "高校入試 頻出問題｜地理 世界編",
+    "grade": "中学地理",
+    "description": "高校入試対策の世界地理。元動画の設問番号1〜75のうち、欠番6を除いた実収録74問を図解とともに学ぶ。",
+    "cover": "images_09/social-geography-world-frequent-questions-75-01/question_001.png",
+    "chapters": [
+      {
+        "id": "basics",
+        "title": "世界地図・地球と時差"
+      },
+      {
+        "id": "climate",
+        "title": "世界の気候"
+      },
+      {
+        "id": "religion",
+        "title": "世界の宗教"
+      },
+      {
+        "id": "asia",
+        "title": "アジア州"
+      },
+      {
+        "id": "europe",
+        "title": "ヨーロッパ州"
+      },
+      {
+        "id": "africa",
+        "title": "アフリカ州"
+      },
+      {
+        "id": "north-america",
+        "title": "北アメリカ州"
+      },
+      {
+        "id": "south-america",
+        "title": "南アメリカ州"
+      },
+      {
+        "id": "oceania",
+        "title": "オセアニア州"
+      },
+      {
+        "id": "entrance",
+        "title": "高校入試の応用問題"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=nXz0aHiTiCc",
+    "series": "frequent",
+    "count": 74,
+    "data": "lessons/social-geography-world-frequent-questions-75-01.json"
+  },
+  {
+    "id": "social-geography-japan-frequent-questions-71-01",
+    "subject": "social",
+    "field": "geography",
+    "title": "高校入試 頻出問題｜地理 日本編",
+    "grade": "中学地理",
+    "description": "高校入試対策の日本地理。元動画の設問番号1〜71のうち欠番37を除いた、実収録70問。問題・正解と図解を画像で学ぶ。",
+    "cover": "images_09/social-geography-japan-frequent-questions-71-01/question_001.png",
+    "chapters": [
+      {
+        "id": "japan-basics",
+        "title": "日本の国土・産業・地図"
+      },
+      {
+        "id": "kyushu",
+        "title": "九州地方"
+      },
+      {
+        "id": "chugoku-shikoku",
+        "title": "中国・四国地方"
+      },
+      {
+        "id": "kinki",
+        "title": "近畿地方"
+      },
+      {
+        "id": "chubu",
+        "title": "中部地方"
+      },
+      {
+        "id": "kanto",
+        "title": "関東地方"
+      },
+      {
+        "id": "tohoku",
+        "title": "東北地方"
+      },
+      {
+        "id": "hokkaido",
+        "title": "北海道地方"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=CSTPhJrvLGY",
+    "series": "frequent",
+    "count": 70,
+    "data": "lessons/social-geography-japan-frequent-questions-71-01.json"
+  },
+  {
+    "id": "social-geography-world-selection-01",
+    "subject": "social",
+    "field": "geography",
+    "title": "高校入試 過去問｜地理 選択問題 世界編①",
+    "grade": "中学地理",
+    "description": "全国高校入試の世界地理選択問題。問題と図解つき解答22組。",
+    "cover": "images_09/social-geography-world-selection-01/question_001.png",
+    "chapters": [
+      {
+        "id": "world",
+        "title": "世界の地理"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=l2MQprD9SJc",
+    "series": "past",
+    "count": 22,
+    "data": "lessons/social-geography-world-selection-01.json"
+  },
+  {
+    "id": "social-geography-world-selection-02",
+    "subject": "social",
+    "field": "geography",
+    "title": "高校入試 過去問｜地理 選択問題 世界編②",
+    "grade": "中学地理",
+    "description": "全国高校入試の世界地理選択問題。問題と図解つき解答24問。",
+    "cover": "images_09/social-geography-world-selection-02/question_001.png",
+    "chapters": [
+      {
+        "id": "world",
+        "title": "世界の地理"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=GF5n3m2JZ_U",
+    "series": "past",
+    "count": 24,
+    "data": "lessons/social-geography-world-selection-02.json"
+  },
+  {
+    "id": "social-geography-japan-selection-01",
+    "subject": "social",
+    "field": "geography",
+    "title": "高校入試 過去問｜地理 選択問題 日本編",
+    "grade": "中学地理",
+    "description": "高校入試対策の日本地理選択問題。北海道から愛知県までの21問を図解つきで学ぶ。",
+    "cover": "images_09/social-geography-japan-selection-01/question_001.png",
+    "chapters": [
+      {
+        "id": "japan",
+        "title": "日本の地理"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=_Lu_7Ub4Y3Q",
+    "series": "past",
+    "count": 21,
+    "data": "lessons/social-geography-japan-selection-01.json"
+  },
+  {
+    "id": "history-jomon-heian-choice-01",
+    "subject": "social",
+    "field": "history",
+    "title": "高校入試 過去問｜歴史 選択問題① 縄文～平安",
+    "grade": "中学歴史",
+    "description": "高校入試過去問から、縄文～平安までの歴史選択問題50問を図解とともに学ぶ。",
+    "cover": "images_10/history-jomon-heian-choice-01/question_001.png",
+    "chapters": [
+      {
+        "id": "history",
+        "title": "縄文～平安"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=tHiylsJog_Q",
+    "series": "past",
+    "count": 50,
+    "data": "lessons/history-jomon-heian-choice-01.json"
+  },
+  {
+    "id": "history-kamakura-edo-choice-02",
+    "subject": "social",
+    "field": "history",
+    "title": "高校入試 過去問｜歴史 選択問題② 鎌倉～江戸",
+    "grade": "中学歴史",
+    "description": "高校入試過去問の歴史選択問題（鎌倉～江戸）。元動画では第55問まで番号があるが、欠番6問を除く実収録49問。",
+    "cover": "images_10/history-kamakura-edo-choice-02/question_001.png",
+    "chapters": [
+      {
+        "id": "history",
+        "title": "鎌倉～江戸"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=eG66qLoRLxw",
+    "series": "past",
+    "count": 49,
+    "data": "lessons/history-kamakura-edo-choice-02.json"
+  },
+  {
+    "id": "history-meiji-showa-choice-03",
+    "subject": "social",
+    "field": "history",
+    "title": "高校入試 過去問｜歴史 選択問題③ 明治～昭和",
+    "grade": "中学歴史",
+    "description": "高校入試過去問の歴史選択問題（明治～昭和）。元動画の設問番号は第51問まで、欠番3問を除く実収録48問。",
+    "cover": "images_10/history-meiji-showa-choice-03/question_001.png",
+    "chapters": [
+      {
+        "id": "history",
+        "title": "明治～昭和"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=o5BD5J0ogII",
+    "series": "past",
+    "count": 48,
+    "data": "lessons/history-meiji-showa-choice-03.json"
+  },
+  {
+    "id": "history-chronological-order-kofun-heian-01",
+    "subject": "social",
+    "field": "history",
+    "title": "高校入試 過去問｜歴史 年代並べ替え① 古墳～平安",
+    "grade": "中学歴史",
+    "description": "高校入試の古墳～平安時代を中心とする年代並べ替え問題21問。全国の公立高校入試過去問より。",
+    "cover": "images_10/history-chronological-order-kofun-heian-01/question_001.png",
+    "chapters": [
+      {
+        "id": "history",
+        "title": "古墳～平安時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=diKmjvQat7Y",
+    "series": "past",
+    "count": 21,
+    "data": "lessons/history-chronological-order-kofun-heian-01.json"
+  },
+  {
+    "id": "history-chronological-order-kamakura-edo-02",
+    "subject": "social",
+    "field": "history",
+    "title": "高校入試 過去問｜歴史 年代並べ替え② 鎌倉～江戸",
+    "grade": "中学歴史",
+    "description": "高校入試過去問を題材に、鎌倉～江戸時代の年代並べ替えを学ぶ15問。図解・時代区分・年代解説つき。",
+    "cover": "images_10/history-chronological-order-kamakura-edo-02/question_001.png",
+    "chapters": [
+      {
+        "id": "history",
+        "title": "鎌倉～江戸時代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=SfiKCQVs_LQ",
+    "series": "past",
+    "count": 15,
+    "data": "lessons/history-chronological-order-kamakura-edo-02.json"
+  },
+  {
+    "id": "history-chronological-order-meiji-modern-03",
+    "subject": "social",
+    "field": "history",
+    "title": "高校入試 過去問｜歴史 年代並べ替え③ 明治～現代",
+    "grade": "中学歴史",
+    "description": "高校入試過去問の年代並べ替え25問。明治・大正・昭和から現代の重要事項を年代や図解とともに学ぶ。",
+    "cover": "images_10/history-chronological-order-meiji-modern-03/question_001.png",
+    "chapters": [
+      {
+        "id": "history",
+        "title": "明治時代～現代"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=-JpLkp3TUpE",
+    "series": "past",
+    "count": 25,
+    "data": "lessons/history-chronological-order-meiji-modern-03.json"
+  },
+  {
+    "id": "japanese-literature-famous-authors-22",
+    "subject": "social",
+    "field": "history",
+    "title": "日本文学史｜作家・文豪",
+    "grade": "中学歴史",
+    "description": "日本文学史で有名な作品の作者を答える一問一答22問。問題と解答の元動画画像で確認できます。",
+    "cover": "images_10/japanese-literature-famous-authors-22/question_001.png",
+    "chapters": [
+      {
+        "id": "japanese-literature",
+        "title": "日本文学史"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=3NPmAxdOvTg",
+    "series": "themes",
+    "count": 22,
+    "data": "lessons/japanese-literature-famous-authors-22.json"
   }
 ];

@@ -1,0 +1,186 @@
+{
+  "id": "history-chronological-order-kamakura-edo-02",
+  "subject": "social",
+  "field": "history",
+  "title": "高校入試 過去問｜歴史 年代並べ替え② 鎌倉～江戸",
+  "grade": "中学歴史",
+  "description": "高校入試過去問を題材に、鎌倉～江戸時代の年代並べ替えを学ぶ15問。図解・時代区分・年代解説つき。",
+  "cover": "images_10/history-chronological-order-kamakura-edo-02/question_001.png",
+  "chapters": [
+    {
+      "id": "history",
+      "title": "鎌倉～江戸時代"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_001.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_001.png",
+      "sourceTimes": {
+        "question": 26.0,
+        "answer": 80.0
+      },
+      "sourceQuestionNumber": 1
+    },
+    {
+      "id": "002",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_002.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_002.png",
+      "sourceTimes": {
+        "question": 96.0,
+        "answer": 134.0
+      },
+      "sourceQuestionNumber": 2
+    },
+    {
+      "id": "003",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_003.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_003.png",
+      "sourceTimes": {
+        "question": 146.0,
+        "answer": 194.0
+      },
+      "sourceQuestionNumber": 3
+    },
+    {
+      "id": "004",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_004.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_004.png",
+      "sourceTimes": {
+        "question": 206.0,
+        "answer": 250.0
+      },
+      "sourceQuestionNumber": 4
+    },
+    {
+      "id": "005",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_005.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_005.png",
+      "sourceTimes": {
+        "question": 266.0,
+        "answer": 294.0
+      },
+      "sourceQuestionNumber": 5
+    },
+    {
+      "id": "006",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_006.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_006.png",
+      "sourceTimes": {
+        "question": 306.0,
+        "answer": 350.0
+      },
+      "sourceQuestionNumber": 6
+    },
+    {
+      "id": "007",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_007.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_007.png",
+      "sourceTimes": {
+        "question": 366.0,
+        "answer": 410.0
+      },
+      "sourceQuestionNumber": 7
+    },
+    {
+      "id": "008",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_008.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_008.png",
+      "sourceTimes": {
+        "question": 426.0,
+        "answer": 464.0
+      },
+      "sourceQuestionNumber": 8
+    },
+    {
+      "id": "009",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_009.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_009.png",
+      "sourceTimes": {
+        "question": 476.0,
+        "answer": 564.0
+      },
+      "sourceQuestionNumber": 9
+    },
+    {
+      "id": "010",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_010.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_010.png",
+      "sourceTimes": {
+        "question": 576.0,
+        "answer": 680.0
+      },
+      "sourceQuestionNumber": 10
+    },
+    {
+      "id": "011",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_011.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_011.png",
+      "sourceTimes": {
+        "question": 696.0,
+        "answer": 734.0
+      },
+      "sourceQuestionNumber": 11
+    },
+    {
+      "id": "012",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_012.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_012.png",
+      "sourceTimes": {
+        "question": 746.0,
+        "answer": 794.0
+      },
+      "sourceQuestionNumber": 12
+    },
+    {
+      "id": "013",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_013.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_013.png",
+      "sourceTimes": {
+        "question": 806.0,
+        "answer": 860.0
+      },
+      "sourceQuestionNumber": 13
+    },
+    {
+      "id": "014",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_014.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_014.png",
+      "sourceTimes": {
+        "question": 876.0,
+        "answer": 910.0
+      },
+      "sourceQuestionNumber": 14
+    },
+    {
+      "id": "015",
+      "chapter": "history",
+      "question": "images_10/history-chronological-order-kamakura-edo-02/question_015.png",
+      "answer": "images_10/history-chronological-order-kamakura-edo-02/answer_015.png",
+      "sourceTimes": {
+        "question": 926.0,
+        "answer": 962.0
+      },
+      "sourceQuestionNumber": 15
+    }
+  ],
+  "series": "past",
+  "count": 15,
+  "source": "https://www.youtube.com/watch?v=SfiKCQVs_LQ",
+  "sourceTitle": "歴史年代古い順② 鎌倉～江戸時代"
+}

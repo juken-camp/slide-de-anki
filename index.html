@@ -1718,8 +1718,8 @@ function normalizeCatalogScope() {
   if (catalogSubject === 'social' && !['geography','history','civics',...catalogChoices().map(m=>m.field)].includes(socialField)) socialField = 'geography';
   const available = availableSeries();
   if (!available.some(s => s.id === catalogSeries)) catalogSeries = available[0]?.id || 'unit';
-  const allowed = new Set(catalogSeriesLessons().map(m => m.id));
-  for (const id of selected) if (!allowed.has(id)) selected.delete(id);
+  const availableIds = new Set(meta.map(m => m.id));
+  for (const id of selected) if (!availableIds.has(id)) selected.delete(id);
 }
 function setCatalogContext({subject=catalogSubject,field=socialField,series} = {}) {
   if(catalogIsCollections) $('catalogSearch').value='';
@@ -1729,7 +1729,7 @@ function setCatalogContext({subject=catalogSubject,field=socialField,series} = {
   catalogSubject = subject; socialField = field;
   catalogSeries = series ?? seriesMemory.get(catalogScopeKey()) ?? 'unit';
   normalizeCatalogScope();
-  if (`${catalogScopeKey()}:${catalogSeries}` !== previous) { selected.clear(); $('catalogSearch').value = ''; catalogFilter = 'all'; }
+  if (`${catalogScopeKey()}:${catalogSeries}` !== previous) { $('catalogSearch').value = ''; catalogFilter = 'all'; }
   renderCatalog();
 }
 function renderSeriesReview() {
@@ -1752,9 +1752,10 @@ function toggleGroup(items) {
   for (const m of items) { if (!allowed.has(m.id)) continue; if (all) selected.delete(m.id); else selected.add(m.id); }
   renderCatalog();
 }
+function selectedCatalogLessons() { return meta.filter(m => selected.has(m.id)); }
 function selectionSummary() {
-  const choices = catalogSeriesLessons().filter(m => selected.has(m.id));
-  $('selectionSummary').textContent = `${seriesContextLabel()}\n${choices.length ? `選択中 ${choices.length}教材 · ${choices.reduce((n,m) => n+m.count,0)}問` : '教材を選ぶにゃ'}`;
+  const choices = selectedCatalogLessons();
+  $('selectionSummary').textContent = `${choices.length ? '選んだ教材' : seriesContextLabel()}\n${choices.length ? `選択中 ${choices.length}教材 · ${choices.reduce((n,m) => n+m.count,0)}問` : '教材を選ぶにゃ'}`;
   $('startStudy').disabled = !choices.length || state.loading; $('clearSelection').disabled = !choices.length;
   if (choices.length && choices.length !== selectionCount && selectionCount >= 0 && tapPlay() && !reduced && !document.hidden) {
     $('startStudy').animate?.([{transform:'scale(1)'},{transform:'translateY(-3px) scale(1.025)'},{transform:'scale(1)'}],{duration:360,easing:'ease-out'});
@@ -2693,7 +2694,7 @@ $('quickPause').onclick = pause;
 $('brandHome').onclick = () => playWithCat($('brandHome'));
 $('navSettings').onclick = () => showScreen('settings');
 $('openCatalog').onclick = () => {catalogIsCollections=false;showScreen('catalog');};$('navCollections').onclick=openMyCollections; $('returnToStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
-$('startStudy').onclick = () => {state.subject = catalogSubject; beep('open');return selectLessons(catalogSeriesLessons().filter(m => selected.has(m.id)).map(m => m.id));};
+$('startStudy').onclick = () => {state.subject = catalogSubject; beep('open');return selectLessons(selectedCatalogLessons().map(m => m.id));};
 $('clearSelection').onclick = () => { selected.clear(); renderCatalog(); };
 $('selectVisible').onclick = () => toggleGroup(visibleLessons()); $('catalogSearch').oninput = renderCatalog;
 

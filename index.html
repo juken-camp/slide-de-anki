@@ -1295,12 +1295,12 @@ const undoHistory = [];
 let assessmentLockUntil = 0;
 let soundEnabled = data.neko.soundEnabled !== false, audio = null, masterGain = null, lastTapSound = -1000;
 let tapNote = 0;
-let audioResumePromise=null,audioStartError=false;
+let audioResumePromise=null,audioStartError=false,mediaSoundFallback=false;
 // Home Screen WebKit can leave AudioContext.resume() pending indefinitely.
-// Play the same synthesized notes through reusable media elements on iOS PWAs.
+// Prefer interactive WebAudio; keep preloaded short media clips as a fallback.
 const useMediaSound = (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1)) && (navigator.standalone===true || window.matchMedia('(display-mode: standalone)').matches);
 const mediaSoundPool=[],mediaSoundCache=new Map();
-let mediaSoundNeedsPrime=true,mediaSoundCursor=0;
+let mediaSoundNeedsPrime=true,mediaSoundCursor=0,mediaSoundBank=null,mediaSoundWarmTimer=null;
 const audioVoices = new Set();
 const soundStyles = ['soft','pop','sparkle'];
 function soundStyle() { return soundStyles.includes(data.neko.soundStyle) ? data.neko.soundStyle : 'soft'; }
@@ -1320,7 +1320,7 @@ function soundSettingsUI() {
   $('dialogSoundToggle').textContent = soundEnabled ? '🔊 オフにするにゃ' : '🔇 オンにするにゃ';
   $('dialogSoundToggle').setAttribute('aria-pressed',String(soundEnabled));
   $('soundStateNote').textContent = !soundEnabled ? 'いまは音がオフにゃ' : soundVolume()===0 ? '音量0%にゃ。スライダーで音量を上げてにゃ' : audioStartError ? '音を開始できないにゃ。もう一度「試し聴き」を押してにゃ。' : '小さめの音から試してにゃ♪';
-  syncAudioGain();
+  syncAudioGain(); scheduleMediaSounds();
 }
 let playing = false, timer = null, remaining = 0, lastTick = 0;
 let catTaps=0, titleTaps=0, cardTaps=0, playfulParticles=0, lastPlaySound=-1000, playfulMessage=null;
@@ -1375,64 +1375,127 @@ function soundAttempt(promise,timeout=1000) {
     Promise.resolve(promise).then(()=>{clearTimeout(timer);resolve(true);},()=>{clearTimeout(timer);resolve(false);});
   });
 }
-function mediaSoundURL(notes,volume) {
-  const key=JSON.stringify([notes,volume]);
+function mediaSoundURL(notes,volume,tail=.02) {
+  const key=JSON.stringify([notes,volume,tail]);
   if(mediaSoundCache.has(key)){const value=mediaSoundCache.get(key);mediaSoundCache.delete(key);mediaSoundCache.set(key,value);return value;}
-  const rate=22050,duration=Math.max(.02,...notes.map(n=>n[2]+n[3]+.02)),samples=Math.ceil(rate*duration);
+  const rate=22050,duration=Math.max(.02,...notes.map(n=>n[2]+n[3]+tail)),samples=Math.ceil(rate*duration);
   const bytes=new Uint8Array(44+samples*2),view=new DataView(bytes.buffer);
   const text=(at,value)=>{for(let i=0;i<value.length;i++)bytes[at+i]=value.charCodeAt(i);};
   text(0,'RIFF');view.setUint32(4,36+samples*2,true);text(8,'WAVE');text(12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,rate,true);view.setUint32(28,rate*2,true);view.setUint16(32,2,true);view.setUint16(34,16,true);text(36,'data');view.setUint32(40,samples*2,true);
-  for(let i=0;i<samples;i++){
-    const time=i/rate;let mixed=0;
-    for(const [start,end,delay,length,level,type] of notes){
-      const t=time-delay;if(t<0 || t>=length)continue;
-      const ratio=Math.log(end/start),phase=2*Math.PI*(Math.abs(ratio)<1e-8 ? start*t : start*length*Math.expm1(ratio*t/length)/ratio);
-      const attack=Math.min(.006,length/2),envelope=t<attack ? .0001*Math.pow(level/.0001,t/attack) : level*Math.pow(.0001/level,(t-attack)/(length-attack));
-      const wave=type==='triangle' ? 2/Math.PI*Math.asin(Math.sin(phase)) : Math.sin(phase);
-      mixed+=wave*envelope;
+  const mix=new Float32Array(samples);
+  for(const [start,end,delay,length,level,type] of notes){
+    const first=Math.ceil(delay*rate),last=Math.min(samples,Math.ceil((delay+length)*rate));
+    const ratio=Math.log(end/start),attack=Math.min(.006,length/2);
+    for(let i=first;i<last;i++){
+      const t=i/rate-delay,phase=2*Math.PI*(Math.abs(ratio)<1e-8 ? start*t : start*length*Math.expm1(ratio*t/length)/ratio);
+      const envelope=t<attack ? .0001*Math.pow(level/.0001,t/attack) : level*Math.pow(.0001/level,(t-attack)/(length-attack));
+      mix[i]+=(type==='triangle' ? 2/Math.PI*Math.asin(Math.sin(phase)) : Math.sin(phase))*envelope;
     }
-    view.setInt16(44+i*2,Math.round(Math.max(-1,Math.min(1,mixed*volume))*32767),true);
   }
+  for(let i=0;i<samples;i++)view.setInt16(44+i*2,Math.round(Math.max(-1,Math.min(1,mix[i]*volume))*32767),true);
   let binary='';for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));
   const url='data:audio/wav;base64,'+btoa(binary);mediaSoundCache.set(key,url);
   if(mediaSoundCache.size>96)mediaSoundCache.delete(mediaSoundCache.keys().next().value);
   return url;
 }
+function soundNotes(kind,palette=soundStyle(),variant=0) {
+  let notes = {
+    tap: [[620,420,0,.045,.027,'sine']],
+    flip: [[500,760,0,.075,.03,'triangle']],
+    move: [[430,550,0,.055,.025,'sine']],
+    weak: [[392,440,0,.075,.025,'sine'],[523,523,.085,.09,.022,'sine']],
+    known: [[660,660,0,.095,.032,'triangle'],[880,880,.065,.1,.029,'triangle'],[1046,1046,.13,.14,.026,'sine']],
+    cat: [[720,1080,0,.11,.03,'sine'],[1080,620,.1,.16,.028,'sine']],
+    sparkle: [[1250,850,0,.17,.025,'sine']],
+    shuffle: [[420,780,0,.055,.026,'triangle'],[600,980,.065,.075,.024,'triangle']],
+    open: [[523,523,0,.075,.025,'sine'],[659,659,.065,.09,.024,'sine'],[784,784,.13,.12,.022,'triangle']],
+    finish: [[523,523,0,.13,.028,'sine'],[659,659,.10,.13,.026,'sine'],[784,784,.20,.13,.025,'sine'],[1046,1046,.32,.25,.023,'sine']],
+    milestone: [[523,523,0,.11,.032,'sine'],[659,659,.085,.11,.03,'sine'],[784,784,.17,.11,.029,'sine'],[1046,1046,.255,.18,.027,'sine']]
+  }[kind] || [[620,420,0,.045,.027,'sine']];
+  if (kind === 'tap') {
+    const f = [523,587,659,784,880][variant % 5];
+    notes = [[f,f*.82,0,.065,.027,'sine']];
+  }
+  if (kind === 'cat') {
+    const f = [600,760,680,850][variant%4];
+    notes = [[f,f*1.5,0,.11,.029,'sine'],[f*1.5,f*.9,.10,.17,.026,'sine']];
+  }
+  const pitch = palette==='pop' ? .72 : palette==='sparkle' ? 1.35 : 1;
+  const length = palette==='pop' ? .8 : palette==='sparkle' ? 1.25 : 1;
+  notes=notes.map(([start,end,delay,duration,volume])=>[start*pitch,end*pitch,delay,duration*length,volume*(palette==='sparkle'?.8:1),palette==='pop'?'triangle':'sine']);
+  return notes;
+}
+// Each fallback clip owns a preloaded player: no audio-sprite seeks on taps.
+function stopMediaEntry(entry) {
+  clearTimeout(entry.timer);entry.timer=null;entry.player.pause();
+}
 function stopMediaSounds() {
-  for(const entry of mediaSoundPool){entry.token++;entry.player.pause();}
+  for(const entry of mediaSoundPool){entry.token++;stopMediaEntry(entry);}
   mediaSoundNeedsPrime=true;
 }
-function primeMediaSounds() {
-  if(!mediaSoundPool.length){
-    for(let i=0;i<4;i++){const player=new Audio();player.preload='auto';player.setAttribute('playsinline','');mediaSoundPool.push({player,token:0});}
+function mediaBankKey(){return soundStyle()+':'+soundVolume();}
+function scheduleMediaSounds(delay=0) {
+  if(!useMediaSound || !soundEnabled || soundVolume()===0 || document.hidden || mediaSoundBank?.key===mediaBankKey())return;
+  clearTimeout(mediaSoundWarmTimer);
+  mediaSoundWarmTimer=setTimeout(()=>{mediaSoundWarmTimer=null;prepareMediaSounds();},delay);
+}
+function prepareMediaSounds() {
+  if(mediaSoundBank?.key===mediaBankKey())return;
+  stopMediaSounds();mediaSoundPool.splice(0);mediaSoundCache.clear();
+  const clips=new Map();
+  for(const kind of ['tap','flip','move','weak','known','cat','sparkle','shuffle','open','finish','milestone']){
+    for(let variant=0;variant<(kind==='tap'?5:kind==='cat'?4:1);variant++){
+      const notes=soundNotes(kind,soundStyle(),variant),key=JSON.stringify(notes);
+      const url=mediaSoundURL(notes,soundVolume()),players=[];
+      for(let i=0;i<2;i++){
+        const player=new Audio(url);player.preload='auto';player.setAttribute('playsinline','');
+        const entry={player,token:0,timer:null,primed:false};
+        player.onended=()=>{try{player.currentTime=0;}catch{}};
+        player.load();players.push(entry);mediaSoundPool.push(entry);
+      }
+      clips.set(key,players);
+    }
   }
-  if(!mediaSoundNeedsPrime)return;mediaSoundNeedsPrime=false;
-  const silent=mediaSoundURL([],0);
+  mediaSoundBank={key:mediaBankKey(),clips};
+}
+function primeMediaSounds() {
+  if(!mediaSoundNeedsPrime)return;
+  prepareMediaSounds();mediaSoundNeedsPrime=false;
   for(const entry of mediaSoundPool){
-    if(!entry.player.paused && !entry.player.ended)continue;
-    const token=++entry.token;entry.player.src=silent;
-    try {soundAttempt(entry.player.play()).then(ok=>{if(token!==entry.token)return;entry.player.pause();if(!ok)mediaSoundNeedsPrime=true;});} catch {mediaSoundNeedsPrime=true;}
+    if(entry.primed)continue;
+    const token=++entry.token;entry.player.muted=true;
+    try{Promise.resolve(entry.player.play()).then(()=>{
+      if(token!==entry.token)return;
+      entry.player.pause();try{entry.player.currentTime=0;}catch{}
+      entry.player.muted=false;entry.primed=true;
+    },()=>{if(token===entry.token){entry.player.muted=false;mediaSoundNeedsPrime=true;}});}catch{entry.player.muted=false;mediaSoundNeedsPrime=true;}
   }
 }
 async function playMediaSound(notes) {
-  primeMediaSounds();
-  const entry=mediaSoundPool.find(e=>e.player.paused || e.player.ended) || mediaSoundPool[mediaSoundCursor++%mediaSoundPool.length];
-  const token=++entry.token;entry.player.pause();entry.player.src=mediaSoundURL(notes,soundVolume());
-  let ok=false;try {ok=await soundAttempt(entry.player.play());} catch {}
-  if(token===entry.token && soundEnabled && !document.hidden){audioStartError=!ok;if(!ok){entry.player.pause();mediaSoundNeedsPrime=true;soundSettingsUI();}}
+  prepareMediaSounds();
+  const players=mediaSoundBank.clips.get(JSON.stringify(notes));if(!players)return;
+  const entry=players.find(e=>e.player.paused || e.player.ended) || players[mediaSoundCursor++%players.length];
+  const token=++entry.token;stopMediaEntry(entry);entry.player.muted=false;
+  // Idle players already sit at zero; rewind only an interrupted overlapping sound.
+  if(entry.player.currentTime!==0)try{entry.player.currentTime=0;}catch{}
+  let ok=false;try{ok=await soundAttempt(entry.player.play());}catch{}
+  if(token===entry.token && soundEnabled && !document.hidden){
+    audioStartError=!ok;
+    if(!ok){stopMediaEntry(entry);mediaSoundNeedsPrime=true;soundSettingsUI();}
+  }
 }
 function unlockAudio(event) {
   if (!soundEnabled || soundVolume()===0 || document.hidden) return null;
   try {
     try { if(navigator.audioSession && navigator.audioSession.type!=='playback') navigator.audioSession.type='playback'; } catch {}
-    if(useMediaSound){primeMediaSounds();return null;}
+    if(useMediaSound && event?.isTrusted && (!audio || audio.state!=='running'))primeMediaSounds();
     if(audio && (audio.state==='closed' || (audio.state!=='running' && audioStartError && event?.isTrusted))){
       for(const voice of audioVoices){try{voice.stop();voice.disconnect();}catch{}}audioVoices.clear();
       try{Promise.resolve(audio.close()).catch(()=>{});}catch{}audio=null;masterGain=null;audioResumePromise=null;
     }
     if (!audio || audio.state === 'closed') {
       const Context = window.AudioContext || window.webkitAudioContext;if(!Context)return null;
-      audio=new Context();masterGain=audio.createGain();masterGain.gain.value=soundVolume();masterGain.connect(audio.destination);
+      audio=new Context({latencyHint:'interactive'});masterGain=audio.createGain();masterGain.gain.value=soundVolume();masterGain.connect(audio.destination);
       const silent=audio.createBufferSource();silent.buffer=audio.createBuffer(1,1,audio.sampleRate);silent.connect(audio.destination);silent.onended=()=>silent.disconnect();silent.start(0);
     }
     if ((audio.state === 'suspended' || audio.state === 'interrupted') && !audioResumePromise) {
@@ -1447,40 +1510,22 @@ async function beep(kind = 'tap') {
   const now = performance.now();
   if (kind === 'tap' && now-lastTapSound < 65) return;
   if (kind === 'tap') lastTapSound = now;
-  let notes = {
-    tap: [[620,420,0,.045,.027,'sine']],
-    flip: [[500,760,0,.075,.03,'triangle']],
-    move: [[430,550,0,.055,.025,'sine']],
-    weak: [[392,440,0,.075,.025,'sine'],[523,523,.085,.09,.022,'sine']],
-    known: [[660,660,0,.095,.032,'triangle'],[880,880,.065,.1,.029,'triangle'],[1046,1046,.13,.14,.026,'sine']],
-    cat: [[720,1080,0,.11,.03,'sine'],[1080,620,.1,.16,.028,'sine']],
-    sparkle: [[1250,850,0,.17,.025,'sine']],
-    shuffle: [[420,780,0,.055,.026,'triangle'],[600,980,.065,.075,.024,'triangle']],
-    open: [[523,523,0,.075,.025,'sine'],[659,659,.065,.09,.024,'sine'],[784,784,.13,.12,.022,'triangle']],
-    finish: [[523,523,0,.13,.028,'sine'],[659,659,.10,.13,.026,'sine'],[784,784,.20,.13,.025,'sine'],[1046,1046,.32,.25,.023,'sine']],
-    milestone: [[523,523,0,.11,.032,'sine'],[659,659,.085,.11,.03,'sine'],[784,784,.17,.11,.029,'sine'],[1046,1046,.255,.18,.027,'sine']]
-  }[kind] || [[620,420,0,.045,.027,'sine']];
-  const palette = soundStyle();
-  if (kind === 'tap') {
-    const f = [523,587,659,784,880][tapNote++ % 5];
-    notes = [[f,f*.82,0,.065,.027,'sine']];
-  }
-  if (kind === 'cat') {
-    const f = [600,760,680,850][(Math.max(1,catTaps)-1)%4];
-    notes = [[f,f*1.5,0,.11,.029,'sine'],[f*1.5,f*.9,.10,.17,.026,'sine']];
-  }
-  const pitch = palette==='pop' ? .72 : palette==='sparkle' ? 1.35 : 1;
-  const length = palette==='pop' ? .8 : palette==='sparkle' ? 1.25 : 1;
-  notes=notes.map(([start,end,delay,duration,volume])=>[start*pitch,end*pitch,delay,duration*length,volume*(palette==='sparkle'?.8:1),palette==='pop'?'triangle':'sine']);
-  if(useMediaSound)return playMediaSound(notes);
-  const context=unlockAudio();if(!context){audioStartError=true;soundSettingsUI();return;}
-  if(audioResumePromise)await audioResumePromise;
+  const variant=kind==='tap' ? tapNote++%5 : kind==='cat' ? (Math.max(1,catTaps)-1)%4 : 0;
+  const notes=soundNotes(kind,soundStyle(),variant);
+  const context=unlockAudio();
+  if(!context){if(useMediaSound){mediaSoundFallback=true;return playMediaSound(notes);}audioStartError=true;soundSettingsUI();return;}
+  // An unresolved WebKit resume must never hold a tap in a one-second queue.
+  if(context.state!=='running' && audioResumePromise && !mediaSoundFallback)await soundAttempt(audioResumePromise,80);
+  if(context.state!=='running' && useMediaSound){mediaSoundFallback=true;return playMediaSound(notes);}
+  mediaSoundFallback=false;
+  // Drop stale events rather than play them after a delayed resume.
+  if(performance.now()-now>180)return;
   if(context!==audio || context.state!=='running' || !soundEnabled || soundVolume()===0 || document.hidden){if(context.state!=='running'){audioStartError=true;soundSettingsUI();}return;}
   audioStartError=false;syncAudioGain();
   try {
     for (const [start,end,delay,duration,volume,type] of notes) {
       if(audioVoices.size>=28)break;
-      const oscillator = context.createOscillator(), gain = context.createGain(), at = context.currentTime+.01+delay;
+      const oscillator = context.createOscillator(), gain = context.createGain(), at = context.currentTime+delay;
       oscillator.type = type; oscillator.frequency.setValueAtTime(start,at); oscillator.frequency.exponentialRampToValueAtTime(end,at+duration);
       gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(volume,at+.006); gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
       oscillator.connect(gain); gain.connect(masterGain); audioVoices.add(oscillator); oscillator.start(at); oscillator.stop(at+duration+.015);
@@ -2629,8 +2674,8 @@ $('autoMode').checked = !!data.neko.auto; $('autoMode').onchange = () => { pause
 for (const face of ['question','answer']) { $(face+'Seconds').value = seconds(face); $(face+'Seconds').onchange = e => { pause(); const n = Number(e.target.value); data.neko[face+'Seconds'] = Number.isFinite(n) ? Math.round(Math.min(120,Math.max(.5,n))*10)/10 : (face==='question'?3:2); e.target.value = data.neko[face+'Seconds']; save(); resetTimer(); }; }
 $('playButton').onclick = () => { if (playing) pause(); else { playing = true; resetTimer(); } };
 for (const b of document.querySelectorAll('[data-close]')) b.onclick = () => $(b.dataset.close).close();
-document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause(); syncAudioGain(); } else { stats(); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',()=>{stopMediaSounds();save();});
-window.addEventListener('pageshow',()=>{mediaSoundNeedsPrime=true;});
+document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause(); syncAudioGain(); } else { stats(); scheduleMediaSounds(0); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',()=>{stopMediaSounds();save();});
+window.addEventListener('pageshow',()=>{mediaSoundNeedsPrime=true;scheduleMediaSounds(0);});
 document.addEventListener('keydown',e => {
   if (screen !== 'study' || navBusy || document.querySelector('dialog[open]') || ['INPUT','SELECT','TEXTAREA','BUTTON','A'].includes(e.target.tagName) || e.target === $('slideTap') || e.repeat) return;
   if (e.key === 'ArrowRight') { e.preventDefault(); animateNav(1); } else if (e.key === 'ArrowLeft') { e.preventDefault(); animateNav(-1); } else if (e.code === 'Space') { e.preventDefault(); flip(); }
@@ -2668,14 +2713,14 @@ if (typeof ResizeObserver !== 'undefined') {
   }).observe($('catalogDock'));
 }
 
-function openSoundStudio() { pause(); soundSettingsUI(); $('soundDialog').showModal(); $('soundDialogTitle').focus({preventScroll:true}); }
+function openSoundStudio() { pause(); soundSettingsUI(); scheduleMediaSounds(0); $('soundDialog').showModal(); $('soundDialogTitle').focus({preventScroll:true}); }
 $('openSoundStudio').onclick = openSoundStudio;
 $('dialogSoundToggle').onclick = () => { soundEnabled=!soundEnabled; save(); stats(); if(soundEnabled)beep('tap'); };
 for(const b of document.querySelectorAll('[data-sound-style]')) b.onclick = () => {
   data.neko.soundStyle = b.dataset.soundStyle; save(); soundSettingsUI(); beep('known');
 };
 $('soundVolume').oninput = () => { data.neko.soundVolume=Number($('soundVolume').value)/100; soundSettingsUI(); };
-$('soundVolume').onchange = () => { save(); beep('tap'); };
+$('soundVolume').onchange = () => { save(); scheduleMediaSounds(0); beep('tap'); };
 $('soundPreview').onclick = async () => { await beep('known'); soundSettingsUI(); burst($('soundPreview'),['♪','✦','🐾'],5); };
 // Sensor access is requested only by a settings gesture. There is no startup popup.
 const orientationAPI = window.DeviceOrientationEvent;

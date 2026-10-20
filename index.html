@@ -2134,6 +2134,13 @@ function register(raw) {
   }
   stats(); if (screen === 'catalog') renderCatalog();
 }
+function unregisterImported(id) {
+  const index=meta.findIndex(m=>m.id===id && m.imported); if(index<0)return false;
+  meta.splice(index,1); loaded.delete(id); pending.delete(id);
+  if(state.lessonIds.includes(id)){ pause(); lesson=null; state.lessonIds=state.lessonIds.filter(x=>x!==id); state.order=[]; state.current=null; }
+  const collections=readCollections().map(c=>({...c,cards:c.cards.filter(r=>r.lessonId!==id)}));writeCollections(collections);
+  stats(); if(screen==='catalog') renderCatalog(); return true;
+}
 // Named sets store references to original cards; images and learning records stay shared.
 const COLLECTION_KEY = 'jc-image-quiz-collections-v1';
 let catalogIsCollections = false, collectionEditor = null, collectionEditSequence = 0, collectionPreviewCard = null, collectionPreviewAnswer = false, collectionThumbObserver = null;
@@ -2182,7 +2189,12 @@ function renderMyAddedLessons(){
  if(!items.length){const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'その教材は見つからないにゃ':'自分の教材を追加するにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'問題と解答の画像を取り込んで、この端末に保存するにゃ。'));if(!all.length)makeMyEmptyAction(e,()=>$('myAddLesson').click(),'教材を追加するにゃ');root.append(e);return;}
  for(const m of items){const box=collectionNode('article',undefined,'my-collection-card my-added-card');box.dataset.myLesson=m.id;
  box.append(collectionNode('h3',m.title),collectionNode('p',[`${m.count}問`,subjectLabel(m.subject),m.fieldLabel||''].filter(Boolean).join(' · ')));
- const buttons=collectionNode('div',undefined,'my-collection-actions');buttons.append(collectionButton('はじめるにゃ 🐾','primary-button',()=>NekoApp.selectImported(m.id)),collectionButton('編集にゃ','tool',()=>NekoApp.editImported(m.id)));box.append(buttons);root.append(box);}
+ const buttons=collectionNode('div',undefined,'my-collection-actions');buttons.append(collectionButton('はじめるにゃ 🐾','primary-button',()=>NekoApp.selectImported(m.id)),collectionButton('編集にゃ','tool',()=>NekoApp.editImported(m.id)),collectionButton('削除','link-button',async()=>{
+   if(!confirm(`「${m.title}」を削除するにゃ？ 学習記録は残るにゃ。`))return;
+   try{
+    await NekoApp.removeImported(m.id);renderMyCollections();toast('教材を削除したにゃ');
+   }catch{toast('教材を削除できなかったにゃ');}
+ }));box.append(buttons);root.append(box);}
 }
 
 function renderMyCollections() {
@@ -2636,7 +2648,7 @@ window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();}
 
 window.NekoApp = {
   flushStudyHistory:async()=>{await studyHistoryReady;await historyWrite;},
-  register, finishImports: async () => { resolveImportedLessons(); stats(); if (screen === 'catalog') renderCatalog(); },
+  register, unregisterImported, finishImports: async () => { resolveImportedLessons(); stats(); if (screen === 'catalog') renderCatalog(); },
   selectImported: async id => { catalogSubject = state.subject = meta.find(m => m.id === id).subject; await selectLessons([id]); }, pause, toast,
   get catalog() { return meta.map(({cards,...m})=>({...m})); },
   get state() { return {...state,lessonIds:[...state.lessonIds],order:[...state.order]}; }, get current() { return current(); }, get records() { return data.records; }
@@ -3015,6 +3027,11 @@ function renderImportedEditor(){
 $('importEditAdd').onclick=()=>{
  if(!editingLesson)return;
  editCards.push({id:'card-'+(crypto.randomUUID?.()||Date.now().toString(36)+'-'+editCards.length),chapter:editingLesson.chapters?.[0]?.id||'all'});renderImportedEditor();$('importEditPairs').scrollTop=$('importEditPairs').scrollHeight;
+};
+app.removeImported=async id=>{
+ const db=await database();
+ await new Promise((resolve,reject)=>{const t=db.transaction('lessons','readwrite');t.objectStore('lessons').delete(id);t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error);});
+ app.unregisterImported(id);
 };
 app.editImported=async id=>{
  const generation=++selectionGeneration;app.pause();

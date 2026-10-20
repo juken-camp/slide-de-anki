@@ -1295,9 +1295,9 @@ const undoHistory = [];
 let assessmentLockUntil = 0;
 let soundEnabled = data.neko.soundEnabled !== false, audio = null, masterGain = null, lastTapSound = -1000;
 let tapNote = 0;
-let audioResumePromise=null,audioStartError=false,mediaSoundFallback=false;
+let audioResumePromise=null,audioStartError=false;
 // Home Screen WebKit can leave AudioContext.resume() pending indefinitely.
-// Prefer interactive WebAudio; keep preloaded short media clips as a fallback.
+// Play the same synthesized notes through reusable media elements on iOS PWAs.
 const useMediaSound = (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1)) && (navigator.standalone===true || window.matchMedia('(display-mode: standalone)').matches);
 const mediaSoundPool=[],mediaSoundCache=new Map();
 let mediaSoundNeedsPrime=true,mediaSoundCursor=0,mediaSoundBank=null,mediaSoundWarmTimer=null;
@@ -1425,77 +1425,92 @@ function soundNotes(kind,palette=soundStyle(),variant=0) {
   notes=notes.map(([start,end,delay,duration,volume])=>[start*pitch,end*pitch,delay,duration*length,volume*(palette==='sparkle'?.8:1),palette==='pop'?'triangle':'sine']);
   return notes;
 }
-// Each fallback clip owns a preloaded player: no audio-sprite seeks on taps.
 function stopMediaEntry(entry) {
-  clearTimeout(entry.timer);entry.timer=null;entry.player.pause();
+  clearTimeout(entry.timer);entry.timer=null;entry.range=null;entry.player.pause();
+  if(soundEnabled && !document.hidden && mediaSoundBank?.key===mediaBankKey())loadMediaBank(entry,mediaSoundBank);
 }
 function stopMediaSounds() {
   for(const entry of mediaSoundPool){entry.token++;stopMediaEntry(entry);}
   mediaSoundNeedsPrime=true;
 }
+function ensureMediaPlayers() {
+  if(mediaSoundPool.length)return;
+  for(let i=0;i<4;i++){
+    const player=new Audio();player.preload='auto';player.setAttribute('playsinline','');
+    const entry={player,token:0,timer:null,range:null};
+    player.ontimeupdate=()=>{if(entry.range && player.currentTime>=entry.range.end)stopMediaEntry(entry);};
+    player.onended=()=>stopMediaEntry(entry);
+    mediaSoundPool.push(entry);
+  }
+}
 function mediaBankKey(){return soundStyle()+':'+soundVolume();}
-function scheduleMediaSounds(delay=0) {
+function loadMediaBank(entry,bank) {
+  if(entry.player.src===bank.url)return;
+  entry.player.src=bank.url;entry.player.load();
+}
+function scheduleMediaSounds(delay=80) {
   if(!useMediaSound || !soundEnabled || soundVolume()===0 || document.hidden || mediaSoundBank?.key===mediaBankKey())return;
   clearTimeout(mediaSoundWarmTimer);
-  mediaSoundWarmTimer=setTimeout(()=>{mediaSoundWarmTimer=null;prepareMediaSounds();},delay);
-}
-function prepareMediaSounds() {
-  if(mediaSoundBank?.key===mediaBankKey())return;
-  stopMediaSounds();mediaSoundPool.splice(0);mediaSoundCache.clear();
-  const clips=new Map();
-  for(const kind of ['tap','flip','move','weak','known','cat','sparkle','shuffle','open','finish','milestone']){
-    for(let variant=0;variant<(kind==='tap'?5:kind==='cat'?4:1);variant++){
-      const notes=soundNotes(kind,soundStyle(),variant),key=JSON.stringify(notes);
-      const url=mediaSoundURL(notes,soundVolume()),players=[];
-      for(let i=0;i<2;i++){
-        const player=new Audio(url);player.preload='auto';player.setAttribute('playsinline','');
-        const entry={player,token:0,timer:null,primed:false};
-        player.onended=()=>{try{player.currentTime=0;}catch{}};
-        player.load();players.push(entry);mediaSoundPool.push(entry);
+  mediaSoundWarmTimer=setTimeout(()=>{
+    mediaSoundWarmTimer=null;
+    if(!soundEnabled || soundVolume()===0 || document.hidden)return;
+    const palette=soundStyle(),volume=soundVolume(),key=mediaBankKey(),clips=new Map(),notes=[];
+    let offset=.2;
+    for(const kind of ['tap','flip','move','weak','known','cat','sparkle','shuffle','open','finish','milestone']){
+      for(let variant=0;variant<(kind==='tap'?5:kind==='cat'?4:1);variant++){
+        const part=soundNotes(kind,palette,variant),duration=Math.max(...part.map(n=>n[2]+n[3]))+.025;
+        clips.set(JSON.stringify(part),{start:offset,end:offset+duration});
+        for(const note of part)notes.push(note.map((value,index)=>index===2?value+offset:value));
+        offset+=duration+.6;
       }
-      clips.set(key,players);
     }
-  }
-  mediaSoundBank={key:mediaBankKey(),clips};
+    const bank={key,clips,url:mediaSoundURL(notes,volume,.65)};
+    // Only the active bank and the few cold-start clips need to remain cached.
+    mediaSoundCache.clear();mediaSoundBank=bank;ensureMediaPlayers();
+    for(const entry of mediaSoundPool)if(entry.player.paused || entry.player.ended)loadMediaBank(entry,bank);
+  },delay);
 }
 function primeMediaSounds() {
-  if(!mediaSoundNeedsPrime)return;
-  prepareMediaSounds();mediaSoundNeedsPrime=false;
+  ensureMediaPlayers();
+  if(!mediaSoundNeedsPrime)return;mediaSoundNeedsPrime=false;
+  const bank=mediaSoundBank?.key===mediaBankKey()?mediaSoundBank:null;
   for(const entry of mediaSoundPool){
-    if(entry.primed)continue;
-    const token=++entry.token;entry.player.muted=true;
-    try{Promise.resolve(entry.player.play()).then(()=>{
-      if(token!==entry.token)return;
-      entry.player.pause();try{entry.player.currentTime=0;}catch{}
-      entry.player.muted=false;entry.primed=true;
-    },()=>{if(token===entry.token){entry.player.muted=false;mediaSoundNeedsPrime=true;}});}catch{entry.player.muted=false;mediaSoundNeedsPrime=true;}
+    if(!entry.player.paused && !entry.player.ended)continue;
+    const token=++entry.token;stopMediaEntry(entry);
+    if(bank){loadMediaBank(entry,bank);try{entry.player.currentTime=0;}catch{}}
+    else entry.player.src=mediaSoundURL([],0);
+    entry.timer=setTimeout(()=>{if(token===entry.token)stopMediaEntry(entry);},80);
+    try {soundAttempt(entry.player.play()).then(ok=>{if(token!==entry.token)return;clearTimeout(entry.timer);entry.timer=null;entry.player.pause();if(!ok)mediaSoundNeedsPrime=true;});} catch {stopMediaEntry(entry);mediaSoundNeedsPrime=true;}
   }
 }
 async function playMediaSound(notes) {
-  prepareMediaSounds();
-  const players=mediaSoundBank.clips.get(JSON.stringify(notes));if(!players)return;
-  const entry=players.find(e=>e.player.paused || e.player.ended) || players[mediaSoundCursor++%players.length];
-  const token=++entry.token;stopMediaEntry(entry);entry.player.muted=false;
-  // Idle players already sit at zero; rewind only an interrupted overlapping sound.
-  if(entry.player.currentTime!==0)try{entry.player.currentTime=0;}catch{}
-  let ok=false;try{ok=await soundAttempt(entry.player.play());}catch{}
+  primeMediaSounds();
+  const bank=mediaSoundBank?.key===mediaBankKey()?mediaSoundBank:null,clip=bank?.clips.get(JSON.stringify(notes));
+  const entry=mediaSoundPool.find(e=>e.player.paused || e.player.ended) || mediaSoundPool[mediaSoundCursor++%mediaSoundPool.length];
+  const token=++entry.token;stopMediaEntry(entry);
+  if(clip){
+    loadMediaBank(entry,bank);
+    try{entry.player.currentTime=clip.start;entry.range=clip;}catch{entry.player.src=mediaSoundURL(notes,soundVolume());}
+  }else{entry.player.src=mediaSoundURL(notes,soundVolume());scheduleMediaSounds(0);}
+  let ok=false;try {ok=await soundAttempt(entry.player.play());} catch {}
   if(token===entry.token && soundEnabled && !document.hidden){
     audioStartError=!ok;
     if(!ok){stopMediaEntry(entry);mediaSoundNeedsPrime=true;soundSettingsUI();}
+    else if(entry.range){const remaining=Math.max(0,entry.range.end-entry.player.currentTime);entry.timer=setTimeout(()=>{if(token===entry.token)stopMediaEntry(entry);},remaining*1000);}
   }
 }
 function unlockAudio(event) {
   if (!soundEnabled || soundVolume()===0 || document.hidden) return null;
   try {
     try { if(navigator.audioSession && navigator.audioSession.type!=='playback') navigator.audioSession.type='playback'; } catch {}
-    if(useMediaSound && event?.isTrusted && (!audio || audio.state!=='running'))primeMediaSounds();
+    if(useMediaSound){primeMediaSounds();return null;}
     if(audio && (audio.state==='closed' || (audio.state!=='running' && audioStartError && event?.isTrusted))){
       for(const voice of audioVoices){try{voice.stop();voice.disconnect();}catch{}}audioVoices.clear();
       try{Promise.resolve(audio.close()).catch(()=>{});}catch{}audio=null;masterGain=null;audioResumePromise=null;
     }
     if (!audio || audio.state === 'closed') {
       const Context = window.AudioContext || window.webkitAudioContext;if(!Context)return null;
-      audio=new Context({latencyHint:'interactive'});masterGain=audio.createGain();masterGain.gain.value=soundVolume();masterGain.connect(audio.destination);
+      audio=new Context();masterGain=audio.createGain();masterGain.gain.value=soundVolume();masterGain.connect(audio.destination);
       const silent=audio.createBufferSource();silent.buffer=audio.createBuffer(1,1,audio.sampleRate);silent.connect(audio.destination);silent.onended=()=>silent.disconnect();silent.start(0);
     }
     if ((audio.state === 'suspended' || audio.state === 'interrupted') && !audioResumePromise) {
@@ -1512,20 +1527,15 @@ async function beep(kind = 'tap') {
   if (kind === 'tap') lastTapSound = now;
   const variant=kind==='tap' ? tapNote++%5 : kind==='cat' ? (Math.max(1,catTaps)-1)%4 : 0;
   const notes=soundNotes(kind,soundStyle(),variant);
-  const context=unlockAudio();
-  if(!context){if(useMediaSound){mediaSoundFallback=true;return playMediaSound(notes);}audioStartError=true;soundSettingsUI();return;}
-  // An unresolved WebKit resume must never hold a tap in a one-second queue.
-  if(context.state!=='running' && audioResumePromise && !mediaSoundFallback)await soundAttempt(audioResumePromise,80);
-  if(context.state!=='running' && useMediaSound){mediaSoundFallback=true;return playMediaSound(notes);}
-  mediaSoundFallback=false;
-  // Drop stale events rather than play them after a delayed resume.
-  if(performance.now()-now>180)return;
+  if(useMediaSound)return playMediaSound(notes);
+  const context=unlockAudio();if(!context){audioStartError=true;soundSettingsUI();return;}
+  if(audioResumePromise)await audioResumePromise;
   if(context!==audio || context.state!=='running' || !soundEnabled || soundVolume()===0 || document.hidden){if(context.state!=='running'){audioStartError=true;soundSettingsUI();}return;}
   audioStartError=false;syncAudioGain();
   try {
     for (const [start,end,delay,duration,volume,type] of notes) {
       if(audioVoices.size>=28)break;
-      const oscillator = context.createOscillator(), gain = context.createGain(), at = context.currentTime+delay;
+      const oscillator = context.createOscillator(), gain = context.createGain(), at = context.currentTime+.01+delay;
       oscillator.type = type; oscillator.frequency.setValueAtTime(start,at); oscillator.frequency.exponentialRampToValueAtTime(end,at+duration);
       gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(volume,at+.006); gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
       oscillator.connect(gain); gain.connect(masterGain); audioVoices.add(oscillator); oscillator.start(at); oscillator.stop(at+duration+.015);

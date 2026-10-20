@@ -915,8 +915,9 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 #catalogScreen .catalog-search-panel .catalog-resume>button{min-height:30px;max-width:100%;padding:4px 10px;font-size:11px;white-space:nowrap;line-height:20px;box-shadow:none}
 /* Keep the title and navigation available while the page scrolls. */
 html{scroll-padding-top:calc(var(--app-header-height,64px) + 12px)}
-#appHeader{position:sticky;top:0;z-index:150;isolation:isolate;padding-top:env(safe-area-inset-top,0px);background:#fff9f1}
-#appHeader::before{content:'';position:absolute;inset:0 -16px;z-index:-1;background:#fff9f1;box-shadow:0 1px 0 #d8bea040,0 5px 12px #6e431508;pointer-events:none}
+#appHeader{position:sticky;top:0;z-index:150;isolation:isolate;padding-top:env(safe-area-inset-top,0px);background:transparent}
+#appHeader::before{content:'';position:absolute;inset:0 -16px;z-index:-1;background:var(--cream);opacity:0;pointer-events:none}
+#appHeader.is-scrolled::before{opacity:.94;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 @media(max-width:600px){#appHeader::before{left:-12px;right:-12px}}
 </style></head>
 <body><main id="app" class="app">
@@ -1402,6 +1403,9 @@ const updateHeaderHeight = () => document.documentElement.style.setProperty('--a
 if (typeof ResizeObserver !== 'undefined') new ResizeObserver(updateHeaderHeight).observe($('appHeader'));
 else window.addEventListener('resize',updateHeaderHeight,{passive:true});
 updateHeaderHeight();
+const updateHeaderScroll = () => $('appHeader').classList.toggle('is-scrolled', window.scrollY > 8);
+window.addEventListener('scroll',updateHeaderScroll,{passive:true});
+updateHeaderScroll();
 const selected = new Set(state.lessonIds);
 const initialCatalogLesson = meta.find(m => selected.has(m.id) && m.subject === state.subject);
 if (initialCatalogLesson) {

@@ -884,6 +884,24 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 #soundVolume::-moz-range-progress{height:6px;background:transparent}
 #soundVolume::-moz-range-thumb{box-sizing:border-box;width:24px;height:24px;border:2px solid #b66b3c;border-radius:50%;background:#fffdf8;box-shadow:0 1px 4px #8b451333}
 
+
+#myCollectionsPanel .my-collection-card{display:grid;grid-template-rows:auto 1fr auto;min-height:132px;padding:14px;margin:0 1px 12px;border:1.5px solid #d5b697;border-radius:14px;background:#fffdf8;box-shadow:0 2px 0 #ead7c3}
+#myCollectionsPanel .my-collection-card h3{font-size:15px;line-height:1.5;margin:0 0 4px}
+#myCollectionsPanel .my-collection-card p{font-size:11px;line-height:1.5;margin:0 0 12px}
+#myCollectionsPanel .my-collection-actions{display:grid;grid-template-columns:minmax(0,1fr) 68px 38px;gap:7px;align-items:center}
+#myCollectionsPanel .my-collection-actions .primary-button,#myCollectionsPanel .my-collection-actions .tool{min-width:0;min-height:36px;margin:0;padding:6px 7px;font-size:12px;line-height:1.5;border-width:1.5px;border-radius:10px;box-shadow:0 2px 0 #dfbea0}
+#myCollectionsPanel .my-collection-actions .primary-button{box-shadow:0 2px 0 #8b4513}
+#myCollectionsPanel .my-collection-actions .link-button{min-width:0;padding:4px 0;font-size:11px}
+/* Preset selection changes color only: no size, shadow, press animation or layer shift. */
+#soundDialog .sound-presets button{border:1.5px solid #dfcbb7;padding:12px 4px;transform:none!important;transition:none!important;animation:none!important;box-shadow:none!important;opacity:1}
+#soundDialog .sound-presets button[aria-pressed=true]{border-color:#a94d18;background:#fff0da;color:#723b1c}
+#soundDialog .sound-presets button:active{transform:none!important;background:#fff0da}
+#importEditPairs{max-height:240px;overflow:auto;margin-bottom:8px;overscroll-behavior:contain}
+#importDialog .edit-photo-face{position:relative;display:block;margin:0;cursor:pointer}
+#importDialog .edit-photo-face input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:pointer}
+#importDialog .edit-photo-face:focus-within{outline:2px solid #ad622e;outline-offset:2px}
+#importDialog #importEditAdd{min-height:34px;padding:6px 10px;margin-bottom:12px;border:1px solid #d2ae88;border-radius:9px;background:#fff7e8;color:#86512e;font-size:11px}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -997,7 +1015,7 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
  <header class="import-head"><h2 id="importDialogTitle" tabindex="-1">教材を追加するにゃ</h2><button type="button" class="dialog-close" data-close="importDialog" aria-label="教材追加を閉じる">×</button></header>
  <form id="importForm">
   <div class="import-body" id="importBody">
-   <div class="import-modes" aria-label="教材の追加方法"><button type="button" id="importPhotoMode" aria-pressed="true">写真から</button><button type="button" id="importFileMode" aria-pressed="false">教材ZIP・画像</button></div>
+   <div class="import-modes" id="importModeControls" aria-label="教材の追加方法"><button type="button" id="importPhotoMode" aria-pressed="true">写真から</button><button type="button" id="importFileMode" aria-pressed="false">教材ZIP・画像</button></div>
    <div id="importPhotoPanel">
     <p class="import-intro">問題と解答をそれぞれ選ぶにゃ。名前はそのままでOKにゃ。</p>
     <div class="import-photo-pickers"><label>問題の写真<span class="photo-picker-button">＋ 写真を選ぶにゃ</span><small id="importQuestionCount">0枚</small><input type="file" id="importQuestions" accept="image/*" multiple></label><label>解答の写真<span class="photo-picker-button">＋ 写真を選ぶにゃ</span><small id="importAnswerCount">0枚</small><input type="file" id="importAnswers" accept="image/*" multiple></label></div>
@@ -1009,6 +1027,7 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
     <label class="import-file-label">教材ファイル・画像<input type="file" id="importImages" accept=".zip,.png,.jpg,.jpeg,.webp" multiple></label>
     <p class="import-pair-note">画像を直接選ぶときは <code>question_001.png</code> と <code>answer_001.png</code> の同じ番号をペアにするにゃ。</p>
    </div>
+   <div id="importEditPanel" hidden><p class="import-intro">写真を押して差し替えるにゃ。</p><div id="importEditPairs" aria-label="編集する問題と解答"></div><button type="button" id="importEditAdd">＋ 問題を追加するにゃ</button></div>
    <label>教材名<input id="importTitle" maxlength="100" placeholder="教材名を入れるにゃ" autocomplete="off" required></label>
    <div class="import-taxonomy">
     <label>教科<input id="importSubject" list="subjectSuggestions" maxlength="60" value="理科" placeholder="教科" required><datalist id="subjectSuggestions"></datalist></label>
@@ -1462,9 +1481,9 @@ function stopMediaSounds() {
 }
 function mediaBankKey(){return soundStyle()+':'+soundVolume();}
 function scheduleMediaSounds(delay=0) {
-  if(!useMediaSound || !soundEnabled || soundVolume()===0 || document.hidden || mediaSoundBank?.key===mediaBankKey())return;
+  if(!useMediaSound || audio?.state==='running' || !soundEnabled || soundVolume()===0 || document.hidden || mediaSoundBank?.key===mediaBankKey())return;
   clearTimeout(mediaSoundWarmTimer);
-  mediaSoundWarmTimer=setTimeout(()=>{mediaSoundWarmTimer=null;prepareMediaSounds();},delay);
+  mediaSoundWarmTimer=setTimeout(()=>{mediaSoundWarmTimer=null;if(audio?.state!=='running')prepareMediaSounds();},delay);
 }
 function prepareMediaSounds() {
   if(mediaSoundBank?.key===mediaBankKey())return;
@@ -1603,7 +1622,7 @@ document.addEventListener('click',event => {
   const control=event.target.closest('button,summary,a');
   if (!control || control.disabled) return;
   if (tapPlay() && !control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
-  tapSpark(control,event);
+  if(!control.hasAttribute('data-sound-style'))tapSpark(control,event);
 },true);
 
 function status(c) { return data.records[c.lessonId]?.[c.originalId]?.status || 'unmarked'; }
@@ -2107,7 +2126,13 @@ function updateTimerUI() {
 function register(raw) {
   if (typeof raw.subject !== 'string' || !raw.subject.trim() || !raw.cards?.length) throw Error('教科と教材の画像を確認してにゃ。');
   const item = {...raw,count:raw.cards.length}, index = meta.findIndex(m => m.id === raw.id); if (index>=0) meta[index] = item; else meta.push(item);
-  loaded.set(raw.id,raw); stats(); if (screen === 'catalog') renderCatalog();
+  loaded.set(raw.id,raw);
+  if(lesson && state.lessonIds.includes(raw.id)){
+    const cards=new Map(raw.cards.map(c=>[c.id,c]));
+    lesson.cards=lesson.cards.map(c=>{const next=c.lessonId===raw.id?cards.get(c.originalId):null;return next?{...c,...next,id:c.id,originalId:c.originalId,lessonId:raw.id,chapterKey:cardKey(raw.id,next.chapter)}:c;});
+    if(!state.collection){const existing=new Set(lesson.cards.map(c=>c.id));for(const c of raw.cards){const id=cardKey(raw.id,c.id);if(!existing.has(id)){lesson.cards.push({...c,id,originalId:c.id,lessonId:raw.id,chapterKey:cardKey(raw.id,c.chapter)});if(state.order.length)state.order.push(id);}}}
+  }
+  stats(); if (screen === 'catalog') renderCatalog();
 }
 // Named sets store references to original cards; images and learning records stay shared.
 const COLLECTION_KEY = 'jc-image-quiz-collections-v1';
@@ -2157,7 +2182,7 @@ function renderMyAddedLessons(){
  if(!items.length){const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'その教材は見つからないにゃ':'自分の教材を追加するにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'問題と解答の画像を取り込んで、この端末に保存するにゃ。'));if(!all.length)makeMyEmptyAction(e,()=>$('myAddLesson').click(),'教材を追加するにゃ');root.append(e);return;}
  for(const m of items){const box=collectionNode('article',undefined,'my-collection-card my-added-card');box.dataset.myLesson=m.id;
  box.append(collectionNode('h3',m.title),collectionNode('p',[`${m.count}問`,subjectLabel(m.subject),m.fieldLabel||''].filter(Boolean).join(' · ')));
- box.append(collectionButton('はじめるにゃ 🐾','primary-button',()=>NekoApp.selectImported(m.id)));root.append(box);}
+ const buttons=collectionNode('div',undefined,'my-collection-actions');buttons.append(collectionButton('はじめるにゃ 🐾','primary-button',()=>NekoApp.selectImported(m.id)),collectionButton('編集にゃ','tool',()=>NekoApp.editImported(m.id)));box.append(buttons);root.append(box);}
 }
 
 function renderMyCollections() {
@@ -2917,6 +2942,7 @@ const $=id=>document.getElementById(id),app=window.NekoApp;
 const fields={science:[['biology','生物'],['chemistry','化学'],['physics','物理'],['earth','地学'],['integrated_science','総合']],social:[['geography','地理'],['history','歴史'],['civics','公民']]};
 let dbPromise,selected=null,selectionGeneration=0,selectionReady=false,importBusy=false,importMode='photos';
 const photoFiles={question:[],answer:[]},photoURLs=[];
+let editingLesson=null,editCards=[];const editURLs=[];
 function database(){if(!window.indexedDB)return Promise.reject(Error('このブラウザーでは教材を保存できません。'));return dbPromise??=new Promise((resolve,reject)=>{const r=indexedDB.open('jc-image-quiz-content',1);r.onupgradeneeded=()=>r.result.createObjectStore('lessons',{keyPath:'id'});r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
 function materialize(raw){return {...raw,cards:raw.cards.map(c=>({id:c.id,chapter:c.chapter||'all',sourceTimes:c.sourceTimes,correctedFaces:c.correctedFaces,question:URL.createObjectURL(c.questionBlob),answer:URL.createObjectURL(c.answerBlob)}))};}
 const fieldChoices = subject => Object.hasOwn(fields,subject) ? fields[subject] : [];
@@ -2958,9 +2984,51 @@ function scheduleImportViewport(){if(!importViewportFrame)importViewportFrame=re
 window.visualViewport?.addEventListener('resize',scheduleImportViewport,{passive:true});
 window.visualViewport?.addEventListener('scroll',scheduleImportViewport,{passive:true});
 window.addEventListener('resize',scheduleImportViewport,{passive:true});
-$('openImport').onclick=()=>{app.pause();$('importDialog').showModal();fillFields();updateImportViewport();$('importBody').scrollTop=0;$('importDialogTitle').focus({preventScroll:true});};let previousSubject='science';
+$('openImport').onclick=()=>{if(editingLesson)resetImportedEditor();++selectionGeneration;app.pause();$('importDialog').showModal();fillFields();updateImportViewport();$('importBody').scrollTop=0;$('importDialogTitle').focus({preventScroll:true});};let previousSubject='science';
 $('importSubject').oninput=()=>{const next=subjectId($('importSubject').value);if(next!==previousSubject && fieldChoices(previousSubject)?.some(([id,name])=>[$('importField').value].includes(name)||$('importField').value===id))$('importField').value='';previousSubject=next;fillFields();};
 function updateImportSubmit(){$('importSubmit').disabled=importBusy||!selectionReady;}
+function clearEditURLs(){for(const url of editURLs)URL.revokeObjectURL(url);editURLs.length=0;}
+function resetImportedEditor(){
+ editingLesson=null;editCards=[];clearEditURLs();$('importEditPairs').replaceChildren();$('importEditPanel').hidden=true;$('importModeControls').hidden=false;
+ $('importDialogTitle').textContent='教材を追加するにゃ';$('importSubmit').textContent='追加するにゃ';$('importForm').reset();
+ photoFiles.question.length=0;photoFiles.answer.length=0;clearPhotoURLs();setImportMode('photos');
+}
+function renderImportedEditor(){
+ clearEditURLs();const root=$('importEditPairs');root.replaceChildren();
+ for(const [i,card] of editCards.entries()){
+  const row=document.createElement('div');row.className='photo-pair';const number=document.createElement('strong');number.textContent=(i+1)+'問';row.append(number);
+  if(!editingLesson.cards.some(c=>c.id===card.id)){
+   const remove=document.createElement('button');remove.type='button';remove.textContent='×';remove.style.cssText='display:block;min-height:30px;margin-top:6px;padding:2px 6px;border:1px solid #d9b99a;border-radius:7px;background:#fff7e8;color:#86512e';remove.setAttribute('aria-label',(i+1)+'問目の追加をやめるにゃ');remove.onclick=()=>{editCards.splice(i,1);renderImportedEditor();};number.append(remove);
+  }
+  for(const [face,label] of [['question','問題'],['answer','解答']]){
+   const cell=document.createElement('label');cell.className='photo-face edit-photo-face';const file=card[face+'Blob'];
+   if(file){const img=document.createElement('img'),url=URL.createObjectURL(file);editURLs.push(url);img.src=url;img.alt=(i+1)+'問目の'+label;img.loading='lazy';cell.append(img);}
+   const caption=document.createElement('span');caption.textContent=file?label+'を差し替えるにゃ':label+'を選ぶにゃ';cell.append(caption);
+   const input=document.createElement('input');input.type='file';input.accept='image/*';input.setAttribute('aria-label',(i+1)+'問目の'+label+'を変更');
+   input.onchange=()=>{if(!input.files.length)return;card[face+'Blob']=input.files[0];renderImportedEditor();};cell.append(input);row.append(cell);
+  }
+  root.append(row);
+ }
+ selectionReady=editCards.length>0&&editCards.every(c=>c.questionBlob&&c.answerBlob);updateImportSubmit();
+ $('importStatus').textContent=selectionReady?editCards.length+'問にゃ。変更したら保存してにゃ。':'追加した問題と解答の写真を選んでにゃ。';
+}
+$('importEditAdd').onclick=()=>{
+ if(!editingLesson)return;
+ editCards.push({id:'card-'+(crypto.randomUUID?.()||Date.now().toString(36)+'-'+editCards.length),chapter:editingLesson.chapters?.[0]?.id||'all'});renderImportedEditor();$('importEditPairs').scrollTop=$('importEditPairs').scrollHeight;
+};
+app.editImported=async id=>{
+ const generation=++selectionGeneration;app.pause();
+ try{
+  const db=await database(),raw=await new Promise((resolve,reject)=>{const r=db.transaction('lessons','readonly').objectStore('lessons').get(id);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});
+  if(generation!==selectionGeneration)return;if(!raw)throw Error('教材が見つからないにゃ。');
+  editingLesson=raw;editCards=raw.cards.map(c=>({...c}));
+  $('importModeControls').hidden=true;$('importPhotoPanel').hidden=true;$('importFilePanel').hidden=true;$('importEditPanel').hidden=false;
+  $('importDialogTitle').textContent='教材を編集するにゃ';$('importSubmit').textContent='保存するにゃ';
+  $('importTitle').value=raw.title;$('importSubject').value=raw.subjectLabel||subjectName(raw.subject).replace(/^custom:/,'');
+  $('importField').value=raw.fieldLabel||fieldChoices(raw.subject).find(([id])=>id===raw.field)?.[1]||String(raw.field||'').replace(/^custom:/,'');$('importGrade').value=raw.grade||'学年共通';previousSubject=raw.subject;fillFields();renderImportedEditor();
+  $('importDialog').showModal();updateImportViewport();$('importBody').scrollTop=0;$('importEditPairs').scrollTop=0;$('importDialogTitle').focus({preventScroll:true});
+ }catch(e){app.toast(e.message||'教材を開けなかったにゃ。');}
+};
 function clearPhotoURLs(){for(const url of photoURLs)URL.revokeObjectURL(url);photoURLs.length=0;}
 function updatePhotoPairs(){
  ++selectionGeneration;clearPhotoURLs();const root=$('importPhotoPairs');root.replaceChildren();
@@ -2990,6 +3058,7 @@ function updatePhotoPairs(){
  updateImportSubmit();
 }
 function setImportMode(mode){
+ if(editingLesson)return;
  importMode=mode;++selectionGeneration;selected=null;selectionReady=false;
  $('importPhotoPanel').hidden=mode!=='photos';$('importFilePanel').hidden=mode==='photos';
  $('importPhotoMode').setAttribute('aria-pressed',String(mode==='photos'));$('importFileMode').setAttribute('aria-pressed',String(mode!=='photos'));
@@ -3000,7 +3069,25 @@ for(const [id,face] of [['importQuestions','question'],['importAnswers','answer'
  const files=[...$(id).files];if(!files.length)return;photoFiles[face].push(...files);$(id).value='';updatePhotoPairs();
 };
 $('importImages').onchange=()=>{const generation=++selectionGeneration;selectionReady=false;updateImportSubmit();$('importStatus').textContent='ファイルを確認するにゃ🐾';selected=inspect([...$('importImages').files]);selected.then(bundle=>{if(generation!==selectionGeneration)return;selectionReady=true;updateImportSubmit();const m=bundle.manifest;if(m){$('importTitle').value=String(m.title||'').slice(0,100);$('importSubject').value=clean(m.subjectLabel)||subjectName(m.subject).replace(/^custom:/,'');$('importGrade').value=clean(m.grade)||'学年共通';$('importField').value=clean(m.fieldLabel)||fieldChoices(m.subject)?.find(([id])=>id===m.field)?.[1]||String(m.field||'').replace(/^custom:/,'');previousSubject=subjectId($('importSubject').value);fillFields();}$('importStatus').textContent=bundle.pairs.length+'問分の画像がそろったにゃ。';}).catch(e=>{if(generation===selectionGeneration)$('importStatus').textContent=e.message;});};
-$('importForm').onsubmit=async e=>{e.preventDefault();if(importBusy)return;importBusy=true;updateImportSubmit();try{if(!selected)throw Error('教材ファイルを選択してください。');const bundle=await selected,title=$('importTitle').value.trim();if(!title)throw Error('教材名を入力してください。');const classification=taxonomy();$('importStatus').textContent='画像を保存しているにゃ🐾';for(const[,pair]of bundle.pairs)await Promise.all([validateImage(pair.question),validateImage(pair.answer)]);const raw=prepareRaw(bundle,title,classification),db=await database();await new Promise((resolve,reject)=>{const t=db.transaction('lessons','readwrite');t.objectStore('lessons').put(raw);t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error);});app.register(materialize(raw));$('importDialog').close();$('importForm').reset();photoFiles.question.length=0;photoFiles.answer.length=0;clearPhotoURLs();setImportMode('photos');await app.selectImported(raw.id);app.toast(raw.cards.length+'問の教材を追加したにゃ♪');}catch(e){$('importStatus').textContent=e?.name==='QuotaExceededError'?'保存容量が足りないにゃ。端末の空き容量を確認してにゃ。':e?.message||'保存できなかったにゃ。';}finally{importBusy=false;updateImportSubmit();}};
+$('importForm').onsubmit=async e=>{
+ e.preventDefault();if(importBusy)return;importBusy=true;updateImportSubmit();
+ try{
+  const title=$('importTitle').value.trim();if(!title)throw Error('教材名を入力してにゃ。');const classification=taxonomy();let raw;const isEdit=!!editingLesson;
+  if(isEdit){
+   if(!editCards.length||editCards.some(c=>!c.questionBlob||!c.answerBlob))throw Error('問題と解答の写真を選んでにゃ。');
+   const old=new Map(editingLesson.cards.map(c=>[c.id,c]));
+   for(const card of editCards)for(const face of ['question','answer'])if(card[face+'Blob']!==old.get(card.id)?.[face+'Blob'])await validateImage(card[face+'Blob']);
+   raw={...editingLesson,title,...classification,grade:clean($('importGrade').value)||'学年共通',cards:editCards.map(c=>({...c}))};
+  }else{
+   if(!selected)throw Error('教材ファイルを選んでにゃ。');const bundle=await selected;
+   for(const[,pair]of bundle.pairs)await Promise.all([validateImage(pair.question),validateImage(pair.answer)]);raw=prepareRaw(bundle,title,classification);
+  }
+  $('importStatus').textContent='画像を保存しているにゃ🐾';const db=await database();await new Promise((resolve,reject)=>{const t=db.transaction('lessons','readwrite');t.objectStore('lessons').put(raw);t.oncomplete=resolve;t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error);});
+  app.register(materialize(raw));$('importDialog').close();resetImportedEditor();
+  if(!isEdit)await app.selectImported(raw.id);app.toast(isEdit?'教材を保存したにゃ♪':raw.cards.length+'問の教材を追加したにゃ♪');
+ }catch(e){$('importStatus').textContent=e?.name==='QuotaExceededError'?'保存容量が足りないにゃ。端末の空き容量を確認してにゃ。':e?.message||'保存できなかったにゃ。';}
+ finally{importBusy=false;updateImportSubmit();}
+};
 (async()=>{try{const db=await database();const rows=await new Promise((resolve,reject)=>{const r=db.transaction('lessons','readonly').objectStore('lessons').getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});for(const raw of rows){if(typeof raw.subject==='string' && raw.subject.trim())app.register(materialize(raw));}}catch{}finally{await app.finishImports();}})();
 })();
 
@@ -3012,7 +3099,7 @@ $('importForm').onsubmit=async e=>{e.preventDefault();if(importBusy)return;impor
     pressed?.classList.remove('neko-pressing');
     pressed = null; pointer = null; origin = null;
   };
-  const control = target => target instanceof Element ? target.closest('button:not(:disabled),summary,a[href]') : null;
+  const control = target => {const node=target instanceof Element?target.closest('button:not(:disabled),summary,a[href]'):null;return node?.hasAttribute('data-sound-style')?null:node;};
   document.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0) return;
     clear(); pressed = control(event.target);

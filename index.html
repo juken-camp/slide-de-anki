@@ -924,7 +924,7 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
   <div class="catalog-heading page-heading"><div><h2 class="screen-title" id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加</button></div>
-  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="secondary-button home-review" id="quickReview" hidden>苦手だけ復習するにゃ</button></div></div>
+  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="secondary-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
   
   
   
@@ -968,8 +968,8 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
   <div class="report-metrics">
    <div><span>学習した日</span><strong id="reportDays">0<span class="report-value-unit">日</span></strong><small id="reportDaysCaption"></small></div>
    <div><span>学習した問題</span><strong id="reportQuestions">0<span class="report-value-unit">問</span></strong><small>同じ問題は1日1問</small></div>
-   <div class="report-pink"><span>思い出せた割合</span><strong id="reportRecall">—</strong><small id="reportRecallCaption">自己判定</small></div>
-   <div><span>苦手から前進</span><strong id="reportImproved">0<span class="report-value-unit">問</span></strong><small>期間内の問題・重複なし</small></div>
+   <div class="report-pink"><span>おぼえた割合</span><strong id="reportRecall">—</strong><small id="reportRecallCaption">自己判定</small></div>
+   <div><span>おぼえてない → おぼえた</span><strong id="reportImproved">0<span class="report-value-unit">問</span></strong><small>期間内に変更した問題・重複なし</small></div>
   </div>
   
   <div class="report-chart-head"><h4>日ごとの学習</h4><span id="reportChartNote"></span></div><div id="reportChart" class="report-chart" aria-label="日別の学習した問題数"></div>
@@ -1084,7 +1084,7 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
    <p class="collection-grid-count" id="collectionGridCount" aria-live="polite"></p>
    <label for="collectionNumbers" class="collection-range-label">番号でまとめて選ぶにゃ（画面の番号）</label>
    <div class="collection-range"><input id="collectionNumbers" placeholder="例：1-10, 15, 20-25" inputmode="text" autocomplete="off"><button class="tool" id="collectionApplyNumbers" type="button">追加で選ぶにゃ</button></div>
-   <div class="collection-grid-tools"><button class="tool" id="collectionSelectAll" type="button">ぜんぶ選ぶにゃ</button><button class="tool" id="collectionSelectWeak" type="button">苦手を選ぶにゃ</button><button class="tool" id="collectionClearCards" type="button">選択を外すにゃ</button></div>
+   <div class="collection-grid-tools"><button class="tool" id="collectionSelectAll" type="button">ぜんぶ選ぶにゃ</button><button class="tool" id="collectionSelectWeak" type="button">おぼえてないのを選ぶにゃ</button><button class="tool" id="collectionClearCards" type="button">選択を外すにゃ</button></div>
    <div class="collection-grid" id="collectionGrid" aria-label="問題画像をタップして複数選択"></div>
   </div>
 
@@ -1622,7 +1622,7 @@ function playWithCat(element = $('mascotPlay')) {
   setTimeout(()=>{if(element.dataset.catTap===String(tap))face.textContent=idleFace;},1100);
   const messages=['にゃ〜ん♪','もふもふにゃ🐾','呼んだかにゃ？','いっしょに覚えるにゃ♪'];
   if (element === $('resultCat')) {
-    const cheers=state.finished?['最後まで進んだにゃ！えらいにゃ🐾','なでなで、うれしいにゃ〜♪','次は苦手をひとつ減らすにゃ🌱','ひと休みも大事にゃ。のび〜😸']:['ちょっとひと休みするにゃ🐾','なでなで、うれしいにゃ〜♪','次もいっしょに進むにゃ🌱','焦らず、自分のペースにゃ😸'];
+    const cheers=state.finished?['最後まで進んだにゃ！えらいにゃ🐾','なでなで、うれしいにゃ〜♪','次は「おぼえてない」をひとつ減らすにゃ🌱','ひと休みも大事にゃ。のび〜😸']:['ちょっとひと休みするにゃ🐾','なでなで、うれしいにゃ〜♪','次もいっしょに進むにゃ🌱','焦らず、自分のペースにゃ😸'];
     $('resultCatReply').textContent=special?'もふもふチャージ完了にゃ✨':cheers[(catTaps-1)%cheers.length];
   } else sayAt(element,special?'もふもふチャージ完了にゃ🐾':messages[(catTaps-1)%messages.length]);
   if(special){burst(element,['🐾','💛','✨','🌟'],9);if(!reduced)face.animate?.([{transform:'rotate(0deg) scale(1)'},{transform:'rotate(180deg) scale(1.15)',offset:.5},{transform:'rotate(360deg) scale(1)'}],{duration:720,easing:'ease-in-out'});}
@@ -1736,7 +1736,7 @@ function renderSeriesReview() {
   if(catalogIsCollections){$('quickReview').hidden=true;return;}
   const weak = catalogSeriesLessons().reduce((n,m) => n + weakFor(m),0);
   $('quickReview').hidden = weak === 0;
-  $('quickReview').textContent = `↻ このシリーズの苦手${weak}問にゃ`;
+  $('quickReview').textContent = `↻ おぼえてないの${weak}問にゃ`;
 }
 function visibleLessons() {
   const normalizeSearch = value => String(value).normalize('NFKC').replace(/\s+/g,'').toLocaleLowerCase();
@@ -2507,14 +2507,14 @@ async function renderLearningReport(){
  const advanced=[...improved].filter(k=>latest.get(k)==='k').length;
  $('reportNameInput').value=studyHistory.name||'';$('reportName').textContent=studyHistory.name||'';$('reportRange').textContent=from===to?hDateLabel(from):`${hDateLabel(from)} 〜 ${hDateLabel(to)}`;$('reportGenerated').textContent='集計 '+hStamp(Date.now());
  const metric=(id,value,unit='')=>$(id).replaceChildren(document.createTextNode(String(value)),...(unit?[collectionNode('span',unit,'report-value-unit')]:[]));
- metric('reportDays',active,'日');$('reportDaysCaption').textContent=`${days.length}日間の取り組み`;metric('reportQuestions',total,'問');metric('reportRecall',judged?Math.round(known/judged*100):'—',judged?'%':'');$('reportRecallCaption').textContent=judged?`${known} / ${judged}問・自己判定`:'まだ判定なし';metric('reportImproved',advanced,'問');
+ metric('reportDays',active,'日');$('reportDaysCaption').textContent=`${days.length}日間の取り組み`;metric('reportQuestions',total,'問');metric('reportRecall',judged?Math.round(known/judged*100):'—',judged?'%':'');$('reportRecallCaption').textContent=judged?`${known} / ${judged}問・その日の最後の仕分け`:'まだ判定なし';metric('reportImproved',advanced,'問');
  const show=days.slice(-14),heights=sums.slice(-14),max=Math.max(1,...heights);$('reportChartNote').textContent=days.length>14?'直近14日を表示':days.length>1?'同じ問題は1日1問':'';$('reportChart').replaceChildren();$('reportChart').classList.toggle('report-chart-single',show.length===1);
  show.forEach((day,i)=>{const count=heights[i],col=collectionNode('div',undefined,'report-chart-day'+(count?' is-active':'')),date=collectionNode('span',show.length===1?hDateLabel(day):hShort(day),'report-chart-date');
  if(show.length===1){col.append(date,collectionNode('b',count?'✓ 学習済み':'未学習','report-day-status'));}
  else{const bar=collectionNode('i');bar.style.height=Math.max(2,Math.round(count/max*46))+'px';col.append(collectionNode('b',`${count}問`),bar,date);}
  col.setAttribute('aria-label',`${day} ${count}問 ${count?'学習済み':'未学習'}`);$('reportChart').append(col);});
  materialRows($('reportMaterials'),byLesson);$('reportLegacy').textContent=(legacy||from<studyHistory.recordedFrom)?'以前の学習分は、端末に残っている問数だけを引き継いでいるにゃ。':'';
- $('reportCheer').textContent=!total?'まずは1問から、いっしょに進むにゃ🐾':advanced?`苦手から${advanced}問前進したにゃ！🐾`:active>=3?`${active}日分の積み重ね、ばっちりにゃ🐾`:'取り組んだ分が、ちゃんと残るにゃ🐾';renderHomeworkTestHistory();
+ $('reportCheer').textContent=!total?'まずは1問から、いっしょに進むにゃ🐾':advanced?`${advanced}問が「おぼえてない」から「おぼえた」になったにゃ！🐾`:active>=3?`${active}日分の積み重ね、ばっちりにゃ🐾`:'取り組んだ分が、ちゃんと残るにゃ🐾';renderHomeworkTestHistory();
 }
 function renderHomeworkTestHistory(){
  const active=studyHistory.activeTest;$('resumeHomeworkTest').hidden=!active||!!active.finishedAt;$('resumeHomeworkTest').textContent=active?`つづきから確認にゃ · ${Object.keys(active.answers||{}).length} / ${active.refs.length}問`:'';
@@ -2762,7 +2762,7 @@ function updateStudyActions(isReady, failed=false) {
   $('weakButton').hidden = $('knownButton').hidden = (!answer || failed) && !document.body.classList.contains('slide-focus');
   $('weakButton').disabled = $('knownButton').disabled = !isReady || !answer || failed || performance.now()<assessmentLockUntil;
   $('zoomImage').disabled = !isReady;
-  $('studyHint').textContent = failed ? '通信を確認して、もう一度試すにゃ' : !isReady ? '画像を準備しているにゃ…' : answer ? '自力で思い出せたか、選ぶにゃ' : 'まずは答えを思い出すにゃ';
+  $('studyHint').textContent = failed ? '通信を確認して、もう一度試すにゃ' : !isReady ? '画像を準備しているにゃ…' : answer ? 'おぼえたかどうか、自分で選ぶにゃ' : 'まずは答えを思い出すにゃ';
   $('slideTap').setAttribute('aria-busy', String(!isReady && !failed));
 }
 $('revealButton').onclick = () => { const focused = document.activeElement === $('revealButton'); pause(); flip(); if (focused) $('slideTap').focus({preventScroll:true}); };

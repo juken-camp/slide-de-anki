@@ -913,6 +913,11 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 /* Reserve one compact review row so changing series never shifts the lesson list. */
 #catalogScreen .catalog-search-panel .catalog-resume:not([hidden]){display:flex;height:32px;min-height:32px;margin:8px 0 0;flex-wrap:nowrap;justify-content:flex-end}
 #catalogScreen .catalog-search-panel .catalog-resume>button{min-height:30px;max-width:100%;padding:4px 10px;font-size:11px;white-space:nowrap;line-height:20px;box-shadow:none}
+/* Keep the title and navigation available while the page scrolls. */
+html{scroll-padding-top:calc(var(--app-header-height,64px) + 12px)}
+#appHeader{position:sticky;top:0;z-index:150;isolation:isolate;padding-top:env(safe-area-inset-top,0px);background:#fff9f1}
+#appHeader::before{content:'';position:absolute;inset:0 -16px;z-index:-1;background:#fff9f1;box-shadow:0 1px 0 #d8bea040,0 5px 12px #6e431508;pointer-events:none}
+@media(max-width:600px){#appHeader::before{left:-12px;right:-12px}}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -1393,6 +1398,10 @@ const reviewLessons = new Set([
   'social-history-jomon-kamakura-01', 'social-history-muromachi-edo-02',
   'social-history-edo-culture-bakumatsu-03', 'social-history-meiji-taisho-04', 'social-history-showa-heisei-05'
 ]);
+const updateHeaderHeight = () => document.documentElement.style.setProperty('--app-header-height', `${$('appHeader').getBoundingClientRect().height}px`);
+if (typeof ResizeObserver !== 'undefined') new ResizeObserver(updateHeaderHeight).observe($('appHeader'));
+else window.addEventListener('resize',updateHeaderHeight,{passive:true});
+updateHeaderHeight();
 const selected = new Set(state.lessonIds);
 const initialCatalogLesson = meta.find(m => selected.has(m.id) && m.subject === state.subject);
 if (initialCatalogLesson) {

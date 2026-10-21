@@ -1617,6 +1617,29 @@ html #app #catalogScreen #catalogDock:not(:has(#selectionDetails[open])) #clearS
 html #app #catalogScreen #catalogDock:has(#selectionDetails[open]) #clearSelection{
   display:inline-flex!important;
 }
+
+/* Cyber Nicopon sound studio: the dialog is outside #app, so target it directly. */
+html[data-persona=cyber] #soundDialog .sound-volume{background:#101d35!important;border:1px solid #2a5978!important;color:#dceaff!important}
+html[data-persona=cyber] #soundDialog .sound-volume .volume-slider::before{
+  background:linear-gradient(to right,#00f5ff 0 var(--volume),#30445f var(--volume) 100%)!important;
+  box-shadow:0 0 9px #00f5ff44;
+}
+html[data-persona=cyber] #soundDialog #soundVolume{background:transparent!important;border:0!important;box-shadow:none!important;accent-color:#00f5ff!important}
+html[data-persona=cyber] #soundDialog #soundVolume::-webkit-slider-runnable-track{background:transparent!important;box-shadow:none!important}
+html[data-persona=cyber] #soundDialog #soundVolume::-webkit-slider-thumb{
+  border:2px solid #00f5ff!important;background:#aafcff!important;box-shadow:0 0 8px #00f5ffb0,0 0 16px #00f5ff55!important;
+}
+html[data-persona=cyber] #soundDialog #soundVolume::-moz-range-track{background:transparent!important}
+html[data-persona=cyber] #soundDialog #soundVolume::-moz-range-progress{background:transparent!important}
+html[data-persona=cyber] #soundDialog #soundVolume::-moz-range-thumb{
+  border:2px solid #00f5ff!important;background:#aafcff!important;box-shadow:0 0 8px #00f5ffb0!important;
+}
+html[data-persona=cyber] #soundDialog .sound-presets button[aria-pressed=true]{
+  color:#00f5ff!important;border:2px solid #00f5ff!important;background:linear-gradient(135deg,#082741,#13163c)!important;
+  box-shadow:0 0 13px #00f5ff53!important;
+}
+/* Longer source-link labels remain legible on smaller phones. */
+#sourceLinks a,#testSourceLinks a{white-space:normal!important;overflow-wrap:anywhere;text-align:center;min-height:41px;line-height:1.45}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -1651,7 +1674,7 @@ html #app #catalogScreen #catalogDock:has(#selectionDetails[open]) #clearSelecti
 
 
 <div id="loadingMessage" class="loading-message" role="status" hidden>ちょっと待ってにゃ🐾</div>
-<section class="stage" id="stage"><article class="card" id="card"><div class="head"><div class="face-meta"><span class="badge" id="faceLabel">問題</span><span class="status-tag" id="cardStatus">まだ</span></div><span class="focus-only" id="focusPosition" aria-hidden="true"></span><span class="unit" id="cardUnit"></span><button title="画像を拡大する" id="zoomImage" class="link-button" type="button" aria-label="問題画像を拡大する">⤢</button></div><div class="image-frame"><div class="slide-wrap loading" id="slideTap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="slideImage" alt="" draggable="false" decoding="async"><div class="image-status" id="imageStatus" role="status">ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="resetImageView" hidden aria-label="画像を元の大きさに戻す">100%に戻すにゃ</button></div></article><div class="actions"><button class="focus-only" id="focusPause" type="button" hidden aria-label="自動めくりを止めるにゃ">Ⅱ</button><button class="arrow" id="prevButton" aria-label="前のカード">‹</button><button class="reveal" id="revealButton" type="button">答えを見るにゃ <span aria-hidden="true">↻</span></button><button class="again" id="weakButton" disabled>↻ おぼえてない</button><button class="done" id="knownButton" disabled>✓ おぼえた</button><button class="arrow" id="nextButton" aria-label="次のカード">›</button><button id="focusTools" class="focus-only" type="button" aria-haspopup="dialog" aria-controls="focusMenu" aria-expanded="false">操作にゃ ☰</button></div><div class="slide-meta"><p class="navigation-info" id="cardPosition" aria-live="polite"></p><button class="link-button" id="undoButton" disabled>↶ ひとつ戻すにゃ</button></div><div class="source-links" id="sourceLinks" aria-label="元動画へのリンク" hidden><a id="sourceVideo" target="_blank" rel="noopener noreferrer">▶ 元動画 ↗</a><a id="sourceMoment" target="_blank" rel="noopener noreferrer" hidden></a><span class="source-note" id="correctionNote" hidden>訂正画像を表示中（元動画は訂正前）</span></div><div class="study-guide" hidden><span id="studyHint" role="status"></span></div><div class="study-progress"><div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div></div><details class="study-options" id="studyOptions"><summary><span>学び方・範囲</span><span id="optionsSummary">ぜんぶ · 問題から</span></summary><div class="study-options-body"><div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
+<section class="stage" id="stage"><article class="card" id="card"><div class="head"><div class="face-meta"><span class="badge" id="faceLabel">問題</span><span class="status-tag" id="cardStatus">まだ</span></div><span class="focus-only" id="focusPosition" aria-hidden="true"></span><span class="unit" id="cardUnit"></span><button title="画像を拡大する" id="zoomImage" class="link-button" type="button" aria-label="問題画像を拡大する">⤢</button></div><div class="image-frame"><div class="slide-wrap loading" id="slideTap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="slideImage" alt="" draggable="false" decoding="async"><div class="image-status" id="imageStatus" role="status">ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="resetImageView" hidden aria-label="画像を元の大きさに戻す">100%に戻すにゃ</button></div></article><div class="actions"><button class="focus-only" id="focusPause" type="button" hidden aria-label="自動めくりを止めるにゃ">Ⅱ</button><button class="arrow" id="prevButton" aria-label="前のカード">‹</button><button class="reveal" id="revealButton" type="button">答えを見るにゃ <span aria-hidden="true">↻</span></button><button class="again" id="weakButton" disabled>↻ おぼえてない</button><button class="done" id="knownButton" disabled>✓ おぼえた</button><button class="arrow" id="nextButton" aria-label="次のカード">›</button><button id="focusTools" class="focus-only" type="button" aria-haspopup="dialog" aria-controls="focusMenu" aria-expanded="false">操作にゃ ☰</button></div><div class="slide-meta"><p class="navigation-info" id="cardPosition" aria-live="polite"></p><button class="link-button" id="undoButton" disabled>↶ ひとつ戻すにゃ</button></div><div class="source-links" id="sourceLinks" aria-label="元動画へのリンク" hidden><a id="sourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="sourceMoment" target="_blank" rel="noopener noreferrer" hidden></a><span class="source-note" id="correctionNote" hidden>訂正画像を表示中（元動画は訂正前）</span></div><div class="study-guide" hidden><span id="studyHint" role="status"></span></div><div class="study-progress"><div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div></div><details class="study-options" id="studyOptions"><summary><span>学び方・範囲</span><span id="optionsSummary">ぜんぶ · 問題から</span></summary><div class="study-options-body"><div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
 <nav class="chips" id="chapterChips" aria-label="単元"></nav>
 <details class="supplement-panel" id="supplementPanel" hidden><summary>補足を見るにゃ</summary><div class="supplement-links" id="supplementLinks"></div></details>
 <div class="face-mode" aria-label="カードの送り方"><button data-face-mode="normal" class="active" aria-pressed="true">問題から</button><button data-face-mode="answer" aria-pressed="false">解答で暗記</button></div>
@@ -1693,7 +1716,7 @@ html #app #catalogScreen #catalogDock:has(#selectionDetails[open]) #clearSelecti
   <article class="card" id="testCard"><div class="head"><span class="badge" id="testFace">問題</span><span class="unit" id="testUnit"></span><button id="testZoom" class="link-button" type="button" aria-label="テスト画像を拡大する">⤢</button></div><div class="image-frame"><div id="testSlideTap" class="slide-wrap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="testSlideImage" alt="" draggable="false" decoding="async"><div id="testImageStatus" class="image-status" role="status" hidden>ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="testResetImage" type="button" hidden>100%に戻すにゃ</button></div></article>
   <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題">‹</button><button id="testReveal" class="primary-button" type="button">答えを見るにゃ</button><button id="testRetry" class="secondary-button" type="button" hidden>もう一度</button><button id="testPass" class="primary-button" type="button" hidden>できた</button><button id="testNext" class="tool" type="button" aria-label="次の問題">›</button></div>
   <div class="test-under"><span id="testGradeHint">口頭や紙で答えてから、解答を開くにゃ。</span><button id="testUndo" class="link-button" type="button" disabled>ひとつ戻すにゃ</button></div>
-  <div class="source-links" id="testSourceLinks" hidden><a id="testSourceVideo" target="_blank" rel="noopener noreferrer">▶ 元動画 ↗</a><a id="testSourceMoment" target="_blank" rel="noopener noreferrer" hidden></a></div>
+  <div class="source-links" id="testSourceLinks" hidden><a id="testSourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="testSourceMoment" target="_blank" rel="noopener noreferrer" hidden></a></div>
   <p class="homework-note test-separate-note">テストの判定は、通常学習の「おぼえた」と分けて保存するにゃ。</p>
  </div>
  <div id="testResult" hidden>
@@ -2066,7 +2089,24 @@ const mediaSoundPool=[],mediaSoundCache=new Map();
 let mediaSoundCursor=0,mediaSoundBank=null,mediaSoundWarmTimer=null;
 const audioVoices = new Set();
 const soundStyles = ['soft','pop','sparkle'];
-function soundStyle() { return soundStyles.includes(data.neko.soundStyle) ? data.neko.soundStyle : 'soft'; }
+const cyberSoundStyles = ['digital','arcade','space'];
+const soundPresetSets = {
+  neko: [
+    ['soft','🫧','やさしい','ふんわり、軽やか'],
+    ['pop','🐾','ぽこぽこ','ころん、と弾む'],
+    ['sparkle','✨','きらきら','ベルみたいに響く']
+  ],
+  cyber: [
+    ['digital','⚡','デジタル','電子的なピコ音'],
+    ['arcade','🎮','8bit','レトロゲーム風'],
+    ['space','🛸','スペース','未来的な電子音']
+  ]
+};
+function cyberSoundActive() { return document.documentElement.dataset.persona === 'cyber'; }
+function soundStyle() {
+  if(cyberSoundActive()) return cyberSoundStyles.includes(data.neko.cyberSoundStyle) ? data.neko.cyberSoundStyle : 'digital';
+  return soundStyles.includes(data.neko.soundStyle) ? data.neko.soundStyle : 'soft';
+}
 function soundVolume() { const n=data.neko.soundVolume; return typeof n === 'number' && Number.isFinite(n) ? Math.max(0,Math.min(1,n)) : .65; }
 function syncAudioGain() {
   if (!soundEnabled || soundVolume()===0 || document.hidden) stopMediaSounds();
@@ -2075,7 +2115,17 @@ function syncAudioGain() {
   masterGain.gain.setTargetAtTime(soundEnabled && !document.hidden ? soundVolume() : 0,audio.currentTime,.012);
 }
 function soundSettingsUI() {
-  document.querySelectorAll('[data-sound-style]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.soundStyle===soundStyle())));
+  const presets = soundPresetSets[cyberSoundActive() ? 'cyber' : 'neko'];
+  document.querySelectorAll('[data-sound-style]').forEach((button,index)=>{
+    const [id,icon,label,detail] = presets[index];
+    button.dataset.soundStyle = id;
+    button.querySelector('span').textContent = icon;
+    button.querySelector('strong').textContent = label;
+    button.querySelector('small').textContent = detail;
+    button.setAttribute('aria-pressed',String(id===soundStyle()));
+  });
+  $('soundPreview').textContent = cyberSoundActive() ? '♪ 試し聴きするぜ' : '♪ 試し聴きにゃ';
+  document.querySelector('#soundDialog .section-kicker').textContent = cyberSoundActive() ? 'CYBER SOUND' : 'NEKOPON SOUND';
   $('soundVolume').value = Math.round(soundVolume()*100);
   $('soundVolumeLabel').textContent = Math.round(soundVolume()*100)+'%';
   $('soundVolumeTrack').style.setProperty('--volume',Math.round(soundVolume()*100)+'%');
@@ -2085,6 +2135,7 @@ function soundSettingsUI() {
   $('soundStateNote').textContent = !soundEnabled ? 'いまは音がオフにゃ' : soundVolume()===0 ? '音量0%にゃ。スライダーで音量を上げてにゃ' : audioStartError ? '音を開始できないにゃ。もう一度「試し聴き」を押してにゃ。' : '小さめの音から試してにゃ♪';
   syncAudioGain(); scheduleMediaSounds();
 }
+window.NekoRefreshSoundUI = soundSettingsUI;
 let playing = false, timer = null, remaining = 0, lastTick = 0;
 let catTaps=0, titleTaps=0, cardTaps=0, playfulParticles=0, lastPlaySound=-1000, playfulMessage=null;
 let noticeTimer, imageWaitTimer, suppressUntil = 0, navBusy = false;
@@ -2157,7 +2208,11 @@ function mediaSoundURL(notes,volume,tail=.02) {
     for(let i=first;i<last;i++){
       const t=i/rate-delay,phase=2*Math.PI*(Math.abs(ratio)<1e-8 ? start*t : start*length*Math.expm1(ratio*t/length)/ratio);
       const envelope=t<attack ? .0001*Math.pow(level/.0001,t/attack) : level*Math.pow(.0001/level,(t-attack)/(length-attack));
-      mix[i]+=(type==='triangle' ? 2/Math.PI*Math.asin(Math.sin(phase)) : Math.sin(phase))*envelope;
+      const wave=type==='triangle' ? 2/Math.PI*Math.asin(Math.sin(phase))
+        : type==='square' ? (Math.sin(phase)>=0 ? .65 : -.65)
+        : type==='sawtooth' ? ((phase/(2*Math.PI)%1)*2-1)*.58
+        : Math.sin(phase);
+      mix[i]+=wave*envelope;
     }
   }
   for(let i=0;i<samples;i++)view.setInt16(44+i*2,Math.round(Math.max(-1,Math.min(1,mix[i]*volume))*32767),true);
@@ -2167,6 +2222,39 @@ function mediaSoundURL(notes,volume,tail=.02) {
   return url;
 }
 function soundNotes(kind,palette=soundStyle(),variant=0) {
+  if (cyberSoundStyles.includes(palette)) {
+    // Three independent cyber presets, each defining ALL app sound events.
+    // Arrays: [startHz,endHz,delaySeconds,durationSeconds,gain,waveform].
+    const sounds = {
+      tap: [[740,980,0,.055,.027,'triangle']],
+      flip: [[480,1160,0,.105,.028,'triangle'],[950,1380,.035,.06,.010,'sine']],
+      move: [[990,580,0,.06,.025,'triangle']],
+      weak: [[480,260,0,.16,.027,'triangle'],[250,190,.1,.1,.014,'sine']],
+      known: [[780,930,0,.09,.028,'triangle'],[1046,1210,.083,.10,.029,'triangle'],[1397,1568,.165,.12,.025,'sine']],
+      cat: [[660,1040,0,.10,.027,'triangle'],[1040,1420,.1,.11,.022,'sine']],
+      sparkle: [[1400,1800,0,.14,.021,'sine']],
+      shuffle: [[550,910,0,.07,.026,'triangle'],[760,1250,.055,.08,.019,'triangle']],
+      open: [[640,850,0,.07,.027,'triangle'],[960,1220,.075,.10,.023,'sine']],
+      finish: [[587,784,0,.12,.027,'triangle'],[784,1046,.105,.13,.025,'triangle'],[1046,1568,.24,.21,.026,'sine']],
+      milestone: [[880,1175,0,.11,.026,'triangle'],[1175,1568,.09,.13,.025,'triangle'],[1568,2093,.22,.19,.023,'sine']]
+    };
+    let notes=(sounds[kind] || sounds.tap).map(note=>note.slice());
+    if(kind==='tap'){const f=[640,740,830,990,1110][variant%5];notes=[[f,f*1.25,0,.055,.026,'triangle']];}
+    if(kind==='cat'){const f=[590,690,790,880][variant%4];notes=[[f,f*1.6,0,.10,.026,'triangle'],[f*1.6,f*1.15,.10,.11,.022,'sine']];}
+    if(palette==='arcade'){
+      // Chiptune notes with stepped 8-bit pitch and a gentle square oscillator.
+      return notes.map(([start,end,delay,duration,level])=>{
+        const step=2**(Math.round(12*Math.log2(start/440))/12);
+        const freq=440*step;
+        return [freq,freq,delay,duration*.8,level*.72,'square'];
+      });
+    }
+    if(palette==='space'){
+      // Slower, softer sci-fi sweeps rather than the sharp digital blips.
+      return notes.map(([start,end,delay,duration,level],i)=>[start*.65,end*.83,delay*1.3,duration*1.7,level*.85,i%2?'triangle':'sine']);
+    }
+    return notes;
+  }
   let notes = {
     tap: [[620,420,0,.045,.027,'sine']],
     flip: [[500,760,0,.075,.03,'triangle']],
@@ -2200,7 +2288,7 @@ function stopMediaEntry(entry) {
 function stopMediaSounds() {
   for(const entry of mediaSoundPool){entry.token++;stopMediaEntry(entry);}
 }
-function mediaBankKey(){return soundStyle()+':'+soundVolume();}
+function mediaBankKey(){return (cyberSoundActive()?'cyber':'neko')+':'+soundStyle()+':'+soundVolume();}
 function scheduleMediaSounds(delay=0) {
   if(!useMediaSound || audio?.state==='running' || !soundEnabled || soundVolume()===0 || document.hidden || mediaSoundBank?.key===mediaBankKey())return;
   clearTimeout(mediaSoundWarmTimer);
@@ -2648,7 +2736,7 @@ function renderSource(c) {
   if (!baseURL) { $('sourceVideo').removeAttribute('href'); $('sourceMoment').hidden = true; $('sourceMoment').removeAttribute('href'); return; }
   const time = c.sourceTimes?.[face], valid = typeof time === 'number' && Number.isFinite(time) && time >= 0;
   const moment = $('sourceMoment'); $('sourceVideo').href = baseURL; moment.hidden = !valid; moment.removeAttribute('href');
-  if (valid) { const sec = Math.floor(time), stamp = Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0'); moment.href = baseURL+'&t='+sec+'s'; moment.textContent = `この場面 ${stamp} ↗`; moment.setAttribute('aria-label',`${state.flipped ? '解答' : '問題'}の場面をYouTubeで見る・${stamp}`); }
+  if (valid) { const sec = Math.floor(time), stamp = Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0'); moment.href = baseURL+'&t='+sec+'s'; moment.textContent = `▶︎ この場面 ${stamp} をみる`; moment.setAttribute('aria-label',`${state.flipped ? '解答' : '問題'}の場面をYouTubeで見る・${stamp}`); }
 }
 function base() { return lesson?.cards.filter(c => state.chapter === 'all' || (state.chapter.startsWith('lesson:') ? c.lessonId === state.chapter.slice(7) : c.chapterKey === state.chapter)) || []; }
 function deck() {
@@ -3355,7 +3443,7 @@ function renderHomeworkTest(){
  testSession.index=Math.max(0,Math.min(testSession.refs.length-1,testSession.index||0));const c=testCards[testSession.index];if(!c){$('testNotice').textContent='元の問題を読み込んでから再開してにゃ。';$('testPlay').hidden=true;return;}
  const graded=Object.keys(testSession.answers).length;$('testPosition').textContent=`${testSession.index+1} / ${testSession.refs.length}問`;$('testJudged').textContent=`判定 ${graded}問`;$('testProgress').style.width=(graded/testSession.refs.length*100)+'%';
  $('testFace').textContent=testFaceAnswer?'解答':'問題';$('testCard').classList.toggle('is-back',testFaceAnswer);$('testUnit').textContent=`${c.lessonTitle} · ${c.displayNumber||c.originalId}`;
- const source=sourceVideoURL(c.source),time=c.sourceTimes?.[testFaceAnswer?'answer':'question'];$('testSourceLinks').hidden=!source;$('testSourceMoment').hidden=true;$('testSourceMoment').removeAttribute('href');if(source){$('testSourceVideo').href=source;if(typeof time==='number'&&Number.isFinite(time)&&time>=0){$('testSourceMoment').hidden=false;$('testSourceMoment').href=source+'&t='+Math.floor(time)+'s';$('testSourceMoment').textContent=`この場面 ${Math.floor(time/60)}:${String(Math.floor(time)%60).padStart(2,'0')} ↗`;}}
+ const source=sourceVideoURL(c.source),time=c.sourceTimes?.[testFaceAnswer?'answer':'question'];$('testSourceLinks').hidden=!source;$('testSourceMoment').hidden=true;$('testSourceMoment').removeAttribute('href');if(source){$('testSourceVideo').href=source;if(typeof time==='number'&&Number.isFinite(time)&&time>=0){$('testSourceMoment').hidden=false;$('testSourceMoment').href=source+'&t='+Math.floor(time)+'s';$('testSourceMoment').textContent=`▶︎ この場面 ${Math.floor(time/60)}:${String(Math.floor(time)%60).padStart(2,'0')} をみる`;}}
  const frame=$('testSlideTap'),image=$('testSlideImage'),url=window.NekoImageURL(c[testFaceAnswer?'answer':'question']);frame.className='slide-wrap loading';$('testImageStatus').hidden=true;$('testImageStatus').textContent='ちょっと待ってにゃ🐾';image.alt=`${c.lessonTitle} ${c.displayNumber||c.originalId} ${testFaceAnswer?'解答':'問題'}`;homeworkImageView.setCard(c.id);updateHomeworkTestActions();
  const urls=[];for(let n=0;n<Math.min(4,testCards.length);n++){const card=testCards[(testSession.index+n)%testCards.length];urls.push(window.NekoImageURL(card.question),window.NekoImageURL(card.answer));}homeworkImageLoader.plan(urls);
  let done=false;const finish=()=>{if(token!==testImageToken||screen!=='test'||done)return;done=true;testReady=true;frame.classList.remove('loading');$('testImageStatus').hidden=true;homeworkImageView.refresh();updateHomeworkTestActions();setTimeout(()=>{if(token===testImageToken&&screen==='test')updateHomeworkTestActions();},Math.max(0,testGradeLock-performance.now())+12);};
@@ -3521,7 +3609,9 @@ function openSoundStudio() { pause(); soundSettingsUI(); scheduleMediaSounds(0);
 $('openSoundStudio').onclick = openSoundStudio;
 $('dialogSoundToggle').onclick = () => { soundEnabled=!soundEnabled; save(); stats(); if(soundEnabled)beep('tap'); };
 for(const b of document.querySelectorAll('[data-sound-style]')) b.onclick = () => {
-  data.neko.soundStyle = b.dataset.soundStyle; save(); soundSettingsUI(); beep('known');
+  if(cyberSoundActive()) data.neko.cyberSoundStyle = b.dataset.soundStyle;
+  else data.neko.soundStyle = b.dataset.soundStyle;
+  save(); soundSettingsUI(); beep('known');
 };
 $('soundVolume').oninput = () => { data.neko.soundVolume=Number($('soundVolume').value)/100; soundSettingsUI(); };
 $('soundVolume').onchange = () => { save(); scheduleMediaSounds(0); beep('tap'); };
@@ -3941,6 +4031,7 @@ $('importForm').onsubmit=async e=>{
       .replace(/Nekopon/g,'Cyber Nicopon')
       .replace(/ネコポン/g,'ニコポン')
       .replace(/傾きの遊びはお休みにゃ。/g,'傾きの遊びはお休みだぜ。')
+      .replace(/試し聴きにゃ/g,'試し聴きするぜ')
       .replace(/ちょっと待ってにゃ/g,'ちょっと待ってくれ')
       .replace(/画像を準備しているにゃ/g,'画像を準備中だぜ')
       .replace(/通信を確認して、もう一度試すにゃ/g,'通信を確認して、もう一度試してくれ')
@@ -4048,6 +4139,7 @@ $('importForm').onsubmit=async e=>{
     const playing=$('notice');if(playing&&mode==='neko'&&playing.classList.contains('show'))playing.classList.remove('show');
     if(mode==='neko'&&$('resultCatReply'))$('resultCatReply').textContent=originalResultReply;
     if($('homeCardFace'))$('homeCardFace').textContent=mode==='cyber'?'⚡':'🐾';
+    window.NekoRefreshSoundUI?.();
   }
   function change(next){
     if(next!== 'neko'&&next!=='cyber')return;

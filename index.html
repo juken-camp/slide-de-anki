@@ -1640,6 +1640,81 @@ html[data-persona=cyber] #soundDialog .sound-presets button[aria-pressed=true]{
 }
 /* Longer source-link labels remain legible on smaller phones. */
 #sourceLinks a,#testSourceLinks a{white-space:normal!important;overflow-wrap:anywhere;text-align:center;min-height:41px;line-height:1.45}
+
+
+/* ===== Cyber Nicopon: final luminous control pass (2026-10-21) =====
+   Only visual properties; all original Nekopon styling and button logic stay intact. */
+
+/* Shared secondary controls: visible glow even without hover (iPhone touch UI). */
+html[data-persona="cyber"] #app :is(.link-button,.tool,.secondary-button):not(:disabled) {
+  border-color:#3fa4d4!important;
+  box-shadow:inset 0 0 9px #00f5ff18,0 0 12px #00f5ff6b,0 0 24px #00f5ff1b!important;
+}
+/* All-items and related catalog actions get the same stronger cyber treatment. */
+html[data-persona="cyber"] #app #catalogScreen :is(.group-heading .link-button,.catalog-list-tools .link-button,#selectVisible,#clearSelection):not(:disabled) {
+  color:#b6faff!important;
+  border:2px solid #42ceef!important;
+  background:linear-gradient(130deg,#162d57 0%,#09172e 100%)!important;
+  box-shadow:inset 0 0 10px #00f5ff23,0 0 13px #00f5ff8a,0 0 24px #00f5ff2e!important;
+  text-decoration:none!important;
+}
+/* Learning-finished screen: these were plain blue/green, without a real glow. */
+html[data-persona="cyber"] #app #emptyState :is(#restartButton,#reviewButton,#unmarkedReview,#allButton,#finishUndo) {
+  appearance:none;
+  color:#c7fcff!important;
+  border:2px solid #42dff5!important;
+  border-radius:14px!important;
+  background:linear-gradient(125deg,#113758 0%,#102149 53%,#08162f 100%)!important;
+  box-shadow:inset 0 0 13px #00f5ff20,0 0 15px #00f5ff96,0 0 27px #00f5ff31!important;
+  text-shadow:0 0 8px #00f5ff51!important;
+  font-weight:800;
+  transition:transform .15s ease,filter .15s ease,box-shadow .15s ease;
+}
+/* Accent colors distinguish actions without reverting to warm paper colors. */
+html[data-persona="cyber"] #app #emptyState #restartButton {
+  color:#05192b!important;border-color:#00f5ff!important;
+  background:linear-gradient(120deg,#10e6f3,#32aeea)!important;
+  box-shadow:inset 0 1px 0 #e8ffff80,0 0 18px #00f5ffa3,0 0 30px #00f5ff3d!important;
+  text-shadow:none!important;
+}
+html[data-persona="cyber"] #app #emptyState #reviewButton {
+  color:#f5ddff!important;border-color:#b962ff!important;
+  background:linear-gradient(125deg,#3f1a65,#241645)!important;
+  box-shadow:inset 0 0 12px #bf00ff35,0 0 16px #bf00ff99,0 0 28px #bf00ff40!important;
+  text-shadow:0 0 8px #bf00ff50!important;
+}
+html[data-persona="cyber"] #app #emptyState #unmarkedReview {
+  color:#eee5ff!important;border-color:#9775f7!important;
+  background:linear-gradient(125deg,#282252,#151a3a)!important;
+  box-shadow:inset 0 0 9px #bf00ff25,0 0 13px #a667fa85,0 0 24px #bf00ff25!important;
+}
+html[data-persona="cyber"] #app #emptyState #finishUndo {
+  color:#b9def4!important;border-color:#4984b3!important;
+  background:linear-gradient(125deg,#162a47,#0c1a32)!important;
+  box-shadow:inset 0 0 7px #00f5ff13,0 0 11px #00f5ff58!important;
+  font-size:12px!important;
+}
+html[data-persona="cyber"] #app #emptyState :is(#allButton,#restartButton,#reviewButton,#unmarkedReview,#finishUndo):not(:disabled):active {
+  filter:brightness(1.18);transform:scale(.985);
+}
+@media(hover:hover){
+  html[data-persona="cyber"] #app #emptyState :is(#allButton,#restartButton,#reviewButton,#unmarkedReview,#finishUndo):not(:disabled):hover {
+    filter:brightness(1.15);
+    box-shadow:0 0 20px #00f5ffae,0 0 36px #00f5ff50!important;
+  }
+  html[data-persona="cyber"] #app :is(.link-button,.tool,.secondary-button):not(:disabled):hover {
+    box-shadow:inset 0 0 10px #00f5ff26,0 0 18px #00f5ff96,0 0 27px #00f5ff4b!important;
+  }
+}
+/* Strong focus indicator without turning orange/brown. */
+html[data-persona="cyber"] #app button:focus-visible,
+html[data-persona="cyber"] #app a:focus-visible {
+  outline:2px solid #83faff!important;
+  outline-offset:3px!important;
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-persona="cyber"] #app #emptyState :is(#allButton,#restartButton,#reviewButton,#unmarkedReview,#finishUndo){transition:none!important}
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

@@ -1187,6 +1187,139 @@ html[data-persona=cyber] body.slide-focus #app #studyScreen .actions #knownButto
 html[data-persona=cyber] body.slide-focus #app #studyScreen .actions #weakButton{background:linear-gradient(135deg,#371747,#201638)!important;border-color:#a54dff!important;color:#e6c3ff!important}
 html[data-persona=cyber] body.homework-capture .report-card{background:#101733!important;color:#dceaff!important;border-color:#315576!important;box-shadow:none!important}
 @media(prefers-reduced-motion:reduce){html[data-persona=cyber] #app :is(.actions button,.tool,.primary-button){animation:none!important}}
+
+/* ===== Cyber Nicopon: final chrome audit (do not recolor source slides) ===== */
+html[data-persona="cyber"]{
+  --cy-ui-bg:#050510;
+  --cy-ui-panel:#101733;
+  --cy-ui-panel-hi:#132243;
+  --cy-ui-border:#326482;
+  --cy-ui-text:#e0eaff;
+  --cy-ui-soft:#adc5e2;
+  --cy-ui-cyan:#00f5ff;
+  --cy-ui-violet:#bf72ff;
+}
+/* Lesson selection: tick box, selection marker and studied fraction all neon. */
+html[data-persona="cyber"] #app #catalogScreen :is(.lesson-choice,.lesson-choice.selected){
+  border-color:#315b81!important;
+  background:#101b37!important;
+  box-shadow:0 0 11px #00f5ff20!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .lesson-choice.selected{
+  background:linear-gradient(110deg,#082e45,#141d46)!important;
+  border-color:var(--cy-ui-cyan)!important;
+  box-shadow:0 0 12px #00f5ff55,inset 3px 0 #00f5ff!important;
+}
+html[data-persona="cyber"] #app :is(.choice-check,#catalogScreen .choice-check){
+  background:#08152e!important;border:1.5px solid #3f7191!important;
+  color:transparent!important;box-shadow:inset 0 0 7px #00f5ff18!important;
+}
+html[data-persona="cyber"] #app :is(.lesson-choice.selected .choice-check,#catalogScreen .lesson-choice.selected .choice-check){
+  background:linear-gradient(135deg,#00f5ff,#3abff5)!important;
+  border-color:#00f5ff!important;color:#051522!important;
+  box-shadow:0 0 10px #00f5ff66!important;
+}
+html[data-persona="cyber"] #app .choice-progress{
+  background:#162743!important;border-color:#27506d!important;
+  box-shadow:inset 0 0 3px #020915!important;
+}
+html[data-persona="cyber"] #app .choice-progress i{
+  background:linear-gradient(90deg,#8b54ff,#00f5ff)!important;
+  box-shadow:0 0 9px #00f5ff55!important;
+}
+html[data-persona="cyber"] #app :is(.choice-meta,.choice-record,.catalog-list-tools,.catalog-list-tools small){color:#a7c3e5!important}
+/* Study status, action buttons and remaining brown shadows. */
+html[data-persona="cyber"] #app :is(#resumeNote,#loadingMessage,.save-warning,.study-heading p,#imageStatus,.image-status){color:#9befff!important}
+html[data-persona="cyber"] #app #saveWarning{
+  background:#171b38!important;border:1px solid #a56aff!important;
+  color:#d8bcff!important;box-shadow:0 0 10px #bf00ff33!important;
+}
+html[data-persona="cyber"] #app #shuffleButton{
+  background:linear-gradient(130deg,#102d50,#0b1839)!important;
+  color:#aaf7ff!important;border:1px solid #2ca7cb!important;
+  box-shadow:0 0 13px #00f5ff50!important;
+}
+html[data-persona="cyber"] #app #emptyState :is(#unmarkedReview,#finishUndo){
+  background:linear-gradient(130deg,#17274a,#0d1934)!important;
+  border:1px solid #3d86ad!important;color:#bcf7ff!important;
+  box-shadow:0 0 11px #00f5ff2b!important;
+}
+/* The daily goal's native progress element needs its own WebKit pseudo-element colors. */
+html[data-persona="cyber"] #app .daily-goal progress,
+html[data-persona="cyber"] #app #goalProgress{
+  appearance:none!important;-webkit-appearance:none!important;
+  background:#152542!important;accent-color:#00f5ff!important;
+  border:1px solid #315b81!important;
+  box-shadow:inset 0 0 8px #030a17!important;
+}
+html[data-persona="cyber"] #app #goalProgress::-webkit-progress-bar,
+html[data-persona="cyber"] #app .daily-goal progress::-webkit-progress-bar{
+  background:#152542!important;
+}
+html[data-persona="cyber"] #app #goalProgress::-webkit-progress-value,
+html[data-persona="cyber"] #app .daily-goal progress::-webkit-progress-value{
+  background:linear-gradient(90deg,#9759ff,#00f5ff)!important;
+  box-shadow:0 0 8px #00f5ff90!important;
+}
+html[data-persona="cyber"] #app #goalProgress::-moz-progress-bar{
+  background:linear-gradient(90deg,#9759ff,#00f5ff)!important;
+}
+html[data-persona="cyber"] #app :is(.goal-top label,#goalMessage,#goalCaption){color:#c3ddf4!important}
+html[data-persona="cyber"] #app .daily-goal{background:#10172e!important;border-color:#315b81!important;box-shadow:0 0 15px #00f5ff18!important}
+/* Report days, date ranges, headings and history management. */
+html[data-persona="cyber"] #app :is(
+  .history-management,.history-management summary,.history-management small,
+  .report-chart-head span,.report-card-head time,.report-card-head p,
+  #reportPeriodTitle,.report-label,.homework-note,.report-chart-day b,.report-chart-day span,
+  .report-brand,.report-period-note,.report-range,.report-main-actions,
+  .report-chart-note,.report-chart-date,#reportNotice,
+  .test-progress-copy,.test-under,#testGradeHint,.test-separate-note,
+  #testNotice,#testScore,#testWrongDetails,#testWrongSummary,
+  .report-person,.result-cat-reply,#resultCatReply
+){color:#b8d8f4!important}
+html[data-persona="cyber"] #app :is(.report-range,.report-filter,.history-management,.report-presets,.report-period-actions){
+  border-color:#315b81!important;
+}
+html[data-persona="cyber"] #app :is(.test-progress-track,.report-chart-day .bar-track){
+  background:#132747!important;border-color:#315b81!important;
+}
+html[data-persona="cyber"] #app .test-progress-track i{
+  background:linear-gradient(90deg,#a65bff,#00f5ff)!important;
+}
+html[data-persona="cyber"] #app :is(.report-date-range,.report-days,.report-day,.report-chart-head){border-color:#315b81!important}
+/* Popovers and dialogs do not live under #app: cover those separately. */
+html[data-persona="cyber"] dialog :is(.focus-menu-header,.homework-setup-foot,.dialog-actions,
+  .report-period-actions,.sound-volume,.import-taxonomy){
+  background:#101933!important;border-color:#315b81!important;
+  color:#cce7fb!important;box-shadow:none!important;
+}
+html[data-persona="cyber"] dialog :is(.focus-menu-header h2,#focusContext,
+  .import-intro,.import-pair-note,.import-freedom,.import-intro code,
+  #importQuestionCount,#importAnswerCount,#importPhotoHint,
+  #importStatus,#collectionEditorStatus,.dialog-actions small,
+  .test-candidate-count){color:#b8d8f4!important}
+html[data-persona="cyber"] dialog .photo-picker-button{
+  background:linear-gradient(130deg,#142b4c,#101638)!important;
+  border:1px solid #2e91b6!important;color:#b6faff!important;
+  box-shadow:0 0 11px #00f5ff26!important;
+}
+html[data-persona="cyber"] dialog :is(button,.tool,.primary-button,.secondary-button):not(:disabled){box-shadow:0 0 10px #00f5ff31!important}
+html[data-persona="cyber"] dialog :is(#collectionSave,.primary-button):not(:disabled){box-shadow:0 0 14px #00f5ff58!important}
+/* Decorative tap rings and controls must lose the warm overlay as well. */
+html[data-persona="cyber"] #app :is(.neko-tap-ring,.neko-tap-charm){
+  color:#00f5ff!important;border-color:#00f5ff!important;
+  background:#00f5ff12!important;box-shadow:0 0 10px #00f5ff3e!important;
+}
+html[data-persona="cyber"] #app :is(#appNavigation button,#shuffleButton,.my-collection-actions .tool,
+  .my-collection-actions .primary-button){box-shadow:0 0 11px #00f5ff34!important}
+/* Card action labels fit one row on narrow screens; standard Neko style is unaffected. */
+html[data-persona="cyber"] #app #myCollectionsPanel .my-collection-actions .tool{
+  white-space:nowrap!important;overflow-wrap:normal!important;
+  letter-spacing:-.035em!important;font-size:11px!important;
+  min-width:0!important;
+}
+/* Keep all problem/answer/preview slide images white and their pixels unchanged. */
+html[data-persona="cyber"] #app :is(.image-frame,.slide-wrap,#slideImage,#testSlideImage,#collectionPreviewImage){filter:none!important}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -3510,13 +3643,15 @@ $('importForm').onsubmit=async e=>{
       .replace(/えらいにゃ[♪！]?/g,'やるじゃねぇか！')
       .replace(/すごいにゃ[♪！]?/g,'最高じゃねぇか！')
       .replace(/あと(\d+)問で今日の目標にゃ/g,'あと$1問で今日の目標だぜ')
+      .replace(/([0-9０-９]+)問にゃ/g,'$1問だぜ')
+      .replace(/OKにゃ/g,'OKだぜ')
       .replace(/今日の目標にゃ/g,'今日の目標だぜ')
       .replace(/目標達成にゃ/g,'目標達成だぜ')
       .replace(/答えを見るにゃ/g,'答えを見るぜ')
       .replace(/まとめを作るにゃ/g,'まとめを作るぜ')
       .replace(/まとめを編集するにゃ/g,'まとめを編集するぜ')
       .replace(/教材を追加するにゃ/g,'教材を追加するぜ')
-      .replace(/編集にゃ/g,'編集するぜ')
+      .replace(/編集にゃ/g,'編集だぜ')
       .replace(/はじめるにゃ/g,'はじめるぜ')
       .replace(/始めるにゃ/g,'始めるぜ')
       .replace(/勉強するにゃ/g,'勉強するぜ')

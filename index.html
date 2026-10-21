@@ -1784,7 +1784,8 @@ function toggleGroup(items) {
 function selectedCatalogLessons() { return meta.filter(m => selected.has(m.id)); }
 function selectionSummary() {
   const choices = selectedCatalogLessons();
-  $('selectionSummary').textContent = `${choices.length ? '選んだ教材' : seriesContextLabel()}\n${choices.length ? `選択中 ${choices.length}教材 · ${choices.reduce((n,m) => n+m.count,0)}問` : '教材を選ぶにゃ'}`;
+  const selectedSubjects = [...new Set(choices.map(m=>m.subject))].map(subjectLabel).join('＋');
+  $('selectionSummary').textContent = `${choices.length ? '選んだ教材' : seriesContextLabel()}\n${choices.length ? `${selectedSubjects} · ${choices.length}教材 · ${choices.reduce((n,m) => n+m.count,0)}問` : '教材を選ぶにゃ'}`;
   $('startStudy').disabled = !choices.length || state.loading; $('clearSelection').disabled = !choices.length;
   if (choices.length && choices.length !== selectionCount && selectionCount >= 0 && tapPlay() && !reduced && !document.hidden) {
     $('startStudy').animate?.([{transform:'scale(1)'},{transform:'translateY(-3px) scale(1.025)'},{transform:'scale(1)'}],{duration:360,easing:'ease-out'});

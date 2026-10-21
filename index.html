@@ -2097,9 +2097,9 @@ const soundPresetSets = {
     ['sparkle','✨','きらきら','ベルみたいに響く']
   ],
   cyber: [
-    ['digital','⚡','デジタル','電子的なピコ音'],
-    ['arcade','🎮','8bit','レトロゲーム風'],
-    ['space','🛸','スペース','未来的な電子音']
+    ['digital','⚡','デジタル','鋭いレーザー＆グリッチ'],
+    ['arcade','🎮','8bit','ファミコン風のメロディ'],
+    ['space','🛸','スペース','宇宙船のワープ音']
   ]
 };
 function cyberSoundActive() { return document.documentElement.dataset.persona === 'cyber'; }
@@ -2223,37 +2223,82 @@ function mediaSoundURL(notes,volume,tail=.02) {
 }
 function soundNotes(kind,palette=soundStyle(),variant=0) {
   if (cyberSoundStyles.includes(palette)) {
-    // Three independent cyber presets, each defining ALL app sound events.
-    // Arrays: [startHz,endHz,delaySeconds,durationSeconds,gain,waveform].
-    const sounds = {
-      tap: [[740,980,0,.055,.027,'triangle']],
-      flip: [[480,1160,0,.105,.028,'triangle'],[950,1380,.035,.06,.010,'sine']],
-      move: [[990,580,0,.06,.025,'triangle']],
-      weak: [[480,260,0,.16,.027,'triangle'],[250,190,.1,.1,.014,'sine']],
-      known: [[780,930,0,.09,.028,'triangle'],[1046,1210,.083,.10,.029,'triangle'],[1397,1568,.165,.12,.025,'sine']],
-      cat: [[660,1040,0,.10,.027,'triangle'],[1040,1420,.1,.11,.022,'sine']],
-      sparkle: [[1400,1800,0,.14,.021,'sine']],
-      shuffle: [[550,910,0,.07,.026,'triangle'],[760,1250,.055,.08,.019,'triangle']],
-      open: [[640,850,0,.07,.027,'triangle'],[960,1220,.075,.10,.023,'sine']],
-      finish: [[587,784,0,.12,.027,'triangle'],[784,1046,.105,.13,.025,'triangle'],[1046,1568,.24,.21,.026,'sine']],
-      milestone: [[880,1175,0,.11,.026,'triangle'],[1175,1568,.09,.13,.025,'triangle'],[1568,2093,.22,.19,.023,'sine']]
+    // Cyber Nicopon: three ORIGINAL sound worlds, not pitch-shifted copies.
+    // Each voice: [startHz, endHz, delaySeconds, durationSeconds, gain, waveform].
+    // All pitches are intentionally audible on small phone speakers.
+    const D = (a,b,t,l,g=.018,w='sawtooth') => [a,b,t,l,g,w];
+    const A = (f,t,l=.085,g=.020) => [f,f,t,l,g,'square'];
+    const S = (a,b,t,l,g=.016,w='sine') => [a,b,t,l,g,w];
+    const digital = {
+      tap: [D(1350,480,0,.08,.020),D(2000,920,.016,.039,.008,'square')],
+      flip: [D(520,2300,0,.105,.023),D(2050,450,.085,.10,.019)],
+      move: [D(1850,730,0,.083,.019)],
+      weak: [D(1200,240,0,.20,.023),D(440,185,.13,.10,.009,'square')],
+      known: [D(650,1700,0,.085,.020),D(980,2400,.09,.090,.023),D(1500,2100,.19,.14,.018,'triangle')],
+      cat: [D(520,1650,0,.11,.022),D(2300,630,.13,.10,.021),D(1100,1850,.245,.065,.010,'square')],
+      sparkle: [D(2700,1100,0,.145,.018),D(1900,2900,.085,.09,.010,'triangle')],
+      shuffle: [D(750,2050,0,.065,.021),D(1750,550,.077,.075,.020),D(990,2250,.15,.068,.018)],
+      open: [D(460,1700,0,.13,.024),D(1380,2650,.105,.09,.015,'triangle')],
+      finish: [D(850,2450,0,.13,.022),D(1250,2850,.125,.14,.021),D(1850,3100,.285,.21,.018,'triangle')],
+      milestone: [D(490,1400,0,.085,.022),D(670,1900,.078,.085,.021),D(900,2350,.155,.10,.021),D(1200,2900,.265,.18,.018)],
+      preview: [
+        D(1100,420,0,.095,.024),D(2150,620,.09,.088,.024),
+        D(480,2550,.20,.19,.024),D(2360,880,.34,.15,.022),
+        D(650,2500,.47,.14,.015,'square')
+      ]
     };
-    let notes=(sounds[kind] || sounds.tap).map(note=>note.slice());
-    if(kind==='tap'){const f=[640,740,830,990,1110][variant%5];notes=[[f,f*1.25,0,.055,.026,'triangle']];}
-    if(kind==='cat'){const f=[590,690,790,880][variant%4];notes=[[f,f*1.6,0,.10,.026,'triangle'],[f*1.6,f*1.15,.10,.11,.022,'sine']];}
-    if(palette==='arcade'){
-      // Chiptune notes with stepped 8-bit pitch and a gentle square oscillator.
-      return notes.map(([start,end,delay,duration,level])=>{
-        const step=2**(Math.round(12*Math.log2(start/440))/12);
-        const freq=440*step;
-        return [freq,freq,delay,duration*.8,level*.72,'square'];
-      });
+    const arcade = {
+      tap: [A(523.25,0,.055,.023)],
+      flip: [A(392,0,.067),A(784,.078,.085)],
+      move: [A(659.25,0,.065)],
+      weak: [A(392,0,.11),A(293.66,.125,.16,.020)],
+      known: [A(587.33,0,.095),A(739.99,.11,.095),A(880,.22,.10),A(1174.66,.34,.18,.023)],
+      cat: [A(523.25,0,.10),A(659.25,.14,.09),A(392,.27,.15)],
+      sparkle: [A(1174.66,0,.07),A(1318.51,.095,.07),A(1567.98,.19,.14)],
+      shuffle: [A(440,0,.060),A(523.25,.079,.060),A(659.25,.16,.065)],
+      open: [A(392,0,.080),A(523.25,.105,.075),A(783.99,.21,.14)],
+      finish: [A(440,0,.105),A(587.33,.12,.11),A(739.99,.245,.11),A(880,.37,.12),A(1174.66,.525,.28,.023)],
+      milestone: [A(392,0,.070),A(493.88,.086,.07),A(587.33,.172,.07),A(783.99,.258,.11),A(987.77,.40,.24,.022)],
+      preview: [
+        A(392,0,.09),A(493.88,.12,.09),A(587.33,.24,.095),
+        A(783.99,.37,.15,.023),A(587.33,.565,.09),A(987.77,.68,.27,.022),
+        A(196,0,.18,.010),A(293.66,.37,.24,.009)
+      ]
+    };
+    const space = {
+      tap: [S(270,400,0,.26,.015),S(405,335,.15,.19,.007)],
+      flip: [S(260,680,0,.48,.016),S(530,350,.22,.39,.009),S(780,950,.42,.31,.006,'triangle')],
+      move: [S(430,270,0,.35,.014)],
+      weak: [S(395,190,0,.58,.018),S(270,235,.21,.40,.009)],
+      known: [S(330,550,0,.61,.017),S(495,745,.12,.57,.012),S(660,880,.30,.58,.008,'triangle')],
+      cat: [S(240,430,0,.47,.016),S(440,310,.25,.45,.014),S(660,850,.50,.42,.009)],
+      sparkle: [S(660,1380,0,.67,.010,'triangle'),S(1050,890,.21,.65,.008)],
+      shuffle: [S(300,490,0,.39,.016),S(590,390,.23,.44,.011)],
+      open: [S(220,470,0,.51,.017),S(440,820,.25,.56,.011),S(720,930,.50,.39,.007)],
+      finish: [S(260,430,0,.77,.019),S(390,620,.13,.79,.012),S(520,780,.30,.78,.010),S(780,960,.56,.60,.006,'triangle')],
+      milestone: [S(235,410,0,.71,.018),S(352,560,.18,.72,.013),S(470,780,.41,.69,.009),S(720,1030,.65,.55,.007)],
+      preview: [
+        S(220,525,0,.91,.017),S(330,720,.23,.86,.014),
+        S(460,930,.55,.84,.012,'triangle'),S(680,480,.94,.52,.008),
+        S(520,390,1.12,.43,.005)
+      ]
+    };
+    const sounds = palette==='digital' ? digital : palette==='arcade' ? arcade : space;
+    if(kind==='tap') {
+      if(palette==='arcade') return [A([392,523.25,659.25,783.99,880][variant%5],0,.065,.023)];
+      if(palette==='space') {
+        const pitch=[240,270,300,350,390][variant%5];
+        return [S(pitch,pitch*1.36,0,.24,.015),S(pitch*1.6,pitch*.95,.13,.21,.006)];
+      }
+      const p=[1050,1250,1450,1650,1900][variant%5];
+      return [D(p,p*.35,0,.078,.019),D(p*1.35,p*.55,.021,.044,.010,'square')];
     }
-    if(palette==='space'){
-      // Slower, softer sci-fi sweeps rather than the sharp digital blips.
-      return notes.map(([start,end,delay,duration,level],i)=>[start*.65,end*.83,delay*1.3,duration*1.7,level*.85,i%2?'triangle':'sine']);
+    if(kind==='cat') {
+      const offset=variant%4;
+      const factor=palette==='arcade' ? [1,1.122,1.259,1.335][offset] : [1,1.08,.92,1.17][offset];
+      return (sounds.cat).map(([a,b,t,l,g,w])=>[a*factor,b*factor,t,l,g,w]);
     }
-    return notes;
+    return sounds[kind] || sounds.tap;
   }
   let notes = {
     tap: [[620,420,0,.045,.027,'sine']],
@@ -2298,7 +2343,7 @@ function prepareMediaSounds() {
   if(mediaSoundBank?.key===mediaBankKey())return;
   stopMediaSounds();mediaSoundPool.splice(0);mediaSoundCache.clear();
   const clips=new Map();
-  for(const kind of ['tap','flip','move','weak','known','cat','sparkle','shuffle','open','finish','milestone']){
+  for(const kind of ['tap','flip','move','weak','known','cat','sparkle','shuffle','open','finish','milestone','preview']){
     for(let variant=0;variant<(kind==='tap'?5:kind==='cat'?4:1);variant++){
       const notes=soundNotes(kind,soundStyle(),variant),key=JSON.stringify(notes);
       const url=mediaSoundURL(notes,soundVolume()),players=[];
@@ -3611,11 +3656,11 @@ $('dialogSoundToggle').onclick = () => { soundEnabled=!soundEnabled; save(); sta
 for(const b of document.querySelectorAll('[data-sound-style]')) b.onclick = () => {
   if(cyberSoundActive()) data.neko.cyberSoundStyle = b.dataset.soundStyle;
   else data.neko.soundStyle = b.dataset.soundStyle;
-  save(); soundSettingsUI(); beep('known');
+  save(); soundSettingsUI(); beep(cyberSoundActive() ? 'preview' : 'known');
 };
 $('soundVolume').oninput = () => { data.neko.soundVolume=Number($('soundVolume').value)/100; soundSettingsUI(); };
 $('soundVolume').onchange = () => { save(); scheduleMediaSounds(0); beep('tap'); };
-$('soundPreview').onclick = async () => { await beep('known'); soundSettingsUI(); burst($('soundPreview'),['♪','✦','🐾'],5); };
+$('soundPreview').onclick = async () => { await beep(cyberSoundActive() ? 'preview' : 'known'); soundSettingsUI(); burst($('soundPreview'),cyberSoundActive()?['⚡','🎮','🛸']:['♪','✦','🐾'],5); };
 // Sensor access is requested only by a settings gesture. There is no startup popup.
 const orientationAPI = window.DeviceOrientationEvent;
 let tiltGranted = !!orientationAPI && typeof orientationAPI.requestPermission !== 'function';

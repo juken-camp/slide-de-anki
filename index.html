@@ -1453,6 +1453,161 @@ html[data-persona="cyber"] #collectionDialog :is(input,select,textarea):focus-vi
   outline-offset:2px!important;caret-color:#00f5ff!important;
   box-shadow:0 0 12px #00f5ff3e!important;background:#101f3b!important;
 }
+
+/* ===== Cyber Nicopon: exhaustive interactive-state refinements ===== */
+/* The break-time playground is intentionally removed in both appearances. */
+#app .neko-playground[hidden]{display:none!important}
+
+/* Search: fix the amber/brown focus ring around the entire search field. */
+html[data-persona="cyber"] #app #catalogScreen .catalog-search,
+html[data-persona="cyber"] #app #catalogScreen .catalog-search:focus-within{
+  background:#0b1831!important;
+  border:2px solid #3c6f94!important;
+  color:#dffaff!important;
+  box-shadow:0 0 11px #00f5ff2c!important;
+  outline:none!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .catalog-search:focus-within{
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ff83!important;
+  outline-offset:2px!important;
+  box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16!important;
+}
+html[data-persona="cyber"] #app #catalogScreen #catalogSearch:focus,
+html[data-persona="cyber"] #app #catalogScreen #catalogSearch:focus-visible{
+  color:#efffff!important;-webkit-text-fill-color:#efffff!important;
+  background:transparent!important;border:0!important;
+  box-shadow:none!important;outline:0!important;
+  caret-color:#00f5ff!important;
+}
+html[data-persona="cyber"] #app #catalogScreen #catalogSearch::placeholder{color:#a0c4e4!important;-webkit-text-fill-color:#a0c4e4!important}
+html[data-persona="cyber"] #app #catalogScreen input[type="search"]::-webkit-search-cancel-button{filter:grayscale(1) brightness(2)}
+
+/* Every side has precisely the same border width, with no faux left accent. */
+html[data-persona="cyber"] #app #catalogScreen .lesson-choice,
+html[data-persona="cyber"] #app #catalogScreen .lesson-choice.selected{
+  box-sizing:border-box!important;border:3px solid #315b81!important;
+  padding:12px!important;transform:none!important;
+  box-shadow:0 0 12px #00f5ff19!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .lesson-choice.selected{
+  border:3px solid #00f5ff!important;
+  background:linear-gradient(110deg,#082e45,#141d46)!important;
+  box-shadow:0 0 14px #00f5ff65!important;
+}
+
+/* "ぜんぶ見るぜ" / show-all links should look like cyber controls, not plain brown links. */
+html[data-persona="cyber"] #app #catalogScreen :is(.group-heading .link-button,.catalog-list-tools .link-button,#selectVisible,#clearSelection){
+  display:inline-flex;align-items:center;justify-content:center;
+  background:linear-gradient(120deg,#182d51,#101834)!important;
+  border:1.5px solid #3fa6d0!important;border-radius:11px!important;
+  color:#9df7ff!important;text-decoration:none!important;
+  box-shadow:0 0 12px #00f5ff3c!important;
+  min-height:34px;padding:6px 10px!important;
+  white-space:nowrap!important;
+}
+html[data-persona="cyber"] #app #catalogScreen :is(.group-heading .link-button,.catalog-list-tools .link-button,#selectVisible,#clearSelection):active{
+  background:linear-gradient(120deg,#115072,#1a2b62)!important;
+  border-color:#00f5ff!important;box-shadow:0 0 17px #00f5ff80!important;
+}
+/* The grade/field, subject and topic buttons communicate active state with bright cyan. */
+html[data-persona="cyber"] #app #catalogScreen :is(#browseSwitch button.active,#browseSwitch button[aria-pressed="true"],#socialSwitch button.active,#socialSwitch button[aria-pressed="true"],#catalogFilters button.active,#catalogFilters button[aria-pressed="true"]){
+  background:linear-gradient(130deg,#064258,#1b3261)!important;
+  border-color:#00f5ff!important;color:#dffcff!important;
+  box-shadow:0 0 13px #00f5ff63!important;
+}
+
+/* Preset tabs always distinguish the selected period; previous base selector hid the active style. */
+html[data-persona="cyber"] #app #reportScreen .report-presets{
+  background:#0e1b37!important;border-color:#386a92!important;
+  box-shadow:inset 0 0 9px #00f5ff1a!important;
+}
+html[data-persona="cyber"] #app #reportScreen .report-presets button[data-report-period]{
+  background:#0a1630!important;color:#b5c9e5!important;
+  border:1.5px solid #2d5378!important;box-shadow:none!important;
+  transition:background .17s,border-color .17s,box-shadow .17s!important;
+}
+html[data-persona="cyber"] #app #reportScreen .report-presets button[data-report-period][aria-pressed="true"]{
+  background:linear-gradient(130deg,#06556a,#192f66)!important;
+  color:#efffff!important;border:1.5px solid #00f5ff!important;
+  box-shadow:0 0 15px #00f5ff80,inset 0 0 9px #00f5ff25!important;
+  text-shadow:0 0 7px #00f5ff70!important;
+}
+
+/* Period picker and remembered-question test: no warm divider or select/focus state. */
+html[data-persona="cyber"] dialog.homework-setup{
+  background:#0e1630!important;border:2px solid #3f7fa7!important;color:#dceeff!important;
+  box-shadow:0 0 28px #00f5ff26!important;
+}
+html[data-persona="cyber"] dialog.homework-setup :is(.homework-setup-head,.homework-setup-foot,.homework-setup-body,.homework-dates,.test-filter-grid){
+  background:#0e1630!important;border-color:#356889!important;
+  color:#deebff!important;box-shadow:none!important;
+}
+html[data-persona="cyber"] dialog.homework-setup .homework-setup-head{
+  border-bottom:1px solid #00e6f47a!important;
+}
+html[data-persona="cyber"] dialog.homework-setup .homework-setup-foot{
+  border-top:1px solid #a16cff74!important;background:#111b39!important;
+}
+html[data-persona="cyber"] dialog.homework-setup :is(label,small,.homework-note,.test-candidate-count){color:#b8d9f7!important}
+html[data-persona="cyber"] dialog.homework-setup :is(input:not([type="checkbox"]),select,textarea){
+  background:#0a1630!important;color:#e0f7ff!important;
+  -webkit-text-fill-color:#e0f7ff!important;
+  border:1.5px solid #4382a9!important;caret-color:#00f5ff!important;
+  box-shadow:inset 0 0 7px #00f5ff13!important;
+  color-scheme:dark!important;
+}
+html[data-persona="cyber"] dialog.homework-setup :is(input:not([type="checkbox"]),select,textarea):is(:focus,:focus-visible){
+  background:#11244c!important;color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ffb3!important;outline-offset:2px!important;
+  box-shadow:0 0 18px #00f5ff6b!important;
+}
+html[data-persona="cyber"] dialog.homework-setup input[type="checkbox"]{accent-color:#00f5ff!important}
+
+/* Settings name, title and subtitle use the same cyan focus treatment. */
+html[data-persona="cyber"] #app #settingsScreen :is(#reportNameInput,#brandTitleInput,#brandSubtitleInput){
+  background:#0c1733!important;border:1.5px solid #467fa6!important;
+  color:#e7f7ff!important;-webkit-text-fill-color:#e7f7ff!important;
+  caret-color:#00f5ff!important;box-shadow:none!important;
+}
+html[data-persona="cyber"] #app #settingsScreen :is(#reportNameInput,#brandTitleInput,#brandSubtitleInput):is(:focus,:focus-visible){
+  background:#14274a!important;border-color:#00f5ff!important;
+  color:#efffff!important;-webkit-text-fill-color:#efffff!important;
+  outline:2px solid #00f5ffae!important;outline-offset:2px!important;
+  box-shadow:0 0 16px #00f5ff64!important;
+}
+html[data-persona="cyber"] #app #settingsScreen :is(#reportNameInput,#brandTitleInput,#brandSubtitleInput)::placeholder{
+  color:#8cb0cf!important;-webkit-text-fill-color:#8cb0cf!important;
+}
+
+/* Explicit readable switches: cyan = on; steel violet = off. */
+html[data-persona="cyber"] #app #settingsScreen .sound-setting input[type="checkbox"][role="switch"]{
+  appearance:none!important;-webkit-appearance:none!important;
+  box-sizing:border-box!important;
+  width:41px!important;height:24px!important;
+  border:1.5px solid #667899!important;
+  border-radius:14px!important;
+  background:#344058!important;
+  box-shadow:inset 0 1px 4px #040718aa!important;
+  opacity:1!important;flex:none!important;
+}
+html[data-persona="cyber"] #app #settingsScreen .sound-setting input[type="checkbox"][role="switch"]:checked{
+  background:linear-gradient(110deg,#00d9ee,#468eff)!important;
+  border-color:#00f5ff!important;
+  box-shadow:0 0 14px #00f5ff96,inset 0 0 5px #a7faff66!important;
+}
+html[data-persona="cyber"] #app #settingsScreen .sound-setting input[type="checkbox"][role="switch"]::before{
+  content:""!important;background:#c7d0e3!important;
+  box-shadow:0 0 4px #041324!important;
+}
+html[data-persona="cyber"] #app #settingsScreen .sound-setting input[type="checkbox"][role="switch"]:checked::before{
+  background:#fff!important;box-shadow:0 0 8px #d2ffff!important;
+}
+html[data-persona="cyber"] #app #settingsScreen .sound-setting input[type="checkbox"][role="switch"]:focus-visible{
+  outline:2px solid #00f5ff!important;outline-offset:4px!important;
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -1464,7 +1619,7 @@ html[data-persona="cyber"] #collectionDialog :is(input,select,textarea):focus-vi
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
   <div class="catalog-heading page-heading"><div><h2 class="screen-title" id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加</button></div>
-  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="全教材からさがすにゃ" aria-label="全教材から教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" aria-pressed="false">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" aria-pressed="false">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="secondary-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
+  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材を検索" aria-label="全教材から教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" aria-pressed="false">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" aria-pressed="false">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="secondary-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
   
   
   
@@ -1540,7 +1695,7 @@ html[data-persona="cyber"] #collectionDialog :is(input,select,textarea):focus-vi
  </div>
 </section>
 
-<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><section class="persona-chooser" aria-labelledby="personaTitle"><h3 id="personaTitle">🎭 着せ替え</h3><div class="persona-options" role="group" aria-label="キャラクターとデザインを選ぶ"><button type="button" class="persona-option" data-persona-choice="neko" aria-pressed="true"><span class="persona-icon" aria-hidden="true">😺</span><span class="persona-copy"><strong>Nekopon</strong><small>いつものネコポン</small></span></button><button type="button" class="persona-option" data-persona-choice="cyber" aria-pressed="false"><span class="persona-icon" aria-hidden="true">😎</span><span class="persona-copy"><strong>Cyber Nicopon</strong><small>ネオンと応援</small></span></button></div><p class="persona-hint" id="personaHint">いつものネコポン。切り替えても学習記録はそのままにゃ。</p></section><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-profile"><label for="reportNameInput">名前（任意）</label><input id="reportNameInput" maxlength="24" placeholder="生徒名・ニックネーム" autocomplete="off" aria-describedby="profileNameNote" disabled><small id="profileNameNote">学習レポートと確認テストに載せるにゃ。</small></div><div class="settings-brand"><h3>自分だけのタイトルにするにゃ</h3><label for="brandTitleInput">タイトル</label><input id="brandTitleInput" maxlength="30" placeholder="スライドで暗記" autocomplete="off"><label for="brandSubtitleInput">サブタイトル</label><input id="brandSubtitleInput" maxlength="40" placeholder="by JUKEN CAMP" autocomplete="off"><button id="resetBrand" class="link-button" type="button">元にもどすにゃ</button></div><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
+<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><section class="persona-chooser" aria-labelledby="personaTitle"><h3 id="personaTitle">🎭 着せ替え</h3><div class="persona-options" role="group" aria-label="キャラクターとデザインを選ぶ"><button type="button" class="persona-option" data-persona-choice="neko" aria-pressed="true"><span class="persona-icon" aria-hidden="true">😺</span><span class="persona-copy"><strong>Nekopon</strong><small>いつものネコポン</small></span></button><button type="button" class="persona-option" data-persona-choice="cyber" aria-pressed="false"><span class="persona-icon" aria-hidden="true">😎</span><span class="persona-copy"><strong>Cyber Nicopon</strong><small>ネオンと応援</small></span></button></div><p class="persona-hint" id="personaHint">いつものネコポン。切り替えても学習記録はそのままにゃ。</p></section><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-profile"><label for="reportNameInput">名前（任意）</label><input id="reportNameInput" maxlength="24" placeholder="生徒名・ニックネーム" autocomplete="off" aria-describedby="profileNameNote" disabled><small id="profileNameNote">学習レポートと確認テストに載せるにゃ。</small></div><div class="settings-brand"><h3>自分だけのタイトルにするにゃ</h3><label for="brandTitleInput">タイトル</label><input id="brandTitleInput" maxlength="30" placeholder="スライドで暗記" autocomplete="off"><label for="brandSubtitleInput">サブタイトル</label><input id="brandSubtitleInput" maxlength="40" placeholder="by JUKEN CAMP" autocomplete="off"><button id="resetBrand" class="link-button" type="button">元にもどすにゃ</button></div><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground" hidden aria-hidden="true"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
 </main><div class="neko-notice" id="notice" role="status" aria-live="polite"></div>
 <dialog id="focusMenu" aria-labelledby="focusMenuTitle"><div class="focus-menu-header"><h2 id="focusMenuTitle">操作にゃ 🐾</h2><button id="focusClose" type="button" aria-label="スライドに戻るにゃ" autofocus>×</button></div><p id="focusContext"></p><div class="focus-navigation"><button id="focusPrev" type="button">‹ 前へ</button><button id="focusFlip" type="button">解答を見るにゃ</button><button id="focusNext" type="button">次へ ›</button></div><div class="focus-extra"><button id="focusZoom" type="button">拡大するにゃ ⤢</button><div id="focusUndoSlot"></div></div><div id="focusSourceSlot"></div><div id="focusOptionsSlot"></div><div class="focus-destinations"><button id="focusCatalog" type="button">教材を選ぶにゃ</button><button id="focusSettings" type="button">設定を開くにゃ</button></div><button id="focusNormal" type="button">横向きでも通常表示にするにゃ</button></dialog>
 
@@ -2756,7 +2911,7 @@ function syncCollectionCatalog() {
   document.querySelector('#catalogScreen .catalog-list-tools').hidden=on;
   $('catalogGroups').hidden=on; if(on)$('catalogEmpty').hidden=true;
   $('openImport').hidden=true;
-  $('catalogSearch').placeholder=on?'自分の教材をさがすにゃ':'全教材からさがすにゃ';
+  $('catalogSearch').placeholder=on?(document.documentElement.dataset.persona==='cyber'?'自分の教材を探すぜ':'自分の教材をさがすにゃ'):(document.documentElement.dataset.persona==='cyber'?'攻略する教材を探すぜ':'全教材からさがすにゃ');
   $('catalogSearch').setAttribute('aria-label',on?'保存したまとめ・追加教材を検索':'教材名で検索');
   if(on)$('quickReview').hidden=true;
   $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
@@ -3827,6 +3982,7 @@ $('importForm').onsubmit=async e=>{
   const placeholderBases=new WeakMap();
   const syncPlaceholders=()=>{
     for(const el of document.querySelectorAll('input[placeholder],textarea[placeholder]')){
+      if(el.id==='catalogSearch')continue;
       if(!placeholderBases.has(el))placeholderBases.set(el,el.getAttribute('placeholder')||'');
       const base=placeholderBases.get(el);
       const intended=mode==='cyber'?speak(base):base;
@@ -3857,7 +4013,7 @@ $('importForm').onsubmit=async e=>{
     $('brandHome')?.setAttribute('aria-label',`${title} ${subtitle}・${mode==='cyber'?'Cyber Nicoponとあそぶぜ':'Nekoponとあそぶにゃ'}`);
     $('mascotPlay')?.setAttribute('aria-label',mode==='cyber'?'Cyber Nicoponをタップするぜ':originals.mascotLabel);
     $('resultCat')?.setAttribute('aria-label',mode==='cyber'?'Cyber Nicoponに声をかけるぜ':originals.resultLabel);
-    $('catalogSearch')?.setAttribute('placeholder',mode==='cyber'?'攻略する教材を探すぜ':originals.searchPlaceholder);
+    $('catalogSearch')?.setAttribute('placeholder',mode==='cyber'?(typeof catalogIsCollections!=='undefined'&&catalogIsCollections?'自分の教材を探すぜ':'攻略する教材を探すぜ'):(typeof catalogIsCollections!=='undefined'&&catalogIsCollections?'自分の教材をさがすにゃ':'全教材からさがすにゃ'));
     const help=$('settingsScreen')?.querySelector(':scope > .catalog-help');if(help)help.textContent=mode==='cyber'?'好きなモードで、勉強を攻略するぜ。':originals.guide;
     const heading=$('settingsScreen')?.querySelector('.settings-play h3');if(heading)heading.textContent=mode==='cyber'?'Cyber Nicoponとのあそび':originals.playHeading;
     const plh=$('settingsScreen')?.querySelector('.neko-playground strong');if(plh)plh.textContent=mode==='cyber'?'ひと息入れようぜ😎':originals.playfulHeading;

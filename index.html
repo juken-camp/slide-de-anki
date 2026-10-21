@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#8b4513"><meta name="application-name" content="スライドで暗記"><meta name="apple-mobile-web-app-title" content="スライドで暗記"><title>Nekoponのスライドで暗記</title><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="/manifest.webmanifest?v=20261019-pwa"><link rel="apple-touch-icon" sizes="180x180" href="/icons/nekopon-180-v1.png"><link rel="icon" type="image/png" sizes="32x32" href="/icons/nekopon-32-v1.png"><!-- Google tag (gtag.js) -->
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#faf8f5"><meta name="application-name" content="スライドで暗記"><meta name="apple-mobile-web-app-title" content="スライドで暗記"><title>Nekoponのスライドで暗記</title><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="manifest" href="/manifest.webmanifest?v=20261019-pwa"><link rel="apple-touch-icon" sizes="180x180" href="/icons/nekopon-180-v1.png"><link rel="icon" type="image/png" sizes="32x32" href="/icons/nekopon-32-v1.png"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EQT641RMP"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -8,7 +8,7 @@ gtag('js',new Date());
 gtag('config','G-8EQT641RMP');
 </script>
 <script>
-// Apply the status-bar palette only to installed iPhone/iPad web apps.
+// Identify installed iOS apps without changing the existing app palette.
 if ((/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1)) && (navigator.standalone===true || window.matchMedia('(display-mode: standalone)').matches)) {
   document.documentElement.classList.add('ios-standalone');
 }
@@ -926,19 +926,16 @@ html{scroll-padding-top:calc(var(--app-header-height,64px) + 12px)}
 #appHeader::before{content:'';position:absolute;inset:0 -16px;z-index:-1;background:var(--cream);opacity:0;pointer-events:none}
 #appHeader.is-scrolled::before{opacity:.94;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 @media(max-width:600px){#appHeader::before{left:-12px;right:-12px}}
-/* Installed iOS apps extend the same header color behind the system clock. */
-html.ios-standalone{background:var(--primary-brown)}
-html.ios-standalone body::before{content:'';position:fixed;top:0;left:0;right:0;height:calc(env(safe-area-inset-top,0px) + 12px);z-index:149;background:var(--primary-brown);pointer-events:none}
-html.ios-standalone #appHeader::before{top:-12px;background:var(--primary-brown);opacity:1;backdrop-filter:none;-webkit-backdrop-filter:none}
-html.ios-standalone #appHeader .brand-home,html.ios-standalone #appHeader .app-navigation button{color:#fff8ec}
-html.ios-standalone #appHeader .brand-credit{color:#f6ddc3}
-html.ios-standalone #appHeader .brand-name{text-shadow:none;-webkit-text-stroke:0}
-html.ios-standalone #appHeader .app-navigation button[aria-current=page]{color:var(--primary-brown);background:#fff3df;border-color:#e7bd8d;box-shadow:0 2px 0 #68310c}
+/* Match the system-edge backdrop to the existing cream page, preserving header colors. */
+#iosStatusBackdrop{display:none}
+html.ios-standalone{background:var(--cream)}
+html.ios-standalone #iosStatusBackdrop{display:block;position:fixed;top:0;left:0;right:0;height:max(1px,env(safe-area-inset-top,0px));z-index:149;background:var(--cream);pointer-events:none}
+html.ios-standalone #appHeader::before{top:-12px;background:var(--cream);opacity:1;backdrop-filter:none;-webkit-backdrop-filter:none}
 html.ios-standalone body.slide-focus .app{padding-top:calc(12px + env(safe-area-inset-top,0px))}
 html.ios-standalone body.homework-capture #app{padding-top:calc(8px + env(safe-area-inset-top,0px))}
-@media print{html.ios-standalone body::before{display:none}}
+@media print{html.ios-standalone #iosStatusBackdrop{display:none}}
 </style></head>
-<body><main id="app" class="app">
+<body><div id="iosStatusBackdrop" aria-hidden="true"></div><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
   
   

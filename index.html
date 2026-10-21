@@ -21,13 +21,14 @@ if ((/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacI
   --primary-brown:#8b4513;
   --light-brown:#d2691e;
   --cream:#faf8f5;
+  --app-background-image:radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%);
   --soft-orange:#ff7f50;
   --gold:#ffd700;
   --pink:#ffb6c1;
   --neko-shadow:rgba(139,69,19,.22);
 }
 html,body{background:var(--cream);color:var(--primary-brown);font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif}
-body{background-image:radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%)}
+body{background-image:var(--app-background-image)}
 .app{position:relative;isolation:isolate;overflow-x:hidden;background:transparent}
 .app:before{content:"🐾";position:fixed;z-index:-1;right:-12px;top:18%;font-size:84px;opacity:.035;transform:rotate(-18deg);pointer-events:none}
 .app:after{content:"🐾";position:fixed;z-index:-1;left:-14px;bottom:12%;font-size:72px;opacity:.035;transform:rotate(22deg);pointer-events:none}
@@ -926,11 +927,14 @@ html{scroll-padding-top:calc(var(--app-header-height,64px) + 12px)}
 #appHeader::before{content:'';position:absolute;inset:0 -16px;z-index:-1;background:var(--cream);opacity:0;pointer-events:none}
 #appHeader.is-scrolled::before{opacity:.94;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 @media(max-width:600px){#appHeader::before{left:-12px;right:-12px}}
-/* Match the system-edge backdrop to the existing cream page, preserving header colors. */
+/* Use one viewport-aligned background for the page and the installed iOS header. */
 #iosStatusBackdrop{display:none}
 html.ios-standalone{background:var(--cream)}
-html.ios-standalone #iosStatusBackdrop{display:block;position:fixed;top:0;left:0;right:0;height:max(1px,env(safe-area-inset-top,0px));z-index:149;background:var(--cream);pointer-events:none}
-html.ios-standalone #appHeader::before{top:-12px;background:var(--cream);opacity:1;backdrop-filter:none;-webkit-backdrop-filter:none}
+html.ios-standalone body{background-image:none}
+html.ios-standalone #iosStatusBackdrop{display:block;position:fixed;inset:0;z-index:0;background-color:var(--cream);background-image:var(--app-background-image);background-repeat:no-repeat;background-size:100vw 100dvh;pointer-events:none}
+html.ios-standalone #app{z-index:1}
+html.ios-standalone #appHeader::before{position:fixed;inset:0 0 auto;height:calc(var(--app-header-height,64px) + 16px);background-color:var(--cream);background-image:var(--app-background-image);background-repeat:no-repeat;background-size:100vw 100dvh;background-position:0 0;opacity:1;backdrop-filter:none;-webkit-backdrop-filter:none}
+html.ios-standalone body.slide-focus #iosStatusBackdrop,html.ios-standalone body.homework-capture #iosStatusBackdrop{display:none}
 html.ios-standalone body.slide-focus .app{padding-top:calc(12px + env(safe-area-inset-top,0px))}
 html.ios-standalone body.homework-capture #app{padding-top:calc(8px + env(safe-area-inset-top,0px))}
 @media print{html.ios-standalone #iosStatusBackdrop{display:none}}

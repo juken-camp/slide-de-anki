@@ -2693,8 +2693,8 @@ function renderControls() {
   $('sessionSummary').textContent = state.collection ? state.collection.name : state.lessonIds.length === 1 ? (loaded.get(state.lessonIds[0])?.title || '') : `${state.lessonIds.length}教材をまとめて学習`;
   $('undoButton').disabled = !undo; $('finishUndo').hidden = !undo;
   $('undoButton').textContent = undoHistory.length > 1 ? `↶ ひとつ戻すにゃ（${undoHistory.length}）` : '↶ ひとつ戻すにゃ';
-  const scope = scopeChoices().find(c => c.id === state.chapter)?.title || 'すべて';
-  $('optionsSummary').textContent = `${state.mode === 'all' ? 'ぜんぶ' : labels[state.mode]} · ${state.answerMode ? '解答で暗記' : '問題から'}${state.chapter !== 'all' ? ' · '+scope : ''}${$('autoMode').checked ? ' · 自動' : ''}`;
+  // Keep the collapsed summary compact; selected unit titles remain visible within the expanded range choices.
+  $('optionsSummary').textContent = `${state.mode === 'all' ? 'ぜんぶ' : labels[state.mode]} · ${state.answerMode ? '解答で暗記' : '問題から'}${$('autoMode').checked ? ' · 自動' : ''}`;
   stats();
 }
 function showEmpty(title,text,{restart=false,review=false,all=false,finishSummary=false} = {}) {
@@ -3925,6 +3925,7 @@ $('importForm').onsubmit=async e=>{
     return value
       .replace(/Nekopon/g,'Cyber Nicopon')
       .replace(/ネコポン/g,'ニコポン')
+      .replace(/傾きの遊びはお休みにゃ。/g,'傾きの遊びはお休みだぜ。')
       .replace(/にゃ〜ん♪/g,'よぉ、呼んだか？😎')
       .replace(/もふもふ/g,'エネルギー')
       .replace(/肉球/g,'パワー')

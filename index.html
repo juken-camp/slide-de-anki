@@ -998,6 +998,195 @@ html[data-persona=cyber] .sound-presets button[aria-pressed=true]{background:#06
 html[data-persona=cyber] body.homework-capture .report-card{background:#fff!important;color:#3b312c!important;border-color:#d7c8b9!important;box-shadow:none!important}
 @media(prefers-reduced-motion:reduce){html[data-persona=cyber] .persona-option{transition:none!important}}
 
+
+/* ===== Cyber Nicopon: complete neon surface and button pass ===== */
+html[data-persona=cyber]{
+  --cy-bg:#050510;--cy-panel:#0f1430;--cy-deep:#080c20;
+  --cy-line:#315576;--cy-cyan:#00f5ff;--cy-purple:#bf00ff;
+  --cy-green:#39ff14;--cy-yellow:#ffea00;--cy-fg:#dceaff;
+  --cy-muted:#a5bdd9;--cy-magenta:#ff2d78;
+}
+/* Neutralize legacy warm paper, pink slide back, and brown drop shadows. */
+html[data-persona=cyber] #app :is(
+  .home-screen,.neko-play-card,.home-card-stack>div,.home-card-stack>div:nth-child(2),.home-card-stack>div:last-child,
+  .home-actions .secondary-button,.home-actions .home-review,.home-sound-button,
+  .catalog-search-panel,.catalog-resume>button,.catalog-search-panel .catalog-search,
+  .catalog-filter-row,.catalog-filter-row #browseSwitch,.catalog-search-panel #catalogSubjects button,
+  #catalogScreen .catalog-resume>button,.group-heading,.selected-lesson,
+  .lesson-grid .lesson-choice,.my-page-actions .tool,.my-collection-card,
+  #myCollectionsPanel .my-collection-empty,.my-library-empty,.my-added-lesson,
+  .result-counts>div,.result-counts>div:first-child,
+  .card .head,.card.is-back .head,#testCard .head,#testCard.is-back .head,
+  .image-reset,.slide-meta,.study-guide,.sound-setting,.sound-setting input,
+  .report-presets,.report-presets button,.report-metrics>div,.report-metrics .report-pink,
+  .report-chart-single .report-chart-day,.report-materials,.report-card,
+  .homework-test-history-item,.homework-tests,.test-result-card,
+  .settings-profile,.settings-display,.settings-sound,.settings-brand,.settings-play,
+  .collection-picker,.collection-editor-head,.collection-editor-foot,
+  .collection-tile .collection-check,.collection-tile-tick,.collection-lesson-tabs button,
+  #collectionDialog .collection-picker,#collectionDialog .collection-picker>summary,
+  #collectionDialog .collection-material-row,#collectionDialog .collection-editor-foot,
+  .collection-footer-info,.collection-preview-help,.report-list-card
+){background:var(--cy-panel)!important;background-image:none!important;color:var(--cy-fg)!important;border-color:var(--cy-line)!important;box-shadow:0 0 12px #00f5ff10!important;text-shadow:none!important}
+html[data-persona=cyber] #app :is(.home-title,.home-tagline,.home-how,.home-kicker,
+  .home-mascot i,.home-card-stack span,.home-card-stack i,
+  .study-heading>p,.group-heading h3,.selection-top summary,
+  .report-chart-head h4,.report-card-head h3,.report-person,.report-metrics>div>span,
+  .report-metrics>div small,.report-metrics strong,.report-card-head time,.report-brand,
+  .report-card-head p,.report-chart-head span,.report-chart-day b,.report-chart-day span,
+  .report-chart-date,.report-day-status,.report-materials b,.report-cheer,
+  .result-counts b,.result-counts span,.my-library-empty,.my-collection-card p,
+  .collection-grid-count,.collection-list-subject,.collection-storage-note,
+  .test-candidate-count,.homework-dates label,.homework-field,.test-filter-grid label,
+  .homework-test-history-item button,.homework-test-history-item small,
+  .settings-brand small,.settings-panel small,.settings-panel label,
+  .settings-panel p,.report-metrics .report-pink strong,.report-chart-single .is-active .report-day-status
+){color:var(--cy-fg)!important;text-shadow:none!important}
+html[data-persona=cyber] #app :is(.home-tagline,.home-how,.report-chart-head span,
+  .report-card-head time,.report-card-head p,.report-metrics small,
+  .report-chart-day span,.report-person,.result-counts span,
+  .collection-grid-count,.collection-list-subject,.collection-storage-note,
+  .homework-test-history-item small,.report-day-status,.report-chart-date
+){color:var(--cy-muted)!important}
+/* Neon interface components: preserve images with their original pixels and white image canvas. */
+html[data-persona=cyber] #app :is(.home-card-stack>div:last-child,.home-mascot,.result-cat){border-color:var(--cy-cyan)!important;box-shadow:0 0 20px #00f5ff26!important}
+html[data-persona=cyber] #app .home-screen:before{background:radial-gradient(circle,#00f5ff16 0%,#bf00ff0a 55%,transparent 72%)!important}
+html[data-persona=cyber] #app .home-title{text-shadow:0 0 17px #00f5ff35!important}
+html[data-persona=cyber] #app .home-card-stack i{background:#00f5ff66!important}
+html[data-persona=cyber] #app .neko-play-card{border:2px solid #8648dd!important;background:linear-gradient(135deg,#1e1747,#122b55)!important;box-shadow:0 0 15px #bf00ff4b!important;color:#b8faff!important}
+html[data-persona=cyber] #app :is(.home-mascot i,.home-kicker){color:var(--cy-cyan)!important}
+html[data-persona=cyber] #app .catalog-filter-row{border-top-color:var(--cy-line)!important}
+html[data-persona=cyber] #app :is(.lesson-choice.selected,#catalogSubjects button.active,
+  .collection-lesson-tabs button[aria-pressed=true],.collection-tile .collection-check[aria-pressed=true]){
+  border-color:var(--cy-cyan)!important;background:#0a3043!important;color:#80f8ff!important;
+  box-shadow:0 0 13px #00f5ff33!important}
+html[data-persona=cyber] #app :is(.selected-lesson,.my-page-actions .tool,.my-collection-actions .tool,
+  .home-sound-button,.catalog-resume>button,.collection-picker-actions button,
+  .collection-editor-head button,.sound-presets button,.settings-goal,.secondary-button,
+  .tool,.link-button,.image-reset,.source-links a,.quick-sound,
+  .collection-lesson-tabs button,.collection-zoom,.test-control,.report-presets button,
+  .report-main-actions button,.report-actions button){
+  border:1.5px solid #327ca2!important;border-radius:11px;
+  background:linear-gradient(140deg,#17234b,#091a36)!important;color:#b6faff!important;
+  box-shadow:inset 0 0 9px #00f5ff0f,0 0 11px #00f5ff25!important;
+  text-shadow:none!important}
+html[data-persona=cyber] #app :is(.report-presets button[aria-pressed=true],.collection-lesson-tabs button[aria-pressed=true]){
+  border-color:var(--cy-cyan)!important;background:linear-gradient(135deg,#123f5b,#132251)!important;
+  box-shadow:0 0 13px #00f5ff55!important;color:#83f6ff!important}
+html[data-persona=cyber] #app :is(.primary-button,#startStudy,#knownButton,#testReveal,
+  .my-collection-actions .primary-button,.collection-editor-foot .primary-button){
+  border:2px solid var(--cy-cyan)!important;
+  background:linear-gradient(125deg,#00f5ff,#35a9e3)!important;color:#001426!important;
+  box-shadow:inset 0 1px 0 #b8fbff66,0 0 12px #00f5ff6b,0 0 25px #00f5ff24!important}
+html[data-persona=cyber] #app :is(.actions button,#revealButton,#testReveal){
+  min-height:48px;border:1.5px solid #00f5ff!important;border-radius:13px;
+  color:#baf9ff!important;background:linear-gradient(125deg,#132f55,#09213d)!important;
+  box-shadow:inset 0 0 10px #00f5ff12,0 0 11px #00f5ff35!important;
+  text-shadow:none!important}
+html[data-persona=cyber] #app :is(#revealButton,.actions .reveal){
+  border:2px solid #c65aff!important;color:#f4e1ff!important;
+  background:linear-gradient(115deg,#302054,#123a64)!important;
+  box-shadow:inset 0 0 11px #bf00ff2a,0 0 14px #bf00ff77!important;font-weight:900}
+html[data-persona=cyber] #app :is(#knownButton,.actions .done){
+  border-color:#00f5ff!important;color:#041222!important;
+  background:linear-gradient(135deg,#00f5ff,#48b2ed)!important;
+  box-shadow:0 0 16px #00f5ff80!important}
+html[data-persona=cyber] #app :is(#weakButton,.actions .again){
+  border-color:#b954ff!important;background:linear-gradient(120deg,#31174c,#1b1941)!important;
+  color:#e9ccff!important;box-shadow:0 0 13px #bf00ff69!important}
+html[data-persona=cyber] #app :is(.actions .arrow,#prevButton,#nextButton){
+  border-color:#297fa6!important;background:linear-gradient(140deg,#0f264c,#08162f)!important;
+  color:#b5faff!important;box-shadow:0 0 9px #00f5ff3f!important}
+html[data-persona=cyber] #app #studyScreen :is(.card,#testCard){background:#10172f!important;border-color:#2b75a1!important;box-shadow:0 0 15px #00f5ff24!important}
+html[data-persona=cyber] #app :is(.card.is-back .head,#testCard.is-back .head){
+  background:linear-gradient(100deg,#20204b,#142a52)!important;border-color:#7541b9!important}
+html[data-persona=cyber] #app :is(.face-mode button[data-face-mode=answer].active,
+  .card.is-back #faceLabel,#testCard.is-back #testFace){
+  background:#261e50!important;color:#d5a9ff!important;border-color:#a45aff!important;
+  box-shadow:0 0 10px #bf00ff45!important}
+html[data-persona=cyber] #app :is(.face-mode button.active,.face-mode button[data-face-mode=question].active){
+  border-color:var(--cy-cyan)!important;background:#0d3345!important;color:#90faff!important;
+  box-shadow:0 0 12px #00f5ff4a!important}
+/* "まだ" is plain status text, not a tag, chip or square. */
+html[data-persona=cyber] #app #cardStatus{
+  display:inline!important;background:transparent!important;border:0!important;
+  border-radius:0!important;box-shadow:none!important;padding:0!important;
+  color:var(--cy-muted)!important;text-shadow:none!important;outline:0!important}
+html[data-persona=cyber] #app .head .badge{border-color:#3c83a9!important;background:#12263e!important;color:#80f2ff!important}
+html[data-persona=cyber] #app .image-frame,html[data-persona=cyber] #app .slide-wrap,
+html[data-persona=cyber] #app .slide-wrap img,html[data-persona=cyber] #app #slideImage,
+html[data-persona=cyber] #app #testSlideImage,
+html[data-persona=cyber] #app #collectionPreviewImage,
+html[data-persona=cyber] #app .collection-tile img{background:#fff!important;filter:none!important}
+/* The learning-options accordion must never become a white paper panel. */
+html[data-persona=cyber] #app :is(#studyOptions,.study-options,.modes,.study-options>summary,.study-options-panel){
+  background:#101733!important;color:#dceaff!important;border-color:#315576!important;
+  box-shadow:0 0 13px #00f5ff18!important}
+html[data-persona=cyber] #app :is(#studyOptions summary,.study-options summary,
+  .modes button,.study-options button){color:#b8edff!important}
+html[data-persona=cyber] #app .card:before{
+  background:linear-gradient(90deg,#00d9f7,#a445ff,#00f5ff)!important}
+/* Report metrics, chart, text and generated day rows are all cyber, including saved image view. */
+html[data-persona=cyber] #app :is(.report-card,.report-metrics>div,.report-chart-day,
+  .report-chart-single .report-chart-day,.report-presets,.report-metrics .report-pink,
+  .report-materials,.result-counts>div){
+  border-color:#315576!important;background:#101733!important;color:var(--cy-fg)!important;
+  box-shadow:0 0 10px #00f5ff13!important}
+html[data-persona=cyber] #app .report-metrics>div:nth-child(2){border-color:#7754b3!important;background:#1c1740!important}
+html[data-persona=cyber] #app .report-metrics strong{color:#8bfaff!important}
+html[data-persona=cyber] #app .report-metrics .report-pink strong{color:#c59bff!important}
+html[data-persona=cyber] #app .report-chart-day i{background:linear-gradient(0deg,#8653ff,#00f5ff)!important;box-shadow:0 0 8px #00f5ff40!important}
+html[data-persona=cyber] #app .report-chart{scrollbar-color:#00c9e6 transparent}
+html[data-persona=cyber] #app .report-materials{border-top-color:#315576!important}
+html[data-persona=cyber] #app .report-cheer{color:#9af4ff!important}
+html[data-persona=cyber] #app .result-counts>div:first-child b{color:#b69aff!important}
+/* Custom-summary popup and dark overlay remain in the cyber world. */
+html[data-persona=cyber] dialog::backdrop{background:rgba(1,5,25,.80)!important;backdrop-filter:blur(6px)!important}
+html[data-persona=cyber] dialog #collectionLessonPicker{
+  background:#0e1734!important;border:1px solid #315576!important;
+  color:#b3d5f4!important;box-shadow:inset 0 0 15px #00f5ff12!important}
+html[data-persona=cyber] dialog #collectionLessonPicker :is(p,span,small){color:#a5bdd9!important}
+/* Remaining report hints, legends and warnings are cold-colored instead of paper-brown. */
+html[data-persona=cyber] #app :is(#reportNotice,#reportLegacy,#reportTestEmpty,
+  .report-help,.report-hint,.report-summary,.report-person,
+  .report-chart-note,.report-materials p,.report-materials span,
+  .history-hint,.report-history,.report-test-empty,
+  .report-main-actions,.homework-setup p,.test-result-note,
+  .test-empty,.test-history,#tiltState){color:#a5bdd9!important}
+html[data-persona=cyber] #app #reportNotice{color:#a78cff!important}
+html[data-persona=cyber] #app :is(#tiltState,.report-label,.settings-play small){background:#101c37!important;border-color:#3a5684!important;color:#bca8ff!important}
+/* Remaining card controls, play effects and focus mode must not inherit orange, pink or cream. */
+html[data-persona=cyber] #app :is(.stat-bubble,.catalog-dock,.goal-top select,
+  .sound-setting input:not(:checked),.sound-setting input:before){
+  border-color:#326180!important;box-shadow:0 0 9px #00f5ff1a!important}
+html[data-persona=cyber] #app .sound-setting input:checked{background:var(--cy-cyan)!important}
+html[data-persona=cyber] #app .sound-setting input:before{background:#c6f8ff!important}
+html[data-persona=cyber] #app :is(.homework-setup,.homework-test-history-item,.test-result-card,
+  .result-counts>div,.collection-tile .collection-check,
+  .collection-preview-help,.collection-picker){color:var(--cy-fg)!important}
+html[data-persona=cyber] #app :is(.collection-editor-head,.collection-editor-foot,
+  .report-card-head,.collection-picker,.report-materials,.settings-panel){border-color:#315576!important}
+html[data-persona=cyber] dialog :is(.collection-editor-head,.collection-editor-foot,
+  .collection-picker,.collection-picker>summary,.collection-material-row,
+  .collection-tile .collection-check,.collection-tile-tick,.collection-lesson-tabs button,
+  .collection-grid-count,.collection-storage-note,.collection-list-subject,
+  .collection-preview-help,.collection-picker-actions button){
+  background:#101733!important;border-color:#315576!important;color:#dceaff!important;
+  box-shadow:0 0 10px #00f5ff10!important}
+html[data-persona=cyber] dialog :is(button,.primary-button,.secondary-button,.tool){
+  border-color:#3283a4!important;background:linear-gradient(120deg,#16284c,#0c1835)!important;
+  color:#b5faff!important;box-shadow:0 0 12px #00f5ff35!important}
+html[data-persona=cyber] dialog :is(.primary-button,#collectionSave,#testReveal){
+  background:linear-gradient(125deg,#00f5ff,#3aace4)!important;border-color:#00f5ff!important;color:#051a29!important}
+html[data-persona=cyber] dialog :is(input,select,textarea){background:#0b1128!important;color:#e0eaff!important;border-color:#315576!important}
+html[data-persona=cyber] body.slide-focus #app:after{background:#080e22!important;border-top-color:#315576!important}
+html[data-persona=cyber] body.slide-focus #app #studyScreen .actions :is(button,#focusTools,#focusPause,#weakButton,#knownButton){
+  border-color:#3187aa!important;background:linear-gradient(120deg,#142747,#0b1531)!important;
+  color:#a1f5ff!important;box-shadow:0 0 12px #00f5ff37!important}
+html[data-persona=cyber] body.slide-focus #app #studyScreen .actions #knownButton{background:linear-gradient(135deg,#00f5ff,#37b9eb)!important;color:#081b29!important}
+html[data-persona=cyber] body.slide-focus #app #studyScreen .actions #weakButton{background:linear-gradient(135deg,#371747,#201638)!important;border-color:#a54dff!important;color:#e6c3ff!important}
+html[data-persona=cyber] body.homework-capture .report-card{background:#101733!important;color:#dceaff!important;border-color:#315576!important;box-shadow:none!important}
+@media(prefers-reduced-motion:reduce){html[data-persona=cyber] #app :is(.actions button,.tool,.primary-button){animation:none!important}}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -1085,7 +1274,7 @@ html[data-persona=cyber] body.homework-capture .report-card{background:#fff!impo
  </div>
 </section>
 
-<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><section class="persona-chooser" aria-labelledby="personaTitle"><h3 id="personaTitle">🎭 着せ替え</h3><div class="persona-options" role="group" aria-label="キャラクターとデザインを選ぶ"><button type="button" class="persona-option" data-persona-choice="neko" aria-pressed="true"><span class="persona-icon" aria-hidden="true">😺</span><span class="persona-copy"><strong>Nekopon</strong><small>いつものネコポン</small></span></button><button type="button" class="persona-option" data-persona-choice="cyber" aria-pressed="false"><span class="persona-icon" aria-hidden="true">😎</span><span class="persona-copy"><strong>Cyber Nicopon</strong><small>ネオンと挑発的な応援</small></span></button></div><p class="persona-hint" id="personaHint">いつものネコポン。切り替えても学習記録はそのままにゃ。</p></section><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-profile"><label for="reportNameInput">名前（任意）</label><input id="reportNameInput" maxlength="24" placeholder="生徒名・ニックネーム" autocomplete="off" aria-describedby="profileNameNote" disabled><small id="profileNameNote">学習レポートと確認テストに載せるにゃ。</small></div><div class="settings-brand"><h3>自分だけのタイトルにするにゃ</h3><label for="brandTitleInput">タイトル</label><input id="brandTitleInput" maxlength="30" placeholder="スライドで暗記" autocomplete="off"><label for="brandSubtitleInput">サブタイトル</label><input id="brandSubtitleInput" maxlength="40" placeholder="by JUKEN CAMP" autocomplete="off"><button id="resetBrand" class="link-button" type="button">元にもどすにゃ</button></div><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
+<section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><section class="persona-chooser" aria-labelledby="personaTitle"><h3 id="personaTitle">🎭 着せ替え</h3><div class="persona-options" role="group" aria-label="キャラクターとデザインを選ぶ"><button type="button" class="persona-option" data-persona-choice="neko" aria-pressed="true"><span class="persona-icon" aria-hidden="true">😺</span><span class="persona-copy"><strong>Nekopon</strong><small>いつものネコポン</small></span></button><button type="button" class="persona-option" data-persona-choice="cyber" aria-pressed="false"><span class="persona-icon" aria-hidden="true">😎</span><span class="persona-copy"><strong>Cyber Nicopon</strong><small>ネオンと応援</small></span></button></div><p class="persona-hint" id="personaHint">いつものネコポン。切り替えても学習記録はそのままにゃ。</p></section><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-profile"><label for="reportNameInput">名前（任意）</label><input id="reportNameInput" maxlength="24" placeholder="生徒名・ニックネーム" autocomplete="off" aria-describedby="profileNameNote" disabled><small id="profileNameNote">学習レポートと確認テストに載せるにゃ。</small></div><div class="settings-brand"><h3>自分だけのタイトルにするにゃ</h3><label for="brandTitleInput">タイトル</label><input id="brandTitleInput" maxlength="30" placeholder="スライドで暗記" autocomplete="off"><label for="brandSubtitleInput">サブタイトル</label><input id="brandSubtitleInput" maxlength="40" placeholder="by JUKEN CAMP" autocomplete="off"><button id="resetBrand" class="link-button" type="button">元にもどすにゃ</button></div><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
 </main><div class="neko-notice" id="notice" role="status" aria-live="polite"></div>
 <dialog id="focusMenu" aria-labelledby="focusMenuTitle"><div class="focus-menu-header"><h2 id="focusMenuTitle">操作にゃ 🐾</h2><button id="focusClose" type="button" aria-label="スライドに戻るにゃ" autofocus>×</button></div><p id="focusContext"></p><div class="focus-navigation"><button id="focusPrev" type="button">‹ 前へ</button><button id="focusFlip" type="button">解答を見るにゃ</button><button id="focusNext" type="button">次へ ›</button></div><div class="focus-extra"><button id="focusZoom" type="button">拡大するにゃ ⤢</button><div id="focusUndoSlot"></div></div><div id="focusSourceSlot"></div><div id="focusOptionsSlot"></div><div class="focus-destinations"><button id="focusCatalog" type="button">教材を選ぶにゃ</button><button id="focusSettings" type="button">設定を開くにゃ</button></div><button id="focusNormal" type="button">横向きでも通常表示にするにゃ</button></dialog>
 
@@ -3297,7 +3486,15 @@ $('importForm').onsubmit=async e=>{
     '#tiltStatus','#tiltPermission','#tiltReload','#sourceMoment',
     '.settings-brand h3','#resetBrand','#landscapeNote',
     '.settings-caption','.settings-play .sound-setting span',
-    '#recordSettingsTitle','.report-brand','#testResultCheer'
+    '#recordSettingsTitle','.report-brand','#testResultCheer',
+    '#revealButton','#testReveal','#newMyCollection','#myAddLesson',
+    '#catalogDock','#quickPause','#focusPause','#focusTools',
+    '#settingsScreen .settings-brand','#settingsScreen .settings-play',
+    '#reportScreen .report-card-head','#reportScreen .report-cheer',
+    '#resultScreen .result-counts','#resultScreen .result-actions',
+    '#collectionDialog .collection-editor-head','#collectionDialog .collection-editor-foot',
+    '#reportScreen .report-person','#testScreen .test-controls',
+    '#homeScreen .home-actions','#studyScreen .study-heading'
   ];
   // Never touch question images, source material, lesson titles, user inputs or saved records.
   const records=new WeakMap();
@@ -3307,17 +3504,42 @@ $('importForm').onsubmit=async e=>{
     return value
       .replace(/Nekopon/g,'Cyber Nicopon')
       .replace(/ネコポン/g,'ニコポン')
-      .replace(/傾けてCyber Nicoponとあそぶ/g,'傾けてCyber Nicoponと遊ぶぜ')
       .replace(/にゃ〜ん♪/g,'よぉ、呼んだか？😎')
       .replace(/もふもふ/g,'エネルギー')
       .replace(/肉球/g,'パワー')
-      .replace(/えらいにゃ♪/g,'やるじゃねぇか！')
-      .replace(/すごいにゃ♪/g,'最高じゃねぇか！')
+      .replace(/えらいにゃ[♪！]?/g,'やるじゃねぇか！')
+      .replace(/すごいにゃ[♪！]?/g,'最高じゃねぇか！')
+      .replace(/あと(\d+)問で今日の目標にゃ/g,'あと$1問で今日の目標だぜ')
+      .replace(/今日の目標にゃ/g,'今日の目標だぜ')
+      .replace(/目標達成にゃ/g,'目標達成だぜ')
+      .replace(/答えを見るにゃ/g,'答えを見るぜ')
+      .replace(/まとめを作るにゃ/g,'まとめを作るぜ')
+      .replace(/まとめを編集するにゃ/g,'まとめを編集するぜ')
+      .replace(/教材を追加するにゃ/g,'教材を追加するぜ')
+      .replace(/編集にゃ/g,'編集するぜ')
+      .replace(/はじめるにゃ/g,'はじめるぜ')
+      .replace(/始めるにゃ/g,'始めるぜ')
+      .replace(/勉強するにゃ/g,'勉強するぜ')
+      .replace(/保存するにゃ/g,'保存するぜ')
+      .replace(/戻るにゃ/g,'戻るぜ')
+      .replace(/設定するにゃ/g,'設定するぜ')
+      .replace(/確認するにゃ/g,'確認するぜ')
+      .replace(/やってみるにゃ/g,'やってみるぜ')
+      .replace(/もう一周するにゃ/g,'もう一周いくぜ')
+      .replace(/復習にゃ/g,'復習するぜ')
+      .replace(/挑戦するにゃ/g,'挑戦するぜ')
+      .replace(/見たにゃ/g,'見たぜ')
+      .replace(/おぼえたにゃ/g,'覚えたぜ')
+      .replace(/できたにゃ/g,'できたぜ')
+      .replace(/だにゃ/g,'だぜ')
+      .replace(/てにゃ/g,'てくれよ')
+      .replace(/([ァ-ヶー]{2,}|[一-龠々]{2,})にゃ/g,'$1だぜ')
+      .replace(/([るたいよね])にゃ/g,'$1ぜ')
       .replace(/にゃ！/g,'ぜ！')
       .replace(/にゃ♪/g,'ぜ⚡')
       .replace(/にゃ？/g,'か？')
       .replace(/にゃ。/g,'ぜ。')
-      .replace(/にゃ(?=\s|$)/g,'ぜ')
+      .replace(/にゃ(?=[^ぁ-んァ-ヶ一-龠]|$)/g,'ぜ')
       .replace(/🐾/g,'⚡');
   };
   window.NekoCyberSpeak=speak;
@@ -3334,6 +3556,15 @@ $('importForm').onsubmit=async e=>{
     const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
     let n;while((n=walker.nextNode()))updateTextNode(n);
   }
+  const placeholderBases=new WeakMap();
+  const syncPlaceholders=()=>{
+    for(const el of document.querySelectorAll('input[placeholder],textarea[placeholder]')){
+      if(!placeholderBases.has(el))placeholderBases.set(el,el.getAttribute('placeholder')||'');
+      const base=placeholderBases.get(el);
+      const intended=mode==='cyber'?speak(base):base;
+      if(el.getAttribute('placeholder')!==intended)el.setAttribute('placeholder',intended);
+    }
+  };
   const originalResultReply=$('resultCatReply')?.textContent||'おつかれさまにゃ。なでてにゃ🐾';
   const originals={
     searchPlaceholder:$('catalogSearch')?.getAttribute('placeholder')||'全教材からさがすにゃ',
@@ -3349,7 +3580,7 @@ $('importForm').onsubmit=async e=>{
     meta?.setAttribute('content',mode==='cyber'?'#050510':originalThemeColor);
     document.querySelectorAll('[data-persona-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.personaChoice===mode)));
     $('personaHint').textContent=mode==='cyber'
-      ? '😎 ネオン全開、Cyber Nicopon参上だぜ！学習記録はそのままだ。'
+      ? '😎 ネオン全開！学習記録はそのままだぜ。'
       : 'いつものネコポン。切り替えても学習記録はそのままにゃ。';
     for(const id of ['headerCatFace','mascotFace','resultCatFace']){
       const n=$(id);if(n)n.textContent=mode==='cyber'?'😎':(id==='resultCatFace'?'😸':'🐱');
@@ -3379,16 +3610,51 @@ $('importForm').onsubmit=async e=>{
   }
   try{mode=localStorage.getItem(KEY)==='cyber'?'cyber':'neko';}catch{}
   refresh();
-  // React only to designated copy nodes, not lesson lists or question content.
+  // Apply copy changes to UI chrome only; never to images, questions, source titles or user data.
+  const UI='button:not(.lesson-choice):not(.selected-lesson):not(.collection-check):not(.collection-material-row),.settings-caption,.report-brand,#goalMessage,.report-cheer,.neko-playground p,.catalog-help,.settings-play h3,.my-collection-empty,.catalog-empty,.study-guide';
+  const SKIP='.choice-copy,.choice-meta,.lesson-choice,.collection-check,.collection-material-row,.selected-lesson,.source-links,.user-content,.collection-material-name,.collection-card-title,.my-collection-title,.persona-option,#personaHint,#personaTitle,#brandTitle,#brandSubtitle,#reportName,#reportRange,#slideImage,#testSlideImage,#collectionPreviewImage,#reportMaterials';
+  function safe(el){return el && !el.closest(SKIP) && !el.matches('script,style,textarea,input,option');}
+  function translateLingering(el){
+    if(!el || !safe(el))return;
+    const nodes=[];
+    if(el.nodeType===3)nodes.push(el);
+    else {const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n;while((n=walker.nextNode()))nodes.push(n);}
+    for(const node of nodes){
+      if(safe(node.parentElement) && /にゃ|Nekopon|ネコポン|🐾/.test(node.nodeValue||''))updateTextNode(node);
+      else if(safe(node.parentElement) && mode==='neko' && /だぜ|Cyber Nicopon|⚡/.test(node.nodeValue||'') && records.has(node))updateTextNode(node);
+    }
+  }
+  function updateUi(el){
+    if(!el || !safe(el))return;
+    if(el.matches?.(UI))updateCopy(el);
+    else if(el.querySelectorAll)for(const item of el.querySelectorAll(UI))if(safe(item))updateCopy(item);
+    translateLingering(el);
+    if(el.matches?.('input[placeholder],textarea[placeholder]'))syncPlaceholders();
+    else if(el.querySelector?.('input[placeholder],textarea[placeholder]'))syncPlaceholders();
+  }
   const observer=new MutationObserver(changes=>{
     const changed=new Set();
     for(const change of changes){
       const el=change.target.nodeType===3?change.target.parentElement:change.target;
       if(el)changed.add(el);
+      for(const added of change.addedNodes||[])if(added.nodeType===1)changed.add(added);
     }
-    for(const el of changed)updateCopy(el);
+    for(const el of changed){
+      if(known.includes(el))updateCopy(el);
+      else if(known.some(node=>node.contains(el)))updateCopy(el);
+      updateUi(el);
+    }
   });
   for(const node of known)observer.observe(node,{subtree:true,characterData:true,childList:true});
+  const appRoot=$('app');
+  if(appRoot)observer.observe(appRoot,{subtree:true,characterData:true,childList:true});
+  for(const dialog of document.querySelectorAll('dialog'))observer.observe(dialog,{subtree:true,characterData:true,childList:true});
+  // Refresh static/new UI labels on both persona changes, with baseline text held per node.
+  const updateAllUi=()=>{for(const node of document.querySelectorAll(UI))if(safe(node))updateCopy(node);translateLingering(appRoot);for(const dialog of document.querySelectorAll('dialog'))translateLingering(dialog);syncPlaceholders();};
+  updateAllUi();
+  for(const btn of document.querySelectorAll('[data-persona-choice]')){
+    btn.addEventListener('click',()=>queueMicrotask(updateAllUi));
+  }
 })();
 </script>
 </body></html>

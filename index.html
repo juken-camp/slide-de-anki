@@ -1715,6 +1715,38 @@ html[data-persona="cyber"] #app a:focus-visible {
 @media(prefers-reduced-motion:reduce){
   html[data-persona="cyber"] #app #emptyState :is(#allButton,#restartButton,#reviewButton,#unmarkedReview,#finishUndo){transition:none!important}
 }
+
+/* ===== ぜんぶ見るぜ / zero-question screen : verified dedicated cyber style =====
+   IMPORTANT: This is the #emptyState / #allButton, not a catalog "all" action.
+   Rule is last in the stylesheet and has high specificity to override shared button rules. */
+html[data-persona="cyber"] body #app #studyScreen #emptyState button#allButton {
+  -webkit-appearance:none!important; appearance:none!important;
+  display:block;
+  width:min(360px,100%);
+  min-height:54px;
+  margin:15px auto 6px;
+  padding:12px 20px!important;
+  border:2px solid #00efff!important;
+  border-radius:15px!important;
+  background:linear-gradient(112deg,#101c46 0%,#17204b 44%,#281452 100%)!important;
+  color:#c5ffff!important;
+  text-shadow:0 0 8px #42e6ff80!important;
+  box-shadow:inset 0 0 0 1px #99f9ff30,inset 0 0 19px #00f5ff17,
+    0 0 0 1px #00f5ff48,0 0 16px #00f5ffa6,0 0 32px #00f5ff5b,
+    0 0 44px #9d4aff2e!important;
+  font-weight:900;
+  transition:transform .15s ease,filter .15s ease!important;
+}
+html[data-persona="cyber"] body #app #studyScreen #emptyState button#allButton:active {
+  transform:scale(.985); filter:brightness(1.16);
+}
+@media(hover:hover){
+  html[data-persona="cyber"] body #app #studyScreen #emptyState button#allButton:hover {
+    filter:brightness(1.16);
+    box-shadow:inset 0 0 0 1px #99f9ff70,inset 0 0 20px #00f5ff28,
+      0 0 17px #00f5ffdf,0 0 36px #00f5ff88,0 0 50px #9d4aff55!important;
+  }
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -1755,7 +1787,7 @@ html[data-persona="cyber"] #app a:focus-visible {
 <div class="face-mode" aria-label="カードの送り方"><button data-face-mode="normal" class="active" aria-pressed="true">問題から</button><button data-face-mode="answer" aria-pressed="false">解答で暗記</button></div>
 <div class="timer-panel"><div class="timer-top"><label><input type="checkbox" id="autoMode"> 自動めくり</label><span id="timerLabel"></span><button class="tool" id="playButton" hidden>▶ 再生</button></div><div id="timerOptions" class="timer-options" hidden><label>問題 <input type="number" id="questionSeconds" min="0.5" max="120" step="0.1" value="3"> 秒</label><label>解答 <input type="number" id="answerSeconds" min="0.5" max="120" step="0.1" value="2"> 秒</label></div><div class="timer-track" id="timerTrack" hidden><i id="timerBar"></i></div></div>
 </div></details></section>
-<div class="empty" id="emptyState" hidden tabindex="-1"><button aria-label="Nekoponをなでるにゃ" class="result-cat" type="button" id="resultCat"><span class="cat-tilt"><span id="resultCatFace" aria-hidden="true">😸</span></span></button><p role="status" class="result-cat-reply" id="resultCatReply">おつかれさまにゃ。なでてにゃ🐾</p><h2 id="emptyTitle"></h2><p id="emptyText"></p><div id="resultCounts" class="result-counts" hidden><div><b id="resultKnown">0</b><span>おぼえた</span></div><div><b id="resultWeak">0</b><span>おぼえてない</span></div><div><b id="resultUnmarked">0</b><span>まだ仕分けてない</span></div></div><button id="restartButton">もう一周するにゃ</button><button id="reviewButton">おぼえてない問題を復習にゃ</button><button id="unmarkedReview" hidden>まだの問題に挑戦するにゃ</button><button id="allButton">ぜんぶ見るにゃ</button><button id="finishUndo" class="finish-undo" hidden>↶ 最後の仕分けを戻すにゃ</button></div>
+<div class="empty" id="emptyState" hidden tabindex="-1"><button aria-label="Nekoponをなでるにゃ" class="result-cat" type="button" id="resultCat"><span class="cat-tilt"><span id="resultCatFace" aria-hidden="true">😸</span></span></button><p role="status" class="result-cat-reply" id="resultCatReply">おつかれさまにゃ。なでてにゃ🐾</p><h2 id="emptyTitle"></h2><p id="emptyText"></p><div id="resultCounts" class="result-counts" hidden><div><b id="resultKnown">0</b><span>おぼえた</span></div><div><b id="resultWeak">0</b><span>おぼえてない</span></div><div><b id="resultUnmarked">0</b><span>まだ仕分けてない</span></div></div><button id="restartButton">もう一周するにゃ</button><button id="reviewButton">おぼえてない問題を復習にゃ</button><button id="unmarkedReview" hidden>まだの問題に挑戦するにゃ</button><button id="allButton" data-neon-revision="all-button-20261022">ぜんぶ見るにゃ</button><button id="finishUndo" class="finish-undo" hidden>↶ 最後の仕分けを戻すにゃ</button></div>
 </section></section>
 <section id="reportScreen" class="homework-screen" aria-labelledby="reportTitle" hidden>
  <div class="page-heading homework-heading" data-capture-hide><h2 id="reportTitle" class="screen-title" tabindex="-1">学習レポート</h2></div>

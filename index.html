@@ -2202,12 +2202,31 @@ function mediaSoundURL(notes,volume,tail=.02) {
   const text=(at,value)=>{for(let i=0;i<value.length;i++)bytes[at+i]=value.charCodeAt(i);};
   text(0,'RIFF');view.setUint32(4,36+samples*2,true);text(8,'WAVE');text(12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);view.setUint32(24,rate,true);view.setUint32(28,rate*2,true);view.setUint16(32,2,true);view.setUint16(34,16,true);text(36,'data');view.setUint32(40,samples*2,true);
   const mix=new Float32Array(samples);
-  for(const [start,end,delay,length,level,type] of notes){
+  for(const [start,end,delay,length,level,type,profile] of notes){
     const first=Math.ceil(delay*rate),last=Math.min(samples,Math.ceil((delay+length)*rate));
     const ratio=Math.log(end/start),attack=Math.min(.006,length/2);
     for(let i=first;i<last;i++){
-      const t=i/rate-delay,phase=2*Math.PI*(Math.abs(ratio)<1e-8 ? start*t : start*length*Math.expm1(ratio*t/length)/ratio);
-      const envelope=t<attack ? .0001*Math.pow(level/.0001,t/attack) : level*Math.pow(.0001/level,(t-attack)/(length-attack));
+      const t=i/rate-delay,progress=t/length;
+      // A playable science-fiction SWEEP, a clearly STEPPED chip note and a quick LASER zap.
+      // The previous common exponential decay silenced the sweep almost immediately.
+      let envelope,phase;
+      if(profile==='warp'){
+        const fadeIn=Math.min(1,t/Math.min(.15,length*.19));
+        const fadeOut=Math.min(1,(length-t)/Math.min(.34,length*.25));
+        envelope=level*Math.max(0,fadeIn)*Math.max(0,fadeOut)*(.86+.14*Math.sin(2*Math.PI*3.2*t));
+        // Exact integrated exponential sweep with a subtle low-frequency vibrato.
+        const basic=(Math.abs(ratio)<1e-8 ? start*t : start*length*Math.expm1(ratio*progress)/ratio);
+        phase=2*Math.PI*(basic+.012*start/(2*Math.PI*4.5)*(1-Math.cos(2*Math.PI*4.5*t)));
+      }else if(profile==='chip'){
+        envelope=level*Math.min(1,t/.0025)*Math.min(1,(length-t)/.013);
+        phase=2*Math.PI*start*t;
+      }else if(profile==='zap'){
+        envelope=level*Math.min(1,t/.0025)*Math.pow(Math.max(0,1-progress),1.65);
+        phase=2*Math.PI*(Math.abs(ratio)<1e-8 ? start*t : start*length*Math.expm1(ratio*progress)/ratio);
+      }else{
+        envelope=t<attack ? .0001*Math.pow(level/.0001,t/attack) : level*Math.pow(.0001/level,(t-attack)/(length-attack));
+        phase=2*Math.PI*(Math.abs(ratio)<1e-8 ? start*t : start*length*Math.expm1(ratio*progress)/ratio);
+      }
       const wave=type==='triangle' ? 2/Math.PI*Math.asin(Math.sin(phase))
         : type==='square' ? (Math.sin(phase)>=0 ? .65 : -.65)
         : type==='sawtooth' ? ((phase/(2*Math.PI)%1)*2-1)*.58
@@ -2223,82 +2242,85 @@ function mediaSoundURL(notes,volume,tail=.02) {
 }
 function soundNotes(kind,palette=soundStyle(),variant=0) {
   if (cyberSoundStyles.includes(palette)) {
-    // Cyber Nicopon: three ORIGINAL sound worlds, not pitch-shifted copies.
-    // Each voice: [startHz, endHz, delaySeconds, durationSeconds, gain, waveform].
-    // All pitches are intentionally audible on small phone speakers.
-    const D = (a,b,t,l,g=.018,w='sawtooth') => [a,b,t,l,g,w];
-    const A = (f,t,l=.085,g=.020) => [f,f,t,l,g,'square'];
-    const S = (a,b,t,l,g=.016,w='sine') => [a,b,t,l,g,w];
-    const digital = {
-      tap: [D(1350,480,0,.08,.020),D(2000,920,.016,.039,.008,'square')],
-      flip: [D(520,2300,0,.105,.023),D(2050,450,.085,.10,.019)],
-      move: [D(1850,730,0,.083,.019)],
-      weak: [D(1200,240,0,.20,.023),D(440,185,.13,.10,.009,'square')],
-      known: [D(650,1700,0,.085,.020),D(980,2400,.09,.090,.023),D(1500,2100,.19,.14,.018,'triangle')],
-      cat: [D(520,1650,0,.11,.022),D(2300,630,.13,.10,.021),D(1100,1850,.245,.065,.010,'square')],
-      sparkle: [D(2700,1100,0,.145,.018),D(1900,2900,.085,.09,.010,'triangle')],
-      shuffle: [D(750,2050,0,.065,.021),D(1750,550,.077,.075,.020),D(990,2250,.15,.068,.018)],
-      open: [D(460,1700,0,.13,.024),D(1380,2650,.105,.09,.015,'triangle')],
-      finish: [D(850,2450,0,.13,.022),D(1250,2850,.125,.14,.021),D(1850,3100,.285,.21,.018,'triangle')],
-      milestone: [D(490,1400,0,.085,.022),D(670,1900,.078,.085,.021),D(900,2350,.155,.10,.021),D(1200,2900,.265,.18,.018)],
-      preview: [
-        D(1100,420,0,.095,.024),D(2150,620,.09,.088,.024),
-        D(480,2550,.20,.19,.024),D(2360,880,.34,.15,.022),
-        D(650,2500,.47,.14,.015,'square')
+    // Each preset has its own instrument, envelope, and independent phrases.
+    // The seventh field drives BOTH native WebAudio and iPhone WAV fallback.
+    // Note = [startHz,endHz,startSec,lengthSec,volume,waveform,envelope].
+    const D=(a,b,t,l,g=.030,w='sawtooth')=>[a,b,t,l,g*1.7,w,'zap'];
+    const A=(f,t,l=.105,g=.032)=>[f,f,t,l,g,'square','chip'];
+    const S=(a,b,t,l,g=.031,w='sine')=>[a,b,t,l,g,w,'warp'];
+    const digital={
+      tap:[D(1950,290,0,.115,.031),D(2850,740,.035,.080,.011,'square')],
+      flip:[D(450,2500,0,.20,.028),D(2050,310,.15,.14,.025)],
+      move:[D(1900,370,0,.12,.029)],
+      weak:[D(1100,190,0,.24,.034),D(520,140,.13,.16,.023)],
+      known:[D(680,1800,0,.095,.028),D(1230,2350,.10,.095,.029),D(2000,720,.23,.17,.029)],
+      cat:[D(980,280,0,.13,.031),D(460,2350,.13,.14,.028),D(2300,510,.27,.13,.026)],
+      sparkle:[D(2700,1100,0,.16,.030),D(1900,2900,.13,.15,.024)],
+      shuffle:[D(800,2450,0,.11,.028),D(2550,480,.12,.13,.030),D(700,2550,.25,.15,.027)],
+      open:[D(450,2700,0,.19,.033),D(2050,660,.14,.13,.022)],
+      finish:[D(730,2300,0,.19,.034),D(1650,350,.20,.18,.034),D(580,2850,.42,.30,.031)],
+      milestone:[D(780,2450,0,.14,.030),D(2450,470,.14,.14,.033),D(620,2900,.28,.22,.031)],
+      preview:[
+        D(2400,250,0,.15,.043),D(450,3000,.17,.22,.037),
+        D(2800,390,.41,.20,.040),D(530,2550,.63,.22,.035),
+        D(1800,200,.87,.22,.043),D(3000,840,1.12,.28,.034,'square')
       ]
     };
-    const arcade = {
-      tap: [A(523.25,0,.055,.023)],
-      flip: [A(392,0,.067),A(784,.078,.085)],
-      move: [A(659.25,0,.065)],
-      weak: [A(392,0,.11),A(293.66,.125,.16,.020)],
-      known: [A(587.33,0,.095),A(739.99,.11,.095),A(880,.22,.10),A(1174.66,.34,.18,.023)],
-      cat: [A(523.25,0,.10),A(659.25,.14,.09),A(392,.27,.15)],
-      sparkle: [A(1174.66,0,.07),A(1318.51,.095,.07),A(1567.98,.19,.14)],
-      shuffle: [A(440,0,.060),A(523.25,.079,.060),A(659.25,.16,.065)],
-      open: [A(392,0,.080),A(523.25,.105,.075),A(783.99,.21,.14)],
-      finish: [A(440,0,.105),A(587.33,.12,.11),A(739.99,.245,.11),A(880,.37,.12),A(1174.66,.525,.28,.023)],
-      milestone: [A(392,0,.070),A(493.88,.086,.07),A(587.33,.172,.07),A(783.99,.258,.11),A(987.77,.40,.24,.022)],
-      preview: [
-        A(392,0,.09),A(493.88,.12,.09),A(587.33,.24,.095),
-        A(783.99,.37,.15,.023),A(587.33,.565,.09),A(987.77,.68,.27,.022),
-        A(196,0,.18,.010),A(293.66,.37,.24,.009)
+    const arcade={
+      tap:[A(523.25,0,.09)],
+      flip:[A(392,0,.105),A(784,.13,.12)],
+      move:[A(659.25,0,.10)],
+      weak:[A(392,0,.16),A(293.66,.19,.19)],
+      known:[A(523.25,0,.12),A(659.25,.135,.12),A(783.99,.27,.12),A(1046.5,.42,.20)],
+      cat:[A(523.25,0,.15),A(783.99,.165,.14),A(392,.34,.19)],
+      sparkle:[A(1174.66,0,.10),A(1567.98,.12,.11),A(2093,.26,.19)],
+      shuffle:[A(392,0,.10),A(523.25,.12,.10),A(659.25,.24,.13)],
+      open:[A(392,0,.13),A(523.25,.15,.12),A(783.99,.30,.19)],
+      finish:[A(392,0,.15),A(523.25,.17,.14),A(659.25,.33,.14),A(783.99,.50,.15),A(1046.5,.68,.34)],
+      milestone:[A(392,0,.12),A(493.88,.14,.12),A(587.33,.28,.12),A(783.99,.43,.29)],
+      preview:[
+        // Unmistakable retro GAME phrase: two-bar melody, distinct stepped square waves.
+        A(392,0,.15),A(523.25,.19,.15),A(659.25,.38,.15),
+        A(783.99,.58,.23),A(659.25,.85,.15),A(523.25,1.04,.15),
+        A(783.99,1.25,.15),A(1046.50,1.44,.42),A(196,0,.20,.013),A(261.63,.58,.23,.011)
       ]
     };
-    const space = {
-      tap: [S(270,400,0,.26,.015),S(405,335,.15,.19,.007)],
-      flip: [S(260,680,0,.48,.016),S(530,350,.22,.39,.009),S(780,950,.42,.31,.006,'triangle')],
-      move: [S(430,270,0,.35,.014)],
-      weak: [S(395,190,0,.58,.018),S(270,235,.21,.40,.009)],
-      known: [S(330,550,0,.61,.017),S(495,745,.12,.57,.012),S(660,880,.30,.58,.008,'triangle')],
-      cat: [S(240,430,0,.47,.016),S(440,310,.25,.45,.014),S(660,850,.50,.42,.009)],
-      sparkle: [S(660,1380,0,.67,.010,'triangle'),S(1050,890,.21,.65,.008)],
-      shuffle: [S(300,490,0,.39,.016),S(590,390,.23,.44,.011)],
-      open: [S(220,470,0,.51,.017),S(440,820,.25,.56,.011),S(720,930,.50,.39,.007)],
-      finish: [S(260,430,0,.77,.019),S(390,620,.13,.79,.012),S(520,780,.30,.78,.010),S(780,960,.56,.60,.006,'triangle')],
-      milestone: [S(235,410,0,.71,.018),S(352,560,.18,.72,.013),S(470,780,.41,.69,.009),S(720,1030,.65,.55,.007)],
-      preview: [
-        S(220,525,0,.91,.017),S(330,720,.23,.86,.014),
-        S(460,930,.55,.84,.012,'triangle'),S(680,480,.94,.52,.008),
-        S(520,390,1.12,.43,.005)
+    const space={
+      // Atmospheric, softly beating sine waves with SLOW continuous pitch movement.
+      // Mid-range starting frequencies are deliberate for smartphone speakers.
+      tap:[S(350,555,0,.40,.032),S(525,390,.14,.37,.015)],
+      flip:[S(330,840,0,.85,.034),S(495,700,.24,.82,.022),S(680,430,.49,.63,.014)],
+      move:[S(430,280,0,.44,.033)],
+      weak:[S(540,290,0,.85,.034),S(780,350,.28,.75,.015)],
+      known:[S(360,710,0,.93,.032),S(520,960,.22,.90,.024),S(700,520,.49,.72,.016)],
+      cat:[S(330,640,0,.78,.031),S(510,770,.25,.82,.023),S(720,460,.51,.70,.014)],
+      sparkle:[S(550,1320,0,.99,.028),S(660,1000,.35,1.00,.019)],
+      shuffle:[S(350,630,0,.77,.034),S(610,400,.28,.78,.018)],
+      open:[S(320,650,0,.86,.036),S(460,890,.30,.93,.024)],
+      finish:[S(330,730,0,1.25,.033),S(495,990,.29,1.18,.022),S(660,470,.65,1.09,.019)],
+      milestone:[S(320,780,0,1.30,.032),S(480,1100,.35,1.22,.021),S(640,490,.82,.90,.018)],
+      preview:[
+        // Over 3 seconds of audible UFO engine sweep: NOT a cluster of short bleeps.
+        S(350,760,0,2.60,.041),S(524,1040,.22,2.58,.028),
+        S(700,485,.70,2.16,.019),S(880,555,1.38,1.57,.013)
       ]
     };
-    const sounds = palette==='digital' ? digital : palette==='arcade' ? arcade : space;
+    const table=palette==='digital'?digital:palette==='arcade'?arcade:space;
     if(kind==='tap') {
-      if(palette==='arcade') return [A([392,523.25,659.25,783.99,880][variant%5],0,.065,.023)];
-      if(palette==='space') {
-        const pitch=[240,270,300,350,390][variant%5];
-        return [S(pitch,pitch*1.36,0,.24,.015),S(pitch*1.6,pitch*.95,.13,.21,.006)];
+      if(palette==='arcade')return [A([392,523.25,659.25,783.99,880][variant%5],0,.10)];
+      if(palette==='space'){
+        const base=[330,350,390,430,460][variant%5];
+        return [S(base,base*1.6,0,.43,.031),S(base*1.5,base*.96,.16,.32,.014)];
       }
-      const p=[1050,1250,1450,1650,1900][variant%5];
-      return [D(p,p*.35,0,.078,.019),D(p*1.35,p*.55,.021,.044,.010,'square')];
+      const startHz=[1550,1800,2100,2350,2600][variant%5];
+      return [D(startHz,startHz*.18,0,.12,.034),D(startHz*1.35,startHz*.42,.035,.075,.012,'square')];
     }
-    if(kind==='cat') {
+    if(kind==='cat'){
       const offset=variant%4;
-      const factor=palette==='arcade' ? [1,1.122,1.259,1.335][offset] : [1,1.08,.92,1.17][offset];
-      return (sounds.cat).map(([a,b,t,l,g,w])=>[a*factor,b*factor,t,l,g,w]);
+      const factor=palette==='arcade'?[1,1.122,1.259,1.335][offset]:[1,1.08,.92,1.17][offset];
+      return table.cat.map(([a,b,t,l,g,w,p])=>[a*factor,b*factor,t,l,g,w,p]);
     }
-    return sounds[kind] || sounds.tap;
+    return table[kind]||table.tap;
   }
   let notes = {
     tap: [[620,420,0,.045,.027,'sine']],
@@ -2333,7 +2355,7 @@ function stopMediaEntry(entry) {
 function stopMediaSounds() {
   for(const entry of mediaSoundPool){entry.token++;stopMediaEntry(entry);}
 }
-function mediaBankKey(){return (cyberSoundActive()?'cyber':'neko')+':'+soundStyle()+':'+soundVolume();}
+function mediaBankKey(){return 'voices-v3:'+ (cyberSoundActive()?'cyber':'neko')+':'+soundStyle()+':'+soundVolume();}
 function scheduleMediaSounds(delay=0) {
   if(!useMediaSound || audio?.state==='running' || !soundEnabled || soundVolume()===0 || document.hidden || mediaSoundBank?.key===mediaBankKey())return;
   clearTimeout(mediaSoundWarmTimer);
@@ -2421,13 +2443,41 @@ async function beep(kind = 'tap') {
   if(context!==audio || context.state!=='running' || !soundEnabled || soundVolume()===0 || document.hidden){if(context.state!=='running'){audioStartError=true;soundSettingsUI();}return;}
   audioStartError=false;syncAudioGain();
   try {
-    for (const [start,end,delay,duration,volume,type] of notes) {
+    for (const [start,end,delay,duration,volume,type,profile] of notes) {
       if(audioVoices.size>=28)break;
       const oscillator = context.createOscillator(), gain = context.createGain(), at = context.currentTime+delay;
-      oscillator.type = type; oscillator.frequency.setValueAtTime(start,at); oscillator.frequency.exponentialRampToValueAtTime(end,at+duration);
-      gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(volume,at+.006); gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
+      oscillator.type = type;
+      oscillator.frequency.setValueAtTime(start,at);
+      if(profile!=='chip')oscillator.frequency.exponentialRampToValueAtTime(end,at+duration);
+      gain.gain.setValueAtTime(.0001,at);
+      if(profile==='warp'){
+        const a=Math.min(.15,duration*.19),r=Math.min(.34,duration*.25);
+        gain.gain.linearRampToValueAtTime(volume,at+a);
+        gain.gain.setValueAtTime(volume*.86,at+duration-r);
+        gain.gain.linearRampToValueAtTime(.0001,at+duration);
+      }else if(profile==='chip'){
+        gain.gain.linearRampToValueAtTime(volume,at+.003);
+        gain.gain.setValueAtTime(volume,at+Math.max(.003,duration-.014));
+        gain.gain.linearRampToValueAtTime(.0001,at+duration);
+      }else if(profile==='zap'){
+        gain.gain.linearRampToValueAtTime(volume,at+.003);
+        gain.gain.exponentialRampToValueAtTime(volume*.20,at+duration*.55);
+        gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
+      }else{
+        gain.gain.exponentialRampToValueAtTime(volume,at+.006);
+        gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
+      }
+      let wobble=null,wobbleGain=null;
+      if(profile==='warp'){
+        wobble=context.createOscillator();wobbleGain=context.createGain();
+        wobble.type='sine';wobble.frequency.setValueAtTime(4.5,at);
+        wobbleGain.gain.setValueAtTime(start*.012,at);
+        wobble.connect(wobbleGain);wobbleGain.connect(oscillator.frequency);
+        wobble.start(at);wobble.stop(at+duration+.012);
+      }
       oscillator.connect(gain); gain.connect(masterGain);
-      oscillator.onended = () => { audioVoices.delete(oscillator); oscillator.disconnect(); gain.disconnect(); };
+      oscillator.onended = () => { audioVoices.delete(oscillator); oscillator.disconnect();gain.disconnect();
+        if(wobble){try{wobble.disconnect();wobbleGain.disconnect();}catch{}} };
       audioVoices.add(oscillator); oscillator.start(at); oscillator.stop(at+duration+.015);
     }
   } catch { audioStartError=true;audioNeedsReset=true; }
@@ -3656,11 +3706,11 @@ $('dialogSoundToggle').onclick = () => { soundEnabled=!soundEnabled; save(); sta
 for(const b of document.querySelectorAll('[data-sound-style]')) b.onclick = () => {
   if(cyberSoundActive()) data.neko.cyberSoundStyle = b.dataset.soundStyle;
   else data.neko.soundStyle = b.dataset.soundStyle;
-  save(); soundSettingsUI(); beep(cyberSoundActive() ? 'preview' : 'known');
+  save(); soundSettingsUI(); if(cyberSoundActive()){stopMediaSounds();for(const voice of audioVoices){try{voice.stop();}catch{}}} beep(cyberSoundActive() ? 'preview' : 'known');
 };
 $('soundVolume').oninput = () => { data.neko.soundVolume=Number($('soundVolume').value)/100; soundSettingsUI(); };
 $('soundVolume').onchange = () => { save(); scheduleMediaSounds(0); beep('tap'); };
-$('soundPreview').onclick = async () => { await beep(cyberSoundActive() ? 'preview' : 'known'); soundSettingsUI(); burst($('soundPreview'),cyberSoundActive()?['⚡','🎮','🛸']:['♪','✦','🐾'],5); };
+$('soundPreview').onclick = async () => { if(cyberSoundActive()){stopMediaSounds();for(const voice of audioVoices){try{voice.stop();}catch{}}} await beep(cyberSoundActive() ? 'preview' : 'known'); soundSettingsUI(); burst($('soundPreview'),cyberSoundActive()?['⚡','🎮','🛸']:['♪','✦','🐾'],5); };
 // Sensor access is requested only by a settings gesture. There is no startup popup.
 const orientationAPI = window.DeviceOrientationEvent;
 let tiltGranted = !!orientationAPI && typeof orientationAPI.requestPermission !== 'function';

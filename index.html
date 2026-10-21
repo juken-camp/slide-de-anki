@@ -911,7 +911,8 @@ body.homework-capture #notice,body.homework-capture .neko-fun-message,body.homew
 #importDialog #importEditAdd{min-height:34px;padding:6px 10px;margin-bottom:12px;border:1px solid #d2ae88;border-radius:9px;background:#fff7e8;color:#86512e;font-size:11px}
 
 /* Reserve one compact review row so changing series never shifts the lesson list. */
-#catalogScreen .catalog-search-panel .catalog-resume:not([hidden]){display:flex;height:32px;min-height:32px;margin:8px 0 0;flex-wrap:nowrap;justify-content:flex-end}
+#catalogScreen .catalog-search-panel{row-gap:8px}
+#catalogScreen .catalog-search-panel .catalog-resume:not([hidden]){display:flex;height:32px;min-height:32px;margin:0;flex-wrap:nowrap;justify-content:flex-end}
 #catalogScreen .catalog-search-panel .catalog-resume>button{min-height:30px;max-width:100%;padding:4px 10px;font-size:11px;white-space:nowrap;line-height:20px;box-shadow:none}
 /* Keep the title and navigation available while the page scrolls. */
 html{scroll-padding-top:calc(var(--app-header-height,64px) + 12px)}
@@ -1763,6 +1764,7 @@ function renderSeriesReview() {
   if(catalogIsCollections){$('quickReview').hidden=true;return;}
   const weak = visibleLessons().reduce((n,m) => n + weakFor(m),0);
   $('quickReview').hidden = weak === 0;
+  $('quickReview').parentElement.hidden = weak === 0;
   $('quickReview').textContent = `↻ おぼえてないの${weak}問にゃ`;
 }
 function visibleLessons() {
@@ -2208,7 +2210,7 @@ function syncMainNavigation(){if(screen!=='catalog')return;$('openCatalog').togg
 function syncCollectionCatalog() {
   const on=catalogIsCollections;syncMainNavigation();$('catalogTitle').textContent=on?'マイページ':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('is-my-page',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
   $('myCollectionsPanel').hidden=!on;
-  document.querySelector('#catalogScreen .catalog-filter-row').hidden=on;
+  document.querySelector('#catalogScreen .catalog-filter-row').hidden=on || !catalogSubject;
   $('seriesScroller').hidden=on; $('catalogSeries').hidden=on; $('catalogDock').hidden=on;
   document.querySelector('#catalogScreen .catalog-list-tools').hidden=on;
   $('catalogGroups').hidden=on; if(on)$('catalogEmpty').hidden=true;

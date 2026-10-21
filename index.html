@@ -930,13 +930,13 @@ html{scroll-padding-top:calc(var(--app-header-height,64px) + 12px)}
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
   <div class="catalog-heading page-heading"><div><h2 class="screen-title" id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加</button></div>
-  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="全教材からさがすにゃ" aria-label="全教材から教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="secondary-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
+  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="全教材からさがすにゃ" aria-label="全教材から教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" aria-pressed="false">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" aria-pressed="false">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="secondary-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
   
   
   
   
   
-  <div class="catalog-list-tools"><span id="visibleCount"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
+  <div class="catalog-list-tools"><span id="visibleCount" aria-live="polite"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
   <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
  <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection">＋ まとめを作るにゃ</button><button class="tool" type="button" id="myAddLesson">＋ 教材を追加するにゃ</button></div>
  <div class="my-collection-heading"><h3 id="myCollectionsTitle">保存したまとめ</h3></div><div id="myCollectionList"></div>
@@ -1391,9 +1391,8 @@ let playing = false, timer = null, remaining = 0, lastTick = 0;
 let catTaps=0, titleTaps=0, cardTaps=0, playfulParticles=0, lastPlaySound=-1000, playfulMessage=null;
 let noticeTimer, imageWaitTimer, suppressUntil = 0, navBusy = false;
 const imageLoader = window.createNekoImageLoader();
-let browse = 'grade', catalogFilter = 'all', catalogSubject = state.subject;
-let socialField = 'geography', catalogSeries = 'unit', selectionCount = -1;
-const seriesMemory = new Map();
+let browse = null, catalogFilter = 'all', catalogSubject = null;
+let socialField = null, catalogSeries = null, selectionCount = -1;
 const reviewLessons = new Set([
   'social-geography-world-review', 'social-geography-japan-review',
   'social-civics-constitution-politics-grade3-01', 'social-civics-economy-welfare-global-grade3-02',
@@ -1408,11 +1407,6 @@ const updateHeaderScroll = () => $('appHeader').classList.toggle('is-scrolled', 
 window.addEventListener('scroll',updateHeaderScroll,{passive:true});
 updateHeaderScroll();
 const selected = new Set(state.lessonIds);
-const initialCatalogLesson = meta.find(m => selected.has(m.id) && m.subject === state.subject);
-if (initialCatalogLesson) {
-  if (state.subject === 'social') socialField = initialCatalogLesson.field;
-  catalogSeries = lessonSeries(initialCatalogLesson);
-}
 const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
 let reduced = !!motionPreference?.matches || data.neko.decorativeMotion === false;
 const tapPlay = () => data.neko.tapPlay !== false;
@@ -1710,14 +1704,14 @@ function showScreen(next) {
   if (next === 'study') { if (lesson && !state.loading) render(); else warmImages(); } else imageLoader.pause();
 }
 function gradeKey(m) { return String(m.grade || '').match(/中\s*([123])/)?.[1] || 'other'; }
-function subjectLabel(id) { return new Map([['science','理科'],['social','社会']]).get(id) || meta.find(m=>m.subject===id)?.subjectLabel || id; }
+function subjectLabel(id) { if(!id)return '全教材'; return new Map([['science','理科'],['social','社会']]).get(id) || meta.find(m=>m.subject===id)?.subjectLabel || id; }
 function fieldLabel(id,subject=catalogSubject) { return meta.find(m=>m.subject===subject && m.field===id)?.fieldLabel || fields[id]?.[0] || id || '未分類'; }
 function catalogQuery() { return $('catalogSearch').value.normalize('NFKC').replace(/\s+/g,'').toLocaleLowerCase(); }
 function usesGrades() { return !catalogQuery() && catalogSubject === 'science' && browse === 'grade'; }
-function groupKey(m) { return catalogQuery() ? `${m.subject}/${m.field || 'other'}` : usesGrades() ? gradeKey(m) : (m.field || 'other'); }
+function groupKey(m) { return catalogQuery() || !catalogSubject ? `${m.subject}/${m.field || 'other'}` : usesGrades() ? gradeKey(m) : (m.field || 'other'); }
 function groupLabel(key) { if(key.includes('/')) { const [subject,field]=key.split('/'); return `${subjectLabel(subject)} · ${fieldLabel(field,subject)}`; } return usesGrades() ? (key === 'other' ? '学年共通' : `中${key}`) : fieldLabel(key); }
 function groupIcon(key) { return usesGrades() ? '📖' : (fields[key.split('/').pop()]?.[1] || '📚'); }
-function catalogChoices() { return meta.filter(m => m.subject === catalogSubject); }
+function catalogChoices() { return meta.filter(m => !catalogSubject || m.subject === catalogSubject); }
 function lessonSeries(m) {
   if ((m.subject === 'science' ? ['unit','symbols','terms','themes','written','past','frequent'] : ['unit','review','frequent','themes','selection','written','past']).includes(m.series)) return m.series;
   if (m.subject === 'science') {
@@ -1734,35 +1728,40 @@ function seriesDefinitions() {
     ? [{id:'unit',label:'単元別'},{id:'past',label:'入試過去問'},{id:'frequent',label:'頻出問題'},{id:'terms',label:'重要用語'},{id:'symbols',label:'記号・式'},{id:'themes',label:'テーマ別'},{id:'written',label:'記述問題'}]
     : [{id:'unit',label:socialField==='history'?'時代別':socialField==='geography'?'地域別':'単元別'},{id:'past',label:'入試過去問'},{id:'frequent',label:'頻出問題'},{id:'review',label:'総まとめ'},{id:'themes',label:'テーマ別'},{id:'selection',label:'選択問題'},{id:'written',label:'記述問題'}];
 }
-function catalogScopeLessons() { return catalogChoices().filter(m => catalogSubject !== 'social' || m.field === socialField); }
+function catalogScopeLessons() { return catalogChoices().filter(m => catalogSubject !== 'social' || !socialField || m.field === socialField); }
 function availableSeries() {
   const items = catalogScopeLessons(), definitions = seriesDefinitions();
   return definitions.filter(s => items.some(m => lessonSeries(m) === s.id));
 }
-function catalogSeriesLessons() { return catalogScopeLessons().filter(m => lessonSeries(m) === catalogSeries); }
-function seriesLabel() { return seriesDefinitions().find(s => s.id === catalogSeries)?.label || '単元別'; }
-function seriesContextLabel() { return `${catalogSubject === 'social' ? fieldLabel(socialField) : subjectLabel(catalogSubject)} · ${seriesLabel()}`; }
+function catalogSeriesLessons() { return catalogScopeLessons().filter(m => !catalogSeries || lessonSeries(m) === catalogSeries); }
+function seriesLabel() { if(!catalogSeries)return '';return seriesDefinitions().find(s => s.id === catalogSeries)?.label || '単元別'; }
+function seriesContextLabel() { return catalogQuery() ? '全教材から検索' : [subjectLabel(catalogSubject),catalogSubject==='social' && socialField ? fieldLabel(socialField) : '',seriesLabel()].filter(Boolean).join(' · '); }
 function normalizeCatalogScope() {
-  if (catalogSubject === 'social' && !['geography','history','civics',...catalogChoices().map(m=>m.field)].includes(socialField)) socialField = 'geography';
-  const available = availableSeries();
-  if (!available.some(s => s.id === catalogSeries)) catalogSeries = available[0]?.id || 'unit';
+  if(catalogSubject && !meta.some(m=>m.subject===catalogSubject))catalogSubject=null;
+  if(!catalogSubject){browse=null;socialField=null;catalogSeries=null;catalogFilter='all';}
+  if(socialField && !catalogChoices().some(m=>m.field===socialField))socialField=null;
+  if(catalogSeries && !availableSeries().some(s=>s.id===catalogSeries))catalogSeries=null;
+  if(!catalogQuery() && catalogFilter!=='all' && !catalogSeriesLessons().some(m=>groupKey(m)===catalogFilter))catalogFilter='all';
   const availableIds = new Set(meta.map(m => m.id));
   for (const id of selected) if (!availableIds.has(id)) selected.delete(id);
 }
-function setCatalogContext({subject=catalogSubject,field=socialField,series} = {}) {
+function setCatalogContext(change = {}) {
   if(catalogIsCollections) $('catalogSearch').value='';
   catalogIsCollections=false;
-  const previous = `${catalogScopeKey()}:${catalogSeries}`;
-  seriesMemory.set(catalogScopeKey(),catalogSeries);
-  catalogSubject = subject; socialField = field;
-  catalogSeries = series ?? seriesMemory.get(catalogScopeKey()) ?? 'unit';
-  normalizeCatalogScope();
-  if (`${catalogScopeKey()}:${catalogSeries}` !== previous) { catalogFilter = 'all'; }
-  renderCatalog();
+  if(Object.hasOwn(change,'subject')) {
+    catalogSubject=change.subject===catalogSubject ? null : change.subject;
+    browse=null;socialField=null;catalogSeries=null;catalogFilter='all';
+  }
+  if(Object.hasOwn(change,'field')) {
+    socialField=change.field===socialField ? null : change.field;
+    catalogFilter='all';
+  }
+  if(Object.hasOwn(change,'series'))catalogSeries=change.series===catalogSeries ? null : change.series;
+  normalizeCatalogScope();renderCatalog();
 }
 function renderSeriesReview() {
   if(catalogIsCollections){$('quickReview').hidden=true;return;}
-  const weak = catalogSeriesLessons().reduce((n,m) => n + weakFor(m),0);
+  const weak = visibleLessons().reduce((n,m) => n + weakFor(m),0);
   $('quickReview').hidden = weak === 0;
   $('quickReview').textContent = `↻ おぼえてないの${weak}問にゃ`;
 }
@@ -1858,26 +1857,26 @@ function renderCatalog() {
     b.append(label,count); b.onclick=()=>setCatalogContext({series:s.id}); $('catalogSeries').append(b);
   }
   const searching = !!catalogQuery(), visible = visibleLessons();
-  const all = catalogSeriesLessons(), keys = searching ? [...new Set(visible.map(groupKey))] : social ? [socialField] : [...new Set(all.map(groupKey))];
+  const all = catalogSeriesLessons(), keys = [...new Set((searching ? visible : all).map(groupKey))];
   if (usesGrades()) keys.sort((a,b) => (a === 'other' ? 9 : Number(a)) - (b === 'other' ? 9 : Number(b)));
   else keys.sort((a,b) => Object.keys(fields).indexOf(a) - Object.keys(fields).indexOf(b));
-  if (!social && !keys.includes(catalogFilter)) catalogFilter = 'all';
   $('catalogFilters').replaceChildren();
-  $('catalogFilters').hidden = social;
-  for (const key of social ? [] : ['all',...keys]) {
+  $('catalogFilters').hidden = social || !catalogSubject || !browse;
+  $('seriesScroller').hidden = !catalogSubject;
+  for (const key of social || !catalogSubject || !browse ? [] : keys) {
     const active = catalogFilter === key;
     const b = document.createElement('button'); b.type = 'button'; b.textContent = key === 'all' ? 'すべて' : groupLabel(key);
     b.className = active ? 'active' : ''; b.setAttribute('aria-pressed',String(active));
-    b.onclick = () => { catalogFilter = key; renderCatalog(); }; $('catalogFilters').append(b);
+    b.onclick = () => { catalogFilter = catalogFilter === key ? 'all' : key; renderCatalog(); }; $('catalogFilters').append(b);
   }
-  $('visibleCount').textContent = `${searching ? '全教材から検索 · ' : ''}${visible.length}教材 · ${visible.reduce((n,m)=>n+m.count,0)}問`;
+  $('visibleCount').textContent = `${searching ? '全教材から検索 · ' : !catalogSubject ? '全教材 · ' : ''}${visible.length}教材 · ${visible.reduce((n,m)=>n+m.count,0)}問`;
   $('selectVisible').hidden = !visible.length; $('selectVisible').textContent = visible.length && visible.every(m => selected.has(m.id)) ? '選択を外すにゃ' : 'まとめて選ぶにゃ';
   $('catalogGroups').replaceChildren();
   for (const key of keys) {
     const items = visible.filter(m => groupKey(m) === key); if (!items.length) continue;
     const section = document.createElement('section'); section.className = 'catalog-group';
     const heading = document.createElement('div'); heading.className = 'group-heading';
-    const h = document.createElement('h3'); h.textContent = `${groupIcon(key)} ${groupLabel(key)}${social && !searching ? ` · ${seriesLabel()}` : ''}`;
+    const h = document.createElement('h3'); h.textContent = `${groupIcon(key)} ${groupLabel(key)}${social && !searching && catalogSeries ? ` · ${seriesLabel()}` : ''}`;
     heading.append(h); section.append(heading);
     const list = document.createElement('div'); list.className = 'lesson-grid';
     for (const m of items) {
@@ -1897,8 +1896,8 @@ function renderCatalog() {
     section.append(list); $('catalogGroups').append(section);
   }
   $('catalogEmpty').hidden = !!visible.length;
-  const preparing = !searching && (social && socialField!=='all' ? !all.some(m => groupKey(m) === socialField) : !all.length);
-  $('catalogEmptyTitle').textContent = preparing ? `${social && socialField!=='all' ? groupLabel(socialField) : subjectLabel(catalogSubject)}の教材は準備中にゃ` : 'その教材は見つからないにゃ';
+  const preparing = !searching && !all.length;
+  $('catalogEmptyTitle').textContent = preparing ? `${social && socialField ? groupLabel(socialField) : subjectLabel(catalogSubject)}の教材は準備中にゃ` : 'その教材は見つからないにゃ';
   $('catalogEmptyText').textContent = preparing ? '「＋ 教材追加にゃ」から新しい教材を入れられるにゃ。' : 'さがし方を変えてみてにゃ。';
   selectionSummary(); renderSeriesReview(); $('returnToStudy').disabled = !lesson && !state.lessonIds.some(id=>meta.some(m=>m.id===id));
   if (focusedLesson) [...document.querySelectorAll('[data-lesson]')].find(b => b.dataset.lesson === focusedLesson)?.focus({preventScroll:true});
@@ -2716,18 +2715,18 @@ for(const button of document.querySelectorAll('[data-neko-stat]'))button.onclick
 };
 // Screen navigation and the textbook-style table of contents.
 $('quickReview').onclick = () => {
-  const ids = catalogSeriesLessons().filter(m => weakFor(m)>0).map(m=>m.id);
-  state.subject = catalogSubject; beep('open'); return selectLessons(ids,{startMode:'weak'});
+  const ids = visibleLessons().filter(m => weakFor(m)>0).map(m=>m.id);
+  state.subject = catalogSubject || meta.find(m=>selected.has(m.id))?.subject || state.subject; beep('open'); return selectLessons(ids,{startMode:'weak'});
 };
 $('quickPause').onclick = pause;
 $('brandHome').onclick = () => playWithCat($('brandHome'));
 $('navSettings').onclick = () => showScreen('settings');
 $('openCatalog').onclick = () => {catalogIsCollections=false;showScreen('catalog');};$('navCollections').onclick=openMyCollections; $('returnToStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
-$('startStudy').onclick = () => {state.subject = catalogSubject; beep('open');return selectLessons(selectedCatalogLessons().map(m => m.id));};
+$('startStudy').onclick = () => {state.subject = catalogSubject || meta.find(m=>selected.has(m.id))?.subject || state.subject; beep('open');return selectLessons(selectedCatalogLessons().map(m => m.id));};
 $('clearSelection').onclick = () => { selected.clear(); renderCatalog(); };
 $('selectVisible').onclick = () => toggleGroup(visibleLessons()); $('catalogSearch').oninput = renderCatalog;
 
-for (const b of document.querySelectorAll('[data-browse]')) b.onclick = () => { browse = b.dataset.browse; catalogFilter = 'all'; renderCatalog(); };
+for (const b of document.querySelectorAll('[data-browse]')) b.onclick = () => { browse = browse === b.dataset.browse ? null : b.dataset.browse; catalogFilter = 'all'; renderCatalog(); };
 
 $('slideTap').onclick = () => { if (performance.now()<suppressUntil || navBusy) return; flip(); };
 $('slideTap').onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } };

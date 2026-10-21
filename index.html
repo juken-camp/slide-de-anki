@@ -1,17 +1,11 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#faf8f5"><meta name="application-name" content="スライドで暗記"><meta name="apple-mobile-web-app-title" content="スライドで暗記"><title>Nekoponのスライドで暗記</title><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="manifest" href="/manifest.webmanifest?v=20261019-pwa"><link rel="apple-touch-icon" sizes="180x180" href="/icons/nekopon-180-v1.png"><link rel="icon" type="image/png" sizes="32x32" href="/icons/nekopon-32-v1.png"><!-- Google tag (gtag.js) -->
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#8b4513"><meta name="application-name" content="スライドで暗記"><meta name="apple-mobile-web-app-title" content="スライドで暗記"><title>Nekoponのスライドで暗記</title><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="manifest" href="/manifest.webmanifest?v=20261019-pwa"><link rel="apple-touch-icon" sizes="180x180" href="/icons/nekopon-180-v1.png"><link rel="icon" type="image/png" sizes="32x32" href="/icons/nekopon-32-v1.png"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EQT641RMP"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','G-8EQT641RMP');
-</script>
-<script>
-// Identify installed iOS apps without changing the existing app palette.
-if ((/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1)) && (navigator.standalone===true || window.matchMedia('(display-mode: standalone)').matches)) {
-  document.documentElement.classList.add('ios-standalone');
-}
 </script>
 <style>
 *{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.45}button:focus-visible,select:focus-visible,input:focus-visible,[role=button]:focus-visible{outline:3px solid #9b5030;outline-offset:3px}[hidden]{display:none!important}.app{max-width:900px;margin:auto;padding:12px 16px 30px}.brand{margin:auto}.subjects{display:flex;max-width:620px;margin:14px auto 12px}.subjects button{flex:1;font-weight:900}.neko-stats{flex-wrap:wrap}.progresscopy{display:flex;justify-content:space-between;gap:8px;margin:10px 0 5px}.track{border-radius:20px;overflow:hidden}.track i{display:block;height:100%;width:0}.modes{display:flex;padding:4px;background:white;flex:1}.modes button{border:0;flex:1;background:transparent;font-weight:800;font-size:12px;white-space:nowrap}.toolbar{display:flex;gap:8px;margin:14px 0 10px}.shuffle{padding:8px 12px;font-weight:800}.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}.chips button{flex:none;padding:7px 12px;border-radius:20px;font-size:12px}.card{position:relative;overflow:hidden;margin:12px 0 0;touch-action:pan-y}.card:before{content:'';display:block}.head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 14px}.badge{border-radius:12px;padding:3px 10px;font-weight:900;font-size:12px}.unit{font-size:12px;text-align:right}.guide{text-align:center;padding:10px 12px;font-size:12px;border-top:1px solid}.actions{display:flex;align-items:stretch}.actions button{padding:14px 8px;min-height:48px;font-weight:900}.actions .again,.actions .done{flex:1}.actions .arrow{width:48px;font-size:21px}.empty{text-align:center;padding:35px 16px;margin-top:15px;border-radius:22px}.empty button{color:white;border:0;padding:11px 22px;margin-top:10px}.stat-bubble{cursor:default}.stage{padding-bottom:18px}
@@ -21,14 +15,13 @@ if ((/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacI
   --primary-brown:#8b4513;
   --light-brown:#d2691e;
   --cream:#faf8f5;
-  --app-background-image:radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%);
   --soft-orange:#ff7f50;
   --gold:#ffd700;
   --pink:#ffb6c1;
   --neko-shadow:rgba(139,69,19,.22);
 }
 html,body{background:var(--cream);color:var(--primary-brown);font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif}
-body{background-image:var(--app-background-image)}
+body{background-image:radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%)}
 .app{position:relative;isolation:isolate;overflow-x:hidden;background:transparent}
 .app:before{content:"🐾";position:fixed;z-index:-1;right:-12px;top:18%;font-size:84px;opacity:.035;transform:rotate(-18deg);pointer-events:none}
 .app:after{content:"🐾";position:fixed;z-index:-1;left:-14px;bottom:12%;font-size:72px;opacity:.035;transform:rotate(22deg);pointer-events:none}
@@ -927,19 +920,8 @@ html{scroll-padding-top:calc(var(--app-header-height,64px) + 12px)}
 #appHeader::before{content:'';position:absolute;inset:0 -16px;z-index:-1;background:var(--cream);opacity:0;pointer-events:none}
 #appHeader.is-scrolled::before{opacity:.94;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 @media(max-width:600px){#appHeader::before{left:-12px;right:-12px}}
-/* Use one viewport-aligned background for the page and the installed iOS header. */
-#iosStatusBackdrop{display:none}
-html.ios-standalone{background:var(--cream)}
-html.ios-standalone body{background-image:none}
-html.ios-standalone #iosStatusBackdrop{display:block;position:fixed;inset:0;z-index:0;background-color:var(--cream);background-image:var(--app-background-image);background-repeat:no-repeat;background-size:100vw 100dvh;pointer-events:none}
-html.ios-standalone #app{z-index:1}
-html.ios-standalone #appHeader::before{position:fixed;inset:0 0 auto;height:calc(var(--app-header-height,64px) + 16px);background-color:var(--cream);background-image:var(--app-background-image);background-repeat:no-repeat;background-size:100vw 100dvh;background-position:0 0;opacity:1;backdrop-filter:none;-webkit-backdrop-filter:none}
-html.ios-standalone body.slide-focus #iosStatusBackdrop,html.ios-standalone body.homework-capture #iosStatusBackdrop{display:none}
-html.ios-standalone body.slide-focus .app{padding-top:calc(12px + env(safe-area-inset-top,0px))}
-html.ios-standalone body.homework-capture #app{padding-top:calc(8px + env(safe-area-inset-top,0px))}
-@media print{html.ios-standalone #iosStatusBackdrop{display:none}}
 </style></head>
-<body><div id="iosStatusBackdrop" aria-hidden="true"></div><main id="app" class="app">
+<body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
   
   

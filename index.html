@@ -930,7 +930,7 @@ html{scroll-padding-top:calc(var(--app-header-height,64px) + 12px)}
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
   <div class="catalog-heading page-heading"><div><h2 class="screen-title" id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加</button></div>
-  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材をさがすにゃ" aria-label="教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="secondary-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
+  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="全教材からさがすにゃ" aria-label="全教材から教材名で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science" class="active"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" class="active" aria-pressed="true">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" class="active" aria-pressed="true">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="secondary-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
   
   
   
@@ -1360,6 +1360,7 @@ let assessmentLockUntil = 0;
 let soundEnabled = data.neko.soundEnabled !== false, audio = null, masterGain = null, lastTapSound = -1000;
 let tapNote = 0;
 let audioResumePromise=null,audioStartError=false;
+let audioNeedsReset=false,audioClockSample=null;
 // Home Screen WebKit can leave AudioContext.resume() pending indefinitely.
 // Prefer interactive WebAudio; keep preloaded short media clips as a fallback.
 const useMediaSound = (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1)) && (navigator.standalone===true || window.matchMedia('(display-mode: standalone)').matches);
@@ -1538,26 +1539,38 @@ async function playMediaSound(notes) {
   let ok=false;try{ok=await soundAttempt(entry.player.play());}catch{}
   if(token===entry.token && soundEnabled && !document.hidden){
     audioStartError=!ok;
-    if(!ok){stopMediaEntry(entry);soundSettingsUI();}
+    if(!ok){stopMediaEntry(entry);mediaSoundBank=null;audioNeedsReset=true;soundSettingsUI();}
   }
+}
+function resetAudioEngine() {
+  const previous=audio;audio=null;masterGain=null;audioResumePromise=null;audioClockSample=null;audioNeedsReset=false;
+  for(const voice of audioVoices){try{voice.stop();voice.disconnect();}catch{}}audioVoices.clear();
+  if(previous){previous.onstatechange=null;try{Promise.resolve(previous.close()).catch(()=>{});}catch{}}
+}
+function restoreAudio() {
+  if(document.hidden)return;
+  syncAudioGain();unlockAudio();scheduleMediaSounds(0);
 }
 function unlockAudio(event) {
   if (!soundEnabled || soundVolume()===0 || document.hidden) return null;
-  if(audio?.state==='running')return audio;
+  // Some WebKit contexts claim to run while their clock no longer advances.
+  const clockNow=performance.now();
+  if(audio?.state==='running' && event?.isTrusted && audioClockSample && clockNow-audioClockSample.wall>250 && audio.currentTime<=audioClockSample.time)audioNeedsReset=true;
+  if(event?.isTrusted && audioNeedsReset)resetAudioEngine();
+  if(audio?.state==='running'){audioClockSample={wall:clockNow,time:audio.currentTime};syncAudioGain();return audio;}
   try {
     try { if(navigator.audioSession && navigator.audioSession.type!=='playback') navigator.audioSession.type='playback'; } catch {}
-    if(audio && (audio.state==='closed' || (!useMediaSound && audio.state!=='running' && audioStartError && event?.isTrusted))){
-      for(const voice of audioVoices){try{voice.stop();voice.disconnect();}catch{}}audioVoices.clear();
-      try{Promise.resolve(audio.close()).catch(()=>{});}catch{}audio=null;masterGain=null;audioResumePromise=null;
-    }
+    if(audio && (audio.state==='closed' || (audioStartError && event?.isTrusted)))resetAudioEngine();
     if (!audio || audio.state === 'closed') {
       const Context = window.AudioContext || window.webkitAudioContext;if(!Context)return null;
       audio=new Context({latencyHint:'interactive'});masterGain=audio.createGain();masterGain.gain.value=soundVolume();masterGain.connect(audio.destination);
+      const created=audio;
+      created.onstatechange=()=>{if(audio!==created)return;if(created.state==='running'){audioStartError=false;audioNeedsReset=false;syncAudioGain();}else if(created.state==='closed'){audioNeedsReset=true;}};
       const silent=audio.createBufferSource();silent.buffer=audio.createBuffer(1,1,audio.sampleRate);silent.connect(audio.destination);silent.onended=()=>silent.disconnect();silent.start(0);
     }
     if ((audio.state === 'suspended' || audio.state === 'interrupted') && !audioResumePromise) {
       const context=audio;
-      audioResumePromise=soundAttempt(context.resume()).then(ok=>{if(audio===context && !useMediaSound)audioStartError=!ok || context.state!=='running';}).finally(()=>{if(audio===context)audioResumePromise=null;});
+      audioResumePromise=soundAttempt(context.resume()).then(ok=>{if(audio===context){audioStartError=!ok || context.state!=='running';audioNeedsReset=audioStartError;if(!audioStartError)syncAudioGain();}}).finally(()=>{if(audio===context)audioResumePromise=null;});
     }
     return audio;
   } catch { audioStartError=true;return null; }
@@ -1584,10 +1597,11 @@ async function beep(kind = 'tap') {
       const oscillator = context.createOscillator(), gain = context.createGain(), at = context.currentTime+delay;
       oscillator.type = type; oscillator.frequency.setValueAtTime(start,at); oscillator.frequency.exponentialRampToValueAtTime(end,at+duration);
       gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(volume,at+.006); gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
-      oscillator.connect(gain); gain.connect(masterGain); audioVoices.add(oscillator); oscillator.start(at); oscillator.stop(at+duration+.015);
+      oscillator.connect(gain); gain.connect(masterGain);
       oscillator.onended = () => { audioVoices.delete(oscillator); oscillator.disconnect(); gain.disconnect(); };
+      audioVoices.add(oscillator); oscillator.start(at); oscillator.stop(at+duration+.015);
     }
-  } catch {}
+  } catch { audioStartError=true;audioNeedsReset=true; }
 }
 function tapSpark(button,event) {
   if (reduced || !tapPlay()) return;
@@ -1698,10 +1712,11 @@ function showScreen(next) {
 function gradeKey(m) { return String(m.grade || '').match(/中\s*([123])/)?.[1] || 'other'; }
 function subjectLabel(id) { return new Map([['science','理科'],['social','社会']]).get(id) || meta.find(m=>m.subject===id)?.subjectLabel || id; }
 function fieldLabel(id,subject=catalogSubject) { return meta.find(m=>m.subject===subject && m.field===id)?.fieldLabel || fields[id]?.[0] || id || '未分類'; }
-function usesGrades() { return catalogSubject === 'science' && browse === 'grade'; }
-function groupKey(m) { return usesGrades() ? gradeKey(m) : (m.field || 'other'); }
-function groupLabel(key) { return usesGrades() ? (key === 'other' ? '学年共通' : `中${key}`) : fieldLabel(key); }
-function groupIcon(key) { return usesGrades() ? '📖' : (fields[key]?.[1] || '📚'); }
+function catalogQuery() { return $('catalogSearch').value.normalize('NFKC').replace(/\s+/g,'').toLocaleLowerCase(); }
+function usesGrades() { return !catalogQuery() && catalogSubject === 'science' && browse === 'grade'; }
+function groupKey(m) { return catalogQuery() ? `${m.subject}/${m.field || 'other'}` : usesGrades() ? gradeKey(m) : (m.field || 'other'); }
+function groupLabel(key) { if(key.includes('/')) { const [subject,field]=key.split('/'); return `${subjectLabel(subject)} · ${fieldLabel(field,subject)}`; } return usesGrades() ? (key === 'other' ? '学年共通' : `中${key}`) : fieldLabel(key); }
+function groupIcon(key) { return usesGrades() ? '📖' : (fields[key.split('/').pop()]?.[1] || '📚'); }
 function catalogChoices() { return meta.filter(m => m.subject === catalogSubject); }
 function lessonSeries(m) {
   if ((m.subject === 'science' ? ['unit','symbols','terms','themes','written','past','frequent'] : ['unit','review','frequent','themes','selection','written','past']).includes(m.series)) return m.series;
@@ -1742,7 +1757,7 @@ function setCatalogContext({subject=catalogSubject,field=socialField,series} = {
   catalogSubject = subject; socialField = field;
   catalogSeries = series ?? seriesMemory.get(catalogScopeKey()) ?? 'unit';
   normalizeCatalogScope();
-  if (`${catalogScopeKey()}:${catalogSeries}` !== previous) { $('catalogSearch').value = ''; catalogFilter = 'all'; }
+  if (`${catalogScopeKey()}:${catalogSeries}` !== previous) { catalogFilter = 'all'; }
   renderCatalog();
 }
 function renderSeriesReview() {
@@ -1753,15 +1768,15 @@ function renderSeriesReview() {
 }
 function visibleLessons() {
   const normalizeSearch = value => String(value).normalize('NFKC').replace(/\s+/g,'').toLocaleLowerCase();
-  const query = normalizeSearch($('catalogSearch').value);
-  return catalogSeriesLessons().filter(m => {
+  const query = catalogQuery();
+  return (query ? meta : catalogSeriesLessons()).filter(m => {
     const inScope = catalogSubject === 'social' || catalogFilter === 'all' || groupKey(m) === catalogFilter;
-    return inScope && (!query || normalizeSearch(`${m.title} ${m.grade} ${fieldLabel(m.field,m.subject)} ${subjectLabel(m.subject)}`).includes(query));
+    return (query || inScope) && (!query || normalizeSearch(`${m.title} ${m.grade} ${fieldLabel(m.field,m.subject)} ${subjectLabel(m.subject)}`).includes(query));
   });
 }
 function toggleGroup(items) {
   const all = items.length && items.every(m => selected.has(m.id));
-  const allowed = new Set(catalogSeriesLessons().map(m => m.id));
+  const allowed = new Set(visibleLessons().map(m => m.id));
   for (const m of items) { if (!allowed.has(m.id)) continue; if (all) selected.delete(m.id); else selected.add(m.id); }
   renderCatalog();
 }
@@ -1842,7 +1857,8 @@ function renderCatalog() {
     const count=document.createElement('span'); count.className='series-count'; count.textContent=`${catalogScopeLessons().filter(m=>lessonSeries(m)===s.id).length}教材`;
     b.append(label,count); b.onclick=()=>setCatalogContext({series:s.id}); $('catalogSeries').append(b);
   }
-  const all = catalogSeriesLessons(), keys = social ? [socialField] : [...new Set(all.map(groupKey))];
+  const searching = !!catalogQuery(), visible = visibleLessons();
+  const all = catalogSeriesLessons(), keys = searching ? [...new Set(visible.map(groupKey))] : social ? [socialField] : [...new Set(all.map(groupKey))];
   if (usesGrades()) keys.sort((a,b) => (a === 'other' ? 9 : Number(a)) - (b === 'other' ? 9 : Number(b)));
   else keys.sort((a,b) => Object.keys(fields).indexOf(a) - Object.keys(fields).indexOf(b));
   if (!social && !keys.includes(catalogFilter)) catalogFilter = 'all';
@@ -1854,14 +1870,14 @@ function renderCatalog() {
     b.className = active ? 'active' : ''; b.setAttribute('aria-pressed',String(active));
     b.onclick = () => { catalogFilter = key; renderCatalog(); }; $('catalogFilters').append(b);
   }
-  const visible = visibleLessons(); $('visibleCount').textContent = `${visible.length}教材 · ${visible.reduce((n,m)=>n+m.count,0)}問`;
+  $('visibleCount').textContent = `${searching ? '全教材から検索 · ' : ''}${visible.length}教材 · ${visible.reduce((n,m)=>n+m.count,0)}問`;
   $('selectVisible').hidden = !visible.length; $('selectVisible').textContent = visible.length && visible.every(m => selected.has(m.id)) ? '選択を外すにゃ' : 'まとめて選ぶにゃ';
   $('catalogGroups').replaceChildren();
   for (const key of keys) {
     const items = visible.filter(m => groupKey(m) === key); if (!items.length) continue;
     const section = document.createElement('section'); section.className = 'catalog-group';
     const heading = document.createElement('div'); heading.className = 'group-heading';
-    const h = document.createElement('h3'); h.textContent = `${groupIcon(key)} ${groupLabel(key)}${social ? ` · ${seriesLabel()}` : ''}`;
+    const h = document.createElement('h3'); h.textContent = `${groupIcon(key)} ${groupLabel(key)}${social && !searching ? ` · ${seriesLabel()}` : ''}`;
     heading.append(h); section.append(heading);
     const list = document.createElement('div'); list.className = 'lesson-grid';
     for (const m of items) {
@@ -1881,7 +1897,7 @@ function renderCatalog() {
     section.append(list); $('catalogGroups').append(section);
   }
   $('catalogEmpty').hidden = !!visible.length;
-  const preparing = social && socialField!=='all' ? !all.some(m => groupKey(m) === socialField) : !all.length;
+  const preparing = !searching && (social && socialField!=='all' ? !all.some(m => groupKey(m) === socialField) : !all.length);
   $('catalogEmptyTitle').textContent = preparing ? `${social && socialField!=='all' ? groupLabel(socialField) : subjectLabel(catalogSubject)}の教材は準備中にゃ` : 'その教材は見つからないにゃ';
   $('catalogEmptyText').textContent = preparing ? '「＋ 教材追加にゃ」から新しい教材を入れられるにゃ。' : 'さがし方を変えてみてにゃ。';
   selectionSummary(); renderSeriesReview(); $('returnToStudy').disabled = !lesson && !state.lessonIds.some(id=>meta.some(m=>m.id===id));
@@ -2198,7 +2214,7 @@ function syncCollectionCatalog() {
   document.querySelector('#catalogScreen .catalog-list-tools').hidden=on;
   $('catalogGroups').hidden=on; if(on)$('catalogEmpty').hidden=true;
   $('openImport').hidden=true;
-  $('catalogSearch').placeholder=on?'自分の教材をさがすにゃ':'教材をさがすにゃ';
+  $('catalogSearch').placeholder=on?'自分の教材をさがすにゃ':'全教材からさがすにゃ';
   $('catalogSearch').setAttribute('aria-label',on?'保存したまとめ・追加教材を検索':'教材名で検索');
   if(on)$('quickReview').hidden=true;
   $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
@@ -2275,10 +2291,10 @@ function fillCollectionLessons() {
   const q=$('collectionLessonSearch').value.normalize('NFKC').trim().toLocaleLowerCase();list.replaceChildren();
   const matches=[];
   for(const sub of [...new Set(meta.map(m=>m.subject))]) {
-    if(subject!=='all' && subject!==sub)continue;
+    if(!q && subject!=='all' && subject!==sub)continue;
     const items=meta.filter(m=>m.subject===sub && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
     if(!items.length)continue;
-    if(subject==='all'){const heading=collectionNode('div',subjectLabel(sub),'collection-list-subject');heading.setAttribute('role','presentation');list.append(heading);}
+    if(q || subject==='all'){const heading=collectionNode('div',subjectLabel(sub),'collection-list-subject');heading.setAttribute('role','presentation');list.append(heading);}
     for(const m of items) {
       matches.push(m.id);
       const row=collectionButton('','collection-material-row',()=>chooseCollectionMaterial(m.id));row.dataset.collectionMaterial=m.id;row.setAttribute('role','option');
@@ -2749,8 +2765,9 @@ $('autoMode').checked = !!data.neko.auto; $('autoMode').onchange = () => { pause
 for (const face of ['question','answer']) { $(face+'Seconds').value = seconds(face); $(face+'Seconds').onchange = e => { pause(); const n = Number(e.target.value); data.neko[face+'Seconds'] = Number.isFinite(n) ? Math.round(Math.min(120,Math.max(.5,n))*10)/10 : (face==='question'?3:2); e.target.value = data.neko[face+'Seconds']; save(); resetTimer(); }; }
 $('playButton').onclick = () => { if (playing) pause(); else { playing = true; resetTimer(); } };
 for (const b of document.querySelectorAll('[data-close]')) b.onclick = () => $(b.dataset.close).close();
-document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause(); syncAudioGain(); } else { stats(); scheduleMediaSounds(0); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',()=>{stopMediaSounds();save();});
-window.addEventListener('pageshow',()=>{scheduleMediaSounds(0);});
+document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause(); syncAudioGain();audioClockSample=null;for(const voice of audioVoices){try{voice.stop();}catch{}} } else { stats(); restoreAudio(); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',()=>{stopMediaSounds();save();});
+window.addEventListener('pageshow',restoreAudio);
+window.addEventListener('focus',restoreAudio);
 document.addEventListener('keydown',e => {
   if (screen !== 'study' || navBusy || document.querySelector('dialog[open]') || ['INPUT','SELECT','TEXTAREA','BUTTON','A'].includes(e.target.tagName) || e.target === $('slideTap') || e.repeat) return;
   if (e.key === 'ArrowRight') { e.preventDefault(); animateNav(1); } else if (e.key === 'ArrowLeft') { e.preventDefault(); animateNav(-1); } else if (e.code === 'Space') { e.preventDefault(); flip(); }
@@ -3169,6 +3186,3 @@ $('importForm').onsubmit=async e=>{
 })();
 
 </script></body></html>
-
-
-

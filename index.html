@@ -2063,6 +2063,51 @@ html[data-persona="cyber"] dialog#reportPeriodDialog .homework-setup-foot.report
 html[data-persona="cyber"] dialog#reportPeriodDialog .homework-setup-foot.report-period-actions{
   border-top:0!important;
 }
+
+/* Expanded selection dock: clear action in the upper-right; lesson chips in two columns. */
+#catalogDock:has(#selectionDetails[open]) .selection-top {
+  position:relative;
+  display:block;
+  padding-top:0;
+}
+#catalogDock:has(#selectionDetails[open]) #selectionDetails {
+  display:block;
+  width:100%;
+}
+#catalogDock:has(#selectionDetails[open]) #selectionSummary {
+  padding-right:clamp(110px,32vw,160px);
+  min-height:42px;
+}
+#catalogDock:has(#selectionDetails[open]) #clearSelection {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:2;
+  max-width:43%;
+  min-height:38px;
+  padding:5px 9px;
+  white-space:nowrap;
+}
+#catalogDock:has(#selectionDetails[open]) #selectedLessons {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;
+  gap:7px;
+  width:100%;
+  max-height:27dvh;
+  padding:9px 0;
+}
+#catalogDock:has(#selectionDetails[open]) #selectedLessons .selected-lesson {
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  text-align:left;
+  overflow-wrap:anywhere;
+  white-space:normal;
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

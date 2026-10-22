@@ -1991,6 +1991,23 @@ html[data-persona="cyber"] #app #testScreen :is(.homework-tests,#homeworkTestHis
   background-image:none!important;
   box-shadow:none!important;
 }
+
+/* Cyber: search field must be one seamless surface, not a dark rectangle behind its text. */
+html[data-persona="cyber"] #app #catalogScreen .catalog-search input#catalogSearch,
+html[data-persona="cyber"] #app #catalogScreen .catalog-search input#catalogSearch:focus,
+html[data-persona="cyber"] #app #catalogScreen .catalog-search input#catalogSearch:active {
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  -webkit-box-shadow:none!important;
+  border:0!important;
+  outline:0!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .catalog-search > span {
+  background:transparent!important;
+  box-shadow:none!important;
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

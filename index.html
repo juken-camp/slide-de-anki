@@ -2151,11 +2151,13 @@ html[data-persona="cyber"] dialog#reportPeriodDialog .homework-setup-foot.report
 #app :is(#zoomImage,#testZoom){display:grid!important;place-items:center!important;flex:0 0 42px!important;box-sizing:border-box!important;width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;padding:4px!important;font-size:23px!important;font-weight:800!important;line-height:1!important;border:1px solid #e8d0bc!important;border-radius:12px!important;background:#fffaf4!important;color:#8b4513!important;text-decoration:none!important;box-shadow:none!important}
 html[data-persona=cyber] #app :is(#zoomImage,#testZoom){background:linear-gradient(140deg,#122b50,#0b1b34)!important;border:2px solid #25a8d1!important;color:#b5faff!important;box-shadow:0 0 11px #00f5ff39!important}
 #app #studyScreen .slide-meta .navigation-info{flex:1;text-align:left}
-#app #testScreen .test-actions{display:flex;align-items:stretch;gap:9px;margin:12px 0 7px}
-#app #testScreen .test-actions .test-writing-prompt{display:flex;flex:1;min-width:0;align-items:center;justify-content:center;text-align:center;color:#a27555;font-size:12px;line-height:1.5}
-#app #testScreen .test-actions #testPrev,#app #testScreen .test-actions #testNext{flex:0 0 48px;width:48px;min-height:46px;font-size:24px}
-#app #testScreen #testShowAnswers{flex:1;min-width:0;min-height:46px;font-size:13px;padding:8px 11px}
-#app #testScreen .test-under{font-size:11px;line-height:1.7;margin:6px 0 10px}
+/* Confirmation test: two wide navigation buttons and one concise instruction. */
+#app #testScreen .test-actions{display:flex;align-items:stretch;gap:10px;margin:14px 0 0}
+#app #testScreen .test-actions > :is(#testPrev,#testNext,#testShowAnswers){flex:1 1 0;min-width:0;width:auto;min-height:60px;box-sizing:border-box;border-radius:15px!important}
+#app #testScreen .test-actions > :is(#testPrev,#testNext){font-size:30px;line-height:1;font-weight:800;padding:8px 12px}
+#app #testScreen .test-actions > #testShowAnswers{font-size:13px;line-height:1.5;padding:8px 12px;box-shadow:none}
+#app #testScreen #testGradeHint{display:block;margin:12px 0 15px;padding:0 3px;color:#916647;font-size:13px;line-height:1.7;text-align:center}
+@media(max-width:360px){#app #testScreen #testGradeHint{font-size:12px}}
 #app #testScreen .test-review{margin:14px 0 40px}
 #app #testScreen .test-review-heading{margin:0 0 16px}
 #app #testScreen .test-review-heading h3{font-size:20px;margin:0 0 8px}
@@ -2256,9 +2258,8 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=ret
  <div id="testPlay" hidden>
   <div class="test-progress-copy"><span id="testPosition"></span><span id="testJudged"></span></div><div class="track test-progress-track"><i id="testProgress"></i></div>
   <article class="card" id="testCard"><div class="head"><div class="face-meta"><span class="badge" id="testFace">問題</span></div><span class="unit" id="testUnit"></span><button id="testZoom" class="link-button" type="button" aria-label="テスト画像を拡大する">⤢</button></div><div class="image-frame"><div id="testSlideTap" class="slide-wrap" aria-label="確認テストの問題画像"><img id="testSlideImage" alt="" draggable="false" decoding="async"><div id="testImageStatus" class="image-status" role="status" hidden>ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="testResetImage" type="button" hidden>100%に戻すにゃ</button></div></article>
-  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題">‹</button><span class="test-writing-prompt">答えをノートに書くにゃ</span><button id="testNext" class="tool" type="button" aria-label="次の問題">›</button><button id="testShowAnswers" class="primary-button" type="button" hidden>解答一覧へ進むにゃ ›</button></div>
-  <div class="test-under"><span id="testGradeHint">解答は最後にまとめて見られるにゃ。ノートに答えを書いて進むにゃ。</span></div>
-  <p class="homework-note test-separate-note">確認テストの記録は、ふだんの「おぼえた」と分けて保存するにゃ。</p>
+  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題">‹</button><button id="testNext" class="tool" type="button" aria-label="次の問題">›</button><button id="testShowAnswers" class="primary-button" type="button" hidden>解答一覧へ進むにゃ ›</button></div>
+  <p class="test-under" id="testGradeHint">答えをノートに書いて、次の問題へ進むにゃ。</p>
  </div>
  <section id="testReview" class="test-review" hidden aria-label="確認テストの解答と丸つけ">
   <div class="test-review-heading"><h3>解答一覧・丸つけ</h3><p>ノートに書いた答えを、上から順に照らし合わせて○×をつけるにゃ。</p><span id="testReviewCount" aria-live="polite"></span></div>
@@ -4071,7 +4072,6 @@ function updateHomeworkTestActions(){
  $('testNext').hidden=last;$('testNext').disabled=!testReady;
  $('testShowAnswers').hidden=!last;$('testShowAnswers').disabled=!testReady;
  $('testZoom').disabled=!testReady;
- $('testGradeHint').textContent=!testReady?'問題画像を準備しているにゃ…':last?'最後の問題に答えを書いたら、解答一覧へ進むにゃ。':'答えをノートに書いて、次の問題へ進むにゃ。';
  $('testSlideTap').setAttribute('aria-busy',String(!testReady));
 }
 function renderHomeworkTest(){

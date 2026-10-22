@@ -2155,8 +2155,6 @@ html[data-persona=cyber] #app :is(#zoomImage,#testZoom){background:linear-gradie
 #app #testScreen .test-actions{display:flex;align-items:stretch;gap:10px;margin:14px 0 0}
 #app #testScreen .test-actions > :is(#testPrev,#testNext,#testShowAnswers){flex:1 1 0;min-width:0;width:auto;min-height:50px;box-sizing:border-box;border-radius:15px!important;font-size:14px;line-height:1.5;font-weight:800;padding:8px clamp(5px,2vw,14px);white-space:nowrap}
 #app #testScreen .test-actions > :is(#testPrev,#testNext){display:inline-flex;align-items:center;justify-content:center;gap:clamp(5px,1.4vw,11px)}
-#app #testScreen .test-nav-arrow{font-size:25px;font-weight:800;line-height:1;flex:none}
-#app #testScreen .test-nav-label{min-width:0}
 /* Use the same text and button height as the study slide controls. */
 @media(max-width:600px){#app #testScreen .test-actions > :is(#testPrev,#testNext,#testShowAnswers){font-size:13px}}
 @media(max-width:350px){#app #testScreen .test-actions > :is(#testPrev,#testNext,#testShowAnswers){font-size:12px}}
@@ -2305,10 +2303,10 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=ret
  <button class="tool capture-exit" type="button" hidden>戻るにゃ</button>
  <p id="testNotice" class="homework-note" role="status"></p>
  <div id="testPlay" hidden>
-  <div class="test-progress-copy"><span id="testPosition"></span><span id="testJudged"></span></div><div class="track test-progress-track"><i id="testProgress"></i></div>
+  <div class="test-progress-copy"><span id="testPosition"></span></div><div class="track test-progress-track"><i id="testProgress"></i></div>
   <article class="card" id="testCard"><div class="head"><div class="face-meta"><span class="badge" id="testFace">問題</span></div><span class="unit" id="testUnit"></span><button id="testZoom" class="link-button" type="button" aria-label="テスト画像を拡大する">⤢</button></div><div class="image-frame"><div id="testSlideTap" class="slide-wrap" aria-label="確認テストの問題画像"><img id="testSlideImage" alt="" draggable="false" decoding="async"><div id="testImageStatus" class="image-status" role="status" hidden>ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="testResetImage" type="button" hidden>100%に戻すにゃ</button></div></article>
-  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題へ"><span class="test-nav-arrow" aria-hidden="true">‹</span><span class="test-nav-label">前の問題へ</span></button><button id="testNext" class="tool" type="button" aria-label="次の問題へ"><span class="test-nav-label">次の問題へ</span><span class="test-nav-arrow" aria-hidden="true">›</span></button><button id="testShowAnswers" class="primary-button" type="button" hidden>解答一覧へ進むにゃ ›</button></div>
-  <p class="test-under" id="testGradeHint">答えをノートに書いて、次の問題へ進むにゃ。</p>
+  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題へ">前の問題へ</button><button id="testNext" class="tool" type="button" aria-label="次の問題へ">次の問題へ</button><button id="testShowAnswers" class="primary-button" type="button" hidden>解答一覧へ進むにゃ</button></div>
+  <p class="test-under" id="testGradeHint">確認テストはノートに解答するにゃ。</p>
  </div>
  <section id="testReview" class="test-review" hidden aria-label="確認テストの解答と丸つけ">
   <div class="test-review-heading"><h3>解答一覧・丸つけ</h3><p>ノートに書いた答えを、上から順に照らし合わせて○×をつけるにゃ。</p><span id="testReviewCount" aria-live="polite"></span></div>
@@ -4133,7 +4131,7 @@ function renderHomeworkTest(){
  testSession.maxSeen=Math.max(testSession.maxSeen||0,testSession.index);
  const c=testCards[testSession.index];if(!c){$('testNotice').textContent='元の問題を読み込んでから再開してにゃ。';$('testPlay').hidden=true;return;}
  $('testPosition').textContent=`${testSession.index+1} / ${testSession.refs.length}問`;
- $('testJudged').textContent='ノートに解答';$('testProgress').style.width=((testSession.index+1)/testSession.refs.length*100)+'%';
+ $('testProgress').style.width=((testSession.index+1)/testSession.refs.length*100)+'%';
  $('testFace').textContent='問題';$('testCard').classList.remove('is-back');$('testUnit').textContent=`${c.lessonTitle} · ${c.displayNumber||c.originalId}`;
  const frame=$('testSlideTap'),image=$('testSlideImage'),url=window.NekoImageURL(c.question);
  frame.className='slide-wrap loading';$('testImageStatus').hidden=true;$('testImageStatus').textContent='ちょっと待ってにゃ🐾';image.alt=`${c.lessonTitle} ${c.displayNumber||c.originalId} 問題`;
@@ -4817,6 +4815,7 @@ $('importForm').onsubmit=async e=>{
       ['画像を準備しているにゃ','画像を準備中だぜ'],
       ['通信を確認して、もう一度試すにゃ','通信を確認して、もう一度試してくれ'],
       ['答えを確認して、判定するにゃ','答えを確認して、判定してくれ'],
+      ['確認テストはノートに解答するにゃ。','確認テストはノートに解答してくれよな。'],
       ['口頭や紙で答えてから、解答を開くにゃ','口頭や紙で答えてから、解答を開こうぜ'],
       ['新しいテストを始めるにゃ？','新しいテストを始めるか？'],
       ['テストをはじめるにゃ','テストをはじめるぜ'],

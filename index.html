@@ -2156,41 +2156,41 @@ html[data-persona=cyber] #app :is(#zoomImage,#testZoom){background:linear-gradie
 #app #testScreen .test-actions > :is(#testPrev,#testNext,#testShowAnswers){flex:1 1 0;min-width:0;width:auto;min-height:60px;box-sizing:border-box;border-radius:15px!important}
 #app #testScreen .test-actions > :is(#testPrev,#testNext){font-size:30px;line-height:1;font-weight:800;padding:8px 12px}
 #app #testScreen .test-actions > #testShowAnswers{font-size:13px;line-height:1.5;padding:8px 12px;box-shadow:none}
-/* Cyber Nicopon: tactile neon controls for moving between test questions.
-   Keep their existing widths, heights, labels and positions. */
+/* Cyber Nicopon: flat neon navigation matching the other cyber controls.
+   Keep the button layout and colors; no raised edge or press-down movement. */
 html[data-persona=cyber] #app #testScreen .test-actions > :is(#testPrev,#testNext){
-  position:relative;
   border:2px solid var(--test-nav-edge)!important;
-  background:linear-gradient(165deg,var(--test-nav-lit) 0%,var(--test-nav-deep) 100%)!important;
+  background:linear-gradient(140deg,var(--test-nav-lit),var(--test-nav-deep))!important;
   color:var(--test-nav-text)!important;
-  text-shadow:0 0 9px var(--test-nav-halo)!important;
-  box-shadow:inset 0 1px 0 #ffffff48,0 5px 0 var(--test-nav-step),0 9px 18px #0009,0 0 17px var(--test-nav-halo)!important;
+  text-shadow:none!important;
+  box-shadow:0 0 12px var(--test-nav-halo)!important;
   font-weight:900;
-  transition:transform .12s ease-out,box-shadow .12s ease-out,filter .12s ease-out;
+  transform:none!important;
+  transition:filter .15s ease,box-shadow .15s ease;
   -webkit-tap-highlight-color:transparent;
 }
 html[data-persona=cyber] #app #testScreen #testPrev{
-  --test-nav-edge:#b25cff;--test-nav-lit:#45226e;--test-nav-deep:#171536;
-  --test-nav-text:#f2deff;--test-nav-step:#3e1b6a;--test-nav-halo:#bf00ff72;
+  --test-nav-edge:#b25cff;--test-nav-lit:#311d50;--test-nav-deep:#171536;
+  --test-nav-text:#f2deff;--test-nav-halo:#bf00ff45;
 }
 html[data-persona=cyber] #app #testScreen #testNext{
-  --test-nav-edge:#00ecf5;--test-nav-lit:#115272;--test-nav-deep:#0a203b;
-  --test-nav-text:#e3fdff;--test-nav-step:#08768c;--test-nav-halo:#00f5ff73;
+  --test-nav-edge:#00ecf5;--test-nav-lit:#133650;--test-nav-deep:#0a203b;
+  --test-nav-text:#e3fdff;--test-nav-halo:#00f5ff48;
 }
 @media(hover:hover){
   html[data-persona=cyber] #app #testScreen .test-actions > :is(#testPrev,#testNext):not(:disabled):hover{
-    filter:brightness(1.19);
-    transform:translateY(-1px);
+    filter:brightness(1.12);
+    box-shadow:0 0 17px var(--test-nav-halo)!important;
   }
 }
 html[data-persona=cyber] #app #testScreen .test-actions > :is(#testPrev,#testNext):not(:disabled):active{
-  transform:translateY(4px) scale(.985);
-  filter:brightness(1.27);
-  box-shadow:inset 0 2px 10px #02061380,0 1px 0 var(--test-nav-step),0 0 24px var(--test-nav-halo)!important;
+  filter:brightness(1.23);
+  box-shadow:0 0 20px var(--test-nav-halo)!important;
 }
 html[data-persona=cyber] #app #testScreen .test-actions > :is(#testPrev,#testNext):disabled{
-  opacity:.42;filter:saturate(.65);
-  box-shadow:inset 0 1px 0 #ffffff17,0 2px 0 var(--test-nav-step)!important;
+  opacity:.42;
+  filter:saturate(.65);
+  box-shadow:0 0 6px var(--test-nav-halo)!important;
 }
 @media(prefers-reduced-motion:reduce){
   html[data-persona=cyber] #app #testScreen .test-actions > :is(#testPrev,#testNext){transition:none!important}

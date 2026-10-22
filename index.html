@@ -2140,25 +2140,48 @@ html[data-persona="cyber"] dialog#reportPeriodDialog .homework-setup-foot.report
   #catalogScreen #catalogDock:has(#selectionDetails[open]) #clearSelection{max-width:120px!important;font-size:10px!important}
 }
 
-/* Minimal Cyber-only alignment fix — preserve all existing Nekopon and study layouts. */
-html[data-persona="cyber"] #app #studyScreen #undoButton {
-  min-height: 38px !important;
-  padding: 7px 12px !important;
-  line-height: 1.5 !important;
-  white-space: nowrap !important;
-}
-html[data-persona="cyber"] #app #testScreen #testZoom {
-  display: inline-grid !important;
-  place-items: center;
-  flex: 0 0 38px !important;
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 38px !important;
-  min-height: 38px !important;
-  padding: 4px !important;
-  font-size: 23px !important;
-  line-height: 1 !important;
-}
+
+/* 2026-10-22: Shared study / test card header and zoom controls.
+   Intentionally identical visual dimensions for both personas. */
+#app #testScreen #testCard{border:1px solid #d9c5b2;box-shadow:0 6px 22px #5733160c}
+#app #testScreen #testCard .head{min-height:42px;gap:6px;padding:6px 10px;border-bottom:0;background:#fffaf4}
+#app #testScreen #testCard .head .unit{flex:1;min-width:0;max-width:none;font-size:10px;line-height:1.55}
+#app #testScreen #testFace{background:#ffe4cc;color:#d2691e;border:1px solid #ffd1ad;border-radius:12px;padding:3px 10px;font-size:12px;line-height:1.6}
+#app #testScreen #testSlideTap:before{padding-top:56.25%}
+#app :is(#zoomImage,#testZoom){display:grid!important;place-items:center!important;flex:0 0 42px!important;box-sizing:border-box!important;width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;padding:4px!important;font-size:23px!important;font-weight:800!important;line-height:1!important;border:1px solid #e8d0bc!important;border-radius:12px!important;background:#fffaf4!important;color:#8b4513!important;text-decoration:none!important;box-shadow:none!important}
+html[data-persona=cyber] #app :is(#zoomImage,#testZoom){background:linear-gradient(140deg,#122b50,#0b1b34)!important;border:2px solid #25a8d1!important;color:#b5faff!important;box-shadow:0 0 11px #00f5ff39!important}
+#app #studyScreen .slide-meta .navigation-info{flex:1;text-align:left}
+#app #testScreen .test-actions{display:flex;align-items:stretch;gap:9px;margin:12px 0 7px}
+#app #testScreen .test-actions .test-writing-prompt{display:flex;flex:1;min-width:0;align-items:center;justify-content:center;text-align:center;color:#a27555;font-size:12px;line-height:1.5}
+#app #testScreen .test-actions #testPrev,#app #testScreen .test-actions #testNext{flex:0 0 48px;width:48px;min-height:46px;font-size:24px}
+#app #testScreen #testShowAnswers{flex:1;min-width:0;min-height:46px;font-size:13px;padding:8px 11px}
+#app #testScreen .test-under{font-size:11px;line-height:1.7;margin:6px 0 10px}
+#app #testScreen .test-review{margin:14px 0 40px}
+#app #testScreen .test-review-heading{margin:0 0 16px}
+#app #testScreen .test-review-heading h3{font-size:20px;margin:0 0 8px}
+#app #testScreen .test-review-heading p{font-size:12px;line-height:1.8;color:#956948;margin:0 0 8px}
+#app #testScreen #testReviewCount{font-size:13px;font-weight:800;color:#a66333}
+#app #testScreen .test-answer-list{display:grid;gap:16px}
+#app #testScreen .test-answer-card{overflow:hidden;border:1px solid #d9c5b2;border-radius:16px;background:#fff;box-shadow:0 4px 14px #5733160b}
+#app #testScreen .test-answer-head{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#fffaf4}
+#app #testScreen .test-answer-head strong{font-size:13px;white-space:nowrap}
+#app #testScreen .test-answer-head span{flex:1;min-width:0;text-align:right;overflow-wrap:anywhere;font-size:11px;color:#926b52}
+#app #testScreen .test-answer-card img{display:block;width:100%;height:auto;aspect-ratio:16 / 9;object-fit:contain;background:#fff}
+#app #testScreen .test-answer-card .test-answer-fallback{font-size:12px;padding:16px;color:#986946}
+#app #testScreen .test-mark-row{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;border-top:1px solid #eedccc}
+#app #testScreen .test-mark-row button{flex:1;min-height:44px;padding:9px;border:1px solid #cfae97;border-radius:12px;background:#fffaf4;color:#81502d;font-size:13px;font-weight:800}
+#app #testScreen .test-mark-row button[aria-pressed=true]{border:2px solid #d2691e;background:#ffead6;color:#753c18}
+#app #testScreen .test-mark-row button[data-outcome=retry][aria-pressed=true]{border-color:#c06682;background:#ffedf4;color:#994566}
+#app #testScreen .test-review-footer{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 25px}
+#app #testScreen .test-review-footer button{flex:1 1 180px;min-height:48px;font-size:12px;padding:10px 12px}
+html[data-persona=cyber] #app #testScreen :is(.test-answer-card,.test-answer-head){background:#10172f!important;color:#dceaff!important;border-color:#315576!important}
+html[data-persona=cyber] #app #testScreen :is(.test-review-heading p,.test-answer-head span,.test-writing-prompt){color:#afc6e5!important}
+html[data-persona=cyber] #app #testScreen #testReviewCount{color:#86f6ff!important}
+html[data-persona=cyber] #app #testScreen .test-mark-row{border-color:#315576!important}
+html[data-persona=cyber] #app #testScreen .test-mark-row button{background:#122445!important;border:1.5px solid #33799f!important;color:#d1edff!important}
+html[data-persona=cyber] #app #testScreen .test-mark-row button[aria-pressed=true]{background:#0d3d53!important;border-color:#00f5ff!important;color:#9afaff!important;box-shadow:0 0 10px #00f5ff44!important}
+html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=retry][aria-pressed=true]{background:#321731!important;border-color:#c05aff!important;color:#f1d7ff!important}
+@media(max-width:390px){#app #testScreen .test-answer-head{flex-wrap:wrap}#app #testScreen .test-answer-head span{text-align:left}#app #testScreen .test-review-footer{gap:8px}}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -2193,13 +2216,13 @@ html[data-persona="cyber"] #app #testScreen #testZoom {
 
 
 <div id="loadingMessage" class="loading-message" role="status" hidden>ちょっと待ってにゃ🐾</div>
-<section class="stage" id="stage"><article class="card" id="card"><div class="head"><div class="face-meta"><span class="badge" id="faceLabel">問題</span><span class="status-tag" id="cardStatus">まだ</span></div><span class="focus-only" id="focusPosition" aria-hidden="true"></span><span class="unit" id="cardUnit"></span><button title="画像を拡大する" id="zoomImage" class="link-button" type="button" aria-label="問題画像を拡大する">⤢</button></div><div class="image-frame"><div class="slide-wrap loading" id="slideTap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="slideImage" alt="" draggable="false" decoding="async"><div class="image-status" id="imageStatus" role="status">ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="resetImageView" hidden aria-label="画像を元の大きさに戻す">100%に戻すにゃ</button></div></article><div class="actions"><button class="focus-only" id="focusPause" type="button" hidden aria-label="自動めくりを止めるにゃ">Ⅱ</button><button class="arrow" id="prevButton" aria-label="前のカード">‹</button><button class="reveal" id="revealButton" type="button">答えを見るにゃ <span aria-hidden="true">↻</span></button><button class="again" id="weakButton" disabled>↻ おぼえてない</button><button class="done" id="knownButton" disabled>✓ おぼえた</button><button class="arrow" id="nextButton" aria-label="次のカード">›</button><button id="focusTools" class="focus-only" type="button" aria-haspopup="dialog" aria-controls="focusMenu" aria-expanded="false">操作にゃ ☰</button></div><div class="slide-meta"><p class="navigation-info" id="cardPosition" aria-live="polite"></p><button class="link-button" id="undoButton" disabled>↶ ひとつ戻すにゃ</button></div><div class="source-links" id="sourceLinks" aria-label="元動画へのリンク" hidden><a id="sourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="sourceMoment" target="_blank" rel="noopener noreferrer" hidden></a><span class="source-note" id="correctionNote" hidden>訂正画像を表示中（元動画は訂正前）</span></div><div class="study-guide" hidden><span id="studyHint" role="status"></span></div><div class="study-progress"><div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div></div><details class="study-options" id="studyOptions"><summary><span>学び方・範囲</span><span id="optionsSummary">ぜんぶ · 問題から</span></summary><div class="study-options-body"><div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
+<section class="stage" id="stage"><article class="card" id="card"><div class="head"><div class="face-meta"><span class="badge" id="faceLabel">問題</span><span class="status-tag" id="cardStatus">まだ</span></div><span class="focus-only" id="focusPosition" aria-hidden="true"></span><span class="unit" id="cardUnit"></span><button title="画像を拡大する" id="zoomImage" class="link-button" type="button" aria-label="問題画像を拡大する">⤢</button></div><div class="image-frame"><div class="slide-wrap loading" id="slideTap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="slideImage" alt="" draggable="false" decoding="async"><div class="image-status" id="imageStatus" role="status">ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="resetImageView" hidden aria-label="画像を元の大きさに戻す">100%に戻すにゃ</button></div></article><div class="actions"><button class="focus-only" id="focusPause" type="button" hidden aria-label="自動めくりを止めるにゃ">Ⅱ</button><button class="arrow" id="prevButton" aria-label="前のカード">‹</button><button class="reveal" id="revealButton" type="button">答えを見るにゃ <span aria-hidden="true">↻</span></button><button class="again" id="weakButton" disabled>↻ おぼえてない</button><button class="done" id="knownButton" disabled>✓ おぼえた</button><button class="arrow" id="nextButton" aria-label="次のカード">›</button><button id="focusTools" class="focus-only" type="button" aria-haspopup="dialog" aria-controls="focusMenu" aria-expanded="false">操作にゃ ☰</button></div><div class="slide-meta"><p class="navigation-info" id="cardPosition" aria-live="polite"></p></div><div class="source-links" id="sourceLinks" aria-label="元動画へのリンク" hidden><a id="sourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="sourceMoment" target="_blank" rel="noopener noreferrer" hidden></a><span class="source-note" id="correctionNote" hidden>訂正画像を表示中（元動画は訂正前）</span></div><div class="study-guide" hidden><span id="studyHint" role="status"></span></div><div class="study-progress"><div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div></div><details class="study-options" id="studyOptions"><summary><span>学び方・範囲</span><span id="optionsSummary">ぜんぶ · 問題から</span></summary><div class="study-options-body"><div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
 <nav class="chips" id="chapterChips" aria-label="単元"></nav>
 <details class="supplement-panel" id="supplementPanel" hidden><summary>補足を見るにゃ</summary><div class="supplement-links" id="supplementLinks"></div></details>
 <div class="face-mode" aria-label="カードの送り方"><button data-face-mode="normal" class="active" aria-pressed="true">問題から</button><button data-face-mode="answer" aria-pressed="false">解答で暗記</button></div>
 <div class="timer-panel"><div class="timer-top"><label><input type="checkbox" id="autoMode"> 自動めくり</label><span id="timerLabel"></span><button class="tool" id="playButton" hidden>▶ 再生</button></div><div id="timerOptions" class="timer-options" hidden><label>問題 <input type="number" id="questionSeconds" min="0.5" max="120" step="0.1" value="3"> 秒</label><label>解答 <input type="number" id="answerSeconds" min="0.5" max="120" step="0.1" value="2"> 秒</label></div><div class="timer-track" id="timerTrack" hidden><i id="timerBar"></i></div></div>
 </div></details></section>
-<div class="empty" id="emptyState" hidden tabindex="-1"><button aria-label="Nekoponをなでるにゃ" class="result-cat" type="button" id="resultCat"><span class="cat-tilt"><span id="resultCatFace" aria-hidden="true">😸</span></span></button><p role="status" class="result-cat-reply" id="resultCatReply">おつかれさまにゃ。なでてにゃ🐾</p><h2 id="emptyTitle"></h2><p id="emptyText"></p><div id="resultCounts" class="result-counts" hidden><div><b id="resultKnown">0</b><span>おぼえた</span></div><div><b id="resultWeak">0</b><span>おぼえてない</span></div><div><b id="resultUnmarked">0</b><span>まだ仕分けてない</span></div></div><button id="restartButton">もう一周するにゃ</button><button id="reviewButton">おぼえてない問題を復習にゃ</button><button id="unmarkedReview" hidden>まだの問題に挑戦するにゃ</button><button id="allButton" data-neon-revision="all-button-20261022">ぜんぶ見るにゃ</button><button id="finishUndo" class="finish-undo" hidden>↶ 最後の仕分けを戻すにゃ</button></div>
+<div class="empty" id="emptyState" hidden tabindex="-1"><button aria-label="Nekoponをなでるにゃ" class="result-cat" type="button" id="resultCat"><span class="cat-tilt"><span id="resultCatFace" aria-hidden="true">😸</span></span></button><p role="status" class="result-cat-reply" id="resultCatReply">おつかれさまにゃ。なでてにゃ🐾</p><h2 id="emptyTitle"></h2><p id="emptyText"></p><div id="resultCounts" class="result-counts" hidden><div><b id="resultKnown">0</b><span>おぼえた</span></div><div><b id="resultWeak">0</b><span>おぼえてない</span></div><div><b id="resultUnmarked">0</b><span>まだ仕分けてない</span></div></div><button id="restartButton">もう一周するにゃ</button><button id="reviewButton">おぼえてない問題を復習にゃ</button><button id="unmarkedReview" hidden>まだの問題に挑戦するにゃ</button><button id="allButton" data-neon-revision="all-button-20261022">ぜんぶ見るにゃ</button></div>
 </section></section>
 <section id="reportScreen" class="homework-screen" aria-labelledby="reportTitle" hidden>
  <div class="page-heading homework-heading" data-capture-hide><h2 id="reportTitle" class="screen-title" tabindex="-1">学習レポート</h2></div>
@@ -2232,23 +2255,27 @@ html[data-persona="cyber"] #app #testScreen #testZoom {
  <p id="testNotice" class="homework-note" role="status"></p>
  <div id="testPlay" hidden>
   <div class="test-progress-copy"><span id="testPosition"></span><span id="testJudged"></span></div><div class="track test-progress-track"><i id="testProgress"></i></div>
-  <article class="card" id="testCard"><div class="head"><span class="badge" id="testFace">問題</span><span class="unit" id="testUnit"></span><button id="testZoom" class="link-button" type="button" aria-label="テスト画像を拡大する">⤢</button></div><div class="image-frame"><div id="testSlideTap" class="slide-wrap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="testSlideImage" alt="" draggable="false" decoding="async"><div id="testImageStatus" class="image-status" role="status" hidden>ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="testResetImage" type="button" hidden>100%に戻すにゃ</button></div></article>
-  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題">‹</button><button id="testReveal" class="primary-button" type="button">答えを見るにゃ</button><button id="testRetry" class="secondary-button" type="button" hidden>もう一度</button><button id="testPass" class="primary-button" type="button" hidden>できた</button><button id="testNext" class="tool" type="button" aria-label="次の問題">›</button></div>
-  <div class="test-under"><span id="testGradeHint">口頭や紙で答えてから、解答を開くにゃ。</span><button id="testUndo" class="link-button" type="button" disabled>ひとつ戻すにゃ</button></div>
-  <div class="source-links" id="testSourceLinks" hidden><a id="testSourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="testSourceMoment" target="_blank" rel="noopener noreferrer" hidden></a></div>
-  <p class="homework-note test-separate-note">テストの判定は、通常学習の「おぼえた」と分けて保存するにゃ。</p>
+  <article class="card" id="testCard"><div class="head"><div class="face-meta"><span class="badge" id="testFace">問題</span></div><span class="unit" id="testUnit"></span><button id="testZoom" class="link-button" type="button" aria-label="テスト画像を拡大する">⤢</button></div><div class="image-frame"><div id="testSlideTap" class="slide-wrap" aria-label="確認テストの問題画像"><img id="testSlideImage" alt="" draggable="false" decoding="async"><div id="testImageStatus" class="image-status" role="status" hidden>ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="testResetImage" type="button" hidden>100%に戻すにゃ</button></div></article>
+  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題">‹</button><span class="test-writing-prompt">答えをノートに書くにゃ</span><button id="testNext" class="tool" type="button" aria-label="次の問題">›</button><button id="testShowAnswers" class="primary-button" type="button" hidden>解答一覧へ進むにゃ ›</button></div>
+  <div class="test-under"><span id="testGradeHint">解答は最後にまとめて見られるにゃ。ノートに答えを書いて進むにゃ。</span></div>
+  <p class="homework-note test-separate-note">確認テストの記録は、ふだんの「おぼえた」と分けて保存するにゃ。</p>
  </div>
+ <section id="testReview" class="test-review" hidden aria-label="確認テストの解答と丸つけ">
+  <div class="test-review-heading"><h3>解答一覧・丸つけ</h3><p>ノートに書いた答えを、上から順に照らし合わせて○×をつけるにゃ。</p><span id="testReviewCount" aria-live="polite"></span></div>
+  <div id="testAnswerList" class="test-answer-list"></div>
+  <div class="test-review-footer"><button id="testReturnQuestions" class="secondary-button" type="button">問題に戻る</button><button id="testFinalize" class="primary-button" type="button" disabled>丸つけが終わったら結果を見るにゃ</button></div>
+ </section>
  <div id="testResult" hidden>
-  <article class="report-card test-result-card" id="testResultCard"><header class="report-card-head"><span class="report-brand">🐾 Nekoponの確認テスト</span><strong id="testResultName"></strong><h3 id="testResultDate"></h3><p id="testResultScope"></p></header><div class="test-score"><strong id="testScore"></strong><span id="testScorePercent"></span></div><div class="test-result-breakdown"><span id="testResultPass"></span><span id="testResultRetry"></span></div><p class="homework-note">解答を開いて「できた／もう一度」で判定した結果</p><div id="testResultMaterials" class="report-materials"></div><p id="testResultCheer" class="report-cheer"></p></article>
+  <article class="report-card test-result-card" id="testResultCard"><header class="report-card-head"><span class="report-brand">🐾 Nekoponの確認テスト</span><strong id="testResultName"></strong><h3 id="testResultDate"></h3><p id="testResultScope"></p></header><div class="test-score"><strong id="testScore"></strong><span id="testScorePercent"></span></div><div class="test-result-breakdown"><span id="testResultPass"></span><span id="testResultRetry"></span></div><p class="homework-note">全問の解答をまとめて確認し、○×で自己採点した結果</p><div id="testResultMaterials" class="report-materials"></div><p id="testResultCheer" class="report-cheer"></p></article>
   <div class="report-main-actions" data-capture-hide><button id="showTestShot" class="secondary-button" type="button">結果を見せるにゃ</button><button id="testReviewWrong" class="primary-button" type="button">もう一度を復習にゃ</button></div>
   <details id="testWrongDetails" class="test-wrong-details" data-capture-hide><summary id="testWrongSummary"></summary><div id="testWrongList"></div></details>
-  <div class="test-result-tools" data-capture-hide><button id="testResultUndo" class="link-button" type="button">最後の判定を戻すにゃ</button><button id="testResultBack" class="tool" type="button">レポートへ</button></div>
+  <div class="test-result-tools" data-capture-hide><button id="testResultBack" class="tool" type="button">レポートへ</button></div>
  </div>
 </section>
 
 <section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定</h2></div></div><p class="catalog-help">自分にぴったりの学び方にするにゃ。</p><section class="persona-chooser" aria-labelledby="personaTitle"><h3 id="personaTitle">🎭 着せ替え</h3><div class="persona-options" role="group" aria-label="キャラクターとデザインを選ぶ"><button type="button" class="persona-option" data-persona-choice="neko" aria-pressed="true"><span class="persona-icon" aria-hidden="true">😺</span><span class="persona-copy"><strong>Nekopon</strong></span></button><button type="button" class="persona-option" data-persona-choice="cyber" aria-pressed="false"><span class="persona-icon" aria-hidden="true">😎</span><span class="persona-copy"><strong>Cyber Nicopon</strong></span></button></div><p class="persona-hint" id="personaHint">いつものネコポン。切り替えても学習記録はそのままにゃ。</p></section><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status">1問から、自分のペースで決めてにゃ。</p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-profile"><label for="reportNameInput">名前（任意）</label><input id="reportNameInput" maxlength="24" placeholder="生徒名・ニックネーム" autocomplete="off" aria-describedby="profileNameNote" disabled><small id="profileNameNote">学習レポートと確認テストに載せるにゃ。</small></div><div class="settings-brand"><h3>自分だけのタイトルにするにゃ</h3><label for="brandTitleInput">タイトル</label><input id="brandTitleInput" maxlength="30" placeholder="スライドで暗記" autocomplete="off"><label for="brandSubtitleInput">サブタイトル</label><input id="brandSubtitleInput" maxlength="40" placeholder="by JUKEN CAMP" autocomplete="off"><button id="resetBrand" class="link-button" type="button">元にもどすにゃ</button></div><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote">スマホで学習中に横向きにすると切り替わるにゃ。</small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><p class="settings-caption">学習記録は、このブラウザーに自動保存するにゃ。</p></div></div><div class="neko-playground" hidden aria-hidden="true"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
 </main><div class="neko-notice" id="notice" role="status" aria-live="polite"></div>
-<dialog id="focusMenu" aria-labelledby="focusMenuTitle"><div class="focus-menu-header"><h2 id="focusMenuTitle">操作にゃ 🐾</h2><button id="focusClose" type="button" aria-label="スライドに戻るにゃ" autofocus>×</button></div><p id="focusContext"></p><div class="focus-navigation"><button id="focusPrev" type="button">‹ 前へ</button><button id="focusFlip" type="button">解答を見るにゃ</button><button id="focusNext" type="button">次へ ›</button></div><div class="focus-extra"><button id="focusZoom" type="button">拡大するにゃ ⤢</button><div id="focusUndoSlot"></div></div><div id="focusSourceSlot"></div><div id="focusOptionsSlot"></div><div class="focus-destinations"><button id="focusCatalog" type="button">教材を選ぶにゃ</button><button id="focusSettings" type="button">設定を開くにゃ</button></div><button id="focusNormal" type="button">横向きでも通常表示にするにゃ</button></dialog>
+<dialog id="focusMenu" aria-labelledby="focusMenuTitle"><div class="focus-menu-header"><h2 id="focusMenuTitle">操作にゃ 🐾</h2><button id="focusClose" type="button" aria-label="スライドに戻るにゃ" autofocus>×</button></div><p id="focusContext"></p><div class="focus-navigation"><button id="focusPrev" type="button">‹ 前へ</button><button id="focusFlip" type="button">解答を見るにゃ</button><button id="focusNext" type="button">次へ ›</button></div><div class="focus-extra"><button id="focusZoom" type="button">拡大するにゃ ⤢</button></div><div id="focusSourceSlot"></div><div id="focusOptionsSlot"></div><div class="focus-destinations"><button id="focusCatalog" type="button">教材を選ぶにゃ</button><button id="focusSettings" type="button">設定を開くにゃ</button></div><button id="focusNormal" type="button">横向きでも通常表示にするにゃ</button></dialog>
 
 <dialog id="homeworkSetup" class="homework-setup" aria-labelledby="homeworkSetupTitle">
  <div class="homework-setup-head"><h2 id="homeworkSetupTitle" tabindex="-1">おぼえた問題で確認にゃ</h2><button id="closeHomeworkSetup" class="tool" type="button" aria-label="テスト設定を閉じる">×</button></div>
@@ -3406,8 +3433,6 @@ function renderControls() {
   $('breakdown').textContent = `まだ ${ct.unmarked} · おぼえてない ${ct.weak} · おぼえた ${ct.known}`;
   const raw = loaded.get(current()?.lessonId); $('lessonGrade').textContent = raw?.subject === 'social' ? fieldLabel(raw.field,raw.subject) : (raw?.grade || '');
   $('sessionSummary').textContent = state.collection ? state.collection.name : state.lessonIds.length === 1 ? (loaded.get(state.lessonIds[0])?.title || '') : `${state.lessonIds.length}教材をまとめて学習`;
-  $('undoButton').disabled = !undo; $('finishUndo').hidden = !undo;
-  $('undoButton').textContent = undoHistory.length > 1 ? `↶ ひとつ戻すにゃ（${undoHistory.length}）` : '↶ ひとつ戻すにゃ';
   // Keep the collapsed summary compact; selected unit titles remain visible within the expanded range choices.
   $('optionsSummary').textContent = `${state.mode === 'all' ? 'ぜんぶ' : labels[state.mode]} · ${state.answerMode ? '解答で暗記' : '問題から'}${$('autoMode').checked ? ' · 自動' : ''}`;
   stats();
@@ -3423,7 +3448,6 @@ function showEmpty(title,text,{restart=false,review=false,all=false,finishSummar
       const amount=document.createElement('b');amount.textContent=value;row.append(name,amount);$('emptyText').append(row);
     }
   } else $('emptyText').textContent = text;
-  $('finishUndo').hidden = !undo;
   const ct = counts(base());
   $('resultCounts').hidden = !state.finished || !lesson;
   $('resultKnown').textContent = ct.known; $('resultWeak').textContent = ct.weak; $('resultUnmarked').textContent = ct.unmarked;
@@ -3959,7 +3983,7 @@ async function renderLearningReport(){
  $('reportCheer').textContent=!total?'まずは1問から、いっしょに進むにゃ🐾':advanced?`${advanced}問が「おぼえてない」から「おぼえた」になったにゃ！🐾`:active>=3?`${active}日分の積み重ね、ばっちりにゃ🐾`:'取り組んだ分が、ちゃんと残るにゃ🐾';renderHomeworkTestHistory();
 }
 function renderHomeworkTestHistory(){
- const active=studyHistory.activeTest;$('resumeHomeworkTest').hidden=!active||!!active.finishedAt;$('resumeHomeworkTest').textContent=active?`つづきから確認にゃ · ${Object.keys(active.answers||{}).length} / ${active.refs.length}問`:'';
+ const active=studyHistory.activeTest;$('resumeHomeworkTest').hidden=!active||!!active.finishedAt;$('resumeHomeworkTest').textContent=active?`確認テストのつづきにゃ · ${active.phase==='review'?`丸つけ ${Object.keys(active.answers||{}).length}`:`問題 ${Math.min(active.refs.length,(active.index||0)+1)}`} / ${active.refs.length}問`:'';
  const list=$('homeworkTestHistory');list.replaceChildren();const tests=[...studyHistory.tests].sort((a,b)=>b.finishedAt-a.finishedAt);
  if(!tests.length){list.append(collectionNode('p','確認した結果を、ここに残すにゃ。','homework-note'));return;}
  for(const t of tests.slice(0,testHistoryVisible)){const item=collectionNode('div',undefined,'homework-test-history-item'),pass=Object.values(t.answers).filter(v=>v==='pass').length;
@@ -4023,7 +4047,7 @@ async function startHomeworkTest(){
   for(const key of candidates){if(picked.length>=wanted)break;const ref=hSplit(key),m=meta.find(m=>m.id===ref.lessonId);if(!m)continue;const raw=await getLesson(m),c=raw.cards.find(c=>c.id===ref.cardId);if(c)picked.push(packedTestCard(raw,c));}
   if(launch!==testLoadRequest||screen!=='report'||!$('homeworkSetup').open)return;
   if(!picked.length)throw Error('出題できる問題が見つからないにゃ。元の教材を確認してにゃ。');
-  testSession={id:'test-'+(crypto.randomUUID?.()||Date.now().toString(36)),createdAt:Date.now(),...scope,refs:picked.map(c=>c.id),answers:{},index:0,undo:[],finishedAt:null,titles:Object.fromEntries(picked.map(c=>[c.lessonId,c.lessonTitle]))};
+  testSession={id:'test-'+(crypto.randomUUID?.()||Date.now().toString(36)),createdAt:Date.now(),...scope,refs:picked.map(c=>c.id),answers:{},phase:'questions',maxSeen:0,index:0,undo:[],finishedAt:null,titles:Object.fromEntries(picked.map(c=>[c.lessonId,c.lessonTitle]))};
   testCards=picked;studyHistory.activeTest=hClone(testSession);await persistStudyHistory();if(launch!==testLoadRequest||screen!=='report'||!$('homeworkSetup').open){studyHistory.activeTest=previousActive;testSession=previousSession;testCards=previousCards;persistStudyHistory();return;}$('homeworkSetup').close();testFaceAnswer=false;showScreen('test');renderHomeworkTest();beep('open');
  }catch(e){$('testSetupNotice').textContent=e?.message||'教材が開けなかったにゃ。通信を確認してにゃ。';}
  finally{testLoading=false;for(const id of ['testAllDates','testSubject','testLesson','testCount'])$(id).disabled=false;updateHomeworkCandidates();}
@@ -4036,62 +4060,110 @@ function persistHomeworkSession(){
 }
 async function resumeHomeworkTest(){
  await Promise.all([studyHistoryReady,importedLessonsReady]);const stored=studyHistory.activeTest;if(!stored)return;
- const seq=++testLoadRequest;showScreen('test');testReady=false;$('testNotice').textContent='ちょっと待ってにゃ🐾';$('testPlay').hidden=$('testResult').hidden=true;
+ const seq=++testLoadRequest;showScreen('test');testReady=false;$('testNotice').textContent='ちょっと待ってにゃ🐾';$('testPlay').hidden=$('testReview').hidden=$('testResult').hidden=true;
  try{const cards=[];for(const key of stored.refs){const r=hSplit(key),m=meta.find(m=>m.id===r.lessonId);if(!m)throw Error('元の教材が見つからないにゃ。教材を読み込んでから再開してにゃ。');const raw=await getLesson(m),c=raw.cards.find(c=>c.id===r.cardId);if(!c)throw Error('元の問題が見つからないにゃ。教材を確認してにゃ。');cards.push(packedTestCard(raw,c));}
-  if(seq!==testLoadRequest||screen!=='test')return;testSession=hClone(stored);testSession.undo ||= [];testCards=cards;testFaceAnswer=false;renderHomeworkTest();
+  if(seq!==testLoadRequest||screen!=='test')return;testSession=hClone(stored);testSession.undo ||= [];testSession.phase ||= 'questions';testCards=cards;renderHomeworkTest();
  }catch(e){if(seq===testLoadRequest)$('testNotice').textContent=e.message;}
 }
 function updateHomeworkTestActions(){
- const c=testCards[testSession?.index||0],answer=testFaceAnswer;
- $('testReveal').hidden=answer;$('testPass').hidden=$('testRetry').hidden=!answer;
- $('testReveal').disabled=!testReady;$('testPass').disabled=$('testRetry').disabled=!testReady||!answer||performance.now()<testGradeLock;
- $('testPrev').disabled=$('testNext').disabled=testCards.length<2;
- $('testZoom').disabled=!testReady;$('testUndo').disabled=!testSession?.undo?.length;
- $('testGradeHint').textContent=!testReady?'画像を準備しているにゃ…':answer?'答えを確認して、判定するにゃ。':'口頭や紙で答えてから、解答を開くにゃ。';
- if(c){$('testSlideTap').setAttribute('aria-label',answer?'タップして問題を見る':'タップして解答を見る');$('testSlideTap').setAttribute('aria-busy',String(!testReady));}
+ const last=!!testSession&&testSession.index>=testSession.refs.length-1;
+ $('testPrev').disabled=!testSession||testSession.index<=0;
+ $('testNext').hidden=last;$('testNext').disabled=!testReady;
+ $('testShowAnswers').hidden=!last;$('testShowAnswers').disabled=!testReady;
+ $('testZoom').disabled=!testReady;
+ $('testGradeHint').textContent=!testReady?'問題画像を準備しているにゃ…':last?'最後の問題に答えを書いたら、解答一覧へ進むにゃ。':'答えをノートに書いて、次の問題へ進むにゃ。';
+ $('testSlideTap').setAttribute('aria-busy',String(!testReady));
 }
 function renderHomeworkTest(){
  if(!testSession||screen!=='test')return;
  if(testSession.finishedAt){showHomeworkResult();return;}
- $('testPlay').hidden=false;$('testResult').hidden=true;$('testNotice').textContent=historyError;testReady=false;const token=++testImageToken;
- testSession.index=Math.max(0,Math.min(testSession.refs.length-1,testSession.index||0));const c=testCards[testSession.index];if(!c){$('testNotice').textContent='元の問題を読み込んでから再開してにゃ。';$('testPlay').hidden=true;return;}
- const graded=Object.keys(testSession.answers).length;$('testPosition').textContent=`${testSession.index+1} / ${testSession.refs.length}問`;$('testJudged').textContent=`判定 ${graded}問`;$('testProgress').style.width=(graded/testSession.refs.length*100)+'%';
- $('testFace').textContent=testFaceAnswer?'解答':'問題';$('testCard').classList.toggle('is-back',testFaceAnswer);$('testUnit').textContent=`${c.lessonTitle} · ${c.displayNumber||c.originalId}`;
- const source=sourceVideoURL(c.source),time=c.sourceTimes?.[testFaceAnswer?'answer':'question'];$('testSourceLinks').hidden=!source;$('testSourceMoment').hidden=true;$('testSourceMoment').removeAttribute('href');if(source){$('testSourceVideo').href=source;if(typeof time==='number'&&Number.isFinite(time)&&time>=0){$('testSourceMoment').hidden=false;$('testSourceMoment').href=source+'&t='+Math.floor(time)+'s';$('testSourceMoment').textContent=`▶︎ この場面 ${Math.floor(time/60)}:${String(Math.floor(time)%60).padStart(2,'0')} をみる`;}}
- const frame=$('testSlideTap'),image=$('testSlideImage'),url=window.NekoImageURL(c[testFaceAnswer?'answer':'question']);frame.className='slide-wrap loading';$('testImageStatus').hidden=true;$('testImageStatus').textContent='ちょっと待ってにゃ🐾';image.alt=`${c.lessonTitle} ${c.displayNumber||c.originalId} ${testFaceAnswer?'解答':'問題'}`;homeworkImageView.setCard(c.id);updateHomeworkTestActions();
- const urls=[];for(let n=0;n<Math.min(4,testCards.length);n++){const card=testCards[(testSession.index+n)%testCards.length];urls.push(window.NekoImageURL(card.question),window.NekoImageURL(card.answer));}homeworkImageLoader.plan(urls);
- let done=false;const finish=()=>{if(token!==testImageToken||screen!=='test'||done)return;done=true;testReady=true;frame.classList.remove('loading');$('testImageStatus').hidden=true;homeworkImageView.refresh();updateHomeworkTestActions();setTimeout(()=>{if(token===testImageToken&&screen==='test')updateHomeworkTestActions();},Math.max(0,testGradeLock-performance.now())+12);};
- const fail=()=>{if(token!==testImageToken||screen!=='test'||done)return;done=true;frame.className='slide-wrap error';$('testImageStatus').hidden=false;$('testImageStatus').textContent='画像が開けないにゃ。タップして読み直してにゃ。';$('testReveal').disabled=false;$('testReveal').textContent='読み直すにゃ ↻';};
- $('testReveal').textContent='答えを見るにゃ';setTimeout(()=>{if(!done&&token===testImageToken&&screen==='test')$('testImageStatus').hidden=false;},300);
- homeworkImageLoader.get(url).then(()=>{if(token!==testImageToken||screen!=='test')return;image.onload=finish;image.onerror=fail;image.src=url;if(image.complete&&image.naturalWidth)finish();}).catch(fail);
+ if(testSession.phase==='review'){renderTestAnswerReview();return;}
+ $('testPlay').hidden=false;$('testReview').hidden=$('testResult').hidden=true;
+ $('testNotice').textContent=historyError;testReady=false;const token=++testImageToken;
+ testSession.index=Math.max(0,Math.min(testSession.refs.length-1,testSession.index||0));
+ testSession.maxSeen=Math.max(testSession.maxSeen||0,testSession.index);
+ const c=testCards[testSession.index];if(!c){$('testNotice').textContent='元の問題を読み込んでから再開してにゃ。';$('testPlay').hidden=true;return;}
+ $('testPosition').textContent=`${testSession.index+1} / ${testSession.refs.length}問`;
+ $('testJudged').textContent='ノートに解答';$('testProgress').style.width=((testSession.index+1)/testSession.refs.length*100)+'%';
+ $('testFace').textContent='問題';$('testCard').classList.remove('is-back');$('testUnit').textContent=`${c.lessonTitle} · ${c.displayNumber||c.originalId}`;
+ const frame=$('testSlideTap'),image=$('testSlideImage'),url=window.NekoImageURL(c.question);
+ frame.className='slide-wrap loading';$('testImageStatus').hidden=true;$('testImageStatus').textContent='ちょっと待ってにゃ🐾';image.alt=`${c.lessonTitle} ${c.displayNumber||c.originalId} 問題`;
+ homeworkImageView.setCard(c.id);updateHomeworkTestActions();
+ // Question-only preloading: no answer image is requested until the review stage.
+ homeworkImageLoader.plan(testCards.slice(testSession.index,Math.min(testCards.length,testSession.index+4)).map(card=>window.NekoImageURL(card.question)));
+ let done=false;
+ const finish=()=>{if(token!==testImageToken||screen!=='test'||done||testSession.phase==='review')return;done=true;testReady=true;frame.classList.remove('loading');$('testImageStatus').hidden=true;homeworkImageView.refresh();updateHomeworkTestActions();};
+ const fail=()=>{if(token!==testImageToken||screen!=='test'||done)return;done=true;frame.className='slide-wrap error';$('testImageStatus').hidden=false;$('testImageStatus').textContent='問題画像を読み込めなかったにゃ。画像をタップしてやり直してにゃ。';updateHomeworkTestActions();};
+ setTimeout(()=>{if(!done&&token===testImageToken&&screen==='test')$('testImageStatus').hidden=false;},300);
+ homeworkImageLoader.get(url).then(()=>{if(token!==testImageToken||screen!=='test'||testSession.phase==='review')return;image.onload=finish;image.onerror=fail;image.src=url;if(image.complete&&image.naturalWidth)finish();}).catch(fail);
 }
-function flipHomeworkTest(){if(screen!=='test'||!testSession||testSession.finishedAt)return;if($('testSlideTap').classList.contains('error')){homeworkImageLoader.forget(window.NekoImageURL(testCards[testSession.index][testFaceAnswer?'answer':'question']));renderHomeworkTest();return;}if(!testReady||performance.now()<testSuppressedUntil)return;testFaceAnswer=!testFaceAnswer;beep('flip');renderHomeworkTest();}
-function navigateHomeworkTest(delta){if(screen!=='test'||!testSession||testSession.finishedAt||testCards.length<2)return;testSession.index=(testSession.index+delta+testCards.length)%testCards.length;testFaceAnswer=false;persistHomeworkSession();renderHomeworkTest();beep('move');}
-function gradeHomeworkTest(outcome){
- if(screen!=='test'||!testSession||testSession.finishedAt||!testFaceAnswer||!testReady||performance.now()<testGradeLock)return;
- testGradeLock=performance.now()+350;const key=testSession.refs[testSession.index];testSession.undo ||= [];testSession.undo.push({key,previous:testSession.answers[key]||null,index:testSession.index});if(testSession.undo.length>40)testSession.undo.shift();testSession.answers[key]=outcome;
- if(testSession.refs.every(key=>testSession.answers[key])){testSession.finishedAt=Date.now();persistHomeworkSession();beep('finish');showHomeworkResult();return;}
- let next=-1;for(let n=1;n<=testSession.refs.length;n++){const i=(testSession.index+n)%testSession.refs.length;if(!testSession.answers[testSession.refs[i]]){next=i;break;}}
- testSession.index=next;testFaceAnswer=false;persistHomeworkSession();beep(outcome==='pass'?'known':'weak');renderHomeworkTest();
+function retryTestQuestionImage(){
+ if(screen!=='test'||!testSession||testSession.phase==='review'||!$('testSlideTap').classList.contains('error'))return;
+ homeworkImageLoader.forget(window.NekoImageURL(testCards[testSession.index].question));renderHomeworkTest();
 }
-function undoHomeworkGrade(){
- if(!testSession?.undo?.length)return;const u=testSession.undo.pop();if(u.previous)testSession.answers[u.key]=u.previous;else delete testSession.answers[u.key];testSession.finishedAt=null;testSession.index=u.index;testGradeLock=0;testFaceAnswer=true;persistHomeworkSession();renderHomeworkTest();toast('判定をひとつ戻したにゃ');
+function navigateHomeworkTest(delta){
+ if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'||!testCards.length)return;
+ const next=Math.max(0,Math.min(testCards.length-1,testSession.index+delta));if(next===testSession.index)return;
+ testSession.index=next;testSession.maxSeen=Math.max(testSession.maxSeen||0,next);
+ persistHomeworkSession();renderHomeworkTest();beep('move');
+}
+function openHomeworkAnswers(){
+ if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'||testSession.index<testCards.length-1||!testReady)return;
+ testSession.phase='review';persistHomeworkSession();homeworkImageView.cancel();renderTestAnswerReview();beep('open');window.scrollTo({top:0,behavior:'instant'});
+}
+function renderTestAnswerReview(){
+ if(!testSession||screen!=='test'||testSession.finishedAt)return;
+ testReady=false;++testImageToken;homeworkImageLoader.pause();$('testPlay').hidden=$('testReview').hidden=$('testResult').hidden=true;$('testReview').hidden=false;$('testNotice').textContent=historyError;
+ const root=$('testAnswerList');root.replaceChildren();
+ testCards.forEach((c,i)=>{
+  const card=collectionNode('article',undefined,'test-answer-card');
+  const head=collectionNode('div',undefined,'test-answer-head');head.append(collectionNode('strong',`第${i+1}問 · 解答`),collectionNode('span',`${c.lessonTitle} · ${c.displayNumber||c.originalId}`));
+  const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.alt=`第${i+1}問の解答`;img.src=window.NekoImageURL(c.answer);
+  img.onerror=()=>{img.hidden=true;const fallback=collectionNode('p','解答画像を読み込めなかったにゃ。通信を確認してにゃ。','test-answer-fallback');card.insertBefore(fallback,card.querySelector('.test-mark-row'));};
+  const marks=collectionNode('div',undefined,'test-mark-row');marks.setAttribute('role','group');marks.setAttribute('aria-label',`第${i+1}問の丸つけ`);
+  for(const [outcome,label] of [['pass','○ 正解'],['retry','× 不正解']]){
+   const button=collectionNode('button',label);button.type='button';button.dataset.outcome=outcome;
+   button.setAttribute('aria-pressed',String(testSession.answers[c.id]===outcome));
+   button.onclick=()=>{if(!testSession||testSession.phase!=='review'||testSession.finishedAt)return;
+    // Tapping the selected mark again clears it before saving the result.
+    if(testSession.answers[c.id]===outcome)delete testSession.answers[c.id];else testSession.answers[c.id]=outcome;
+    for(const b of marks.querySelectorAll('button'))b.setAttribute('aria-pressed',String(testSession.answers[c.id]===b.dataset.outcome));
+    persistHomeworkSession();updateTestReviewCount();beep('move');
+   };marks.append(button);
+  }
+  card.append(head,img,marks);root.append(card);
+ });
+ updateTestReviewCount();
+}
+function updateTestReviewCount(){
+ if(!testSession)return;const done=testSession.refs.filter(id=>testSession.answers[id]==='pass'||testSession.answers[id]==='retry').length;
+ $('testReviewCount').textContent=`丸つけ済み ${done} / ${testSession.refs.length}問`;
+ $('testFinalize').disabled=done!==testSession.refs.length;
+}
+function finishHomeworkGrading(){
+ if(screen!=='test'||!testSession||testSession.phase!=='review'||testSession.finishedAt)return;
+ if(!testSession.refs.every(id=>testSession.answers[id]==='pass'||testSession.answers[id]==='retry'))return;
+ testSession.finishedAt=Date.now();persistHomeworkSession();beep('finish');showHomeworkResult();window.scrollTo({top:0,behavior:'instant'});
+}
+function returnToTestQuestions(){
+ if(screen!=='test'||!testSession||testSession.phase!=='review')return;
+ testSession.phase='questions';persistHomeworkSession();renderHomeworkTest();window.scrollTo({top:0,behavior:'instant'});
 }
 function showHomeworkResult(){
- if(!testSession)return;testReady=false;++testImageToken;homeworkImageLoader.pause();$('testPlay').hidden=true;$('testResult').hidden=false;$('testNotice').textContent=historyError;
+ if(!testSession)return;testReady=false;++testImageToken;homeworkImageLoader.pause();$('testPlay').hidden=$('testReview').hidden=true;$('testResult').hidden=false;$('testNotice').textContent=historyError;
  const pass=testSession.refs.filter(k=>testSession.answers[k]==='pass').length,retry=testSession.refs.filter(k=>testSession.answers[k]==='retry');
  $('testResultName').textContent=studyHistory.name||'';$('testResultDate').textContent=hStamp(testSession.finishedAt);$('testResultScope').textContent='対象：'+(testSession.allDates?'記録日指定なし':hDateLabel(testSession.from)+' 〜 '+hDateLabel(testSession.to));
  $('testScore').textContent=`${pass} / ${testSession.refs.length}問`;$('testScorePercent').textContent=Math.round(pass/testSession.refs.length*100)+'%';$('testResultPass').textContent=`できた ${pass}問`;$('testResultRetry').textContent=`もう一度 ${retry.length}問`;
  const byLesson=new Map();for(const key of testSession.refs){const id=hSplit(key).lessonId;byLesson.set(id,(byLesson.get(id)||0)+1);}materialRows($('testResultMaterials'),byLesson);
  $('testResultCheer').textContent=retry.length?'次に復習する問題が見つかったにゃ🐾':'全部できたにゃ！積み重ねの成果にゃ🐾';
  $('testReviewWrong').disabled=!retry.length;$('testWrongDetails').hidden=!retry.length;$('testWrongSummary').textContent=`もう一度の問題 ${retry.length}問`;$('testWrongList').replaceChildren();for(const key of retry)$('testWrongList').append(collectionNode('p',historyCardTitle(key)));
- $('testResultUndo').disabled=!testSession.undo?.length;$('testResultUndo').hidden=!testSession.undo?.length;
 }
 function openSavedHomeworkResult(id){const t=studyHistory.tests.find(t=>t.id===id);if(!t)return;testSession=hClone(t);testSession.undo=[];testCards=[];showScreen('test');showHomeworkResult();}
 function reviewHomeworkWrong(){if(!testSession)return;const keys=testSession.refs.filter(k=>testSession.answers[k]==='retry');if(!keys.length)return;const ids=[...new Set(keys.map(k=>hSplit(k).lessonId))];toggleHomeworkCapture(false);return selectLessons(ids,{collection:{id:'review-'+testSession.id,name:'確認テストの復習',cardKeys:keys}});}
-const homeworkImageView=window.createNekoImageView({frame:$('testSlideTap'),image:$('testSlideImage'),resetButton:$('testResetImage'),isReady:()=>screen==='test'&&testReady&&!testSession?.finishedAt,onTap:flipHomeworkTest,onNavigate:navigateHomeworkTest,onPause:()=>{},onDrag:()=>{},onSnap:()=>{},suppressClicks:()=>{testSuppressedUntil=performance.now()+500;}});
-$('testSlideTap').onclick=flipHomeworkTest;$('testSlideTap').onkeydown=e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();flipHomeworkTest();}};
-$('testReveal').onclick=flipHomeworkTest;$('testPass').onclick=()=>gradeHomeworkTest('pass');$('testRetry').onclick=()=>gradeHomeworkTest('retry');$('testPrev').onclick=()=>navigateHomeworkTest(-1);$('testNext').onclick=()=>navigateHomeworkTest(1);$('testUndo').onclick=$('testResultUndo').onclick=undoHomeworkGrade;
+const homeworkImageView=window.createNekoImageView({frame:$('testSlideTap'),image:$('testSlideImage'),resetButton:$('testResetImage'),isReady:()=>screen==='test'&&testReady&&!testSession?.finishedAt&&testSession?.phase!=='review',onTap:retryTestQuestionImage,onNavigate:navigateHomeworkTest,onPause:()=>{},onDrag:()=>{},onSnap:()=>{},suppressClicks:()=>{testSuppressedUntil=performance.now()+500;}});
+$('testSlideTap').onclick=retryTestQuestionImage;
+$('testPrev').onclick=()=>navigateHomeworkTest(-1);$('testNext').onclick=()=>navigateHomeworkTest(1);
+$('testShowAnswers').onclick=openHomeworkAnswers;$('testReturnQuestions').onclick=returnToTestQuestions;$('testFinalize').onclick=finishHomeworkGrading;
 $('testZoom').onclick=()=>homeworkImageView.zoom();$('testReviewWrong').onclick=reviewHomeworkWrong;
 $('openTestSetup').onclick=openHomeworkSetup;$('closeHomeworkSetup').onclick=()=>$('homeworkSetup').close();$('startHomeworkTest').onclick=startHomeworkTest;
 $('homeworkSetup').addEventListener('close',()=>{++testLoadRequest;});
@@ -4145,7 +4217,7 @@ $('slideTap').onclick = () => { if (performance.now()<suppressUntil || navBusy) 
 $('slideTap').onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } };
 for (const id of ['sourceVideo','sourceMoment']) $(id).addEventListener('click',() => { pause(); save(); });
 $('prevButton').onclick = () => { if (!navBusy) animateNav(-1); }; $('nextButton').onclick = () => { if (!navBusy) animateNav(1); };
-$('knownButton').onclick = () => assess('known'); $('finishUndo').onclick = undoAssessment; $('weakButton').onclick = () => assess('weak'); $('undoButton').onclick = undoAssessment;
+$('knownButton').onclick = () => assess('known'); $('weakButton').onclick = () => assess('weak');
 for (const b of document.querySelectorAll('[data-mode]')) b.onclick = () => changeRange({mode:b.dataset.mode});
 $('shuffleButton').onclick = () => { beep('shuffle'); state.shuffle = !state.shuffle; state.order = state.shuffle ? shuffle(lesson?.cards.map(c => c.id) || []) : lesson?.cards.map(c => c.id) || []; changeRange({}); };
 $('unmarkedReview').onclick = () => changeRange({mode:'unmarked'});
@@ -4363,7 +4435,7 @@ function syncLandscape() {
 function openFocusMenu() {
   if (!document.body.classList.contains('slide-focus') || $('focusMenu').open) return;
   pause(); imageView.cancel(); focusOptionsWasOpen = $('studyOptions').open;
-  focusMoves = [['undoButton','focusUndoSlot'],['sourceLinks','focusSourceSlot'],['studyOptions','focusOptionsSlot']].map(([id,slot]) => {
+  focusMoves = [['sourceLinks','focusSourceSlot'],['studyOptions','focusOptionsSlot']].map(([id,slot]) => {
     const node=$(id),marker=document.createComment('landscape-control:'+id); node.before(marker); $(slot).append(node); return {node,marker};
   });
   $('focusContext').textContent = `${$('sessionSummary').textContent} · ${$('cardPosition').textContent}`;
@@ -4391,7 +4463,7 @@ $('focusCatalog').onclick=()=>{closeFocusMenu();catalogIsCollections=false;showS
 $('focusSettings').onclick=()=>{closeFocusMenu();showScreen('settings');};
 $('focusNormal').onclick=()=>{closeFocusMenu();data.neko.landscapeFocus=false;save();syncLandscape();};
 $('landscapeToggle').onchange=()=>{data.neko.landscapeFocus=$('landscapeToggle').checked;save();syncLandscape();};
-$('undoButton').addEventListener('click',()=>{if($('focusMenu').open)closeFocusMenu();});
+
 $('playButton').addEventListener('click',()=>{if($('focusMenu').open && playing)closeFocusMenu();});
 landscapeQuery.addEventListener('change',syncLandscape);
 window.addEventListener('resize',syncLandscape);

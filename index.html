@@ -950,7 +950,7 @@ html[data-persona=cyber] .app{position:relative;z-index:1}
 html[data-persona=cyber] .app::before{content:'⚡';opacity:.09}
 html[data-persona=cyber] .app::after{content:'✦';opacity:.09}
 html[data-persona=cyber] #appHeader.is-scrolled::before{background:#050510;opacity:.96}
-html[data-persona=cyber] .compact-header .brand-name{color:#00f5ff;text-shadow:0 0 12px #00f5ff77,0 0 26px #00f5ff2b;-webkit-text-stroke:0}
+html[data-persona=cyber] .compact-header .brand-name{color:#00f5ff;background:transparent!important;box-shadow:none!important;border:0!important;text-shadow:0 0 6px rgba(0,245,255,.35),0 0 14px rgba(0,245,255,.18);filter:drop-shadow(0 0 5px rgba(0,245,255,.16));-webkit-text-stroke:0}\nhtml[data-persona=cyber] .compact-header .brand-home,html[data-persona=cyber] .compact-header .brand-home>.brand-lockup{background:transparent!important;box-shadow:none!important;border-color:transparent!important}
 html[data-persona=cyber] .compact-header .brand-credit{color:#9988e2}
 html[data-persona=cyber] .compact-header .brand-home{color:#00f5ff}
 html[data-persona=cyber] #headerCatFace,html[data-persona=cyber] #mascotFace,html[data-persona=cyber] #resultCatFace{filter:drop-shadow(0 0 9px #00f5ff7a)}
@@ -1291,6 +1291,95 @@ html[data-persona="cyber"] #app :is(.report-range,.report-filter,.history-manage
 html[data-persona="cyber"] #app :is(.test-progress-track,.report-chart-day .bar-track){
   background:#132747!important;border-color:#315b81!important;
 }
+html[data-persona="cyber"] #app #testScreen .test-under{gap:12px!important;align-items:center!important}
+html[data-persona="cyber"] #app #testScreen #testUndo{
+  flex:0 0 auto!important;
+  min-height:40px!important;
+  padding:0 14px!important;
+  border:2px solid #00f5ff!important;
+  border-radius:16px!important;
+  background:linear-gradient(135deg,#102346,#0c1733)!important;
+  color:#dffcff!important;
+  font-size:11px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+  text-decoration:none!important;
+  box-shadow:0 0 10px #00f5ff44, inset 0 0 10px #00f5ff12!important;
+}
+html[data-persona="cyber"] #app #testScreen #testUndo:not(:disabled):active{transform:translateY(1px)!important;box-shadow:0 0 6px #00f5ff40!important}
+html[data-persona="cyber"] #app #testScreen #testUndo:disabled{opacity:.72!important;border-color:#4b6d8f!important;color:#9eb7cf!important;box-shadow:none!important}
+
+/* ===== Cyber Nicopon: remaining warm colors inside dialogs and preview overlays ===== */
+html[data-persona="cyber"] :is(#collectionDialog,#collectionPreview,#importDialog) .dialog-close,
+html[data-persona="cyber"] #collectionDialog #collectionEditorClose,
+html[data-persona="cyber"] #collectionPreview #collectionPreviewClose{
+  border:2px solid #2fa7c8!important;
+  border-radius:14px!important;
+  background:linear-gradient(135deg,#163055,#0c1a36)!important;
+  color:#d8fbff!important;
+  box-shadow:0 0 12px #00f5ff38,inset 0 0 10px #00f5ff10!important;
+  text-decoration:none!important;
+}
+html[data-persona="cyber"] #collectionPreview #collectionPreviewClose{
+  min-height:46px!important;
+  padding:0 14px!important;
+  white-space:nowrap!important;
+}
+html[data-persona="cyber"] :is(#collectionDialog,#collectionPreview,#importDialog) :is(.dialog-close,#collectionEditorClose,#collectionPreviewClose):active{
+  transform:translateY(1px)!important;
+  box-shadow:0 0 7px #00f5ff30!important;
+}
+html[data-persona="cyber"] #collectionDialog :is(input,select,textarea),
+html[data-persona="cyber"] #collectionPreview :is(input,select,textarea),
+html[data-persona="cyber"] #importDialog :is(input,select,textarea){
+  background:#0b1128!important;
+  color:#eaf5ff!important;
+  -webkit-text-fill-color:#eaf5ff!important;
+  border:1.5px solid #477092!important;
+  caret-color:#00f5ff!important;
+  box-shadow:none!important;
+}
+html[data-persona="cyber"] #collectionDialog :is(input,select,textarea)::placeholder,
+html[data-persona="cyber"] #collectionPreview :is(input,select,textarea)::placeholder,
+html[data-persona="cyber"] #importDialog :is(input,select,textarea)::placeholder{
+  color:#8fb2d2!important;
+  -webkit-text-fill-color:#8fb2d2!important;
+}
+html[data-persona="cyber"] #collectionDialog :is(input,select,textarea):focus,
+html[data-persona="cyber"] #collectionDialog :is(input,select,textarea):focus-visible,
+html[data-persona="cyber"] #collectionPreview :is(input,select,textarea):focus,
+html[data-persona="cyber"] #collectionPreview :is(input,select,textarea):focus-visible,
+html[data-persona="cyber"] #importDialog :is(input,select,textarea):focus,
+html[data-persona="cyber"] #importDialog :is(input,select,textarea):focus-visible{
+  background:#102345!important;
+  color:#f3fdff!important;
+  -webkit-text-fill-color:#f3fdff!important;
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ffb0!important;
+  outline-offset:2px!important;
+  box-shadow:0 0 16px #00f5ff52,inset 0 0 10px #00f5ff16!important;
+}
+html[data-persona="cyber"] #collectionDialog :is(input,select,textarea):-webkit-autofill,
+html[data-persona="cyber"] #collectionDialog :is(input,select,textarea):-webkit-autofill:hover,
+html[data-persona="cyber"] #collectionDialog :is(input,select,textarea):-webkit-autofill:focus,
+html[data-persona="cyber"] #collectionPreview :is(input,select,textarea):-webkit-autofill,
+html[data-persona="cyber"] #collectionPreview :is(input,select,textarea):-webkit-autofill:hover,
+html[data-persona="cyber"] #collectionPreview :is(input,select,textarea):-webkit-autofill:focus,
+html[data-persona="cyber"] #importDialog :is(input,select,textarea):-webkit-autofill,
+html[data-persona="cyber"] #importDialog :is(input,select,textarea):-webkit-autofill:hover,
+html[data-persona="cyber"] #importDialog :is(input,select,textarea):-webkit-autofill:focus{
+  -webkit-text-fill-color:#eaf5ff!important;
+  caret-color:#00f5ff!important;
+  -webkit-box-shadow:0 0 0 1000px #0b1128 inset,0 0 0 1.5px #477092 inset,0 0 12px #00f5ff26!important;
+  box-shadow:0 0 0 1000px #0b1128 inset,0 0 0 1.5px #477092 inset,0 0 12px #00f5ff26!important;
+  transition:background-color 9999s ease-out 0s!important;
+}
+html[data-persona="cyber"] #collectionDialog :is(#collectionEditorStatus,.collection-storage-note,.collection-range-label,.collection-name-label,.collection-preview-help),
+html[data-persona="cyber"] #collectionPreview :is(.collection-preview-help,.collection-preview-head h3),
+html[data-persona="cyber"] #importDialog :is(#importStatus,.dialog-actions small){
+  color:#b8d8f4!important;
+}
+
 html[data-persona="cyber"] #app .test-progress-track i{
   background:linear-gradient(90deg,#a65bff,#00f5ff)!important;
 }
@@ -1746,6 +1835,70 @@ html[data-persona="cyber"] body #app #studyScreen #emptyState button#allButton:a
     box-shadow:inset 0 0 0 1px #99f9ff70,inset 0 0 20px #00f5ff28,
       0 0 17px #00f5ffdf,0 0 36px #00f5ff88,0 0 50px #9d4aff55!important;
   }
+}
+
+/* ===== Cyber Nicopon: catalog scroll affordance and transparent area headings ===== */
+/* The horizontal scrollbar must be navy/cyan rather than the legacy warm brown. */
+html[data-persona="cyber"] #app #catalogScreen #catalogSeries {
+  scrollbar-color:#39cdeb #10243d!important;
+  scrollbar-width:thin;
+}
+html[data-persona="cyber"] #app #catalogScreen #catalogSeries::-webkit-scrollbar {
+  height:4px;
+}
+html[data-persona="cyber"] #app #catalogScreen #catalogSeries::-webkit-scrollbar-thumb {
+  background:#36bdda!important;
+  border-radius:10px;
+  box-shadow:0 0 9px #00f5ff66;
+}
+html[data-persona="cyber"] #app #catalogScreen #catalogSeries::-webkit-scrollbar-track {
+  background:#10243d!important;
+  border-radius:10px;
+}
+/* The side fades also use cyber colors, not cream/sepia. */
+html[data-persona="cyber"] #app #catalogScreen .series-scroller::before {
+  background:linear-gradient(90deg,rgba(0,245,255,.13) 0%,rgba(10,20,41,.8) 32%,transparent 100%)!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .series-scroller::after {
+  background:linear-gradient(270deg,rgba(0,245,255,.13) 0%,rgba(10,20,41,.8) 32%,transparent 100%)!important;
+}
+/* Area titles (e.g. 🌏 地理) sit directly on the page grid, without a colored strip. */
+html[data-persona="cyber"] #app #catalogScreen .catalog-group .group-heading,
+html[data-persona="cyber"] #app #catalogScreen .catalog-group .group-heading h3 {
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border:0!important;
+}
+
+/* ===== Cyber Nicopon: consistent transparent standalone text headings =====
+   Remove decorative strips only from section titles / headings.
+   Real controls, selected chips, sliders, cards and dialogs retain their backgrounds. */
+html[data-persona="cyber"] #app :is(
+  .catalog-group .group-heading,
+  .my-collection-heading,
+  .catalog-heading.page-heading,
+  .study-heading.page-heading,
+  .homework-heading.page-heading,
+  .report-chart-head
+){
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html[data-persona="cyber"] #app :is(
+  .catalog-group .group-heading h3,
+  .my-collection-heading h3,
+  .catalog-heading.page-heading .screen-title,
+  .study-heading.page-heading .screen-title,
+  .homework-heading.page-heading .screen-title,
+  .report-chart-head h4
+){
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
 }
 </style></head>
 <body><main id="app" class="app">
@@ -4227,61 +4380,66 @@ $('importForm').onsubmit=async e=>{
   // Never touch question images, source material, lesson titles, user inputs or saved records.
   const records=new WeakMap();
   const known=[...document.querySelectorAll(dynamicSelectors.join(','))].filter(Boolean);
+  // Cyber dialogue: convert meaningful phrases first, then use grammatical endings.
+  // Avoid blindly turning every「にゃ」into「ぜ」(e.g. おつかれさまぜ / 選んでぜ).
   const speak=(value)=>{
     if(typeof value!=='string'||root.dataset.persona!=='cyber')return value;
-    return value
-      .replace(/Nekopon/g,'Cyber Nicopon')
-      .replace(/ネコポン/g,'ニコポン')
-      .replace(/傾きの遊びはお休みにゃ。/g,'傾きの遊びはお休みだぜ。')
-      .replace(/試し聴きにゃ/g,'試し聴きするぜ')
-      .replace(/ちょっと待ってにゃ/g,'ちょっと待ってくれ')
-      .replace(/画像を準備しているにゃ/g,'画像を準備中だぜ')
-      .replace(/通信を確認して、もう一度試すにゃ/g,'通信を確認して、もう一度試してくれ')
-      .replace(/答えを確認して、判定するにゃ/g,'答えを確認して、判定してくれ')
-      .replace(/口頭や紙で答えてから、解答を開くにゃ/g,'口頭や紙で答えてから、解答を開こうぜ')
-      .replace(/新しいテストを始めるにゃ？/g,'新しいテストを始めるか？')
-      .replace(/新しいテストを始めるにゃ/g,'新しいテストを始めるぜ')
-      .replace(/テストをはじめるにゃ/g,'テストをはじめるぜ')
-      .replace(/確認した結果を、ここに残すにゃ/g,'確認した結果を、ここに残すぜ')
-      .replace(/つづきから確認にゃ/g,'つづきから確認するぜ')
-      .replace(/にゃ〜ん♪/g,'よぉ、呼んだか？😎')
+    let result=value.replace(/Nekopon/g,'Cyber Nicopon').replace(/ネコポン/g,'ニコポン');
+    const fixedPhrases=[
+      ['おつかれさまにゃ。なでてにゃ🐾','おつかれさまだぜ。よく頑張ったな⚡'],
+      ['ひと休みするにゃ。なでてにゃ🐾','ひと休みだぜ。休んだらまた行こう⚡'],
+      ['おつかれさまにゃ','おつかれさまだぜ'],
+      ['傾きの遊びはお休みにゃ。','傾きの遊びはお休みだぜ。'],
+      ['試し聴きにゃ','試し聴きするぜ'],
+      ['ちょっと待ってにゃ','ちょっと待ってくれ'],
+      ['画像を準備しているにゃ','画像を準備中だぜ'],
+      ['通信を確認して、もう一度試すにゃ','通信を確認して、もう一度試してくれ'],
+      ['答えを確認して、判定するにゃ','答えを確認して、判定してくれ'],
+      ['口頭や紙で答えてから、解答を開くにゃ','口頭や紙で答えてから、解答を開こうぜ'],
+      ['新しいテストを始めるにゃ？','新しいテストを始めるか？'],
+      ['テストをはじめるにゃ','テストをはじめるぜ'],
+      ['確認した結果を、ここに残すにゃ','確認した結果を、ここに残すぜ'],
+      ['つづきから確認にゃ','つづきから確認するぜ'],
+      ['にゃ〜ん♪','よぉ、呼んだか？😎'],
+      ['呼んだかにゃ？','呼んだか？'],
+      ['もふもふにゃ🐾','元気チャージだぜ⚡'],
+      ['なでなで、うれしいにゃ〜♪','やるじゃねぇか！⚡'],
+      ['めくめくにゃ♪','さあ、めくるぜ⚡'],
+      ['えらいにゃ','やるじゃねぇか'],
+      ['すごいにゃ','最高じゃねぇか'],
+      ['ばっちりにゃ','ばっちりだぜ'],
+      ['その調子にゃ','その調子だぜ'],
+      ['音量0%にゃ','音量0%だぜ'],
+      ['いまは音がオフにゃ','いまは音がオフだぜ'],
+      ['今日の目標にゃ','今日の目標だぜ'],
+      ['目標達成にゃ','目標達成だぜ'],
+      ['答えを見るにゃ','答えを見るぜ'],
+      ['まとめを作るにゃ','まとめを作るぜ'],
+      ['まとめを編集するにゃ','まとめを編集するぜ'],
+      ['教材を追加するにゃ','教材を追加するぜ'],
+      ['「＋ 教材追加にゃ」','「＋ 教材を追加するぜ」'],
+      ['編集にゃ','編集だぜ'],
+      ['もう一周するにゃ','もう一周いくぜ'],
+      ['復習にゃ','復習するぜ'],
+      ['にゃ〜','ぜ〜'],
+      ['だにゃ','だぜ']
+    ];
+    for(const [from,to] of fixedPhrases)result=result.split(from).join(to);
+    return result
+      // Questions should end in 「〜するか？」, not 「〜するぜ？」.
+      .replace(/にゃ(?=[？?])/g,'か')
+      // Imperatives like 「選んでにゃ」「入れてにゃ」 need a request, not 「選んでぜ」.
+      .replace(/([てで])にゃ/g,'$1くれよ')
+      // Natural verb/adjective endings: 「見るぜ」「できたぜ」「ないぜ」.
+      .replace(/([るたいうくぐすつぬぶむよね])にゃ/g,'$1ぜ')
+      // Counters and short labels are noun phrases: 「51問だぜ」「3枚だぜ」.
+      .replace(/([0-9０-９]+\s*(?:問|枚|件|個|日|回|人|教材|%))にゃ/g,'$1だぜ')
+      .replace(/にゃ(?=[！!])/g,'だぜ')
+      .replace(/にゃ(?=[？?])/g,'か')
+      .replace(/にゃ(?=[。、\s]|$)/g,'だぜ')
+      .replace(/にゃ/g,'だぜ')
       .replace(/もふもふ/g,'エネルギー')
       .replace(/肉球/g,'パワー')
-      .replace(/えらいにゃ[♪！]?/g,'やるじゃねぇか！')
-      .replace(/すごいにゃ[♪！]?/g,'最高じゃねぇか！')
-      .replace(/あと(\d+)問で今日の目標にゃ/g,'あと$1問で今日の目標だぜ')
-      .replace(/([0-9０-９]+)問にゃ/g,'$1問だぜ')
-      .replace(/OKにゃ/g,'OKだぜ')
-      .replace(/今日の目標にゃ/g,'今日の目標だぜ')
-      .replace(/目標達成にゃ/g,'目標達成だぜ')
-      .replace(/答えを見るにゃ/g,'答えを見るぜ')
-      .replace(/まとめを作るにゃ/g,'まとめを作るぜ')
-      .replace(/まとめを編集するにゃ/g,'まとめを編集するぜ')
-      .replace(/教材を追加するにゃ/g,'教材を追加するぜ')
-      .replace(/編集にゃ/g,'編集だぜ')
-      .replace(/はじめるにゃ/g,'はじめるぜ')
-      .replace(/始めるにゃ/g,'始めるぜ')
-      .replace(/勉強するにゃ/g,'勉強するぜ')
-      .replace(/保存するにゃ/g,'保存するぜ')
-      .replace(/戻るにゃ/g,'戻るぜ')
-      .replace(/設定するにゃ/g,'設定するぜ')
-      .replace(/確認するにゃ/g,'確認するぜ')
-      .replace(/やってみるにゃ/g,'やってみるぜ')
-      .replace(/もう一周するにゃ/g,'もう一周いくぜ')
-      .replace(/復習にゃ/g,'復習するぜ')
-      .replace(/挑戦するにゃ/g,'挑戦するぜ')
-      .replace(/見たにゃ/g,'見たぜ')
-      .replace(/おぼえたにゃ/g,'覚えたぜ')
-      .replace(/できたにゃ/g,'できたぜ')
-      .replace(/だにゃ/g,'だぜ')
-      .replace(/てにゃ/g,'てくれよ')
-      .replace(/([ァ-ヶー]{2,}|[一-龠々]{2,})にゃ/g,'$1だぜ')
-      .replace(/([るたいよね])にゃ/g,'$1ぜ')
-      .replace(/にゃ！/g,'ぜ！')
-      .replace(/にゃ♪/g,'ぜ⚡')
-      .replace(/にゃ？/g,'か？')
-      .replace(/にゃ。/g,'ぜ。')
-      .replace(/にゃ(?=[^ぁ-んァ-ヶ一-龠]|$)/g,'ぜ')
       .replace(/🐾/g,'⚡');
   };
   window.NekoCyberSpeak=speak;

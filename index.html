@@ -1970,6 +1970,27 @@ html[data-persona="cyber"] #app #settingsScreen .settings-panel {
   background: #0f1430 !important;
   background-image: none !important;
 }
+
+/* Cyber Nicopon: transparent grouping surfaces in study and test history.
+   Keep individual action buttons and history cards intact. */
+html[data-persona="cyber"] #app #studyScreen :is(#studyArea,#stage,.actions,.slide-meta,.navigation-info),
+html[data-persona="cyber"] #app #testScreen :is(.homework-tests,#homeworkTestHistory) {
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  filter:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+html[data-persona="cyber"] #app #studyScreen :is(#studyArea,#stage,.actions,.slide-meta)::before,
+html[data-persona="cyber"] #app #studyScreen :is(#studyArea,#stage,.actions,.slide-meta)::after,
+html[data-persona="cyber"] #app #testScreen :is(.homework-tests,#homeworkTestHistory)::before,
+html[data-persona="cyber"] #app #testScreen :is(.homework-tests,#homeworkTestHistory)::after {
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

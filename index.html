@@ -2008,6 +2008,34 @@ html[data-persona="cyber"] #app #catalogScreen .catalog-search > span {
   background:transparent!important;
   box-shadow:none!important;
 }
+
+/* Cyber: remove the rectangular backing behind test history and report details.
+   The individual history cards, neon controls and chart bars stay intact. */
+html[data-persona="cyber"] #app #reportScreen :is(
+  .homework-tests, #homeworkTestHistory,
+  .report-chart, .report-chart-day, .report-materials
+){
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+html[data-persona="cyber"] #app #reportScreen :is(
+  .homework-tests, #homeworkTestHistory,
+  .report-chart, .report-chart-day, .report-materials
+)::before,
+html[data-persona="cyber"] #app #reportScreen :is(
+  .homework-tests, #homeworkTestHistory,
+  .report-chart, .report-chart-day, .report-materials
+)::after{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html[data-persona="cyber"] #app #reportScreen .report-chart-day{
+  border:0!important;
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

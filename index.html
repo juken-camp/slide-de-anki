@@ -2154,7 +2154,12 @@ html[data-persona=cyber] #app :is(#zoomImage,#testZoom){background:linear-gradie
 /* Confirmation test: two wide navigation buttons and one concise instruction. */
 #app #testScreen .test-actions{display:flex;align-items:stretch;gap:10px;margin:14px 0 0}
 #app #testScreen .test-actions > :is(#testPrev,#testNext,#testShowAnswers){flex:1 1 0;min-width:0;width:auto;min-height:60px;box-sizing:border-box;border-radius:15px!important}
-#app #testScreen .test-actions > :is(#testPrev,#testNext){font-size:30px;line-height:1;font-weight:800;padding:8px 12px}
+#app #testScreen .test-actions > :is(#testPrev,#testNext){display:inline-flex;align-items:center;justify-content:center;gap:clamp(5px,1.4vw,11px);font-size:clamp(13px,4vw,17px);line-height:1.25;font-weight:800;padding:8px clamp(5px,2vw,14px);white-space:nowrap}
+#app #testScreen .test-nav-arrow{font-size:clamp(22px,6vw,30px);font-weight:800;line-height:1;flex:none}
+#app #testScreen .test-nav-label{min-width:0}
+/* Same image-swipe feedback as study: move the card lightly, without changing the flat neon button treatment. */
+#app #testScreen #testCard{transition:transform .18s ease-out,opacity .18s ease-out}
+@media(prefers-reduced-motion:reduce){#app #testScreen #testCard{transition:none!important}}
 #app #testScreen .test-actions > #testShowAnswers{font-size:13px;line-height:1.5;padding:8px 12px;box-shadow:none}
 /* Cyber Nicopon: flat neon navigation matching the other cyber controls.
    Keep the button layout and colors; no raised edge or press-down movement. */
@@ -2297,7 +2302,7 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=ret
  <div id="testPlay" hidden>
   <div class="test-progress-copy"><span id="testPosition"></span><span id="testJudged"></span></div><div class="track test-progress-track"><i id="testProgress"></i></div>
   <article class="card" id="testCard"><div class="head"><div class="face-meta"><span class="badge" id="testFace">問題</span></div><span class="unit" id="testUnit"></span><button id="testZoom" class="link-button" type="button" aria-label="テスト画像を拡大する">⤢</button></div><div class="image-frame"><div id="testSlideTap" class="slide-wrap" aria-label="確認テストの問題画像"><img id="testSlideImage" alt="" draggable="false" decoding="async"><div id="testImageStatus" class="image-status" role="status" hidden>ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="testResetImage" type="button" hidden>100%に戻すにゃ</button></div></article>
-  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題">‹</button><button id="testNext" class="tool" type="button" aria-label="次の問題">›</button><button id="testShowAnswers" class="primary-button" type="button" hidden>解答一覧へ進むにゃ ›</button></div>
+  <div class="test-actions"><button id="testPrev" class="tool" type="button" aria-label="前の問題へ"><span class="test-nav-arrow" aria-hidden="true">‹</span><span class="test-nav-label">前の問題へ</span></button><button id="testNext" class="tool" type="button" aria-label="次の問題へ"><span class="test-nav-label">次の問題へ</span><span class="test-nav-arrow" aria-hidden="true">›</span></button><button id="testShowAnswers" class="primary-button" type="button" hidden>解答一覧へ進むにゃ ›</button></div>
   <p class="test-under" id="testGradeHint">答えをノートに書いて、次の問題へ進むにゃ。</p>
  </div>
  <section id="testReview" class="test-review" hidden aria-label="確認テストの解答と丸つけ">
@@ -4140,8 +4145,12 @@ function retryTestQuestionImage(){
  if(screen!=='test'||!testSession||testSession.phase==='review'||!$('testSlideTap').classList.contains('error'))return;
  homeworkImageLoader.forget(window.NekoImageURL(testCards[testSession.index].question));renderHomeworkTest();
 }
+function resetTestCardSwipe(){
+ const card=$('testCard');card.style.transition='';card.style.transform='';card.style.opacity='';
+}
 function navigateHomeworkTest(delta){
  if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'||!testCards.length)return;
+ resetTestCardSwipe();
  const next=Math.max(0,Math.min(testCards.length-1,testSession.index+delta));if(next===testSession.index)return;
  testSession.index=next;testSession.maxSeen=Math.max(testSession.maxSeen||0,next);
  persistHomeworkSession();renderHomeworkTest();beep('move');
@@ -4199,7 +4208,18 @@ function showHomeworkResult(){
 }
 function openSavedHomeworkResult(id){const t=studyHistory.tests.find(t=>t.id===id);if(!t)return;testSession=hClone(t);testSession.undo=[];testCards=[];showScreen('test');showHomeworkResult();}
 function reviewHomeworkWrong(){if(!testSession)return;const keys=testSession.refs.filter(k=>testSession.answers[k]==='retry');if(!keys.length)return;const ids=[...new Set(keys.map(k=>hSplit(k).lessonId))];toggleHomeworkCapture(false);return selectLessons(ids,{collection:{id:'review-'+testSession.id,name:'確認テストの復習',cardKeys:keys}});}
-const homeworkImageView=window.createNekoImageView({frame:$('testSlideTap'),image:$('testSlideImage'),resetButton:$('testResetImage'),isReady:()=>screen==='test'&&testReady&&!testSession?.finishedAt&&testSession?.phase!=='review',onTap:retryTestQuestionImage,onNavigate:navigateHomeworkTest,onPause:()=>{},onDrag:()=>{},onSnap:()=>{},suppressClicks:()=>{testSuppressedUntil=performance.now()+500;}});
+const homeworkImageView=window.createNekoImageView({
+ frame:$('testSlideTap'),image:$('testSlideImage'),resetButton:$('testResetImage'),
+ isReady:()=>screen==='test'&&testReady&&!testSession?.finishedAt&&testSession?.phase!=='review',
+ onTap:retryTestQuestionImage,onNavigate:navigateHomeworkTest,onPause:()=>{},
+ onDrag:dx=>{
+  const card=$('testCard'),offset=Math.max(-48,Math.min(48,dx*.32));
+  card.style.transition='none';card.style.transform=`translateX(${offset}px) rotate(${offset*.035}deg)`;
+  card.style.opacity=String(Math.max(.82,1-Math.abs(offset)/360));
+ },
+ onSnap:resetTestCardSwipe,
+ suppressClicks:()=>{testSuppressedUntil=performance.now()+500;}
+});
 $('testSlideTap').onclick=retryTestQuestionImage;
 $('testPrev').onclick=()=>navigateHomeworkTest(-1);$('testNext').onclick=()=>navigateHomeworkTest(1);
 $('testShowAnswers').onclick=openHomeworkAnswers;$('testReturnQuestions').onclick=returnToTestQuestions;$('testFinalize').onclick=finishHomeworkGrading;

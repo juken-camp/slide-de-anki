@@ -1924,6 +1924,52 @@ html[data-persona="cyber"] #app :is(.slide-meta,.progresscopy,.counter-row,.home
 html[data-persona="cyber"] #app .settings-panel{background:#0f1430!important}
 html[data-persona="cyber"] #app .homework-test-history-item{background:#0f1430!important}
 
+
+
+/* Cyber: flatten decorative inner rectangles, without changing interactive controls. */
+html[data-persona="cyber"] #app :is(
+  #studyScreen .stage, #studyScreen .slide-meta,
+  #studyScreen .study-progress, #studyScreen .progresscopy,
+  #studyScreen .counter-row, #studyScreen .navigation-info,
+  #settingsScreen .record-settings,
+  #settingsScreen .settings-panel > .settings-profile,
+  #settingsScreen .settings-panel > .settings-brand,
+  #settingsScreen .settings-panel > .settings-sound,
+  #settingsScreen .settings-panel > .settings-display,
+  #settingsScreen .settings-panel > .settings-play,
+  #settingsScreen .settings-panel > .settings-caption,
+  #settingsScreen .settings-panel .sound-setting
+) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+html[data-persona="cyber"] #app :is(
+  #studyScreen .slide-meta, #studyScreen .study-progress,
+  #settingsScreen .settings-panel > .settings-profile,
+  #settingsScreen .settings-panel > .settings-brand,
+  #settingsScreen .settings-panel > .settings-sound,
+  #settingsScreen .settings-panel > .settings-display,
+  #settingsScreen .settings-panel > .settings-play
+)::before,
+html[data-persona="cyber"] #app :is(
+  #studyScreen .slide-meta, #studyScreen .study-progress,
+  #settingsScreen .settings-panel > .settings-profile,
+  #settingsScreen .settings-panel > .settings-brand,
+  #settingsScreen .settings-panel > .settings-sound,
+  #settingsScreen .settings-panel > .settings-display,
+  #settingsScreen .settings-panel > .settings-play
+)::after {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+/* Retain the one intended outer settings card surface. */
+html[data-persona="cyber"] #app #settingsScreen .settings-panel {
+  background: #0f1430 !important;
+  background-image: none !important;
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

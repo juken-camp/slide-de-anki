@@ -2108,6 +2108,37 @@ html[data-persona="cyber"] dialog#reportPeriodDialog .homework-setup-foot.report
   overflow-wrap:anywhere;
   white-space:normal;
 }
+
+/* Selection dock v2: override earlier flex rules explicitly. */
+#catalogScreen #catalogDock:has(#selectionDetails[open]) .selection-top {
+  display:block!important;position:relative!important;width:100%!important;
+}
+#catalogScreen #catalogDock:has(#selectionDetails[open]) #selectionDetails {
+  display:block!important;width:100%!important;min-width:0!important;
+}
+#catalogScreen #catalogDock:has(#selectionDetails[open]) #selectionSummary {
+  display:block!important;padding-right:155px!important;min-height:66px!important;
+}
+#catalogScreen #catalogDock:has(#selectionDetails[open]) #clearSelection {
+  position:absolute!important;right:0!important;top:0!important;bottom:auto!important;
+  margin:0!important;max-width:145px!important;min-height:40px!important;
+  padding:7px 10px!important;z-index:5!important;
+}
+#catalogScreen #catalogDock:has(#selectionDetails[open]) #selectedLessons {
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:8px!important;align-items:stretch!important;width:100%!important;
+  max-height:32dvh!important;overflow-y:auto!important;
+}
+#catalogScreen #catalogDock:has(#selectionDetails[open]) #selectedLessons > * {
+  display:flex!important;width:100%!important;min-width:0!important;max-width:100%!important;
+  box-sizing:border-box!important;align-items:center!important;
+  white-space:normal!important;overflow-wrap:anywhere!important;
+  padding:8px 6px!important;line-height:1.4!important;
+}
+@media(max-width:360px){
+  #catalogScreen #catalogDock:has(#selectionDetails[open]) #selectionSummary{padding-right:125px!important}
+  #catalogScreen #catalogDock:has(#selectionDetails[open]) #clearSelection{max-width:120px!important;font-size:10px!important}
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -2592,7 +2623,7 @@ function soundSettingsUI() {
     button.querySelector('small').textContent = detail;
     button.setAttribute('aria-pressed',String(id===soundStyle()));
   });
-  $('soundPreview').textContent = cyberSoundActive() ? '♪ 試し聴きするぜ' : '♪ 試し聴きにゃ';
+  $('soundPreview').textContent = '♪ 試し聴きにゃ'; // Personality layer owns the displayed wording.
   document.querySelector('#soundDialog .section-kicker').textContent = cyberSoundActive() ? 'CYBER SOUND' : 'NEKOPON SOUND';
   $('soundVolume').value = Math.round(soundVolume()*100);
   $('soundVolumeLabel').textContent = Math.round(soundVolume()*100)+'%';
@@ -4571,7 +4602,7 @@ $('importForm').onsubmit=async e=>{
     '#importStatus','#collectionEditorStatus','#collectionSave','#collectionEditorCancel',
     '#collectionPreviewClose','#collectionPreviewFlip','#collectionPreviewSelect',
     '#testResultCheer','#focusMenuTitle','#focusFlip','#focusZoom','#focusCatalog',
-    '#focusSettings','#focusNormal','#soundStateNote','#dialogSoundToggle',
+    '#focusSettings','#focusNormal','#soundStateNote','#dialogSoundToggle','#soundPreview',
     '#tiltStatus','#tiltPermission','#tiltReload','#sourceMoment',
     '.settings-brand h3','#resetBrand','#landscapeNote',
     '.settings-caption','.settings-play .sound-setting span',
@@ -4708,6 +4739,8 @@ $('importForm').onsubmit=async e=>{
     if(mode==='neko'&&$('resultCatReply'))$('resultCatReply').textContent=originalResultReply;
     if($('homeCardFace'))$('homeCardFace').textContent=mode==='cyber'?'⚡':'🐾';
     window.NekoRefreshSoundUI?.();
+    // Sound UI rewrites its own labels; personalize the fresh text nodes, too.
+    for(const id of ['soundStateNote','dialogSoundToggle','soundPreview'])updateCopy($(id));
   }
   function change(next){
     if(next!== 'neko'&&next!=='cyber')return;
@@ -4730,8 +4763,12 @@ $('importForm').onsubmit=async e=>{
     if(el.nodeType===3)nodes.push(el);
     else {const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n;while((n=walker.nextNode()))nodes.push(n);}
     for(const node of nodes){
-      if(safe(node.parentElement) && /にゃ|Nekopon|ネコポン|🐾/.test(node.nodeValue||''))updateTextNode(node);
-      else if(safe(node.parentElement) && mode==='neko' && /だぜ|Cyber Nicopon|⚡/.test(node.nodeValue||'') && records.has(node))updateTextNode(node);
+      if(!safe(node.parentElement))continue;
+      // A cyber sentence may end in 「〜るぜ」「〜すぜ」 instead of 「だぜ」.
+      // Restore EVERY text node we previously transformed when switching back.
+      // This also restores substituted words (e.g. 肉球), even if no 「ぜ」 remains.
+      // Never infer the original from the cyber wording or rewrite user material.
+      if(records.has(node) || (mode==='cyber' && /にゃ|Nekopon|ネコポン|🐾/.test(node.nodeValue||'')))updateTextNode(node);
     }
   }
   function updateUi(el){
@@ -4759,8 +4796,27 @@ $('importForm').onsubmit=async e=>{
   const appRoot=$('app');
   if(appRoot)observer.observe(appRoot,{subtree:true,characterData:true,childList:true});
   for(const dialog of document.querySelectorAll('dialog'))observer.observe(dialog,{subtree:true,characterData:true,childList:true});
+  // Screen-reader labels and tooltips follow the outfit too, without changing app data.
+  const attributeBases=new WeakMap();
+  function syncUiAttributes(){
+    for(const el of document.querySelectorAll('#app [aria-label],#app [title],dialog [aria-label],dialog [title]')){
+      if(!safe(el) || el.matches('#brandHome,#mascotPlay,#resultCat,#catalogSearch'))continue;
+      let base=attributeBases.get(el);
+      if(!base){base={};attributeBases.set(el,base);}
+      for(const attr of ['aria-label','title']){
+        const value=el.getAttribute(attr);
+        if(value===null)continue;
+        if(!(attr in base)){
+          if(!/にゃ|Nekopon|ネコポン|🐾/.test(value))continue;
+          base[attr]=value;
+        }
+        const wanted=mode==='cyber'?speak(base[attr]):base[attr];
+        if(value!==wanted)el.setAttribute(attr,wanted);
+      }
+    }
+  }
   // Refresh static/new UI labels on both persona changes, with baseline text held per node.
-  const updateAllUi=()=>{for(const node of document.querySelectorAll(UI))if(safe(node))updateCopy(node);translateLingering(appRoot);for(const dialog of document.querySelectorAll('dialog'))translateLingering(dialog);syncPlaceholders();};
+  const updateAllUi=()=>{for(const node of document.querySelectorAll(UI))if(safe(node))updateCopy(node);translateLingering(appRoot);for(const dialog of document.querySelectorAll('dialog'))translateLingering(dialog);syncPlaceholders();syncUiAttributes();};
   updateAllUi();
   for(const btn of document.querySelectorAll('[data-persona-choice]')){
     btn.addEventListener('click',()=>queueMicrotask(updateAllUi));

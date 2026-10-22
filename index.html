@@ -2160,8 +2160,8 @@ html[data-persona=cyber] #app :is(#zoomImage,#testZoom){background:linear-gradie
 /* Use the same text and button height as the study slide controls. */
 @media(max-width:600px){#app #testScreen .test-actions > :is(#testPrev,#testNext,#testShowAnswers){font-size:13px}}
 @media(max-width:350px){#app #testScreen .test-actions > :is(#testPrev,#testNext,#testShowAnswers){font-size:12px}}
-/* Same image-swipe feedback as study: move the card lightly, without changing the flat neon button treatment. */
-#app #testScreen #testCard{transition:transform .18s ease-out,opacity .18s ease-out}
+/* Match the study card’s return animation; keep the existing test layout and neon controls. */
+#app #testScreen #testCard{transition:transform .24s ease,opacity .24s ease}
 @media(prefers-reduced-motion:reduce){#app #testScreen #testCard{transition:none!important}}
 #app #testScreen .test-actions > #testShowAnswers{box-shadow:none}
 html[data-persona=cyber] #app #testScreen .test-actions > #testShowAnswers{min-height:48px!important}
@@ -4050,7 +4050,7 @@ $('showReportShot').onclick=()=>{renderLearningReport();toggleHomeworkCapture(tr
 $('resetReportHistory').onclick=()=>{if(!confirmWithPersona('日別レポートだけを消すにゃ？ 元の学習記録とテスト結果は残るにゃ。', '日別レポートだけ消すか？ 元の学習記録とテスト結果は残るぜ。'))return;studyHistory.days={};studyHistory.recordedFrom=dateKey();historyUndoSnapshots.clear();persistStudyHistory();renderLearningReport();};
 $('resetTestHistory').onclick=()=>{if(!confirmWithPersona('確認テストの結果と途中のテストを消すにゃ？ 元の学習記録は残るにゃ。', '確認テストの結果と途中のテストを消すか？ 元の学習記録は残るぜ。'))return;studyHistory.tests=[];studyHistory.activeTest=null;testSession=null;persistStudyHistory();renderLearningReport();};
 
-let testSession=null,testCards=[],testReady=false,testLoading=false,testFaceAnswer=false,testImageToken=0,testSuppressedUntil=0,testGradeLock=0,testLoadRequest=0;
+let testSession=null,testCards=[],testReady=false,testLoading=false,testFaceAnswer=false,testImageToken=0,testSuppressedUntil=0,testGradeLock=0,testLoadRequest=0,testNavBusy=false;
 const homeworkImageLoader=window.createNekoImageLoader();
 function homeworkCandidates(){
  const all=$('testAllDates').checked,from=$('testFrom').value,to=$('testTo').value,subject=$('testSubject').value,unit=$('testLesson').value;
@@ -4151,17 +4151,43 @@ function retryTestQuestionImage(){
  homeworkImageLoader.forget(window.NekoImageURL(testCards[testSession.index].question));renderHomeworkTest();
 }
 function resetTestCardSwipe(){
- const card=$('testCard');card.style.transition='';card.style.transform='';card.style.opacity='';
+ // Match snapCard() in the learning slides, including reduced-motion settings.
+ const card=$('testCard');card.style.transition=reduced?'none':'transform .24s ease, opacity .24s ease';
+ card.style.transform='';card.style.opacity='';
 }
 function navigateHomeworkTest(delta){
- if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'||!testCards.length)return;
- resetTestCardSwipe();
- const next=Math.max(0,Math.min(testCards.length-1,testSession.index+delta));if(next===testSession.index)return;
- testSession.index=next;testSession.maxSeen=Math.max(testSession.maxSeen||0,next);
- persistHomeworkSession();renderHomeworkTest();beep('move');
+ if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'||!testCards.length||testNavBusy){
+  if(!testNavBusy)resetTestCardSwipe();
+  return;
+ }
+ const next=Math.max(0,Math.min(testCards.length-1,testSession.index+delta));
+ if(next===testSession.index){resetTestCardSwipe();return;}
+ beep('move');testNavBusy=true;
+ const card=$('testCard');
+ const switchCard=()=>{
+  if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'){
+   resetTestCardSwipe();testNavBusy=false;return;
+  }
+  testSession.index=next;testSession.maxSeen=Math.max(testSession.maxSeen||0,next);
+  persistHomeworkSession();renderHomeworkTest();
+ };
+ if(reduced){switchCard();resetTestCardSwipe();testNavBusy=false;return;}
+ // Same slide-out distance, rotation, fade, and slide-in timing as animateNav().
+ const distance=Math.min(180,card.offsetWidth*.45||140);
+ card.style.transition='transform .14s ease-in, opacity .14s ease-in';
+ card.style.transform=`translateX(${-delta*distance}px) rotate(${-delta*4}deg)`;
+ card.style.opacity='0';
+ setTimeout(()=>{
+  if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'){
+   resetTestCardSwipe();testNavBusy=false;return;
+  }
+  switchCard();
+  card.style.transition='none';card.style.transform=`translateX(${delta*36}px)`;card.style.opacity='0';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{resetTestCardSwipe();testNavBusy=false;}));
+ },140);
 }
 function openHomeworkAnswers(){
- if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'||testSession.index<testCards.length-1||!testReady)return;
+ if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'||testNavBusy||testSession.index<testCards.length-1||!testReady)return;
  testSession.phase='review';persistHomeworkSession();homeworkImageView.cancel();renderTestAnswerReview();beep('open');window.scrollTo({top:0,behavior:'instant'});
 }
 function renderTestAnswerReview(){
@@ -4215,12 +4241,13 @@ function openSavedHomeworkResult(id){const t=studyHistory.tests.find(t=>t.id===i
 function reviewHomeworkWrong(){if(!testSession)return;const keys=testSession.refs.filter(k=>testSession.answers[k]==='retry');if(!keys.length)return;const ids=[...new Set(keys.map(k=>hSplit(k).lessonId))];toggleHomeworkCapture(false);return selectLessons(ids,{collection:{id:'review-'+testSession.id,name:'確認テストの復習',cardKeys:keys}});}
 const homeworkImageView=window.createNekoImageView({
  frame:$('testSlideTap'),image:$('testSlideImage'),resetButton:$('testResetImage'),
- isReady:()=>screen==='test'&&testReady&&!testSession?.finishedAt&&testSession?.phase!=='review',
+ isReady:()=>screen==='test'&&testReady&&!testNavBusy&&!testSession?.finishedAt&&testSession?.phase!=='review',
  onTap:retryTestQuestionImage,onNavigate:navigateHomeworkTest,onPause:()=>{},
  onDrag:dx=>{
-  const card=$('testCard'),offset=Math.max(-48,Math.min(48,dx*.32));
-  card.style.transition='none';card.style.transform=`translateX(${offset}px) rotate(${offset*.035}deg)`;
-  card.style.opacity=String(Math.max(.82,1-Math.abs(offset)/360));
+  // Exact same finger-following distance, tilt and opacity as the learning slides.
+  const card=$('testCard');card.style.transition='none';
+  card.style.transform=`translateX(${dx}px) rotate(${Math.max(-7,Math.min(7,dx*.025))}deg)`;
+  card.style.opacity=String(Math.max(.55,1-Math.abs(dx)/700));
  },
  onSnap:resetTestCardSwipe,
  suppressClicks:()=>{testSuppressedUntil=performance.now()+500;}

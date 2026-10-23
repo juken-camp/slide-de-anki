@@ -2471,8 +2471,8 @@ html[data-persona="cyber"] #app .typed-review-filter button[aria-pressed="true"]
 <style>
 .question-search-row{display:grid;grid-template-columns:32px minmax(0,1fr);gap:2px;align-items:start;min-width:0}
 .question-search-row .question-search-hit{min-width:0;margin:0!important}
-.search-question-select{display:flex;align-items:center;justify-content:center;min-height:44px;margin:0!important;cursor:pointer}
-.search-question-select input{width:19px;height:19px;margin:10px 0 0;accent-color:#af602c;cursor:pointer}
+.search-question-select{display:flex;align-items:flex-start;justify-content:center;min-height:44px;margin:0!important;padding-top:8px;cursor:pointer}
+.search-question-select input{width:19px;height:19px;margin:0;accent-color:#af602c;cursor:pointer}
 .search-question-text{display:block}.search-question-answer{display:block;margin-top:5px;font-size:12px;color:#884d47;white-space:pre-wrap;overflow-wrap:anywhere}
 .search-selection-tools{padding:10px 12px;margin:10px 0;border:1px solid #dcc2a5;border-radius:12px;background:#fff7eb;font-size:12px;line-height:1.6;min-width:0}
 .search-selection-tools>div{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.search-selection-tools button{font-size:12px;min-height:36px;padding:6px 9px;white-space:normal}
@@ -2548,7 +2548,7 @@ html[data-persona="cyber"] #catalogScreen .lesson-text-panel>.lesson-text-list{b
 .lesson-card-shell{position:relative;min-width:0;width:100%}
 #catalogScreen .lesson-card-shell>.lesson-choice{width:100%;height:auto}
 #catalogScreen .lesson-card-shell:has(.lesson-text-toggle) .choice-copy>strong{padding-right:42px}
-#catalogScreen .lesson-card-shell>.lesson-text-toggle{position:absolute;right:14px;top:14px;z-index:1;display:grid;place-items:center;width:30px;height:30px;min-width:30px;min-height:30px;padding:0;border:0;border-radius:0;background:transparent;color:#89532e;font-size:18px;font-weight:600;line-height:1;box-shadow:none;text-decoration:none}
+#catalogScreen .lesson-card-shell>.lesson-text-toggle{position:absolute;right:14px;top:14px;z-index:1;display:grid;place-items:center;width:30px;height:30px;min-width:30px;min-height:30px;padding:0;border:0;border-radius:0;background:transparent;color:#89532e;font-family:Arial,sans-serif;font-size:18px;font-weight:400;line-height:1;box-shadow:none;text-decoration:none}
 #catalogScreen .lesson-text-panel{margin:7px 0 0;padding:0}
 #catalogScreen .lesson-entry.text-open{grid-column:1/-1}
 #catalogScreen .lesson-entry.text-open>.question-search-results{display:none}
@@ -4813,7 +4813,7 @@ function renderAssessmentCatalog(){
   if(!m.imported){
    const panel=collectionNode('div',undefined,'lesson-text-panel');panel.dataset.lessonText=m.id;panel.id='lesson-text-'+m.id;panel.hidden=true;
    const body=collectionNode('div',undefined,'lesson-inline-body');panel.append(body);wrapper.append(panel);
-   const toggle=collectionButton('⌄','lesson-text-toggle',()=>setInlineLessonOpen(m,panel,toggle,panel.hidden));
+   const toggle=collectionButton('∨','lesson-text-toggle',()=>setInlineLessonOpen(m,panel,toggle,panel.hidden));
    toggle.setAttribute('aria-label',m.title+'の問題・解答一覧を開閉');toggle.setAttribute('title','問題・解答一覧');toggle.setAttribute('aria-controls',panel.id);shell.append(toggle);
    setInlineLessonOpen(m,panel,toggle,expandedLessonText.has(m.id));
   }
@@ -4887,7 +4887,7 @@ function openQuestionSearch(m,cards){
  searchDialogItems=cards.map(c=>({m,c}));searchDialogPage=0;$('questionSearchTitle').textContent=m.title;renderQuestionSearchDialog();$('questionSearchDialog').showModal();
 }
 function setInlineLessonOpen(m,panel,toggle,on){
- panel.hidden=!on;toggle.setAttribute('aria-expanded',String(on));toggle.textContent=on?'⌃':'⌄';panel.closest('.lesson-entry').classList.toggle('text-open',on);
+ panel.hidden=!on;toggle.setAttribute('aria-expanded',String(on));toggle.textContent=on?'∧':'∨';toggle.setAttribute('aria-label',m.title+'の問題・解答一覧を'+(on?'閉じる':'開く'));toggle.title=on?'一覧を閉じる':'一覧を開く';panel.closest('.lesson-entry').classList.toggle('text-open',on);
  if(on){expandedLessonText.add(m.id);if(!panel.querySelector('.lesson-inline-body').childNodes.length)renderInlineLessonText(m,panel);}
  else expandedLessonText.delete(m.id);
  syncSearchSelection();

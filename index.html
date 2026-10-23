@@ -2236,7 +2236,7 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=ret
 #app #reportScreen .report-test-heading{margin-top:32px;}
 
 /* Confirmation-test quick presets: match the learning-report segmented tabs */
-.homework-setup .test-quick-presets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid #e4c7a8;background:#f5e7d6;border-radius:14px;padding:4px;margin:2px 0 13px}
+.homework-setup .test-quick-presets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;border:1px solid #e4c7a8;background:#f5e7d6;border-radius:14px;padding:4px;margin:2px 0 13px}
 .homework-setup .test-quick-presets button{min-width:0;border:1.5px solid transparent;background:transparent;color:#91694c;border-radius:11px;padding:11px 2px;font:inherit;font-size:13px;font-weight:750;cursor:pointer}
 .homework-setup .test-quick-presets button[aria-pressed="true"]{background:#fffaf2;border-color:#d39b66;color:#874619;box-shadow:0 3px 0 #dfb58f}
 .homework-setup .test-advanced{margin:13px 0 0;border-top:1px solid #ead6c0;padding-top:11px}
@@ -2569,7 +2569,7 @@ html[data-persona=cyber] .assessment-prompt,html[data-persona=cyber] .typed-entr
   };
 })();
 </script>
-<script src="catalog.js?v=20261023-world117-review06"></script>
+<script src="catalog.js?v=20261023-world117-review06-fix1"></script>
 <dialog id="collectionDialog" aria-labelledby="collectionDialogTitle">
  <div class="collection-editor-head"><h2 id="collectionDialogTitle" tabindex="-1">まとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ">×</button></div>
  <div class="collection-editor-body" id="collectionEditorBody">
@@ -4546,7 +4546,7 @@ async function ensureAssessmentData(){
  assessmentPromise=(async()=>{
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
   try{
-   const r=await fetch(assessmentDataURL,{signal:controller.signal});if(!r.ok)throw Error('data');
+   const r=await fetch(assessmentDataURL,{signal:controller.signal});if(!r.ok)throw Error(r.status===404?'missing-data':'data');
    const value=await r.json();
    if(value.schema!==1||typeof value.revision!=='string'||Object.keys(value.lessons||{}).length!==117)throw Error('schema');
    const cards=Object.values(value.lessons).flatMap(l=>l.cards||[]);
@@ -4556,8 +4556,8 @@ async function ensureAssessmentData(){
     for(const c of l.cards)if(typeof c.q!=='string'||typeof c.contract!=='string'||!Array.isArray(c.accepted)||c.editorial&&c.image)throw Error('record');
    }
    assessmentDataset=value;assessmentSearchCache.clear();return value;
-  }catch{
-   assessmentError='問題文データを読み込めなかったにゃ。通信と更新ファイルを確認して、やり直してにゃ。';throw Error(assessmentError);
+  }catch(error){
+   assessmentError=error?.message==='missing-data'?'問題文データの更新ファイルがまだ反映されていないにゃ。更新ファイルを確認してにゃ。':'問題文データを読み込めなかったにゃ。通信と更新ファイルを確認して、やり直してにゃ。';throw Error(assessmentError);
   }finally{clearTimeout(timer);assessmentPromise=null;}
  })();
  return assessmentPromise;
@@ -5677,3 +5677,4 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+

@@ -2412,14 +2412,14 @@ window.QUIZ_CATALOG = [
     "id": "social-history-world-part1-ancient-earlymodern",
     "subject": "social",
     "field": "history",
-    "title": "世界史①｜四大文明・宗教・大航海時代など",
+    "title": "世界史｜四大文明・宗教・大航海時代など",
     "grade": "中学歴史",
     "description": "人類の進化、四大文明、中国王朝、宗教、ルネサンス、大航海時代、宗教改革、革命と産業革命などを学ぶ一問一答47問。",
     "cover": "images_07/social-history-world-part1-ancient-earlymodern/question_001.png",
     "chapters": [
       {
         "id": "world-history-part1-ancient-to-industrial",
-        "title": "世界史・前編（古代文明～産業革命）"
+        "title": "世界史（四大文明・宗教・大航海時代など）"
       }
     ],
     "source": "https://www.youtube.com/watch?v=zN0Smc91lZs",
@@ -2428,10 +2428,29 @@ window.QUIZ_CATALOG = [
     "data": "lessons/social-history-world-part1-ancient-earlymodern.json"
   },
   {
+    "id": "social-history-world-part1-bce-18c-55",
+    "subject": "social",
+    "field": "history",
+    "title": "世界史①｜紀元前〜18世紀頃",
+    "grade": "中学歴史",
+    "description": "紀元前の文明から18世紀頃までを学ぶ一問一答55問。47問版とは別の動画をもとにした教材。",
+    "cover": "images_11/social-history-world-part1-bce-18c-55/question_001.png",
+    "chapters": [
+      {
+        "id": "world-history-part1-bce-to-18th-century",
+        "title": "世界史・前編（紀元前～18世紀頃）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=_iR8QrAO6FE",
+    "series": "themes",
+    "count": 55,
+    "data": "lessons/social-history-world-part1-bce-18c-55.json"
+  },
+  {
     "id": "social-history-world-part2-18c-20c",
     "subject": "social",
     "field": "history",
-    "title": "世界史②｜18世紀～20世紀",
+    "title": "世界史②｜18世紀〜20世紀",
     "grade": "中学歴史",
     "description": "18世紀のフランス革命から20世紀の国際情勢までを学ぶ、一問一答形式の全54問教材。",
     "cover": "images_07/social-history-world-part2-18c-20c/question_001.png",

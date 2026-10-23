@@ -2,14 +2,14 @@
   "id": "social-history-world-part1-ancient-earlymodern",
   "subject": "social",
   "field": "history",
-  "title": "世界史①｜四大文明・宗教・大航海時代など",
+  "title": "世界史｜四大文明・宗教・大航海時代など",
   "grade": "中学歴史",
   "description": "人類の進化、四大文明、中国王朝、宗教、ルネサンス、大航海時代、宗教改革、革命と産業革命などを学ぶ一問一答47問。",
   "cover": "images_07/social-history-world-part1-ancient-earlymodern/question_001.png",
   "chapters": [
     {
       "id": "world-history-part1-ancient-to-industrial",
-      "title": "世界史・前編（古代文明～産業革命）"
+      "title": "世界史（四大文明・宗教・大航海時代など）"
     }
   ],
   "cards": [
@@ -321,7 +321,11 @@
       "sourceTimes": {
         "question": 559.5,
         "answer": 564.7
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "032",
@@ -366,6 +370,7 @@
         "answer": 636.7
       },
       "correctedFaces": [
+        "question",
         "answer"
       ]
     },
@@ -437,7 +442,11 @@
       "sourceTimes": {
         "question": 770.5,
         "answer": 774.8
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "043",
@@ -447,7 +456,11 @@
       "sourceTimes": {
         "question": 790.5,
         "answer": 795.7
-      }
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
     },
     {
       "id": "044",

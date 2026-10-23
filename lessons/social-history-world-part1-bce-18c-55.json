@@ -1,0 +1,599 @@
+{
+  "id": "social-history-world-part1-bce-18c-55",
+  "subject": "social",
+  "field": "history",
+  "title": "世界史①｜紀元前〜18世紀頃",
+  "grade": "中学歴史",
+  "description": "紀元前の文明から18世紀頃までを学ぶ一問一答55問。47問版とは別の動画をもとにした教材。",
+  "cover": "images_11/social-history-world-part1-bce-18c-55/question_001.png",
+  "chapters": [
+    {
+      "id": "world-history-part1-bce-to-18th-century",
+      "title": "世界史・前編（紀元前～18世紀頃）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_001.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_001.png",
+      "sourceTimes": {
+        "question": 16.0,
+        "answer": 28.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_002.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_002.png",
+      "sourceTimes": {
+        "question": 33.0,
+        "answer": 41.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_003.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_003.png",
+      "sourceTimes": {
+        "question": 46.0,
+        "answer": 56.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_004.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_004.png",
+      "sourceTimes": {
+        "question": 61.0,
+        "answer": 70.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_005.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_005.png",
+      "sourceTimes": {
+        "question": 75.0,
+        "answer": 84.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_006.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_006.png",
+      "sourceTimes": {
+        "question": 89.0,
+        "answer": 97.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_007.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_007.png",
+      "sourceTimes": {
+        "question": 102.0,
+        "answer": 110.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_008.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_008.png",
+      "sourceTimes": {
+        "question": 115.0,
+        "answer": 123.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_009.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_009.png",
+      "sourceTimes": {
+        "question": 128.0,
+        "answer": 135.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_010.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_010.png",
+      "sourceTimes": {
+        "question": 140.0,
+        "answer": 146.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_011.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_011.png",
+      "sourceTimes": {
+        "question": 151.0,
+        "answer": 164.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_012.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_012.png",
+      "sourceTimes": {
+        "question": 169.0,
+        "answer": 178.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_013.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_013.png",
+      "sourceTimes": {
+        "question": 183.0,
+        "answer": 194.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_014.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_014.png",
+      "sourceTimes": {
+        "question": 199.0,
+        "answer": 205.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_015.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_015.png",
+      "sourceTimes": {
+        "question": 210.0,
+        "answer": 218.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_016.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_016.png",
+      "sourceTimes": {
+        "question": 223.0,
+        "answer": 232.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_017.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_017.png",
+      "sourceTimes": {
+        "question": 237.0,
+        "answer": 245.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_018.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_018.png",
+      "sourceTimes": {
+        "question": 250.0,
+        "answer": 258.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_019.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_019.png",
+      "sourceTimes": {
+        "question": 263.0,
+        "answer": 274.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_020.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_020.png",
+      "sourceTimes": {
+        "question": 279.0,
+        "answer": 289.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_021.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_021.png",
+      "sourceTimes": {
+        "question": 294.0,
+        "answer": 303.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_022.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_022.png",
+      "sourceTimes": {
+        "question": 308.0,
+        "answer": 320.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_023.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_023.png",
+      "sourceTimes": {
+        "question": 325.0,
+        "answer": 334.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_024.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_024.png",
+      "sourceTimes": {
+        "question": 339.0,
+        "answer": 348.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_025.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_025.png",
+      "sourceTimes": {
+        "question": 353.0,
+        "answer": 364.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_026.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_026.png",
+      "sourceTimes": {
+        "question": 369.0,
+        "answer": 381.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_027.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_027.png",
+      "sourceTimes": {
+        "question": 386.0,
+        "answer": 397.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "028",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_028.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_028.png",
+      "sourceTimes": {
+        "question": 402.0,
+        "answer": 415.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_029.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_029.png",
+      "sourceTimes": {
+        "question": 420.0,
+        "answer": 430.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_030.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_030.png",
+      "sourceTimes": {
+        "question": 435.0,
+        "answer": 443.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_031.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_031.png",
+      "sourceTimes": {
+        "question": 448.0,
+        "answer": 459.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_032.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_032.png",
+      "sourceTimes": {
+        "question": 464.0,
+        "answer": 474.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "033",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_033.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_033.png",
+      "sourceTimes": {
+        "question": 479.0,
+        "answer": 493.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_034.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_034.png",
+      "sourceTimes": {
+        "question": 498.0,
+        "answer": 508.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_035.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_035.png",
+      "sourceTimes": {
+        "question": 513.0,
+        "answer": 520.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_036.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_036.png",
+      "sourceTimes": {
+        "question": 525.0,
+        "answer": 537.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_037.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_037.png",
+      "sourceTimes": {
+        "question": 542.0,
+        "answer": 551.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_038.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_038.png",
+      "sourceTimes": {
+        "question": 556.0,
+        "answer": 566.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_039.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_039.png",
+      "sourceTimes": {
+        "question": 571.0,
+        "answer": 579.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "040",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_040.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_040.png",
+      "sourceTimes": {
+        "question": 584.0,
+        "answer": 595.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_041.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_041.png",
+      "sourceTimes": {
+        "question": 600.0,
+        "answer": 608.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_042.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_042.png",
+      "sourceTimes": {
+        "question": 613.0,
+        "answer": 625.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_043.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_043.png",
+      "sourceTimes": {
+        "question": 630.0,
+        "answer": 640.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_044.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_044.png",
+      "sourceTimes": {
+        "question": 645.0,
+        "answer": 657.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "045",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_045.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_045.png",
+      "sourceTimes": {
+        "question": 662.0,
+        "answer": 671.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "046",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_046.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_046.png",
+      "sourceTimes": {
+        "question": 676.0,
+        "answer": 687.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_047.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_047.png",
+      "sourceTimes": {
+        "question": 692.0,
+        "answer": 704.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_048.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_048.png",
+      "sourceTimes": {
+        "question": 709.0,
+        "answer": 724.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_049.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_049.png",
+      "sourceTimes": {
+        "question": 729.0,
+        "answer": 734.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_050.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_050.png",
+      "sourceTimes": {
+        "question": 739.0,
+        "answer": 749.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_051.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_051.png",
+      "sourceTimes": {
+        "question": 754.0,
+        "answer": 765.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_052.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_052.png",
+      "sourceTimes": {
+        "question": 770.0,
+        "answer": 779.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_053.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_053.png",
+      "sourceTimes": {
+        "question": 784.0,
+        "answer": 794.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_054.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_054.png",
+      "sourceTimes": {
+        "question": 799.0,
+        "answer": 811.0
+      },
+      "correctedFaces": [
+        "question",
+        "answer"
+      ]
+    },
+    {
+      "id": "055",
+      "chapter": "world-history-part1-bce-to-18th-century",
+      "question": "images_11/social-history-world-part1-bce-18c-55/question_055.png",
+      "answer": "images_11/social-history-world-part1-bce-18c-55/answer_055.png",
+      "sourceTimes": {
+        "question": 816.0,
+        "answer": 823.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=_iR8QrAO6FE",
+  "series": "themes",
+  "extractionNotes": {
+    "sourceFilename": "【世界史一問一答】前編／紀元前～18世紀頃まで／聞き流し暗記法.f399.mp4",
+    "sourceSha256": "d416b82d612fb49d4eb10b52ccad9a56a3f1d981a888566a4efd6d18e7b8f517",
+    "timestampNote": "sourceTimes は添付 pairs.csv の取得秒数。元動画は画像訂正前の内容。",
+    "review": "review06"
+  }
+}

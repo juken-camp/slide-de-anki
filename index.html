@@ -2384,6 +2384,40 @@ html[data-persona=cyber] .assessment-prompt,html[data-persona=cyber] .typed-entr
 @media(max-width:480px){.assessment-prompt{padding:15px}.typed-entry{padding:12px}.typed-fields label{gap:7px}.typed-mode-select{gap:8px}.typed-mode-select label{font-size:12px}.test-actions{gap:7px}.test-actions button{font-size:13px!important;min-height:44px}.typed-review-filter{gap:6px}.typed-review-filter button{padding:7px 9px}}
 @media print{.typed-entry,.typed-review-filter,.typed-inline-actions,.lesson-challenge{display:none}}
 
+/* Cyber's learning controls move outside #app when the landscape menu opens. */
+html[data-persona="cyber"] #focusMenu :is(.study-options,.study-options-body,.modes,.face-mode,.timer-panel){
+  background:#101733!important;
+  color:#dceaff!important;
+  border-color:#315576!important;
+  box-shadow:none!important;
+}
+html[data-persona="cyber"] #focusMenu :is(.study-options>summary,.study-options>summary span,.timer-top label,.timer-options label,#timerLabel){
+  background:transparent!important;
+  color:#cce7fb!important;
+}
+html[data-persona="cyber"] #focusMenu button{
+  border-color:#3a87a7!important;
+  color:#b6faff!important;
+}
+html[data-persona="cyber"] #focusMenu :is(.modes button.active,.face-mode button.active,.chips button.active){
+  background:linear-gradient(130deg,#063b59,#07506a)!important;
+  border-color:#00dff5!important;
+  color:#e6fcff!important;
+}
+html[data-persona="cyber"] #focusMenu :is(input,select){
+  background:#0b1128!important;
+  color:#eaf5ff!important;
+  border-color:#477092!important;
+  accent-color:#00dff5;
+}
+html[data-persona="cyber"] #focusMenu :is(button,input,select,summary):focus-visible{
+  outline:2px solid #00dff5!important;
+  outline-offset:3px!important;
+}
+html[data-persona="cyber"] #focusMenu :is(button,input,select,summary):focus{
+  outline-color:#00dff5!important;
+}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -5677,4 +5711,5 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 

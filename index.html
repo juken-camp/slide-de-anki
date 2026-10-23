@@ -2547,8 +2547,8 @@ html[data-persona="cyber"] #catalogScreen .lesson-text-panel>.lesson-text-list{b
 #catalogScreen .lesson-entry{gap:0}
 .lesson-card-shell{position:relative;min-width:0;width:100%}
 #catalogScreen .lesson-card-shell>.lesson-choice{width:100%;height:auto}
-#catalogScreen .lesson-card-shell:has(.lesson-text-toggle) .choice-copy>strong{padding-right:52px}
-#catalogScreen .lesson-card-shell>.lesson-text-toggle{position:absolute;right:14px;top:14px;z-index:1;display:flex;align-items:center;justify-content:center;gap:4px;width:auto;height:28px;min-width:0;min-height:28px;padding:0 2px;border:0;border-radius:0;background:transparent;color:#89532e;font-size:12px;font-weight:600;line-height:1;box-shadow:none;text-decoration:none}
+#catalogScreen .lesson-card-shell:has(.lesson-text-toggle) .choice-copy>strong{padding-right:42px}
+#catalogScreen .lesson-card-shell>.lesson-text-toggle{position:absolute;right:14px;top:14px;z-index:1;display:grid;place-items:center;width:30px;height:30px;min-width:30px;min-height:30px;padding:0;border:0;border-radius:0;background:transparent;color:#89532e;font-size:18px;font-weight:600;line-height:1;box-shadow:none;text-decoration:none}
 #catalogScreen .lesson-text-panel{margin:7px 0 0;padding:0}
 #catalogScreen .lesson-entry.text-open{grid-column:1/-1}
 #catalogScreen .lesson-entry.text-open>.question-search-results{display:none}
@@ -2562,6 +2562,10 @@ html[data-persona="cyber"] #catalogScreen .lesson-text-panel>.lesson-text-list{b
 #catalogScreen .question-text-content>.search-question-answer{font-size:12px;margin:4px 0 0;line-height:1.6}
 #catalogScreen .question-text-content>small{font-size:11px}
 html[data-persona="cyber"] #app #catalogScreen .lesson-card-shell>.lesson-text-toggle{background:transparent!important;color:#9befff!important;border:0!important;box-shadow:none!important}
+html[data-persona="cyber"] .search-question-select input{appearance:none;-webkit-appearance:none;display:grid;place-items:center;width:19px;height:19px;border:1.5px solid #3f7394;border-radius:5px;background:#0d1e37;color:transparent;accent-color:#00f5ff;box-shadow:inset 0 0 5px #00f5ff15;cursor:pointer}
+html[data-persona="cyber"] .search-question-select input::before{content:'✓';font-size:14px;font-weight:900;line-height:1;color:#00f5ff;transform:scale(0);transition:transform .12s ease}
+html[data-persona="cyber"] .search-question-select input:checked{border-color:#00f5ff;background:#0d1e37;box-shadow:0 0 8px #00f5ff50}
+html[data-persona="cyber"] .search-question-select input:checked::before{transform:scale(1)}
 html[data-persona="cyber"] #app #catalogScreen :is(.lesson-text-question,.inline-text-tools button){background:transparent!important;box-shadow:none!important;border:0!important}
 html[data-persona="cyber"] #app #catalogScreen .lesson-text-question{color:#dceaff!important}
 html[data-persona="cyber"] #app #catalogScreen .inline-text-tools{background:transparent!important;border:0!important}
@@ -4809,7 +4813,7 @@ function renderAssessmentCatalog(){
   if(!m.imported){
    const panel=collectionNode('div',undefined,'lesson-text-panel');panel.dataset.lessonText=m.id;panel.id='lesson-text-'+m.id;panel.hidden=true;
    const body=collectionNode('div',undefined,'lesson-inline-body');panel.append(body);wrapper.append(panel);
-   const toggle=collectionButton('一覧　⌄','lesson-text-toggle',()=>setInlineLessonOpen(m,panel,toggle,panel.hidden));
+   const toggle=collectionButton('⌄','lesson-text-toggle',()=>setInlineLessonOpen(m,panel,toggle,panel.hidden));
    toggle.setAttribute('aria-label',m.title+'の問題・解答一覧を開閉');toggle.setAttribute('title','問題・解答一覧');toggle.setAttribute('aria-controls',panel.id);shell.append(toggle);
    setInlineLessonOpen(m,panel,toggle,expandedLessonText.has(m.id));
   }
@@ -4883,7 +4887,7 @@ function openQuestionSearch(m,cards){
  searchDialogItems=cards.map(c=>({m,c}));searchDialogPage=0;$('questionSearchTitle').textContent=m.title;renderQuestionSearchDialog();$('questionSearchDialog').showModal();
 }
 function setInlineLessonOpen(m,panel,toggle,on){
- panel.hidden=!on;toggle.setAttribute('aria-expanded',String(on));toggle.textContent=on?'一覧　⌃':'一覧　⌄';panel.closest('.lesson-entry').classList.toggle('text-open',on);
+ panel.hidden=!on;toggle.setAttribute('aria-expanded',String(on));toggle.textContent=on?'⌃':'⌄';panel.closest('.lesson-entry').classList.toggle('text-open',on);
  if(on){expandedLessonText.add(m.id);if(!panel.querySelector('.lesson-inline-body').childNodes.length)renderInlineLessonText(m,panel);}
  else expandedLessonText.delete(m.id);
  syncSearchSelection();

@@ -2426,7 +2426,28 @@ html[data-persona="cyber"] #focusMenu :is(button,input,select,summary):focus{
   outline-color:#00dff5!important;
 }
 
-</style></head>
+</style>
+<style>
+/* Cyber controls in dialogs override the generic dialog button skin. */
+html[data-persona="cyber"] #focusMenu .timer-track{background:#203a54!important}
+html[data-persona="cyber"] #focusMenu .timer-track i{background:linear-gradient(90deg,#428dff,#00f5ff)!important}
+html[data-persona="cyber"] #homeworkSetup .test-advanced{border-top-color:#315b81!important}
+html[data-persona="cyber"] dialog#homeworkSetup .test-quick-presets button[aria-pressed="false"]{
+ background:#101933!important;color:#aacbe5!important;border-color:#386c89!important;box-shadow:none!important;
+}
+html[data-persona="cyber"] dialog#homeworkSetup .test-quick-presets button[aria-pressed="true"]{
+ background:#00dbea!important;color:#041c2b!important;border-color:#7cffff!important;
+ box-shadow:0 0 12px #00f5ff60,inset 0 -3px 0 #00a9c3!important;
+}
+</style>
+
+<style>
+html[data-persona="cyber"] #app .typed-entry :is(input,textarea,select):is(:focus,:focus-visible){
+ outline:2px solid #00e7ff!important;outline-offset:2px!important;border-color:#00e7ff!important;caret-color:#00e7ff!important;
+ box-shadow:0 0 10px #00e7ff35!important;
+}
+</style>
+</head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
   

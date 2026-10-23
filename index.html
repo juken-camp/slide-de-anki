@@ -2234,6 +2234,20 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=ret
 
 /* Separate the confirmation-test section clearly from the report card. */
 #app #reportScreen .report-test-heading{margin-top:32px;}
+
+/* Confirmation-test quick presets: match the learning-report segmented tabs */
+.homework-setup .test-quick-presets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid #e4c7a8;background:#f5e7d6;border-radius:14px;padding:4px;margin:2px 0 13px}
+.homework-setup .test-quick-presets button{min-width:0;border:1.5px solid transparent;background:transparent;color:#91694c;border-radius:11px;padding:11px 2px;font:inherit;font-size:13px;font-weight:750;cursor:pointer}
+.homework-setup .test-quick-presets button[aria-pressed="true"]{background:#fffaf2;border-color:#d39b66;color:#874619;box-shadow:0 3px 0 #dfb58f}
+.homework-setup .test-advanced{margin:13px 0 0;border-top:1px solid #ead6c0;padding-top:11px}
+.homework-setup .test-advanced summary{cursor:pointer;color:#95613b;font-size:12px;font-weight:700;padding:6px 0}
+.homework-setup .test-advanced-inner{padding-top:8px}
+.homework-setup #testCustomDates[hidden]{display:none!important}
+html[data-persona="cyber"] .homework-setup .test-quick-presets{background:rgba(10,25,42,.7);border-color:rgba(70,190,235,.45)}
+html[data-persona="cyber"] .homework-setup .test-quick-presets button{color:#9dc9e5}
+html[data-persona="cyber"] .homework-setup .test-quick-presets button[aria-pressed="true"]{background:#123b5c;color:#e4faff;border-color:#4cb9e9;box-shadow:0 3px 0 #0c253c}
+html[data-persona="cyber"] .homework-setup .test-advanced summary{color:#9dc9e5}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -2332,11 +2346,10 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=ret
 <dialog id="homeworkSetup" class="homework-setup" aria-labelledby="homeworkSetupTitle">
  <div class="homework-setup-head"><h2 id="homeworkSetupTitle" tabindex="-1">おぼえた問題で確認にゃ</h2><button id="closeHomeworkSetup" class="tool" type="button" aria-label="テスト設定を閉じる">×</button></div>
  <div class="homework-setup-body">
-  <label class="homework-check"><input id="testAllDates" type="checkbox">記録日を指定しない</label>
-  <div class="homework-dates"><label>開始日<input type="date" id="testFrom"></label><label>終了日<input type="date" id="testTo"></label></div>
-  <p class="homework-note">期間内に「おぼえた」を記録し、いまも「おぼえた」の問題から出すにゃ。</p>
-  <div class="test-filter-grid"><label>教科<select id="testSubject"></select></label><label>問題数<select id="testCount"><option value="5">5問</option><option value="10" selected>10問</option><option value="20">20問</option></select></label></div>
-  <label class="homework-field">教材<select id="testLesson"></select></label>
+  <div class="test-quick-presets" role="group" aria-label="確認テストの出題期間"><button type="button" data-test-period="today" aria-pressed="true">今日</button><button type="button" data-test-period="three" aria-pressed="false">直近3日間</button><button type="button" data-test-period="custom" aria-pressed="false">期間指定</button></div>
+  <div id="testCustomDates" hidden><div class="homework-dates"><label>開始日<input type="date" id="testFrom"></label><label>終了日<input type="date" id="testTo"></label></div></div>
+  <p class="homework-note">選んだ期間に「おぼえた」を記録し、いまも「おぼえた」の問題から出すにゃ。</p>
+  <details class="test-advanced" id="testAdvanced"><summary>詳細設定（教科・教材・問題数）</summary><div class="test-advanced-inner"><label class="homework-check"><input id="testAllDates" type="checkbox">記録日を指定しない</label><div class="test-filter-grid"><label>教科<select id="testSubject"></select></label><label>問題数<select id="testCount"><option value="5">5問</option><option value="10" selected>10問</option><option value="20">20問</option></select></label></div><label class="homework-field">教材<select id="testLesson"></select></label></div></details>
   <p id="testCandidateCount" class="test-candidate-count" aria-live="polite"></p><p id="testSetupNotice" class="homework-note" role="status"></p>
  </div><div class="homework-setup-foot"><button id="startHomeworkTest" class="primary-button" type="button" disabled>テストをはじめるにゃ</button></div>
 </dialog>
@@ -4078,11 +4091,21 @@ function updateHomeworkCandidates(){
  try{const count=homeworkCandidates().length,n=Math.min(count,Number($('testCount').value));$('testCandidateCount').textContent=`候補 ${count}問`;$('testSetupNotice').textContent=count?'同じ問題は重複させず、ランダムに選ぶにゃ。':'「おぼえた」の問題がないにゃ。期間や教材を変えてみてにゃ。';$('startHomeworkTest').disabled=count===0||testLoading;$('startHomeworkTest').textContent=n?`${n}問でテストをはじめるにゃ`:'テストをはじめるにゃ';}
  catch(e){$('testCandidateCount').textContent='';$('testSetupNotice').textContent=e.message;$('startHomeworkTest').disabled=true;}
 }
+function setTestQuickPeriod(period){
+ const today=hDay();
+ document.querySelectorAll('[data-test-period]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.testPeriod===period)));
+ $('testCustomDates').hidden=period!=='custom';
+ $('testAllDates').checked=false;
+ if(period==='today'){$('testFrom').value=today;$('testTo').value=today;}
+ else if(period==='three'){$('testFrom').value=hDaysBack(2);$('testTo').value=today;}
+ updateHomeworkCandidates();
+}
+document.querySelectorAll('[data-test-period]').forEach(b=>b.addEventListener('click',()=>setTestQuickPeriod(b.dataset.testPeriod)));
 async function openHomeworkSetup(){
  await Promise.all([studyHistoryReady,importedLessonsReady]);if(screen!=='report')return;
- const range=reportDates();$('testFrom').value=range.from;$('testTo').value=range.to;$('testAllDates').checked=false;
+ $('testFrom').value=hDay();$('testTo').value=hDay();$('testAllDates').checked=false;$('testCount').value='10';$('testAdvanced').open=false;
  $('testSubject').replaceChildren();for(const [id,title] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const option=collectionNode('option',title);option.value=id;$('testSubject').append(option);}
- $('testSubject').value='all';fillHomeworkTestLessons();$('homeworkSetup').showModal();$('homeworkSetupTitle').focus({preventScroll:true});
+ $('testSubject').value='all';fillHomeworkTestLessons();setTestQuickPeriod('today');$('homeworkSetup').showModal();$('homeworkSetupTitle').focus({preventScroll:true});
 }
 function packedTestCard(raw,c){return {...c,id:cardKey(raw.id,c.id),lessonId:raw.id,originalId:c.id,lessonTitle:raw.title,source:raw.source};}
 async function startHomeworkTest(){

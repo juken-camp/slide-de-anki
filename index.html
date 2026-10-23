@@ -2332,6 +2332,39 @@ html[data-persona=cyber] body.slide-focus #app #studyScreen #focusPosition{
 body.slide-focus #app #studyScreen #zoomImage,
 body.slide-focus #focusMenu #focusZoom,
 body.slide-focus #focusMenu .focus-extra{display:none!important}
+
+
+/* 2026-10-23: Landscape study — the source slide reaches the bottom edge.
+   Only the study controls float above it; this applies to both personas. */
+body.slide-focus #app::after{
+  display:none!important;
+  content:none!important;
+}
+body.slide-focus #app #studyScreen #card{
+  top:0;
+  height:100vh!important;
+  height:100dvh!important;
+}
+/* Place the unobstructed counter on the full-height slide, not below it. */
+body.slide-focus #app #studyScreen #card>.head{
+  bottom:calc(11px + env(safe-area-inset-bottom,0px));
+  left:calc(12px + env(safe-area-inset-left,0px));
+  max-width:170px;
+  z-index:7;
+}
+/* A little depth makes the individual buttons look suspended above the slide,
+   with no shared bar, colored strip, or full-width overlay. */
+html:not([data-persona=cyber]) body.slide-focus #app #studyScreen .actions button{
+  box-shadow:0 3px 13px rgba(72,44,24,.22)!important;
+}
+/* Cyber's previous cyan counter was meant for a dark footer. Darken it on
+   the white slide to keep the text readable while leaving it unboxed. */
+html[data-persona=cyber] body.slide-focus #app #studyScreen #card #faceLabel{
+  color:#096b84!important;
+}
+html[data-persona=cyber] body.slide-focus #app #studyScreen #focusPosition{
+  color:#425d73!important;
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

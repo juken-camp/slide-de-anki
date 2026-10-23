@@ -2249,6 +2249,13 @@ html[data-persona="cyber"] .homework-setup .test-quick-presets button{color:#9dc
 html[data-persona="cyber"] .homework-setup .test-quick-presets button[aria-pressed="true"]{background:#123b5c;color:#e4faff;border-color:#4cb9e9;box-shadow:0 3px 0 #0c253c}
 html[data-persona="cyber"] .homework-setup .test-advanced summary{color:#9dc9e5}
 
+
+/* 確認テスト詳細設定：既存の入力欄に合わせた検索と自由入力 */
+.homework-setup #testLessonSearch,.homework-setup #testCountCustom{display:block;width:100%;min-width:0;box-sizing:border-box;margin-top:5px;padding:9px 11px;border:1.5px solid #d9b58f;border-radius:11px;background:#fffdf8;color:inherit;font:inherit;font-size:14px}
+.homework-setup #testLessonSearch{margin-bottom:8px}
+.homework-setup #testLessonSearchInfo{display:block;margin-top:5px;font-size:11px;opacity:.75}
+.homework-setup #testCountCustom[hidden]{display:none!important}
+html[data-persona="cyber"] .homework-setup #testLessonSearch,html[data-persona="cyber"] .homework-setup #testCountCustom{background:var(--panel,#14293a);color:inherit;border-color:#5a87a3}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -2350,7 +2357,7 @@ html[data-persona="cyber"] .homework-setup .test-advanced summary{color:#9dc9e5}
   <div class="test-quick-presets" role="group" aria-label="確認テストの出題期間"><button type="button" data-test-period="today" aria-pressed="true">今日</button><button type="button" data-test-period="three" aria-pressed="false">直近3日間</button><button type="button" data-test-period="custom" aria-pressed="false">詳細設定</button></div>
   <div id="testCustomDates" hidden><div class="homework-dates"><label>開始日<input type="date" id="testFrom"></label><label>終了日<input type="date" id="testTo"></label></div></div>
   <p class="homework-note">選んだ期間に「おぼえた」を記録し、いまも「おぼえた」の問題から出すにゃ。</p>
-  <div class="test-advanced" id="testAdvanced" hidden><div class="test-advanced-inner"><label class="homework-check"><input id="testAllDates" type="checkbox">記録日を指定しない</label><div class="test-filter-grid"><label>教科<select id="testSubject"></select></label><label>問題数<select id="testCount"><option value="5">5問</option><option value="10" selected>10問</option><option value="20">20問</option></select></label></div><label class="homework-field">教材<select id="testLesson"></select></label></div></div>
+  <div class="test-advanced" id="testAdvanced" hidden><div class="test-advanced-inner"><label class="homework-check"><input id="testAllDates" type="checkbox">記録日を指定しない</label><div class="test-filter-grid"><label>教科<select id="testSubject"></select></label><label>問題数<select id="testCount"><option value="5">5問</option><option value="10" selected>10問</option><option value="20">20問</option><option value="custom">自分で入力</option></select><input id="testCountCustom" type="number" min="1" max="5092" step="1" inputmode="numeric" placeholder="問題数を入力" aria-label="出題する問題数" hidden></label></div><label class="homework-field">教材<input id="testLessonSearch" type="search" placeholder="教材名で検索" autocomplete="off" aria-label="教材を検索"><select id="testLesson"></select><small id="testLessonSearchInfo" aria-live="polite"></small></label></div></div>
   <p id="testCandidateCount" class="test-candidate-count" aria-live="polite"></p><p id="testSetupNotice" class="homework-note" role="status"></p>
  </div><div class="homework-setup-foot"><button id="startHomeworkTest" class="primary-button" type="button" disabled>テストをはじめるにゃ</button></div>
 </dialog>
@@ -4081,15 +4088,40 @@ function homeworkCandidates(){
   }
  }return [...new Set(keys)];
 }
+function homeworkRequestedCount(){
+ const custom=$('testCount').value==='custom';
+ const raw=custom?$('testCountCustom').value:$('testCount').value;
+ const n=Number(raw);
+ return Number.isSafeInteger(n)&&n>=1&&n<=5092?n:0;
+}
+function syncHomeworkCount(){
+ const custom=$('testCount').value==='custom';
+ $('testCountCustom').hidden=!custom;
+ $('testCountCustom').disabled=!custom||testLoading;
+ updateHomeworkCandidates();
+}
+function filterHomeworkLessons(){
+ const search=$('testLessonSearch').value.trim().toLocaleLowerCase();
+ const select=$('testLesson'),selected=select.value;
+ let matches=0;
+ for(const opt of select.options){
+  const show=opt.value==='all'||opt.textContent.toLocaleLowerCase().includes(search);
+  opt.hidden=!show;
+  if(show&&opt.value!=='all')matches++;
+ }
+ $('testLessonSearchInfo').textContent=search?`${matches}教材が見つかったにゃ。`:'';
+ // 選択中の教材は検索中も維持する（検索は出題条件を変えない）。
+ if(selected)select.value=selected;
+}
 function fillHomeworkTestLessons(){
  const select=$('testLesson'),previous=select.value,sub=$('testSubject').value;select.replaceChildren();
  const all=collectionNode('option','すべての教材');all.value='all';select.append(all);
  for(const m of meta.filter(m=>sub==='all'||m.subject===sub)){const option=collectionNode('option',m.title);option.value=m.id;select.append(option);}
- select.value=[...select.options].some(o=>o.value===previous)?previous:'all';updateHomeworkCandidates();
+ select.value=[...select.options].some(o=>o.value===previous)?previous:'all';filterHomeworkLessons();updateHomeworkCandidates();
 }
 function updateHomeworkCandidates(){
  $('testFrom').disabled=$('testTo').disabled=$('testAllDates').checked;
- try{const count=homeworkCandidates().length,n=Math.min(count,Number($('testCount').value));$('testCandidateCount').textContent=`候補 ${count}問`;$('testSetupNotice').textContent=count?'同じ問題は重複させず、ランダムに選ぶにゃ。':'「おぼえた」の問題がないにゃ。期間や教材を変えてみてにゃ。';$('startHomeworkTest').disabled=count===0||testLoading;$('startHomeworkTest').textContent=n?`${n}問でテストをはじめるにゃ`:'テストをはじめるにゃ';}
+ try{const count=homeworkCandidates().length,wanted=homeworkRequestedCount(),n=Math.min(count,wanted);$('testCandidateCount').textContent=`候補 ${count}問`;$('testSetupNotice').textContent=count?'同じ問題は重複させず、ランダムに選ぶにゃ。':'「おぼえた」の問題がないにゃ。期間や教材を変えてみてにゃ。';$('startHomeworkTest').disabled=count===0||!wanted||testLoading;$('startHomeworkTest').textContent=n?`${n}問でテストをはじめるにゃ`:'テストをはじめるにゃ';}
  catch(e){$('testCandidateCount').textContent='';$('testSetupNotice').textContent=e.message;$('startHomeworkTest').disabled=true;}
 }
 function setTestQuickPeriod(period){
@@ -4105,7 +4137,7 @@ function setTestQuickPeriod(period){
 document.querySelectorAll('[data-test-period]').forEach(b=>b.addEventListener('click',()=>setTestQuickPeriod(b.dataset.testPeriod)));
 async function openHomeworkSetup(){
  await Promise.all([studyHistoryReady,importedLessonsReady]);if(screen!=='report')return;
- $('testFrom').value=hDay();$('testTo').value=hDay();$('testAllDates').checked=false;$('testCount').value='10';$('testAdvanced').hidden=true;
+ $('testFrom').value=hDay();$('testTo').value=hDay();$('testAllDates').checked=false;$('testCount').value='10';$('testCountCustom').value='';$('testCountCustom').hidden=true;$('testLessonSearch').value='';$('testAdvanced').hidden=true;
  $('testSubject').replaceChildren();for(const [id,title] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const option=collectionNode('option',title);option.value=id;$('testSubject').append(option);}
  $('testSubject').value='all';fillHomeworkTestLessons();setTestQuickPeriod('today');$('homeworkSetup').showModal();$('homeworkSetupTitle').focus({preventScroll:true});
 }
@@ -4114,10 +4146,10 @@ async function startHomeworkTest(){
  if(testLoading)return;
  if(studyHistory.activeTest&&!confirmWithPersona('途中のテストがあるにゃ。新しいテストを始めるにゃ？', '途中のテストが残ってるぜ。新しいテストを始めるか？'))return;
  let candidates;try{candidates=shuffle(homeworkCandidates());}catch(e){$('testSetupNotice').textContent=e.message;return;}
- const wanted=Math.min(Number($('testCount').value),candidates.length);if(!wanted)return;
+ const wanted=Math.min(homeworkRequestedCount(),candidates.length);if(!wanted)return;
  const launch=++testLoadRequest,scope={from:$('testFrom').value,to:$('testTo').value,allDates:$('testAllDates').checked,subject:$('testSubject').value,lesson:$('testLesson').value};
  const previousActive=studyHistory.activeTest?hClone(studyHistory.activeTest):null,previousSession=testSession,previousCards=testCards;
- for(const id of ['testFrom','testTo','testAllDates','testSubject','testLesson','testCount'])$(id).disabled=true;
+ for(const id of ['testFrom','testTo','testAllDates','testSubject','testLesson','testCount','testCountCustom','testLessonSearch'])$(id).disabled=true;
  testLoading=true;updateHomeworkCandidates();$('testSetupNotice').textContent='ちょっと待ってにゃ🐾';
  try{
   const picked=[];
@@ -4127,7 +4159,7 @@ async function startHomeworkTest(){
   testSession={id:'test-'+(crypto.randomUUID?.()||Date.now().toString(36)),createdAt:Date.now(),...scope,refs:picked.map(c=>c.id),answers:{},phase:'questions',maxSeen:0,index:0,undo:[],finishedAt:null,titles:Object.fromEntries(picked.map(c=>[c.lessonId,c.lessonTitle]))};
   testCards=picked;studyHistory.activeTest=hClone(testSession);await persistStudyHistory();if(launch!==testLoadRequest||screen!=='report'||!$('homeworkSetup').open){studyHistory.activeTest=previousActive;testSession=previousSession;testCards=previousCards;persistStudyHistory();return;}$('homeworkSetup').close();testFaceAnswer=false;showScreen('test');renderHomeworkTest();beep('open');
  }catch(e){$('testSetupNotice').textContent=e?.message||'教材が開けなかったにゃ。通信を確認してにゃ。';}
- finally{testLoading=false;for(const id of ['testAllDates','testSubject','testLesson','testCount'])$(id).disabled=false;updateHomeworkCandidates();}
+ finally{testLoading=false;for(const id of ['testAllDates','testSubject','testLesson','testCount','testLessonSearch'])$(id).disabled=false;syncHomeworkCount();updateHomeworkCandidates();}
 }
 function persistHomeworkSession(){
  if(!testSession)return;
@@ -4285,7 +4317,7 @@ $('testShowAnswers').onclick=openHomeworkAnswers;$('testReturnQuestions').onclic
 $('testZoom').onclick=()=>homeworkImageView.zoom();$('testReviewWrong').onclick=reviewHomeworkWrong;
 $('openTestSetup').onclick=openHomeworkSetup;$('closeHomeworkSetup').onclick=()=>$('homeworkSetup').close();$('startHomeworkTest').onclick=startHomeworkTest;
 $('homeworkSetup').addEventListener('close',()=>{++testLoadRequest;});
-$('testSubject').onchange=fillHomeworkTestLessons;for(const id of ['testLesson','testCount','testFrom','testTo','testAllDates'])$(id).onchange=updateHomeworkCandidates;
+$('testSubject').onchange=fillHomeworkTestLessons;$('testCount').onchange=syncHomeworkCount;$('testCountCustom').oninput=updateHomeworkCandidates;$('testLessonSearch').oninput=filterHomeworkLessons;for(const id of ['testLesson','testFrom','testTo','testAllDates'])$(id).onchange=updateHomeworkCandidates;
 $('testBack').onclick=$('testResultBack').onclick=()=>showScreen('report');$('showTestShot').onclick=()=>toggleHomeworkCapture(true);
 window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();});
 

@@ -2294,8 +2294,8 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=ret
   <div id="reportMaterials" class="report-materials"></div><p id="reportLegacy" class="homework-note"></p>
   <p id="reportCheer" class="report-cheer"></p>
  </article>
- <div class="report-main-actions" data-capture-hide><button id="showReportShot" class="secondary-button" type="button">成果を見せるにゃ</button><button id="openTestSetup" class="primary-button" type="button">確認テストにゃ 🐾</button></div>
- <section class="homework-tests" data-capture-hide><h3>確認テストの記録</h3><button id="resumeHomeworkTest" class="secondary-button" type="button" hidden></button><div id="homeworkTestHistory"></div></section>
+ <div class="report-main-actions" data-capture-hide><button id="resumeTestMain" class="secondary-button" type="button" disabled>続きからやるにゃ</button><button id="openTestSetup" class="primary-button" type="button">新しく始めるにゃ <span aria-hidden="true">🐾</span></button></div>
+ <section class="homework-tests" data-capture-hide><h3>確認テストの記録</h3><div id="homeworkTestHistory"></div></section>
  <details class="history-management" data-capture-hide><summary>履歴の管理にゃ</summary><div><button id="resetReportHistory" class="link-button" type="button">日別レポートを消すにゃ</button><button id="resetTestHistory" class="link-button" type="button">テスト履歴を消すにゃ</button></div><small>元の教材・「おぼえた」・まとめは残るにゃ。</small></details>
 </section>
 <section id="testScreen" class="homework-screen" aria-labelledby="testTitle" hidden>
@@ -4009,9 +4009,9 @@ function historyCardTitle(key){const r=hSplit(key),m=meta.find(m=>m.id===r.lesso
 function materialRows(target,countsByLesson,limit=5){target.replaceChildren();const entries=[...countsByLesson].sort((a,b)=>b[1]-a[1]);for(const [id,count] of entries.slice(0,limit)){const row=collectionNode('div');row.append(collectionNode('span',meta.find(m=>m.id===id)?.title||'端末内の教材'),collectionNode('b',`${count}問`));target.append(row);}if(entries.length>limit)target.append(collectionNode('div',`ほか${entries.length-limit}教材`));}
 async function openLearningReport(){showScreen('report');}
 async function renderLearningReport(){
- const seq=++reportOpenRequest;$('showReportShot').disabled=$('openTestSetup').disabled=true;$('reportNotice').textContent=historyLoaded?historyError:'ちょっと待ってにゃ🐾';await studyHistoryReady;if(seq!==reportOpenRequest||screen!=='report')return;
- let days;const {from,to}=reportDates();try{days=hRange(from,to);}catch(e){$('reportNotice').textContent=e.message;$('reportCard').hidden=true;$('showReportShot').disabled=$('openTestSetup').disabled=true;return;}
- $('reportCard').hidden=false;$('showReportShot').disabled=$('openTestSetup').disabled=false;$('reportNotice').textContent=historyError;
+ const seq=++reportOpenRequest;$('resumeTestMain').disabled=$('openTestSetup').disabled=true;$('reportNotice').textContent=historyLoaded?historyError:'ちょっと待ってにゃ🐾';await studyHistoryReady;if(seq!==reportOpenRequest||screen!=='report')return;
+ let days;const {from,to}=reportDates();try{days=hRange(from,to);}catch(e){$('reportNotice').textContent=e.message;$('reportCard').hidden=true;$('resumeTestMain').disabled=$('openTestSetup').disabled=true;return;}
+ $('reportCard').hidden=false;$('openTestSetup').disabled=false;$('resumeTestMain').disabled=!studyHistory.activeTest||!!studyHistory.activeTest.finishedAt;$('reportNotice').textContent=historyError;
  const sums=[],byLesson=new Map(),latest=new Map(),improved=new Set();let total=0,active=0,known=0,judged=0,legacy=false;
  for(const day of days){let count=0;for(const [key,row] of Object.entries(studyHistory.days[day]||{})){
   if(row.v){count++;const id=hSplit(key).lessonId;if(meta.some(m=>m.id===id))byLesson.set(id,(byLesson.get(id)||0)+1);}
@@ -4031,7 +4031,7 @@ async function renderLearningReport(){
  $('reportCheer').textContent=!total?'まずは1問から、いっしょに進むにゃ🐾':advanced?`${advanced}問が「おぼえてない」から「おぼえた」になったにゃ！🐾`:active>=3?`${active}日分の積み重ね、ばっちりにゃ🐾`:'取り組んだ分が、ちゃんと残るにゃ🐾';renderHomeworkTestHistory();
 }
 function renderHomeworkTestHistory(){
- const active=studyHistory.activeTest;$('resumeHomeworkTest').hidden=!active||!!active.finishedAt;$('resumeHomeworkTest').textContent=active?`確認テストのつづきにゃ · ${active.phase==='review'?`丸つけ ${Object.keys(active.answers||{}).length}`:`問題 ${Math.min(active.refs.length,(active.index||0)+1)}`} / ${active.refs.length}問`:'';
+ const active=studyHistory.activeTest;$('resumeTestMain').disabled=!active||!!active.finishedAt;$('resumeTestMain').title=active&&!active.finishedAt?`${active.phase==='review'?'丸つけ':`問題 ${(active.index||0)+1}`} / ${active.refs.length}問から再開`:'途中の確認テストはないにゃ';
  const list=$('homeworkTestHistory');list.replaceChildren();const tests=[...studyHistory.tests].sort((a,b)=>b.finishedAt-a.finishedAt);
  if(!tests.length){list.append(collectionNode('p','確認した結果を、ここに残すにゃ。','homework-note'));return;}
  for(const t of tests.slice(0,testHistoryVisible)){const item=collectionNode('div',undefined,'homework-test-history-item'),pass=Object.values(t.answers).filter(v=>v==='pass').length;
@@ -4044,7 +4044,7 @@ $('navRecords').onclick=openLearningReport;
 for(const b of document.querySelectorAll('[data-report-period]'))b.onclick=()=>{if(b.dataset.reportPeriod==='custom'){openReportPeriod();return;}setReportPreset(b.dataset.reportPeriod);renderLearningReport();};
 for(const id of ['reportFrom','reportTo'])$(id).onchange=()=>{$('reportPeriodNotice').textContent='';};
 $('reportNameInput').onchange=()=>{studyHistory.name=$('reportNameInput').value.trim().slice(0,24);persistStudyHistory();renderLearningReport();};
-$('showReportShot').onclick=()=>{renderLearningReport();toggleHomeworkCapture(true);};for(const b of document.querySelectorAll('.capture-exit'))b.onclick=()=>toggleHomeworkCapture(false);
+$('resumeTestMain').onclick=resumeHomeworkTest;for(const b of document.querySelectorAll('.capture-exit'))b.onclick=()=>toggleHomeworkCapture(false);
 $('resetReportHistory').onclick=()=>{if(!confirmWithPersona('日別レポートだけを消すにゃ？ 元の学習記録とテスト結果は残るにゃ。', '日別レポートだけ消すか？ 元の学習記録とテスト結果は残るぜ。'))return;studyHistory.days={};studyHistory.recordedFrom=dateKey();historyUndoSnapshots.clear();persistStudyHistory();renderLearningReport();};
 $('resetTestHistory').onclick=()=>{if(!confirmWithPersona('確認テストの結果と途中のテストを消すにゃ？ 元の学習記録は残るにゃ。', '確認テストの結果と途中のテストを消すか？ 元の学習記録は残るぜ。'))return;studyHistory.tests=[];studyHistory.activeTest=null;testSession=null;persistStudyHistory();renderLearningReport();};
 
@@ -4257,7 +4257,7 @@ $('testZoom').onclick=()=>homeworkImageView.zoom();$('testReviewWrong').onclick=
 $('openTestSetup').onclick=openHomeworkSetup;$('closeHomeworkSetup').onclick=()=>$('homeworkSetup').close();$('startHomeworkTest').onclick=startHomeworkTest;
 $('homeworkSetup').addEventListener('close',()=>{++testLoadRequest;});
 $('testSubject').onchange=fillHomeworkTestLessons;for(const id of ['testLesson','testCount','testFrom','testTo','testAllDates'])$(id).onchange=updateHomeworkCandidates;
-$('resumeHomeworkTest').onclick=resumeHomeworkTest;$('testBack').onclick=$('testResultBack').onclick=()=>showScreen('report');$('showTestShot').onclick=()=>toggleHomeworkCapture(true);
+$('testBack').onclick=$('testResultBack').onclick=()=>showScreen('report');$('showTestShot').onclick=()=>toggleHomeworkCapture(true);
 window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();});
 
 window.NekoApp = {
@@ -4818,6 +4818,8 @@ $('importForm').onsubmit=async e=>{
       ['確認テストはノートに解答するにゃ。','確認テストはノートに解答してくれよな。'],
       ['口頭や紙で答えてから、解答を開くにゃ','口頭や紙で答えてから、解答を開こうぜ'],
       ['新しいテストを始めるにゃ？','新しいテストを始めるか？'],
+      ['続きからやるにゃ','続きからやるぜ'],
+      ['新しく始めるにゃ','新しく始めるぜ'],
       ['テストをはじめるにゃ','テストをはじめるぜ'],
       ['確認した結果を、ここに残すにゃ','確認した結果を、ここに残すぜ'],
       ['つづきから確認にゃ','つづきから確認するぜ'],

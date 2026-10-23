@@ -4834,6 +4834,10 @@ function syncSearchSelection(){
  for(const el of document.querySelectorAll('[data-search-check]'))el.checked=searchSelectedQuestions.has(el.dataset.searchCheck);
  const all=document.querySelector('[data-search-select-all]');if(all)all.hidden=!catalogQuery();if(all)all.disabled=!assessmentDataset||!catalogQuery()||!meta.some(m=>assessmentSearchMatches(m.id,catalogQuery()).length);
 }
+function questionListText(c,maxLength=0){
+ const text=maxLength&&c.q.length>maxLength?c.q.slice(0,maxLength)+'…':c.q;
+ return text+(c.image?'（図を参照）':'');
+}
 function questionSearchButton(m,c){
  const key=cardKey(m.id,c.id),row=collectionNode('div',undefined,'question-search-row');
  const label=collectionNode('label',undefined,'search-question-select'),check=document.createElement('input');
@@ -4841,7 +4845,7 @@ function questionSearchButton(m,c){
  check.onchange=()=>{if(check.checked)searchSelectedQuestions.add(key);else searchSelectedQuestions.delete(key);syncSearchSelection();};
  label.append(check);row.append(label);
  const b=collectionButton('','question-search-hit',()=>openSearchQuestion(m.id,c.id));
- b.append(collectionNode('small',`問題 ${c.number}`),collectionNode('span',c.q.length>130?c.q.slice(0,130)+'…':c.q,'search-question-text'));
+ b.append(collectionNode('small',`問題 ${c.number}`),collectionNode('span',questionListText(c,130),'search-question-text'));
  const answer=collectionNode('span',undefined,'search-question-answer');answer.append(collectionNode('strong','解答：'),document.createTextNode(c.a||'解答画像で確認'));b.append(answer);row.append(b);return row;
 }
 function selectSearchMatches(items){for(const {m,c} of items)searchSelectedQuestions.add(cardKey(m.id,c.id));syncSearchSelection();}
@@ -4922,7 +4926,7 @@ function lessonTextQuestionRow(m,c){
  buildPrompt(prompt,{...c,mode:'text'});body.append(prompt);
  const answer=collectionNode('div',undefined,'search-question-answer user-content');answer.append(collectionNode('strong','解答：'),document.createTextNode(c.a||'解答画像で確認'));body.append(answer);
  const question=prompt.querySelector('p');
- if(question){const open=collectionButton(question.textContent,'lesson-text-question',()=>openSearchQuestion(m.id,c.id));open.setAttribute('aria-label',`問題${c.number}のスライドを開く：${c.q}`);question.replaceWith(open);}
+ if(question){const open=collectionButton(questionListText(c),'lesson-text-question',()=>openSearchQuestion(m.id,c.id));open.setAttribute('aria-label',`問題${c.number}のスライドを開く：${open.textContent}`);question.replaceWith(open);}
  old.replaceWith(body);return row;
 }
 function renderQuestionSearchDialog(){

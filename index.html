@@ -2507,6 +2507,23 @@ html[data-persona="cyber"] dialog#homeworkSetup .test-quick-presets button[aria-
  background:linear-gradient(135deg,#12354c,#0b2636)!important;color:#70f7ff!important;border:2px solid #00f5ff!important;box-shadow:0 0 12px #00f5ff48,inset 0 0 10px #00f5ff13!important;border-radius:11px;
 }
 </style>
+
+<style>
+.lesson-text-list{align-self:flex-start;text-align:left;padding:9px 8px;min-height:36px;line-height:1.5}
+html[data-persona="cyber"] #app .lesson-text-list{color:#9befff!important}
+.question-search-dialog.is-text-lesson[open]{display:flex;flex-direction:column;height:min(86dvh,900px);max-height:86dvh;overflow:hidden}
+.question-search-dialog.is-text-lesson>header,.question-search-dialog.is-text-lesson>.search-selection-tools{flex:none}
+.question-search-dialog.is-text-lesson .question-search-dialog-list{flex:1;min-height:0;max-height:none;overflow:auto;overscroll-behavior:contain}
+.question-text-content{min-width:0;border-left:2px solid #dfc3a6;padding:8px 10px 12px;margin-bottom:10px;color:#714c32;font-size:13px;line-height:1.75;overflow-wrap:anywhere}
+.question-text-content>small{display:block;font-size:11px;color:#9a7357}
+.lesson-text-prompt p{margin:5px 0;font-size:13px;line-height:1.75;white-space:pre-wrap}.lesson-text-prompt ul{padding-left:18px;margin:6px 0}
+.lesson-text-prompt .assessment-aux{font-size:12px;color:inherit}.lesson-text-prompt table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:12px}.lesson-text-prompt :is(th,td){padding:4px;border:1px solid #dcc2a5;overflow-wrap:anywhere}
+.question-text-content>.search-question-answer{font-size:13px;white-space:pre-wrap;margin:8px 0}
+.question-text-content>.link-button{font-size:11px;padding:4px 0;min-height:32px}
+html[data-persona="cyber"] .question-text-content{color:#dceaff;border-color:#355b78}
+html[data-persona="cyber"] .question-text-content>small{color:#9ab8d5}
+html[data-persona="cyber"] .lesson-text-prompt :is(th,td){border-color:#355b78}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -4665,7 +4682,7 @@ const assessmentCore=window.NekoAssessmentCore;
 let assessmentDataset=null,assessmentPromise=null,assessmentError='',assessmentSearchCache=new Map();
 let typedReviewLimit=20,typedReviewPendingOnly=false,typedRenderingKey='',typedLaunching=false;
 let typedSaveTimer=null;
-let searchDialogItems=[],searchDialogPage=0;
+let searchDialogItems=[],searchDialogPage=0,searchDialogFullLesson=false;
 const searchSelectedQuestions=new Set();
 const assessmentByKey=key=>{const r=hSplit(key);return assessmentDataset?.lessons[r.lessonId]?.cards.find(c=>c.id===r.cardId)||null;};
 const typedTest=()=>testSession?.typedSchema===1;
@@ -4746,6 +4763,10 @@ function renderAssessmentCatalog(){
    const b=collectionButton(award?'もう一度チャレンジにゃ':'確認チャレンジにゃ','link-button lesson-challenge',()=>startLessonChallenge(m.id));
    b.setAttribute('aria-label',m.title+'の確認チャレンジ');wrapper.append(b);
   }
+  if(!m.imported){
+   const textButton=collectionButton('問題・解答を一覧で見るにゃ','link-button lesson-text-list',()=>openLessonTextList(m));
+   textButton.setAttribute('aria-label',m.title+'の全問題・解答をテキストで見る');wrapper.append(textButton);
+  }
   if(query&&assessmentDataset){
    const matches=assessmentSearchMatches(m.id,query);if(!matches.length)continue;
    const list=collectionNode('div',undefined,'question-search-results');
@@ -4812,10 +4833,36 @@ async function openSearchQuestion(lid,cid){
  try{await selectLessons([lid],{collection:{id:'question-search',name:'検索した問題',cardKeys:[cardKey(lid,cid)]}});}
  catch{toast('問題を開けなかったにゃ。通信を確認してにゃ。');}
 }
-function openQuestionSearch(m,cards){searchDialogItems=cards.map(c=>({m,c}));searchDialogPage=0;$('questionSearchTitle').textContent=m.title;renderQuestionSearchDialog();$('questionSearchDialog').showModal();}
+function openQuestionSearch(m,cards){
+ searchDialogFullLesson=false;searchDialogItems=cards.map(c=>({m,c}));searchDialogPage=0;$('questionSearchTitle').textContent=m.title;renderQuestionSearchDialog();$('questionSearchDialog').showModal();
+}
+async function openLessonTextList(m){
+ try{
+  await ensureAssessmentData();const cards=assessmentDataset.lessons[m.id]?.cards;
+  if(!cards?.length){toast('この教材のテキストはまだ準備中にゃ。');return;}
+  searchDialogFullLesson=true;searchDialogItems=cards.map(c=>({m,c}));searchDialogPage=0;
+  $('questionSearchTitle').textContent=`${m.title} · 全${cards.length}問`;
+  renderQuestionSearchDialog();if(!$('questionSearchDialog').open)$('questionSearchDialog').showModal();
+ }catch(e){toast(e.message||'問題文データを読み込めなかったにゃ。');}
+}
+function lessonTextQuestionRow(m,c){
+ const row=questionSearchButton(m,c),old=row.querySelector('.question-search-hit');
+ const body=collectionNode('div',undefined,'question-text-content');
+ body.append(collectionNode('small',`問題 ${c.number}`));
+ const prompt=collectionNode('div',undefined,'lesson-text-prompt user-content');
+ buildPrompt(prompt,{...c,mode:'text'});body.append(prompt);
+ const answer=collectionNode('div',undefined,'search-question-answer user-content');answer.append(collectionNode('strong','解答：'),document.createTextNode(c.a||'解答画像で確認'));body.append(answer);
+ const open=collectionButton(c.image?'図・画像をスライドで確認':'スライドを見る','link-button',()=>openSearchQuestion(m.id,c.id));body.append(open);
+ old.replaceWith(body);return row;
+}
 function renderQuestionSearchDialog(){
- const list=$('questionSearchDialogList');list.replaceChildren();
- for(const {m,c} of searchDialogItems.slice(searchDialogPage*20,searchDialogPage*20+20))list.append(questionSearchButton(m,c));
+ const dialog=$('questionSearchDialog'),list=$('questionSearchDialogList');list.replaceChildren();
+ dialog.classList.toggle('is-text-lesson',searchDialogFullLesson);
+ dialog.querySelector('footer').hidden=searchDialogFullLesson;
+ $('questionSearchClose').setAttribute('aria-label','問題一覧を閉じる');
+ $('searchDialogSelectAll').textContent=searchDialogFullLesson?'この教材の全問を選ぶにゃ':'この教材の検索結果を選ぶにゃ';
+ const items=searchDialogFullLesson?searchDialogItems:searchDialogItems.slice(searchDialogPage*20,searchDialogPage*20+20);
+ for(const {m,c} of items)list.append(searchDialogFullLesson?lessonTextQuestionRow(m,c):questionSearchButton(m,c));
  $('questionSearchPage').textContent=`${searchDialogPage+1} / ${Math.max(1,Math.ceil(searchDialogItems.length/20))}`;
  $('questionSearchPrev').disabled=searchDialogPage===0;$('questionSearchNext').disabled=(searchDialogPage+1)*20>=searchDialogItems.length;list.scrollTop=0;syncSearchSelection();
 }

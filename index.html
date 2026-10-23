@@ -2447,6 +2447,26 @@ html[data-persona="cyber"] #app .typed-entry :is(input,textarea,select):is(:focu
  box-shadow:0 0 10px #00e7ff35!important;
 }
 </style>
+
+<style>
+/* All Cyber surfaces, including dialogs outside #app, share cool focus rings. */
+html[data-persona="cyber"] :is(button,input,select,textarea,summary,a,[role="button"]):focus-visible{
+ outline:2px solid #00e7ff!important;outline-offset:3px!important;
+}
+html[data-persona="cyber"] :is(button,input,select,textarea,summary,a,[role="button"]):focus{
+ outline-color:#00e7ff!important;
+}
+html[data-persona="cyber"] #app .typed-review-filter button[aria-pressed="true"]{
+ background:#123b5c!important;color:#e4faff!important;border-color:#00e7ff!important;
+ box-shadow:0 0 10px #00e7ff35!important;
+}
+#questionSearchDialog header,#collectionPreview .collection-preview-head{align-items:flex-start;gap:12px}
+#questionSearchTitle,#collectionPreviewTitle{min-width:0;overflow-wrap:anywhere}
+:is(#questionSearchDialog,#collectionPreview) button.compact-close{
+ display:grid;place-items:center;flex:0 0 40px;width:40px;min-width:40px;height:40px;min-height:40px;
+ padding:0!important;font-size:24px!important;line-height:1!important;white-space:nowrap;text-decoration:none;
+}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -2593,7 +2613,7 @@ html[data-persona="cyber"] #app .typed-entry :is(input,textarea,select):is(:focu
  </form>
 </dialog>
 <noscript><p>このアプリを使うにはJavaScriptを有効にしてにゃ。</p></noscript>
-<dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><span class="volume-slider" id="soundVolumeTrack"><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></span></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">Nekoponをタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><dialog class="question-search-dialog" id="questionSearchDialog" aria-labelledby="questionSearchTitle"><header><h3 id="questionSearchTitle"></h3><button type="button" class="tool" id="questionSearchClose">閉じるにゃ</button></header><div class="question-search-dialog-list" id="questionSearchDialogList"></div><footer><button type="button" class="tool" id="questionSearchPrev">前へ</button><span id="questionSearchPage"></span><button type="button" class="tool" id="questionSearchNext">次へ</button></footer></dialog><script src="asset-config.js"></script>
+<dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><span class="volume-slider" id="soundVolumeTrack"><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></span></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">Nekoponをタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><dialog class="question-search-dialog" id="questionSearchDialog" aria-labelledby="questionSearchTitle"><header><h3 id="questionSearchTitle"></h3><button type="button" class="tool compact-close" id="questionSearchClose" aria-label="検索結果を閉じる">×</button></header><div class="question-search-dialog-list" id="questionSearchDialogList"></div><footer><button type="button" class="tool" id="questionSearchPrev">前へ</button><span id="questionSearchPage"></span><button type="button" class="tool" id="questionSearchNext">次へ</button></footer></dialog><script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
 <script>
 // Keep registered image paths stable while refreshing these replaced R2 objects.
@@ -2656,7 +2676,7 @@ html[data-persona="cyber"] #app .typed-entry :is(input,textarea,select):is(:focu
  <div class="collection-editor-foot"><p id="collectionEditorStatus" role="status"></p><div class="collection-footer-info"><span class="collection-total" id="collectionTotal" aria-live="polite">0問</span><small class="collection-storage-note" title="この端末・ブラウザーに保存するにゃ">この端末に保存にゃ</small></div><button class="tool" id="collectionEditorCancel" type="button">やめるにゃ</button><button class="primary-button" id="collectionSave" type="button">保存するにゃ</button></div>
 </dialog>
 <dialog id="collectionPreview" aria-labelledby="collectionPreviewTitle">
- <div class="collection-preview-head"><h3 id="collectionPreviewTitle"></h3><button id="collectionPreviewClose" type="button" class="tool" aria-label="画像一覧に戻るにゃ">閉じるにゃ ×</button></div>
+ <div class="collection-preview-head"><h3 id="collectionPreviewTitle"></h3><button id="collectionPreviewClose" type="button" class="tool compact-close" aria-label="画像一覧に戻るにゃ">×</button></div>
  <img id="collectionPreviewImage" alt="">
  <div class="collection-preview-actions"><button class="secondary-button" id="collectionPreviewFlip" type="button">解答を見るにゃ</button><button class="secondary-button" id="collectionPreviewSelect" type="button">選ぶにゃ ✓</button></div>
  <p class="collection-preview-help">確認用の画像にゃ。学習数や「おぼえた」は増えないにゃ。</p>

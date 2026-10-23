@@ -2231,6 +2231,9 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button{background:#1224
 html[data-persona=cyber] #app #testScreen .test-mark-row button[aria-pressed=true]{background:#0d3d53!important;border-color:#00f5ff!important;color:#9afaff!important;box-shadow:0 0 10px #00f5ff44!important}
 html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=retry][aria-pressed=true]{background:#321731!important;border-color:#c05aff!important;color:#f1d7ff!important}
 @media(max-width:390px){#app #testScreen .test-answer-head{flex-wrap:wrap}#app #testScreen .test-answer-head span{text-align:left}#app #testScreen .test-review-footer{gap:8px}}
+
+/* Separate the confirmation-test section clearly from the report card. */
+#app #reportScreen .report-test-heading{margin-top:32px;}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -2294,7 +2297,7 @@ html[data-persona=cyber] #app #testScreen .test-mark-row button[data-outcome=ret
   <div id="reportMaterials" class="report-materials"></div><p id="reportLegacy" class="homework-note"></p>
   <p id="reportCheer" class="report-cheer"></p>
  </article>
- <div class="page-heading homework-heading" data-capture-hide><h2 class="screen-title">確認テスト</h2></div>
+ <div class="page-heading homework-heading report-test-heading" data-capture-hide><h2 class="screen-title">確認テスト</h2></div>
  <div class="report-main-actions" data-capture-hide><button id="resumeTestMain" class="secondary-button" type="button" disabled>続きからやるにゃ</button><button id="openTestSetup" class="primary-button" type="button">新しく始めるにゃ <span aria-hidden="true">🐾</span></button></div>
  <section class="homework-tests" data-capture-hide><h3>確認テストの記録</h3><div id="homeworkTestHistory"></div></section>
  <details class="history-management" data-capture-hide><summary>履歴の管理にゃ</summary><div><button id="resetReportHistory" class="link-button" type="button">日別レポートを消すにゃ</button><button id="resetTestHistory" class="link-button" type="button">テスト履歴を消すにゃ</button></div><small>元の教材・「おぼえた」・まとめは残るにゃ。</small></details>

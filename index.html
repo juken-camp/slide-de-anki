@@ -2467,6 +2467,29 @@ html[data-persona="cyber"] #app .typed-review-filter button[aria-pressed="true"]
  padding:0!important;font-size:24px!important;line-height:1!important;white-space:nowrap;text-decoration:none;
 }
 </style>
+
+<style>
+.question-search-row{display:grid;grid-template-columns:32px minmax(0,1fr);gap:2px;align-items:start;min-width:0}
+.question-search-row .question-search-hit{min-width:0;margin:0!important}
+.search-question-select{display:flex;align-items:center;justify-content:center;min-height:44px;margin:0!important;cursor:pointer}
+.search-question-select input{width:19px;height:19px;margin:10px 0 0;accent-color:#af602c;cursor:pointer}
+.search-question-text{display:block}.search-question-answer{display:block;margin-top:5px;font-size:12px;color:#884d47;white-space:pre-wrap;overflow-wrap:anywhere}
+.search-selection-tools{padding:10px 12px;margin:10px 0;border:1px solid #dcc2a5;border-radius:12px;background:#fff7eb;font-size:12px;line-height:1.6;min-width:0}
+.search-selection-tools>div{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.search-selection-tools button{font-size:12px;min-height:36px;padding:6px 9px;white-space:normal}
+.question-search-dialog-list{max-height:48dvh}.question-search-dialog .search-selection-tools{margin:10px 0}
+.search-save-dialog{width:min(500px,calc(100vw - 24px));padding:16px;max-height:85dvh}
+.search-save-dialog header{display:flex;justify-content:space-between;gap:12px;align-items:center}.search-save-dialog h2{font-size:16px;margin:0;min-width:0}
+.search-save-dialog .compact-close{flex:none;width:40px;min-width:40px;min-height:40px;padding:0;font-size:24px;white-space:nowrap}
+.search-save-dialog input,.search-save-dialog select{font-size:16px!important;max-width:100%;min-width:0}.search-save-dialog footer{display:flex;justify-content:flex-end;margin-top:12px}
+.search-save-preview{max-height:20dvh;overflow:auto;padding:4px 10px;border-left:2px solid #dcc2a5;font-size:12px}.search-save-preview p{margin:4px 0;font-size:12px}
+#searchSaveStatus{font-size:12px;min-height:1.5em}
+html[data-persona="cyber"] .search-selection-tools{background:#101933;border-color:#315b81;color:#cce7fb}
+html[data-persona="cyber"] .search-question-select input{accent-color:#00e7ff}
+html[data-persona="cyber"] .search-question-answer{color:#81ecfa}
+html[data-persona="cyber"] .search-save-dialog{background:#0f1430;color:#dceaff;border-color:#00e7ff}
+html[data-persona="cyber"] .search-save-preview{border-color:#315b81}
+html[data-persona="cyber"] #searchSaveDialog :is(input,select){background:#0b1426!important;color:#dceaff!important;border-color:#477092!important;caret-color:#00e7ff}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>
@@ -2484,7 +2507,7 @@ html[data-persona="cyber"] #app .typed-review-filter button[aria-pressed="true"]
   
   
   
-  <p id="questionSearchStatus" class="question-search-status" role="status"></p><details class="catalog-milestones" id="catalogMilestones"><summary>🐾 達成マークを集めるにゃ</summary><p>全問を「おぼえた」にすると ✓。そのあと確認チャレンジで、ランダム10問（候補が少なければ全問）を自動判定で満点にすると 🏅 確認クリアにゃ。自己判定の○は区別するにゃ。獲得日と出題数を残すにゃ。</p></details>
+  <p id="questionSearchStatus" class="question-search-status" role="status"></p><div id="questionSearchSelection" class="search-selection-tools" hidden><span data-search-count role="status" aria-live="polite"></span><div><button type="button" class="tool" data-search-select-all>検索した問題をすべて選ぶにゃ</button><button type="button" class="link-button" data-search-clear>選択を解除</button><button type="button" class="tool" data-search-save>まとめに保存にゃ</button></div></div><details class="catalog-milestones" id="catalogMilestones"><summary>🐾 達成マークを集めるにゃ</summary><p>全問を「おぼえた」にすると ✓。そのあと確認チャレンジで、ランダム10問（候補が少なければ全問）を自動判定で満点にすると 🏅 確認クリアにゃ。自己判定の○は区別するにゃ。獲得日と出題数を残すにゃ。</p></details>
   <div class="catalog-list-tools"><span id="visibleCount" aria-live="polite"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
   <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
  <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection">＋ まとめを作るにゃ</button><button class="tool" type="button" id="myAddLesson">＋ 教材を追加するにゃ</button></div>
@@ -2613,7 +2636,18 @@ html[data-persona="cyber"] #app .typed-review-filter button[aria-pressed="true"]
  </form>
 </dialog>
 <noscript><p>このアプリを使うにはJavaScriptを有効にしてにゃ。</p></noscript>
-<dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><span class="volume-slider" id="soundVolumeTrack"><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></span></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">Nekoponをタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><dialog class="question-search-dialog" id="questionSearchDialog" aria-labelledby="questionSearchTitle"><header><h3 id="questionSearchTitle"></h3><button type="button" class="tool compact-close" id="questionSearchClose" aria-label="検索結果を閉じる">×</button></header><div class="question-search-dialog-list" id="questionSearchDialogList"></div><footer><button type="button" class="tool" id="questionSearchPrev">前へ</button><span id="questionSearchPage"></span><button type="button" class="tool" id="questionSearchNext">次へ</button></footer></dialog><script src="asset-config.js"></script>
+<dialog id="soundDialog" aria-labelledby="soundDialogTitle"><button class="dialog-close" data-close="soundDialog" aria-label="音の設定を閉じる">✕</button><p class="section-kicker">NEKOPON SOUND</p><h2 id="soundDialogTitle" tabindex="-1" autofocus>お気に入りの音で学ぶにゃ</h2><p class="sound-intro">めくる音も、おぼえた音も、好きな雰囲気に♪</p><div class="sound-presets" aria-label="効果音の種類"><button type="button" data-sound-style="soft" aria-pressed="true"><span aria-hidden="true">🫧</span><strong>やさしい</strong><small>ふんわり、軽やか</small></button><button type="button" data-sound-style="pop" aria-pressed="false"><span aria-hidden="true">🐾</span><strong>ぽこぽこ</strong><small>ころん、と弾む</small></button><button type="button" data-sound-style="sparkle" aria-pressed="false"><span aria-hidden="true">✨</span><strong>きらきら</strong><small>ベルみたいに響く</small></button></div><label class="sound-volume" for="soundVolume"><span>音量 <output id="soundVolumeLabel" for="soundVolume">65%</output></span><span class="volume-slider" id="soundVolumeTrack"><input type="range" id="soundVolume" min="0" max="100" step="5" value="65"></span></label><p id="soundStateNote" class="sound-state" role="status"></p><div class="sound-dialog-actions"><button type="button" class="tool" id="dialogSoundToggle" aria-pressed="true">🔊 オフにするにゃ</button><button type="button" class="primary-button" id="soundPreview">♪ 試し聴きにゃ</button></div><p class="sound-tip">Nekoponをタップすると、いろんな声でお返事するにゃ。<br>音をオフにしても、肉球や星で反応するにゃ。</p><button type="button" class="tool sound-close" data-close="soundDialog">この音でいくにゃ</button></dialog><dialog class="question-search-dialog" id="questionSearchDialog" aria-labelledby="questionSearchTitle"><header><h3 id="questionSearchTitle"></h3><button type="button" class="tool compact-close" id="questionSearchClose" aria-label="検索結果を閉じる">×</button></header><div class="search-selection-tools"><span data-search-count role="status" aria-live="polite"></span><div><button type="button" class="tool" id="searchDialogSelectAll">この教材の検索結果を選ぶにゃ</button><button type="button" class="link-button" data-search-clear>選択を解除</button><button type="button" class="tool" data-search-save>まとめに保存にゃ</button></div></div><div class="question-search-dialog-list" id="questionSearchDialogList"></div><footer><button type="button" class="tool" id="questionSearchPrev">前へ</button><span id="questionSearchPage"></span><button type="button" class="tool" id="questionSearchNext">次へ</button></footer></dialog>
+<dialog id="searchSaveDialog" class="search-save-dialog" aria-labelledby="searchSaveTitle">
+ <header><h2 id="searchSaveTitle">選んだ問題を保存にゃ</h2><button type="button" class="tool compact-close" id="searchSaveClose" aria-label="保存画面を閉じる">×</button></header>
+ <form id="searchSaveForm">
+  <p id="searchSaveCount"></p><div id="searchSavePreview" class="search-save-preview user-content"></div>
+  <label for="searchSaveTarget">保存先</label><select id="searchSaveTarget"></select>
+  <div id="searchSaveNameField"><label for="searchSaveName">新しいまとめのタイトル</label><input id="searchSaveName" maxlength="50" autocomplete="off" placeholder="例：植物の復習"></div>
+  <p id="searchSaveStatus" role="status" aria-live="polite"></p>
+  <footer><button type="submit" class="primary-button" id="searchSaveSubmit">保存するにゃ</button></footer>
+ </form>
+</dialog>
+<script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
 <script>
 // Keep registered image paths stable while refreshing these replaced R2 objects.
@@ -3994,7 +4028,10 @@ function collectionSnapshot(c) {return {id:c.id,name:c.name,cardKeys:c.cards.map
 function collectionKnown(c) {return c.cards.filter(r=>data.records[r.lessonId]?.[r.cardId]?.status==='known').length;}
 function syncMainNavigation(){if(screen!=='catalog')return;$('openCatalog').toggleAttribute('aria-current',!catalogIsCollections);$('navCollections').toggleAttribute('aria-current',catalogIsCollections);if(!catalogIsCollections)$('openCatalog').setAttribute('aria-current','page');else $('navCollections').setAttribute('aria-current','page');}
 function syncCollectionCatalog() {
-  const on=catalogIsCollections;syncMainNavigation();$('catalogTitle').textContent=on?'マイページ':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('is-my-page',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
+  const on=catalogIsCollections;
+  $('questionSearchSelection').hidden=on||(!catalogQuery()&&!searchSelectedQuestions.size);
+  $('questionSearchStatus').hidden=on;$('catalogMilestones').hidden=on||!!catalogQuery();
+  syncMainNavigation();$('catalogTitle').textContent=on?'マイページ':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('is-my-page',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
   $('myCollectionsPanel').hidden=!on;
   document.querySelector('#catalogScreen .catalog-filter-row').hidden=on || !catalogSubject;
   $('seriesScroller').hidden=on; $('catalogSeries').hidden=on; $('catalogDock').hidden=on;
@@ -4612,6 +4649,7 @@ let assessmentDataset=null,assessmentPromise=null,assessmentError='',assessmentS
 let typedReviewLimit=20,typedReviewPendingOnly=false,typedRenderingKey='',typedLaunching=false;
 let typedSaveTimer=null;
 let searchDialogItems=[],searchDialogPage=0;
+const searchSelectedQuestions=new Set();
 const assessmentByKey=key=>{const r=hSplit(key);return assessmentDataset?.lessons[r.lessonId]?.cards.find(c=>c.id===r.cardId)||null;};
 const typedTest=()=>testSession?.typedSchema===1;
 const typedSetup=()=>$('testAnswerMode').value!=='notebook';
@@ -4666,6 +4704,7 @@ function questionSearchMatchesLesson(m,query){return !!assessmentSearchMatches(m
 function renderAssessmentCatalog(){
  const on=!catalogIsCollections,query=catalogQuery(),status=$('questionSearchStatus');
  $('catalogMilestones').hidden=!on||!!query;status.hidden=!on;status.replaceChildren();
+ syncSearchSelection();
  if(on&&query){
   if(!assessmentDataset){
    status.append(document.createTextNode(assessmentError?'教材名だけで検索中にゃ。'+assessmentError:'教材名を検索中にゃ。問題文はちょっと待ってにゃ🐾'));
@@ -4699,10 +4738,58 @@ function renderAssessmentCatalog(){
   }
  }
 }
-function questionSearchButton(m,c){
- const b=collectionButton('','question-search-hit',()=>openSearchQuestion(m.id,c.id));
- b.append(collectionNode('small',`問題 ${c.number}`),document.createTextNode(c.q.length>130?c.q.slice(0,130)+'…':c.q));return b;
+function syncSearchSelection(){
+ const n=searchSelectedQuestions.size;
+ $('questionSearchSelection').hidden=catalogIsCollections||(!catalogQuery()&&!n);
+ for(const el of document.querySelectorAll('[data-search-count]'))el.textContent=`問題を選んでまとめるにゃ · ${n}問選択`;
+ for(const el of document.querySelectorAll('[data-search-save],[data-search-clear]'))el.disabled=!n;
+ for(const el of document.querySelectorAll('[data-search-check]'))el.checked=searchSelectedQuestions.has(el.dataset.searchCheck);
+ const all=document.querySelector('[data-search-select-all]');if(all)all.disabled=!assessmentDataset||!catalogQuery()||!meta.some(m=>assessmentSearchMatches(m.id,catalogQuery()).length);
 }
+function questionSearchButton(m,c){
+ const key=cardKey(m.id,c.id),row=collectionNode('div',undefined,'question-search-row');
+ const label=collectionNode('label',undefined,'search-question-select'),check=document.createElement('input');
+ check.type='checkbox';check.dataset.searchCheck=key;check.checked=searchSelectedQuestions.has(key);check.setAttribute('aria-label',`${m.title} 問題${c.number}をまとめ用に選択`);
+ check.onchange=()=>{if(check.checked)searchSelectedQuestions.add(key);else searchSelectedQuestions.delete(key);syncSearchSelection();};
+ label.append(check);row.append(label);
+ const b=collectionButton('','question-search-hit',()=>openSearchQuestion(m.id,c.id));
+ b.append(collectionNode('small',`問題 ${c.number}`),collectionNode('span',c.q.length>130?c.q.slice(0,130)+'…':c.q,'search-question-text'));
+ const answer=collectionNode('span',undefined,'search-question-answer');answer.append(collectionNode('strong','解答：'),document.createTextNode(c.a||'解答画像で確認'));b.append(answer);row.append(b);return row;
+}
+function selectSearchMatches(items){for(const {m,c} of items)searchSelectedQuestions.add(cardKey(m.id,c.id));syncSearchSelection();}
+function openSearchSave(){
+ if(!searchSelectedQuestions.size)return;
+ const refs=[...searchSelectedQuestions].map(hSplit),groups=new Map();
+ for(const r of refs)groups.set(r.lessonId,(groups.get(r.lessonId)||0)+1);
+ $('searchSaveCount').textContent=`選んだ${refs.length}問を、マイのまとめに保存するにゃ。`;
+ const preview=$('searchSavePreview');preview.replaceChildren();
+ for(const [id,n] of groups)preview.append(collectionNode('p',`${meta.find(m=>m.id===id)?.title||id} · ${n}問`));
+ const select=$('searchSaveTarget');select.replaceChildren();const fresh=document.createElement('option');fresh.value='';fresh.textContent='新しいまとめを作る';select.append(fresh);
+ for(const c of readCollections()){const o=document.createElement('option');o.value=c.id;o.textContent=`${c.name}（${c.cards.length}問）に追加`;select.append(o);}
+ $('searchSaveNameField').hidden=false;$('searchSaveName').value='';$('searchSaveName').removeAttribute('aria-invalid');$('searchSaveStatus').textContent='';
+ $('searchSaveDialog').showModal();$('searchSaveTarget').focus({preventScroll:true});
+}
+function saveSearchSelection(event){
+ event.preventDefault();const refs=[...searchSelectedQuestions].map(hSplit);if(!refs.length)return;
+ const target=$('searchSaveTarget').value,items=readCollections();let item=items.find(c=>c.id===target);
+ if(target&&!item){$('searchSaveStatus').textContent='保存先が見つからないにゃ。一度閉じて選び直してにゃ。';return;}
+ const name=$('searchSaveName').value.trim();
+ if(!target&&!name){$('searchSaveName').setAttribute('aria-invalid','true');$('searchSaveStatus').textContent='まとめのタイトルを入れてにゃ。';$('searchSaveName').focus();return;}
+ if(!item){item={id:'collection-'+(crypto.randomUUID?.()||Date.now().toString(36)),name,cards:[]};items.push(item);}
+ const seen=new Set(item.cards.map(r=>cardKey(r.lessonId,r.cardId)));let added=0;
+ for(const r of refs)if(!seen.has(cardKey(r.lessonId,r.cardId))){item.cards.push({lessonId:r.lessonId,cardId:r.cardId});seen.add(cardKey(r.lessonId,r.cardId));added++;}
+ item.updated=new Date().toISOString();
+ if(!writeCollections(items)){$('searchSaveStatus').textContent='保存できなかったにゃ。端末の空き容量と保存設定を確認してにゃ。';return;}
+ $('searchSaveDialog').close();searchSelectedQuestions.clear();syncSearchSelection();
+ toast(target?(added?`${added}問を追加したにゃ（合計${item.cards.length}問）`:'選んだ問題はすでに保存済みにゃ'):`${item.cards.length}問のまとめを保存したにゃ🐾`);
+}
+$('searchSaveForm').onsubmit=saveSearchSelection;
+$('searchSaveTarget').onchange=()=>{$('searchSaveNameField').hidden=!!$('searchSaveTarget').value;$('searchSaveStatus').textContent='';};
+$('searchSaveClose').onclick=()=>$('searchSaveDialog').close();
+for(const b of document.querySelectorAll('[data-search-save]'))b.onclick=openSearchSave;
+for(const b of document.querySelectorAll('[data-search-clear]'))b.onclick=()=>{searchSelectedQuestions.clear();syncSearchSelection();};
+$('searchDialogSelectAll').onclick=()=>selectSearchMatches(searchDialogItems);
+document.querySelector('[data-search-select-all]').onclick=()=>{const query=catalogQuery();if(!query)return;selectSearchMatches(meta.flatMap(m=>assessmentSearchMatches(m.id,query).map(c=>({m,c}))));};
 async function openSearchQuestion(lid,cid){
  $('questionSearchDialog').close();
  try{await selectLessons([lid],{collection:{id:'question-search',name:'検索した問題',cardKeys:[cardKey(lid,cid)]}});}
@@ -4713,7 +4800,7 @@ function renderQuestionSearchDialog(){
  const list=$('questionSearchDialogList');list.replaceChildren();
  for(const {m,c} of searchDialogItems.slice(searchDialogPage*20,searchDialogPage*20+20))list.append(questionSearchButton(m,c));
  $('questionSearchPage').textContent=`${searchDialogPage+1} / ${Math.max(1,Math.ceil(searchDialogItems.length/20))}`;
- $('questionSearchPrev').disabled=searchDialogPage===0;$('questionSearchNext').disabled=(searchDialogPage+1)*20>=searchDialogItems.length;list.scrollTop=0;
+ $('questionSearchPrev').disabled=searchDialogPage===0;$('questionSearchNext').disabled=(searchDialogPage+1)*20>=searchDialogItems.length;list.scrollTop=0;syncSearchSelection();
 }
 function lessonAllKnown(lid){
  const m=meta.find(m=>m.id===lid);if(!m)return false;

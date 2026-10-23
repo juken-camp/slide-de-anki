@@ -2278,6 +2278,60 @@ html[data-persona="cyber"] .homework-setup #testLessonSearch,html[data-persona="
   textarea,
   select { font-size: 16px !important; }
 }
+
+/* 2026-10-23: Landscape study focus, both Nekopon / Cyber Nicopon.
+   The decorative .app::after normally rotates 22 degrees; in landscape it
+   becomes the footer strip, so all decoration transforms MUST be cleared. */
+body.slide-focus #app::after{
+  transform:none!important;
+  opacity:1!important;
+  animation:none!important;
+  filter:none!important;
+  box-shadow:none!important;
+  font-size:0!important;
+}
+body.slide-focus #app::before{display:none!important}
+/* Do not let Cyber's general card/head backgrounds, borders or neon glows
+   override the edge-to-edge white slide and the transparent footer labels. */
+body.slide-focus #app #studyScreen #card{
+  z-index:2; /* keep the bottom-left counter above the footer overlay */
+  background:#fff!important;
+  border:0!important;
+  border-radius:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  animation:none!important;
+}
+body.slide-focus #app #studyScreen #card::before{display:none!important}
+body.slide-focus #app #studyScreen #card>.head{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+body.slide-focus #app #studyScreen #card #faceLabel{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+/* In the normal landscape UI the status tag is hidden; Cyber's global
+   #cardStatus rule must not turn it back on. */
+body.slide-focus #app #studyScreen #card #cardStatus{display:none!important}
+html[data-persona=cyber] body.slide-focus #app #studyScreen #card #faceLabel{
+  color:#83f1ff!important;
+}
+html[data-persona=cyber] body.slide-focus #app #studyScreen #focusPosition{
+  color:#acc5e1!important;
+}
+/* The image already fills the landscape slide. Hide the redundant arrow in
+   BOTH personas; portrait study and test zoom buttons are left unchanged. */
+body.slide-focus #app #studyScreen #zoomImage,
+body.slide-focus #focusMenu #focusZoom,
+body.slide-focus #focusMenu .focus-extra{display:none!important}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

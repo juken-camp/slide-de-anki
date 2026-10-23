@@ -2270,6 +2270,14 @@ html[data-persona="cyber"] .homework-setup .test-lesson-choice:has(input:checked
 .homework-setup #testLessonSearchInfo{display:block;margin-top:5px;font-size:11px;opacity:.75}
 .homework-setup #testCountCustom[hidden]{display:none!important}
 html[data-persona="cyber"] .homework-setup #testLessonSearch,html[data-persona="cyber"] .homework-setup #testCountCustom{background:var(--panel,#14293a);color:inherit;border-color:#5a87a3}
+
+/* iPhone Safari: prevent automatic focus zoom on text-entry controls.
+   Keep page pinch-zoom accessible; do not disable viewport scaling. */
+@media (max-width: 900px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="color"]):not([type="hidden"]),
+  textarea,
+  select { font-size: 16px !important; }
+}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP</span></span></button>

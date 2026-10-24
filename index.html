@@ -2617,6 +2617,10 @@ html[data-persona=cyber] #app .neko-practice-verdict[data-outcome=pass]{color:#8
 html[data-persona=cyber] #app .neko-practice-verdict[data-outcome=retry]{color:#f6a8ca}
 html[data-persona=cyber] #app .neko-practice-footer{border-color:#315b81}
 html[data-persona=cyber] .neko-tutor-figure figcaption{color:#a9c6e5}
+
+/* One-answer practice needs no disabled method selector; keep real choices in other tests. */
+#testAnswerMethodRow{grid-template-columns:minmax(0,1fr)}
+html[data-persona="cyber"] #nekoRelatedDialog .homework-setup-head{border-bottom-color:#315b81!important}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -2729,7 +2733,7 @@ html[data-persona=cyber] .neko-tutor-figure figcaption{color:#a9c6e5}
 <dialog id="homeworkSetup" class="homework-setup" aria-labelledby="homeworkSetupTitle">
  <div class="homework-setup-head"><h2 id="homeworkSetupTitle" tabindex="-1">おぼえた問題で確認にゃ</h2><button id="closeHomeworkSetup" class="tool" type="button" aria-label="テスト設定を閉じる">×</button></div>
  <div class="homework-setup-body"><p id="nekoSetupHint" class="homework-note"></p>
-  <div class="typed-mode-select"><label>解答方法<select id="testAnswerMode"><option value="typed">入力で解答</option><option value="notebook">ノートに解答</option></select></label><label hidden>答え合わせ<select id="testFeedbackMode"><option value="test">全問を提出してから</option><option value="practice">1問ずつ・練習</option></select></label></div><p class="homework-note" id="testFormatNote">問題を見ながら入力するにゃ。答え合わせは全問を提出してからにゃ。</p>
+  <div class="typed-mode-select" id="testAnswerMethodRow"><label>解答方法<select id="testAnswerMode"><option value="typed">入力で解答</option><option value="notebook">ノートに解答</option></select></label><label hidden>答え合わせ<select id="testFeedbackMode"><option value="test">全問を提出してから</option><option value="practice">1問ずつ・練習</option></select></label></div><p class="homework-note" id="testFormatNote">問題を見ながら入力するにゃ。答え合わせは全問を提出してからにゃ。</p>
   <div id="testDateScope" class="test-date-scope"><div class="test-quick-presets" role="group" aria-label="確認テストの出題期間"><button type="button" data-test-period="today" aria-pressed="true">今日</button><button type="button" data-test-period="three" aria-pressed="false">直近3日間</button><button type="button" data-test-period="custom" aria-pressed="false">期間指定</button></div>
   <div id="testCustomDates" hidden><div class="homework-dates"><label>開始日<input type="date" id="testFrom"></label><label>終了日<input type="date" id="testTo"></label></div></div>
   <p class="test-dates-note">選んだ期間に「おぼえた」を記録し、いまも「おぼえた」の問題から出すにゃ。</p><label class="homework-check"><input id="testAllDates" type="checkbox">記録日を指定しない</label></div><div id="testWrongScope" hidden><label class="homework-check"><input id="testIncludeRecovered" type="checkbox">克服した問題も含める</label><p class="test-dates-note">通常は、最後の判定が不正解の問題から出すにゃ。</p></div>
@@ -5047,7 +5051,7 @@ function homeworkCandidates(){
 }
 function updateHomeworkCandidates(){
  if(typeof nekoSetupMode!=='undefined'&&!nekoScopeRestoring){nekoRememberScope();}
- $('testAnswerMode').disabled=nekoSetupMode==='practice';
+ $('testAnswerMode').disabled=nekoSetupMode==='practice';$('testAnswerMethodRow').hidden=nekoSetupMode==='practice';
  if(typedSetup()&&!assessmentDataset){
   $('testCandidateCount').textContent='';$('testSetupNotice').textContent=assessmentError||'ちょっと待ってにゃ🐾';$('startHomeworkTest').disabled=true;
   $('assessmentRetry').hidden=!assessmentError;if(!assessmentError&&!assessmentPromise)requestAssessmentRefresh();return;
@@ -5366,7 +5370,7 @@ function nekoRememberScope(){if(nekoScopeRestoring||!$('homeworkSetup').open||te
 async function nekoOpenSetup(mode='confirm'){
  if(typeof mode!=='string'||!nekoTestModes[mode])mode='confirm';await Promise.all([studyHistoryReady,importedLessonsReady]);if(screen!=='report')return;nekoSetupMode=mode;nekoScopeRestoring=true;
  $('homeworkSetupTitle').textContent=nekoTestModes[mode].title;$('nekoSetupHint').textContent=nekoTestModes[mode].hint;$('testDateScope').hidden=mode!=='confirm';$('testWrongScope').hidden=mode!=='wrong';$('testTutorScope').hidden=mode!=='practice';
- $('testFeedbackMode').value=mode==='practice'?'practice':'test';$('testAnswerMode').disabled=mode==='practice';
+ $('testFeedbackMode').value=mode==='practice'?'practice':'test';$('testAnswerMode').disabled=mode==='practice';$('testAnswerMethodRow').hidden=mode==='practice';
  $('testSubject').replaceChildren();for(const [id,title] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const op=collectionNode('option',title);op.value=id;$('testSubject').append(op);}
  const p=data.neko.testScopes?.[mode]||{};$('testSubject').value=meta.some(m=>m.subject===p.subject)?p.subject:'all';nekoFilterField();if([...$('testField').options].some(o=>o.value===p.field))$('testField').value=p.field;
  $('testCount').value=['5','10','15','20','custom'].includes(p.count)?p.count:'5';$('testCountCustom').value=p.custom||'';$('testCountCustom').hidden=$('testCount').value!=='custom';$('testAnswerMode').value=mode==='practice'?'typed':p.answerMode==='notebook'?'notebook':'typed';$('testLessonSearch').value='';$('testIncludeRecovered').checked=!!p.includeRecovered;
@@ -5379,7 +5383,7 @@ function nekoSetExplainPrefs(root){const p=nekoPreferences();root.querySelectorA
 function nekoExplainControls(onChange){const root=collectionNode('div',undefined,'neko-explain-prefs');for(const [key,title,opts] of [['taste','解説のテイスト',[['gentle','やさしく'],['spartan','スパルタ'],['energetic','ハイテンション']]],['amount','解説のボリューム',[['short','ひとこと'],['points','ちゃんと'],['deep','じっくり']]]]){const label=collectionNode('label',title),sel=document.createElement('select');sel.dataset.nekoPref=key;sel.setAttribute('aria-label',title);for(const [v,t]of opts){const op=collectionNode('option',t);op.value=v;sel.append(op);}sel.value=nekoPreferences()[key];sel.onchange=()=>{nekoSavePrefs({[key]:sel.value});onChange?.();};label.append(sel);root.append(label);}return root;}
 async function nekoAiStatus(){if(!nekoPreferences().enabled)return false;if(nekoAiAvailable!==null)return nekoAiAvailable;if(nekoAiStatusPromise)return nekoAiStatusPromise;nekoAiStatusPromise=(async()=>{try{const r=await fetch('/api/nekopon',{signal:AbortSignal.timeout(8000)});if(!r.ok){if(r.status===404)nekoAiAvailable=false;return false;}const j=await r.json();nekoAiAvailable=j.configured===true;return nekoAiAvailable;}catch{return false;}finally{nekoAiStatusPromise=null;}})();return nekoAiStatusPromise;}
 function nekoResponseStamp(key,session=testSession){return JSON.stringify([session?.responses?.[key]||[],!!session?.skipped?.[key],session?.displayContracts?.[key]]);}
-function nekoCached(key,action,question=''){const s=testSession,signature=JSON.stringify(['tutor-20261024',nekoResponseStamp(key),document.documentElement.dataset.persona||'neko',nekoPreferences().taste,nekoPreferences().amount,action,question]);const entry=s?.tutor?.[key];return {signature,entry,result:entry?.cache?.[signature]};}
+function nekoCached(key,action,question=''){const s=testSession,signature=JSON.stringify(['tutor-20261024-tone2',nekoResponseStamp(key),document.documentElement.dataset.persona||'neko',nekoPreferences().taste,nekoPreferences().amount,action,question]);const entry=s?.tutor?.[key];return {signature,entry,result:entry?.cache?.[signature]};}
 async function nekoAsk(key,action='initial',question=''){
  const session=testSession,record=assessmentByKey(key);if(!session||!record||!nekoPreferences().enabled)throw Error('Nekoponの解説をオフにしているにゃ。設定から変更できるにゃ。');
  const {signature,result}=nekoCached(key,action,question);if(result)return result;const pendingKey=session.id+'|'+key+'|'+signature;if(nekoAiPending.has(pendingKey))return nekoAiPending.get(pendingKey);
@@ -5412,19 +5416,33 @@ function nekoQuestionFigure(r){
  const note=collectionNode('p','図を読み込めなかったにゃ。通信を確認してにゃ。','homework-note');note.hidden=true;const retry=collectionButton('図を読み直すにゃ','link-button',()=>{note.hidden=true;image.hidden=false;image.src=window.NekoImageURL(r.question);});retry.hidden=true;
  image.onerror=()=>{image.hidden=true;note.hidden=false;retry.hidden=false;};image.onload=()=>{note.hidden=true;retry.hidden=true;};figure.append(caption,image,note,retry);return figure;
 }
+function readableTutorText(value){
+ const pairs={'「':'」','『':'』','（':'）','(':')','【':'】','［':'］'};
+ return String(value||'').replace(/\r\n?/g,'\n').trim().split(/\n+/).flatMap(line=>{
+  const chars=Array.from(line),stack=[],parts=[];let start=0;
+  for(let i=0;i<chars.length;i++){
+   const c=chars[i];if(pairs[c])stack.push(pairs[c]);else if(stack.at(-1)===c)stack.pop();
+   if(stack.length||!/[。！？!?]/.test(c))continue;
+   let end=i+1;while(end<chars.length&&/[。！？!?]/.test(chars[end]))end++;
+   while(end<chars.length&&/[\p{Extended_Pictographic}\p{Emoji_Modifier}\uFE0F\u200D \t]/u.test(chars[end]))end++;
+   parts.push(chars.slice(start,end).join('').trim());start=end;i=end-1;
+  }
+  parts.push(chars.slice(start).join('').trim());return parts.filter(Boolean);
+ }).join('\n\n');
+}
 function nekoRenderTutor(root,key,readonly=false){
  const sessionId=testSession?.id,r=assessmentByKey(key);if(!r)return;root.replaceChildren();const heading=collectionNode('div',undefined,'neko-tutor-heading');heading.append(collectionNode('span',document.documentElement.dataset.persona==='cyber'?'😎':'🐱'),collectionNode('strong',document.documentElement.dataset.persona==='cyber'?'Cyber Nicopon':'Nekopon'));const comment=collectionNode('p',nekoBasicComment(key),'neko-tutor-comment user-content');const controls=nekoExplainControls(()=>run('initial'));const explanation=collectionNode('div',undefined,'neko-tutor-explanation user-content');explanation.hidden=true;const status=collectionNode('p','','neko-tutor-status');status.setAttribute('role','status');const bubbleHint=collectionNode('p','気になることを、押して聞いてにゃ。','neko-chat-title'),bubbles=collectionNode('div',undefined,'neko-bubble-row');const conversation=collectionNode('div',undefined,'neko-conversation');const related=collectionNode('div');
  if(testSession.judgements?.[key]?.source==='manual')root.append(collectionNode('p',testSession.answers[key]==='pass'?'この問題は自己判定で正解に訂正しているにゃ。':'この問題は自己判定でもう一度に訂正しているにゃ。','neko-manual-note'));
  root.append(heading,comment,controls);const figure=nekoQuestionFigure(r);if(figure)root.append(figure);root.append(explanation,status,conversation,bubbleHint,bubbles,related);
  const tools=collectionNode('div',undefined,'neko-tutor-tools');tools.append(collectionButton('この問題をまとめに保存','link-button',()=>nekoSaveQuestion(key)),collectionButton('解説を読み直す','link-button',()=>{nekoAiAvailable=null;run('initial');}));root.append(tools);
  function paintBubbles(value){bubbles.replaceChildren();const suggestions=(Array.isArray(value?.suggestions)?value.suggestions:[]).filter(s=>s&&Object.hasOwn(nekoActionLabels,s.action)&&s.action!=='initial'&&typeof s.question==='string'&&s.question.trim()&&s.question.length<=60).slice(0,3);bubbleHint.textContent=suggestions.length?'この問題でもう少し聞いてみようにゃ。':'気になることを、押して聞いてにゃ。';for(const s of suggestions.length?suggestions:['easy','memory','compare'].map(action=>({action,question:nekoActionLabels[action]}))){bubbles.append(collectionButton(s.question,'neko-question-bubble',()=>run(s.action,s.question)));}}
- function paint(value,suggestions=value){comment.textContent=value?.comment||nekoBasicComment(key);explanation.hidden=!value?.explanation;explanation.textContent=value?.explanation||'';nekoRenderConversation(conversation,key);paintBubbles(suggestions);nekoRenderConnections(related,key,suggestions?.keywords||value?.keywords||[]);}
+ function paint(value,suggestions=value){comment.textContent=readableTutorText(value?.comment||nekoBasicComment(key));explanation.hidden=!value?.explanation;explanation.textContent=readableTutorText(value?.explanation||'');nekoRenderConversation(conversation,key);paintBubbles(suggestions);nekoRenderConnections(related,key,suggestions?.keywords||value?.keywords||[]);}
  let busy=false;async function run(action,question=''){if(busy)return;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);controls.querySelectorAll('select').forEach(s=>s.disabled=true);status.textContent='Nekoponが考えているにゃ…';try{const value=await nekoAsk(key,action,question);if(!root.isConnected||testSession?.id!==sessionId)return;if(action==='initial')paint(value);else{paint(nekoCached(key,'initial').result,value);conversation.lastElementChild?.scrollIntoView({block:'nearest',behavior:'smooth'});}status.textContent='Nekoponの解説';
   if(!readonly&&testSession?.kind==='practice'&&typedRenderingKey===key){const verdict=$('typedPracticeFeedback').querySelector('.neko-practice-verdict'),outcome=testSession.answers[key];if(verdict){verdict.textContent=outcome==='pass'?'○ 正解':outcome==='retry'?'× 不正解':'要確認';verdict.dataset.outcome=outcome||'pending';}}
  }catch(e){if(root.isConnected)status.textContent=e.message;}finally{busy=false;root.removeAttribute('aria-busy');bubbles.querySelectorAll('button').forEach(b=>b.disabled=false);controls.querySelectorAll('select').forEach(s=>s.disabled=false);}}
  const initial=nekoCached(key,'initial').result;paint(initial);if(nekoPreferences().enabled)run('initial');else status.textContent='Nekoponの解説はオフにしているにゃ。設定で変更できるにゃ。';
 }
-function nekoRenderConversation(root,key){root.replaceChildren();for(const turn of testSession?.tutor?.[key]?.turns||[]){const row=collectionNode('div',undefined,'neko-conversation-turn');row.append(collectionNode('p',turn.question||nekoActionLabels[turn.action]||'解説','neko-conversation-question user-content'),collectionNode('p',turn.text,'neko-conversation-answer user-content'));root.append(row);}}
+function nekoRenderConversation(root,key){root.replaceChildren();for(const turn of testSession?.tutor?.[key]?.turns||[]){const row=collectionNode('div',undefined,'neko-conversation-turn');row.append(collectionNode('p',turn.question||nekoActionLabels[turn.action]||'解説','neko-conversation-question user-content'),collectionNode('p',readableTutorText(turn.text),'neko-conversation-answer user-content'));root.append(row);}}
 function nekoRelated(key,keywords=[]){const r=assessmentByKey(key),m=meta.find(m=>m.id===hSplit(key).lessonId);if(!r)return [];const norm=s=>String(s||'').normalize('NFKC').replace(/\s/g,'');const words=keywords.map(k=>typeof k==='string'?k:k.word).filter(w=>typeof w==='string'&&w.length>=2).slice(0,3);if(!words.length&&r.a.length>=2&&r.a.length<=18)words.push(r.a);const seen=new Set(),result=[];for(const [lid,l]of Object.entries(assessmentDataset?.lessons||{})){const other=meta.find(x=>x.id===lid);for(const c of l.cards){if(!c.eligible||cardKey(lid,c.id)===key)continue;const id=norm(c.q)+norm(c.a);if(seen.has(id))continue;seen.add(id);let score=words.reduce((s,w)=>s+(c.a.includes(w)?15:0)+(c.q.includes(w)?4:0),0);if(!score)continue;score+=(other?.field===m?.field?4:0)+(other?.subject===m?.subject?2:0)+(lid===m?.id?2:0);result.push({key:cardKey(lid,c.id),r:c,title:l.title,score,why:words.find(w=>c.a.includes(w)||c.q.includes(w))});}}return result.sort((a,b)=>b.score-a.score).slice(0,3);}
 function nekoRenderConnections(root,key,keywords=[]){root.replaceChildren();if(keywords.length){root.append(collectionNode('h4','つながる知識','neko-related-title'));const words=collectionNode('div',undefined,'neko-keywords'),notes=collectionNode('p','','neko-keyword-note');const descriptions=[];for(const k of keywords.slice(0,3)){const word=typeof k==='string'?k:k.word;if(!word)continue;words.append(collectionButton(word,'neko-question-bubble',()=>nekoOpenKeyword(word)));if(k.connection)descriptions.push(word+'：'+k.connection);}notes.textContent=descriptions.join('\n');notes.style.whiteSpace='pre-line';root.append(words,notes);}const related=nekoRelated(key,keywords);if(!related.length)return;root.append(collectionNode('h4','次につながる一問','neko-related-title'));const make=item=>{const b=collectionButton('','neko-related-card',()=>nekoOpenRelated(item.key));b.append(collectionNode('small',`「${item.why}」でつながる · ${item.title}`),collectionNode('span',item.r.q+(item.r.image?'（図を参照）':'')));return b;};root.append(make(related[0]));if(related.length>1){const more=collectionNode('details',undefined,'neko-related-more');more.append(collectionNode('summary','関連問題をもう少し見る'));for(const item of related.slice(1))more.append(make(item));root.append(more);}}
 function nekoSaveQuestion(key){searchSelectedQuestions.add(key);syncSearchSelection();if($('nekoRelatedDialog').open)$('nekoRelatedDialog').close();openSearchSave();}

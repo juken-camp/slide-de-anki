@@ -2459,6 +2459,35 @@ html[data-persona=cyber] #app .neko-bubble-wait{color:#a7d8f2}
 #app .neko-bubble-controls button{min-height:44px;padding:8px 14px;font-size:12px}
 #app .neko-bubble-row[hidden],#app .neko-chat-title[hidden]{display:none!important}
 
+
+/* Chat turns: learner on the right, Nekopon on the left. */
+#app .neko-conversation{max-height:none;overflow:visible;gap:20px}
+#app .neko-conversation-turn{display:flex;flex-direction:column;align-items:stretch;gap:10px;border:0;padding-top:8px;min-width:0}
+#app .neko-conversation-question{display:block;align-self:flex-end;max-width:85%;box-sizing:border-box;margin:0 0 3px auto;padding:10px 14px;border-radius:16px 16px 4px 16px;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.8;background:#f0d9be;color:#75472b}
+#app .neko-conversation-answer{width:100%;min-width:0}
+#app .neko-pending-answer{align-self:flex-start;font-size:12px}
+#app .neko-bubble-row{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin:18px 0}
+#app .neko-bubble-row .neko-question-bubble{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:48px;padding:12px 14px;border-radius:12px;box-shadow:0 3px 0 #d9b995;transition:transform .12s,background-color .12s,box-shadow .12s;font-size:12px;line-height:1.7;-webkit-tap-highlight-color:rgba(170,110,50,.2);touch-action:manipulation}
+#app .neko-bubble-row .neko-question-bubble:after{content:'＋';flex:none;font-size:17px;opacity:.65}
+#app .neko-bubble-row .neko-question-bubble:active{transform:translateY(2px) scale(.985);background:#f3dfc7;box-shadow:0 0 0 transparent}
+#app .neko-bubble-row .neko-question-bubble:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+#app .neko-bubble-row .neko-question-bubble:disabled{opacity:.45}
+html[data-persona=cyber] #app .neko-conversation-question{background:#17394d!important;border:1px solid #438da8!important;color:#dbf8ff!important}
+html[data-persona=cyber] #app .neko-bubble-row .neko-question-bubble{background:#102b40!important;border-color:#4995b3!important;box-shadow:0 3px 0 #173d54!important;color:#d8f5ff!important;-webkit-tap-highlight-color:rgba(91,207,255,.22)}
+html[data-persona=cyber] #app .neko-bubble-row .neko-question-bubble:active{background:#20516a!important;box-shadow:none!important}
+@media(prefers-reduced-motion:reduce){#app .neko-bubble-row .neko-question-bubble{transition:none}#app .neko-bubble-row .neko-question-bubble:active{transform:none}}
+
+
+#app .neko-multi-bubbles>.neko-explanation-bubble{max-width:92%;border-radius:16px 16px 16px 4px}
+#app .neko-bubble-wait{align-self:flex-start;width:auto;padding:10px 14px;border:1px solid #ead2b9;border-radius:16px 16px 16px 4px;background:#fff7eb}
+#app .neko-bubble-wait .neko-thinking-copy,#app .neko-pending-answer .neko-thinking-copy{display:none}
+#app .neko-bubble-wait .neko-thinking-dots,#app .neko-pending-answer .neko-thinking-dots{padding:0;gap:5px;align-items:center;min-height:18px}
+#app .neko-bubble-wait .neko-thinking-dots>span,#app .neko-pending-answer .neko-thinking-dots>span{font-size:23px}
+#app .neko-bubble-arrive{animation:neko-message-arrive .22s ease-out}
+@keyframes neko-message-arrive{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+html[data-persona=cyber] #app .neko-bubble-wait{background:#0d223a;border-color:#3c7793;color:#a7d8f2}
+@media(prefers-reduced-motion:reduce){#app .neko-bubble-arrive{animation:none}}
+
 </style>
 <style>
 /* Cyber controls in dialogs override the generic dialog button skin. */
@@ -5609,11 +5638,11 @@ function nekoRenderExplanation(node,text,glossary,key,animate=false){
  const rows=parts.map(part=>{const row=collectionNode('div',undefined,'neko-explanation-bubble user-content');nekoRenderGlossaryText(row,part,glossary,key);node.append(row);return row;});
  const reduced=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(!animate||reduced||data.neko.decorativeMotion===false||rows.length<2)return;
- let cursor=1,timer;rows.forEach((row,i)=>row.hidden=i>0);
- const waiting=collectionNode('div',undefined,'neko-bubble-wait');waiting.setAttribute('role','status');nekoShowThinking(waiting,'続きを書いているにゃ');
+ rows[0].classList.add('neko-bubble-arrive');let cursor=1,timer;rows.forEach((row,i)=>row.hidden=i>0);
+ const waiting=collectionNode('div',undefined,'neko-bubble-wait');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','続きを書いています');nekoShowThinking(waiting,'続きを書いているにゃ');
  const controls=collectionNode('div',undefined,'neko-bubble-controls'),advance=collectionButton('次へ','link-button',()=>{clearTimeout(timer);next();}),all=collectionButton('全部表示','link-button',()=>finish());controls.append(advance,all);node.append(waiting,controls);
  function finish(){clearTimeout(timer);rows.forEach(row=>row.hidden=false);waiting.remove();controls.remove();node.nekoBubbleCancel=null;}
- function next(){if(!node.isConnected){clearTimeout(timer);return;}if(document.hidden){schedule();return;}rows[cursor++].hidden=false;if(cursor===rows.length){finish();return;}schedule();}
+ function next(){if(!node.isConnected){clearTimeout(timer);return;}if(document.hidden){schedule();return;}rows[cursor].classList.add('neko-bubble-arrive');rows[cursor++].hidden=false;if(cursor===rows.length){finish();return;}schedule();}
  function schedule(){timer=setTimeout(next,Math.min(14000,Math.max(5000,Array.from(parts[cursor-1]).length*130)));}
  node.nekoBubbleCancel=()=>{clearTimeout(timer);};schedule();
 }
@@ -5622,11 +5651,11 @@ function nekoRenderTutor(root,key,readonly=false){
  if(testSession.judgements?.[key]?.source==='manual')root.append(collectionNode('p',testSession.answers[key]==='pass'?'この問題は自己判定で正解に訂正しているにゃ。':'この問題は自己判定でもう一度に訂正しているにゃ。','neko-manual-note'));
  root.append(heading);const figure=nekoQuestionFigure(r,key);if(figure)root.append(figure);root.append(explanation,status,conversation,bubbleHint,bubbles,related);
  const tools=collectionNode('div',undefined,'neko-tutor-tools');tools.append(collectionButton('この問題をまとめに保存','link-button',()=>nekoSaveQuestion(key)),collectionButton('解説を読み直す','link-button',()=>{nekoAiAvailable=null;run('initial');}));root.append(tools);
- function paintBubbles(value){bubbles.replaceChildren();bubbleHint.hidden=true;const suggestions=(Array.isArray(value?.suggestions)?value.suggestions:[]).filter(s=>s&&Object.hasOwn(nekoActionLabels,s.action)&&s.action!=='initial'&&typeof s.question==='string'&&s.question.trim()&&s.question.length<=60).slice(0,3);bubbles.hidden=!suggestions.length;for(const s of suggestions)bubbles.append(collectionButton(s.question,'neko-question-bubble',()=>run(s.action,s.question)));}
- function paint(value,suggestions=value,animate=false,action='initial'){const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');paintBubbles(suggestions);related.replaceChildren();if(value)nekoRenderConnections(related,key,suggestions?.keywords||value?.keywords||[]);if(nekoPreferences().amount==='short'&&related.childNodes.length){const fold=collectionNode('details',undefined,'neko-related-more'),body=collectionNode('div');fold.append(collectionNode('summary','つながる知識・類題'));while(related.firstChild)body.append(related.firstChild);fold.append(body);related.append(fold);}}
- let busy=false;async function run(action,question=''){if(busy)return;const animateNew=!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);status.hidden=false;nekoShowThinking(status,'解説を書いているにゃ');try{await (figure?.nekoReady||Promise.resolve());if(!root.isConnected||testSession?.id!==sessionId)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||testSession?.id!==sessionId)return;if(action==='initial')paint(value,value,animateNew,action);else paint(nekoCached(key,'initial').result,value,animateNew,action);status.textContent='';status.hidden=true;
+ function paintBubbles(value){bubbles.replaceChildren();bubbleHint.hidden=true;const asked=new Set((testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).map(t=>t.question));const suggestions=(Array.isArray(value?.suggestions)?value.suggestions:[]).filter(s=>s&&Object.hasOwn(nekoActionLabels,s.action)&&s.action!=='initial'&&typeof s.question==='string'&&s.question.trim()&&s.question.length<=60&&!asked.has(s.question)).slice(0,3);bubbles.hidden=!suggestions.length;for(const s of suggestions)bubbles.append(collectionButton(s.question,'neko-question-bubble',()=>run(s.action,s.question)));}
+ function paint(value,suggestions=value,animate=false,action='initial'){const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');paintBubbles(suggestions);related.replaceChildren();if(value)nekoRenderConnections(related,key,suggestions?.keywords||value?.keywords||[]);if(nekoPreferences().amount==='short'&&related.childNodes.length){const fold=collectionNode('details',undefined,'neko-related-more'),body=collectionNode('div');fold.append(collectionNode('summary','つながる知識・類題'));while(related.firstChild)body.append(related.firstChild);fold.append(body);related.append(fold);}}
+ let busy=false;async function run(action,question=''){if(busy)return;const animateNew=!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){nekoRenderConversation(conversation,key);const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');pending.append(collectionNode('p',question||nekoActionLabels[action],'neko-conversation-question user-content'),waiting);conversation.append(pending);}nekoShowThinking(waiting,'解説を書いているにゃ');try{await (figure?.nekoReady||Promise.resolve());if(!root.isConnected||testSession?.id!==sessionId)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||testSession?.id!==sessionId)return;if(action==='initial')paint(value,value,animateNew,action);else paint(nekoCached(key,'initial').result,value,animateNew,action);status.textContent='';status.hidden=true;
   if(!readonly&&testSession?.kind==='practice'&&typedRenderingKey===key){const verdict=$('typedPracticeFeedback').querySelector('.neko-practice-verdict'),outcome=testSession.answers[key];if(verdict){verdict.textContent=outcome==='pass'?'○ 正解':outcome==='retry'?'× 不正解':'要確認';verdict.dataset.outcome=outcome||'pending';}}
- }catch(e){if(root.isConnected)status.textContent=e.message;}finally{busy=false;status.dataset.thinking='';root.removeAttribute('aria-busy');bubbles.querySelectorAll('button').forEach(b=>b.disabled=false);}}
+ }catch(e){if(root.isConnected){waiting.textContent=e.message;waiting.dataset.thinking='';waiting.hidden=false;}}finally{busy=false;status.dataset.thinking='';root.removeAttribute('aria-busy');bubbles.querySelectorAll('button').forEach(b=>b.disabled=false);}}
  const initial=nekoCached(key,'initial').result;paint(initial);if(nekoPreferences().enabled)run('initial');else {status.hidden=false;status.textContent='Nekoponの解説はオフにしているにゃ。設定で変更できるにゃ。';}
 }
 function nekoRenderConversation(root,key,animate=false){

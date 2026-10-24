@@ -5491,7 +5491,7 @@ $('testModeResume').onclick=()=>resumeHomeworkTest(nekoSetupMode);
 function nekoSetExplainPrefs(root){const p=nekoPreferences();root.querySelectorAll('[data-neko-pref]').forEach(sel=>{sel.value=p[sel.dataset.nekoPref];sel.onchange=()=>{nekoSavePrefs({[sel.dataset.nekoPref]:sel.value});};});}
 async function nekoAiStatus(){if(!nekoPreferences().enabled)return false;if(nekoAiAvailable!==null)return nekoAiAvailable;if(nekoAiStatusPromise)return nekoAiStatusPromise;nekoAiStatusPromise=(async()=>{try{const r=await fetch('/api/nekopon',{signal:AbortSignal.timeout(8000)});if(!r.ok){if(r.status===404)nekoAiAvailable=false;return false;}const j=await r.json();nekoAiAvailable=j.configured===true;return nekoAiAvailable;}catch{return false;}finally{nekoAiStatusPromise=null;}})();return nekoAiStatusPromise;}
 function nekoResponseStamp(key,session=testSession){return JSON.stringify([session?.responses?.[key]||[],!!session?.skipped?.[key],session?.displayContracts?.[key]]);}
-const nekoTutorFormat='tutor-20261024-short11';
+const nekoTutorFormat='tutor-20261024-meaning12';
 function nekoTurnCurrent(turn,session,key,prefs=nekoPreferences(),persona=document.documentElement.dataset.persona||'neko'){return turn.formatVersion===nekoTutorFormat&&turn.taste===prefs.taste&&turn.amount===prefs.amount&&turn.persona===persona&&turn.responseStamp===nekoResponseStamp(key,session);}
 function nekoCached(key,action,question=''){const s=testSession,signature=JSON.stringify([nekoTutorFormat,nekoResponseStamp(key),document.documentElement.dataset.persona||'neko',nekoPreferences().taste,nekoPreferences().amount,action,question,!!s?.questionImageShown?.[key]]);const entry=s?.tutor?.[key];return {signature,entry,result:entry?.cache?.[signature]};}
 async function nekoAsk(key,action='initial',question=''){
@@ -5548,7 +5548,7 @@ function nekoRenderGlossaryText(root,text,glossary,key){
 }
 const nekoWordPending=new Map();let nekoWordActive=null;
 function nekoWordExcerpt(text,word){const at=String(text||'').indexOf(word);return at<0?'':String(text).slice(Math.max(0,at-240),at+word.length+700);}
-function nekoWordSignature(key,word,excerpt){return JSON.stringify(['word-20261024-short11',assessmentByKey(key)?.contract,word,excerpt,document.documentElement.dataset.persona||'neko',nekoPreferences().taste]);}
+function nekoWordSignature(key,word,excerpt){return JSON.stringify(['word-20261024-meaning12',assessmentByKey(key)?.contract,word,excerpt,document.documentElement.dataset.persona||'neko',nekoPreferences().taste]);}
 async function nekoAskWord(key,word,excerpt){
  const session=testSession,record=assessmentByKey(key),preferences={...nekoPreferences()},persona=document.documentElement.dataset.persona||'neko';if(!session||!record||!preferences.enabled)throw Error('新しく聞くときは、設定でNekoponの解説をオンにしてにゃ。');
  const signature=nekoWordSignature(key,word,excerpt),cached=session.tutor?.[key]?.wordCache?.[signature];if(cached)return cached;

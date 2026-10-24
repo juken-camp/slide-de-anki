@@ -49,16 +49,9 @@ function completeSentences(text){const out=[];let start=0,stack=[];const pairs={
 function reflowText(text,max=150){return readableTutorText(text).split(/\n\s*\n/).map(p=>{const rows=[];let row='';for(const sentence of completeSentences(p.replace(/\n/g,' '))){if(row&&charCount(row+sentence)>max){rows.push(row.trim());row='';}row+=sentence;}if(row.trim())rows.push(row.trim());return rows.join('\n\n');}).join('\n\n');}
 function addEnergy(text,minimum=1){if(!text)return text;let parts=text.split(/\n\s*\n/);parts=parts.map(p=>p.replace(/[。．.]\s*$/,'！'));let count=(parts.join('').match(/\p{Extended_Pictographic}/gu)||[]).length;const icons=['💡','✨','⚡'];for(let i=0;count<minimum;i++,count++)parts[i%parts.length]=icons[i%icons.length]+' '+parts[i%parts.length];if(!/[！!]/.test(parts.join('')))parts[parts.length-1]+='！';return parts.join('\n\n');}
 function fitComplete(text,max){const flat=text.replace(/\s*\n\s*/g,' ').trim();if(charCount(flat)<=max)return flat;let fitted='';for(const sentence of completeSentences(flat)){if(charCount(fitted+sentence)>max)break;fitted+=sentence;}return fitted.trim();}
-function finishPresentation(value,amount,taste){const p=writingProfiles[amount];value={...value};value.comment=value.comment.replace(/\s*\n\s*/g,' ');value.explanation=reflowText(value.explanation,p.paragraph);
+function finishPresentation(value,amount,taste){const p=writingProfiles[amount];value={...value,comment:value.comment.replace(/\s*\n\s*/g,' '),explanation:reflowText(value.fullExplanation||value.explanation,p.paragraph)};
  if(taste==='energetic'){value.comment=addEnergy(value.comment);value.explanation=addEnergy(value.explanation,{short:1,points:2,deep:3}[amount]);}
- value.comment=fitComplete(value.comment,p.comment);const full=value.explanation;
- if(amount==='short'&&charCount(full)>p.explanation){
-  value.explanation=amount==='short'?fitComplete(full,p.explanation):fitComplete(full,p.explanation).split(/\n\s*\n/).join('\n\n');value.explanation=reflowText(value.explanation,p.paragraph);if(value.explanation!==full)value.fullExplanation=full;
- }
- if(amount==='short')value.explanation=value.explanation.replace(/\s*\n\s*/g,' ');if(taste==='energetic'&&value.explanation&&!/\p{Extended_Pictographic}/u.test(value.explanation))value.explanation=addEnergy(amount==='short'?fitComplete(value.explanation,p.explanation-3):value.explanation);
- // Emoji after a sentence belongs to that sentence; never leave a lone icon.
- if(value.explanation&&!/[\p{L}\p{N}]/u.test(value.explanation)){value.fullExplanation=full;value.explanation='';}
- value.glossary=value.glossary.slice(0,p.glossary).map(g=>({...g,meaning:taste==='energetic'?addEnergy(g.meaning):g.meaning}));value.keywords=value.keywords.slice(0,p.keywords);value.formatVersion=formatVersion;return value;
+ delete value.fullExplanation;value.glossary=value.glossary.slice(0,p.glossary).map(g=>({...g,meaning:taste==='energetic'?addEnergy(g.meaning):g.meaning}));value.keywords=value.keywords.slice(0,p.keywords);value.formatVersion=formatVersion;return value;
 }
 function longPresentation(value,amount){const p=writingProfiles[amount];return charCount(value.comment)>p.comment||charCount(value.explanation)>p.explanation||value.explanation.split(/\n\s*\n/).some(t=>charCount(t)>p.paragraph);}
 function publicAux(record){return (record.aux||[]).filter(t=>t!=='各欄の記号を付けてすべて答える。欄ごとの入力では、記号と解答の対応を保つ。');}

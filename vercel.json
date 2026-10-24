@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "api/nekopon.js": {
+      "maxDuration": 60,
+      "includeFiles": "nekopon-data/assessment-06ce35ab7c44.json"
+    }
+  }
+}

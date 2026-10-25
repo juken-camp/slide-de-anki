@@ -6453,6 +6453,7 @@ $('importForm').onsubmit=async e=>{
       ['いまは音がオフにゃ','いまは音がオフだぜ'],
       ['今日の目標にゃ','今日の目標だぜ'],
       ['目標達成にゃ','目標達成だぜ'],
+      ['レベルアップにゃ','レベルアップだぜ'],
       ['答えを見るにゃ','答えを見るぜ'],
       ['まとめを作るにゃ','まとめを作るぜ'],
       ['まとめを編集するにゃ','まとめを編集するぜ'],
@@ -6477,7 +6478,8 @@ $('importForm').onsubmit=async e=>{
       .replace(/にゃ(?=[！!])/g,'だぜ')
       .replace(/にゃ(?=[？?])/g,'か')
       .replace(/にゃ(?=[。、\s]|$)/g,'だぜ')
-      .replace(/にゃ/g,'ぜ')
+      // Noun phrases before emoji/ellipsis also require the copula.
+      .replace(/にゃ/g,'だぜ')
       .replace(/もふもふ/g,'エネルギー')
       .replace(/肉球/g,'パワー')
       .replace(/🐾/g,'⚡');

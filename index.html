@@ -2967,6 +2967,9 @@ html[data-persona=cyber] #app #testScreen .neko-chat-scroll>.neko-tutor-heading{
 html[data-persona] body #app #testScreen :is(.neko-chat-scroll>.neko-tutor-heading,.neko-words-section>.neko-related-title,.neko-problems-section>.neko-related-title){font-size:13px;font-weight:700;line-height:1.5;margin:0 0 12px;padding:0;border:0!important;text-align:left}
 html[data-persona] body #app #testScreen .neko-chat-scroll>.neko-tutor-heading>span:first-child{display:none}
 html[data-persona] body #app #testScreen .neko-chat-scroll>.neko-tutor-heading>strong{font:inherit}
+/* Leave breathing room under the translucent header without a separator line. */
+html[data-persona] body #app #testScreen .neko-chat-scroll>.neko-tutor-heading{padding-bottom:12px;margin-bottom:12px}
+html[data-persona] body #app #testScreen .neko-bubble-controls button{min-height:36px;padding:6px 2px!important;font-size:11px!important;border:0!important;background:transparent!important;box-shadow:none!important;text-decoration:none!important;color:var(--ui-control-fg)!important}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -5544,7 +5547,7 @@ function renderTypedInput(r,key){
    input.onchange=()=>store([...fields.querySelectorAll('input:checked')].map(n=>n.value));label.append(input,collectionNode('span',option.text));fields.append(label);
   }
  }else if(r.mode==='ordered'){
-  fields.className='';const options=collectionNode('div',undefined,'typed-ordered'),value=collectionNode('p',response.length?'あなたの解答：'+response.join(' → '):'選んだ順に並ぶにゃ','typed-order-value');
+  fields.className='';const options=collectionNode('div',undefined,'typed-ordered'),value=collectionNode('p',response.length?response.join(' → '):'選んだ順に並ぶにゃ','typed-order-value');
   for(const option of r.choices){const b=collectionButton(option.text,'',()=>{const arr=[...(testSession.responses[key]||[])];if(arr.includes(option.value))return;arr.push(option.value);store(arr);renderTypedInput(r,key);});b.disabled=locked||response.includes(option.value);options.append(b);}
   const undo=collectionButton('ひとつ戻すにゃ','link-button',()=>{store((testSession.responses[key]||[]).slice(0,-1));renderTypedInput(r,key);});undo.disabled=locked||!response.length;undo.hidden=undo.disabled;undo.classList.add('typed-order-undo');fields.append(options,value,undo);
  }else{
@@ -5877,7 +5880,7 @@ function nekoRenderExplanation(node,text,glossary,key,animate=false){
  if(!animate||reduced||data.neko.decorativeMotion===false||rows.length<2)return;
  rows[0].classList.add('neko-bubble-arrive');let cursor=1,timer;rows.forEach((row,i)=>row.hidden=i>0);
  const waiting=collectionNode('div',undefined,'neko-bubble-wait');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','続きを書いています');nekoShowThinking(waiting,'続きを書いているにゃ');
- const controls=collectionNode('div',undefined,'neko-bubble-controls'),advance=collectionButton('次へ','link-button',()=>{clearTimeout(timer);next();}),all=collectionButton('全部表示','link-button',()=>finish());controls.append(advance,all);node.append(waiting,controls);
+ const controls=collectionNode('div',undefined,'neko-bubble-controls'),all=collectionButton('今すぐ表示','link-button',()=>finish());controls.append(all);node.append(waiting,controls);
  function finish(){clearTimeout(timer);rows.forEach(row=>row.hidden=false);waiting.remove();controls.remove();node.nekoBubbleCancel=null;node.nekoBubbleDone?.();node.nekoBubbleDone=null;}
  function next(){if(!node.isConnected){clearTimeout(timer);return;}if(document.hidden){schedule();return;}rows[cursor].classList.add('neko-bubble-arrive');rows[cursor++].hidden=false;if(cursor===rows.length){finish();return;}schedule();}
  function schedule(){timer=setTimeout(next,Math.min(14000,Math.max(5000,Array.from(parts[cursor-1]).length*130)));}

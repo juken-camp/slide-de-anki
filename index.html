@@ -2915,10 +2915,10 @@ html[data-persona] body #app #catalogScreen #quickReview[hidden]{display:none!im
 html[data-persona] body #app #catalogScreen #quickReview:active{opacity:.7}
 /* All sound actions share a parent gap, including the separate confirmation row. */
 #soundDialog .sound-controls{display:grid;gap:12px;margin-top:12px;min-width:0}
-#soundDialog .sound-dialog-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;min-width:0}
+#soundDialog .sound-dialog-actions{display:flex;flex-wrap:wrap;gap:10px;min-width:0}
 #soundDialog .sound-controls>button{margin:0;width:100%;min-width:0}
-html[data-persona] body #soundDialog .sound-dialog-actions>button{min-width:0;white-space:normal;overflow-wrap:anywhere;padding:9px 8px!important;font-size:12px!important}
-@media(max-width:370px){#soundDialog .sound-dialog-actions{grid-template-columns:minmax(0,1fr)}}
+html[data-persona] body dialog#soundDialog .sound-controls .sound-dialog-actions>button:is(#soundPreview,#dialogSoundToggle){flex:1 0 max-content;min-width:max-content;white-space:nowrap!important;overflow-wrap:normal;padding:9px 8px!important;font-size:12px!important;line-height:1.5!important}
+@media(max-width:370px){#soundDialog .sound-dialog-actions{flex-direction:column}}
 /* Keep totals out of the action buttons' space on narrow collection dialogs. */
 @media(max-width:420px){#collectionDialog .collection-editor-foot{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#collectionDialog #collectionTotal{grid-column:1/-1}#collectionDialog :is(#collectionSave,#collectionEditorCancel){width:100%;white-space:normal}}
 </style>

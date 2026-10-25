@@ -2955,6 +2955,10 @@ html[data-persona=cyber] body #app #testScreen .neko-explanation-title{border-co
 #app #testScreen .neko-chat-scroll{position:relative;isolation:isolate}
 #app #testScreen .neko-chat-scroll>.neko-tutor-heading{position:sticky;top:0;z-index:3;margin:0 0 12px;padding:12px 0;min-height:48px;background:rgba(255,252,247,.84);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,145,110,.22)}
 html[data-persona=cyber] #app #testScreen .neko-chat-scroll>.neko-tutor-heading{background:rgba(15,20,48,.8);border-bottom-color:rgba(100,193,225,.2);color:#9befff}
+/* Align all three panel headings near their top edge; avoid doubled chat padding. */
+html[data-persona] body #app #testScreen :is(.neko-chat-section,.neko-words-section,.neko-problems-section){padding-top:12px}
+html[data-persona] body #app #testScreen .neko-chat-scroll>.neko-tutor-heading{padding:0 0 10px;min-height:0;margin:0 0 12px;line-height:1.5}
+html[data-persona] body #app #testScreen :is(.neko-words-section,.neko-problems-section)>.neko-related-title{margin-top:0;line-height:1.5}
 </style>
 </head>
 <body><main id="app" class="app">

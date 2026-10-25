@@ -2921,6 +2921,12 @@ html[data-persona] body dialog#soundDialog .sound-controls .sound-dialog-actions
 @media(max-width:370px){#soundDialog .sound-dialog-actions{flex-direction:column}}
 /* Keep totals out of the action buttons' space on narrow collection dialogs. */
 @media(max-width:420px){#collectionDialog .collection-editor-foot{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#collectionDialog #collectionTotal{grid-column:1/-1}#collectionDialog :is(#collectionSave,#collectionEditorCancel){width:100%;white-space:normal}}
+/* Individual translate keeps the dock's idle float separate from press transforms. */
+@keyframes catalog-start-float{0%,100%{translate:0 0}50%{translate:0 -4px}}
+html[data-persona][data-ui-motion=on] body #app #catalogDock #startStudy:not(:disabled){animation:catalog-start-float 3.6s ease-in-out infinite}
+html[data-persona][data-ui-motion=on] body #app #catalogDock #startStudy:active{animation-play-state:paused}
+html[data-persona][data-ui-motion=off] body #app #catalogDock #startStudy,html[data-persona] body #app #catalogDock #startStudy:disabled{animation:none!important;translate:none}
+@media(prefers-reduced-motion:reduce){html[data-persona] body #app #catalogDock #startStudy{animation:none!important;translate:none}}
 </style>
 </head>
 <body><main id="app" class="app">

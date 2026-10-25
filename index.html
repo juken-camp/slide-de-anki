@@ -2978,6 +2978,58 @@ html[data-persona] body dialog#collectionDialog .collection-editor-foot>:is(#col
 #collectionDialog .collection-editor-foot>#collectionEditorCancel{grid-column:1}
 #collectionDialog .collection-editor-foot>#collectionSave{grid-column:2}
 </style>
+<style>
+/* Import selection and native file controls keep their own state skin. */
+html[data-persona] body dialog#importDialog #importModeControls button,
+html[data-persona] body dialog#collectionDialog #collectionLessonTabs button{
+ display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:0;
+ min-height:40px;padding:7px 6px;border:1px solid #ccb499!important;
+ background:#fffaf4!important;color:#805434!important;-webkit-text-fill-color:#805434!important;
+ box-shadow:none!important;font-size:12px;line-height:1.5;white-space:nowrap;
+}
+html[data-persona] body dialog#importDialog #importModeControls button:before,
+html[data-persona] body dialog#collectionDialog #collectionLessonTabs button:before{
+ content:'';display:inline-block;flex:0 0 12px;width:12px;
+}
+html[data-persona] body dialog#importDialog #importModeControls button[aria-pressed=true],
+html[data-persona] body dialog#collectionDialog #collectionLessonTabs button[aria-pressed=true]{
+ background:#ffe7c8!important;border-color:#a65d2e!important;color:#6d3619!important;
+ -webkit-text-fill-color:#6d3619!important;box-shadow:inset 0 0 0 1px #a65d2e!important;
+}
+html[data-persona] body dialog#importDialog #importModeControls button[aria-pressed=true]:before,
+html[data-persona] body dialog#collectionDialog #collectionLessonTabs button[aria-pressed=true]:before{content:'✓' / ''}
+html[data-persona=cyber] body dialog#importDialog #importModeControls button,
+html[data-persona=cyber] body dialog#collectionDialog #collectionLessonTabs button{
+ background:#101b33!important;border-color:#426787!important;color:#b8cee8!important;
+ -webkit-text-fill-color:#b8cee8!important;box-shadow:none!important;
+}
+html[data-persona=cyber] body dialog#importDialog #importModeControls button[aria-pressed=true],
+html[data-persona=cyber] body dialog#collectionDialog #collectionLessonTabs button[aria-pressed=true]{
+ background:linear-gradient(125deg,#075267,#183968)!important;border-color:#00f5ff!important;
+ color:#edffff!important;-webkit-text-fill-color:#edffff!important;
+ box-shadow:0 0 12px #00f5ff65,inset 0 0 0 1px #00f5ff40!important;
+}
+html[data-persona] body dialog#importDialog input[type=file]::file-selector-button{
+ background:#fff0db!important;color:#754329!important;-webkit-text-fill-color:#754329!important;
+ border:1px solid #bc8c62!important;border-radius:8px;min-height:32px;padding:5px 9px;
+ margin-right:8px;font-family:inherit;font-size:12px;font-weight:700;line-height:1.5;white-space:nowrap;
+}
+html[data-persona=cyber] body dialog#importDialog input[type=file]::file-selector-button{
+ background:#12394d!important;color:#d9fcff!important;-webkit-text-fill-color:#d9fcff!important;
+ border-color:#4cc7e2!important;box-shadow:0 0 7px #00f5ff30!important;
+}
+
+html[data-persona] body dialog#importDialog input[type=file]::-webkit-file-upload-button{
+ background:#fff0db!important;color:#754329!important;-webkit-text-fill-color:#754329!important;
+ border:1px solid #bc8c62!important;border-radius:8px;min-height:32px;padding:5px 9px;
+ margin-right:8px;font-family:inherit;font-size:12px;font-weight:700;line-height:1.5;white-space:nowrap;
+}
+
+html[data-persona=cyber] body dialog#importDialog input[type=file]::-webkit-file-upload-button{
+ background:#12394d!important;color:#d9fcff!important;-webkit-text-fill-color:#d9fcff!important;
+ border-color:#4cc7e2!important;box-shadow:0 0 7px #00f5ff30!important;
+}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

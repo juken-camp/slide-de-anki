@@ -2928,6 +2928,11 @@ html[data-persona] body #app #catalogDock #startStudy{animation:none!important;t
 html[data-persona][data-ui-motion=on] body #app #catalogDock:has(button:active){animation-play-state:paused}
 html[data-persona][data-ui-motion=off] body #app #catalogDock,html[data-persona] body #app #catalogDock:has(#startStudy:disabled){animation:none!important;translate:none}
 @media(prefers-reduced-motion:reduce){html[data-persona] body #app #catalogDock{animation:none!important;translate:none}}
+/* Paint the disclosure surface only on its rounded outer container. */
+html[data-persona] body :is(#app,#focusMenu) details.study-options{overflow:hidden}
+html[data-persona] body :is(#app,#focusMenu) details.study-options>summary{background:transparent!important;border-radius:inherit}
+html[data-persona] body :is(#app,#focusMenu) details.study-options[open]>summary{border-bottom-left-radius:0;border-bottom-right-radius:0}
+html[data-persona] body :is(#app,#focusMenu) details.study-options>summary:focus-visible{outline-offset:-3px}
 </style>
 </head>
 <body><main id="app" class="app">

@@ -2901,6 +2901,10 @@ html[data-persona] #app #catalogScreen .lesson-card-shell>.lesson-choice{min-hei
 /* Only the added completion footer uses the tighter spacing. */
 #app #catalogScreen .lesson-completion-actions{padding:0 12px 2px 44px;gap:12px}
 #app #catalogScreen .lesson-completion-actions:not(:has(.lesson-challenge)){padding-top:3px;padding-bottom:8px}
+/* Bring only the completion footer closer to its progress bar. */
+html[data-persona] body #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions)>.lesson-choice{padding-bottom:0!important}
+html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-challenge{min-height:36px;padding:4px 10px!important}
+html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-challenge:before{inset:4px 0}
 </style>
 </head>
 <body><main id="app" class="app">

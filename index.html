@@ -812,7 +812,7 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 .test-progress-copy,.test-under{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;color:#986946;margin:11px 0 7px}.test-progress-track{background:#eedbc5;height:5px;margin-bottom:12px}.test-progress-track i{background:#cf8a47;border-radius:4px;transition:width .2s}
 #testCard{border:2px solid #cba17a;border-radius:18px;background:#fff;box-shadow:0 3px 0 #e4c7a8}#testCard .head{min-height:40px;border-bottom:1px solid #ecd8bf;background:#fff0d7}#testCard.is-back .head{background:#ffe4ed;border-color:#e4b4c6}#testCard .unit{font-size:10px;max-width:74%;overflow-wrap:anywhere}#testFace{background:#ad602c;color:#fff;font-size:11px}#testCard.is-back #testFace{background:#b35e7e}
 #testSlideTap::before{padding-top:calc(56.25% + 34px)}.test-actions{display:flex;gap:7px;align-items:stretch;margin:15px 0 8px}.test-actions button{min-height:44px;min-width:0;padding:8px 5px;font-size:13px;border-radius:12px!important}.test-actions #testReveal{flex:1}.test-actions #testPass,.test-actions #testRetry{flex:1}.test-actions #testPrev,.test-actions #testNext{flex:none;width:34px;font-size:19px;border:1px solid #d5b18b;background:#fff8ed;box-shadow:0 2px 0 #e5ceb4}.test-actions #testPass{background:#ae5b7b;border-color:#a24b6c;box-shadow:0 3px 0 #873b59}.test-actions #testRetry{border:2px solid #cfa880;background:#fff1db;color:#885127}.test-under{font-size:10px}.test-under .link-button{font-size:10px;white-space:nowrap;padding:0;min-height:36px}.test-separate-note{font-size:10px}
-.test-score{display:flex;align-items:baseline;justify-content:center;gap:12px;padding:15px 0}.test-score strong{font-size:28px;font-weight:750;color:#a15b2e;line-height:1.2}.test-score span{font-size:15px;font-weight:800;color:#b56680}.test-result-breakdown{display:flex;justify-content:center;gap:18px;font-size:12px;font-weight:800;margin:4px 0 15px}.test-result-card>.homework-note{text-align:center;margin:0 0 12px}.test-result-tools{display:flex;align-items:center;justify-content:space-between;gap:10px}.test-result-tools button{font-size:11px}.test-wrong-details{margin:18px 0;font-size:12px;color:#97623e}.test-wrong-details summary{min-height:38px;line-height:38px;cursor:pointer}.test-wrong-details p{font-size:11px;padding:8px 0;margin:0;border-bottom:1px solid #ecdece;line-height:1.6}
+.test-score{display:flex;align-items:baseline;justify-content:center;gap:12px;padding:15px 0}.test-score strong{font-size:28px;font-weight:750;color:#a15b2e;line-height:1.2}.test-score span{font-size:15px;font-weight:800;color:#b56680}.test-result-breakdown{display:flex;justify-content:center;gap:18px;font-size:12px;font-weight:800;margin:4px 0 15px}.test-result-card>.homework-note{text-align:center;margin:0 0 12px}.test-wrong-details{margin:18px 0;font-size:12px;color:#97623e}.test-wrong-details summary{min-height:38px;line-height:38px;cursor:pointer}.test-wrong-details p{font-size:11px;padding:8px 0;margin:0;border-bottom:1px solid #ecdece;line-height:1.6}
 .capture-exit{font-size:11px;min-height:34px;padding:5px 10px;margin-bottom:10px}
 body.homework-capture #appHeader,body.homework-capture [data-capture-hide]{display:none!important}body.homework-capture .capture-exit{display:inline-block!important}body.homework-capture #app{padding-top:8px;max-width:560px}body.homework-capture .homework-screen{margin-top:0!important}body.homework-capture #reportNotice{display:none!important}body.homework-capture .report-card{box-shadow:none}body.homework-capture .report-card-head{margin-bottom:10px}
 @media(max-width:370px){.report-card{padding:12px}.report-metrics>div{padding:10px 8px}.report-metrics strong{font-size:21px}.report-metrics>div>span{font-size:10px}.report-metrics small{font-size:8px}.report-card-head h3{font-size:15px}.report-main-actions button{font-size:11px}.test-under{flex-wrap:wrap}}
@@ -3033,6 +3033,18 @@ html[data-persona=cyber] body dialog#importDialog input[type=file]::-webkit-file
 /* The correction disclosure needs only its outer section divider. */
 #app #testScreen details>.test-mark-row{border-top:0!important}
 </style>
+<style>
+/* Keep the sticky chat header flush with the rounded panel's scroll viewport.
+   Move the inset into the header so messages cannot peek above its background. */
+html[data-persona] body #app #testScreen .neko-chat-section{padding-top:0!important;overflow:hidden}
+html[data-persona] body #app #testScreen .neko-chat-scroll>.neko-tutor-heading{
+ top:0;padding-top:12px;padding-bottom:12px;margin-top:0;
+ box-shadow:inset 0 12px 0 #fffcf7!important;
+}
+html[data-persona=cyber] body #app #testScreen .neko-chat-scroll>.neko-tutor-heading{
+ box-shadow:inset 0 12px 0 #0f1430!important;
+}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3111,7 +3123,7 @@ html[data-persona=cyber] body dialog#importDialog input[type=file]::-webkit-file
 
 </section>
 <section id="testScreen" class="homework-screen" aria-labelledby="testTitle" hidden>
- <div class="page-heading homework-heading" data-capture-hide><h2 id="testTitle" class="screen-title" tabindex="-1">確認テスト</h2><button id="testBack" class="tool" type="button">テストへ</button></div>
+ <div class="page-heading homework-heading" data-capture-hide><h2 id="testTitle" class="screen-title" tabindex="-1">確認テスト</h2></div>
  <button class="tool capture-exit" type="button" hidden>戻るにゃ</button>
  <p id="testNotice" class="homework-note" role="status"></p>
  <div id="testPlay" hidden>
@@ -3132,7 +3144,7 @@ html[data-persona=cyber] body dialog#importDialog input[type=file]::-webkit-file
   <div class="report-main-actions" data-capture-hide><button id="showTestShot" class="secondary-button" type="button">結果を見せるにゃ</button><button id="testReviewWrong" class="primary-button" type="button">スライドで復習</button></div>
   <details id="testWrongDetails" class="test-wrong-details" data-capture-hide><summary id="testWrongSummary"></summary><div id="testWrongList"></div></details>
   <div id="typedResultActions" class="report-main-actions" data-capture-hide hidden><button id="typedShowResponses" type="button" class="secondary-button">解答とNekoponの解説</button><button id="typedRetestWrong" type="button" class="primary-button">間違いテストで再挑戦</button></div><details id="typedResultAnswers" class="typed-result-answers" data-capture-hide hidden><summary>解答・判定・Nekoponの解説</summary><div id="typedResultAnswersList"></div></details>
-  <div class="test-result-tools" data-capture-hide><button id="testResultBack" class="tool" type="button">テストへ</button></div>
+  
  </div>
 </section>
 
@@ -5240,7 +5252,7 @@ $('openTestSetup').onclick=openHomeworkSetup;$('closeHomeworkSetup').onclick=()=
 // Dialog close is queued: entering a test must not cancel its in-flight resume.
 $('homeworkSetup').addEventListener('close',()=>{if(screen==='report')++testLoadRequest;});
 $('testSubject').onchange=fillHomeworkTestLessons;$('testCount').onchange=syncHomeworkCount;$('testCountCustom').oninput=updateHomeworkCandidates;$('testLessonSearch').oninput=filterHomeworkLessons;for(const id of ['testFrom','testTo','testAllDates'])$(id).onchange=updateHomeworkCandidates;
-$('testBack').onclick=$('testResultBack').onclick=()=>showScreen('report');$('showTestShot').onclick=()=>toggleHomeworkCapture(true);
+$('showTestShot').onclick=()=>toggleHomeworkCapture(true);
 window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();});
 
 // Additive assessment data: existing lesson files, IDs and progress are untouched.

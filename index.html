@@ -2940,7 +2940,6 @@ html[data-persona=cyber] body #app #goalProgress::-moz-progress-bar{background:l
 @keyframes catalog-dock-float{0%,100%{translate:0 0}50%{translate:0 -4px}}
 html[data-persona][data-ui-motion=on] body #app #catalogDock:has(#startStudy:not(:disabled)){animation:catalog-dock-float 3.6s ease-in-out infinite}
 html[data-persona] body #app #catalogDock #startStudy{animation:none!important;translate:none}
-html[data-persona][data-ui-motion=on] body #app #catalogDock:has(button:active){animation-play-state:paused}
 html[data-persona][data-ui-motion=off] body #app #catalogDock,html[data-persona] body #app #catalogDock:has(#startStudy:disabled){animation:none!important;translate:none}
 @media(prefers-reduced-motion:reduce){html[data-persona] body #app #catalogDock{animation:none!important;translate:none}}
 html[data-persona] body :is(#app,#focusMenu) details.study-options{overflow:hidden}

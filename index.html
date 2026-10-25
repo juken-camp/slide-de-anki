@@ -2894,16 +2894,13 @@ html[data-persona] #app #catalogScreen .lesson-card-shell:not(:has(.lesson-compl
 html[data-persona=cyber] #app #catalogScreen .lesson-card-shell:not(:has(.lesson-completion-actions))>.lesson-choice{box-shadow:0 0 8px #00f5ff19!important}
 html[data-persona] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions):has(.lesson-choice.selected){box-shadow:0 2px 7px #8b451318}
 html[data-persona=cyber] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions):has(.lesson-choice.selected),html[data-persona=cyber] #app #catalogScreen .lesson-card-shell:not(:has(.lesson-completion-actions))>.lesson-choice.selected{box-shadow:0 0 12px #00f5ff55!important}
-/* Keep catalogue cards compact without moving their controls. */
-html[data-persona] #app #catalogScreen .lesson-card-shell>.lesson-choice{min-height:0!important;padding:8px 12px!important;gap:10px}
-#app #catalogScreen .lesson-card-shell .choice-copy{row-gap:2px}
-#app #catalogScreen .lesson-card-shell .choice-copy strong{line-height:1.4}
-#app #catalogScreen .lesson-card-shell .choice-meta{line-height:1.4}
-#app #catalogScreen .lesson-card-shell .choice-record{line-height:1.4}
-#app #catalogScreen .lesson-card-shell .choice-progress{height:3px}
+/* Preserve the original card spacing; reserve two title lines for equal rows. */
+html[data-persona] #app #catalogScreen .lesson-card-shell>.lesson-choice{min-height:0!important;padding:12px!important;gap:10px}
+#app #catalogScreen .lesson-card-shell .choice-copy{row-gap:4px}
+#app #catalogScreen .lesson-card-shell .choice-copy strong{font-size:13px;line-height:1.5;min-height:3em;align-self:start}
+/* Only the added completion footer uses the tighter spacing. */
 #app #catalogScreen .lesson-completion-actions{padding:0 12px 2px 44px;gap:12px}
 #app #catalogScreen .lesson-completion-actions:not(:has(.lesson-challenge)){padding-top:3px;padding-bottom:8px}
-#app #catalogScreen .lesson-card-shell>.lesson-text-toggle{top:8px}
 </style>
 </head>
 <body><main id="app" class="app">

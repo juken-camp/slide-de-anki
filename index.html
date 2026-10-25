@@ -2905,6 +2905,9 @@ html[data-persona] #app #catalogScreen .lesson-card-shell>.lesson-choice{min-hei
 html[data-persona] body #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions)>.lesson-choice{padding-bottom:0!important}
 html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-challenge{min-height:36px;padding:4px 10px!important}
 html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-challenge:before{inset:4px 0}
+/* Completed cards reserve the same footer height, with or without a challenge. */
+#app #catalogScreen .lesson-completion-actions{box-sizing:border-box;min-height:38px}
+#app #catalogScreen .lesson-completion-actions:not(:has(.lesson-challenge)){padding:0 12px 2px 44px}
 </style>
 </head>
 <body><main id="app" class="app">

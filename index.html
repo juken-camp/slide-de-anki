@@ -2873,17 +2873,27 @@ html[data-persona] #app #myCollectionsPanel .my-collection-actions .tool{padding
 html[data-persona] #app #myCollectionsPanel .my-collection-actions .link-button{padding:6px 4px!important;font-size:12px!important}
 @media(max-width:380px){#app #myCollectionsPanel .my-collection-actions{grid-template-columns:1fr auto}#app #myCollectionsPanel .my-collection-actions .primary-button{grid-column:1/-1;width:100%}#app #myCollectionsPanel .my-collection-actions .tool{justify-self:end}}
 
-#catalogScreen .lesson-completion-actions{position:static;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;min-height:44px;padding:0 12px 12px 44px}
+#catalogScreen .lesson-completion-actions{position:static;display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:12px;min-height:0;padding:0 12px 6px 44px}
 #catalogScreen .lesson-completion-actions .lesson-marks{margin:0;gap:4px;min-width:0}
-html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-challenge{display:inline-flex;align-items:center;justify-content:center;flex:none;min-height:44px;margin:0!important;padding:6px 8px!important;font-size:11px!important;line-height:1.5;white-space:nowrap;border:1px solid var(--ui-control-line)!important;border-radius:12px!important;background:var(--ui-control-bg)!important;color:var(--ui-control-fg)!important;box-shadow:var(--ui-control-shadow)!important;text-decoration:none!important}
+html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-challenge{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;flex:none;min-height:44px;margin:0!important;padding:6px 10px!important;font-size:11px!important;font-weight:600;line-height:1.5;white-space:nowrap;border:0!important;border-radius:8px!important;background:transparent!important;color:var(--ui-control-fg)!important;box-shadow:none!important;text-decoration:none!important}
+html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-challenge:before{content:'';position:absolute;inset:8px 0;border:1px solid var(--ui-control-line);border-radius:8px;background:var(--ui-control-bg);box-shadow:var(--ui-control-shadow);z-index:-1;pointer-events:none}
+html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-mark{border:0!important;background:transparent!important;box-shadow:none!important;padding:0;font-size:10px;font-weight:600;line-height:1.6}
+#catalogScreen .lesson-completion-actions:not(:has(.lesson-challenge)){padding-bottom:12px}
+
 
 /* The header button and completion row share one card surface in normal flow. */
-html[data-persona] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions){border:3px solid var(--neko-edge);border-radius:19px;background:#fffdf8;box-shadow:0 4px 0 var(--neko-base),0 7px 12px #8b451308;min-width:0}
+html[data-persona] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions){border:1px solid var(--neko-edge);border-radius:14px;background:#fffdf8;box-shadow:0 2px 5px #8b45130b;min-width:0}
 html[data-persona] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions):has(.lesson-choice.selected){border-color:var(--neko-picked);background:#fff0d6;box-shadow:0 5px 0 var(--neko-picked-base),0 9px 16px #8b451314}
 html[data-persona=cyber] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions){border-color:#315b81;background:#101b37;box-shadow:0 0 12px #00f5ff19}
 html[data-persona=cyber] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions):has(.lesson-choice.selected){border-color:#00f5ff;background:linear-gradient(110deg,#082e45,#141d46);box-shadow:0 0 14px #00f5ff65}
 html[data-persona] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions)>.lesson-choice{border:0!important;background:transparent!important;box-shadow:none!important;padding:12px!important;transform:none!important;width:100%;height:auto;min-width:0}
 
+
+/* Compact catalogue cards share the same thin outline at every progress state. */
+html[data-persona] #app #catalogScreen .lesson-card-shell:not(:has(.lesson-completion-actions))>.lesson-choice{border-width:1px!important;border-radius:14px!important;box-shadow:0 2px 5px #8b45130b!important}
+html[data-persona=cyber] #app #catalogScreen .lesson-card-shell:not(:has(.lesson-completion-actions))>.lesson-choice{box-shadow:0 0 8px #00f5ff19!important}
+html[data-persona] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions):has(.lesson-choice.selected){box-shadow:0 2px 7px #8b451318}
+html[data-persona=cyber] #app #catalogScreen .lesson-card-shell:has(.lesson-completion-actions):has(.lesson-choice.selected),html[data-persona=cyber] #app #catalogScreen .lesson-card-shell:not(:has(.lesson-completion-actions))>.lesson-choice.selected{box-shadow:0 0 12px #00f5ff55!important}
 </style>
 </head>
 <body><main id="app" class="app">

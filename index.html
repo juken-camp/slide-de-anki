@@ -2933,6 +2933,12 @@ html[data-persona] body :is(#app,#focusMenu) details.study-options{overflow:hidd
 html[data-persona] body :is(#app,#focusMenu) details.study-options>summary{background:transparent!important;border-radius:inherit}
 html[data-persona] body :is(#app,#focusMenu) details.study-options[open]>summary{border-bottom-left-radius:0;border-bottom-right-radius:0}
 html[data-persona] body :is(#app,#focusMenu) details.study-options>summary:focus-visible{outline-offset:-3px}
+/* Related questions are reading rows; only the outer dialog carries neon framing. */
+html[data-persona] body dialog#nekoRelatedDialog #nekoRelatedContent>.neko-related-card,
+html[data-persona] body #app #testScreen .neko-problems-section>.neko-related-card{display:block;width:100%;margin:0;padding:12px 0;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;text-shadow:none!important;text-align:left;text-decoration:none!important;transform:none!important}
+html[data-persona] body dialog#nekoRelatedDialog #nekoRelatedContent>.neko-related-card+.neko-related-card,
+html[data-persona] body #app #testScreen .neko-problems-section>.neko-related-card+.neko-related-card{margin-top:12px}
+html[data-persona] body dialog#nekoRelatedDialog #nekoRelatedContent>.neko-related-card:active{opacity:.75}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -5880,7 +5886,30 @@ function nekoRenderConnections(root,key,keywords=[]){
  const related=nekoRelated(key,keywords);if(!related.length)return;const section=collectionNode('section',undefined,'neko-problems-section');section.tabIndex=-1;section.append(collectionNode('h4','関連問題','neko-related-title'));for(const item of related){const b=collectionButton('','neko-related-card',()=>nekoOpenRelated(item.key));b.append(collectionNode('small',`「${item.why}」でつながる · ${item.title}`),collectionNode('span',item.r.q+(item.r.image?'（図を参照）':'')));section.append(b);}root.append(section);
 }
 function nekoSaveQuestion(key){searchSelectedQuestions.add(key);syncSearchSelection();if($('nekoRelatedDialog').open)$('nekoRelatedDialog').close();openSearchSave();}
-async function nekoOpenRelated(key){const r=assessmentByKey(key);if(!r)return;const root=$('nekoRelatedContent');root.replaceChildren();$('nekoRelatedTitle').textContent=historyCardTitle(key);const prompt=collectionNode('div',undefined,'assessment-prompt user-content');buildPrompt(prompt,r);root.append(prompt);if(nekoCanShowQuestionImage(r)){const img=document.createElement('img');img.src=window.NekoImageURL(r.question);img.alt='元教材の問題スライド';const note=collectionNode('p','画像を読み込めなかったにゃ。問題文で確認してにゃ。','homework-note');note.hidden=true;img.onerror=()=>{img.hidden=true;note.hidden=false;};root.append(img,note);}const d=collectionNode('details',undefined,'neko-answer-disclosure');d.append(collectionNode('summary','解答を見る'));const answer=collectionNode('div',r.a,'typed-response typed-model user-content');d.append(answer);const footer=collectionNode('footer',undefined,'neko-related-footer');footer.append(collectionButton('この問題をまとめに保存','tool neko-related-save',()=>nekoSaveQuestion(key)));root.append(d,footer);if(!$('nekoRelatedDialog').open)$('nekoRelatedDialog').showModal();$('nekoRelatedDialog').scrollTop=0;$('nekoRelatedTitle').focus?.({preventScroll:true});}
+async function nekoOpenRelated(key){
+ const r=assessmentByKey(key);if(!r)return;
+ const root=$('nekoRelatedContent');root.replaceChildren();$('nekoRelatedTitle').textContent=historyCardTitle(key);
+ const prompt=collectionNode('div',undefined,'assessment-prompt user-content');buildPrompt(prompt,r);root.append(prompt);
+ let slide=null,slideNote=null;
+ if(nekoCanShowQuestionImage(r)){
+  slide=document.createElement('img');slide.src=window.NekoImageURL(r.question);slide.alt='元教材の問題スライド';
+  slideNote=collectionNode('p','画像を読み込めなかったにゃ。問題文で確認してにゃ。','homework-note');slideNote.hidden=true;
+  slide.onerror=()=>{slide.hidden=true;slideNote.hidden=false;};root.append(slide,slideNote);
+ }
+ const d=collectionNode('details',undefined,'neko-answer-disclosure');d.append(collectionNode('summary','解答を見る'));
+ const answer=collectionNode('div',r.a,'typed-response typed-model user-content');d.append(answer);
+ d.addEventListener('toggle',()=>{
+  if(!slide)return;
+  const showAnswer=d.open&&!!r.answer;
+  slide.hidden=false;slideNote.hidden=true;
+  slideNote.textContent=showAnswer?'解答画像を読み込めなかったにゃ。下の解答で確認してにゃ。':'画像を読み込めなかったにゃ。問題文で確認してにゃ。';
+  slide.alt=showAnswer?'元教材の解答スライド':'元教材の問題スライド';
+  slide.src=window.NekoImageURL(showAnswer?r.answer:r.question);
+ });
+ const footer=collectionNode('footer',undefined,'neko-related-footer');footer.append(collectionButton('この問題をまとめに保存','tool neko-related-save',()=>nekoSaveQuestion(key)));root.append(d,footer);
+ if(!$('nekoRelatedDialog').open)$('nekoRelatedDialog').showModal();$('nekoRelatedDialog').scrollTop=0;$('nekoRelatedTitle').focus?.({preventScroll:true});
+}
+
 function nekoOpenKeyword(word){const root=$('nekoRelatedContent');root.replaceChildren();$('nekoRelatedTitle').textContent='「'+word+'」につながる問題';let items=[];for(const m of meta)for(const c of assessmentSearchMatches(m.id,word))items.push({m,c});root.append(collectionNode('p',`${items.length}問が見つかったにゃ。`,'homework-note'));for(const {m,c}of items.slice(0,30)){const b=collectionButton('','neko-related-card',()=>nekoOpenRelated(cardKey(m.id,c.id)));b.append(collectionNode('small',m.title),collectionNode('span',c.q+(c.image?'（図を参照）':'')));root.append(b);}if(items.length>30)root.append(collectionNode('p','先頭30問を表示しているにゃ。','homework-note'));if(!$('nekoRelatedDialog').open)$('nekoRelatedDialog').showModal();$('nekoRelatedDialog').scrollTop=0;$('nekoRelatedTitle').focus?.({preventScroll:true});}
 async function nekoGradeReview(){
  if(nekoReviewBusy===testSession?.id||!typedTest()||testSession.finishedAt||!nekoPreferences().enabled)return;const session=testSession,pending=session.refs.filter(k=>session.judgements[k]?.source==='pending'&&!session.imageFailures?.[k]&&!nekoCached(k,'initial').result).slice(0,20);if(!pending.length)return;nekoReviewBusy=session.id;$('nekoAIReviewNext').hidden=true;let done=0,failed=false;const status=$('nekoAIReviewState');status.textContent=`Nekoponが解答を確認中にゃ · 0 / ${pending.length}問`;

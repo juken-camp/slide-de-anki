@@ -2872,6 +2872,11 @@ html[data-persona] #app #myCollectionsPanel .my-collection-actions :is(.primary-
 html[data-persona] #app #myCollectionsPanel .my-collection-actions .tool{padding:8px!important;font-size:12px!important}
 html[data-persona] #app #myCollectionsPanel .my-collection-actions .link-button{padding:6px 4px!important;font-size:12px!important}
 @media(max-width:380px){#app #myCollectionsPanel .my-collection-actions{grid-template-columns:1fr auto}#app #myCollectionsPanel .my-collection-actions .primary-button{grid-column:1/-1;width:100%}#app #myCollectionsPanel .my-collection-actions .tool{justify-self:end}}
+
+#catalogScreen .lesson-card-shell:has(.lesson-completion-actions)>.lesson-choice{padding-bottom:68px}
+#catalogScreen .lesson-completion-actions{position:absolute;left:50px;right:14px;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px}
+#catalogScreen .lesson-completion-actions .lesson-marks{margin:0;gap:4px;min-width:0}
+html[data-persona] body #app #catalogScreen .lesson-completion-actions .lesson-challenge{display:inline-flex;align-items:center;justify-content:center;flex:none;min-height:44px;margin:0!important;padding:6px 8px!important;font-size:11px!important;line-height:1.5;white-space:nowrap;border:1px solid var(--ui-control-line)!important;border-radius:12px!important;background:var(--ui-control-bg)!important;color:var(--ui-control-fg)!important;box-shadow:var(--ui-control-shadow)!important;text-decoration:none!important}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -5177,11 +5182,11 @@ function renderAssessmentCatalog(){
    const badge=collectionNode('span','🏅 確認クリア','lesson-mark is-verified');
    badge.title=`${hStamp(award.at)}・ランダム${award.refs.length}問を自動判定で満点`;markRow.append(badge);
   }
-  if(markRow.childNodes.length)row.querySelector('.choice-copy').append(markRow);
+  const completion=collectionNode('div',undefined,'lesson-completion-actions');if(markRow.childNodes.length){completion.append(markRow);shell.append(completion);}
   const eligible=assessmentDataset?.lessons[m.id]?.cards.filter(c=>c.eligible)||[];
   if(complete&&eligible.length){
-   const b=collectionButton(award?'もう一度チャレンジにゃ':'確認チャレンジにゃ','link-button lesson-challenge',()=>startLessonChallenge(m.id));
-   b.setAttribute('aria-label',m.title+'の確認チャレンジ');wrapper.append(b);
+   const b=collectionButton(award?'もう一度挑戦':'確認チャレンジ','link-button lesson-challenge',async()=>{b.disabled=true;b.setAttribute('aria-busy','true');try{await startLessonChallenge(m.id);}catch(e){toast(e.message||'テストを開けなかったにゃ。');}finally{b.disabled=false;b.removeAttribute('aria-busy');}});
+   b.setAttribute('aria-label',m.title+'の確認チャレンジ');completion.append(b);
   }
   if(!m.imported){
    const panel=collectionNode('div',undefined,'lesson-text-panel');panel.dataset.lessonText=m.id;panel.id='lesson-text-'+m.id;panel.hidden=true;
@@ -5345,7 +5350,7 @@ async function startHomeworkTest(){
 async function launchTypedTest(keys,options={}){
  if(typedLaunching)return;
  const slot=nekoActiveMode(options);if(!nekoConfirmNewTest(slot))return;
- typedLaunching=true;testLoading=true;updateHomeworkCandidates();
+ typedLaunching=true;testLoading=true;if($('homeworkSetup').open)updateHomeworkCandidates();
  const beforeActive=hClone(nekoGetActiveTest(slot)),beforeSession=testSession,beforeCards=testCards;let createdId=null;
  const seq=++testLoadRequest;
  try{
@@ -5364,8 +5369,8 @@ async function launchTypedTest(keys,options={}){
   testFaceAnswer=false;typedReviewLimit=20;typedReviewPendingOnly=false;showScreen('test');renderHomeworkTest();beep('open');
  }catch(e){
   if(createdId){nekoRestoreActiveTest(slot,beforeActive,createdId);if(testSession?.id===createdId){testSession=beforeSession;testCards=beforeCards;}persistStudyHistory();}
-  if(seq===testLoadRequest){const target=$('homeworkSetup').open?$('testSetupNotice'):screen==='catalog'?$('questionSearchStatus'):$('testNotice');target.textContent=e.message||'テストを開けなかったにゃ。';}
- }finally{typedLaunching=false;testLoading=false;updateHomeworkCandidates();}
+  if(seq===testLoadRequest){if(screen==='catalog')toast(e.message||'テストを開けなかったにゃ。');else{const target=$('homeworkSetup').open?$('testSetupNotice'):$('testNotice');target.textContent=e.message||'テストを開けなかったにゃ。';}}
+ }finally{typedLaunching=false;testLoading=false;if($('homeworkSetup').open)updateHomeworkCandidates();}
 }
 async function startLessonChallenge(lid){
  try{await Promise.all([studyHistoryReady,ensureAssessmentData()]);}catch(e){toast(e.message);return;}

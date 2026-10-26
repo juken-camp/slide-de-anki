@@ -497,7 +497,7 @@ button:disabled{opacity:.5}input[type=search],dialog input,dialog select{font-si
 
 /* Landscape study keeps the entire slide above a compact, unobstructed control strip. */
 .focus-only{display:none!important}
-.settings-display{padding:8px 0 12px;border-bottom:1px solid #eee3d7;margin-bottom:10px}.settings-display h3{font-size:13px;margin:6px 0}.settings-display .sound-setting{gap:16px}.settings-display small{display:block;color:var(--muted);font-size:11px;line-height:1.7;margin:0 0 0 2px}
+.settings-display{padding:8px 0 12px;border-bottom:0;margin-bottom:10px}.settings-display h3{font-size:13px;margin:6px 0}.settings-display .sound-setting{gap:16px}.settings-display small{display:block;color:var(--muted);font-size:11px;line-height:1.7;margin:0 0 0 2px}
 body.slide-focus{overflow:hidden;overscroll-behavior:none;background:#fff}
 body.slide-focus #app{position:fixed;inset:0;max-width:none;width:100%;height:100vh;height:100dvh;margin:0;padding:0;background:#fff;overflow:hidden}
 body.slide-focus #app:before{display:none}
@@ -3047,6 +3047,11 @@ html[data-persona] body #app #testScreen .neko-chat-scroll>.neko-tutor-heading{
 html[data-persona=cyber] body #app #testScreen .neko-chat-scroll>.neko-tutor-heading{
  box-shadow:inset 0 12px 0 #0f1430!important;
 }
+
+/* Notifications must fully disappear, including long messages on iPhone. */
+body #notice{max-width:calc(100vw - 24px);width:max-content;white-space:normal;overflow-wrap:anywhere;box-sizing:border-box;opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-12px);transition:opacity .18s,transform .18s,visibility .18s}
+body:not(.slide-focus) #notice{top:var(--notice-top,calc(var(--app-header-height,64px) + 12px));bottom:auto;max-height:calc(100dvh - var(--notice-top,80px) - 20px);overflow:auto}
+body #notice.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -3685,7 +3690,13 @@ syncBrandLabels();
 function confirmWithPersona(nekoText, cyberText) {
   return window.confirm(document.documentElement.dataset.persona === 'cyber' ? cyberText : nekoText);
 }
-function toast(s) { $('notice').textContent = window.NekoCyberSpeak?.(s) || s; $('notice').classList.add('show'); clearTimeout(noticeTimer); noticeTimer = setTimeout(() => $('notice').classList.remove('show'), 2600); }
+function toast(s) {
+ const notice=$('notice');notice.textContent=window.NekoCyberSpeak?.(s)||s;
+ const header=$('appHeader'),bottom=header?.getBoundingClientRect().bottom||0;
+ notice.style.setProperty('--notice-top',`${Math.max(12,bottom+10)}px`);
+ notice.classList.add('show');clearTimeout(noticeTimer);
+ noticeTimer=setTimeout(()=>notice.classList.remove('show'),Math.min(7000,Math.max(3000,notice.textContent.length*85)));
+}
 function soundAttempt(promise,timeout=1000) {
   return new Promise(resolve=>{
     const timer=setTimeout(()=>resolve(false),timeout);
@@ -5280,7 +5291,7 @@ $('showTestShot').onclick=()=>toggleHomeworkCapture(true);
 window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();});
 
 // Additive assessment data: existing lesson files, IDs and progress are untouched.
-const assessmentDataURL='nekopon-data/assessment-06ce35ab7c44.json?v=source-label-cleanup-20261026';
+const assessmentDataURL='nekopon-data/assessment-06ce35ab7c44.json?v=source-label-cleanup-20261026-resume1';
 const assessmentCore=window.NekoAssessmentCore;
 let assessmentDataset=null,assessmentPromise=null,assessmentError='',assessmentSearchCache=new Map();
 let typedReviewLimit=20,typedReviewPendingOnly=false,typedRenderingKey='',typedLaunching=false;
@@ -5621,10 +5632,29 @@ async function startLessonChallenge(lid){
  const entries=assessmentDataset.lessons[lid]?.cards.filter(c=>c.eligible)||[];
  return launchTypedTest(entries.map(c=>cardKey(lid,c.id)),{wanted:Math.min(10,entries.length),kind:'challenge',challengeLesson:lid,lessons:[lid],allDates:true,subject:meta.find(m=>m.id===lid)?.subject});
 }
+function reconcileTypedResume(stored,dataset){
+ const session=hClone(stored),changed=[];
+ if(session.dataRevision===dataset.revision)return {session,changed};
+ for(const key of session.refs){
+  const ref=hSplit(key),record=dataset.lessons[ref.lessonId]?.cards.find(c=>c.id===ref.cardId);
+  if(!record?.eligible)throw Error('元の問題が見つからないにゃ。教材データを確認してにゃ。');
+  const seen=Object.hasOwn(session.displayContracts||{},key),answered=Object.hasOwn(session.answers||{},key)||Object.hasOwn(session.judgements||{},key)||session.practiceRevealed?.[key];
+  if((seen||answered)&&session.displayContracts?.[key]!==record.contract){
+   changed.push(key);
+   for(const field of ['answers','judgements','practiceRevealed','imageFailures','skipped','questionImageShown','nekoFeedback','nekoRequests','nekoErrors','nekoQuestionImages','tutor'])if(session[field])delete session[field][key];
+   if(session.displayContracts)delete session.displayContracts[key];
+  }
+ }
+ session.dataRevision=dataset.revision;session.undo=[];
+ // A challenge begun against an older dataset cannot earn a new-version medal.
+ if(session.kind==='challenge')session.challengeAllKnownAtStart=false;
+ if(changed.length){session.phase='questions';session.index=session.refs.indexOf(changed[0]);session.finishedAt=null;}
+ return {session,changed};
+}
 async function resumeHomeworkTest(mode){
  await studyHistoryReady;mode=typeof mode==='string'?mode:undefined;const stored=nekoGetActiveTest(mode);if(!stored)return;const request=++testLoadRequest;
  if(stored.typedSchema===1){
-  try{await ensureAssessmentData();if(stored.dataRevision!==assessmentDataset.revision){toast('このテストと問題文データの版が違うにゃ。新しいテストを始めてにゃ。');return;}}
+  try{await ensureAssessmentData();if(request!==testLoadRequest)return;if(stored.dataRevision!==assessmentDataset.revision){const migrated=reconcileTypedResume(stored,assessmentDataset);Object.assign(stored,migrated.session);nekoStoreActiveTest(stored);await persistStudyHistory();if(migrated.changed.length)toast(`内容を更新した${migrated.changed.length}問だけ、もう一度答えを確かめてにゃ。入力した答えは残しているにゃ。`);}}
   catch(e){toast(e.message);return;}
  }
  if(request!==testLoadRequest)return;if($('homeworkSetup').open)$('homeworkSetup').close();typedReviewLimit=20;typedReviewPendingOnly=false;return legacyResumeHomeworkTest(stored);

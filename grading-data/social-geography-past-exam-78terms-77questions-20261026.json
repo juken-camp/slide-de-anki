@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "social-geography-past-exam-78terms-77questions-20261026",
   "title": "高校入試 過去問｜地理 一問一答①",
   "subject": "social",
@@ -355,7 +355,7 @@
         "question": 70.8,
         "answer": 88.85
       },
-      "question_text": "東京湾の臨海部で、大工場が立ち並び、京浜工業地帯や京葉工業地域が形成されている。「（　）工業地帯」に入る語を書きなさい。",
+      "question_text": "関東地方について。東京湾の臨海部には、大工場が立ち並び（　）工業地帯や京葉工業地域が形成されている。（　）にあてはまる語を書きなさい。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "",
@@ -390,7 +390,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "問題文に正答の京浜が先に書かれていたため削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -402,7 +404,7 @@
         "accepted_answers": [
           {
             "text": "京浜",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -414,7 +416,7 @@
       },
       "runtime_record": {
         "id": "004",
-        "q": "東京湾の臨海部で、大工場が立ち並び、京浜工業地帯や京葉工業地域が形成されている。「（　）工業地帯」に入る語を書きなさい。",
+        "q": "関東地方について。東京湾の臨海部には、大工場が立ち並び（　）工業地帯や京葉工業地域が形成されている。（　）にあてはまる語を書きなさい。",
         "aux": [],
         "choices": [],
         "a": "京浜",
@@ -444,7 +446,7 @@
           "answer": 88.85
         },
         "table": null,
-        "contract": "845392779d5515f19a2c5c4a46db59a3de850360de47113c04304ebbec86f6dc"
+        "contract": "89ee64b0a7929daa758d55d0fff031fbe605c0141561ae932d67b309d377fbbd"
       }
     },
     {
@@ -2937,7 +2939,7 @@
         "question": 600.9,
         "answer": 621.02
       },
-      "question_text": "工業製品を陸上輸送より船で輸送すると、燃料消費が減り、地球温暖化の原因となる（　）の排出量が減少する。空欄を書きなさい。",
+      "question_text": "工業製品を陸上輸送する場合、輸送距離を短くすると、消費する燃料が削減され、地球温暖化の原因でもある（　）の排出量が減少する。（　）にあてはまる語句を書きなさい。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "",
@@ -2972,7 +2974,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "元画像の陸上輸送の距離短縮を別内容の船輸送に変えた不一致を訂正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2984,7 +2988,7 @@
         "accepted_answers": [
           {
             "text": "温室効果ガス",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2996,7 +3000,7 @@
       },
       "runtime_record": {
         "id": "029",
-        "q": "工業製品を陸上輸送より船で輸送すると、燃料消費が減り、地球温暖化の原因となる（　）の排出量が減少する。空欄を書きなさい。",
+        "q": "工業製品を陸上輸送する場合、輸送距離を短くすると、消費する燃料が削減され、地球温暖化の原因でもある（　）の排出量が減少する。（　）にあてはまる語句を書きなさい。",
         "aux": [],
         "choices": [],
         "a": "温室効果ガス",
@@ -3026,7 +3030,7 @@
           "answer": 621.02
         },
         "table": null,
-        "contract": "2ddcc1af80856e955252d6036ec8e979d95cf6a10f25eb93dfe2552b2866d790"
+        "contract": "5773a7fec6b7074c5b8351c0eb0438a7cde5e90eeab1568d7f97688f0a5513e7"
       }
     },
     {
@@ -8130,7 +8134,7 @@
       },
       {
         "id": "004",
-        "q": "東京湾の臨海部で、大工場が立ち並び、京浜工業地帯や京葉工業地域が形成されている。「（　）工業地帯」に入る語を書きなさい。",
+        "q": "関東地方について。東京湾の臨海部には、大工場が立ち並び（　）工業地帯や京葉工業地域が形成されている。（　）にあてはまる語を書きなさい。",
         "aux": [],
         "choices": [],
         "a": "京浜",
@@ -8160,7 +8164,7 @@
           "answer": 88.85
         },
         "table": null,
-        "contract": "845392779d5515f19a2c5c4a46db59a3de850360de47113c04304ebbec86f6dc"
+        "contract": "89ee64b0a7929daa758d55d0fff031fbe605c0141561ae932d67b309d377fbbd"
       },
       {
         "id": "005",
@@ -8988,7 +8992,7 @@
       },
       {
         "id": "029",
-        "q": "工業製品を陸上輸送より船で輸送すると、燃料消費が減り、地球温暖化の原因となる（　）の排出量が減少する。空欄を書きなさい。",
+        "q": "工業製品を陸上輸送する場合、輸送距離を短くすると、消費する燃料が削減され、地球温暖化の原因でもある（　）の排出量が減少する。（　）にあてはまる語句を書きなさい。",
         "aux": [],
         "choices": [],
         "a": "温室効果ガス",
@@ -9018,7 +9022,7 @@
           "answer": 621.02
         },
         "table": null,
-        "contract": "2ddcc1af80856e955252d6036ec8e979d95cf6a10f25eb93dfe2552b2866d790"
+        "contract": "5773a7fec6b7074c5b8351c0eb0438a7cde5e90eeab1568d7f97688f0a5513e7"
       },
       {
         "id": "030",

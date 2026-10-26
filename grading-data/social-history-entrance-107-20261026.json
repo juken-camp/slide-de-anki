@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "social-history-entrance-107-20261026",
   "title": "高校入試 過去問｜歴史 一問一答①",
   "subject": "social",
@@ -381,7 +381,9 @@
         "question_answer_pair_matches": true,
         "verbatim_question_text": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "解答画像の別解・出題に合う正答を採点設定に追加"
+      ],
       "advisory_notes": [
         "元動画URL・概要欄の訂正事項未確認。細かな補足文字には未校正箇所あり。"
       ],
@@ -390,15 +392,20 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_plus_optional_image",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "徳政令",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "永仁の徳政令",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "徳政令"
+          "徳政令",
+          "永仁の徳政令"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -420,10 +427,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "徳政令"
+          "徳政令",
+          "永仁の徳政令"
         ],
         "normalized": [
-          "徳政令"
+          "徳政令",
+          "永仁の徳政令"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -436,7 +445,7 @@
           "answer": 115.5
         },
         "table": null,
-        "contract": "7dc00ccdce23263cb70b31463c7839c467b60efa4138849b3e8f7d1b6fff719b"
+        "contract": "205a335ba47a907dabd0440c98de068a3108112db4dd0bdfa8ceddf6c350b330"
       }
     },
     {
@@ -1005,7 +1014,9 @@
         "question_answer_pair_matches": true,
         "verbatim_question_text": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "解答画像の別解・出題に合う正答を採点設定に追加"
+      ],
       "advisory_notes": [
         "元動画URL・概要欄の訂正事項未確認。細かな補足文字には未校正箇所あり。"
       ],
@@ -1014,15 +1025,20 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_plus_optional_image",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "刀狩",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "刀狩令",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "刀狩"
+          "刀狩",
+          "刀狩令"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -1044,10 +1060,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "刀狩"
+          "刀狩",
+          "刀狩令"
         ],
         "normalized": [
-          "刀狩"
+          "刀狩",
+          "刀狩令"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -1060,7 +1078,7 @@
           "answer": 229.5
         },
         "table": null,
-        "contract": "7143d1307137415998e3f1fcb739eb86bdbcfc29853e857944b3c4f09aec302e"
+        "contract": "2ffeadf2a0cc531193f72846fa2c14ffdfeb61ee7c7bde8c7a3deadc121efcb7"
       }
     },
     {
@@ -3613,7 +3631,7 @@
     {
       "id": "035",
       "chapter": "mixed",
-      "question": "images_20261026107/social-history-entrance-107-20261026/question_035.png",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_035.png?v=6a33634530a7f38b",
       "answer": "images_20261026107/social-history-entrance-107-20261026/answer_035.png",
       "sourceTimes": {
         "question": 823.4,
@@ -3640,9 +3658,9 @@
       "source_video_url": null,
       "images": {
         "question": {
-          "path": "images_20261026107/social-history-entrance-107-20261026/question_035.png",
+          "path": "images_20261026107/social-history-entrance-107-20261026/question_035.png?v=6a33634530a7f38b",
           "local_path": "images_20261026107/social-history-entrance-107-20261026/question_035.png",
-          "sha256": "00772dd314ab5477f0885aef90ad2607d6a1268ccc008a7a490b5212117c0640"
+          "sha256": "6a33634530a7f38ba4b8aec696a5c985a8fe12a90e394ef21996c8fbed10d0e6"
         },
         "answer": {
           "path": "images_20261026107/social-history-entrance-107-20261026/answer_035.png",
@@ -3656,7 +3674,9 @@
         "question_answer_pair_matches": true,
         "verbatim_question_text": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "田沼意次を問う別問題の混入を日ソ中立条約の設問に差し替え"
+      ],
       "advisory_notes": [
         "元動画URL・概要欄の訂正事項未確認。細かな補足文字には未校正箇所あり。"
       ],
@@ -3665,11 +3685,11 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_plus_optional_image",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "日ソ中立条約",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3689,7 +3709,7 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_20261026107/social-history-entrance-107-20261026/question_035.png",
+        "question": "images_20261026107/social-history-entrance-107-20261026/question_035.png?v=6a33634530a7f38b",
         "answer": "images_20261026107/social-history-entrance-107-20261026/answer_035.png",
         "eligible": true,
         "editorial": false,
@@ -3711,7 +3731,7 @@
           "answer": 878.5
         },
         "table": null,
-        "contract": "42a602e126d8a6040d22f02e674c647c108e6dd4344b61dc7dd88b244f3565c8"
+        "contract": "38dc888e2a4faf75f99cf9e4930308a165c96fd7817272116da98e5d2a4c2e11"
       }
     },
     {
@@ -3926,13 +3946,13 @@
       "id": "038",
       "chapter": "mixed",
       "question": "images_20261026107/social-history-entrance-107-20261026/question_038.png",
-      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_038.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_038.png?v=455e3d3f33f0ad3c",
       "sourceTimes": {
         "question": 919.4,
         "answer": 938.5
       },
       "lesson_id": "social-history-entrance-107-20261026",
-      "question_text": "1882年、伊藤博文がヨーロッパで憲法を調査した際に学んだ、ドイツの首相は誰か。",
+      "question_text": "1882年、伊藤博文がヨーロッパで憲法を調査した当時、ドイツの首相であった人物は誰か。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "設問に答える",
@@ -3957,9 +3977,9 @@
           "sha256": "3c5a9384b0e48bb7d39a69db99707f08e63b821d52a9d315e3c6cf9b1ffa8faa"
         },
         "answer": {
-          "path": "images_20261026107/social-history-entrance-107-20261026/answer_038.png",
+          "path": "images_20261026107/social-history-entrance-107-20261026/answer_038.png?v=455e3d3f33f0ad3c",
           "local_path": "images_20261026107/social-history-entrance-107-20261026/answer_038.png",
-          "sha256": "1ab1a2ed8f6a072fc2ee9c8504116096051c983aa2c45b4e4ab850b2e3440e38"
+          "sha256": "455e3d3f33f0ad3c5dd30e24d11711f46caea6d1d64a0a478e1de4e046f0a57e"
         }
       },
       "transcription_review": {
@@ -3968,7 +3988,10 @@
         "question_answer_pair_matches": true,
         "verbatim_question_text": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "画像の出題内容と合う問題文に修正",
+        "1882年伊藤の憲法調査に誤って付いた岩倉使節団の注記を削除"
+      ],
       "advisory_notes": [
         "元動画URL・概要欄の訂正事項未確認。細かな補足文字には未校正箇所あり。"
       ],
@@ -3977,11 +4000,11 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_plus_optional_image",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "ビスマルク",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3993,7 +4016,7 @@
       },
       "runtime_record": {
         "id": "038",
-        "q": "1882年、伊藤博文がヨーロッパで憲法を調査した際に学んだ、ドイツの首相は誰か。",
+        "q": "1882年、伊藤博文がヨーロッパで憲法を調査した当時、ドイツの首相であった人物は誰か。",
         "aux": [],
         "choices": [],
         "a": "ビスマルク",
@@ -4002,7 +4025,7 @@
         "parts": [],
         "image": false,
         "question": "images_20261026107/social-history-entrance-107-20261026/question_038.png",
-        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_038.png",
+        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_038.png?v=455e3d3f33f0ad3c",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -4023,7 +4046,7 @@
           "answer": 938.5
         },
         "table": null,
-        "contract": "a5ae34dd7f434cc50515d7879af622821ce38711610b064719dcbb7cdb7c00f9"
+        "contract": "39989d45862408a785b84c6d9c70064d75fbf03d7ee8517fd83fe5b882496f90"
       }
     },
     {
@@ -6116,14 +6139,14 @@
     {
       "id": "059",
       "chapter": "mixed",
-      "question": "images_20261026107/social-history-entrance-107-20261026/question_059.png",
-      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_059.png",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_059.png?v=20a7b73ab898603e",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_059.png?v=80009584691e0a0c",
       "sourceTimes": {
         "question": 1370.4,
         "answer": 1382.5
       },
       "lesson_id": "social-history-entrance-107-20261026",
-      "question_text": "大正時代、平塚らいてうらが女性解放を目指して設立した団体は何か。",
+      "question_text": "明治時代、平塚らいてうらが女性解放を目指して設立した団体は何か。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "設問に答える",
@@ -6143,14 +6166,14 @@
       "source_video_url": null,
       "images": {
         "question": {
-          "path": "images_20261026107/social-history-entrance-107-20261026/question_059.png",
+          "path": "images_20261026107/social-history-entrance-107-20261026/question_059.png?v=20a7b73ab898603e",
           "local_path": "images_20261026107/social-history-entrance-107-20261026/question_059.png",
-          "sha256": "659a86256b5420fc38f71307c312daba79205923636282ba18ef17848a74f34f"
+          "sha256": "20a7b73ab898603ef15f1e5c68396b49ff12da682627f029508bee01229aac22"
         },
         "answer": {
-          "path": "images_20261026107/social-history-entrance-107-20261026/answer_059.png",
+          "path": "images_20261026107/social-history-entrance-107-20261026/answer_059.png?v=80009584691e0a0c",
           "local_path": "images_20261026107/social-history-entrance-107-20261026/answer_059.png",
-          "sha256": "8877a6a8f6bcdd5fef1509bf7beca697cc496725981f24c439b7f0ee179fbe66"
+          "sha256": "80009584691e0a0c7b1947be3ada68bf43f1d66ab443f229f053d58ed2328418"
         }
       },
       "transcription_review": {
@@ -6159,7 +6182,11 @@
         "question_answer_pair_matches": true,
         "verbatim_question_text": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "青鞜社設立は1911年（明治44年）のため訂正",
+        "青鞜社設立の時代を明治に訂正",
+        "青鞜社設立の時代を明治に訂正し新婦人協会の誤注記を削除"
+      ],
       "advisory_notes": [
         "元動画URL・概要欄の訂正事項未確認。細かな補足文字には未校正箇所あり。"
       ],
@@ -6168,11 +6195,11 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_plus_optional_image",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "青鞜社",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -6184,7 +6211,7 @@
       },
       "runtime_record": {
         "id": "059",
-        "q": "大正時代、平塚らいてうらが女性解放を目指して設立した団体は何か。",
+        "q": "明治時代、平塚らいてうらが女性解放を目指して設立した団体は何か。",
         "aux": [],
         "choices": [],
         "a": "青鞜社",
@@ -6192,8 +6219,8 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_20261026107/social-history-entrance-107-20261026/question_059.png",
-        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_059.png",
+        "question": "images_20261026107/social-history-entrance-107-20261026/question_059.png?v=20a7b73ab898603e",
+        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_059.png?v=80009584691e0a0c",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -6214,7 +6241,7 @@
           "answer": 1382.5
         },
         "table": null,
-        "contract": "14a5459cf755699bf8cabf8f3146981a2fa9d614eaec7c44cbafc7b98b1e6765"
+        "contract": "56761b8b8e452993d7f6ec45c113cebbe551d52e1f28f88f97cd5fede495a97a"
       }
     },
     {
@@ -6471,7 +6498,9 @@
         "question_answer_pair_matches": true,
         "verbatim_question_text": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "解答画像の別解・出題に合う正答を採点設定に追加"
+      ],
       "advisory_notes": [
         "元動画URL・概要欄の訂正事項未確認。細かな補足文字には未校正箇所あり。"
       ],
@@ -6480,15 +6509,20 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_plus_optional_image",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "平等院",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "平等院鳳凰堂",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "平等院"
+          "平等院",
+          "平等院鳳凰堂"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -6510,10 +6544,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "平等院"
+          "平等院",
+          "平等院鳳凰堂"
         ],
         "normalized": [
-          "平等院"
+          "平等院",
+          "平等院鳳凰堂"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -6526,7 +6562,7 @@
           "answer": 1447.5
         },
         "table": null,
-        "contract": "5d00a7c6c15e70b82e235aa0aca71518436ac862ae7c69a9839b3da31c7e57d5"
+        "contract": "08727c216485d09005daf8bf851f84a371655b566ed9daacf3464b95320c0798"
       }
     },
     {
@@ -10729,14 +10765,14 @@
     {
       "id": "103",
       "chapter": "mixed",
-      "question": "images_20261026107/social-history-entrance-107-20261026/question_103.png",
-      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_103.png",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_103.png?v=536fef0c83743183",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_103.png?v=a0f94f1a1c332234",
       "sourceTimes": {
         "question": 2350.4,
         "answer": 2364.5
       },
       "lesson_id": "social-history-entrance-107-20261026",
-      "question_text": "明治時代に『たけくらべ』『にごりえ』などの小説を書き、五千円札にも使われた女性作家は誰か。",
+      "question_text": "明治時代に「たけくらべ」「にごりえ」などの小説を発表し、2004年発行の五千円札に肖像が使われた女流文学者は誰か。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "設問に答える",
@@ -10756,14 +10792,14 @@
       "source_video_url": null,
       "images": {
         "question": {
-          "path": "images_20261026107/social-history-entrance-107-20261026/question_103.png",
+          "path": "images_20261026107/social-history-entrance-107-20261026/question_103.png?v=536fef0c83743183",
           "local_path": "images_20261026107/social-history-entrance-107-20261026/question_103.png",
-          "sha256": "58a70e06a92a944926c79431ed3c9280c6e6937633da6b01c7be6442bbc81cff"
+          "sha256": "536fef0c837431834259e478b33103f0cd18900fd7e9480718106d0b2842e7ca"
         },
         "answer": {
-          "path": "images_20261026107/social-history-entrance-107-20261026/answer_103.png",
+          "path": "images_20261026107/social-history-entrance-107-20261026/answer_103.png?v=a0f94f1a1c332234",
           "local_path": "images_20261026107/social-history-entrance-107-20261026/answer_103.png",
-          "sha256": "13b690fc7573603b72cb6ef23942296701c22d3bbaa9517c37dc6bfbfeb3e8bb"
+          "sha256": "a0f94f1a1c33223400791ee556cc61d514f8a0830a64c256b7923eb870dead4e"
         }
       },
       "transcription_review": {
@@ -10772,7 +10808,9 @@
         "question_answer_pair_matches": true,
         "verbatim_question_text": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "樋口一葉の紙幣を現在の五千円札から2004年発行の紙幣に訂正"
+      ],
       "advisory_notes": [
         "元動画URL・概要欄の訂正事項未確認。細かな補足文字には未校正箇所あり。"
       ],
@@ -10781,11 +10819,11 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_plus_optional_image",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "樋口一葉",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -10797,7 +10835,7 @@
       },
       "runtime_record": {
         "id": "103",
-        "q": "明治時代に『たけくらべ』『にごりえ』などの小説を書き、五千円札にも使われた女性作家は誰か。",
+        "q": "明治時代に「たけくらべ」「にごりえ」などの小説を発表し、2004年発行の五千円札に肖像が使われた女流文学者は誰か。",
         "aux": [],
         "choices": [],
         "a": "樋口一葉",
@@ -10805,8 +10843,8 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_20261026107/social-history-entrance-107-20261026/question_103.png",
-        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_103.png",
+        "question": "images_20261026107/social-history-entrance-107-20261026/question_103.png?v=536fef0c83743183",
+        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_103.png?v=a0f94f1a1c332234",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -10827,7 +10865,7 @@
           "answer": 2364.5
         },
         "table": null,
-        "contract": "c28ddce3627b5e6f2291359f23babd035296701d7e597ea831af67b849c6fe6a"
+        "contract": "a52a9304205b698e5c6834e605512b63fe981247e46d13e5875bcb12037eb156"
       }
     },
     {
@@ -11370,10 +11408,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "徳政令"
+          "徳政令",
+          "永仁の徳政令"
         ],
         "normalized": [
-          "徳政令"
+          "徳政令",
+          "永仁の徳政令"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -11386,7 +11426,7 @@
           "answer": 115.5
         },
         "table": null,
-        "contract": "7dc00ccdce23263cb70b31463c7839c467b60efa4138849b3e8f7d1b6fff719b"
+        "contract": "205a335ba47a907dabd0440c98de068a3108112db4dd0bdfa8ceddf6c350b330"
       },
       {
         "id": "005",
@@ -11574,10 +11614,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "刀狩"
+          "刀狩",
+          "刀狩令"
         ],
         "normalized": [
-          "刀狩"
+          "刀狩",
+          "刀狩令"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -11590,7 +11632,7 @@
           "answer": 229.5
         },
         "table": null,
-        "contract": "7143d1307137415998e3f1fcb739eb86bdbcfc29853e857944b3c4f09aec302e"
+        "contract": "2ffeadf2a0cc531193f72846fa2c14ffdfeb61ee7c7bde8c7a3deadc121efcb7"
       },
       {
         "id": "011",
@@ -12446,7 +12488,7 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_20261026107/social-history-entrance-107-20261026/question_035.png",
+        "question": "images_20261026107/social-history-entrance-107-20261026/question_035.png?v=6a33634530a7f38b",
         "answer": "images_20261026107/social-history-entrance-107-20261026/answer_035.png",
         "eligible": true,
         "editorial": false,
@@ -12468,7 +12510,7 @@
           "answer": 878.5
         },
         "table": null,
-        "contract": "42a602e126d8a6040d22f02e674c647c108e6dd4344b61dc7dd88b244f3565c8"
+        "contract": "38dc888e2a4faf75f99cf9e4930308a165c96fd7817272116da98e5d2a4c2e11"
       },
       {
         "id": "036",
@@ -12540,7 +12582,7 @@
       },
       {
         "id": "038",
-        "q": "1882年、伊藤博文がヨーロッパで憲法を調査した際に学んだ、ドイツの首相は誰か。",
+        "q": "1882年、伊藤博文がヨーロッパで憲法を調査した当時、ドイツの首相であった人物は誰か。",
         "aux": [],
         "choices": [],
         "a": "ビスマルク",
@@ -12549,7 +12591,7 @@
         "parts": [],
         "image": false,
         "question": "images_20261026107/social-history-entrance-107-20261026/question_038.png",
-        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_038.png",
+        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_038.png?v=455e3d3f33f0ad3c",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -12570,7 +12612,7 @@
           "answer": 938.5
         },
         "table": null,
-        "contract": "a5ae34dd7f434cc50515d7879af622821ce38711610b064719dcbb7cdb7c00f9"
+        "contract": "39989d45862408a785b84c6d9c70064d75fbf03d7ee8517fd83fe5b882496f90"
       },
       {
         "id": "039",
@@ -13256,7 +13298,7 @@
       },
       {
         "id": "059",
-        "q": "大正時代、平塚らいてうらが女性解放を目指して設立した団体は何か。",
+        "q": "明治時代、平塚らいてうらが女性解放を目指して設立した団体は何か。",
         "aux": [],
         "choices": [],
         "a": "青鞜社",
@@ -13264,8 +13306,8 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_20261026107/social-history-entrance-107-20261026/question_059.png",
-        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_059.png",
+        "question": "images_20261026107/social-history-entrance-107-20261026/question_059.png?v=20a7b73ab898603e",
+        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_059.png?v=80009584691e0a0c",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -13286,7 +13328,7 @@
           "answer": 1382.5
         },
         "table": null,
-        "contract": "14a5459cf755699bf8cabf8f3146981a2fa9d614eaec7c44cbafc7b98b1e6765"
+        "contract": "56761b8b8e452993d7f6ec45c113cebbe551d52e1f28f88f97cd5fede495a97a"
       },
       {
         "id": "060",
@@ -13372,10 +13414,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "平等院"
+          "平等院",
+          "平等院鳳凰堂"
         ],
         "normalized": [
-          "平等院"
+          "平等院",
+          "平等院鳳凰堂"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -13388,7 +13432,7 @@
           "answer": 1447.5
         },
         "table": null,
-        "contract": "5d00a7c6c15e70b82e235aa0aca71518436ac862ae7c69a9839b3da31c7e57d5"
+        "contract": "08727c216485d09005daf8bf851f84a371655b566ed9daacf3464b95320c0798"
       },
       {
         "id": "063",
@@ -14776,7 +14820,7 @@
       },
       {
         "id": "103",
-        "q": "明治時代に『たけくらべ』『にごりえ』などの小説を書き、五千円札にも使われた女性作家は誰か。",
+        "q": "明治時代に「たけくらべ」「にごりえ」などの小説を発表し、2004年発行の五千円札に肖像が使われた女流文学者は誰か。",
         "aux": [],
         "choices": [],
         "a": "樋口一葉",
@@ -14784,8 +14828,8 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_20261026107/social-history-entrance-107-20261026/question_103.png",
-        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_103.png",
+        "question": "images_20261026107/social-history-entrance-107-20261026/question_103.png?v=536fef0c83743183",
+        "answer": "images_20261026107/social-history-entrance-107-20261026/answer_103.png?v=a0f94f1a1c332234",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -14806,7 +14850,7 @@
           "answer": 2364.5
         },
         "table": null,
-        "contract": "c28ddce3627b5e6f2291359f23babd035296701d7e597ea831af67b849c6fe6a"
+        "contract": "a52a9304205b698e5c6834e605512b63fe981247e46d13e5875bcb12037eb156"
       },
       {
         "id": "104",

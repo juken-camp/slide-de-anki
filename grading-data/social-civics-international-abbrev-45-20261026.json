@@ -9,12 +9,12 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "social-civics-international-abbrev-45-20261026",
   "title": "国際略語｜地域主義・国連・国際社会",
   "subject": "social",
-  "field": "civics",
-  "grade": "中3社会・高校入試",
+  "field": "geography",
+  "grade": "中学地理・高校入試",
   "source": null,
   "transcription_datetime_jst": "2026-10-26",
   "question_count": 45,
@@ -66,7 +66,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -78,7 +80,7 @@
         "accepted_answers": [
           {
             "text": "GATT",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -95,7 +97,7 @@
         "choices": [],
         "a": "GATT",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_001.png",
@@ -120,7 +122,7 @@
           "answer": 48.0
         },
         "table": null,
-        "contract": "ed092bb86dd7057801c2e50ec156993dd4ca5faea08dceb84c83d97fafe06476"
+        "contract": "3536cc0929e2e0fa084cef3f6146354f6ff7a8efb5dbeffe26300b8444679f04"
       }
     },
     {
@@ -168,7 +170,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -180,7 +184,7 @@
         "accepted_answers": [
           {
             "text": "WTO",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -197,7 +201,7 @@
         "choices": [],
         "a": "WTO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_002.png",
@@ -222,7 +226,7 @@
           "answer": 76.0
         },
         "table": null,
-        "contract": "663e696e8f56dd861db90e8909455cb16df712d3d081e36f8cb78ec09e1b9037"
+        "contract": "44e553801481c9bd3573c610de9d2c7468fe4f003323e139090e2a330312a795"
       }
     },
     {
@@ -270,7 +274,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -282,7 +288,7 @@
         "accepted_answers": [
           {
             "text": "FTA",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -299,7 +305,7 @@
         "choices": [],
         "a": "FTA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_003.png",
@@ -324,7 +330,7 @@
           "answer": 101.333
         },
         "table": null,
-        "contract": "02d52248bcb4e3765fc7dd843bc17585314792ab8e5ef2636306c9ecf7593edb"
+        "contract": "75f92339821a0191c20e78468278241cd11b717a436b63bce1699708931db982"
       }
     },
     {
@@ -372,7 +378,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -384,7 +392,7 @@
         "accepted_answers": [
           {
             "text": "EPA",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -401,7 +409,7 @@
         "choices": [],
         "a": "EPA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_004.png",
@@ -426,7 +434,7 @@
           "answer": 133.333
         },
         "table": null,
-        "contract": "a90e6d3151c3b76f5d5f23d2074690e7be0d1476aa525ab168596d78b2824f1b"
+        "contract": "3ee185a780d1de7aa497e0553004ec19150b14853e3d0c8a192dc56bda5ddd93"
       }
     },
     {
@@ -474,7 +482,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -486,7 +496,7 @@
         "accepted_answers": [
           {
             "text": "EU",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -503,7 +513,7 @@
         "choices": [],
         "a": "EU",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_005.png",
@@ -528,7 +538,7 @@
           "answer": 161.333
         },
         "table": null,
-        "contract": "6672f568c4aec75cd7764ca1b99dfb44ed385a0f3810fe77809657b5ec17d101"
+        "contract": "a9e2c3388c9e289ab11b0efbcbd469a5bbcc30d79bd1582fdf98833844aa068d"
       }
     },
     {
@@ -576,7 +586,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -588,7 +600,7 @@
         "accepted_answers": [
           {
             "text": "EFTA",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -605,7 +617,7 @@
         "choices": [],
         "a": "EFTA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_006.png",
@@ -630,7 +642,7 @@
           "answer": 185.333
         },
         "table": null,
-        "contract": "60cfdcba0397bc461efb5a8ea6440c0e9a93e9fb518160038bcd2c2d3e0b6aea"
+        "contract": "516576fac22d08532a3343faf8c44a714bca852c009ef76f9ec77db6ecfb36c1"
       }
     },
     {
@@ -678,7 +690,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -690,7 +704,7 @@
         "accepted_answers": [
           {
             "text": "NATO",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -707,7 +721,7 @@
         "choices": [],
         "a": "NATO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_007.png",
@@ -732,7 +746,7 @@
           "answer": 208.0
         },
         "table": null,
-        "contract": "206de93c9cc99237d548cd2c7fd5ede75ee85e2f2000b14c80f3a669b5aaec56"
+        "contract": "2a3c5a55c4ca0eba04cdff4d5584a264fb869dbbd57ad6ca52266ae13285b37b"
       }
     },
     {
@@ -781,7 +795,8 @@
         "question_answer_pair_matches": true
       },
       "content_review_notes": [
-        "NAFTAは2020年7月1日からUSMCAに取って代わられた。動画でも次問でUSMCAに触れている。歴史的略語として掲載。"
+        "NAFTAは2020年7月1日からUSMCAに取って代わられた。動画でも次問でUSMCAに触れている。歴史的略語として掲載。",
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
       ],
       "advisory_notes": [
         "NAFTAは2020年7月1日からUSMCAに取って代わられた。動画でも次問でUSMCAに触れている。歴史的略語として掲載。"
@@ -796,7 +811,7 @@
         "accepted_answers": [
           {
             "text": "NAFTA",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -813,7 +828,7 @@
         "choices": [],
         "a": "NAFTA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_008.png",
@@ -838,7 +853,7 @@
           "answer": 232.0
         },
         "table": null,
-        "contract": "7e39dd45ec4444577ebaa81c7b3c390724bc879be0baf8ee9291cfbbf4d3380f"
+        "contract": "1f62a6d0bee177ee2bb7c166e6faf4f27aa395bbf53fd9a3b9b9a88f282932a7"
       }
     },
     {
@@ -886,7 +901,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -898,7 +915,7 @@
         "accepted_answers": [
           {
             "text": "USMCA",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -915,7 +932,7 @@
         "choices": [],
         "a": "USMCA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_009.png",
@@ -940,7 +957,7 @@
           "answer": 253.333
         },
         "table": null,
-        "contract": "7a8c3ae3122e5b2001b8e56c194794222237bdb26ad07270df7c33218469ceca"
+        "contract": "136244c79ab8d17dad50036aecaa3f85407b3b660e1a978955bc2be14aba2d2a"
       }
     },
     {
@@ -988,7 +1005,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1000,7 +1019,7 @@
         "accepted_answers": [
           {
             "text": "OAS",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1017,7 +1036,7 @@
         "choices": [],
         "a": "OAS",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_010.png",
@@ -1042,7 +1061,7 @@
           "answer": 277.333
         },
         "table": null,
-        "contract": "af760ff6c847fd8ca4f0d5686b5f9b7d67dcc62d738f2fd18e9ef3e07435e852"
+        "contract": "4c6819d5fe64168bfcc3a1c877b46be1c11a56727b377843fb5c83ebed404916"
       }
     },
     {
@@ -1090,7 +1109,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1102,7 +1123,7 @@
         "accepted_answers": [
           {
             "text": "MERCOSUR",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1119,7 +1140,7 @@
         "choices": [],
         "a": "MERCOSUR",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_011.png",
@@ -1144,7 +1165,7 @@
           "answer": 298.667
         },
         "table": null,
-        "contract": "6a43e4dbbf36db002bb498e05d6391038193141792fd812f134abb2380fcf8f2"
+        "contract": "e5593a1ae46925a4abb6920294aa9ad40df9831073a953c9eb7b4b252c4fc08f"
       }
     },
     {
@@ -1192,7 +1213,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1204,7 +1227,7 @@
         "accepted_answers": [
           {
             "text": "AU",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1221,7 +1244,7 @@
         "choices": [],
         "a": "AU",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_012.png",
@@ -1246,7 +1269,7 @@
           "answer": 320.0
         },
         "table": null,
-        "contract": "618b571af004395eefea9216250e99438d36cc17817185736c1b47905b50d554"
+        "contract": "06bff29a9caab69f32de94251175f815eb9335eb3b3c1f5a611372e2a6850688"
       }
     },
     {
@@ -1294,7 +1317,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1306,7 +1331,7 @@
         "accepted_answers": [
           {
             "text": "OPEC",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1323,7 +1348,7 @@
         "choices": [],
         "a": "OPEC",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_013.png",
@@ -1348,7 +1373,7 @@
           "answer": 348.0
         },
         "table": null,
-        "contract": "3e5ef8f3239858f129db69e2797bcec3ea147c13d4571536883d3405208fef09"
+        "contract": "d9007e483d80f6c739fba8c6ecdddac87774712a89fd3c082a41769022264462"
       }
     },
     {
@@ -1396,7 +1421,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1408,7 +1435,7 @@
         "accepted_answers": [
           {
             "text": "ASEAN",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1425,7 +1452,7 @@
         "choices": [],
         "a": "ASEAN",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_014.png",
@@ -1450,7 +1477,7 @@
           "answer": 362.667
         },
         "table": null,
-        "contract": "bc1407ad0a9a5af070fdbe7d5f8c958db2bb5842185c992e79bd30da8643c254"
+        "contract": "39baba6ecc8ccd1ef7d217fe9d9416b8d74c62e4d206af8a58f647c22ff5aa90"
       }
     },
     {
@@ -1498,7 +1525,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1510,7 +1539,7 @@
         "accepted_answers": [
           {
             "text": "APEC",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1527,7 +1556,7 @@
         "choices": [],
         "a": "APEC",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_015.png",
@@ -1552,7 +1581,7 @@
           "answer": 400.0
         },
         "table": null,
-        "contract": "326396c80d6ce0365c4892fac0a90b8d158359eb4080ce179d110fab02401c6e"
+        "contract": "8e033456050fa2736f90ad06896a3f3ca6d17b4e954493f655999a38069c455e"
       }
     },
     {
@@ -1601,7 +1630,8 @@
         "question_answer_pair_matches": true
       },
       "content_review_notes": [
-        "元来のTPPは発効せず、CPTPPが2018年に発効した。動画のTPPという略称の問題は歴史的名称として保存。"
+        "元来のTPPは発効せず、CPTPPが2018年に発効した。動画のTPPという略称の問題は歴史的名称として保存。",
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
       ],
       "advisory_notes": [
         "元来のTPPは発効せず、CPTPPが2018年に発効した。動画のTPPという略称の問題は歴史的名称として保存。"
@@ -1616,7 +1646,7 @@
         "accepted_answers": [
           {
             "text": "TPP",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1633,7 +1663,7 @@
         "choices": [],
         "a": "TPP",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_016.png",
@@ -1658,7 +1688,7 @@
           "answer": 426.667
         },
         "table": null,
-        "contract": "5f019e43047866302e22536789ab676e80da78755b3641a5122c3f320fc2fd38"
+        "contract": "fa5312ec9e9c33bf8e141b6e31576744781130d6a53162d6c6674ff8eb34d413"
       }
     },
     {
@@ -1706,7 +1736,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1718,7 +1750,7 @@
         "accepted_answers": [
           {
             "text": "RCEP",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1735,7 +1767,7 @@
         "choices": [],
         "a": "RCEP",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_017.png",
@@ -1760,7 +1792,7 @@
           "answer": 464.0
         },
         "table": null,
-        "contract": "72a1449ea0fafa221b8096508c2ce02b22ef08e8f58c7f16d42f173739e1f1ac"
+        "contract": "20ffecc4964f6e008687c965d86eb829474ee650f283dd9d61ac30d9456e6969"
       }
     },
     {
@@ -1808,7 +1840,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1820,7 +1854,7 @@
         "accepted_answers": [
           {
             "text": "NIES",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1837,7 +1871,7 @@
         "choices": [],
         "a": "NIES",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_018.png",
@@ -1862,7 +1896,7 @@
           "answer": 485.333
         },
         "table": null,
-        "contract": "e33c29b57c32bdbe49983786225b3c761f72df63ad64f1a34eb5f272daf50f55"
+        "contract": "fbbde0ab6fa46fad117d08ac97a717ad3456877f29f5884460eb85e047a2ec4c"
       }
     },
     {
@@ -1910,7 +1944,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1922,7 +1958,7 @@
         "accepted_answers": [
           {
             "text": "IPEF",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1939,7 +1975,7 @@
         "choices": [],
         "a": "IPEF",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_019.png",
@@ -1964,7 +2000,7 @@
           "answer": 517.333
         },
         "table": null,
-        "contract": "a547036d6f6ba7c792f5e48bcd83058a53438d9847ab945103d345bd80efe5d5"
+        "contract": "e50f4826760df43ad53dbaa6cdec863c86307daa22766a9cccc430480fa87174"
       }
     },
     {
@@ -2013,7 +2049,8 @@
         "question_answer_pair_matches": true
       },
       "content_review_notes": [
-        "動画の「5か国」はBRICSが初期に5か国だった時代の説明。2024-25年の加盟国拡大により、現在の加盟国数ではない。問題文は原構成国である旨を明記。"
+        "動画の「5か国」はBRICSが初期に5か国だった時代の説明。2024-25年の加盟国拡大により、現在の加盟国数ではない。問題文は原構成国である旨を明記。",
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
       ],
       "advisory_notes": [
         "動画の「5か国」はBRICSが初期に5か国だった時代の説明。2024-25年の加盟国拡大により、現在の加盟国数ではない。問題文は原構成国である旨を明記。"
@@ -2028,7 +2065,7 @@
         "accepted_answers": [
           {
             "text": "BRICS",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2045,7 +2082,7 @@
         "choices": [],
         "a": "BRICS",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_020.png",
@@ -2070,7 +2107,7 @@
           "answer": 544.0
         },
         "table": null,
-        "contract": "1ed67f933f100fdffd76f2fa1e2de07c241998e32a269222b28c3d225000843e"
+        "contract": "121a91b996a9c1f43a58400f0c1b2524cf783daffc3b3444c265fca849893ff3"
       }
     },
     {
@@ -2118,7 +2155,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2130,7 +2169,7 @@
         "accepted_answers": [
           {
             "text": "AUKUS",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2147,7 +2186,7 @@
         "choices": [],
         "a": "AUKUS",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_021.png",
@@ -2172,7 +2211,7 @@
           "answer": 561.333
         },
         "table": null,
-        "contract": "3ff344f1b4bb50bffba86fc4d4eedec17c4102e2f5445b9864aa59a8fcec6d91"
+        "contract": "18e617115d364a3b81c39e838edaf7c892e085bf907879c545cc6cdf1dabe6cb"
       }
     },
     {
@@ -2220,7 +2259,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2232,11 +2273,11 @@
         "accepted_answers": [
           {
             "text": "Quad",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "QUAD",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2254,7 +2295,7 @@
         "choices": [],
         "a": "Quad",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_022.png",
@@ -2281,7 +2322,7 @@
           "answer": 586.667
         },
         "table": null,
-        "contract": "83971a676a55af0fa9a792c51084b9ab1577c940dc2b8074d5792dda29ade946"
+        "contract": "7cb5182c18340e40ef3b5ca9e9addc0a8ecaeda8a77abab7f9068e7d93c86ab3"
       }
     },
     {
@@ -2329,7 +2370,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2341,7 +2384,7 @@
         "accepted_answers": [
           {
             "text": "PKO",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2358,7 +2401,7 @@
         "choices": [],
         "a": "PKO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_023.png",
@@ -2383,7 +2426,7 @@
           "answer": 616.0
         },
         "table": null,
-        "contract": "58ffa61b57db63ac826fac2b37d230e5b45f92559046fd617fb87319cc666c73"
+        "contract": "00c6c4b839993695ec6352d9e2947487d2bbee0ed7b32041a61a520bf19919e9"
       }
     },
     {
@@ -2431,7 +2474,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2443,7 +2488,7 @@
         "accepted_answers": [
           {
             "text": "FAO",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2460,7 +2505,7 @@
         "choices": [],
         "a": "FAO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_024.png",
@@ -2485,7 +2530,7 @@
           "answer": 640.0
         },
         "table": null,
-        "contract": "04253185b2bcd658cf27fa1d57d070159380a1c3a2af5301b54e1dbc1b740faf"
+        "contract": "a110b459afb0ce5587178f38b17aa3146663cde8339a69667fceddd6ab752e7a"
       }
     },
     {
@@ -2533,7 +2578,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2545,7 +2592,7 @@
         "accepted_answers": [
           {
             "text": "ILO",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2562,7 +2609,7 @@
         "choices": [],
         "a": "ILO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_025.png",
@@ -2587,7 +2634,7 @@
           "answer": 665.333
         },
         "table": null,
-        "contract": "16fb5d899a967abd0fda5d8aace119b367180f5bf5ffa5e86d2f89436ffa720b"
+        "contract": "6a0f8e58b40dd283ac4c72b87f237a8e90333061e84c9fe25690734cdaed08c0"
       }
     },
     {
@@ -2635,7 +2682,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2647,7 +2696,7 @@
         "accepted_answers": [
           {
             "text": "IMF",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2664,7 +2713,7 @@
         "choices": [],
         "a": "IMF",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_026.png",
@@ -2689,7 +2738,7 @@
           "answer": 682.667
         },
         "table": null,
-        "contract": "9665db65aa92fd3b9b3b0f77a37d548be598bac0c592fc975d03ec271467dd1e"
+        "contract": "02c3756764dfd04b58593d9b6f7a8abd4d05f0c7c0ebe9f854cf80aa2843778c"
       }
     },
     {
@@ -2737,7 +2786,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2749,7 +2800,7 @@
         "accepted_answers": [
           {
             "text": "WHO",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2766,7 +2817,7 @@
         "choices": [],
         "a": "WHO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_027.png",
@@ -2791,7 +2842,7 @@
           "answer": 705.333
         },
         "table": null,
-        "contract": "ee687874947dc02923a6dc4b9d2fe22dda3a0cde96fc327ff6d20f528cd1e504"
+        "contract": "9159745c35eadcd1e62cb2bbe07125dcf6096bac2536bdb5a82ccf75e57d2d21"
       }
     },
     {
@@ -2839,7 +2890,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2851,7 +2904,7 @@
         "accepted_answers": [
           {
             "text": "UNESCO",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2868,7 +2921,7 @@
         "choices": [],
         "a": "UNESCO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_028.png",
@@ -2893,7 +2946,7 @@
           "answer": 730.667
         },
         "table": null,
-        "contract": "94f0cb2cd30df2c9eecf039b396f6e3f3f5a75fc651ad9e168563c0e2dee840d"
+        "contract": "f80a26100e9936b6244605a960aed332e313946316dd0e7a4cec18ab9a24ea9e"
       }
     },
     {
@@ -2941,7 +2994,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2953,7 +3008,7 @@
         "accepted_answers": [
           {
             "text": "ICC",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2970,7 +3025,7 @@
         "choices": [],
         "a": "ICC",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_029.png",
@@ -2995,7 +3050,7 @@
           "answer": 752.0
         },
         "table": null,
-        "contract": "9f19e7060077e78965cf95a050f5e512a44c2be07d1927cc1a50f9b8aa942b3b"
+        "contract": "979eafe394a9720e88ebfdb2d25b088327835250e75b2d079cb1ad694dafd40e"
       }
     },
     {
@@ -3043,7 +3098,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3055,7 +3112,7 @@
         "accepted_answers": [
           {
             "text": "ICJ",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3072,7 +3129,7 @@
         "choices": [],
         "a": "ICJ",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_030.png",
@@ -3097,7 +3154,7 @@
           "answer": 773.333
         },
         "table": null,
-        "contract": "d2a8b2032673087cf0af6f3f599f64de6134e66f42c4b258d482a0ec4f7a5144"
+        "contract": "b0d073ed9eed77e83cd1ed1f729e5d6a4134743778e38300675cccfb6d7a1029"
       }
     },
     {
@@ -3145,7 +3202,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3157,7 +3216,7 @@
         "accepted_answers": [
           {
             "text": "IAEA",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3174,7 +3233,7 @@
         "choices": [],
         "a": "IAEA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_031.png",
@@ -3199,7 +3258,7 @@
           "answer": 797.333
         },
         "table": null,
-        "contract": "d9c5572df8032d4c8a5054275849f4d60a515879a3291a2cc6d6fa282aee57e2"
+        "contract": "bce1d2ec2dd0821e9ebb560e86c635dd343f83ad37c0474d094442554a081bb0"
       }
     },
     {
@@ -3248,7 +3307,8 @@
         "question_answer_pair_matches": true
       },
       "content_review_notes": [
-        "UNCTADは2024年4月に対外名称を「UN Trade and Development」に刷新。動画にある国連貿易開発会議は以前の名称。略語はUNCTADのまま。"
+        "UNCTADは2024年4月に対外名称を「UN Trade and Development」に刷新。動画にある国連貿易開発会議は以前の名称。略語はUNCTADのまま。",
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
       ],
       "advisory_notes": [
         "UNCTADは2024年4月に対外名称を「UN Trade and Development」に刷新。動画にある国連貿易開発会議は以前の名称。略語はUNCTADのまま。"
@@ -3263,7 +3323,7 @@
         "accepted_answers": [
           {
             "text": "UNCTAD",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3280,7 +3340,7 @@
         "choices": [],
         "a": "UNCTAD",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_032.png",
@@ -3305,7 +3365,7 @@
           "answer": 821.333
         },
         "table": null,
-        "contract": "d20258b8a61e0b4d5a55b21b0b0c1e3989b3a9af1ced0aa1a0b9470c43fba110"
+        "contract": "74c2ae875d34a32f0d57bee46ccb18a126e3f60fce36d4a306df8783e97cb70c"
       }
     },
     {
@@ -3353,7 +3413,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3365,7 +3427,7 @@
         "accepted_answers": [
           {
             "text": "UNICEF",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3382,7 +3444,7 @@
         "choices": [],
         "a": "UNICEF",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_033.png",
@@ -3407,7 +3469,7 @@
           "answer": 848.0
         },
         "table": null,
-        "contract": "69b9ac49316a1239ea218d77628a233b284b92169be790228685e53e718c77b8"
+        "contract": "c99ffa7be2c8673942cce4b236394ea278239fe51daf53358777bf175f9fba47"
       }
     },
     {
@@ -3455,7 +3517,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3467,7 +3531,7 @@
         "accepted_answers": [
           {
             "text": "UNHCR",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3484,7 +3548,7 @@
         "choices": [],
         "a": "UNHCR",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_034.png",
@@ -3509,7 +3573,7 @@
           "answer": 869.333
         },
         "table": null,
-        "contract": "58dc947e28815799a5441626e1b91b73db9881ffe317fba26abc0fe398a1a471"
+        "contract": "cd9e0831f958474121be58a9696c123cd9eaef0c9d025fe41efabe69b12b937a"
       }
     },
     {
@@ -3557,7 +3621,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3569,7 +3635,7 @@
         "accepted_answers": [
           {
             "text": "NPT",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3586,7 +3652,7 @@
         "choices": [],
         "a": "NPT",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_035.png",
@@ -3611,7 +3677,7 @@
           "answer": 906.667
         },
         "table": null,
-        "contract": "48f9dfdddceecafcf9539c0d15c2fe76e01371adba3df2bf4adf306c6c5a4e98"
+        "contract": "a40e96cc758b1bb262315e66be9528000e121e0e731e2a85cf4c58a3678b546b"
       }
     },
     {
@@ -3659,7 +3725,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3671,7 +3739,7 @@
         "accepted_answers": [
           {
             "text": "OECD",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3688,7 +3756,7 @@
         "choices": [],
         "a": "OECD",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_036.png",
@@ -3713,7 +3781,7 @@
           "answer": 926.667
         },
         "table": null,
-        "contract": "c4a9deb5e14e2fde4a205332a1dc0cd72525235f5c265a6a8deb9c2f486a22c2"
+        "contract": "6f2f0e53be27d8597e5c7e254f3c875198586f9d0c033fd9562b1a6b8c147025"
       }
     },
     {
@@ -3762,7 +3830,8 @@
         "question_answer_pair_matches": true
       },
       "content_review_notes": [
-        "COPは条約ごとの締約国会議を指す一般的な略語。動画では気候変動の文脈で説明されている。"
+        "COPは条約ごとの締約国会議を指す一般的な略語。動画では気候変動の文脈で説明されている。",
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
       ],
       "advisory_notes": [
         "COPは条約ごとの締約国会議を指す一般的な略語。動画では気候変動の文脈で説明されている。"
@@ -3777,7 +3846,7 @@
         "accepted_answers": [
           {
             "text": "COP",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3794,7 +3863,7 @@
         "choices": [],
         "a": "COP",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_037.png",
@@ -3819,7 +3888,7 @@
           "answer": 938.667
         },
         "table": null,
-        "contract": "98a05cd137f57af99e3730ff0fc6c46ce85c7a0cf22170603343c23e0d8e8875"
+        "contract": "0e9c1500812b169d795ebfcf1a92d7e636b609102e7b172095373bded3237994"
       }
     },
     {
@@ -3867,7 +3936,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3879,7 +3950,7 @@
         "accepted_answers": [
           {
             "text": "TICAD",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3896,7 +3967,7 @@
         "choices": [],
         "a": "TICAD",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_038.png",
@@ -3921,7 +3992,7 @@
           "answer": 960.0
         },
         "table": null,
-        "contract": "f278991255cafd7cfd0bcada548e1df4fcc00681dd3adfa403c37f2afc7ddedc"
+        "contract": "c5addab8628b36c23245e3e13ddd5401aedb4cd68438a074dd364c6807ab684f"
       }
     },
     {
@@ -3969,7 +4040,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3981,7 +4054,7 @@
         "accepted_answers": [
           {
             "text": "G7",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3998,7 +4071,7 @@
         "choices": [],
         "a": "G7",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_039.png",
@@ -4023,7 +4096,7 @@
           "answer": 986.667
         },
         "table": null,
-        "contract": "28bdee338af640d0600fd1254c0932317b7c2f3c109d45328060281d30796662"
+        "contract": "772ba0ab8bd579f86d2f56ba4e9e844ba401640337767d9ad2da272fb22821b5"
       }
     },
     {
@@ -4071,7 +4144,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4083,7 +4158,7 @@
         "accepted_answers": [
           {
             "text": "G20",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4100,7 +4175,7 @@
         "choices": [],
         "a": "G20",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_040.png",
@@ -4125,7 +4200,7 @@
           "answer": 1008.0
         },
         "table": null,
-        "contract": "8fe3a8092f37231ec2947db0f521718d5f14987454d3ff425071ab50af88a491"
+        "contract": "a71de3a368aa5f527d3486226a1f995e9aff439fda541a571189490ab1d3d719"
       }
     },
     {
@@ -4173,7 +4248,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4185,7 +4262,7 @@
         "accepted_answers": [
           {
             "text": "ODA",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4202,7 +4279,7 @@
         "choices": [],
         "a": "ODA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_041.png",
@@ -4227,7 +4304,7 @@
           "answer": 1029.333
         },
         "table": null,
-        "contract": "71e94a7a8f197f8645b892003d7a703999f27c95b3e3af023eb4b19983d58cfe"
+        "contract": "bd8b8fb5d410c0d7f7c185ac4df7122c3a654e90b099ddbc667af146ad62fa2a"
       }
     },
     {
@@ -4275,7 +4352,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4287,7 +4366,7 @@
         "accepted_answers": [
           {
             "text": "NGO",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4304,7 +4383,7 @@
         "choices": [],
         "a": "NGO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_042.png",
@@ -4329,7 +4408,7 @@
           "answer": 1053.333
         },
         "table": null,
-        "contract": "8cb419b29ff36d7388d7e4e983a4f1c2524b043c64d8e77ddbf5c048fb6997aa"
+        "contract": "30daa93921b42285d13f9a91e9f4b6d274df00ac5e567398b658324228dc82ed"
       }
     },
     {
@@ -4377,7 +4456,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4389,7 +4470,7 @@
         "accepted_answers": [
           {
             "text": "SDGs",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4406,7 +4487,7 @@
         "choices": [],
         "a": "SDGs",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_043.png",
@@ -4431,7 +4512,7 @@
           "answer": 1077.333
         },
         "table": null,
-        "contract": "9794d915c44282614d837b0a16a569ebd09fd0e4aa9ee8ca5d7a24ca9e8ba961"
+        "contract": "ca443ea19385d8edb05d8b176caff553199c24c9c7936030f1ff30d229e477b8"
       }
     },
     {
@@ -4479,7 +4560,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4491,7 +4574,7 @@
         "accepted_answers": [
           {
             "text": "EEZ",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4508,7 +4591,7 @@
         "choices": [],
         "a": "EEZ",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_044.png",
@@ -4533,7 +4616,7 @@
           "answer": 1097.333
         },
         "table": null,
-        "contract": "aa1db6875d23036d351622422cc08115e32c98add94f6dae39c7c6dfccce41e4"
+        "contract": "dd78740beb1c09d575180a5485d2092095ca0569674ec7a8d7b892a8e3d62714"
       }
     },
     {
@@ -4581,7 +4664,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4593,7 +4678,7 @@
         "accepted_answers": [
           {
             "text": "IOC",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4610,7 +4695,7 @@
         "choices": [],
         "a": "IOC",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_045.png",
@@ -4635,7 +4720,7 @@
           "answer": 1110.667
         },
         "table": null,
-        "contract": "a4da35e228b3cd232aa4c0111fb2bf14e58ac85e3235347678d23e3365c5f5f6"
+        "contract": "c1ab5ee10a1fa8cd33a9f57ead100518a97d1cf4a456f9795a4b3e8d9f7b9c01"
       }
     }
   ],
@@ -4665,7 +4750,7 @@
         "choices": [],
         "a": "GATT",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_001.png",
@@ -4690,7 +4775,7 @@
           "answer": 48.0
         },
         "table": null,
-        "contract": "ed092bb86dd7057801c2e50ec156993dd4ca5faea08dceb84c83d97fafe06476"
+        "contract": "3536cc0929e2e0fa084cef3f6146354f6ff7a8efb5dbeffe26300b8444679f04"
       },
       {
         "id": "002",
@@ -4699,7 +4784,7 @@
         "choices": [],
         "a": "WTO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_002.png",
@@ -4724,7 +4809,7 @@
           "answer": 76.0
         },
         "table": null,
-        "contract": "663e696e8f56dd861db90e8909455cb16df712d3d081e36f8cb78ec09e1b9037"
+        "contract": "44e553801481c9bd3573c610de9d2c7468fe4f003323e139090e2a330312a795"
       },
       {
         "id": "003",
@@ -4733,7 +4818,7 @@
         "choices": [],
         "a": "FTA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_003.png",
@@ -4758,7 +4843,7 @@
           "answer": 101.333
         },
         "table": null,
-        "contract": "02d52248bcb4e3765fc7dd843bc17585314792ab8e5ef2636306c9ecf7593edb"
+        "contract": "75f92339821a0191c20e78468278241cd11b717a436b63bce1699708931db982"
       },
       {
         "id": "004",
@@ -4767,7 +4852,7 @@
         "choices": [],
         "a": "EPA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_004.png",
@@ -4792,7 +4877,7 @@
           "answer": 133.333
         },
         "table": null,
-        "contract": "a90e6d3151c3b76f5d5f23d2074690e7be0d1476aa525ab168596d78b2824f1b"
+        "contract": "3ee185a780d1de7aa497e0553004ec19150b14853e3d0c8a192dc56bda5ddd93"
       },
       {
         "id": "005",
@@ -4801,7 +4886,7 @@
         "choices": [],
         "a": "EU",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_005.png",
@@ -4826,7 +4911,7 @@
           "answer": 161.333
         },
         "table": null,
-        "contract": "6672f568c4aec75cd7764ca1b99dfb44ed385a0f3810fe77809657b5ec17d101"
+        "contract": "a9e2c3388c9e289ab11b0efbcbd469a5bbcc30d79bd1582fdf98833844aa068d"
       },
       {
         "id": "006",
@@ -4835,7 +4920,7 @@
         "choices": [],
         "a": "EFTA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_006.png",
@@ -4860,7 +4945,7 @@
           "answer": 185.333
         },
         "table": null,
-        "contract": "60cfdcba0397bc461efb5a8ea6440c0e9a93e9fb518160038bcd2c2d3e0b6aea"
+        "contract": "516576fac22d08532a3343faf8c44a714bca852c009ef76f9ec77db6ecfb36c1"
       },
       {
         "id": "007",
@@ -4869,7 +4954,7 @@
         "choices": [],
         "a": "NATO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_007.png",
@@ -4894,7 +4979,7 @@
           "answer": 208.0
         },
         "table": null,
-        "contract": "206de93c9cc99237d548cd2c7fd5ede75ee85e2f2000b14c80f3a669b5aaec56"
+        "contract": "2a3c5a55c4ca0eba04cdff4d5584a264fb869dbbd57ad6ca52266ae13285b37b"
       },
       {
         "id": "008",
@@ -4903,7 +4988,7 @@
         "choices": [],
         "a": "NAFTA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_008.png",
@@ -4928,7 +5013,7 @@
           "answer": 232.0
         },
         "table": null,
-        "contract": "7e39dd45ec4444577ebaa81c7b3c390724bc879be0baf8ee9291cfbbf4d3380f"
+        "contract": "1f62a6d0bee177ee2bb7c166e6faf4f27aa395bbf53fd9a3b9b9a88f282932a7"
       },
       {
         "id": "009",
@@ -4937,7 +5022,7 @@
         "choices": [],
         "a": "USMCA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_009.png",
@@ -4962,7 +5047,7 @@
           "answer": 253.333
         },
         "table": null,
-        "contract": "7a8c3ae3122e5b2001b8e56c194794222237bdb26ad07270df7c33218469ceca"
+        "contract": "136244c79ab8d17dad50036aecaa3f85407b3b660e1a978955bc2be14aba2d2a"
       },
       {
         "id": "010",
@@ -4971,7 +5056,7 @@
         "choices": [],
         "a": "OAS",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_010.png",
@@ -4996,7 +5081,7 @@
           "answer": 277.333
         },
         "table": null,
-        "contract": "af760ff6c847fd8ca4f0d5686b5f9b7d67dcc62d738f2fd18e9ef3e07435e852"
+        "contract": "4c6819d5fe64168bfcc3a1c877b46be1c11a56727b377843fb5c83ebed404916"
       },
       {
         "id": "011",
@@ -5005,7 +5090,7 @@
         "choices": [],
         "a": "MERCOSUR",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_011.png",
@@ -5030,7 +5115,7 @@
           "answer": 298.667
         },
         "table": null,
-        "contract": "6a43e4dbbf36db002bb498e05d6391038193141792fd812f134abb2380fcf8f2"
+        "contract": "e5593a1ae46925a4abb6920294aa9ad40df9831073a953c9eb7b4b252c4fc08f"
       },
       {
         "id": "012",
@@ -5039,7 +5124,7 @@
         "choices": [],
         "a": "AU",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_012.png",
@@ -5064,7 +5149,7 @@
           "answer": 320.0
         },
         "table": null,
-        "contract": "618b571af004395eefea9216250e99438d36cc17817185736c1b47905b50d554"
+        "contract": "06bff29a9caab69f32de94251175f815eb9335eb3b3c1f5a611372e2a6850688"
       },
       {
         "id": "013",
@@ -5073,7 +5158,7 @@
         "choices": [],
         "a": "OPEC",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_013.png",
@@ -5098,7 +5183,7 @@
           "answer": 348.0
         },
         "table": null,
-        "contract": "3e5ef8f3239858f129db69e2797bcec3ea147c13d4571536883d3405208fef09"
+        "contract": "d9007e483d80f6c739fba8c6ecdddac87774712a89fd3c082a41769022264462"
       },
       {
         "id": "014",
@@ -5107,7 +5192,7 @@
         "choices": [],
         "a": "ASEAN",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_014.png",
@@ -5132,7 +5217,7 @@
           "answer": 362.667
         },
         "table": null,
-        "contract": "bc1407ad0a9a5af070fdbe7d5f8c958db2bb5842185c992e79bd30da8643c254"
+        "contract": "39baba6ecc8ccd1ef7d217fe9d9416b8d74c62e4d206af8a58f647c22ff5aa90"
       },
       {
         "id": "015",
@@ -5141,7 +5226,7 @@
         "choices": [],
         "a": "APEC",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_015.png",
@@ -5166,7 +5251,7 @@
           "answer": 400.0
         },
         "table": null,
-        "contract": "326396c80d6ce0365c4892fac0a90b8d158359eb4080ce179d110fab02401c6e"
+        "contract": "8e033456050fa2736f90ad06896a3f3ca6d17b4e954493f655999a38069c455e"
       },
       {
         "id": "016",
@@ -5175,7 +5260,7 @@
         "choices": [],
         "a": "TPP",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_016.png",
@@ -5200,7 +5285,7 @@
           "answer": 426.667
         },
         "table": null,
-        "contract": "5f019e43047866302e22536789ab676e80da78755b3641a5122c3f320fc2fd38"
+        "contract": "fa5312ec9e9c33bf8e141b6e31576744781130d6a53162d6c6674ff8eb34d413"
       },
       {
         "id": "017",
@@ -5209,7 +5294,7 @@
         "choices": [],
         "a": "RCEP",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_017.png",
@@ -5234,7 +5319,7 @@
           "answer": 464.0
         },
         "table": null,
-        "contract": "72a1449ea0fafa221b8096508c2ce02b22ef08e8f58c7f16d42f173739e1f1ac"
+        "contract": "20ffecc4964f6e008687c965d86eb829474ee650f283dd9d61ac30d9456e6969"
       },
       {
         "id": "018",
@@ -5243,7 +5328,7 @@
         "choices": [],
         "a": "NIES",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_018.png",
@@ -5268,7 +5353,7 @@
           "answer": 485.333
         },
         "table": null,
-        "contract": "e33c29b57c32bdbe49983786225b3c761f72df63ad64f1a34eb5f272daf50f55"
+        "contract": "fbbde0ab6fa46fad117d08ac97a717ad3456877f29f5884460eb85e047a2ec4c"
       },
       {
         "id": "019",
@@ -5277,7 +5362,7 @@
         "choices": [],
         "a": "IPEF",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_019.png",
@@ -5302,7 +5387,7 @@
           "answer": 517.333
         },
         "table": null,
-        "contract": "a547036d6f6ba7c792f5e48bcd83058a53438d9847ab945103d345bd80efe5d5"
+        "contract": "e50f4826760df43ad53dbaa6cdec863c86307daa22766a9cccc430480fa87174"
       },
       {
         "id": "020",
@@ -5311,7 +5396,7 @@
         "choices": [],
         "a": "BRICS",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_020.png",
@@ -5336,7 +5421,7 @@
           "answer": 544.0
         },
         "table": null,
-        "contract": "1ed67f933f100fdffd76f2fa1e2de07c241998e32a269222b28c3d225000843e"
+        "contract": "121a91b996a9c1f43a58400f0c1b2524cf783daffc3b3444c265fca849893ff3"
       },
       {
         "id": "021",
@@ -5345,7 +5430,7 @@
         "choices": [],
         "a": "AUKUS",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_021.png",
@@ -5370,7 +5455,7 @@
           "answer": 561.333
         },
         "table": null,
-        "contract": "3ff344f1b4bb50bffba86fc4d4eedec17c4102e2f5445b9864aa59a8fcec6d91"
+        "contract": "18e617115d364a3b81c39e838edaf7c892e085bf907879c545cc6cdf1dabe6cb"
       },
       {
         "id": "022",
@@ -5379,7 +5464,7 @@
         "choices": [],
         "a": "Quad",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_022.png",
@@ -5406,7 +5491,7 @@
           "answer": 586.667
         },
         "table": null,
-        "contract": "83971a676a55af0fa9a792c51084b9ab1577c940dc2b8074d5792dda29ade946"
+        "contract": "7cb5182c18340e40ef3b5ca9e9addc0a8ecaeda8a77abab7f9068e7d93c86ab3"
       },
       {
         "id": "023",
@@ -5415,7 +5500,7 @@
         "choices": [],
         "a": "PKO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_023.png",
@@ -5440,7 +5525,7 @@
           "answer": 616.0
         },
         "table": null,
-        "contract": "58ffa61b57db63ac826fac2b37d230e5b45f92559046fd617fb87319cc666c73"
+        "contract": "00c6c4b839993695ec6352d9e2947487d2bbee0ed7b32041a61a520bf19919e9"
       },
       {
         "id": "024",
@@ -5449,7 +5534,7 @@
         "choices": [],
         "a": "FAO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_024.png",
@@ -5474,7 +5559,7 @@
           "answer": 640.0
         },
         "table": null,
-        "contract": "04253185b2bcd658cf27fa1d57d070159380a1c3a2af5301b54e1dbc1b740faf"
+        "contract": "a110b459afb0ce5587178f38b17aa3146663cde8339a69667fceddd6ab752e7a"
       },
       {
         "id": "025",
@@ -5483,7 +5568,7 @@
         "choices": [],
         "a": "ILO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_025.png",
@@ -5508,7 +5593,7 @@
           "answer": 665.333
         },
         "table": null,
-        "contract": "16fb5d899a967abd0fda5d8aace119b367180f5bf5ffa5e86d2f89436ffa720b"
+        "contract": "6a0f8e58b40dd283ac4c72b87f237a8e90333061e84c9fe25690734cdaed08c0"
       },
       {
         "id": "026",
@@ -5517,7 +5602,7 @@
         "choices": [],
         "a": "IMF",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_026.png",
@@ -5542,7 +5627,7 @@
           "answer": 682.667
         },
         "table": null,
-        "contract": "9665db65aa92fd3b9b3b0f77a37d548be598bac0c592fc975d03ec271467dd1e"
+        "contract": "02c3756764dfd04b58593d9b6f7a8abd4d05f0c7c0ebe9f854cf80aa2843778c"
       },
       {
         "id": "027",
@@ -5551,7 +5636,7 @@
         "choices": [],
         "a": "WHO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_027.png",
@@ -5576,7 +5661,7 @@
           "answer": 705.333
         },
         "table": null,
-        "contract": "ee687874947dc02923a6dc4b9d2fe22dda3a0cde96fc327ff6d20f528cd1e504"
+        "contract": "9159745c35eadcd1e62cb2bbe07125dcf6096bac2536bdb5a82ccf75e57d2d21"
       },
       {
         "id": "028",
@@ -5585,7 +5670,7 @@
         "choices": [],
         "a": "UNESCO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_028.png",
@@ -5610,7 +5695,7 @@
           "answer": 730.667
         },
         "table": null,
-        "contract": "94f0cb2cd30df2c9eecf039b396f6e3f3f5a75fc651ad9e168563c0e2dee840d"
+        "contract": "f80a26100e9936b6244605a960aed332e313946316dd0e7a4cec18ab9a24ea9e"
       },
       {
         "id": "029",
@@ -5619,7 +5704,7 @@
         "choices": [],
         "a": "ICC",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_029.png",
@@ -5644,7 +5729,7 @@
           "answer": 752.0
         },
         "table": null,
-        "contract": "9f19e7060077e78965cf95a050f5e512a44c2be07d1927cc1a50f9b8aa942b3b"
+        "contract": "979eafe394a9720e88ebfdb2d25b088327835250e75b2d079cb1ad694dafd40e"
       },
       {
         "id": "030",
@@ -5653,7 +5738,7 @@
         "choices": [],
         "a": "ICJ",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_030.png",
@@ -5678,7 +5763,7 @@
           "answer": 773.333
         },
         "table": null,
-        "contract": "d2a8b2032673087cf0af6f3f599f64de6134e66f42c4b258d482a0ec4f7a5144"
+        "contract": "b0d073ed9eed77e83cd1ed1f729e5d6a4134743778e38300675cccfb6d7a1029"
       },
       {
         "id": "031",
@@ -5687,7 +5772,7 @@
         "choices": [],
         "a": "IAEA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_031.png",
@@ -5712,7 +5797,7 @@
           "answer": 797.333
         },
         "table": null,
-        "contract": "d9c5572df8032d4c8a5054275849f4d60a515879a3291a2cc6d6fa282aee57e2"
+        "contract": "bce1d2ec2dd0821e9ebb560e86c635dd343f83ad37c0474d094442554a081bb0"
       },
       {
         "id": "032",
@@ -5721,7 +5806,7 @@
         "choices": [],
         "a": "UNCTAD",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_032.png",
@@ -5746,7 +5831,7 @@
           "answer": 821.333
         },
         "table": null,
-        "contract": "d20258b8a61e0b4d5a55b21b0b0c1e3989b3a9af1ced0aa1a0b9470c43fba110"
+        "contract": "74c2ae875d34a32f0d57bee46ccb18a126e3f60fce36d4a306df8783e97cb70c"
       },
       {
         "id": "033",
@@ -5755,7 +5840,7 @@
         "choices": [],
         "a": "UNICEF",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_033.png",
@@ -5780,7 +5865,7 @@
           "answer": 848.0
         },
         "table": null,
-        "contract": "69b9ac49316a1239ea218d77628a233b284b92169be790228685e53e718c77b8"
+        "contract": "c99ffa7be2c8673942cce4b236394ea278239fe51daf53358777bf175f9fba47"
       },
       {
         "id": "034",
@@ -5789,7 +5874,7 @@
         "choices": [],
         "a": "UNHCR",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_034.png",
@@ -5814,7 +5899,7 @@
           "answer": 869.333
         },
         "table": null,
-        "contract": "58dc947e28815799a5441626e1b91b73db9881ffe317fba26abc0fe398a1a471"
+        "contract": "cd9e0831f958474121be58a9696c123cd9eaef0c9d025fe41efabe69b12b937a"
       },
       {
         "id": "035",
@@ -5823,7 +5908,7 @@
         "choices": [],
         "a": "NPT",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_035.png",
@@ -5848,7 +5933,7 @@
           "answer": 906.667
         },
         "table": null,
-        "contract": "48f9dfdddceecafcf9539c0d15c2fe76e01371adba3df2bf4adf306c6c5a4e98"
+        "contract": "a40e96cc758b1bb262315e66be9528000e121e0e731e2a85cf4c58a3678b546b"
       },
       {
         "id": "036",
@@ -5857,7 +5942,7 @@
         "choices": [],
         "a": "OECD",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_036.png",
@@ -5882,7 +5967,7 @@
           "answer": 926.667
         },
         "table": null,
-        "contract": "c4a9deb5e14e2fde4a205332a1dc0cd72525235f5c265a6a8deb9c2f486a22c2"
+        "contract": "6f2f0e53be27d8597e5c7e254f3c875198586f9d0c033fd9562b1a6b8c147025"
       },
       {
         "id": "037",
@@ -5891,7 +5976,7 @@
         "choices": [],
         "a": "COP",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_037.png",
@@ -5916,7 +6001,7 @@
           "answer": 938.667
         },
         "table": null,
-        "contract": "98a05cd137f57af99e3730ff0fc6c46ce85c7a0cf22170603343c23e0d8e8875"
+        "contract": "0e9c1500812b169d795ebfcf1a92d7e636b609102e7b172095373bded3237994"
       },
       {
         "id": "038",
@@ -5925,7 +6010,7 @@
         "choices": [],
         "a": "TICAD",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_038.png",
@@ -5950,7 +6035,7 @@
           "answer": 960.0
         },
         "table": null,
-        "contract": "f278991255cafd7cfd0bcada548e1df4fcc00681dd3adfa403c37f2afc7ddedc"
+        "contract": "c5addab8628b36c23245e3e13ddd5401aedb4cd68438a074dd364c6807ab684f"
       },
       {
         "id": "039",
@@ -5959,7 +6044,7 @@
         "choices": [],
         "a": "G7",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_039.png",
@@ -5984,7 +6069,7 @@
           "answer": 986.667
         },
         "table": null,
-        "contract": "28bdee338af640d0600fd1254c0932317b7c2f3c109d45328060281d30796662"
+        "contract": "772ba0ab8bd579f86d2f56ba4e9e844ba401640337767d9ad2da272fb22821b5"
       },
       {
         "id": "040",
@@ -5993,7 +6078,7 @@
         "choices": [],
         "a": "G20",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_040.png",
@@ -6018,7 +6103,7 @@
           "answer": 1008.0
         },
         "table": null,
-        "contract": "8fe3a8092f37231ec2947db0f521718d5f14987454d3ff425071ab50af88a491"
+        "contract": "a71de3a368aa5f527d3486226a1f995e9aff439fda541a571189490ab1d3d719"
       },
       {
         "id": "041",
@@ -6027,7 +6112,7 @@
         "choices": [],
         "a": "ODA",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_041.png",
@@ -6052,7 +6137,7 @@
           "answer": 1029.333
         },
         "table": null,
-        "contract": "71e94a7a8f197f8645b892003d7a703999f27c95b3e3af023eb4b19983d58cfe"
+        "contract": "bd8b8fb5d410c0d7f7c185ac4df7122c3a654e90b099ddbc667af146ad62fa2a"
       },
       {
         "id": "042",
@@ -6061,7 +6146,7 @@
         "choices": [],
         "a": "NGO",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_042.png",
@@ -6086,7 +6171,7 @@
           "answer": 1053.333
         },
         "table": null,
-        "contract": "8cb419b29ff36d7388d7e4e983a4f1c2524b043c64d8e77ddbf5c048fb6997aa"
+        "contract": "30daa93921b42285d13f9a91e9f4b6d274df00ac5e567398b658324228dc82ed"
       },
       {
         "id": "043",
@@ -6095,7 +6180,7 @@
         "choices": [],
         "a": "SDGs",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_043.png",
@@ -6120,7 +6205,7 @@
           "answer": 1077.333
         },
         "table": null,
-        "contract": "9794d915c44282614d837b0a16a569ebd09fd0e4aa9ee8ca5d7a24ca9e8ba961"
+        "contract": "ca443ea19385d8edb05d8b176caff553199c24c9c7936030f1ff30d229e477b8"
       },
       {
         "id": "044",
@@ -6129,7 +6214,7 @@
         "choices": [],
         "a": "EEZ",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_044.png",
@@ -6154,7 +6239,7 @@
           "answer": 1097.333
         },
         "table": null,
-        "contract": "aa1db6875d23036d351622422cc08115e32c98add94f6dae39c7c6dfccce41e4"
+        "contract": "dd78740beb1c09d575180a5485d2092095ca0569674ec7a8d7b892a8e3d62714"
       },
       {
         "id": "045",
@@ -6163,7 +6248,7 @@
         "choices": [],
         "a": "IOC",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_86/social-civics-international-abbrev-45-20261026/question_045.png",
@@ -6188,7 +6273,7 @@
           "answer": 1110.667
         },
         "table": null,
-        "contract": "a4da35e228b3cd232aa4c0111fb2bf14e58ac85e3235347678d23e3365c5f5f6"
+        "contract": "c1ab5ee10a1fa8cd33a9f57ead100518a97d1cf4a456f9795a4b3e8d9f7b9c01"
       }
     ]
   }

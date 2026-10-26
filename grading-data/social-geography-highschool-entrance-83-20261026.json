@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "social-geography-highschool-entrance-83-20261026",
   "title": "高校入試 過去問｜地理 一問一答②",
   "subject": "social",
@@ -158,9 +158,9 @@
       "choices_origin": null,
       "answer_type": "term",
       "has_figure": true,
-      "requires_image_for_answer": false,
-      "image_requirement_reason": "",
-      "question_text_suffices_for_answer": true,
+      "requires_image_for_answer": true,
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
+      "question_text_suffices_for_answer": false,
       "figure_summary": "補足の地図・写真・図表。問題文の必要条件は文字起こしに含めた。",
       "source_video_url": null,
       "images": {
@@ -181,21 +181,23 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 2
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "問題に必要な地図・資料を必須画像に指定"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text",
+        "required_display": "question_image_and_text",
         "accepted_answers": [
           {
             "text": "南極",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "南極大陸",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -215,7 +217,7 @@
         "type": "term",
         "mode": "text",
         "parts": [],
-        "image": false,
+        "image": true,
         "question": "images_60/social-geography-highschool-entrance-83-20261026/question_002.png",
         "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_002.png",
         "eligible": true,
@@ -240,7 +242,7 @@
           "answer": 48.0
         },
         "table": null,
-        "contract": "96edd6ab92a5499e3ddcd51baf6b83846c98223b094ab07726106acb988be5fa"
+        "contract": "c1bde2f4cb9cb13135669638085aae57fe900b173a8f303048d5fd4697eb7564"
       }
     },
     {
@@ -461,15 +463,15 @@
     {
       "id": "005",
       "chapter": "social-geography-past-exam",
-      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png",
-      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png?v=a6d51be9fd10fac2",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png?v=2156b629f67a7c52",
       "sourceTimes": {
         "question": 107.0,
         "answer": 114.0
       },
       "lesson_id": "social-geography-highschool-entrance-83-20261026",
       "source_slide_number": 5,
-      "question_text": "現在、日本国内にあるアメリカ軍の軍事基地の面積のうち約70％が置かれている都道府県の名を書きなさい。",
+      "question_text": "日本国内にある米軍専用施設・区域の面積のうち、約70％が集中している都道府県の名を書きなさい。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "",
@@ -487,14 +489,14 @@
       "source_video_url": null,
       "images": {
         "question": {
-          "path": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png",
+          "path": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png?v=a6d51be9fd10fac2",
           "local_path": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png",
-          "sha256": "654a3549bfb00bf07d2cec4f7c98cb779593da9cd8226b8499a5e6dadc0d12c2"
+          "sha256": "a6d51be9fd10fac2cfea2a352b3a9d1101187a9ccc3600605b09393a06bccb45"
         },
         "answer": {
-          "path": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png",
+          "path": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png?v=2156b629f67a7c52",
           "local_path": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png",
-          "sha256": "0a05facb78cda88a69f0488a4c11705516eab0ce8c9e7818b3ffac76dde7693c"
+          "sha256": "2156b629f67a7c52908810f59dfd57b8a3eaeaed1592e922f267ed53dedb76ca"
         }
       },
       "transcription_review": {
@@ -503,7 +505,10 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 5
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "基地面積の約7割という説明の対象を米軍専用施設・区域に限定",
+        "約7割の対象を米軍専用施設・区域に限定"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
@@ -513,7 +518,7 @@
         "accepted_answers": [
           {
             "text": "沖縄県",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -525,7 +530,7 @@
       },
       "runtime_record": {
         "id": "005",
-        "q": "現在、日本国内にあるアメリカ軍の軍事基地の面積のうち約70％が置かれている都道府県の名を書きなさい。",
+        "q": "日本国内にある米軍専用施設・区域の面積のうち、約70％が集中している都道府県の名を書きなさい。",
         "aux": [],
         "choices": [],
         "a": "沖縄県",
@@ -533,8 +538,8 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png",
-        "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png",
+        "question": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png?v=a6d51be9fd10fac2",
+        "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png?v=2156b629f67a7c52",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -555,7 +560,7 @@
           "answer": 114.0
         },
         "table": null,
-        "contract": "fb4263a9369de7e94e32fa74a31b51dc18ee8c604a5687ad8ad740e324668fa5"
+        "contract": "d9739ef139671717765cb505c1a734488975565d5f70b84567a8628b01396d19"
       }
     },
     {
@@ -2403,7 +2408,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 28
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "海流が空欄の外にあるため空欄部分の正答も許可"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
@@ -2413,11 +2420,16 @@
         "accepted_answers": [
           {
             "text": "北大西洋海流",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "北大西洋",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "北大西洋海流"
+          "北大西洋海流",
+          "北大西洋"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -2439,10 +2451,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "北大西洋海流"
+          "北大西洋海流",
+          "北大西洋"
         ],
         "normalized": [
-          "北大西洋海流"
+          "北大西洋海流",
+          "北大西洋"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -2455,7 +2469,7 @@
           "answer": 606.0
         },
         "table": null,
-        "contract": "c5ec57f332d3e274153a2ded0aa5a6f2599e16cdcd7ba1ea32be45714adeff83"
+        "contract": "7a5ddb8ab1a3ab66a9f9f839853b113e30f38f07c15385b248a6ae5a51bcbe14"
       }
     },
     {
@@ -2603,7 +2617,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 30
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "現象が空欄の外にあるため空欄部分の正答も許可"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
@@ -2613,11 +2629,16 @@
         "accepted_answers": [
           {
             "text": "ヒートアイランド現象",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "ヒートアイランド",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "ヒートアイランド現象"
+          "ヒートアイランド現象",
+          "ヒートアイランド"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -2639,10 +2660,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "ヒートアイランド現象"
+          "ヒートアイランド現象",
+          "ヒートアイランド"
         ],
         "normalized": [
-          "ヒートアイランド現象"
+          "ヒートアイランド現象",
+          "ヒートアイランド"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -2655,7 +2678,7 @@
           "answer": 666.0
         },
         "table": null,
-        "contract": "833bb5c7a43a5d3c5766482b41587cc1c0508ea9d4185273eb445dd646aaa2d2"
+        "contract": "24b94da5d0fb0efdb9f5f239cf3aa22dafd73907010aa87ba9228cce8864d8a1"
       }
     },
     {
@@ -7152,7 +7175,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "元動画の地図・図表・写真に示された記号・位置・数値・選択欄を参照する。",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "元動画の地図・図表・写真に示された記号・位置・数値・選択欄を参照する。",
       "source_video_url": null,
@@ -7174,21 +7197,28 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 75
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "解答画像に記載された別解を追加"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_choices_and_auxiliary_material",
+        "required_display": "question_image_and_text",
         "accepted_answers": [
           {
             "text": "高温多湿",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "高温多雨",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "高温多湿"
+          "高温多湿",
+          "高温多雨"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -7210,10 +7240,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "高温多湿"
+          "高温多湿",
+          "高温多雨"
         ],
         "normalized": [
-          "高温多湿"
+          "高温多湿",
+          "高温多雨"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -7226,7 +7258,7 @@
           "answer": 1962.0
         },
         "table": null,
-        "contract": "618e0bc7edb793a7a7f755d76f1e9699f12275998c7925df80d8cef7e1475dca"
+        "contract": "0fbbefd062e7a668a612787e8dc701fe48ba59d8efad97d551997943ada3b2e1"
       }
     },
     {
@@ -7751,9 +7783,9 @@
       "choices_origin": null,
       "answer_type": "term",
       "has_figure": true,
-      "requires_image_for_answer": false,
-      "image_requirement_reason": "",
-      "question_text_suffices_for_answer": true,
+      "requires_image_for_answer": true,
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
+      "question_text_suffices_for_answer": false,
       "figure_summary": "補足の地図・写真・図表。問題文の必要条件は文字起こしに含めた。",
       "source_video_url": null,
       "images": {
@@ -7774,17 +7806,19 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 81
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "問題に必要な地図・資料を必須画像に指定"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text",
+        "required_display": "question_image_and_text",
         "accepted_answers": [
           {
             "text": "プランテーション",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -7803,7 +7837,7 @@
         "type": "term",
         "mode": "text",
         "parts": [],
-        "image": false,
+        "image": true,
         "question": "images_60/social-geography-highschool-entrance-83-20261026/question_077.png",
         "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_077.png",
         "eligible": true,
@@ -7826,7 +7860,7 @@
           "answer": 2142.0
         },
         "table": null,
-        "contract": "80850a1fa3e049e129601193b65f044f27002c359f4172689a0dbb82bed7ab1c"
+        "contract": "a0e9ce835e6acbab0547b2b9c3d6f541e648c3d2cfd344bd953675e5d938030d"
       }
     },
     {
@@ -8518,7 +8552,7 @@
         "type": "term",
         "mode": "text",
         "parts": [],
-        "image": false,
+        "image": true,
         "question": "images_60/social-geography-highschool-entrance-83-20261026/question_002.png",
         "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_002.png",
         "eligible": true,
@@ -8543,7 +8577,7 @@
           "answer": 48.0
         },
         "table": null,
-        "contract": "96edd6ab92a5499e3ddcd51baf6b83846c98223b094ab07726106acb988be5fa"
+        "contract": "c1bde2f4cb9cb13135669638085aae57fe900b173a8f303048d5fd4697eb7564"
       },
       {
         "id": "003",
@@ -8630,7 +8664,7 @@
       },
       {
         "id": "005",
-        "q": "現在、日本国内にあるアメリカ軍の軍事基地の面積のうち約70％が置かれている都道府県の名を書きなさい。",
+        "q": "日本国内にある米軍専用施設・区域の面積のうち、約70％が集中している都道府県の名を書きなさい。",
         "aux": [],
         "choices": [],
         "a": "沖縄県",
@@ -8638,8 +8672,8 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png",
-        "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png",
+        "question": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png?v=a6d51be9fd10fac2",
+        "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png?v=2156b629f67a7c52",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -8660,7 +8694,7 @@
           "answer": 114.0
         },
         "table": null,
-        "contract": "fb4263a9369de7e94e32fa74a31b51dc18ee8c604a5687ad8ad740e324668fa5"
+        "contract": "d9739ef139671717765cb505c1a734488975565d5f70b84567a8628b01396d19"
       },
       {
         "id": "006",
@@ -9290,10 +9324,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "北大西洋海流"
+          "北大西洋海流",
+          "北大西洋"
         ],
         "normalized": [
-          "北大西洋海流"
+          "北大西洋海流",
+          "北大西洋"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -9306,7 +9342,7 @@
           "answer": 606.0
         },
         "table": null,
-        "contract": "c5ec57f332d3e274153a2ded0aa5a6f2599e16cdcd7ba1ea32be45714adeff83"
+        "contract": "7a5ddb8ab1a3ab66a9f9f839853b113e30f38f07c15385b248a6ae5a51bcbe14"
       },
       {
         "id": "025",
@@ -9358,10 +9394,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "ヒートアイランド現象"
+          "ヒートアイランド現象",
+          "ヒートアイランド"
         ],
         "normalized": [
-          "ヒートアイランド現象"
+          "ヒートアイランド現象",
+          "ヒートアイランド"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -9374,7 +9412,7 @@
           "answer": 666.0
         },
         "table": null,
-        "contract": "833bb5c7a43a5d3c5766482b41587cc1c0508ea9d4185273eb445dd646aaa2d2"
+        "contract": "24b94da5d0fb0efdb9f5f239cf3aa22dafd73907010aa87ba9228cce8864d8a1"
       },
       {
         "id": "027",
@@ -10924,10 +10962,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "高温多湿"
+          "高温多湿",
+          "高温多雨"
         ],
         "normalized": [
-          "高温多湿"
+          "高温多湿",
+          "高温多雨"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -10940,7 +10980,7 @@
           "answer": 1962.0
         },
         "table": null,
-        "contract": "618e0bc7edb793a7a7f755d76f1e9699f12275998c7925df80d8cef7e1475dca"
+        "contract": "0fbbefd062e7a668a612787e8dc701fe48ba59d8efad97d551997943ada3b2e1"
       },
       {
         "id": "072",
@@ -11121,7 +11161,7 @@
         "type": "term",
         "mode": "text",
         "parts": [],
-        "image": false,
+        "image": true,
         "question": "images_60/social-geography-highschool-entrance-83-20261026/question_077.png",
         "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_077.png",
         "eligible": true,
@@ -11144,7 +11184,7 @@
           "answer": 2142.0
         },
         "table": null,
-        "contract": "80850a1fa3e049e129601193b65f044f27002c359f4172689a0dbb82bed7ab1c"
+        "contract": "a0e9ce835e6acbab0547b2b9c3d6f541e648c3d2cfd344bd953675e5d938030d"
       },
       {
         "id": "078",

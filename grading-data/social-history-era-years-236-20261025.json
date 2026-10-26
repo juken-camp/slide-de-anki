@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "social-history-era-years-236-20261025",
   "title": "歴史の時代・時期｜日本史・世界史",
   "subject": "social",
@@ -11432,7 +11432,7 @@
       "id": "104",
       "chapter": "era-years-061-120",
       "question": "images_11/social-history-era-years-236-20261025/question_104.png",
-      "answer": "images_11/social-history-era-years-236-20261025/answer_104.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_104.png?v=b5c5faa801fa2488",
       "sourceTimes": {
         "question": 2244.0,
         "answer": 2258.0
@@ -11463,9 +11463,9 @@
           "sha256": "a3a815e4dbc36d712a3fd8d823acc5e293061ee31a6bde8c4b701362b639ff1b"
         },
         "answer": {
-          "path": "images_11/social-history-era-years-236-20261025/answer_104.png",
+          "path": "images_11/social-history-era-years-236-20261025/answer_104.png?v=b5c5faa801fa2488",
           "local_path": "images_11/social-history-era-years-236-20261025/answer_104.png",
-          "sha256": "f2e1b0a182218e3dbb26f94078f7e94ebc58b7e2c546e5e76f835b3216e4e4b1"
+          "sha256": "b5c5faa801fa248888a8d155b08ff090d8670d2ba3cbf4625da668cc60d1d7d6"
         }
       },
       "transcription_review": {
@@ -11475,7 +11475,9 @@
         "question_prompt_partially_absent_on_source_image": false,
         "peripheral_text_ocr_reviewed": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "1947年の教育基本法・労働基準法公布に対応する補足年号を訂正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -11483,15 +11485,15 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_choices_and_auxiliary_material",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "昭和時代（戦後）",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "昭和時代",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -11515,7 +11517,7 @@
         "parts": [],
         "image": false,
         "question": "images_11/social-history-era-years-236-20261025/question_104.png",
-        "answer": "images_11/social-history-era-years-236-20261025/answer_104.png",
+        "answer": "images_11/social-history-era-years-236-20261025/answer_104.png?v=b5c5faa801fa2488",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -11538,7 +11540,7 @@
           "answer": 2258.0
         },
         "table": null,
-        "contract": "8340306948660593d2537eedf0722d11a0b8823feda81ce2e039c54872919a95"
+        "contract": "899f8192e8af0d0625c1f9d29a2c86db1ce7d8d097e1308ddc8d3e16899c9f39"
       }
     },
     {
@@ -16727,7 +16729,7 @@
       "id": "152",
       "chapter": "era-years-121-180",
       "question": "images_11/social-history-era-years-236-20261025/question_152.png",
-      "answer": "images_11/social-history-era-years-236-20261025/answer_152.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_152.png?v=e383b9b1a59910c8",
       "sourceTimes": {
         "question": 3176.0,
         "answer": 3187.0
@@ -16758,9 +16760,9 @@
           "sha256": "b1a0cf79c12443071117f4cd167f7cb103196df5df346c996257890c7b042218"
         },
         "answer": {
-          "path": "images_11/social-history-era-years-236-20261025/answer_152.png",
+          "path": "images_11/social-history-era-years-236-20261025/answer_152.png?v=e383b9b1a59910c8",
           "local_path": "images_11/social-history-era-years-236-20261025/answer_152.png",
-          "sha256": "31ee020d3ccafe68a44f2c6a0e51131c692523a698322d18dfba0193b1682cc5"
+          "sha256": "e383b9b1a59910c8c5295852a6c4d2dc76ceca64428d2f8acc9525e4486c6f79"
         }
       },
       "transcription_review": {
@@ -16770,7 +16772,9 @@
         "question_prompt_partially_absent_on_source_image": false,
         "peripheral_text_ocr_reviewed": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "ニューディール政策の開始年を1933年に訂正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -16778,15 +16782,15 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_choices_and_auxiliary_material",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "昭和時代（初期）",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "昭和時代",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -16810,7 +16814,7 @@
         "parts": [],
         "image": false,
         "question": "images_11/social-history-era-years-236-20261025/question_152.png",
-        "answer": "images_11/social-history-era-years-236-20261025/answer_152.png",
+        "answer": "images_11/social-history-era-years-236-20261025/answer_152.png?v=e383b9b1a59910c8",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -16833,7 +16837,7 @@
           "answer": 3187.0
         },
         "table": null,
-        "contract": "9be0f977b7fb1fbe6a62ed8f04aad82e9a2f4ea0f042e36fe59207fb34de543c"
+        "contract": "2b97372900be4360adf3dfa507d2b715c04c08ecef50e1c67f5ed75a9a2e9834"
       }
     },
     {
@@ -29768,7 +29772,7 @@
         "parts": [],
         "image": false,
         "question": "images_11/social-history-era-years-236-20261025/question_104.png",
-        "answer": "images_11/social-history-era-years-236-20261025/answer_104.png",
+        "answer": "images_11/social-history-era-years-236-20261025/answer_104.png?v=b5c5faa801fa2488",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -29791,7 +29795,7 @@
           "answer": 2258.0
         },
         "table": null,
-        "contract": "8340306948660593d2537eedf0722d11a0b8823feda81ce2e039c54872919a95"
+        "contract": "899f8192e8af0d0625c1f9d29a2c86db1ce7d8d097e1308ddc8d3e16899c9f39"
       },
       {
         "id": "105",
@@ -31458,7 +31462,7 @@
         "parts": [],
         "image": false,
         "question": "images_11/social-history-era-years-236-20261025/question_152.png",
-        "answer": "images_11/social-history-era-years-236-20261025/answer_152.png",
+        "answer": "images_11/social-history-era-years-236-20261025/answer_152.png?v=e383b9b1a59910c8",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -31481,7 +31485,7 @@
           "answer": 3187.0
         },
         "table": null,
-        "contract": "9be0f977b7fb1fbe6a62ed8f04aad82e9a2f4ea0f042e36fe59207fb34de543c"
+        "contract": "2b97372900be4360adf3dfa507d2b715c04c08ecef50e1c67f5ed75a9a2e9834"
       },
       {
         "id": "153",

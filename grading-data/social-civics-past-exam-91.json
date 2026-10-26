@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "social-civics-past-exam-91",
   "title": "高校入試 過去問｜公民 一問一答②",
   "subject": "social",
@@ -470,7 +470,7 @@
       },
       "lesson_id": "social-civics-past-exam-91",
       "source_slide_number": 5,
-      "question_text": "刑事裁判について、被疑者が罪を犯した疑いが確実で、刑罰を科すべきだと判断すると、被疑者を（D）人として裁判所に訴える（C）官の名称を答えなさい。",
+      "question_text": "刑事裁判について、被疑者が罪を犯した疑いが確実で、刑罰を科すべきだと判断すると、（C）官は被疑者を（D）人として裁判所に訴える。CとDにあてはまる語句をそれぞれ答えなさい。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "",
@@ -504,17 +504,19 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 5
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "Cだけを問う問題文を実際の2空欄C・Dに合わせる"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_choices_and_auxiliary_material",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "C：検察、D：被告",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -526,7 +528,7 @@
       },
       "runtime_record": {
         "id": "005",
-        "q": "刑事裁判について、被疑者が罪を犯した疑いが確実で、刑罰を科すべきだと判断すると、被疑者を（D）人として裁判所に訴える（C）官の名称を答えなさい。",
+        "q": "刑事裁判について、被疑者が罪を犯した疑いが確実で、刑罰を科すべきだと判断すると、（C）官は被疑者を（D）人として裁判所に訴える。CとDにあてはまる語句をそれぞれ答えなさい。",
         "aux": [],
         "choices": [],
         "a": "C：検察、D：被告",
@@ -571,7 +573,7 @@
           "answer": 164.5
         },
         "table": null,
-        "contract": "8202963222ef41d46fdf4f96e561c72179d0c2ce6f1e3651317c3f7187cf89ce"
+        "contract": "2cd4159290fa8beb6511a8e941e934be27ed0c89781dd9b0f34fa7489a8a9808"
       }
     },
     {
@@ -900,7 +902,7 @@
       },
       "lesson_id": "social-civics-past-exam-91",
       "source_slide_number": 11,
-      "question_text": "政治のしくみの図で、内閣が国会に対して行う（Q）の決議にあてはまる語句を答えなさい。",
+      "question_text": "政治のしくみの図で、国会（衆議院）が内閣に対して行う（Q）の決議にあてはまる語句を答えなさい。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "",
@@ -912,7 +914,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "国民・国会・内閣・裁判所の関係図。「国会→内閣」の「Qの決議」を答える。",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "国民・国会・内閣・裁判所の関係図。「国会→内閣」の「Qの決議」を答える。",
       "source_video_url": null,
@@ -934,17 +936,19 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 11
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "内閣不信任決議の主体と対象が逆のため訂正"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_choices_and_auxiliary_material",
+        "required_display": "question_image_and_text",
         "accepted_answers": [
           {
             "text": "不信任",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -956,7 +960,7 @@
       },
       "runtime_record": {
         "id": "009",
-        "q": "政治のしくみの図で、内閣が国会に対して行う（Q）の決議にあてはまる語句を答えなさい。",
+        "q": "政治のしくみの図で、国会（衆議院）が内閣に対して行う（Q）の決議にあてはまる語句を答えなさい。",
         "aux": [],
         "choices": [],
         "a": "不信任",
@@ -986,7 +990,7 @@
           "answer": 314.5
         },
         "table": null,
-        "contract": "f873118ffcff4ee1677ebfc9dae1e6673adf00d388f63d2d93d83726dbf54a57"
+        "contract": "1929ac8709294e80e577bbf655b51f521bb9a70a690861dd7bcb1375a7384a6e"
       }
     },
     {
@@ -1200,7 +1204,7 @@
       },
       "lesson_id": "social-civics-past-exam-91",
       "source_slide_number": 14,
-      "question_text": "三審制の民事裁判の図において、一つの事件について3回まで裁判を受けられるように、上級の裁判所に不服を申し立てることを何というか。",
+      "question_text": "民事裁判で、第一審の判決に不服があるとき、第二審の裁判所へ不服を申し立てることを何というか。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "",
@@ -1234,17 +1238,19 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 14
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "控訴と上告を区別できる問題文に訂正"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text_choices_and_auxiliary_material",
+        "required_display": "question_text",
         "accepted_answers": [
           {
             "text": "控訴",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1256,7 +1262,7 @@
       },
       "runtime_record": {
         "id": "012",
-        "q": "三審制の民事裁判の図において、一つの事件について3回まで裁判を受けられるように、上級の裁判所に不服を申し立てることを何というか。",
+        "q": "民事裁判で、第一審の判決に不服があるとき、第二審の裁判所へ不服を申し立てることを何というか。",
         "aux": [],
         "choices": [],
         "a": "控訴",
@@ -1286,7 +1292,7 @@
           "answer": 410.5
         },
         "table": null,
-        "contract": "b8693824f18c75494850bbec15f9ca8b687967cb15a83f110c26880e5027e0cb"
+        "contract": "c04911648b251e2b825a76f98d05bb3461a8255423ebc20931872fd3584032cb"
       }
     },
     {
@@ -9502,7 +9508,7 @@
       },
       {
         "id": "005",
-        "q": "刑事裁判について、被疑者が罪を犯した疑いが確実で、刑罰を科すべきだと判断すると、被疑者を（D）人として裁判所に訴える（C）官の名称を答えなさい。",
+        "q": "刑事裁判について、被疑者が罪を犯した疑いが確実で、刑罰を科すべきだと判断すると、（C）官は被疑者を（D）人として裁判所に訴える。CとDにあてはまる語句をそれぞれ答えなさい。",
         "aux": [],
         "choices": [],
         "a": "C：検察、D：被告",
@@ -9547,7 +9553,7 @@
           "answer": 164.5
         },
         "table": null,
-        "contract": "8202963222ef41d46fdf4f96e561c72179d0c2ce6f1e3651317c3f7187cf89ce"
+        "contract": "2cd4159290fa8beb6511a8e941e934be27ed0c89781dd9b0f34fa7489a8a9808"
       },
       {
         "id": "006",
@@ -9668,7 +9674,7 @@
       },
       {
         "id": "009",
-        "q": "政治のしくみの図で、内閣が国会に対して行う（Q）の決議にあてはまる語句を答えなさい。",
+        "q": "政治のしくみの図で、国会（衆議院）が内閣に対して行う（Q）の決議にあてはまる語句を答えなさい。",
         "aux": [],
         "choices": [],
         "a": "不信任",
@@ -9698,7 +9704,7 @@
           "answer": 314.5
         },
         "table": null,
-        "contract": "f873118ffcff4ee1677ebfc9dae1e6673adf00d388f63d2d93d83726dbf54a57"
+        "contract": "1929ac8709294e80e577bbf655b51f521bb9a70a690861dd7bcb1375a7384a6e"
       },
       {
         "id": "010",
@@ -9770,7 +9776,7 @@
       },
       {
         "id": "012",
-        "q": "三審制の民事裁判の図において、一つの事件について3回まで裁判を受けられるように、上級の裁判所に不服を申し立てることを何というか。",
+        "q": "民事裁判で、第一審の判決に不服があるとき、第二審の裁判所へ不服を申し立てることを何というか。",
         "aux": [],
         "choices": [],
         "a": "控訴",
@@ -9800,7 +9806,7 @@
           "answer": 410.5
         },
         "table": null,
-        "contract": "b8693824f18c75494850bbec15f9ca8b687967cb15a83f110c26880e5027e0cb"
+        "contract": "c04911648b251e2b825a76f98d05bb3461a8255423ebc20931872fd3584032cb"
       },
       {
         "id": "013",

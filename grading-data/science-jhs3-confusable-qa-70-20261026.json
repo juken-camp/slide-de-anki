@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "science-jhs3-confusable-qa-70-20261026",
   "title": "中3理科の間違えやすい問題",
   "subject": "science",
@@ -1343,7 +1343,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "実際の正しい選択肢の値を採点用正答に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1355,11 +1357,16 @@
         "accepted_answers": [
           {
             "text": "（引く力は）半分になる",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "半分になる",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "(引く力は)半分になる"
+          "(引く力は)半分になる",
+          "半分になる"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -1390,10 +1397,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "（引く力は）半分になる"
+          "（引く力は）半分になる",
+          "半分になる"
         ],
         "normalized": [
-          "(引く力は)半分になる"
+          "(引く力は)半分になる",
+          "半分になる"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -1406,7 +1415,7 @@
           "answer": 250.0
         },
         "table": null,
-        "contract": "ca71f99451679612d0bf2cc1e991b92a42a0b7c4352824e9fcc4f280d60327c2"
+        "contract": "a58cf0208bf8cd81e84321fed2de2d5bdf0e7fa745e6e512dcd0022c6c4a0d1a"
       }
     },
     {
@@ -3829,7 +3838,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "実際の正しい選択肢の値を採点用正答に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3841,11 +3852,16 @@
         "accepted_answers": [
           {
             "text": "無機物から有機物を作り出している",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "無機物から有機物",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "無機物から有機物を作り出している"
+          "無機物から有機物を作り出している",
+          "無機物から有機物"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -3876,10 +3892,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "無機物から有機物を作り出している"
+          "無機物から有機物を作り出している",
+          "無機物から有機物"
         ],
         "normalized": [
-          "無機物から有機物を作り出している"
+          "無機物から有機物を作り出している",
+          "無機物から有機物"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -3892,7 +3910,7 @@
           "answer": 670.0
         },
         "table": null,
-        "contract": "e0313082f9dad10fa1216b952f575e8cf5a4f597bd95421c14de63ba17566b92"
+        "contract": "5a4288cba95d078474c39a4bfc330bb7d1ee3f0d5ffbca411bb4c61995c4294d"
       }
     },
     {
@@ -4020,7 +4038,7 @@
       "id": "033",
       "chapter": "jhs3-confusable-ecosystem",
       "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_033.png",
-      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png?v=a5abf186302db422",
       "sourceTimes": {
         "question": 695.0,
         "answer": 715.0
@@ -4060,9 +4078,9 @@
           "sha256": "24774c7b0bf8de4eb84393ef4bf209690af8aa33a944757c2c5b3c3c9ba8f307"
         },
         "answer": {
-          "path": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png",
+          "path": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png?v=a5abf186302db422",
           "local_path": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png",
-          "sha256": "6605138cddde2f954fb5a22c0d4b075c25c3fb6caeeb88df0876f96221d1a05c"
+          "sha256": "a5abf186302db422fda59c1c6e0d68e4c4999fd3f42d385f94180353e3b1bd85"
         }
       },
       "transcription_review": {
@@ -4071,7 +4089,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "草食動物の解答文字の表示欠けを修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4083,7 +4103,7 @@
         "accepted_answers": [
           {
             "text": "草食動物",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4113,7 +4133,7 @@
         "parts": [],
         "image": false,
         "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_033.png",
-        "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png",
+        "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png?v=a5abf186302db422",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -4134,7 +4154,7 @@
           "answer": 715.0
         },
         "table": null,
-        "contract": "96c6939f662c82c4bac8379cbed5e08c6ea194e41fca33497a3092ed272617f3"
+        "contract": "80257a7684e0d63c3ed76780175f90dbbca0c838058de3f8d95bb10839e6fe6c"
       }
     },
     {
@@ -5416,7 +5436,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "実際の正しい選択肢の値を採点用正答に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5428,11 +5450,16 @@
         "accepted_answers": [
           {
             "text": "－極から＋極へ",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "－極から＋極",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "-極から+極へ"
+          "-極から+極へ",
+          "-極から+極"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -5463,10 +5490,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "－極から＋極へ"
+          "－極から＋極へ",
+          "－極から＋極"
         ],
         "normalized": [
-          "-極から+極へ"
+          "-極から+極へ",
+          "-極から+極"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -5479,7 +5508,7 @@
           "answer": 940.0
         },
         "table": null,
-        "contract": "e1d99d46fd8cb52bcb5c170844034ce63db739a17718abfa7f7beaf3a14fd891"
+        "contract": "0549b6098cc5009314dcf221664b108c2cfc9677aef097e551a0b746d6cd3da9"
       }
     },
     {
@@ -6727,7 +6756,7 @@
       "id": "055",
       "chapter": "jhs3-confusable-earth-space",
       "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_055.png",
-      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png?v=b601b0b9909b1c62",
       "sourceTimes": {
         "question": 1140.0,
         "answer": 1150.0
@@ -6767,9 +6796,9 @@
           "sha256": "7486732df13ad688b95b8e1d273bd54a164dcbbf22615507aa72a5392118004a"
         },
         "answer": {
-          "path": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png",
+          "path": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png?v=b601b0b9909b1c62",
           "local_path": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png",
-          "sha256": "b98ff8f0267d2981a1c90c17c0c7fb3df5a2c2b0f297cc79499b4cffe98fb7a0"
+          "sha256": "b601b0b9909b1c6229fca8be622dd4916205b3378a8dc922d627f447527ea1e0"
         }
       },
       "transcription_review": {
@@ -6778,7 +6807,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "公転の解答文字の表示欠けを修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6790,7 +6821,7 @@
         "accepted_answers": [
           {
             "text": "公転",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -6820,7 +6851,7 @@
         "parts": [],
         "image": false,
         "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_055.png",
-        "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png",
+        "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png?v=b601b0b9909b1c62",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -6841,7 +6872,7 @@
           "answer": 1150.0
         },
         "table": null,
-        "contract": "d01178c6ea10b70b4ac421956fefae87f8a4a1f7fef17c9cdbf2566cd03cc332"
+        "contract": "c9245b6c18d4aa64267d3696599b9d02662340211c848bc7365ecfb349d7179c"
       }
     },
     {
@@ -9233,10 +9264,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "（引く力は）半分になる"
+          "（引く力は）半分になる",
+          "半分になる"
         ],
         "normalized": [
-          "(引く力は)半分になる"
+          "(引く力は)半分になる",
+          "半分になる"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -9249,7 +9282,7 @@
           "answer": 250.0
         },
         "table": null,
-        "contract": "ca71f99451679612d0bf2cc1e991b92a42a0b7c4352824e9fcc4f280d60327c2"
+        "contract": "a58cf0208bf8cd81e84321fed2de2d5bdf0e7fa745e6e512dcd0022c6c4a0d1a"
       },
       {
         "id": "012",
@@ -10117,10 +10150,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "無機物から有機物を作り出している"
+          "無機物から有機物を作り出している",
+          "無機物から有機物"
         ],
         "normalized": [
-          "無機物から有機物を作り出している"
+          "無機物から有機物を作り出している",
+          "無機物から有機物"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -10133,7 +10168,7 @@
           "answer": 670.0
         },
         "table": null,
-        "contract": "e0313082f9dad10fa1216b952f575e8cf5a4f597bd95421c14de63ba17566b92"
+        "contract": "5a4288cba95d078474c39a4bfc330bb7d1ee3f0d5ffbca411bb4c61995c4294d"
       },
       {
         "id": "032",
@@ -10198,7 +10233,7 @@
         "parts": [],
         "image": false,
         "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_033.png",
-        "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png",
+        "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png?v=a5abf186302db422",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -10219,7 +10254,7 @@
           "answer": 715.0
         },
         "table": null,
-        "contract": "96c6939f662c82c4bac8379cbed5e08c6ea194e41fca33497a3092ed272617f3"
+        "contract": "80257a7684e0d63c3ed76780175f90dbbca0c838058de3f8d95bb10839e6fe6c"
       },
       {
         "id": "034",
@@ -10680,10 +10715,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "－極から＋極へ"
+          "－極から＋極へ",
+          "－極から＋極"
         ],
         "normalized": [
-          "-極から+極へ"
+          "-極から+極へ",
+          "-極から+極"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -10696,7 +10733,7 @@
           "answer": 940.0
         },
         "table": null,
-        "contract": "e1d99d46fd8cb52bcb5c170844034ce63db739a17718abfa7f7beaf3a14fd891"
+        "contract": "0549b6098cc5009314dcf221664b108c2cfc9677aef097e551a0b746d6cd3da9"
       },
       {
         "id": "045",
@@ -11158,7 +11195,7 @@
         "parts": [],
         "image": false,
         "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_055.png",
-        "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png",
+        "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png?v=b601b0b9909b1c62",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -11179,7 +11216,7 @@
           "answer": 1150.0
         },
         "table": null,
-        "contract": "d01178c6ea10b70b4ac421956fefae87f8a4a1f7fef17c9cdbf2566cd03cc332"
+        "contract": "c9245b6c18d4aa64267d3696599b9d02662340211c848bc7365ecfb349d7179c"
       },
       {
         "id": "056",

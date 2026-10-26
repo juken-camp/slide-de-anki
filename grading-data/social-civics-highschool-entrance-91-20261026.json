@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "social-civics-highschool-entrance-91-20261026",
   "title": "高校入試 過去問｜公民 一問一答①",
   "subject": "social",
@@ -4405,15 +4405,15 @@
     {
       "id": "041",
       "chapter": "social-civics-entrance-past",
-      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png",
-      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png?v=dc4f4315c9add06a",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png?v=0e798ba307b04ae9",
       "sourceTimes": {
         "question": 1033.3,
         "answer": 1051.6
       },
       "lesson_id": "social-civics-highschool-entrance-91-20261026",
       "source_slide_number": 41,
-      "question_text": "訪問販売などで商品を購入した場合、購入後8日以内であれば、買い手が売り手に契約解除の通知書を送付することで、無条件で契約を取り消すことができる。この制度を何というか。",
+      "question_text": "訪問販売などで商品を購入した場合、契約書面を受け取った日から8日以内であれば、買い手が売り手に契約解除の通知書を送付することで、無条件で契約を取り消すことができる。この制度を何というか。",
       "question_auxiliary_text": [],
       "answer_auxiliary_text": [],
       "response_instruction": "",
@@ -4433,14 +4433,14 @@
       "source_video_url": null,
       "images": {
         "question": {
-          "path": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png",
+          "path": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png?v=dc4f4315c9add06a",
           "local_path": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png",
-          "sha256": "f3033b90487faef427f6c48307f5f55f9952329029a21cdae058fcd60b8af0c0"
+          "sha256": "dc4f4315c9add06a8fb991370efbe9829d3ec2a4ab29205ec3420d24aac236fc"
         },
         "answer": {
-          "path": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png",
+          "path": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png?v=0e798ba307b04ae9",
           "local_path": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png",
-          "sha256": "bf6eb8fc8880185954ad0d891278cd85820ceb15f5e1a402083772d97eea707d"
+          "sha256": "0e798ba307b04ae9846069cb94c79db0345eb987479356a17cff2fc75827e4b8"
         }
       },
       "transcription_review": {
@@ -4449,7 +4449,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 41
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "クーリング・オフの起算点を契約書面受領日に訂正"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
@@ -4459,15 +4461,15 @@
         "accepted_answers": [
           {
             "text": "クーリング・オフ制度",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "クーリングオフ",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "クーリング・オフ",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4483,7 +4485,7 @@
       },
       "runtime_record": {
         "id": "041",
-        "q": "訪問販売などで商品を購入した場合、購入後8日以内であれば、買い手が売り手に契約解除の通知書を送付することで、無条件で契約を取り消すことができる。この制度を何というか。",
+        "q": "訪問販売などで商品を購入した場合、契約書面を受け取った日から8日以内であれば、買い手が売り手に契約解除の通知書を送付することで、無条件で契約を取り消すことができる。この制度を何というか。",
         "aux": [],
         "choices": [],
         "a": "クーリング・オフ制度",
@@ -4491,8 +4493,8 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png",
-        "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png",
+        "question": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png?v=dc4f4315c9add06a",
+        "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png?v=0e798ba307b04ae9",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -4517,7 +4519,7 @@
           "answer": 1051.6
         },
         "table": null,
-        "contract": "b713c6344bb4ea690d3ac50eda6635b32fa1943baf5da237c930ea543e2909b1"
+        "contract": "de5733095e26a832aa9cbc594be7d8817599a68a1da1a040c9542a2d7dece6aa"
       }
     },
     {
@@ -6141,7 +6143,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 57
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "性が空欄の外にあるため空欄部分の正答も許可"
+      ],
       "grading": {
         "status": "ready_for_exact_match",
         "auto_grade_eligible": true,
@@ -6151,11 +6155,16 @@
         "accepted_answers": [
           {
             "text": "希少性",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "希少",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "希少性"
+          "希少性",
+          "希少"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -6179,10 +6188,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "希少性"
+          "希少性",
+          "希少"
         ],
         "normalized": [
-          "希少性"
+          "希少性",
+          "希少"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -6195,7 +6206,7 @@
           "answer": 1453.6
         },
         "table": null,
-        "contract": "d110f1f1512f3a6661133ce640ea9b90b1cee8e27594bad10eb4ef225978a3e2"
+        "contract": "7d6536c8ea8cde8139561fb5d10c1c6d465009d0db2f5f9c0656738099ab27ba"
       }
     },
     {
@@ -11299,7 +11310,7 @@
       },
       {
         "id": "041",
-        "q": "訪問販売などで商品を購入した場合、購入後8日以内であれば、買い手が売り手に契約解除の通知書を送付することで、無条件で契約を取り消すことができる。この制度を何というか。",
+        "q": "訪問販売などで商品を購入した場合、契約書面を受け取った日から8日以内であれば、買い手が売り手に契約解除の通知書を送付することで、無条件で契約を取り消すことができる。この制度を何というか。",
         "aux": [],
         "choices": [],
         "a": "クーリング・オフ制度",
@@ -11307,8 +11318,8 @@
         "mode": "text",
         "parts": [],
         "image": false,
-        "question": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png",
-        "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png",
+        "question": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png?v=dc4f4315c9add06a",
+        "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png?v=0e798ba307b04ae9",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -11333,7 +11344,7 @@
           "answer": 1051.6
         },
         "table": null,
-        "contract": "b713c6344bb4ea690d3ac50eda6635b32fa1943baf5da237c930ea543e2909b1"
+        "contract": "de5733095e26a832aa9cbc594be7d8817599a68a1da1a040c9542a2d7dece6aa"
       },
       {
         "id": "042",
@@ -11865,10 +11876,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "希少性"
+          "希少性",
+          "希少"
         ],
         "normalized": [
-          "希少性"
+          "希少性",
+          "希少"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -11881,7 +11894,7 @@
           "answer": 1453.6
         },
         "table": null,
-        "contract": "d110f1f1512f3a6661133ce640ea9b90b1cee8e27594bad10eb4ef225978a3e2"
+        "contract": "7d6536c8ea8cde8139561fb5d10c1c6d465009d0db2f5f9c0656738099ab27ba"
       },
       {
         "id": "058",

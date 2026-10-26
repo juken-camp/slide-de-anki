@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "science-jhs2-confusable-qa-54-20261025",
   "title": "中2理科の間違えやすい問題",
   "subject": "science",
@@ -509,7 +509,7 @@
       "id": "005",
       "chapter": "jhs2-confusable-chemical-reactions",
       "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_005.png",
-      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png?v=fa247c809f042812",
       "sourceTimes": {
         "question": 81.0,
         "answer": 88.0
@@ -549,9 +549,9 @@
           "sha256": "f78fce35b2919289fee35e62896d5a6618a4f34ebdbfbbfd6cd97d3cbe0c19fc"
         },
         "answer": {
-          "path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png",
+          "path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png?v=fa247c809f042812",
           "local_path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png",
-          "sha256": "5986b103bc846b661578e8d06633ac36aa93766e3eab439dc9754ab897dae8b2"
+          "sha256": "fa247c809f042812b37297440bc678a15d19c0c405fabd6fac9bb2fa3a360f25"
         }
       },
       "transcription_review": {
@@ -560,7 +560,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "原子の解答文字が枠外にはみ出す表示を修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -572,7 +574,7 @@
         "accepted_answers": [
           {
             "text": "原子",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -602,7 +604,7 @@
         "parts": [],
         "image": false,
         "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_005.png",
-        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png",
+        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png?v=fa247c809f042812",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -623,7 +625,7 @@
           "answer": 88.0
         },
         "table": null,
-        "contract": "1d9cb0eda7c2fdac0ffa377b56a82b3701eaa481ab0b5954315ab09d9cbfbc61"
+        "contract": "63259de0b02e929439d39388cb1ffc6e339992f5a1ebbc3f4de3116d522c757c"
       }
     },
     {
@@ -2929,7 +2931,7 @@
       "id": "025",
       "chapter": "jhs2-confusable-organisms",
       "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_025.png",
-      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png?v=e98cb3d47a63a009",
       "sourceTimes": {
         "question": 408.0,
         "answer": 419.0
@@ -2969,9 +2971,9 @@
           "sha256": "5580971a196a4109a87de63bdd17f1c3a9d6c8354e231249d061db72d3375cb4"
         },
         "answer": {
-          "path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png",
+          "path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png?v=e98cb3d47a63a009",
           "local_path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png",
-          "sha256": "e77d14cd67df54d236e3fac8f91a65bd9a64d14fb70b2677bf4d3ee7611c2e89"
+          "sha256": "e98cb3d47a63a009789add61a6a71212975abb9c1dea411475e4945582772847"
         }
       },
       "transcription_review": {
@@ -2980,7 +2982,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "赤血球の解答文字が枠外にはみ出す表示を修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2992,7 +2996,7 @@
         "accepted_answers": [
           {
             "text": "赤血球",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3022,7 +3026,7 @@
         "parts": [],
         "image": false,
         "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_025.png",
-        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png",
+        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png?v=e98cb3d47a63a009",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -3043,7 +3047,7 @@
           "answer": 419.0
         },
         "table": null,
-        "contract": "b3d8dcd79110489917f262248e0a3fceec3e566f1fda3e9e7af48db243a67fd1"
+        "contract": "a770649b601292f701cbac15f67ac9394a22832e7ab456cc8226b6d0fe93f37b"
       }
     },
     {
@@ -3706,7 +3710,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "実際の正しい選択肢の値を採点用正答に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3718,11 +3724,21 @@
         "accepted_answers": [
           {
             "text": "じん臓（腎臓）",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "腎臓",
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "じん臓",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "じん臓(腎臓)"
+          "じん臓(腎臓)",
+          "腎臓",
+          "じん臓"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -3753,10 +3769,14 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "じん臓（腎臓）"
+          "じん臓（腎臓）",
+          "腎臓",
+          "じん臓"
         ],
         "normalized": [
-          "じん臓(腎臓)"
+          "じん臓(腎臓)",
+          "腎臓",
+          "じん臓"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -3769,7 +3789,7 @@
           "answer": 524.0
         },
         "table": null,
-        "contract": "a289a810e8321a4105a7236def85ea8dbfd57880b4f4e934f8162b46a1f651df"
+        "contract": "60b372c976ac3241524c57679c18aadcecdb38d6f913d49fc8e517157227f457"
       }
     },
     {
@@ -3827,7 +3847,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3839,21 +3861,11 @@
         "accepted_answers": [
           {
             "text": "聴覚",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "じん臓",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "腎臓",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "聴覚",
-          "じん臓",
-          "腎臓"
+          "聴覚"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -3884,14 +3896,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "聴覚",
-          "じん臓",
-          "腎臓"
+          "聴覚"
         ],
         "normalized": [
-          "聴覚",
-          "じん臓",
-          "腎臓"
+          "聴覚"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -3904,7 +3912,7 @@
           "answer": 541.0
         },
         "table": null,
-        "contract": "fd6483473ce18858e292ef5ba3f13b34c603f51537828f8af5b788be08097da3"
+        "contract": "93f8961869cf5ea8669774a18a1507a1638625ee23f530714cd75e6311342b26"
       }
     },
     {
@@ -4083,7 +4091,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4095,16 +4105,11 @@
         "accepted_answers": [
           {
             "text": "中枢神経",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "（明るいところでは）小さくなる",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "中枢神経",
-          "(明るいところでは)小さくなる"
+          "中枢神経"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -4135,12 +4140,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "中枢神経",
-          "（明るいところでは）小さくなる"
+          "中枢神経"
         ],
         "normalized": [
-          "中枢神経",
-          "(明るいところでは)小さくなる"
+          "中枢神経"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -4153,7 +4156,7 @@
           "answer": 575.0
         },
         "table": null,
-        "contract": "24244a1784f7004dc17e5e6995dc5e0b7d45f270518053e0ed4840178cfa80b7"
+        "contract": "9d8a455000b087ed755f41af8acc2dc1f34045f2cb7b4c3105b3615f00a468fb"
       }
     },
     {
@@ -4281,7 +4284,7 @@
       "id": "036",
       "chapter": "jhs2-confusable-organisms",
       "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_036.png",
-      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png?v=ef7b6865462233f5",
       "sourceTimes": {
         "question": 598.0,
         "answer": 610.0
@@ -4321,9 +4324,9 @@
           "sha256": "f86981a7b5ecfbb0663ece6547bbf645f5ef5d2c1b99a311c770f08e0437e37a"
         },
         "answer": {
-          "path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png",
+          "path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png?v=ef7b6865462233f5",
           "local_path": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png",
-          "sha256": "5efa60f4540122a63ab9169a131dad0d905c8d0a98e4489b0431d80acf124d5f"
+          "sha256": "ef7b6865462233f55932e025ee3f8df03a71ab1f5c4d9eca8ac59a6c13925528"
         }
       },
       "transcription_review": {
@@ -4332,7 +4335,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "胎生の解答文字が枠外にはみ出す表示を修正"
+      ],
       "advisory_notes": [
         "原動画は「ホニュウ類だけは」と断定。カモノハシ・ハリモグラ等の卵生哺乳類は例外。公開画像2枚と問題文を「ホニュウ類の多くは」へ修正。根拠: https://www2.sci.hokudai.ac.jp/article/17493, https://www.tokyo-zoo.net/ueno/encyclopedia/short-beaked-echidna/index.html"
       ],
@@ -4346,7 +4351,7 @@
         "accepted_answers": [
           {
             "text": "胎生",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4376,7 +4381,7 @@
         "parts": [],
         "image": false,
         "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_036.png",
-        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png",
+        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png?v=ef7b6865462233f5",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -4397,7 +4402,7 @@
           "answer": 610.0
         },
         "table": null,
-        "contract": "95c002efe177b89b7050416f9523b699021b335137188a4e9621b18af20a7a34"
+        "contract": "84d7fd53c1325892d3e6f42a39e4865ac0a946bc61c84bb1bd175cfa3e4c7123"
       }
     },
     {
@@ -4576,7 +4581,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4588,21 +4595,11 @@
         "accepted_answers": [
           {
             "text": "並列回路",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "プラス極",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "+極",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "並列回路",
-          "プラス極",
-          "+極"
+          "並列回路"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -4633,14 +4630,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "並列回路",
-          "プラス極",
-          "+極"
+          "並列回路"
         ],
         "normalized": [
-          "並列回路",
-          "プラス極",
-          "+極"
+          "並列回路"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -4653,7 +4646,7 @@
           "answer": 646.0
         },
         "table": null,
-        "contract": "0245b71749f902f5fced317025ce64e1ac3d01ec51050b5b71aae729f1db8cbd"
+        "contract": "6c738a1047143698b4c87dd9376b986ec2a12381824fedc5ac69c8fcf4cf05b2"
       }
     },
     {
@@ -4832,7 +4825,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "実際の正しい選択肢の値を採点用正答に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4844,11 +4839,26 @@
         "accepted_answers": [
           {
             "text": "ボルト（V）",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "V（ボルト）",
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "V",
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "ボルト",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "ボルト(V)"
+          "ボルト(V)",
+          "V(ボルト)",
+          "V",
+          "ボルト"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -4879,10 +4889,16 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "ボルト（V）"
+          "ボルト（V）",
+          "V（ボルト）",
+          "V",
+          "ボルト"
         ],
         "normalized": [
-          "ボルト(V)"
+          "ボルト(V)",
+          "V(ボルト)",
+          "V",
+          "ボルト"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -4895,7 +4911,7 @@
           "answer": 674.0
         },
         "table": null,
-        "contract": "91ed9afcb00acb347eff595ca12e29f756153580c95b38dbce233ccd8b14aa04"
+        "contract": "d940db553a3b19dfd0b87f05479b467f65ca221702484f1695aff6770af80360"
       }
     },
     {
@@ -4953,7 +4969,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4965,26 +4983,11 @@
         "accepted_answers": [
           {
             "text": "小さい",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "V",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "ボルト",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "V（ボルト）",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "小さい",
-          "V",
-          "ボルト",
-          "V(ボルト)"
+          "小さい"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -5015,16 +5018,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "小さい",
-          "V",
-          "ボルト",
-          "V（ボルト）"
+          "小さい"
         ],
         "normalized": [
-          "小さい",
-          "V",
-          "ボルト",
-          "V(ボルト)"
+          "小さい"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -5037,7 +5034,7 @@
           "answer": 691.0
         },
         "table": null,
-        "contract": "3bd742201e70f8b59e0b83eb59bf17ad7a1a680942784b3d21c93be718b0c30b"
+        "contract": "e609175c22607b928c9d3d165bfaec612c1eeb1f2c450ecd2a474058424dc488"
       }
     },
     {
@@ -5095,7 +5092,10 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除",
+        "実際の正しい選択肢の値を採点用正答に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5107,16 +5107,26 @@
         "accepted_answers": [
           {
             "text": "ワット（W）",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
-            "text": "全体の抵抗が小さい",
-            "basis": "integrated_runtime_verified_answer"
+            "text": "W（ワット）",
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "W",
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "ワット",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
           "ワット(W)",
-          "全体の抵抗が小さい"
+          "W(ワット)",
+          "W",
+          "ワット"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -5148,11 +5158,15 @@
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
           "ワット（W）",
-          "全体の抵抗が小さい"
+          "W（ワット）",
+          "W",
+          "ワット"
         ],
         "normalized": [
           "ワット(W)",
-          "全体の抵抗が小さい"
+          "W(ワット)",
+          "W",
+          "ワット"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -5165,7 +5179,7 @@
           "answer": 711.0
         },
         "table": null,
-        "contract": "dc502e2691e458ba3ccb6b1e67914221b1d8f47b4f1a8919f626def60c9a39fe"
+        "contract": "a9c2ed4024975c28affc881e958a2ae412f883461cf2ffd94f5bec567a32befe"
       }
     },
     {
@@ -5223,7 +5237,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5235,26 +5251,11 @@
         "accepted_answers": [
           {
             "text": "N極",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "W",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "ワット",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "W（ワット）",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "N極",
-          "W",
-          "ワット",
-          "W(ワット)"
+          "N極"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -5285,16 +5286,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "N極",
-          "W",
-          "ワット",
-          "W（ワット）"
+          "N極"
         ],
         "normalized": [
-          "N極",
-          "W",
-          "ワット",
-          "W(ワット)"
+          "N極"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -5307,7 +5302,7 @@
           "answer": 725.0
         },
         "table": null,
-        "contract": "03f9dd9de2541ac0bfdc18098c0dac3cd8fab250074c26ca116883c2338b0ac3"
+        "contract": "04bbe6dfccf93a46a5f155b20efce38e9129e17e2482352e16a2d7a6066af02e"
       }
     },
     {
@@ -5730,7 +5725,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5742,21 +5739,11 @@
         "accepted_answers": [
           {
             "text": "低い",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "－極→＋極",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "マイナス極からプラス極",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "低い",
-          "-極→+極",
-          "マイナス極からプラス極"
+          "低い"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -5787,14 +5774,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "低い",
-          "－極→＋極",
-          "マイナス極からプラス極"
+          "低い"
         ],
         "normalized": [
-          "低い",
-          "-極→+極",
-          "マイナス極からプラス極"
+          "低い"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -5807,7 +5790,7 @@
           "answer": 812.0
         },
         "table": null,
-        "contract": "6c52cd19fe27f394133b196b00cc70006ec2c80c3ad0049b4a634247a268dfd5"
+        "contract": "99d97f7dc68ed331b7ed71ad4b12a427d5bb7e4820405913bd8ad9e3df9ea9e2"
       }
     },
     {
@@ -5986,7 +5969,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "実際の正しい選択肢の値を採点用正答に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5998,11 +5983,16 @@
         "accepted_answers": [
           {
             "text": "高気圧から低気圧へ向かってふく",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "高気圧から低気圧に向かってふく",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "高気圧から低気圧へ向かってふく"
+          "高気圧から低気圧へ向かってふく",
+          "高気圧から低気圧に向かってふく"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -6033,10 +6023,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "高気圧から低気圧へ向かってふく"
+          "高気圧から低気圧へ向かってふく",
+          "高気圧から低気圧に向かってふく"
         ],
         "normalized": [
-          "高気圧から低気圧へ向かってふく"
+          "高気圧から低気圧へ向かってふく",
+          "高気圧から低気圧に向かってふく"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -6049,7 +6041,7 @@
           "answer": 849.0
         },
         "table": null,
-        "contract": "06c29357380317f624de8e24959b55671bf8d50e05cd2e6809b04a4b625eb83f"
+        "contract": "385c5b635c6d8ca32e61e793c503c849918c47af93e816fb87e4cb8aca8b9259"
       }
     },
     {
@@ -6107,7 +6099,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6119,16 +6113,11 @@
         "accepted_answers": [
           {
             "text": "上昇気流が生じているから",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "高気圧から低気圧に向かってふく",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "上昇気流が生じているから",
-          "高気圧から低気圧に向かってふく"
+          "上昇気流が生じているから"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -6159,12 +6148,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "上昇気流が生じているから",
-          "高気圧から低気圧に向かってふく"
+          "上昇気流が生じているから"
         ],
         "normalized": [
-          "上昇気流が生じているから",
-          "高気圧から低気圧に向かってふく"
+          "上昇気流が生じているから"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -6177,7 +6164,7 @@
           "answer": 871.0
         },
         "table": null,
-        "contract": "00b5c73dd1641a5d10e60abbb682e1cd57bbdf6e86581a14b2806fac732095a7"
+        "contract": "8f7be9a4826f22a75d5ced731d6ed06a28267da86f2bc53891fee25fe3a183ba"
       }
     },
     {
@@ -6235,7 +6222,9 @@
         "question_answer_pair_matches": true,
         "question_prompt_partially_absent_on_source_image": false
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "隣の問題の答えが混入した別解を削除"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6247,16 +6236,11 @@
         "accepted_answers": [
           {
             "text": "寒冷前線",
-            "basis": "integrated_runtime_verified_answer"
-          },
-          {
-            "text": "上昇気流が生じているから",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "寒冷前線",
-          "上昇気流が生じているから"
+          "寒冷前線"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -6287,12 +6271,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "寒冷前線",
-          "上昇気流が生じているから"
+          "寒冷前線"
         ],
         "normalized": [
-          "寒冷前線",
-          "上昇気流が生じているから"
+          "寒冷前線"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -6305,7 +6287,7 @@
           "answer": 887.0
         },
         "table": null,
-        "contract": "680f5434e589cec78530bd7e6d5a792b75e15cf3af72796edbc79b37dedafb12"
+        "contract": "d22ee3ff88bafaac4d21ae53e96bc3ae7ca8beb204534da7c3e4beb410acf329"
       }
     },
     {
@@ -6881,7 +6863,7 @@
         "parts": [],
         "image": false,
         "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_005.png",
-        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png",
+        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png?v=fa247c809f042812",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -6902,7 +6884,7 @@
           "answer": 88.0
         },
         "table": null,
-        "contract": "1d9cb0eda7c2fdac0ffa377b56a82b3701eaa481ab0b5954315ab09d9cbfbc61"
+        "contract": "63259de0b02e929439d39388cb1ffc6e339992f5a1ebbc3f4de3116d522c757c"
       },
       {
         "id": "006",
@@ -7741,7 +7723,7 @@
         "parts": [],
         "image": false,
         "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_025.png",
-        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png",
+        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png?v=e98cb3d47a63a009",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -7762,7 +7744,7 @@
           "answer": 419.0
         },
         "table": null,
-        "contract": "b3d8dcd79110489917f262248e0a3fceec3e566f1fda3e9e7af48db243a67fd1"
+        "contract": "a770649b601292f701cbac15f67ac9394a22832e7ab456cc8226b6d0fe93f37b"
       },
       {
         "id": "026",
@@ -8004,10 +7986,14 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "じん臓（腎臓）"
+          "じん臓（腎臓）",
+          "腎臓",
+          "じん臓"
         ],
         "normalized": [
-          "じん臓(腎臓)"
+          "じん臓(腎臓)",
+          "腎臓",
+          "じん臓"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8020,7 +8006,7 @@
           "answer": 524.0
         },
         "table": null,
-        "contract": "a289a810e8321a4105a7236def85ea8dbfd57880b4f4e934f8162b46a1f651df"
+        "contract": "60b372c976ac3241524c57679c18aadcecdb38d6f913d49fc8e517157227f457"
       },
       {
         "id": "032",
@@ -8047,14 +8033,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "聴覚",
-          "じん臓",
-          "腎臓"
+          "聴覚"
         ],
         "normalized": [
-          "聴覚",
-          "じん臓",
-          "腎臓"
+          "聴覚"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8067,7 +8049,7 @@
           "answer": 541.0
         },
         "table": null,
-        "contract": "fd6483473ce18858e292ef5ba3f13b34c603f51537828f8af5b788be08097da3"
+        "contract": "93f8961869cf5ea8669774a18a1507a1638625ee23f530714cd75e6311342b26"
       },
       {
         "id": "033",
@@ -8137,12 +8119,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "中枢神経",
-          "（明るいところでは）小さくなる"
+          "中枢神経"
         ],
         "normalized": [
-          "中枢神経",
-          "(明るいところでは)小さくなる"
+          "中枢神経"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8155,7 +8135,7 @@
           "answer": 575.0
         },
         "table": null,
-        "contract": "24244a1784f7004dc17e5e6995dc5e0b7d45f270518053e0ed4840178cfa80b7"
+        "contract": "9d8a455000b087ed755f41af8acc2dc1f34045f2cb7b4c3105b3615f00a468fb"
       },
       {
         "id": "035",
@@ -8220,7 +8200,7 @@
         "parts": [],
         "image": false,
         "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_036.png",
-        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png",
+        "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png?v=ef7b6865462233f5",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -8241,7 +8221,7 @@
           "answer": 610.0
         },
         "table": null,
-        "contract": "95c002efe177b89b7050416f9523b699021b335137188a4e9621b18af20a7a34"
+        "contract": "84d7fd53c1325892d3e6f42a39e4865ac0a946bc61c84bb1bd175cfa3e4c7123"
       },
       {
         "id": "037",
@@ -8311,14 +8291,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "並列回路",
-          "プラス極",
-          "+極"
+          "並列回路"
         ],
         "normalized": [
-          "並列回路",
-          "プラス極",
-          "+極"
+          "並列回路"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8331,7 +8307,7 @@
           "answer": 646.0
         },
         "table": null,
-        "contract": "0245b71749f902f5fced317025ce64e1ac3d01ec51050b5b71aae729f1db8cbd"
+        "contract": "6c738a1047143698b4c87dd9376b986ec2a12381824fedc5ac69c8fcf4cf05b2"
       },
       {
         "id": "039",
@@ -8401,10 +8377,16 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "ボルト（V）"
+          "ボルト（V）",
+          "V（ボルト）",
+          "V",
+          "ボルト"
         ],
         "normalized": [
-          "ボルト(V)"
+          "ボルト(V)",
+          "V(ボルト)",
+          "V",
+          "ボルト"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8417,7 +8399,7 @@
           "answer": 674.0
         },
         "table": null,
-        "contract": "91ed9afcb00acb347eff595ca12e29f756153580c95b38dbce233ccd8b14aa04"
+        "contract": "d940db553a3b19dfd0b87f05479b467f65ca221702484f1695aff6770af80360"
       },
       {
         "id": "041",
@@ -8444,16 +8426,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "小さい",
-          "V",
-          "ボルト",
-          "V（ボルト）"
+          "小さい"
         ],
         "normalized": [
-          "小さい",
-          "V",
-          "ボルト",
-          "V(ボルト)"
+          "小さい"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8466,7 +8442,7 @@
           "answer": 691.0
         },
         "table": null,
-        "contract": "3bd742201e70f8b59e0b83eb59bf17ad7a1a680942784b3d21c93be718b0c30b"
+        "contract": "e609175c22607b928c9d3d165bfaec612c1eeb1f2c450ecd2a474058424dc488"
       },
       {
         "id": "042",
@@ -8494,11 +8470,15 @@
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
           "ワット（W）",
-          "全体の抵抗が小さい"
+          "W（ワット）",
+          "W",
+          "ワット"
         ],
         "normalized": [
           "ワット(W)",
-          "全体の抵抗が小さい"
+          "W(ワット)",
+          "W",
+          "ワット"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8511,7 +8491,7 @@
           "answer": 711.0
         },
         "table": null,
-        "contract": "dc502e2691e458ba3ccb6b1e67914221b1d8f47b4f1a8919f626def60c9a39fe"
+        "contract": "a9c2ed4024975c28affc881e958a2ae412f883461cf2ffd94f5bec567a32befe"
       },
       {
         "id": "043",
@@ -8538,16 +8518,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "N極",
-          "W",
-          "ワット",
-          "W（ワット）"
+          "N極"
         ],
         "normalized": [
-          "N極",
-          "W",
-          "ワット",
-          "W(ワット)"
+          "N極"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8560,7 +8534,7 @@
           "answer": 725.0
         },
         "table": null,
-        "contract": "03f9dd9de2541ac0bfdc18098c0dac3cd8fab250074c26ca116883c2338b0ac3"
+        "contract": "04bbe6dfccf93a46a5f155b20efce38e9129e17e2482352e16a2d7a6066af02e"
       },
       {
         "id": "044",
@@ -8716,14 +8690,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "低い",
-          "－極→＋極",
-          "マイナス極からプラス極"
+          "低い"
         ],
         "normalized": [
-          "低い",
-          "-極→+極",
-          "マイナス極からプラス極"
+          "低い"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8736,7 +8706,7 @@
           "answer": 812.0
         },
         "table": null,
-        "contract": "6c52cd19fe27f394133b196b00cc70006ec2c80c3ad0049b4a634247a268dfd5"
+        "contract": "99d97f7dc68ed331b7ed71ad4b12a427d5bb7e4820405913bd8ad9e3df9ea9e2"
       },
       {
         "id": "048",
@@ -8806,10 +8776,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "高気圧から低気圧へ向かってふく"
+          "高気圧から低気圧へ向かってふく",
+          "高気圧から低気圧に向かってふく"
         ],
         "normalized": [
-          "高気圧から低気圧へ向かってふく"
+          "高気圧から低気圧へ向かってふく",
+          "高気圧から低気圧に向かってふく"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8822,7 +8794,7 @@
           "answer": 849.0
         },
         "table": null,
-        "contract": "06c29357380317f624de8e24959b55671bf8d50e05cd2e6809b04a4b625eb83f"
+        "contract": "385c5b635c6d8ca32e61e793c503c849918c47af93e816fb87e4cb8aca8b9259"
       },
       {
         "id": "050",
@@ -8849,12 +8821,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "上昇気流が生じているから",
-          "高気圧から低気圧に向かってふく"
+          "上昇気流が生じているから"
         ],
         "normalized": [
-          "上昇気流が生じているから",
-          "高気圧から低気圧に向かってふく"
+          "上昇気流が生じているから"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8867,7 +8837,7 @@
           "answer": 871.0
         },
         "table": null,
-        "contract": "00b5c73dd1641a5d10e60abbb682e1cd57bbdf6e86581a14b2806fac732095a7"
+        "contract": "8f7be9a4826f22a75d5ced731d6ed06a28267da86f2bc53891fee25fe3a183ba"
       },
       {
         "id": "051",
@@ -8894,12 +8864,10 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "寒冷前線",
-          "上昇気流が生じているから"
+          "寒冷前線"
         ],
         "normalized": [
-          "寒冷前線",
-          "上昇気流が生じているから"
+          "寒冷前線"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -8912,7 +8880,7 @@
           "answer": 887.0
         },
         "table": null,
-        "contract": "680f5434e589cec78530bd7e6d5a792b75e15cf3af72796edbc79b37dedafb12"
+        "contract": "d22ee3ff88bafaac4d21ae53e96bc3ae7ca8beb204534da7c3e4beb410acf329"
       },
       {
         "id": "052",

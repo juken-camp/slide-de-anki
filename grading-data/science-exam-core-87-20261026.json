@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "science-exam-core-87-20261026",
   "title": "高校入試 頻出問題｜理科の基本",
   "subject": "science",
@@ -66,7 +66,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -78,7 +80,7 @@
         "accepted_answers": [
           {
             "text": "被子植物",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -95,7 +97,7 @@
         "choices": [],
         "a": "被子植物",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_001.png",
@@ -120,7 +122,7 @@
           "answer": 29.0
         },
         "table": null,
-        "contract": "97019040e817ce681bb96fa00875f074c7b6a1803917666ece4c98eb051b56a8"
+        "contract": "f4a9753e51c7ac72229fcc54294000d29a769f975f97368cebf2cfa2c00d9ef1"
       }
     },
     {
@@ -291,7 +293,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -303,7 +307,7 @@
         "accepted_answers": [
           {
             "text": "道管",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -320,7 +324,7 @@
         "choices": [],
         "a": "道管",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_003.png",
@@ -345,7 +349,7 @@
           "answer": 84.0
         },
         "table": null,
-        "contract": "9711d6a0bc087c49168c911bfa9a50ddc7697763fba05ab88742f6a0f31a7330"
+        "contract": "a0b527d74918174dfe4af8545cd23999619bd8ccbd7fd2d4c2bf116f4ae77ee0"
       }
     },
     {
@@ -495,7 +499,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -507,7 +513,7 @@
         "accepted_answers": [
           {
             "text": "胞子",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -524,7 +530,7 @@
         "choices": [],
         "a": "胞子",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_005.png",
@@ -549,7 +555,7 @@
           "answer": 144.0
         },
         "table": null,
-        "contract": "e93690753aaf351dd76414a4a7b85ef225b3e0e069e1b3f25a0fd96b776334ba"
+        "contract": "bd715f6bc565e08bbe0cb4b425c00e7056788d34eba729ed1d4e6b99a468907d"
       }
     },
     {
@@ -717,7 +723,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -729,7 +737,7 @@
         "accepted_answers": [
           {
             "text": "節足動物",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -746,7 +754,7 @@
         "choices": [],
         "a": "節足動物",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_007.png",
@@ -771,7 +779,7 @@
           "answer": 193.0
         },
         "table": null,
-        "contract": "37ac363d10e0ea626d03321199e0fb1cfc09fdb008c784df55cf1b7326375fbf"
+        "contract": "cd254120552f0eb83c45946bb0d421efdd1d5da471f069f1049e758c5aff76a3"
       }
     },
     {
@@ -819,7 +827,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -831,7 +841,7 @@
         "accepted_answers": [
           {
             "text": "軟体動物",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -848,7 +858,7 @@
         "choices": [],
         "a": "軟体動物",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_008.png",
@@ -873,7 +883,7 @@
           "answer": 217.0
         },
         "table": null,
-        "contract": "2c60147fbd6a11110ddd9a072ca1f55b1debfbfb09767dcf015b43561d306335"
+        "contract": "88c839437c5b9a8e812ddc0b657ed90c6c0773e26782cbb862d943b33c0343e2"
       }
     },
     {
@@ -1017,7 +1027,7 @@
       "id": "010",
       "chapter": "science87-biology",
       "question": "images_85/science-exam-core-87-20261026/question_010.png",
-      "answer": "images_85/science-exam-core-87-20261026/answer_010.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_010.png?v=0c24f992ba0c58b8",
       "sourceTimes": {
         "question": 264.0,
         "answer": 279.0
@@ -1047,9 +1057,9 @@
           "sha256": "7a0b5e20baf7925c99055a6ff76af21c27c5ecdf8afebb9bcdcc46e778f74ce8"
         },
         "answer": {
-          "path": "images_85/science-exam-core-87-20261026/answer_010.png",
+          "path": "images_85/science-exam-core-87-20261026/answer_010.png?v=0c24f992ba0c58b8",
           "local_path": "images_85/science-exam-core-87-20261026/answer_010.png",
-          "sha256": "d2cfec822465f17e46912d898c09a13539487e63be22da37d3332eac39e040f9"
+          "sha256": "0c24f992ba0c58b80ffc0c6aa103331ce23a51f980395701809fd3c00f8330d6"
         }
       },
       "transcription_review": {
@@ -1058,7 +1068,9 @@
         "question_answer_pair_matches": true
       },
       "content_review_notes": [
-        "Original source incorrectly generalizes all mammals as viviparous; corrected prompt and answer image."
+        "Original source incorrectly generalizes all mammals as viviparous; corrected prompt and answer image.",
+        "選択肢が空のため入力欄が出ないsingleをtextに修正",
+        "胎生の解答文字の表示欠けを修正"
       ],
       "advisory_notes": [],
       "explanation_review_notes": [],
@@ -1071,7 +1083,7 @@
         "accepted_answers": [
           {
             "text": "胎生",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1088,11 +1100,11 @@
         "choices": [],
         "a": "胎生",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_010.png",
-        "answer": "images_85/science-exam-core-87-20261026/answer_010.png",
+        "answer": "images_85/science-exam-core-87-20261026/answer_010.png?v=0c24f992ba0c58b8",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -1113,7 +1125,7 @@
           "answer": 279.0
         },
         "table": null,
-        "contract": "1052a302d4ad147f97c86ef9f58c1cb98ebe6d70b5c53f39c0fbcc68e441a2f1"
+        "contract": "110415ee115cdb67aff6b0a56535892521cbf917a941d725d1b358efa7d71bcc"
       }
     },
     {
@@ -1161,7 +1173,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1173,7 +1187,7 @@
         "accepted_answers": [
           {
             "text": "組織",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1190,7 +1204,7 @@
         "choices": [],
         "a": "組織",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_011.png",
@@ -1215,7 +1229,7 @@
           "answer": 308.0
         },
         "table": null,
-        "contract": "376e9e335b7a4f01c461d2dac25980b342c46f485ac6385f9598097b9d0861a4"
+        "contract": "6cca95dbf9a655d8342abaec7a5512c7e302445a78073c9eed33b221a57da629"
       }
     },
     {
@@ -1365,7 +1379,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1377,15 +1393,15 @@
         "accepted_answers": [
           {
             "text": "デンプン",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "でんぷん",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "澱粉",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1404,7 +1420,7 @@
         "choices": [],
         "a": "デンプン",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_013.png",
@@ -1433,7 +1449,7 @@
           "answer": 372.0
         },
         "table": null,
-        "contract": "4dcda9086e2e502f510a06aaa95d5b043bccf67270b5be633787bd98f703d2df"
+        "contract": "72533161e73c168ec60a7fd82e0e488f05d47b33523dca46d5d7dc57eac7bfd4"
       }
     },
     {
@@ -1583,7 +1599,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1595,7 +1613,7 @@
         "accepted_answers": [
           {
             "text": "肝臓",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1612,7 +1630,7 @@
         "choices": [],
         "a": "肝臓",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_015.png",
@@ -1637,7 +1655,7 @@
           "answer": 436.0
         },
         "table": null,
-        "contract": "7a79882ef1f1e1418890b80690629fef259f9f3a5d1cd153014b1361fc515bd8"
+        "contract": "5e5eab207e3beeea40fbc3cd3a070ec27cc299a509e5525d709ca6f86a554586"
       }
     },
     {
@@ -1685,7 +1703,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1697,7 +1717,7 @@
         "accepted_answers": [
           {
             "text": "尿素",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1714,7 +1734,7 @@
         "choices": [],
         "a": "尿素",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_016.png",
@@ -1739,7 +1759,7 @@
           "answer": 454.0
         },
         "table": null,
-        "contract": "764eafbdc029f84e10b9709e25c6582b4689838c05f34b6532a498c8def7b206"
+        "contract": "cc84e34c58c9655b81de9b8cd7d8f62e7107b5a31e3c04c226212675129a3476"
       }
     },
     {
@@ -1889,7 +1909,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -1901,7 +1923,7 @@
         "accepted_answers": [
           {
             "text": "肺循環",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -1918,7 +1940,7 @@
         "choices": [],
         "a": "肺循環",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_018.png",
@@ -1943,7 +1965,7 @@
           "answer": 508.0
         },
         "table": null,
-        "contract": "bc0c1fe510f3c89bfc92b4f2f5bd066352c82fe745330e6c45ba2766c2a75016"
+        "contract": "52daec8fe9fc7de47b1cf7ea7100a7acfb5a87784036951b286b8383b2801359"
       }
     },
     {
@@ -2093,7 +2115,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2105,7 +2129,7 @@
         "accepted_answers": [
           {
             "text": "網膜",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2122,7 +2146,7 @@
         "choices": [],
         "a": "網膜",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_020.png",
@@ -2147,7 +2171,7 @@
           "answer": 564.0
         },
         "table": null,
-        "contract": "1eae5651a07c64445aa9979b9e8adf9d9268837d748f9457471e6b0c5fb2d661"
+        "contract": "7dcfa6290df8e9a74108798cad3c8359523feb19b6cfa219c1436f3816c6bdff"
       }
     },
     {
@@ -2195,7 +2219,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2207,7 +2233,7 @@
         "accepted_answers": [
           {
             "text": "反射",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2224,7 +2250,7 @@
         "choices": [],
         "a": "反射",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_021.png",
@@ -2249,7 +2275,7 @@
           "answer": 592.0
         },
         "table": null,
-        "contract": "788c17949e6063ccaf9c2b8ad2419db165d1beb3240b88fc1351cf5abdff8987"
+        "contract": "21057150f17a7d251873ea296cd812ba3e4691fa9948373ff9f27b3c4c1a1397"
       }
     },
     {
@@ -2526,7 +2552,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2538,7 +2566,7 @@
         "accepted_answers": [
           {
             "text": "栄養生殖",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2555,7 +2583,7 @@
         "choices": [],
         "a": "栄養生殖",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_024.png",
@@ -2580,7 +2608,7 @@
           "answer": 660.0
         },
         "table": null,
-        "contract": "845885d7f5dfb8d2be8785f75e3af99a332a0a5c96b1cd87189303db1536e6e5"
+        "contract": "ad2c3e812dd90c5da7d0a58f889fe0f706c47188e24fec1cfa3901f54b568cfe"
       }
     },
     {
@@ -2628,7 +2656,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2640,11 +2670,11 @@
         "accepted_answers": [
           {
             "text": "顕性形質",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "優性形質",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2662,7 +2692,7 @@
         "choices": [],
         "a": "顕性形質",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_025.png",
@@ -2689,7 +2719,7 @@
           "answer": 688.0
         },
         "table": null,
-        "contract": "dbdb104e071898027f5e090350618887f182ae95fdb68aa9774071f11c325f27"
+        "contract": "5ce30024f413e2a4be5dc504105b06034abb129baabbdb162e7e930ae707d39f"
       }
     },
     {
@@ -2715,7 +2745,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "カエル・ワニ・スズメ・コウモリ・クジラ・ヒトの前肢の骨格図",
       "figure_text_scope": "visually_checked",
@@ -2737,7 +2767,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2749,7 +2781,7 @@
         "accepted_answers": [
           {
             "text": "相同器官",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2766,7 +2798,7 @@
         "choices": [],
         "a": "相同器官",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_026.png",
@@ -2791,7 +2823,7 @@
           "answer": 712.0
         },
         "table": null,
-        "contract": "fed32e0486d699489a9223a7ece7421ab13265b7fd331d6f6fce7183e44af996"
+        "contract": "0e23f5d311208644028431d81e235cca3d146491e5bcbe691f3c07bbe4c6dcf7"
       }
     },
     {
@@ -2941,7 +2973,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2953,7 +2987,7 @@
         "accepted_answers": [
           {
             "text": "示相化石",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -2970,7 +3004,7 @@
         "choices": [],
         "a": "示相化石",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_028.png",
@@ -2995,7 +3029,7 @@
           "answer": 780.0
         },
         "table": null,
-        "contract": "0a780cb6eabf6731cac63f4ff40f80c3de779eaebbaa1985ec1d89719745062e"
+        "contract": "8b2977e30345729d10d410a63ba677e8932c6e96ee5e54bf25d319a44cb85742"
       }
     },
     {
@@ -3145,7 +3179,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3157,7 +3193,7 @@
         "accepted_answers": [
           {
             "text": "示準化石",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3174,7 +3210,7 @@
         "choices": [],
         "a": "示準化石",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_030.png",
@@ -3199,7 +3235,7 @@
           "answer": 832.0
         },
         "table": null,
-        "contract": "e292d7f8e4d9d46fee64154e33740fe846698dcb909fea7a10a724182a0cdcb9"
+        "contract": "1e5a36c78c4b18a35bea94e6d9f38cb13685523b784dce8cd19d53d447cfba7d"
       }
     },
     {
@@ -3375,7 +3411,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3387,15 +3425,15 @@
         "accepted_answers": [
           {
             "text": "二酸化炭素",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "CO₂",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "CO2",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3413,7 +3451,7 @@
         "choices": [],
         "a": "二酸化炭素",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_032.png",
@@ -3441,7 +3479,7 @@
           "answer": 900.0
         },
         "table": null,
-        "contract": "8c27d16fe31746728243e1d82a5fc188b563fa7cd2a8033da28d02cd613c6ac0"
+        "contract": "e5676eef3f3509a53fcd92e4221e702a0a030e6b1d6a360b3b36f7e02de068c2"
       }
     },
     {
@@ -3467,7 +3505,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "火山岩の顕微鏡写真と石基・斑晶",
       "figure_text_scope": "visually_checked",
@@ -3489,7 +3527,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3501,7 +3541,7 @@
         "accepted_answers": [
           {
             "text": "斑状組織",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3518,7 +3558,7 @@
         "choices": [],
         "a": "斑状組織",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_033.png",
@@ -3543,7 +3583,7 @@
           "answer": 936.0
         },
         "table": null,
-        "contract": "e91345858927940c53ecd4eeac8d83b84a82e52c796dcb130cc6527e230d3471"
+        "contract": "603e4230ea9a39d98186033f833d3ca6b28a206268aa45b639b0863dc4658da0"
       }
     },
     {
@@ -3671,7 +3711,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "地層のずれとしゅう曲の図",
       "figure_text_scope": "visually_checked",
@@ -3693,7 +3733,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3705,7 +3747,7 @@
         "accepted_answers": [
           {
             "text": "断層",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3722,7 +3764,7 @@
         "choices": [],
         "a": "断層",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_035.png",
@@ -3747,7 +3789,7 @@
           "answer": 984.0
         },
         "table": null,
-        "contract": "8b50ee74a476f2264467f6e09bb01deb37306cd35918fa2a0b32ea67bb9f27c3"
+        "contract": "019822668c2f1fc2d020a5176a3e4cb9b75571961256da9c9c9b223b25281143"
       }
     },
     {
@@ -3923,7 +3965,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -3935,7 +3979,7 @@
         "accepted_answers": [
           {
             "text": "露点",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -3952,7 +3996,7 @@
         "choices": [],
         "a": "露点",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_037.png",
@@ -3977,7 +4021,7 @@
           "answer": 1032.0
         },
         "table": null,
-        "contract": "c0e3814d229c66d0458dba6ffb90b13193d9522304ca38efc98631c1ad463fe2"
+        "contract": "01f90abb6636c4e6d09b33133816de0224d3d24f3022f790ac900cefd2fd1065"
       }
     },
     {
@@ -4105,7 +4149,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "温暖前線と寒冷前線の断面",
       "figure_text_scope": "visually_checked",
@@ -4127,7 +4171,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4139,7 +4185,7 @@
         "accepted_answers": [
           {
             "text": "積乱雲",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4156,7 +4202,7 @@
         "choices": [],
         "a": "積乱雲",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_039.png",
@@ -4181,7 +4227,7 @@
           "answer": 1080.0
         },
         "table": null,
-        "contract": "ce6ada8c55291c35e628ede042be0481711debb444c5da6048fdf8bd7b035048"
+        "contract": "f64c54b3a57061723b3b1a00639ac8bf52342db86c0620810b67cb5c52721cd0"
       }
     },
     {
@@ -4207,7 +4253,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "日本列島上の前線Aの天気図",
       "figure_text_scope": "visually_checked",
@@ -4229,7 +4275,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4241,7 +4289,7 @@
         "accepted_answers": [
           {
             "text": "停滞前線",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4258,7 +4306,7 @@
         "choices": [],
         "a": "停滞前線",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_040.png",
@@ -4283,7 +4331,7 @@
           "answer": 1120.0
         },
         "table": null,
-        "contract": "1f2a021504d5a20a281b20dfd630d66f21abd5d75bb3c3ce5dd723b6df943ea0"
+        "contract": "17d799dadf3f61c3c7d5f64335524f1a0b9c8a80bd4f81593d37913bfdf1dbc3"
       }
     },
     {
@@ -4433,7 +4481,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4445,7 +4495,7 @@
         "accepted_answers": [
           {
             "text": "台風",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4462,7 +4512,7 @@
         "choices": [],
         "a": "台風",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_042.png",
@@ -4487,7 +4537,7 @@
           "answer": 1172.0
         },
         "table": null,
-        "contract": "fc2611435aa944f5fb02317ea142f763a9e4aec837dbcef992f03e70fe065ad9"
+        "contract": "8337ac01e649d368522a71a583ae3e7976970e6a4b66d63b28612071680b8c5c"
       }
     },
     {
@@ -4513,7 +4563,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "西高東低の気圧配置を示す地図",
       "figure_text_scope": "visually_checked",
@@ -4535,7 +4585,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4547,11 +4599,11 @@
         "accepted_answers": [
           {
             "text": "冬",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "冬季",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4569,7 +4621,7 @@
         "choices": [],
         "a": "冬",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_043.png",
@@ -4596,7 +4648,7 @@
           "answer": 1192.0
         },
         "table": null,
-        "contract": "ccf3f5610238e3f62373e4718ff955c0a4ffa36f0cdefe8600435a1add107557"
+        "contract": "59064f2f796813959ad16ec737efc4bba0637ba9d7dbcbd0e364055544ff7194"
       }
     },
     {
@@ -4644,7 +4696,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4656,11 +4710,11 @@
         "accepted_answers": [
           {
             "text": "太陽の日周運動",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "日周運動",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4678,7 +4732,7 @@
         "choices": [],
         "a": "太陽の日周運動",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_044.png",
@@ -4705,7 +4759,7 @@
           "answer": 1224.0
         },
         "table": null,
-        "contract": "feb7dba4a5b4bac7afbac8e78512e70dd27411d22dc145821a7d9ebc3f77344a"
+        "contract": "b63ce876582afc1ecceb77b0e45dd07f6f7410c029b4838c929604c200655dd5"
       }
     },
     {
@@ -4935,7 +4989,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "太陽・地球・月の配置と月食の画像",
       "figure_text_scope": "visually_checked",
@@ -4957,7 +5011,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4969,7 +5025,7 @@
         "accepted_answers": [
           {
             "text": "月食",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -4986,7 +5042,7 @@
         "choices": [],
         "a": "月食",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_047.png",
@@ -5011,7 +5067,7 @@
           "answer": 1308.0
         },
         "table": null,
-        "contract": "8a2f990ab9fac5dbdc706a987675de03b42ebf34f07eea76132b717c1cb62be1"
+        "contract": "fc2c883e2ad43e38c806f67d70696e018b9aa8a1ee08c184f45929f65b008525"
       }
     },
     {
@@ -5161,7 +5217,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5173,7 +5231,7 @@
         "accepted_answers": [
           {
             "text": "恒星",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -5190,7 +5248,7 @@
         "choices": [],
         "a": "恒星",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_049.png",
@@ -5215,7 +5273,7 @@
           "answer": 1348.0
         },
         "table": null,
-        "contract": "1f00b57b0a830feae1d5cf56d64b15b49842437f4014b2d01d1221e832f0906a"
+        "contract": "5d073f9d1a823e52bdae552ba42749a2b8a8aeca69c5bae178b83a7695ffb9ab"
       }
     },
     {
@@ -5263,7 +5321,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5275,7 +5335,7 @@
         "accepted_answers": [
           {
             "text": "生態系",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -5292,7 +5352,7 @@
         "choices": [],
         "a": "生態系",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_050.png",
@@ -5317,7 +5377,7 @@
           "answer": 1374.0
         },
         "table": null,
-        "contract": "8b195a4868cf17dab475f5441b375746ce42a7ad0c09669b94a104b86dd70f25"
+        "contract": "d30d30d8b229491ecbcec39d187641144e280ffd54f03b832d063d5d72555580"
       }
     },
     {
@@ -5493,7 +5553,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5505,7 +5567,7 @@
         "accepted_answers": [
           {
             "text": "金属",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -5522,7 +5584,7 @@
         "choices": [],
         "a": "金属",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_052.png",
@@ -5547,7 +5609,7 @@
           "answer": 1432.0
         },
         "table": null,
-        "contract": "8fcf28e3f60f6edb5b463367ef3387820e1a1144aa355819adb66b397ef3ca31"
+        "contract": "99004c7da84017abd9979f0b6d65cf4cfd7064dfa3670fc4d04a39ad9a30618b"
       }
     },
     {
@@ -5927,7 +5989,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -5939,7 +6003,7 @@
         "accepted_answers": [
           {
             "text": "飽和",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -5956,7 +6020,7 @@
         "choices": [],
         "a": "飽和",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_056.png",
@@ -5981,7 +6045,7 @@
           "answer": 1546.0
         },
         "table": null,
-        "contract": "9d5082429bc62f07a27d3ccde04c912c2fece4ed29d86675d7ac735c7bf5a6eb"
+        "contract": "24c40bc5b5980a99b4e81f2bb8220bb31621e2747ae6a6c34a9791c92d9f08dc"
       }
     },
     {
@@ -6149,7 +6213,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6161,7 +6227,7 @@
         "accepted_answers": [
           {
             "text": "電解質",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -6178,7 +6244,7 @@
         "choices": [],
         "a": "電解質",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_058.png",
@@ -6203,7 +6269,7 @@
           "answer": 1594.0
         },
         "table": null,
-        "contract": "a6674042dd651497469eeb674e9ef3f8c5b20a70fa9ac37c131e29c3b1b9ba0e"
+        "contract": "00b61b9dc8c2dee457ca9a826fd779f3c8c5fba808a277c1da7e0e78f1e0593a"
       }
     },
     {
@@ -6353,7 +6419,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6365,7 +6433,7 @@
         "accepted_answers": [
           {
             "text": "音を立てて燃える。",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -6382,7 +6450,7 @@
         "choices": [],
         "a": "音を立てて燃える。",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_060.png",
@@ -6407,7 +6475,7 @@
           "answer": 1648.0
         },
         "table": null,
-        "contract": "80a91617c130953c33cea70e3d5301e23a360e2c52076d8b343ecaa04e87e930"
+        "contract": "635b8957c21a7d718b0d81f2048f0ef7db2c2ead86042b6cdca8a0644add98a2"
       }
     },
     {
@@ -6455,7 +6523,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6467,7 +6537,7 @@
         "accepted_answers": [
           {
             "text": "単体",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -6484,7 +6554,7 @@
         "choices": [],
         "a": "単体",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_061.png",
@@ -6509,7 +6579,7 @@
           "answer": 1672.0
         },
         "table": null,
-        "contract": "be12098c3433ec08551d426dc0fa0c908896bc1f2755defadbd0ae9136c81d87"
+        "contract": "8847f947ea6b785243930fad24cfa4350bc0f62bc0a6469b71fcc6dad090abf4"
       }
     },
     {
@@ -6557,7 +6627,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6569,15 +6641,15 @@
         "accepted_answers": [
           {
             "text": "硫化鉄",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "硫化鉄(II)",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "FeS",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -6596,7 +6668,7 @@
         "choices": [],
         "a": "硫化鉄",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_062.png",
@@ -6625,7 +6697,7 @@
           "answer": 1704.0
         },
         "table": null,
-        "contract": "2703e84f9e7f960e6088b1a64f391c4717e33729f367c57fb301f06b15c1ba10"
+        "contract": "432067431308d982619bc820fdec5684f044a94f4199e41a1f542b2d89037ea9"
       }
     },
     {
@@ -6775,7 +6847,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6787,7 +6861,7 @@
         "accepted_answers": [
           {
             "text": "還元",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -6804,7 +6878,7 @@
         "choices": [],
         "a": "還元",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_064.png",
@@ -6829,7 +6903,7 @@
           "answer": 1756.0
         },
         "table": null,
-        "contract": "073be3b99413f5bc05e16a822ded11c878ed5e8f5629619f580c3d1606d23627"
+        "contract": "f46290a147632bf19f244ceecf55ec873583cf3281e645818019cddc315c5388"
       }
     },
     {
@@ -6877,7 +6951,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6889,15 +6965,15 @@
         "accepted_answers": [
           {
             "text": "2CuO+C→2Cu+CO₂",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "2CuO + C → 2Cu + CO2",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "2CuO+C→2Cu+CO2",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -6914,7 +6990,7 @@
         "choices": [],
         "a": "2CuO+C→2Cu+CO₂",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_065.png",
@@ -6941,7 +7017,7 @@
           "answer": 1788.0
         },
         "table": null,
-        "contract": "49f97a149406b6368fa526e2b938013b78b10052d4c22b00ecc14c8059c024aa"
+        "contract": "610e8df097c7f970ddb2ba3df3ab844663c3fddc01eaf579f60306b8c6e4d869"
       }
     },
     {
@@ -6989,7 +7065,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -7001,7 +7079,7 @@
         "accepted_answers": [
           {
             "text": "質量保存の法則",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -7018,7 +7096,7 @@
         "choices": [],
         "a": "質量保存の法則",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_066.png",
@@ -7043,7 +7121,7 @@
           "answer": 1812.0
         },
         "table": null,
-        "contract": "30d6b77d90c569c41615b2c9f6991642f4364aa3e9f83ed8eb3b0470a7067e15"
+        "contract": "03410a7f5cc59544402274eb4bb590eb24e79389dde22cd0f2bff7e6304ea569"
       }
     },
     {
@@ -7173,7 +7251,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "酸性・中性・アルカリ性と指示薬の変化を示す表",
       "figure_text_scope": "visually_checked",
@@ -7195,7 +7273,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -7207,7 +7287,7 @@
         "accepted_answers": [
           {
             "text": "酸性",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -7224,7 +7304,7 @@
         "choices": [],
         "a": "酸性",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_068.png",
@@ -7249,7 +7329,7 @@
           "answer": 1852.0
         },
         "table": null,
-        "contract": "262792ac46a6ac5e46da12e6568e9524902979b77f2b9c78a9ef514950ddf15b"
+        "contract": "eb75b326929a395b0effb8d419807b5dcb490656c1b2713eda1752f5bc7ce906"
       }
     },
     {
@@ -7723,7 +7803,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -7735,7 +7817,7 @@
         "accepted_answers": [
           {
             "text": "燃料電池",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -7752,7 +7834,7 @@
         "choices": [],
         "a": "燃料電池",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_073.png",
@@ -7777,7 +7859,7 @@
           "answer": 1992.0
         },
         "table": null,
-        "contract": "88d8d48dcf7475e74217dab0f1b88db1825e31d7c029cf11ae7de86b51d3adf2"
+        "contract": "6ec7a6cfee2dc591434c5eed68a4017838d734ca9ff701981d3d9cd2f2028dfb"
       }
     },
     {
@@ -7825,7 +7907,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -7837,7 +7921,7 @@
         "accepted_answers": [
           {
             "text": "光源",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -7854,7 +7938,7 @@
         "choices": [],
         "a": "光源",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_074.png",
@@ -7879,7 +7963,7 @@
           "answer": 2016.0
         },
         "table": null,
-        "contract": "f868fc6a384486f6d23e6aec1c7602de94189dd51d490670666ea24ca357d815"
+        "contract": "8df25fdf70ff8e5f2a48518f01d8bde4f07e6d23b871aeb03fb13cc6b2a4a833"
       }
     },
     {
@@ -7905,7 +7989,7 @@
       "answer_type": "term",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "空気・ガラス・水の境界で曲がる光線の図",
       "figure_text_scope": "visually_checked",
@@ -7927,7 +8011,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -7939,11 +8025,11 @@
         "accepted_answers": [
           {
             "text": "光の屈折",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "屈折",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -7961,7 +8047,7 @@
         "choices": [],
         "a": "光の屈折",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_075.png",
@@ -7988,7 +8074,7 @@
           "answer": 2040.0
         },
         "table": null,
-        "contract": "05098c52c8448803647a5ff7fe26dd6a694c9bcb51091557e66193a1abe09cfa"
+        "contract": "92149c7ad0263e5db3d50e79691e949f88accdc7388980ccb016cf43312bc81d"
       }
     },
     {
@@ -8036,7 +8122,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -8048,7 +8136,7 @@
         "accepted_answers": [
           {
             "text": "虚像",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -8065,7 +8153,7 @@
         "choices": [],
         "a": "虚像",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_076.png",
@@ -8090,7 +8178,7 @@
           "answer": 2064.0
         },
         "table": null,
-        "contract": "9859c9b9c37548d3c426a5c7a051a9041c2bd4c81da47fe749339f8db0a462be"
+        "contract": "e18dab831c37351adea39c7d978530b62d35af9140102dbdaf5100b95232fd9c"
       }
     },
     {
@@ -8374,7 +8462,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -8386,7 +8476,7 @@
         "accepted_answers": [
           {
             "text": "オームの法則",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -8403,7 +8493,7 @@
         "choices": [],
         "a": "オームの法則",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_079.png",
@@ -8428,7 +8518,7 @@
           "answer": 2148.0
         },
         "table": null,
-        "contract": "6a51371b30204b6ba324cef812f3a01161f8290b146ebd81cb2eafad3cedfd15"
+        "contract": "33e3b8797516c4d811a24d91d3c0d4861dc83834bcbd89634ae1b409440f0ae4"
       }
     },
     {
@@ -8596,7 +8686,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -8608,7 +8700,7 @@
         "accepted_answers": [
           {
             "text": "導体",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -8625,7 +8717,7 @@
         "choices": [],
         "a": "導体",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_081.png",
@@ -8650,7 +8742,7 @@
           "answer": 2200.0
         },
         "table": null,
-        "contract": "2550abab05cc7350f2134c67b190641efd1fa6254a0abd8c87c2c1b2d2e02b8f"
+        "contract": "01af1d2cb630a6bc7b5564448425c8722084a3c9adff7b2ee103e7fa50ef5c7f"
       }
     },
     {
@@ -8698,7 +8790,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -8710,23 +8804,23 @@
         "accepted_answers": [
           {
             "text": "－極",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "-極",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "マイナス極",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "負極",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "陰極",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -8746,7 +8840,7 @@
         "choices": [],
         "a": "－極",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_082.png",
@@ -8778,14 +8872,14 @@
           "answer": 2224.0
         },
         "table": null,
-        "contract": "80e36e1fae122d00db24fa6ece0334b525af004e29c8ca2c99c4c295ec82fff1"
+        "contract": "dd6ebba817eb1ac62b1d7986c31f6b2e3d623d0e96cbe405c9c26eacb79651ef"
       }
     },
     {
       "lesson_id": "science-exam-core-87-20261026",
       "id": "083",
       "chapter": "science87-physics",
-      "question": "images_85/science-exam-core-87-20261026/question_083.png",
+      "question": "images_85/science-exam-core-87-20261026/question_083.png?v=e28bae6da9738166",
       "answer": "images_85/science-exam-core-87-20261026/answer_083.png",
       "sourceTimes": {
         "question": 2232.0,
@@ -8813,16 +8907,16 @@
       "answer_type": "choice",
       "has_figure": true,
       "requires_image_for_answer": true,
-      "image_requirement_reason": "図中の選択肢・形状・比較表の確認が必要",
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
       "question_text_suffices_for_answer": false,
       "figure_summary": "直線電流と右ねじの法則の図",
       "figure_text_scope": "visually_checked",
       "source_video_url": null,
       "images": {
         "question": {
-          "path": "images_85/science-exam-core-87-20261026/question_083.png",
+          "path": "images_85/science-exam-core-87-20261026/question_083.png?v=e28bae6da9738166",
           "local_path": "images_85/science-exam-core-87-20261026/question_083.png",
-          "sha256": "a34db179df7215dfab3e1bab739446b8c5ae60d97be09d4cf3564821d76acd90"
+          "sha256": "e28bae6da97381661f047d43385c522c5e2ae461156ac708dd96a3c2ec1b41c5"
         },
         "answer": {
           "path": "images_85/science-exam-core-87-20261026/answer_083.png",
@@ -8835,7 +8929,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "欠けた同心円・AとBの候補矢印を復元し逆方向を明示"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -8847,7 +8943,7 @@
         "accepted_answers": [
           {
             "text": "A",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -8876,7 +8972,7 @@
         "mode": "single",
         "parts": [],
         "image": true,
-        "question": "images_85/science-exam-core-87-20261026/question_083.png",
+        "question": "images_85/science-exam-core-87-20261026/question_083.png?v=e28bae6da9738166",
         "answer": "images_85/science-exam-core-87-20261026/answer_083.png",
         "eligible": true,
         "editorial": false,
@@ -8898,7 +8994,7 @@
           "answer": 2260.0
         },
         "table": null,
-        "contract": "8e53fcfa325766ecc230516b4db97c80b9ce6f5324e4cbeb77bf4e6dd985b2d6"
+        "contract": "54c28c6bf95c65738a226add6a075e87a2645d907f6d326a01d91123a8cff332"
       }
     },
     {
@@ -8946,7 +9042,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -8958,7 +9056,7 @@
         "accepted_answers": [
           {
             "text": "誘導電流",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -8975,7 +9073,7 @@
         "choices": [],
         "a": "誘導電流",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_084.png",
@@ -9000,7 +9098,7 @@
           "answer": 2296.0
         },
         "table": null,
-        "contract": "e4e5c5e2056543b9f36cd936602dbf6ae8592d149f3c7e43cc646552d8eecf2e"
+        "contract": "44954b51ec29c24d6835c324029860906a0fa2db5fa26393e535d916f899ba30"
       }
     },
     {
@@ -9150,7 +9248,9 @@
         "unreadable_question_or_primary_answer_text": false,
         "question_answer_pair_matches": true
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "選択肢が空のため入力欄が出ないsingleをtextに修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -9162,7 +9262,7 @@
         "accepted_answers": [
           {
             "text": "浮力",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -9179,7 +9279,7 @@
         "choices": [],
         "a": "浮力",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_086.png",
@@ -9204,7 +9304,7 @@
           "answer": 2356.0
         },
         "table": null,
-        "contract": "f31b494fad272025f262815a6ca16775355da2de014eec32d1c4b9dca0d2a61c"
+        "contract": "b193772db14bec961fd45b27c846d09b9b9ae064f60875798ab33365cd1a5f04"
       }
     },
     {
@@ -9331,7 +9431,7 @@
         "choices": [],
         "a": "被子植物",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_001.png",
@@ -9356,7 +9456,7 @@
           "answer": 29.0
         },
         "table": null,
-        "contract": "97019040e817ce681bb96fa00875f074c7b6a1803917666ece4c98eb051b56a8"
+        "contract": "f4a9753e51c7ac72229fcc54294000d29a769f975f97368cebf2cfa2c00d9ef1"
       },
       {
         "id": "002",
@@ -9405,7 +9505,7 @@
         "choices": [],
         "a": "道管",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_003.png",
@@ -9430,7 +9530,7 @@
           "answer": 84.0
         },
         "table": null,
-        "contract": "9711d6a0bc087c49168c911bfa9a50ddc7697763fba05ab88742f6a0f31a7330"
+        "contract": "a0b527d74918174dfe4af8545cd23999619bd8ccbd7fd2d4c2bf116f4ae77ee0"
       },
       {
         "id": "004",
@@ -9473,7 +9573,7 @@
         "choices": [],
         "a": "胞子",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_005.png",
@@ -9498,7 +9598,7 @@
           "answer": 144.0
         },
         "table": null,
-        "contract": "e93690753aaf351dd76414a4a7b85ef225b3e0e069e1b3f25a0fd96b776334ba"
+        "contract": "bd715f6bc565e08bbe0cb4b425c00e7056788d34eba729ed1d4e6b99a468907d"
       },
       {
         "id": "006",
@@ -9550,7 +9650,7 @@
         "choices": [],
         "a": "節足動物",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_007.png",
@@ -9575,7 +9675,7 @@
           "answer": 193.0
         },
         "table": null,
-        "contract": "37ac363d10e0ea626d03321199e0fb1cfc09fdb008c784df55cf1b7326375fbf"
+        "contract": "cd254120552f0eb83c45946bb0d421efdd1d5da471f069f1049e758c5aff76a3"
       },
       {
         "id": "008",
@@ -9584,7 +9684,7 @@
         "choices": [],
         "a": "軟体動物",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_008.png",
@@ -9609,7 +9709,7 @@
           "answer": 217.0
         },
         "table": null,
-        "contract": "2c60147fbd6a11110ddd9a072ca1f55b1debfbfb09767dcf015b43561d306335"
+        "contract": "88c839437c5b9a8e812ddc0b657ed90c6c0773e26782cbb862d943b33c0343e2"
       },
       {
         "id": "009",
@@ -9669,11 +9769,11 @@
         "choices": [],
         "a": "胎生",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_010.png",
-        "answer": "images_85/science-exam-core-87-20261026/answer_010.png",
+        "answer": "images_85/science-exam-core-87-20261026/answer_010.png?v=0c24f992ba0c58b8",
         "eligible": true,
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
@@ -9694,7 +9794,7 @@
           "answer": 279.0
         },
         "table": null,
-        "contract": "1052a302d4ad147f97c86ef9f58c1cb98ebe6d70b5c53f39c0fbcc68e441a2f1"
+        "contract": "110415ee115cdb67aff6b0a56535892521cbf917a941d725d1b358efa7d71bcc"
       },
       {
         "id": "011",
@@ -9703,7 +9803,7 @@
         "choices": [],
         "a": "組織",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_011.png",
@@ -9728,7 +9828,7 @@
           "answer": 308.0
         },
         "table": null,
-        "contract": "376e9e335b7a4f01c461d2dac25980b342c46f485ac6385f9598097b9d0861a4"
+        "contract": "6cca95dbf9a655d8342abaec7a5512c7e302445a78073c9eed33b221a57da629"
       },
       {
         "id": "012",
@@ -9771,7 +9871,7 @@
         "choices": [],
         "a": "デンプン",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_013.png",
@@ -9800,7 +9900,7 @@
           "answer": 372.0
         },
         "table": null,
-        "contract": "4dcda9086e2e502f510a06aaa95d5b043bccf67270b5be633787bd98f703d2df"
+        "contract": "72533161e73c168ec60a7fd82e0e488f05d47b33523dca46d5d7dc57eac7bfd4"
       },
       {
         "id": "014",
@@ -9843,7 +9943,7 @@
         "choices": [],
         "a": "肝臓",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_015.png",
@@ -9868,7 +9968,7 @@
           "answer": 436.0
         },
         "table": null,
-        "contract": "7a79882ef1f1e1418890b80690629fef259f9f3a5d1cd153014b1361fc515bd8"
+        "contract": "5e5eab207e3beeea40fbc3cd3a070ec27cc299a509e5525d709ca6f86a554586"
       },
       {
         "id": "016",
@@ -9877,7 +9977,7 @@
         "choices": [],
         "a": "尿素",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_016.png",
@@ -9902,7 +10002,7 @@
           "answer": 454.0
         },
         "table": null,
-        "contract": "764eafbdc029f84e10b9709e25c6582b4689838c05f34b6532a498c8def7b206"
+        "contract": "cc84e34c58c9655b81de9b8cd7d8f62e7107b5a31e3c04c226212675129a3476"
       },
       {
         "id": "017",
@@ -9945,7 +10045,7 @@
         "choices": [],
         "a": "肺循環",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_018.png",
@@ -9970,7 +10070,7 @@
           "answer": 508.0
         },
         "table": null,
-        "contract": "bc0c1fe510f3c89bfc92b4f2f5bd066352c82fe745330e6c45ba2766c2a75016"
+        "contract": "52daec8fe9fc7de47b1cf7ea7100a7acfb5a87784036951b286b8383b2801359"
       },
       {
         "id": "019",
@@ -10013,7 +10113,7 @@
         "choices": [],
         "a": "網膜",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_020.png",
@@ -10038,7 +10138,7 @@
           "answer": 564.0
         },
         "table": null,
-        "contract": "1eae5651a07c64445aa9979b9e8adf9d9268837d748f9457471e6b0c5fb2d661"
+        "contract": "7dcfa6290df8e9a74108798cad3c8359523feb19b6cfa219c1436f3816c6bdff"
       },
       {
         "id": "021",
@@ -10047,7 +10147,7 @@
         "choices": [],
         "a": "反射",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_021.png",
@@ -10072,7 +10172,7 @@
           "answer": 592.0
         },
         "table": null,
-        "contract": "788c17949e6063ccaf9c2b8ad2419db165d1beb3240b88fc1351cf5abdff8987"
+        "contract": "21057150f17a7d251873ea296cd812ba3e4691fa9948373ff9f27b3c4c1a1397"
       },
       {
         "id": "022",
@@ -10160,7 +10260,7 @@
         "choices": [],
         "a": "栄養生殖",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_024.png",
@@ -10185,7 +10285,7 @@
           "answer": 660.0
         },
         "table": null,
-        "contract": "845885d7f5dfb8d2be8785f75e3af99a332a0a5c96b1cd87189303db1536e6e5"
+        "contract": "ad2c3e812dd90c5da7d0a58f889fe0f706c47188e24fec1cfa3901f54b568cfe"
       },
       {
         "id": "025",
@@ -10194,7 +10294,7 @@
         "choices": [],
         "a": "顕性形質",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_025.png",
@@ -10221,7 +10321,7 @@
           "answer": 688.0
         },
         "table": null,
-        "contract": "dbdb104e071898027f5e090350618887f182ae95fdb68aa9774071f11c325f27"
+        "contract": "5ce30024f413e2a4be5dc504105b06034abb129baabbdb162e7e930ae707d39f"
       },
       {
         "id": "026",
@@ -10230,7 +10330,7 @@
         "choices": [],
         "a": "相同器官",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_026.png",
@@ -10255,7 +10355,7 @@
           "answer": 712.0
         },
         "table": null,
-        "contract": "fed32e0486d699489a9223a7ece7421ab13265b7fd331d6f6fce7183e44af996"
+        "contract": "0e23f5d311208644028431d81e235cca3d146491e5bcbe691f3c07bbe4c6dcf7"
       },
       {
         "id": "027",
@@ -10298,7 +10398,7 @@
         "choices": [],
         "a": "示相化石",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_028.png",
@@ -10323,7 +10423,7 @@
           "answer": 780.0
         },
         "table": null,
-        "contract": "0a780cb6eabf6731cac63f4ff40f80c3de779eaebbaa1985ec1d89719745062e"
+        "contract": "8b2977e30345729d10d410a63ba677e8932c6e96ee5e54bf25d319a44cb85742"
       },
       {
         "id": "029",
@@ -10366,7 +10466,7 @@
         "choices": [],
         "a": "示準化石",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_030.png",
@@ -10391,7 +10491,7 @@
           "answer": 832.0
         },
         "table": null,
-        "contract": "e292d7f8e4d9d46fee64154e33740fe846698dcb909fea7a10a724182a0cdcb9"
+        "contract": "1e5a36c78c4b18a35bea94e6d9f38cb13685523b784dce8cd19d53d447cfba7d"
       },
       {
         "id": "031",
@@ -10447,7 +10547,7 @@
         "choices": [],
         "a": "二酸化炭素",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_032.png",
@@ -10475,7 +10575,7 @@
           "answer": 900.0
         },
         "table": null,
-        "contract": "8c27d16fe31746728243e1d82a5fc188b563fa7cd2a8033da28d02cd613c6ac0"
+        "contract": "e5676eef3f3509a53fcd92e4221e702a0a030e6b1d6a360b3b36f7e02de068c2"
       },
       {
         "id": "033",
@@ -10484,7 +10584,7 @@
         "choices": [],
         "a": "斑状組織",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_033.png",
@@ -10509,7 +10609,7 @@
           "answer": 936.0
         },
         "table": null,
-        "contract": "e91345858927940c53ecd4eeac8d83b84a82e52c796dcb130cc6527e230d3471"
+        "contract": "603e4230ea9a39d98186033f833d3ca6b28a206268aa45b639b0863dc4658da0"
       },
       {
         "id": "034",
@@ -10552,7 +10652,7 @@
         "choices": [],
         "a": "断層",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_035.png",
@@ -10577,7 +10677,7 @@
           "answer": 984.0
         },
         "table": null,
-        "contract": "8b50ee74a476f2264467f6e09bb01deb37306cd35918fa2a0b32ea67bb9f27c3"
+        "contract": "019822668c2f1fc2d020a5176a3e4cb9b75571961256da9c9c9b223b25281143"
       },
       {
         "id": "036",
@@ -10633,7 +10733,7 @@
         "choices": [],
         "a": "露点",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_037.png",
@@ -10658,7 +10758,7 @@
           "answer": 1032.0
         },
         "table": null,
-        "contract": "c0e3814d229c66d0458dba6ffb90b13193d9522304ca38efc98631c1ad463fe2"
+        "contract": "01f90abb6636c4e6d09b33133816de0224d3d24f3022f790ac900cefd2fd1065"
       },
       {
         "id": "038",
@@ -10701,7 +10801,7 @@
         "choices": [],
         "a": "積乱雲",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_039.png",
@@ -10726,7 +10826,7 @@
           "answer": 1080.0
         },
         "table": null,
-        "contract": "ce6ada8c55291c35e628ede042be0481711debb444c5da6048fdf8bd7b035048"
+        "contract": "f64c54b3a57061723b3b1a00639ac8bf52342db86c0620810b67cb5c52721cd0"
       },
       {
         "id": "040",
@@ -10735,7 +10835,7 @@
         "choices": [],
         "a": "停滞前線",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_040.png",
@@ -10760,7 +10860,7 @@
           "answer": 1120.0
         },
         "table": null,
-        "contract": "1f2a021504d5a20a281b20dfd630d66f21abd5d75bb3c3ce5dd723b6df943ea0"
+        "contract": "17d799dadf3f61c3c7d5f64335524f1a0b9c8a80bd4f81593d37913bfdf1dbc3"
       },
       {
         "id": "041",
@@ -10803,7 +10903,7 @@
         "choices": [],
         "a": "台風",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_042.png",
@@ -10828,7 +10928,7 @@
           "answer": 1172.0
         },
         "table": null,
-        "contract": "fc2611435aa944f5fb02317ea142f763a9e4aec837dbcef992f03e70fe065ad9"
+        "contract": "8337ac01e649d368522a71a583ae3e7976970e6a4b66d63b28612071680b8c5c"
       },
       {
         "id": "043",
@@ -10837,7 +10937,7 @@
         "choices": [],
         "a": "冬",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_043.png",
@@ -10864,7 +10964,7 @@
           "answer": 1192.0
         },
         "table": null,
-        "contract": "ccf3f5610238e3f62373e4718ff955c0a4ffa36f0cdefe8600435a1add107557"
+        "contract": "59064f2f796813959ad16ec737efc4bba0637ba9d7dbcbd0e364055544ff7194"
       },
       {
         "id": "044",
@@ -10873,7 +10973,7 @@
         "choices": [],
         "a": "太陽の日周運動",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_044.png",
@@ -10900,7 +11000,7 @@
           "answer": 1224.0
         },
         "table": null,
-        "contract": "feb7dba4a5b4bac7afbac8e78512e70dd27411d22dc145821a7d9ebc3f77344a"
+        "contract": "b63ce876582afc1ecceb77b0e45dd07f6f7410c029b4838c929604c200655dd5"
       },
       {
         "id": "045",
@@ -10977,7 +11077,7 @@
         "choices": [],
         "a": "月食",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_047.png",
@@ -11002,7 +11102,7 @@
           "answer": 1308.0
         },
         "table": null,
-        "contract": "8a2f990ab9fac5dbdc706a987675de03b42ebf34f07eea76132b717c1cb62be1"
+        "contract": "fc2c883e2ad43e38c806f67d70696e018b9aa8a1ee08c184f45929f65b008525"
       },
       {
         "id": "048",
@@ -11045,7 +11145,7 @@
         "choices": [],
         "a": "恒星",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_049.png",
@@ -11070,7 +11170,7 @@
           "answer": 1348.0
         },
         "table": null,
-        "contract": "1f00b57b0a830feae1d5cf56d64b15b49842437f4014b2d01d1221e832f0906a"
+        "contract": "5d073f9d1a823e52bdae552ba42749a2b8a8aeca69c5bae178b83a7695ffb9ab"
       },
       {
         "id": "050",
@@ -11079,7 +11179,7 @@
         "choices": [],
         "a": "生態系",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_050.png",
@@ -11104,7 +11204,7 @@
           "answer": 1374.0
         },
         "table": null,
-        "contract": "8b195a4868cf17dab475f5441b375746ce42a7ad0c09669b94a104b86dd70f25"
+        "contract": "d30d30d8b229491ecbcec39d187641144e280ffd54f03b832d063d5d72555580"
       },
       {
         "id": "051",
@@ -11160,7 +11260,7 @@
         "choices": [],
         "a": "金属",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_052.png",
@@ -11185,7 +11285,7 @@
           "answer": 1432.0
         },
         "table": null,
-        "contract": "8fcf28e3f60f6edb5b463367ef3387820e1a1144aa355819adb66b397ef3ca31"
+        "contract": "99004c7da84017abd9979f0b6d65cf4cfd7064dfa3670fc4d04a39ad9a30618b"
       },
       {
         "id": "053",
@@ -11309,7 +11409,7 @@
         "choices": [],
         "a": "飽和",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_056.png",
@@ -11334,7 +11434,7 @@
           "answer": 1546.0
         },
         "table": null,
-        "contract": "9d5082429bc62f07a27d3ccde04c912c2fece4ed29d86675d7ac735c7bf5a6eb"
+        "contract": "24c40bc5b5980a99b4e81f2bb8220bb31621e2747ae6a6c34a9791c92d9f08dc"
       },
       {
         "id": "057",
@@ -11386,7 +11486,7 @@
         "choices": [],
         "a": "電解質",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_058.png",
@@ -11411,7 +11511,7 @@
           "answer": 1594.0
         },
         "table": null,
-        "contract": "a6674042dd651497469eeb674e9ef3f8c5b20a70fa9ac37c131e29c3b1b9ba0e"
+        "contract": "00b61b9dc8c2dee457ca9a826fd779f3c8c5fba808a277c1da7e0e78f1e0593a"
       },
       {
         "id": "059",
@@ -11454,7 +11554,7 @@
         "choices": [],
         "a": "音を立てて燃える。",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_060.png",
@@ -11479,7 +11579,7 @@
           "answer": 1648.0
         },
         "table": null,
-        "contract": "80a91617c130953c33cea70e3d5301e23a360e2c52076d8b343ecaa04e87e930"
+        "contract": "635b8957c21a7d718b0d81f2048f0ef7db2c2ead86042b6cdca8a0644add98a2"
       },
       {
         "id": "061",
@@ -11488,7 +11588,7 @@
         "choices": [],
         "a": "単体",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_061.png",
@@ -11513,7 +11613,7 @@
           "answer": 1672.0
         },
         "table": null,
-        "contract": "be12098c3433ec08551d426dc0fa0c908896bc1f2755defadbd0ae9136c81d87"
+        "contract": "8847f947ea6b785243930fad24cfa4350bc0f62bc0a6469b71fcc6dad090abf4"
       },
       {
         "id": "062",
@@ -11522,7 +11622,7 @@
         "choices": [],
         "a": "硫化鉄",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_062.png",
@@ -11551,7 +11651,7 @@
           "answer": 1704.0
         },
         "table": null,
-        "contract": "2703e84f9e7f960e6088b1a64f391c4717e33729f367c57fb301f06b15c1ba10"
+        "contract": "432067431308d982619bc820fdec5684f044a94f4199e41a1f542b2d89037ea9"
       },
       {
         "id": "063",
@@ -11594,7 +11694,7 @@
         "choices": [],
         "a": "還元",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_064.png",
@@ -11619,7 +11719,7 @@
           "answer": 1756.0
         },
         "table": null,
-        "contract": "073be3b99413f5bc05e16a822ded11c878ed5e8f5629619f580c3d1606d23627"
+        "contract": "f46290a147632bf19f244ceecf55ec873583cf3281e645818019cddc315c5388"
       },
       {
         "id": "065",
@@ -11628,7 +11728,7 @@
         "choices": [],
         "a": "2CuO+C→2Cu+CO₂",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_065.png",
@@ -11655,7 +11755,7 @@
           "answer": 1788.0
         },
         "table": null,
-        "contract": "49f97a149406b6368fa526e2b938013b78b10052d4c22b00ecc14c8059c024aa"
+        "contract": "610e8df097c7f970ddb2ba3df3ab844663c3fddc01eaf579f60306b8c6e4d869"
       },
       {
         "id": "066",
@@ -11664,7 +11764,7 @@
         "choices": [],
         "a": "質量保存の法則",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_066.png",
@@ -11689,7 +11789,7 @@
           "answer": 1812.0
         },
         "table": null,
-        "contract": "30d6b77d90c569c41615b2c9f6991642f4364aa3e9f83ed8eb3b0470a7067e15"
+        "contract": "03410a7f5cc59544402274eb4bb590eb24e79389dde22cd0f2bff7e6304ea569"
       },
       {
         "id": "067",
@@ -11732,7 +11832,7 @@
         "choices": [],
         "a": "酸性",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_068.png",
@@ -11757,7 +11857,7 @@
           "answer": 1852.0
         },
         "table": null,
-        "contract": "262792ac46a6ac5e46da12e6568e9524902979b77f2b9c78a9ef514950ddf15b"
+        "contract": "eb75b326929a395b0effb8d419807b5dcb490656c1b2713eda1752f5bc7ce906"
       },
       {
         "id": "069",
@@ -11911,7 +12011,7 @@
         "choices": [],
         "a": "燃料電池",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_073.png",
@@ -11936,7 +12036,7 @@
           "answer": 1992.0
         },
         "table": null,
-        "contract": "88d8d48dcf7475e74217dab0f1b88db1825e31d7c029cf11ae7de86b51d3adf2"
+        "contract": "6ec7a6cfee2dc591434c5eed68a4017838d734ca9ff701981d3d9cd2f2028dfb"
       },
       {
         "id": "074",
@@ -11945,7 +12045,7 @@
         "choices": [],
         "a": "光源",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_074.png",
@@ -11970,7 +12070,7 @@
           "answer": 2016.0
         },
         "table": null,
-        "contract": "f868fc6a384486f6d23e6aec1c7602de94189dd51d490670666ea24ca357d815"
+        "contract": "8df25fdf70ff8e5f2a48518f01d8bde4f07e6d23b871aeb03fb13cc6b2a4a833"
       },
       {
         "id": "075",
@@ -11979,7 +12079,7 @@
         "choices": [],
         "a": "光の屈折",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": true,
         "question": "images_85/science-exam-core-87-20261026/question_075.png",
@@ -12006,7 +12106,7 @@
           "answer": 2040.0
         },
         "table": null,
-        "contract": "05098c52c8448803647a5ff7fe26dd6a694c9bcb51091557e66193a1abe09cfa"
+        "contract": "92149c7ad0263e5db3d50e79691e949f88accdc7388980ccb016cf43312bc81d"
       },
       {
         "id": "076",
@@ -12015,7 +12115,7 @@
         "choices": [],
         "a": "虚像",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_076.png",
@@ -12040,7 +12140,7 @@
           "answer": 2064.0
         },
         "table": null,
-        "contract": "9859c9b9c37548d3c426a5c7a051a9041c2bd4c81da47fe749339f8db0a462be"
+        "contract": "e18dab831c37351adea39c7d978530b62d35af9140102dbdaf5100b95232fd9c"
       },
       {
         "id": "077",
@@ -12130,7 +12230,7 @@
         "choices": [],
         "a": "オームの法則",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_079.png",
@@ -12155,7 +12255,7 @@
           "answer": 2148.0
         },
         "table": null,
-        "contract": "6a51371b30204b6ba324cef812f3a01161f8290b146ebd81cb2eafad3cedfd15"
+        "contract": "33e3b8797516c4d811a24d91d3c0d4861dc83834bcbd89634ae1b409440f0ae4"
       },
       {
         "id": "080",
@@ -12207,7 +12307,7 @@
         "choices": [],
         "a": "導体",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_081.png",
@@ -12232,7 +12332,7 @@
           "answer": 2200.0
         },
         "table": null,
-        "contract": "2550abab05cc7350f2134c67b190641efd1fa6254a0abd8c87c2c1b2d2e02b8f"
+        "contract": "01af1d2cb630a6bc7b5564448425c8722084a3c9adff7b2ee103e7fa50ef5c7f"
       },
       {
         "id": "082",
@@ -12241,7 +12341,7 @@
         "choices": [],
         "a": "－極",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_082.png",
@@ -12273,7 +12373,7 @@
           "answer": 2224.0
         },
         "table": null,
-        "contract": "80e36e1fae122d00db24fa6ece0334b525af004e29c8ca2c99c4c295ec82fff1"
+        "contract": "dd6ebba817eb1ac62b1d7986c31f6b2e3d623d0e96cbe405c9c26eacb79651ef"
       },
       {
         "id": "083",
@@ -12294,7 +12394,7 @@
         "mode": "single",
         "parts": [],
         "image": true,
-        "question": "images_85/science-exam-core-87-20261026/question_083.png",
+        "question": "images_85/science-exam-core-87-20261026/question_083.png?v=e28bae6da9738166",
         "answer": "images_85/science-exam-core-87-20261026/answer_083.png",
         "eligible": true,
         "editorial": false,
@@ -12316,7 +12416,7 @@
           "answer": 2260.0
         },
         "table": null,
-        "contract": "8e53fcfa325766ecc230516b4db97c80b9ce6f5324e4cbeb77bf4e6dd985b2d6"
+        "contract": "54c28c6bf95c65738a226add6a075e87a2645d907f6d326a01d91123a8cff332"
       },
       {
         "id": "084",
@@ -12325,7 +12425,7 @@
         "choices": [],
         "a": "誘導電流",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_084.png",
@@ -12350,7 +12450,7 @@
           "answer": 2296.0
         },
         "table": null,
-        "contract": "e4e5c5e2056543b9f36cd936602dbf6ae8592d149f3c7e43cc646552d8eecf2e"
+        "contract": "44954b51ec29c24d6835c324029860906a0fa2db5fa26393e535d916f899ba30"
       },
       {
         "id": "085",
@@ -12393,7 +12493,7 @@
         "choices": [],
         "a": "浮力",
         "type": "term",
-        "mode": "single",
+        "mode": "text",
         "parts": [],
         "image": false,
         "question": "images_85/science-exam-core-87-20261026/question_086.png",
@@ -12418,7 +12518,7 @@
           "answer": 2356.0
         },
         "table": null,
-        "contract": "f31b494fad272025f262815a6ca16775355da2de014eec32d1c4b9dca0d2a61c"
+        "contract": "b193772db14bec961fd45b27c846d09b9b9ae064f60875798ab33365cd1a5f04"
       },
       {
         "id": "087",

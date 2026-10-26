@@ -9,7 +9,7 @@
     "proposed_aliases_enabled": false,
     "unicode_minus_to_ASCII_minus": true
   },
-  "dataset_status": "integrated_20261026",
+  "dataset_status": "qa_reviewed_20261026",
   "lesson_id": "social-history-highschool-entrance-103-20261026",
   "title": "高校入試 過去問｜歴史 一問一答②",
   "subject": "social",
@@ -2195,7 +2195,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 25
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "解答画像の別解・出題に合う正答を採点設定に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -2207,11 +2209,16 @@
         "accepted_answers": [
           {
             "text": "御恩",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "恩",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "御恩"
+          "御恩",
+          "恩"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -2233,10 +2240,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "御恩"
+          "御恩",
+          "恩"
         ],
         "normalized": [
-          "御恩"
+          "御恩",
+          "恩"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -2249,7 +2258,7 @@
           "answer": 655.5
         },
         "table": null,
-        "contract": "328bbaaaf444dc912e042f9af3baf5bd6aa11e4f8a1871a717014ac649b5ae78"
+        "contract": "2a54aa20f3c5fc51c4469fa6280dc2e3eac381b06498d00ed8aa97d100c25e5a"
       }
     },
     {
@@ -4303,7 +4312,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 45
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "解答画像の別解・出題に合う正答を採点設定に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -4315,11 +4326,16 @@
         "accepted_answers": [
           {
             "text": "冷戦",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "冷たい戦争",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "冷戦"
+          "冷戦",
+          "冷たい戦争"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -4341,10 +4357,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "冷戦"
+          "冷戦",
+          "冷たい戦争"
         ],
         "normalized": [
-          "冷戦"
+          "冷戦",
+          "冷たい戦争"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -4357,7 +4375,7 @@
           "answer": 1264.5
         },
         "table": null,
-        "contract": "7bdabbe4cbeaaf720eea7c8afaa12aa09c7812a89168813d589dcf35db169646"
+        "contract": "3b4ac180cd76111aae81c6ff622269f614389169d01f18d7cfa7142cd3a0517c"
       }
     },
     {
@@ -6501,7 +6519,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 68
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "解答画像の別解・出題に合う正答を採点設定に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6513,11 +6533,16 @@
         "accepted_answers": [
           {
             "text": "御成敗式目",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "貞永式目",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "御成敗式目"
+          "御成敗式目",
+          "貞永式目"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -6539,10 +6564,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "御成敗式目"
+          "御成敗式目",
+          "貞永式目"
         ],
         "normalized": [
-          "御成敗式目"
+          "御成敗式目",
+          "貞永式目"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -6555,7 +6582,7 @@
           "answer": 1924.5
         },
         "table": null,
-        "contract": "6d4660633c423cf20c1478eab80333eb64820f3cb6200c38224087ed622fd2f9"
+        "contract": "9a62516f1d0918bf394546201b569f7087413061556078e5ba5d0ac9e9eb63ce"
       }
     },
     {
@@ -6917,7 +6944,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 72
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "解答画像の別解・出題に合う正答を採点設定に追加"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -6929,11 +6958,16 @@
         "accepted_answers": [
           {
             "text": "永仁の徳政令",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
+          },
+          {
+            "text": "徳政令",
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
-          "永仁の徳政令"
+          "永仁の徳政令",
+          "徳政令"
         ],
         "proposed_aliases_not_enabled": [],
         "substring_match": false,
@@ -6955,10 +6989,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "永仁の徳政令"
+          "永仁の徳政令",
+          "徳政令"
         ],
         "normalized": [
-          "永仁の徳政令"
+          "永仁の徳政令",
+          "徳政令"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -6971,7 +7007,7 @@
           "answer": 2068.5
         },
         "table": null,
-        "contract": "a361c777ece85a3dba0ceca6ec829cb89d12dcb50b4da21bdfbfa29db2dd2dde"
+        "contract": "b40269c0bce12d161b5d9e5f9c4463848103a952ca9093427c1a4d0356e62478"
       }
     },
     {
@@ -7729,9 +7765,9 @@
       "choices_origin": null,
       "answer_type": "labeled_multi_blank",
       "has_figure": true,
-      "requires_image_for_answer": false,
-      "image_requirement_reason": "",
-      "question_text_suffices_for_answer": true,
+      "requires_image_for_answer": true,
+      "image_requirement_reason": "設問・図のラベル・空欄を判断するため問題画像を表示する",
+      "question_text_suffices_for_answer": false,
       "figure_summary": "日露戦争後の国内外の動向を説明する2欄の問題",
       "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
       "source_video_url": null,
@@ -7753,7 +7789,9 @@
         "question_answer_pair_matches": true,
         "original_slide_number": 80
       },
-      "content_review_notes": [],
+      "content_review_notes": [
+        "問題画像が必要な設問の表示指定を修正"
+      ],
       "advisory_notes": [],
       "explanation_review_notes": [],
       "grading": {
@@ -7761,15 +7799,15 @@
         "auto_grade_eligible": true,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
-        "required_display": "question_text",
+        "required_display": "question_image_and_text",
         "accepted_answers": [
           {
             "text": "（う）孫文／（え）ポーツマス条約",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           },
           {
             "text": "孫文／ポーツマス条約",
-            "basis": "integrated_runtime_verified_answer"
+            "basis": "source_image_and_question_review_20261026"
           }
         ],
         "accepted_normalized_values": [
@@ -7804,7 +7842,7 @@
             "norm": []
           }
         ],
-        "image": false,
+        "image": true,
         "question": "images_61/social-history-highschool-entrance-103-20261026/question_074.png",
         "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_074.png",
         "eligible": true,
@@ -7829,7 +7867,7 @@
           "answer": 2374.5
         },
         "table": null,
-        "contract": "fb5aa9eaf40e0a1a33ad0c824de7a4653f05f6224db0e3273991dcde6452a243"
+        "contract": "76484c3b5cbe02099f9af9ce8b5ba02238264ce71e485399c248c051fe895ff9"
       }
     },
     {
@@ -11576,10 +11614,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "御恩"
+          "御恩",
+          "恩"
         ],
         "normalized": [
-          "御恩"
+          "御恩",
+          "恩"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -11592,7 +11632,7 @@
           "answer": 655.5
         },
         "table": null,
-        "contract": "328bbaaaf444dc912e042f9af3baf5bd6aa11e4f8a1871a717014ac649b5ae78"
+        "contract": "2a54aa20f3c5fc51c4469fa6280dc2e3eac381b06498d00ed8aa97d100c25e5a"
       },
       {
         "id": "022",
@@ -12264,10 +12304,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "冷戦"
+          "冷戦",
+          "冷たい戦争"
         ],
         "normalized": [
-          "冷戦"
+          "冷戦",
+          "冷たい戦争"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -12280,7 +12322,7 @@
           "answer": 1264.5
         },
         "table": null,
-        "contract": "7bdabbe4cbeaaf720eea7c8afaa12aa09c7812a89168813d589dcf35db169646"
+        "contract": "3b4ac180cd76111aae81c6ff622269f614389169d01f18d7cfa7142cd3a0517c"
       },
       {
         "id": "042",
@@ -12982,10 +13024,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "御成敗式目"
+          "御成敗式目",
+          "貞永式目"
         ],
         "normalized": [
-          "御成敗式目"
+          "御成敗式目",
+          "貞永式目"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -12998,7 +13042,7 @@
           "answer": 1924.5
         },
         "table": null,
-        "contract": "6d4660633c423cf20c1478eab80333eb64820f3cb6200c38224087ed622fd2f9"
+        "contract": "9a62516f1d0918bf394546201b569f7087413061556078e5ba5d0ac9e9eb63ce"
       },
       {
         "id": "063",
@@ -13118,10 +13162,12 @@
         "editorial": false,
         "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
         "accepted": [
-          "永仁の徳政令"
+          "永仁の徳政令",
+          "徳政令"
         ],
         "normalized": [
-          "永仁の徳政令"
+          "永仁の徳政令",
+          "徳政令"
         ],
         "labels": [],
         "orderSensitive": false,
@@ -13134,7 +13180,7 @@
           "answer": 2068.5
         },
         "table": null,
-        "contract": "a361c777ece85a3dba0ceca6ec829cb89d12dcb50b4da21bdfbfa29db2dd2dde"
+        "contract": "b40269c0bce12d161b5d9e5f9c4463848103a952ca9093427c1a4d0356e62478"
       },
       {
         "id": "067",
@@ -13400,7 +13446,7 @@
             "norm": []
           }
         ],
-        "image": false,
+        "image": true,
         "question": "images_61/social-history-highschool-entrance-103-20261026/question_074.png",
         "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_074.png",
         "eligible": true,
@@ -13425,7 +13471,7 @@
           "answer": 2374.5
         },
         "table": null,
-        "contract": "fb5aa9eaf40e0a1a33ad0c824de7a4653f05f6224db0e3273991dcde6452a243"
+        "contract": "76484c3b5cbe02099f9af9ce8b5ba02238264ce71e485399c248c051fe895ff9"
       },
       {
         "id": "075",

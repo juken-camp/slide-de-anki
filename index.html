@@ -5280,7 +5280,7 @@ $('showTestShot').onclick=()=>toggleHomeworkCapture(true);
 window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();});
 
 // Additive assessment data: existing lesson files, IDs and progress are untouched.
-const assessmentDataURL='nekopon-data/assessment-06ce35ab7c44.json';
+const assessmentDataURL='nekopon-data/assessment-06ce35ab7c44.json?v=images35-text-20261026';
 const assessmentCore=window.NekoAssessmentCore;
 let assessmentDataset=null,assessmentPromise=null,assessmentError='',assessmentSearchCache=new Map();
 let typedReviewLimit=20,typedReviewPendingOnly=false,typedRenderingKey='',typedLaunching=false;
@@ -5314,7 +5314,7 @@ async function ensureAssessmentData(){
    if(cards.length!==5147||cards.filter(c=>c.eligible).length!==5136||cards.filter(c=>c.editorial).length!==86)throw Error('coverage');
    for(const l of Object.values(value.lessons)){
     if(new Set(l.cards.map(c=>c.id)).size!==l.cards.length)throw Error('duplicate');
-    for(const c of l.cards)if(typeof c.q!=='string'||typeof c.contract!=='string'||!Array.isArray(c.accepted)||c.editorial&&c.image)throw Error('record');
+    for(const c of l.cards)if(typeof c.q!=='string'||typeof c.contract!=='string'||!Array.isArray(c.accepted))throw Error('record');
    }
    assessmentDataset=value;assessmentSearchCache.clear();return value;
   }catch(error){

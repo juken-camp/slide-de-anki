@@ -3127,6 +3127,9 @@ html[data-persona=cyber] body #app #testScreen .neko-chat-scroll :is(.neko-conve
 html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)::after{content:none!important}
 html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)::before{content:"";position:absolute;left:-7px;top:-1px;width:calc(100% + 14px);height:calc(100% + 2px);z-index:-1;pointer-events:none;background-image:var(--chat-bubble-shape);background-repeat:no-repeat;background-size:100% 100%;border:0!important;border-radius:0!important;transform:none!important}
 </style>
+<style id="chat-question-vertical-center-20261027">
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble){display:flex!important;align-items:center!important;justify-content:flex-start;box-sizing:border-box;padding-top:8px!important;padding-bottom:8px!important}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -7073,9 +7076,9 @@ $('importForm').onsubmit=async e=>{
 (()=>{
  const selector='#testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)';
  function shapePath(w,h){
-  const x=6.5,right=w+5.5,top=.5,bottom=h-.5,r=Math.min((h-1)/2,23.5),tip=w+11;
+  const x=6.5,right=w+5.5,top=.5,bottom=h-.5,r=Math.min((h-1)/2,23.5),tailR=23.5,tip=w+11;
   // Tail grows out of the top corner, pointing upward, like the reference.
-  return `M${x+r} ${top} H${right-r} C${right-r*.72} ${top} ${right-r*.5} ${top+1} ${right-9} ${top+4} C${right-4} ${top+5} ${right+1} ${top+3} ${tip} ${top+.5} C${tip-.6} ${top+5} ${right+3} ${top+9} ${right-1} ${top+12} C${right} ${top+15} ${right} ${top+r-3} ${right} ${top+r} V${bottom-r} A${r} ${r} 0 0 1 ${right-r} ${bottom} H${x+r} A${r} ${r} 0 0 1 ${x} ${bottom-r} V${top+r} A${r} ${r} 0 0 1 ${x+r} ${top} Z`;
+  return `M${x+r} ${top} H${right-tailR} C${right-tailR*.72} ${top} ${right-tailR*.5} ${top+1} ${right-9} ${top+4} C${right-4} ${top+5} ${right+1} ${top+3} ${tip} ${top+.5} C${tip-.6} ${top+5} ${right+3} ${top+9} ${right-1} ${top+12} C${right} ${top+15} ${right} ${top+17} ${right} ${top+18} V${bottom-r} A${r} ${r} 0 0 1 ${right-r} ${bottom} H${x+r} A${r} ${r} 0 0 1 ${x} ${bottom-r} V${top+r} A${r} ${r} 0 0 1 ${x+r} ${top} Z`;
  }
  function paint(el){
   const w=el.offsetWidth,h=el.offsetHeight;if(w<10||h<24)return;

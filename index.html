@@ -5280,7 +5280,7 @@ $('showTestShot').onclick=()=>toggleHomeworkCapture(true);
 window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();});
 
 // Additive assessment data: existing lesson files, IDs and progress are untouched.
-const assessmentDataURL='nekopon-data/assessment-06ce35ab7c44.json?v=images35-text-20261026';
+const assessmentDataURL='nekopon-data/assessment-06ce35ab7c44.json?v=source-label-cleanup-20261026';
 const assessmentCore=window.NekoAssessmentCore;
 let assessmentDataset=null,assessmentPromise=null,assessmentError='',assessmentSearchCache=new Map();
 let typedReviewLimit=20,typedReviewPendingOnly=false,typedRenderingKey='',typedLaunching=false;

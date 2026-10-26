@@ -3223,5 +3223,494 @@ window.QUIZ_CATALOG = [
     "series": "themes",
     "count": 22,
     "data": "lessons/japanese-literature-famous-authors-22.json"
+  },
+  {
+    "id": "social-history-year-chronology-93-20261026",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史の年号｜日本史・世界史",
+    "grade": "中学歴史",
+    "description": "日本史・世界史の重要な出来事と西暦年号を年代順に覚える93問。",
+    "cover": "images_2026102693/social-history-year-chronology-93-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "ancient",
+        "title": "古代（57〜794年）"
+      },
+      {
+        "id": "medieval",
+        "title": "平安・鎌倉・室町時代（935〜1467年）"
+      },
+      {
+        "id": "sengoku",
+        "title": "戦国・安土桃山・江戸初期（1492〜1637年）"
+      },
+      {
+        "id": "earlymodern",
+        "title": "江戸時代と幕末（1688〜1866年）"
+      },
+      {
+        "id": "modern",
+        "title": "明治・大正（1867〜1923年）"
+      },
+      {
+        "id": "contemporary",
+        "title": "昭和・平成（1925〜2011年）"
+      }
+    ],
+    "source": "",
+    "series": "themes",
+    "count": 93,
+    "data": "lessons/social-history-year-chronology-93-20261026.json"
+  },
+  {
+    "id": "social-history-entrance-107-20261026",
+    "subject": "social",
+    "field": "history",
+    "title": "高校入試 過去問｜歴史 一問一答①",
+    "grade": "中学歴史",
+    "description": "元動画表題108語。映像中の独立した問題107問を収録。応仁の乱からアイヌ民族までの歴史総合。",
+    "cover": "images_20261026107/social-history-entrance-107-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "mixed",
+        "title": "日本史・世界史 総合107問"
+      }
+    ],
+    "source": "",
+    "series": "past",
+    "count": 107,
+    "data": "lessons/social-history-entrance-107-20261026.json"
+  },
+  {
+    "id": "social-history-era-years-236-20261025",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史の時代・時期｜日本史・世界史",
+    "grade": "中学歴史",
+    "description": "日本史・世界史の236の出来事について、起きた時代・時期を覚える問題集。年号語呂合わせ・年代表つき。",
+    "cover": "images_11/social-history-era-years-236-20261025/question_001.png",
+    "chapters": [
+      {
+        "id": "era-years-001-060",
+        "title": "時代・時期①（1〜60問）"
+      },
+      {
+        "id": "era-years-061-120",
+        "title": "時代・時期②（61〜120問）"
+      },
+      {
+        "id": "era-years-121-180",
+        "title": "時代・時期③（121〜180問）"
+      },
+      {
+        "id": "era-years-181-236",
+        "title": "時代・時期④（181〜236問）"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=YtGMp5Oh9jc",
+    "series": "themes",
+    "count": 236,
+    "data": "lessons/social-history-era-years-236-20261025.json"
+  },
+  {
+    "id": "science-jhs1-confusable-qa-27-20261025",
+    "subject": "science",
+    "field": "general",
+    "title": "中1理科の間違えやすい問題",
+    "grade": "中1理科",
+    "description": "中1理科の植物・物質・光と音と力・大地の変化から、似た用語を比較する図解二択27問。元動画内で確認できる独立した問題数に合わせて収録。",
+    "cover": "images_82/science-jhs1-confusable-qa-27-20261025/question_001.png",
+    "chapters": [
+      {
+        "id": "jhs1-confusable-plants",
+        "title": "植物"
+      },
+      {
+        "id": "jhs1-confusable-materials",
+        "title": "物質"
+      },
+      {
+        "id": "jhs1-confusable-physics",
+        "title": "光・音・力"
+      },
+      {
+        "id": "jhs1-confusable-earth",
+        "title": "火山・地震・地層"
+      }
+    ],
+    "source": null,
+    "series": "themes",
+    "count": 27,
+    "data": "lessons/science-jhs1-confusable-qa-27-20261025.json"
+  },
+  {
+    "id": "social-history-tokugawa-shoguns-15",
+    "subject": "social",
+    "field": "history",
+    "title": "江戸幕府の15代将軍｜徳川家康〜徳川慶喜",
+    "grade": "中学歴史",
+    "description": "初代・徳川家康から15代・徳川慶喜まで。家系図と肖像画で各将軍の特徴を学ぶ15問。",
+    "cover": "images_58/social-history-tokugawa-shoguns-15/question_001.png",
+    "chapters": [
+      {
+        "id": "tokugawa-shoguns",
+        "title": "江戸幕府・徳川15代将軍"
+      }
+    ],
+    "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+    "series": "themes",
+    "count": 15,
+    "data": "lessons/social-history-tokugawa-shoguns-15.json"
+  },
+  {
+    "id": "social-civics-past-exam-91",
+    "subject": "social",
+    "field": "civics",
+    "title": "高校入試 過去問｜公民 一問一答②",
+    "grade": "中学公民",
+    "description": "公立高校入試の過去問に登場した政治・経済・国際社会の重要語句。元動画の設問画面91枚を教材化（スライド番号8・9・16・17・88は動画内に存在しない）。",
+    "cover": "images_59/social-civics-past-exam-91/question_001.png",
+    "chapters": [
+      {
+        "id": "social-civics-entrance-exam",
+        "title": "公民・高校入試過去問"
+      }
+    ],
+    "source": null,
+    "series": "past",
+    "count": 91,
+    "data": "lessons/social-civics-past-exam-91.json"
+  },
+  {
+    "id": "social-geography-highschool-entrance-83-20261026",
+    "subject": "social",
+    "field": "geography",
+    "title": "高校入試 過去問｜地理 一問一答②",
+    "grade": "中学地理",
+    "description": "公立高校入試の地理一問一答83問。動画のスライド原番号1〜87（11・19・20・21欠番）を実在する83問に整理。",
+    "cover": "images_60/social-geography-highschool-entrance-83-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "social-geography-past-exam",
+        "title": "地理・高校入試過去問"
+      }
+    ],
+    "source": null,
+    "series": "past",
+    "count": 83,
+    "data": "lessons/social-geography-highschool-entrance-83-20261026.json"
+  },
+  {
+    "id": "social-history-highschool-entrance-103-20261026",
+    "subject": "social",
+    "field": "history",
+    "title": "高校入試 過去問｜歴史 一問一答②",
+    "grade": "中学歴史",
+    "description": "公立高校入試の歴史一問一答103問。動画の元スライド1〜109（11・12・20・21・66・67欠番）を実在する103問に採番し直した教材。",
+    "cover": "images_61/social-history-highschool-entrance-103-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "social-history-past-exam",
+        "title": "歴史・高校入試過去問"
+      }
+    ],
+    "source": null,
+    "series": "past",
+    "count": 103,
+    "data": "lessons/social-history-highschool-entrance-103-20261026.json"
+  },
+  {
+    "id": "social-geography-past-exam-78terms-77questions-20261026",
+    "subject": "social",
+    "field": "geography",
+    "title": "高校入試 過去問｜地理 一問一答①",
+    "grade": "中3社会・高校入試",
+    "description": "世界地理・日本地理の高校入試用語を77問・78解答欄で確認。地図・表・写真付き問題を収録。",
+    "cover": "images_87/social-geography-past-exam-78terms-77questions-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "geography-exam-2026",
+        "title": "地理総合（全77問・78解答欄）"
+      }
+    ],
+    "source": null,
+    "series": "past",
+    "count": 77,
+    "data": "lessons/social-geography-past-exam-78terms-77questions-20261026.json"
+  },
+  {
+    "id": "social-civics-international-abbrev-45-20261026",
+    "subject": "social",
+    "field": "civics",
+    "title": "国際略語｜地域主義・国連・国際社会",
+    "grade": "中3社会・高校入試",
+    "description": "GATT・WTO・ASEANから国連機関、SDGs・EEZ・IOCまで。略語を45問で確認。旧制度は注記付き。",
+    "cover": "images_86/social-civics-international-abbrev-45-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "intl45-trade-regions",
+        "title": "地域主義・貿易・経済連携（1～22問）"
+      },
+      {
+        "id": "intl45-un-institutions",
+        "title": "国際連合・国際機関（23～34問）"
+      },
+      {
+        "id": "intl45-other",
+        "title": "国際社会・環境・その他（35～45問）"
+      }
+    ],
+    "source": null,
+    "series": "themes",
+    "count": 45,
+    "data": "lessons/social-civics-international-abbrev-45-20261026.json"
+  },
+  {
+    "id": "science-jhs2-confusable-qa-54-20261025",
+    "subject": "science",
+    "field": "general",
+    "title": "中2理科の間違えやすい問題",
+    "grade": "中2理科",
+    "description": "中2理科の化学変化、動植物、電流、天気の間違えやすい似た用語を比較。動画の独立した問答54問を収録。",
+    "cover": "images_83/science-jhs2-confusable-qa-54-20261025/question_001.png",
+    "chapters": [
+      {
+        "id": "jhs2-confusable-chemical-reactions",
+        "title": "化学変化と原子・分子"
+      },
+      {
+        "id": "jhs2-confusable-organisms",
+        "title": "動物と生物"
+      },
+      {
+        "id": "jhs2-confusable-electricity",
+        "title": "電流とその利用"
+      },
+      {
+        "id": "jhs2-confusable-weather",
+        "title": "大気と天気の変化"
+      }
+    ],
+    "source": null,
+    "series": "themes",
+    "count": 54,
+    "data": "lessons/science-jhs2-confusable-qa-54-20261025.json"
+  },
+  {
+    "id": "science-jhs3-confusable-qa-70-20261026",
+    "subject": "science",
+    "field": "general",
+    "title": "中3理科の間違えやすい問題",
+    "grade": "中3理科",
+    "description": "中3理科の運動とエネルギー、生命、自然界、イオン、地球と宇宙、自然と人間を収録した図解一問一答70問。",
+    "cover": "images_84/science-jhs3-confusable-qa-70-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "jhs3-confusable-motion-energy",
+        "title": "運動とエネルギー"
+      },
+      {
+        "id": "jhs3-confusable-life",
+        "title": "生命のつながり"
+      },
+      {
+        "id": "jhs3-confusable-ecosystem",
+        "title": "自然界のつながり"
+      },
+      {
+        "id": "jhs3-confusable-ions",
+        "title": "化学変化とイオン"
+      },
+      {
+        "id": "jhs3-confusable-earth-space",
+        "title": "地球と宇宙"
+      },
+      {
+        "id": "jhs3-confusable-nature-humans",
+        "title": "自然と人間"
+      }
+    ],
+    "source": null,
+    "series": "themes",
+    "count": 70,
+    "data": "lessons/science-jhs3-confusable-qa-70-20261026.json"
+  },
+  {
+    "id": "science-exam-core-87-20261026",
+    "subject": "science",
+    "field": "general",
+    "title": "高校入試 頻出問題｜理科の基本",
+    "grade": "中学理科・高校入試",
+    "description": "高校入試の基本87問。生物・地学・化学・物理の図解付き一問一答。",
+    "cover": "images_85/science-exam-core-87-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "science87-biology",
+        "title": "生物（1～27問）"
+      },
+      {
+        "id": "science87-geoscience",
+        "title": "地学（28～50問）"
+      },
+      {
+        "id": "science87-chemistry",
+        "title": "化学（51～73問）"
+      },
+      {
+        "id": "science87-physics",
+        "title": "物理（74～87問）"
+      }
+    ],
+    "source": null,
+    "series": "frequent",
+    "count": 87,
+    "data": "lessons/science-exam-core-87-20261026.json"
+  },
+  {
+    "id": "social-geography-old-provinces-46",
+    "subject": "social",
+    "field": "geography",
+    "title": "日本の旧国名（令制国）",
+    "grade": "中学地理",
+    "description": "日本の旧国名（令制国・旧地名）と現在の都道府県を対応させる全46問。日本地図付きの問題・解答画像を収録。",
+    "cover": "images_12/social-geography-old-provinces-46/question_001.png",
+    "chapters": [
+      {
+        "id": "former-provinces-japan",
+        "title": "旧国名と現在の都道府県"
+      }
+    ],
+    "series": "themes",
+    "count": 46,
+    "data": "lessons/social-geography-old-provinces-46.json"
+  },
+  {
+    "id": "social-history-year-mnemonics-84-20261026",
+    "subject": "social",
+    "field": "history",
+    "title": "歴史年号の語呂合わせ｜日本史・世界史",
+    "grade": "中学歴史",
+    "description": "年号語呂合わせスライドと出来事で覚える、日本史・世界史84問。",
+    "cover": "images_2026102684/social-history-year-mnemonics-84-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "ancient",
+        "title": "古代（57〜894年）"
+      },
+      {
+        "id": "medieval",
+        "title": "平安・鎌倉・室町（1016〜1467年）"
+      },
+      {
+        "id": "earlymodern",
+        "title": "戦国・江戸・幕末（1492〜1867年）"
+      },
+      {
+        "id": "modern",
+        "title": "明治・大正（1868〜1925年）"
+      },
+      {
+        "id": "contemporary",
+        "title": "昭和・平成（1929〜2011年）"
+      }
+    ],
+    "source": "",
+    "series": "themes",
+    "count": 84,
+    "data": "lessons/social-history-year-mnemonics-84-20261026.json"
+  },
+  {
+    "id": "social-history-summary-japan-part1-50-20261025",
+    "subject": "social",
+    "field": "history",
+    "title": "日本史総まとめ①｜よく出る問題",
+    "grade": "中学歴史",
+    "description": "日本史の一問一答50問。弥生時代から室町・戦国時代までの基礎用語を図版とともに学習する。",
+    "cover": "images_12/social-history-summary-japan-part1-50-20261025/question_001.png",
+    "chapters": [
+      {
+        "id": "prehistoric-yayoi-kofun",
+        "title": "弥生・古墳時代（1〜6問）"
+      },
+      {
+        "id": "asuka-ritsuryo",
+        "title": "飛鳥・律令国家（7〜15問）"
+      },
+      {
+        "id": "nara-classical",
+        "title": "奈良時代（16〜22問）"
+      },
+      {
+        "id": "heian-classical",
+        "title": "平安時代（23〜33問）"
+      },
+      {
+        "id": "kamakura-shogunate",
+        "title": "鎌倉時代（34〜40問）"
+      },
+      {
+        "id": "muromachi-sengoku",
+        "title": "室町・戦国時代（41〜50問）"
+      }
+    ],
+    "source": "",
+    "series": "review",
+    "count": 50,
+    "data": "lessons/social-history-summary-japan-part1-50-20261025.json"
+  },
+  {
+    "id": "social-history-summary-japan-part2-50-20261026",
+    "subject": "social",
+    "field": "history",
+    "title": "日本史総まとめ②｜よく出る問題",
+    "grade": "中学歴史",
+    "description": "日本史の一問一答50問。戦国・江戸時代から戦後・現代までの基礎用語を学習する。",
+    "cover": "images_13/social-history-summary-japan-part2-50-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "sengoku-azuchi",
+        "title": "戦国・安土桃山時代（1〜5問）"
+      },
+      {
+        "id": "edo",
+        "title": "江戸時代（6〜20問）"
+      },
+      {
+        "id": "bakumatsu-meiji",
+        "title": "幕末・明治時代（21〜31問）"
+      },
+      {
+        "id": "taisho-showa-prewar",
+        "title": "大正・昭和戦前期（32〜42問）"
+      },
+      {
+        "id": "showa-postwar",
+        "title": "戦後・現代（43〜50問）"
+      }
+    ],
+    "source": "",
+    "series": "review",
+    "count": 50,
+    "data": "lessons/social-history-summary-japan-part2-50-20261026.json"
+  },
+  {
+    "id": "social-civics-highschool-entrance-91-20261026",
+    "subject": "social",
+    "field": "civics",
+    "title": "高校入試 過去問｜公民 一問一答①",
+    "grade": "中学公民",
+    "description": "高校入試対策の公民一問一答91問。実際の設問91問を収録し、問題・解答を1920×1080で抽出。",
+    "cover": "images_62/social-civics-highschool-entrance-91-20261026/question_001.png",
+    "chapters": [
+      {
+        "id": "social-civics-entrance-past",
+        "title": "公民・高校入試対策"
+      }
+    ],
+    "source": null,
+    "series": "past",
+    "count": 91,
+    "data": "lessons/social-civics-highschool-entrance-91-20261026.json"
   }
 ];

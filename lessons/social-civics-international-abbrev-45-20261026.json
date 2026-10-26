@@ -1,0 +1,476 @@
+{
+  "id": "social-civics-international-abbrev-45-20261026",
+  "subject": "social",
+  "field": "civics",
+  "title": "国際略語｜地域主義・国連・国際社会",
+  "grade": "中3社会・高校入試",
+  "description": "GATT・WTO・ASEANから国連機関、SDGs・EEZ・IOCまで。略語を45問で確認。旧制度は注記付き。",
+  "cover": "images_86/social-civics-international-abbrev-45-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "intl45-trade-regions",
+      "title": "地域主義・貿易・経済連携（1～22問）"
+    },
+    {
+      "id": "intl45-un-institutions",
+      "title": "国際連合・国際機関（23～34問）"
+    },
+    {
+      "id": "intl45-other",
+      "title": "国際社会・環境・その他（35～45問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_001.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 33.333,
+        "answer": 48.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_002.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 61.333,
+        "answer": 76.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_003.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 89.133,
+        "answer": 101.333
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_004.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 116.0,
+        "answer": 133.333
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_005.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 145.333,
+        "answer": 161.333
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_006.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 170.667,
+        "answer": 185.333
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_007.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 192.0,
+        "answer": 208.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_008.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 218.667,
+        "answer": 232.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_009.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 240.0,
+        "answer": 253.333
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_010.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 260.0,
+        "answer": 277.333
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_011.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 288.0,
+        "answer": 298.667
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_012.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 304.0,
+        "answer": 320.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_013.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 330.667,
+        "answer": 348.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_014.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 358.667,
+        "answer": 362.667
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_015.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 384.0,
+        "answer": 400.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_016.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 410.667,
+        "answer": 426.667
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_017.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 442.667,
+        "answer": 464.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_018.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 474.667,
+        "answer": 485.333
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_019.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 500.0,
+        "answer": 517.333
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_020.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 528.0,
+        "answer": 544.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_021.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 554.667,
+        "answer": 561.333
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "intl45-trade-regions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_022.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 576.0,
+        "answer": 586.667
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_023.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 605.333,
+        "answer": 616.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_024.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 620.0,
+        "answer": 640.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_025.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 650.667,
+        "answer": 665.333
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_026.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 672.0,
+        "answer": 682.667
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_027.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 690.667,
+        "answer": 705.333
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_028.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 716.0,
+        "answer": 730.667
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_029.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 734.667,
+        "answer": 752.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_030.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 757.333,
+        "answer": 773.333
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_031.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 781.333,
+        "answer": 797.333
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_032.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 802.667,
+        "answer": 821.333
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_033.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 830.667,
+        "answer": 848.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "intl45-un-institutions",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_034.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 856.0,
+        "answer": 869.333
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_035.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 889.333,
+        "answer": 906.667
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_036.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 913.333,
+        "answer": 926.667
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_037.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 933.333,
+        "answer": 938.667
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_038.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 949.333,
+        "answer": 960.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_039.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 970.667,
+        "answer": 986.667
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_040.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 992.0,
+        "answer": 1008.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_041.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 1018.667,
+        "answer": 1029.333
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_042.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 1036.0,
+        "answer": 1053.333
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_043.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 1061.333,
+        "answer": 1077.333
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_044.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 1082.667,
+        "answer": 1097.333
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "intl45-other",
+      "question": "images_86/social-civics-international-abbrev-45-20261026/question_045.png",
+      "answer": "images_86/social-civics-international-abbrev-45-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 1104.0,
+        "answer": 1110.667
+      }
+    }
+  ],
+  "series": "themes"
+}

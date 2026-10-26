@@ -1,0 +1,169 @@
+{
+  "id": "social-history-tokugawa-shoguns-15",
+  "subject": "social",
+  "field": "history",
+  "title": "江戸幕府の15代将軍｜徳川家康〜徳川慶喜",
+  "grade": "中学歴史",
+  "description": "初代・徳川家康から15代・徳川慶喜まで。家系図と肖像画で各将軍の特徴を学ぶ15問。",
+  "cover": "images_58/social-history-tokugawa-shoguns-15/question_001.png",
+  "chapters": [
+    {
+      "id": "tokugawa-shoguns",
+      "title": "江戸幕府・徳川15代将軍"
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_001.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_001.png",
+      "sourceTimes": {
+        "question": 32.5,
+        "answer": 37.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_002.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_002.png",
+      "sourceTimes": {
+        "question": 51.5,
+        "answer": 56.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_003.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_003.png",
+      "sourceTimes": {
+        "question": 71.5,
+        "answer": 76.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_004.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_004.png",
+      "sourceTimes": {
+        "question": 93.5,
+        "answer": 98.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_005.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_005.png",
+      "sourceTimes": {
+        "question": 115.5,
+        "answer": 120.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_006.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_006.png",
+      "sourceTimes": {
+        "question": 138.5,
+        "answer": 143.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_007.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_007.png",
+      "sourceTimes": {
+        "question": 160.5,
+        "answer": 165.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_008.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_008.png",
+      "sourceTimes": {
+        "question": 183.5,
+        "answer": 188.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_009.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_009.png",
+      "sourceTimes": {
+        "question": 204.5,
+        "answer": 209.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_010.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_010.png",
+      "sourceTimes": {
+        "question": 228.5,
+        "answer": 233.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_011.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_011.png",
+      "sourceTimes": {
+        "question": 256.5,
+        "answer": 261.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_012.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_012.png",
+      "sourceTimes": {
+        "question": 283.5,
+        "answer": 288.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_013.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_013.png",
+      "sourceTimes": {
+        "question": 306.5,
+        "answer": 311.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_014.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_014.png",
+      "sourceTimes": {
+        "question": 336.5,
+        "answer": 341.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_015.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_015.png",
+      "sourceTimes": {
+        "question": 361.5,
+        "answer": 366.5
+      }
+    }
+  ],
+  "series": "themes"
+}

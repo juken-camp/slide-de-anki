@@ -1,0 +1,4501 @@
+{
+  "schema_version": "nekopon-grading-data-1.0",
+  "normalization_policy": {
+    "NFKC": true,
+    "remove_whitespace": true,
+    "remove_punctuation": false,
+    "substring_match": false,
+    "lowercase_units_or_symbols": false,
+    "proposed_aliases_enabled": false,
+    "unicode_minus_to_ASCII_minus": true
+  },
+  "dataset_status": "integrated_20261026",
+  "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+  "title": "中1理科の間違えやすい問題",
+  "subject": "science",
+  "field": "general",
+  "grade": "中1理科",
+  "source": null,
+  "transcription_datetime_jst": "2026-10-25",
+  "question_count": 27,
+  "source_image_count": 54,
+  "supplement_image_count": 0,
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_001.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_001.png",
+      "sourceTimes": {
+        "question": 23.0,
+        "answer": 25.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "「花」のつくりの中で、花粉（やく）をつけている方は、めしべ？おしべ？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "おしべ",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "めしべ",
+          "text": "めしべ"
+        },
+        {
+          "value": "おしべ",
+          "text": "おしべ"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "花の構造図で左右の黄色い葯が示される。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_001.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_001.png",
+          "sha256": "1d8ba1d884d44c0d5dfcfd3aa48dada8ecb398dc042fe48c4733acaca611d0df"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_001.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_001.png",
+          "sha256": "dfbf4e501c39dd1bc3bc6ad5b4c3e6d13549119678717ad14a53c618441a6017"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [
+        "原動画の「花粉（やく）」は用語を簡略化した表現。やくは花粉をつくるおしべの一部で、花粉そのものと同一ではない。画像は出典どおり保存し、指導上注意。"
+      ],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "おしべ",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "おしべ"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "001",
+        "q": "「花」のつくりの中で、花粉（やく）をつけている方は、めしべ？おしべ？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "めしべ",
+            "text": "めしべ"
+          },
+          {
+            "value": "おしべ",
+            "text": "おしべ"
+          }
+        ],
+        "a": "おしべ",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_001.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_001.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "おしべ"
+        ],
+        "normalized": [
+          "おしべ"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "001",
+        "source": null,
+        "sourceTimes": {
+          "question": 23.0,
+          "answer": 25.0
+        },
+        "table": null,
+        "contract": "a3933cb1f58fa0bf9c691aefb48c4a6cb11d9868a9cf0a3d5c6f9440cd7603bb"
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_002.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_002.png",
+      "sourceTimes": {
+        "question": 34.0,
+        "answer": 37.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "めしべの根本のふくらんだ部分は、子房？胚珠？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "子房",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "子房",
+          "text": "子房"
+        },
+        {
+          "value": "胚珠",
+          "text": "胚珠"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "花の模式図と拡大した子房・胚珠の位置。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_002.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_002.png",
+          "sha256": "58f76e262d4b0f821ca0364dd589acfb7c6e49572e9f9a3c659a30ed3c5d0864"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_002.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_002.png",
+          "sha256": "6c1af122d9b1423c83198e8ad7e474fd87479ada461383bd67ddda6a303219b5"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "子房",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "子房"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "002",
+        "q": "めしべの根本のふくらんだ部分は、子房？胚珠？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "子房",
+            "text": "子房"
+          },
+          {
+            "value": "胚珠",
+            "text": "胚珠"
+          }
+        ],
+        "a": "子房",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_002.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_002.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "子房"
+        ],
+        "normalized": [
+          "子房"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "002",
+        "source": null,
+        "sourceTimes": {
+          "question": 34.0,
+          "answer": 37.0
+        },
+        "table": null,
+        "contract": "b8d1e3f3bfd90ec4b0efa8f3467d67646f1453c74d441e47c704293dd08f91a5"
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_003.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_003.png",
+      "sourceTimes": {
+        "question": 49.0,
+        "answer": 52.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "ツツジやアサガオの花のように、花弁がくっついている花は、離弁花？合弁花？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "合弁花",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "離弁花",
+          "text": "離弁花"
+        },
+        {
+          "value": "合弁花",
+          "text": "合弁花"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "離弁花と合弁花の模式図および花の写真。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_003.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_003.png",
+          "sha256": "17e0fbc938cc26b698b46a42ae9092f70912f2f7435b3612531182286d443e58"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_003.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_003.png",
+          "sha256": "91744fb212c9a7c0507b1bd53e0b208c2ba2cdad8fccaf5cb8108b6fe08bdbda"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "合弁花",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "合弁花"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "003",
+        "q": "ツツジやアサガオの花のように、花弁がくっついている花は、離弁花？合弁花？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "離弁花",
+            "text": "離弁花"
+          },
+          {
+            "value": "合弁花",
+            "text": "合弁花"
+          }
+        ],
+        "a": "合弁花",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_003.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_003.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "合弁花"
+        ],
+        "normalized": [
+          "合弁花"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "003",
+        "source": null,
+        "sourceTimes": {
+          "question": 49.0,
+          "answer": 52.0
+        },
+        "table": null,
+        "contract": "7d5345e17c9c286ee8dbfb9ae0e9280682662dd6f551dcbafd5ba7777ea5fded"
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_004.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_004.png",
+      "sourceTimes": {
+        "question": 66.0,
+        "answer": 69.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "種子植物の中で、「子房がなく」胚珠がむき出しになっている植物は、被子植物？裸子植物？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "裸子植物",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "被子植物",
+          "text": "被子植物"
+        },
+        {
+          "value": "裸子植物",
+          "text": "裸子植物"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "種子植物の分類図とマツの球果の写真。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_004.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_004.png",
+          "sha256": "0509733f9f68d839aba894ecf52e2a7149c51ed103ccbdfc7f61be4be787edd7"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_004.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_004.png",
+          "sha256": "b6d5ab9428f9741f691c2a7d1e41a02db567be25133252705054a30f978a3ccd"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "裸子植物",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "裸子植物"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "004",
+        "q": "種子植物の中で、「子房がなく」胚珠がむき出しになっている植物は、被子植物？裸子植物？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "被子植物",
+            "text": "被子植物"
+          },
+          {
+            "value": "裸子植物",
+            "text": "裸子植物"
+          }
+        ],
+        "a": "裸子植物",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_004.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_004.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "裸子植物"
+        ],
+        "normalized": [
+          "裸子植物"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "004",
+        "source": null,
+        "sourceTimes": {
+          "question": 66.0,
+          "answer": 69.0
+        },
+        "table": null,
+        "contract": "c9a27002ca6fd37d5df141119cf3a5a5c9d005c95d00c30be617a557050c4e73"
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_005.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_005.png",
+      "sourceTimes": {
+        "question": 83.0,
+        "answer": 87.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "種子をつくらない植物の中で、「根・茎・葉」の区別がある植物は、シダ植物？コケ植物？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "シダ植物",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "シダ植物",
+          "text": "シダ植物"
+        },
+        {
+          "value": "コケ植物",
+          "text": "コケ植物"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "植物の分類図とシダの写真。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_005.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_005.png",
+          "sha256": "8f5981c837cd0e68b0cb4f0afb722d5844fdd069a4955c84e42b0e8644b2c459"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_005.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_005.png",
+          "sha256": "27da7934ce33d8753f6e2a983834510f9f3b98efed04bb005674d959a43b5968"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "シダ植物",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "シダ植物"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "005",
+        "q": "種子をつくらない植物の中で、「根・茎・葉」の区別がある植物は、シダ植物？コケ植物？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "シダ植物",
+            "text": "シダ植物"
+          },
+          {
+            "value": "コケ植物",
+            "text": "コケ植物"
+          }
+        ],
+        "a": "シダ植物",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_005.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_005.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "シダ植物"
+        ],
+        "normalized": [
+          "シダ植物"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "005",
+        "source": null,
+        "sourceTimes": {
+          "question": 83.0,
+          "answer": 87.0
+        },
+        "table": null,
+        "contract": "7f90c3c4cea32f5bfbd5851f6288ce0a5d43f61db63b4246e67f8cac37c6c505"
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_006.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_006.png",
+      "sourceTimes": {
+        "question": 99.0,
+        "answer": 102.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "根から吸収された水や肥料分が通る、茎の中の通り道は、道管？師管？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "道管",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "道管",
+          "text": "道管"
+        },
+        {
+          "value": "師管",
+          "text": "師管"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "茎の断面図で道管と師管の場所を示す。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_006.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_006.png",
+          "sha256": "50b50a0be37a108b32b206dccf7f95ef1dc368ad35179dd09699d65c720f115c"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_006.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_006.png",
+          "sha256": "69abc266a9bf140a02badfa83521360bafb9d445bbb115f964e4f4d0fbcdaad6"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "道管",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "道管"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "006",
+        "q": "根から吸収された水や肥料分が通る、茎の中の通り道は、道管？師管？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "道管",
+            "text": "道管"
+          },
+          {
+            "value": "師管",
+            "text": "師管"
+          }
+        ],
+        "a": "道管",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_006.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_006.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "道管"
+        ],
+        "normalized": [
+          "道管"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "006",
+        "source": null,
+        "sourceTimes": {
+          "question": 99.0,
+          "answer": 102.0
+        },
+        "table": null,
+        "contract": "d379c797a7a64e23eb0913da87ad962212e3eca6ad08c8b86ceb3f00ec7aee17"
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_007.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_007.png",
+      "sourceTimes": {
+        "question": 114.0,
+        "answer": 119.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "葉の「葉脈」で、網目のように広がっている方は、平行脈？網状脈？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "網状脈",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "平行脈",
+          "text": "平行脈"
+        },
+        {
+          "value": "網状脈",
+          "text": "網状脈"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "葉の写真と網状脈・平行脈の比較。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_007.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_007.png",
+          "sha256": "14d5308a4bf3bcae00911d5c69a50ad360abb7d7692507b67f836226e243d771"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_007.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_007.png",
+          "sha256": "74afc3f316298ed6c50029bff25f49fe8bf42958f95e7ee1cf03256863f1cc19"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "網状脈",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "網状脈"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "007",
+        "q": "葉の「葉脈」で、網目のように広がっている方は、平行脈？網状脈？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "平行脈",
+            "text": "平行脈"
+          },
+          {
+            "value": "網状脈",
+            "text": "網状脈"
+          }
+        ],
+        "a": "網状脈",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_007.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_007.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "網状脈"
+        ],
+        "normalized": [
+          "網状脈"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "007",
+        "source": null,
+        "sourceTimes": {
+          "question": 114.0,
+          "answer": 119.0
+        },
+        "table": null,
+        "contract": "a498ee5a4f75dc27e3c5e375b6bb3576ce2efe4a25daf452874143db19b65d87"
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_008.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_008.png",
+      "sourceTimes": {
+        "question": 130.0,
+        "answer": 134.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "最初に生えてくる葉っぱ「子葉」の枚数が、2枚の植物は、双子葉類？単子葉類？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "双子葉類",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "双子葉類",
+          "text": "双子葉類"
+        },
+        {
+          "value": "単子葉類",
+          "text": "単子葉類"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "芽生えの子葉の写真と双子葉類・単子葉類の比較。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_008.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_008.png",
+          "sha256": "b830a0d16c6c0632a6d18e37f0810d86b45471d75a596caf94c7d48276aa21eb"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_008.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_008.png",
+          "sha256": "220f9b71597bc8553b76e6b8fac5eec9ef4f434cebeb32298405bbb65618274e"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "双子葉類",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "双子葉類"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "008",
+        "q": "最初に生えてくる葉っぱ「子葉」の枚数が、2枚の植物は、双子葉類？単子葉類？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "双子葉類",
+            "text": "双子葉類"
+          },
+          {
+            "value": "単子葉類",
+            "text": "単子葉類"
+          }
+        ],
+        "a": "双子葉類",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_008.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_008.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "双子葉類"
+        ],
+        "normalized": [
+          "双子葉類"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "008",
+        "source": null,
+        "sourceTimes": {
+          "question": 130.0,
+          "answer": 134.0
+        },
+        "table": null,
+        "contract": "88dd6d72030d2d7c34c5af1a3145c44aad0bbf148e2b8f226330c51726354dd6"
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "jhs1-confusable-materials",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_009.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_009.png",
+      "sourceTimes": {
+        "question": 149.0,
+        "answer": 152.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "物質の中で、炭素を含み、燃えると黒く焦げ、二酸化炭素や水が発生する物質は、有機物？無機物？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "有機物",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "有機物",
+          "text": "有機物"
+        },
+        {
+          "value": "無機物",
+          "text": "無機物"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "物質を有機物・無機物に分けた図と具体例。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_009.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_009.png",
+          "sha256": "6c71d87bcae86c4017229b9beefdbc95a10ac3e66b9c13fccc85eefa8228808a"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_009.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_009.png",
+          "sha256": "8b448f2c0ca3e9cb9bb25453947a3e2914a72b969de16e90dc71a6f3c96773f8"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "有機物",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "有機物"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "009",
+        "q": "物質の中で、炭素を含み、燃えると黒く焦げ、二酸化炭素や水が発生する物質は、有機物？無機物？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "有機物",
+            "text": "有機物"
+          },
+          {
+            "value": "無機物",
+            "text": "無機物"
+          }
+        ],
+        "a": "有機物",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_009.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_009.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "有機物"
+        ],
+        "normalized": [
+          "有機物"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "009",
+        "source": null,
+        "sourceTimes": {
+          "question": 149.0,
+          "answer": 152.0
+        },
+        "table": null,
+        "contract": "dc7448822f6e748741490dc9ef47948d682e2f2f3cbf500343e5c0eed926c5e0"
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "jhs1-confusable-materials",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_010.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_010.png",
+      "sourceTimes": {
+        "question": 163.0,
+        "answer": 168.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "物質が状態変化すると、体積は変化する？変化しない？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "変化する",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "変化する",
+          "text": "変化する"
+        },
+        {
+          "value": "変化しない",
+          "text": "変化しない"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "気体・液体・固体間の変化を示す図。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_010.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_010.png",
+          "sha256": "bd25e9d14612f1864b31cc3877acd582099a351ecb4dcbb2a9f1360a839d9fef"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_010.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_010.png",
+          "sha256": "c0e223bb13a88955b81687ff388737c38b9c4752490ddfe2ebccd8149fbfc564"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "変化する",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "変化する"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "010",
+        "q": "物質が状態変化すると、体積は変化する？変化しない？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "変化する",
+            "text": "変化する"
+          },
+          {
+            "value": "変化しない",
+            "text": "変化しない"
+          }
+        ],
+        "a": "変化する",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_010.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_010.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "変化する"
+        ],
+        "normalized": [
+          "変化する"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "010",
+        "source": null,
+        "sourceTimes": {
+          "question": 163.0,
+          "answer": 168.0
+        },
+        "table": null,
+        "contract": "c15740e160d252e4202ed5fcec765a9d10ca4d43b33489de4b0aa8be0a034905"
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "jhs1-confusable-materials",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_011.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_011.png",
+      "sourceTimes": {
+        "question": 178.0,
+        "answer": 182.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "「溶液」にとけている物質の方は、溶質？溶媒？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "溶質",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "溶質",
+          "text": "溶質"
+        },
+        {
+          "value": "溶媒",
+          "text": "溶媒"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "溶質と溶媒が溶液になる図。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_011.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_011.png",
+          "sha256": "01e84f21bbde9f6d980a902ce651259a6c14d92210a8c13bbea93a8ec77010f1"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_011.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_011.png",
+          "sha256": "3e6c3ed37b2c14666928a9010270d206537861717c6b22fc0cc555696aa3ee15"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "溶質",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "溶質"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "011",
+        "q": "「溶液」にとけている物質の方は、溶質？溶媒？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "溶質",
+            "text": "溶質"
+          },
+          {
+            "value": "溶媒",
+            "text": "溶媒"
+          }
+        ],
+        "a": "溶質",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_011.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_011.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "溶質"
+        ],
+        "normalized": [
+          "溶質"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "011",
+        "source": null,
+        "sourceTimes": {
+          "question": 178.0,
+          "answer": 182.0
+        },
+        "table": null,
+        "contract": "06b3ede4e09014f61becfda5ba0e987df3fd03138e03651401c361244a1c17ec"
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_012.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_012.png",
+      "sourceTimes": {
+        "question": 196.0,
+        "answer": 200.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "光が物体に当たる線と、反射面から垂直に伸びた線との角度のことを、入射角という？反射角という？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "入射角",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "入射角",
+          "text": "入射角"
+        },
+        {
+          "value": "反射角",
+          "text": "反射角"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "鏡への入射光と反射光、垂線と角度を示す模式図。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_012.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_012.png",
+          "sha256": "aed373f08863cba9eb86815c8d9ffd3dac26043fe0aec88c12ed9f92aa34b298"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_012.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_012.png",
+          "sha256": "db3434158ece79dc0315ab1486320ef8a42a2eaa5e75f9ee7f6c7932fe744d2a"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "入射角",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "入射角"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "012",
+        "q": "光が物体に当たる線と、反射面から垂直に伸びた線との角度のことを、入射角という？反射角という？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "入射角",
+            "text": "入射角"
+          },
+          {
+            "value": "反射角",
+            "text": "反射角"
+          }
+        ],
+        "a": "入射角",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_012.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_012.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "入射角"
+        ],
+        "normalized": [
+          "入射角"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "012",
+        "source": null,
+        "sourceTimes": {
+          "question": 196.0,
+          "answer": 200.0
+        },
+        "table": null,
+        "contract": "ec9aec08ab66b225cd030e11a8bcfeb92d70369d3133fd83ff3864f489dbf7ce"
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_013.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_013.png",
+      "sourceTimes": {
+        "question": 214.0,
+        "answer": 218.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "物体から出た光が凸レンズで屈折し、物体と上下左右が逆向きになる像は、虚像？実像？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "実像",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "虚像",
+          "text": "虚像"
+        },
+        {
+          "value": "実像",
+          "text": "実像"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "凸レンズを通りスクリーンに届く光路図。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_013.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_013.png",
+          "sha256": "66c43528b03f33e9926c17d211ea3c958dea1111054fa487376e2dde51413aea"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_013.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_013.png",
+          "sha256": "68e7c6687c809224e529f5f5701b298f03fbe96d8dab33d592ff36a9e5ef66d7"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "実像",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "実像"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "013",
+        "q": "物体から出た光が凸レンズで屈折し、物体と上下左右が逆向きになる像は、虚像？実像？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "虚像",
+            "text": "虚像"
+          },
+          {
+            "value": "実像",
+            "text": "実像"
+          }
+        ],
+        "a": "実像",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_013.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_013.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "実像"
+        ],
+        "normalized": [
+          "実像"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "013",
+        "source": null,
+        "sourceTimes": {
+          "question": 214.0,
+          "answer": 218.0
+        },
+        "table": null,
+        "contract": "ecdd20003eb2b547e3fb933cf29711484cec12a599adad60b95f8f53c5e98d23"
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_014.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_014.png",
+      "sourceTimes": {
+        "question": 228.0,
+        "answer": 232.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "音が大きいのは、振幅が大きい方？小さい方？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "大きい方",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "大きい方",
+          "text": "大きい方"
+        },
+        {
+          "value": "小さい方",
+          "text": "小さい方"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "振幅の違う2つの波形を比較。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_014.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_014.png",
+          "sha256": "30191f1e6b12d75a1870a1796db38f9b0d20359a128302b1593e2dfaf25138b1"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_014.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_014.png",
+          "sha256": "0b6c55ed5d06496d21ae6d645a86db31c9ae5753815e83f6518bb9ec9f3ef721"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "大きい方",
+            "basis": "integrated_runtime_verified_answer"
+          },
+          {
+            "text": "振幅が大きい方",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "大きい方",
+          "振幅が大きい方"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "014",
+        "q": "音が大きいのは、振幅が大きい方？小さい方？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "大きい方",
+            "text": "大きい方"
+          },
+          {
+            "value": "小さい方",
+            "text": "小さい方"
+          }
+        ],
+        "a": "大きい方",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_014.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_014.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "大きい方",
+          "振幅が大きい方"
+        ],
+        "normalized": [
+          "大きい方",
+          "振幅が大きい方"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "014",
+        "source": null,
+        "sourceTimes": {
+          "question": 228.0,
+          "answer": 232.0
+        },
+        "table": null,
+        "contract": "569839052830e884f0b679fd97a9242b873f697ce8251a8ebfd86092bfe37229"
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_015.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_015.png",
+      "sourceTimes": {
+        "question": 243.0,
+        "answer": 247.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "水中にある物質が受ける、上向きの力は、重力？浮力？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "浮力",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "重力",
+          "text": "重力"
+        },
+        {
+          "value": "浮力",
+          "text": "浮力"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "水中の人物と上向き矢印、重力との比較。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_015.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_015.png",
+          "sha256": "053e87e2e3ca6f330e821f91370390e00bd757e78ebfc92186847e522f849a68"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_015.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_015.png",
+          "sha256": "f330d7a3276c823cc79e73ece80758045e691995a08917296212d801c24f9436"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "浮力",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "浮力"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "015",
+        "q": "水中にある物質が受ける、上向きの力は、重力？浮力？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "重力",
+            "text": "重力"
+          },
+          {
+            "value": "浮力",
+            "text": "浮力"
+          }
+        ],
+        "a": "浮力",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_015.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_015.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "浮力"
+        ],
+        "normalized": [
+          "浮力"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "015",
+        "source": null,
+        "sourceTimes": {
+          "question": 243.0,
+          "answer": 247.0
+        },
+        "table": null,
+        "contract": "78605b649adcf8170951aadac838ea24fd0fc57f6f04c66a0c2599fd3c3a9826"
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_016.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_016.png",
+      "sourceTimes": {
+        "question": 258.0,
+        "answer": 263.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "標高が高いほど、大気圧は小さい？大きい？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "小さい",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "小さい",
+          "text": "小さい"
+        },
+        {
+          "value": "大きい",
+          "text": "大きい"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "山の標高に沿った大気圧の変化を示す。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_016.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_016.png",
+          "sha256": "e112c402b73590dc7417217c70054c5591ebdd4ecd7d38492580715f4659e836"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_016.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_016.png",
+          "sha256": "c4ff039e9f9751ebaefadadf60f8bbf5febe56ab3b4f58a20b3d56c5421c1862"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "小さい",
+            "basis": "integrated_runtime_verified_answer"
+          },
+          {
+            "text": "標高が高いほど小さい",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "小さい",
+          "標高が高いほど小さい"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "016",
+        "q": "標高が高いほど、大気圧は小さい？大きい？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "小さい",
+            "text": "小さい"
+          },
+          {
+            "value": "大きい",
+            "text": "大きい"
+          }
+        ],
+        "a": "小さい",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_016.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_016.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "小さい",
+          "標高が高いほど小さい"
+        ],
+        "normalized": [
+          "小さい",
+          "標高が高いほど小さい"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "016",
+        "source": null,
+        "sourceTimes": {
+          "question": 258.0,
+          "answer": 263.0
+        },
+        "table": null,
+        "contract": "2a525748405d6284c452d318af54e57cfebc32dee3bedc6878dfde3b8dd05ba9"
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_017.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_017.png",
+      "sourceTimes": {
+        "question": 274.0,
+        "answer": 279.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "傾斜のゆるやかな火山は、マグマのねばりけが、弱い？強い？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "弱い",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "弱い",
+          "text": "弱い"
+        },
+        {
+          "value": "強い",
+          "text": "強い"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "ねばりけが異なる火山3種類の写真と断面図。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_017.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_017.png",
+          "sha256": "ded5f98d856e1ae75af9d0e1a7a508f8ff0d2d2987a93729537c65cb9628ef3d"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_017.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_017.png",
+          "sha256": "bf94c612f2881dcf212656409cd697cb18b3c6936f391d5c132012778aa704b6"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "弱い",
+            "basis": "integrated_runtime_verified_answer"
+          },
+          {
+            "text": "ねばりけが弱い",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "弱い",
+          "ねばりけが弱い"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "017",
+        "q": "傾斜のゆるやかな火山は、マグマのねばりけが、弱い？強い？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "弱い",
+            "text": "弱い"
+          },
+          {
+            "value": "強い",
+            "text": "強い"
+          }
+        ],
+        "a": "弱い",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_017.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_017.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "弱い",
+          "ねばりけが弱い"
+        ],
+        "normalized": [
+          "弱い",
+          "ねばりけが弱い"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "017",
+        "source": null,
+        "sourceTimes": {
+          "question": 274.0,
+          "answer": 279.0
+        },
+        "table": null,
+        "contract": "7b46a802000782cfd7d2cd1d96b84689343bff302dd8e1d42f5a0a909fc31fc4"
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_018.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_018.png",
+      "sourceTimes": {
+        "question": 294.0,
+        "answer": 298.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "火成岩には「火山岩と深成岩」という2種類があります。短期間に地表付近で固まった方は、火山岩？深成岩？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "火山岩",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "火山岩",
+          "text": "火山岩"
+        },
+        {
+          "value": "深成岩",
+          "text": "深成岩"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "火山岩・深成岩の形成場所を示す火山断面図。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_018.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_018.png",
+          "sha256": "7484c9707a85da2ce41ed08cc56cc3275450bae19883ebe03761513f1ba688ce"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_018.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_018.png",
+          "sha256": "6733ad5621291b2f85ea074617e2366a25d976a149fa317977a404694868a35b"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "火山岩",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "火山岩"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "018",
+        "q": "火成岩には「火山岩と深成岩」という2種類があります。短期間に地表付近で固まった方は、火山岩？深成岩？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "火山岩",
+            "text": "火山岩"
+          },
+          {
+            "value": "深成岩",
+            "text": "深成岩"
+          }
+        ],
+        "a": "火山岩",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_018.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_018.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "火山岩"
+        ],
+        "normalized": [
+          "火山岩"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "018",
+        "source": null,
+        "sourceTimes": {
+          "question": 294.0,
+          "answer": 298.0
+        },
+        "table": null,
+        "contract": "a505ae19f0ba40b40e141a5f0cbe6a9407f1bf2aaf91d519af6b47a17451c82e"
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_019.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_019.png",
+      "sourceTimes": {
+        "question": 312.0,
+        "answer": 318.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "同じくらいの鉱物がぎっしり組み合わさっている深成岩の組織のことを、斑状組織という？等粒状組織という？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "等粒状組織",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "斑状組織",
+          "text": "斑状組織"
+        },
+        {
+          "value": "等粒状組織",
+          "text": "等粒状組織"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "斑状組織と等粒状組織の拡大模式図。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_019.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_019.png",
+          "sha256": "bbb8bf6ce132fc2c0f7cd5844870ea239cb6cd1bfdcd2b4d4997ac052362fbb1"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_019.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_019.png",
+          "sha256": "0b3228d2984cc4be20b36718721c26d051ced0ac136121e5ddc467927785cceb"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "等粒状組織",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "等粒状組織"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "019",
+        "q": "同じくらいの鉱物がぎっしり組み合わさっている深成岩の組織のことを、斑状組織という？等粒状組織という？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "斑状組織",
+            "text": "斑状組織"
+          },
+          {
+            "value": "等粒状組織",
+            "text": "等粒状組織"
+          }
+        ],
+        "a": "等粒状組織",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_019.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_019.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "等粒状組織"
+        ],
+        "normalized": [
+          "等粒状組織"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "019",
+        "source": null,
+        "sourceTimes": {
+          "question": 312.0,
+          "answer": 318.0
+        },
+        "table": null,
+        "contract": "372a3fe7dd02f843e079fe9636eaeadf41cbf6142e5751ab8d7060c6ed0936a8"
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_020.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_020.png",
+      "sourceTimes": {
+        "question": 328.0,
+        "answer": 331.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "「安山岩」があてはまるのは、火山岩？深成岩？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "火山岩",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "火山岩",
+          "text": "火山岩"
+        },
+        {
+          "value": "深成岩",
+          "text": "深成岩"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "火山岩・深成岩の分類図と安山岩などの写真。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_020.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_020.png",
+          "sha256": "3bbc634b3ade4d02c0eae801c8ccf6afe474686336e46795a3529c40df80cd7c"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_020.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_020.png",
+          "sha256": "bf9845268e7f71b40a55eb8d53e161088065cb88067205784f2dabc3dfbb952b"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "火山岩",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "火山岩"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "020",
+        "q": "「安山岩」があてはまるのは、火山岩？深成岩？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "火山岩",
+            "text": "火山岩"
+          },
+          {
+            "value": "深成岩",
+            "text": "深成岩"
+          }
+        ],
+        "a": "火山岩",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_020.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_020.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "火山岩"
+        ],
+        "normalized": [
+          "火山岩"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "020",
+        "source": null,
+        "sourceTimes": {
+          "question": 328.0,
+          "answer": 331.0
+        },
+        "table": null,
+        "contract": "b086cb8763e237cd548b014bbf65e346cdbb07bd98525929484c82e314d0066f"
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_021.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_021.png",
+      "sourceTimes": {
+        "question": 345.0,
+        "answer": 350.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "地震の揺れでは「P波・S波」という2つの波が発生します。最初に起こる速い波は、P波？S波？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "P波",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "P波",
+          "text": "P波"
+        },
+        {
+          "value": "S波",
+          "text": "S波"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "地震計の波形。先に届く小さな揺れはP波。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_021.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_021.png",
+          "sha256": "3ca18073c3422c63591bb8406ee5153243244e574dd5eb434ec756727c66a895"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_021.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_021.png",
+          "sha256": "56a71e2a5946587abd0e8bc44b72a52f127e0ea9c942395d0e39461b858489bc"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "P波",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "P波"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "021",
+        "q": "地震の揺れでは「P波・S波」という2つの波が発生します。最初に起こる速い波は、P波？S波？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "P波",
+            "text": "P波"
+          },
+          {
+            "value": "S波",
+            "text": "S波"
+          }
+        ],
+        "a": "P波",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_021.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_021.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "P波"
+        ],
+        "normalized": [
+          "P波"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "021",
+        "source": null,
+        "sourceTimes": {
+          "question": 345.0,
+          "answer": 350.0
+        },
+        "table": null,
+        "contract": "90ad2c4616ad1ea38b530407b67d54d64c06e2ec3f82c12f92e3d5ad97423e24"
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_022.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_022.png",
+      "sourceTimes": {
+        "question": 360.0,
+        "answer": 363.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "P波により起こる揺れは、初期微動？主要動？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "初期微動",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "初期微動",
+          "text": "初期微動"
+        },
+        {
+          "value": "主要動",
+          "text": "主要動"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "地震計の波形にP波・S波が示される。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_022.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_022.png",
+          "sha256": "762d5a1c04bbea9714dc36e156cca1aa1fc248c19ce08599d6faae6e0854822a"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_022.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_022.png",
+          "sha256": "27888735a9d5fbd5e0f40d14accd87c0b2b344374b1bcfe22678a5f01d5e463a"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "初期微動",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "初期微動"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "022",
+        "q": "P波により起こる揺れは、初期微動？主要動？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "初期微動",
+            "text": "初期微動"
+          },
+          {
+            "value": "主要動",
+            "text": "主要動"
+          }
+        ],
+        "a": "初期微動",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_022.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_022.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "初期微動"
+        ],
+        "normalized": [
+          "初期微動"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "022",
+        "source": null,
+        "sourceTimes": {
+          "question": 360.0,
+          "answer": 363.0
+        },
+        "table": null,
+        "contract": "60a814747bdf1975e2969065a1bf39762d5ba0869c40db7a90529b25b70e305d"
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_023.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_023.png",
+      "sourceTimes": {
+        "question": 376.0,
+        "answer": 381.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "初期微動継続時間が短い場合、震源からの距離は遠い？近い？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "近い",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "遠い",
+          "text": "遠い"
+        },
+        {
+          "value": "近い",
+          "text": "近い"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "異なる地点のP波とS波の到着時間を示す2つの地震計波形。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_023.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_023.png",
+          "sha256": "6ef03e04bddbf0fa7b4f53db97619a146a877e7a8db5c6d07e146f288a9ce5ef"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_023.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_023.png",
+          "sha256": "acd0bf07e2fe566a9bf344f9487739bf2dbeedb8af1fa94b897b4e8e85960ccc"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "近い",
+            "basis": "integrated_runtime_verified_answer"
+          },
+          {
+            "text": "震源から近い",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "近い",
+          "震源から近い"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "023",
+        "q": "初期微動継続時間が短い場合、震源からの距離は遠い？近い？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "遠い",
+            "text": "遠い"
+          },
+          {
+            "value": "近い",
+            "text": "近い"
+          }
+        ],
+        "a": "近い",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_023.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_023.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "近い",
+          "震源から近い"
+        ],
+        "normalized": [
+          "近い",
+          "震源から近い"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "023",
+        "source": null,
+        "sourceTimes": {
+          "question": 376.0,
+          "answer": 381.0
+        },
+        "table": null,
+        "contract": "8879e9ba2f860eb3eefd8064c2d1d4835b7899269923cab31790d8a9e0fd259f"
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_024.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_024.png",
+      "sourceTimes": {
+        "question": 392.0,
+        "answer": 396.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "地震の規模をあらわす数値は、震度？マグニチュード？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "マグニチュード",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "震度",
+          "text": "震度"
+        },
+        {
+          "value": "マグニチュード",
+          "text": "マグニチュード"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "同じ地震で異なる地点の震度と震源のマグニチュードを示す。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_024.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_024.png",
+          "sha256": "c3315301f82342171418b1b1330693e5ae1c2b92960fbf8daa6f0c1bbe6751ca"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_024.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_024.png",
+          "sha256": "e51a4f2f79071de9cb9e6e927dfa41163020c1beaf4af4e1d7300279805a615c"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "マグニチュード",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "マグニチュード"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "024",
+        "q": "地震の規模をあらわす数値は、震度？マグニチュード？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "震度",
+            "text": "震度"
+          },
+          {
+            "value": "マグニチュード",
+            "text": "マグニチュード"
+          }
+        ],
+        "a": "マグニチュード",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_024.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_024.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "マグニチュード"
+        ],
+        "normalized": [
+          "マグニチュード"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "024",
+        "source": null,
+        "sourceTimes": {
+          "question": 392.0,
+          "answer": 396.0
+        },
+        "table": null,
+        "contract": "1794cf66b22be2bbf11733ceb75dca2ff9f88e23a99f567a0c506624f592f27c"
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_025.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_025.png",
+      "sourceTimes": {
+        "question": 411.0,
+        "answer": 415.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "地表の岩石が、日射や水などの自然のはたらきによって、表面からくずれていく現象は、侵食？風化？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "風化",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "侵食",
+          "text": "侵食"
+        },
+        {
+          "value": "風化",
+          "text": "風化"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": false,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "風化と侵食を対比する岩石・川の写真（解答後に表示）。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_025.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_025.png",
+          "sha256": "712b37b2f2e46dfadbf6fc5aaedfa2e9ac4191174dc685661b1ab98a66ccb581"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_025.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_025.png",
+          "sha256": "e929d72e1a82e9c06178b922f5d9645e0e4aef2a294a950404918a5134e07aef"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [
+        "問題側には文字だけがあり、風化と侵食の対比写真は解答表示時に追加される。"
+      ],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "風化",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "風化"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "025",
+        "q": "地表の岩石が、日射や水などの自然のはたらきによって、表面からくずれていく現象は、侵食？風化？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "侵食",
+            "text": "侵食"
+          },
+          {
+            "value": "風化",
+            "text": "風化"
+          }
+        ],
+        "a": "風化",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_025.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_025.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "風化"
+        ],
+        "normalized": [
+          "風化"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "025",
+        "source": null,
+        "sourceTimes": {
+          "question": 411.0,
+          "answer": 415.0
+        },
+        "table": null,
+        "contract": "adbb3db6584c9cbd6386d1133532db59b741b8dfcefd4d94153f9bdc9cc00520"
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_026.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_026.png",
+      "sourceTimes": {
+        "question": 427.0,
+        "answer": 430.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "地層や岩盤に大きな力が加わり、ずれてくいちがったものは、しゅう曲？断層？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "断層",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "しゅう曲",
+          "text": "しゅう曲"
+        },
+        {
+          "value": "断層",
+          "text": "断層"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "ずれた地層の模型と、しゅう曲した地層の写真。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_026.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_026.png",
+          "sha256": "502b09c0e15362436b7f618d589a628dc3c6871dc745e09922ffa12ab9f04f21"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_026.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_026.png",
+          "sha256": "92031991b85a46cb765f331bffe614af8603c7451c67e618aeb609dbd0e99956"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "断層",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "断層"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "026",
+        "q": "地層や岩盤に大きな力が加わり、ずれてくいちがったものは、しゅう曲？断層？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "しゅう曲",
+            "text": "しゅう曲"
+          },
+          {
+            "value": "断層",
+            "text": "断層"
+          }
+        ],
+        "a": "断層",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_026.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_026.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "断層"
+        ],
+        "normalized": [
+          "断層"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "026",
+        "source": null,
+        "sourceTimes": {
+          "question": 427.0,
+          "answer": 430.0
+        },
+        "table": null,
+        "contract": "6894b269b0ae81d085163f171921b0e7b0d2d3771c2832cb558154ec6db0afa7"
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_027.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_027.png",
+      "sourceTimes": {
+        "question": 442.0,
+        "answer": 448.0
+      },
+      "lesson_id": "science-jhs1-confusable-qa-27-20261025",
+      "question_text": "当時の自然環境を知ることができる化石は、示相化石？示準化石？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "示相化石",
+      "answer_notes": "",
+      "answer_reading": "",
+      "choices": [
+        {
+          "value": "示相化石",
+          "text": "示相化石"
+        },
+        {
+          "value": "示準化石",
+          "text": "示準化石"
+        }
+      ],
+      "choices_origin": "written_alternatives_in_question_image",
+      "answer_type": "choice",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "示相化石の貝と示準化石のアンモナイトの写真。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": null,
+      "images": {
+        "question": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/question_027.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/question_027.png",
+          "sha256": "466b46263ed43618ff9bd11751cf3dbb9986b986841cd180f8835fc33644a3ab"
+        },
+        "answer": {
+          "path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_027.png",
+          "local_path": "images_82/science-jhs1-confusable-qa-27-20261025/answer_027.png",
+          "sha256": "b1a0e826ae7e9a9d96b449c7cd510cb8eec9b743c2aa96f3fc53868b89bdeaee"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "示相化石",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "示相化石"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "027",
+        "q": "当時の自然環境を知ることができる化石は、示相化石？示準化石？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "示相化石",
+            "text": "示相化石"
+          },
+          {
+            "value": "示準化石",
+            "text": "示準化石"
+          }
+        ],
+        "a": "示相化石",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_027.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_027.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "示相化石"
+        ],
+        "normalized": [
+          "示相化石"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "027",
+        "source": null,
+        "sourceTimes": {
+          "question": 442.0,
+          "answer": 448.0
+        },
+        "table": null,
+        "contract": "239e996bd756d08f5c4f363bbb4a0da9cb3d94764408a9d5412088f1dc6c8c24"
+      }
+    }
+  ],
+  "supplements": [],
+  "runtime_schema": 1,
+  "runtime_lesson": {
+    "title": "中1理科の間違えやすい問題",
+    "count": 27,
+    "cards": [
+      {
+        "id": "001",
+        "q": "「花」のつくりの中で、花粉（やく）をつけている方は、めしべ？おしべ？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "めしべ",
+            "text": "めしべ"
+          },
+          {
+            "value": "おしべ",
+            "text": "おしべ"
+          }
+        ],
+        "a": "おしべ",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_001.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_001.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "おしべ"
+        ],
+        "normalized": [
+          "おしべ"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "001",
+        "source": null,
+        "sourceTimes": {
+          "question": 23.0,
+          "answer": 25.0
+        },
+        "table": null,
+        "contract": "a3933cb1f58fa0bf9c691aefb48c4a6cb11d9868a9cf0a3d5c6f9440cd7603bb"
+      },
+      {
+        "id": "002",
+        "q": "めしべの根本のふくらんだ部分は、子房？胚珠？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "子房",
+            "text": "子房"
+          },
+          {
+            "value": "胚珠",
+            "text": "胚珠"
+          }
+        ],
+        "a": "子房",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_002.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_002.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "子房"
+        ],
+        "normalized": [
+          "子房"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "002",
+        "source": null,
+        "sourceTimes": {
+          "question": 34.0,
+          "answer": 37.0
+        },
+        "table": null,
+        "contract": "b8d1e3f3bfd90ec4b0efa8f3467d67646f1453c74d441e47c704293dd08f91a5"
+      },
+      {
+        "id": "003",
+        "q": "ツツジやアサガオの花のように、花弁がくっついている花は、離弁花？合弁花？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "離弁花",
+            "text": "離弁花"
+          },
+          {
+            "value": "合弁花",
+            "text": "合弁花"
+          }
+        ],
+        "a": "合弁花",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_003.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_003.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "合弁花"
+        ],
+        "normalized": [
+          "合弁花"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "003",
+        "source": null,
+        "sourceTimes": {
+          "question": 49.0,
+          "answer": 52.0
+        },
+        "table": null,
+        "contract": "7d5345e17c9c286ee8dbfb9ae0e9280682662dd6f551dcbafd5ba7777ea5fded"
+      },
+      {
+        "id": "004",
+        "q": "種子植物の中で、「子房がなく」胚珠がむき出しになっている植物は、被子植物？裸子植物？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "被子植物",
+            "text": "被子植物"
+          },
+          {
+            "value": "裸子植物",
+            "text": "裸子植物"
+          }
+        ],
+        "a": "裸子植物",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_004.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_004.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "裸子植物"
+        ],
+        "normalized": [
+          "裸子植物"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "004",
+        "source": null,
+        "sourceTimes": {
+          "question": 66.0,
+          "answer": 69.0
+        },
+        "table": null,
+        "contract": "c9a27002ca6fd37d5df141119cf3a5a5c9d005c95d00c30be617a557050c4e73"
+      },
+      {
+        "id": "005",
+        "q": "種子をつくらない植物の中で、「根・茎・葉」の区別がある植物は、シダ植物？コケ植物？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "シダ植物",
+            "text": "シダ植物"
+          },
+          {
+            "value": "コケ植物",
+            "text": "コケ植物"
+          }
+        ],
+        "a": "シダ植物",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_005.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_005.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "シダ植物"
+        ],
+        "normalized": [
+          "シダ植物"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "005",
+        "source": null,
+        "sourceTimes": {
+          "question": 83.0,
+          "answer": 87.0
+        },
+        "table": null,
+        "contract": "7f90c3c4cea32f5bfbd5851f6288ce0a5d43f61db63b4246e67f8cac37c6c505"
+      },
+      {
+        "id": "006",
+        "q": "根から吸収された水や肥料分が通る、茎の中の通り道は、道管？師管？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "道管",
+            "text": "道管"
+          },
+          {
+            "value": "師管",
+            "text": "師管"
+          }
+        ],
+        "a": "道管",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_006.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_006.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "道管"
+        ],
+        "normalized": [
+          "道管"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "006",
+        "source": null,
+        "sourceTimes": {
+          "question": 99.0,
+          "answer": 102.0
+        },
+        "table": null,
+        "contract": "d379c797a7a64e23eb0913da87ad962212e3eca6ad08c8b86ceb3f00ec7aee17"
+      },
+      {
+        "id": "007",
+        "q": "葉の「葉脈」で、網目のように広がっている方は、平行脈？網状脈？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "平行脈",
+            "text": "平行脈"
+          },
+          {
+            "value": "網状脈",
+            "text": "網状脈"
+          }
+        ],
+        "a": "網状脈",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_007.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_007.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "網状脈"
+        ],
+        "normalized": [
+          "網状脈"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "007",
+        "source": null,
+        "sourceTimes": {
+          "question": 114.0,
+          "answer": 119.0
+        },
+        "table": null,
+        "contract": "a498ee5a4f75dc27e3c5e375b6bb3576ce2efe4a25daf452874143db19b65d87"
+      },
+      {
+        "id": "008",
+        "q": "最初に生えてくる葉っぱ「子葉」の枚数が、2枚の植物は、双子葉類？単子葉類？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "双子葉類",
+            "text": "双子葉類"
+          },
+          {
+            "value": "単子葉類",
+            "text": "単子葉類"
+          }
+        ],
+        "a": "双子葉類",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_008.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_008.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "双子葉類"
+        ],
+        "normalized": [
+          "双子葉類"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "008",
+        "source": null,
+        "sourceTimes": {
+          "question": 130.0,
+          "answer": 134.0
+        },
+        "table": null,
+        "contract": "88dd6d72030d2d7c34c5af1a3145c44aad0bbf148e2b8f226330c51726354dd6"
+      },
+      {
+        "id": "009",
+        "q": "物質の中で、炭素を含み、燃えると黒く焦げ、二酸化炭素や水が発生する物質は、有機物？無機物？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "有機物",
+            "text": "有機物"
+          },
+          {
+            "value": "無機物",
+            "text": "無機物"
+          }
+        ],
+        "a": "有機物",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_009.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_009.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "有機物"
+        ],
+        "normalized": [
+          "有機物"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "009",
+        "source": null,
+        "sourceTimes": {
+          "question": 149.0,
+          "answer": 152.0
+        },
+        "table": null,
+        "contract": "dc7448822f6e748741490dc9ef47948d682e2f2f3cbf500343e5c0eed926c5e0"
+      },
+      {
+        "id": "010",
+        "q": "物質が状態変化すると、体積は変化する？変化しない？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "変化する",
+            "text": "変化する"
+          },
+          {
+            "value": "変化しない",
+            "text": "変化しない"
+          }
+        ],
+        "a": "変化する",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_010.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_010.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "変化する"
+        ],
+        "normalized": [
+          "変化する"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "010",
+        "source": null,
+        "sourceTimes": {
+          "question": 163.0,
+          "answer": 168.0
+        },
+        "table": null,
+        "contract": "c15740e160d252e4202ed5fcec765a9d10ca4d43b33489de4b0aa8be0a034905"
+      },
+      {
+        "id": "011",
+        "q": "「溶液」にとけている物質の方は、溶質？溶媒？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "溶質",
+            "text": "溶質"
+          },
+          {
+            "value": "溶媒",
+            "text": "溶媒"
+          }
+        ],
+        "a": "溶質",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_011.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_011.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "溶質"
+        ],
+        "normalized": [
+          "溶質"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "011",
+        "source": null,
+        "sourceTimes": {
+          "question": 178.0,
+          "answer": 182.0
+        },
+        "table": null,
+        "contract": "06b3ede4e09014f61becfda5ba0e987df3fd03138e03651401c361244a1c17ec"
+      },
+      {
+        "id": "012",
+        "q": "光が物体に当たる線と、反射面から垂直に伸びた線との角度のことを、入射角という？反射角という？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "入射角",
+            "text": "入射角"
+          },
+          {
+            "value": "反射角",
+            "text": "反射角"
+          }
+        ],
+        "a": "入射角",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_012.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_012.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "入射角"
+        ],
+        "normalized": [
+          "入射角"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "012",
+        "source": null,
+        "sourceTimes": {
+          "question": 196.0,
+          "answer": 200.0
+        },
+        "table": null,
+        "contract": "ec9aec08ab66b225cd030e11a8bcfeb92d70369d3133fd83ff3864f489dbf7ce"
+      },
+      {
+        "id": "013",
+        "q": "物体から出た光が凸レンズで屈折し、物体と上下左右が逆向きになる像は、虚像？実像？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "虚像",
+            "text": "虚像"
+          },
+          {
+            "value": "実像",
+            "text": "実像"
+          }
+        ],
+        "a": "実像",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_013.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_013.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "実像"
+        ],
+        "normalized": [
+          "実像"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "013",
+        "source": null,
+        "sourceTimes": {
+          "question": 214.0,
+          "answer": 218.0
+        },
+        "table": null,
+        "contract": "ecdd20003eb2b547e3fb933cf29711484cec12a599adad60b95f8f53c5e98d23"
+      },
+      {
+        "id": "014",
+        "q": "音が大きいのは、振幅が大きい方？小さい方？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "大きい方",
+            "text": "大きい方"
+          },
+          {
+            "value": "小さい方",
+            "text": "小さい方"
+          }
+        ],
+        "a": "大きい方",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_014.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_014.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "大きい方",
+          "振幅が大きい方"
+        ],
+        "normalized": [
+          "大きい方",
+          "振幅が大きい方"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "014",
+        "source": null,
+        "sourceTimes": {
+          "question": 228.0,
+          "answer": 232.0
+        },
+        "table": null,
+        "contract": "569839052830e884f0b679fd97a9242b873f697ce8251a8ebfd86092bfe37229"
+      },
+      {
+        "id": "015",
+        "q": "水中にある物質が受ける、上向きの力は、重力？浮力？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "重力",
+            "text": "重力"
+          },
+          {
+            "value": "浮力",
+            "text": "浮力"
+          }
+        ],
+        "a": "浮力",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_015.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_015.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "浮力"
+        ],
+        "normalized": [
+          "浮力"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "015",
+        "source": null,
+        "sourceTimes": {
+          "question": 243.0,
+          "answer": 247.0
+        },
+        "table": null,
+        "contract": "78605b649adcf8170951aadac838ea24fd0fc57f6f04c66a0c2599fd3c3a9826"
+      },
+      {
+        "id": "016",
+        "q": "標高が高いほど、大気圧は小さい？大きい？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "小さい",
+            "text": "小さい"
+          },
+          {
+            "value": "大きい",
+            "text": "大きい"
+          }
+        ],
+        "a": "小さい",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_016.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_016.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "小さい",
+          "標高が高いほど小さい"
+        ],
+        "normalized": [
+          "小さい",
+          "標高が高いほど小さい"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "016",
+        "source": null,
+        "sourceTimes": {
+          "question": 258.0,
+          "answer": 263.0
+        },
+        "table": null,
+        "contract": "2a525748405d6284c452d318af54e57cfebc32dee3bedc6878dfde3b8dd05ba9"
+      },
+      {
+        "id": "017",
+        "q": "傾斜のゆるやかな火山は、マグマのねばりけが、弱い？強い？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "弱い",
+            "text": "弱い"
+          },
+          {
+            "value": "強い",
+            "text": "強い"
+          }
+        ],
+        "a": "弱い",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_017.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_017.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "弱い",
+          "ねばりけが弱い"
+        ],
+        "normalized": [
+          "弱い",
+          "ねばりけが弱い"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "017",
+        "source": null,
+        "sourceTimes": {
+          "question": 274.0,
+          "answer": 279.0
+        },
+        "table": null,
+        "contract": "7b46a802000782cfd7d2cd1d96b84689343bff302dd8e1d42f5a0a909fc31fc4"
+      },
+      {
+        "id": "018",
+        "q": "火成岩には「火山岩と深成岩」という2種類があります。短期間に地表付近で固まった方は、火山岩？深成岩？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "火山岩",
+            "text": "火山岩"
+          },
+          {
+            "value": "深成岩",
+            "text": "深成岩"
+          }
+        ],
+        "a": "火山岩",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_018.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_018.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "火山岩"
+        ],
+        "normalized": [
+          "火山岩"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "018",
+        "source": null,
+        "sourceTimes": {
+          "question": 294.0,
+          "answer": 298.0
+        },
+        "table": null,
+        "contract": "a505ae19f0ba40b40e141a5f0cbe6a9407f1bf2aaf91d519af6b47a17451c82e"
+      },
+      {
+        "id": "019",
+        "q": "同じくらいの鉱物がぎっしり組み合わさっている深成岩の組織のことを、斑状組織という？等粒状組織という？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "斑状組織",
+            "text": "斑状組織"
+          },
+          {
+            "value": "等粒状組織",
+            "text": "等粒状組織"
+          }
+        ],
+        "a": "等粒状組織",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_019.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_019.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "等粒状組織"
+        ],
+        "normalized": [
+          "等粒状組織"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "019",
+        "source": null,
+        "sourceTimes": {
+          "question": 312.0,
+          "answer": 318.0
+        },
+        "table": null,
+        "contract": "372a3fe7dd02f843e079fe9636eaeadf41cbf6142e5751ab8d7060c6ed0936a8"
+      },
+      {
+        "id": "020",
+        "q": "「安山岩」があてはまるのは、火山岩？深成岩？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "火山岩",
+            "text": "火山岩"
+          },
+          {
+            "value": "深成岩",
+            "text": "深成岩"
+          }
+        ],
+        "a": "火山岩",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_020.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_020.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "火山岩"
+        ],
+        "normalized": [
+          "火山岩"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "020",
+        "source": null,
+        "sourceTimes": {
+          "question": 328.0,
+          "answer": 331.0
+        },
+        "table": null,
+        "contract": "b086cb8763e237cd548b014bbf65e346cdbb07bd98525929484c82e314d0066f"
+      },
+      {
+        "id": "021",
+        "q": "地震の揺れでは「P波・S波」という2つの波が発生します。最初に起こる速い波は、P波？S波？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "P波",
+            "text": "P波"
+          },
+          {
+            "value": "S波",
+            "text": "S波"
+          }
+        ],
+        "a": "P波",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_021.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_021.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "P波"
+        ],
+        "normalized": [
+          "P波"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "021",
+        "source": null,
+        "sourceTimes": {
+          "question": 345.0,
+          "answer": 350.0
+        },
+        "table": null,
+        "contract": "90ad2c4616ad1ea38b530407b67d54d64c06e2ec3f82c12f92e3d5ad97423e24"
+      },
+      {
+        "id": "022",
+        "q": "P波により起こる揺れは、初期微動？主要動？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "初期微動",
+            "text": "初期微動"
+          },
+          {
+            "value": "主要動",
+            "text": "主要動"
+          }
+        ],
+        "a": "初期微動",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_022.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_022.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "初期微動"
+        ],
+        "normalized": [
+          "初期微動"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "022",
+        "source": null,
+        "sourceTimes": {
+          "question": 360.0,
+          "answer": 363.0
+        },
+        "table": null,
+        "contract": "60a814747bdf1975e2969065a1bf39762d5ba0869c40db7a90529b25b70e305d"
+      },
+      {
+        "id": "023",
+        "q": "初期微動継続時間が短い場合、震源からの距離は遠い？近い？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "遠い",
+            "text": "遠い"
+          },
+          {
+            "value": "近い",
+            "text": "近い"
+          }
+        ],
+        "a": "近い",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_023.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_023.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "近い",
+          "震源から近い"
+        ],
+        "normalized": [
+          "近い",
+          "震源から近い"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "023",
+        "source": null,
+        "sourceTimes": {
+          "question": 376.0,
+          "answer": 381.0
+        },
+        "table": null,
+        "contract": "8879e9ba2f860eb3eefd8064c2d1d4835b7899269923cab31790d8a9e0fd259f"
+      },
+      {
+        "id": "024",
+        "q": "地震の規模をあらわす数値は、震度？マグニチュード？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "震度",
+            "text": "震度"
+          },
+          {
+            "value": "マグニチュード",
+            "text": "マグニチュード"
+          }
+        ],
+        "a": "マグニチュード",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_024.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_024.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "マグニチュード"
+        ],
+        "normalized": [
+          "マグニチュード"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "024",
+        "source": null,
+        "sourceTimes": {
+          "question": 392.0,
+          "answer": 396.0
+        },
+        "table": null,
+        "contract": "1794cf66b22be2bbf11733ceb75dca2ff9f88e23a99f567a0c506624f592f27c"
+      },
+      {
+        "id": "025",
+        "q": "地表の岩石が、日射や水などの自然のはたらきによって、表面からくずれていく現象は、侵食？風化？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "侵食",
+            "text": "侵食"
+          },
+          {
+            "value": "風化",
+            "text": "風化"
+          }
+        ],
+        "a": "風化",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_025.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_025.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "風化"
+        ],
+        "normalized": [
+          "風化"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "025",
+        "source": null,
+        "sourceTimes": {
+          "question": 411.0,
+          "answer": 415.0
+        },
+        "table": null,
+        "contract": "adbb3db6584c9cbd6386d1133532db59b741b8dfcefd4d94153f9bdc9cc00520"
+      },
+      {
+        "id": "026",
+        "q": "地層や岩盤に大きな力が加わり、ずれてくいちがったものは、しゅう曲？断層？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "しゅう曲",
+            "text": "しゅう曲"
+          },
+          {
+            "value": "断層",
+            "text": "断層"
+          }
+        ],
+        "a": "断層",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_026.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_026.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "断層"
+        ],
+        "normalized": [
+          "断層"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "026",
+        "source": null,
+        "sourceTimes": {
+          "question": 427.0,
+          "answer": 430.0
+        },
+        "table": null,
+        "contract": "6894b269b0ae81d085163f171921b0e7b0d2d3771c2832cb558154ec6db0afa7"
+      },
+      {
+        "id": "027",
+        "q": "当時の自然環境を知ることができる化石は、示相化石？示準化石？",
+        "aux": [],
+        "choices": [
+          {
+            "value": "示相化石",
+            "text": "示相化石"
+          },
+          {
+            "value": "示準化石",
+            "text": "示準化石"
+          }
+        ],
+        "a": "示相化石",
+        "type": "choice",
+        "mode": "single",
+        "parts": [],
+        "image": false,
+        "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_027.png",
+        "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_027.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "示相化石"
+        ],
+        "normalized": [
+          "示相化石"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "027",
+        "source": null,
+        "sourceTimes": {
+          "question": 442.0,
+          "answer": 448.0
+        },
+        "table": null,
+        "contract": "239e996bd756d08f5c4f363bbb4a0da9cb3d94764408a9d5412088f1dc6c8c24"
+      }
+    ]
+  }
+}

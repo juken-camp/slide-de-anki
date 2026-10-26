@@ -1,0 +1,2146 @@
+{
+  "schema_version": "nekopon-grading-data-1.0",
+  "normalization_policy": {
+    "NFKC": true,
+    "remove_whitespace": true,
+    "remove_punctuation": false,
+    "substring_match": false,
+    "lowercase_units_or_symbols": false,
+    "proposed_aliases_enabled": false,
+    "unicode_minus_to_ASCII_minus": true
+  },
+  "dataset_status": "integrated_20261026",
+  "lesson_id": "social-history-tokugawa-shoguns-15",
+  "title": "江戸幕府の15代将軍｜徳川家康〜徳川慶喜",
+  "subject": "social",
+  "field": "history",
+  "grade": "中学歴史",
+  "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+  "transcription_datetime_jst": "2026-10-25",
+  "question_count": 15,
+  "source_image_count": 30,
+  "supplement_image_count": 0,
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_001.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_001.png",
+      "sourceTimes": {
+        "question": 32.5,
+        "answer": 37.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "1603年、征夷大将軍となって江戸幕府を開いた初代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家康",
+      "answer_notes": "",
+      "answer_reading": "いえやす",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_001.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_001.png",
+          "sha256": "063eaf9c5c74217e8265165c30f8c675d72701aa635928f24fe1f461947a581c"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_001.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_001.png",
+          "sha256": "73201da5ef402559969efe53f976fc2c55f04e6a620406c50078a77b9eaf1e56"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家康",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家康"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "001",
+        "q": "1603年、征夷大将軍となって江戸幕府を開いた初代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家康",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_001.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_001.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家康"
+        ],
+        "normalized": [
+          "徳川家康"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "001",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 32.5,
+          "answer": 37.5
+        },
+        "table": null,
+        "contract": "c33b13f91541d5c9d09e0b1d036a3911036580bcbdf21ab4d957f581de9e0cba",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_002.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_002.png",
+      "sourceTimes": {
+        "question": 51.5,
+        "answer": 56.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "徳川家康の三男で、「江」という正室をもつ、徳川幕府2代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川秀忠",
+      "answer_notes": "",
+      "answer_reading": "ひでただ",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_002.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_002.png",
+          "sha256": "9f3aa6016b26702561f2dd253586ad242bfe0f1853c4baec746c53b45ec0659d"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_002.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_002.png",
+          "sha256": "58e8623570c4d3a69452317023a1ee9af47915aacb09f97ce2621367996ee9e7"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川秀忠",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川秀忠"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "002",
+        "q": "徳川家康の三男で、「江」という正室をもつ、徳川幕府2代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川秀忠",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_002.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_002.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川秀忠"
+        ],
+        "normalized": [
+          "徳川秀忠"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "002",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 51.5,
+          "answer": 56.5
+        },
+        "table": null,
+        "contract": "eb8916ee05bc21d79caeba2d02d1e26273bdc4d3389177f981c42163d6afff04",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_003.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_003.png",
+      "sourceTimes": {
+        "question": 71.5,
+        "answer": 76.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "乳母は「春日局」で、参勤交代を始め、鎖国を完成させた江戸幕府3代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家光",
+      "answer_notes": "",
+      "answer_reading": "いえみつ",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_003.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_003.png",
+          "sha256": "7d06f7d7e00c8cb13419fe4ad3b286cdf76fb70ec796f69d3b43281000cb5cac"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_003.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_003.png",
+          "sha256": "300a3505762305d06435acc237b9f346a07c23666ffa21ad10effd97e75e635f"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家光",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家光"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "003",
+        "q": "乳母は「春日局」で、参勤交代を始め、鎖国を完成させた江戸幕府3代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家光",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_003.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_003.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家光"
+        ],
+        "normalized": [
+          "徳川家光"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "003",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 71.5,
+          "answer": 76.5
+        },
+        "table": null,
+        "contract": "d6b32b2389f13f5d075be8d1687bd1ffefb55b4dc0dedeb51b6d6d9faf152a9d",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_004.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_004.png",
+      "sourceTimes": {
+        "question": 93.5,
+        "answer": 98.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "家光の長男で、江戸を焼き尽くした大火事「明暦の大火」が起こった時の江戸幕府4代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家綱",
+      "answer_notes": "",
+      "answer_reading": "いえつな",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_004.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_004.png",
+          "sha256": "1ba4c30b0d6d816b99970d605c51b4ad42264778f1f5987f97156e257ac33c14"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_004.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_004.png",
+          "sha256": "39ac8bd498f69c037530179df25f221cdcd206fa4b19b018f72e166b22eab719"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家綱",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家綱"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "004",
+        "q": "家光の長男で、江戸を焼き尽くした大火事「明暦の大火」が起こった時の江戸幕府4代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家綱",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_004.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_004.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家綱"
+        ],
+        "normalized": [
+          "徳川家綱"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "004",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 93.5,
+          "answer": 98.5
+        },
+        "table": null,
+        "contract": "3b37defa4c67c27492bf4b921c74460106854dca301027d66f3161e1288c1724",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_005.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_005.png",
+      "sourceTimes": {
+        "question": 115.5,
+        "answer": 120.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "質の悪い貨幣を発行したり、「生類憐れみの令」という極端な動物愛護令を出した徳川幕府5代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川綱吉",
+      "answer_notes": "",
+      "answer_reading": "つなよし",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_005.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_005.png",
+          "sha256": "bfd0408011f12c2e8e2bcd35de3b83b506a3a6f8a2cfc66ee62f6d7ea8d62623"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_005.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_005.png",
+          "sha256": "d60107a51ce06622ad6a58a239616c4a9740769971f5725b2a08c3aa81087be2"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川綱吉",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川綱吉"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "005",
+        "q": "質の悪い貨幣を発行したり、「生類憐れみの令」という極端な動物愛護令を出した徳川幕府5代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川綱吉",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_005.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_005.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川綱吉"
+        ],
+        "normalized": [
+          "徳川綱吉"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "005",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 115.5,
+          "answer": 120.5
+        },
+        "table": null,
+        "contract": "4fb8de3bc2e2df00393f5fd2337f43bbab3d52a191b2e908a3ebfa01cc546553",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_006.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_006.png",
+      "sourceTimes": {
+        "question": 138.5,
+        "answer": 143.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "歴代最高齢の48歳で将軍になり3年後に亡くなった、生類憐れみの令などを廃止した江戸幕府6代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家宣",
+      "answer_notes": "",
+      "answer_reading": "いえのぶ",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_006.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_006.png",
+          "sha256": "a2d7211481f03e38e1e893cc33b9566ba9f2293f85fa98c437da3bdfee0a640b"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_006.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_006.png",
+          "sha256": "be91474a4e9f75d6e7ad39811fcb7ac5acca6973efec6af001567c809bcad0d3"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家宣",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家宣"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "006",
+        "q": "歴代最高齢の48歳で将軍になり3年後に亡くなった、生類憐れみの令などを廃止した江戸幕府6代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家宣",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_006.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_006.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家宣"
+        ],
+        "normalized": [
+          "徳川家宣"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "006",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 138.5,
+          "answer": 143.5
+        },
+        "table": null,
+        "contract": "c722ca490a73f9bcccf44db1e62cc182bd12038cb2e40024e8b22e9f89627f01",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_007.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_007.png",
+      "sourceTimes": {
+        "question": 160.5,
+        "answer": 165.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "歴代最年少の5歳で将軍に就任し、8歳で亡くなった江戸幕府7代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家継",
+      "answer_notes": "",
+      "answer_reading": "いえつぐ",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_007.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_007.png",
+          "sha256": "f630259b4598d770bbcdbce27cbe9d7203b5e738699106c384a1e10b560429e0"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_007.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_007.png",
+          "sha256": "20897eef6dd7a11052afdfef4330d9461bc27ba95ea7f969bb2eb4196db20cde"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [
+        "原動画の「4歳で将軍に就任」は家督相続の年齢を将軍就任と混同しているため、歴史事典の就任年齢（数え5歳）に合わせて画像2枚・テキストを訂正。",
+        "江戸時代の年齢は現代の満年齢ではなく数え年表現を含む。"
+      ],
+      "advisory_notes": [
+        "元動画では4歳。就任は5歳として訂正。"
+      ],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家継",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家継"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "007",
+        "q": "歴代最年少の5歳で将軍に就任し、8歳で亡くなった江戸幕府7代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家継",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_007.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_007.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家継"
+        ],
+        "normalized": [
+          "徳川家継"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "007",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 160.5,
+          "answer": 165.5
+        },
+        "table": null,
+        "contract": "e014a9cf6a8aa10ebef499f66e1056b8bbabbbc5d4ee04f8af5640ad66f7a0cd",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_008.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_008.png",
+      "sourceTimes": {
+        "question": 183.5,
+        "answer": 188.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "目安箱や公事方御定書などの「享保の改革」を行った、元紀伊藩主の江戸幕府8代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川吉宗",
+      "answer_notes": "",
+      "answer_reading": "よしむね",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_008.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_008.png",
+          "sha256": "4674c7e48a9caed7b65242605cdb4b346c762e6ce89d1fc3b626743cd99c9c6a"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_008.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_008.png",
+          "sha256": "d1be9f7b3d84eb90f074b7ceab096ae87b3c3742db949f63b9b062de65cca2fe"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川吉宗",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川吉宗"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "008",
+        "q": "目安箱や公事方御定書などの「享保の改革」を行った、元紀伊藩主の江戸幕府8代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川吉宗",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_008.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_008.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川吉宗"
+        ],
+        "normalized": [
+          "徳川吉宗"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "008",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 183.5,
+          "answer": 188.5
+        },
+        "table": null,
+        "contract": "da1804fc45e19f213052e97d4f2d4ea36bfe822a2ba27fe7393237ecc1658772",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_009.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_009.png",
+      "sourceTimes": {
+        "question": 204.5,
+        "answer": 209.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "吉宗の長男で、脳性麻痺からくる言語障害があったとされる、江戸幕府9代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家重",
+      "answer_notes": "",
+      "answer_reading": "いえしげ",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_009.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_009.png",
+          "sha256": "bfafa8c55bc8e97c13dd04c55d0dc83e0dd706d36dc3d2058362e017f36cd34d"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_009.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_009.png",
+          "sha256": "b0df4242123023233f8462244236cb817ca1710cec8dfc7382941f14ede6b8ef"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [
+        "「脳性麻痺」は史料と遺骨研究などに基づく学説として紹介されており、動画の「とされる」を残した。断定したわけではない。"
+      ],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家重",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家重"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "009",
+        "q": "吉宗の長男で、脳性麻痺からくる言語障害があったとされる、江戸幕府9代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家重",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_009.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_009.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家重"
+        ],
+        "normalized": [
+          "徳川家重"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "009",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 204.5,
+          "answer": 209.5
+        },
+        "table": null,
+        "contract": "0523b0c8a673b9aa5d5cf7c179b9cf7187f0bd79708997d50c8f107aeb04ab6b",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_010.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_010.png",
+      "sourceTimes": {
+        "question": 228.5,
+        "answer": 233.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "祖父の吉宗に寵愛された聡明な将軍で、老中に「田沼意次」を任命し、愛妻家だった江戸幕府10代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家治",
+      "answer_notes": "",
+      "answer_reading": "いえはる",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_010.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_010.png",
+          "sha256": "74221ce7608b56dc9cb740b534d01df110b3b86bdc726b717be36f373b22bbce"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_010.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_010.png",
+          "sha256": "c66ba1a576ccca35af46a590fed5917ba0e1b16f0f6a6372639d7114972d588c"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家治",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家治"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "010",
+        "q": "祖父の吉宗に寵愛された聡明な将軍で、老中に「田沼意次」を任命し、愛妻家だった江戸幕府10代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家治",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_010.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_010.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家治"
+        ],
+        "normalized": [
+          "徳川家治"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "010",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 228.5,
+          "answer": 233.5
+        },
+        "table": null,
+        "contract": "5883044a710e68b069d95b3439e7726ee6398918b2d71dfc755d3741dd1ee418",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_011.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_011.png",
+      "sourceTimes": {
+        "question": 256.5,
+        "answer": 261.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "一橋家から将軍になり、「寛政の改革」を行った松平定信を老中にもち、53人の子をもうけた在任期間が歴代最高（50年）の江戸幕府11代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家斉",
+      "answer_notes": "",
+      "answer_reading": "いえなり",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_011.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_011.png",
+          "sha256": "90f44bf49ce457e5be94ab412e88ba58d5ff807eeef5399a760385f3e71308d5"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_011.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_011.png",
+          "sha256": "e7094e8820ef60edf4f7d8063acabaf98f220bf41b703a18be5b85cadfb99f7b"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家斉",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家斉"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "011",
+        "q": "一橋家から将軍になり、「寛政の改革」を行った松平定信を老中にもち、53人の子をもうけた在任期間が歴代最高（50年）の江戸幕府11代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家斉",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_011.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_011.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家斉"
+        ],
+        "normalized": [
+          "徳川家斉"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "011",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 256.5,
+          "answer": 261.5
+        },
+        "table": null,
+        "contract": "e81c1f6e88fff9036912ce78ff7f39f6f7cda3f4200e4e651fa7b1b282f0f823",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_012.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_012.png",
+      "sourceTimes": {
+        "question": 283.5,
+        "answer": 288.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "天保の改革を行った老中「水野忠邦」を任命し、ペリーが黒船で来航したさなかに亡くなった江戸幕府12代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家慶",
+      "answer_notes": "",
+      "answer_reading": "いえよし",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_012.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_012.png",
+          "sha256": "e0b7ea0eddfa3b1f47e5a4e66d791e6e6ecf7758c682e2d8544e79c14930cbfc"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_012.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_012.png",
+          "sha256": "525851a13284636b39f4727c31b66d2a5cea6601be84a7a75a98f9d0a8c492a9"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家慶",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家慶"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "012",
+        "q": "天保の改革を行った老中「水野忠邦」を任命し、ペリーが黒船で来航したさなかに亡くなった江戸幕府12代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家慶",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_012.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_012.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家慶"
+        ],
+        "normalized": [
+          "徳川家慶"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "012",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 283.5,
+          "answer": 288.5
+        },
+        "table": null,
+        "contract": "2a37a04adaa6d380d5a405943103f58a4bd015ce1604398bc1e2d248e3d488d8",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_013.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_013.png",
+      "sourceTimes": {
+        "question": 306.5,
+        "answer": 311.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "病弱で人前に出ることを嫌い、3人目の正室として天璋院篤姫と結婚した江戸幕府13代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家定",
+      "answer_notes": "",
+      "answer_reading": "いえさだ",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_013.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_013.png",
+          "sha256": "38bb73b971ebbc334ce09af9a2a19b53218713ecfb7104e399c9fd43b32938df"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_013.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_013.png",
+          "sha256": "271c4792a522d9490b0759a2bf03eed0662984c96e3b9a485ab89efd53aac2a9"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家定",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家定"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "013",
+        "q": "病弱で人前に出ることを嫌い、3人目の正室として天璋院篤姫と結婚した江戸幕府13代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家定",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_013.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_013.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家定"
+        ],
+        "normalized": [
+          "徳川家定"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "013",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 306.5,
+          "answer": 311.5
+        },
+        "table": null,
+        "contract": "5d9f8076a608eac44ca059f68261a7c6311243e58ca6381d386ec9a4f9e89a40",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_014.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_014.png",
+      "sourceTimes": {
+        "question": 336.5,
+        "answer": 341.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "井伊直弼に推されて紀州徳川家から13歳で将軍となり、政略結婚だった皇女「和宮」を一途に愛し、20歳で亡くなった江戸幕府14代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川家茂",
+      "answer_notes": "",
+      "answer_reading": "いえもち",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_014.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_014.png",
+          "sha256": "7eed2f4a19876e5a5fbcf7a5261b7939f1dd8f7d2c7701569a72625f7bf9bb73"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_014.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_014.png",
+          "sha256": "abb7f54e8972a6e86e060f9263b20d9261a7b1fea8adbbbe00470c76c45d8416"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [
+        "江戸時代の年齢は現代の満年齢ではなく数え年表現を含む。"
+      ],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川家茂",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川家茂"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "014",
+        "q": "井伊直弼に推されて紀州徳川家から13歳で将軍となり、政略結婚だった皇女「和宮」を一途に愛し、20歳で亡くなった江戸幕府14代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家茂",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_014.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_014.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家茂"
+        ],
+        "normalized": [
+          "徳川家茂"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "014",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 336.5,
+          "answer": 341.5
+        },
+        "table": null,
+        "contract": "7c2a6ba52641ea8cd79bd16faf16cf6498d99cdddd5c653ac44d9b46e5c6515c",
+        "hideQuestionImage": true
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "tokugawa-shoguns",
+      "question": "images_58/social-history-tokugawa-shoguns-15/question_015.png",
+      "answer": "images_58/social-history-tokugawa-shoguns-15/answer_015.png",
+      "sourceTimes": {
+        "question": 361.5,
+        "answer": 366.5
+      },
+      "lesson_id": "social-history-tokugawa-shoguns-15",
+      "question_text": "一橋家から将軍になり、江戸城には入らず畿内で朝廷と連携し、「大政奉還」を行った江戸幕府15代将軍は誰？",
+      "question_auxiliary_text": [],
+      "answer_auxiliary_text": [],
+      "response_instruction": "",
+      "response_instruction_origin": null,
+      "answer_text": "徳川慶喜",
+      "answer_notes": "",
+      "answer_reading": "よしのぶ",
+      "choices": [],
+      "choices_origin": null,
+      "answer_type": "term",
+      "has_figure": true,
+      "requires_image_for_answer": false,
+      "image_requirement_reason": "",
+      "question_text_suffices_for_answer": true,
+      "figure_summary": "右側に徳川将軍家の家系図。対象となる将軍の代数を赤い楕円で示している。系図には将軍の氏名が書かれているため、テキスト確認テストでは図を表示しない。",
+      "figure_text_scope": "relevant_labels_and_summary_not_all_small_text",
+      "source_video_url": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+      "images": {
+        "question": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/question_015.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/question_015.png",
+          "sha256": "4691aff192951c76632422cae1888d1e55a2046ad079a7a47bd6eb9961f477fa"
+        },
+        "answer": {
+          "path": "images_58/social-history-tokugawa-shoguns-15/answer_015.png",
+          "local_path": "images_58/social-history-tokugawa-shoguns-15/answer_015.png",
+          "sha256": "bc90f73ffc8a7bad69a292b8c9eabd08d9c5620f95ac3def8064e9ea2185d719"
+        }
+      },
+      "transcription_review": {
+        "status": "question_and_answer_pair_visually_checked",
+        "unreadable_question_or_primary_answer_text": false,
+        "question_answer_pair_matches": true,
+        "question_prompt_partially_absent_on_source_image": false
+      },
+      "content_review_notes": [],
+      "advisory_notes": [],
+      "explanation_review_notes": [],
+      "grading": {
+        "status": "ready_for_exact_match",
+        "auto_grade_eligible": true,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "unmatched_response_result": "needs_review_or_self_assessment_not_automatic_incorrect",
+        "required_display": "question_text_choices_and_auxiliary_material",
+        "accepted_answers": [
+          {
+            "text": "徳川慶喜",
+            "basis": "integrated_runtime_verified_answer"
+          }
+        ],
+        "accepted_normalized_values": [
+          "徳川慶喜"
+        ],
+        "proposed_aliases_not_enabled": [],
+        "substring_match": false,
+        "lowercase_units_or_symbols": false
+      },
+      "runtime_record": {
+        "id": "015",
+        "q": "一橋家から将軍になり、江戸城には入らず畿内で朝廷と連携し、「大政奉還」を行った江戸幕府15代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川慶喜",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_015.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_015.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川慶喜"
+        ],
+        "normalized": [
+          "徳川慶喜"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "015",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 361.5,
+          "answer": 366.5
+        },
+        "table": null,
+        "contract": "8eef0a4f92d0730a3e44035a8e87b84ce46dec09f929039dce6a697480805268",
+        "hideQuestionImage": true
+      }
+    }
+  ],
+  "supplements": [],
+  "summary": {
+    "visually_checked_pairs": 15,
+    "auto_grade_eligible": 15,
+    "needs_content_review": [],
+    "requires_original_question_image": [],
+    "source_video_url_verified": true,
+    "applied_image_corrections": [
+      {
+        "id": "007",
+        "note": "将軍就任年齢は数え5歳。問題・解答画像を訂正。"
+      }
+    ],
+    "factual_cautions": [
+      {
+        "id": "009",
+        "note": "脳性麻痺説には学説上の不確実性があり「とされる」を維持。"
+      }
+    ]
+  },
+  "runtime_schema": 1,
+  "runtime_lesson": {
+    "title": "江戸幕府の15代将軍｜徳川家康〜徳川慶喜",
+    "count": 15,
+    "cards": [
+      {
+        "id": "001",
+        "q": "1603年、征夷大将軍となって江戸幕府を開いた初代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家康",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_001.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_001.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家康"
+        ],
+        "normalized": [
+          "徳川家康"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "001",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 32.5,
+          "answer": 37.5
+        },
+        "table": null,
+        "contract": "c33b13f91541d5c9d09e0b1d036a3911036580bcbdf21ab4d957f581de9e0cba",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "002",
+        "q": "徳川家康の三男で、「江」という正室をもつ、徳川幕府2代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川秀忠",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_002.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_002.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川秀忠"
+        ],
+        "normalized": [
+          "徳川秀忠"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "002",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 51.5,
+          "answer": 56.5
+        },
+        "table": null,
+        "contract": "eb8916ee05bc21d79caeba2d02d1e26273bdc4d3389177f981c42163d6afff04",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "003",
+        "q": "乳母は「春日局」で、参勤交代を始め、鎖国を完成させた江戸幕府3代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家光",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_003.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_003.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家光"
+        ],
+        "normalized": [
+          "徳川家光"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "003",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 71.5,
+          "answer": 76.5
+        },
+        "table": null,
+        "contract": "d6b32b2389f13f5d075be8d1687bd1ffefb55b4dc0dedeb51b6d6d9faf152a9d",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "004",
+        "q": "家光の長男で、江戸を焼き尽くした大火事「明暦の大火」が起こった時の江戸幕府4代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家綱",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_004.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_004.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家綱"
+        ],
+        "normalized": [
+          "徳川家綱"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "004",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 93.5,
+          "answer": 98.5
+        },
+        "table": null,
+        "contract": "3b37defa4c67c27492bf4b921c74460106854dca301027d66f3161e1288c1724",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "005",
+        "q": "質の悪い貨幣を発行したり、「生類憐れみの令」という極端な動物愛護令を出した徳川幕府5代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川綱吉",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_005.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_005.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川綱吉"
+        ],
+        "normalized": [
+          "徳川綱吉"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "005",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 115.5,
+          "answer": 120.5
+        },
+        "table": null,
+        "contract": "4fb8de3bc2e2df00393f5fd2337f43bbab3d52a191b2e908a3ebfa01cc546553",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "006",
+        "q": "歴代最高齢の48歳で将軍になり3年後に亡くなった、生類憐れみの令などを廃止した江戸幕府6代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家宣",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_006.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_006.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家宣"
+        ],
+        "normalized": [
+          "徳川家宣"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "006",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 138.5,
+          "answer": 143.5
+        },
+        "table": null,
+        "contract": "c722ca490a73f9bcccf44db1e62cc182bd12038cb2e40024e8b22e9f89627f01",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "007",
+        "q": "歴代最年少の5歳で将軍に就任し、8歳で亡くなった江戸幕府7代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家継",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_007.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_007.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家継"
+        ],
+        "normalized": [
+          "徳川家継"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "007",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 160.5,
+          "answer": 165.5
+        },
+        "table": null,
+        "contract": "e014a9cf6a8aa10ebef499f66e1056b8bbabbbc5d4ee04f8af5640ad66f7a0cd",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "008",
+        "q": "目安箱や公事方御定書などの「享保の改革」を行った、元紀伊藩主の江戸幕府8代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川吉宗",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_008.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_008.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川吉宗"
+        ],
+        "normalized": [
+          "徳川吉宗"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "008",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 183.5,
+          "answer": 188.5
+        },
+        "table": null,
+        "contract": "da1804fc45e19f213052e97d4f2d4ea36bfe822a2ba27fe7393237ecc1658772",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "009",
+        "q": "吉宗の長男で、脳性麻痺からくる言語障害があったとされる、江戸幕府9代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家重",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_009.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_009.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家重"
+        ],
+        "normalized": [
+          "徳川家重"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "009",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 204.5,
+          "answer": 209.5
+        },
+        "table": null,
+        "contract": "0523b0c8a673b9aa5d5cf7c179b9cf7187f0bd79708997d50c8f107aeb04ab6b",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "010",
+        "q": "祖父の吉宗に寵愛された聡明な将軍で、老中に「田沼意次」を任命し、愛妻家だった江戸幕府10代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家治",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_010.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_010.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家治"
+        ],
+        "normalized": [
+          "徳川家治"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "010",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 228.5,
+          "answer": 233.5
+        },
+        "table": null,
+        "contract": "5883044a710e68b069d95b3439e7726ee6398918b2d71dfc755d3741dd1ee418",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "011",
+        "q": "一橋家から将軍になり、「寛政の改革」を行った松平定信を老中にもち、53人の子をもうけた在任期間が歴代最高（50年）の江戸幕府11代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家斉",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_011.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_011.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家斉"
+        ],
+        "normalized": [
+          "徳川家斉"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "011",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 256.5,
+          "answer": 261.5
+        },
+        "table": null,
+        "contract": "e81c1f6e88fff9036912ce78ff7f39f6f7cda3f4200e4e651fa7b1b282f0f823",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "012",
+        "q": "天保の改革を行った老中「水野忠邦」を任命し、ペリーが黒船で来航したさなかに亡くなった江戸幕府12代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家慶",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_012.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_012.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家慶"
+        ],
+        "normalized": [
+          "徳川家慶"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "012",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 283.5,
+          "answer": 288.5
+        },
+        "table": null,
+        "contract": "2a37a04adaa6d380d5a405943103f58a4bd015ce1604398bc1e2d248e3d488d8",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "013",
+        "q": "病弱で人前に出ることを嫌い、3人目の正室として天璋院篤姫と結婚した江戸幕府13代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家定",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_013.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_013.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家定"
+        ],
+        "normalized": [
+          "徳川家定"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "013",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 306.5,
+          "answer": 311.5
+        },
+        "table": null,
+        "contract": "5d9f8076a608eac44ca059f68261a7c6311243e58ca6381d386ec9a4f9e89a40",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "014",
+        "q": "井伊直弼に推されて紀州徳川家から13歳で将軍となり、政略結婚だった皇女「和宮」を一途に愛し、20歳で亡くなった江戸幕府14代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川家茂",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_014.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_014.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川家茂"
+        ],
+        "normalized": [
+          "徳川家茂"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "014",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 336.5,
+          "answer": 341.5
+        },
+        "table": null,
+        "contract": "7c2a6ba52641ea8cd79bd16faf16cf6498d99cdddd5c653ac44d9b46e5c6515c",
+        "hideQuestionImage": true
+      },
+      {
+        "id": "015",
+        "q": "一橋家から将軍になり、江戸城には入らず畿内で朝廷と連携し、「大政奉還」を行った江戸幕府15代将軍は誰？",
+        "aux": [],
+        "choices": [],
+        "a": "徳川慶喜",
+        "type": "term",
+        "mode": "text",
+        "parts": [],
+        "image": false,
+        "question": "images_58/social-history-tokugawa-shoguns-15/question_015.png",
+        "answer": "images_58/social-history-tokugawa-shoguns-15/answer_015.png",
+        "eligible": true,
+        "editorial": false,
+        "comparison": "NFKC_unicode_minus_to_ASCII_minus_remove_whitespace_exact_equality",
+        "accepted": [
+          "徳川慶喜"
+        ],
+        "normalized": [
+          "徳川慶喜"
+        ],
+        "labels": [],
+        "orderSensitive": false,
+        "unordered": false,
+        "inputHint": "",
+        "number": "015",
+        "source": "https://www.youtube.com/watch?v=2cpyO5cnGdg",
+        "sourceTimes": {
+          "question": 361.5,
+          "answer": 366.5
+        },
+        "table": null,
+        "contract": "8eef0a4f92d0730a3e44035a8e87b84ce46dec09f929039dce6a697480805268",
+        "hideQuestionImage": true
+      }
+    ]
+  }
+}

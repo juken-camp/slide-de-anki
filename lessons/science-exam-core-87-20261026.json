@@ -1,0 +1,900 @@
+{
+  "id": "science-exam-core-87-20261026",
+  "subject": "science",
+  "field": "general",
+  "title": "高校入試 頻出問題｜理科の基本",
+  "grade": "中学理科・高校入試",
+  "description": "高校入試の基本87問。生物・地学・化学・物理の図解付き一問一答。",
+  "cover": "images_85/science-exam-core-87-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "science87-biology",
+      "title": "生物（1～27問）"
+    },
+    {
+      "id": "science87-geoscience",
+      "title": "地学（28～50問）"
+    },
+    {
+      "id": "science87-chemistry",
+      "title": "化学（51～73問）"
+    },
+    {
+      "id": "science87-physics",
+      "title": "物理（74～87問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_001.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 12.0,
+        "answer": 29.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_002.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 36.0,
+        "answer": 62.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_003.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 72.0,
+        "answer": 84.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_004.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 96.0,
+        "answer": 112.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_005.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 120.0,
+        "answer": 144.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_006.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 156.0,
+        "answer": 170.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_007.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 180.0,
+        "answer": 193.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_008.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 204.0,
+        "answer": 217.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_009.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 228.0,
+        "answer": 253.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_010.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 264.0,
+        "answer": 279.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_011.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 288.0,
+        "answer": 308.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_012.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 312.0,
+        "answer": 334.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_013.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 336.0,
+        "answer": 372.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_014.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 384.0,
+        "answer": 412.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_015.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 420.0,
+        "answer": 436.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_016.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 444.0,
+        "answer": 454.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_017.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 456.0,
+        "answer": 480.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_018.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 492.0,
+        "answer": 508.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_019.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 516.0,
+        "answer": 544.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_020.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 552.0,
+        "answer": 564.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_021.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 576.0,
+        "answer": 592.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_022.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 600.0,
+        "answer": 610.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_023.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 612.0,
+        "answer": 636.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_024.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 648.0,
+        "answer": 660.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_025.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 672.0,
+        "answer": 688.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_026.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 696.0,
+        "answer": 712.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "science87-biology",
+      "question": "images_85/science-exam-core-87-20261026/question_027.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 720.0,
+        "answer": 744.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_028.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 768.0,
+        "answer": 780.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_029.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 792.0,
+        "answer": 804.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_030.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 816.0,
+        "answer": 832.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_031.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 840.0,
+        "answer": 880.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_032.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 888.0,
+        "answer": 900.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_033.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 912.0,
+        "answer": 936.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_034.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 948.0,
+        "answer": 960.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_035.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 972.0,
+        "answer": 984.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_036.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 996.0,
+        "answer": 1008.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_037.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 1020.0,
+        "answer": 1032.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_038.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 1044.0,
+        "answer": 1060.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_039.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 1068.0,
+        "answer": 1080.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_040.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 1092.0,
+        "answer": 1120.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_041.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 1128.0,
+        "answer": 1144.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_042.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 1152.0,
+        "answer": 1172.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_043.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 1176.0,
+        "answer": 1192.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_044.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 1200.0,
+        "answer": 1224.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_045.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 1236.0,
+        "answer": 1252.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_046.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_046.png",
+      "sourceTimes": {
+        "question": 1260.0,
+        "answer": 1284.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_047.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_047.png",
+      "sourceTimes": {
+        "question": 1296.0,
+        "answer": 1308.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_048.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_048.png",
+      "sourceTimes": {
+        "question": 1320.0,
+        "answer": 1332.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_049.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_049.png",
+      "sourceTimes": {
+        "question": 1344.0,
+        "answer": 1348.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "science87-geoscience",
+      "question": "images_85/science-exam-core-87-20261026/question_050.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_050.png",
+      "sourceTimes": {
+        "question": 1356.0,
+        "answer": 1374.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_051.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_051.png",
+      "sourceTimes": {
+        "question": 1392.0,
+        "answer": 1408.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_052.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_052.png",
+      "sourceTimes": {
+        "question": 1416.0,
+        "answer": 1432.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_053.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_053.png",
+      "sourceTimes": {
+        "question": 1440.0,
+        "answer": 1468.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_054.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_054.png",
+      "sourceTimes": {
+        "question": 1476.0,
+        "answer": 1488.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_055.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_055.png",
+      "sourceTimes": {
+        "question": 1500.0,
+        "answer": 1512.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_056.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_056.png",
+      "sourceTimes": {
+        "question": 1524.0,
+        "answer": 1546.0
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_057.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_057.png",
+      "sourceTimes": {
+        "question": 1548.0,
+        "answer": 1572.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_058.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_058.png",
+      "sourceTimes": {
+        "question": 1584.0,
+        "answer": 1594.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_059.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_059.png",
+      "sourceTimes": {
+        "question": 1596.0,
+        "answer": 1620.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_060.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_060.png",
+      "sourceTimes": {
+        "question": 1632.0,
+        "answer": 1648.0
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_061.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_061.png",
+      "sourceTimes": {
+        "question": 1656.0,
+        "answer": 1672.0
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_062.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_062.png",
+      "sourceTimes": {
+        "question": 1680.0,
+        "answer": 1704.0
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_063.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_063.png",
+      "sourceTimes": {
+        "question": 1716.0,
+        "answer": 1732.0
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_064.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_064.png",
+      "sourceTimes": {
+        "question": 1740.0,
+        "answer": 1756.0
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_065.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_065.png",
+      "sourceTimes": {
+        "question": 1764.0,
+        "answer": 1788.0
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_066.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_066.png",
+      "sourceTimes": {
+        "question": 1800.0,
+        "answer": 1812.0
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_067.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_067.png",
+      "sourceTimes": {
+        "question": 1820.0,
+        "answer": 1828.0
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_068.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_068.png",
+      "sourceTimes": {
+        "question": 1836.0,
+        "answer": 1852.0
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_069.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_069.png",
+      "sourceTimes": {
+        "question": 1860.0,
+        "answer": 1876.0
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_070.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_070.png",
+      "sourceTimes": {
+        "question": 1884.0,
+        "answer": 1900.0
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_071.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_071.png",
+      "sourceTimes": {
+        "question": 1908.0,
+        "answer": 1936.0
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_072.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_072.png",
+      "sourceTimes": {
+        "question": 1944.0,
+        "answer": 1972.0
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "science87-chemistry",
+      "question": "images_85/science-exam-core-87-20261026/question_073.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_073.png",
+      "sourceTimes": {
+        "question": 1980.0,
+        "answer": 1992.0
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_074.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_074.png",
+      "sourceTimes": {
+        "question": 2004.0,
+        "answer": 2016.0
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_075.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_075.png",
+      "sourceTimes": {
+        "question": 2028.0,
+        "answer": 2040.0
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_076.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_076.png",
+      "sourceTimes": {
+        "question": 2052.0,
+        "answer": 2064.0
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_077.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_077.png",
+      "sourceTimes": {
+        "question": 2076.0,
+        "answer": 2092.0
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_078.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_078.png",
+      "sourceTimes": {
+        "question": 2100.0,
+        "answer": 2124.0
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_079.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_079.png",
+      "sourceTimes": {
+        "question": 2136.0,
+        "answer": 2148.0
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_080.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_080.png",
+      "sourceTimes": {
+        "question": 2160.0,
+        "answer": 2184.0
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_081.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_081.png",
+      "sourceTimes": {
+        "question": 2196.0,
+        "answer": 2200.0
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_082.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_082.png",
+      "sourceTimes": {
+        "question": 2208.0,
+        "answer": 2224.0
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_083.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_083.png",
+      "sourceTimes": {
+        "question": 2232.0,
+        "answer": 2260.0
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_084.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_084.png",
+      "sourceTimes": {
+        "question": 2268.0,
+        "answer": 2296.0
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_085.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_085.png",
+      "sourceTimes": {
+        "question": 2304.0,
+        "answer": 2332.0
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_086.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_086.png",
+      "sourceTimes": {
+        "question": 2340.0,
+        "answer": 2356.0
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "science87-physics",
+      "question": "images_85/science-exam-core-87-20261026/question_087.png",
+      "answer": "images_85/science-exam-core-87-20261026/answer_087.png",
+      "sourceTimes": {
+        "question": 2364.0,
+        "answer": 2400.0
+      }
+    }
+  ],
+  "series": "frequent"
+}

@@ -1,0 +1,1088 @@
+{
+  "id": "social-history-entrance-107-20261026",
+  "subject": "social",
+  "field": "history",
+  "title": "高校入試 過去問｜歴史 一問一答①",
+  "grade": "中学歴史",
+  "description": "元動画表題108語。映像中の独立した問題107問を収録。応仁の乱からアイヌ民族までの歴史総合。",
+  "cover": "images_20261026107/social-history-entrance-107-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "mixed",
+      "title": "日本史・世界史 総合107問"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_001.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 20.4,
+        "answer": 40.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_002.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 45.4,
+        "answer": 69.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_003.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 74.4,
+        "answer": 83.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_004.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 88.4,
+        "answer": 115.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_005.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 120.4,
+        "answer": 133.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_006.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 138.4,
+        "answer": 149.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_007.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 154.4,
+        "answer": 167.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_008.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 172.4,
+        "answer": 184.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_009.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 189.4,
+        "answer": 204.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_010.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 209.4,
+        "answer": 229.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_011.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 234.4,
+        "answer": 246.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_012.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 251.4,
+        "answer": 269.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_013.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 274.4,
+        "answer": 291.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_014.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 296.4,
+        "answer": 318.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_015.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 323.4,
+        "answer": 334.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_016.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 339.4,
+        "answer": 353.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_017.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 358.4,
+        "answer": 381.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_018.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 386.4,
+        "answer": 400.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_019.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 405.4,
+        "answer": 419.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_020.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 424.4,
+        "answer": 443.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_021.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 448.4,
+        "answer": 492.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_022.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 497.4,
+        "answer": 515.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_023.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 520.4,
+        "answer": 550.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_024.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 555.4,
+        "answer": 569.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_025.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 574.4,
+        "answer": 596.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_026.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 601.4,
+        "answer": 620.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_027.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 625.4,
+        "answer": 655.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_028.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 660.4,
+        "answer": 685.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_029.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 690.4,
+        "answer": 704.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_030.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 709.4,
+        "answer": 728.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_031.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 733.4,
+        "answer": 751.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_032.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 756.4,
+        "answer": 769.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_033.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 774.4,
+        "answer": 796.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_034.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 801.4,
+        "answer": 818.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_035.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 823.4,
+        "answer": 878.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_036.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 883.4,
+        "answer": 897.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_037.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 902.4,
+        "answer": 914.5
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_038.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 919.4,
+        "answer": 938.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_039.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 943.4,
+        "answer": 966.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_040.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 971.4,
+        "answer": 987.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_041.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 992.4,
+        "answer": 1005.5
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_042.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 1010.4,
+        "answer": 1021.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_043.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 1026.4,
+        "answer": 1045.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_044.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 1050.4,
+        "answer": 1062.5
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_045.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 1067.4,
+        "answer": 1081.5
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_046.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_046.png",
+      "sourceTimes": {
+        "question": 1086.4,
+        "answer": 1102.5
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_047.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_047.png",
+      "sourceTimes": {
+        "question": 1107.4,
+        "answer": 1123.5
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_048.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_048.png",
+      "sourceTimes": {
+        "question": 1128.4,
+        "answer": 1146.5
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_049.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_049.png",
+      "sourceTimes": {
+        "question": 1151.4,
+        "answer": 1178.5
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_050.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_050.png",
+      "sourceTimes": {
+        "question": 1183.4,
+        "answer": 1203.5
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_051.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_051.png",
+      "sourceTimes": {
+        "question": 1208.4,
+        "answer": 1230.5
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_052.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_052.png",
+      "sourceTimes": {
+        "question": 1235.4,
+        "answer": 1248.5
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_053.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_053.png",
+      "sourceTimes": {
+        "question": 1253.4,
+        "answer": 1271.5
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_054.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_054.png",
+      "sourceTimes": {
+        "question": 1276.4,
+        "answer": 1293.5
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_055.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_055.png",
+      "sourceTimes": {
+        "question": 1298.4,
+        "answer": 1312.5
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_056.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_056.png",
+      "sourceTimes": {
+        "question": 1317.4,
+        "answer": 1334.5
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_057.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_057.png",
+      "sourceTimes": {
+        "question": 1339.4,
+        "answer": 1351.5
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_058.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_058.png",
+      "sourceTimes": {
+        "question": 1356.4,
+        "answer": 1365.5
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_059.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_059.png",
+      "sourceTimes": {
+        "question": 1370.4,
+        "answer": 1382.5
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_060.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_060.png",
+      "sourceTimes": {
+        "question": 1387.4,
+        "answer": 1406.5
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_061.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_061.png",
+      "sourceTimes": {
+        "question": 1411.4,
+        "answer": 1421.5
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_062.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_062.png",
+      "sourceTimes": {
+        "question": 1426.4,
+        "answer": 1447.5
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_063.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_063.png",
+      "sourceTimes": {
+        "question": 1452.4,
+        "answer": 1469.5
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_064.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_064.png",
+      "sourceTimes": {
+        "question": 1474.4,
+        "answer": 1494.5
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_065.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_065.png",
+      "sourceTimes": {
+        "question": 1499.4,
+        "answer": 1508.5
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_066.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_066.png",
+      "sourceTimes": {
+        "question": 1513.4,
+        "answer": 1529.5
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_067.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_067.png",
+      "sourceTimes": {
+        "question": 1534.4,
+        "answer": 1549.5
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_068.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_068.png",
+      "sourceTimes": {
+        "question": 1554.4,
+        "answer": 1577.5
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_069.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_069.png",
+      "sourceTimes": {
+        "question": 1582.4,
+        "answer": 1604.5
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_070.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_070.png",
+      "sourceTimes": {
+        "question": 1609.4,
+        "answer": 1623.5
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_071.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_071.png",
+      "sourceTimes": {
+        "question": 1628.4,
+        "answer": 1645.5
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_072.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_072.png",
+      "sourceTimes": {
+        "question": 1650.4,
+        "answer": 1667.5
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_073.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_073.png",
+      "sourceTimes": {
+        "question": 1672.4,
+        "answer": 1686.5
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_074.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_074.png",
+      "sourceTimes": {
+        "question": 1691.4,
+        "answer": 1709.5
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_075.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_075.png",
+      "sourceTimes": {
+        "question": 1714.4,
+        "answer": 1739.5
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_076.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_076.png",
+      "sourceTimes": {
+        "question": 1744.4,
+        "answer": 1759.5
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_077.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_077.png",
+      "sourceTimes": {
+        "question": 1764.4,
+        "answer": 1779.5
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_078.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_078.png",
+      "sourceTimes": {
+        "question": 1784.4,
+        "answer": 1798.5
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_079.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_079.png",
+      "sourceTimes": {
+        "question": 1803.4,
+        "answer": 1823.5
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_080.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_080.png",
+      "sourceTimes": {
+        "question": 1828.4,
+        "answer": 1847.5
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_081.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_081.png",
+      "sourceTimes": {
+        "question": 1852.4,
+        "answer": 1870.5
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_082.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_082.png",
+      "sourceTimes": {
+        "question": 1875.4,
+        "answer": 1889.5
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_083.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_083.png",
+      "sourceTimes": {
+        "question": 1894.4,
+        "answer": 1923.5
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_084.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_084.png",
+      "sourceTimes": {
+        "question": 1928.4,
+        "answer": 1950.5
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_085.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_085.png",
+      "sourceTimes": {
+        "question": 1955.4,
+        "answer": 2002.5
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_086.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_086.png",
+      "sourceTimes": {
+        "question": 2007.4,
+        "answer": 2017.5
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_087.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_087.png",
+      "sourceTimes": {
+        "question": 2022.4,
+        "answer": 2040.5
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_088.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_088.png",
+      "sourceTimes": {
+        "question": 2045.4,
+        "answer": 2061.5
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_089.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_089.png",
+      "sourceTimes": {
+        "question": 2066.4,
+        "answer": 2100.5
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_090.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_090.png",
+      "sourceTimes": {
+        "question": 2105.4,
+        "answer": 2115.5
+      }
+    },
+    {
+      "id": "091",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_091.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_091.png",
+      "sourceTimes": {
+        "question": 2120.4,
+        "answer": 2133.5
+      }
+    },
+    {
+      "id": "092",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_092.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_092.png",
+      "sourceTimes": {
+        "question": 2138.4,
+        "answer": 2166.5
+      }
+    },
+    {
+      "id": "093",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_093.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_093.png",
+      "sourceTimes": {
+        "question": 2171.4,
+        "answer": 2183.5
+      }
+    },
+    {
+      "id": "094",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_094.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_094.png",
+      "sourceTimes": {
+        "question": 2188.4,
+        "answer": 2200.5
+      }
+    },
+    {
+      "id": "095",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_095.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_095.png",
+      "sourceTimes": {
+        "question": 2205.4,
+        "answer": 2222.5
+      }
+    },
+    {
+      "id": "096",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_096.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_096.png",
+      "sourceTimes": {
+        "question": 2227.4,
+        "answer": 2239.5
+      }
+    },
+    {
+      "id": "097",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_097.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_097.png",
+      "sourceTimes": {
+        "question": 2244.4,
+        "answer": 2255.5
+      }
+    },
+    {
+      "id": "098",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_098.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_098.png",
+      "sourceTimes": {
+        "question": 2260.4,
+        "answer": 2275.5
+      }
+    },
+    {
+      "id": "099",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_099.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_099.png",
+      "sourceTimes": {
+        "question": 2280.4,
+        "answer": 2294.5
+      }
+    },
+    {
+      "id": "100",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_100.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_100.png",
+      "sourceTimes": {
+        "question": 2299.4,
+        "answer": 2306.5
+      }
+    },
+    {
+      "id": "101",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_101.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_101.png",
+      "sourceTimes": {
+        "question": 2311.4,
+        "answer": 2324.5
+      }
+    },
+    {
+      "id": "102",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_102.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_102.png",
+      "sourceTimes": {
+        "question": 2329.4,
+        "answer": 2345.5
+      }
+    },
+    {
+      "id": "103",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_103.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_103.png",
+      "sourceTimes": {
+        "question": 2350.4,
+        "answer": 2364.5
+      }
+    },
+    {
+      "id": "104",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_104.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_104.png",
+      "sourceTimes": {
+        "question": 2369.4,
+        "answer": 2382.5
+      }
+    },
+    {
+      "id": "105",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_105.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_105.png",
+      "sourceTimes": {
+        "question": 2387.4,
+        "answer": 2403.5
+      }
+    },
+    {
+      "id": "106",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_106.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_106.png",
+      "sourceTimes": {
+        "question": 2408.4,
+        "answer": 2428.5
+      }
+    },
+    {
+      "id": "107",
+      "chapter": "mixed",
+      "question": "images_20261026107/social-history-entrance-107-20261026/question_107.png",
+      "answer": "images_20261026107/social-history-entrance-107-20261026/answer_107.png",
+      "sourceTimes": {
+        "question": 2433.4,
+        "answer": 2446.5
+      }
+    }
+  ],
+  "series": "past"
+}

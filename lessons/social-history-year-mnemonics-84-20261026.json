@@ -1,0 +1,874 @@
+{
+  "id": "social-history-year-mnemonics-84-20261026",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史年号の語呂合わせ｜日本史・世界史",
+  "grade": "中学歴史",
+  "description": "年号語呂合わせスライドと出来事で覚える、日本史・世界史84問。",
+  "cover": "images_2026102684/social-history-year-mnemonics-84-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "ancient",
+      "title": "古代（57〜894年）"
+    },
+    {
+      "id": "medieval",
+      "title": "平安・鎌倉・室町（1016〜1467年）"
+    },
+    {
+      "id": "earlymodern",
+      "title": "戦国・江戸・幕末（1492〜1867年）"
+    },
+    {
+      "id": "modern",
+      "title": "明治・大正（1868〜1925年）"
+    },
+    {
+      "id": "contemporary",
+      "title": "昭和・平成（1929〜2011年）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_001.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 27.7,
+        "answer": 37
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_002.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 42.7,
+        "answer": 52
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_003.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 60.7,
+        "answer": 70
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_004.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 75.7,
+        "answer": 83.4
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_005.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 87.7,
+        "answer": 97
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_006.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 102.7,
+        "answer": 112
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_007.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 120.7,
+        "answer": 130
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_008.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 138.7,
+        "answer": 148
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "ancient",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_009.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 155.4,
+        "answer": 163
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_010.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 170.4,
+        "answer": 178
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_011.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 186.7,
+        "answer": 196
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_012.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 201.7,
+        "answer": 211
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_013.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 219.7,
+        "answer": 229
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_014.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 234.7,
+        "answer": 244
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_015.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 251.4,
+        "answer": 259
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_016.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 267.7,
+        "answer": 277
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_017.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 285.7,
+        "answer": 295
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_018.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 303.7,
+        "answer": 313
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_019.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 321.7,
+        "answer": 331
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_020.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 339.7,
+        "answer": 349
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_021.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 360.7,
+        "answer": 370
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "medieval",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_022.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 378.7,
+        "answer": 388
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_023.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 396.7,
+        "answer": 406
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_024.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 414.7,
+        "answer": 424
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_025.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 432.7,
+        "answer": 442
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_026.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 450.7,
+        "answer": 460
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_027.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 465.7,
+        "answer": 475
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_028.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 480.7,
+        "answer": 490
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_029.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 501.7,
+        "answer": 511
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_030.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 516.7,
+        "answer": 526
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_031.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 534.7,
+        "answer": 544
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_032.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 552.7,
+        "answer": 562
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_033.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 570.7,
+        "answer": 580
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_034.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 585.7,
+        "answer": 595
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_035.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 603.7,
+        "answer": 613
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_036.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 621.7,
+        "answer": 631
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_037.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 637.7,
+        "answer": 643
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_038.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 654.7,
+        "answer": 664
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_039.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 675.7,
+        "answer": 685
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_040.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 693.7,
+        "answer": 703
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_041.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 711.7,
+        "answer": 721
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_042.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 729.7,
+        "answer": 739
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_043.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 747.7,
+        "answer": 757
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_044.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 764.4,
+        "answer": 772
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_045.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 783.7,
+        "answer": 793
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_046.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_046.png",
+      "sourceTimes": {
+        "question": 801.7,
+        "answer": 811
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_047.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_047.png",
+      "sourceTimes": {
+        "question": 819.7,
+        "answer": 829
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_048.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_048.png",
+      "sourceTimes": {
+        "question": 837.7,
+        "answer": 847
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "earlymodern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_049.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_049.png",
+      "sourceTimes": {
+        "question": 857.4,
+        "answer": 865
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_050.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_050.png",
+      "sourceTimes": {
+        "question": 876.7,
+        "answer": 886
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_051.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_051.png",
+      "sourceTimes": {
+        "question": 895.7,
+        "answer": 905
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_052.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_052.png",
+      "sourceTimes": {
+        "question": 913.7,
+        "answer": 923
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_053.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_053.png",
+      "sourceTimes": {
+        "question": 928.7,
+        "answer": 938
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_054.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_054.png",
+      "sourceTimes": {
+        "question": 948.4,
+        "answer": 956
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_055.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_055.png",
+      "sourceTimes": {
+        "question": 967.7,
+        "answer": 977
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_056.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_056.png",
+      "sourceTimes": {
+        "question": 985.7,
+        "answer": 995
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_057.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_057.png",
+      "sourceTimes": {
+        "question": 1000.7,
+        "answer": 1010
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_058.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_058.png",
+      "sourceTimes": {
+        "question": 1018.7,
+        "answer": 1028
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_059.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_059.png",
+      "sourceTimes": {
+        "question": 1036.7,
+        "answer": 1046
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_060.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_060.png",
+      "sourceTimes": {
+        "question": 1054.7,
+        "answer": 1064
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_061.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_061.png",
+      "sourceTimes": {
+        "question": 1069.7,
+        "answer": 1079
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_062.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_062.png",
+      "sourceTimes": {
+        "question": 1087.7,
+        "answer": 1097
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_063.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_063.png",
+      "sourceTimes": {
+        "question": 1105.7,
+        "answer": 1115
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "modern",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_064.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_064.png",
+      "sourceTimes": {
+        "question": 1123.7,
+        "answer": 1133
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_065.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_065.png",
+      "sourceTimes": {
+        "question": 1141.7,
+        "answer": 1151
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_066.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_066.png",
+      "sourceTimes": {
+        "question": 1159.7,
+        "answer": 1169
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_067.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_067.png",
+      "sourceTimes": {
+        "question": 1174.7,
+        "answer": 1184
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_068.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_068.png",
+      "sourceTimes": {
+        "question": 1191.4,
+        "answer": 1199
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_069.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_069.png",
+      "sourceTimes": {
+        "question": 1207.7,
+        "answer": 1217
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_070.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_070.png",
+      "sourceTimes": {
+        "question": 1222.7,
+        "answer": 1232
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_071.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_071.png",
+      "sourceTimes": {
+        "question": 1240.7,
+        "answer": 1250
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_072.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_072.png",
+      "sourceTimes": {
+        "question": 1261.7,
+        "answer": 1271
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_073.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_073.png",
+      "sourceTimes": {
+        "question": 1281.4,
+        "answer": 1289
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_074.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_074.png",
+      "sourceTimes": {
+        "question": 1297.7,
+        "answer": 1307
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_075.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_075.png",
+      "sourceTimes": {
+        "question": 1312.7,
+        "answer": 1322
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_076.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_076.png",
+      "sourceTimes": {
+        "question": 1330.7,
+        "answer": 1340
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_077.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_077.png",
+      "sourceTimes": {
+        "question": 1350.4,
+        "answer": 1358
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_078.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_078.png",
+      "sourceTimes": {
+        "question": 1366.7,
+        "answer": 1376
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_079.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_079.png",
+      "sourceTimes": {
+        "question": 1384.7,
+        "answer": 1394
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_080.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_080.png",
+      "sourceTimes": {
+        "question": 1399.7,
+        "answer": 1409
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_081.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_081.png",
+      "sourceTimes": {
+        "question": 1417.7,
+        "answer": 1427
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_082.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_082.png",
+      "sourceTimes": {
+        "question": 1435.7,
+        "answer": 1445
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_083.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_083.png",
+      "sourceTimes": {
+        "question": 1456.7,
+        "answer": 1466
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "contemporary",
+      "question": "images_2026102684/social-history-year-mnemonics-84-20261026/question_084.png",
+      "answer": "images_2026102684/social-history-year-mnemonics-84-20261026/answer_084.png",
+      "sourceTimes": {
+        "question": 1474.7,
+        "answer": 1484
+      }
+    }
+  ],
+  "series": "themes"
+}

@@ -1,0 +1,578 @@
+{
+  "id": "science-jhs2-confusable-qa-54-20261025",
+  "subject": "science",
+  "field": "general",
+  "title": "中2理科の間違えやすい問題",
+  "grade": "中2理科",
+  "description": "中2理科の化学変化、動植物、電流、天気の間違えやすい似た用語を比較。動画の独立した問答54問を収録。",
+  "cover": "images_83/science-jhs2-confusable-qa-54-20261025/question_001.png",
+  "chapters": [
+    {
+      "id": "jhs2-confusable-chemical-reactions",
+      "title": "化学変化と原子・分子"
+    },
+    {
+      "id": "jhs2-confusable-organisms",
+      "title": "動物と生物"
+    },
+    {
+      "id": "jhs2-confusable-electricity",
+      "title": "電流とその利用"
+    },
+    {
+      "id": "jhs2-confusable-weather",
+      "title": "大気と天気の変化"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_001.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_001.png",
+      "sourceTimes": {
+        "question": 21.0,
+        "answer": 31.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_002.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_002.png",
+      "sourceTimes": {
+        "question": 36.0,
+        "answer": 46.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_003.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_003.png",
+      "sourceTimes": {
+        "question": 51.0,
+        "answer": 61.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_004.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_004.png",
+      "sourceTimes": {
+        "question": 66.0,
+        "answer": 76.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_005.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_005.png",
+      "sourceTimes": {
+        "question": 81.0,
+        "answer": 88.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_006.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_006.png",
+      "sourceTimes": {
+        "question": 93.0,
+        "answer": 102.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_007.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_007.png",
+      "sourceTimes": {
+        "question": 107.0,
+        "answer": 116.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_008.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_008.png",
+      "sourceTimes": {
+        "question": 121.0,
+        "answer": 132.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_009.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_009.png",
+      "sourceTimes": {
+        "question": 137.0,
+        "answer": 149.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_010.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_010.png",
+      "sourceTimes": {
+        "question": 154.0,
+        "answer": 165.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_011.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_011.png",
+      "sourceTimes": {
+        "question": 170.0,
+        "answer": 181.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_012.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_012.png",
+      "sourceTimes": {
+        "question": 186.0,
+        "answer": 195.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_013.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_013.png",
+      "sourceTimes": {
+        "question": 200.0,
+        "answer": 209.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "jhs2-confusable-chemical-reactions",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_014.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_014.png",
+      "sourceTimes": {
+        "question": 214.0,
+        "answer": 223.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_015.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_015.png",
+      "sourceTimes": {
+        "question": 233.0,
+        "answer": 242.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_016.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_016.png",
+      "sourceTimes": {
+        "question": 247.0,
+        "answer": 260.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_017.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_017.png",
+      "sourceTimes": {
+        "question": 265.0,
+        "answer": 285.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_018.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_018.png",
+      "sourceTimes": {
+        "question": 290.0,
+        "answer": 301.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_019.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_019.png",
+      "sourceTimes": {
+        "question": 306.0,
+        "answer": 317.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_020.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_020.png",
+      "sourceTimes": {
+        "question": 322.0,
+        "answer": 335.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_021.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_021.png",
+      "sourceTimes": {
+        "question": 340.0,
+        "answer": 352.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_022.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_022.png",
+      "sourceTimes": {
+        "question": 357.0,
+        "answer": 370.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_023.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_023.png",
+      "sourceTimes": {
+        "question": 375.0,
+        "answer": 385.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_024.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_024.png",
+      "sourceTimes": {
+        "question": 390.0,
+        "answer": 403.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_025.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_025.png",
+      "sourceTimes": {
+        "question": 408.0,
+        "answer": 419.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_026.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_026.png",
+      "sourceTimes": {
+        "question": 424.0,
+        "answer": 438.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_027.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_027.png",
+      "sourceTimes": {
+        "question": 443.0,
+        "answer": 454.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_028.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_028.png",
+      "sourceTimes": {
+        "question": 459.0,
+        "answer": 473.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_029.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_029.png",
+      "sourceTimes": {
+        "question": 478.0,
+        "answer": 489.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_030.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_030.png",
+      "sourceTimes": {
+        "question": 494.0,
+        "answer": 507.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_031.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_031.png",
+      "sourceTimes": {
+        "question": 512.0,
+        "answer": 524.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_032.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_032.png",
+      "sourceTimes": {
+        "question": 529.0,
+        "answer": 541.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_033.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_033.png",
+      "sourceTimes": {
+        "question": 546.0,
+        "answer": 559.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_034.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_034.png",
+      "sourceTimes": {
+        "question": 564.0,
+        "answer": 575.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_035.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_035.png",
+      "sourceTimes": {
+        "question": 580.0,
+        "answer": 593.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "jhs2-confusable-organisms",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_036.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_036.png",
+      "sourceTimes": {
+        "question": 598.0,
+        "answer": 610.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_037.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_037.png",
+      "sourceTimes": {
+        "question": 620.0,
+        "answer": 632.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_038.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_038.png",
+      "sourceTimes": {
+        "question": 637.0,
+        "answer": 646.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_039.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_039.png",
+      "sourceTimes": {
+        "question": 651.0,
+        "answer": 661.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_040.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_040.png",
+      "sourceTimes": {
+        "question": 666.0,
+        "answer": 674.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_041.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_041.png",
+      "sourceTimes": {
+        "question": 679.0,
+        "answer": 691.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_042.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_042.png",
+      "sourceTimes": {
+        "question": 696.0,
+        "answer": 711.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_043.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_043.png",
+      "sourceTimes": {
+        "question": 716.0,
+        "answer": 725.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_044.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_044.png",
+      "sourceTimes": {
+        "question": 730.0,
+        "answer": 746.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_045.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_045.png",
+      "sourceTimes": {
+        "question": 751.0,
+        "answer": 772.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "jhs2-confusable-electricity",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_046.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_046.png",
+      "sourceTimes": {
+        "question": 777.0,
+        "answer": 791.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "jhs2-confusable-weather",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_047.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_047.png",
+      "sourceTimes": {
+        "question": 803.0,
+        "answer": 812.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "jhs2-confusable-weather",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_048.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_048.png",
+      "sourceTimes": {
+        "question": 817.0,
+        "answer": 831.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "jhs2-confusable-weather",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_049.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_049.png",
+      "sourceTimes": {
+        "question": 836.0,
+        "answer": 849.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "jhs2-confusable-weather",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_050.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_050.png",
+      "sourceTimes": {
+        "question": 854.0,
+        "answer": 871.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "jhs2-confusable-weather",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_051.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_051.png",
+      "sourceTimes": {
+        "question": 876.0,
+        "answer": 887.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "jhs2-confusable-weather",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_052.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_052.png",
+      "sourceTimes": {
+        "question": 892.0,
+        "answer": 902.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "jhs2-confusable-weather",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_053.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_053.png",
+      "sourceTimes": {
+        "question": 907.0,
+        "answer": 920.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "jhs2-confusable-weather",
+      "question": "images_83/science-jhs2-confusable-qa-54-20261025/question_054.png",
+      "answer": "images_83/science-jhs2-confusable-qa-54-20261025/answer_054.png",
+      "sourceTimes": {
+        "question": 925.0,
+        "answer": 938.0
+      }
+    }
+  ],
+  "source": null,
+  "series": "themes",
+  "extractionNotes": {
+    "mp4_filename": "【中2理科ミス対策一問一答】理科の間違えやすい似てる答え／図解あり.f137.mp4",
+    "duration_seconds": 977.333,
+    "actual_question_pairs": 54,
+    "source_url_status": "unverified",
+    "image_folder_collision_check": "reference_only; must recheck with actual latest repo before merging"
+  }
+}

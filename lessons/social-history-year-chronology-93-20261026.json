@@ -1,0 +1,968 @@
+{
+  "id": "social-history-year-chronology-93-20261026",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史の年号｜日本史・世界史",
+  "grade": "中学歴史",
+  "description": "日本史・世界史の重要な出来事と西暦年号を年代順に覚える93問。",
+  "cover": "images_2026102693/social-history-year-chronology-93-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "ancient",
+      "title": "古代（57〜794年）"
+    },
+    {
+      "id": "medieval",
+      "title": "平安・鎌倉・室町時代（935〜1467年）"
+    },
+    {
+      "id": "sengoku",
+      "title": "戦国・安土桃山・江戸初期（1492〜1637年）"
+    },
+    {
+      "id": "earlymodern",
+      "title": "江戸時代と幕末（1688〜1866年）"
+    },
+    {
+      "id": "modern",
+      "title": "明治・大正（1867〜1923年）"
+    },
+    {
+      "id": "contemporary",
+      "title": "昭和・平成（1925〜2011年）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_001.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 19.8,
+        "answer": 23.3
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_002.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 28.3,
+        "answer": 32.3
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_003.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 36.8,
+        "answer": 40.8
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_004.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 46.3,
+        "answer": 50.3
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_005.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 56.8,
+        "answer": 59.8
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_006.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 66.8,
+        "answer": 69.8
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_007.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 73.8,
+        "answer": 76.8
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_008.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 81.3,
+        "answer": 84.8
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_009.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 90.3,
+        "answer": 94.3
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "ancient",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_010.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 100.8,
+        "answer": 104.8
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_011.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 108.8,
+        "answer": 112.8
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_012.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 116.8,
+        "answer": 121.3
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_013.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 126.8,
+        "answer": 131.3
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_014.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 136.8,
+        "answer": 139.3
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_015.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 145.3,
+        "answer": 149.3
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_016.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 153.8,
+        "answer": 157.3
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_017.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 162.8,
+        "answer": 167.3
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_018.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 174.8,
+        "answer": 179.3
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_019.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 183.8,
+        "answer": 188.8
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_020.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 194.3,
+        "answer": 198.8
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_021.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 205.8,
+        "answer": 210.8
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_022.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 216.3,
+        "answer": 220.8
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_023.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 227.8,
+        "answer": 231.8
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "medieval",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_024.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 235.8,
+        "answer": 240.8
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_025.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 246.8,
+        "answer": 251.3
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_026.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 255.3,
+        "answer": 260.3
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_027.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 264.8,
+        "answer": 269.3
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_028.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 274.3,
+        "answer": 278.8
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_029.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 282.8,
+        "answer": 287.3
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_030.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 294.8,
+        "answer": 299.8
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_031.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 303.8,
+        "answer": 307.8
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_032.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 312.8,
+        "answer": 317.3
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_033.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 323.3,
+        "answer": 327.3
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_034.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 331.8,
+        "answer": 335.3
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_035.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 340.8,
+        "answer": 344.3
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_036.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 348.8,
+        "answer": 352.8
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_037.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 358.8,
+        "answer": 363.3
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "sengoku",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_038.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 369.8,
+        "answer": 374.3
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_039.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 379.3,
+        "answer": 383.3
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_040.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 389.3,
+        "answer": 393.8
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_041.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 398.8,
+        "answer": 403.8
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_042.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 409.8,
+        "answer": 414.8
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_043.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 419.8,
+        "answer": 423.8
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_044.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 428.8,
+        "answer": 433.3
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_045.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 438.8,
+        "answer": 443.3
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_046.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_046.png",
+      "sourceTimes": {
+        "question": 449.3,
+        "answer": 453.8
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_047.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_047.png",
+      "sourceTimes": {
+        "question": 458.8,
+        "answer": 463.8
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_048.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_048.png",
+      "sourceTimes": {
+        "question": 469.8,
+        "answer": 474.3
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_049.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_049.png",
+      "sourceTimes": {
+        "question": 479.8,
+        "answer": 484.3
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_050.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_050.png",
+      "sourceTimes": {
+        "question": 490.3,
+        "answer": 494.8
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_051.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_051.png",
+      "sourceTimes": {
+        "question": 501.3,
+        "answer": 505.8
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "earlymodern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_052.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_052.png",
+      "sourceTimes": {
+        "question": 512.8,
+        "answer": 517.3
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_053.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_053.png",
+      "sourceTimes": {
+        "question": 525.8,
+        "answer": 530.3
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_054.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_054.png",
+      "sourceTimes": {
+        "question": 537.8,
+        "answer": 542.3
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_055.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_055.png",
+      "sourceTimes": {
+        "question": 548.3,
+        "answer": 552.8
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_056.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_056.png",
+      "sourceTimes": {
+        "question": 561.8,
+        "answer": 565.8
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_057.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_057.png",
+      "sourceTimes": {
+        "question": 573.3,
+        "answer": 577.8
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_058.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_058.png",
+      "sourceTimes": {
+        "question": 582.8,
+        "answer": 587.8
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_059.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_059.png",
+      "sourceTimes": {
+        "question": 594.3,
+        "answer": 598.3
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_060.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_060.png",
+      "sourceTimes": {
+        "question": 603.8,
+        "answer": 607.3
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_061.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_061.png",
+      "sourceTimes": {
+        "question": 613.8,
+        "answer": 617.8
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_062.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_062.png",
+      "sourceTimes": {
+        "question": 624.3,
+        "answer": 628.3
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_063.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_063.png",
+      "sourceTimes": {
+        "question": 636.3,
+        "answer": 640.3
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_064.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_064.png",
+      "sourceTimes": {
+        "question": 644.8,
+        "answer": 649.3
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_065.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_065.png",
+      "sourceTimes": {
+        "question": 655.3,
+        "answer": 659.3
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_066.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_066.png",
+      "sourceTimes": {
+        "question": 666.8,
+        "answer": 671.3
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_067.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_067.png",
+      "sourceTimes": {
+        "question": 678.8,
+        "answer": 683.3
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_068.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_068.png",
+      "sourceTimes": {
+        "question": 688.8,
+        "answer": 693.3
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_069.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_069.png",
+      "sourceTimes": {
+        "question": 700.3,
+        "answer": 704.3
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "modern",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_070.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_070.png",
+      "sourceTimes": {
+        "question": 708.8,
+        "answer": 713.3
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_071.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_071.png",
+      "sourceTimes": {
+        "question": 718.3,
+        "answer": 722.3
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_072.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_072.png",
+      "sourceTimes": {
+        "question": 726.8,
+        "answer": 730.8
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_073.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_073.png",
+      "sourceTimes": {
+        "question": 737.3,
+        "answer": 741.3
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_074.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_074.png",
+      "sourceTimes": {
+        "question": 748.3,
+        "answer": 752.3
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_075.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_075.png",
+      "sourceTimes": {
+        "question": 759.3,
+        "answer": 763.8
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_076.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_076.png",
+      "sourceTimes": {
+        "question": 767.8,
+        "answer": 772.3
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_077.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_077.png",
+      "sourceTimes": {
+        "question": 776.3,
+        "answer": 780.3
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_078.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_078.png",
+      "sourceTimes": {
+        "question": 785.3,
+        "answer": 789.3
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_079.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_079.png",
+      "sourceTimes": {
+        "question": 794.8,
+        "answer": 798.8
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_080.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_080.png",
+      "sourceTimes": {
+        "question": 805.3,
+        "answer": 808.8
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_081.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_081.png",
+      "sourceTimes": {
+        "question": 813.8,
+        "answer": 817.8
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_082.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_082.png",
+      "sourceTimes": {
+        "question": 822.3,
+        "answer": 826.3
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_083.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_083.png",
+      "sourceTimes": {
+        "question": 833.8,
+        "answer": 837.8
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_084.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_084.png",
+      "sourceTimes": {
+        "question": 844.8,
+        "answer": 848.8
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_085.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_085.png",
+      "sourceTimes": {
+        "question": 853.8,
+        "answer": 858.3
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_086.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_086.png",
+      "sourceTimes": {
+        "question": 866.3,
+        "answer": 870.8
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_087.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_087.png",
+      "sourceTimes": {
+        "question": 876.8,
+        "answer": 881.3
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_088.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_088.png",
+      "sourceTimes": {
+        "question": 888.8,
+        "answer": 893.8
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_089.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_089.png",
+      "sourceTimes": {
+        "question": 900.3,
+        "answer": 904.3
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_090.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_090.png",
+      "sourceTimes": {
+        "question": 910.3,
+        "answer": 914.8
+      }
+    },
+    {
+      "id": "091",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_091.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_091.png",
+      "sourceTimes": {
+        "question": 919.3,
+        "answer": 923.8
+      }
+    },
+    {
+      "id": "092",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_092.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_092.png",
+      "sourceTimes": {
+        "question": 928.3,
+        "answer": 931.8
+      }
+    },
+    {
+      "id": "093",
+      "chapter": "contemporary",
+      "question": "images_2026102693/social-history-year-chronology-93-20261026/question_093.png",
+      "answer": "images_2026102693/social-history-year-chronology-93-20261026/answer_093.png",
+      "sourceTimes": {
+        "question": 935.8,
+        "answer": 940.3
+      }
+    }
+  ],
+  "series": "themes"
+}

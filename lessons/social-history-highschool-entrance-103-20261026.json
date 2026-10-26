@@ -1,0 +1,1048 @@
+{
+  "id": "social-history-highschool-entrance-103-20261026",
+  "subject": "social",
+  "field": "history",
+  "title": "高校入試 過去問｜歴史 一問一答②",
+  "grade": "中学歴史",
+  "description": "公立高校入試の歴史一問一答103問。動画の元スライド1〜109（11・12・20・21・66・67欠番）を実在する103問に採番し直した教材。",
+  "cover": "images_61/social-history-highschool-entrance-103-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "social-history-past-exam",
+      "title": "歴史・高校入試過去問"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_001.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 10.0,
+        "answer": 37.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_002.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 43.0,
+        "answer": 58.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_003.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 64.0,
+        "answer": 85.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_004.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 91.0,
+        "answer": 112.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_005.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 118.0,
+        "answer": 136.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_006.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 142.0,
+        "answer": 166.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_007.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 172.0,
+        "answer": 202.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_008.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 208.0,
+        "answer": 238.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_009.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 244.0,
+        "answer": 268.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_010.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 274.0,
+        "answer": 295.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_011.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 301.0,
+        "answer": 331.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_012.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 337.0,
+        "answer": 361.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_013.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 367.0,
+        "answer": 394.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_014.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 400.0,
+        "answer": 418.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_015.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 424.0,
+        "answer": 451.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_016.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 457.0,
+        "answer": 484.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_017.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 490.0,
+        "answer": 529.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_018.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 535.0,
+        "answer": 556.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_019.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 562.0,
+        "answer": 586.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_020.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 592.0,
+        "answer": 616.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_021.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 622.0,
+        "answer": 655.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_022.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 661.0,
+        "answer": 679.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_023.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 685.0,
+        "answer": 724.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_024.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 730.0,
+        "answer": 757.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_025.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 763.0,
+        "answer": 811.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_026.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 817.0,
+        "answer": 832.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_027.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 838.0,
+        "answer": 859.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_028.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 865.0,
+        "answer": 883.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_029.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 889.0,
+        "answer": 904.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_030.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 910.0,
+        "answer": 934.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_031.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 940.0,
+        "answer": 961.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_032.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 967.0,
+        "answer": 982.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_033.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 988.0,
+        "answer": 1009.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_034.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 1018.0,
+        "answer": 1036.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_035.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 1042.0,
+        "answer": 1060.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_036.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 1066.0,
+        "answer": 1090.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_037.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 1096.0,
+        "answer": 1126.5
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_038.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 1132.0,
+        "answer": 1165.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_039.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 1171.0,
+        "answer": 1201.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_040.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 1207.0,
+        "answer": 1234.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_041.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 1240.0,
+        "answer": 1264.5
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_042.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 1270.0,
+        "answer": 1297.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_043.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 1303.0,
+        "answer": 1333.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_044.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 1339.0,
+        "answer": 1360.5
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_045.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 1366.0,
+        "answer": 1390.5
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_046.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_046.png",
+      "sourceTimes": {
+        "question": 1396.0,
+        "answer": 1417.5
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_047.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_047.png",
+      "sourceTimes": {
+        "question": 1426.0,
+        "answer": 1453.5
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_048.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_048.png",
+      "sourceTimes": {
+        "question": 1459.0,
+        "answer": 1489.5
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_049.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_049.png",
+      "sourceTimes": {
+        "question": 1495.0,
+        "answer": 1534.5
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_050.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_050.png",
+      "sourceTimes": {
+        "question": 1540.0,
+        "answer": 1558.5
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_051.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_051.png",
+      "sourceTimes": {
+        "question": 1564.0,
+        "answer": 1588.5
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_052.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_052.png",
+      "sourceTimes": {
+        "question": 1594.0,
+        "answer": 1618.5
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_053.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_053.png",
+      "sourceTimes": {
+        "question": 1624.0,
+        "answer": 1648.5
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_054.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_054.png",
+      "sourceTimes": {
+        "question": 1654.0,
+        "answer": 1684.5
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_055.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_055.png",
+      "sourceTimes": {
+        "question": 1690.0,
+        "answer": 1708.5
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_056.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_056.png",
+      "sourceTimes": {
+        "question": 1714.0,
+        "answer": 1729.5
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_057.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_057.png",
+      "sourceTimes": {
+        "question": 1735.0,
+        "answer": 1756.5
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_058.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_058.png",
+      "sourceTimes": {
+        "question": 1762.0,
+        "answer": 1795.5
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_059.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_059.png",
+      "sourceTimes": {
+        "question": 1801.0,
+        "answer": 1819.5
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_060.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_060.png",
+      "sourceTimes": {
+        "question": 1825.0,
+        "answer": 1846.5
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_061.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_061.png",
+      "sourceTimes": {
+        "question": 1852.0,
+        "answer": 1888.5
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_062.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_062.png",
+      "sourceTimes": {
+        "question": 1894.0,
+        "answer": 1924.5
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_063.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_063.png",
+      "sourceTimes": {
+        "question": 1930.0,
+        "answer": 1969.5
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_064.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_064.png",
+      "sourceTimes": {
+        "question": 1975.0,
+        "answer": 1999.5
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_065.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_065.png",
+      "sourceTimes": {
+        "question": 2005.0,
+        "answer": 2023.5
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_066.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_066.png",
+      "sourceTimes": {
+        "question": 2029.0,
+        "answer": 2068.5
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_067.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_067.png",
+      "sourceTimes": {
+        "question": 2073.0,
+        "answer": 2086.5
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_068.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_068.png",
+      "sourceTimes": {
+        "question": 2092.0,
+        "answer": 2128.5
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_069.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_069.png",
+      "sourceTimes": {
+        "question": 2134.0,
+        "answer": 2161.5
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_070.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_070.png",
+      "sourceTimes": {
+        "question": 2167.0,
+        "answer": 2200.5
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_071.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_071.png",
+      "sourceTimes": {
+        "question": 2206.0,
+        "answer": 2230.5
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_072.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_072.png",
+      "sourceTimes": {
+        "question": 2236.0,
+        "answer": 2287.5
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_073.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_073.png",
+      "sourceTimes": {
+        "question": 2293.0,
+        "answer": 2317.5
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_074.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_074.png",
+      "sourceTimes": {
+        "question": 2323.0,
+        "answer": 2374.5
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_075.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_075.png",
+      "sourceTimes": {
+        "question": 2380.0,
+        "answer": 2398.5
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_076.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_076.png",
+      "sourceTimes": {
+        "question": 2404.0,
+        "answer": 2431.5
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_077.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_077.png",
+      "sourceTimes": {
+        "question": 2437.0,
+        "answer": 2461.5
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_078.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_078.png",
+      "sourceTimes": {
+        "question": 2467.0,
+        "answer": 2500.5
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_079.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_079.png",
+      "sourceTimes": {
+        "question": 2506.0,
+        "answer": 2539.5
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_080.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_080.png",
+      "sourceTimes": {
+        "question": 2545.0,
+        "answer": 2581.5
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_081.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_081.png",
+      "sourceTimes": {
+        "question": 2587.0,
+        "answer": 2614.5
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_082.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_082.png",
+      "sourceTimes": {
+        "question": 2620.0,
+        "answer": 2653.5
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_083.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_083.png",
+      "sourceTimes": {
+        "question": 2659.0,
+        "answer": 2692.5
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_084.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_084.png",
+      "sourceTimes": {
+        "question": 2698.0,
+        "answer": 2740.5
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_085.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_085.png",
+      "sourceTimes": {
+        "question": 2746.0,
+        "answer": 2785.5
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_086.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_086.png",
+      "sourceTimes": {
+        "question": 2791.0,
+        "answer": 2818.5
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_087.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_087.png",
+      "sourceTimes": {
+        "question": 2824.0,
+        "answer": 2848.5
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_088.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_088.png",
+      "sourceTimes": {
+        "question": 2854.0,
+        "answer": 2875.5
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_089.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_089.png",
+      "sourceTimes": {
+        "question": 2881.0,
+        "answer": 2896.5
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_090.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_090.png",
+      "sourceTimes": {
+        "question": 2902.0,
+        "answer": 2926.5
+      }
+    },
+    {
+      "id": "091",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_091.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_091.png",
+      "sourceTimes": {
+        "question": 2932.0,
+        "answer": 2956.5
+      }
+    },
+    {
+      "id": "092",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_092.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_092.png",
+      "sourceTimes": {
+        "question": 2962.0,
+        "answer": 2986.5
+      }
+    },
+    {
+      "id": "093",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_093.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_093.png",
+      "sourceTimes": {
+        "question": 2992.0,
+        "answer": 3016.5
+      }
+    },
+    {
+      "id": "094",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_094.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_094.png",
+      "sourceTimes": {
+        "question": 3022.0,
+        "answer": 3043.5
+      }
+    },
+    {
+      "id": "095",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_095.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_095.png",
+      "sourceTimes": {
+        "question": 3049.0,
+        "answer": 3079.5
+      }
+    },
+    {
+      "id": "096",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_096.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_096.png",
+      "sourceTimes": {
+        "question": 3085.0,
+        "answer": 3109.5
+      }
+    },
+    {
+      "id": "097",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_097.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_097.png",
+      "sourceTimes": {
+        "question": 3115.0,
+        "answer": 3145.5
+      }
+    },
+    {
+      "id": "098",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_098.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_098.png",
+      "sourceTimes": {
+        "question": 3150.0,
+        "answer": 3163.5
+      }
+    },
+    {
+      "id": "099",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_099.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_099.png",
+      "sourceTimes": {
+        "question": 3169.0,
+        "answer": 3208.5
+      }
+    },
+    {
+      "id": "100",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_100.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_100.png",
+      "sourceTimes": {
+        "question": 3214.0,
+        "answer": 3232.5
+      }
+    },
+    {
+      "id": "101",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_101.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_101.png",
+      "sourceTimes": {
+        "question": 3238.0,
+        "answer": 3262.5
+      }
+    },
+    {
+      "id": "102",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_102.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_102.png",
+      "sourceTimes": {
+        "question": 3268.0,
+        "answer": 3292.5
+      }
+    },
+    {
+      "id": "103",
+      "chapter": "social-history-past-exam",
+      "question": "images_61/social-history-highschool-entrance-103-20261026/question_103.png",
+      "answer": "images_61/social-history-highschool-entrance-103-20261026/answer_103.png",
+      "sourceTimes": {
+        "question": 3298.0,
+        "answer": 3328.5
+      }
+    }
+  ],
+  "series": "past"
+}

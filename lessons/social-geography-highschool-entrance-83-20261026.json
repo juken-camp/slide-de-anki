@@ -1,0 +1,848 @@
+{
+  "id": "social-geography-highschool-entrance-83-20261026",
+  "subject": "social",
+  "field": "geography",
+  "title": "高校入試 過去問｜地理 一問一答②",
+  "grade": "中学地理",
+  "description": "公立高校入試の地理一問一答83問。動画のスライド原番号1〜87（11・19・20・21欠番）を実在する83問に整理。",
+  "cover": "images_60/social-geography-highschool-entrance-83-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "social-geography-past-exam",
+      "title": "地理・高校入試過去問"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_001.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 11.0,
+        "answer": 30.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_002.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 41.0,
+        "answer": 48.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_003.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 59.0,
+        "answer": 72.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_004.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 83.0,
+        "answer": 96.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_005.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 107.0,
+        "answer": 114.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_006.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 125.0,
+        "answer": 132.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_007.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 143.0,
+        "answer": 156.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_008.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 167.0,
+        "answer": 174.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_009.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 185.0,
+        "answer": 198.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_010.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 209.0,
+        "answer": 234.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_011.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 245.0,
+        "answer": 264.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_012.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 275.0,
+        "answer": 282.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_013.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 290.0,
+        "answer": 300.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_014.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 311.0,
+        "answer": 318.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_015.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 327.0,
+        "answer": 336.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_016.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 347.0,
+        "answer": 366.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_017.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 377.0,
+        "answer": 396.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_018.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 407.0,
+        "answer": 420.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_019.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 431.0,
+        "answer": 456.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_020.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 467.0,
+        "answer": 486.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_021.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 497.0,
+        "answer": 510.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_022.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 521.0,
+        "answer": 552.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_023.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 563.0,
+        "answer": 570.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_024.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 581.0,
+        "answer": 606.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_025.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 617.0,
+        "answer": 642.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_026.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 653.0,
+        "answer": 666.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_027.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 677.0,
+        "answer": 702.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_028.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 713.0,
+        "answer": 726.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_029.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 737.0,
+        "answer": 756.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_030.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 767.0,
+        "answer": 810.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_031.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 821.0,
+        "answer": 840.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_032.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 851.0,
+        "answer": 870.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_033.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 881.0,
+        "answer": 900.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_034.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 911.0,
+        "answer": 924.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_035.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 935.0,
+        "answer": 954.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_036.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 965.0,
+        "answer": 978.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_037.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 989.0,
+        "answer": 1002.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_038.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 1013.0,
+        "answer": 1050.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_039.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 1061.0,
+        "answer": 1080.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_040.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 1091.0,
+        "answer": 1116.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_041.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 1127.0,
+        "answer": 1134.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_042.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 1145.0,
+        "answer": 1158.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_043.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 1169.0,
+        "answer": 1188.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_044.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 1199.0,
+        "answer": 1212.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_045.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 1223.0,
+        "answer": 1236.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_046.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_046.png",
+      "sourceTimes": {
+        "question": 1247.0,
+        "answer": 1260.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_047.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_047.png",
+      "sourceTimes": {
+        "question": 1271.0,
+        "answer": 1300.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_048.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_048.png",
+      "sourceTimes": {
+        "question": 1307.0,
+        "answer": 1320.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_049.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_049.png",
+      "sourceTimes": {
+        "question": 1331.0,
+        "answer": 1350.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_050.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_050.png",
+      "sourceTimes": {
+        "question": 1361.0,
+        "answer": 1374.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_051.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_051.png",
+      "sourceTimes": {
+        "question": 1385.0,
+        "answer": 1392.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_052.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_052.png",
+      "sourceTimes": {
+        "question": 1403.0,
+        "answer": 1416.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_053.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_053.png",
+      "sourceTimes": {
+        "question": 1427.0,
+        "answer": 1440.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_054.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_054.png",
+      "sourceTimes": {
+        "question": 1451.0,
+        "answer": 1476.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_055.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_055.png",
+      "sourceTimes": {
+        "question": 1487.0,
+        "answer": 1506.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_056.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_056.png",
+      "sourceTimes": {
+        "question": 1517.0,
+        "answer": 1536.0
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_057.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_057.png",
+      "sourceTimes": {
+        "question": 1547.0,
+        "answer": 1566.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_058.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_058.png",
+      "sourceTimes": {
+        "question": 1577.0,
+        "answer": 1590.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_059.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_059.png",
+      "sourceTimes": {
+        "question": 1601.0,
+        "answer": 1620.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_060.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_060.png",
+      "sourceTimes": {
+        "question": 1631.0,
+        "answer": 1644.0
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_061.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_061.png",
+      "sourceTimes": {
+        "question": 1655.0,
+        "answer": 1668.0
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_062.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_062.png",
+      "sourceTimes": {
+        "question": 1679.0,
+        "answer": 1696.0
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_063.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_063.png",
+      "sourceTimes": {
+        "question": 1703.0,
+        "answer": 1728.0
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_064.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_064.png",
+      "sourceTimes": {
+        "question": 1739.0,
+        "answer": 1758.0
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_065.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_065.png",
+      "sourceTimes": {
+        "question": 1769.0,
+        "answer": 1776.0
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_066.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_066.png",
+      "sourceTimes": {
+        "question": 1787.0,
+        "answer": 1806.0
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_067.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_067.png",
+      "sourceTimes": {
+        "question": 1817.0,
+        "answer": 1830.0
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_068.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_068.png",
+      "sourceTimes": {
+        "question": 1841.0,
+        "answer": 1860.0
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_069.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_069.png",
+      "sourceTimes": {
+        "question": 1871.0,
+        "answer": 1890.0
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_070.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_070.png",
+      "sourceTimes": {
+        "question": 1901.0,
+        "answer": 1926.0
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_071.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_071.png",
+      "sourceTimes": {
+        "question": 1937.0,
+        "answer": 1962.0
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_072.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_072.png",
+      "sourceTimes": {
+        "question": 1973.0,
+        "answer": 1992.0
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_073.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_073.png",
+      "sourceTimes": {
+        "question": 2003.0,
+        "answer": 2022.0
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_074.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_074.png",
+      "sourceTimes": {
+        "question": 2033.0,
+        "answer": 2052.0
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_075.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_075.png",
+      "sourceTimes": {
+        "question": 2063.0,
+        "answer": 2082.0
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_076.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_076.png",
+      "sourceTimes": {
+        "question": 2093.0,
+        "answer": 2112.0
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_077.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_077.png",
+      "sourceTimes": {
+        "question": 2123.0,
+        "answer": 2142.0
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_078.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_078.png",
+      "sourceTimes": {
+        "question": 2153.0,
+        "answer": 2172.0
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_079.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_079.png",
+      "sourceTimes": {
+        "question": 2183.0,
+        "answer": 2202.0
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_080.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_080.png",
+      "sourceTimes": {
+        "question": 2213.0,
+        "answer": 2226.0
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_081.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_081.png",
+      "sourceTimes": {
+        "question": 2237.0,
+        "answer": 2268.0
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_082.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_082.png",
+      "sourceTimes": {
+        "question": 2279.0,
+        "answer": 2292.0
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "social-geography-past-exam",
+      "question": "images_60/social-geography-highschool-entrance-83-20261026/question_083.png",
+      "answer": "images_60/social-geography-highschool-entrance-83-20261026/answer_083.png",
+      "sourceTimes": {
+        "question": 2303.0,
+        "answer": 2316.0
+      }
+    }
+  ],
+  "series": "past"
+}

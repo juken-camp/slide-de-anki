@@ -1,0 +1,309 @@
+{
+  "id": "science-jhs1-confusable-qa-27-20261025",
+  "subject": "science",
+  "field": "general",
+  "title": "中1理科の間違えやすい問題",
+  "grade": "中1理科",
+  "description": "中1理科の植物・物質・光と音と力・大地の変化から、似た用語を比較する図解二択27問。元動画内で確認できる独立した問題数に合わせて収録。",
+  "cover": "images_82/science-jhs1-confusable-qa-27-20261025/question_001.png",
+  "chapters": [
+    {
+      "id": "jhs1-confusable-plants",
+      "title": "植物"
+    },
+    {
+      "id": "jhs1-confusable-materials",
+      "title": "物質"
+    },
+    {
+      "id": "jhs1-confusable-physics",
+      "title": "光・音・力"
+    },
+    {
+      "id": "jhs1-confusable-earth",
+      "title": "火山・地震・地層"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_001.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_001.png",
+      "sourceTimes": {
+        "question": 23.0,
+        "answer": 25.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_002.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_002.png",
+      "sourceTimes": {
+        "question": 34.0,
+        "answer": 37.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_003.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_003.png",
+      "sourceTimes": {
+        "question": 49.0,
+        "answer": 52.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_004.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_004.png",
+      "sourceTimes": {
+        "question": 66.0,
+        "answer": 69.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_005.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_005.png",
+      "sourceTimes": {
+        "question": 83.0,
+        "answer": 87.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_006.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_006.png",
+      "sourceTimes": {
+        "question": 99.0,
+        "answer": 102.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_007.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_007.png",
+      "sourceTimes": {
+        "question": 114.0,
+        "answer": 119.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "jhs1-confusable-plants",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_008.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_008.png",
+      "sourceTimes": {
+        "question": 130.0,
+        "answer": 134.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "jhs1-confusable-materials",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_009.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_009.png",
+      "sourceTimes": {
+        "question": 149.0,
+        "answer": 152.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "jhs1-confusable-materials",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_010.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_010.png",
+      "sourceTimes": {
+        "question": 163.0,
+        "answer": 168.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "jhs1-confusable-materials",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_011.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_011.png",
+      "sourceTimes": {
+        "question": 178.0,
+        "answer": 182.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_012.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_012.png",
+      "sourceTimes": {
+        "question": 196.0,
+        "answer": 200.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_013.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_013.png",
+      "sourceTimes": {
+        "question": 214.0,
+        "answer": 218.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_014.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_014.png",
+      "sourceTimes": {
+        "question": 228.0,
+        "answer": 232.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_015.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_015.png",
+      "sourceTimes": {
+        "question": 243.0,
+        "answer": 247.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "jhs1-confusable-physics",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_016.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_016.png",
+      "sourceTimes": {
+        "question": 258.0,
+        "answer": 263.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_017.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_017.png",
+      "sourceTimes": {
+        "question": 274.0,
+        "answer": 279.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_018.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_018.png",
+      "sourceTimes": {
+        "question": 294.0,
+        "answer": 298.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_019.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_019.png",
+      "sourceTimes": {
+        "question": 312.0,
+        "answer": 318.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_020.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_020.png",
+      "sourceTimes": {
+        "question": 328.0,
+        "answer": 331.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_021.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_021.png",
+      "sourceTimes": {
+        "question": 345.0,
+        "answer": 350.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_022.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_022.png",
+      "sourceTimes": {
+        "question": 360.0,
+        "answer": 363.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_023.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_023.png",
+      "sourceTimes": {
+        "question": 376.0,
+        "answer": 381.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_024.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_024.png",
+      "sourceTimes": {
+        "question": 392.0,
+        "answer": 396.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_025.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_025.png",
+      "sourceTimes": {
+        "question": 411.0,
+        "answer": 415.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_026.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_026.png",
+      "sourceTimes": {
+        "question": 427.0,
+        "answer": 430.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "jhs1-confusable-earth",
+      "question": "images_82/science-jhs1-confusable-qa-27-20261025/question_027.png",
+      "answer": "images_82/science-jhs1-confusable-qa-27-20261025/answer_027.png",
+      "sourceTimes": {
+        "question": 442.0,
+        "answer": 448.0
+      }
+    }
+  ],
+  "source": null,
+  "series": "themes",
+  "extractionNotes": {
+    "mp4_filename": "【中1理科ミス対策一問一答】理科の間違えやすい似てる答え／図解あり.f137.mp4",
+    "duration_seconds": 487.0,
+    "source_title_claimed_questions": 28,
+    "actual_question_pairs": 27,
+    "source_url_status": "unverified",
+    "image_folder_collision_check": "reference_20261025_only; must recheck with latest before merging"
+  }
+}

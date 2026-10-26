@@ -1,0 +1,928 @@
+{
+  "id": "social-civics-highschool-entrance-91-20261026",
+  "subject": "social",
+  "field": "civics",
+  "title": "高校入試 過去問｜公民 一問一答①",
+  "grade": "中学公民",
+  "description": "高校入試対策の公民一問一答91問。実際の設問91問を収録し、問題・解答を1920×1080で抽出。",
+  "cover": "images_62/social-civics-highschool-entrance-91-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "social-civics-entrance-past",
+      "title": "公民・高校入試対策"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_001.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 19.3,
+        "answer": 34.6
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_002.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 40.3,
+        "answer": 58.6
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_003.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 64.3,
+        "answer": 79.6
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_004.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 85.3,
+        "answer": 106.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_005.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 112.3,
+        "answer": 127.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_006.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 133.3,
+        "answer": 148.6
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_007.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 153.3,
+        "answer": 163.6
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_008.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 169.3,
+        "answer": 184.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_009.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 190.3,
+        "answer": 205.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_010.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 211.3,
+        "answer": 229.6
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_011.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 235.3,
+        "answer": 253.6
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_012.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 258.3,
+        "answer": 271.6
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_013.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 277.3,
+        "answer": 298.6
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_014.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 304.3,
+        "answer": 328.6
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_015.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 334.3,
+        "answer": 349.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_016.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 355.3,
+        "answer": 373.6
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_017.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 379.3,
+        "answer": 397.6
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_018.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 403.3,
+        "answer": 421.6
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_019.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 426.3,
+        "answer": 439.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_020.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 445.3,
+        "answer": 463.6
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_021.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 469.3,
+        "answer": 490.6
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_022.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 496.3,
+        "answer": 520.6
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_023.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 526.3,
+        "answer": 547.6
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_024.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 553.3,
+        "answer": 583.6
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_025.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 589.3,
+        "answer": 604.6
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_026.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 610.3,
+        "answer": 628.6
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_027.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 634.3,
+        "answer": 652.6
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_028.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 658.3,
+        "answer": 691.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_029.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 697.3,
+        "answer": 718.6
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_030.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 724.3,
+        "answer": 751.6
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_031.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 757.3,
+        "answer": 793.6
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_032.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 798.3,
+        "answer": 811.6
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_033.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 817.3,
+        "answer": 844.6
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_034.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 850.3,
+        "answer": 877.6
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_035.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 883.3,
+        "answer": 898.6
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_036.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 904.3,
+        "answer": 934.6
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_037.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 940.3,
+        "answer": 955.6
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_038.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 961.3,
+        "answer": 979.6
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_039.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 985.3,
+        "answer": 1000.6
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_040.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 1006.3,
+        "answer": 1027.6
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_041.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 1033.3,
+        "answer": 1051.6
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_042.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 1057.3,
+        "answer": 1075.6
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_043.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 1081.3,
+        "answer": 1099.6
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_044.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 1105.3,
+        "answer": 1120.6
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_045.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 1125.3,
+        "answer": 1136.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_046.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_046.png",
+      "sourceTimes": {
+        "question": 1144.3,
+        "answer": 1165.6
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_047.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_047.png",
+      "sourceTimes": {
+        "question": 1171.3,
+        "answer": 1198.6
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_048.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_048.png",
+      "sourceTimes": {
+        "question": 1203.3,
+        "answer": 1213.6
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_049.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_049.png",
+      "sourceTimes": {
+        "question": 1218.3,
+        "answer": 1231.6
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_050.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_050.png",
+      "sourceTimes": {
+        "question": 1236.3,
+        "answer": 1249.6
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_051.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_051.png",
+      "sourceTimes": {
+        "question": 1255.3,
+        "answer": 1294.6
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_052.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_052.png",
+      "sourceTimes": {
+        "question": 1300.3,
+        "answer": 1330.6
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_053.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_053.png",
+      "sourceTimes": {
+        "question": 1335.3,
+        "answer": 1348.6
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_054.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_054.png",
+      "sourceTimes": {
+        "question": 1354.3,
+        "answer": 1378.6
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_055.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_055.png",
+      "sourceTimes": {
+        "question": 1383.3,
+        "answer": 1396.6
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_056.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_056.png",
+      "sourceTimes": {
+        "question": 1402.3,
+        "answer": 1429.6
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_057.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_057.png",
+      "sourceTimes": {
+        "question": 1435.3,
+        "answer": 1453.6
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_058.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_058.png",
+      "sourceTimes": {
+        "question": 1459.3,
+        "answer": 1477.6
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_059.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_059.png",
+      "sourceTimes": {
+        "question": 1483.3,
+        "answer": 1504.6
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_060.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_060.png",
+      "sourceTimes": {
+        "question": 1510.3,
+        "answer": 1531.6
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_061.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_061.png",
+      "sourceTimes": {
+        "question": 1536.3,
+        "answer": 1549.6
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_062.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_062.png",
+      "sourceTimes": {
+        "question": 1555.3,
+        "answer": 1570.6
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_063.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_063.png",
+      "sourceTimes": {
+        "question": 1576.3,
+        "answer": 1594.6
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_064.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_064.png",
+      "sourceTimes": {
+        "question": 1600.3,
+        "answer": 1621.0
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_065.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_065.png",
+      "sourceTimes": {
+        "question": 1630.3,
+        "answer": 1654.6
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_066.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_066.png",
+      "sourceTimes": {
+        "question": 1660.3,
+        "answer": 1681.6
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_067.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_067.png",
+      "sourceTimes": {
+        "question": 1687.3,
+        "answer": 1702.6
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_068.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_068.png",
+      "sourceTimes": {
+        "question": 1708.3,
+        "answer": 1723.6
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_069.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_069.png",
+      "sourceTimes": {
+        "question": 1729.3,
+        "answer": 1747.0
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_070.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_070.png",
+      "sourceTimes": {
+        "question": 1756.3,
+        "answer": 1771.6
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_071.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_071.png",
+      "sourceTimes": {
+        "question": 1776.3,
+        "answer": 1786.6
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_072.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_072.png",
+      "sourceTimes": {
+        "question": 1792.3,
+        "answer": 1807.6
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_073.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_073.png",
+      "sourceTimes": {
+        "question": 1813.3,
+        "answer": 1834.6
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_074.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_074.png",
+      "sourceTimes": {
+        "question": 1840.3,
+        "answer": 1858.6
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_075.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_075.png",
+      "sourceTimes": {
+        "question": 1863.3,
+        "answer": 1876.6
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_076.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_076.png",
+      "sourceTimes": {
+        "question": 1882.3,
+        "answer": 1909.6
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_077.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_077.png",
+      "sourceTimes": {
+        "question": 1915.3,
+        "answer": 1945.6
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_078.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_078.png",
+      "sourceTimes": {
+        "question": 1951.3,
+        "answer": 1975.6
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_079.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_079.png",
+      "sourceTimes": {
+        "question": 1981.3,
+        "answer": 1996.6
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_080.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_080.png",
+      "sourceTimes": {
+        "question": 2002.3,
+        "answer": 2029.6
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_081.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_081.png",
+      "sourceTimes": {
+        "question": 2035.3,
+        "answer": 2056.6
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_082.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_082.png",
+      "sourceTimes": {
+        "question": 2062.3,
+        "answer": 2080.6
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_083.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_083.png",
+      "sourceTimes": {
+        "question": 2085.3,
+        "answer": 2098.6
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_084.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_084.png",
+      "sourceTimes": {
+        "question": 2104.3,
+        "answer": 2140.0
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_085.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_085.png",
+      "sourceTimes": {
+        "question": 2149.3,
+        "answer": 2164.6
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_086.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_086.png",
+      "sourceTimes": {
+        "question": 2170.3,
+        "answer": 2188.6
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_087.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_087.png",
+      "sourceTimes": {
+        "question": 2193.3,
+        "answer": 2206.6
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_088.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_088.png",
+      "sourceTimes": {
+        "question": 2212.3,
+        "answer": 2239.6
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_089.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_089.png",
+      "sourceTimes": {
+        "question": 2245.3,
+        "answer": 2266.6
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_090.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_090.png",
+      "sourceTimes": {
+        "question": 2272.3,
+        "answer": 2293.6
+      }
+    },
+    {
+      "id": "091",
+      "chapter": "social-civics-entrance-past",
+      "question": "images_62/social-civics-highschool-entrance-91-20261026/question_091.png",
+      "answer": "images_62/social-civics-highschool-entrance-91-20261026/answer_091.png",
+      "sourceTimes": {
+        "question": 2299.3,
+        "answer": 2317.6
+      }
+    }
+  ],
+  "series": "past"
+}

@@ -1,0 +1,478 @@
+{
+  "id": "social-geography-old-provinces-46",
+  "subject": "social",
+  "field": "geography",
+  "title": "日本の旧国名（令制国）",
+  "grade": "中学地理",
+  "description": "日本の旧国名（令制国・旧地名）と現在の都道府県を対応させる全46問。日本地図付きの問題・解答画像を収録。",
+  "cover": "images_12/social-geography-old-provinces-46/question_001.png",
+  "chapters": [
+    {
+      "id": "former-provinces-japan",
+      "title": "旧国名と現在の都道府県"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_001.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_001.png",
+      "sourceTimes": {
+        "question": 19.5,
+        "answer": 22.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_002.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_002.png",
+      "sourceTimes": {
+        "question": 28.5,
+        "answer": 31.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_003.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_003.png",
+      "sourceTimes": {
+        "question": 40.5,
+        "answer": 43.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_004.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_004.png",
+      "sourceTimes": {
+        "question": 50.5,
+        "answer": 53.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_005.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_005.png",
+      "sourceTimes": {
+        "question": 61.5,
+        "answer": 64.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_006.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_006.png",
+      "sourceTimes": {
+        "question": 73.5,
+        "answer": 76.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_007.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_007.png",
+      "sourceTimes": {
+        "question": 85.5,
+        "answer": 88.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_008.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_008.png",
+      "sourceTimes": {
+        "question": 96.5,
+        "answer": 99.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_009.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_009.png",
+      "sourceTimes": {
+        "question": 107.5,
+        "answer": 110.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_010.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_010.png",
+      "sourceTimes": {
+        "question": 117.5,
+        "answer": 120.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_011.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_011.png",
+      "sourceTimes": {
+        "question": 128.5,
+        "answer": 131.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_012.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_012.png",
+      "sourceTimes": {
+        "question": 138.5,
+        "answer": 141.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_013.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_013.png",
+      "sourceTimes": {
+        "question": 150.5,
+        "answer": 153.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_014.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_014.png",
+      "sourceTimes": {
+        "question": 161.5,
+        "answer": 164.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_015.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_015.png",
+      "sourceTimes": {
+        "question": 172.5,
+        "answer": 175.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_016.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_016.png",
+      "sourceTimes": {
+        "question": 183.5,
+        "answer": 186.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_017.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_017.png",
+      "sourceTimes": {
+        "question": 197.5,
+        "answer": 200.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_018.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_018.png",
+      "sourceTimes": {
+        "question": 211.5,
+        "answer": 214.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_019.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_019.png",
+      "sourceTimes": {
+        "question": 222.5,
+        "answer": 225.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_020.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_020.png",
+      "sourceTimes": {
+        "question": 234.5,
+        "answer": 237.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_021.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_021.png",
+      "sourceTimes": {
+        "question": 244.5,
+        "answer": 247.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_022.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_022.png",
+      "sourceTimes": {
+        "question": 256.5,
+        "answer": 259.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_023.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_023.png",
+      "sourceTimes": {
+        "question": 267.5,
+        "answer": 270.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_024.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_024.png",
+      "sourceTimes": {
+        "question": 279.5,
+        "answer": 282.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_025.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_025.png",
+      "sourceTimes": {
+        "question": 290.5,
+        "answer": 293.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_026.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_026.png",
+      "sourceTimes": {
+        "question": 301.5,
+        "answer": 304.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_027.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_027.png",
+      "sourceTimes": {
+        "question": 314.5,
+        "answer": 317.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_028.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_028.png",
+      "sourceTimes": {
+        "question": 328.5,
+        "answer": 331.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_029.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_029.png",
+      "sourceTimes": {
+        "question": 339.5,
+        "answer": 342.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_030.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_030.png",
+      "sourceTimes": {
+        "question": 350.5,
+        "answer": 353.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_031.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_031.png",
+      "sourceTimes": {
+        "question": 363.5,
+        "answer": 366.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_032.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_032.png",
+      "sourceTimes": {
+        "question": 375.5,
+        "answer": 378.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_033.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_033.png",
+      "sourceTimes": {
+        "question": 388.5,
+        "answer": 391.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_034.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_034.png",
+      "sourceTimes": {
+        "question": 399.5,
+        "answer": 402.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_035.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_035.png",
+      "sourceTimes": {
+        "question": 409.5,
+        "answer": 412.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_036.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_036.png",
+      "sourceTimes": {
+        "question": 419.5,
+        "answer": 422.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_037.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_037.png",
+      "sourceTimes": {
+        "question": 430.5,
+        "answer": 433.5
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_038.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_038.png",
+      "sourceTimes": {
+        "question": 440.5,
+        "answer": 443.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_039.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_039.png",
+      "sourceTimes": {
+        "question": 453.5,
+        "answer": 456.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_040.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_040.png",
+      "sourceTimes": {
+        "question": 465.5,
+        "answer": 468.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_041.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_041.png",
+      "sourceTimes": {
+        "question": 475.5,
+        "answer": 478.5
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_042.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_042.png",
+      "sourceTimes": {
+        "question": 487.5,
+        "answer": 490.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_043.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_043.png",
+      "sourceTimes": {
+        "question": 497.5,
+        "answer": 500.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_044.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_044.png",
+      "sourceTimes": {
+        "question": 508.5,
+        "answer": 511.5
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_045.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_045.png",
+      "sourceTimes": {
+        "question": 519.5,
+        "answer": 522.5
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "former-provinces-japan",
+      "question": "images_12/social-geography-old-provinces-46/question_046.png",
+      "answer": "images_12/social-geography-old-provinces-46/answer_046.png",
+      "sourceTimes": {
+        "question": 529.5,
+        "answer": 532.5
+      }
+    }
+  ],
+  "series": "themes"
+}

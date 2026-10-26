@@ -1,0 +1,929 @@
+{
+  "id": "social-civics-past-exam-91",
+  "subject": "social",
+  "field": "civics",
+  "title": "高校入試 過去問｜公民 一問一答②",
+  "grade": "中学公民",
+  "description": "公立高校入試の過去問に登場した政治・経済・国際社会の重要語句。元動画の設問画面91枚を教材化（スライド番号8・9・16・17・88は動画内に存在しない）。",
+  "cover": "images_59/social-civics-past-exam-91/question_001.png",
+  "chapters": [
+    {
+      "id": "social-civics-entrance-exam",
+      "title": "公民・高校入試過去問"
+    }
+  ],
+  "source": null,
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_001.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_001.png",
+      "sourceTimes": {
+        "question": 12,
+        "answer": 37.5
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_002.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_002.png",
+      "sourceTimes": {
+        "question": 47,
+        "answer": 59.5
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_003.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_003.png",
+      "sourceTimes": {
+        "question": 69,
+        "answer": 94.5
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_004.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_004.png",
+      "sourceTimes": {
+        "question": 104,
+        "answer": 127.5
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_005.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_005.png",
+      "sourceTimes": {
+        "question": 137,
+        "answer": 164.5
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_006.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_006.png",
+      "sourceTimes": {
+        "question": 174,
+        "answer": 204.5
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_007.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_007.png",
+      "sourceTimes": {
+        "question": 214,
+        "answer": 253.5
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_008.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_008.png",
+      "sourceTimes": {
+        "question": 263,
+        "answer": 292.5
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_009.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_009.png",
+      "sourceTimes": {
+        "question": 302,
+        "answer": 314.5
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_010.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_010.png",
+      "sourceTimes": {
+        "question": 324,
+        "answer": 346.5
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_011.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_011.png",
+      "sourceTimes": {
+        "question": 356,
+        "answer": 380.5
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_012.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_012.png",
+      "sourceTimes": {
+        "question": 390,
+        "answer": 410.5
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_013.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_013.png",
+      "sourceTimes": {
+        "question": 420,
+        "answer": 457.5
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_014.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_014.png",
+      "sourceTimes": {
+        "question": 467,
+        "answer": 487.5
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_015.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_015.png",
+      "sourceTimes": {
+        "question": 497,
+        "answer": 535.5
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_016.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_016.png",
+      "sourceTimes": {
+        "question": 545,
+        "answer": 563.5
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_017.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_017.png",
+      "sourceTimes": {
+        "question": 573,
+        "answer": 603.5
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_018.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_018.png",
+      "sourceTimes": {
+        "question": 613,
+        "answer": 632.5
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_019.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_019.png",
+      "sourceTimes": {
+        "question": 642,
+        "answer": 665.5
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_020.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_020.png",
+      "sourceTimes": {
+        "question": 675,
+        "answer": 707.5
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_021.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_021.png",
+      "sourceTimes": {
+        "question": 717,
+        "answer": 753.5
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_022.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_022.png",
+      "sourceTimes": {
+        "question": 763,
+        "answer": 801.5
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_023.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_023.png",
+      "sourceTimes": {
+        "question": 811,
+        "answer": 852.5
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_024.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_024.png",
+      "sourceTimes": {
+        "question": 862,
+        "answer": 889.5
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_025.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_025.png",
+      "sourceTimes": {
+        "question": 899,
+        "answer": 919.5
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_026.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_026.png",
+      "sourceTimes": {
+        "question": 929,
+        "answer": 948.5
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_027.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_027.png",
+      "sourceTimes": {
+        "question": 958,
+        "answer": 988.5
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_028.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_028.png",
+      "sourceTimes": {
+        "question": 998,
+        "answer": 1028.5
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_029.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_029.png",
+      "sourceTimes": {
+        "question": 1038,
+        "answer": 1050.5
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_030.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_030.png",
+      "sourceTimes": {
+        "question": 1060,
+        "answer": 1072.5
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_031.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_031.png",
+      "sourceTimes": {
+        "question": 1082,
+        "answer": 1105.5
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_032.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_032.png",
+      "sourceTimes": {
+        "question": 1115,
+        "answer": 1133.5
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_033.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_033.png",
+      "sourceTimes": {
+        "question": 1143,
+        "answer": 1156.5
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_034.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_034.png",
+      "sourceTimes": {
+        "question": 1166,
+        "answer": 1193.5
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_035.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_035.png",
+      "sourceTimes": {
+        "question": 1203,
+        "answer": 1218.5
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_036.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_036.png",
+      "sourceTimes": {
+        "question": 1228,
+        "answer": 1249.5
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_037.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_037.png",
+      "sourceTimes": {
+        "question": 1259,
+        "answer": 1278.5
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_038.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_038.png",
+      "sourceTimes": {
+        "question": 1288,
+        "answer": 1319.5
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_039.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_039.png",
+      "sourceTimes": {
+        "question": 1329,
+        "answer": 1342.5
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_040.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_040.png",
+      "sourceTimes": {
+        "question": 1352,
+        "answer": 1378.5
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_041.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_041.png",
+      "sourceTimes": {
+        "question": 1388,
+        "answer": 1410.5
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_042.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_042.png",
+      "sourceTimes": {
+        "question": 1420,
+        "answer": 1437.5
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_043.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_043.png",
+      "sourceTimes": {
+        "question": 1446.1,
+        "answer": 1454.5
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_044.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_044.png",
+      "sourceTimes": {
+        "question": 1464,
+        "answer": 1490.5
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_045.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_045.png",
+      "sourceTimes": {
+        "question": 1500,
+        "answer": 1513.5
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_046.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_046.png",
+      "sourceTimes": {
+        "question": 1523,
+        "answer": 1549.5
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_047.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_047.png",
+      "sourceTimes": {
+        "question": 1559,
+        "answer": 1599.5
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_048.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_048.png",
+      "sourceTimes": {
+        "question": 1609,
+        "answer": 1646.5
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_049.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_049.png",
+      "sourceTimes": {
+        "question": 1656,
+        "answer": 1677.5
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_050.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_050.png",
+      "sourceTimes": {
+        "question": 1687,
+        "answer": 1708.5
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_051.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_051.png",
+      "sourceTimes": {
+        "question": 1718,
+        "answer": 1763.5
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_052.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_052.png",
+      "sourceTimes": {
+        "question": 1773,
+        "answer": 1791.5
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_053.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_053.png",
+      "sourceTimes": {
+        "question": 1801,
+        "answer": 1821.5
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_054.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_054.png",
+      "sourceTimes": {
+        "question": 1831,
+        "answer": 1852.5
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_055.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_055.png",
+      "sourceTimes": {
+        "question": 1862,
+        "answer": 1878.5
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_056.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_056.png",
+      "sourceTimes": {
+        "question": 1888,
+        "answer": 1914.5
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_057.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_057.png",
+      "sourceTimes": {
+        "question": 1924,
+        "answer": 1946.5
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_058.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_058.png",
+      "sourceTimes": {
+        "question": 1956,
+        "answer": 2004.5
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_059.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_059.png",
+      "sourceTimes": {
+        "question": 2014,
+        "answer": 2037.5
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_060.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_060.png",
+      "sourceTimes": {
+        "question": 2047,
+        "answer": 2068.5
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_061.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_061.png",
+      "sourceTimes": {
+        "question": 2078,
+        "answer": 2104.5
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_062.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_062.png",
+      "sourceTimes": {
+        "question": 2114,
+        "answer": 2149.5
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_063.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_063.png",
+      "sourceTimes": {
+        "question": 2159,
+        "answer": 2194.5
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_064.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_064.png",
+      "sourceTimes": {
+        "question": 2204,
+        "answer": 2219.5
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_065.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_065.png",
+      "sourceTimes": {
+        "question": 2229,
+        "answer": 2251.5
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_066.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_066.png",
+      "sourceTimes": {
+        "question": 2261,
+        "answer": 2274.5
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_067.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_067.png",
+      "sourceTimes": {
+        "question": 2284,
+        "answer": 2294.5
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_068.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_068.png",
+      "sourceTimes": {
+        "question": 2304,
+        "answer": 2331.5
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_069.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_069.png",
+      "sourceTimes": {
+        "question": 2341,
+        "answer": 2367.5
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_070.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_070.png",
+      "sourceTimes": {
+        "question": 2377,
+        "answer": 2402.5
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_071.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_071.png",
+      "sourceTimes": {
+        "question": 2412,
+        "answer": 2439.5
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_072.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_072.png",
+      "sourceTimes": {
+        "question": 2449,
+        "answer": 2489.5
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_073.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_073.png",
+      "sourceTimes": {
+        "question": 2499,
+        "answer": 2524.5
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_074.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_074.png",
+      "sourceTimes": {
+        "question": 2534,
+        "answer": 2555.5
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_075.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_075.png",
+      "sourceTimes": {
+        "question": 2565,
+        "answer": 2593.5
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_076.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_076.png",
+      "sourceTimes": {
+        "question": 2603,
+        "answer": 2621.5
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_077.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_077.png",
+      "sourceTimes": {
+        "question": 2631,
+        "answer": 2672.5
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_078.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_078.png",
+      "sourceTimes": {
+        "question": 2682,
+        "answer": 2699.5
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_079.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_079.png",
+      "sourceTimes": {
+        "question": 2709,
+        "answer": 2734.5
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_080.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_080.png",
+      "sourceTimes": {
+        "question": 2744,
+        "answer": 2771.5
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_081.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_081.png",
+      "sourceTimes": {
+        "question": 2781,
+        "answer": 2799.5
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_082.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_082.png",
+      "sourceTimes": {
+        "question": 2809,
+        "answer": 2820.5
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_083.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_083.png",
+      "sourceTimes": {
+        "question": 2830,
+        "answer": 2849.5
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_084.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_084.png",
+      "sourceTimes": {
+        "question": 2859,
+        "answer": 2889.5
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_085.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_085.png",
+      "sourceTimes": {
+        "question": 2899,
+        "answer": 2946.5
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_086.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_086.png",
+      "sourceTimes": {
+        "question": 2956,
+        "answer": 2973.5
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_087.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_087.png",
+      "sourceTimes": {
+        "question": 2983,
+        "answer": 3019.5
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_088.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_088.png",
+      "sourceTimes": {
+        "question": 3029,
+        "answer": 3041.5
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_089.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_089.png",
+      "sourceTimes": {
+        "question": 3051,
+        "answer": 3075.5
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_090.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_090.png",
+      "sourceTimes": {
+        "question": 3085,
+        "answer": 3101.5
+      }
+    },
+    {
+      "id": "091",
+      "chapter": "social-civics-entrance-exam",
+      "question": "images_59/social-civics-past-exam-91/question_091.png",
+      "answer": "images_59/social-civics-past-exam-91/answer_091.png",
+      "sourceTimes": {
+        "question": 3111,
+        "answer": 3139.5
+      }
+    }
+  ],
+  "series": "past"
+}

@@ -1,0 +1,541 @@
+{
+  "id": "social-history-summary-japan-part1-50-20261025",
+  "subject": "social",
+  "field": "history",
+  "title": "日本史総まとめ①｜よく出る問題",
+  "grade": "中学歴史",
+  "description": "日本史の一問一答50問。弥生時代から室町・戦国時代までの基礎用語を図版とともに学習する。",
+  "cover": "images_12/social-history-summary-japan-part1-50-20261025/question_001.png",
+  "chapters": [
+    {
+      "id": "prehistoric-yayoi-kofun",
+      "title": "弥生・古墳時代（1〜6問）"
+    },
+    {
+      "id": "asuka-ritsuryo",
+      "title": "飛鳥・律令国家（7〜15問）"
+    },
+    {
+      "id": "nara-classical",
+      "title": "奈良時代（16〜22問）"
+    },
+    {
+      "id": "heian-classical",
+      "title": "平安時代（23〜33問）"
+    },
+    {
+      "id": "kamakura-shogunate",
+      "title": "鎌倉時代（34〜40問）"
+    },
+    {
+      "id": "muromachi-sengoku",
+      "title": "室町・戦国時代（41〜50問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "prehistoric-yayoi-kofun",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_001.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_001.png",
+      "sourceTimes": {
+        "question": 20,
+        "answer": 26.6
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "prehistoric-yayoi-kofun",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_002.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_002.png",
+      "sourceTimes": {
+        "question": 33,
+        "answer": 41.6
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "prehistoric-yayoi-kofun",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_003.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_003.png",
+      "sourceTimes": {
+        "question": 48,
+        "answer": 55.6
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "prehistoric-yayoi-kofun",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_004.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_004.png",
+      "sourceTimes": {
+        "question": 62,
+        "answer": 71.6
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "prehistoric-yayoi-kofun",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_005.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_005.png",
+      "sourceTimes": {
+        "question": 78,
+        "answer": 88.6
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "prehistoric-yayoi-kofun",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_006.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_006.png",
+      "sourceTimes": {
+        "question": 95,
+        "answer": 107.6
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_007.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_007.png",
+      "sourceTimes": {
+        "question": 114,
+        "answer": 122.6
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_008.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_008.png",
+      "sourceTimes": {
+        "question": 129,
+        "answer": 139.6
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_009.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_009.png",
+      "sourceTimes": {
+        "question": 146,
+        "answer": 156.6
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_010.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_010.png",
+      "sourceTimes": {
+        "question": 163,
+        "answer": 173.6
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_011.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_011.png",
+      "sourceTimes": {
+        "question": 180,
+        "answer": 192.6
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_012.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_012.png",
+      "sourceTimes": {
+        "question": 199,
+        "answer": 209.6
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_013.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_013.png",
+      "sourceTimes": {
+        "question": 216,
+        "answer": 226.6
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_014.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_014.png",
+      "sourceTimes": {
+        "question": 233,
+        "answer": 244.6
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "asuka-ritsuryo",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_015.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_015.png",
+      "sourceTimes": {
+        "question": 251,
+        "answer": 263.6
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "nara-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_016.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_016.png",
+      "sourceTimes": {
+        "question": 270,
+        "answer": 279.6
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "nara-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_017.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_017.png",
+      "sourceTimes": {
+        "question": 286,
+        "answer": 296.6
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "nara-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_018.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_018.png",
+      "sourceTimes": {
+        "question": 303,
+        "answer": 316.6
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "nara-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_019.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_019.png",
+      "sourceTimes": {
+        "question": 323,
+        "answer": 332.6
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "nara-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_020.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_020.png",
+      "sourceTimes": {
+        "question": 339,
+        "answer": 351.6
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "nara-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_021.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_021.png",
+      "sourceTimes": {
+        "question": 358,
+        "answer": 368.6
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "nara-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_022.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_022.png",
+      "sourceTimes": {
+        "question": 375,
+        "answer": 387.6
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_023.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_023.png",
+      "sourceTimes": {
+        "question": 394,
+        "answer": 405.6
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_024.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_024.png",
+      "sourceTimes": {
+        "question": 412,
+        "answer": 424.6
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_025.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_025.png",
+      "sourceTimes": {
+        "question": 431,
+        "answer": 445.6
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_026.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_026.png",
+      "sourceTimes": {
+        "question": 452,
+        "answer": 466.6
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_027.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_027.png",
+      "sourceTimes": {
+        "question": 473,
+        "answer": 482.6
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_028.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_028.png",
+      "sourceTimes": {
+        "question": 489,
+        "answer": 498.6
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_029.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_029.png",
+      "sourceTimes": {
+        "question": 505,
+        "answer": 515.6
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_030.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_030.png",
+      "sourceTimes": {
+        "question": 522,
+        "answer": 535.6
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_031.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_031.png",
+      "sourceTimes": {
+        "question": 542,
+        "answer": 556.6
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_032.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_032.png",
+      "sourceTimes": {
+        "question": 563,
+        "answer": 575.6
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "heian-classical",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_033.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_033.png",
+      "sourceTimes": {
+        "question": 582,
+        "answer": 595.6
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "kamakura-shogunate",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_034.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_034.png",
+      "sourceTimes": {
+        "question": 602,
+        "answer": 610.6
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "kamakura-shogunate",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_035.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_035.png",
+      "sourceTimes": {
+        "question": 617,
+        "answer": 630.6
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "kamakura-shogunate",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_036.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_036.png",
+      "sourceTimes": {
+        "question": 637,
+        "answer": 651.6
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "kamakura-shogunate",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_037.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_037.png",
+      "sourceTimes": {
+        "question": 658,
+        "answer": 668.6
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "kamakura-shogunate",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_038.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_038.png",
+      "sourceTimes": {
+        "question": 675,
+        "answer": 686.6
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "kamakura-shogunate",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_039.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_039.png",
+      "sourceTimes": {
+        "question": 693,
+        "answer": 707.6
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "kamakura-shogunate",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_040.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_040.png",
+      "sourceTimes": {
+        "question": 714,
+        "answer": 725.6
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_041.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_041.png",
+      "sourceTimes": {
+        "question": 732,
+        "answer": 745.6
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_042.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_042.png",
+      "sourceTimes": {
+        "question": 752,
+        "answer": 762.6
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_043.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_043.png",
+      "sourceTimes": {
+        "question": 769,
+        "answer": 777.6
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_044.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_044.png",
+      "sourceTimes": {
+        "question": 784,
+        "answer": 791.6
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_045.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_045.png",
+      "sourceTimes": {
+        "question": 798,
+        "answer": 808.6
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_046.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_046.png",
+      "sourceTimes": {
+        "question": 815,
+        "answer": 826.6
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_047.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_047.png",
+      "sourceTimes": {
+        "question": 833,
+        "answer": 845.6
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_048.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_048.png",
+      "sourceTimes": {
+        "question": 852,
+        "answer": 861.6
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_049.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_049.png",
+      "sourceTimes": {
+        "question": 868,
+        "answer": 881.6
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "muromachi-sengoku",
+      "question": "images_12/social-history-summary-japan-part1-50-20261025/question_050.png",
+      "answer": "images_12/social-history-summary-japan-part1-50-20261025/answer_050.png",
+      "sourceTimes": {
+        "question": 888,
+        "answer": 900.6
+      }
+    }
+  ],
+  "source": "",
+  "series": "review",
+  "count": 50,
+  "data": "lessons/social-history-summary-japan-part1-50-20261025.json"
+}

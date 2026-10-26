@@ -1,0 +1,2393 @@
+{
+  "id": "social-history-era-years-236-20261025",
+  "subject": "social",
+  "field": "history",
+  "title": "歴史の時代・時期｜日本史・世界史",
+  "grade": "中学歴史",
+  "description": "日本史・世界史の236の出来事について、起きた時代・時期を覚える問題集。年号語呂合わせ・年代表つき。",
+  "cover": "images_11/social-history-era-years-236-20261025/question_001.png",
+  "chapters": [
+    {
+      "id": "era-years-001-060",
+      "title": "時代・時期①（1〜60問）"
+    },
+    {
+      "id": "era-years-061-120",
+      "title": "時代・時期②（61〜120問）"
+    },
+    {
+      "id": "era-years-121-180",
+      "title": "時代・時期③（121〜180問）"
+    },
+    {
+      "id": "era-years-181-236",
+      "title": "時代・時期④（181〜236問）"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_001.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_001.png",
+      "sourceTimes": {
+        "question": 32.0,
+        "answer": 72.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_002.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_002.png",
+      "sourceTimes": {
+        "question": 79.0,
+        "answer": 86.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_003.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_003.png",
+      "sourceTimes": {
+        "question": 94.0,
+        "answer": 103.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_004.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_004.png",
+      "sourceTimes": {
+        "question": 112.0,
+        "answer": 125.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_005.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_005.png",
+      "sourceTimes": {
+        "question": 135.0,
+        "answer": 151.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_006.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_006.png",
+      "sourceTimes": {
+        "question": 160.0,
+        "answer": 172.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_007.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_007.png",
+      "sourceTimes": {
+        "question": 182.0,
+        "answer": 200.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_008.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_008.png",
+      "sourceTimes": {
+        "question": 210.0,
+        "answer": 224.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_009.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_009.png",
+      "sourceTimes": {
+        "question": 233.0,
+        "answer": 245.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_010.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_010.png",
+      "sourceTimes": {
+        "question": 255.0,
+        "answer": 273.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_011.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_011.png",
+      "sourceTimes": {
+        "question": 282.0,
+        "answer": 295.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_012.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_012.png",
+      "sourceTimes": {
+        "question": 304.0,
+        "answer": 316.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_013.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_013.png",
+      "sourceTimes": {
+        "question": 325.0,
+        "answer": 337.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_014.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_014.png",
+      "sourceTimes": {
+        "question": 343.0,
+        "answer": 350.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_015.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_015.png",
+      "sourceTimes": {
+        "question": 358.0,
+        "answer": 369.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_016.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_016.png",
+      "sourceTimes": {
+        "question": 379.0,
+        "answer": 394.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_017.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_017.png",
+      "sourceTimes": {
+        "question": 404.0,
+        "answer": 418.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_018.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_018.png",
+      "sourceTimes": {
+        "question": 426.0,
+        "answer": 435.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_019.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_019.png",
+      "sourceTimes": {
+        "question": 444.0,
+        "answer": 457.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_020.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_020.png",
+      "sourceTimes": {
+        "question": 466.0,
+        "answer": 480.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_021.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_021.png",
+      "sourceTimes": {
+        "question": 487.0,
+        "answer": 496.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_022.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_022.png",
+      "sourceTimes": {
+        "question": 506.0,
+        "answer": 523.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_023.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_023.png",
+      "sourceTimes": {
+        "question": 532.0,
+        "answer": 544.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_024.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_024.png",
+      "sourceTimes": {
+        "question": 553.0,
+        "answer": 566.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_025.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_025.png",
+      "sourceTimes": {
+        "question": 575.0,
+        "answer": 588.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_026.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_026.png",
+      "sourceTimes": {
+        "question": 595.0,
+        "answer": 603.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_027.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_027.png",
+      "sourceTimes": {
+        "question": 613.0,
+        "answer": 628.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_028.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_028.png",
+      "sourceTimes": {
+        "question": 637.0,
+        "answer": 649.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_029.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_029.png",
+      "sourceTimes": {
+        "question": 658.0,
+        "answer": 669.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_030.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_030.png",
+      "sourceTimes": {
+        "question": 679.0,
+        "answer": 695.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_031.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_031.png",
+      "sourceTimes": {
+        "question": 705.0,
+        "answer": 722.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_032.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_032.png",
+      "sourceTimes": {
+        "question": 731.0,
+        "answer": 744.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_033.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_033.png",
+      "sourceTimes": {
+        "question": 753.0,
+        "answer": 765.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_034.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_034.png",
+      "sourceTimes": {
+        "question": 774.0,
+        "answer": 786.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_035.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_035.png",
+      "sourceTimes": {
+        "question": 795.0,
+        "answer": 809.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_036.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_036.png",
+      "sourceTimes": {
+        "question": 819.0,
+        "answer": 833.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_037.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_037.png",
+      "sourceTimes": {
+        "question": 843.0,
+        "answer": 860.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_038.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_038.png",
+      "sourceTimes": {
+        "question": 869.0,
+        "answer": 881.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_039.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_039.png",
+      "sourceTimes": {
+        "question": 891.0,
+        "answer": 906.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_040.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_040.png",
+      "sourceTimes": {
+        "question": 916.0,
+        "answer": 935.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_041.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_041.png",
+      "sourceTimes": {
+        "question": 944.0,
+        "answer": 958.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_042.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_042.png",
+      "sourceTimes": {
+        "question": 967.0,
+        "answer": 980.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_043.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_043.png",
+      "sourceTimes": {
+        "question": 990.0,
+        "answer": 1004.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_044.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_044.png",
+      "sourceTimes": {
+        "question": 1013.0,
+        "answer": 1026.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_045.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_045.png",
+      "sourceTimes": {
+        "question": 1035.0,
+        "answer": 1047.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_046.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_046.png",
+      "sourceTimes": {
+        "question": 1055.0,
+        "answer": 1066.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_047.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_047.png",
+      "sourceTimes": {
+        "question": 1076.0,
+        "answer": 1094.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_048.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_048.png",
+      "sourceTimes": {
+        "question": 1104.0,
+        "answer": 1119.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_049.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_049.png",
+      "sourceTimes": {
+        "question": 1128.0,
+        "answer": 1141.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_050.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_050.png",
+      "sourceTimes": {
+        "question": 1151.0,
+        "answer": 1166.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_051.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_051.png",
+      "sourceTimes": {
+        "question": 1174.0,
+        "answer": 1183.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_052.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_052.png",
+      "sourceTimes": {
+        "question": 1192.0,
+        "answer": 1204.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_053.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_053.png",
+      "sourceTimes": {
+        "question": 1214.0,
+        "answer": 1228.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_054.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_054.png",
+      "sourceTimes": {
+        "question": 1238.0,
+        "answer": 1252.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_055.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_055.png",
+      "sourceTimes": {
+        "question": 1262.0,
+        "answer": 1278.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_056.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_056.png",
+      "sourceTimes": {
+        "question": 1287.0,
+        "answer": 1300.0
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_057.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_057.png",
+      "sourceTimes": {
+        "question": 1307.0,
+        "answer": 1315.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_058.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_058.png",
+      "sourceTimes": {
+        "question": 1325.0,
+        "answer": 1339.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_059.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_059.png",
+      "sourceTimes": {
+        "question": 1348.0,
+        "answer": 1359.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "era-years-001-060",
+      "question": "images_11/social-history-era-years-236-20261025/question_060.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_060.png",
+      "sourceTimes": {
+        "question": 1368.0,
+        "answer": 1380.0
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_061.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_061.png",
+      "sourceTimes": {
+        "question": 1388.0,
+        "answer": 1399.0
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_062.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_062.png",
+      "sourceTimes": {
+        "question": 1406.0,
+        "answer": 1413.0
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_063.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_063.png",
+      "sourceTimes": {
+        "question": 1423.0,
+        "answer": 1438.0
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_064.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_064.png",
+      "sourceTimes": {
+        "question": 1447.0,
+        "answer": 1460.0
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_065.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_065.png",
+      "sourceTimes": {
+        "question": 1467.0,
+        "answer": 1476.0
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_066.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_066.png",
+      "sourceTimes": {
+        "question": 1485.0,
+        "answer": 1497.0
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_067.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_067.png",
+      "sourceTimes": {
+        "question": 1505.0,
+        "answer": 1514.0
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_068.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_068.png",
+      "sourceTimes": {
+        "question": 1523.0,
+        "answer": 1535.0
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_069.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_069.png",
+      "sourceTimes": {
+        "question": 1545.0,
+        "answer": 1559.0
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_070.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_070.png",
+      "sourceTimes": {
+        "question": 1567.0,
+        "answer": 1578.0
+      }
+    },
+    {
+      "id": "071",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_071.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_071.png",
+      "sourceTimes": {
+        "question": 1588.0,
+        "answer": 1606.0
+      }
+    },
+    {
+      "id": "072",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_072.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_072.png",
+      "sourceTimes": {
+        "question": 1614.0,
+        "answer": 1624.0
+      }
+    },
+    {
+      "id": "073",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_073.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_073.png",
+      "sourceTimes": {
+        "question": 1633.0,
+        "answer": 1646.0
+      }
+    },
+    {
+      "id": "074",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_074.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_074.png",
+      "sourceTimes": {
+        "question": 1654.0,
+        "answer": 1663.0
+      }
+    },
+    {
+      "id": "075",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_075.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_075.png",
+      "sourceTimes": {
+        "question": 1670.0,
+        "answer": 1678.0
+      }
+    },
+    {
+      "id": "076",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_076.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_076.png",
+      "sourceTimes": {
+        "question": 1688.0,
+        "answer": 1702.0
+      }
+    },
+    {
+      "id": "077",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_077.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_077.png",
+      "sourceTimes": {
+        "question": 1711.0,
+        "answer": 1723.0
+      }
+    },
+    {
+      "id": "078",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_078.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_078.png",
+      "sourceTimes": {
+        "question": 1730.0,
+        "answer": 1738.0
+      }
+    },
+    {
+      "id": "079",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_079.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_079.png",
+      "sourceTimes": {
+        "question": 1747.0,
+        "answer": 1759.0
+      }
+    },
+    {
+      "id": "080",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_080.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_080.png",
+      "sourceTimes": {
+        "question": 1768.0,
+        "answer": 1781.0
+      }
+    },
+    {
+      "id": "081",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_081.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_081.png",
+      "sourceTimes": {
+        "question": 1789.0,
+        "answer": 1798.0
+      }
+    },
+    {
+      "id": "082",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_082.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_082.png",
+      "sourceTimes": {
+        "question": 1807.0,
+        "answer": 1820.0
+      }
+    },
+    {
+      "id": "083",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_083.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_083.png",
+      "sourceTimes": {
+        "question": 1827.0,
+        "answer": 1836.0
+      }
+    },
+    {
+      "id": "084",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_084.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_084.png",
+      "sourceTimes": {
+        "question": 1845.0,
+        "answer": 1856.0
+      }
+    },
+    {
+      "id": "085",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_085.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_085.png",
+      "sourceTimes": {
+        "question": 1864.0,
+        "answer": 1875.0
+      }
+    },
+    {
+      "id": "086",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_086.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_086.png",
+      "sourceTimes": {
+        "question": 1883.0,
+        "answer": 1894.0
+      }
+    },
+    {
+      "id": "087",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_087.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_087.png",
+      "sourceTimes": {
+        "question": 1901.0,
+        "answer": 1910.0
+      }
+    },
+    {
+      "id": "088",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_088.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_088.png",
+      "sourceTimes": {
+        "question": 1918.0,
+        "answer": 1927.0
+      }
+    },
+    {
+      "id": "089",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_089.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_089.png",
+      "sourceTimes": {
+        "question": 1935.0,
+        "answer": 1946.0
+      }
+    },
+    {
+      "id": "090",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_090.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_090.png",
+      "sourceTimes": {
+        "question": 1953.0,
+        "answer": 1961.0
+      }
+    },
+    {
+      "id": "091",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_091.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_091.png",
+      "sourceTimes": {
+        "question": 1969.0,
+        "answer": 1979.0
+      }
+    },
+    {
+      "id": "092",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_092.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_092.png",
+      "sourceTimes": {
+        "question": 1987.0,
+        "answer": 1998.0
+      }
+    },
+    {
+      "id": "093",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_093.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_093.png",
+      "sourceTimes": {
+        "question": 2006.0,
+        "answer": 2017.0
+      }
+    },
+    {
+      "id": "094",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_094.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_094.png",
+      "sourceTimes": {
+        "question": 2025.0,
+        "answer": 2036.0
+      }
+    },
+    {
+      "id": "095",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_095.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_095.png",
+      "sourceTimes": {
+        "question": 2045.0,
+        "answer": 2056.0
+      }
+    },
+    {
+      "id": "096",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_096.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_096.png",
+      "sourceTimes": {
+        "question": 2066.0,
+        "answer": 2087.0
+      }
+    },
+    {
+      "id": "097",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_097.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_097.png",
+      "sourceTimes": {
+        "question": 2094.0,
+        "answer": 2101.0
+      }
+    },
+    {
+      "id": "098",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_098.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_098.png",
+      "sourceTimes": {
+        "question": 2111.0,
+        "answer": 2131.0
+      }
+    },
+    {
+      "id": "099",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_099.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_099.png",
+      "sourceTimes": {
+        "question": 2140.0,
+        "answer": 2152.0
+      }
+    },
+    {
+      "id": "100",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_100.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_100.png",
+      "sourceTimes": {
+        "question": 2160.0,
+        "answer": 2169.0
+      }
+    },
+    {
+      "id": "101",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_101.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_101.png",
+      "sourceTimes": {
+        "question": 2178.0,
+        "answer": 2191.0
+      }
+    },
+    {
+      "id": "102",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_102.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_102.png",
+      "sourceTimes": {
+        "question": 2200.0,
+        "answer": 2211.0
+      }
+    },
+    {
+      "id": "103",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_103.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_103.png",
+      "sourceTimes": {
+        "question": 2220.0,
+        "answer": 2234.0
+      }
+    },
+    {
+      "id": "104",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_104.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_104.png",
+      "sourceTimes": {
+        "question": 2244.0,
+        "answer": 2258.0
+      }
+    },
+    {
+      "id": "105",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_105.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_105.png",
+      "sourceTimes": {
+        "question": 2264.0,
+        "answer": 2270.0
+      }
+    },
+    {
+      "id": "106",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_106.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_106.png",
+      "sourceTimes": {
+        "question": 2280.0,
+        "answer": 2295.0
+      }
+    },
+    {
+      "id": "107",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_107.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_107.png",
+      "sourceTimes": {
+        "question": 2303.0,
+        "answer": 2313.0
+      }
+    },
+    {
+      "id": "108",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_108.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_108.png",
+      "sourceTimes": {
+        "question": 2322.0,
+        "answer": 2333.0
+      }
+    },
+    {
+      "id": "109",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_109.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_109.png",
+      "sourceTimes": {
+        "question": 2340.0,
+        "answer": 2348.0
+      }
+    },
+    {
+      "id": "110",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_110.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_110.png",
+      "sourceTimes": {
+        "question": 2355.0,
+        "answer": 2363.0
+      }
+    },
+    {
+      "id": "111",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_111.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_111.png",
+      "sourceTimes": {
+        "question": 2371.0,
+        "answer": 2380.0
+      }
+    },
+    {
+      "id": "112",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_112.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_112.png",
+      "sourceTimes": {
+        "question": 2389.0,
+        "answer": 2400.0
+      }
+    },
+    {
+      "id": "113",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_113.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_113.png",
+      "sourceTimes": {
+        "question": 2409.0,
+        "answer": 2421.0
+      }
+    },
+    {
+      "id": "114",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_114.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_114.png",
+      "sourceTimes": {
+        "question": 2428.0,
+        "answer": 2435.0
+      }
+    },
+    {
+      "id": "115",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_115.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_115.png",
+      "sourceTimes": {
+        "question": 2444.0,
+        "answer": 2456.0
+      }
+    },
+    {
+      "id": "116",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_116.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_116.png",
+      "sourceTimes": {
+        "question": 2463.0,
+        "answer": 2471.0
+      }
+    },
+    {
+      "id": "117",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_117.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_117.png",
+      "sourceTimes": {
+        "question": 2480.0,
+        "answer": 2493.0
+      }
+    },
+    {
+      "id": "118",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_118.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_118.png",
+      "sourceTimes": {
+        "question": 2500.0,
+        "answer": 2507.0
+      }
+    },
+    {
+      "id": "119",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_119.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_119.png",
+      "sourceTimes": {
+        "question": 2516.0,
+        "answer": 2529.0
+      }
+    },
+    {
+      "id": "120",
+      "chapter": "era-years-061-120",
+      "question": "images_11/social-history-era-years-236-20261025/question_120.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_120.png",
+      "sourceTimes": {
+        "question": 2538.0,
+        "answer": 2551.0
+      }
+    },
+    {
+      "id": "121",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_121.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_121.png",
+      "sourceTimes": {
+        "question": 2560.0,
+        "answer": 2572.0
+      }
+    },
+    {
+      "id": "122",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_122.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_122.png",
+      "sourceTimes": {
+        "question": 2581.0,
+        "answer": 2594.0
+      }
+    },
+    {
+      "id": "123",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_123.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_123.png",
+      "sourceTimes": {
+        "question": 2601.0,
+        "answer": 2609.0
+      }
+    },
+    {
+      "id": "124",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_124.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_124.png",
+      "sourceTimes": {
+        "question": 2618.0,
+        "answer": 2632.0
+      }
+    },
+    {
+      "id": "125",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_125.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_125.png",
+      "sourceTimes": {
+        "question": 2642.0,
+        "answer": 2656.0
+      }
+    },
+    {
+      "id": "126",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_126.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_126.png",
+      "sourceTimes": {
+        "question": 2664.0,
+        "answer": 2675.0
+      }
+    },
+    {
+      "id": "127",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_127.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_127.png",
+      "sourceTimes": {
+        "question": 2682.0,
+        "answer": 2689.0
+      }
+    },
+    {
+      "id": "128",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_128.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_128.png",
+      "sourceTimes": {
+        "question": 2697.0,
+        "answer": 2708.0
+      }
+    },
+    {
+      "id": "129",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_129.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_129.png",
+      "sourceTimes": {
+        "question": 2716.0,
+        "answer": 2727.0
+      }
+    },
+    {
+      "id": "130",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_130.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_130.png",
+      "sourceTimes": {
+        "question": 2736.0,
+        "answer": 2749.0
+      }
+    },
+    {
+      "id": "131",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_131.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_131.png",
+      "sourceTimes": {
+        "question": 2755.0,
+        "answer": 2762.0
+      }
+    },
+    {
+      "id": "132",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_132.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_132.png",
+      "sourceTimes": {
+        "question": 2770.0,
+        "answer": 2780.0
+      }
+    },
+    {
+      "id": "133",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_133.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_133.png",
+      "sourceTimes": {
+        "question": 2789.0,
+        "answer": 2803.0
+      }
+    },
+    {
+      "id": "134",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_134.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_134.png",
+      "sourceTimes": {
+        "question": 2810.0,
+        "answer": 2817.0
+      }
+    },
+    {
+      "id": "135",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_135.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_135.png",
+      "sourceTimes": {
+        "question": 2826.0,
+        "answer": 2840.0
+      }
+    },
+    {
+      "id": "136",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_136.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_136.png",
+      "sourceTimes": {
+        "question": 2848.0,
+        "answer": 2858.0
+      }
+    },
+    {
+      "id": "137",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_137.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_137.png",
+      "sourceTimes": {
+        "question": 2867.0,
+        "answer": 2879.0
+      }
+    },
+    {
+      "id": "138",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_138.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_138.png",
+      "sourceTimes": {
+        "question": 2888.0,
+        "answer": 2902.0
+      }
+    },
+    {
+      "id": "139",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_139.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_139.png",
+      "sourceTimes": {
+        "question": 2910.0,
+        "answer": 2920.0
+      }
+    },
+    {
+      "id": "140",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_140.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_140.png",
+      "sourceTimes": {
+        "question": 2930.0,
+        "answer": 2944.0
+      }
+    },
+    {
+      "id": "141",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_141.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_141.png",
+      "sourceTimes": {
+        "question": 2953.0,
+        "answer": 2965.0
+      }
+    },
+    {
+      "id": "142",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_142.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_142.png",
+      "sourceTimes": {
+        "question": 2975.0,
+        "answer": 2989.0
+      }
+    },
+    {
+      "id": "143",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_143.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_143.png",
+      "sourceTimes": {
+        "question": 2999.0,
+        "answer": 3015.0
+      }
+    },
+    {
+      "id": "144",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_144.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_144.png",
+      "sourceTimes": {
+        "question": 3021.0,
+        "answer": 3027.0
+      }
+    },
+    {
+      "id": "145",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_145.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_145.png",
+      "sourceTimes": {
+        "question": 3035.0,
+        "answer": 3044.0
+      }
+    },
+    {
+      "id": "146",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_146.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_146.png",
+      "sourceTimes": {
+        "question": 3052.0,
+        "answer": 3062.0
+      }
+    },
+    {
+      "id": "147",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_147.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_147.png",
+      "sourceTimes": {
+        "question": 3071.0,
+        "answer": 3085.0
+      }
+    },
+    {
+      "id": "148",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_148.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_148.png",
+      "sourceTimes": {
+        "question": 3092.0,
+        "answer": 3101.0
+      }
+    },
+    {
+      "id": "149",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_149.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_149.png",
+      "sourceTimes": {
+        "question": 3109.0,
+        "answer": 3120.0
+      }
+    },
+    {
+      "id": "150",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_150.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_150.png",
+      "sourceTimes": {
+        "question": 3130.0,
+        "answer": 3146.0
+      }
+    },
+    {
+      "id": "151",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_151.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_151.png",
+      "sourceTimes": {
+        "question": 3155.0,
+        "answer": 3168.0
+      }
+    },
+    {
+      "id": "152",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_152.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_152.png",
+      "sourceTimes": {
+        "question": 3176.0,
+        "answer": 3187.0
+      }
+    },
+    {
+      "id": "153",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_153.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_153.png",
+      "sourceTimes": {
+        "question": 3196.0,
+        "answer": 3208.0
+      }
+    },
+    {
+      "id": "154",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_154.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_154.png",
+      "sourceTimes": {
+        "question": 3215.0,
+        "answer": 3224.0
+      }
+    },
+    {
+      "id": "155",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_155.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_155.png",
+      "sourceTimes": {
+        "question": 3233.0,
+        "answer": 3247.0
+      }
+    },
+    {
+      "id": "156",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_156.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_156.png",
+      "sourceTimes": {
+        "question": 3256.0,
+        "answer": 3270.0
+      }
+    },
+    {
+      "id": "157",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_157.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_157.png",
+      "sourceTimes": {
+        "question": 3280.0,
+        "answer": 3296.0
+      }
+    },
+    {
+      "id": "158",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_158.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_158.png",
+      "sourceTimes": {
+        "question": 3305.0,
+        "answer": 3319.0
+      }
+    },
+    {
+      "id": "159",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_159.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_159.png",
+      "sourceTimes": {
+        "question": 3327.0,
+        "answer": 3336.0
+      }
+    },
+    {
+      "id": "160",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_160.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_160.png",
+      "sourceTimes": {
+        "question": 3345.0,
+        "answer": 3357.0
+      }
+    },
+    {
+      "id": "161",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_161.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_161.png",
+      "sourceTimes": {
+        "question": 3366.0,
+        "answer": 3378.0
+      }
+    },
+    {
+      "id": "162",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_162.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_162.png",
+      "sourceTimes": {
+        "question": 3386.0,
+        "answer": 3397.0
+      }
+    },
+    {
+      "id": "163",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_163.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_163.png",
+      "sourceTimes": {
+        "question": 3406.0,
+        "answer": 3417.0
+      }
+    },
+    {
+      "id": "164",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_164.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_164.png",
+      "sourceTimes": {
+        "question": 3424.0,
+        "answer": 3432.0
+      }
+    },
+    {
+      "id": "165",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_165.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_165.png",
+      "sourceTimes": {
+        "question": 3442.0,
+        "answer": 3460.0
+      }
+    },
+    {
+      "id": "166",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_166.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_166.png",
+      "sourceTimes": {
+        "question": 3470.0,
+        "answer": 3491.0
+      }
+    },
+    {
+      "id": "167",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_167.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_167.png",
+      "sourceTimes": {
+        "question": 3500.0,
+        "answer": 3514.0
+      }
+    },
+    {
+      "id": "168",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_168.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_168.png",
+      "sourceTimes": {
+        "question": 3521.0,
+        "answer": 3529.0
+      }
+    },
+    {
+      "id": "169",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_169.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_169.png",
+      "sourceTimes": {
+        "question": 3537.0,
+        "answer": 3548.0
+      }
+    },
+    {
+      "id": "170",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_170.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_170.png",
+      "sourceTimes": {
+        "question": 3557.0,
+        "answer": 3568.0
+      }
+    },
+    {
+      "id": "171",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_171.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_171.png",
+      "sourceTimes": {
+        "question": 3577.0,
+        "answer": 3591.0
+      }
+    },
+    {
+      "id": "172",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_172.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_172.png",
+      "sourceTimes": {
+        "question": 3598.0,
+        "answer": 3607.0
+      }
+    },
+    {
+      "id": "173",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_173.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_173.png",
+      "sourceTimes": {
+        "question": 3616.0,
+        "answer": 3629.0
+      }
+    },
+    {
+      "id": "174",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_174.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_174.png",
+      "sourceTimes": {
+        "question": 3636.0,
+        "answer": 3644.0
+      }
+    },
+    {
+      "id": "175",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_175.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_175.png",
+      "sourceTimes": {
+        "question": 3652.0,
+        "answer": 3663.0
+      }
+    },
+    {
+      "id": "176",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_176.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_176.png",
+      "sourceTimes": {
+        "question": 3670.0,
+        "answer": 3678.0
+      }
+    },
+    {
+      "id": "177",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_177.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_177.png",
+      "sourceTimes": {
+        "question": 3687.0,
+        "answer": 3699.0
+      }
+    },
+    {
+      "id": "178",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_178.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_178.png",
+      "sourceTimes": {
+        "question": 3709.0,
+        "answer": 3728.0
+      }
+    },
+    {
+      "id": "179",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_179.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_179.png",
+      "sourceTimes": {
+        "question": 3738.0,
+        "answer": 3754.0
+      }
+    },
+    {
+      "id": "180",
+      "chapter": "era-years-121-180",
+      "question": "images_11/social-history-era-years-236-20261025/question_180.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_180.png",
+      "sourceTimes": {
+        "question": 3762.0,
+        "answer": 3773.0
+      }
+    },
+    {
+      "id": "181",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_181.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_181.png",
+      "sourceTimes": {
+        "question": 3782.0,
+        "answer": 3795.0
+      }
+    },
+    {
+      "id": "182",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_182.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_182.png",
+      "sourceTimes": {
+        "question": 3804.0,
+        "answer": 3817.0
+      }
+    },
+    {
+      "id": "183",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_183.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_183.png",
+      "sourceTimes": {
+        "question": 3826.0,
+        "answer": 3837.0
+      }
+    },
+    {
+      "id": "184",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_184.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_184.png",
+      "sourceTimes": {
+        "question": 3846.0,
+        "answer": 3858.0
+      }
+    },
+    {
+      "id": "185",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_185.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_185.png",
+      "sourceTimes": {
+        "question": 3867.0,
+        "answer": 3880.0
+      }
+    },
+    {
+      "id": "186",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_186.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_186.png",
+      "sourceTimes": {
+        "question": 3888.0,
+        "answer": 3899.0
+      }
+    },
+    {
+      "id": "187",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_187.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_187.png",
+      "sourceTimes": {
+        "question": 3909.0,
+        "answer": 3923.0
+      }
+    },
+    {
+      "id": "188",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_188.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_188.png",
+      "sourceTimes": {
+        "question": 3932.0,
+        "answer": 3943.0
+      }
+    },
+    {
+      "id": "189",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_189.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_189.png",
+      "sourceTimes": {
+        "question": 3952.0,
+        "answer": 3964.0
+      }
+    },
+    {
+      "id": "190",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_190.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_190.png",
+      "sourceTimes": {
+        "question": 3971.0,
+        "answer": 3979.0
+      }
+    },
+    {
+      "id": "191",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_191.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_191.png",
+      "sourceTimes": {
+        "question": 3986.0,
+        "answer": 3993.0
+      }
+    },
+    {
+      "id": "192",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_192.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_192.png",
+      "sourceTimes": {
+        "question": 4002.0,
+        "answer": 4014.0
+      }
+    },
+    {
+      "id": "193",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_193.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_193.png",
+      "sourceTimes": {
+        "question": 4023.0,
+        "answer": 4037.0
+      }
+    },
+    {
+      "id": "194",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_194.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_194.png",
+      "sourceTimes": {
+        "question": 4045.0,
+        "answer": 4054.0
+      }
+    },
+    {
+      "id": "195",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_195.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_195.png",
+      "sourceTimes": {
+        "question": 4063.0,
+        "answer": 4074.0
+      }
+    },
+    {
+      "id": "196",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_196.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_196.png",
+      "sourceTimes": {
+        "question": 4083.0,
+        "answer": 4096.0
+      }
+    },
+    {
+      "id": "197",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_197.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_197.png",
+      "sourceTimes": {
+        "question": 4105.0,
+        "answer": 4117.0
+      }
+    },
+    {
+      "id": "198",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_198.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_198.png",
+      "sourceTimes": {
+        "question": 4123.0,
+        "answer": 4128.0
+      }
+    },
+    {
+      "id": "199",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_199.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_199.png",
+      "sourceTimes": {
+        "question": 4137.0,
+        "answer": 4151.0
+      }
+    },
+    {
+      "id": "200",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_200.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_200.png",
+      "sourceTimes": {
+        "question": 4158.0,
+        "answer": 4166.0
+      }
+    },
+    {
+      "id": "201",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_201.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_201.png",
+      "sourceTimes": {
+        "question": 4175.0,
+        "answer": 4189.0
+      }
+    },
+    {
+      "id": "202",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_202.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_202.png",
+      "sourceTimes": {
+        "question": 4198.0,
+        "answer": 4210.0
+      }
+    },
+    {
+      "id": "203",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_203.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_203.png",
+      "sourceTimes": {
+        "question": 4220.0,
+        "answer": 4234.0
+      }
+    },
+    {
+      "id": "204",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_204.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_204.png",
+      "sourceTimes": {
+        "question": 4242.0,
+        "answer": 4251.0
+      }
+    },
+    {
+      "id": "205",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_205.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_205.png",
+      "sourceTimes": {
+        "question": 4260.0,
+        "answer": 4271.0
+      }
+    },
+    {
+      "id": "206",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_206.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_206.png",
+      "sourceTimes": {
+        "question": 4280.0,
+        "answer": 4293.0
+      }
+    },
+    {
+      "id": "207",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_207.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_207.png",
+      "sourceTimes": {
+        "question": 4301.0,
+        "answer": 4311.0
+      }
+    },
+    {
+      "id": "208",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_208.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_208.png",
+      "sourceTimes": {
+        "question": 4321.0,
+        "answer": 4335.0
+      }
+    },
+    {
+      "id": "209",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_209.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_209.png",
+      "sourceTimes": {
+        "question": 4343.0,
+        "answer": 4354.0
+      }
+    },
+    {
+      "id": "210",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_210.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_210.png",
+      "sourceTimes": {
+        "question": 4364.0,
+        "answer": 4380.0
+      }
+    },
+    {
+      "id": "211",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_211.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_211.png",
+      "sourceTimes": {
+        "question": 4387.0,
+        "answer": 4394.0
+      }
+    },
+    {
+      "id": "212",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_212.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_212.png",
+      "sourceTimes": {
+        "question": 4402.0,
+        "answer": 4411.0
+      }
+    },
+    {
+      "id": "213",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_213.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_213.png",
+      "sourceTimes": {
+        "question": 4420.0,
+        "answer": 4433.0
+      }
+    },
+    {
+      "id": "214",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_214.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_214.png",
+      "sourceTimes": {
+        "question": 4440.0,
+        "answer": 4447.0
+      }
+    },
+    {
+      "id": "215",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_215.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_215.png",
+      "sourceTimes": {
+        "question": 4456.0,
+        "answer": 4470.0
+      }
+    },
+    {
+      "id": "216",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_216.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_216.png",
+      "sourceTimes": {
+        "question": 4479.0,
+        "answer": 4493.0
+      }
+    },
+    {
+      "id": "217",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_217.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_217.png",
+      "sourceTimes": {
+        "question": 4502.0,
+        "answer": 4514.0
+      }
+    },
+    {
+      "id": "218",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_218.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_218.png",
+      "sourceTimes": {
+        "question": 4521.0,
+        "answer": 4529.0
+      }
+    },
+    {
+      "id": "219",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_219.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_219.png",
+      "sourceTimes": {
+        "question": 4539.0,
+        "answer": 4553.0
+      }
+    },
+    {
+      "id": "220",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_220.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_220.png",
+      "sourceTimes": {
+        "question": 4561.0,
+        "answer": 4572.0
+      }
+    },
+    {
+      "id": "221",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_221.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_221.png",
+      "sourceTimes": {
+        "question": 4580.0,
+        "answer": 4590.0
+      }
+    },
+    {
+      "id": "222",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_222.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_222.png",
+      "sourceTimes": {
+        "question": 4600.0,
+        "answer": 4616.0
+      }
+    },
+    {
+      "id": "223",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_223.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_223.png",
+      "sourceTimes": {
+        "question": 4623.0,
+        "answer": 4631.0
+      }
+    },
+    {
+      "id": "224",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_224.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_224.png",
+      "sourceTimes": {
+        "question": 4640.0,
+        "answer": 4654.0
+      }
+    },
+    {
+      "id": "225",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_225.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_225.png",
+      "sourceTimes": {
+        "question": 4662.0,
+        "answer": 4671.0
+      }
+    },
+    {
+      "id": "226",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_226.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_226.png",
+      "sourceTimes": {
+        "question": 4679.0,
+        "answer": 4689.0
+      }
+    },
+    {
+      "id": "227",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_227.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_227.png",
+      "sourceTimes": {
+        "question": 4697.0,
+        "answer": 4707.0
+      }
+    },
+    {
+      "id": "228",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_228.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_228.png",
+      "sourceTimes": {
+        "question": 4715.0,
+        "answer": 4726.0
+      }
+    },
+    {
+      "id": "229",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_229.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_229.png",
+      "sourceTimes": {
+        "question": 4734.0,
+        "answer": 4743.0
+      }
+    },
+    {
+      "id": "230",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_230.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_230.png",
+      "sourceTimes": {
+        "question": 4753.0,
+        "answer": 4769.0
+      }
+    },
+    {
+      "id": "231",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_231.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_231.png",
+      "sourceTimes": {
+        "question": 4779.0,
+        "answer": 4795.0
+      }
+    },
+    {
+      "id": "232",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_232.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_232.png",
+      "sourceTimes": {
+        "question": 4804.0,
+        "answer": 4818.0
+      }
+    },
+    {
+      "id": "233",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_233.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_233.png",
+      "sourceTimes": {
+        "question": 4828.0,
+        "answer": 4842.0
+      }
+    },
+    {
+      "id": "234",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_234.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_234.png",
+      "sourceTimes": {
+        "question": 4851.0,
+        "answer": 4865.0
+      }
+    },
+    {
+      "id": "235",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_235.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_235.png",
+      "sourceTimes": {
+        "question": 4873.0,
+        "answer": 4883.0
+      }
+    },
+    {
+      "id": "236",
+      "chapter": "era-years-181-236",
+      "question": "images_11/social-history-era-years-236-20261025/question_236.png",
+      "answer": "images_11/social-history-era-years-236-20261025/answer_236.png",
+      "sourceTimes": {
+        "question": 4893.0,
+        "answer": 4907.0
+      }
+    }
+  ],
+  "source": "https://www.youtube.com/watch?v=YtGMp5Oh9jc",
+  "series": "themes",
+  "count": 236,
+  "data": "lessons/social-history-era-years-236-20261025.json"
+}

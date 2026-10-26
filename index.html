@@ -3053,6 +3053,24 @@ body #notice{max-width:calc(100vw - 24px);width:max-content;white-space:normal;o
 body:not(.slide-focus) #notice{top:var(--notice-top,calc(var(--app-header-height,64px) + 12px));bottom:auto;max-height:calc(100dvh - var(--notice-top,80px) - 20px);overflow:auto}
 body #notice.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
 </style>
+<style id="test-review-spacing-20261026">
+/* A shared inset aligns review text, controls and explanation content. */
+html[data-persona] body #app #testScreen .test-answer-card{--review-inset:clamp(12px,3.5vw,20px)}
+html[data-persona] body #app #testScreen .test-answer-card>.neko-tutor{padding:0 var(--review-inset) 16px!important;margin-top:16px!important;box-sizing:border-box;min-width:0}
+html[data-persona] body #app #testScreen .test-mark-row{border-top:0!important;padding:10px var(--review-inset);gap:12px;min-width:0;box-sizing:border-box}
+html[data-persona] body #app #testScreen .test-mark-row button{flex:1;min-width:0;white-space:normal;line-height:1.5}
+html[data-persona] body #app #testScreen .neko-feedback-tools{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;min-width:0;margin:0 0 18px}
+html[data-persona] body #app #testScreen .neko-feedback-tools>.neko-manual-note{flex:1 1 220px;margin:0;font-size:12px;line-height:1.7;overflow-wrap:anywhere}
+html[data-persona] body #app #testScreen .neko-feedback-tools>.neko-save-top{flex:0 1 auto;width:auto;max-width:100%;min-height:36px;margin:0!important;padding:6px 0!important;text-align:left;white-space:normal;line-height:1.6}
+html[data-persona] body #app #testScreen .neko-explanation-title{margin:0 0 14px!important;padding:18px 0 0!important;border-top:1px solid #e4cbb3;font-size:15px;line-height:1.5}
+html[data-persona=cyber] body #app #testScreen .neko-explanation-title{border-top-color:#315b81}
+html[data-persona] body #app #testScreen .neko-section-nav{margin:0 0 18px!important;padding:0!important;gap:8px;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;min-width:0}
+html[data-persona] body #app #testScreen .neko-section-nav button{padding:8px 4px!important;min-height:42px;min-width:0;border-radius:10px!important;font-size:12px!important;line-height:1.5}
+html[data-persona] body #app #testScreen :is(.neko-chat-section,.neko-words-section,.neko-problems-section){padding-left:0!important;padding-right:0!important;min-width:0;box-sizing:border-box}
+html[data-persona] body #app #testScreen .neko-practice-result-row{align-items:center;justify-content:flex-start;gap:6px 16px;margin-top:12px}
+html[data-persona] body #app #testScreen .neko-practice-result-row .neko-save-top{margin:0!important;text-align:left}
+@media(max-width:480px){html[data-persona] body #app #testScreen .neko-feedback-tools{flex-direction:column;align-items:flex-start;gap:4px}html[data-persona] body #app #testScreen .neko-feedback-tools>.neko-manual-note{flex:0 1 auto}}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3167,7 +3185,7 @@ body #notice.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
   <div id="testDateScope" class="test-date-scope"><div class="test-quick-presets" role="group" aria-label="確認テストの出題期間"><button type="button" data-test-period="today" aria-pressed="true">今日</button><button type="button" data-test-period="three" aria-pressed="false">直近3日間</button><button type="button" data-test-period="custom" aria-pressed="false">期間指定</button></div>
   <div id="testCustomDates" hidden><div class="homework-dates"><label>開始日<input type="date" id="testFrom"></label><label>終了日<input type="date" id="testTo"></label></div></div>
   <p class="test-dates-note">期間内に覚えて、いまも「おぼえた」の問題から出すにゃ</p><label class="homework-check"><input id="testAllDates" type="checkbox">記録日を指定しない</label></div><div id="testWrongScope" hidden><label class="homework-check"><input id="testIncludeRecovered" type="checkbox">克服した問題も含める</label><p class="test-dates-note">通常は、最後の判定が不正解の問題から出すにゃ。</p></div>
-  <div class="test-advanced" id="testAdvanced" hidden><div class="test-advanced-inner"><div class="test-filter-grid"><label>教科<select id="testSubject"></select></label><label>問題数<select id="testCount"><option value="5">5問</option><option value="10" selected>10問</option><option value="15">15問</option><option value="20">20問</option><option value="custom">自分で入力</option></select><input id="testCountCustom" type="number" min="1" max="5147" step="1" inputmode="numeric" placeholder="問題数を入力" aria-label="出題する問題数" hidden></label></div><label class="homework-field">分野<select id="testField"><option value="all">すべての分野</option></select></label><label class="homework-field">教材<input id="testLessonSearch" type="search" placeholder="教材名で検索" autocomplete="off" aria-label="教材を検索"><div id="testLessonPicker" class="test-lesson-picker"><div class="test-lesson-actions"><button type="button" id="testLessonSelectVisible">検索結果をすべて選択</button><button type="button" id="testLessonClear">選択を解除</button></div><div id="testLessonChoices" class="test-lesson-choices" role="group" aria-label="出題する教材"></div></div><small id="testLessonSearchInfo" aria-live="polite"></small></label></div></div>
+  <div class="test-advanced" id="testAdvanced" hidden><div class="test-advanced-inner"><div class="test-filter-grid"><label>教科<select id="testSubject"></select></label><label>問題数<select id="testCount"><option value="5">5問</option><option value="10" selected>10問</option><option value="15">15問</option><option value="20">20問</option><option value="custom">自分で入力</option></select><input id="testCountCustom" type="number" min="1" max="6556" step="1" inputmode="numeric" placeholder="問題数を入力" aria-label="出題する問題数" hidden></label></div><label class="homework-field">分野<select id="testField"><option value="all">すべての分野</option></select></label><label class="homework-field">教材<input id="testLessonSearch" type="search" placeholder="教材名で検索" autocomplete="off" aria-label="教材を検索"><div id="testLessonPicker" class="test-lesson-picker"><div class="test-lesson-actions"><button type="button" id="testLessonSelectVisible">検索結果をすべて選択</button><button type="button" id="testLessonClear">選択を解除</button></div><div id="testLessonChoices" class="test-lesson-choices" role="group" aria-label="出題する教材"></div></div><small id="testLessonSearchInfo" aria-live="polite"></small></label></div></div>
   <div id="testTutorScope" hidden></div><button type="button" class="link-button" id="assessmentRetry" hidden>問題文データを読み直すにゃ</button><p id="testCandidateCount" class="test-candidate-count" aria-live="polite"></p><p id="testSetupNotice" class="homework-note" role="status"></p>
  </div><div class="homework-setup-foot"><button id="startHomeworkTest" class="primary-button" type="button" disabled>テストをはじめるにゃ</button></div>
 </dialog>
@@ -3259,7 +3277,7 @@ body #notice.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
   };
 })();
 </script>
-<script src="catalog.js?v=20261023-world117-review06-fix1"></script>
+<script src="catalog.js?v=integrated135-20261026-f65cd097d4d0"></script>
 <dialog id="collectionDialog" aria-labelledby="collectionDialogTitle">
  <div class="collection-editor-head"><h2 id="collectionDialogTitle" tabindex="-1">まとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ" class="ui-close">×</button></div>
  <div class="collection-editor-body" id="collectionEditorBody">
@@ -5053,7 +5071,7 @@ function homeworkRequestedCount(){
  const custom=$('testCount').value==='custom';
  const raw=custom?$('testCountCustom').value:$('testCount').value;
  const n=Number(raw);
- return Number.isSafeInteger(n)&&n>=1&&n<=5147?n:0;
+ return Number.isSafeInteger(n)&&n>=1&&n<=6556?n:0;
 }
 function syncHomeworkCount(){
  const custom=$('testCount').value==='custom';
@@ -5291,7 +5309,7 @@ $('showTestShot').onclick=()=>toggleHomeworkCapture(true);
 window.addEventListener('pagehide',()=>{if(historyLoaded)persistStudyHistory();});
 
 // Additive assessment data: existing lesson files, IDs and progress are untouched.
-const assessmentDataURL='nekopon-data/assessment-06ce35ab7c44.json?v=source-label-cleanup-20261026-resume1';
+const assessmentDataURL='nekopon-data/assessment-06ce35ab7c44.json?v=integrated135-20261026-f65cd097d4d0';
 const assessmentCore=window.NekoAssessmentCore;
 let assessmentDataset=null,assessmentPromise=null,assessmentError='',assessmentSearchCache=new Map();
 let typedReviewLimit=20,typedReviewPendingOnly=false,typedRenderingKey='',typedLaunching=false;
@@ -5320,9 +5338,9 @@ async function ensureAssessmentData(){
   try{
    const r=await fetch(assessmentDataURL,{signal:controller.signal});if(!r.ok)throw Error(r.status===404?'missing-data':'data');
    const value=await r.json();
-   if(value.schema!==1||typeof value.revision!=='string'||Object.keys(value.lessons||{}).length!==117)throw Error('schema');
+   if(value.schema!==1||typeof value.revision!=='string'||Object.keys(value.lessons||{}).length!==135)throw Error('schema');
    const cards=Object.values(value.lessons).flatMap(l=>l.cards||[]);
-   if(cards.length!==5147||cards.filter(c=>c.eligible).length!==5136||cards.filter(c=>c.editorial).length!==86)throw Error('coverage');
+   if(cards.length!==6556||cards.filter(c=>c.eligible).length!==6544||cards.filter(c=>c.editorial).length!==86)throw Error('coverage');
    for(const l of Object.values(value.lessons)){
     if(new Set(l.cards.map(c=>c.id)).size!==l.cards.length)throw Error('duplicate');
     for(const c of l.cards)if(typeof c.q!=='string'||typeof c.contract!=='string'||!Array.isArray(c.accepted))throw Error('record');
@@ -5659,7 +5677,7 @@ async function resumeHomeworkTest(mode){
  }
  if(request!==testLoadRequest)return;if($('homeworkSetup').open)$('homeworkSetup').close();typedReviewLimit=20;typedReviewPendingOnly=false;return legacyResumeHomeworkTest(stored);
 }
-function nekoCanShowQuestionImage(r){return !!(r&&!r.editorial&&typeof r.question==='string'&&/^images_\d+\/[\w/-]+\.png(?:\?v=[a-f0-9]{8,64})?$/.test(r.question));}
+function nekoCanShowQuestionImage(r){return !!(r&&!r.editorial&&!r.hideQuestionImage&&typeof r.question==='string'&&/^images_\d+\/[\w/-]+\.png(?:\?v=[a-f0-9]{8,64})?$/.test(r.question));}
 function buildPrompt(target,r){
  target.replaceChildren();target.append(collectionNode('p',r.q));
  for(const text of (r.aux||[]).filter(t=>t!=='各欄の記号を付けてすべて答える。欄ごとの入力では、記号と解答の対応を保つ。'))target.append(collectionNode('p',text,'assessment-aux'));
@@ -6062,14 +6080,15 @@ function nekoRenderExplanation(node,text,glossary,key,animate=false){
 }
 function nekoRenderTutor(root,key,readonly=false){
  const sessionId=testSession?.id,r=assessmentByKey(key);if(!r)return;root.replaceChildren();const heading=collectionNode('div',undefined,'neko-tutor-heading');heading.append(collectionNode('span',document.documentElement.dataset.persona==='cyber'?'😎':'🐱'),collectionNode('strong',document.documentElement.dataset.persona==='cyber'?'Yoruponチャット':'Nekoponチャット'));heading.tabIndex=-1;const comment=collectionNode('p','','neko-tutor-comment user-content');comment.hidden=true;const explanation=collectionNode('div',undefined,'neko-tutor-explanation user-content');explanation.hidden=true;const status=collectionNode('p','','neko-tutor-status');status.setAttribute('role','status');status.hidden=true;const bubbleHint=collectionNode('p','気になることを、押して聞いてにゃ。','neko-chat-title'),bubbles=collectionNode('div',undefined,'neko-bubble-row');const conversation=collectionNode('div',undefined,'neko-conversation');const related=collectionNode('section',undefined,'neko-connections');related.setAttribute('aria-label','つながる知識と関連問題');
- if(testSession.judgements?.[key]?.source==='manual')root.append(collectionNode('p',testSession.answers[key]==='pass'?'この問題は自己判定で正解に訂正しているにゃ。':'この問題は自己判定でもう一度に訂正しているにゃ。','neko-manual-note'));
+ const feedbackTools=collectionNode('div',undefined,'neko-feedback-tools');
+ if(testSession.judgements?.[key]?.source==='manual')feedbackTools.append(collectionNode('p',testSession.answers[key]==='pass'?'この問題は自己判定で正解に訂正しているにゃ。':'この問題は自己判定でもう一度に訂正しているにゃ。','neko-manual-note'));
  const uid='neko-tabs-'+(nekoRenderTutor.serial=(nekoRenderTutor.serial||0)+1);let selectedTab='chat';
  const nav=collectionNode('nav',undefined,'neko-section-nav report-presets');nav.setAttribute('role','tablist');nav.setAttribute('aria-label','解説の表示切り替え');
  const chatJump=collectionButton('チャット','',()=>selectTab('chat')),wordJump=collectionButton('関連ワード','',()=>selectTab('words')),problemJump=collectionButton('関連問題','',()=>selectTab('problems'));const tabs=[['chat',chatJump],['words',wordJump],['problems',problemJump]];
  for(const [name,button]of tabs){button.id=uid+'-'+name+'-tab';button.setAttribute('role','tab');button.setAttribute('aria-controls',uid+'-'+name);button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const enabled=tabs.filter(([,b])=>!b.disabled),i=enabled.findIndex(([n])=>n===name),next=event.key==='Home'?0:event.key==='End'?enabled.length-1:(i+(event.key==='ArrowRight'?1:-1)+enabled.length)%enabled.length;selectTab(enabled[next][0]);enabled[next][1].focus();});nav.append(button);}
  function selectTab(name){selectedTab=name;syncTabs();}
  function syncTabs(){const panels={chat,words:related.querySelector('.neko-words-section'),problems:related.querySelector('.neko-problems-section')};if(!panels[selectedTab])selectedTab='chat';for(const [name,button]of tabs){const panel=panels[name],active=selectedTab===name;button.disabled=!panel;button.tabIndex=active?0:-1;button.setAttribute('aria-selected',String(active));button.setAttribute('aria-pressed',String(active));if(panel){panel.id=uid+'-'+name;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',button.id);panel.hidden=!active;}}}
- const chat=collectionNode('section',undefined,'neko-chat-section');if(readonly||testSession?.kind!=='practice')root.append(collectionButton('この問題をまとめに保存','link-button neko-save-top',()=>nekoSaveQuestion(key)));root.append(collectionNode('h3','解説','neko-explanation-title'),nav,chat);const chatScroll=collectionNode('div',undefined,'neko-chat-scroll');chatScroll.tabIndex=0;chatScroll.setAttribute('role','region');chatScroll.setAttribute('aria-label','チャットの解説とやり取り');chat.append(chatScroll);chatScroll.append(heading);const figure=nekoQuestionFigure(r,key);if(figure)chatScroll.append(figure);chatScroll.append(explanation,status,conversation,bubbleHint,bubbles);root.append(related);
+ const chat=collectionNode('section',undefined,'neko-chat-section');if(readonly||testSession?.kind!=='practice')feedbackTools.append(collectionButton('この問題をまとめに保存','link-button neko-save-top',()=>nekoSaveQuestion(key)));if(feedbackTools.childNodes.length)root.append(feedbackTools);root.append(collectionNode('h3','解説','neko-explanation-title'),nav,chat);const chatScroll=collectionNode('div',undefined,'neko-chat-scroll');chatScroll.tabIndex=0;chatScroll.setAttribute('role','region');chatScroll.setAttribute('aria-label','チャットの解説とやり取り');chat.append(chatScroll);chatScroll.append(heading);const figure=nekoQuestionFigure(r,key);if(figure)chatScroll.append(figure);chatScroll.append(explanation,status,conversation,bubbleHint,bubbles);root.append(related);
 
  function paintBubbles(value){bubbles.replaceChildren();bubbleHint.hidden=true;const asked=new Set((testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).map(t=>t.question));const suggestions=(Array.isArray(value?.suggestions)?value.suggestions:[]).filter(s=>s&&Object.hasOwn(nekoActionLabels,s.action)&&s.action!=='initial'&&typeof s.question==='string'&&s.question.trim()&&s.question.length<=60&&!asked.has(s.question)).slice(0,3);bubbles.hidden=!suggestions.length;for(const s of suggestions){const button=collectionButton(s.question,'neko-question-bubble',()=>run(s.action,s.question,button));button.setAttribute('aria-label',s.question+' を聞く');bubbles.append(button);}}
  function paint(value,suggestions=value,animate=false,action='initial'){const savedScroll=typeof chatScroll!=='undefined'?chatScroll.scrollTop:0;const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');paintBubbles(suggestions);const pendingBubbles=Array.from(root.querySelectorAll?.('.neko-multi-bubbles')||[]).filter(n=>n.nekoBubbleCancel);if(pendingBubbles.length){const hasSuggestions=!bubbles.hidden;bubbles.hidden=true;for(const n of pendingBubbles)n.nekoBubbleDone=()=>{if(root.isConnected&&pendingBubbles.every(n=>!n.nekoBubbleCancel))bubbles.hidden=!hasSuggestions;};}related.replaceChildren();if(value)nekoRenderConnections(related,key,suggestions?.keywords||value?.keywords||[]);if(typeof syncTabs==='function')syncTabs();if(typeof chatScroll!=='undefined')chatScroll.scrollTop=savedScroll;}

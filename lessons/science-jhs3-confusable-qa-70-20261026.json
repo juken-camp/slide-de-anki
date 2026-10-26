@@ -1,0 +1,738 @@
+{
+  "id": "science-jhs3-confusable-qa-70-20261026",
+  "subject": "science",
+  "field": "general",
+  "title": "中3理科の間違えやすい問題",
+  "grade": "中3理科",
+  "description": "中3理科の運動とエネルギー、生命、自然界、イオン、地球と宇宙、自然と人間を収録した図解一問一答70問。",
+  "cover": "images_84/science-jhs3-confusable-qa-70-20261026/question_001.png",
+  "chapters": [
+    {
+      "id": "jhs3-confusable-motion-energy",
+      "title": "運動とエネルギー"
+    },
+    {
+      "id": "jhs3-confusable-life",
+      "title": "生命のつながり"
+    },
+    {
+      "id": "jhs3-confusable-ecosystem",
+      "title": "自然界のつながり"
+    },
+    {
+      "id": "jhs3-confusable-ions",
+      "title": "化学変化とイオン"
+    },
+    {
+      "id": "jhs3-confusable-earth-space",
+      "title": "地球と宇宙"
+    },
+    {
+      "id": "jhs3-confusable-nature-humans",
+      "title": "自然と人間"
+    }
+  ],
+  "cards": [
+    {
+      "id": "001",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_001.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_001.png",
+      "sourceTimes": {
+        "question": 25.0,
+        "answer": 45.0
+      }
+    },
+    {
+      "id": "002",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_002.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_002.png",
+      "sourceTimes": {
+        "question": 50.0,
+        "answer": 60.0
+      }
+    },
+    {
+      "id": "003",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_003.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_003.png",
+      "sourceTimes": {
+        "question": 65.0,
+        "answer": 80.0
+      }
+    },
+    {
+      "id": "004",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_004.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_004.png",
+      "sourceTimes": {
+        "question": 85.0,
+        "answer": 100.0
+      }
+    },
+    {
+      "id": "005",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_005.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_005.png",
+      "sourceTimes": {
+        "question": 105.0,
+        "answer": 130.0
+      }
+    },
+    {
+      "id": "006",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_006.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_006.png",
+      "sourceTimes": {
+        "question": 135.0,
+        "answer": 145.0
+      }
+    },
+    {
+      "id": "007",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_007.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_007.png",
+      "sourceTimes": {
+        "question": 150.0,
+        "answer": 160.0
+      }
+    },
+    {
+      "id": "008",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_008.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_008.png",
+      "sourceTimes": {
+        "question": 165.0,
+        "answer": 180.0
+      }
+    },
+    {
+      "id": "009",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_009.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_009.png",
+      "sourceTimes": {
+        "question": 185.0,
+        "answer": 210.0
+      }
+    },
+    {
+      "id": "010",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_010.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_010.png",
+      "sourceTimes": {
+        "question": 215.0,
+        "answer": 230.0
+      }
+    },
+    {
+      "id": "011",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_011.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_011.png",
+      "sourceTimes": {
+        "question": 235.0,
+        "answer": 250.0
+      }
+    },
+    {
+      "id": "012",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_012.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_012.png",
+      "sourceTimes": {
+        "question": 255.0,
+        "answer": 275.0
+      }
+    },
+    {
+      "id": "013",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_013.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_013.png",
+      "sourceTimes": {
+        "question": 280.0,
+        "answer": 290.0
+      }
+    },
+    {
+      "id": "014",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_014.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_014.png",
+      "sourceTimes": {
+        "question": 295.0,
+        "answer": 305.0
+      }
+    },
+    {
+      "id": "015",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_015.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_015.png",
+      "sourceTimes": {
+        "question": 310.0,
+        "answer": 320.0
+      }
+    },
+    {
+      "id": "016",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_016.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_016.png",
+      "sourceTimes": {
+        "question": 325.0,
+        "answer": 345.0
+      }
+    },
+    {
+      "id": "017",
+      "chapter": "jhs3-confusable-motion-energy",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_017.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_017.png",
+      "sourceTimes": {
+        "question": 350.0,
+        "answer": 365.0
+      }
+    },
+    {
+      "id": "018",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_018.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_018.png",
+      "sourceTimes": {
+        "question": 375.0,
+        "answer": 390.0
+      }
+    },
+    {
+      "id": "019",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_019.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_019.png",
+      "sourceTimes": {
+        "question": 395.0,
+        "answer": 410.0
+      }
+    },
+    {
+      "id": "020",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_020.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_020.png",
+      "sourceTimes": {
+        "question": 415.0,
+        "answer": 435.0
+      }
+    },
+    {
+      "id": "021",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_021.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_021.png",
+      "sourceTimes": {
+        "question": 440.0,
+        "answer": 455.0
+      }
+    },
+    {
+      "id": "022",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_022.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_022.png",
+      "sourceTimes": {
+        "question": 460.0,
+        "answer": 475.0
+      }
+    },
+    {
+      "id": "023",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_023.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_023.png",
+      "sourceTimes": {
+        "question": 480.0,
+        "answer": 495.0
+      }
+    },
+    {
+      "id": "024",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_024.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_024.png",
+      "sourceTimes": {
+        "question": 500.0,
+        "answer": 515.0
+      }
+    },
+    {
+      "id": "025",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_025.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_025.png",
+      "sourceTimes": {
+        "question": 520.0,
+        "answer": 540.0
+      }
+    },
+    {
+      "id": "026",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_026.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_026.png",
+      "sourceTimes": {
+        "question": 550.0,
+        "answer": 558.0
+      }
+    },
+    {
+      "id": "027",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_027.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_027.png",
+      "sourceTimes": {
+        "question": 560.0,
+        "answer": 580.0
+      }
+    },
+    {
+      "id": "028",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_028.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_028.png",
+      "sourceTimes": {
+        "question": 590.0,
+        "answer": 600.0
+      }
+    },
+    {
+      "id": "029",
+      "chapter": "jhs3-confusable-life",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_029.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_029.png",
+      "sourceTimes": {
+        "question": 605.0,
+        "answer": 620.0
+      }
+    },
+    {
+      "id": "030",
+      "chapter": "jhs3-confusable-ecosystem",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_030.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_030.png",
+      "sourceTimes": {
+        "question": 635.0,
+        "answer": 645.0
+      }
+    },
+    {
+      "id": "031",
+      "chapter": "jhs3-confusable-ecosystem",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_031.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_031.png",
+      "sourceTimes": {
+        "question": 650.0,
+        "answer": 670.0
+      }
+    },
+    {
+      "id": "032",
+      "chapter": "jhs3-confusable-ecosystem",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_032.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_032.png",
+      "sourceTimes": {
+        "question": 675.0,
+        "answer": 690.0
+      }
+    },
+    {
+      "id": "033",
+      "chapter": "jhs3-confusable-ecosystem",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_033.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_033.png",
+      "sourceTimes": {
+        "question": 695.0,
+        "answer": 715.0
+      }
+    },
+    {
+      "id": "034",
+      "chapter": "jhs3-confusable-ecosystem",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_034.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_034.png",
+      "sourceTimes": {
+        "question": 720.0,
+        "answer": 735.0
+      }
+    },
+    {
+      "id": "035",
+      "chapter": "jhs3-confusable-ecosystem",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_035.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_035.png",
+      "sourceTimes": {
+        "question": 740.0,
+        "answer": 755.0
+      }
+    },
+    {
+      "id": "036",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_036.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_036.png",
+      "sourceTimes": {
+        "question": 775.0,
+        "answer": 780.0
+      }
+    },
+    {
+      "id": "037",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_037.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_037.png",
+      "sourceTimes": {
+        "question": 785.0,
+        "answer": 805.0
+      }
+    },
+    {
+      "id": "038",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_038.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_038.png",
+      "sourceTimes": {
+        "question": 810.0,
+        "answer": 825.0
+      }
+    },
+    {
+      "id": "039",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_039.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_039.png",
+      "sourceTimes": {
+        "question": 830.0,
+        "answer": 845.0
+      }
+    },
+    {
+      "id": "040",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_040.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_040.png",
+      "sourceTimes": {
+        "question": 850.0,
+        "answer": 862.0
+      }
+    },
+    {
+      "id": "041",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_041.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_041.png",
+      "sourceTimes": {
+        "question": 865.0,
+        "answer": 880.0
+      }
+    },
+    {
+      "id": "042",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_042.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_042.png",
+      "sourceTimes": {
+        "question": 885.0,
+        "answer": 900.0
+      }
+    },
+    {
+      "id": "043",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_043.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_043.png",
+      "sourceTimes": {
+        "question": 905.0,
+        "answer": 920.0
+      }
+    },
+    {
+      "id": "044",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_044.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_044.png",
+      "sourceTimes": {
+        "question": 925.0,
+        "answer": 940.0
+      }
+    },
+    {
+      "id": "045",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_045.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_045.png",
+      "sourceTimes": {
+        "question": 945.0,
+        "answer": 960.0
+      }
+    },
+    {
+      "id": "046",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_046.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_046.png",
+      "sourceTimes": {
+        "question": 965.0,
+        "answer": 975.0
+      }
+    },
+    {
+      "id": "047",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_047.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_047.png",
+      "sourceTimes": {
+        "question": 980.0,
+        "answer": 995.0
+      }
+    },
+    {
+      "id": "048",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_048.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_048.png",
+      "sourceTimes": {
+        "question": 1000.0,
+        "answer": 1013.0
+      }
+    },
+    {
+      "id": "049",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_049.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_049.png",
+      "sourceTimes": {
+        "question": 1020.0,
+        "answer": 1030.0
+      }
+    },
+    {
+      "id": "050",
+      "chapter": "jhs3-confusable-ions",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_050.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_050.png",
+      "sourceTimes": {
+        "question": 1035.0,
+        "answer": 1055.0
+      }
+    },
+    {
+      "id": "051",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_051.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_051.png",
+      "sourceTimes": {
+        "question": 1065.0,
+        "answer": 1077.0
+      }
+    },
+    {
+      "id": "052",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_052.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_052.png",
+      "sourceTimes": {
+        "question": 1080.0,
+        "answer": 1095.0
+      }
+    },
+    {
+      "id": "053",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_053.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_053.png",
+      "sourceTimes": {
+        "question": 1100.0,
+        "answer": 1115.0
+      }
+    },
+    {
+      "id": "054",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_054.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_054.png",
+      "sourceTimes": {
+        "question": 1120.0,
+        "answer": 1135.0
+      }
+    },
+    {
+      "id": "055",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_055.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_055.png",
+      "sourceTimes": {
+        "question": 1140.0,
+        "answer": 1150.0
+      }
+    },
+    {
+      "id": "056",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_056.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_056.png",
+      "sourceTimes": {
+        "question": 1155.0,
+        "answer": 1170.0
+      }
+    },
+    {
+      "id": "057",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_057.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_057.png",
+      "sourceTimes": {
+        "question": 1175.0,
+        "answer": 1195.0
+      }
+    },
+    {
+      "id": "058",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_058.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_058.png",
+      "sourceTimes": {
+        "question": 1200.0,
+        "answer": 1220.0
+      }
+    },
+    {
+      "id": "059",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_059.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_059.png",
+      "sourceTimes": {
+        "question": 1225.0,
+        "answer": 1240.0
+      }
+    },
+    {
+      "id": "060",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_060.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_060.png",
+      "sourceTimes": {
+        "question": 1245.0,
+        "answer": 1260.0
+      }
+    },
+    {
+      "id": "061",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_061.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_061.png",
+      "sourceTimes": {
+        "question": 1265.0,
+        "answer": 1285.0
+      }
+    },
+    {
+      "id": "062",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_062.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_062.png",
+      "sourceTimes": {
+        "question": 1290.0,
+        "answer": 1310.0
+      }
+    },
+    {
+      "id": "063",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_063.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_063.png",
+      "sourceTimes": {
+        "question": 1312.7,
+        "answer": 1330.0
+      }
+    },
+    {
+      "id": "064",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_064.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_064.png",
+      "sourceTimes": {
+        "question": 1335.0,
+        "answer": 1350.0
+      }
+    },
+    {
+      "id": "065",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_065.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_065.png",
+      "sourceTimes": {
+        "question": 1355.0,
+        "answer": 1368.0
+      }
+    },
+    {
+      "id": "066",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_066.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_066.png",
+      "sourceTimes": {
+        "question": 1370.0,
+        "answer": 1390.0
+      }
+    },
+    {
+      "id": "067",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_067.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_067.png",
+      "sourceTimes": {
+        "question": 1395.0,
+        "answer": 1415.0
+      }
+    },
+    {
+      "id": "068",
+      "chapter": "jhs3-confusable-earth-space",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_068.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_068.png",
+      "sourceTimes": {
+        "question": 1420.0,
+        "answer": 1430.0
+      }
+    },
+    {
+      "id": "069",
+      "chapter": "jhs3-confusable-nature-humans",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_069.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_069.png",
+      "sourceTimes": {
+        "question": 1440.0,
+        "answer": 1460.0
+      }
+    },
+    {
+      "id": "070",
+      "chapter": "jhs3-confusable-nature-humans",
+      "question": "images_84/science-jhs3-confusable-qa-70-20261026/question_070.png",
+      "answer": "images_84/science-jhs3-confusable-qa-70-20261026/answer_070.png",
+      "sourceTimes": {
+        "question": 1465.0,
+        "answer": 1485.0
+      }
+    }
+  ],
+  "series": "themes"
+}

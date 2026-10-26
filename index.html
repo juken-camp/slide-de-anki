@@ -5711,7 +5711,7 @@ async function resumeHomeworkTest(mode){
 function nekoCanShowQuestionImage(r){return !!(r&&!r.editorial&&!r.hideQuestionImage&&typeof r.question==='string'&&/^images_\d+\/[\w/-]+\.png(?:\?v=[a-f0-9]{8,64})?$/.test(r.question));}
 function buildPrompt(target,r){
  target.replaceChildren();target.append(collectionNode('p',r.q));
- for(const text of (r.aux||[]).filter(t=>t!=='各欄の記号を付けてすべて答える。欄ごとの入力では、記号と解答の対応を保つ。'))target.append(collectionNode('p',text,'assessment-aux'));
+ for(const text of (r.aux||[]).filter(t=>!['各欄の記号を付けてすべて答える。欄ごとの入力では、記号と解答の対応を保つ。','元の設問の指定数・欄に従って解答する。'].includes(String(t).trim())))target.append(collectionNode('p',text,'assessment-aux'));
  if(r.choices.length&&r.mode!=='single'&&r.mode!=='multiple'&&r.mode!=='ordered'){
   const list=collectionNode('ul',undefined,'prompt-choices');for(const c of r.choices)list.append(collectionNode('li',c.text));target.append(list);
  }
@@ -5777,7 +5777,9 @@ function renderTypedInput(r,key){
   parts.forEach((part,i)=>{
    const label=document.createElement('label'),control=document.createElement(r.mode==='long'?'textarea':'input');if(control.tagName==='INPUT')control.type='text';control.id='typedResponse'+i;control.value=response[i]||'';control.maxLength=r.mode==='long'?4000:500;control.autocomplete='off';control.spellcheck=false;control.setAttribute('autocorrect','off');control.setAttribute('autocapitalize','off');control.setAttribute('enterkeyhint','done');control.setAttribute('aria-label',part.label+'を入力');control.disabled=locked;
    if(/chemical|ion_formula/.test(r.type))control.setAttribute('inputmode','text');
-   control.oninput=()=>store([...fields.querySelectorAll('input,textarea')].map(n=>n.value));
+   const resize=()=>{if(control.tagName!=='TEXTAREA')return;control.style.height='auto';const height=Math.min(200,Math.max(48,control.scrollHeight+2));control.style.height=height+'px';control.style.overflowY=control.scrollHeight+2>200?'auto':'hidden';};
+   if(control.tagName==='TEXTAREA'){control.rows=1;control.style.minHeight='48px';control.style.height='48px';requestAnimationFrame(()=>{if(control.isConnected)resize();});}
+   control.oninput=()=>{store([...fields.querySelectorAll('input,textarea')].map(n=>n.value));resize();};
    control.onkeydown=e=>{if(e.key==='Enter'&&!e.isComposing&&control.tagName==='INPUT'){e.preventDefault();control.blur();}};
    if(r.mode==='parts')label.append(collectionNode('span',part.label));else label.className='typed-single-label';
    label.append(control);fields.append(label);
@@ -6141,7 +6143,26 @@ function nekoRenderConversation(root,key,animate=false){
  if(current.length>1){const history=collectionNode('details',undefined,'neko-related-more neko-chat-history');history.append(collectionNode('summary',`前のやり取り（${current.length-1}件）`));for(const turn of current.slice(0,-1))history.append(rowFor(turn));root.append(history);}if(current.length)root.append(rowFor(current.at(-1)));
  if(older.length){const archive=collectionNode('details',undefined,'neko-related-more');archive.append(collectionNode('summary',`以前の設定・解答でのやり取り（${older.length}件）`));for(const turn of older)archive.append(rowFor(turn));root.append(archive);}
 }
-function nekoRelated(key,keywords=[]){const r=assessmentByKey(key),m=meta.find(m=>m.id===hSplit(key).lessonId);if(!r)return [];const norm=s=>String(s||'').normalize('NFKC').replace(/\s/g,'');const words=keywords.map(k=>typeof k==='string'?k:k.word).filter(w=>typeof w==='string'&&w.length>=2).slice(0,3);if(!words.length&&r.a.length>=2&&r.a.length<=18)words.push(r.a);const seen=new Set(),result=[];for(const [lid,l]of Object.entries(assessmentDataset?.lessons||{})){const other=meta.find(x=>x.id===lid);for(const c of l.cards){if(!c.eligible||cardKey(lid,c.id)===key)continue;const id=norm(c.q)+norm(c.a);if(seen.has(id))continue;seen.add(id);let score=words.reduce((s,w)=>s+(c.a.includes(w)?15:0)+(c.q.includes(w)?4:0),0);if(!score)continue;score+=(other?.field===m?.field?4:0)+(other?.subject===m?.subject?2:0)+(lid===m?.id?2:0);result.push({key:cardKey(lid,c.id),r:c,title:l.title,score,why:words.find(w=>c.a.includes(w)||c.q.includes(w))});}}return result.sort((a,b)=>b.score-a.score).slice(0,3);}
+function nekoRelated(key,keywords=[]){
+ const r=assessmentByKey(key),m=meta.find(m=>m.id===hSplit(key).lessonId);if(!r)return [];
+ const norm=s=>String(s||'').normalize('NFKC').replace(/\s/g,'');
+ const words=[...new Set(keywords.map(k=>typeof k==='string'?k:k.word).filter(w=>typeof w==='string'&&w.length>=2).map(norm))].slice(0,3);
+ if(!words.length&&r.a.length>=2&&r.a.length<=18)words.push(norm(r.a));
+ const identity=c=>norm(c.q)+'|'+norm(c.a),seen=new Set([identity(r)]),result=[];
+ for(const [lid,l]of Object.entries(assessmentDataset?.lessons||{})){
+  const other=meta.find(x=>x.id===lid);
+  for(const c of l.cards){
+   if(!c.eligible||cardKey(lid,c.id)===key)continue;
+   const id=identity(c);if(seen.has(id))continue;
+   const answer=norm(c.a),question=norm(c.q),extra=norm([...(c.aux||[]),...(c.accepted||[]),...(c.choices||[]).map(x=>x.text)].join(' '));
+   let score=words.reduce((s,w)=>s+(answer.includes(w)?15:0)+(question.includes(w)?4:0)+(extra.includes(w)?3:0),0);
+   if(!score)continue;seen.add(id);
+   score+=(other?.field===m?.field?4:0)+(other?.subject===m?.subject?2:0)+(lid===m?.id?2:0);
+   result.push({key:cardKey(lid,c.id),r:c,title:l.title,score,why:words.find(w=>answer.includes(w)||question.includes(w)||extra.includes(w))});
+  }
+ }
+ return result.sort((a,b)=>b.score-a.score).slice(0,3);
+}
 function nekoRenderConnections(root,key,keywords=[]){
  root.replaceChildren();
  if(keywords.length){const section=collectionNode('section',undefined,'neko-words-section');section.tabIndex=-1;section.append(collectionNode('h4','関連ワード','neko-related-title'));const words=collectionNode('div',undefined,'neko-knowledge-list');for(const k of keywords.slice(0,3)){const word=typeof k==='string'?k:k.word;if(!word)continue;const item=collectionNode('div',undefined,'neko-knowledge-item');item.append(collectionButton(word,'neko-knowledge-link',()=>nekoOpenKeyword(word)));if(k.connection)item.append(collectionNode('p',k.connection,'neko-keyword-note user-content'));words.append(item);}section.append(words);root.append(section);}

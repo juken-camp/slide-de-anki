@@ -7074,7 +7074,8 @@ $('importForm').onsubmit=async e=>{
  const selector='#testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)';
  function shapePath(w,h){
   const x=6.5,right=w+5.5,top=.5,bottom=h-.5,r=Math.min((h-1)/2,23.5),tip=w+11;
-  return `M${x+r} ${top} H${right-r} Q${right-3} ${top} ${right-1} 9 Q${right+2} 7 ${tip} 7 Q${tip-1} 12 ${right} 15 L${right} ${bottom-r} Q${right} ${bottom} ${right-r} ${bottom} H${x+r} Q${x} ${bottom} ${x} ${bottom-r} V${top+r} Q${x} ${top} ${x+r} ${top} Z`;
+  // Tail grows out of the top corner, pointing upward, like the reference.
+  return `M${x+r} ${top} H${right-r} C${right-r*.72} ${top} ${right-r*.5} ${top+1} ${right-9} ${top+4} C${right-4} ${top+5} ${right+1} ${top+3} ${tip} ${top+.5} C${tip-.6} ${top+5} ${right+3} ${top+9} ${right-1} ${top+12} C${right} ${top+15} ${right} ${top+r-3} ${right} ${top+r} V${bottom-r} A${r} ${r} 0 0 1 ${right-r} ${bottom} H${x+r} A${r} ${r} 0 0 1 ${x} ${bottom-r} V${top+r} A${r} ${r} 0 0 1 ${x+r} ${top} Z`;
  }
  function paint(el){
   const w=el.offsetWidth,h=el.offsetHeight;if(w<10||h<24)return;

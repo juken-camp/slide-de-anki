@@ -4306,7 +4306,7 @@ function renderCatalog() {
     b.className = active ? 'active' : ''; b.setAttribute('aria-pressed',String(active));
     b.onclick = () => { catalogFilter = catalogFilter === key ? 'all' : key; renderCatalog(); }; $('catalogFilters').append(b);
   }
-  $('visibleCount').textContent = `${searching ? '全教材から検索 · ' : !catalogSubject ? '全教材 · ' : ''}${visible.length}教材 · ${visible.reduce((n,m)=>n+m.count,0)}問`;
+  $('visibleCount').textContent = catalogVisibleCountLabel(visible);
   $('selectVisible').hidden = !visible.length; $('selectVisible').textContent = visible.length && visible.every(m => selected.has(m.id)) ? '選択を外すにゃ' : 'まとめて選ぶにゃ';
   $('catalogGroups').replaceChildren();
   for (const key of keys) {
@@ -5344,6 +5344,16 @@ function assessmentSearchMatches(lid,query){
  if(assessmentSearchCache.size>250)assessmentSearchCache.clear();assessmentSearchCache.set(key,found);return found;
 }
 function questionSearchMatchesLesson(m,query){return !!assessmentSearchMatches(m.id,query).length;}
+// Use the same question-level matches for the result count and Select All.
+function catalogSearchQuestionItems(query=catalogQuery()){
+ if(!query||!assessmentDataset)return [];
+ return meta.flatMap(m=>assessmentSearchMatches(m.id,query).map(c=>({m,c})));
+}
+function catalogVisibleCountLabel(visible){
+ if(!catalogQuery())return `${!catalogSubject?'全教材 · ':''}${visible.length}教材 · ${visible.reduce((n,m)=>n+m.count,0)}問`;
+ const count=assessmentDataset?`該当${catalogSearchQuestionItems().length}問`:assessmentError?'問題数を取得できません':'問題数を確認中';
+ return `全教材から検索 · ${visible.length}教材 · ${count}`;
+}
 function flushSearchResults(){
  searchRenderTimer=null;const deadline=performance.now()+8;
  while(searchRenderJobs.length){
@@ -5410,7 +5420,7 @@ function syncSearchSelection(){
  for(const el of document.querySelectorAll('[data-search-count]'))el.textContent=el.closest('.inline-text-tools')?`${n}問選択`:`問題を選んでまとめるにゃ · ${n}問選択`;
  for(const el of document.querySelectorAll('[data-search-save],[data-search-clear]'))el.disabled=!n;
  for(const el of document.querySelectorAll('[data-search-check]'))el.checked=searchSelectedQuestions.has(el.dataset.searchCheck);
- const all=document.querySelector('[data-search-select-all]');if(all)all.hidden=!catalogQuery();if(all)all.disabled=!assessmentDataset||!catalogQuery()||!meta.some(m=>assessmentSearchMatches(m.id,catalogQuery()).length);
+ const all=document.querySelector('[data-search-select-all]');if(all)all.hidden=!catalogQuery();if(all)all.disabled=!catalogSearchQuestionItems().length;
 }
 let catalogQuestionReturn=null, catalogReturnRequest=0;
 function rememberCatalogQuestionPosition(lid,cid,source){
@@ -5492,7 +5502,7 @@ $('searchSaveClose').onclick=()=>$('searchSaveDialog').close();
 for(const b of document.querySelectorAll('[data-search-save]'))b.onclick=openSearchSave;
 for(const b of document.querySelectorAll('[data-search-clear]'))b.onclick=()=>{searchSelectedQuestions.clear();syncSearchSelection();};
 $('searchDialogSelectAll').onclick=()=>selectSearchMatches(searchDialogItems);
-document.querySelector('[data-search-select-all]').onclick=()=>{const query=catalogQuery();if(!query)return;selectSearchMatches(meta.flatMap(m=>assessmentSearchMatches(m.id,query).map(c=>({m,c}))));};
+document.querySelector('[data-search-select-all]').onclick=()=>{if(!catalogQuery())return;selectSearchMatches(catalogSearchQuestionItems());};
 async function openSearchQuestion(lid,cid,source){
  rememberCatalogQuestionPosition(lid,cid,source);
  $('questionSearchDialog').close();

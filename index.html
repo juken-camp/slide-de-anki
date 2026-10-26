@@ -3118,30 +3118,14 @@ html[data-persona] body #app #testScreen .neko-chat-scroll{overflow-anchor:none}
 #app .neko-chat-archive-label{font-size:11px;opacity:.75;margin:6px 0}
 </style>
 <style id="round-chat-tails-20261027">
-/* The radius clamps to a semicircle for a one-line bubble, and stays round for longer text. */
-html[data-persona] body #app #testScreen .neko-chat-scroll{padding-left:6px!important}
-html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble){
- position:relative;overflow:visible!important;border-radius:24px!important;
- border:1px solid var(--chat-bubble-line)!important;background:var(--chat-bubble-fill)!important;
-}
+html[data-persona] body #app #testScreen .neko-chat-scroll{padding-left:8px!important;padding-right:16px!important}
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble){position:relative;isolation:isolate;overflow:visible!important;border-radius:24px!important;border:1px solid transparent!important;background:transparent!important;padding-left:14px!important}
 html[data-persona] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble{--chat-bubble-fill:#fff7eb;--chat-bubble-line:#ead2b9}
 html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble){--chat-bubble-fill:#f0d9be;--chat-bubble-line:#dab991}
 html[data-persona=cyber] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble{--chat-bubble-fill:#0d223a;--chat-bubble-line:#3c7793}
 html[data-persona=cyber] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble){--chat-bubble-fill:#17394d;--chat-bubble-line:#438da8}
-html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble):active{--chat-bubble-fill:#f3dfc7}
-html[data-persona=cyber] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble):active{--chat-bubble-fill:#20516a}
-html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)::after{
- content:""!important;display:block;position:absolute;top:10px;width:9px;height:9px;
- background:var(--chat-bubble-fill);pointer-events:none;box-sizing:border-box;
-}
-html[data-persona] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble::after{
- left:-4px;border-left:1px solid var(--chat-bubble-line);border-bottom:1px solid var(--chat-bubble-line);
- border-radius:0 0 0 3px;transform:rotate(35deg) skew(-8deg,-8deg);
-}
-html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble)::after{
- right:-4px;border-right:1px solid var(--chat-bubble-line);border-top:1px solid var(--chat-bubble-line);
- border-radius:0 3px 0 0;transform:rotate(-35deg) skew(8deg,8deg);
-}
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)::after{content:none!important}
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)::before{content:"";position:absolute;left:-7px;top:-1px;width:calc(100% + 14px);height:calc(100% + 2px);z-index:-1;pointer-events:none;background-image:var(--chat-bubble-shape);background-repeat:no-repeat;background-size:100% 100%;border:0!important;border-radius:0!important;transform:none!important}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -7083,6 +7067,28 @@ $('importForm').onsubmit=async e=>{
   for(const btn of document.querySelectorAll('[data-persona-choice]')){
     btn.addEventListener('click',()=>queueMicrotask(updateAllUi));
   }
+})();
+</script>
+<script id="continuous-bubble-shape">
+(()=>{
+ const selector='#testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)';
+ function shapePath(w,h){
+  const x=6.5,right=w+5.5,top=.5,bottom=h-.5,r=Math.min((h-1)/2,23.5),tip=w+11;
+  return `M${x+r} ${top} H${right-r} Q${right-3} ${top} ${right-1} 9 Q${right+2} 7 ${tip} 7 Q${tip-1} 12 ${right} 15 L${right} ${bottom-r} Q${right} ${bottom} ${right-r} ${bottom} H${x+r} Q${x} ${bottom} ${x} ${bottom-r} V${top+r} Q${x} ${top} ${x+r} ${top} Z`;
+ }
+ function paint(el){
+  const w=el.offsetWidth,h=el.offsetHeight;if(w<10||h<24)return;
+  const style=getComputedStyle(el),fill=style.getPropertyValue('--chat-bubble-fill').trim()||'#fff7eb',line=style.getPropertyValue('--chat-bubble-line').trim()||'#ead2b9';
+  const left=el.classList.contains('neko-explanation-bubble'),stamp=[w,h,fill,line,left].join('|');if(el.nekoShapeStamp===stamp)return;el.nekoShapeStamp=stamp;
+  const transform=left?`transform="translate(${w+12} 0) scale(-1 1)"`:'';
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${w+12}" height="${h}" viewBox="0 0 ${w+12} ${h}"><path ${transform} d="${shapePath(w,h)}" fill="${fill}" stroke="${line}" stroke-width="1" stroke-linejoin="round"/></svg>`;
+  el.style.setProperty('--chat-bubble-shape',`url("data:image/svg+xml,${encodeURIComponent(svg)}")`);
+ }
+ const observed=new WeakSet(),resizer=typeof ResizeObserver==='function'?new ResizeObserver(entries=>entries.forEach(e=>paint(e.target))):null;
+ let pending=false;function scan(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;for(const el of document.querySelectorAll(selector)){paint(el);if(!observed.has(el)){observed.add(el);resizer?.observe(el);}}});}
+ const app=document.getElementById('app');if(app)new MutationObserver(scan).observe(app,{childList:true,subtree:true});
+ new MutationObserver(scan).observe(document.documentElement,{attributes:true,attributeFilter:['data-persona']});
+ window.addEventListener('resize',scan,{passive:true});scan();
 })();
 </script>
 </body></html>

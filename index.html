@@ -5953,10 +5953,36 @@ const nekoTestModes={confirm:{title:'確認テスト',hint:'「おぼえた」�
 let nekoSetupMode='confirm',nekoScopeRestoring=false,nekoAiAvailable=null,nekoAiStatusPromise=null,nekoReviewBusy=false;
 const nekoAiPending=new Map();
 const nekoActionLabels={initial:'解説を聞く',easy:'もっとかんたんに',memory:'覚え方を教えて',compare:'似た言葉と比べて',reason:'なぜそうなるの？',exam:'入試のポイントは？'};
-// Questions already carry their generated character voice. Do not add stock phrases.
-function nekoQuestionVoice(question){return String(question||'');}
-function nekoRecentQuestions(persona){try{const list=JSON.parse(localStorage.getItem('nekopon-question-phrases-v2-'+persona)||'[]');return Array.isArray(list)?list.filter(q=>typeof q==='string'&&q.length<=60).slice(-18):[];}catch{return [];}}
-function nekoRememberQuestions(persona,value){const questions=(value?.suggestions||[]).map(s=>s.question).filter(q=>typeof q==='string'&&q.length<=60);try{localStorage.setItem('nekopon-question-phrases-v2-'+persona,JSON.stringify([...new Set([...nekoRecentQuestions(persona),...questions])].slice(-18)));}catch{}}
+function nekoQuestionVoice(question){
+ const original=String(question||'').trim();if(!original)return original;
+ const cyber=document.documentElement.dataset.persona==='cyber';
+ // Stable per question: re-rendering must not change a question under the finger.
+ const seed=Array.from(original).reduce((n,c)=>(n*31+c.codePointAt(0))>>>0,0);
+ const pick=values=>values[seed%values.length];
+ let text=original;
+ const meaning=/(?:って|とは)(?:どういう|どんな)意味(?:なの|なんだ|ですか)?(?:にゃ)?[。！？!?？]*$/;
+ const what=/(?:って|とは)何(?:なの|なんだ|ですか)?(?:にゃ)?[。！？!?？]*$/;
+ const teach=/(?:教えて|教えてほしい)(?:にゃ)?[。！？!?？]*$/;
+ if(meaning.test(text)||what.test(text)){
+  const pattern=meaning.test(text)?meaning:what;
+  const ending=meaning.test(text)?'どういう意味':'何';
+  text=text.replace(pattern,cyber?'って、いったい'+ending+'なんだ！？':'って、いったい'+ending+'にゃ！？');
+  return pick(cyber?['待て待て！','なんだと！？','おいおい！']:['にゃんだって！？','にゃにゃっ！？','おひげがピンッ！'])+text;
+ }
+ if(teach.test(text)){
+  text=text.replace(teach,cyber?'教えてくれよ！':'教えてほしいにゃ〜っ！');
+  return pick(cyber?['頼む、ここで置いてくな！','脳みそ、ただいま格闘中！','待て、まだあきらめてねぇ！']:['猫の手も借りたいにゃ！','おひげだけじゃピンとこないにゃ！','頭の中で毛糸がからまったにゃ！'])+text;
+ }
+ // Keep the complete subject, comparison, condition and requested scope.
+ // Only change the character ending; never rewrite the learning terms.
+ text=text.replace(/にゃ(?=[。！？!?？]|$)/g,'').replace(/[。！？!?？]+$/,'');
+ if(cyber){
+  text=window.NekoCyberSpeak?.(text)||text;
+  text=text.replace(/^(?:なぜ|どうして)/,'なんで');
+  return pick(['待て待て、そこが謎だ！','おいおい、気になって眠れねぇ！','ちょっと待ったぁ！','くっ、ここで引き下がれるか！'])+text+'！？';
+ }
+ return pick(['にゃにゃっ、事件にゃ！','おひげが反応したにゃ！','気になって丸くなれないにゃ！','待ってにゃ、置いてかないでにゃ〜！'])+text+'にゃ！？';
+}
 function nekoPreferences(){const p=data.neko.tutor||{};return {enabled:p.enabled!==false,taste:['gentle','spartan','energetic'].includes(p.taste)?p.taste:'gentle',amount:['short','points','deep'].includes(p.amount)?p.amount:'points'};}
 function nekoPrefsCaption(){const p=nekoPreferences();return ({gentle:'やさしく',spartan:'スパルタ',energetic:'ハイテンション'}[p.taste])+'・'+({short:'ひとこと',points:'ちゃんと',deep:'じっくり'}[p.amount]);}
 function nekoSavePrefs(patch){data.neko.tutor={...nekoPreferences(),...patch};save();const prefs=nekoPreferences();for(const select of document.querySelectorAll('[data-neko-pref]'))select.value=prefs[select.dataset.nekoPref];for(const label of document.querySelectorAll('[data-neko-prefs-label]'))label.textContent=nekoPrefsCaption();}
@@ -6002,7 +6028,7 @@ function nekoClientId(){
 }
 const nekoTutorFormat='tutor-20261025-final19';
 function nekoTurnCurrent(turn,session,key,prefs=nekoPreferences(),persona=document.documentElement.dataset.persona||'neko'){return turn.formatVersion===nekoTutorFormat&&turn.taste===prefs.taste&&turn.amount===prefs.amount&&turn.persona===persona&&turn.responseStamp===nekoResponseStamp(key,session);}
-function nekoCached(key,action,question='',s=testSession,prefs=nekoPreferences(),persona=document.documentElement.dataset.persona||'neko'){const signature=JSON.stringify(['generated-questions-v2',nekoTutorFormat,nekoResponseStamp(key,s),persona,prefs.taste,prefs.amount,action,question,!!s?.questionImageShown?.[key]]);const entry=s?.tutor?.[key];return {signature,entry,result:entry?.cache?.[signature]};}
+function nekoCached(key,action,question='',s=testSession,prefs=nekoPreferences(),persona=document.documentElement.dataset.persona||'neko'){const signature=JSON.stringify([nekoTutorFormat,nekoResponseStamp(key,s),persona,prefs.taste,prefs.amount,action,question,!!s?.questionImageShown?.[key]]);const entry=s?.tutor?.[key];return {signature,entry,result:entry?.cache?.[signature]};}
 async function nekoAsk(key,action='initial',question=''){
  const session=testSession,record=assessmentByKey(key),preferences={...nekoPreferences()},persona=document.documentElement.dataset.persona||'neko';if(!session||!record||!preferences.enabled)throw Error('Nekoponの解説をオフにしているにゃ。設定から変更できるにゃ。');
  const {signature,result}=nekoCached(key,action,question);if(result)return result;const pendingKey=session.id+'|'+key+'|'+signature;if(nekoAiPending.has(pendingKey))return nekoAiPending.get(pendingKey);
@@ -6012,12 +6038,11 @@ async function nekoAsk(key,action='initial',question=''){
   try{
    const entry=session.tutor?.[key],initial=nekoCached(key,'initial','',session,preferences,persona).result,history=(entry?.turns||[]).filter(t=>nekoTurnCurrent(t,session,key,preferences,persona)).slice(-3).map(t=>({question:t.question||nekoActionLabels[t.action]||'解説',answer:(t.fullExplanation||t.text).slice(0,3000)}));
    if(action!=='initial'&&initial)history.unshift({question:'この問題の最初の解説',answer:[initial.comment,initial.fullExplanation||initial.explanation].filter(Boolean).join('\n\n').slice(0,3000)});
-   const response=await fetch('/api/nekopon',{method:'POST',headers:{'Content-Type':'application/json','x-neko-client':nekoClientId()},body:JSON.stringify({lessonId:ref.lessonId,cardId:ref.cardId,revision:session.dataRevision,contract:session.displayContracts?.[key]||record.contract,response:session.responses?.[key]||[],skipped:!!session.skipped?.[key],imageFailed:!!session.imageFailures?.[key],questionImageVisible:!!session.questionImageShown?.[key],action,question,persona,...preferences,history,recentQuestions:nekoRecentQuestions(persona)}),signal:controller.signal});
+   const response=await fetch('/api/nekopon',{method:'POST',headers:{'Content-Type':'application/json','x-neko-client':nekoClientId()},body:JSON.stringify({lessonId:ref.lessonId,cardId:ref.cardId,revision:session.dataRevision,contract:session.displayContracts?.[key]||record.contract,response:session.responses?.[key]||[],skipped:!!session.skipped?.[key],imageFailed:!!session.imageFailures?.[key],questionImageVisible:!!session.questionImageShown?.[key],action,question,persona,...preferences,history}),signal:controller.signal});
    let value;try{value=await response.json();}catch{throw Error('解説を受け取れなかったにゃ。もう一度試してにゃ。');}
    if(!response.ok){if(value.code==='not_configured')nekoAiAvailable=false;throw Error(value.message||'今は解説を受け取れないにゃ。少し待って試してにゃ。');}
    if(!value||typeof value.explanation!=='string'||typeof value.comment!=='string')throw Error('解説を確認できなかったにゃ。');
    if(value.formatVersion!==nekoTutorFormat)throw Error('解説機能の更新がまだそろっていないにゃ。少し待って開き直してにゃ。');
-   nekoRememberQuestions(persona,value);
    const target=nekoSessionForId(session.id);if(!target||nekoResponseStamp(key,target)!==stamp)return value;
    target.tutor ||= {};const item=target.tutor[key] ||= {cache:{},turns:[]};item.cache ||= {};item.turns ||= [];item.cache[signature]=value;
    if(action==='initial')item.initialSignature=signature;const cacheKeys=Object.keys(item.cache).filter(k=>k!==item.initialSignature);for(const old of cacheKeys.slice(0,-(item.initialSignature?11:12)))delete item.cache[old];

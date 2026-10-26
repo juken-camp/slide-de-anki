@@ -4000,8 +4000,7 @@ function prepareMediaSounds() {
 }
 async function playMediaSound(notes) {
   const requestedAt=performance.now();
-  prepareMediaSounds();
-  if(performance.now()-requestedAt>180)return;
+  if(mediaSoundBank?.key!==mediaBankKey()){scheduleMediaSounds(0);return;}
   const players=mediaSoundBank.clips.get(JSON.stringify(notes));if(!players)return;
   const entry=players.find(e=>e.player.paused || e.player.ended) || players[mediaSoundCursor++%players.length];
   const token=++entry.token;stopMediaEntry(entry);entry.player.muted=false;
@@ -4018,6 +4017,7 @@ async function playMediaSound(notes) {
 }
 function resetAudioEngine() {
   const previous=audio;audio=null;masterGain=null;audioResumePromise=null;audioClockSample=null;audioNeedsReset=false;
+  clearTimeout(mediaSoundWarmTimer);mediaSoundWarmTimer=null;stopMediaSounds();
   stopAudioVoices();
   if(previous){previous.onstatechange=null;try{Promise.resolve(previous.close()).catch(()=>{});}catch{}}
 }
@@ -6239,7 +6239,7 @@ function nekoRenderTutor(root,key,readonly=false){
   if(delay&&suggestions.length)questionRevealTimer=setTimeout(()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken)return;bubbles.style.visibility='';bubbles.inert=false;if(latestOnShow)scrollLatest();for(const [i,button]of [...bubbles.children].entries())nekoChatAnimate(button,i*60);},delay);
  }
  function paint(value,suggestions=value,animate=false,action='initial'){const savedScroll=typeof chatScroll!=='undefined'?chatScroll.scrollTop:0;const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');paintBubbles(suggestions,(animate||action!=='initial')?1000:0);const connectionTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));nekoRenderConnections(related,key,nekoConnectionWords(suggestions,value,...[...connectionTurns].reverse()));if(typeof syncTabs==='function')syncTabs();if(typeof chatScroll!=='undefined')chatScroll.scrollTop=savedScroll;}
- let busy=false;async function run(action,question='',selected=null){if(busy)return;clearTimeout(questionRevealTimer);const animateNew=!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.style.visibility='hidden';bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){nekoRenderConversation(conversation,key);const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);conversation.append(pending);beep('chatSend');nekoChatAnimate(sent);if(selected)bubbles.style.visibility='hidden';requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{await (figure?.nekoReady||Promise.resolve());if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
+ let busy=false;async function run(action,question='',selected=null){if(busy)return;clearTimeout(questionRevealTimer);const animateNew=!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.style.visibility='hidden';bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);conversation.append(pending);beep('chatSend');nekoChatAnimate(sent);if(selected)bubbles.style.visibility='hidden';requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{if(action==='initial')await (figure?.nekoReady||Promise.resolve());else await new Promise(resolve=>setTimeout(resolve,0));if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
  if(action==='initial'){paint(value,value,animateNew,action);scrollLatest();}else paint(nekoCached(key,'initial').result,value,animateNew,action);
  if(action==='initial'&&animateNew)beep('chatReceive');
  if(action!=='initial'){
@@ -6421,7 +6421,7 @@ $('autoMode').checked = !!data.neko.auto; $('autoMode').onchange = () => { pause
 for (const face of ['question','answer']) { $(face+'Seconds').value = seconds(face); $(face+'Seconds').onchange = e => { pause(); const n = Number(e.target.value); data.neko[face+'Seconds'] = Number.isFinite(n) ? Math.round(Math.min(120,Math.max(.5,n))*10)/10 : (face==='question'?3:2); e.target.value = data.neko[face+'Seconds']; save(); resetTimer(); }; }
 $('playButton').onclick = () => { if (playing) pause(); else { playing = true; resetTimer(); } };
 for (const b of document.querySelectorAll('[data-close]')) b.onclick = () => $(b.dataset.close).close();
-document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause(); syncAudioGain();audioClockSample=null;stopAudioVoices(); } else { stats(); restoreAudio(); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',()=>{stopMediaSounds();stopAudioVoices();audioClockSample=null;save();});
+document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause();resetAudioEngine(); } else { stats(); restoreAudio(); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',()=>{resetAudioEngine();save();});
 window.addEventListener('pageshow',restoreAudio);
 window.addEventListener('focus',restoreAudio);
 document.addEventListener('keydown',e => {
@@ -6823,7 +6823,7 @@ $('importForm').onsubmit=async e=>{
     pressed?.classList.remove('neko-pressing');
     pressed = null; pointer = null; origin = null;
   };
-  const control = target => {const node=target instanceof Element?target.closest('button:not(:disabled),summary,a[href]'):null;return node?.hasAttribute('data-sound-style')?null:node;};
+  const control = target => {const node=target instanceof Element?target.closest('button:not(:disabled),summary,a[href]'):null;return node?.matches('[data-sound-style],.neko-question-bubble')?null:node;};
   document.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0) return;
     clear(); pressed = control(event.target);

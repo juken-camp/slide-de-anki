@@ -2578,6 +2578,8 @@ html[data-persona="cyber"] #app .typed-review-filter button[aria-pressed="true"]
 .search-question-select{display:flex;align-items:flex-start;justify-content:center;min-height:44px;margin:0!important;padding-top:8px;cursor:pointer}
 .search-question-select input{width:19px;height:19px;margin:0;accent-color:#af602c;cursor:pointer}
 .search-question-text{display:block}.search-question-answer{display:block;margin-top:5px;font-size:12px;color:#884d47;white-space:pre-wrap;overflow-wrap:anywhere}
+.search-question-text p{margin:0 0 6px;white-space:pre-wrap;overflow-wrap:anywhere}
+.search-question-text .prompt-choices{margin:6px 0;padding-left:1.4em;white-space:pre-wrap;overflow-wrap:anywhere}
 .search-selection-tools{padding:10px 12px;margin:10px 0;border:1px solid #dcc2a5;border-radius:12px;background:#fff7eb;font-size:12px;line-height:1.6;min-width:0}
 .search-selection-tools>div{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.search-selection-tools button{font-size:12px;min-height:36px;padding:6px 9px;white-space:normal}
 .question-search-dialog-list{max-height:48dvh}.question-search-dialog .search-selection-tools{margin:10px 0}
@@ -4103,6 +4105,8 @@ function stats() {
 
 }
 function showScreen(next) {
+  const catalogReturn = next==='catalog' && !catalogIsCollections && screen!=='catalog' ? catalogQuestionReturn : null;
+  if(next==='catalog'&&!catalogReturn)catalogQuestionReturn=null;
   if (screen !== next) { pause(); imageView.cancel(); homeworkImageView.cancel(); homeworkImageLoader.pause(); ++testImageToken; } if(next!=='report'&&next!=='test')toggleHomeworkCapture(false);screen = next; $('app').dataset.screen = next;
   for (const name of ['catalog','study','settings','report','test']) $(name+'Screen').hidden = name !== next;
   $('appHeader').hidden = false;
@@ -4118,6 +4122,7 @@ function showScreen(next) {
   if (next === 'report') {toggleHomeworkCapture(false);setReportPreset(reportPreset);renderLearningReport();$('reportTitle').focus({preventScroll:true});}
   if (next === 'test') $('testTitle').focus({preventScroll:true});
   if (next === 'study') { if (lesson && !state.loading) render(); else warmImages(); } else imageLoader.pause();
+  if (catalogReturn) restoreCatalogQuestionPosition(catalogReturn);
 }
 function gradeKey(m) { return String(m.grade || '').match(/中\s*([123])/)?.[1] || 'other'; }
 function subjectLabel(id) { if(!id)return '全教材'; return new Map([['science','理科'],['social','社会']]).get(id) || meta.find(m=>m.subject===id)?.subjectLabel || id; }
@@ -5388,18 +5393,49 @@ function syncSearchSelection(){
  for(const el of document.querySelectorAll('[data-search-check]'))el.checked=searchSelectedQuestions.has(el.dataset.searchCheck);
  const all=document.querySelector('[data-search-select-all]');if(all)all.hidden=!catalogQuery();if(all)all.disabled=!assessmentDataset||!catalogQuery()||!meta.some(m=>assessmentSearchMatches(m.id,catalogQuery()).length);
 }
-function questionListText(c,maxLength=0){
- const text=maxLength&&c.q.length>maxLength?c.q.slice(0,maxLength)+'…':c.q;
- return text+(c.image?'（図を参照）':'');
+let catalogQuestionReturn=null, catalogReturnRequest=0;
+function rememberCatalogQuestionPosition(lid,cid,source){
+ if(screen!=='catalog'||catalogIsCollections)return;
+ const row=source?.closest?.('.question-search-row');
+ catalogQuestionReturn={key:cardKey(lid,cid),top:row?.getBoundingClientRect().top??null,y:window.scrollY};
+}
+function restoreCatalogQuestionPosition(saved){
+ const token=++catalogReturnRequest;let attempts=0;
+ const events=['pointerdown','touchstart','wheel','keydown'];
+ const finish=()=>{for(const type of events)document.removeEventListener(type,cancel,true);if(catalogQuestionReturn===saved)catalogQuestionReturn=null;};
+ const cancel=()=>{if(token===catalogReturnRequest)++catalogReturnRequest;finish();};
+ for(const type of events)document.addEventListener(type,cancel,{capture:true,passive:true});
+ const restore=()=>{
+  if(token!==catalogReturnRequest||screen!=='catalog'||catalogIsCollections){finish();return;}
+  const root=$('catalogGroups');
+  const row=[...root.querySelectorAll('[data-question-key]')].find(el=>el.dataset.questionKey===saved.key);
+  const loading=searchRenderJobs.length||[...root.querySelectorAll('.inline-text-status')].some(el=>el.textContent.includes('ちょっと待って'));
+  if(row&&saved.top!==null)window.scrollTo({top:Math.max(0,window.scrollY+row.getBoundingClientRect().top-saved.top),behavior:'instant'});
+  else window.scrollTo({top:saved.y,behavior:'instant'});
+  if((!row||loading)&&++attempts<180){requestAnimationFrame(restore);return;}
+  finish();
+ };
+ requestAnimationFrame(()=>requestAnimationFrame(restore));
+}
+function questionListText(c){
+ return c.q+(c.image?'（図を参照）':'');
+}
+function buildCatalogQuestionPrompt(target,c){
+ const norm=s=>String(s).normalize('NFKC').replace(/\s/g,'');
+ const text=norm(c.q),choices=c.choices||[];
+ const embedded=choices.length&&choices.every(choice=>text.includes(norm(choice.text.replace(/^[ア-ンA-Z0-9]+[：:\s]+/,''))));
+ buildPrompt(target,{...c,mode:'text',choices:embedded?[]:choices});
 }
 function questionSearchButton(m,c){
  const key=cardKey(m.id,c.id),row=collectionNode('div',undefined,'question-search-row');
+ row.dataset.questionKey=key;
  const label=collectionNode('label',undefined,'search-question-select'),check=document.createElement('input');
  check.type='checkbox';check.dataset.searchCheck=key;check.checked=searchSelectedQuestions.has(key);check.setAttribute('aria-label',`${m.title} 問題${c.number}をまとめ用に選択`);
  check.onchange=()=>{if(check.checked)searchSelectedQuestions.add(key);else searchSelectedQuestions.delete(key);syncSearchSelection();};
  label.append(check);row.append(label);
- const b=collectionButton('','question-search-hit',()=>openSearchQuestion(m.id,c.id));
- b.append(collectionNode('small',`問題 ${c.number}`),collectionNode('span',questionListText(c,130),'search-question-text'));
+ const b=collectionButton('','question-search-hit',()=>openSearchQuestion(m.id,c.id,b));
+ const prompt=collectionNode('div',undefined,'search-question-text user-content');buildCatalogQuestionPrompt(prompt,c);
+ b.append(collectionNode('small',`問題 ${c.number}`),prompt);
  const answer=collectionNode('span',undefined,'search-question-answer');answer.append(collectionNode('strong','解答：'),document.createTextNode(c.a||'解答画像で確認'));b.append(answer);row.append(b);return row;
 }
 function selectSearchMatches(items){for(const {m,c} of items)searchSelectedQuestions.add(cardKey(m.id,c.id));syncSearchSelection();}
@@ -5436,7 +5472,8 @@ for(const b of document.querySelectorAll('[data-search-save]'))b.onclick=openSea
 for(const b of document.querySelectorAll('[data-search-clear]'))b.onclick=()=>{searchSelectedQuestions.clear();syncSearchSelection();};
 $('searchDialogSelectAll').onclick=()=>selectSearchMatches(searchDialogItems);
 document.querySelector('[data-search-select-all]').onclick=()=>{const query=catalogQuery();if(!query)return;selectSearchMatches(meta.flatMap(m=>assessmentSearchMatches(m.id,query).map(c=>({m,c}))));};
-async function openSearchQuestion(lid,cid){
+async function openSearchQuestion(lid,cid,source){
+ rememberCatalogQuestionPosition(lid,cid,source);
  $('questionSearchDialog').close();
  try{await selectLessons([lid],{collection:{id:'question-search',name:'検索した問題',cardKeys:[cardKey(lid,cid)]}});}
  catch{toast('問題を開けなかったにゃ。通信を確認してにゃ。');}
@@ -5477,10 +5514,10 @@ function lessonTextQuestionRow(m,c){
  const body=collectionNode('div',undefined,'question-text-content');
  body.append(collectionNode('small',`問題 ${c.number}`));
  const prompt=collectionNode('div',undefined,'lesson-text-prompt user-content');
- buildPrompt(prompt,{...c,mode:'text'});body.append(prompt);
+ buildCatalogQuestionPrompt(prompt,c);body.append(prompt);
  const answer=collectionNode('div',undefined,'search-question-answer user-content');answer.append(collectionNode('strong','解答：'),document.createTextNode(c.a||'解答画像で確認'));body.append(answer);
  const question=prompt.querySelector('p');
- if(question){const open=collectionButton(questionListText(c),'lesson-text-question',()=>openSearchQuestion(m.id,c.id));open.setAttribute('aria-label',`問題${c.number}のスライドを開く：${open.textContent}`);question.replaceWith(open);}
+ if(question){const open=collectionButton(questionListText(c),'lesson-text-question',()=>openSearchQuestion(m.id,c.id,open));open.setAttribute('aria-label',`問題${c.number}のスライドを開く：${open.textContent}`);question.replaceWith(open);}
  old.replaceWith(body);return row;
 }
 function renderQuestionSearchDialog(){

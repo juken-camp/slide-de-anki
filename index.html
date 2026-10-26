@@ -3083,12 +3083,13 @@ html[data-persona] body #app #testScreen .typed-image-review{margin-top:2px!impo
 #app :is(.typed-image-review,.neko-practice-footer) img,#nekoRelatedContent .neko-answer-disclosure img{display:block;max-width:100%;height:auto;border-radius:10px;overflow:hidden}
 html[data-persona] body #app #testScreen .neko-multi-bubbles{min-width:0;width:100%;box-sizing:border-box}
 html[data-persona] body #app #testScreen .neko-multi-bubbles>.neko-explanation-bubble{max-width:96%;min-width:0;overflow-wrap:anywhere}
-body.slide-focus #app #studyScreen .actions #focusPause{width:auto;min-width:0;padding:8px 10px;font-size:11px;line-height:1.35;white-space:nowrap;max-width:none;flex:0 0 auto}
+body.slide-focus #app #studyScreen .actions #focusPause{width:auto;min-width:0;padding:8px 10px;font-size:11px;line-height:1.35;white-space:nowrap;max-width:none;flex:0 0 auto;display:inline-flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;align-self:stretch;text-align:center;line-height:1}
 
 /* Solid chat edges; reserve reclaimed footer space for readable messages. */
 html[data-persona] body #app #testScreen .neko-chat-scroll{height:clamp(284px,calc(55dvh + 36px),576px);box-sizing:border-box;padding:0 4px 2px 0;border-radius:0;background:transparent!important;-webkit-mask-image:none!important;mask-image:none!important}
 html[data-persona] body #app #testScreen .test-answer-card>.neko-tutor{padding-bottom:0!important}
 html[data-persona] body #app #testScreen .neko-chat-scroll>:last-child{margin-bottom:0!important}
+body.slide-focus #app #studyScreen .actions #focusPause[hidden]{display:none!important}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -4645,7 +4646,11 @@ function resetTimer() { clearTimer(); remaining = seconds(state.flipped ? 'answe
 function tick() { if (document.hidden || !ready || screen !== 'study' || document.querySelector('dialog[open]')) { pause(); return; } const now = performance.now(); remaining = Math.max(0,remaining-(now-lastTick)); lastTick = now; updateTimerUI(); if (remaining<=0) { clearTimer(); if (state.flipped) navigate(1,{end:true}); else flip(); } }
 function pause() { playing = false; clearTimer(); updateTimerUI(); }
 function updateTimerUI() {
-  $('quickPause').hidden = $('focusPause').hidden = !playing;
+  $('quickPause').hidden = !playing;
+  $('focusPause').hidden = !$('autoMode').checked;
+  $('focusPause').textContent = playing ? 'Ⅱ 停止' : '▶ 再生';
+  $('focusPause').setAttribute('aria-label',playing ? '自動めくりを停止' : '自動めくりを再生');
+  $('focusPause').disabled = !lesson || state.loading || state.finished || !deck().length;
   const auto = $('autoMode').checked; $('timerOptions').hidden = $('timerTrack').hidden = $('playButton').hidden = !auto;
   $('playButton').textContent = playing ? 'Ⅱ 止めるにゃ' : '▶ めくるにゃ'; $('playButton').disabled = !lesson || state.loading || state.finished || !deck().length;
   $('timerLabel').textContent = !auto ? '' : playing ? (ready ? `${state.flipped ? '解答' : '問題'} ${(remaining/1000).toFixed(1)}秒` : '') : '停止中にゃ';
@@ -6468,7 +6473,7 @@ $('focusPrev').onclick=()=>{closeFocusMenu();animateNav(-1);};
 $('focusNext').onclick=()=>{closeFocusMenu();animateNav(1);};
 $('focusFlip').onclick=()=>{closeFocusMenu();flip();};
 $('focusZoom').onclick=()=>{closeFocusMenu();imageView.zoom();};
-$('focusPause').onclick=pause;
+$('focusPause').onclick=()=>{if(!$('playButton').disabled)$('playButton').click();};
 $('focusCatalog').onclick=()=>{closeFocusMenu();catalogIsCollections=false;showScreen('catalog');};
 $('focusSettings').onclick=()=>{closeFocusMenu();showScreen('settings');};
 $('landscapeToggle').onchange=()=>{data.neko.landscapeFocus=$('landscapeToggle').checked;save();syncLandscape();};

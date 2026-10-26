@@ -3132,7 +3132,7 @@ html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversatio
 </style>
 <style id="chat-unsent-questions-20261027">
 /* Only the selectable drafts are outlined. Sent messages retain their fill. */
-html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble{--chat-bubble-fill:none;gap:10px;cursor:pointer;transition:transform .13s ease,filter .13s ease!important}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble{--chat-bubble-fill:none!important;gap:10px;cursor:pointer;transition:transform .13s ease,filter .13s ease!important}
 html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble::before{opacity:.85}
 html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble .neko-question-label{min-width:0;flex:1}
 html[data-persona] body #app #testScreen .neko-chat-scroll .neko-send-indicator{display:flex;align-items:center;justify-content:center;flex:0 0 18px;width:18px;height:18px;opacity:.8;transition:transform .13s ease,opacity .13s ease}
@@ -3142,6 +3142,13 @@ html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble
 html[data-persona] body #app #testScreen .neko-chat-scroll .neko-pending-turn .neko-conversation-question::before{animation:neko-sent-fill .24s ease-out both}
 @keyframes neko-sent-fill{from{opacity:.25}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble,html[data-persona] body #app #testScreen .neko-chat-scroll .neko-send-indicator{transition:none!important}html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble:active{transform:none!important}html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble:active .neko-send-indicator{transform:none}html[data-persona] body #app #testScreen .neko-chat-scroll .neko-pending-turn .neko-conversation-question::before{animation:none}}
+</style>
+<style id="chat-draft-no-tap-overlay-20261027">
+html[data-persona] body #app #testScreen .neko-chat-scroll button.neko-question-bubble,
+html[data-persona] body #app #testScreen .neko-chat-scroll button.neko-question-bubble:is(:hover,:focus,:focus-visible,:active){background:transparent!important;background-image:none!important;box-shadow:none!important;outline:none!important;-webkit-tap-highlight-color:transparent!important;-webkit-appearance:none;appearance:none}
+html[data-persona] body #app #testScreen .neko-chat-scroll button.neko-question-bubble::before{background-color:transparent!important;box-shadow:none!important}
+/* Keyboard focus follows the full SVG silhouette, including its tail. */
+html[data-persona] body #app #testScreen .neko-chat-scroll button.neko-question-bubble:focus-visible::before{filter:drop-shadow(0 0 2px currentColor)}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -7095,7 +7102,7 @@ $('importForm').onsubmit=async e=>{
  }
  function paint(el){
   const w=el.offsetWidth,h=el.offsetHeight;if(w<10||h<24)return;
-  const style=getComputedStyle(el),fill=style.getPropertyValue('--chat-bubble-fill').trim()||'#fff7eb',line=style.getPropertyValue('--chat-bubble-line').trim()||'#ead2b9';
+  const style=getComputedStyle(el),draft=el.classList.contains('neko-question-bubble'),fill=draft?'none':(style.getPropertyValue('--chat-bubble-fill').trim()||'#fff7eb'),line=style.getPropertyValue('--chat-bubble-line').trim()||'#ead2b9';
   const left=el.classList.contains('neko-explanation-bubble'),stamp=[w,h,fill,line,left].join('|');if(el.nekoShapeStamp===stamp)return;el.nekoShapeStamp=stamp;
   const transform=left?`transform="translate(${w+12} 0) scale(-1 1)"`:'';
   const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${w+12}" height="${h}" viewBox="0 0 ${w+12} ${h}"><path ${transform} d="${shapePath(w,h)}" fill="${fill}" stroke="${line}" stroke-width="1" stroke-linejoin="round"/></svg>`;

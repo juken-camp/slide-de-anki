@@ -3117,6 +3117,32 @@ html[data-persona] body #app #testScreen .neko-chat-scroll .neko-multi-bubbles{g
 html[data-persona] body #app #testScreen .neko-chat-scroll{overflow-anchor:none}
 #app .neko-chat-archive-label{font-size:11px;opacity:.75;margin:6px 0}
 </style>
+<style id="round-chat-tails-20261027">
+/* The radius clamps to a semicircle for a one-line bubble, and stays round for longer text. */
+html[data-persona] body #app #testScreen .neko-chat-scroll{padding-left:6px!important}
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble){
+ position:relative;overflow:visible!important;border-radius:24px!important;
+ border:1px solid var(--chat-bubble-line)!important;background:var(--chat-bubble-fill)!important;
+}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble{--chat-bubble-fill:#fff7eb;--chat-bubble-line:#ead2b9}
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble){--chat-bubble-fill:#f0d9be;--chat-bubble-line:#dab991}
+html[data-persona=cyber] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble{--chat-bubble-fill:#0d223a;--chat-bubble-line:#3c7793}
+html[data-persona=cyber] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble){--chat-bubble-fill:#17394d;--chat-bubble-line:#438da8}
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble):active{--chat-bubble-fill:#f3dfc7}
+html[data-persona=cyber] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble):active{--chat-bubble-fill:#20516a}
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation-bubble,.neko-conversation-question,.neko-question-bubble)::after{
+ content:""!important;display:block;position:absolute;top:10px;width:9px;height:9px;
+ background:var(--chat-bubble-fill);pointer-events:none;box-sizing:border-box;
+}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble::after{
+ left:-4px;border-left:1px solid var(--chat-bubble-line);border-bottom:1px solid var(--chat-bubble-line);
+ border-radius:0 0 0 3px;transform:rotate(35deg) skew(-8deg,-8deg);
+}
+html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble)::after{
+ right:-4px;border-right:1px solid var(--chat-bubble-line);border-top:1px solid var(--chat-bubble-line);
+ border-radius:0 3px 0 0;transform:rotate(-35deg) skew(8deg,8deg);
+}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

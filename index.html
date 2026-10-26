@@ -3130,6 +3130,19 @@ html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-explanation
 <style id="chat-question-vertical-center-20261027">
 html[data-persona] body #app #testScreen .neko-chat-scroll :is(.neko-conversation-question,.neko-question-bubble){display:flex!important;align-items:center!important;justify-content:flex-start;box-sizing:border-box;padding-top:8px!important;padding-bottom:8px!important}
 </style>
+<style id="chat-unsent-questions-20261027">
+/* Only the selectable drafts are outlined. Sent messages retain their fill. */
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble{--chat-bubble-fill:none;gap:10px;cursor:pointer;transition:transform .13s ease,filter .13s ease!important}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble::before{opacity:.85}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble .neko-question-label{min-width:0;flex:1}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-send-indicator{display:flex;align-items:center;justify-content:center;flex:0 0 18px;width:18px;height:18px;opacity:.8;transition:transform .13s ease,opacity .13s ease}
+.neko-send-indicator svg{display:block;width:18px;height:18px}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble:active{transform:scale(.975)!important;filter:brightness(1.2)}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble:active .neko-send-indicator{transform:translate(2px,-2px);opacity:1}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-pending-turn .neko-conversation-question::before{animation:neko-sent-fill .24s ease-out both}
+@keyframes neko-sent-fill{from{opacity:.25}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble,html[data-persona] body #app #testScreen .neko-chat-scroll .neko-send-indicator{transition:none!important}html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble:active{transform:none!important}html[data-persona] body #app #testScreen .neko-chat-scroll .neko-question-bubble:active .neko-send-indicator{transform:none}html[data-persona] body #app #testScreen .neko-chat-scroll .neko-pending-turn .neko-conversation-question::before{animation:none}}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -6211,7 +6224,7 @@ function nekoRenderTutor(root,key,readonly=false){
   const currentTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));
   const suggestions=nekoQuestionCandidates(value,testSession?.tutor?.[key],currentTurns,key);
   bubbles.hidden=!suggestions.length;bubbles.style.visibility=delay?'hidden':'';bubbles.inert=!!delay;
-  for(const s of suggestions){const button=collectionButton(nekoQuestionVoice(s.question),'neko-question-bubble',()=>run(s.action,s.question,button));button.setAttribute('aria-label',s.question+' を聞く');bubbles.append(button);}
+  for(const s of suggestions){const button=collectionButton('','neko-question-bubble',()=>run(s.action,s.question,button));const label=collectionNode('span',nekoQuestionVoice(s.question),'neko-question-label'),send=collectionNode('span',undefined,'neko-send-indicator');send.setAttribute('aria-hidden','true');send.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 20 4l-6.5 17-3.2-7.3L3 11.5Z M10.3 13.7 20 4"/></svg>';button.append(label,send);button.setAttribute('aria-label',s.question+' を送信');bubbles.append(button);}
   if(delay&&suggestions.length)questionRevealTimer=setTimeout(()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken)return;bubbles.style.visibility='';bubbles.inert=false;for(const [i,button]of [...bubbles.children].entries())nekoChatAnimate(button,i*60);},delay);
  }
  function paint(value,suggestions=value,animate=false,action='initial'){const savedScroll=typeof chatScroll!=='undefined'?chatScroll.scrollTop:0;const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');paintBubbles(suggestions,(animate||action!=='initial')?1000:0);const connectionTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));nekoRenderConnections(related,key,nekoConnectionWords(suggestions,value,...[...connectionTurns].reverse()));if(typeof syncTabs==='function')syncTabs();if(typeof chatScroll!=='undefined')chatScroll.scrollTop=savedScroll;}

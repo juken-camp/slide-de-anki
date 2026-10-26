@@ -2580,6 +2580,7 @@ html[data-persona="cyber"] #app .typed-review-filter button[aria-pressed="true"]
 .search-question-text{display:block}.search-question-answer{display:block;margin-top:5px;font-size:12px;color:#884d47;white-space:pre-wrap;overflow-wrap:anywhere}
 .search-question-text p{margin:0 0 6px;white-space:pre-wrap;overflow-wrap:anywhere}
 .search-question-text .prompt-choices{margin:6px 0;padding-left:1.4em;white-space:pre-wrap;overflow-wrap:anywhere}
+#app[data-question-preview="true"] :is(.study-progress,#studyOptions,#cardPosition,#focusPosition,#prevButton,#nextButton,#playButton){display:none!important}
 .search-selection-tools{padding:10px 12px;margin:10px 0;border:1px solid #dcc2a5;border-radius:12px;background:#fff7eb;font-size:12px;line-height:1.6;min-width:0}
 .search-selection-tools>div{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.search-selection-tools button{font-size:12px;min-height:36px;padding:6px 9px;white-space:normal}
 .question-search-dialog-list{max-height:48dvh}.question-search-dialog .search-selection-tools{margin:10px 0}
@@ -4104,7 +4105,19 @@ function stats() {
   $('knownCount').textContent = known; $('levelCount').textContent = 1 + Math.floor(known/10);
 
 }
+const pagePositions=new Map(), catalogQueries={catalog:'',collections:''};
+let displayedPageKey=null, lastTestPage='report';
+function rememberPageBeforeNavigation(){
+ if(!displayedPageKey)return;
+ pagePositions.set(displayedPageKey,window.scrollY);
+ if(displayedPageKey==='catalog'||displayedPageKey==='collections')catalogQueries[displayedPageKey]=$('catalogSearch').value;
+}
 function showScreen(next) {
+  rememberPageBeforeNavigation();
+  const pageKey=next==='catalog'?(catalogIsCollections?'collections':'catalog'):next;
+  if(next==='catalog')$('catalogSearch').value=catalogQueries[pageKey];
+  displayedPageKey=pageKey;
+  if(next==='test'||next==='report')lastTestPage=next;
   const catalogReturn = next==='catalog' && !catalogIsCollections && screen!=='catalog' ? catalogQuestionReturn : null;
   if(next==='catalog'&&!catalogReturn)catalogQuestionReturn=null;
   if (screen !== next) { pause(); imageView.cancel(); homeworkImageView.cancel(); homeworkImageLoader.pause(); ++testImageToken; } if(next!=='report'&&next!=='test')toggleHomeworkCapture(false);screen = next; $('app').dataset.screen = next;
@@ -4123,6 +4136,7 @@ function showScreen(next) {
   if (next === 'test') $('testTitle').focus({preventScroll:true});
   if (next === 'study') { if (lesson && !state.loading) render(); else warmImages(); } else imageLoader.pause();
   if (catalogReturn) restoreCatalogQuestionPosition(catalogReturn);
+  else if(pagePositions.has(pageKey))restoreCatalogQuestionPosition({key:null,top:null,y:pagePositions.get(pageKey),pageKey});
 }
 function gradeKey(m) { return String(m.grade || '').match(/中\s*([123])/)?.[1] || 'other'; }
 function subjectLabel(id) { if(!id)return '全教材'; return new Map([['science','理科'],['social','社会']]).get(id) || meta.find(m=>m.subject===id)?.subjectLabel || id; }
@@ -4404,7 +4418,9 @@ function scopeChoices() {
   const raw = loaded.get(state.lessonIds[0]);
   return [{id:'all',title:state.collection?'まとめのすべて':'すべて'},...(raw?.chapters || []).filter(c => c.id !== 'all').map(ch => ({id:cardKey(raw.id,ch.id),title:ch.title}))];
 }
+function isQuestionPreview(){return state.collection?.id==='question-search';}
 function renderControls() {
+  $('app').dataset.questionPreview=String(isQuestionPreview());
   document.querySelectorAll('[data-face-mode]').forEach(b => { const on = (b.dataset.faceMode === 'answer') === state.answerMode; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
   document.querySelectorAll('[data-mode]').forEach(b => { const on = b.dataset.mode === state.mode; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
   $('shuffleButton').classList.toggle('is-on',state.shuffle); $('shuffleButton').textContent = state.shuffle ? '🔀 まぜるにゃ' : '🔀 順番にゃ'; $('shuffleButton').setAttribute('aria-pressed',String(state.shuffle));
@@ -4439,6 +4455,7 @@ function showEmpty(title,text,{restart=false,review=false,all=false,finishSummar
   $('restartButton').hidden = !restart; $('reviewButton').hidden = !review; $('allButton').hidden = !all;
 }
 function render() {
+  if(isQuestionPreview())state.finished=false;
   syncLandscape();
   updateStudyActions(false);
   clearTimer(); clearTimeout(imageWaitTimer); imageWaitTimer=null; ready = false; const token = ++imageToken; $('sourceLinks').hidden = true;
@@ -4535,6 +4552,7 @@ function flip() {
   if (!reduced && imageView.state.scale<=1.015 && $('slideImage').animate) $('slideImage').animate([{opacity:.55,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
 }
 function navigate(delta,{end=false} = {}) {
+  if(isQuestionPreview())return;
   if (!lesson || state.loading || state.finished) return;
   const d = deck(); if (!d.length) return; const i = d.findIndex(c => c.id === state.current);
   if (end && i === d.length-1) { state.finished = true; beep('finish'); render(); return; }
@@ -4550,6 +4568,7 @@ function assess(nextStatus) {
   data.records[c.lessonId] ??= {}; data.records[c.lessonId][c.originalId] = {...prev,status:nextStatus,attempts:(prev?.attempts||0)+1,updated:new Date().toISOString()};
   const after = new Set(deck().map(c => c.id)), next = d.slice(i+1).find(x => after.has(x.id));
   state.flipped = state.answerMode; if (next) state.current = next.id; else state.finished = true;
+  if(isQuestionPreview()){state.finished=false;state.flipped=true;}
   beep(state.finished ? 'finish' : nextStatus === 'known' ? 'known' : 'weak');
   const wasKeyboard = document.activeElement === $('knownButton') || document.activeElement === $('weakButton');
   pause(); render();
@@ -4642,7 +4661,7 @@ function syncCollectionCatalog() {
   if(on)$('quickReview').hidden=true;
   $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
 }
-function openMyCollections() {catalogIsCollections=true;$('catalogSearch').value='';showScreen('catalog');}
+function openMyCollections() {catalogIsCollections=true;showScreen('catalog');}
 function makeMyEmptyAction(element,action,label){
  element.classList.add('my-empty-action');element.setAttribute('role','button');element.tabIndex=0;element.setAttribute('aria-label',label);element.onclick=action;
  element.onkeydown=e=>{if(e.target===element&&(e.key==='Enter'||e.key===' ')){e.preventDefault();if(!e.repeat)action();}};
@@ -4963,7 +4982,7 @@ $('closeReportPeriod').onclick=$('cancelReportPeriod').onclick=()=>$('reportPeri
 $('applyReportPeriod').onclick=()=>{const from=$('reportFrom').value,to=$('reportTo').value;try{hRange(from,to);}catch(e){$('reportPeriodNotice').textContent=e.message;return;}reportPeriod={from,to};setReportPreset('custom');$('reportPeriodDialog').close();renderLearningReport();};
 function historyCardTitle(key){const r=hSplit(key),m=meta.find(m=>m.id===r.lessonId),c=loaded.get(r.lessonId)?.cards.find(c=>c.id===r.cardId);return `${m?.title||'端末内の教材'} · ${c?.displayNumber||r.cardId}`;}
 function materialRows(target,countsByLesson,limit=5){target.replaceChildren();const entries=[...countsByLesson].sort((a,b)=>b[1]-a[1]);for(const [id,count] of entries.slice(0,limit)){const row=collectionNode('div');row.append(collectionNode('span',meta.find(m=>m.id===id)?.title||'端末内の教材'),collectionNode('b',`${count}問`));target.append(row);}if(entries.length>limit)target.append(collectionNode('div',`ほか${entries.length-limit}教材`));}
-async function openLearningReport(){showScreen('report');}
+async function openLearningReport(){showScreen(screen!=='test'&&lastTestPage==='test'&&testSession&&testCards.length?'test':'report');}
 async function renderLearningReport(){
  const seq=++reportOpenRequest;$('resumeTestMain').disabled=$('openTestSetup').disabled=true;$('reportNotice').textContent=historyLoaded?historyError:'ちょっと待ってにゃ🐾';await studyHistoryReady;if(seq!==reportOpenRequest||screen!=='report')return;
  let days;const {from,to}=reportDates();try{days=hRange(from,to);}catch(e){$('reportNotice').textContent=e.message;$('reportCard').hidden=true;$('resumeTestMain').disabled=$('openTestSetup').disabled=true;return;}
@@ -5406,13 +5425,15 @@ function restoreCatalogQuestionPosition(saved){
  const cancel=()=>{if(token===catalogReturnRequest)++catalogReturnRequest;finish();};
  for(const type of events)document.addEventListener(type,cancel,{capture:true,passive:true});
  const restore=()=>{
-  if(token!==catalogReturnRequest||screen!=='catalog'||catalogIsCollections){finish();return;}
+  const expected=saved.pageKey||'catalog';
+  const currentPage=screen==='catalog'?(catalogIsCollections?'collections':'catalog'):screen;
+  if(token!==catalogReturnRequest||currentPage!==expected){finish();return;}
   const root=$('catalogGroups');
-  const row=[...root.querySelectorAll('[data-question-key]')].find(el=>el.dataset.questionKey===saved.key);
-  const loading=searchRenderJobs.length||[...root.querySelectorAll('.inline-text-status')].some(el=>el.textContent.includes('ちょっと待って'));
+  const row=saved.key?[...root.querySelectorAll('[data-question-key]')].find(el=>el.dataset.questionKey===saved.key):null;
+  const loading=screen==='catalog'&&!catalogIsCollections&&(searchRenderJobs.length||[...root.querySelectorAll('.inline-text-status')].some(el=>el.textContent.includes('ちょっと待って')));
   if(row&&saved.top!==null)window.scrollTo({top:Math.max(0,window.scrollY+row.getBoundingClientRect().top-saved.top),behavior:'instant'});
   else window.scrollTo({top:saved.y,behavior:'instant'});
-  if((!row||loading)&&++attempts<180){requestAnimationFrame(restore);return;}
+  if(((saved.key&&!row)||loading)&&++attempts<180){requestAnimationFrame(restore);return;}
   finish();
  };
  requestAnimationFrame(()=>requestAnimationFrame(restore));
@@ -5856,16 +5877,18 @@ function nekoCandidates(){
  return keys.filter(key=>{const m=meta.find(m=>m.id===hSplit(key).lessonId);return m&&(subject==='all'||m.subject===subject)&&(field==='all'||m.field===field)&&(!units.size||units.has(m.id));});
 }
 function nekoFilterField(){const subject=$('testSubject').value,current=$('testField').value;$('testField').replaceChildren(collectionNode('option','すべての分野'));$('testField').firstChild.value='all';const seen=new Set();for(const m of meta.filter(m=>subject==='all'||m.subject===subject)){if(!m.field||seen.has(m.field))continue;seen.add(m.field);const op=collectionNode('option',fieldLabel(m.field,m.subject));op.value=m.field;$('testField').append(op);}$('testField').value=seen.has(current)?current:'all';}
-function nekoRememberScope(){if(nekoScopeRestoring||!$('homeworkSetup').open||testLoading)return;data.neko.testScopes ||= {};data.neko.testScopes[nekoSetupMode]={subject:$('testSubject').value,field:$('testField').value,count:$('testCount').value,custom:$('testCountCustom').value,lessons:[...selectedHomeworkLessons],answerMode:$('testAnswerMode').value,includeRecovered:$('testIncludeRecovered').checked};save();}
+function nekoRememberScope(){if(nekoScopeRestoring||!$('homeworkSetup').open||testLoading)return;data.neko.testScopes ||= {};data.neko.testScopes[nekoSetupMode]={subject:$('testSubject').value,field:$('testField').value,count:$('testCount').value,custom:$('testCountCustom').value,lessons:[...selectedHomeworkLessons],answerMode:$('testAnswerMode').value,includeRecovered:$('testIncludeRecovered').checked,search:$('testLessonSearch').value,from:$('testFrom').value,to:$('testTo').value,allDates:$('testAllDates').checked};save();}
 async function nekoOpenSetup(mode='confirm'){
  if(typeof mode!=='string'||!Object.hasOwn(nekoTestModes,mode))mode='confirm';const request=++testLoadRequest;await Promise.all([studyHistoryReady,importedLessonsReady]);if(screen!=='report'||request!==testLoadRequest)return;nekoSetupMode=mode;nekoScopeRestoring=true;
  $('homeworkSetupTitle').textContent=nekoTestModes[mode].title;$('nekoSetupHint').textContent='';$('testDateScope').hidden=mode!=='confirm';$('testWrongScope').hidden=mode!=='wrong';$('testTutorScope').hidden=true;
  $('testFeedbackMode').value=mode==='practice'?'practice':'test';$('testAnswerMode').disabled=mode==='practice';$('testAnswerMethodRow').hidden=mode==='practice';
  $('testSubject').replaceChildren();for(const [id,title] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const op=collectionNode('option',title);op.value=id;$('testSubject').append(op);}
  const p=data.neko.testScopes?.[mode]||{};$('testSubject').value=meta.some(m=>m.subject===p.subject)?p.subject:'all';nekoFilterField();if([...$('testField').options].some(o=>o.value===p.field))$('testField').value=p.field;
- $('testCount').value=['5','10','15','20','custom'].includes(p.count)?p.count:'5';$('testCountCustom').value=p.custom||'';$('testCountCustom').hidden=$('testCount').value!=='custom';$('testAnswerMode').value=mode==='practice'?'typed':p.answerMode==='notebook'?'notebook':'typed';$('testLessonSearch').value='';$('testIncludeRecovered').checked=!!p.includeRecovered;
+ $('testCount').value=['5','10','15','20','custom'].includes(p.count)?p.count:'5';$('testCountCustom').value=p.custom||'';$('testCountCustom').hidden=$('testCount').value!=='custom';$('testAnswerMode').value=mode==='practice'?'typed':p.answerMode==='notebook'?'notebook':'typed';$('testLessonSearch').value=p.search||'';$('testIncludeRecovered').checked=!!p.includeRecovered;
  selectedHomeworkLessons.clear();for(const id of p.lessons||[])if(meta.some(m=>m.id===id))selectedHomeworkLessons.add(id);
- $('testFrom').value=$('testTo').value=hDay();$('testAllDates').checked=mode!=='confirm';setTestQuickPeriod('today');$('testAllDates').checked=mode!=='confirm';$('testAdvanced').hidden=false;filterHomeworkLessons();nekoSetExplainPrefs($('testTutorScope'));nekoScopeRestoring=false;updateHomeworkCandidates();
+ $('testFrom').value=$('testTo').value=hDay();$('testAllDates').checked=mode!=='confirm';setTestQuickPeriod('today');
+ if(/^\d{4}-\d{2}-\d{2}$/.test(p.from||'')&&/^\d{4}-\d{2}-\d{2}$/.test(p.to||'')){$('testFrom').value=p.from;$('testTo').value=p.to;}
+ $('testAllDates').checked=typeof p.allDates==='boolean'?p.allDates:mode!=='confirm';$('testAdvanced').hidden=false;filterHomeworkLessons();nekoSetExplainPrefs($('testTutorScope'));nekoScopeRestoring=false;updateHomeworkCandidates();
  const unfinished=nekoGetActiveTest(mode);$('testModeResumeBox').hidden=!unfinished;$('testModeResumeInfo').textContent=unfinished?nekoActiveProgress(unfinished):'';$('homeworkSetup').showModal();$('homeworkSetupTitle').focus({preventScroll:true});if(!assessmentDataset)requestAssessmentRefresh();
 }
 function nekoRenderHub(){

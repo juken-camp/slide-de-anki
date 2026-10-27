@@ -4437,7 +4437,7 @@ function renderCatalog() {
     $('catalogSubjects').append(b);
   }
 
-  const newsButton=document.createElement('button');newsButton.type='button';newsButton.textContent='📰 ニュース';newsButton.classList.toggle('active',newsDemoMode&&!catalogIsCollections);newsButton.setAttribute('aria-pressed',String(newsDemoMode&&!catalogIsCollections));newsButton.onclick=()=>{newsDemoMode=true;catalogIsCollections=false;$('catalogSearch').value='';renderCatalog();};$('catalogSubjects').append(newsButton);
+  const newsButton=document.createElement('button');newsButton.type='button';newsButton.textContent='📰 ニュース';newsButton.classList.toggle('active',newsDemoMode&&!catalogIsCollections);newsButton.setAttribute('aria-pressed',String(newsDemoMode&&!catalogIsCollections));newsButton.onclick=()=>{newsDemoMode=true;catalogIsCollections=false;$('catalogSearch').value='';if(newsSelectedDate&&newsSelectedDate!==newsToday()){newsSelectedDate=null;newsLoadedDate=null;newsDates=null;}renderCatalog();};$('catalogSubjects').append(newsButton);
   if(newsDemoMode&&!catalogIsCollections){renderNewsDemo();return;}
   if(catalogIsCollections) [...$('catalogSubjects').querySelectorAll('[data-subject]')].forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
   if(subjectFocus) [...$('catalogSubjects').children].find(b=>b.dataset.subject===subjectFocus)?.focus({preventScroll:true});
@@ -5681,15 +5681,22 @@ async function openSearchQuestion(lid,cid,source){
  catch{toast('問題を開けなかったにゃ。通信を確認してにゃ。');}
 }
 // These are deliberately fictional examples, not automatically retrieved news.
-const newsDemoTopics=[
- {url:"https://www.pref.okinawa.jp/shigoto/kankotokusan/1011671/1011816/1003287/1026300.html",article:"沖縄県は10月26日、2026年度上半期の入域観光客数を発表しました。4月から9月までの観光客は約533万人。観光には宿泊や飲食、交通など、地域のさまざまな仕事が関わっています。",lessonId:"social-geography-japan-nature-resources-industry-05",cardId:"042",neko:"沖縄に来る人を迎えるには、ホテルや店、バスなどが必要にゃ。これらの仕事は第三次産業に入るにゃ。",cyber:"沖縄に来る人を迎えるには、ホテルや店、バスなどが必要だぜ。これらの仕事は第三次産業に入るんだ。",articleNeko:"2026年4月から9月に沖縄へ来た人は約533万人。去年より少ないけど、この時期では過去3番目の多さにゃ。沖縄には今もたくさんの人が観光に来ているにゃ。",articleCyber:"2026年4月から9月に沖縄へ来た人は約533万人。去年より少ないけど、この時期では過去3番目の多さだぜ。沖縄には今もたくさんの人が観光に来ているんだ。",field:'geography',label:'🌏 地理',title:'観光客が増えると、地域の産業は？',answer:/観光|第三次産業/,topic:'観光やサービス業は、地域の産業や雇用とつながっています。'},
- {url:"https://www.city.yokohama.lg.jp/city-info/koho-kocho/press/kowan/2026/0914SAKURA.html",article:"横浜市は2026年、新しい客船の就航に合わせ、横浜港を盛り上げる催しを行いました。横浜は江戸時代末期の開港後、外国との貿易の拠点として発展した港です。",lessonId:"social-history-edo-early-series-10",cardId:"012",neko:"今の横浜港は、外国とも行き来できる港にゃ。でも、江戸時代には外国との交流を制限する「鎖国」があったにゃ。",cyber:"今の横浜港は、外国とも行き来できる港だぜ。でも、江戸時代には外国との交流を制限する「鎖国」があったんだ。",articleNeko:"2026年、新しい客船が横浜の港から出発したにゃ。今は外国とも行き来できるけど、昔の日本は外国との交流を制限していたにゃ。",articleCyber:"2026年、新しい客船が横浜の港から出発したぜ。今は外国とも行き来できるけど、昔の日本は外国との交流を制限していたんだ。",field:'history',label:'🏯 歴史',title:'外国との交流を、昔の日本から考える',answer:/ペリー|鎖国|開国/,topic:'外国との交流を考えるとき、江戸時代の対外政策や開国の歴史が手がかりになります。'},
- {url:"https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.htm",article:"総務省は10月23日、2026年9月の全国の消費者物価指数を公表しました。物価は、私たちが買う商品やサービスの値段の動きを見る手がかりになります。",lessonId:"social-civics-economy-welfare-global-grade3-02",cardId:"021",neko:"ものの値段が変わるときは、どれだけ売られるかも関係するにゃ。売る側が売ろうとする量を「供給量」というにゃ。",cyber:"ものの値段が変わるときは、どれだけ売られるかも関係するぜ。売る側が売ろうとする量を「供給量」というんだ。",articleNeko:"2026年9月の、ものやサービスの値段の動きが発表されたにゃ。値段が上がると、同じものを買うにも、前より多くのお金が必要になるにゃ。",articleCyber:"2026年9月の、ものやサービスの値段の動きが発表されたぜ。値段が上がると、同じものを買うにも、前より多くのお金が必要になるんだ。",field:'civics',label:'🏛️ 公民',title:'物価が変わると、暮らしはどうなる？',answer:/円安|物価|需要|供給/,topic:'物価や為替の動きは、商品の値段や私たちの暮らしに関係します。'},
- {url:"https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saiene_shuryoku/001.html",article:"経済産業省は2026年6月、再生可能エネルギーの利用を進めるための会議を開きました。太陽光や風力などから電気をつくる方法が話し合われています。",lessonId:"science-magnetism-current-electrons-01",cardId:"017",neko:"風で発電機を回すと、電磁誘導によって電流が生まれるにゃ。風力発電は、このしくみを使っているにゃ。",cyber:"風で発電機を回すと、電磁誘導によって電流が生まれるぜ。風力発電は、このしくみを使っているんだ。",articleNeko:"太陽の光や風を使って、もっと電気をつくる方法が話し合われたにゃ。太陽や風は、石油などとちがい、使ってもなくならない自然の力にゃ。",articleCyber:"太陽の光や風を使って、もっと電気をつくる方法が話し合われたぜ。太陽や風は、石油などとちがい、使ってもなくならない自然の力だ。",field:'physics',label:'⚡ 物理',title:'電気をつくる仕組みを考える',answer:/電磁誘導|発電|電流/,topic:'発電では、運動などのエネルギーを電気エネルギーに変えます。'},
- {url:"https://www.meti.go.jp/press/2026/04/20260415001/20260415001.html",article:"経済産業省は2026年4月、千葉県の九十九里沖で二酸化炭素を地下にためる事業に向けた試掘を許可しました。排出された二酸化炭素を回収し、地下に貯留する技術が検討されています。",lessonId:"science-materials-gases-01",cardId:"025",neko:"地球の気温を上げる原因の一つが、二酸化炭素にゃ。この気体には、石灰水を白くにごらせる性質もあるにゃ。",cyber:"地球の気温を上げる原因の一つが、二酸化炭素だぜ。この気体には、石灰水を白くにごらせる性質もあるんだ。",articleNeko:"二酸化炭素を集めて、地下にためる計画が進んでいるにゃ。地球の気温を上げる原因の一つを、空気中に出しすぎないための方法にゃ。",articleCyber:"二酸化炭素を集めて、地下にためる計画が進んでいるぜ。地球の気温を上げる原因の一つを、空気中に出しすぎないための方法だ。",field:'chemistry',label:'🧪 化学',title:'空気と二酸化炭素の話題',answer:/二酸化炭素|酸素/,topic:'空気中の気体にはさまざまな性質があり、環境や生物の生活と関係しています。'},
- {url:"https://www.jst.go.jp/pr/announce/20260826-2/index.html",article:"琉球大学などの研究グループは2026年8月、2024年の高い海水温により、沖縄から本州まで広い範囲でサンゴが白化したと発表しました。サンゴと共生する藻類は光合成を行います。",lessonId:"science-plants-01",cardId:"018",neko:"サンゴの中には、一緒にくらす小さな藻がいるにゃ。この藻も、光を使って養分をつくる「光合成」をするにゃ。",cyber:"サンゴの中には、一緒にくらす小さな藻がいるぜ。この藻も、光を使って養分をつくる「光合成」をするんだ。",articleNeko:"2024年、熱い海の水の影響で、沖縄から本州まで広い範囲のサンゴが白くなったにゃ。白くなるのは弱っているサイン。長く続くと死んでしまうこともあるにゃ。",articleCyber:"2024年、熱い海の水の影響で、沖縄から本州まで広い範囲のサンゴが白くなったぜ。白くなるのは弱っているサイン。長く続くと死んでしまうこともあるんだ。",field:'biology',label:'🌱 生物',title:'植物が育つために必要なものは？',answer:/光合成/,topic:'植物は光合成で光のエネルギーを使い、二酸化炭素と水から養分をつくります。'},
- {url:"https://www.data.jma.go.jp/cpd/longfcst/monthly/202609/202609m.html",article:"気象庁によると、2026年9月上旬には台風24号や湿った空気の影響で秋雨前線が活発になり、東海地方などで記録的な大雨となった所がありました。",lessonId:"science-weather-mechanisms-changes-01",cardId:"046",neko:"ニュースの秋雨前線は、同じ場所にとどまりやすい停滞前線の一つにゃ。前線が長くとどまると、雨も続きやすいにゃ。",cyber:"ニュースの秋雨前線は、同じ場所にとどまりやすい停滞前線の一つだぜ。前線が長くとどまると、雨も続きやすいんだ。",articleNeko:"2026年9月、台風などの影響で秋雨前線が活発になり、東海地方などで大雨になったにゃ。前線が同じ場所にとどまると、雨が長く続くことがあるにゃ。",articleCyber:"2026年9月、台風などの影響で秋雨前線が活発になり、東海地方などで大雨になったぜ。前線が同じ場所にとどまると、雨が長く続くことがあるんだ。",field:'earth',label:'🌀 地学',title:'空のニュースから天気のしくみへ',answer:/偏西風|高気圧|低気圧|前線/,topic:'雲や風、気圧の変化を知ると、天気の移り変わりを考えやすくなります。'}
-];
+let newsDemoTopics=[],newsDates=null,newsSelectedDate=null,newsLoading=false,newsError='',newsLoadedDate=null;
+const newsIcons={geography:'🌏',history:'🏯',civics:'🏛️',physics:'⚡',chemistry:'🧪',biology:'🌱',earth:'🌀'};
+function newsToday(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));return `${p.year}-${p.month}-${p.day}`;}
+async function newsLoad(date=null,refresh=false){
+ if(newsLoading)return;newsLoading=true;newsError='';
+ try{
+  if(!newsDates||refresh){const r=await fetch('news/daily/index.json',{cache:'no-store'});if(!r.ok)throw Error('ニュースはまだ準備中です。');const index=await r.json();if(index.version!==1||!Array.isArray(index.dates))throw Error('ニュースを読み込めませんでした。');newsDates=index.dates.filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d));}
+  newsSelectedDate=date||newsToday();
+  if(!newsDates.includes(newsSelectedDate)){newsDemoTopics=[];newsLoadedDate=newsSelectedDate;return;}
+  const r=await fetch('news/daily/'+newsSelectedDate+'.json',{cache:'no-store'});if(!r.ok)throw Error('ニュースを読み込めませんでした。');const data=await r.json();
+  if(data.version!==1||data.date!==newsSelectedDate||!Array.isArray(data.items))throw Error('ニュースを読み込めませんでした。');
+  newsDemoTopics=data.items.filter(x=>x&&newsIcons[x.field]&&typeof x.lessonId==='string'&&typeof x.cardId==='string'&&typeof x.url==='string'&&/^https:\/\//.test(x.url)&&['title','articleNeko','articleCyber','neko','cyber'].every(k=>typeof x[k]==='string'&&x[k])).map(x=>({...x,label:newsIcons[x.field]+' '+({geography:'地理',history:'歴史',civics:'公民',physics:'物理',chemistry:'化学',biology:'生物',earth:'地学'})[x.field]}));
+  newsLoadedDate=newsSelectedDate;
+ }catch(e){newsError=e.message||'ニュースを読み込めませんでした。';newsDemoTopics=[];newsLoadedDate=newsSelectedDate||newsToday();}
+ finally{newsLoading=false;if(newsDemoMode&&screen==='catalog')renderCatalog();}
+}
 function newsDemoFind(topic){
  const m=meta.find(m=>m.id===topic.lessonId),c=assessmentDataset?.lessons?.[topic.lessonId]?.cards?.find(c=>c.id===topic.cardId);
  return m&&c?{m,c}:null;
@@ -5703,7 +5710,7 @@ function newsDateLabel(date=new Date()){
 }
 function renderNewsDemo(){
  for(const id of ['browseSwitch','socialSwitch','catalogFilters','seriesScroller','quickReview','questionSearchSelection','catalogMilestones','selectVisible','catalogEmpty'])$(id).hidden=true;
- $('questionSearchStatus').hidden=true;$('visibleCount').textContent=newsDateLabel();
+ $('questionSearchStatus').hidden=true;const showing=newsSelectedDate||newsToday();$('visibleCount').textContent=newsDateLabel(new Date(showing+'T03:00:00Z')).replace('今日の7問',showing===newsToday()?(newsLoadedDate&&newsDemoTopics.length?'今日の'+newsDemoTopics.length+'問':'今日のニュース'):(newsDemoTopics.length?newsDemoTopics.length+'問':'ニュース'));
  const groups=$('catalogGroups');groups.replaceChildren();
 
  if(!assessmentDataset){
@@ -5712,6 +5719,9 @@ function renderNewsDemo(){
   else if(!assessmentPromise)ensureAssessmentData().then(()=>{if(newsDemoMode&&screen==='catalog')renderCatalog();}).catch(()=>{if(newsDemoMode&&screen==='catalog')renderCatalog();});
   return;
  }
+ if(!newsLoadedDate){groups.append(collectionNode('p','ニュースを準備しています…','news-demo-notice'));newsLoad(newsSelectedDate||null);return;}
+ if(newsDates?.length){const chooser=collectionNode('label','日付を選ぶ　','news-demo-notice');const select=document.createElement('select');select.setAttribute('aria-label','ニュースの日付');const dates=[newsToday(),...newsDates.filter(d=>d!==newsToday())];for(const date of dates){const o=collectionNode('option',date===newsToday()?'今日':date.replaceAll('-','/'));o.value=date;o.selected=date===showing;select.append(o);}select.onchange=()=>{newsSelectedDate=select.value;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(select.value);};chooser.append(select);groups.append(chooser);}
+ if(newsError||!newsDemoTopics.length){groups.append(collectionNode('p',newsError||'この日のニュースはまだありません。','news-demo-notice'));const retry=collectionButton('更新を確認','link-button',()=>{newsLoadedDate=null;newsLoad(showing,true);renderCatalog();});groups.append(retry);return;}
  for(const topic of newsDemoTopics){
   const found=newsDemoFind(topic),entry=collectionNode('section',undefined,'news-demo-entry');
   entry.append(collectionNode('h3',topic.label+'｜'+topic.title,'news-demo-title'));
@@ -5719,7 +5729,7 @@ function renderNewsDemo(){
   const {m,c,fallback}=found;entry.append(collectionNode('p',newsDemoArticle(topic),'news-demo-article user-content'),collectionNode('p',m.title,'news-demo-lesson'));
   const row=questionSearchButton(m,c),button=row.querySelector('.question-search-hit');
   button.onclick=()=>openNewsDemoQuestion(topic,m,c,fallback,button);
-  entry.append(row,collectionNode('p',newsDemoCopy(topic,fallback),'news-demo-explanation user-content'));const source=document.createElement('a');source.href=topic.url;source.target='_blank';source.rel='noopener noreferrer';source.textContent='▶︎ 記事を見る';source.className='news-source-link';entry.append(source);groups.append(entry);
+  entry.append(row,collectionNode('p',newsDemoCopy(topic,fallback),'news-demo-explanation user-content'));if(topic.source){const date=new Date(topic.publishedAt);const stamp=Number.isFinite(date.getTime())?new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric'}).format(date):'';entry.append(collectionNode('p',[topic.source,stamp].filter(Boolean).join(' · '),'news-demo-lesson'));}const source=document.createElement('a');source.href=topic.url;source.target='_blank';source.rel='noopener noreferrer';source.textContent='▶︎ 記事を見る';source.className='news-source-link';entry.append(source);groups.append(entry);
  }
 }
 async function openNewsDemoQuestion(topic,m,c,fallback,source){

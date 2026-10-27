@@ -3166,6 +3166,14 @@ html[data-persona=cyber] body #app #appHeader.is-scrolled::before{background:rgb
 /* Let the original letters and bubble colours show through the time chip. */
 html[data-persona] body #app #testScreen .neko-chat-date time{background:rgba(114,83,57,.25)!important;opacity:.78;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
 html[data-persona=cyber] body #app #testScreen .neko-chat-date time{background:rgba(77,111,137,.28)!important}
+
+/* News demo uses the existing catalog and study layouts. */
+#newsStudyExplanation{margin:12px 0 16px;padding:14px 16px;border:1px solid var(--neko-edge);border-radius:14px;background:var(--neko-surface,#fffaf4);line-height:1.7}
+#newsStudyExplanation h3{margin:0 0 6px;font-size:15px}#newsStudyExplanation p{margin:0;font-size:14px}
+.news-demo-notice{margin:8px 0 14px;font-size:13px;line-height:1.6}
+.news-demo-entry{margin:0 0 16px}.news-demo-entry .question-search-row{margin-top:8px}
+.news-demo-title{margin:0 0 4px;font-size:16px}.news-demo-lesson{margin:0 0 6px;font-size:13px;opacity:.8}.news-demo-explanation{margin:8px 4px 0;font-size:13px;line-height:1.65}
+html[data-persona=cyber] #newsStudyExplanation{background:#0e1830;color:#d8efff;border-color:#39738c}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -3202,7 +3210,7 @@ html[data-persona=cyber] body #app #testScreen .neko-chat-date time{background:r
 
 
 <div id="loadingMessage" class="loading-message" role="status" hidden>ちょっと待ってにゃ🐾</div>
-<section class="stage" id="stage"><article class="card" id="card"><div class="head"><div class="face-meta"><span class="badge" id="faceLabel">問題</span><span class="status-tag" id="cardStatus">まだ</span></div><span class="focus-only" id="focusPosition" aria-hidden="true"></span><span class="unit" id="cardUnit"></span><button title="画像を拡大する" id="zoomImage" class="link-button" type="button" aria-label="問題画像を拡大する">⤢</button></div><div class="image-frame"><div class="slide-wrap loading" id="slideTap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="slideImage" alt="" draggable="false" decoding="async"><div class="image-status" id="imageStatus" role="status">ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="resetImageView" hidden aria-label="画像を元の大きさに戻す">100%に戻すにゃ</button></div></article><div class="actions"><button class="focus-only" id="focusPause" type="button" hidden aria-label="自動めくりを止めるにゃ"><span aria-hidden="true">Ⅱ</span> 停止</button><button class="arrow" id="prevButton" aria-label="前のカード">‹</button><button class="reveal" id="revealButton" type="button">答えを見るにゃ <span aria-hidden="true">↻</span></button><button class="again" id="weakButton" disabled>↻ おぼえてない</button><button class="done" id="knownButton" disabled>✓ おぼえた</button><button class="arrow" id="nextButton" aria-label="次のカード">›</button><button id="focusTools" class="focus-only" type="button" aria-haspopup="dialog" aria-controls="focusMenu" aria-expanded="false">操作にゃ ☰</button></div><div class="slide-meta"><p class="navigation-info" id="cardPosition" aria-live="polite"></p></div><div class="source-links" id="sourceLinks" aria-label="元動画へのリンク" hidden><a id="sourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="sourceMoment" target="_blank" rel="noopener noreferrer" hidden></a><span class="source-note" id="correctionNote" hidden>訂正画像を表示中（元動画は訂正前）</span></div><div class="study-guide" style="background:transparent!important;border:0!important;box-shadow:none!important" hidden><span id="studyHint" role="status" style="background:transparent!important;box-shadow:none!important"></span></div><div class="study-progress"><div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div></div><details class="study-options" id="studyOptions"><summary><span>学び方・範囲</span><span id="optionsSummary">ぜんぶ · 問題から</span></summary><div class="study-options-body"><div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
+<section class="stage" id="stage"><article class="card" id="card"><div class="head"><div class="face-meta"><span class="badge" id="faceLabel">問題</span><span class="status-tag" id="cardStatus">まだ</span></div><span class="focus-only" id="focusPosition" aria-hidden="true"></span><span class="unit" id="cardUnit"></span><button title="画像を拡大する" id="zoomImage" class="link-button" type="button" aria-label="問題画像を拡大する">⤢</button></div><div class="image-frame"><div class="slide-wrap loading" id="slideTap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="slideImage" alt="" draggable="false" decoding="async"><div class="image-status" id="imageStatus" role="status">ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="resetImageView" hidden aria-label="画像を元の大きさに戻す">100%に戻すにゃ</button></div></article><div class="actions"><button class="focus-only" id="focusPause" type="button" hidden aria-label="自動めくりを止めるにゃ"><span aria-hidden="true">Ⅱ</span> 停止</button><button class="arrow" id="prevButton" aria-label="前のカード">‹</button><button class="reveal" id="revealButton" type="button">答えを見るにゃ <span aria-hidden="true">↻</span></button><button class="again" id="weakButton" disabled>↻ おぼえてない</button><button class="done" id="knownButton" disabled>✓ おぼえた</button><button class="arrow" id="nextButton" aria-label="次のカード">›</button><button id="focusTools" class="focus-only" type="button" aria-haspopup="dialog" aria-controls="focusMenu" aria-expanded="false">操作にゃ ☰</button></div><div class="slide-meta"><p class="navigation-info" id="cardPosition" aria-live="polite"></p></div><div class="source-links" id="sourceLinks" aria-label="元動画へのリンク" hidden><a id="sourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="sourceMoment" target="_blank" rel="noopener noreferrer" hidden></a><span class="source-note" id="correctionNote" hidden>訂正画像を表示中（元動画は訂正前）</span></div><div id="newsStudyExplanation" hidden><h3>📰 ニュースとのつながり <small>（見本）</small></h3><p></p></div><div class="study-guide" style="background:transparent!important;border:0!important;box-shadow:none!important" hidden><span id="studyHint" role="status" style="background:transparent!important;box-shadow:none!important"></span></div><div class="study-progress"><div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div></div><details class="study-options" id="studyOptions"><summary><span>学び方・範囲</span><span id="optionsSummary">ぜんぶ · 問題から</span></summary><div class="study-options-body"><div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
 <nav class="chips" id="chapterChips" aria-label="単元"></nav>
 <details class="supplement-panel" id="supplementPanel" hidden><summary>補足を見るにゃ</summary><div class="supplement-links" id="supplementLinks"></div></details>
 <div class="face-mode" aria-label="カードの送り方"><button data-face-mode="normal" class="active" aria-pressed="true">問題から</button><button data-face-mode="answer" aria-pressed="false">解答で暗記</button></div>
@@ -4331,7 +4339,9 @@ function normalizeCatalogScope() {
   const availableIds = new Set(meta.map(m => m.id));
   for (const id of selected) if (!availableIds.has(id)) selected.delete(id);
 }
+let newsDemoMode=false,newsDemoActive=null;
 function setCatalogContext(change = {}) {
+  newsDemoMode=false;
   if(catalogIsCollections) $('catalogSearch').value='';
   catalogIsCollections=false;
   if(Object.hasOwn(change,'subject')) {
@@ -4415,15 +4425,18 @@ function renderCatalog() {
   $('browseSwitch').hidden = catalogSubject !== 'science';
   $('socialSwitch').hidden = !social;
   const subjectFocus = document.activeElement?.dataset?.subject;
+  $('catalogDock').hidden=newsDemoMode&&!catalogIsCollections;
   $('catalogSubjects').replaceChildren();
   for (const id of [...new Set(['science','social',...meta.map(m=>m.subject)])]) {
     const b=document.createElement('button'); b.type='button'; b.dataset.subject=id;
     b.textContent=(id==='science'?'🔬 ':id==='social'?'🌏 ':'📚 ')+subjectLabel(id);
-    const on=id===catalogSubject; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on));
+    const on=!newsDemoMode&&id===catalogSubject; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on));
     b.onclick=()=>setCatalogContext({subject:id});
     $('catalogSubjects').append(b);
   }
 
+  const newsButton=document.createElement('button');newsButton.type='button';newsButton.textContent='📰 ニュース';newsButton.classList.toggle('active',newsDemoMode&&!catalogIsCollections);newsButton.setAttribute('aria-pressed',String(newsDemoMode&&!catalogIsCollections));newsButton.onclick=()=>{newsDemoMode=true;catalogIsCollections=false;$('catalogSearch').value='';renderCatalog();};$('catalogSubjects').append(newsButton);
+  if(newsDemoMode&&!catalogIsCollections){renderNewsDemo();return;}
   if(catalogIsCollections) [...$('catalogSubjects').querySelectorAll('[data-subject]')].forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
   if(subjectFocus) [...$('catalogSubjects').children].find(b=>b.dataset.subject===subjectFocus)?.focus({preventScroll:true});
   if(catalogIsCollections){renderMyCollections();return;}
@@ -4618,7 +4631,7 @@ function render() {
   if (state.finished) { showEmpty('選んだ範囲を一周したにゃ🎉','',{restart:true,finishSummary:true,review:counts(base()).weak>0,all:state.mode!=='all'}); save(); return; }
   const d = deck();
   if (!d.length) { showEmpty(state.mode === 'all' ? 'この範囲には問題がないにゃ' : 'この分類には問題がないにゃ','分類を変えると、ほかの問題も見られるにゃ。',{all:state.mode!=='all'}); save(); return; }
-  const c = current(), raw = loaded.get(c.lessonId); renderSource(c); renderSupplements(raw); $('stage').hidden = false;
+  const c = current(), raw = loaded.get(c.lessonId);renderNewsDemoStudy(c); renderSource(c); renderSupplements(raw); $('stage').hidden = false;
   $('card').classList.toggle('is-back',state.flipped); $('faceLabel').textContent = state.flipped ? '解答' : '問題';
   const chapter = raw.chapters?.find(ch => ch.id === c.chapter)?.title || raw.title;
   $('cardUnit').textContent = `${state.lessonIds.length>1 || state.collection ? raw.title+' / ' : ''}${chapter} · ${c.displayNumber || c.originalId}`;
@@ -5659,10 +5672,66 @@ for(const b of document.querySelectorAll('[data-search-clear]'))b.onclick=()=>{s
 $('searchDialogSelectAll').onclick=()=>selectSearchMatches(searchDialogItems);
 document.querySelector('[data-search-select-all]').onclick=()=>{if(!catalogQuery())return;selectSearchMatches(catalogSearchQuestionItems());};
 async function openSearchQuestion(lid,cid,source){
+ newsDemoActive=null;
  rememberCatalogQuestionPosition(lid,cid,source);
  $('questionSearchDialog').close();
  try{await selectLessons([lid],{collection:{id:'question-search',name:'検索した問題',cardKeys:[cardKey(lid,cid)]}});}
  catch{toast('問題を開けなかったにゃ。通信を確認してにゃ。');}
+}
+// These are deliberately fictional examples, not automatically retrieved news.
+const newsDemoTopics=[
+ {field:'geography',label:'🌏 地理',title:'観光客が増えると、地域の産業は？',answer:/観光|第三次産業/,topic:'観光やサービス業は、地域の産業や雇用とつながっています。'},
+ {field:'history',label:'🏯 歴史',title:'外国との交流を、昔の日本から考える',answer:/ペリー|鎖国|開国/,topic:'外国との交流を考えるとき、江戸時代の対外政策や開国の歴史が手がかりになります。'},
+ {field:'civics',label:'🏛️ 公民',title:'物価が変わると、暮らしはどうなる？',answer:/円安|物価|需要|供給/,topic:'物価や為替の動きは、商品の値段や私たちの暮らしに関係します。'},
+ {field:'physics',label:'⚡ 理科・物理',title:'電気をつくる仕組みを考える',answer:/電磁誘導|発電|電流/,topic:'発電では、運動などのエネルギーを電気エネルギーに変えます。'},
+ {field:'chemistry',label:'🧪 理科・化学',title:'空気と二酸化炭素の話題',answer:/二酸化炭素|酸素/,topic:'空気中の気体にはさまざまな性質があり、環境や生物の生活と関係しています。'},
+ {field:'biology',label:'🌱 理科・生物',title:'植物が育つために必要なものは？',answer:/光合成|二酸化炭素|酸素/,topic:'植物は光合成で光のエネルギーを使い、二酸化炭素と水から養分をつくります。'},
+ {field:'earth',label:'🌀 理科・地学',title:'空のニュースから天気のしくみへ',answer:/偏西風|高気圧|低気圧|前線/,topic:'雲や風、気圧の変化を知ると、天気の移り変わりを考えやすくなります。'}
+];
+function newsDemoFind(topic){
+ for(const m of meta.filter(m=>m.field===topic.field)){
+  const cards=assessmentDataset?.lessons?.[m.id]?.cards||[];
+  const c=cards.find(c=>c.eligible&&topic.answer.test(String(c.a||'')));
+  if(c)return {m,c};
+ }
+ // Keep the demo usable even when the exact sample answer is absent.
+ for(const m of meta.filter(m=>m.field===topic.field)){
+  const c=(assessmentDataset?.lessons?.[m.id]?.cards||[]).find(c=>c.eligible&&c.q&&c.a);
+  if(c)return {m,c,fallback:true};
+ }
+ return null;
+}
+function newsDemoCopy(topic,fallback){return fallback?'この分野のニュースと、問題の答えをつなぐ解説がここに入ります。（見本）':topic.topic;}
+function renderNewsDemo(){
+ for(const id of ['browseSwitch','socialSwitch','catalogFilters','seriesScroller','quickReview','questionSearchSelection','catalogMilestones','selectVisible','catalogEmpty'])$(id).hidden=true;
+ $('questionSearchStatus').hidden=true;$('visibleCount').textContent='ニュースとつながる7問';
+ const groups=$('catalogGroups');groups.replaceChildren();
+ groups.append(collectionNode('p','これは表示の見本です。実際のニュース取得・更新はまだ行っていません。','news-demo-notice'));
+ if(!assessmentDataset){
+  const status=collectionNode('p',assessmentError||'問題を準備しています…','news-demo-notice');groups.append(status);
+  if(assessmentError)groups.append(collectionButton('もう一度読み込む','tool',()=>{assessmentError='';renderCatalog();}));
+  else if(!assessmentPromise)ensureAssessmentData().then(()=>{if(newsDemoMode&&screen==='catalog')renderCatalog();}).catch(()=>{if(newsDemoMode&&screen==='catalog')renderCatalog();});
+  return;
+ }
+ for(const topic of newsDemoTopics){
+  const found=newsDemoFind(topic),entry=collectionNode('section',undefined,'news-demo-entry');
+  entry.append(collectionNode('h3',topic.label+'｜'+topic.title,'news-demo-title'));
+  if(!found){entry.append(collectionNode('p','問題を準備できませんでした。'));groups.append(entry);continue;}
+  const {m,c,fallback}=found;entry.append(collectionNode('p',m.title,'news-demo-lesson'));
+  const row=questionSearchButton(m,c),button=row.querySelector('.question-search-hit');
+  button.onclick=()=>openNewsDemoQuestion(topic,m,c,fallback,button);
+  entry.append(row,collectionNode('p','📰 ニュースとのつながり（見本） '+newsDemoCopy(topic,fallback),'news-demo-explanation user-content'));groups.append(entry);
+ }
+}
+async function openNewsDemoQuestion(topic,m,c,fallback,source){
+ rememberCatalogQuestionPosition(m.id,c.id,source);
+ const active={key:cardKey(m.id,c.id),text:newsDemoCopy(topic,fallback)};newsDemoActive=active;
+ try{await selectLessons([m.id],{collection:{id:'question-search',name:'ニュースとつながる問題（見本）',cardKeys:[active.key]}});}
+ catch{if(newsDemoActive===active)newsDemoActive=null;toast('問題を開けなかったにゃ。通信を確認してにゃ。');}
+}
+function renderNewsDemoStudy(card){
+ const box=$('newsStudyExplanation'),show=!!(newsDemoActive&&state.collection?.id==='question-search'&&cardKey(card.lessonId,card.originalId||card.id)===newsDemoActive.key);
+ box.hidden=!show;if(show)box.querySelector('p').textContent=newsDemoActive.text;
 }
 function openQuestionSearch(m,cards){
  searchDialogItems=cards.map(c=>({m,c}));searchDialogPage=0;$('questionSearchTitle').textContent=m.title;renderQuestionSearchDialog();$('questionSearchDialog').showModal();

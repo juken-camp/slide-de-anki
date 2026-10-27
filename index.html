@@ -3698,12 +3698,13 @@ let assessmentLockUntil = 0;
 let soundEnabled = data.neko.soundEnabled !== false, audio = null, masterGain = null, lastTapSound = -1000;
 let tapNote = 0;
 let audioResumePromise=null,audioStartError=false;
-let audioNeedsReset=false,audioClockSample=null;
+let audioNeedsReset=false,audioClockSample=null,audioResumeGeneration=0,audioLifecycle=0;
 // Home Screen WebKit can leave AudioContext.resume() pending indefinitely.
 // Prefer interactive WebAudio; keep preloaded short media clips as a fallback.
 const useMediaSound = (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1)) && (navigator.standalone===true || window.matchMedia('(display-mode: standalone)').matches);
 const mediaSoundPool=[],mediaSoundCache=new Map();
 let mediaSoundCursor=0,mediaSoundBank=null,mediaSoundWarmTimer=null;
+const mediaWarmQueue=new Map();
 const audioVoices = new Set();
 const soundStyles = ['soft','pop','sparkle'];
 const cyberSoundStyles = ['digital','arcade','space'];
@@ -3811,6 +3812,18 @@ function toast(s) {
  notice.classList.add('show');clearTimeout(noticeTimer);
  noticeTimer=setTimeout(()=>notice.classList.remove('show'),Math.min(7000,Math.max(3000,notice.textContent.length*85)));
 }
+const nekoTimedTasks=new Set();
+function nekoTimedTask(work,timeout,message){
+ const controller=new AbortController(),deadline=Date.now()+timeout;let timer,finished=false,rejectTimeout;
+ const expired=new Promise((_,reject)=>{rejectTimeout=reject;});
+ const task={check(){if(!finished&&Date.now()>=deadline){controller.abort();rejectTimeout(Error(message));}}};
+ nekoTimedTasks.add(task);timer=setTimeout(()=>{controller.abort();rejectTimeout(Error(message));},timeout);
+ return Promise.race([Promise.resolve().then(()=>work(controller.signal,()=>{task.check();if(controller.signal.aborted)throw Error(message);})),expired]).finally(()=>{finished=true;clearTimeout(timer);nekoTimedTasks.delete(task);});
+}
+function nekoRecoverTimedTasks(){if(!document.hidden)for(const task of nekoTimedTasks)task.check();}
+document.addEventListener('visibilitychange',nekoRecoverTimedTasks);
+window.addEventListener('pageshow',nekoRecoverTimedTasks);
+window.addEventListener('focus',nekoRecoverTimedTasks);
 function soundAttempt(promise,timeout=1000) {
   return new Promise(resolve=>{
     const timer=setTimeout(()=>resolve(false),timeout);
@@ -3991,40 +4004,37 @@ function stopAudioVoices() {
   for(const voice of [...audioVoices]){try{voice.stop();}catch{}voice.nekoCleanup?.();}
 }
 function mediaBankKey(){return 'voices-v3:'+ (cyberSoundActive()?'cyber':'neko')+':'+soundStyle()+':'+soundVolume();}
-function scheduleMediaSounds(delay=0) {
-  if(!useMediaSound || audio?.state==='running' || !soundEnabled || soundVolume()===0 || document.hidden || mediaSoundBank?.key===mediaBankKey())return;
-  clearTimeout(mediaSoundWarmTimer);
-  mediaSoundWarmTimer=setTimeout(()=>{mediaSoundWarmTimer=null;if(audio?.state!=='running')prepareMediaSounds();},delay);
+// Build only a requested fallback clip, in a later task, never in a tap handler.
+function scheduleMediaSounds(delay=0,notes=null) {
+  if(!useMediaSound || !soundEnabled || soundVolume()===0 || document.hidden)return;
+  if(notes)mediaWarmQueue.set(JSON.stringify(notes),notes);
+  if(mediaSoundWarmTimer!==null||!mediaWarmQueue.size)return;
+  mediaSoundWarmTimer=setTimeout(()=>{mediaSoundWarmTimer=null;prepareMediaSounds();},Math.max(30,delay));
 }
 function prepareMediaSounds() {
-  if(mediaSoundBank?.key===mediaBankKey())return;
-  disposeMediaSounds();
-  const clips=new Map();
-  for(const kind of ['tap','flip','move','weak','known','cat','sparkle','shuffle','open','finish','milestone','preview','chatSend','chatReceive']){
-    for(let variant=0;variant<(kind==='tap'?5:kind==='cat'?4:1);variant++){
-      const notes=soundNotes(kind,soundStyle(),variant),key=JSON.stringify(notes);
-      const url=mediaSoundURL(notes,soundVolume()),players=[];
-      for(let i=0;i<2;i++){
-        const player=new Audio(url);player.preload='auto';player.setAttribute('playsinline','');
-        const entry={player,token:0,timer:null};
-        player.onended=()=>{try{player.currentTime=0;}catch{}};
-        player.load();players.push(entry);mediaSoundPool.push(entry);
-      }
-      clips.set(key,players);
-    }
+  if(document.hidden||!soundEnabled)return;
+  const next=mediaWarmQueue.entries().next().value;if(!next)return;
+  const [key,notes]=next;mediaWarmQueue.delete(key);
+  if(mediaSoundBank?.key!==mediaBankKey()){disposeMediaSounds();mediaSoundBank={key:mediaBankKey(),clips:new Map()};}
+  if(!mediaSoundBank.clips.has(key)){
+    // Four players at most, instead of creating a whole bank on every return.
+    if(mediaSoundPool.length>=4){const old=mediaSoundPool.shift();old.token++;stopMediaEntry(old);old.player.onended=null;old.player.removeAttribute('src');old.player.load();mediaSoundBank.clips.delete(old.key);}
+    const player=new Audio(mediaSoundURL(notes,soundVolume()));player.preload='auto';player.setAttribute('playsinline','');
+    const entry={key,player,token:0,timer:null};player.onended=()=>{try{player.currentTime=0;}catch{}};
+    player.load();mediaSoundPool.push(entry);mediaSoundBank.clips.set(key,[entry]);
   }
-  mediaSoundBank={key:mediaBankKey(),clips};
+  scheduleMediaSounds(30);
 }
 async function playMediaSound(notes) {
-  const requestedAt=performance.now();
-  if(mediaSoundBank?.key!==mediaBankKey()){scheduleMediaSounds(0);return;}
-  const players=mediaSoundBank.clips.get(JSON.stringify(notes));if(!players)return;
+  const requestedAt=Date.now();
+  if(mediaSoundBank?.key!==mediaBankKey()){scheduleMediaSounds(30,notes);return;}
+  const players=mediaSoundBank.clips.get(JSON.stringify(notes));if(!players){scheduleMediaSounds(30,notes);return;}
   const entry=players.find(e=>e.player.paused || e.player.ended) || players[mediaSoundCursor++%players.length];
   const token=++entry.token;stopMediaEntry(entry);entry.player.muted=false;
   // Idle players already sit at zero; rewind only an interrupted overlapping sound.
   if(entry.player.currentTime!==0)try{entry.player.currentTime=0;}catch{}
   // Cancel a pending play itself, not just the promise waiting for it.
-  entry.player.onplaying=()=>{if(token!==entry.token || performance.now()-requestedAt>180 || !soundEnabled || document.hidden)stopMediaEntry(entry);else{clearTimeout(entry.timer);entry.timer=null;}};
+  entry.player.onplaying=()=>{if(token!==entry.token || Date.now()-requestedAt>180 || !soundEnabled || document.hidden)stopMediaEntry(entry);else{clearTimeout(entry.timer);entry.timer=null;}};
   entry.timer=setTimeout(()=>{if(token===entry.token){entry.token++;stopMediaEntry(entry);}},180);
   let ok=false;try{ok=await soundAttempt(entry.player.play(),180);}catch{}
   if(token===entry.token && soundEnabled && !document.hidden){
@@ -4033,56 +4043,69 @@ async function playMediaSound(notes) {
   }
 }
 function resetAudioEngine() {
-  const previous=audio;audio=null;masterGain=null;audioResumePromise=null;audioClockSample=null;audioNeedsReset=false;
+  audioLifecycle++;const previous=audio;audio=null;masterGain=null;audioResumePromise=null;audioResumeGeneration++;audioClockSample=null;audioNeedsReset=false;audioStartError=false;
   clearTimeout(mediaSoundWarmTimer);mediaSoundWarmTimer=null;stopMediaSounds();
   stopAudioVoices();
   if(previous){previous.onstatechange=null;try{Promise.resolve(previous.close()).catch(()=>{});}catch{}}
 }
+function suspendAppAudio() {
+  // Keep the context and prepared clips. A hidden page must not queue old effects.
+  audioLifecycle++;audioResumeGeneration++;audioResumePromise=null;audioClockSample=null;
+  clearTimeout(mediaSoundWarmTimer);mediaSoundWarmTimer=null;mediaWarmQueue.clear();
+  stopAudioVoices();stopMediaSounds();
+}
 function restoreAudio() {
   if(document.hidden)return;
-  syncAudioGain();unlockAudio();scheduleMediaSounds(0);
+  syncAudioGain();
+  for(const kind of ['tap','chatSend','chatReceive'])scheduleMediaSounds(150,soundNotes(kind,soundStyle(),0));
+  // Do not create/resume an engine outside a user gesture. Probe a running clock
+  // separately so a stopped WebKit clock can be repaired on the next tap.
+  const context=audio;if(!context||context.state!=='running')return;
+  const time=context.currentTime;
+  setTimeout(()=>{if(audio===context&&!document.hidden&&context.state==='running'&&context.currentTime<=time)audioNeedsReset=true;},120);
 }
 function unlockAudio(event) {
   if (!soundEnabled || soundVolume()===0 || document.hidden) return null;
-  // Some WebKit contexts claim to run while their clock no longer advances.
+  const trusted=!!event?.isTrusted||navigator.userActivation?.isActive===true;
   const clockNow=performance.now();
-  if(audio?.state==='running' && event?.isTrusted && audioClockSample && clockNow-audioClockSample.wall>250 && audio.currentTime<=audioClockSample.time)audioNeedsReset=true;
-  if(audio?.state==='running' && event?.isTrusted){
-    try{const stamp=audio.getOutputTimestamp?.();if(stamp?.contextTime>0 && stamp.performanceTime>0 && (audio.currentTime-stamp.contextTime>Math.max(.25,(audio.baseLatency||0)+(audio.outputLatency||0)+.15) || (audioVoices.size>0 && clockNow-stamp.performanceTime>500)))audioNeedsReset=true;}catch{}
-  }
-  if(event?.isTrusted && audioNeedsReset)resetAudioEngine();
-  if(audio?.state==='running'){audioClockSample={wall:clockNow,time:audio.currentTime};if(mediaSoundPool.length)disposeMediaSounds();syncAudioGain();return audio;}
+  if(audio?.state==='running' && trusted && audioClockSample && clockNow-audioClockSample.wall>250 && audio.currentTime<=audioClockSample.time)audioNeedsReset=true;
+  if(trusted && audioNeedsReset)resetAudioEngine();
+  if(audio?.state==='running'){audioClockSample={wall:clockNow,time:audio.currentTime};syncAudioGain();return audio;}
+  if(!trusted)return audio;
   try {
     try { if(navigator.audioSession && navigator.audioSession.type!=='playback') navigator.audioSession.type='playback'; } catch {}
-    if(audio && (audio.state==='closed' || (audioStartError && event?.isTrusted)))resetAudioEngine();
-    if (!audio || audio.state === 'closed') {
+    if(audio && (audio.state==='closed' || audioStartError))resetAudioEngine();
+    if (!audio) {
       const Context = window.AudioContext || window.webkitAudioContext;if(!Context)return null;
       audio=new Context({latencyHint:'interactive'});masterGain=audio.createGain();masterGain.gain.value=soundVolume();masterGain.connect(audio.destination);
       const created=audio;
       created.onstatechange=()=>{if(audio!==created)return;if(created.state==='running'){audioStartError=false;audioNeedsReset=false;syncAudioGain();}else if(created.state==='closed'){audioNeedsReset=true;}};
       const silent=audio.createBufferSource();silent.buffer=audio.createBuffer(1,1,audio.sampleRate);silent.connect(audio.destination);silent.onended=()=>silent.disconnect();silent.start(0);
     }
-    if ((audio.state === 'suspended' || audio.state === 'interrupted') && !audioResumePromise) {
-      const context=audio;
-      audioResumePromise=soundAttempt(context.resume()).then(ok=>{if(audio===context){audioStartError=!ok || context.state!=='running';audioNeedsReset=audioStartError;if(!audioStartError)syncAudioGain();}}).finally(()=>{if(audio===context)audioResumePromise=null;});
+    if (audio.state === 'suspended' || audio.state === 'interrupted') {
+      const context=audio,generation=++audioResumeGeneration;
+      // Retry in each real activation (notably pointerup/click on touch screens).
+      const resumed=soundAttempt(context.resume(),180);
+      audioResumePromise=resumed.then(ok=>{if(audio===context&&generation===audioResumeGeneration){audioStartError=!ok||context.state!=='running';audioNeedsReset=audioStartError;if(!audioStartError)syncAudioGain();}}).finally(()=>{if(audio===context&&generation===audioResumeGeneration)audioResumePromise=null;});
     }
     return audio;
   } catch { audioStartError=true;return null; }
 }
 async function beep(kind = 'tap') {
   if (!soundEnabled || soundVolume()===0 || document.hidden) return;
-  const now = performance.now();
+  const requestedAt=Date.now(),now = performance.now();
   if (kind === 'tap' && now-lastTapSound < 65) return;
   if (kind === 'tap') lastTapSound = now;
   const variant=kind==='tap' ? tapNote++%5 : kind==='cat' ? (Math.max(1,catTaps)-1)%4 : 0;
-  const notes=soundNotes(kind,soundStyle(),variant);
-  const context=unlockAudio();
-  if(!context){if(useMediaSound){return playMediaSound(notes);}audioStartError=true;soundSettingsUI();return;}
+  const notes=soundNotes(kind,soundStyle(),variant),fallbackNotes=['tap','cat'].includes(kind)?soundNotes(kind,soundStyle(),0):notes;
+  const context=unlockAudio(),lifecycle=audioLifecycle;
+  if(!context){if(useMediaSound){return playMediaSound(fallbackNotes);}audioStartError=true;soundSettingsUI();return;}
   // An unresolved WebKit resume must never hold a tap in a one-second queue.
-  if(context.state!=='running' && audioResumePromise && !useMediaSound)await soundAttempt(audioResumePromise,80);
-  if(context.state!=='running' && useMediaSound){return playMediaSound(notes);}
+  if(context.state!=='running' && audioResumePromise)await soundAttempt(audioResumePromise,100);
+  if(Date.now()-requestedAt>180||document.hidden||context!==audio||lifecycle!==audioLifecycle||!soundEnabled||soundVolume()===0)return;
+  if(context.state!=='running' && useMediaSound){return playMediaSound(fallbackNotes);}
   // Drop stale events rather than play them after a delayed resume.
-  if(performance.now()-now>180)return;
+  if(Date.now()-requestedAt>180)return;
   if(context!==audio || context.state!=='running' || !soundEnabled || soundVolume()===0 || document.hidden){if(context.state!=='running'){audioStartError=true;soundSettingsUI();}return;}
   audioStartError=false;syncAudioGain();
   try {
@@ -4188,7 +4211,7 @@ function playWithCat(element = $('mascotPlay')) {
   if(special){burst(element,cyber?['⚡','💜','✨','💥']:['🐾','💛','✨','🌟'],9);if(!reduced)face.animate?.([{transform:'rotate(0deg) scale(1)'},{transform:'rotate(180deg) scale(1.15)',offset:.5},{transform:'rotate(360deg) scale(1)'}],{duration:720,easing:'ease-in-out'});}
 }
 // Unlock sound inside a user gesture on iPhone as well as desktop browsers.
-for(const type of ['pointerdown','keydown'])document.addEventListener(type,unlockAudio,{passive:true,capture:true});
+for(const type of ['pointerup','click','keydown'])document.addEventListener(type,unlockAudio,{passive:true,capture:true});
 document.addEventListener('click',event => {
   const control=event.target.closest('button,summary,a');
   if (!control || control.disabled || control.matches('.neko-question-bubble')) return;
@@ -5074,7 +5097,7 @@ function nekoSaveTutorSession(session){return session===testSession?persistHomew
 function nekoActiveProgress(test){return test?.phase==='review'?`答え合わせ中 · ${Object.keys(test.answers||{}).length}/${test.refs.length}問`:`問題 ${Math.min((test?.index||0)+1,test?.refs?.length||1)}/${test?.refs?.length||0}問`;}
 function nekoConfirmNewTest(mode){const previous=nekoGetActiveTest(mode);if(!previous)return true;const title=mode==='challenge'?'確認チャレンジ':nekoModeTitle(previous);return confirmWithPersona(`途中の${title}があるにゃ。この種類の途中データを新しいテストに置き換えるにゃ？`,`途中の${window.NekoCyberSpeak?.(title)||title}があるぜ。この種類の途中データを新しいテストに置き換えるか？`);}
 let studyHistory=hFresh(),historyLoaded=false,historyQueue=[],historyWrite=Promise.resolve(),historyDatabasePromise=null,historyFallback=false,historyError='',historyUndoSnapshots=new Map();
-function historyDB(){return historyDatabasePromise ||= new Promise((resolve,reject)=>{if(!window.indexedDB){reject(Error('IndexedDB unavailable'));return;}const r=indexedDB.open(historyDatabaseName,1);r.onupgradeneeded=()=>r.result.createObjectStore('state');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+function historyDB(){return historyDatabasePromise ||= new Promise((resolve,reject)=>{if(!window.indexedDB){reject(Error('IndexedDB unavailable'));return;}const r=indexedDB.open(historyDatabaseName,1);r.onupgradeneeded=()=>r.result.createObjectStore('state');r.onsuccess=()=>{const db=r.result;db.onversionchange=()=>{db.close();historyDatabasePromise=null;};db.onclose=()=>{historyDatabasePromise=null;};resolve(db);};r.onerror=()=>{historyDatabasePromise=null;reject(r.error);};});}
 function persistStudyHistory(){
  nekoTestSlots();const snapshot=hClone(studyHistory);
  historyWrite=historyWrite.catch(()=>{}).then(async()=>{
@@ -6106,7 +6129,11 @@ function nekoRenderHub(){
 $('testModeResume').onclick=()=>resumeHomeworkTest(nekoSetupMode);
 
 function nekoSetExplainPrefs(root){const p=nekoPreferences();root.querySelectorAll('[data-neko-pref]').forEach(sel=>{sel.value=p[sel.dataset.nekoPref];sel.onchange=()=>{nekoSavePrefs({[sel.dataset.nekoPref]:sel.value});};});}
-async function nekoAiStatus(){if(!nekoPreferences().enabled)return false;if(nekoAiAvailable!==null)return nekoAiAvailable;if(nekoAiStatusPromise)return nekoAiStatusPromise;nekoAiStatusPromise=(async()=>{try{const r=await fetch('/api/nekopon',{signal:AbortSignal.timeout(8000)});if(!r.ok){if(r.status===404)nekoAiAvailable=false;return false;}const j=await r.json();nekoAiAvailable=j.configured===true;return nekoAiAvailable;}catch{return false;}finally{nekoAiStatusPromise=null;}})();return nekoAiStatusPromise;}
+async function nekoAiStatus(){
+ if(!nekoPreferences().enabled)return false;if(nekoAiAvailable!==null)return nekoAiAvailable;if(nekoAiStatusPromise)return nekoAiStatusPromise;
+ const promise=nekoTimedTask(async (signal,check)=>{const r=await fetch('/api/nekopon',{signal});check();if(!r.ok){if(r.status===404)nekoAiAvailable=false;return false;}const j=await r.json();check();nekoAiAvailable=j.configured===true;return nekoAiAvailable;},8000,'通信を確認して、もう一度試してにゃ。').catch(()=>false);
+ nekoAiStatusPromise=promise;try{return await promise;}finally{if(nekoAiStatusPromise===promise)nekoAiStatusPromise=null;}
+}
 function nekoResponseStamp(key,session=testSession){return JSON.stringify([session?.responses?.[key]||[],!!session?.skipped?.[key],session?.displayContracts?.[key]]);}
 let nekoClientIdentity='';
 function nekoClientId(){
@@ -6123,15 +6150,17 @@ async function nekoAsk(key,action='initial',question=''){
  const {signature,result}=nekoCached(key,action,question);if(result)return result;const pendingKey=session.id+'|'+key+'|'+signature;if(nekoAiPending.has(pendingKey))return nekoAiPending.get(pendingKey);
  const promise=(async()=>{
   if(!await nekoAiStatus())throw Error('今はNekoponの解説を利用できないにゃ。模範解答で確認してにゃ。');
-  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),45000),ref=hSplit(key),stamp=nekoResponseStamp(key,session);
-  try{
+  const ref=hSplit(key),stamp=nekoResponseStamp(key,session);
+  return nekoTimedTask(async (signal,check)=>{try{
    const entry=session.tutor?.[key],initial=nekoCached(key,'initial','',session,preferences,persona).result,history=(entry?.turns||[]).filter(t=>typeof (t.fullExplanation||t.text)==='string').slice(-8).map(t=>({question:t.question||nekoActionLabels[t.action]||'解説',answer:(t.fullExplanation||t.text).slice(0,1800)}));
    if(action!=='initial'&&initial)history.unshift({question:'この問題の最初の解説',answer:[initial.comment,initial.fullExplanation||initial.explanation].filter(Boolean).join('\n\n').slice(0,3000)});
-   const response=await fetch('/api/nekopon',{method:'POST',headers:{'Content-Type':'application/json','x-neko-client':nekoClientId()},body:JSON.stringify({lessonId:ref.lessonId,cardId:ref.cardId,revision:session.dataRevision,contract:session.displayContracts?.[key]||record.contract,response:session.responses?.[key]||[],skipped:!!session.skipped?.[key],imageFailed:!!session.imageFailures?.[key],questionImageVisible:!!session.questionImageShown?.[key],action,question,persona,...preferences,history,recentQuestions:nekoRecentQuestions(persona),askedQuestions:(entry?.turns||[]).filter(t=>nekoTurnCurrent(t,session,key,preferences,persona)).slice(-24).map(t=>t.question)}),signal:controller.signal});
+   const response=await fetch('/api/nekopon',{method:'POST',headers:{'Content-Type':'application/json','x-neko-client':nekoClientId()},body:JSON.stringify({lessonId:ref.lessonId,cardId:ref.cardId,revision:session.dataRevision,contract:session.displayContracts?.[key]||record.contract,response:session.responses?.[key]||[],skipped:!!session.skipped?.[key],imageFailed:!!session.imageFailures?.[key],questionImageVisible:!!session.questionImageShown?.[key],action,question,persona,...preferences,history,recentQuestions:nekoRecentQuestions(persona),askedQuestions:(entry?.turns||[]).filter(t=>nekoTurnCurrent(t,session,key,preferences,persona)).slice(-24).map(t=>t.question)}),signal});
    let value;try{value=await response.json();}catch{throw Error('解説を受け取れなかったにゃ。もう一度試してにゃ。');}
+   check();
    if(!response.ok){if(value.code==='not_configured')nekoAiAvailable=false;throw Error(value.message||'今は解説を受け取れないにゃ。少し待って試してにゃ。');}
    if(!value||typeof value.explanation!=='string'||typeof value.comment!=='string')throw Error('解説を確認できなかったにゃ。');
    if(value.formatVersion!==nekoTutorFormat)throw Error('解説機能の更新がまだそろっていないにゃ。少し待って開き直してにゃ。');
+   if(signal.aborted)throw Error('解説に時間がかかっているにゃ。もう一度試してにゃ。');
    nekoRememberQuestions(persona,value);
    const target=nekoSessionForId(session.id);if(!target||nekoResponseStamp(key,target)!==stamp)return value;
    target.tutor ||= {};const item=target.tutor[key] ||= {cache:{},turns:[]};item.cache ||= {};item.turns ||= [];item.cache[signature]=value;
@@ -6139,8 +6168,8 @@ async function nekoAsk(key,action='initial',question=''){
    if(action!=='initial'){item.turns.push({action,question:question||nekoActionLabels[action],text:value.explanation,fullExplanation:value.fullExplanation||'',signature,suggestions:value.suggestions||[],keywords:value.keywords||[],glossary:value.glossary||[],formatVersion:nekoTutorFormat,responseStamp:stamp,persona,taste:preferences.taste,amount:preferences.amount,at:Date.now()});/* Keep every saved turn visible in the scrollable conversation. */}else item.initial=value;
    const j=target.judgements?.[key];if(!target.finishedAt&&j?.source==='pending'&&!target.imageFailures?.[key]&&value.confidence>=0.92&&['pass','retry'].includes(value.outcome)){target.judgements[key]={outcome:value.outcome,source:'ai',reason:value.reason||'Nekoponが解答の意味を確認',at:Date.now()};target.answers[key]=value.outcome;}
    if(action!=='initial')nekoMergeQuestionHistory(target,key);nekoSaveTutorSession(target);return value;
-  }catch(e){throw Error(e.name==='AbortError'?'解説に時間がかかっているにゃ。もう一度試してにゃ。':e.message);}finally{clearTimeout(timer);}
- })();nekoAiPending.set(pendingKey,promise);try{return await promise;}finally{nekoAiPending.delete(pendingKey);}
+  }catch(e){throw Error(e.name==='AbortError'?'解説に時間がかかっているにゃ。もう一度試してにゃ。':e.message);}},45000,'解説に時間がかかっているにゃ。もう一度試してにゃ。');
+ })();nekoAiPending.set(pendingKey,promise);try{return await promise;}finally{if(nekoAiPending.get(pendingKey)===promise)nekoAiPending.delete(pendingKey);}
 }
 function nekoBasicComment(key){const speak=t=>document.documentElement.dataset.persona==='cyber'?(window.NekoCyberSpeak?.(t)||t):t;const j=testSession.judgements?.[key],outcome=testSession.answers?.[key];return speak(outcome==='pass'?'正解にゃ。理由や似た言葉もつなげてみよう。':outcome==='retry'?'ここで確かめれば大丈夫にゃ。模範解答と見比べて、次の一問につなげよう。':j?.reason||'言い換えや記述は、模範解答と照らし合わせて確認するにゃ。');}
 function nekoTutorPanel(key,{open=false,readonly=false}={}){
@@ -6182,11 +6211,11 @@ async function nekoAskWord(key,word,excerpt){
  const session=testSession,record=assessmentByKey(key),preferences={...nekoPreferences()},persona=document.documentElement.dataset.persona||'neko';if(!session||!record||!preferences.enabled)throw Error('新しく聞くときは、設定でNekoponの解説をオンにしてにゃ。');
  const signature=nekoWordSignature(key,word,excerpt),cached=session.tutor?.[key]?.wordCache?.[signature];if(cached)return cached;
  const pendingKey=session.id+'|'+key+'|'+signature;if(nekoWordPending.has(pendingKey))return nekoWordPending.get(pendingKey);
- const promise=(async()=>{if(!await nekoAiStatus())throw Error('今は新しい補足を利用できないにゃ。保存した意味はそのまま読めるにゃ。');const ref=hSplit(key),controller=new AbortController(),timer=setTimeout(()=>controller.abort(),45000);
-  try{const response=await fetch('/api/nekopon',{method:'POST',headers:{'Content-Type':'application/json','x-neko-client':nekoClientId()},body:JSON.stringify({operation:'word',lessonId:ref.lessonId,cardId:ref.cardId,revision:session.dataRevision,contract:session.displayContracts?.[key]||record.contract,word,excerpt,persona,taste:preferences.taste}),signal:controller.signal});let value;try{value=await response.json();}catch{throw Error('補足を受け取れなかったにゃ。もう一度試してにゃ。');}if(!response.ok)throw Error(value.message||'今は補足を受け取れないにゃ。');if(!value||typeof value.meaning!=='string'||!value.meaning.trim()||typeof value.example!=='string'||typeof value.connection!=='string')throw Error('ことばの説明を確認できなかったにゃ。');if(value.formatVersion!==nekoTutorFormat)throw Error('解説機能の更新がまだそろっていないにゃ。少し待って開き直してにゃ。');
+ const promise=(async()=>{if(!await nekoAiStatus())throw Error('今は新しい補足を利用できないにゃ。保存した意味はそのまま読めるにゃ。');const ref=hSplit(key);
+  return nekoTimedTask(async (signal,check)=>{try{const response=await fetch('/api/nekopon',{method:'POST',headers:{'Content-Type':'application/json','x-neko-client':nekoClientId()},body:JSON.stringify({operation:'word',lessonId:ref.lessonId,cardId:ref.cardId,revision:session.dataRevision,contract:session.displayContracts?.[key]||record.contract,word,excerpt,persona,taste:preferences.taste}),signal});let value;try{value=await response.json();}catch{throw Error('補足を受け取れなかったにゃ。もう一度試してにゃ。');}check();if(!response.ok)throw Error(value.message||'今は補足を受け取れないにゃ。');if(!value||typeof value.meaning!=='string'||!value.meaning.trim()||typeof value.example!=='string'||typeof value.connection!=='string')throw Error('ことばの説明を確認できなかったにゃ。');if(value.formatVersion!==nekoTutorFormat)throw Error('解説機能の更新がまだそろっていないにゃ。少し待って開き直してにゃ。');
    const target=nekoSessionForId(session.id);if(target){target.tutor ||= {};const item=target.tutor[key] ||= {cache:{},turns:[]};item.wordCache ||= {};item.wordCache[signature]=value;for(const old of Object.keys(item.wordCache).slice(0,-12))delete item.wordCache[old];nekoSaveTutorSession(target);}return value;
-  }catch(error){throw Error(error.name==='AbortError'?'補足に時間がかかっているにゃ。保存した意味を読みながら、あとで試してにゃ。':error.message);}finally{clearTimeout(timer);}
- })();nekoWordPending.set(pendingKey,promise);try{return await promise;}finally{nekoWordPending.delete(pendingKey);}
+  }catch(error){throw Error(error.name==='AbortError'?'補足に時間がかかっているにゃ。保存した意味を読みながら、あとで試してにゃ。':error.message);}},45000,'補足に時間がかかっているにゃ。もう一度試してにゃ。');
+ })();nekoWordPending.set(pendingKey,promise);try{return await promise;}finally{if(nekoWordPending.get(pendingKey)===promise)nekoWordPending.delete(pendingKey);}
 }
 function nekoPaintWord(value){$('nekoWordMeaning').textContent=readableTutorText(value.meaning);$('nekoWordExample').textContent=readableTutorText(value.example||'');$('nekoWordExampleBlock').hidden=!value.example;$('nekoWordConnection').textContent=readableTutorText(value.connection||'');$('nekoWordConnectionBlock').hidden=!value.connection;}
 function nekoOpenWord(key,word,text){
@@ -6261,26 +6290,27 @@ function nekoRenderTutor(root,key,readonly=false){
  function scrollLatest(){chatScroll.classList.remove('neko-history-scroll');latestOnShow=true;for(const label of conversation.querySelectorAll('.neko-chat-date time')){const info=nekoChatDateInfo(label.dateTime);if(info)label.textContent=info.label;}requestAnimationFrame(()=>requestAnimationFrame(()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken||!chatScroll.clientHeight)return;chatScroll.scrollTop=chatScroll.scrollHeight;latestOnShow=false;}));}
  root.nekoScrollLatest=scrollLatest;
  if(typeof ResizeObserver==='function'){const observer=new ResizeObserver(()=>{if(!root.isConnected){observer.disconnect();return;}if(latestOnShow&&chatScroll.clientHeight)scrollLatest();});observer.observe(chatScroll);}
- let questionRevealTimer;
+ let questionRevealTimer,questionRevealDeadline=0,revealQuestions=null;
  function paintBubbles(value,delay=0){
-  clearTimeout(questionRevealTimer);bubbles.replaceChildren();bubbleHint.hidden=true;
+  clearTimeout(questionRevealTimer);questionRevealDeadline=delay?Date.now()+delay:0;bubbles.replaceChildren();bubbleHint.hidden=true;
   const currentTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));
   const suggestions=nekoQuestionCandidates(value,testSession?.tutor?.[key],currentTurns,key);
   bubbles.hidden=!suggestions.length;bubbles.style.visibility=delay?'hidden':'';bubbles.inert=!!delay;
   for(const s of suggestions){const button=collectionButton('','neko-question-bubble',()=>run(s.action,s.question,button));const label=collectionNode('span',nekoQuestionVoice(s.question),'neko-question-label'),send=collectionNode('span',undefined,'neko-send-indicator');send.setAttribute('aria-hidden','true');send.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 20 4l-6.5 17-3.2-7.3L3 11.5Z M10.3 13.7 20 4"/></svg>';button.append(label,send);button.setAttribute('aria-label',s.question+' を送信');bubbles.append(button);}
-  if(delay&&suggestions.length)questionRevealTimer=setTimeout(()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken)return;bubbles.style.visibility='';bubbles.inert=false;if(latestOnShow)scrollLatest();for(const [i,button]of [...bubbles.children].entries())nekoChatAnimate(button,i*60);},delay);
+  revealQuestions=()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken)return;clearTimeout(questionRevealTimer);questionRevealDeadline=0;bubbles.style.visibility='';bubbles.inert=false;if(latestOnShow)scrollLatest();for(const [i,button]of [...bubbles.children].entries())nekoChatAnimate(button,i*60);};
+  if(delay&&suggestions.length)questionRevealTimer=setTimeout(revealQuestions,delay);
  }
  function paint(value,suggestions=value,animate=false,action='initial'){const savedScroll=typeof chatScroll!=='undefined'?chatScroll.scrollTop:0;const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');paintBubbles(suggestions,(animate||action!=='initial')?1000:0);const connectionTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));nekoRenderConnections(related,key,nekoConnectionWords(suggestions,value,...[...connectionTurns].reverse()));if(typeof syncTabs==='function')syncTabs();if(typeof chatScroll!=='undefined')chatScroll.scrollTop=savedScroll;}
- let busy=false;async function run(action,question='',selected=null){if(busy)return;clearTimeout(questionRevealTimer);const animateNew=!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.style.visibility='hidden';bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);const today=nekoChatDateInfo(Date.now());let day=conversation.lastElementChild;if(!day||day.dataset.chatDay!==today.key||Date.now()-Number(day.dataset.lastAt||0)>=30*60*1000){day=nekoChatDay(today);conversation.append(day);}day.append(pending);beep('chatSend');nekoChatAnimate(sent);if(selected)bubbles.style.visibility='hidden';requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{if(action==='initial')await (figure?.nekoReady||Promise.resolve());else await new Promise(resolve=>setTimeout(resolve,0));if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
+ root.nekoRecoverInteraction=()=>{if(questionRevealDeadline&&Date.now()>=questionRevealDeadline)revealQuestions?.();};
+ let busy=false;async function run(action,question='',selected=null){if(busy)return;clearTimeout(questionRevealTimer);questionRevealDeadline=0;const animateNew=!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.style.visibility='hidden';bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);const today=nekoChatDateInfo(Date.now());let day=conversation.lastElementChild;if(!day||day.dataset.chatDay!==today.key||Date.now()-Number(day.dataset.lastAt||0)>=30*60*1000){day=nekoChatDay(today);conversation.append(day);}day.append(pending);beep('chatSend');nekoChatAnimate(sent);if(selected)bubbles.style.visibility='hidden';requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{if(action==='initial')await nekoTimedTask(()=>figure?.nekoReady||Promise.resolve(),7000,'画像を確認できなかったにゃ。もう一度試してにゃ。');else await new Promise(resolve=>setTimeout(resolve,0));if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
+ if(action!=='initial'||animateNew)beep('chatReceive');
  if(action==='initial'){paint(value,value,animateNew,action);scrollLatest();}else paint(nekoCached(key,'initial').result,value,animateNew,action);
- if(action==='initial'&&animateNew)beep('chatReceive');
  if(action!=='initial'){
-  beep('chatReceive');
   if(follow)requestAnimationFrame(()=>{const row=[...conversation.querySelectorAll('.neko-conversation-turn')].at(-1);if(row)chatScroll.scrollTo({top:Math.max(0,row.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'});});
  }
  status.textContent='';status.hidden=true;
   if(!readonly&&testSession?.kind==='practice'&&typedRenderingKey===key){const verdict=$('typedPracticeFeedback').querySelector('.neko-practice-verdict'),outcome=testSession.answers[key];if(verdict){verdict.textContent=outcome==='pass'?'○ 正解':outcome==='retry'?'× 不正解':'要確認';verdict.dataset.outcome=outcome||'pending';}}
- }catch(e){if(root.isConnected){waiting.textContent=e.message;waiting.dataset.thinking='';waiting.hidden=false;if(selected){bubbles.hidden=false;bubbles.style.visibility='';bubbles.inert=false;}}}finally{busy=false;status.dataset.thinking='';root.removeAttribute('aria-busy');bubbles.querySelectorAll('button').forEach(b=>b.disabled=false);}}
+ }catch(e){if(root.isConnected&&root.nekoRenderToken===renderToken){waiting.textContent=e.message;waiting.dataset.thinking='';waiting.hidden=false;bubbles.style.visibility='';bubbles.inert=false;if(selected)bubbles.hidden=false;if(action==='initial'){const retry=collectionButton('もう一度読み込む','tool',()=>run('initial'));waiting.append(retry);}}}finally{busy=false;if(root.nekoRenderToken===renderToken){status.dataset.thinking='';root.removeAttribute('aria-busy');bubbles.querySelectorAll('button').forEach(b=>b.disabled=false);}}}
  const initial=nekoCached(key,'initial').result;paint(initial);scrollLatest();if(nekoPreferences().enabled){if(!initial)run('initial');}else {status.hidden=false;status.textContent='Nekoponの解説はオフにしているにゃ。設定で変更できるにゃ。';}
 }
 window.NekoRefreshTutorPersona=()=>{for(const body of document.querySelectorAll('.neko-tutor-body[data-tutor-key]')){if(assessmentByKey(body.dataset.tutorKey))nekoRenderTutor(body,body.dataset.tutorKey,body.dataset.tutorReadonly==='true');}};
@@ -6476,7 +6506,7 @@ $('autoMode').checked = !!data.neko.auto; $('autoMode').onchange = () => { pause
 for (const face of ['question','answer']) { $(face+'Seconds').value = seconds(face); $(face+'Seconds').onchange = e => { pause(); const n = Number(e.target.value); data.neko[face+'Seconds'] = Number.isFinite(n) ? Math.round(Math.min(120,Math.max(.5,n))*10)/10 : (face==='question'?3:2); e.target.value = data.neko[face+'Seconds']; save(); resetTimer(); }; }
 $('playButton').onclick = () => { if (playing) pause(); else { playing = true; resetTimer(); } };
 for (const b of document.querySelectorAll('[data-close]')) b.onclick = () => $(b.dataset.close).close();
-document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause();resetAudioEngine(); } else { stats(); restoreAudio(); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',()=>{resetAudioEngine();save();});
+document.addEventListener('visibilitychange',() => { if (document.hidden) { pause(); imageLoader.pause();cancelNavAnimation();suspendAppAudio(); } else { stats(); restoreAudio(); if (screen==='study' && lesson) render(); } }); window.addEventListener('pagehide',()=>{cancelNavAnimation();suspendAppAudio();save();});
 window.addEventListener('pageshow',restoreAudio);
 window.addEventListener('focus',restoreAudio);
 document.addEventListener('keydown',e => {
@@ -6485,17 +6515,27 @@ document.addEventListener('keydown',e => {
 });
 // Follow the finger, lock the direction, and preserve vertical page scrolling.
 function snapCard() { const el = $('card'); el.style.transition = reduced ? 'none' : 'transform .24s ease, opacity .24s ease'; el.style.transform = ''; el.style.opacity = ''; }
+let navAnimationEpoch=0,navAnimationTimer=null,navAnimationFrame=null,navAnimationFinish=null;
+function cancelNavAnimation(){
+  navAnimationEpoch++;clearTimeout(navAnimationTimer);clearTimeout(navAnimationFinish);cancelAnimationFrame(navAnimationFrame);
+  navAnimationTimer=navAnimationFrame=navAnimationFinish=null;navBusy=false;snapCard();
+}
 function animateNav(direction) {
   if (!lesson || state.loading || state.finished || navBusy || deck().length < 2) { snapCard(); return; }
-  beep('move'); pause(); navBusy = true; const el = $('card');
-  if (reduced) { navigate(direction); snapCard(); navBusy = false; return; }
+  beep('move'); pause(); navBusy = true; const el = $('card'),epoch=++navAnimationEpoch;
+  if (reduced) { try{navigate(direction);}finally{cancelNavAnimation();}return; }
   const distance = Math.min(180, el.offsetWidth*.45 || 140);
   el.style.transition = 'transform .14s ease-in, opacity .14s ease-in'; el.style.transform = `translateX(${-direction*distance}px) rotate(${-direction*4}deg)`; el.style.opacity = '0';
-  setTimeout(() => {
-    navigate(direction); el.style.transition = 'none'; el.style.transform = `translateX(${direction*36}px)`; el.style.opacity = '0';
-    requestAnimationFrame(() => requestAnimationFrame(() => { snapCard(); navBusy = false; }));
+  navAnimationTimer=setTimeout(() => {
+    if(epoch!==navAnimationEpoch||document.hidden)return;
+    try{
+      navigate(direction);el.style.transition='none';el.style.transform=`translateX(${direction*36}px)`;el.style.opacity='0';
+      navAnimationFrame=requestAnimationFrame(()=>{if(epoch!==navAnimationEpoch)return;navAnimationFrame=requestAnimationFrame(()=>{if(epoch===navAnimationEpoch)cancelNavAnimation();});});
+      navAnimationFinish=setTimeout(()=>{if(epoch===navAnimationEpoch)cancelNavAnimation();},300);
+    }catch(e){cancelNavAnimation();throw e;}
   },140);
 }
+window.addEventListener('pageshow',()=>{cancelNavAnimation();});
 function updateStudyActions(isReady, failed=false) {
   const answer = state.flipped;
   $('revealButton').hidden = answer && !failed;
@@ -7167,8 +7207,8 @@ $('importForm').onsubmit=async e=>{
   const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${w+12}" height="${h}" viewBox="0 0 ${w+12} ${h}"><path ${transform} d="${shapePath(w,h)}" fill="${fill}" stroke="${line}" stroke-width="1" stroke-linejoin="round"/></svg>`;
   el.style.setProperty('--chat-bubble-shape',`url("data:image/svg+xml,${encodeURIComponent(svg)}")`);
  }
- const observed=new WeakSet(),resizer=typeof ResizeObserver==='function'?new ResizeObserver(entries=>entries.forEach(e=>paint(e.target))):null;
- let pending=false;function scan(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;for(const el of document.querySelectorAll(selector)){paint(el);if(!observed.has(el)){observed.add(el);resizer?.observe(el);}}});}
+ const observed=new Set(),resizer=typeof ResizeObserver==='function'?new ResizeObserver(entries=>entries.forEach(e=>paint(e.target))):null;
+ let pending=false;function scan(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;for(const el of observed){if(!el.isConnected){resizer?.unobserve(el);observed.delete(el);}}for(const el of document.querySelectorAll(selector)){paint(el);if(!observed.has(el)){observed.add(el);resizer?.observe(el);}}});}
  const app=document.getElementById('app');if(app)new MutationObserver(scan).observe(app,{childList:true,subtree:true});
  new MutationObserver(scan).observe(document.documentElement,{attributes:true,attributeFilter:['data-persona']});
  window.addEventListener('resize',scan,{passive:true});scan();
@@ -7176,7 +7216,7 @@ $('importForm').onsubmit=async e=>{
 </script>
 <script id="chat-reopen-latest-20261027">
 (()=>{
- const restore=()=>{if(document.hidden)return;for(const root of document.querySelectorAll('.neko-tutor-body[data-tutor-key]'))root.nekoScrollLatest?.();};
+ const restore=()=>{if(document.hidden)return;for(const root of document.querySelectorAll('.neko-tutor-body[data-tutor-key]')){root.nekoRecoverInteraction?.();root.nekoScrollLatest?.();}};
  window.addEventListener('pageshow',restore);
  document.addEventListener('visibilitychange',restore);
 })();

@@ -3161,12 +3161,11 @@ html[data-persona=cyber] body #app #testScreen .neko-chat-date time{background:r
 /* Labels travel with the conversation toward the latest messages. */
 html[data-persona] body #app #testScreen .neko-chat-scroll .neko-chat-date{position:relative;top:auto}
 html[data-persona] body #app #testScreen .neko-chat-scroll.neko-history-scroll .neko-chat-date{position:sticky;top:3px}
-/* Retain the fixed controls, exposing the existing cyber background. */
-html[data-persona=cyber] body #app #appHeader,
-html[data-persona=cyber] body #app #appHeader.is-scrolled{background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-html[data-persona=cyber] body #app #appHeader::before,
-html[data-persona=cyber] body #app #appHeader::after{content:none!important;display:none!important}
-html[data-persona=cyber] body #app #appHeader #appNavigation{background:transparent!important}
+/* A translucent header surface, retaining the original sticky controls. */
+html[data-persona=cyber] body #app #appHeader.is-scrolled::before{background:rgba(5,5,16,.80)!important;opacity:1!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+/* Let the original letters and bubble colours show through the time chip. */
+html[data-persona] body #app #testScreen .neko-chat-date time{background:rgba(114,83,57,.25)!important;opacity:.78;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html[data-persona=cyber] body #app #testScreen .neko-chat-date time{background:rgba(77,111,137,.28)!important}
 </style>
 </head>
 <body><main id="app" class="app">

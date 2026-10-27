@@ -6358,7 +6358,7 @@ function nekoRenderExplanation(node,text,glossary,key,animate=false){
   }else if(animate)nekoChatAnimate(row);
  }
  if(animate&&parts.length>1){
-  waiting=collectionNode('div',undefined,'neko-bubble-wait');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','返信を準備しています');nekoShowThinking(waiting,'返信を準備しています');parts.length&&node.children[0].after(waiting);
+  waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-bubble-wait');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','返信を準備しています');nekoShowThinking(waiting,'返信を準備しています');parts.length&&node.children[0].after(waiting);
  }
 }
 // Conversation turns are shared by question across test sessions on this device.
@@ -7324,6 +7324,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

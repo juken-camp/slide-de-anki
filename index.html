@@ -3186,6 +3186,19 @@ html[data-persona] body #app #testScreen .neko-practice-footer{border-top:0!impo
 html[data-persona=cyber] #newsStudyExplanation{background:#0e1830;color:#d8efff;border-color:#39738c}
 </style>
 
+<style id="news-date-design">
+#app #catalogScreen .news-date-panel{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 26px;padding:14px 16px;border:1px solid #e3cbb4;border-radius:16px;background:#fffaf3;box-sizing:border-box}
+#app #catalogScreen .news-date-current{display:flex;align-items:baseline;gap:10px;min-width:0;color:#774b31}
+#app #catalogScreen .news-date-heading{font-size:15px;line-height:1.5}
+#app #catalogScreen .news-date-count{font-size:12px;color:#a37556;white-space:nowrap}
+#app #catalogScreen .news-date-select-wrap{display:flex;align-items:center;gap:8px;min-width:0;font-size:12px;color:#8c6245}
+#app #catalogScreen .news-date-select-wrap select{max-width:100%;min-height:42px;padding:7px 30px 7px 12px;border:1.5px solid #d6b491;border-radius:12px;background:#fffdf8;color:#754b2f;font-size:16px}
+html[data-persona=cyber] #app #catalogScreen .news-date-panel{background:#0f1933;border-color:#315b81}
+html[data-persona=cyber] #app #catalogScreen .news-date-current,html[data-persona=cyber] #app #catalogScreen .news-date-label{color:#c9eaff}
+html[data-persona=cyber] #app #catalogScreen .news-date-count{color:#9bbad6}
+html[data-persona=cyber] #app #catalogScreen .news-date-select-wrap select{background:#0a1830;color:#d7f4ff;border-color:#397190}
+@media(max-width:370px){#app #catalogScreen .news-date-panel{gap:8px;padding:12px}#app #catalogScreen .news-date-select-wrap{width:100%;justify-content:space-between}}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -4429,6 +4442,7 @@ window.addEventListener('resize',scheduleSeriesEdges,{passive:true});
 function renderCatalog() {
   if(!catalogIsCollections) normalizeCatalogScope();
   syncCollectionCatalog();
+  $('visibleCount').hidden=!!(newsDemoMode&&!catalogIsCollections);
   const focusedLesson = document.activeElement?.dataset?.lesson;
   const focusedFilter = document.activeElement?.parentElement?.id === 'catalogFilters' ? document.activeElement.textContent : null;
   const focusedSeries = document.activeElement?.closest('[data-series]')?.dataset.series;
@@ -5720,8 +5734,16 @@ function newsDateLabel(date=new Date()){
 }
 function renderNewsDemo(){
  for(const id of ['browseSwitch','socialSwitch','catalogFilters','seriesScroller','quickReview','questionSearchSelection','catalogMilestones','selectVisible','catalogEmpty'])$(id).hidden=true;
- $('questionSearchStatus').hidden=true;const showing=newsSelectedDate||newsToday();$('visibleCount').textContent=newsDateLabel(new Date(showing+'T03:00:00Z')).replace('今日の7問',showing===newsToday()?(newsLoadedDate&&newsDemoTopics.length?'今日の'+newsDemoTopics.length+'問':'今日のニュース'):(newsDemoTopics.length?newsDemoTopics.length+'問':'ニュース'));
+ $('questionSearchStatus').hidden=true;const showing=newsSelectedDate||newsToday();
+ $('catalogTitle').textContent=showing===newsToday()?'今日のニュース':'ニュース';
  const groups=$('catalogGroups');groups.replaceChildren();
+ const header=collectionNode('div',undefined,'news-date-panel'),left=collectionNode('div',undefined,'news-date-current');
+ const formatted=newsDateLabel(new Date(showing+'T03:00:00Z')).replace(/\s*今日の7問$/,'');
+ left.append(collectionNode('strong',formatted,'news-date-heading'));
+ if(newsLoadedDate===showing&&newsDemoTopics.length)left.append(collectionNode('span',newsDemoTopics.length+'問','news-date-count'));
+ header.append(left);
+ if(newsDates?.length){const chooser=collectionNode('label',undefined,'news-date-select-wrap');chooser.append(collectionNode('span','日付を選ぶ','news-date-label'));const select=document.createElement('select');select.setAttribute('aria-label','ニュースの日付');const dates=[newsToday(),...newsDates.filter(d=>d!==newsToday())];for(const date of dates){const dateText=newsDateLabel(new Date(date+'T03:00:00Z')).replace(/\s*今日の7問$/,'');const o=collectionNode('option',date===newsToday()?'今日 '+dateText:dateText);o.value=date;o.selected=date===showing;select.append(o);}select.onchange=()=>{newsSelectedDate=select.value;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(select.value);};chooser.append(select);header.append(chooser);}
+ groups.append(header);
 
  if(!assessmentDataset){
   const status=collectionNode('p',assessmentError||'問題を準備しています…','news-demo-notice');groups.append(status);
@@ -5730,7 +5752,6 @@ function renderNewsDemo(){
   return;
  }
  if(!newsLoadedDate){groups.append(collectionNode('p','ニュースを準備しています…','news-demo-notice'));newsLoad(newsSelectedDate||null);return;}
- if(newsDates?.length){const chooser=collectionNode('label','日付を選ぶ　','news-demo-notice');const select=document.createElement('select');select.setAttribute('aria-label','ニュースの日付');const dates=[newsToday(),...newsDates.filter(d=>d!==newsToday())];for(const date of dates){const o=collectionNode('option',date===newsToday()?'今日':date.replaceAll('-','/'));o.value=date;o.selected=date===showing;select.append(o);}select.onchange=()=>{newsSelectedDate=select.value;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(select.value);};chooser.append(select);groups.append(chooser);}
  if(newsError||!newsDemoTopics.length){groups.append(collectionNode('p',newsError||'この日のニュースはまだありません。','news-demo-notice'));const retry=collectionButton('更新を確認','link-button',()=>{newsLoadedDate=null;newsLoad(showing,true);renderCatalog();});groups.append(retry);return;}
  for(const topic of newsDemoTopics){
   const found=newsDemoFind(topic),entry=collectionNode('section',undefined,'news-demo-entry');
@@ -7343,6 +7364,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

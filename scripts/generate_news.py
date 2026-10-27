@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Daily news generator. The repository's existing assessment and catalog are inputs."""
-import argparse, datetime as dt, email.utils, hashlib, json, os, re, sys, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+import argparse, time, urllib.error, datetime as dt, email.utils, hashlib, json, os, re, sys, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 from pathlib import Path
 JST=dt.timezone(dt.timedelta(hours=9)); ROOT=Path(__file__).resolve().parents[1]
 FIELDS={'geography':'地理','history':'歴史','civics':'公民','physics':'物理','chemistry':'化学','biology':'生物','earth':'地学'}
@@ -8,9 +8,20 @@ FEEDS=['https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja']+['https://news.goog
 
 def get(url):
  req=urllib.request.Request(url,headers={'User-Agent':'NekoponNews/1.0','Accept':'application/rss+xml, application/xml'})
- with urllib.request.urlopen(req,timeout=18) as r:
-  if r.status!=200: raise ValueError('feed request failed')
-  return r.read(3_000_000)
+ for attempt in range(3):
+  try:
+   with urllib.request.urlopen(req,timeout=18) as r:
+    if r.status!=200:raise ValueError('feed request failed')
+    return r.read(3_000_000)
+  except urllib.error.HTTPError as e:
+   print('feed HTTP:',e.code,urllib.parse.urlparse(url).hostname,file=sys.stderr)
+   if attempt==2 or e.code not in (429,500,502,503,504):raise
+   try:delay=min(20,max(3,int(e.headers.get('Retry-After','3'))))
+   except (ValueError,TypeError):delay=3
+   time.sleep(delay)
+  except (urllib.error.URLError,TimeoutError):
+   if attempt==2:raise
+   time.sleep(3)
 
 def collect(feeds,source_date,days=30):
  seen=set();items=[]
@@ -112,7 +123,20 @@ def main():
   queries=['沖縄','政治 経済','世界 地理','歴史 文化','科学 物理','化学 環境','生物 自然','気象 宇宙']
   begin=source-dt.timedelta(days=1);end=source+dt.timedelta(days=1)
   feeds=['https://news.google.com/rss/search?q='+urllib.parse.quote(q+' after:'+begin.isoformat()+' before:'+end.isoformat())+'&hl=ja&gl=JP&ceid=JP:ja' for q in queries]
- items=collect(feeds,source,days=1 if args.date else 30)
+ cached=[];source_path=ROOT/'news'/'sources'/(source.isoformat()+'.json')
+ if source_path.exists():
+  payload=json.loads(source_path.read_text())
+  if payload.get('version')==1 and payload.get('sourceDate')==source.isoformat():
+   for row in payload.get('items',[]):
+    try:
+     date=email.utils.parsedate_to_datetime(row['publishedAt']).astimezone(JST).date()
+     if date==source and row.get('headline') and str(row.get('url','')).startswith('https://'):cached.append(row)
+    except (ValueError,TypeError,KeyError,OverflowError):continue
+ if args.date and cached:
+  items=cached;print('保存済みの実記事を使用:',source,len(items),'件')
+ else:
+  items=collect(feeds,source,days=1 if args.date else 30)
+  if not items and cached:items=cached;print('取得障害のため保存済みの実記事を使用:',source,len(items),'件')
  if not items:raise ValueError('指定した期間の記事を取得できませんでした')
  catalog,data=read_inputs();result=generate(items,catalog,data,source,edition_date=edition);result['temporalRules']=1
  # Retry only missing fields; prefer recent reports but widen to thirty days.

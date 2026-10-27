@@ -1,28 +1,22 @@
-過去７日分のニュース追加・検索
+今回の修正版
 
-このZIPの３ファイルを、GitHub juken-camp/slide-de-anki の次の場所へ配置してください。
+1. scripts/generate_news.py を GitHub の scripts/generate_news.py に置換。
+2. news/sources/ 内の７つのJSONを GitHubの news/sources/ に追加。
+   news フォルダーをリポジトリ直下にアップロードすれば、sources配下の７ファイルを追加できます。
+3. news_backfill.yml を GitHub の .github/workflows/news_backfill.yml に追加。
+   .github/workflows/ を開き、Add file → Upload files で追加してください。
+4. Actions →「過去７日分のニュースを追加」→ Run workflow。
+   今回は「今日のニュース」を実行する必要はありません。
 
-ZIP内                         GitHubの配置先
-index.html                    index.html
-scripts/generate_news.py      scripts/generate_news.py
-news_backfill.yml             .github/workflows/news_backfill.yml
+Googleニュースから実際に取得した公開日時付き見出し272件を同梱しています。
+2026-10-20:30件 / 21:44件 / 22:47件 / 23:35件 / 24:29件 / 25:32件 / 26:55件。
+解説生成は、設定済みANTHROPIC_API_KEYを使い、Actionsで実行します。
+追加キーは不要です。API利用料は発生します。
+過去７日分はこの保存済み見出しを使うため、Googleニュースへの再アクセスは不要です。
+見つからない分野を架空の記事で補いません。毎日必ず７件になるとは限りません。
+既にある日付のニュースは保持します。
+index.html は前回の７日分追加パックのものをそのまま使用してください。
 
-news_backfill.yml はリポジトリ直下には置かないでください。
-GitHubで .github/workflows/ を開き、Add file → Upload files から配置できます。
-
-配置後：Actions →「過去７日分のニュースを追加」→ Run workflow → Run workflow。
-既存の ANTHROPIC_API_KEY を使用します。追加キーは不要です。API利用料は発生します。
-対象は2026年10月20日〜26日の７日分。各日の公開日時を確認して取得します。
-本日（10月27日）のニュースは上書きしません。保存済みの日は再生成しません。
-見つからない分野を架空のニュースで補う処理はありません。そのため各日７件とは限りません。
-一部の日が失敗しても残りの日は実行します。再実行では既存分を保持します。
-
-使い方：ニュース →「過去のニュース」。分野の選択と上部の検索欄で探せます。
-検索対象：ニュース見出し・本文・解説・関連する問題文と解答・教材名。
-過去一覧は見出しを押すと展開します。同じ記事・分野・問題の組み合わせは１件にまとめます。
-「今日・日付別」はこれまでと同じ表示です。
-学習記録やチャットの保存データを変更する処理は追加していません。
-
-確認済み：構文、日付指定、保存済みファイルの保持、履歴一覧保存、分野・キーワード検索、重複整理。
-未確認：実際のAPI生成結果、Google Newsの当該７日分の取得件数、スマホでの表示。
-このZIPには生成済みの記事は含まれません。記事はActions実行時に生成されます。
+今回の確認：全７日分の取得、各記事の公開日、保存済み見出しから生成する処理（APIを模擬）、Python構文。
+未確認：実際のAI解説生成・GitHub Actionsの完了・スマホ表示。
+ニュースの生成結果は実行後に確認が必要です。

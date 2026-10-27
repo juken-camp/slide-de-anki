@@ -6332,9 +6332,20 @@ function nekoRenderExplanation(node,text,glossary,key,animate=false){
  if(!text)return;
  const parts=nekoPreferences().amount==='short'?[text]:nekoBubbleParts(text);
  node.classList.add('neko-multi-bubbles');
+ const timers=[];
+ node.nekoBubbleCancel=()=>{for(const timer of timers)clearTimeout(timer);};
  for(const [i,part] of parts.entries()){
   const row=collectionNode('div',undefined,'neko-explanation-bubble user-content');nekoRenderGlossaryText(row,part,glossary,key);node.append(row);
-  if(animate)nekoChatAnimate(row,Math.min(i*90,360));
+  if(animate&&i){
+   row.hidden=true;
+   timers.push(setTimeout(()=>{
+    if(!node.isConnected||!row.isConnected)return;
+    const scroll=node.closest('.neko-chat-scroll');
+    const follow=scroll&&scroll.scrollHeight-scroll.scrollTop-scroll.clientHeight<100;
+    row.hidden=false;nekoChatAnimate(row);
+    if(follow)scroll.scrollTo({top:scroll.scrollHeight,behavior:'auto'});
+   },i*3000));
+  }else if(animate)nekoChatAnimate(row);
  }
 }
 // Conversation turns are shared by question across test sessions on this device.
@@ -6378,7 +6389,7 @@ function nekoRenderTutor(root,key,readonly=false){
   revealQuestions=()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken)return;clearTimeout(questionRevealTimer);questionRevealDeadline=0;bubbles.style.visibility='';bubbles.inert=false;if(latestOnShow)scrollLatest();for(const [i,button]of [...bubbles.children].entries())nekoChatAnimate(button,i*60);};
   if(delay&&suggestions.length)questionRevealTimer=setTimeout(revealQuestions,delay);
  }
- function paint(value,suggestions=value,animate=false,action='initial'){const savedScroll=typeof chatScroll!=='undefined'?chatScroll.scrollTop:0;const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');paintBubbles(suggestions,(animate||action!=='initial')?1000:0);const connectionTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));nekoRenderConnections(related,key,nekoConnectionWords(suggestions,value,...[...connectionTurns].reverse()));if(typeof syncTabs==='function')syncTabs();if(typeof chatScroll!=='undefined')chatScroll.scrollTop=savedScroll;}
+ function paint(value,suggestions=value,animate=false,action='initial'){const savedScroll=typeof chatScroll!=='undefined'?chatScroll.scrollTop:0;const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');const replyText=action==='initial'?text:(latest?.fullExplanation||latest?.text||'');const replyParts=nekoPreferences().amount==='short'?1:nekoBubbleParts(readableTutorText(replyText)).length;const questionDelay=(animate?Math.max(0,replyParts-1)*3000:0)+((animate||action!=='initial')?3000:0);paintBubbles(suggestions,questionDelay);const connectionTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));nekoRenderConnections(related,key,nekoConnectionWords(suggestions,value,...[...connectionTurns].reverse()));if(typeof syncTabs==='function')syncTabs();if(typeof chatScroll!=='undefined')chatScroll.scrollTop=savedScroll;}
  root.nekoRecoverInteraction=()=>{if(questionRevealDeadline&&Date.now()>=questionRevealDeadline)revealQuestions?.();};
  let busy=false;async function run(action,question='',selected=null){if(busy)return;clearTimeout(questionRevealTimer);questionRevealDeadline=0;const animateNew=!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.style.visibility='hidden';bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);const today=nekoChatDateInfo(Date.now());let day=conversation.lastElementChild;if(!day||day.dataset.chatDay!==today.key||Date.now()-Number(day.dataset.lastAt||0)>=30*60*1000){day=nekoChatDay(today);conversation.append(day);}day.append(pending);beep('chatSend');nekoChatAnimate(sent);if(selected)bubbles.style.visibility='hidden';requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{if(action==='initial')await nekoTimedTask(()=>figure?.nekoReady||Promise.resolve(),7000,'画像を確認できなかったにゃ。もう一度試してにゃ。');else await new Promise(resolve=>setTimeout(resolve,0));if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
  if(action!=='initial'||animateNew)beep('chatReceive');
@@ -7300,5 +7311,6 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 

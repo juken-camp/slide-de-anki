@@ -17,6 +17,8 @@ jobs:
         date: ['2026-10-20', '2026-10-21', '2026-10-22', '2026-10-23', '2026-10-24', '2026-10-25', '2026-10-26']
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -25,6 +27,13 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           EDITION_DATE: ${{ matrix.date }}
         run: python scripts/generate_news.py --date "$EDITION_DATE" --skip-existing
+      - name: 生成結果の控えを保存
+        uses: actions/upload-artifact@v4
+        with:
+          name: news-${{ matrix.date }}
+          path: news/daily/${{ matrix.date }}.json
+          if-no-files-found: warn
+          retention-days: 7
       - name: ニュースを保存
         run: |
           git config user.name 'github-actions[bot]'

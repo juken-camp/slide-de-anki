@@ -3176,7 +3176,7 @@ html[data-persona] body #app #testScreen .neko-practice-footer{border-top:0!impo
 @media(prefers-reduced-motion:reduce){html[data-persona] body #app #testScreen .neko-chat-scroll .neko-chat-date{transition:none}}
 
 /* News view */
-#catalogScreen .catalog-search-panel.news-active .catalog-filter-row,#catalogScreen .catalog-search-panel.news-active #seriesScroller,#catalogScreen .catalog-search-panel.news-active .catalog-resume{display:none!important}
+#catalogScreen .catalog-search-panel.news-active #seriesScroller,#catalogScreen .catalog-search-panel.news-active .catalog-resume{display:none!important}
 #newsStudyExplanation{margin:12px 0 16px;padding:14px 16px;border:1px solid var(--neko-edge);border-radius:14px;background:var(--neko-surface,#fffaf4);line-height:1.7}
 #newsStudyExplanation h3{margin:0 0 6px;font-size:15px}#newsStudyExplanation p{margin:0;font-size:14px}
 .news-demo-notice{margin:8px 0 14px;font-size:13px;line-height:1.6}
@@ -3188,14 +3188,17 @@ html[data-persona=cyber] #newsStudyExplanation{background:#0e1830;color:#d8efff;
 
 <style id="news-date-design">
 #app #catalogScreen.news-view .catalog-list-tools{display:none!important}
-#app #catalogScreen .news-date-panel{display:flex;align-items:center;gap:8px;margin:12px 0 0;padding:10px 0 0;border-top:1px solid #dfc7b0;min-width:0}
-#app #catalogScreen .news-date-select-wrap{display:block;position:relative;max-width:100%;margin:0}
-#app #catalogScreen .news-date-select-wrap::after{content:'⌄';position:absolute;right:12px;top:50%;transform:translateY(-56%);font-size:16px;pointer-events:none;color:#8c6245}
-#app #catalogScreen .news-date-select-wrap select{appearance:none;-webkit-appearance:none;box-sizing:border-box;min-height:40px;max-width:100%;width:auto;padding:7px 34px 7px 13px;border:1.5px solid #d8b897;border-radius:12px;background:#fffaf3;color:#805334;font-family:inherit;font-size:16px;font-weight:600;line-height:1.5;box-shadow:none;cursor:pointer}
-#app #catalogScreen .news-date-heading{font-size:14px;line-height:1.5;color:#805334}
-html[data-persona=cyber] #app #catalogScreen .news-date-panel{border-top-color:#315b81}
-html[data-persona=cyber] #app #catalogScreen .news-date-select-wrap select{background:#0a1630;color:#cfe9ff;border-color:#345b7c;box-shadow:inset 0 0 7px #00f5ff0a}
-html[data-persona=cyber] #app #catalogScreen .news-date-select-wrap::after,html[data-persona=cyber] #app #catalogScreen .news-date-heading{color:#b8dced}
+#catalogScreen .catalog-search-panel.news-active .catalog-filter-row{display:flex!important}
+#app #catalogScreen .news-date-panel{display:grid;gap:8px;width:100%;min-width:0}
+#app #catalogScreen .news-date-tabs{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:5px;padding:5px;border:2px solid #e3cfb9;border-radius:15px;background:#f1e6d7}
+#app #catalogScreen .news-date-tabs button,#app #catalogScreen .news-date-history button{min-width:0;min-height:36px;padding:5px 6px;border:2px solid transparent;border-radius:10px;background:transparent;color:#805b40;font:inherit;font-size:12px;font-weight:800;white-space:nowrap;cursor:pointer}
+#app #catalogScreen .news-date-tabs button.active,#app #catalogScreen .news-date-history button.active{border-color:#c99465;background:#fffaf2;color:#783b1c;box-shadow:0 3px 0 #d5b08d}
+#app #catalogScreen .news-date-history{display:flex;gap:5px;overflow-x:auto;padding:2px 0 5px;scrollbar-width:thin}
+#app #catalogScreen .news-date-history button{flex:0 0 auto;border-color:#d5b99b;background:#fffaf2}
+html[data-persona=cyber] #app #catalogScreen .news-date-tabs{background:#0c1730;border-color:#315778}
+html[data-persona=cyber] #app #catalogScreen .news-date-tabs button,html[data-persona=cyber] #app #catalogScreen .news-date-history button{color:#bcd8ee}
+html[data-persona=cyber] #app #catalogScreen .news-date-tabs button.active,html[data-persona=cyber] #app #catalogScreen .news-date-history button.active{border-color:#00e9f5;background:#07304a;color:#ddffff;box-shadow:0 0 9px #00e9f555}
+html[data-persona=cyber] #app #catalogScreen .news-date-history button:not(.active){background:#0c1730;border-color:#315778}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -5705,7 +5708,7 @@ async function openSearchQuestion(lid,cid,source){
  catch{toast('問題を開けなかったにゃ。通信を確認してにゃ。');}
 }
 // These are deliberately fictional examples, not automatically retrieved news.
-let newsDemoTopics=[],newsDates=null,newsSelectedDate=null,newsLoading=false,newsError='',newsLoadedDate=null;
+let newsDemoTopics=[],newsDates=null,newsSelectedDate=null,newsLoading=false,newsError='',newsLoadedDate=null,newsHistoryOpen=false;
 const newsIcons={geography:'🌏',history:'🏯',civics:'🏛️',physics:'⚡',chemistry:'🧪',biology:'🌱',earth:'🌀'};
 function newsToday(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));return `${p.year}-${p.month}-${p.day}`;}
 async function newsLoad(date=null,refresh=false){
@@ -5738,10 +5741,14 @@ function renderNewsDemo(){
  $('catalogTitle').textContent=showing===newsToday()?'今日のニュース':'ニュース';
  const groups=$('catalogGroups');groups.replaceChildren();
  const header=collectionNode('div',undefined,'news-date-panel');header.id='newsDateControls';
- const formatted=newsDateLabel(new Date(showing+'T03:00:00Z')).replace(/\s*今日の7問$/,'');
- if(newsDates?.length){const chooser=collectionNode('label',undefined,'news-date-select-wrap');const select=document.createElement('select');select.setAttribute('aria-label','ニュースの日付');const dates=[newsToday(),...newsDates.filter(d=>d!==newsToday())];for(const date of dates){const dateText=newsDateLabel(new Date(date+'T03:00:00Z')).replace(/\s*今日の7問$/,'');const o=collectionNode('option',date===newsToday()?'今日 '+dateText:dateText);o.value=date;o.selected=date===showing;select.append(o);}select.onchange=()=>{newsSelectedDate=select.value;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(select.value);};chooser.append(select);header.append(chooser);}
- if(!newsDates?.length)header.append(collectionNode('span',formatted,'news-date-heading'));
- document.querySelector('#catalogScreen .catalog-search-panel').append(header);
+ const yesterdayDate=new Date(newsToday()+'T03:00:00Z');yesterdayDate.setUTCDate(yesterdayDate.getUTCDate()-1);
+ const yesterday=yesterdayDate.toISOString().slice(0,10),isPast=showing!==newsToday()&&showing!==yesterday;
+ const tabs=collectionNode('div',undefined,'news-date-tabs');tabs.setAttribute('aria-label','ニュースの日付');
+ function chooseNewsDate(date){if(newsLoading)return;newsSelectedDate=date;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(date);}
+ for(const [label,date] of [['今日',newsToday()],['昨日',yesterday]]){const button=collectionNode('button',label);button.type='button';button.classList.toggle('active',showing===date&&!newsHistoryOpen);button.setAttribute('aria-pressed',String(showing===date&&!newsHistoryOpen));button.onclick=()=>{newsHistoryOpen=false;chooseNewsDate(date);};tabs.append(button);}
+ const past=collectionNode('button','過去のニュース');past.type='button';past.classList.toggle('active',newsHistoryOpen||isPast);past.setAttribute('aria-expanded',String(newsHistoryOpen));past.onclick=()=>{newsHistoryOpen=!newsHistoryOpen;renderCatalog();};tabs.append(past);header.append(tabs);
+ if(newsHistoryOpen){const history=collectionNode('div',undefined,'news-date-history');history.setAttribute('aria-label','過去のニュースの日付');const dates=(newsDates||[]).filter(d=>d!==newsToday()&&d!==yesterday).sort().reverse();for(const date of dates){const label=newsDateLabel(new Date(date+'T03:00:00Z')).replace(/\s*今日の7問$/,'');const button=collectionNode('button',label);button.type='button';button.classList.toggle('active',date===showing);button.setAttribute('aria-pressed',String(date===showing));button.onclick=()=>chooseNewsDate(date);history.append(button);}if(!dates.length)history.append(collectionNode('span','過去のニュースはまだありません。'));header.append(history);}
+ const filterRow=document.querySelector('#catalogScreen .catalog-filter-row');filterRow.hidden=false;filterRow.append(header);
 
  if(!assessmentDataset){
   const status=collectionNode('p',assessmentError||'問題を準備しています…','news-demo-notice');groups.append(status);

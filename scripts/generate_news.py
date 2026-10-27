@@ -30,12 +30,21 @@ def collect(feeds,source_date,days=30):
 def ask(prompt,max_tokens=4096):
  key=os.environ.get('ANTHROPIC_API_KEY','')
  if not key:raise ValueError('ANTHROPIC_API_KEY が設定されていません')
- payload={'model':os.environ.get('NEWS_MODEL','claude-haiku-5-5'),'max_tokens':max_tokens,'messages':[{'role':'user','content':prompt}]}
- req=urllib.request.Request('https://api.anthropic.com/v1/messages',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01'},method='POST')
- with urllib.request.urlopen(req,timeout=110) as response: result=json.load(response)
- text=''.join(x.get('text','') for x in result.get('content',[]) if x.get('type')=='text').strip()
- if text.startswith('```'):text=re.sub(r'^```(?:json)?\s*|\s*```$','',text)
- return json.loads(text)
+ for attempt in range(3):
+  limit=min(max_tokens*(attempt+2),24000)
+  payload={'model':os.environ.get('NEWS_MODEL','claude-haiku-5-5'),'max_tokens':limit,'messages':[{'role':'user','content':prompt}]}
+  req=urllib.request.Request('https://api.anthropic.com/v1/messages',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01'},method='POST')
+  with urllib.request.urlopen(req,timeout=110) as response: result=json.load(response)
+  text=''.join(x.get('text','') for x in result.get('content',[]) if x.get('type')=='text').strip()
+  if text.startswith('```'):text=re.sub(r'^```(?:json)?\s*|\s*```$','',text)
+  try:
+   if result.get('stop_reason')=='max_tokens':raise ValueError('返答が途中で切れました')
+   parsed=json.loads(text)
+   if not isinstance(parsed,dict):raise ValueError('返答の形式が正しくありません')
+   return parsed
+  except (ValueError,TypeError):
+   print('AIの返答を読み取れません。再試行:',attempt+1,file=sys.stderr)
+ raise ValueError('AIの返答を読み取れませんでした')
 
 def read_inputs():
  raw=(ROOT/'catalog.js').read_text(); catalog=json.loads(re.sub(r';\s*$','',re.sub(r'^\s*window\.QUIZ_CATALOG\s*=\s*','',raw)))
@@ -90,8 +99,11 @@ def main():
  for attempt in range(2):
   missing=[f for f in FIELDS if not any(x['field']==f for x in result['items'])]
   if not missing:break
-  extra=generate(items,catalog,data,source,missing)
-  result['items'].extend(x for x in extra['items'] if x['field'] in missing)
+  try:
+   extra=generate(items,catalog,data,source,missing)
+   result['items'].extend(x for x in extra['items'] if x['field'] in missing)
+  except Exception as e:
+   print('不足分の追加に失敗:',str(e),file=sys.stderr)
  if not result['items']:raise ValueError('対応するニュースと問題が見つかりませんでした')
  order={field:i for i,field in enumerate(FIELDS)};result['items'].sort(key=lambda x:order[x['field']])
  output=ROOT/'news'/'daily';output.mkdir(parents=True,exist_ok=True)

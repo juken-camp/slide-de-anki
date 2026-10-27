@@ -3159,7 +3159,7 @@ html[data-persona=cyber] body #app #testScreen .neko-chat-date time{background:r
 </style>
 <style id="chat-date-direction-and-floating-header-20261027">
 /* Labels travel with the conversation toward the latest messages. */
-html[data-persona] body #app #testScreen .neko-chat-scroll .neko-chat-date{position:relative;top:auto}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-chat-date{position:sticky;top:3px}
 html[data-persona] body #app #testScreen .neko-chat-scroll.neko-history-scroll .neko-chat-date{position:sticky;top:3px}
 /* A translucent header surface, retaining the original sticky controls. */
 html[data-persona=cyber] body #app #appHeader.is-scrolled::before{background:rgba(5,5,16,.80)!important;opacity:1!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -6125,7 +6125,7 @@ async function nekoAsk(key,action='initial',question=''){
   if(!await nekoAiStatus())throw Error('今はNekoponの解説を利用できないにゃ。模範解答で確認してにゃ。');
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),45000),ref=hSplit(key),stamp=nekoResponseStamp(key,session);
   try{
-   const entry=session.tutor?.[key],initial=nekoCached(key,'initial','',session,preferences,persona).result,history=(entry?.turns||[]).filter(t=>nekoTurnCurrent(t,session,key,preferences,persona)).slice(-8).map(t=>({question:t.question||nekoActionLabels[t.action]||'解説',answer:(t.fullExplanation||t.text).slice(0,1800)}));
+   const entry=session.tutor?.[key],initial=nekoCached(key,'initial','',session,preferences,persona).result,history=(entry?.turns||[]).filter(t=>typeof (t.fullExplanation||t.text)==='string').slice(-8).map(t=>({question:t.question||nekoActionLabels[t.action]||'解説',answer:(t.fullExplanation||t.text).slice(0,1800)}));
    if(action!=='initial'&&initial)history.unshift({question:'この問題の最初の解説',answer:[initial.comment,initial.fullExplanation||initial.explanation].filter(Boolean).join('\n\n').slice(0,3000)});
    const response=await fetch('/api/nekopon',{method:'POST',headers:{'Content-Type':'application/json','x-neko-client':nekoClientId()},body:JSON.stringify({lessonId:ref.lessonId,cardId:ref.cardId,revision:session.dataRevision,contract:session.displayContracts?.[key]||record.contract,response:session.responses?.[key]||[],skipped:!!session.skipped?.[key],imageFailed:!!session.imageFailures?.[key],questionImageVisible:!!session.questionImageShown?.[key],action,question,persona,...preferences,history,recentQuestions:nekoRecentQuestions(persona),askedQuestions:(entry?.turns||[]).filter(t=>nekoTurnCurrent(t,session,key,preferences,persona)).slice(-24).map(t=>t.question)}),signal:controller.signal});
    let value;try{value=await response.json();}catch{throw Error('解説を受け取れなかったにゃ。もう一度試してにゃ。');}
@@ -6138,7 +6138,7 @@ async function nekoAsk(key,action='initial',question=''){
    if(action==='initial')item.initialSignature=signature;const cacheKeys=Object.keys(item.cache).filter(k=>k!==item.initialSignature);for(const old of cacheKeys.slice(0,-(item.initialSignature?11:12)))delete item.cache[old];
    if(action!=='initial'){item.turns.push({action,question:question||nekoActionLabels[action],text:value.explanation,fullExplanation:value.fullExplanation||'',signature,suggestions:value.suggestions||[],keywords:value.keywords||[],glossary:value.glossary||[],formatVersion:nekoTutorFormat,responseStamp:stamp,persona,taste:preferences.taste,amount:preferences.amount,at:Date.now()});/* Keep every saved turn visible in the scrollable conversation. */}else item.initial=value;
    const j=target.judgements?.[key];if(!target.finishedAt&&j?.source==='pending'&&!target.imageFailures?.[key]&&value.confidence>=0.92&&['pass','retry'].includes(value.outcome)){target.judgements[key]={outcome:value.outcome,source:'ai',reason:value.reason||'Nekoponが解答の意味を確認',at:Date.now()};target.answers[key]=value.outcome;}
-   nekoSaveTutorSession(target);return value;
+   if(action!=='initial')nekoMergeQuestionHistory(target,key);nekoSaveTutorSession(target);return value;
   }catch(e){throw Error(e.name==='AbortError'?'解説に時間がかかっているにゃ。もう一度試してにゃ。':e.message);}finally{clearTimeout(timer);}
  })();nekoAiPending.set(pendingKey,promise);try{return await promise;}finally{nekoAiPending.delete(pendingKey);}
 }
@@ -6230,7 +6230,20 @@ function nekoRenderExplanation(node,text,glossary,key,animate=false){
   if(animate)nekoChatAnimate(row,Math.min(i*90,360));
  }
 }
+// Conversation turns are shared by question across test sessions on this device.
+function nekoMergeQuestionHistory(session,key){
+ if(!session||!key)return [];
+ studyHistory.questionChats ||= {};
+ const sources=[studyHistory.questionChats[key],...Object.values(studyHistory.activeTests||{}).map(t=>t?.tutor?.[key]?.turns),studyHistory.activeTest?.tutor?.[key]?.turns,...(studyHistory.tests||[]).map(t=>t?.tutor?.[key]?.turns),session.tutor?.[key]?.turns];
+ const seen=new Set(),merged=[];
+ for(const turns of sources){if(!Array.isArray(turns))continue;for(const turn of turns){if(!turn||typeof turn!=='object')continue;const id=JSON.stringify([turn.at,turn.signature,turn.question,turn.fullExplanation||turn.text]);if(seen.has(id))continue;seen.add(id);merged.push(turn);}}
+ merged.sort((a,b)=>(Number(a.at)||0)-(Number(b.at)||0));
+ const prior=studyHistory.questionChats[key];const changed=!Array.isArray(prior)||JSON.stringify(prior)!==JSON.stringify(merged);
+ if(merged.length){studyHistory.questionChats[key]=hClone(merged);session.tutor ||= {};const entry=session.tutor[key] ||= {cache:{},turns:[]};entry.turns=hClone(merged);if(changed)persistStudyHistory();}
+ return merged;
+}
 function nekoRenderTutor(root,key,readonly=false){
+ nekoMergeQuestionHistory(testSession,key);
  const sessionId=testSession?.id,renderPersona=document.documentElement.dataset.persona||'neko',renderToken=Symbol(),r=assessmentByKey(key);if(!r)return;root.nekoRenderToken=renderToken;root.dataset.tutorKey=key;root.dataset.tutorReadonly=String(readonly);root.replaceChildren();const heading=collectionNode('div',undefined,'neko-tutor-heading');heading.append(collectionNode('span',document.documentElement.dataset.persona==='cyber'?'😎':'🐱'),collectionNode('strong','Nekoponチャット'));heading.tabIndex=-1;const comment=collectionNode('p','','neko-tutor-comment user-content');comment.hidden=true;const explanation=collectionNode('div',undefined,'neko-tutor-explanation user-content');explanation.hidden=true;const status=collectionNode('p','','neko-tutor-status');status.setAttribute('role','status');status.hidden=true;const bubbleHint=collectionNode('p','気になることを、押して聞いてにゃ。','neko-chat-title'),bubbles=collectionNode('div',undefined,'neko-bubble-row');const conversation=collectionNode('div',undefined,'neko-conversation');const related=collectionNode('section',undefined,'neko-connections');related.setAttribute('aria-label','つながる知識と関連問題');
  const feedbackTools=collectionNode('div',undefined,'neko-feedback-tools');
  if(testSession.judgements?.[key]?.source==='manual')feedbackTools.append(collectionNode('p',testSession.answers[key]==='pass'?'この問題は自己判定で正解に訂正しているにゃ。':'この問題は自己判定でもう一度に訂正しているにゃ。','neko-manual-note'));

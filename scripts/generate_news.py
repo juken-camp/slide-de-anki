@@ -12,7 +12,7 @@ def get(url):
   if r.status!=200: raise ValueError('feed request failed')
   return r.read(3_000_000)
 
-def collect(feeds,source_date):
+def collect(feeds,source_date,days=30):
  seen=set();items=[]
  for url in feeds:
   try: root=ET.fromstring(get(url))
@@ -21,10 +21,11 @@ def collect(feeds,source_date):
    headline=(item.findtext('title') or '').strip();link=(item.findtext('link') or '').strip();pub=item.findtext('pubDate') or ''
    try: date=email.utils.parsedate_to_datetime(pub).astimezone(JST).date()
    except (ValueError,TypeError,OverflowError):continue
-   if date!=source_date or not headline or len(headline)>300 or not link.startswith('https://') or link in seen:continue
+   if not (source_date-dt.timedelta(days=days-1)<=date<=source_date) or not headline or len(headline)>300 or not link.startswith('https://') or link in seen:continue
    source=(item.findtext('source') or '').strip();seen.add(link)
    items.append({'id':len(items),'headline':headline,'source':source,'url':link,'publishedAt':pub})
- return items[:300]
+ items.sort(key=lambda item:email.utils.parsedate_to_datetime(item['publishedAt']).timestamp(),reverse=True)
+ return items[:500]
 
 def ask(prompt,max_tokens=4096):
  key=os.environ.get('ANTHROPIC_API_KEY','')
@@ -57,17 +58,18 @@ def candidates(catalog,data,field,words):
    if score:rows.append((score,hashlib.sha256((m['id']+'/'+c['id']).encode()).hexdigest(),{'lessonId':m['id'],'cardId':c['id'],'q':q,'a':a,'title':m.get('title','')}))
  rows.sort(key=lambda x:(-x[0],x[1]));return [v for _,_,v in rows[:30]]
 
-def generate(items,catalog,data,source_date):
- choices=[{'id':x['id'],'headline':x['headline'],'source':x['source']} for x in items]
- selection=ask('中学生向け。前日のニュースの見出しから、地理・歴史・公民・物理・化学・生物・地学の7分野につながる話題をそれぞれ選ぶ。見出しにない事実は想像しない。適切なものがない場合はnull。各分野で既存の中学教材を検索する具体的な語を5個まで提案。JSONのみ。形式 {"geography":{"id":0,"keywords":["地震"]},"history":null,"civics":null,"physics":null,"chemistry":null,"biology":null,"earth":null}。ニュース一覧: '+json.dumps(choices,ensure_ascii=False))
+def generate(items,catalog,data,source_date,wanted=None):
+ wanted=list(wanted or FIELDS)
+ choices=[{'id':x['id'],'headline':x['headline'],'source':x['source'],'publishedAt':x['publishedAt']} for x in items]
+ selection=ask('中学生向け。直近30日間のニュースの見出しから、地理・歴史・公民・物理・化学・生物・地学の7分野につながる話題をそれぞれ選ぶ。見出しにない事実は想像しない。適切なものがない場合はnull。各分野で既存の中学教材を検索する具体的な語を5個まで提案。JSONのみ。形式 {"geography":{"id":0,"keywords":["地震"]},"history":null,"civics":null,"physics":null,"chemistry":null,"biology":null,"earth":null}。新しい記事を優先しつつ、指定された分野を必ず探す。分野: '+json.dumps(wanted,ensure_ascii=False)+' ニュース一覧: '+json.dumps(choices,ensure_ascii=False))
  proposed={};byid={x['id']:x for x in items}
- for field in FIELDS:
+ for field in wanted:
   a=selection.get(field)
   if not isinstance(a,dict) or a.get('id') not in byid or not isinstance(a.get('keywords'),list):continue
   words=[x for x in a['keywords'] if isinstance(x,str) and len(x)<=30][:5]
   news=byid[a['id']]; cs=candidates(catalog,data,field,[news['headline']]+words)
   if cs:proposed[field]={'news':news,'candidates':cs}
- if not proposed:raise ValueError('対応するニュースと問題を見つけられませんでした')
+ if not proposed:return {'version':1,'date':(source_date+dt.timedelta(days=1)).isoformat(),'sourceDate':source_date.isoformat(),'generatedAt':dt.datetime.now(JST).isoformat(),'items':[]}
  prompt='''あなたは中学生向けの塾講師。ニュースと問題の関連を教える。分野ごとに候補問題から厳密に1つ選び、無理に結びつけず、関連が弱ければ省略する。報道の見出しから確実に分かる事実以外は書かない。記事本文は未取得、背景・数字・理由を推測しない。見出しだけから重要性や比較が不明なら断定しない。文章は偏差値40程度の中学生が読みやすい短い日本語にする。覚えるべき単語以外の専門用語を使わない。「何が起きた」「どういうこと」「問題の答えとの関係」を短く示し、考え方の答えを教える。テーマは普通の言葉で。文体はNekopon=にゃ、Yorupon=だぜ。JSONだけ返す。形式 {"items":[{"field":"geography","lessonId":"候補と一致","cardId":"候補と一致","title":"短い見出し","articleNeko":"ニュースと意味","articleCyber":"同内容の別口調","neko":"問題の答えとのつながり","cyber":"同内容の別口調"}]}。候補: '''+json.dumps(proposed,ensure_ascii=False)
  result=ask(prompt,7000);output=[];used=set()
  for row in result.get('items',[]):
@@ -77,15 +79,31 @@ def generate(items,catalog,data,source_date):
   if not c:continue
   if any(not isinstance(row.get(k),str) or not 1<=len(row[k].strip())<=400 for k in ['title','articleNeko','articleCyber','neko','cyber']):continue
   news=block['news'];output.append({k:row[k].strip() for k in ['field','lessonId','cardId','title','articleNeko','articleCyber','neko','cyber']}|{'label':FIELDS[f],'url':news['url'],'source':news['source'],'sourceHeadline':news['headline'],'publishedAt':news['publishedAt']});used.add(f)
- if not output:raise ValueError('検証を通った記事がありません')
+
  return {'version':1,'date':(source_date+dt.timedelta(days=1)).isoformat(),'sourceDate':source_date.isoformat(),'generatedAt':dt.datetime.now(JST).isoformat(),'items':output}
 
 def main():
  source=(dt.datetime.now(JST).date()-dt.timedelta(days=1));items=collect(FEEDS,source)
  if not items:raise ValueError('前日の見出しを取得できませんでした')
  catalog,data=read_inputs();result=generate(items,catalog,data,source)
+ # Retry only missing fields; prefer recent reports but widen to thirty days.
+ for attempt in range(2):
+  missing=[f for f in FIELDS if not any(x['field']==f for x in result['items'])]
+  if not missing:break
+  extra=generate(items,catalog,data,source,missing)
+  result['items'].extend(x for x in extra['items'] if x['field'] in missing)
+ if not result['items']:raise ValueError('対応するニュースと問題が見つかりませんでした')
+ order={field:i for i,field in enumerate(FIELDS)};result['items'].sort(key=lambda x:order[x['field']])
  output=ROOT/'news'/'daily';output.mkdir(parents=True,exist_ok=True)
- path=output/(result['date']+'.json');temp=path.with_suffix('.tmp');temp.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');temp.replace(path)
+ path=output/(result['date']+'.json')
+ if path.exists():
+  try:previous=json.loads(path.read_text())
+  except (OSError,ValueError):previous={}
+  existing={item.get('field'):item for item in previous.get('items',[]) if isinstance(item,dict) and item.get('field') in FIELDS}
+  present={item['field'] for item in result['items']}
+  result['items'].extend(existing[field] for field in FIELDS if field not in present and field in existing)
+  result['items'].sort(key=lambda x:order[x['field']])
+ temp=path.with_suffix('.tmp');temp.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');temp.replace(path)
  # Rebuild the history index from valid dated files; no empty overwrites on failures.
  dates=sorted([p.stem for p in output.glob('????-??-??.json')],reverse=True)
  index={'version':1,'dates':dates};temp=output/'index.tmp';temp.write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n');temp.replace(output/'index.json')

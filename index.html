@@ -6341,8 +6341,8 @@ function nekoRenderExplanation(node,text,glossary,key,animate=false){
  if(!text)return;
  const parts=nekoPreferences().amount==='short'?[text]:nekoBubbleParts(text);
  node.classList.add('neko-multi-bubbles');
- const timers=[];
- node.nekoBubbleCancel=()=>{for(const timer of timers)clearTimeout(timer);};
+ const timers=[];let waiting=null;
+ node.nekoBubbleCancel=()=>{for(const timer of timers)clearTimeout(timer);waiting?.remove();};
  for(const [i,part] of parts.entries()){
   const row=collectionNode('div',undefined,'neko-explanation-bubble user-content');nekoRenderGlossaryText(row,part,glossary,key);node.append(row);
   if(animate&&i){
@@ -6352,9 +6352,13 @@ function nekoRenderExplanation(node,text,glossary,key,animate=false){
     const scroll=node.closest('.neko-chat-scroll');
     const follow=scroll&&scroll.scrollHeight-scroll.scrollTop-scroll.clientHeight<100;
     row.hidden=false;nekoChatAnimate(row);
+    if(waiting){if(i===parts.length-1){waiting.remove();waiting=null;}else row.after(waiting);}
     if(follow)scroll.scrollTo({top:scroll.scrollHeight,behavior:'auto'});
    },i*3000));
   }else if(animate)nekoChatAnimate(row);
+ }
+ if(animate&&parts.length>1){
+  waiting=collectionNode('div',undefined,'neko-bubble-wait');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','返信を準備しています');nekoShowThinking(waiting,'返信を準備しています');parts.length&&node.children[0].after(waiting);
  }
 }
 // Conversation turns are shared by question across test sessions on this device.
@@ -6393,14 +6397,14 @@ function nekoRenderTutor(root,key,readonly=false){
   clearTimeout(questionRevealTimer);questionRevealDeadline=delay?Date.now()+delay:0;bubbles.replaceChildren();bubbleHint.hidden=true;
   const currentTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));
   const suggestions=nekoQuestionCandidates(value,testSession?.tutor?.[key],currentTurns,key);
-  bubbles.hidden=!suggestions.length;bubbles.style.visibility=delay?'hidden':'';bubbles.inert=!!delay;
+  bubbles.hidden=!suggestions.length||!!delay;bubbles.style.visibility='';bubbles.inert=!!delay;
   for(const s of suggestions){const button=collectionButton('','neko-question-bubble',()=>run(s.action,s.question,button));const label=collectionNode('span',nekoQuestionVoice(s.question),'neko-question-label'),send=collectionNode('span',undefined,'neko-send-indicator');send.setAttribute('aria-hidden','true');send.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 20 4l-6.5 17-3.2-7.3L3 11.5Z M10.3 13.7 20 4"/></svg>';button.append(label,send);button.setAttribute('aria-label',s.question+' を送信');bubbles.append(button);}
-  revealQuestions=()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken)return;clearTimeout(questionRevealTimer);questionRevealDeadline=0;bubbles.style.visibility='';bubbles.inert=false;if(latestOnShow)scrollLatest();for(const [i,button]of [...bubbles.children].entries())nekoChatAnimate(button,i*60);};
+  revealQuestions=()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken)return;clearTimeout(questionRevealTimer);questionRevealDeadline=0;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<100;bubbles.hidden=!suggestions.length;bubbles.style.visibility='';bubbles.inert=false;if(latestOnShow||follow)scrollLatest();for(const [i,button]of [...bubbles.children].entries())nekoChatAnimate(button,i*60);};
   if(delay&&suggestions.length)questionRevealTimer=setTimeout(revealQuestions,delay);
  }
  function paint(value,suggestions=value,animate=false,action='initial'){const savedScroll=typeof chatScroll!=='undefined'?chatScroll.scrollTop:0;const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');const replyText=action==='initial'?text:(latest?.fullExplanation||latest?.text||'');const replyParts=nekoPreferences().amount==='short'?1:nekoBubbleParts(readableTutorText(replyText)).length;const questionDelay=(animate?Math.max(0,replyParts-1)*3000:0)+((animate||action!=='initial')?3000:0);paintBubbles(suggestions,questionDelay);const connectionTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));nekoRenderConnections(related,key,nekoConnectionWords(suggestions,value,...[...connectionTurns].reverse()));if(typeof syncTabs==='function')syncTabs();if(typeof chatScroll!=='undefined')chatScroll.scrollTop=savedScroll;}
  root.nekoRecoverInteraction=()=>{if(questionRevealDeadline&&Date.now()>=questionRevealDeadline)revealQuestions?.();};
- let busy=false;async function run(action,question='',selected=null){if(busy)return;clearTimeout(questionRevealTimer);questionRevealDeadline=0;const animateNew=action!=='initial'||!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.style.visibility='hidden';bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);const today=nekoChatDateInfo(Date.now());let day=conversation.lastElementChild;if(!day||day.dataset.chatDay!==today.key||Date.now()-Number(day.dataset.lastAt||0)>=30*60*1000){day=nekoChatDay(today);conversation.append(day);}day.append(pending);beep('chatSend');nekoChatAnimate(sent);if(selected)bubbles.style.visibility='hidden';requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{if(action==='initial')await nekoTimedTask(()=>figure?.nekoReady||Promise.resolve(),7000,'画像を確認できなかったにゃ。もう一度試してにゃ。');else await new Promise(resolve=>setTimeout(resolve,0));if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
+ let busy=false;async function run(action,question='',selected=null){if(busy)return;clearTimeout(questionRevealTimer);questionRevealDeadline=0;const animateNew=action!=='initial'||!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.hidden=true;bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);const today=nekoChatDateInfo(Date.now());let day=conversation.lastElementChild;if(!day||day.dataset.chatDay!==today.key||Date.now()-Number(day.dataset.lastAt||0)>=30*60*1000){day=nekoChatDay(today);conversation.append(day);}day.append(pending);beep('chatSend');nekoChatAnimate(sent);if(selected)bubbles.hidden=true;requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{if(action==='initial')await nekoTimedTask(()=>figure?.nekoReady||Promise.resolve(),7000,'画像を確認できなかったにゃ。もう一度試してにゃ。');else await new Promise(resolve=>setTimeout(resolve,0));if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
  if(action!=='initial'||animateNew)beep('chatReceive');
  if(action==='initial'){paint(value,value,animateNew,action);scrollLatest();}else paint(nekoCached(key,'initial').result,value,animateNew,action);
  if(action!=='initial'){
@@ -7320,6 +7324,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

@@ -3166,6 +3166,11 @@ html[data-persona=cyber] body #app #appHeader.is-scrolled::before{background:rgb
 /* Let the original letters and bubble colours show through the time chip. */
 html[data-persona] body #app #testScreen .neko-chat-date time{background:rgba(114,83,57,.25)!important;opacity:.78;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
 html[data-persona=cyber] body #app #testScreen .neko-chat-date time{background:rgba(77,111,137,.28)!important}
+/* Show date chips only while the user scrolls the conversation. */
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-chat-date{opacity:0;transition:opacity .2s ease}
+html[data-persona] body #app #testScreen .neko-chat-scroll.neko-date-visible .neko-chat-date{opacity:1}
+html[data-persona] body #app #testScreen .neko-practice-footer{border-top:0!important}
+@media(prefers-reduced-motion:reduce){html[data-persona] body #app #testScreen .neko-chat-scroll .neko-chat-date{transition:none}}
 
 /* News view */
 #catalogScreen .catalog-search-panel.news-active .catalog-filter-row,#catalogScreen .catalog-search-panel.news-active #seriesScroller,#catalogScreen .catalog-search-panel.news-active .catalog-resume{display:none!important}
@@ -6388,8 +6393,16 @@ function nekoRenderTutor(root,key,readonly=false){
  function syncTabs(){const panels={chat,words:related.querySelector('.neko-words-section'),problems:related.querySelector('.neko-problems-section')};if(!panels[selectedTab])selectedTab='chat';for(const [name,button]of tabs){const panel=panels[name],active=selectedTab===name;button.disabled=!panel;button.tabIndex=active?0:-1;button.setAttribute('aria-selected',String(active));button.setAttribute('aria-pressed',String(active));if(panel){panel.id=uid+'-'+name;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',button.id);panel.hidden=!active;}}}
  const chat=collectionNode('section',undefined,'neko-chat-section');if(readonly||testSession?.kind!=='practice')feedbackTools.append(collectionButton('この問題をまとめに保存','link-button neko-save-top',()=>nekoSaveQuestion(key)));if(feedbackTools.childNodes.length)root.append(feedbackTools);root.append(collectionNode('h3','解説','neko-explanation-title'),nav,chat);const chatScroll=collectionNode('div',undefined,'neko-chat-scroll');chatScroll.tabIndex=0;chatScroll.setAttribute('role','region');chatScroll.setAttribute('aria-label','チャットの解説とやり取り');chat.append(heading,chatScroll);const figure=nekoQuestionFigure(r,key);if(figure)chatScroll.append(figure);chatScroll.append(explanation,status,conversation,bubbleHint,bubbles);root.append(related);
 
- let previousChatTop=0;
- chatScroll.addEventListener('scroll',()=>{const top=chatScroll.scrollTop,delta=top-previousChatTop;previousChatTop=top;if(chatScroll.scrollHeight-top-chatScroll.clientHeight<8||delta>1)chatScroll.classList.remove('neko-history-scroll');else if(delta< -1)chatScroll.classList.add('neko-history-scroll');},{passive:true});
+ let previousChatTop=0,datePointerDown=false,dateUserUntil=0,dateHideTimer;
+ const showChatDates=()=>{for(const label of conversation.querySelectorAll('.neko-chat-date time')){const info=nekoChatDateInfo(label.dateTime);if(info)label.textContent=info.label;}chatScroll.classList.add('neko-date-visible');clearTimeout(dateHideTimer);dateHideTimer=setTimeout(()=>chatScroll.classList.remove('neko-date-visible'),1400);};
+ chatScroll.addEventListener('pointerdown',()=>{datePointerDown=true;},{passive:true});
+ const endDatePointer=()=>{datePointerDown=false;dateUserUntil=Date.now()+1400;};
+ chatScroll.addEventListener('pointerup',endDatePointer,{passive:true});
+ chatScroll.addEventListener('pointercancel',endDatePointer,{passive:true});
+ chatScroll.addEventListener('pointerleave',endDatePointer,{passive:true});
+ chatScroll.addEventListener('wheel',()=>{dateUserUntil=Date.now()+1400;},{passive:true});
+ chatScroll.addEventListener('keydown',event=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key))dateUserUntil=Date.now()+1400;});
+ chatScroll.addEventListener('scroll',()=>{const top=chatScroll.scrollTop,delta=top-previousChatTop;previousChatTop=top;if(Math.abs(delta)>0&&(datePointerDown||Date.now()<dateUserUntil)){dateUserUntil=Date.now()+1400;showChatDates();}if(chatScroll.scrollHeight-top-chatScroll.clientHeight<8||delta>1)chatScroll.classList.remove('neko-history-scroll');else if(delta< -1)chatScroll.classList.add('neko-history-scroll');},{passive:true});
  let latestOnShow=true;
  function scrollLatest(smooth=false){chatScroll.classList.remove('neko-history-scroll');latestOnShow=true;for(const label of conversation.querySelectorAll('.neko-chat-date time')){const info=nekoChatDateInfo(label.dateTime);if(info)label.textContent=info.label;}requestAnimationFrame(()=>requestAnimationFrame(()=>{if(!root.isConnected||root.nekoRenderToken!==renderToken||!chatScroll.clientHeight)return;if(smooth&&data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches)chatScroll.scrollTo({top:chatScroll.scrollHeight,behavior:'smooth'});else chatScroll.scrollTop=chatScroll.scrollHeight;latestOnShow=false;}));}
  root.nekoScrollLatest=scrollLatest;
@@ -6407,7 +6420,7 @@ function nekoRenderTutor(root,key,readonly=false){
  }
  function paint(value,suggestions=value,animate=false,action='initial'){const savedScroll=typeof chatScroll!=='undefined'?chatScroll.scrollTop:0;const latest=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key)).at(-1);if(suggestions===value&&latest)suggestions=latest;const glossary=value?.glossary||[];const body=value?.fullExplanation||value?.explanation||'',note=typeof value?.comment==='string'?value.comment.trim():'';const text=[note,body].filter(Boolean).join('\n\n');explanation.hidden=!text;nekoRenderExplanation(explanation,readableTutorText(text),glossary,key,animate&&action==='initial');nekoRenderConversation(conversation,key,animate&&action!=='initial');const replyText=action==='initial'?text:(latest?.fullExplanation||latest?.text||'');const replyParts=nekoPreferences().amount==='short'?1:nekoBubbleParts(readableTutorText(replyText)).length;const questionDelay=(animate?Math.max(0,replyParts-1)*5000:0)+((animate||action!=='initial')?5000:0);paintBubbles(suggestions,questionDelay);const connectionTurns=(testSession?.tutor?.[key]?.turns||[]).filter(t=>nekoTurnCurrent(t,testSession,key));nekoRenderConnections(related,key,nekoConnectionWords(suggestions,value,...[...connectionTurns].reverse()));if(typeof syncTabs==='function')syncTabs();if(typeof chatScroll!=='undefined')chatScroll.scrollTop=savedScroll;}
  root.nekoRecoverInteraction=()=>{if(questionRevealDeadline&&Date.now()>=questionRevealDeadline)revealQuestions?.();};
- let busy=false;async function run(action,question='',selected=null,event=null){if(busy)return;if(action!=='initial')beep('chatSend',event);clearTimeout(questionRevealTimer);questionRevealDeadline=0;const animateNew=action!=='initial'||!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.hidden=true;bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);const today=nekoChatDateInfo(Date.now());let day=conversation.lastElementChild;if(!day||day.dataset.chatDay!==today.key||Date.now()-Number(day.dataset.lastAt||0)>=30*60*1000){day=nekoChatDay(today);conversation.append(day);}day.append(pending);nekoChatAnimate(sent);if(selected)bubbles.hidden=true;requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{if(action==='initial')await nekoTimedTask(()=>figure?.nekoReady||Promise.resolve(),7000,'画像を確認できなかったにゃ。もう一度試してにゃ。');else await new Promise(resolve=>setTimeout(resolve,0));if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
+ let busy=false;async function run(action,question='',selected=null,event=null){if(busy)return;if(action!=='initial')beep('chatSend',event);clearTimeout(questionRevealTimer);questionRevealDeadline=0;const animateNew=action!=='initial'||!nekoCached(key,action,question).result;busy=true;root.setAttribute('aria-busy','true');bubbles.querySelectorAll('button').forEach(b=>b.disabled=true);if(action==='initial'){bubbles.hidden=true;bubbles.inert=true;}let waiting=status;status.hidden=action!=='initial';if(action!=='initial'){const pending=collectionNode('div',undefined,'neko-conversation-turn neko-pending-turn');waiting=collectionNode('div',undefined,'neko-explanation-bubble neko-pending-answer');waiting.setAttribute('role','status');waiting.setAttribute('aria-label','解説を書いています');const sent=collectionNode('p',nekoQuestionVoice(question||nekoActionLabels[action]),'neko-conversation-question user-content');pending.append(sent,waiting);const today=nekoChatDateInfo(Date.now());let day=conversation.lastElementChild;if(!day||day.dataset.chatDay!==today.key){day=nekoChatDay(today);conversation.append(day);}day.append(pending);nekoChatAnimate(sent);if(selected)bubbles.hidden=true;requestAnimationFrame(()=>chatScroll.scrollTo({top:Math.max(0,pending.getBoundingClientRect().top-chatScroll.getBoundingClientRect().top+chatScroll.scrollTop-8),behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'}));}nekoShowThinking(waiting,'解説を書いているにゃ');try{if(action==='initial')await nekoTimedTask(()=>figure?.nekoReady||Promise.resolve(),7000,'画像を確認できなかったにゃ。もう一度試してにゃ。');else await new Promise(resolve=>setTimeout(resolve,0));if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const value=await nekoAsk(key,action,question);if(!root.isConnected||root.nekoRenderToken!==renderToken||testSession?.id!==sessionId||document.documentElement.dataset.persona!==renderPersona)return;const follow=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<160;
  if(action==='initial'){markInitialShown();paint(value,value,animateNew,action);scrollLatest(true);}else paint(nekoCached(key,'initial').result,value,animateNew,action);
  if(action!=='initial'){
   if(follow)requestAnimationFrame(()=>{if(!chatScroll.isConnected)return;chatScroll.scrollTo({top:chatScroll.scrollHeight,behavior:data.neko.decorativeMotion!==false&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto'});});
@@ -6422,8 +6435,8 @@ function nekoChatDateInfo(value,now=Date.now()){
  if(value===undefined||value===null||value==='')return null;
  const date=new Date(value),today=new Date(now);if(!Number.isFinite(date.getTime()))return null;
  const day=d=>Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000;
- const difference=day(today)-day(date),time=String(date.getHours()).padStart(2,'0')+':'+String(date.getMinutes()).padStart(2,'0');
- return {key:date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),label:difference===0?time:difference===1?'昨日':(date.getMonth()+1)+'/'+date.getDate()+'('+'日月火水木金土'[date.getDay()]+')',iso:date.toISOString()};
+ const difference=day(today)-day(date);
+ return {key:date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),label:difference===0?'今日':difference===1?'昨日':(date.getMonth()+1)+'/'+date.getDate()+'('+'日月火水木金土'[date.getDay()]+')',iso:date.toISOString()};
 }
 function nekoChatDay(info){
  const node=collectionNode('section',undefined,'neko-chat-day');node.dataset.chatDay=info?.key||'unknown';
@@ -6435,7 +6448,7 @@ function nekoRenderConversation(root,key,animate=false){
  const previous=root.nekoTurnRows||new Map(),next=new Map(),groups=[],priorGroups=root.nekoDayGroups||new Map(),nextGroups=new Map();let group=null;
  for(const [i,turn]of turns.entries()){
   const info=nekoChatDateInfo(turn.at),dayKey=info?.key||'unknown';
-  if(!group||group.dayKey!==dayKey||(Number.isFinite(Number(turn.at))&&Number.isFinite(group.lastAt)&&Number(turn.at)-group.lastAt>=30*60*1000)){
+  if(!group||group.dayKey!==dayKey){
    const id=dayKey+':'+groups.length,node=priorGroups.get(id)||nekoChatDay(info);
    const label=node.querySelector('.neko-chat-date time');if(label&&info){label.textContent=info.label;label.dateTime=info.iso;}
    group={node,dayKey,rows:[]};groups.push(group);nextGroups.set(id,node);
@@ -7326,6 +7339,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

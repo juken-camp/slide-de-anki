@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "date": "2026-10-27",
+  "sourceDate": "2026-10-26",
+  "generatedAt": "2026-10-27T18:23:09.764420+09:00",
+  "items": [
+    {
+      "field": "civics",
+      "lessonId": "social-civics-politics-institutions-grade3-03",
+      "cardId": "023",
+      "title": "市長選挙と首長",
+      "articleNeko": "那覇市の市長選挙で、今の市長がもう一度選ばれたにゃ。市のトップを選ぶ選挙だにゃ。",
+      "articleCyber": "那覇市の市長選挙で、今の市長がもう一度当選したんだぜ。市のトップを選ぶ選挙なんだぜ。",
+      "neko": "都道府県知事や市町村長など、地方のトップを「首長」というにゃ。問題の答えは「首長」にゃ。市長も首長の一人だにゃ。",
+      "cyber": "地方のトップの市長や知事は「首長」っていうんだぜ。問題の答えは「首長」だぜ。市長も首長の仲間なんだぜ。",
+      "label": "公民",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBXa1pOQ25Wa2JkbFB0OUZNLUJpcHRKUXVncllNU2M1Y2FFTHp0WW5uRnYwVFFaODVDVWVYMTRxbG9oVG54bGd1ZnVZVjZ3SklDYTBKTElSN2tWVXE1ZlpTYUxmUFozZ2p3RlZaMTRwenpSQm1OU2trNW8yeXd4MXM?oc=5",
+      "source": "Yahoo!ニュース",
+      "sourceHeadline": "那覇市長選挙で現職再選、「オール沖縄」の瓦解象徴…沖縄県「選挙イヤー」で自民党は国政選挙に弾み（読売新聞オンライン） - Yahoo!ニュース",
+      "publishedAt": "Mon, 26 Oct 2026 01:06:32 GMT"
+    },
+    {
+      "field": "physics",
+      "lessonId": "science-electric-circuits-voltage-resistance-01",
+      "cardId": "037",
+      "title": "消費電力",
+      "articleNeko": "積水化学の研究機関が、吹き抜けのあるリビングの消費電力を分析したにゃ。見出しには、断熱性能が高いほど消費電力が減ると書かれているにゃ。",
+      "articleCyber": "積水化学の研究機関が、吹き抜けリビングの消費電力を分析したんだぜ。見出しでは、断熱性能が高いほど消費電力が減るとあるんだぜ。",
+      "neko": "消費電力とは、電気器具が1秒あたりに使う電気エネルギーの量のことにゃ。問題の答えは「電力（消費電力）」にゃ。記事の「消費電力」も同じ言葉だにゃ。",
+      "cyber": "消費電力とは、電気器具が1秒あたりに使う電気エネルギーの量のことだぜ。問題の答えは「電力（消費電力）」だぜ。記事の「消費電力」も同じ言葉なんだぜ。",
+      "label": "物理",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBncGtod1ZuQU9QaDF1ZGFBa1REQUkyZ3dya2ZrRGp3ck42R1Ytd0VwWXYzUVFIR0dOZlhSWG1yU20td3RhZFJ3RmE2bmzSAUxBVV95cUxQZ3BraHdWbkFPUGgxdWRhQWtUREFJMmd3cmtma0Rqd3JONkdWLXdFcFl2M1FRSEdHTmZYUlhtclNtLXd0YWRSd0ZhNm5s?oc=5",
+      "source": "住宅産業新聞",
+      "sourceHeadline": "積水化学の調査研究機関、吹き抜けリビングの消費電力量についてビッグデータで分析=断熱性能高いほど消費電力が減少 - 住宅産業新聞",
+      "publishedAt": "Mon, 26 Oct 2026 04:32:36 GMT"
+    },
+    {
+      "field": "chemistry",
+      "lessonId": "science-materials-gases-01",
+      "cardId": "009",
+      "title": "使用済みプラスチック",
+      "articleNeko": "使い終わったプラスチックを化学の原料として使う取り組みがあるにゃ。見出しでは、年2万トンを処理すると書かれているにゃ。",
+      "articleCyber": "使い終わったプラスチックを化学の原料に使う取り組みがあるんだぜ。見出しでは、年2万トンを処理するとあるんだぜ。",
+      "neko": "ポリエチレンやポリ塩化ビニルなどの種類がある、有機物の一種は「プラスチック」にゃ。問題の答えは「プラスチック」にゃ。記事の「使用済みプラ」も同じものだにゃ。",
+      "cyber": "ポリエチレンやポリ塩化ビニルなどの種類がある、有機物の一種は「プラスチック」だぜ。問題の答えは「プラスチック」だぜ。記事の「使用済みプラ」も同じものなんだぜ。",
+      "label": "化学",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9PSFc5dWlFQ2xzcU1UbGhQRTVHdmdieFhEX0pkc2tVczJHTDhQaVhSWFJ0YXVsZDdIRFRPTWxZbW1GR19nZGt1UVZHV2p2QWRGZzFDNlRnb0E0bmU5Rnh4RnlqZXY0WXVHNWU3eENZdTNta1pERFdrZkhnR0x5SzA?oc=5",
+      "source": "環境ビジネスオンライン",
+      "sourceHeadline": "三菱ケミカル、使用済みプラを化学原料に 「超臨界水」で油化／年2万t処理 - 環境ビジネスオンライン",
+      "publishedAt": "Mon, 26 Oct 2026 04:01:21 GMT"
+    },
+    {
+      "field": "biology",
+      "lessonId": "science-food-chain-ecosystem-grade3-01",
+      "cardId": "017",
+      "title": "自然の大切さと持続可能な社会",
+      "articleNeko": "佐賀市の県立森林公園で、池干しをして生き物を観察するイベントがあるにゃ。11月22日に行われ、参加者を募集しているにゃ。自然の大切さを学ぶ催しだにゃ。",
+      "articleCyber": "佐賀市の県立森林公園で、池干しをして生き物を観察するイベントがあるんだぜ。11月22日に行われ、参加者を募集しているんだぜ。自然の大切さを学ぶ催しなんだぜ。",
+      "neko": "自然から恵みを受けて、限りある資源を守り、将来も同じように暮らせる社会を「持続可能な社会」というにゃ。問題の答えは「持続可能な社会」にゃ。自然を大切にする考えは、このイベントとつながるにゃ。",
+      "cyber": "自然から恵みを受けて、限りある資源を守り、将来も同じように暮らせる社会を「持続可能な社会」っていうんだぜ。問題の答えは「持続可能な社会」だぜ。自然を大切にする考えは、このイベントともつながるんだぜ。",
+      "label": "生物",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB2WE9zbFRYSnE5bGFhNXR2UWY2S3pfOGE5czNPT2RGLXVTR0ZOVVlLT3hDNzhzTzhmZTFSUFJxcnNyZHBrZU1mbTNxbU96eFdSM2swUFBB?oc=5",
+      "source": "佐賀新聞",
+      "sourceHeadline": "「池干し」で生物観察、自然の大切さを学ぼう トヨタソーシャルフェス参加者募集 11月22日、佐賀市の県立森林公園 - 佐賀新聞",
+      "publishedAt": "Mon, 26 Oct 2026 02:30:00 GMT"
+    }
+  ]
+}

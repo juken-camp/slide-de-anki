@@ -6297,7 +6297,6 @@ function nekoRenderConversation(root,key,animate=false){
   let row=previous.get(id);
   if(!row){
    row=collectionNode('div',undefined,'neko-conversation-turn');
-   if(!current)row.append(collectionNode('small','以前の設定・解答でのやり取り','neko-chat-archive-label'));
    const answer=collectionNode('div',undefined,'neko-conversation-answer user-content'),text=turn.fullExplanation||turn.text||'';
    row.append(collectionNode('p',nekoQuestionVoice(turn.question||nekoActionLabels[turn.action]||'解説'),'neko-conversation-question user-content'),answer);
    nekoRenderExplanation(answer,readableTutorText(text),turn.glossary||[],key,animate&&i===turns.length-1);answer.hidden=!text;

@@ -3199,6 +3199,14 @@ html[data-persona=cyber] #app #catalogScreen .news-date-tabs{background:#0c1730;
 html[data-persona=cyber] #app #catalogScreen .news-date-tabs button,html[data-persona=cyber] #app #catalogScreen .news-date-history button{color:#bcd8ee}
 html[data-persona=cyber] #app #catalogScreen .news-date-tabs button.active,html[data-persona=cyber] #app #catalogScreen .news-date-history button.active{border-color:#00e9f5;background:#07304a;color:#ddffff;box-shadow:0 0 9px #00e9f555}
 html[data-persona=cyber] #app #catalogScreen .news-date-history button:not(.active){background:#0c1730;border-color:#315778}
+
+#app #catalogScreen .news-tools{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+#app #catalogScreen .news-tools button,#app #catalogScreen .news-fields button,#app #catalogScreen .news-find button{min-height:38px;padding:7px;border:2px solid #d5b99b;border-radius:10px;background:#fffaf2;color:#805334;font:inherit;font-size:12px;font-weight:700}
+#app #catalogScreen .news-tools button.active,#app #catalogScreen .news-fields button.active{border-color:#c99465;background:#ffe9d3}
+#app #catalogScreen .news-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+#app #catalogScreen .news-find{display:flex;gap:6px} #app #catalogScreen .news-find input{min-width:0;flex:1;padding:8px 10px;font-size:16px;border:2px solid #d5b99b;border-radius:10px;background:#fffaf2;color:#503a2b} #app #catalogScreen .news-find button{flex:0 0 auto;padding:7px 14px}
+html[data-persona=cyber] #app #catalogScreen :is(.news-tools button,.news-fields button,.news-find button,.news-find input){background:#0c1730;border-color:#315778;color:#d4efff}
+html[data-persona=cyber] #app #catalogScreen :is(.news-tools button.active,.news-fields button.active){border-color:#00e9f5;background:#07304a;box-shadow:0 0 9px #00e9f555}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -5709,6 +5717,15 @@ async function openSearchQuestion(lid,cid,source){
 }
 // These are deliberately fictional examples, not automatically retrieved news.
 let newsDemoTopics=[],newsDates=null,newsSelectedDate=null,newsLoading=false,newsError='',newsLoadedDate=null,newsHistoryOpen=false;
+let newsTool='',newsField='',newsQuery='',newsArchive=null,newsArchiveLoading=false,newsArchiveFailures=0;
+async function loadNewsArchive(){
+ if(newsArchiveLoading||newsArchive)return;newsArchiveLoading=true;newsArchiveFailures=0;if(newsDemoMode)renderCatalog();
+ try{if(!newsDates){const r=await fetch('news/daily/index.json',{cache:'no-store'});if(!r.ok)throw Error();const index=await r.json();if(index.version!==1||!Array.isArray(index.dates))throw Error();newsDates=index.dates.filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d));}
+ const dates=[...newsDates].sort().reverse(),results=new Array(dates.length);let next=0;
+ async function worker(){while(next<dates.length){const i=next++,date=dates[i];try{const r=await fetch('news/daily/'+date+'.json',{cache:'no-store'});if(!r.ok)throw Error();const data=await r.json();if(data.version!==1||data.date!==date||!Array.isArray(data.items))throw Error();results[i]=data.items.filter(x=>x&&newsIcons[x.field]&&typeof x.lessonId==='string'&&typeof x.cardId==='string'&&typeof x.url==='string'&&/^https:\/\//.test(x.url)&&['title','articleNeko','articleCyber','neko','cyber'].every(k=>typeof x[k]==='string'&&x[k])).map(x=>({...x,archiveDate:date,label:newsIcons[x.field]+' '+({geography:'地理',history:'歴史',civics:'公民',physics:'物理',chemistry:'化学',biology:'生物',earth:'地学'})[x.field]}));}catch(e){newsArchiveFailures++;results[i]=[];}}}
+ await Promise.all(Array.from({length:Math.min(4,dates.length)},worker));newsArchive=results.flat();
+ }catch(e){newsArchiveFailures++;newsArchive=[];}finally{newsArchiveLoading=false;if(newsDemoMode&&screen==='catalog')renderCatalog();}
+}
 const newsIcons={geography:'🌏',history:'🏯',civics:'🏛️',physics:'⚡',chemistry:'🧪',biology:'🌱',earth:'🌀'};
 function newsToday(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));return `${p.year}-${p.month}-${p.day}`;}
 async function newsLoad(date=null,refresh=false){
@@ -5744,13 +5761,16 @@ function renderNewsDemo(){
  const yesterdayDate=new Date(newsToday()+'T03:00:00Z');yesterdayDate.setUTCDate(yesterdayDate.getUTCDate()-1);
  const yesterday=yesterdayDate.toISOString().slice(0,10),isPast=showing!==newsToday()&&showing!==yesterday;
  const tabs=collectionNode('div',undefined,'news-date-tabs');tabs.setAttribute('aria-label','ニュースの日付');
- function chooseNewsDate(date){if(newsLoading)return;newsSelectedDate=date;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(date);}
+ function chooseNewsDate(date){if(newsLoading)return;newsTool='';newsField='';newsQuery='';newsSelectedDate=date;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(date);}
  for(const [label,date] of [['今日',newsToday()],['昨日',yesterday]]){const button=collectionNode('button',label);button.type='button';button.classList.toggle('active',showing===date&&!newsHistoryOpen);button.setAttribute('aria-pressed',String(showing===date&&!newsHistoryOpen));button.onclick=()=>{newsHistoryOpen=false;chooseNewsDate(date);};tabs.append(button);}
  const past=collectionNode('button','過去');past.type='button';past.classList.toggle('active',newsHistoryOpen||isPast);past.setAttribute('aria-expanded',String(newsHistoryOpen));past.onclick=()=>{newsHistoryOpen=!newsHistoryOpen;renderCatalog();};tabs.append(past);header.append(tabs);
  if(newsHistoryOpen){const history=collectionNode('div',undefined,'news-date-history');history.setAttribute('aria-label','過去のニュースの日付');
  for(const days of [3,4]){const d=new Date(newsToday()+'T03:00:00Z');d.setUTCDate(d.getUTCDate()-days);const date=d.toISOString().slice(0,10);const label=newsDateLabel(d).replace(/\s*今日の7問$/,'');const button=collectionNode('button',label);button.type='button';button.classList.toggle('active',date===showing);button.setAttribute('aria-pressed',String(date===showing));button.onclick=()=>chooseNewsDate(date);history.append(button);}
  const picker=collectionNode('label',undefined,'news-date-picker');picker.append(collectionNode('span','日付を指定'));const select=document.createElement('select');select.setAttribute('aria-label','過去のニュースの日付を指定');const placeholder=collectionNode('option','日付を指定');placeholder.value='';placeholder.disabled=true;placeholder.selected=true;select.append(placeholder);for(const date of (newsDates||[]).filter(d=>d<newsToday()).sort().reverse()){const option=collectionNode('option',newsDateLabel(new Date(date+'T03:00:00Z')).replace(/\s*今日の7問$/,''));option.value=date;select.append(option);}select.onchange=()=>chooseNewsDate(select.value);picker.append(select);history.append(picker);header.append(history);
  if(isPast){const current=collectionNode('div',newsDateLabel(new Date(showing+'T03:00:00Z')).replace(/\s*今日の7問$/,''));current.style.cssText='font-size:12px;opacity:.8;text-align:center';header.append(current);}}
+ const toolsRow=collectionNode('div',undefined,'news-tools');for(const [id,label] of [['field','分野から探す'],['search','ニュースを検索']]){const b=collectionNode('button',label);b.type='button';b.classList.toggle('active',newsTool===id);b.setAttribute('aria-expanded',String(newsTool===id));b.onclick=()=>{newsTool=newsTool===id?'':id;newsField='';newsQuery='';renderCatalog();};toolsRow.append(b);}header.append(toolsRow);
+ if(newsTool==='field'){const fields=collectionNode('div',undefined,'news-fields');for(const [id,label] of [['geography','地理'],['history','歴史'],['civics','公民'],['physics','物理'],['chemistry','化学'],['biology','生物'],['earth','地学']]){const b=collectionNode('button',label);b.type='button';b.classList.toggle('active',newsField===id);b.onclick=()=>{newsField=id;renderCatalog();loadNewsArchive();};fields.append(b);}header.append(fields);}
+ if(newsTool==='search'){const form=document.createElement('form');form.className='news-find';const input=document.createElement('input');input.type='search';input.placeholder='ニュースや問題の言葉';input.value=newsQuery;input.setAttribute('aria-label','ニュースを検索');const b=collectionNode('button','検索');b.type='submit';form.append(input,b);form.onsubmit=e=>{e.preventDefault();newsQuery=input.value.trim();renderCatalog();if(newsQuery)loadNewsArchive();};header.append(form);}
  const filterRow=document.querySelector('#catalogScreen .catalog-filter-row');filterRow.hidden=false;filterRow.append(header);
 
  if(!assessmentDataset){
@@ -5759,11 +5779,16 @@ function renderNewsDemo(){
   else if(!assessmentPromise)ensureAssessmentData().then(()=>{if(newsDemoMode&&screen==='catalog')renderCatalog();}).catch(()=>{if(newsDemoMode&&screen==='catalog')renderCatalog();});
   return;
  }
- if(!newsLoadedDate){groups.append(collectionNode('p','ニュースを準備しています…','news-demo-notice'));newsLoad(newsSelectedDate||null);return;}
- if(newsError||!newsDemoTopics.length){groups.append(collectionNode('p',newsError||'この日のニュースはまだありません。','news-demo-notice'));const retry=collectionButton('更新を確認','link-button',()=>{newsLoadedDate=null;newsLoad(showing,true);renderCatalog();});groups.append(retry);return;}
- for(const topic of newsDemoTopics){
+ const archiveMode=(newsTool==='field'&&newsField)||(newsTool==='search'&&newsQuery);
+ if(archiveMode){if(newsArchiveLoading||!newsArchive){groups.append(collectionNode('p','過去のニュースを読み込んでいます…','news-demo-notice'));loadNewsArchive();return;}if(newsArchiveFailures){groups.append(collectionNode('p','一部のニュースを読み込めませんでした。','news-demo-notice'));groups.append(collectionButton('もう一度読み込む','link-button',()=>{newsArchive=null;loadNewsArchive();}));}}
+ if(!archiveMode&&!newsLoadedDate){groups.append(collectionNode('p','ニュースを準備しています…','news-demo-notice'));newsLoad(newsSelectedDate||null);return;}
+ if(!archiveMode&&(newsError||!newsDemoTopics.length)){groups.append(collectionNode('p',newsError||'この日のニュースはまだありません。','news-demo-notice'));const retry=collectionButton('更新を確認','link-button',()=>{newsLoadedDate=null;newsLoad(showing,true);renderCatalog();});groups.append(retry);return;}
+ const searchText=newsQuery.normalize('NFKC').toLowerCase();
+ const topics=archiveMode?newsArchive.filter(t=>{if(newsTool==='field')return t.field===newsField;const found=newsDemoFind(t);return JSON.stringify([t.title,t.articleNeko,t.articleCyber,t.neko,t.cyber,found?.m?.title,found?.c]).normalize('NFKC').toLowerCase().includes(searchText);}):newsDemoTopics;
+ if(archiveMode&&!topics.length)groups.append(collectionNode('p','該当するニュースはありません。','news-demo-notice'));
+ for(const topic of topics){
   const found=newsDemoFind(topic),entry=collectionNode('section',undefined,'news-demo-entry');
-  entry.append(collectionNode('h3',topic.label+'｜'+topic.title,'news-demo-title'));
+  if(archiveMode)entry.append(collectionNode('p',newsDateLabel(new Date(topic.archiveDate+'T03:00:00Z')).replace(/\s*今日の7問$/,''),'news-demo-lesson'));entry.append(collectionNode('h3',topic.label+'｜'+topic.title,'news-demo-title'));
   if(!found){entry.append(collectionNode('p','問題を準備できませんでした。'));groups.append(entry);continue;}
   const {m,c,fallback}=found;entry.append(collectionNode('p',newsDemoArticle(topic),'news-demo-article user-content'),collectionNode('p',m.title,'news-demo-lesson'));
   const row=questionSearchButton(m,c),button=row.querySelector('.question-search-hit');

@@ -2531,6 +2531,10 @@ html[data-persona=cyber] #app .neko-bubble-wait{background:#0d223a;border-color:
 html[data-persona=cyber] #app .settings-info{color:#b8d9f7}
 
 #app :is(#resumeNote,#personaHint,#profileNameNote,#landscapeNote)[hidden]{display:none!important}
+
+#app #catalogScreen .news-date-picker.active{border-color:#c99465;background:#fffaf2;color:#783b1c;box-shadow:0 3px 0 #d5b08d}
+html[data-persona=cyber] #app #catalogScreen .news-date-picker.active{border-color:#00e9f5;background:#07304a;color:#ddffff;box-shadow:0 0 9px #00e9f555}
+#app #catalogScreen .news-date-picker:focus-within{outline:2px solid currentColor;outline-offset:2px}
 </style>
 <style>
 /* Cyber controls in dialogs override the generic dialog button skin. */
@@ -5814,6 +5818,7 @@ async function openSearchQuestion(lid,cid,source){
 }
 // These are deliberately fictional examples, not automatically retrieved news.
 let newsDemoTopics=[],newsDates=null,newsSelectedDate=null,newsLoading=false,newsError='',newsLoadedDate=null,newsHistoryOpen=false;
+let newsDatePickerActive=false,newsCustomDate='';
 let newsTool='',newsField='',newsQuery='',newsArchive=null,newsArchiveLoading=false,newsArchiveFailures=0;
 async function loadNewsArchive(){
  if(newsArchiveLoading||newsArchive)return;newsArchiveLoading=true;newsArchiveFailures=0;if(newsDemoMode)renderCatalog();
@@ -5858,13 +5863,16 @@ function renderNewsDemo(){
  const header=collectionNode('div',undefined,'news-date-panel');header.id='newsDateControls';
  const isPast=showing!==newsToday();
  const tabs=collectionNode('div',undefined,'news-date-tabs');tabs.setAttribute('aria-label','ニュースの探し方');
- function chooseNewsDate(date){if(newsLoading)return;newsTool='';newsField='';newsQuery='';$('catalogSearch').value='';newsSelectedDate=date;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(date);}
+ function chooseNewsDate(date,fromPicker=false){if(newsLoading)return;if(!fromPicker){newsDatePickerActive=false;newsCustomDate='';}newsTool='';newsField='';newsQuery='';$('catalogSearch').value='';newsSelectedDate=date;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(date);}
  const todayButton=collectionNode('button','今日のニュース');todayButton.type='button';const todayActive=showing===newsToday()&&!newsHistoryOpen&&!newsTool;todayButton.classList.toggle('active',todayActive);todayButton.setAttribute('aria-pressed',String(todayActive));todayButton.onclick=()=>{newsHistoryOpen=false;chooseNewsDate(newsToday());};tabs.append(todayButton);
  const past=collectionNode('button','過去のニュース');past.type='button';past.classList.toggle('active',!newsTool&&(newsHistoryOpen||isPast));past.setAttribute('aria-expanded',String(newsHistoryOpen));past.onclick=(event)=>{beep('tap',event);newsHistoryOpen=!newsHistoryOpen;newsTool='';newsField='';newsQuery='';$('catalogSearch').value='';renderCatalog();};tabs.append(past);
  const fieldButton=collectionNode('button','分野から探す');fieldButton.type='button';fieldButton.classList.toggle('active',newsTool==='field');fieldButton.setAttribute('aria-expanded',String(newsTool==='field'));fieldButton.onclick=()=>{newsTool=newsTool==='field'?'':'field';newsHistoryOpen=false;newsField='';newsQuery='';$('catalogSearch').value='';renderCatalog();};tabs.append(fieldButton);header.append(tabs);
  if(newsHistoryOpen){const history=collectionNode('div',undefined,'news-date-history');history.setAttribute('aria-label','過去のニュースの日付');
- for(const days of [1,2]){const d=new Date(newsToday()+'T03:00:00Z');d.setUTCDate(d.getUTCDate()-days);const date=d.toISOString().slice(0,10);const label=newsDateLabel(d).replace(/\s*今日の7問$/,'');const button=collectionNode('button',label);button.type='button';button.classList.toggle('active',date===showing);button.setAttribute('aria-pressed',String(date===showing));button.onclick=()=>chooseNewsDate(date);history.append(button);}
- const picker=collectionNode('label',undefined,'news-date-picker');picker.append(collectionNode('span','日付を指定'));const select=document.createElement('select');select.setAttribute('aria-label','過去のニュースの日付を指定');const placeholder=collectionNode('option','日付を指定');placeholder.value='';placeholder.disabled=true;placeholder.selected=true;select.append(placeholder);for(const date of (newsDates||[]).filter(d=>d<newsToday()).sort().reverse()){const option=collectionNode('option',newsDateLabel(new Date(date+'T03:00:00Z')).replace(/\s*今日の7問$/,''));option.value=date;select.append(option);}select.onchange=()=>chooseNewsDate(select.value);picker.append(select);history.append(picker);header.append(history);
+ for(const days of [1,2]){const d=new Date(newsToday()+'T03:00:00Z');d.setUTCDate(d.getUTCDate()-days);const date=d.toISOString().slice(0,10);const label=newsDateLabel(d).replace(/\s*今日の7問$/,'');const button=collectionNode('button',label);button.type='button';button.classList.toggle('active',date===showing&&!newsDatePickerActive);button.setAttribute('aria-pressed',String(date===showing&&!newsDatePickerActive));button.onclick=()=>chooseNewsDate(date);history.append(button);}
+ const picker=collectionNode('label',undefined,'news-date-picker');const pickerLabel=collectionNode('span',(newsCustomDate?newsDateLabel(new Date(newsCustomDate+'T03:00:00Z')).replace(/\s*今日の7問$/,''):'日付を指定')+' ▾');picker.append(pickerLabel);picker.classList.toggle('active',newsDatePickerActive);const select=document.createElement('select');select.setAttribute('aria-label','過去のニュースの日付を指定');const placeholder=collectionNode('option','日付を指定');placeholder.value='';placeholder.disabled=true;placeholder.selected=true;select.append(placeholder);for(const date of (newsDates||[]).filter(d=>d<newsToday()).sort().reverse()){const option=collectionNode('option',newsDateLabel(new Date(date+'T03:00:00Z')).replace(/\s*今日の7問$/,''));option.value=date;select.append(option);}if(newsCustomDate)select.value=newsCustomDate;
+ const activatePicker=()=>{newsDatePickerActive=true;picker.classList.add('active');for(const button of history.querySelectorAll('button')){button.classList.remove('active');button.setAttribute('aria-pressed','false');}};
+ select.addEventListener('pointerdown',activatePicker);select.addEventListener('focus',activatePicker);
+ select.onchange=()=>{if(newsLoading){select.value=newsCustomDate||'';return;}newsCustomDate=select.value;newsDatePickerActive=true;chooseNewsDate(select.value,true);};picker.append(select);history.append(picker);header.append(history);
  }
  if(newsTool==='field'){const fields=collectionNode('div',undefined,'news-fields');for(const [id,label] of [['physics','物理'],['chemistry','化学'],['biology','生物'],['earth','地学'],['geography','地理'],['history','歴史'],['civics','公民']]){const b=collectionNode('button',label);const icon=collectionNode('span',newsIcons[id]+' ');icon.setAttribute('aria-hidden','true');b.prepend(icon);b.type='button';b.classList.toggle('active',newsField===id);b.onclick=()=>{newsField=id;renderCatalog();loadNewsArchive();};fields.append(b);}header.append(fields);}
  const filterRow=document.querySelector('#catalogScreen .catalog-filter-row');filterRow.hidden=false;filterRow.append(header);

@@ -2535,6 +2535,12 @@ html[data-persona=cyber] #app .settings-info{color:#b8d9f7}
 #app #catalogScreen .news-date-picker.active{border-color:#c99465;background:#fffaf2;color:#783b1c;box-shadow:0 3px 0 #d5b08d}
 html[data-persona=cyber] #app #catalogScreen .news-date-picker.active{border-color:#00e9f5;background:#07304a;color:#ddffff;box-shadow:0 0 9px #00e9f555}
 #app #catalogScreen .news-date-picker:focus-within{outline:2px solid currentColor;outline-offset:2px}
+
+/* Keep the three actions aligned and the preview control inside each tile. */
+#collectionDialog .collection-grid-tools{display:grid;grid-template-columns:1fr 1.55fr 1fr;gap:5px}
+#collectionDialog .collection-grid-tools button{min-width:0;white-space:nowrap;padding:6px 2px;font-size:clamp(8px,2.6vw,11px)}
+#collectionDialog .collection-tile .collection-zoom{position:absolute;right:5px;bottom:5px;width:34px;height:30px;min-width:0;min-height:0;padding:0;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;color:#8c552d;line-height:30px;font-size:20px}
+html[data-persona="cyber"] #collectionDialog .collection-tile .collection-zoom{background:transparent!important;box-shadow:none!important;color:#b7eaff!important}
 </style>
 <style>
 /* Cyber controls in dialogs override the generic dialog button skin. */
@@ -3512,7 +3518,7 @@ html[data-persona="cyber"] #examSetDialog .exam-set-count{color:#a9cde8}
   <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="まとめの名前を入れるにゃ" autocomplete="off">
   <details class="collection-picker" id="collectionPicker" open><summary id="collectionPickerToggle" role="button" aria-controls="collectionPickerContent">＋ 教材をえらぶにゃ</summary><div id="collectionPickerContent">
    <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
-   <div id="collectionLessonPicker" role="listbox" tabindex="0" aria-label="追加する教材の一覧"></div>
+   <div id="collectionLessonPicker" role="listbox" aria-multiselectable="true" tabindex="0" aria-label="追加する教材の一覧"></div>
    <div class="collection-picker-actions"><button class="secondary-button" id="collectionAddWhole" type="button">丸ごと入れるにゃ</button><button class="secondary-button" id="collectionPickCards" type="button">問題を選ぶにゃ</button></div>
   </div></details>
   <nav id="collectionLessonTabs" class="collection-lesson-tabs" aria-label="編集中の教材"></nav>
@@ -5086,41 +5092,46 @@ function fillCollectionSubjects() {
   for(const [id,label] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const option=collectionNode('option',label);option.value=id;select.append(option);}
   select.value=[...select.options].some(o=>o.value===value)?value:'all';fillCollectionLessons();
 }
-function chooseCollectionMaterial(id,{focus=false}={}) {
-  const list=$('collectionLessonPicker');list.dataset.value=id || '';
+function chooseCollectionMaterial(id) {
+  if(!collectionEditor || !id)return;
+  const selected=collectionEditor.pickerSelection;
+  if(selected.has(id))selected.delete(id);else selected.add(id);
+  updateCollectionPickerSelection();
+}
+function updateCollectionPickerSelection() {
+  const list=$('collectionLessonPicker'),selected=collectionEditor?.pickerSelection||new Set();
   for(const row of list.querySelectorAll('[data-collection-material]')) {
-    const on=row.dataset.collectionMaterial===id;
-    row.setAttribute('aria-selected',String(on));row.tabIndex=on?0:-1;
+    const on=selected.has(row.dataset.collectionMaterial);
+    row.setAttribute('aria-selected',String(on));row.tabIndex=0;
     row.querySelector('.collection-material-tick').textContent=on?'✓':'';
-    if(on && focus){row.focus({preventScroll:true});row.scrollIntoView({block:'nearest',behavior:'instant'});}
   }
+  $('collectionAddWhole').disabled=$('collectionPickCards').disabled=!selected.size;
 }
 function fillCollectionLessons() {
-  const list=$('collectionLessonPicker'),previous=list.dataset.value,subject=$('collectionSubject').value;
+  const list=$('collectionLessonPicker'),subject=$('collectionSubject').value;
   const q=$('collectionLessonSearch').value.normalize('NFKC').trim().toLocaleLowerCase();list.replaceChildren();
-  const matches=[];
+  let count=0;
   for(const sub of [...new Set(meta.map(m=>m.subject))]) {
     if(!q && subject!=='all' && subject!==sub)continue;
     const items=meta.filter(m=>isListedLesson(m) && m.subject===sub && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
     if(!items.length)continue;
     if(q || subject==='all'){const heading=collectionNode('div',subjectLabel(sub),'collection-list-subject');heading.setAttribute('role','presentation');list.append(heading);}
     for(const m of items) {
-      matches.push(m.id);
+      count++;
       const row=collectionButton('','collection-material-row',()=>chooseCollectionMaterial(m.id));row.dataset.collectionMaterial=m.id;row.setAttribute('role','option');
       const tick=collectionNode('span','','collection-material-tick');tick.setAttribute('aria-hidden','true');
       row.append(tick,collectionNode('span',m.title,'collection-material-title'),collectionNode('span',`${m.count}問`,'collection-material-count'));list.append(row);
     }
   }
-  chooseCollectionMaterial(matches.includes(previous)?previous:matches[0]);
-  list.tabIndex=matches.length?-1:0;
-  if(!matches.length)list.append(collectionNode('p','その教材は見つからないにゃ','collection-material-empty'));
-  $('collectionAddWhole').disabled=$('collectionPickCards').disabled=!matches.length;
+  list.tabIndex=count?-1:0;
+  if(!count)list.append(collectionNode('p','その教材は見つからないにゃ','collection-material-empty'));
+  updateCollectionPickerSelection();
 }
 $('collectionLessonPicker').addEventListener('keydown',e=>{
-  const list=$('collectionLessonPicker'),rows=[...list.querySelectorAll('[data-collection-material]')];if(!rows.length || !['ArrowDown','ArrowUp','Home','End'].includes(e.key))return;
-  e.preventDefault();const at=Math.max(0,rows.findIndex(b=>b.dataset.collectionMaterial===list.dataset.value));
+  const rows=[...$('collectionLessonPicker').querySelectorAll('[data-collection-material]')];if(!rows.length || !['ArrowDown','ArrowUp','Home','End'].includes(e.key))return;
+  e.preventDefault();const at=Math.max(0,rows.indexOf(document.activeElement));
   const next=e.key==='Home'?0:e.key==='End'?rows.length-1:Math.max(0,Math.min(rows.length-1,at+(e.key==='ArrowDown'?1:-1)));
-  chooseCollectionMaterial(rows[next].dataset.collectionMaterial,{focus:true});
+  rows[next].focus({preventScroll:true});rows[next].scrollIntoView({block:'nearest',behavior:'instant'});
 });
 function editorStatus(message='') {$('collectionEditorStatus').textContent=message;}
 function updateCollectionTotal() {
@@ -5166,7 +5177,7 @@ $('collectionPickerToggle').addEventListener('click',()=>{
 async function openCollectionEditor(id=null) {
   const existing=readCollections().find(c=>c.id===id);if(id&&!existing){toast('まとめが見つからないにゃ');return;}
   pause();collectionEditSequence++;
-  collectionEditor={id:existing?.id||null,updated:existing?.updated,cards:new Map(),activeId:null,activeRaw:null};
+  collectionEditor={id:existing?.id||null,updated:existing?.updated,cards:new Map(),pickerSelection:new Set(),activeId:null,activeRaw:null};
   for(const r of existing?.cards||[]){if(!collectionEditor.cards.has(r.lessonId))collectionEditor.cards.set(r.lessonId,new Set());collectionEditor.cards.get(r.lessonId).add(r.cardId);}
   $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';
   $('collectionDialogTitle').textContent=existing?'まとめを編集するにゃ':'まとめを作るにゃ';
@@ -5260,8 +5271,22 @@ function saveCollectionEditor() {
 $('myAddLesson').onclick=()=>$('openImport').click();
 $('newMyCollection').onclick=()=>openCollectionEditor();
 $('collectionSubject').onchange=fillCollectionLessons;$('collectionLessonSearch').oninput=fillCollectionLessons;
-$('collectionAddWhole').onclick=()=>loadCollectionGrid($('collectionLessonPicker').dataset.value,{whole:true});
-$('collectionPickCards').onclick=()=>loadCollectionGrid($('collectionLessonPicker').dataset.value);
+async function addSelectedCollectionMaterials(whole) {
+  const editor=collectionEditor,ids=[...(editor?.pickerSelection||[])];if(!editor || !ids.length)return;
+  const seq=++collectionEditSequence;
+  editorStatus('ちょっと待ってにゃ🐾');$('collectionAddWhole').disabled=$('collectionPickCards').disabled=$('collectionSave').disabled=true;
+  try {
+    const raws=[];
+    for(const id of ids){const m=meta.find(m=>m.id===id);if(!m)throw Error();raws.push(await getLesson(m));}
+    if(collectionEditor!==editor || seq!==collectionEditSequence)return;
+    for(const raw of raws){if(!editor.cards.has(raw.id))editor.cards.set(raw.id,new Set());if(whole)for(const c of raw.cards)editor.cards.get(raw.id).add(c.id);}
+    editor.pickerSelection.clear();renderCollectionTabs();updateCollectionTotal();
+    await loadCollectionGrid(ids[0]);
+  } catch {if(collectionEditor===editor && seq===collectionEditSequence)editorStatus('教材が開けなかったにゃ。通信を確認して、もう一度選んでにゃ。');}
+  finally {if(collectionEditor===editor && seq===collectionEditSequence){$('collectionSave').disabled=false;updateCollectionPickerSelection();}}
+}
+$('collectionAddWhole').onclick=()=>addSelectedCollectionMaterials(true);
+$('collectionPickCards').onclick=()=>addSelectedCollectionMaterials(false);
 $('collectionEditorClose').onclick=$('collectionEditorCancel').onclick=closeCollectionEditor;
 $('collectionDialog').addEventListener('cancel',e=>{e.preventDefault();closeCollectionEditor();});
 $('collectionSave').onclick=saveCollectionEditor;

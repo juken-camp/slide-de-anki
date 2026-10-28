@@ -3301,6 +3301,14 @@ html[data-persona] body #examSetDialog :is(#examSetStudy,#examSetTest,#examSetSa
 html[data-persona="cyber"] #examSetDialog .exam-set-count{color:#a9cde8}
 #examSetDialog .exam-set-actions #examSetSave{margin-top:3px}
 #examSetDialog .exam-set-filters select{appearance:none;-webkit-appearance:none;padding-left:6px!important;padding-right:14px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='none' stroke='%23749ab9' stroke-width='1.5' d='M1 1l4 4 4-4'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 5px center!important}
+
+/* Collection editor: align the heading and fit all three controls on one row. */
+html[data-persona] body dialog#collectionDialog .collection-active-heading{display:flex;align-items:center;gap:8px}
+html[data-persona] body dialog#collectionDialog .collection-active-heading h3{flex:1;min-width:0;line-height:1.45}
+html[data-persona] body dialog#collectionDialog #collectionRemoveLesson{flex:0 0 auto;align-self:center;min-height:44px;margin:0!important;padding:5px 2px!important;font-size:clamp(9px,2.8vw,12px)!important;line-height:1.3!important;white-space:nowrap}
+html[data-persona] body dialog#collectionDialog .collection-grid-tools{grid-template-columns:minmax(0,1fr) minmax(0,1.85fr) minmax(0,1fr);gap:4px}
+html[data-persona] body dialog#collectionDialog .collection-grid-tools button.tool{min-width:0;width:100%;padding:7px 1px!important;font-size:clamp(8px,2.45vw,10px)!important;line-height:1.25;white-space:nowrap;letter-spacing:-.03em}
+html[data-persona] body dialog#collectionDialog .collection-tile-label{background:transparent!important;box-shadow:none!important}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

@@ -3207,6 +3207,28 @@ html[data-persona=cyber] #app #catalogScreen .news-date-history button:not(.acti
 #app #catalogScreen .news-find{display:flex;gap:6px} #app #catalogScreen .news-find input{min-width:0;flex:1;padding:8px 10px;font-size:16px;border:2px solid #d5b99b;border-radius:10px;background:#fffaf2;color:#503a2b} #app #catalogScreen .news-find button{flex:0 0 auto;padding:7px 14px}
 html[data-persona=cyber] #app #catalogScreen :is(.news-tools button,.news-fields button,.news-find button,.news-find input){background:#0c1730;border-color:#315778;color:#d4efff}
 html[data-persona=cyber] #app #catalogScreen :is(.news-tools button.active,.news-fields button.active){border-color:#00e9f5;background:#07304a;box-shadow:0 0 9px #00e9f555}
+
+/* Past exam references: keep the counter fixed and scroll only the year list. */
+#app #studyScreen .slide-meta{display:flex;align-items:center;gap:12px;min-width:0;max-width:100%}
+#app #studyScreen .slide-meta #cardPosition{flex:0 0 auto;white-space:nowrap}
+#pastExamRow{display:flex;align-items:center;gap:7px;flex:0 1 auto;min-width:0;margin-left:auto;font-size:12px;color:var(--muted)}
+#pastExamRow[hidden]{display:none!important}
+#app[data-question-preview="true"] #pastExamRow{margin-left:0;flex:1 1 auto}
+.past-exam-caption{flex:none;white-space:nowrap}
+#pastExamList{display:flex;align-items:center;gap:10px;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scrollbar-width:thin}
+#pastExamList .past-exam-year{flex:none;min-height:32px;padding:3px 0;border:0;border-radius:3px;background:transparent;color:var(--ink);font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+html[data-persona=cyber] #pastExamList .past-exam-year{color:#91f1ff}
+#pastExamList .past-exam-year:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
+#pastExamDialog{width:min(540px,calc(100vw - 24px));box-sizing:border-box}
+#pastExamDialog .past-exam-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#pastExamDialog h2{margin:0;font-size:18px}
+#pastExamClose{flex:none;min-width:40px;min-height:40px;font-size:22px}
+#pastExamDialog .past-exam-note{font-size:12px;line-height:1.7}
+.past-exam-detail{padding:14px 0;border-top:1px solid currentColor;scroll-margin:12px}
+#pastExamDialog .past-exam-detail h3{margin:0 0 8px;font-size:15px}
+#pastExamDialog .past-exam-detail p{margin:7px 0;line-height:1.7}
+#pastExamDialog .past-exam-relation{font-size:12px}
+@media(max-width:400px){#app #studyScreen .slide-meta{gap:8px}#pastExamRow{font-size:11px;gap:5px}#pastExamList{gap:9px}}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -3243,7 +3265,7 @@ html[data-persona=cyber] #app #catalogScreen :is(.news-tools button.active,.news
 
 
 <div id="loadingMessage" class="loading-message" role="status" hidden>ちょっと待ってにゃ🐾</div>
-<section class="stage" id="stage"><article class="card" id="card"><div class="head"><div class="face-meta"><span class="badge" id="faceLabel">問題</span><span class="status-tag" id="cardStatus">まだ</span></div><span class="focus-only" id="focusPosition" aria-hidden="true"></span><span class="unit" id="cardUnit"></span><button title="画像を拡大する" id="zoomImage" class="link-button" type="button" aria-label="問題画像を拡大する">⤢</button></div><div class="image-frame"><div class="slide-wrap loading" id="slideTap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="slideImage" alt="" draggable="false" decoding="async"><div class="image-status" id="imageStatus" role="status">ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="resetImageView" hidden aria-label="画像を元の大きさに戻す">100%に戻すにゃ</button></div></article><div class="actions"><button class="focus-only" id="focusPause" type="button" hidden aria-label="自動めくりを止めるにゃ"><span aria-hidden="true">Ⅱ</span> 停止</button><button class="arrow" id="prevButton" aria-label="前のカード">‹</button><button class="reveal" id="revealButton" type="button">答えを見るにゃ <span aria-hidden="true">↻</span></button><button class="again" id="weakButton" disabled>↻ おぼえてない</button><button class="done" id="knownButton" disabled>✓ おぼえた</button><button class="arrow" id="nextButton" aria-label="次のカード">›</button><button id="focusTools" class="focus-only" type="button" aria-haspopup="dialog" aria-controls="focusMenu" aria-expanded="false">操作にゃ ☰</button></div><div class="slide-meta"><p class="navigation-info" id="cardPosition" aria-live="polite"></p></div><div class="source-links" id="sourceLinks" aria-label="元動画へのリンク" hidden><a id="sourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="sourceMoment" target="_blank" rel="noopener noreferrer" hidden></a><span class="source-note" id="correctionNote" hidden>訂正画像を表示中（元動画は訂正前）</span></div><div id="newsStudyExplanation" hidden><p></p></div><div class="study-guide" style="background:transparent!important;border:0!important;box-shadow:none!important" hidden><span id="studyHint" role="status" style="background:transparent!important;box-shadow:none!important"></span></div><div class="study-progress"><div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div></div><details class="study-options" id="studyOptions"><summary><span>学び方・範囲</span><span id="optionsSummary">ぜんぶ · 問題から</span></summary><div class="study-options-body"><div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
+<section class="stage" id="stage"><article class="card" id="card"><div class="head"><div class="face-meta"><span class="badge" id="faceLabel">問題</span><span class="status-tag" id="cardStatus">まだ</span></div><span class="focus-only" id="focusPosition" aria-hidden="true"></span><span class="unit" id="cardUnit"></span><button title="画像を拡大する" id="zoomImage" class="link-button" type="button" aria-label="問題画像を拡大する">⤢</button></div><div class="image-frame"><div class="slide-wrap loading" id="slideTap" role="button" tabindex="0" aria-label="タップして解答を見る"><img id="slideImage" alt="" draggable="false" decoding="async"><div class="image-status" id="imageStatus" role="status">ちょっと待ってにゃ🐾</div></div><button class="image-reset" id="resetImageView" hidden aria-label="画像を元の大きさに戻す">100%に戻すにゃ</button></div></article><div class="actions"><button class="focus-only" id="focusPause" type="button" hidden aria-label="自動めくりを止めるにゃ"><span aria-hidden="true">Ⅱ</span> 停止</button><button class="arrow" id="prevButton" aria-label="前のカード">‹</button><button class="reveal" id="revealButton" type="button">答えを見るにゃ <span aria-hidden="true">↻</span></button><button class="again" id="weakButton" disabled>↻ おぼえてない</button><button class="done" id="knownButton" disabled>✓ おぼえた</button><button class="arrow" id="nextButton" aria-label="次のカード">›</button><button id="focusTools" class="focus-only" type="button" aria-haspopup="dialog" aria-controls="focusMenu" aria-expanded="false">操作にゃ ☰</button></div><div class="slide-meta"><p class="navigation-info" id="cardPosition" aria-live="polite"></p><div id="pastExamRow" hidden><span class="past-exam-caption">入試過去問</span><div id="pastExamList" role="group" aria-label="入試過去問の年度一覧・横にスクロールできます"></div></div></div><div class="source-links" id="sourceLinks" aria-label="元動画へのリンク" hidden><a id="sourceVideo" target="_blank" rel="noopener noreferrer">▶︎ 元動画をみる</a><a id="sourceMoment" target="_blank" rel="noopener noreferrer" hidden></a><span class="source-note" id="correctionNote" hidden>訂正画像を表示中（元動画は訂正前）</span></div><div id="newsStudyExplanation" hidden><p></p></div><div class="study-guide" style="background:transparent!important;border:0!important;box-shadow:none!important" hidden><span id="studyHint" role="status" style="background:transparent!important;box-shadow:none!important"></span></div><div class="study-progress"><div class="progresscopy"><span id="progressLabel">おぼえた 0 / 0問</span><span id="percentLabel">0%</span></div><div class="track" id="progressTrack" role="progressbar" aria-label="この教材のおぼえた割合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="progressBar"></i></div><div class="counter-row"><span id="breakdown"></span><span id="lessonGrade"></span></div></div><details class="study-options" id="studyOptions"><summary><span>学び方・範囲</span><span id="optionsSummary">ぜんぶ · 問題から</span></summary><div class="study-options-body"><div class="toolbar"><div class="modes" aria-label="カードの絞り込み"><button data-mode="all" class="active">ぜんぶ</button><button data-mode="unmarked">まだ</button><button data-mode="weak">おぼえてない</button><button data-mode="known">おぼえた</button></div><button class="shuffle" id="shuffleButton" aria-pressed="false">🔀 順番にゃ</button></div>
 <nav class="chips" id="chapterChips" aria-label="単元"></nav>
 <details class="supplement-panel" id="supplementPanel" hidden><summary>補足を見るにゃ</summary><div class="supplement-links" id="supplementLinks"></div></details>
 <div class="face-mode" aria-label="カードの送り方"><button data-face-mode="normal" class="active" aria-pressed="true">問題から</button><button data-face-mode="answer" aria-pressed="false">解答で暗記</button></div>
@@ -3375,6 +3397,7 @@ html[data-persona=cyber] #app #catalogScreen :is(.news-tools button.active,.news
 </dialog>
 <dialog id="nekoWordDialog" class="neko-word-dialog" aria-labelledby="nekoWordTitle"><div class="homework-setup-head"><h2 id="nekoWordTitle" class="user-content">ことばの意味</h2><button id="nekoWordClose" class="tool compact-close ui-close" type="button" autofocus aria-label="ことばの説明を閉じる">×</button></div><div class="neko-word-content"><p class="neko-word-caption">この説明での意味</p><p id="nekoWordMeaning" class="neko-word-copy user-content"></p><section id="nekoWordExampleBlock"><h3>たとえば</h3><p id="nekoWordExample" class="neko-word-copy user-content"></p></section><section id="nekoWordConnectionBlock" hidden><h3>この問題とのつながり</h3><p id="nekoWordConnection" class="neko-word-copy user-content"></p></section><p id="nekoWordState" class="neko-word-state" role="status"></p><div class="neko-word-actions"><button id="nekoWordMore" type="button" class="tool">もっとくわしく</button><a id="nekoWordSearch" target="_blank" rel="noopener noreferrer">Googleで意味を調べる</a></div></div></dialog>
 <dialog id="nekoRelatedDialog" class="neko-related-dialog" aria-labelledby="nekoRelatedTitle"><div class="homework-setup-head"><h2 id="nekoRelatedTitle" tabindex="-1">つながる問題</h2><button id="nekoRelatedClose" class="tool compact-close ui-close" type="button" autofocus aria-label="関連問題を閉じる">×</button></div><div id="nekoRelatedContent" class="neko-related-content"></div></dialog>
+<dialog id="pastExamDialog" aria-labelledby="pastExamTitle"><div class="past-exam-head"><h2 id="pastExamTitle">入試過去問</h2><button id="pastExamClose" class="tool" type="button" aria-label="入試過去問を閉じる" autofocus>×</button></div><p class="past-exam-note">分析資料をもとに確認した対応です。入試問題原本との照合は未完了です。確認できた分だけを掲載しています。</p><div id="pastExamDetails"></div></dialog>
 <script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
 <script>
@@ -4655,6 +4678,76 @@ function showEmpty(title,text,{restart=false,review=false,all=false,finishSummar
   $('unmarkedReview').hidden = !state.finished || !ct.unmarked;
   $('restartButton').hidden = !restart; $('reviewButton').hidden = !review; $('allButton').hidden = !all;
 }
+// Okinawa exam references: reviewed links only; never modify learning records.
+const pastExamUI = (() => {
+  let request=null, activeKey='', drawToken=0, activeEntries=[], paintedKey='';
+  const row=$('pastExamRow'), list=$('pastExamList'), dialog=$('pastExamDialog');
+  const circled=['','①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩','⑪','⑫','⑬','⑭','⑮'];
+  function label(q) {
+    const era=q.eraYear.replace('令和','R').replace('平成','H');
+    const small=q.smallQuestion.replace(/^問/,'').replace(/\(([^)]+)\)/g,'-$1');
+    return `${era}${circled[q.bigQuestion] || `大問${q.bigQuestion}`}(${small})`;
+  }
+  function fullLabel(q) {return `${q.eraYear}年度 大問${q.bigQuestion} ${q.smallQuestion}`;}
+  function load() {
+    if(!request) request=(async()=>{
+      const controller=new AbortController(), timer=setTimeout(()=>controller.abort(),10000);
+      try {
+        const response=await fetch('exam-past-data.json?v=20261028-1',{signal:controller.signal});
+        if(!response.ok) throw Error('Exam references unavailable');
+        const data=await response.json();
+        if(data.schemaVersion!==1 || !data.questions || !data.slides)throw Error('Invalid exam references');
+        return data;
+      } finally {clearTimeout(timer);}
+    })().catch(()=>{request=null;return null;});
+    return request;
+  }
+  function detail(index) {
+    if(!activeEntries.length)return;
+    $('pastExamDetails').replaceChildren();
+    activeEntries.forEach((entry,i)=>{
+      const section=document.createElement('section');section.className='past-exam-detail';
+      const title=document.createElement('h3');title.textContent=fullLabel(entry.q);
+      const topic=document.createElement('p');topic.textContent=entry.q.topic;
+      const demand=document.createElement('p');demand.textContent=entry.q.demand;
+      const relation=document.createElement('p');relation.className='past-exam-relation';
+      relation.textContent=entry.relation==='answer_term'
+        ? 'このスライドの答えと、答える名称が同じです。問い方や実験条件まで同じとは限りません。'
+        : 'このスライドで学ぶ知識が関連します。入試では図の読み取りや計算・説明などが必要な場合もあります。';
+      section.append(title,topic,demand,relation);section.id=`pastExamDetail${i}`;
+      $('pastExamDetails').append(section);
+    });
+    if(!dialog.open)dialog.showModal();
+    const target=$(`pastExamDetail${index}`);
+    if(target)target.scrollIntoView({block:'nearest'});
+  }
+  $('pastExamClose').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+  function render(card) {
+    const token=++drawToken, key=card ? `${card.lessonId}::${card.originalId}` : '';
+    if(key!==activeKey){activeKey=key;paintedKey='';activeEntries=[];row.hidden=true;list.replaceChildren();list.scrollLeft=0;if(dialog.open)dialog.close();}
+    if(!key)return;
+    load().then(data=>{
+      if(!data || token!==drawToken || key!==activeKey)return;
+      if(paintedKey===key)return;
+      paintedKey=key;
+      const seen=new Set();
+      activeEntries=(data.slides[key] || []).flatMap(([id,relation])=>{
+        if(!['answer_term','concept'].includes(relation) || !data.questions[id] || seen.has(id))return [];
+        seen.add(id);return [{q:data.questions[id],relation}];
+      }).sort((a,b)=>b.q.year-a.q.year || a.q.bigQuestion-b.q.bigQuestion || a.q.smallQuestion.localeCompare(b.q.smallQuestion,'ja',{numeric:true}));
+      list.replaceChildren();
+      activeEntries.forEach((entry,i)=>{
+        const button=document.createElement('button');button.type='button';button.className='past-exam-year';
+        button.textContent=label(entry.q);button.setAttribute('aria-label',`${fullLabel(entry.q)}の対応を見る`);
+        button.setAttribute('aria-haspopup','dialog');button.addEventListener('click',()=>detail(i));list.append(button);
+      });
+      row.hidden=!activeEntries.length;
+    });
+  }
+  return {render};
+})();
+
 function render() {
   if(isQuestionPreview())state.finished=false;
   syncLandscape();
@@ -4662,6 +4755,7 @@ function render() {
   clearTimer(); clearTimeout(imageWaitTimer); imageWaitTimer=null; ready = false; const token = ++imageToken; $('sourceLinks').hidden = true;
   if (lesson && !state.finished) { const d = deck(); if (d.length && !d.some(c => c.id === state.current)) { state.current = d[0].id; state.flipped = state.answerMode; } }
   if (current()) state.lessonId = current().lessonId;
+  pastExamUI.render(lesson && !state.finished && !state.loading ? current() : null);
   renderControls(); $('loadingMessage').hidden = !state.loading; $('emptyState').hidden = true; $('stage').hidden = true;
   if (state.loading) { imageLoader.pause(); return; }
   if (!lesson) { showEmpty('目次から教材を選ぶにゃ','好きな教材をまとめて選べるにゃ♪'); return; }

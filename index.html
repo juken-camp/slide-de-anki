@@ -4366,7 +4366,8 @@ function usesGrades() { return !catalogQuery() && catalogSubject === 'science' &
 function groupKey(m) { return catalogQuery() || !catalogSubject ? `${m.subject}/${m.field || 'other'}` : usesGrades() ? gradeKey(m) : (m.field || 'other'); }
 function groupLabel(key) { if(key.includes('/')) { const [subject,field]=key.split('/'); return `${subjectLabel(subject)} · ${fieldLabel(field,subject)}`; } return usesGrades() ? (key === 'other' ? '学年共通' : `中${key}`) : fieldLabel(key); }
 function groupIcon(key) { return usesGrades() ? '📖' : (fields[key.split('/').pop()]?.[1] || '📚'); }
-function catalogChoices() { return meta.filter(m => !catalogSubject || m.subject === catalogSubject); }
+function isListedLesson(m) { return m.id !== 'social-history-year-mnemonics-84-20261026'; }
+function catalogChoices() { return meta.filter(m => isListedLesson(m) && (!catalogSubject || m.subject === catalogSubject)); }
 function lessonSeries(m) {
   if ((m.subject === 'science' ? ['unit','symbols','terms','themes','written','past','frequent'] : ['unit','review','frequent','themes','selection','written','past']).includes(m.series)) return m.series;
   if (m.subject === 'science') {
@@ -4397,7 +4398,7 @@ function normalizeCatalogScope() {
   if(socialField && !catalogChoices().some(m=>m.field===socialField))socialField=null;
   if(catalogSeries && !availableSeries().some(s=>s.id===catalogSeries))catalogSeries=null;
   if(!catalogQuery() && catalogFilter!=='all' && !catalogSeriesLessons().some(m=>groupKey(m)===catalogFilter))catalogFilter='all';
-  const availableIds = new Set(meta.map(m => m.id));
+  const availableIds = new Set(meta.filter(isListedLesson).map(m => m.id));
   for (const id of selected) if (!availableIds.has(id)) selected.delete(id);
 }
 let newsDemoMode=false,newsDemoActive=null;
@@ -4426,7 +4427,7 @@ function renderSeriesReview() {
 function visibleLessons() {
   const normalizeSearch = value => String(value).normalize('NFKC').replace(/\s+/g,'').toLocaleLowerCase();
   const query = catalogQuery();
-  return (query ? meta : catalogSeriesLessons()).filter(m => {
+  return (query ? meta.filter(isListedLesson) : catalogSeriesLessons()).filter(m => {
     const inScope = catalogSubject === 'social' || catalogFilter === 'all' || groupKey(m) === catalogFilter;
     return (query || inScope) && (!query || (normalizeSearch(`${m.title} ${m.grade} ${fieldLabel(m.field,m.subject)} ${subjectLabel(m.subject)}`).includes(query) || questionSearchMatchesLesson(m,query)));
   });
@@ -4437,7 +4438,7 @@ function toggleGroup(items) {
   for (const m of items) { if (!allowed.has(m.id)) continue; if (all) selected.delete(m.id); else selected.add(m.id); }
   renderCatalog();
 }
-function selectedCatalogLessons() { return meta.filter(m => selected.has(m.id)); }
+function selectedCatalogLessons() { return meta.filter(m => isListedLesson(m) && selected.has(m.id)); }
 function selectionSummary() {
   const choices = selectedCatalogLessons();
   const selectedSubjects = [...new Set(choices.map(m=>m.subject))].map(subjectLabel).join('＋');
@@ -5035,7 +5036,7 @@ function fillCollectionLessons() {
   const matches=[];
   for(const sub of [...new Set(meta.map(m=>m.subject))]) {
     if(!q && subject!=='all' && subject!==sub)continue;
-    const items=meta.filter(m=>m.subject===sub && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
+    const items=meta.filter(m=>isListedLesson(m) && m.subject===sub && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
     if(!items.length)continue;
     if(q || subject==='all'){const heading=collectionNode('div',subjectLabel(sub),'collection-list-subject');heading.setAttribute('role','presentation');list.append(heading);}
     for(const m of items) {
@@ -5354,7 +5355,7 @@ function syncHomeworkCount(){
 const selectedHomeworkLessons=new Set();
 function matchingHomeworkLessons(){
  const query=$('testLessonSearch').value.trim().toLocaleLowerCase(),subject=$('testSubject').value;
- const field=$('testField').value;return meta.filter(m=>(subject==='all'||m.subject===subject)&&(field==='all'||m.field===field)&&(!query||m.title.toLocaleLowerCase().includes(query)));
+ const field=$('testField').value;return meta.filter(m=>isListedLesson(m)&&(subject==='all'||m.subject===subject)&&(field==='all'||m.field===field)&&(!query||m.title.toLocaleLowerCase().includes(query)));
 }
 function filterHomeworkLessons(){
  const matches=matchingHomeworkLessons(),target=$('testLessonChoices');target.replaceChildren();
@@ -5648,7 +5649,7 @@ function questionSearchMatchesLesson(m,query){return !!assessmentSearchMatches(m
 // Use the same question-level matches for the result count and Select All.
 function catalogSearchQuestionItems(query=catalogQuery()){
  if(!query||!assessmentDataset)return [];
- return meta.flatMap(m=>assessmentSearchMatches(m.id,query).map(c=>({m,c})));
+ return meta.filter(isListedLesson).flatMap(m=>assessmentSearchMatches(m.id,query).map(c=>({m,c})));
 }
 function catalogVisibleCountLabel(visible){
  if(!catalogQuery())return `${!catalogSubject?'全教材 · ':''}${visible.length}教材 · ${visible.reduce((n,m)=>n+m.count,0)}問`;

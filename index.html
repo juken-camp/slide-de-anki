@@ -3316,6 +3316,14 @@ html[data-persona="cyber"] body ::-webkit-scrollbar-thumb{background-color:#39cd
 html[data-persona="cyber"] body ::-webkit-scrollbar-track{background-color:#10243d!important}
 html[data-persona="cyber"] #collectionDialog #collectionLessonPicker:focus-visible{outline-color:#00e7ff!important}
 html[data-persona="cyber"] #collectionDialog .collection-editor-body :is(input,select):focus{outline-color:#00e7ff!important;border-color:#00e7ff!important;caret-color:#00e7ff}
+
+/* Make preview selection unmistakable and avoid clipped tab glows. */
+html[data-persona] body dialog#collectionPreview .collection-preview-actions button{min-width:0;white-space:nowrap!important;padding-left:3px!important;padding-right:3px!important;font-size:clamp(10px,2.8vw,13px)!important}
+html[data-persona] body dialog#collectionPreview #collectionPreviewSelect[aria-pressed="true"]{background:#ffe2b9!important;border-color:#b46129!important;color:#713b19!important;-webkit-text-fill-color:#713b19!important;box-shadow:inset 0 0 0 1px #b46129!important}
+html[data-persona="cyber"] body dialog#collectionPreview #collectionPreviewSelect[aria-pressed="true"]{background:linear-gradient(125deg,#00e8f1,#36ace4)!important;border-color:#00f5ff!important;color:#071a2b!important;-webkit-text-fill-color:#071a2b!important;box-shadow:0 0 10px #00f5ff55!important}
+html[data-persona="cyber"] body dialog#collectionDialog #collectionLessonTabs button[aria-pressed="true"]{box-shadow:inset 0 0 0 1px #00f5ff40!important}
+#collectionDialog .collection-picker>summary::after{content:'∨';font:18px Arial,sans-serif}
+#collectionDialog .collection-picker[open]>summary::after{content:'∧'}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -5269,7 +5277,7 @@ function syncCollectionPreview() {
   $('collectionPreviewTitle').textContent=`${raw.title} · ${number} · ${collectionPreviewAnswer?'解答':'問題'}`;
   $('collectionPreviewImage').src=window.NekoImageURL(c[face]);$('collectionPreviewImage').alt=`第${number}問の${collectionPreviewAnswer?'解答':'問題'}`;
   $('collectionPreviewFlip').textContent=collectionPreviewAnswer?'問題を見るにゃ':'解答を見るにゃ';
-  const on=collectionEditor.cards.get(raw.id)?.has(c.id);$('collectionPreviewSelect').textContent=on?'選択を外すにゃ':'選ぶにゃ ✓';$('collectionPreviewSelect').setAttribute('aria-pressed',String(!!on));
+  const on=collectionEditor.cards.get(raw.id)?.has(c.id);$('collectionPreviewSelect').textContent=on?'✓ 選択中（外す）':'選ぶにゃ ✓';$('collectionPreviewSelect').setAttribute('aria-pressed',String(!!on));
 }
 function saveCollectionEditor() {
   if(!collectionEditor)return;

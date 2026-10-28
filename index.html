@@ -6234,7 +6234,7 @@ function nekoConnectionWords(...sources){
    const word=typeof item==='string'?item:item?.word;if(typeof word!=='string'||word.length<2||seen.has(word))continue;seen.add(word);words.push(typeof item==='string'?{word}:item);
   }
  }
- return words.slice(0,3);
+ return words.slice(0,6);
 }
 function nekoQuestionVoice(question){return String(question||'');}
 function nekoRecentQuestions(persona){try{const list=JSON.parse(localStorage.getItem('nekopon-question-phrases-v2-'+persona)||'[]');return Array.isArray(list)?list.filter(q=>typeof q==='string'&&q.length<=60).slice(-18):[];}catch{return [];}}
@@ -6537,7 +6537,7 @@ function nekoRenderConversation(root,key,animate=false){
 function nekoRelated(key,keywords=[]){
  const r=assessmentByKey(key),m=meta.find(m=>m.id===hSplit(key).lessonId);if(!r)return [];
  const norm=s=>String(s||'').normalize('NFKC').replace(/\s/g,'');
- const words=[...new Set(keywords.map(k=>typeof k==='string'?k:k.word).filter(w=>typeof w==='string'&&w.length>=2).map(norm))].slice(0,3);
+ const words=[...new Set(keywords.map(k=>typeof k==='string'?k:k.word).filter(w=>typeof w==='string'&&w.length>=2).map(norm))].slice(0,6);
  if(!words.length&&r.a.length>=2&&r.a.length<=18)words.push(norm(r.a));
  const identity=c=>norm(c.q)+'|'+norm(c.a),seen=new Set([identity(r)]),result=[];
  for(const [lid,l]of Object.entries(assessmentDataset?.lessons||{})){
@@ -6555,20 +6555,28 @@ function nekoRelated(key,keywords=[]){
  return result.sort((a,b)=>b.score-a.score).slice(0,3);
 }
 // Known school-level contrasts also enrich previously saved explanations locally.
-const nekoContrastPairs=[["蒸散","蒸発","蒸散は植物から水が水蒸気として出ること、蒸発は水などの液体が表面から気体に変わること"],["融解","溶解","融解は氷が水になるように固体が液体になること、溶解は砂糖が水にとけるようにほかの物質にとけること"],["葉緑体","葉緑素","葉緑体は細胞の中で光合成を行う部分、葉緑素はそこにある緑色の色素"],["光合成","呼吸","光合成は光を使って養分をつくること、呼吸は養分から生きるためのエネルギーを取り出すこと。植物も呼吸する、という点が大切"],["化合物","混合物","化合物は違う種類の原子が結び付いた物質、混合物は複数の物質が混ざったもの"],["質量","重さ","質量は物体そのものの量、重さは重力で引かれる力。月へ行っても質量は変わらず、重さは変わるという違い"],["直列","並列","直列は電流の通り道が一本道、並列は途中で枝分かれするつなぎ方"],["震度","マグニチュード","震度はその場所の揺れの強さ、マグニチュードは地震そのものの規模"],["風化","侵食","風化は岩石がその場でもろくなること、侵食は流水などが地面や岩石を削ること"],["衆議院","参議院","衆議院は任期4年で解散があり、参議院は任期6年で解散がないという違い"],["国会","内閣","国会は法律をつくる立法を担い、内閣は法律や予算に基づいて政治を進める行政を担うという違い"],["需要","供給","需要は商品を買おうとすること、供給は商品を売ろうとすること"],["円高","円安","円高は1ドルをより少ない円で買えること、円安は1ドルを買うのにより多くの円が必要になること"],["促成栽培","抑制栽培","促成栽培は暖かさなどを利用して出荷を早め、抑制栽培は涼しさなどを利用して出荷を遅らせる栽培"],["扇状地","三角州","扇状地は川が山地から平地に出る所にでき、三角州は川が海や湖へ流れ込む所にできる地形"]];
+const nekoContrastPairs=[["蒸散","蒸発","蒸散は植物から水が水蒸気として出ること、蒸発は水などの液体が表面から気体に変わること"],["融解","溶解","融解は氷が水になるように固体が液体になること、溶解は砂糖が水にとけるようにほかの物質にとけること"],["葉緑体","葉緑素","葉緑体は細胞の中で光合成を行う部分、葉緑素はそこにある緑色の色素"],["光合成","呼吸","光合成は光を使って養分をつくること、呼吸は養分から生きるためのエネルギーを取り出すこと。植物も呼吸する、という点が大切"],["化合物","混合物","化合物は違う種類の原子が結び付いた物質、混合物は複数の物質が混ざったもの"],["質量","重さ","質量は物体そのものの量、重さは重力で引かれる力。月へ行っても質量は変わらず、重さは変わるという違い"],["直列","並列","直列は電流の通り道が一本道、並列は途中で枝分かれするつなぎ方"],["震度","マグニチュード","震度はその場所の揺れの強さ、マグニチュードは地震そのものの規模"],["風化","侵食","風化は岩石がその場でもろくなること、侵食は流水などが地面や岩石を削ること"],["衆議院","参議院","衆議院は任期4年で解散があり、参議院は任期6年で解散がないという違い"],["国会","内閣","国会は法律をつくる立法を担い、内閣は法律や予算に基づいて政治を進める行政を担うという違い"],["需要","供給","需要は商品を買おうとすること、供給は商品を売ろうとすること"],["円高","円安","円高は1ドルをより少ない円で買えること、円安は1ドルを買うのにより多くの円が必要になること"],["促成栽培","抑制栽培","促成栽培は暖かさなどを利用して出荷を早め、抑制栽培は涼しさなどを利用して出荷を遅らせる栽培"],["扇状地","三角州","扇状地は川が山地から平地に出る所にでき、三角州は川が海や湖へ流れ込む所にできる地形"],["経済特区","特別行政区","経済特区は税金などの特別な制度で外国企業を呼び込む地域、特別行政区は香港やマカオのように中国本土と異なる制度が認められる地域"]];
 function nekoComparisonKeywords(record,keywords=[],persona='neko'){
  const answer=String(record?.a||'').normalize('NFKC'),question=String(record?.q||'').normalize('NFKC');
  const matches=nekoContrastPairs.map(([a,b,note],index)=>({a,b,note,index,score:answer.includes(a)||answer.includes(b)?2:question.includes(a)||question.includes(b)?1:0})).filter(x=>x.score).sort((a,b)=>b.score-a.score||a.index-b.index);
  const result=[],seen=new Set();
  if(matches.length){const {a,b,note}=matches[0],anchor=answer.includes(a)?a:answer.includes(b)?b:question.includes(a)?a:b;const word=anchor===a?b:a;result.push({word,connection:note+(persona==='cyber'?'だぜ。':'にゃ。')});seen.add(word);}
+ if(answer.includes('経済特区')||question.includes('経済特区')){
+  for(const [word,note] of [
+   ['工業団地','工業団地は工場が集まって活動しやすいように整備した場所。経済特区のような税金などの特別制度が必ずあるわけではない、という違い'],
+   ['世界の工場','世界の工場は、多くの工業製品をつくって世界へ輸出する中国の呼び名。経済特区のような地域や制度の名前ではない、という違い'],
+   ['深圳','深圳（シェンチェン）は経済特区の具体例。外国企業を呼び込み、工業が発展した中国の都市'],
+   ['経済格差','経済格差は、地域などによる豊かさの違い。中国では工業が発展した沿海部と内陸部の差も課題']
+  ]){if(!seen.has(word)){result.push({word,connection:note+(persona==='cyber'?'だぜ。':'にゃ。')});seen.add(word);}}
+ }
  for(const k of keywords){const item=typeof k==='string'?{word:k}:k;if(!item||typeof item.word!=='string'||!item.word.trim()||seen.has(item.word))continue;seen.add(item.word);result.push(item);}
- return result.slice(0,3);
+ return result.slice(0,6);
 }
 
 function nekoRenderConnections(root,key,keywords=[]){
  keywords=nekoComparisonKeywords(assessmentByKey(key),keywords,document.documentElement.dataset.persona);
  root.replaceChildren();
- if(keywords.length){const section=collectionNode('section',undefined,'neko-words-section');section.tabIndex=-1;section.append(collectionNode('h4','関連ワード','neko-related-title'));const words=collectionNode('div',undefined,'neko-knowledge-list');for(const k of keywords.slice(0,3)){const word=typeof k==='string'?k:k.word;if(!word)continue;const item=collectionNode('div',undefined,'neko-knowledge-item');item.append(collectionButton(word,'neko-knowledge-link',()=>nekoOpenKeyword(word)));if(k.connection)item.append(collectionNode('p',k.connection,'neko-keyword-note user-content'));words.append(item);}section.append(words);root.append(section);}
+ if(keywords.length){const section=collectionNode('section',undefined,'neko-words-section');section.tabIndex=-1;section.append(collectionNode('h4','関連ワード','neko-related-title'));const words=collectionNode('div',undefined,'neko-knowledge-list');for(const k of keywords.slice(0,6)){const word=typeof k==='string'?k:k.word;if(!word)continue;const item=collectionNode('div',undefined,'neko-knowledge-item');item.append(collectionButton(word,'neko-knowledge-link',()=>nekoOpenKeyword(word)));if(k.connection)item.append(collectionNode('p',k.connection,'neko-keyword-note user-content'));words.append(item);}section.append(words);root.append(section);}
  const related=nekoRelated(key,keywords);if(!related.length)return;const section=collectionNode('section',undefined,'neko-problems-section');section.tabIndex=-1;section.append(collectionNode('h4','関連問題','neko-related-title'));for(const item of related){const b=collectionButton('','neko-related-card',()=>nekoOpenRelated(item.key));b.append(collectionNode('small',`「${item.why}」でつながる · ${item.title}`),collectionNode('span',item.r.q+(item.r.image?'（図を参照）':'')));section.append(b);}root.append(section);
 }
 function nekoSaveQuestion(key){searchSelectedQuestions.add(key);syncSearchSelection();if($('nekoRelatedDialog').open)$('nekoRelatedDialog').close();openSearchSave();}

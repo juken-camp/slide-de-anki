@@ -4693,7 +4693,7 @@ const pastExamUI = (() => {
     if(!request) request=(async()=>{
       const controller=new AbortController(), timer=setTimeout(()=>controller.abort(),10000);
       try {
-        const response=await fetch('exam-past-data.json?v=20261028-full-source-review-1',{signal:controller.signal});
+        const response=await fetch('exam-past-data.json?v=20261028-originals-1',{signal:controller.signal});
         if(!response.ok) throw Error('Exam references unavailable');
         const data=await response.json();
         if(data.schemaVersion!==1 || !data.questions || !data.slides)throw Error('Invalid exam references');

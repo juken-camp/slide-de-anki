@@ -39,24 +39,41 @@ def collect(feeds,source_date,days=30):
  items.sort(key=lambda item:email.utils.parsedate_to_datetime(item['publishedAt']).timestamp(),reverse=True)
  return items[:500]
 
-def ask(prompt,max_tokens=4096):
+def response_schema(kind,wanted=None):
+ if kind=='selection':
+  choice={'anyOf':[{'type':'null'},{'type':'object','properties':{'id':{'type':'integer'},'keywords':{'type':'array','items':{'type':'string'},'maxItems':5}},'required':['id','keywords'],'additionalProperties':False}]}
+  return {'type':'object','properties':{f:choice for f in wanted},'required':list(wanted),'additionalProperties':False}
+ if kind=='review':return {'type':'object','properties':{'replaceFields':{'type':'array','items':{'type':'string','enum':list(FIELDS)}}},'required':['replaceFields'],'additionalProperties':False}
+ properties={k:{'type':'string','minLength':1} for k in ['field','lessonId','cardId','title','articleNeko','articleCyber','neko','cyber']};properties['field']['enum']=list(FIELDS)
+ return {'type':'object','properties':{'items':{'type':'array','items':{'type':'object','properties':properties,'required':list(properties),'additionalProperties':False}}},'required':['items'],'additionalProperties':False}
+
+def parse_result(result):
+ if result.get('stop_reason')=='max_tokens':raise ValueError('返答が途中で切れました')
+ blocks=[b for b in result.get('content',[]) if b.get('type')=='tool_use' and b.get('name')=='submit_news_result']
+ if len(blocks)!=1 or not isinstance(blocks[0].get('input'),dict):raise ValueError('指定した形式のデータがありません')
+ return blocks[0]['input']
+
+def ask(prompt,max_tokens=4096,schema=None):
  key=os.environ.get('ANTHROPIC_API_KEY','')
  if not key:raise ValueError('ANTHROPIC_API_KEY が設定されていません')
+ if schema is None:raise ValueError('AI返答の形式が指定されていません')
  for attempt in range(3):
-  limit=min(max_tokens*(attempt+2),24000)
-  payload={'model':os.environ.get('NEWS_MODEL','claude-haiku-5-5'),'max_tokens':limit,'messages':[{'role':'user','content':prompt}]}
+  payload={'model':os.environ.get('NEWS_MODEL','claude-haiku-5-5'),'max_tokens':min(max_tokens*(attempt+2),24000),'messages':[{'role':'user','content':prompt+'\n回答はsubmit_news_resultへ入力して提出してください。'}],'tools':[{'name':'submit_news_result','description':'Submit the selected news data in the requested schema. This tool only returns data and performs no external action.','input_schema':schema}],'tool_choice':{'type':'tool','name':'submit_news_result','disable_parallel_tool_use':True}}
   req=urllib.request.Request('https://api.anthropic.com/v1/messages',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01'},method='POST')
-  with urllib.request.urlopen(req,timeout=110) as response: result=json.load(response)
-  text=''.join(x.get('text','') for x in result.get('content',[]) if x.get('type')=='text').strip()
-  if text.startswith('```'):text=re.sub(r'^```(?:json)?\s*|\s*```$','',text)
   try:
-   if result.get('stop_reason')=='max_tokens':raise ValueError('返答が途中で切れました')
-   parsed=json.loads(text)
-   if not isinstance(parsed,dict):raise ValueError('返答の形式が正しくありません')
-   return parsed
-  except (ValueError,TypeError):
-   print('AIの返答を読み取れません。再試行:',attempt+1,file=sys.stderr)
- raise ValueError('AIの返答を読み取れませんでした')
+   with urllib.request.urlopen(req,timeout=110) as response:result=json.load(response)
+  except urllib.error.HTTPError as e:
+   print('AI API HTTP:',e.code,'試行:',attempt+1,file=sys.stderr)
+   if e.code not in (429,500,502,503,504,529) or attempt==2:raise
+   time.sleep(3*(attempt+1));continue
+  except (urllib.error.URLError,TimeoutError):
+   print('AI API通信待ち失敗。試行:',attempt+1,file=sys.stderr)
+   if attempt==2:raise
+   time.sleep(3);continue
+  try:return parse_result(result)
+  except (ValueError,TypeError) as e:
+   print('AIデータ受取失敗:',str(e),'段階:',','.join(schema['properties']),'stop_reason:',result.get('stop_reason'),'response_id:',result.get('id'),'試行:',attempt+1,file=sys.stderr)
+ raise ValueError('AIから指定形式のデータを受け取れませんでした。上の段階別ログを確認してください')
 
 def read_inputs():
  raw=(ROOT/'catalog.js').read_text(); catalog=json.loads(re.sub(r';\s*$','',re.sub(r'^\s*window\.QUIZ_CATALOG\s*=\s*','',raw)))
@@ -135,7 +152,7 @@ def generate(items,catalog,data,source_date,wanted=None,edition_date=None,exclud
  wanted=list(wanted or FIELDS)
  choices=[{'id':x['id'],'headline':x['headline'],'source':x['source'],'publishedAt':x['publishedAt'],'kind':x.get('kind','news')} for x in items]
  history_hint=json.dumps([{'field':r['field'],'topic':r['topic'],'title':r['title']} for r in RECENT],ensure_ascii=False)
- selection=ask('直近7日間の出題履歴は '+history_hint+'。同じ出来事・同じ小分野への偏りを避ける。地学は天気だけでなく天体・地震・火山・地層も探す。中学生向け。直近30日間のニュースの見出しから、地理・歴史・公民・物理・化学・生物・地学の7分野につながる話題をそれぞれ選ぶ。見出しにない事実は想像しない。適切なものがない場合はnull。同じ記事を複数分野で使わない。同じ出来事の別記事も選ばない。各分野で既存の中学教材を検索する具体的な語を5個まで提案。JSONのみ。形式 {"geography":{"id":0,"keywords":["地震"]},"history":null,"civics":null,"physics":null,"chemistry":null,"biology":null,"earth":null}。新しい記事を優先しつつ、指定された分野を必ず探す。分野: '+json.dumps(wanted,ensure_ascii=False)+' ニュース一覧: '+json.dumps(choices,ensure_ascii=False))
+ selection=ask('直近7日間の出題履歴は '+history_hint+'。同じ出来事・同じ小分野への偏りを避ける。地学は天気だけでなく天体・地震・火山・地層も探す。中学生向け。直近30日間のニュースの見出しから、地理・歴史・公民・物理・化学・生物・地学の7分野につながる話題をそれぞれ選ぶ。見出しにない事実は想像しない。適切なものがない場合はnull。同じ記事を複数分野で使わない。同じ出来事の別記事も選ばない。各分野で既存の中学教材を検索する具体的な語を5個まで提案。JSONのみ。形式 {"geography":{"id":0,"keywords":["地震"]},"history":null,"civics":null,"physics":null,"chemistry":null,"biology":null,"earth":null}。新しい記事を優先しつつ、指定された分野を必ず探す。分野: '+json.dumps(wanted,ensure_ascii=False)+' ニュース一覧: '+json.dumps(choices,ensure_ascii=False),schema=response_schema('selection',wanted))
  proposed={};chosen_urls=set(excluded);byid={x['id']:x for x in items}
  for field in wanted:
   a=selection.get(field)
@@ -160,7 +177,7 @@ def generate(items,catalog,data,source_date,wanted=None,edition_date=None,exclud
 kind=themeの入力は最近も関わりのある学習テーマであり、新しい出来事ではない。『今日のテーマは〜』『〜の仕組みを見てみよう』などと書き、発表・報道日や『最近決まった』などを作らない。入力のheadlineは参考資料の要点。ニュースがなければこのテーマを使い、適切な教材と結びつく場合は省略しない。
 このページの掲載日（日本時間）は '''+edition_date.isoformat()+'''。各記事の publicationDateJST はニュースが報道された日であり、出来事が起こった日ではない。古い予報や予定を現在の予報・今後の予定として書かない。台風や天気、警報、災害、選挙、催し、公開予定など時間に敏感な記事は、日付が過ぎた可能性が少しでもあるなら「○月○日のニュースでは、〜と予想されていた」「〜と報じられていた」のように報道当時の話だと明示し、現在も続いている・これから起こるとは書かない。見出しが予報なら実際に起きたと断定しない。報道日以降に状況が変わったかは見出しだけでは分からない。古い記事の「今日」「明日」「まもなく」などを掲載日時点の言葉として使わない。年月日のあいまいな箇所は推測しない。過去日付の掲載分も後日読まれるので、予報・予定には必ず報道日を添えた過去の伝聞表現を使う。記事見出し・articleNeko・articleCyber・neko・cyberすべてで守る。例：掲載日2026-10-27、10月20日の「台風が23日接近見込み」なら「10月20日のニュースでは、台風が沖縄に近づくと予想されていた」と書く。生徒向け文章に制作上の説明は書かない。
 文章は偏差値40程度の中学生が読みやすい短い日本語にする。覚えるべき単語以外の専門用語を使わない。「何が起きた」「どういうこと」「問題の答えとの関係」を短く示し、考え方の答えを教える。テーマは普通の言葉で。文体はNekopon=にゃ、Yorupon=だぜ。JSONだけ返す。形式 {"items":[{"field":"geography","lessonId":"候補と一致","cardId":"候補と一致","title":"短い見出し","articleNeko":"ニュースと意味","articleCyber":"同内容の別口調","neko":"問題の答えとのつながり","cyber":"同内容の別口調"}]}。候補: '''+json.dumps(proposed,ensure_ascii=False)
- result=ask(prompt,7000);output=[];used=set()
+ result=ask(prompt,7000,schema=response_schema('items'));output=[];used=set()
  for row in result.get('items',[]):
   f=row.get('field'); block=proposed.get(f)
   if not block or f in used:continue
@@ -244,7 +261,7 @@ def main():
   if not extra['items']:extra=theme_fallback(field,catalog,data,source,edition,used)
   result['items'].extend(extra['items'])
  # Have the model inspect all seven for the same event under different headlines.
- review=ask('直近の履歴は '+json.dumps([{'field':r['field'],'title':r['title'],'topic':r['topic']} for r in RECENT],ensure_ascii=False)+'。以下の今日の7話題で同じ出来事を二重に使っている場合、または履歴の同じ出来事の言い換えだけで学ぶ内容に変化がない場合、その今日の分野をJSONのreplaceFields配列で返す。記事の新展開があり問題の仕組みも別なら許可。関連する広いテーマでも出来事が別なら重複ではない。形式 {"replaceFields":[]}。'+json.dumps([{'field':x['field'],'headline':x.get('sourceHeadline'),'title':x['title']} for x in result['items']],ensure_ascii=False),1000)
+ review=ask('直近の履歴は '+json.dumps([{'field':r['field'],'title':r['title'],'topic':r['topic']} for r in RECENT],ensure_ascii=False)+'。以下の今日の7話題で同じ出来事を二重に使っている場合、または履歴の同じ出来事の言い換えだけで学ぶ内容に変化がない場合、その今日の分野をJSONのreplaceFields配列で返す。記事の新展開があり問題の仕組みも別なら許可。関連する広いテーマでも出来事が別なら重複ではない。形式 {"replaceFields":[]}。'+json.dumps([{'field':x['field'],'headline':x.get('sourceHeadline'),'title':x['title']} for x in result['items']],ensure_ascii=False),1000,schema=response_schema('review'))
  for field in review.get('replaceFields',[]):
   if field not in FIELDS:continue
   others=[x for x in result['items'] if x['field']!=field]

@@ -3,7 +3,7 @@
 import argparse, time, urllib.error, datetime as dt, email.utils, hashlib, json, os, re, sys, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 from pathlib import Path
 JST=dt.timezone(dt.timedelta(hours=9)); ROOT=Path(__file__).resolve().parents[1]
-QUALITY_VERSION=3
+QUALITY_VERSION=4
 FIELDS={'geography':'地理','history':'歴史','civics':'公民','physics':'物理','chemistry':'化学','biology':'生物','earth':'地学'}
 FEEDS=['https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja']+['https://news.google.com/rss/search?q='+urllib.parse.quote(q)+'&hl=ja&gl=JP&ceid=JP:ja' for q in ['沖縄','政治 経済','世界 地理','歴史 文化','科学 物理','化学 環境','生物 自然','気象 宇宙']]
 
@@ -144,6 +144,9 @@ def candidates(catalog,data,field,words):
    if score:rows.append((topic_penalty(field,c),score,hashlib.sha256((m['id']+'/'+c['id']).encode()).hexdigest(),{'lessonId':m['id'],'cardId':c['id'],'q':q,'a':a,'title':m.get('title','')}))
  rows.sort(key=lambda x:(x[0],-x[1],x[2]));return [v for _,_,_,v in rows[:30]]
 
+def has_editorial_commentary(text):
+ return bool(re.search(r'見出し|記事本文|本文.{0,10}(?:未取得|取得していない)|(?:中身|詳細).{0,12}(?:分から|わから)|情報が(?:足り|不足)|制作(?:上|側)|候補問題|生成(?:過程|側)',text))
+
 def generate(items,catalog,data,source_date,wanted=None,edition_date=None,excluded=()):
  blocked=set(excluded)|{r['url'] for r in RECENT}
  items=[x for x in items if x['url'] not in blocked or x.get('kind')=='theme']
@@ -176,6 +179,7 @@ def generate(items,catalog,data,source_date,wanted=None,edition_date=None,exclud
 省庁名、拠点、就航、検討、共生などは不可欠でない限り簡単な言葉に言い換える。覚える用語以外の難しい補足を増やさない。両口調とも自然な日本語で。『報じられただぜ』『報じられていただぜ』『ありましただぜ』は禁止。『報じられたんだぜ』『報じられていたんだぜ』を使う。すべての文末に機械的に『だぜ』『にゃ』を足さない。出力前に文法を見直す。
 kind=themeの入力は最近も関わりのある学習テーマであり、新しい出来事ではない。『今日のテーマは〜』『〜の仕組みを見てみよう』などと書き、発表・報道日や『最近決まった』などを作らない。入力のheadlineは参考資料の要点。ニュースがなければこのテーマを使い、適切な教材と結びつく場合は省略しない。
 このページの掲載日（日本時間）は '''+edition_date.isoformat()+'''。各記事の publicationDateJST はニュースが報道された日であり、出来事が起こった日ではない。古い予報や予定を現在の予報・今後の予定として書かない。台風や天気、警報、災害、選挙、催し、公開予定など時間に敏感な記事は、日付が過ぎた可能性が少しでもあるなら「○月○日のニュースでは、〜と予想されていた」「〜と報じられていた」のように報道当時の話だと明示し、現在も続いている・これから起こるとは書かない。見出しが予報なら実際に起きたと断定しない。報道日以降に状況が変わったかは見出しだけでは分からない。古い記事の「今日」「明日」「まもなく」などを掲載日時点の言葉として使わない。年月日のあいまいな箇所は推測しない。過去日付の掲載分も後日読まれるので、予報・予定には必ず報道日を添えた過去の伝聞表現を使う。記事見出し・articleNeko・articleCyber・neko・cyberすべてで守る。例：掲載日2026-10-27、10月20日の「台風が23日接近見込み」なら「10月20日のニュースでは、台風が沖縄に近づくと予想されていた」と書く。生徒向け文章に制作上の説明は書かない。
+生徒に見せる文章では「見出し」「記事本文」「本文を取得していない」「中身は分からない」「情報が足りない」「候補」「生成」など、制作・収集・分析上の事情を説明しない。不明な細部は書かず、確認できた出来事と、中学校で学ぶ仕組みを具体的に説明する。確認できた事実だけでは意味のある文章を作れない記事は選ばず、別の記事または学習テーマを使う。「同じ言葉がある」「答えとつながる」「セットで覚えよう」だけの説明は不可。ニュースで扱われた研究と教科書の研究が別なら同一視せず、学ぶ仕組みの関係を説明する。
 文章は偏差値40程度の中学生が読みやすい短い日本語にする。覚えるべき単語以外の専門用語を使わない。「何が起きた」「どういうこと」「問題の答えとの関係」を短く示し、考え方の答えを教える。テーマは普通の言葉で。文体はNekopon=にゃ、Yorupon=だぜ。JSONだけ返す。形式 {"items":[{"field":"geography","lessonId":"候補と一致","cardId":"候補と一致","title":"短い見出し","articleNeko":"ニュースと意味","articleCyber":"同内容の別口調","neko":"問題の答えとのつながり","cyber":"同内容の別口調"}]}。候補: '''+json.dumps(proposed,ensure_ascii=False)
  result=ask(prompt,7000,schema=response_schema('items'));output=[];used=set()
  for row in result.get('items',[]):
@@ -184,6 +188,7 @@ kind=themeの入力は最近も関わりのある学習テーマであり、新�
   c=next((x for x in block['candidates'] if x['lessonId']==row.get('lessonId') and x['cardId']==row.get('cardId')),None)
   if not c:continue
   if any(not isinstance(row.get(k),str) or not 1<=len(row[k].strip())<=400 for k in ['title','articleNeko','articleCyber','neko','cyber']):continue
+  if any(has_editorial_commentary(row[k]) for k in ['title','articleNeko','articleCyber','neko','cyber']):continue
   news=block['news'];output.append({k:row[k].strip() for k in ['field','lessonId','cardId','title','articleNeko','articleCyber','neko','cyber']}|{'label':FIELDS[f],'url':news['url'],'source':news['source'],'sourceHeadline':news['headline'],'publishedAt':news['publishedAt'],'kind':news.get('kind','news')});used.add(f)
 
  return {'version':1,'temporalRules':1,'date':edition_date.isoformat(),'sourceDate':source_date.isoformat(),'generatedAt':dt.datetime.now(JST).isoformat(),'items':output}
@@ -227,6 +232,7 @@ def check_complete(result):
  if len(rows)!=7 or {x.get('field') for x in rows}!=set(FIELDS):raise ValueError('7分野がそろわないため公開しません')
  if len({x['url'] for x in rows})!=7:raise ValueError('記事が重複しているため公開しません')
  for row in rows:
+  if any(has_editorial_commentary(row[k]) for k in ['title','articleNeko','articleCyber','neko','cyber']):raise ValueError('生徒向けでない制作上の説明が含まれています')
   for k in ['articleNeko','articleCyber','neko','cyber']:
    row[k]=re.sub(r'(報じられ(?:てい)?た)だぜ',r'\1んだぜ',row[k])
    if re.search(r'(?:ました|だった|された)だぜ',row[k]):raise ValueError('不自然な語尾が残っています')

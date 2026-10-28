@@ -3220,9 +3220,9 @@ html[data-persona=cyber] #app #catalogScreen :is(.news-tools button.active,.news
 html[data-persona=cyber] #pastExamList .past-exam-year{color:#91f1ff}
 #pastExamList .past-exam-year:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
 #pastExamDialog{width:min(540px,calc(100vw - 24px));box-sizing:border-box}
-#pastExamDialog .past-exam-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-#pastExamDialog h2{margin:0;font-size:18px}
-#pastExamClose{flex:none;min-width:40px;min-height:40px;font-size:22px}
+#pastExamDialog .past-exam-head{display:grid;grid-template-columns:minmax(0,1fr) 40px;align-items:center;gap:10px;padding-bottom:16px}
+#pastExamDialog h2{margin:0;min-width:0;font-size:clamp(10px,3vw,16px);line-height:1.5;white-space:nowrap;letter-spacing:0}
+#pastExamClose{position:static;box-sizing:border-box;width:40px;height:40px;min-width:40px;min-height:40px;margin:0;padding:0;font-size:22px;line-height:1;display:grid;place-items:center}
 #pastExamDialog .past-exam-note{font-size:12px;line-height:1.7}
 .past-exam-detail{padding:14px 0;border-top:1px solid currentColor;scroll-margin:12px}
 #pastExamDialog .past-exam-detail h3{margin:0 0 8px;font-size:15px}
@@ -3397,7 +3397,7 @@ html[data-persona=cyber] #pastExamList .past-exam-year{color:#91f1ff}
 </dialog>
 <dialog id="nekoWordDialog" class="neko-word-dialog" aria-labelledby="nekoWordTitle"><div class="homework-setup-head"><h2 id="nekoWordTitle" class="user-content">ことばの意味</h2><button id="nekoWordClose" class="tool compact-close ui-close" type="button" autofocus aria-label="ことばの説明を閉じる">×</button></div><div class="neko-word-content"><p class="neko-word-caption">この説明での意味</p><p id="nekoWordMeaning" class="neko-word-copy user-content"></p><section id="nekoWordExampleBlock"><h3>たとえば</h3><p id="nekoWordExample" class="neko-word-copy user-content"></p></section><section id="nekoWordConnectionBlock" hidden><h3>この問題とのつながり</h3><p id="nekoWordConnection" class="neko-word-copy user-content"></p></section><p id="nekoWordState" class="neko-word-state" role="status"></p><div class="neko-word-actions"><button id="nekoWordMore" type="button" class="tool">もっとくわしく</button><a id="nekoWordSearch" target="_blank" rel="noopener noreferrer">Googleで意味を調べる</a></div></div></dialog>
 <dialog id="nekoRelatedDialog" class="neko-related-dialog" aria-labelledby="nekoRelatedTitle"><div class="homework-setup-head"><h2 id="nekoRelatedTitle" tabindex="-1">つながる問題</h2><button id="nekoRelatedClose" class="tool compact-close ui-close" type="button" autofocus aria-label="関連問題を閉じる">×</button></div><div id="nekoRelatedContent" class="neko-related-content"></div></dialog>
-<dialog id="pastExamDialog" aria-labelledby="pastExamTitle"><div class="past-exam-head"><h2 id="pastExamTitle">沖縄県立高校入試過去問</h2><button id="pastExamClose" class="tool" type="button" aria-label="入試過去問を閉じる" autofocus>×</button></div><div id="pastExamDetails"></div></dialog>
+<dialog id="pastExamDialog" aria-labelledby="pastExamTitle"><div class="past-exam-head"><h2 id="pastExamTitle">沖縄県立高校入試に出題されました</h2><button id="pastExamClose" class="tool" type="button" aria-label="入試過去問を閉じる" autofocus>×</button></div><div id="pastExamDetails"></div></dialog>
 <script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
 <script>

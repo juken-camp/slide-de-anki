@@ -3247,6 +3247,8 @@ html[data-persona=cyber] #pastExamDialog .past-exam-head{background:#0b1426!impo
 .report-time-main{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-width:0}.report-time-label{font-size:11px;font-weight:700}.report-time strong{font-size:23px;line-height:1.25;font-variant-numeric:tabular-nums}.report-time-detail{font-size:10px;line-height:1.5;color:#aa7c52;overflow-wrap:anywhere}.report-time-note{font-size:9px;line-height:1.5;color:#a38165;margin:-2px 0 9px}
 html[data-persona=cyber] #app #reportScreen .report-time{background:#0f0f2a;color:#e0eaff;border-color:#315576;box-shadow:none}html[data-persona=cyber] #app #reportScreen .report-time strong{color:#8bfaff}html[data-persona=cyber] #app #reportScreen :is(.report-time-detail,.report-time-note){color:#b9cde9}
 @media(max-width:370px){.report-time{padding:10px 8px}.report-time strong{font-size:21px}}
+</style><style>
+html[data-persona] body #app #testResult .report-main-actions button{font-size:clamp(11px,3.25vw,14px)!important;white-space:nowrap!important;padding-left:5px!important;padding-right:5px!important;gap:3px!important}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3309,7 +3311,7 @@ html[data-persona=cyber] #app #reportScreen .report-time{background:#0f0f2a;colo
  <p id="reportNotice" class="homework-note" role="status"></p>
  <article id="reportCard" class="report-card" aria-label="期間の学習成果">
   <header class="report-card-head"><span class="report-brand">🐾 Nekoponの学習レポート</span><strong id="reportName"></strong><h3 id="reportRange"></h3><time id="reportGenerated"></time></header>
-  <div class="report-time" aria-label="学習時間"><div class="report-time-main"><span class="report-time-label">学習時間</span><strong id="reportTimeTotal">記録なし</strong></div><span class="report-time-detail" id="reportTimeDetail"></span></div><p class="report-time-note" id="reportTimeNote" hidden></p>
+  <div class="report-time" aria-label="学習時間"><div class="report-time-main"><span class="report-time-label">学習時間</span><strong id="reportTimeTotal">記録なし</strong></div><span class="report-time-detail" id="reportTimeDetail"></span></div>
   <div class="report-metrics">
    <div><span>学習した日</span><strong id="reportDays">0<span class="report-value-unit">日</span></strong><small id="reportDaysCaption"></small></div>
    <div><span>学習した問題</span><strong id="reportQuestions">0<span class="report-value-unit">問</span></strong><small>同じ問題は1日1問</small></div>
@@ -3339,14 +3341,14 @@ html[data-persona=cyber] #app #reportScreen .report-time{background:#0f0f2a;colo
  <section id="testReview" class="test-review" hidden aria-label="確認テストの解答と丸つけ">
   <div class="test-review-heading"><h3>解答一覧・丸つけ</h3><p>ノートに書いた答えを、上から順に照らし合わせて○×をつけるにゃ。</p><span id="testReviewCount" aria-live="polite"></span></div>
   <div id="typedReviewFilter" class="typed-review-filter" hidden><button type="button" class="tool" data-typed-filter="all" aria-pressed="true">すべて</button><button type="button" class="tool" data-typed-filter="pending" aria-pressed="false">要確認だけ</button></div>
-  <p id="nekoAIReviewState" class="neko-ai-review-state" role="status"></p><button id="nekoAIReviewNext" class="tool" type="button" hidden>残りのAI判定を進める</button><div id="testAnswerList" class="test-answer-list"></div>
+  <p id="nekoAIReviewState" class="neko-ai-review-state" role="status"></p><button id="nekoAIReviewNext" class="tool" type="button" hidden>AIに判定してもらう</button><div id="testAnswerList" class="test-answer-list"></div>
   <div class="test-review-footer"><button id="testReturnQuestions" class="secondary-button" type="button">問題に戻る</button><button id="testFinalize" class="primary-button" type="button" disabled>丸つけが終わったら結果を見るにゃ</button></div>
  </section>
  <div id="testResult" hidden>
   <article class="report-card test-result-card" id="testResultCard"><header class="report-card-head"><span class="report-brand">🐾 Nekoponの確認テスト</span><strong id="testResultName"></strong><h3 id="testResultDate"></h3><p id="testResultScope"></p></header><div class="test-score"><strong id="testScore"></strong><span id="testScorePercent"></span></div><div class="test-result-breakdown"><span id="testResultPass"></span><span id="testResultRetry"></span></div><p class="homework-note typed-result-method" id="testResultMethod">全問の解答をまとめて確認し、○×で自己採点した結果</p><div id="testResultMaterials" class="report-materials"></div><p id="testResultCheer" class="report-cheer"></p></article>
   <div class="report-main-actions" data-capture-hide><button id="showTestShot" class="secondary-button" type="button">結果を見せるにゃ</button><button id="testReviewWrong" class="primary-button" type="button">スライドで復習</button></div>
   <details id="testWrongDetails" class="test-wrong-details" data-capture-hide><summary id="testWrongSummary"></summary><div id="testWrongList"></div></details>
-  <div id="typedResultActions" class="report-main-actions" data-capture-hide hidden><button id="typedShowResponses" type="button" class="secondary-button">解答とNekoponの解説</button><button id="typedRetestWrong" type="button" class="primary-button">間違いテストで再挑戦</button></div><details id="typedResultAnswers" class="typed-result-answers" data-capture-hide hidden><summary>解答・判定・Nekoponの解説</summary><div id="typedResultAnswersList"></div></details>
+  <div id="typedResultActions" class="report-main-actions" data-capture-hide hidden><button id="typedShowResponses" type="button" class="secondary-button">解答と解説</button><button id="typedRetestWrong" type="button" class="primary-button">再挑戦</button></div><details id="typedResultAnswers" class="typed-result-answers" data-capture-hide hidden><summary>解答・判定・Nekoponの解説</summary><div id="typedResultAnswersList"></div></details>
   
  </div>
 </section>
@@ -5330,7 +5332,7 @@ async function renderLearningReport(){
  metric('reportDays',active,'日');$('reportDaysCaption').textContent=`${days.length}日間の取り組み`;metric('reportQuestions',total,'問');metric('reportRecall',judged?Math.round(known/judged*100):'—',judged?'%':'');$('reportRecallCaption').textContent=judged?`${known} / ${judged}問・その日の最後の仕分け`:'まだ判定なし';metric('reportImproved',advanced,'問');
  const trackingFrom=studyHistory.timeRecordedFrom,recordedDays=days.filter(day=>day>=trackingFrom),timeDays=studyHistory.timeDays||{};let slideMs=0,testMs=0;for(const day of recordedDays){slideMs+=Number(timeDays[day]?.slide)||0;testMs+=Number(timeDays[day]?.test)||0;}
  $('reportTimeTotal').textContent=recordedDays.length?hTime(slideMs+testMs):'記録なし';$('reportTimeDetail').textContent=recordedDays.length?`スライド ${hTime(slideMs)} ・ テスト ${hTime(testMs)}`:'';
- $('reportTimeNote').hidden=from>=trackingFrom;$('reportTimeNote').textContent=recordedDays.length?`学習時間は ${hDateLabel(trackingFrom)} から記録しています。`:'この期間の学習時間は記録されていません。';
+
  const show=days.slice(-14),heights=show.map(day=>(Number(timeDays[day]?.slide)||0)+(Number(timeDays[day]?.test)||0)),max=Math.max(1,...heights);$('reportChartNote').textContent=days.length>14?'直近14日を表示':'学習時間';$('reportChart').replaceChildren();$('reportChart').classList.toggle('report-chart-single',show.length===1);
  show.forEach((day,i)=>{const count=heights[i],available=day>=trackingFrom,col=collectionNode('div',undefined,'report-chart-day'+(count?' is-active':'')),date=collectionNode('span',show.length===1?hDateLabel(day):hShort(day),'report-chart-date'),label=available?hTime(count):'記録なし';
  if(show.length===1){col.append(date,collectionNode('b',label,'report-day-status'));}
@@ -5538,7 +5540,7 @@ function navigateHomeworkTest(delta){
 }
 function legacyOpenHomeworkAnswers(){
  if(screen!=='test'||!testSession||testSession.finishedAt||testSession.phase==='review'||testNavBusy||testSession.index<testCards.length-1||!testReady)return;
- testSession.phase='review';persistHomeworkSession();homeworkImageView.cancel();renderTestAnswerReview();nekoGradeReview();beep('open');window.scrollTo({top:0,behavior:'instant'});
+ testSession.phase='review';persistHomeworkSession();homeworkImageView.cancel();renderTestAnswerReview();beep('open');window.scrollTo({top:0,behavior:'instant'});
 }
 function legacyRenderTestAnswerReview(){
  if(!testSession||screen!=='test'||testSession.finishedAt)return;
@@ -6097,7 +6099,7 @@ function buildPrompt(target,r){
 function renderHomeworkTest(){
  if(!typedTest()){$('testTitle').textContent=nekoModeTitle();$('testGradeHint').textContent='確認テストはノートに解答するにゃ。';$('assessmentPrompt').hidden=true;$('typedEntry').hidden=true;$('testCard').querySelector('.image-frame').hidden=false;return legacyRenderHomeworkTest();}
  if(testSession.finishedAt)return showHomeworkResult();
- if(testSession.phase==='review'){renderTestAnswerReview();nekoGradeReview();return;}
+ if(testSession.phase==='review'){renderTestAnswerReview();return;}
  const key=testSession.refs[testSession.index],r=assessmentByKey(key),c=testCards[testSession.index];
  if(!r||!r.eligible||testSession.dataRevision!==assessmentDataset?.revision){$('testNotice').textContent='問題文データを確認できないにゃ。再開し直してにゃ。';$('testPlay').hidden=true;return;}
  $('testPlay').hidden=false;$('testReview').hidden=$('testResult').hidden=true;typedRenderingKey=key;
@@ -6261,6 +6263,7 @@ function renderTestAnswerReview(){
  const auto=testSession.refs.filter(k=>testSession.judgements[k]?.source==='auto').length,manual=testSession.refs.filter(k=>testSession.judgements[k]?.source==='manual').length,pending=testSession.refs.filter(k=>!testSession.answers[k]).length;
  const ai=testSession.refs.filter(k=>testSession.judgements[k]?.source==='ai').length;
  $('testReviewCount').textContent=`登録解答と一致 ${auto}問 · AI判定 ${ai}問 · 自己判定 ${manual}問 · 要確認 ${pending}問`;
+ $('nekoAIReviewNext').hidden=!pending||!nekoPreferences().enabled||!testSession.refs.some(k=>testSession.judgements[k]?.source==='pending'&&!testSession.imageFailures?.[k]&&!nekoCached(k,'initial').result);
  $('testFinalize').disabled=!!pending;$('testFinalize').textContent='結果を保存するにゃ';
 }
 function finishHomeworkGrading(){
@@ -6327,7 +6330,7 @@ const nekoAiPending=new Map();
 const nekoActionLabels={initial:'解説を聞く',easy:'もっとかんたんに',memory:'覚え方を教えて',compare:'似た言葉と比べて',reason:'なぜそうなるの？',exam:'入試のポイントは？'};
 // Questions already carry their generated character voice. Do not add stock phrases.
 function nekoQuestionCandidates(value,entry,currentTurns=[],key=''){
- if(!value)return [];
+ value ||= {};
  const asked=new Set(currentTurns.map(t=>t.question)),seen=new Set(),pool=[...(value?.suggestions||[])];
  const take=items=>items.filter(s=>{if(!s||!Object.hasOwn(nekoActionLabels,s.action)||s.action==='initial'||typeof s.question!=='string'||!s.question.trim()||s.question.length>60||asked.has(s.question)||seen.has(s.question))return false;seen.add(s.question);return true;});
  const result=take(pool).slice(0,3);if(result.length===3)return result;
@@ -6634,7 +6637,7 @@ function nekoRenderTutor(root,key,readonly=false){
  status.textContent='';status.hidden=true;
   if(!readonly&&testSession?.kind==='practice'&&typedRenderingKey===key){const verdict=$('typedPracticeFeedback').querySelector('.neko-practice-verdict'),outcome=testSession.answers[key];if(verdict){verdict.textContent=outcome==='pass'?'○ 正解':outcome==='retry'?'× 不正解':'要確認';verdict.dataset.outcome=outcome||'pending';}}
  }catch(e){if(root.isConnected&&root.nekoRenderToken===renderToken){waiting.textContent=e.message;waiting.dataset.thinking='';waiting.hidden=false;bubbles.style.visibility='';bubbles.inert=false;if(selected)bubbles.hidden=false;if(action==='initial'){const retry=collectionButton('もう一度読み込む','tool',()=>run('initial'));waiting.append(retry);}}}finally{busy=false;if(root.nekoRenderToken===renderToken){status.dataset.thinking='';root.removeAttribute('aria-busy');bubbles.querySelectorAll('button').forEach(b=>b.disabled=false);}}}
- const initialCache=nekoCached(key,'initial'),initial=initialCache.result;const hasHistory=!!testSession?.tutor?.[key]?.turns?.length;const seenInitial=initialCache.entry?.initialShownSignature===initialCache.signature;const animateInitial=!!initial&&!hasHistory&&!seenInitial;if(initial)markInitialShown();paint(initial,initial,animateInitial,'initial');scrollLatest();if(nekoPreferences().enabled){if(!initial)run('initial');}else {status.hidden=false;status.textContent='Nekoponの解説はオフにしているにゃ。設定で変更できるにゃ。';}
+ const initialCache=nekoCached(key,'initial'),initial=initialCache.result;const hasHistory=!!testSession?.tutor?.[key]?.turns?.length;const seenInitial=initialCache.entry?.initialShownSignature===initialCache.signature;const animateInitial=!!initial&&!hasHistory&&!seenInitial;if(initial)markInitialShown();paint(initial,initial,animateInitial,'initial');scrollLatest();if(!nekoPreferences().enabled){bubbles.hidden=true;bubbles.inert=true;status.hidden=false;status.textContent='Nekoponの解説はオフにしているにゃ。設定で変更できるにゃ。';}
 }
 window.NekoRefreshTutorPersona=()=>{for(const body of document.querySelectorAll('.neko-tutor-body[data-tutor-key]')){if(assessmentByKey(body.dataset.tutorKey))nekoRenderTutor(body,body.dataset.tutorKey,body.dataset.tutorReadonly==='true');}};
 function nekoChatDateInfo(value,now=Date.now()){
@@ -7568,4 +7571,5 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 

@@ -47,11 +47,37 @@ def response_schema(kind,wanted=None):
  properties={k:{'type':'string','minLength':1} for k in ['field','lessonId','cardId','title','articleNeko','articleCyber','neko','cyber']};properties['field']['enum']=list(FIELDS)
  return {'type':'object','properties':{'items':{'type':'array','items':{'type':'object','properties':properties,'required':list(properties),'additionalProperties':False}}},'required':['items'],'additionalProperties':False}
 
-def parse_result(result):
+def validate_response(value,schema,path='result'):
+ if 'anyOf' in schema:
+  for option in schema['anyOf']:
+   try:validate_response(value,option,path);return
+   except ValueError:pass
+  raise ValueError(path+': 指定形式と一致しません')
+ kind=schema.get('type')
+ valid={'object':isinstance(value,dict),'array':isinstance(value,list),'string':isinstance(value,str),'integer':type(value) is int,'null':value is None}
+ if kind and not valid.get(kind,False):raise ValueError(path+': '+kind+'型が必要です')
+ if 'enum' in schema and value not in schema['enum']:raise ValueError(path+': 指定外の値です')
+ if kind=='object':
+  props=schema.get('properties',{})
+  if any(k not in value for k in schema.get('required',[])):raise ValueError(path+': 必須項目がありません')
+  if schema.get('additionalProperties') is False and set(value)-set(props):raise ValueError(path+': 指定外の項目があります')
+  for key,item in value.items():
+   if key in props:validate_response(item,props[key],path+'.'+key)
+ if kind=='array':
+  if len(value)>schema.get('maxItems',float('inf')):raise ValueError(path+': 項目が多すぎます')
+  for i,item in enumerate(value):validate_response(item,schema['items'],path+'['+str(i)+']')
+ if kind=='string' and len(value)<schema.get('minLength',0):raise ValueError(path+': 空の文章です')
+
+def parse_result(result,schema=None):
+ if not isinstance(result,dict):raise ValueError('AI応答がオブジェクトではありません')
  if result.get('stop_reason')=='max_tokens':raise ValueError('返答が途中で切れました')
- blocks=[b for b in result.get('content',[]) if b.get('type')=='tool_use' and b.get('name')=='submit_news_result']
+ content=result.get('content')
+ if not isinstance(content,list):raise ValueError('AI応答のcontentが配列ではありません')
+ blocks=[b for b in content if isinstance(b,dict) and b.get('type')=='tool_use' and b.get('name')=='submit_news_result']
  if len(blocks)!=1 or not isinstance(blocks[0].get('input'),dict):raise ValueError('指定した形式のデータがありません')
- return blocks[0]['input']
+ value=blocks[0]['input']
+ if schema is not None:validate_response(value,schema)
+ return value
 
 def ask(prompt,max_tokens=4096,schema=None):
  key=os.environ.get('ANTHROPIC_API_KEY','')
@@ -70,9 +96,9 @@ def ask(prompt,max_tokens=4096,schema=None):
    print('AI API通信待ち失敗。試行:',attempt+1,file=sys.stderr)
    if attempt==2:raise
    time.sleep(3);continue
-  try:return parse_result(result)
+  try:return parse_result(result,schema)
   except (ValueError,TypeError) as e:
-   print('AIデータ受取失敗:',str(e),'段階:',','.join(schema['properties']),'stop_reason:',result.get('stop_reason'),'response_id:',result.get('id'),'試行:',attempt+1,file=sys.stderr)
+   print('AIデータ受取失敗:',str(e),'段階:',','.join(schema['properties']),'stop_reason:',(result.get('stop_reason') if isinstance(result,dict) else None),'response_id:',(result.get('id') if isinstance(result,dict) else None),'試行:',attempt+1,file=sys.stderr)
  raise ValueError('AIから指定形式のデータを受け取れませんでした。上の段階別ログを確認してください')
 
 def read_inputs():

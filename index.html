@@ -4693,7 +4693,7 @@ const pastExamUI = (() => {
     if(!request) request=(async()=>{
       const controller=new AbortController(), timer=setTimeout(()=>controller.abort(),10000);
       try {
-        const response=await fetch('exam-past-data.json?v=20261028-1',{signal:controller.signal});
+        const response=await fetch('exam-past-data.json?v=20261028-full-source-review-1',{signal:controller.signal});
         if(!response.ok) throw Error('Exam references unavailable');
         const data=await response.json();
         if(data.schemaVersion!==1 || !data.questions || !data.slides)throw Error('Invalid exam references');
@@ -4703,8 +4703,8 @@ const pastExamUI = (() => {
     return request;
   }
   function detail(index) {
-    if(!activeEntries.length)return;
     $('pastExamDetails').replaceChildren();
+    if(!activeEntries.length){const note=document.createElement('p');note.textContent='過去10年分の分析表は確認済みですが、このスライドとの対応はまだ特定できていません。出題されていないという意味ではありません。';$('pastExamDetails').append(note);if(!dialog.open)dialog.showModal();return;}
     activeEntries.forEach((entry,i)=>{
       const section=document.createElement('section');section.className='past-exam-detail';
       const title=document.createElement('h3');title.textContent=fullLabel(entry.q);
@@ -4728,7 +4728,8 @@ const pastExamUI = (() => {
     if(key!==activeKey){activeKey=key;paintedKey='';activeEntries=[];row.hidden=true;list.replaceChildren();list.scrollLeft=0;if(dialog.open)dialog.close();}
     if(!key)return;
     load().then(data=>{
-      if(!data || token!==drawToken || key!==activeKey)return;
+      if(token!==drawToken || key!==activeKey)return;
+      if(!data){list.replaceChildren();const retry=document.createElement('button');retry.type='button';retry.className='past-exam-year';retry.textContent='読み直す';retry.setAttribute('aria-label','入試過去問の対応データを読み直す');retry.addEventListener('click',()=>render(card));list.append(retry);row.hidden=false;return;}
       if(paintedKey===key)return;
       paintedKey=key;
       const seen=new Set();
@@ -4742,7 +4743,8 @@ const pastExamUI = (() => {
         button.textContent=label(entry.q);button.setAttribute('aria-label',`${fullLabel(entry.q)}の対応を見る`);
         button.setAttribute('aria-haspopup','dialog');button.addEventListener('click',()=>detail(i));list.append(button);
       });
-      row.hidden=!activeEntries.length;
+      if(!activeEntries.length && Object.prototype.hasOwnProperty.call(data.slides,key)){const pending=document.createElement('button');pending.type='button';pending.className='past-exam-year';pending.textContent='確認中';pending.setAttribute('aria-haspopup','dialog');pending.addEventListener('click',()=>detail(0));list.append(pending);}
+      row.hidden=!Object.prototype.hasOwnProperty.call(data.slides,key);
     });
   }
   return {render};

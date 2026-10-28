@@ -3242,7 +3242,12 @@ html[data-persona=cyber] #pastExamDialog .past-exam-head{background:#0b1426!impo
 #pastExamDialog .past-exam-relation{font-size:12px}
 @media(max-width:400px){#app #studyScreen .slide-meta{gap:8px}#pastExamRow{font-size:11px;gap:5px}#pastExamList{gap:9px}}
 </style>
-</head>
+<style>
+.report-time{display:flex;align-items:center;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;min-width:0;margin:0 0 9px;padding:11px 12px;border:1px solid #e5d2b9;border-radius:12px;background:#fff9ed}
+.report-time-main{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-width:0}.report-time-label{font-size:11px;font-weight:700}.report-time strong{font-size:23px;line-height:1.25;font-variant-numeric:tabular-nums}.report-time-detail{font-size:10px;line-height:1.5;color:#aa7c52;overflow-wrap:anywhere}.report-time-note{font-size:9px;line-height:1.5;color:#a38165;margin:-2px 0 9px}
+html[data-persona=cyber] #app #reportScreen .report-time{background:#0f0f2a;color:#e0eaff;border-color:#315576;box-shadow:none}html[data-persona=cyber] #app #reportScreen .report-time strong{color:#8bfaff}html[data-persona=cyber] #app #reportScreen :is(.report-time-detail,.report-time-note){color:#b9cde9}
+@media(max-width:370px){.report-time{padding:10px 8px}.report-time strong{font-size:21px}}
+</style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   
@@ -3304,6 +3309,7 @@ html[data-persona=cyber] #pastExamDialog .past-exam-head{background:#0b1426!impo
  <p id="reportNotice" class="homework-note" role="status"></p>
  <article id="reportCard" class="report-card" aria-label="期間の学習成果">
   <header class="report-card-head"><span class="report-brand">🐾 Nekoponの学習レポート</span><strong id="reportName"></strong><h3 id="reportRange"></h3><time id="reportGenerated"></time></header>
+  <div class="report-time" aria-label="学習時間"><div class="report-time-main"><span class="report-time-label">学習時間</span><strong id="reportTimeTotal">記録なし</strong></div><span class="report-time-detail" id="reportTimeDetail"></span></div><p class="report-time-note" id="reportTimeNote" hidden></p>
   <div class="report-metrics">
    <div><span>学習した日</span><strong id="reportDays">0<span class="report-value-unit">日</span></strong><small id="reportDaysCaption"></small></div>
    <div><span>学習した問題</span><strong id="reportQuestions">0<span class="report-value-unit">問</span></strong><small>同じ問題は1日1問</small></div>
@@ -3311,7 +3317,7 @@ html[data-persona=cyber] #pastExamDialog .past-exam-head{background:#0b1426!impo
    <div><span>おぼえてない → おぼえた</span><strong id="reportImproved">0<span class="report-value-unit">問</span></strong><small>期間内に変更した問題・重複なし</small></div>
   </div>
   
-  <div class="report-chart-head"><h4>日ごとの学習</h4><span id="reportChartNote"></span></div><div id="reportChart" class="report-chart" aria-label="日別の学習した問題数"></div>
+  <div class="report-chart-head"><h4>日ごとの学習</h4><span id="reportChartNote"></span></div><div id="reportChart" class="report-chart" aria-label="日別の学習時間"></div>
   <div id="reportMaterials" class="report-materials"></div><p id="reportLegacy" class="homework-note"></p>
   <p id="reportCheer" class="report-cheer"></p>
  </article>
@@ -4341,6 +4347,7 @@ function rememberPageBeforeNavigation(){
  if(displayedPageKey==='catalog'||displayedPageKey==='collections')catalogQueries[displayedPageKey]=$('catalogSearch').value;
 }
 function showScreen(next) {
+  learningTick();learningFlush();
   rememberPageBeforeNavigation();
   const pageKey=next==='catalog'?(catalogIsCollections?'collections':'catalog'):next;
   if(next==='catalog')$('catalogSearch').value=catalogQueries[pageKey];
@@ -5270,8 +5277,22 @@ const studyHistoryReady=(async()=>{
  else{
   for(const [day,keys] of Object.entries(data.neko.daily))if(hValidDay(day)&&Array.isArray(keys)){const rows={};for(const key of new Set(keys.filter(k=>typeof k==='string')))rows[key]={v:1,l:1};studyHistory.days[day]=rows;}
  }
+ if(!hValidDay(studyHistory.timeRecordedFrom))studyHistory.timeRecordedFrom=dateKey();if(!isObject(studyHistory.timeDays))studyHistory.timeDays={};
  nekoTestSlots();historyLoaded=true;for(const fn of historyQueue)fn(studyHistory);historyQueue=[];$('reportNameInput').value=studyHistory.name||'';$('reportNameInput').disabled=false;await persistStudyHistory();return studyHistory;
 })();
+// Count visible study/test time for up to one minute after a real interaction.
+const learningIdleMs=60000;let learningLastAction=0,learningLastTick=Date.now(),learningLastSave=0,learningPending={};
+function learningMode(){if(document.hidden||!document.hasFocus())return null;if(screen==='study'&&lesson&&!state.loading&&!state.finished&&!$('stage').hidden)return 'slide';if(screen==='test'&&testSession&&(!$('testPlay').hidden||!$('testReview').hidden||!$('testResult').hidden))return 'test';return null;}
+function learningAccumulate(start,end,mode){while(start<end){const d=new Date(start),midnight=new Date(d.getFullYear(),d.getMonth(),d.getDate()+1).getTime(),stop=Math.min(end,midnight),day=hDay(d),row=learningPending[day] ||= {slide:0,test:0};row[mode]+=stop-start;start=stop;}}
+function learningFlush(){const batch=learningPending;learningPending={};if(!Object.keys(batch).length)return;learningLastSave=Date.now();changeStudyHistory(log=>{log.timeDays ||= {};for(const [day,amount] of Object.entries(batch)){const row=log.timeDays[day] ||= {slide:0,test:0};row.slide=(Number(row.slide)||0)+amount.slide;row.test=(Number(row.test)||0)+amount.test;}});}
+function learningTick(now=Date.now()){const start=learningLastTick;learningLastTick=now;const mode=learningMode();if(mode&&learningLastAction&&now>=start){const end=Math.min(now,learningLastAction+learningIdleMs);if(end>start)learningAccumulate(start,end,mode);}if(now-learningLastSave>=5000)learningFlush();}
+function learningActivity(e){if(!e.isTrusted)return;const now=Date.now();learningTick(now);learningLastAction=now;}
+for(const type of ['pointerdown','keydown','input','wheel','touchstart'])document.addEventListener(type,learningActivity,{capture:true,passive:true});
+setInterval(()=>learningTick(),1000);
+document.addEventListener('visibilitychange',()=>{learningTick();learningFlush();if(document.hidden)learningLastAction=0;});
+window.addEventListener('blur',()=>{learningTick();learningFlush();learningLastAction=0;});
+window.addEventListener('pagehide',()=>{learningTick();learningFlush();learningLastAction=0;});
+function hTime(ms){if(!ms)return '0分';if(ms<60000)return '1分未満';const minutes=Math.floor(ms/60000);return minutes<60?`${minutes}分`:`${Math.floor(minutes/60)}時間${minutes%60?`${minutes%60}分`:''}`;}
 function trackStudySeen(c){const day=dateKey(),key=c.id;changeStudyHistory(log=>{const rows=log.days[day] ||= {};const row=rows[key] ||= {};if(row.v)return false;row.v=1;});}
 function trackStudyAssessment(c,nextStatus,previousStatus){
  const token='h-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8),day=dateKey(),key=c.id,at=Date.now();
@@ -5307,11 +5328,14 @@ async function renderLearningReport(){
  $('reportNameInput').value=studyHistory.name||'';$('reportName').textContent=studyHistory.name||'';$('reportRange').textContent=from===to?hDateLabel(from):`${hDateLabel(from)} 〜 ${hDateLabel(to)}`;$('reportGenerated').textContent='集計 '+hStamp(Date.now());
  const metric=(id,value,unit='')=>$(id).replaceChildren(document.createTextNode(String(value)),...(unit?[collectionNode('span',unit,'report-value-unit')]:[]));
  metric('reportDays',active,'日');$('reportDaysCaption').textContent=`${days.length}日間の取り組み`;metric('reportQuestions',total,'問');metric('reportRecall',judged?Math.round(known/judged*100):'—',judged?'%':'');$('reportRecallCaption').textContent=judged?`${known} / ${judged}問・その日の最後の仕分け`:'まだ判定なし';metric('reportImproved',advanced,'問');
- const show=days.slice(-14),heights=sums.slice(-14),max=Math.max(1,...heights);$('reportChartNote').textContent=days.length>14?'直近14日を表示':days.length>1?'同じ問題は1日1問':'';$('reportChart').replaceChildren();$('reportChart').classList.toggle('report-chart-single',show.length===1);
- show.forEach((day,i)=>{const count=heights[i],col=collectionNode('div',undefined,'report-chart-day'+(count?' is-active':'')),date=collectionNode('span',show.length===1?hDateLabel(day):hShort(day),'report-chart-date');
- if(show.length===1){col.append(date,collectionNode('b',count?'✓ 学習済み':'未学習','report-day-status'));}
- else{const bar=collectionNode('i');bar.style.height=Math.max(2,Math.round(count/max*46))+'px';col.append(collectionNode('b',`${count}問`),bar,date);}
- col.setAttribute('aria-label',`${day} ${count}問 ${count?'学習済み':'未学習'}`);$('reportChart').append(col);});
+ const trackingFrom=studyHistory.timeRecordedFrom,recordedDays=days.filter(day=>day>=trackingFrom),timeDays=studyHistory.timeDays||{};let slideMs=0,testMs=0;for(const day of recordedDays){slideMs+=Number(timeDays[day]?.slide)||0;testMs+=Number(timeDays[day]?.test)||0;}
+ $('reportTimeTotal').textContent=recordedDays.length?hTime(slideMs+testMs):'記録なし';$('reportTimeDetail').textContent=recordedDays.length?`スライド ${hTime(slideMs)} ・ テスト ${hTime(testMs)}`:'';
+ $('reportTimeNote').hidden=from>=trackingFrom;$('reportTimeNote').textContent=recordedDays.length?`学習時間は ${hDateLabel(trackingFrom)} から記録しています。`:'この期間の学習時間は記録されていません。';
+ const show=days.slice(-14),heights=show.map(day=>(Number(timeDays[day]?.slide)||0)+(Number(timeDays[day]?.test)||0)),max=Math.max(1,...heights);$('reportChartNote').textContent=days.length>14?'直近14日を表示':'学習時間';$('reportChart').replaceChildren();$('reportChart').classList.toggle('report-chart-single',show.length===1);
+ show.forEach((day,i)=>{const count=heights[i],available=day>=trackingFrom,col=collectionNode('div',undefined,'report-chart-day'+(count?' is-active':'')),date=collectionNode('span',show.length===1?hDateLabel(day):hShort(day),'report-chart-date'),label=available?hTime(count):'記録なし';
+ if(show.length===1){col.append(date,collectionNode('b',label,'report-day-status'));}
+ else{const bar=collectionNode('i');bar.style.height=count?Math.max(2,Math.round(count/max*46))+'px':'0px';if(!count)bar.style.visibility='hidden';const shortLabel=!available?'—':count>0&&count<60000?'<1分':label;col.append(collectionNode('b',shortLabel),bar,date);}
+ col.setAttribute('aria-label',`${day} ${label}`);$('reportChart').append(col);});
  materialRows($('reportMaterials'),byLesson);$('reportLegacy').textContent=(legacy||from<studyHistory.recordedFrom)?'以前の学習分は、端末に残っている問数だけを引き継いでいるにゃ。':'';
  $('reportCheer').textContent=!total?'まずは1問から、いっしょに進むにゃ🐾':advanced?`${advanced}問が「おぼえてない」から「おぼえた」になったにゃ！🐾`:active>=3?`${active}日分の積み重ね、ばっちりにゃ🐾`:'取り組んだ分が、ちゃんと残るにゃ🐾';renderHomeworkTestHistory();nekoRenderHub();
 }
@@ -5330,7 +5354,7 @@ for(const b of document.querySelectorAll('[data-report-period]'))b.onclick=()=>{
 for(const id of ['reportFrom','reportTo'])$(id).onchange=()=>{$('reportPeriodNotice').textContent='';};
 $('reportNameInput').onchange=()=>{studyHistory.name=$('reportNameInput').value.trim().slice(0,24);persistStudyHistory();renderLearningReport();};
 $('resumeTestMain').onclick=resumeHomeworkTest;for(const b of document.querySelectorAll('.capture-exit'))b.onclick=()=>toggleHomeworkCapture(false);
-$('resetReportHistory').onclick=()=>{if(!confirmWithPersona('日別レポートだけを消すにゃ？ 元の学習記録とテスト結果は残るにゃ。', '日別レポートだけ消すか？ 元の学習記録とテスト結果は残るぜ。'))return;studyHistory.days={};studyHistory.recordedFrom=dateKey();historyUndoSnapshots.clear();persistStudyHistory();renderLearningReport();};
+$('resetReportHistory').onclick=()=>{if(!confirmWithPersona('日別レポートだけを消すにゃ？ 元の学習記録とテスト結果は残るにゃ。', '日別レポートだけ消すか？ 元の学習記録とテスト結果は残るぜ。'))return;learningTick();learningFlush();studyHistory.days={};studyHistory.timeDays={};studyHistory.timeRecordedFrom=dateKey();studyHistory.recordedFrom=dateKey();historyUndoSnapshots.clear();persistStudyHistory();renderLearningReport();};
 $('resetTestHistory').onclick=()=>{if(!confirmWithPersona('確認テストの結果と途中のテストを消すにゃ？ 元の学習記録は残るにゃ。', '確認テストの結果と途中のテストを消すか？ 元の学習記録は残るぜ。'))return;studyHistory.tests=[];studyHistory.activeTests={};studyHistory.activeTest=null;testSession=null;persistStudyHistory();renderLearningReport();};
 
 let testSession=null,testCards=[],testReady=false,testLoading=false,testFaceAnswer=false,testImageToken=0,testSuppressedUntil=0,testGradeLock=0,testLoadRequest=0,testNavBusy=false;
@@ -7544,3 +7568,4 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+

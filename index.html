@@ -3309,6 +3309,13 @@ html[data-persona] body dialog#collectionDialog #collectionRemoveLesson{flex:0 0
 html[data-persona] body dialog#collectionDialog .collection-grid-tools{grid-template-columns:minmax(0,1fr) minmax(0,1.85fr) minmax(0,1fr);gap:4px}
 html[data-persona] body dialog#collectionDialog .collection-grid-tools button.tool{min-width:0;width:100%;padding:7px 1px!important;font-size:clamp(8px,2.45vw,10px)!important;line-height:1.25;white-space:nowrap;letter-spacing:-.03em}
 html[data-persona] body dialog#collectionDialog .collection-tile-label{background:transparent!important;box-shadow:none!important}
+
+/* Cyber scrollbars and focus feedback, including scrollable dialogs. */
+html[data-persona="cyber"] body,html[data-persona="cyber"] body *{scrollbar-color:#39cdeb #10243d!important}
+html[data-persona="cyber"] body ::-webkit-scrollbar-thumb{background-color:#39cdeb!important;border-radius:10px}
+html[data-persona="cyber"] body ::-webkit-scrollbar-track{background-color:#10243d!important}
+html[data-persona="cyber"] #collectionDialog #collectionLessonPicker:focus-visible{outline-color:#00e7ff!important}
+html[data-persona="cyber"] #collectionDialog .collection-editor-body :is(input,select):focus{outline-color:#00e7ff!important;border-color:#00e7ff!important;caret-color:#00e7ff}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

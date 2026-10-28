@@ -3219,10 +3219,14 @@ html[data-persona=cyber] #app #catalogScreen :is(.news-tools button.active,.news
 #pastExamList .past-exam-year{flex:none;min-height:32px;padding:3px 0;border:0;border-radius:3px;background:transparent;color:var(--ink);font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 html[data-persona=cyber] #pastExamList .past-exam-year{color:#91f1ff}
 #pastExamList .past-exam-year:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
-#pastExamDialog{width:min(540px,calc(100vw - 24px));box-sizing:border-box}
-#pastExamDialog .past-exam-head{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:12px;padding-bottom:18px}
-#pastExamDialog h2{grid-row:2;margin:0;min-width:0;font-size:clamp(15px,4.4vw,20px);font-weight:700;line-height:1.5;white-space:nowrap;letter-spacing:0}
-#pastExamClose{grid-row:1;justify-self:end;position:static;box-sizing:border-box;width:44px;height:44px;min-width:44px;min-height:44px;margin:0;padding:0;font-size:22px;line-height:1;display:grid;place-items:center}
+#pastExamDialog{width:min(540px,calc(100vw - 24px));box-sizing:border-box;padding:0;overflow:auto}
+#pastExamDialog .past-exam-head{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid #315b81;background:var(--paper,#fffaf4)}
+#pastExamDialog h2{flex:1;min-width:0;margin:0;font-size:clamp(11px,3.4vw,16px);font-weight:700;line-height:1.5;white-space:nowrap;letter-spacing:0}
+#pastExamClose{position:relative;flex:0 0 44px;box-sizing:border-box;width:44px;height:44px;min-width:44px;min-height:44px;margin:0;padding:0;font-size:22px;line-height:1;display:grid;place-items:center}
+#pastExamDetails{padding:8px 14px 18px}
+#pastExamDialog .past-exam-detail{padding:14px 0;border-top:1px solid #315b81;scroll-margin-top:86px}
+#pastExamDialog .past-exam-detail:first-child{border-top:0}
+html[data-persona=cyber] #pastExamDialog .past-exam-head{background:#0b1426!important;border-bottom-color:#315b81!important}
 #pastExamDialog .past-exam-note{font-size:12px;line-height:1.7}
 .past-exam-detail{padding:14px 0;border-top:1px solid currentColor;scroll-margin:12px}
 #pastExamDialog .past-exam-detail h3{margin:0 0 8px;font-size:14px}

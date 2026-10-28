@@ -3397,7 +3397,7 @@ html[data-persona=cyber] #pastExamList .past-exam-year{color:#91f1ff}
 </dialog>
 <dialog id="nekoWordDialog" class="neko-word-dialog" aria-labelledby="nekoWordTitle"><div class="homework-setup-head"><h2 id="nekoWordTitle" class="user-content">ことばの意味</h2><button id="nekoWordClose" class="tool compact-close ui-close" type="button" autofocus aria-label="ことばの説明を閉じる">×</button></div><div class="neko-word-content"><p class="neko-word-caption">この説明での意味</p><p id="nekoWordMeaning" class="neko-word-copy user-content"></p><section id="nekoWordExampleBlock"><h3>たとえば</h3><p id="nekoWordExample" class="neko-word-copy user-content"></p></section><section id="nekoWordConnectionBlock" hidden><h3>この問題とのつながり</h3><p id="nekoWordConnection" class="neko-word-copy user-content"></p></section><p id="nekoWordState" class="neko-word-state" role="status"></p><div class="neko-word-actions"><button id="nekoWordMore" type="button" class="tool">もっとくわしく</button><a id="nekoWordSearch" target="_blank" rel="noopener noreferrer">Googleで意味を調べる</a></div></div></dialog>
 <dialog id="nekoRelatedDialog" class="neko-related-dialog" aria-labelledby="nekoRelatedTitle"><div class="homework-setup-head"><h2 id="nekoRelatedTitle" tabindex="-1">つながる問題</h2><button id="nekoRelatedClose" class="tool compact-close ui-close" type="button" autofocus aria-label="関連問題を閉じる">×</button></div><div id="nekoRelatedContent" class="neko-related-content"></div></dialog>
-<dialog id="pastExamDialog" aria-labelledby="pastExamTitle"><div class="past-exam-head"><h2 id="pastExamTitle">入試過去問</h2><button id="pastExamClose" class="tool" type="button" aria-label="入試過去問を閉じる" autofocus>×</button></div><p class="past-exam-note">分析資料をもとに確認した対応です。入試問題原本との照合は未完了です。確認できた分だけを掲載しています。</p><div id="pastExamDetails"></div></dialog>
+<dialog id="pastExamDialog" aria-labelledby="pastExamTitle"><div class="past-exam-head"><h2 id="pastExamTitle">沖縄県立高校入試過去問</h2><button id="pastExamClose" class="tool" type="button" aria-label="入試過去問を閉じる" autofocus>×</button></div><div id="pastExamDetails"></div></dialog>
 <script src="asset-config.js"></script>
 <script src="asset-origin.js"></script>
 <script>
@@ -4710,11 +4710,7 @@ const pastExamUI = (() => {
       const title=document.createElement('h3');title.textContent=fullLabel(entry.q);
       const topic=document.createElement('p');topic.textContent=entry.q.topic;
       const demand=document.createElement('p');demand.textContent=entry.q.demand;
-      const relation=document.createElement('p');relation.className='past-exam-relation';
-      relation.textContent=entry.relation==='answer_term'
-        ? 'このスライドの答えと、答える名称が同じです。問い方や実験条件まで同じとは限りません。'
-        : 'このスライドで学ぶ知識が関連します。入試では図の読み取りや計算・説明などが必要な場合もあります。';
-      section.append(title,topic,demand,relation);section.id=`pastExamDetail${i}`;
+      section.append(title,topic,demand);section.id=`pastExamDetail${i}`;
       $('pastExamDetails').append(section);
     });
     if(!dialog.open)dialog.showModal();

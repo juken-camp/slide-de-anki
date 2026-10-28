@@ -4693,7 +4693,7 @@ const pastExamUI = (() => {
     if(!request) request=(async()=>{
       const controller=new AbortController(), timer=setTimeout(()=>controller.abort(),10000);
       try {
-        const response=await fetch('exam-past-data.json?v=20261028-h28r7-social-1',{signal:controller.signal});
+        const response=await fetch('exam-past-data.json?v=20261028-r8-1',{signal:controller.signal});
         if(!response.ok) throw Error('Exam references unavailable');
         const data=await response.json();
         if(data.schemaVersion!==1 || !data.questions || !data.slides)throw Error('Invalid exam references');
@@ -4704,7 +4704,7 @@ const pastExamUI = (() => {
   }
   function detail(index) {
     $('pastExamDetails').replaceChildren();
-    if(!activeEntries.length){const note=document.createElement('p');note.textContent='過去10年分の分析表は確認済みですが、このスライドとの対応はまだ特定できていません。出題されていないという意味ではありません。';$('pastExamDetails').append(note);if(!dialog.open)dialog.showModal();return;}
+    if(!activeEntries.length){const note=document.createElement('p');note.textContent='平成28〜令和8年度の分析資料は確認済みですが、このスライドとの対応はまだ特定できていません。出題されていないという意味ではありません。';$('pastExamDetails').append(note);if(!dialog.open)dialog.showModal();return;}
     activeEntries.forEach((entry,i)=>{
       const section=document.createElement('section');section.className='past-exam-detail';
       const title=document.createElement('h3');title.textContent=fullLabel(entry.q);

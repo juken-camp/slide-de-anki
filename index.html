@@ -4955,8 +4955,8 @@ function syncCollectionCatalog() {
   document.querySelector('#catalogScreen .catalog-list-tools').hidden=on;
   $('catalogGroups').hidden=on; if(on)$('catalogEmpty').hidden=true;
   $('openImport').hidden=true;
-  $('catalogSearch').placeholder=on?(document.documentElement.dataset.persona==='cyber'?'自分の教材を探すぜ':'自分の教材をさがすにゃ'):(document.documentElement.dataset.persona==='cyber'?'攻略する教材を探すぜ':'全教材からさがすにゃ');
-  $('catalogSearch').setAttribute('aria-label',on?'作成したまとめ教材・追加したオリジナル教材を検索':'教材名・問題文・解答で検索');
+  $('catalogSearch').placeholder=newsDemoMode&&!on?(document.documentElement.dataset.persona==='cyber'?'ニュースを探すぜ':'ニュースを探すにゃ'):on?(document.documentElement.dataset.persona==='cyber'?'自分の教材を探すぜ':'自分の教材をさがすにゃ'):(document.documentElement.dataset.persona==='cyber'?'攻略する教材を探すぜ':'全教材からさがすにゃ');
+  $('catalogSearch').setAttribute('aria-label',newsDemoMode&&!on?'ニュースを検索':on?'作成したまとめ教材・追加したオリジナル教材を検索':'教材名・問題文・解答で検索');
   if(on)$('quickReview').hidden=true;
   $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
 }
@@ -7387,7 +7387,7 @@ $('importForm').onsubmit=async e=>{
     $('brandHome')?.setAttribute('aria-label',`${title} ${subtitle}・${mode==='cyber'?'Yoruponとあそぶぜ':'Nekoponとあそぶにゃ'}`);
     $('mascotPlay')?.setAttribute('aria-label',mode==='cyber'?'Yoruponをタップするぜ':originals.mascotLabel);
     $('resultCat')?.setAttribute('aria-label',mode==='cyber'?'Yoruponに声をかけるぜ':originals.resultLabel);
-    $('catalogSearch')?.setAttribute('placeholder',mode==='cyber'?(typeof catalogIsCollections!=='undefined'&&catalogIsCollections?'自分の教材を探すぜ':'攻略する教材を探すぜ'):(typeof catalogIsCollections!=='undefined'&&catalogIsCollections?'自分の教材をさがすにゃ':'全教材からさがすにゃ'));
+    $('catalogSearch')?.setAttribute('placeholder',$('catalogScreen')?.classList.contains('news-view')?(mode==='cyber'?'ニュースを探すぜ':'ニュースを探すにゃ'):mode==='cyber'?(typeof catalogIsCollections!=='undefined'&&catalogIsCollections?'自分の教材を探すぜ':'攻略する教材を探すぜ'):(typeof catalogIsCollections!=='undefined'&&catalogIsCollections?'自分の教材をさがすにゃ':'全教材からさがすにゃ'));
 
     const heading=$('settingsScreen')?.querySelector('.settings-play h3');if(heading)heading.textContent=mode==='cyber'?'Yoruponとのあそび':originals.playHeading;
     const plh=$('settingsScreen')?.querySelector('.neko-playground strong');if(plh)plh.textContent=mode==='cyber'?'ひと息入れようぜ😎':originals.playfulHeading;

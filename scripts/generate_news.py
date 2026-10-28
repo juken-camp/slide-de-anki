@@ -3,7 +3,7 @@
 import argparse, time, urllib.error, datetime as dt, email.utils, hashlib, json, os, re, sys, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 from pathlib import Path
 JST=dt.timezone(dt.timedelta(hours=9)); ROOT=Path(__file__).resolve().parents[1]
-QUALITY_VERSION=2
+QUALITY_VERSION=3
 FIELDS={'geography':'地理','history':'歴史','civics':'公民','physics':'物理','chemistry':'化学','biology':'生物','earth':'地学'}
 FEEDS=['https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja']+['https://news.google.com/rss/search?q='+urllib.parse.quote(q)+'&hl=ja&gl=JP&ceid=JP:ja' for q in ['沖縄','政治 経済','世界 地理','歴史 文化','科学 物理','化学 環境','生物 自然','気象 宇宙']]
 
@@ -67,25 +67,75 @@ def read_inputs():
 def grams(text):
  text=re.sub(r'[^\w\u3040-\u30ff\u4e00-\u9fff]','',text);return set(text[i:i+2] for i in range(max(0,len(text)-1)))
 
+# Historical exclusion is based on the edition date, never the wall clock.
+RECENT=[]
+SUBTOPICS={
+ 'earth':{'天体':['天体','月','太陽','惑星','星座','宇宙','日食'],'地震':['地震','震源','震度','断層','津波'],'火山':['火山','噴火','マグマ','溶岩'],'地層':['地層','化石','堆積','岩石'],'天気':['台風','前線','低気圧','気圧','湿度','雲','天気']},
+ 'physics':{'電気':['電流','電圧','電気','電池','磁界','発電'],'光':['光','レンズ','反射','屈折'],'音':['音','振動'],'力':['力','圧力','浮力','重力'],'エネルギー':['仕事','エネルギー','運動']},
+ 'chemistry':{'物質':['物質','密度','プラスチック','金属'],'気体':['気体','酸素','二酸化炭素','水素'],'状態変化':['融点','沸点','蒸留','状態変化'],'化学変化':['化学変化','酸化','還元','燃焼'],'イオン':['イオン','酸性','アルカリ','中和','電気分解']},
+ 'biology':{'植物':['植物','光合成','葉','根','花'],'動物':['動物','消化','血液','呼吸','神経'],'細胞と遺伝':['細胞','遺伝','生殖','染色体'],'生態系':['生態系','食物連鎖','自然','持続可能','生物多様性']},
+ 'geography':{'産業':['産業','農業','工業','漁業','貿易'],'人口と地域':['人口','都市','観光','交通'],'環境と防災':['災害','地震','台風','環境','ハザード'],'世界':['大陸','国','世界','緯度','経度']},
+ 'history':{'古代':['縄文','弥生','古墳','飛鳥','奈良','平安'],'中世':['鎌倉','室町','琉球','武士'],'近世':['江戸','徳川','戦国','織田','豊臣'],'近現代':['明治','大正','昭和','革命','世界大戦','憲法']},
+ 'civics':{'政治':['国会','選挙','内閣','裁判','地方自治'],'人権':['人権','憲法','自由','平等'],'経済':['税','金融','銀行','需要','供給','価格','会社'],'国際と福祉':['国際','国連','社会保障','福祉','環境']}}
+
+def norm(value):
+ value=re.sub(r'（[^）]*）|\([^)]*\)','',str(value))
+ return re.sub(r'[^\w\u3040-\u30ff\u4e00-\u9fff]','',value).casefold()
+
+def answer_keys(card):
+ value=str(card.get('a','')).strip()
+ # Choice letters and bare numbers do not identify a learning concept.
+ if re.fullmatch(r'[0-9０-９\s.．＋+−-]+',value) or re.fullmatch(r'[A-Da-dア-オ](?:[\s・/／,，、]+[A-Da-dア-オ])*',value):return set()
+ return {norm(x) for x in re.split(r'[／/\n]',value) if norm(x)}
+
+def topic(field,text):
+ scores={name:sum(len(word) for word in words if word in text) for name,words in SUBTOPICS.get(field,{}).items()}
+ return max(scores,key=scores.get) if scores and max(scores.values()) else 'その他'
+
+def card_for(data,lid,cid):
+ return next((c for c in data.get('lessons',{}).get(lid,{}).get('cards',[]) if c.get('id')==cid),None)
+
+def load_recent(data,edition):
+ rows=[]
+ for path in sorted((ROOT/'news'/'daily').glob('????-??-??.json')):
+  day=dt.date.fromisoformat(path.stem)
+  if not edition-dt.timedelta(days=7)<=day<edition:continue
+  previous=json.loads(path.read_text())
+  if previous.get('date')!=path.stem or not isinstance(previous.get('items'),list):raise ValueError('過去のニュース履歴の形式が不正です: '+path.name)
+  for row in previous['items']:
+   field=row.get('field');c=card_for(data,row.get('lessonId'),row.get('cardId'))
+   rows.append({'field':field,'day':day,'key':(row.get('lessonId'),row.get('cardId')),'answers':answer_keys(c or {}),'question':norm((c or {}).get('q','')),'topic':topic(field,str((c or {}).get('q',''))+' '+str((c or {}).get('a',''))),'url':row.get('url'),'title':row.get('title','')})
+ return rows
+
+def recently_used(field,lid,c):
+ return any(r['field']==field and (r['key']==(lid,c['id']) or (r['question'] and r['question']==norm(c.get('q',''))) or bool(r['answers']&answer_keys(c))) for r in RECENT)
+
+def topic_penalty(field,c):
+ bucket=topic(field,str(c.get('q',''))+' '+str(c.get('a','')))
+ return sum(1 for r in RECENT if r['field']==field and r['topic']==bucket)
+
 def candidates(catalog,data,field,words):
  query=grams(' '.join(words));rows=[]
  for m in catalog:
   if m.get('field')!=field:continue
   for c in data.get('lessons',{}).get(m['id'],{}).get('cards',[]):
    q=str(c.get('q',''));a=str(c.get('a',''))
+   if recently_used(field,m['id'],c):continue
    if not c.get('eligible') or not q or not a or len(q)>200 or len(a)>120:continue
    if c.get('image') or re.search(r'図[のはを中]|下の図|次の図|写真|グラフ|地図|表[のをは]',q):continue
    score=len(query & grams(m.get('title','')+' '+q+' '+a))+sum(12 for word in words if word and word in a)
-   if score:rows.append((score,hashlib.sha256((m['id']+'/'+c['id']).encode()).hexdigest(),{'lessonId':m['id'],'cardId':c['id'],'q':q,'a':a,'title':m.get('title','')}))
- rows.sort(key=lambda x:(-x[0],x[1]));return [v for _,_,v in rows[:30]]
+   if score:rows.append((topic_penalty(field,c),score,hashlib.sha256((m['id']+'/'+c['id']).encode()).hexdigest(),{'lessonId':m['id'],'cardId':c['id'],'q':q,'a':a,'title':m.get('title','')}))
+ rows.sort(key=lambda x:(x[0],-x[1],x[2]));return [v for _,_,_,v in rows[:30]]
 
 def generate(items,catalog,data,source_date,wanted=None,edition_date=None,excluded=()):
- items=[x for x in items if x['url'] not in set(excluded)]
+ blocked=set(excluded)|{r['url'] for r in RECENT}
+ items=[x for x in items if x['url'] not in blocked or x.get('kind')=='theme']
  if not items:return {'items':[]}
  edition_date=edition_date or source_date+dt.timedelta(days=1)
  wanted=list(wanted or FIELDS)
  choices=[{'id':x['id'],'headline':x['headline'],'source':x['source'],'publishedAt':x['publishedAt'],'kind':x.get('kind','news')} for x in items]
- selection=ask('中学生向け。直近30日間のニュースの見出しから、地理・歴史・公民・物理・化学・生物・地学の7分野につながる話題をそれぞれ選ぶ。見出しにない事実は想像しない。適切なものがない場合はnull。同じ記事を複数分野で使わない。同じ出来事の別記事も選ばない。各分野で既存の中学教材を検索する具体的な語を5個まで提案。JSONのみ。形式 {"geography":{"id":0,"keywords":["地震"]},"history":null,"civics":null,"physics":null,"chemistry":null,"biology":null,"earth":null}。新しい記事を優先しつつ、指定された分野を必ず探す。分野: '+json.dumps(wanted,ensure_ascii=False)+' ニュース一覧: '+json.dumps(choices,ensure_ascii=False))
+ history_hint=json.dumps([{'field':r['field'],'topic':r['topic'],'title':r['title']} for r in RECENT],ensure_ascii=False)
+ selection=ask('直近7日間の出題履歴は '+history_hint+'。同じ出来事・同じ小分野への偏りを避ける。地学は天気だけでなく天体・地震・火山・地層も探す。中学生向け。直近30日間のニュースの見出しから、地理・歴史・公民・物理・化学・生物・地学の7分野につながる話題をそれぞれ選ぶ。見出しにない事実は想像しない。適切なものがない場合はnull。同じ記事を複数分野で使わない。同じ出来事の別記事も選ばない。各分野で既存の中学教材を検索する具体的な語を5個まで提案。JSONのみ。形式 {"geography":{"id":0,"keywords":["地震"]},"history":null,"civics":null,"physics":null,"chemistry":null,"biology":null,"earth":null}。新しい記事を優先しつつ、指定された分野を必ず探す。分野: '+json.dumps(wanted,ensure_ascii=False)+' ニュース一覧: '+json.dumps(choices,ensure_ascii=False))
  proposed={};chosen_urls=set(excluded);byid={x['id']:x for x in items}
  for field in wanted:
   a=selection.get(field)
@@ -94,13 +144,16 @@ def generate(items,catalog,data,source_date,wanted=None,edition_date=None,exclud
   news=byid[a['id']]
   if news['url'] in chosen_urls:continue
   cs=candidates(catalog,data,field,[news['headline']]+words)
+  if news.get('anchor'):
+   anchor=news['anchor'];c=card_for(data,anchor['lessonId'],anchor['cardId'])
+   cs=[{'lessonId':anchor['lessonId'],'cardId':c['id'],'q':c['q'],'a':c['a'],'title':next(m['title'] for m in catalog if m['id']==anchor['lessonId'])}] if c and not recently_used(field,anchor['lessonId'],c) else []
   if cs:
    news_context=dict(news)
    chosen_urls.add(news['url'])
    news_context['publicationDateJST']=email.utils.parsedate_to_datetime(news['publishedAt']).astimezone(JST).date().isoformat() if news.get('publishedAt') else None
    proposed[field]={'news':news_context,'candidates':cs}
  if not proposed:return {'version':1,'date':edition_date.isoformat(),'sourceDate':source_date.isoformat(),'generatedAt':dt.datetime.now(JST).isoformat(),'items':[]}
- prompt='''あなたは中学生向けの塾講師。ニュースと問題の関連を教える。分野ごとに候補問題から厳密に1つ選び、無理に結びつけず、関連が弱ければ省略する。報道の見出しから確実に分かる事実以外は書かない。記事本文は未取得、背景・数字・理由を推測しない。見出しだけから重要性や比較が不明なら断定しない。
+ prompt='''あなたは中学生向けの塾講師。ニュースと問題の関連を教える。候補は最近扱っていない小分野を優先して並べてある。可能なら上位から自然につながるものを選ぶ。違う問題でも同じ話の繰り返しにしない。分野ごとに候補問題から厳密に1つ選び、無理に結びつけず、関連が弱ければ省略する。報道の見出しから確実に分かる事実以外は書かない。記事本文は未取得、背景・数字・理由を推測しない。見出しだけから重要性や比較が不明なら断定しない。
 次の品質基準を必ず守る。ニュースの要約だけで終わらず、子どもに『結局どういう話？』の答えをあげる。articleは2〜3文、80〜160字目安で、出来事→暮らしへの意味・争点を示す。neko/cyberは2〜3文、70〜150字目安で、身近な例や原因→結果→問題の答えへの橋渡しを説明する。articleと解説で同じ説明を繰り返さない。単に『答えと同じ言葉』『セットで覚えよう』『しっかり覚えよう』で埋めない。ニュースの当事者の意図・数字は推測せず、一般的な仕組みは教材の知識として説明してよい。
 例：法人税を上げる案なら『国がお金を集めるため、会社への税金を増やす案が出たんだぜ。増税すると会社の手元に残るお金は減る。国に必要なお金を、誰がどれだけ負担するかがポイントだぜ。』解説は『売り上げが100万円でも、仕入れなどに80万円使えば、もうけは20万円。このもうけにかかる税金が法人税だぜ。売り上げ全部への税金とは区別しようぜ。』のように具体化する。ただし税額そのものの単純計算はしない。
 省庁名、拠点、就航、検討、共生などは不可欠でない限り簡単な言葉に言い換える。覚える用語以外の難しい補足を増やさない。両口調とも自然な日本語で。『報じられただぜ』『報じられていただぜ』『ありましただぜ』は禁止。『報じられたんだぜ』『報じられていたんだぜ』を使う。すべての文末に機械的に『だぜ』『にゃ』を足さない。出力前に文法を見直す。
@@ -129,6 +182,29 @@ THEMES={
  'earth':('火山ではマグマや火山ガスなどが地表に噴き出す。火山の情報は防災にも役立つ。',['噴火','マグマ','火山'],'https://www.jma.go.jp/jma/kishou/know/kazan/kazanyougo/funka.html','気象庁')}
 QUERIES={'geography':'地理 観光 農業 防災','history':'歴史 文化財 発掘','civics':'経済 税金 社会','physics':'発電 エネルギー 電池','chemistry':'化学 素材 プラスチック','biology':'生物 自然 生態系','earth':'宇宙 火山 地震 気象'}
 
+def theme_fallback(field,catalog,data,source,edition,excluded):
+ headline,keywords,url,publisher=THEMES[field]
+ choices=candidates(catalog,data,field,[headline]+keywords)
+ if choices:
+  seed=[{'id':0,'headline':headline,'source':publisher,'url':url,'publishedAt':'','kind':'theme'}]
+  extra=generate(seed,catalog,data,source,[field],edition_date=edition,excluded=excluded)
+  if extra['items']:return extra
+ # Broaden the subject, rather than repeating a familiar answer or forcing a match.
+ options=[]
+ for m in catalog:
+  if m.get('field')!=field or not str(m.get('source','')).startswith('https://'):continue
+  for c in data.get('lessons',{}).get(m['id'],{}).get('cards',[]):
+   if not c.get('eligible') or recently_used(field,m['id'],c) or c.get('image'):continue
+   q,a=str(c.get('q','')),str(c.get('a',''))
+   if not q or not a or len(q)>200 or len(a)>120 or re.search(r'図[のはを中]|下の図|次の図|写真|グラフ|地図|表[のをは]',q):continue
+   options.append((topic_penalty(field,c),hashlib.sha256((edition.isoformat()+m['id']+c['id']).encode()).hexdigest(),m,c))
+ options.sort(key=lambda x:(x[0],x[1]))
+ for _,_,m,c in options[:3]:
+  seed=[{'id':0,'headline':'暮らしや社会につながる学習テーマ。教材の確認済み内容：'+str(c['q'])+' 答え：'+str(c['a']),'source':'教材の元動画','url':m['source'],'publishedAt':'','kind':'theme','anchor':{'lessonId':m['id'],'cardId':c['id']}}]
+  extra=generate(seed,catalog,data,source,[field],edition_date=edition,excluded=excluded)
+  if extra['items']:return extra
+ return {'items':[]}
+
 def check_complete(result):
  rows=result.get('items',[])
  if len(rows)!=7 or {x.get('field') for x in rows}!=set(FIELDS):raise ValueError('7分野がそろわないため公開しません')
@@ -152,29 +228,33 @@ def main():
    else:print('完成済み:',edition);return
  items=collect(FEEDS,source,days=30)
  catalog,data=read_inputs()
+ global RECENT
+ RECENT=load_recent(data,edition)
  result=generate(items,catalog,data,source,edition_date=edition) if items else {'items':[]}
  # Separate searches for missing fields, then a truthful sourced learning theme.
  for field in FIELDS:
   if any(x['field']==field for x in result['items']):continue
   used=[x['url'] for x in result['items']]
-  query=QUERIES[field]+' after:'+(source-dt.timedelta(days=90)).isoformat()+' before:'+(source+dt.timedelta(days=1)).isoformat()
+  counts={name:sum(1 for r in RECENT if r['field']==field and r['topic']==name) for name in SUBTOPICS[field]}
+  least=sorted(counts,key=counts.get)[:2]
+  query='('+' OR '.join(SUBTOPICS[field][name][0] for name in least)+') after:'+(source-dt.timedelta(days=90)).isoformat()+' before:'+(source+dt.timedelta(days=1)).isoformat()
   feed='https://news.google.com/rss/search?q='+urllib.parse.quote(query)+'&hl=ja&gl=JP&ceid=JP:ja'
   more=collect([feed],source,days=90)
   extra=generate(more,catalog,data,source,[field],edition_date=edition,excluded=used) if more else {'items':[]}
-  if not extra['items']:
-   headline,keywords,url,publisher=THEMES[field]
-   fallback=[{'id':0,'headline':headline,'source':publisher,'url':url,'publishedAt':'','kind':'theme'}]
-   extra=generate(fallback,catalog,data,source,[field],edition_date=edition,excluded=used)
+  if not extra['items']:extra=theme_fallback(field,catalog,data,source,edition,used)
   result['items'].extend(extra['items'])
  # Have the model inspect all seven for the same event under different headlines.
- review=ask('以下の7話題で同じ出来事を二重に使っている場合、後の分野だけをJSONのreplaceFields配列で返す。関連する広いテーマでも出来事が別なら重複ではない。形式 {"replaceFields":[]}。'+json.dumps([{'field':x['field'],'headline':x.get('sourceHeadline'),'title':x['title']} for x in result['items']],ensure_ascii=False),1000)
+ review=ask('直近の履歴は '+json.dumps([{'field':r['field'],'title':r['title'],'topic':r['topic']} for r in RECENT],ensure_ascii=False)+'。以下の今日の7話題で同じ出来事を二重に使っている場合、または履歴の同じ出来事の言い換えだけで学ぶ内容に変化がない場合、その今日の分野をJSONのreplaceFields配列で返す。記事の新展開があり問題の仕組みも別なら許可。関連する広いテーマでも出来事が別なら重複ではない。形式 {"replaceFields":[]}。'+json.dumps([{'field':x['field'],'headline':x.get('sourceHeadline'),'title':x['title']} for x in result['items']],ensure_ascii=False),1000)
  for field in review.get('replaceFields',[]):
   if field not in FIELDS:continue
-  headline,keywords,url,publisher=THEMES[field];others=[x for x in result['items'] if x['field']!=field]
-  extra=generate([{'id':0,'headline':headline,'source':publisher,'url':url,'publishedAt':'','kind':'theme'}],catalog,data,source,[field],edition_date=edition,excluded=[x['url'] for x in others])
+  others=[x for x in result['items'] if x['field']!=field]
+  extra=theme_fallback(field,catalog,data,source,edition,[x['url'] for x in others])
   result['items']=others+extra['items']
  result.update(version=1,temporalRules=1,date=edition.isoformat(),sourceDate=source.isoformat(),generatedAt=dt.datetime.now(JST).isoformat())
  check_complete(result)
+ for row in result['items']:
+  c=card_for(data,row['lessonId'],row['cardId'])
+  if not c or recently_used(row['field'],row['lessonId'],c):raise ValueError('過去7日と重複する問題が残ったため公開しません')
  order={field:i for i,field in enumerate(FIELDS)};result['items'].sort(key=lambda x:order[x['field']])
  output.mkdir(parents=True,exist_ok=True);temp=path.with_suffix('.tmp');temp.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');temp.replace(path)
  dates=sorted([p.stem for p in output.glob('????-??-??.json')],reverse=True)

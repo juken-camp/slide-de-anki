@@ -3350,6 +3350,29 @@ html[data-persona="cyber"] #app #reportScreen .test-hub-grid #openExamSet{backgr
 /* Keep the selected mode visible above the shared button styles. */
 html[data-persona] body #app #settingsScreen .play-mode-options button.tool[aria-pressed="true"]{background:#ffe4cc!important;border-color:#c8753e!important;color:#713611!important;box-shadow:0 2px 0 #d5a782,0 0 8px #d8854438!important;font-weight:800!important}
 html[data-persona="cyber"] body #app #settingsScreen .play-mode-options button.tool[aria-pressed="true"]{background:#073b50!important;border-color:#00e9f5!important;color:#e1ffff!important;box-shadow:0 0 12px #00e9f577,inset 0 0 8px #00e9f529!important;font-weight:800!important}
+
+/* Quiz motion stays on decorative children: text, card sizes and hit areas keep their layout. */
+html[data-play-effects="lively"] #app :is(.subject-icon,.stat-icon,.persona-icon,.cat-tilt > span){display:inline-block;animation:quiz-icon-sway 3.6s ease-in-out infinite!important;transform-origin:50% 60%;will-change:auto}
+html[data-play-effects="lively"] #app :is(.subject-icon,.stat-icon):nth-child(2n){animation-delay:-1.8s!important}
+html[data-play-effects="lively"] #app .cat-tilt > span{animation:quiz-cat-idle 4s ease-in-out infinite!important}
+@keyframes quiz-icon-sway{0%,100%{rotate:calc(var(--cat-tilt-angle,0deg) - 8deg);scale:1}50%{rotate:calc(var(--cat-tilt-angle,0deg) + 10deg);scale:1.12}}
+@keyframes quiz-cat-idle{0%,100%{rotate:-7deg;scale:1}50%{rotate:8deg;scale:1.13}}
+@media(hover:hover) and (pointer:fine){html[data-play-effects="lively"] #app button:not(:disabled):hover{scale:1.035;transition:scale .18s ease-out}}
+.quiz-effects-layer,.quiz-effects-layer:popover-open{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;pointer-events:none!important;overflow:hidden!important;z-index:2147483647;color:#d67b31;box-shadow:none!important;contain:strict}
+.quiz-effects-layer[data-persona="cyber"]{color:#00e9f5}
+.quiz-effects-layer::backdrop{background:transparent!important;pointer-events:none!important;backdrop-filter:none!important}
+.quiz-effect{position:absolute;display:block;pointer-events:none!important;line-height:1;user-select:none;font-family:inherit}
+.quiz-particle{font-size:22px;animation:quiz-particle-fly 1.15s ease-out forwards;filter:drop-shadow(0 0 3px currentColor)}
+.quiz-ripple{width:32px;height:32px;border:3px solid currentColor;border-radius:50%;background:currentColor;animation:quiz-tap-ripple .65s ease-out forwards}
+.quiz-star{font-size:30px;animation:quiz-particle-fly 1.25s ease-out forwards}
+@keyframes quiz-particle-fly{0%{opacity:1;transform:translate(-50%,-50%) scale(.2) rotate(0)}20%{opacity:1;scale:1.2}100%{opacity:0;transform:translate(calc(-50% + var(--qx)),calc(-50% + var(--qy))) scale(.6) rotate(var(--qr))}}
+@keyframes quiz-tap-ripple{0%{opacity:.4;transform:translate(-50%,-50%) scale(.1)}100%{opacity:0;transform:translate(-50%,-50%) scale(6)}}
+body.homework-capture .quiz-effects-layer{display:none!important}
+@media(prefers-reduced-motion:reduce){html[data-play-effects] #app :is(.subject-icon,.stat-icon,.persona-icon,.cat-tilt > span){animation:none!important}.quiz-effects-layer{display:none!important}}
+
+html[data-play-effects="lively"] body dialog[open]{animation:quiz-dialog-enter .35s ease-out!important}
+@keyframes quiz-dialog-enter{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:reduce){html[data-play-effects] body dialog[open]{animation:none!important}}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -4387,7 +4410,7 @@ async function beep(kind = 'tap', event = null) {
   } catch { audioStartError=true;audioNeedsReset=true; }
 }
 function tapSpark(button,event) {
-  if (reduced || !tapPlay()) return;
+  if (reduced || !tapPlay() || data.neko.playMode==='lively') return;
   const rect=button.getBoundingClientRect(), particle=document.createElement('span');
   particle.className='neko-tap-ring'; particle.setAttribute('aria-hidden','true');
   particle.style.left=(event.clientX || rect.left+rect.width/2)+'px'; particle.style.top=(event.clientY || rect.top+rect.height/2)+'px';
@@ -4401,6 +4424,7 @@ function bounce(element,className='neko-bounce',duration=780) {
   setTimeout(()=>element.classList.remove(className),duration);
 }
 function burst(element,icons=['🐾','✦','✨'],count=5) {
+  if(data.neko.playMode==='lively'){livelyCelebrate(element,count);return;}
   if(reduced||!tapPlay()||playfulParticles>=28)return;
   const r=element.getBoundingClientRect();
   for(let i=0;i<count&&playfulParticles<28;i++) {
@@ -4444,24 +4468,79 @@ function playWithCat(element = $('mascotPlay')) {
   } else sayAt(element,special?(cyber?'フルチャージだぜ！⚡':'もふもふチャージ完了にゃ🐾'):messages[(catTaps-1)%messages.length]);
   if(special){burst(element,cyber?['⚡','💜','✨','💥']:['🐾','💛','✨','🌟'],9);if(!reduced)face.animate?.([{transform:'rotate(0deg) scale(1)'},{transform:'rotate(180deg) scale(1.15)',offset:.5},{transform:'rotate(360deg) scale(1)'}],{duration:720,easing:'ease-in-out'});}
 }
-// Lively feedback adds only visual effects: it never dispatches actions or audio.
-let livelyParticles=0;
-function livelyFeedback(control,event){
- if(data.neko.playMode!=='lively'||reduced||!tapPlay()||!control.isConnected)return;
- const rect=control.getBoundingClientRect();if(!rect.width||!rect.height)return;
- const x=event?.clientX||rect.left+rect.width/2,y=event?.clientY||rect.top+rect.height/2;
- const root=control.closest('dialog[open]')||$('app');
- const icons=document.documentElement.dataset.persona==='cyber'?['⚡','✦','💠']:['🐾','✨','♡'];
- for(let i=0;i<4&&livelyParticles<20;i++){
-  const p=document.createElement('span');p.className='neko-lively-particle';p.setAttribute('aria-hidden','true');p.textContent=icons[i%icons.length];p.style.left=x+'px';p.style.top=y+'px';p.style.setProperty('--party-x',[-27,-9,13,30][i]+'px');p.style.setProperty('--party-y',[-27,-42,-37,-24][i]+'px');root.append(p);livelyParticles++;setTimeout(()=>{p.remove();livelyParticles--;},750);
- }
- if(!control.matches('#brandHome,#mascotPlay,#resultCat')&&typeof control.animate==='function')control.animate([{transform:'scale(1)'},{transform:'scale(1.035)'},{transform:'scale(1)'}],{duration:260,easing:'ease-out'});
+// Quiz-style visuals share no actions, timers or sounds with study records.
+let livelyLayer=null,livelySerial=0;
+const livelyAnimations=new Map(),livelyEffects=new Map();
+const livelyOn=()=>data.neko.playMode==='lively'&&!reduced&&tapPlay()&&!document.hidden;
+function clearLively(){
+ for(const animation of livelyAnimations.values())animation.cancel();livelyAnimations.clear();
+ for(const [node,timer] of livelyEffects){clearTimeout(timer);node.remove();}livelyEffects.clear();
+ if(livelyLayer){livelyLayer.remove();livelyLayer=null;}
 }
+function livelyRoot(){
+ if(!livelyLayer?.isConnected){livelyLayer=document.createElement('div');livelyLayer.className='quiz-effects-layer';livelyLayer.setAttribute('aria-hidden','true');document.body.append(livelyLayer);}
+ livelyLayer.dataset.persona=document.documentElement.dataset.persona||'neko';
+ // A manual popover draws above dialogs without changing their contents or focus.
+ if(typeof livelyLayer.showPopover==='function'){
+  livelyLayer.setAttribute('popover','manual');
+  try{if(livelyLayer.matches(':popover-open'))livelyLayer.hidePopover();livelyLayer.showPopover();}catch{}
+ }
+ return livelyLayer;
+}
+function livelyEffect(kind,x,y,content,dx=0,dy=0){
+ if(livelyEffects.size>=64)return;
+ const node=document.createElement('span');node.className='quiz-effect quiz-'+kind;
+ node.textContent=content;node.style.left=x+'px';node.style.top=y+'px';
+ node.style.setProperty('--qx',dx+'px');node.style.setProperty('--qy',dy+'px');
+ node.style.setProperty('--qr',(livelySerial++%2?210:-170)+'deg');
+ (livelyLayer?.isConnected?livelyLayer:livelyRoot()).append(node);
+ livelyEffects.set(node,setTimeout(()=>{node.remove();livelyEffects.delete(node);},1300));
+}
+function livelyAnimate(element,frames,duration=600){
+ if(!element||typeof element.animate!=='function')return;
+ livelyAnimations.get(element)?.cancel();
+ const animation=element.animate(frames,{duration,easing:'cubic-bezier(.25,.46,.45,.94)'});
+ livelyAnimations.set(element,animation);
+ const finish=()=>{if(livelyAnimations.get(element)===animation)livelyAnimations.delete(element);};
+ animation.onfinish=finish;animation.oncancel=finish;
+}
+function livelyBurst(x,y,count=10){
+ const cyber=document.documentElement.dataset.persona==='cyber';
+ const icons=cyber?['⚡','✦','💎','✨','💠']:['🐾','✨','💖','🌟','♪'];
+ for(let i=0;i<count;i++){
+  const angle=(i/count)*Math.PI*2,radius=45+(i%3)*22;
+  livelyEffect('particle',x,y,icons[i%icons.length],Math.cos(angle)*radius,Math.sin(angle)*radius-30);
+ }
+}
+function livelyFeedback(control,event){
+ if(!livelyOn()||!control.isConnected)return;
+ const r=control.getBoundingClientRect();if(!r.width||!r.height)return;
+ const x=event?.detail&&Number.isFinite(event.clientX)?event.clientX:r.left+r.width/2;
+ const y=event?.detail&&Number.isFinite(event.clientY)?event.clientY:r.top+r.height/2;
+ const face=control.querySelector('.cat-tilt > span');
+ if(face){
+  livelyAnimate(face,[{scale:'1',rotate:'0deg'},{scale:'1.6',rotate:'20deg',offset:.25},{scale:'1.8',rotate:'-15deg',offset:.5},{scale:'1.4',rotate:'10deg',offset:.75},{scale:'1',rotate:'0deg'}],800);
+ }else{
+  livelyAnimate(control,[{scale:'1'},{scale:'1.10',offset:.1},{scale:'.95',offset:.2},{scale:'1.08',offset:.3},{scale:'.98',offset:.4},{scale:'1.05',offset:.5},{scale:'.99',offset:.6},{scale:'1.02',offset:.7},{scale:'1'}],600);
+ }
+ const icon=control.querySelector('.subject-icon,.stat-icon,.persona-icon');
+ if(icon)livelyAnimate(icon,[{scale:'1',translate:'0 0'},{scale:'1.5',translate:'0 -5px',offset:.3},{scale:'1.2',translate:'0 -2px',offset:.6},{scale:'1',translate:'0 0'}],800);
+ livelyRoot();livelyEffect('ripple',x,y,'');livelyBurst(x,y,face?14:8);
+}
+function livelyCelebrate(element,count){
+ if(!livelyOn()||!element?.isConnected)return;
+ const r=element.getBoundingClientRect();if(!r.width||!r.height)return;
+ const x=r.left+r.width/2,y=r.top+r.height/2;
+ livelyRoot();livelyBurst(x,y,count>=8?22:14);
+ livelyEffect('star',x,y,'🌟',0,-80);
+}
+document.addEventListener('visibilitychange',()=>{if(document.hidden){clearLively();document.documentElement.dataset.playEffects='normal';}else syncPlaySettings();});
 // Unlock sound inside a user gesture on iPhone as well as desktop browsers.
 for(const type of ['pointerup','click','keydown'])document.addEventListener(type,unlockAudio,{passive:true,capture:true});
 document.addEventListener('click',event => {
   const control=event.target.closest('button,summary,a');
-  if (!control || control.disabled || control.matches('.neko-question-bubble')) return;
+  if (!control || control.disabled) return;
+  if(control.matches('.neko-question-bubble')){livelyFeedback(control,event);return;}
   const selectionControl=control.matches('.lesson-choice,.collection-check,.collection-material-row,[data-search-select-all],[data-search-clear],#selectVisible,#clearSelection,#testLessonSelectVisible,#testLessonClear');
   if ((selectionControl || tapPlay()) && !control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton','examSetStudy','examSetSave'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
   if(!control.hasAttribute('data-sound-style')){tapSpark(control,event);livelyFeedback(control,event);}
@@ -6475,6 +6554,7 @@ function finishHomeworkGrading(){
  persistHomeworkSession();beep('finish');showHomeworkResult();window.scrollTo({top:0,behavior:'instant'});
 }
 function showHomeworkResult(){
+ if(livelyOn())requestAnimationFrame(()=>{if(livelyOn()&&!$('testResult').hidden){livelyCelebrate($('testScore'),9);livelyAnimate($('testScore'),[{scale:'1'},{scale:'1.2',offset:.35},{scale:'.96',offset:.65},{scale:'1'}],600);}});
  legacyShowHomeworkResult();nekoImproveResult();$('testTitle').textContent=nekoModeTitle()+'の結果';const pending=studyHistory.pendingBatches?.[nekoActiveMode(testSession)];$('testNextBatch').hidden=!testSession.remainingRefs?.length||!pending||pending.refs.length!==testSession.remainingRefs.length||!pending.refs.every((k,i)=>k===testSession.remainingRefs[i]);$('testNextBatch').textContent='次の'+Math.min(10,testSession.remainingRefs?.length||0)+'問へ';
  $('typedResultActions').hidden=!typedTest();$('typedResultAnswers').hidden=true;
  if(!typedTest()){$('testResultMethod').textContent='全問の解答をまとめて確認し、○×で自己採点した結果';return;}
@@ -7215,6 +7295,8 @@ function syncPlaySettings() {
   $('app').classList.toggle('neko-motion-off',reduced);document.documentElement.dataset.uiMotion=reduced?'off':'on';
   $('tapPlayToggle').checked=tapPlay();$('motionToggle').checked=data.neko.decorativeMotion!==false;
   document.querySelectorAll('[data-play-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.playMode===(data.neko.playMode==='lively'?'lively':'normal'))));
+  document.documentElement.dataset.playEffects=livelyOn()?'lively':'normal';
+  if(!livelyOn())clearLively();
   updateTilt();
 }
 document.querySelectorAll('[data-play-mode]').forEach(button=>button.addEventListener('click',()=>{data.neko.playMode=button.dataset.playMode==='lively'?'lively':'normal';save();syncPlaySettings();}));

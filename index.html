@@ -3357,7 +3357,7 @@ html[data-play-effects="lively"] #app :is(.subject-icon,.stat-icon):nth-child(2n
 html[data-play-effects="lively"] #app .cat-tilt > span{animation:quiz-cat-idle 4s ease-in-out infinite!important}
 @keyframes quiz-icon-sway{0%,100%{rotate:calc(var(--cat-tilt-angle,0deg) - 8deg);scale:1}50%{rotate:calc(var(--cat-tilt-angle,0deg) + 10deg);scale:1.12}}
 @keyframes quiz-cat-idle{0%,100%{rotate:-7deg;scale:1}50%{rotate:8deg;scale:1.13}}
-@media(hover:hover) and (pointer:fine){html[data-play-effects="lively"] #app button:not(:disabled):hover{scale:1.035;transition:scale .18s ease-out}}
+@media(hover:hover) and (pointer:fine){html[data-play-effects="lively"] #app button:not(:disabled):not(.link-button):hover{scale:1.035;transition:scale .18s ease-out}}
 .quiz-effects-layer,.quiz-effects-layer:popover-open{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;pointer-events:none!important;overflow:hidden!important;z-index:2147483647;color:#d67b31;box-shadow:none!important;contain:strict}
 .quiz-effects-layer[data-persona="cyber"]{color:#00e9f5}
 .quiz-effects-layer::backdrop{background:transparent!important;pointer-events:none!important;backdrop-filter:none!important}
@@ -3375,11 +3375,11 @@ html[data-play-effects="lively"] body dialog[open]{animation:quiz-dialog-enter .
 @media(prefers-reduced-motion:reduce){html[data-play-effects] body dialog[open]{animation:none!important}}
 
 /* Match Quiz's hover brightness, press depth and spring response without resizing layout. */
-html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):active{scale:.95!important;filter:brightness(1.2)!important}
+html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):not(.link-button):active{scale:.95!important;filter:brightness(1.2)!important}
 @media(hover:hover) and (pointer:fine){
- html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):hover{scale:1.05;filter:brightness(1.2)!important;transition:scale .2s cubic-bezier(.25,.46,.45,.94),filter .2s ease-out}
- html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):hover{box-shadow:0 0 12px #ffb44c88,0 6px 20px #d5863c55!important}
- html[data-play-effects="lively"][data-persona="cyber"] body :is(#app,dialog) button:not(:disabled):hover{box-shadow:0 0 12px #00eaff99,0 6px 22px #00eaff55!important}
+ html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):not(.link-button):hover{scale:1.05;filter:brightness(1.2)!important;transition:scale .2s cubic-bezier(.25,.46,.45,.94),filter .2s ease-out}
+ html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):not(.link-button):hover{box-shadow:0 0 12px #ffb44c88,0 6px 20px #d5863c55!important}
+ html[data-play-effects="lively"][data-persona="cyber"] body :is(#app,dialog) button:not(:disabled):not(.link-button):hover{box-shadow:0 0 12px #00eaff99,0 6px 22px #00eaff55!important}
 }
 html[data-play-effects="lively"] #app :is(.subject-icon,.stat-icon,.persona-icon,.cat-tilt > span).quiz-icon-active{animation:none!important}
 /* Sound studio dialogs use the same visual response as every other button. */
@@ -4557,7 +4557,8 @@ function livelyBurst(x,y,count=10){
  }
 }
 function livelyFeedback(control,event){
- if(!livelyOn()||!control.isConnected)return;
+ // Text links and disclosure labels retain their plain text appearance.
+ if(!livelyOn()||!control.isConnected||control.matches('summary,a,.link-button'))return;
  const r=control.getBoundingClientRect();if(!r.width||!r.height)return;
  const x=event?.detail&&Number.isFinite(event.clientX)?event.clientX:r.left+r.width/2;
  const y=event?.detail&&Number.isFinite(event.clientY)?event.clientY:r.top+r.height/2;

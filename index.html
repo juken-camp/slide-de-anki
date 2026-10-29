@@ -4386,16 +4386,29 @@ document.addEventListener('click',event => {
   const control=event.target.closest('button,summary,a');
   if (!control || control.disabled || control.matches('.neko-question-bubble')) return;
   const selectionControl=control.matches('.lesson-choice,.collection-check,.collection-material-row,[data-search-select-all],[data-search-clear],#selectVisible,#clearSelection,#testLessonSelectVisible,#testLessonClear');
-  if ((selectionControl || tapPlay()) && !control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
+  if ((selectionControl || tapPlay()) && !control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton','examSetStudy','examSetSave'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
   if(!control.hasAttribute('data-sound-style'))tapSpark(control,event);
 },true);
 function selectionChangeSound(event){
  const input=event.target;
  if(!input?.matches?.('input[type="checkbox"],input[type="radio"]')||input.disabled)return;
- if(!input.closest('#catalogScreen,#questionSearchDialog,#collectionDialog,#homeworkSetup,#testScreen'))return;
- beep('tap');
+ if(input.id==='soundToggle')return;
+ if(!input.closest('#app,dialog'))return;
+ beep('tap',event);
 }
 document.addEventListener('change',selectionChangeSound,true);
+// Native selects do not dispatch button clicks. Sound once when opened,
+// including keyboard activation; the news date picker has its own sound.
+function selectOpenSound(event){
+ const input=event.target;
+ if(!input?.matches?.('select:not(:disabled)')||!input.closest('#app,dialog')||input.closest('.news-date-picker'))return;
+ if(event.type==='pointerdown' && (!event.isPrimary||event.button!==0))return;
+ if(event.type==='keydown' && (event.repeat||!['Enter',' ','ArrowDown','ArrowUp'].includes(event.key)))return;
+ beep('tap',event);
+}
+document.addEventListener('pointerdown',selectOpenSound,true);
+document.addEventListener('keydown',selectOpenSound,true);
+
 
 function status(c) { return data.records[c.lessonId]?.[c.originalId]?.status || 'unmarked'; }
 function counts(cards) { return cards.reduce((r,c) => { const s = status(c); r[s] = (r[s] || 0)+1; return r; }, { known: 0, weak: 0, unmarked: 0 }); }
@@ -5999,7 +6012,7 @@ function renderNewsDemo(){
  const tabs=collectionNode('div',undefined,'news-date-tabs');tabs.setAttribute('aria-label','ニュースの探し方');
  function chooseNewsDate(date,fromPicker=false){if(newsLoading)return;if(!fromPicker){newsDatePickerActive=false;newsCustomDate='';}newsTool='';newsField='';newsQuery='';$('catalogSearch').value='';newsSelectedDate=date;newsLoadedDate=null;newsDemoTopics=[];renderCatalog();newsLoad(date);}
  const todayButton=collectionNode('button','今日のニュース');todayButton.type='button';const todayActive=showing===newsToday()&&!newsHistoryOpen&&!newsTool;todayButton.classList.toggle('active',todayActive);todayButton.setAttribute('aria-pressed',String(todayActive));todayButton.onclick=()=>{newsHistoryOpen=false;chooseNewsDate(newsToday());};tabs.append(todayButton);
- const past=collectionNode('button','過去のニュース');past.type='button';past.classList.toggle('active',!newsTool&&(newsHistoryOpen||isPast));past.setAttribute('aria-expanded',String(newsHistoryOpen));past.onclick=(event)=>{beep('tap',event);newsHistoryOpen=!newsHistoryOpen;newsTool='';newsField='';newsQuery='';$('catalogSearch').value='';renderCatalog();};tabs.append(past);
+ const past=collectionNode('button','過去のニュース');past.type='button';past.classList.toggle('active',!newsTool&&(newsHistoryOpen||isPast));past.setAttribute('aria-expanded',String(newsHistoryOpen));past.onclick=()=>{newsHistoryOpen=!newsHistoryOpen;newsTool='';newsField='';newsQuery='';$('catalogSearch').value='';renderCatalog();};tabs.append(past);
  const fieldButton=collectionNode('button','分野から探す');fieldButton.type='button';fieldButton.classList.toggle('active',newsTool==='field');fieldButton.setAttribute('aria-expanded',String(newsTool==='field'));fieldButton.onclick=()=>{newsTool=newsTool==='field'?'':'field';newsHistoryOpen=false;newsField='';newsQuery='';$('catalogSearch').value='';renderCatalog();};tabs.append(fieldButton);header.append(tabs);
  if(newsHistoryOpen){const history=collectionNode('div',undefined,'news-date-history');history.setAttribute('aria-label','過去のニュースの日付');
  for(const days of [1,2]){const d=new Date(newsToday()+'T03:00:00Z');d.setUTCDate(d.getUTCDate()-days);const date=d.toISOString().slice(0,10);const label=newsDateLabel(d).replace(/\s*今日の7問$/,'');const button=collectionNode('button',label);button.type='button';button.classList.toggle('active',date===showing&&!newsDatePickerActive);button.setAttribute('aria-pressed',String(date===showing&&!newsDatePickerActive));button.onclick=()=>chooseNewsDate(date);history.append(button);}

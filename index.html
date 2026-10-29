@@ -3407,6 +3407,24 @@ html[data-persona] body #catalogDock{grid-template-columns:minmax(0,1fr) auto!im
 @media(max-width:420px){html[data-persona] body #catalogDock{grid-template-columns:minmax(0,1fr)!important}#catalogDock .reel-entry-actions{display:grid;grid-template-columns:1fr 1.35fr}html[data-persona] body #catalogDock :is(#openReel,#startStudy){width:100%}}
 html[data-persona] body #examSetDialog #examSetReel{grid-column:1/-1;width:100%;font-size:12px}#studyReel{margin-left:auto;white-space:nowrap}
 html[data-persona] body #reelExportDialog{width:min(480px,calc(100vw - 24px));max-height:90dvh;padding:16px;border-radius:20px}#reelExportDialog .reel-export-head{display:flex;align-items:center;justify-content:space-between;gap:12px}#reelExportDialog h2{font-size:16px;margin:0}#reelExportPreview{display:block;max-width:100%;max-height:48dvh;object-fit:contain;margin:14px auto;background:#fff;border-radius:10px}#reelExportDialog .reel-export-actions{display:flex;flex-wrap:wrap;gap:10px}#reelExportDialog .reel-export-actions>*{flex:1;text-align:center;white-space:nowrap}#reelExportDialog #reelDownload{display:grid;place-items:center;text-decoration:none}#reelExportNotice{font-size:12px;line-height:1.7}
+
+/* Full-screen reel: the white slide surface fills the viewport; controls float above it. */
+html[data-persona] body #reelDialog{background:#fff!important}
+#reelDialog .reel-shell{position:relative;display:block;width:100%;max-width:none;height:100%;padding:0;margin:0;overflow:hidden}
+#reelDialog .reel-top{position:absolute;z-index:5;top:0;left:0;right:0;padding:calc(env(safe-area-inset-top,0px) + 8px) max(10px,env(safe-area-inset-right,0px)) 28px max(12px,env(safe-area-inset-left,0px));border:0;background:linear-gradient(to bottom,rgba(5,12,26,.82),rgba(5,12,26,.48) 65%,transparent);color:#fff;pointer-events:none}
+#reelDialog .reel-top>*{pointer-events:auto}#reelDialog .reel-top small,#reelDialog .reel-top #reelPosition,#reelDialog .reel-top #reelLesson{color:#fff!important;text-shadow:0 1px 4px #000}
+html[data-persona] body #reelDialog #reelClose{background:rgba(10,20,38,.7)!important;color:#fff!important;border:1px solid rgba(255,255,255,.6)!important;box-shadow:none!important}
+#reelDialog .reel-main{position:absolute;inset:0;display:block;background:#fff}
+#reelDialog #reelFeed{position:absolute;inset:0;width:100%;height:100%;background:#fff}
+#reelDialog .reel-page{padding:0;background:#fff}
+#reelDialog .reel-pair{width:100%;height:auto;max-height:100%;aspect-ratio:8/9;border:0;border-radius:0;background:#fff}
+#reelDialog .reel-rail{position:absolute;z-index:4;right:max(8px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 8px);gap:6px}
+html[data-persona] body #reelDialog .reel-rail button{min-height:50px;gap:2px;color:#fff!important;text-shadow:0 1px 4px #000!important}
+#reelDialog .reel-rail button>span{width:40px;height:40px;background:rgba(7,18,34,.76)!important;border-color:rgba(255,255,255,.55);box-shadow:0 2px 7px #0005}
+#reelDialog .reel-rail button[aria-pressed=true]>span{color:var(--reel-accent);border-color:var(--reel-accent)}
+#reelDialog .reel-bottom{position:absolute;z-index:5;left:10px;right:70px;bottom:calc(env(safe-area-inset-bottom,0px) + 8px);min-height:0;display:block;padding:0;pointer-events:none;text-align:left}
+#reelDialog #reelStatus:not(:empty){display:inline-block;background:rgba(5,12,26,.8);border-radius:12px;color:#fff;padding:7px 10px}
+#reelDialog #reelHint{left:10px;right:72px;bottom:calc(env(safe-area-inset-bottom,0px) + 15px)}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

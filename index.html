@@ -3840,7 +3840,27 @@ if (!isObject(data.neko)) data.neko = {};
 if (!isObject(data.neko.daily)) data.neko.daily = {};
 for (const [day, entries] of Object.entries(data.neko.daily)) if (!Array.isArray(entries)) delete data.neko.daily[day];
 data.records ||= {}; data.neko ||= {}; data.neko.daily ||= {};
-const meta = [...window.QUIZ_CATALOG], loaded = new Map(), pending = new Map();
+// Keep numbered parts of the same subject/field together in ascending order.
+// Other lessons keep their catalog order; lesson IDs and content are unchanged.
+function orderCatalogSeries(catalog){
+ const marks='①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳';
+ const groups=new Map(), memberships=new Map();
+ catalog.forEach((item,index)=>{
+  const match=String(item.title||'').match(/[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]/);
+  if(!match||match.index===0)return;
+  const prefix=item.title.slice(0,match.index).trim(),key=JSON.stringify([item.subject,item.field,prefix]);
+  if(!groups.has(key))groups.set(key,[]);
+  groups.get(key).push({item,index,number:marks.indexOf(match[0])});memberships.set(index,key);
+ });
+ const result=[];
+ catalog.forEach((item,index)=>{
+  const key=memberships.get(index),group=groups.get(key);
+  if(!group||group.length<2){result.push(item);return;}
+  if(group[0].index===index)result.push(...[...group].sort((a,b)=>a.number-b.number||a.index-b.index).map(entry=>entry.item));
+ });
+ return result;
+}
+const meta = orderCatalogSeries(window.QUIZ_CATALOG), loaded = new Map(), pending = new Map();
 let resolveImportedLessons;
 const importedLessonsReady=new Promise(resolve=>{resolveImportedLessons=resolve;});
 const saved = data.neko.resume || {};

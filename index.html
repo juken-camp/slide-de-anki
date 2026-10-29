@@ -3373,6 +3373,18 @@ body.homework-capture .quiz-effects-layer{display:none!important}
 html[data-play-effects="lively"] body dialog[open]{animation:quiz-dialog-enter .35s ease-out!important}
 @keyframes quiz-dialog-enter{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
 @media(prefers-reduced-motion:reduce){html[data-play-effects] body dialog[open]{animation:none!important}}
+
+/* Match Quiz's hover brightness, press depth and spring response without resizing layout. */
+html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):active{scale:.95!important;filter:brightness(1.2)!important}
+@media(hover:hover) and (pointer:fine){
+ html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):hover{scale:1.05;filter:brightness(1.2)!important;transition:scale .2s cubic-bezier(.25,.46,.45,.94),filter .2s ease-out}
+ html[data-play-effects="lively"] body :is(#app,dialog) button:not(:disabled):hover{box-shadow:0 0 12px #ffb44c88,0 6px 20px #d5863c55!important}
+ html[data-play-effects="lively"][data-persona="cyber"] body :is(#app,dialog) button:not(:disabled):hover{box-shadow:0 0 12px #00eaff99,0 6px 22px #00eaff55!important}
+}
+html[data-play-effects="lively"] #app :is(.subject-icon,.stat-icon,.persona-icon,.cat-tilt > span).quiz-icon-active{animation:none!important}
+/* Sound studio dialogs use the same visual response as every other button. */
+html[data-play-effects="lively"] body dialog .quiz-icon-active{animation:none!important}
+@media(prefers-reduced-motion:reduce){html[data-play-effects] body :is(#app,dialog) button{scale:1!important;transition:none!important}}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -4470,9 +4482,11 @@ function playWithCat(element = $('mascotPlay')) {
 }
 // Quiz-style visuals share no actions, timers or sounds with study records.
 let livelyLayer=null,livelySerial=0;
-const livelyAnimations=new Map(),livelyEffects=new Map();
+const livelyAnimations=new Map(),livelyEffects=new Map(),livelyHighlights=new Map(),livelyIconTimers=new Map();
 const livelyOn=()=>data.neko.playMode==='lively'&&!reduced&&tapPlay()&&!document.hidden;
 function clearLively(){
+ for(const element of [...livelyHighlights.keys()])restoreLivelyHighlight(element);
+ for(const [element,timer] of livelyIconTimers){clearTimeout(timer);element.classList.remove('quiz-icon-active');}livelyIconTimers.clear();
  for(const animation of livelyAnimations.values())animation.cancel();livelyAnimations.clear();
  for(const [node,timer] of livelyEffects){clearTimeout(timer);node.remove();}livelyEffects.clear();
  if(livelyLayer){livelyLayer.remove();livelyLayer=null;}
@@ -4504,6 +4518,36 @@ function livelyAnimate(element,frames,duration=600){
  const finish=()=>{if(livelyAnimations.get(element)===animation)livelyAnimations.delete(element);};
  animation.onfinish=finish;animation.oncancel=finish;
 }
+// Inline important values keep temporary light above the shared control skin.
+// Each original inline declaration (including priority) is restored exactly.
+function restoreLivelyHighlight(element){
+ const record=livelyHighlights.get(element);if(!record)return;
+ clearTimeout(record.timer);
+ for(const [name,value,priority] of record.original){if(value)element.style.setProperty(name,value,priority);else element.style.removeProperty(name);}
+ livelyHighlights.delete(element);
+}
+function livelyHighlight(element){
+ restoreLivelyHighlight(element);
+ const names=['filter','box-shadow','border-color'];
+ const original=names.map(name=>[name,element.style.getPropertyValue(name),element.style.getPropertyPriority(name)]);
+ const cyber=document.documentElement.dataset.persona==='cyber',glow=cyber?'#00eaff':'#ffb44c';
+ element.style.setProperty('filter','brightness(1.2)','important');
+ element.style.setProperty('box-shadow',`0 0 12px ${glow},0 0 28px ${glow}aa,inset 0 0 16px ${glow}66`,'important');
+ element.style.setProperty('border-color',glow,'important');
+ livelyHighlights.set(element,{original,timer:setTimeout(()=>restoreLivelyHighlight(element),650)});
+}
+function livelyIconFeedback(element,kind='sparkle'){
+ clearTimeout(livelyIconTimers.get(element));element.classList.add('quiz-icon-active');
+ const glow=document.documentElement.dataset.persona==='cyber'?'#00eaff':kind==='trophy'?'orange':'gold';
+ const light=(brightness,radius)=>`brightness(${brightness}) drop-shadow(0 0 ${radius}px ${glow})`;
+ const frames=kind==='cat'?
+ [{scale:'1',rotate:'0deg',filter:light(1,0)},{scale:'1.6',rotate:'20deg',filter:light(1.5,15),offset:.25},{scale:'1.8',rotate:'-15deg',filter:light(1.8,20),offset:.5},{scale:'1.4',rotate:'10deg',filter:light(1.4,10),offset:.75},{scale:'1',rotate:'0deg',filter:light(1,0)}]:kind==='trophy'?
+ [{scale:'1',rotate:'0deg',translate:'0 0',filter:light(1,0)},{scale:'1.6',rotate:'25deg',translate:'0 -5px',filter:light(4,25),offset:.2},{scale:'1.4',rotate:'-15deg',translate:'0 -2px',filter:light(3,20),offset:.4},{scale:'1.2',rotate:'10deg',translate:'0 0',filter:light(2,15),offset:.6},{scale:'1.05',rotate:'-3deg',filter:light(1.5,8),offset:.8},{scale:'1',rotate:'0deg',translate:'0 0',filter:light(1,0)}]:kind==='fire'?
+ [{scale:'1',rotate:'0deg',filter:light(1,0)},{scale:'1.5',rotate:'20deg',filter:light(3,20),offset:.25},{scale:'1.3',rotate:'-10deg',filter:light(2.5,18),offset:.5},{scale:'1.1',rotate:'8deg',filter:light(1.8,10),offset:.75},{scale:'1',rotate:'0deg',filter:light(1,0)}]:
+ [{scale:'1',rotate:'0deg',filter:light(1,0)},{scale:'1.4',rotate:'15deg',filter:light(2,20),offset:.3},{scale:'1.2',rotate:'5deg',filter:light(1.8,15),offset:.6},{scale:'1',rotate:'0deg',filter:light(1,0)}];
+ livelyAnimate(element,frames,800);
+ livelyIconTimers.set(element,setTimeout(()=>{element.classList.remove('quiz-icon-active');livelyIconTimers.delete(element);},820));
+}
 function livelyBurst(x,y,count=10){
  const cyber=document.documentElement.dataset.persona==='cyber';
  const icons=cyber?['⚡','✦','💎','✨','💠']:['🐾','✨','💖','🌟','♪'];
@@ -4517,14 +4561,14 @@ function livelyFeedback(control,event){
  const r=control.getBoundingClientRect();if(!r.width||!r.height)return;
  const x=event?.detail&&Number.isFinite(event.clientX)?event.clientX:r.left+r.width/2;
  const y=event?.detail&&Number.isFinite(event.clientY)?event.clientY:r.top+r.height/2;
+ livelyHighlight(control);
  const face=control.querySelector('.cat-tilt > span');
- if(face){
-  livelyAnimate(face,[{scale:'1',rotate:'0deg'},{scale:'1.6',rotate:'20deg',offset:.25},{scale:'1.8',rotate:'-15deg',offset:.5},{scale:'1.4',rotate:'10deg',offset:.75},{scale:'1',rotate:'0deg'}],800);
- }else{
-  livelyAnimate(control,[{scale:'1'},{scale:'1.10',offset:.1},{scale:'.95',offset:.2},{scale:'1.08',offset:.3},{scale:'.98',offset:.4},{scale:'1.05',offset:.5},{scale:'.99',offset:.6},{scale:'1.02',offset:.7},{scale:'1'}],600);
+ if(face)livelyIconFeedback(face,'cat');
+ else{
+  livelyAnimate(control,[{scale:'1'},{scale:'1.10',offset:.1},{scale:'.95',offset:.2},{scale:'1.08',offset:.3},{scale:'.98',offset:.4},{scale:'1.05',offset:.5},{scale:'.99',offset:.6},{scale:'1.02',offset:.7},{scale:'.995',offset:.8},{scale:'1.01',offset:.9},{scale:'1'}],600);
  }
  const icon=control.querySelector('.subject-icon,.stat-icon,.persona-icon');
- if(icon)livelyAnimate(icon,[{scale:'1',translate:'0 0'},{scale:'1.5',translate:'0 -5px',offset:.3},{scale:'1.2',translate:'0 -2px',offset:.6},{scale:'1',translate:'0 0'}],800);
+ if(icon)livelyIconFeedback(icon,control.dataset.nekoStat==='level'?'trophy':control.dataset.nekoStat==='known'?'fire':'sparkle');
  livelyRoot();livelyEffect('ripple',x,y,'');livelyBurst(x,y,face?14:8);
 }
 function livelyCelebrate(element,count){
@@ -4543,7 +4587,8 @@ document.addEventListener('click',event => {
   if(control.matches('.neko-question-bubble')){livelyFeedback(control,event);return;}
   const selectionControl=control.matches('.lesson-choice,.collection-check,.collection-material-row,[data-search-select-all],[data-search-clear],#selectVisible,#clearSelection,#testLessonSelectVisible,#testLessonClear');
   if ((selectionControl || tapPlay()) && !control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton','examSetStudy','examSetSave'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
-  if(!control.hasAttribute('data-sound-style')){tapSpark(control,event);livelyFeedback(control,event);}
+  if(!control.hasAttribute('data-sound-style'))tapSpark(control,event);
+  livelyFeedback(control,event);
 },true);
 function selectionChangeSound(event){
  const input=event.target;

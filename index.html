@@ -3494,6 +3494,13 @@ html[data-persona] body #reelCommentDialog{width:min(430px,calc(100vw - 32px));m
 #reelCommentDialog h2{font-size:16px;margin:0}#reelCommentDialog textarea{display:block;width:100%;min-height:140px;box-sizing:border-box;margin:14px 0 8px;padding:12px;border-radius:12px;font:inherit;resize:vertical}
 #reelCommentDialog .reel-comment-note{font-size:11px;line-height:1.5;opacity:.8}#reelCommentDialog .reel-comment-actions{display:flex;gap:8px}#reelCommentDialog .reel-comment-actions button{flex:1}
 #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg{color:var(--reel-accent);fill:currentColor}
+
+/* The reel uses the same header spacing and theme as the rest of the app. */
+html[data-persona] body #reelDialog #appHeader{min-height:calc(62px + env(safe-area-inset-top,0px));padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 0 max(12px,env(safe-area-inset-left,0px));background:#fffaf4!important}
+html[data-persona=cyber] body #reelDialog #appHeader{background-color:#050510!important;background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%)!important;background-size:36px 36px,36px 36px,100% 100%!important}
+html[data-persona] body #reelDialog #appHeader #brandHome{background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important;color:inherit!important}
+html[data-persona=cyber] body #reelDialog #appHeader #brandHome{color:#00f5ff!important}
+@media(min-width:601px){html[data-persona] body #reelDialog #appHeader{min-height:calc(68px + env(safe-area-inset-top,0px));padding:calc(16px + env(safe-area-inset-top,0px)) max(calc((100vw - 840px)/2 + 20px),env(safe-area-inset-right,0px)) 0 max(calc((100vw - 840px)/2 + 20px),env(safe-area-inset-left,0px));}}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -7554,7 +7561,7 @@ $('landscapeToggle').checked=data.neko.landscapeFocus!==false;
 
 // Reels read source lessons directly and never advance the normal study session.
 const reel={cards:[],index:0,generation:0,loaded:false,opener:null,exportFile:null,exportURL:null};
-const reelIcons={heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',bookmark:'<path d="M6 3h12v18l-6-4-6 4V3Z"/>',camera:'<path d="M4 6h4l2-3h4l2 3h4v14H4V6Z"/><circle cx="12" cy="12.5" r="3.5"/>',comment:'<path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h6"/>',share:'<path d="M13 5l6 5-6 5v-3c-4.5 0-7.5 1.8-9 5 0-5 2.6-9 9-9V5Z"/>'};
+const reelIcons={heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',bookmark:'<path d="M6 3h12v18l-6-4-6 4V3Z"/>',camera:'<path d="M4 6h4l2-3h4l2 3h4v14H4V6Z"/><circle cx="12" cy="12.5" r="3.5"/>',comment:'<path d="M20.5 11.3c0 4.3-3.8 7.5-8.5 7.5-1.3 0-2.5-.2-3.5-.6L4.2 20l1.1-3.6a6.8 6.8 0 0 1-1.8-5.1c0-4.2 3.8-7.4 8.5-7.4s8.5 3.2 8.5 7.4Z"/><path d="M8.2 10h7.6M8.2 13h5.5"/>',share:'<path d="M13 5l6 5-6 5v-3c-4.5 0-7.5 1.8-9 5 0-5 2.6-9 9-9V5Z"/>'};
 function reelCurrent(){return reel.cards[reel.index*2];}
 let reelMessageTimer;function reelMessage(text){clearTimeout(reelMessageTimer);$('reelStatus').textContent=text;if(text)reelMessageTimer=setTimeout(()=>{$('reelStatus').textContent='';},3000);}
 function reelSync(){const first=reelCurrent();if(!first)return;const second=reel.cards[reel.index*2+1];$('reelLesson').textContent=second&&second.title!==first.title?first.title+' / '+second.title:first.title;$('reelPosition').textContent=`${reel.index*2+1}${second?'–'+(reel.index*2+2):''} / ${reel.cards.length}問`;

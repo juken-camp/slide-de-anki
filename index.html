@@ -3346,6 +3346,10 @@ html[data-persona="cyber"] #app #reportScreen .test-hub-grid #openExamSet{backgr
 #testPartialReview{display:block;width:100%;margin:12px 0 0;min-height:44px}
 #testPartialReview[hidden],#testNextBatch[hidden]{display:none!important}
 #examResumeBox{margin-bottom:14px}
+
+/* Keep the selected mode visible above the shared button styles. */
+html[data-persona] body #app #settingsScreen .play-mode-options button.tool[aria-pressed="true"]{background:#ffe4cc!important;border-color:#c8753e!important;color:#713611!important;box-shadow:0 2px 0 #d5a782,0 0 8px #d8854438!important;font-weight:800!important}
+html[data-persona="cyber"] body #app #settingsScreen .play-mode-options button.tool[aria-pressed="true"]{background:#073b50!important;border-color:#00e9f5!important;color:#e1ffff!important;box-shadow:0 0 12px #00e9f577,inset 0 0 8px #00e9f529!important;font-weight:800!important}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

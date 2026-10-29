@@ -3523,6 +3523,13 @@ html[data-persona=cyber] body #reelFolderDialog{background:#101933!important;bor
 #reelFolderDialog .folder-actions{display:flex;gap:8px;padding:12px 18px 16px;border-top:1px solid var(--line)}
 #reelFolderDialog .folder-actions button{flex:1;min-width:0;white-space:nowrap}
 #collectionSortSelected{width:100%;margin:10px 0;min-height:42px;white-space:nowrap}
+
+/* Reel controls use a white filled icon to show the saved state. */
+html[data-persona] body #reelDialog .reel-rail button[aria-pressed=true]>span{color:inherit!important}
+html[data-persona] body #reelDialog .reel-rail button[data-action=heart][aria-pressed=true] svg{color:inherit!important;fill:currentColor!important}
+html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg{color:inherit!important;fill:none!important}
+html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg path:first-child{fill:currentColor}
+html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg path:last-child{stroke:#18212f}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

@@ -3539,6 +3539,21 @@ html[data-persona] body #reelDialog .reel-rail button[data-action=heart][aria-pr
 html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg{color:inherit!important;fill:none!important}
 html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg path:first-child{fill:currentColor}
 html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg path:last-child{stroke:#18212f}
+
+/* In landscape, show one question-and-answer pair in each half. */
+@media (orientation:landscape) and (max-height:600px){
+ #reelDialog .reel-page{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:0}
+ #reelDialog .reel-question-row{width:100%;height:100%;min-width:0;border-bottom:0}
+ #reelDialog .reel-question-row+.reel-question-row{border-left:1px solid #e5e7eb}
+ #reelDialog .reel-pair{height:100%;width:auto;max-width:100%;max-height:100%;aspect-ratio:8/9}
+ #reelDialog .reel-rail{right:4px;top:50%;bottom:auto;transform:translateY(-50%);gap:0}
+ html[data-persona] body #reelDialog .reel-rail button{width:42px;min-height:42px;gap:0}
+ #reelDialog .reel-rail button>span{width:29px;height:29px}
+ #reelDialog .reel-rail svg{width:20px;height:20px}
+ #reelDialog .reel-rail small{font-size:9px}
+ html[data-persona] body #reelDialog .reel-comment-preview{left:6px;bottom:6px;width:min(280px,calc(100% - 55px));max-width:calc(100% - 55px)}
+}
+
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

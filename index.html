@@ -3689,7 +3689,7 @@ html[data-persona] body dialog#collectionDialog #collectionLessonTabs button:bef
 </style><style>
 html[data-persona] body dialog#collectionDialog #collectionLessonTabs{align-items:flex-start}
 html[data-persona] body dialog#collectionDialog #collectionLessonTabs button{flex:0 0 auto;align-self:flex-start;width:max-content;max-width:none;min-height:40px;height:40px;box-sizing:border-box;white-space:nowrap;overflow:visible;word-break:normal;padding:6px 10px;line-height:1.3}
-</style></head>
+</style><style>html[data-persona] body dialog#collectionDialog #collectionLessonTabs{padding-bottom:18px}</style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   
@@ -3709,7 +3709,7 @@ html[data-persona] body dialog#collectionDialog #collectionLessonTabs button{fle
   <p id="questionSearchStatus" class="question-search-status" role="status"></p><div id="questionSearchSelection" class="search-selection-tools" hidden><span data-search-count role="status" aria-live="polite"></span><div><button type="button" class="tool" data-search-select-all>検索した問題をすべて選ぶにゃ</button><button type="button" class="link-button" data-search-clear>選択を解除</button><button type="button" class="tool" data-search-save>まとめに保存にゃ</button></div></div><details class="catalog-milestones" id="catalogMilestones"><summary>達成マークを確かめるにゃ</summary><p>✓は、全問を「おぼえた」にした教材に付くにゃ。🏅は、確認チャレンジのランダム10問（候補が少なければ全問）を自動判定で全問正解すると付くにゃ。自己判定の正解は🏅の対象外にゃ。</p></details>
   <div class="catalog-list-tools"><span id="visibleCount" aria-live="polite"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
   <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
- <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>まとめを作るにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト対策するにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を追加するにゃ</span></button></div>
+ <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>教材を作るにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト対策するにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を追加するにゃ</span></button></div>
  <div class="my-collection-heading"><h3 id="myCollectionsTitle">作成した教材</h3></div><div id="myCollectionList"></div>
  <section class="my-added-section" aria-labelledby="myAddedTitle"><div class="my-collection-heading"><h3 id="myAddedTitle">追加したオリジナル教材</h3></div><div id="myAddedLessons"></div></section>
 </section>
@@ -8498,6 +8498,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

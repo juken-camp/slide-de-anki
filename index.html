@@ -3487,8 +3487,8 @@ html[data-persona] body #reelDialog .reel-rail button{opacity:1}
 #reelDialog .reel-top :is(#reelLesson,#reelPosition){background:rgba(16,28,46,.48);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
 /* A compact, floating switch for hiding answers. */
 html[data-persona] body #reelDialog #reelHideAnswers{position:relative;flex:none;display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;margin:-6px -4px;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;color:#fff!important;pointer-events:auto;touch-action:manipulation}
-#reelDialog #reelHideAnswers::before{content:'';position:absolute;width:30px;height:30px;border-radius:50%;background:rgba(16,28,46,.48);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
-#reelDialog #reelHideAnswers svg{position:relative;width:20px;height:20px;filter:drop-shadow(0 1px 2px #222)}
+#reelDialog #reelHideAnswers::before{display:none!important}
+#reelDialog #reelHideAnswers svg{position:relative;width:20px;height:20px;filter:drop-shadow(0 1px 2px #222) drop-shadow(0 0 2px #222)}
 #reelDialog #reelHideAnswers .hide-slash{display:none}
 #reelDialog #reelHideAnswers[aria-pressed=true] .hide-slash{display:block}
 #reelDialog .reel-answer-hidden img{filter:blur(22px);transform:scale(1.03)}
@@ -8244,6 +8244,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

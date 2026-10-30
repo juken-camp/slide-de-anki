@@ -1,0 +1,185 @@
+name: リール画像を軽量化
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: reel-image-optimization
+  cancel-in-progress: false
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 画像処理の準備
+        run: python -m pip install 'Pillow==11.3.0' 'boto3==1.40.20'
+      - name: 画像を軽量化してR2へ保存
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.REEL_R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.REEL_R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.REEL_R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.REEL_R2_BUCKET }}
+        run: |
+          python - <<'PY'
+          #!/usr/bin/env python3
+          """Create restartable reel-only WebP images alongside, never over, R2 originals."""
+          import concurrent.futures
+          import io
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import sys
+          import threading
+          from urllib.parse import urlsplit
+          
+          import boto3
+          from botocore.config import Config
+          from botocore.exceptions import ClientError
+          from PIL import Image, ImageOps
+          
+          PREFIX = 'reel-light-v1/'
+          VERSION = 'webp-w1440-q90-v1'
+          PATTERN = re.compile(r'^images_\d+/[^?#]+\.(?:png|jpe?g|webp)$', re.I)
+          MAX_BYTES = 30 * 1024 * 1024
+          Image.MAX_IMAGE_PIXELS = 50_000_000
+          
+          
+          def collect_paths(lesson_dir):
+              paths, invalid = set(), []
+              for filename in sorted(Path(lesson_dir).glob('*.json')):
+                  try:
+                      data = json.loads(filename.read_text(encoding='utf-8'))
+                      if not isinstance(data.get('cards'), list):
+                          raise ValueError('cards is missing or not a list')
+                      for card in data['cards']:
+                          for face in ('question', 'answer'):
+                              path = card.get(face)
+                              if not isinstance(path, str) or not path:
+                                  invalid.append(f'{filename.name}: missing {face}')
+                                  continue
+                              path = urlsplit(path).path
+                              if PATTERN.fullmatch(path) and all(p not in ('.', '..') for p in path.split('/')):
+                                  paths.add(path)
+                              else:
+                                  invalid.append(f'{filename.name}: unsupported {face}: {path}')
+                  except (ValueError, OSError, TypeError, AttributeError) as exc:
+                      invalid.append(f'{filename.name}: {exc}')
+              return sorted(paths), invalid
+          
+          
+          def optimize(data):
+              with Image.open(io.BytesIO(data)) as source:
+                  source.load()
+                  image = ImageOps.exif_transpose(source)
+                  if image.mode not in ('RGB', 'RGBA'):
+                      image = image.convert('RGBA' if 'transparency' in image.info else 'RGB')
+                  if image.width > 1440:
+                      image.thumbnail((1440, image.height), Image.Resampling.LANCZOS)
+                  out = io.BytesIO()
+                  image.save(out, format='WEBP', quality=90, method=4)
+                  return out.getvalue()
+          
+          
+          def missing(exc):
+              return str(exc.response.get('Error', {}).get('Code', '')) in ('404', 'NoSuchKey', 'NotFound')
+          
+          
+          def process_one(client, bucket, path):
+              source_info = client.head_object(Bucket=bucket, Key=path)
+              etag = source_info.get('ETag', '').strip('"')
+              if not etag:
+                  raise RuntimeError('元画像のETagが取得できません')
+              target = PREFIX + path + '.webp'
+              try:
+                  existing = client.head_object(Bucket=bucket, Key=target)
+              except ClientError as exc:
+                  if not missing(exc):
+                      raise
+              else:
+                  meta = existing.get('Metadata', {})
+                  if meta.get('source-etag') == etag and meta.get('reel-version') == VERSION:
+                      return 'skipped', 0, 0
+              if source_info['ContentLength'] > MAX_BYTES:
+                  raise RuntimeError('元画像が大きすぎます')
+              response = client.get_object(Bucket=bucket, Key=path)
+              body = response['Body']
+              try:
+                  original = body.read(MAX_BYTES + 1)
+              finally:
+                  body.close()
+              if len(original) > MAX_BYTES:
+                  raise RuntimeError('元画像が大きすぎます')
+              # Avoid publishing an image whose source changed between HEAD and GET.
+              if response.get('ETag', '').strip('"') != etag:
+                  raise RuntimeError('処理中に元画像が更新されました。再実行してください')
+              output = optimize(original)
+              client.put_object(Bucket=bucket, Key=target, Body=output, ContentType='image/webp',
+                                CacheControl='public, max-age=86400',
+                                Metadata={'source-etag': etag, 'reel-version': VERSION})
+              return 'created', len(original), len(output)
+          
+          
+          def main():
+              needed = ('R2_ACCOUNT_ID', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY', 'R2_BUCKET')
+              absent = [name for name in needed if not os.environ.get(name)]
+              if absent:
+                  print('GitHub Secretsが未設定です: ' + ', '.join(absent), file=sys.stderr)
+                  return 2
+              account = os.environ['R2_ACCOUNT_ID']
+              if not re.fullmatch(r'[a-fA-F0-9]{32}', account):
+                  print('R2_ACCOUNT_IDの形式を確認してください', file=sys.stderr)
+                  return 2
+              paths, invalid = collect_paths('lessons')
+              if not paths:
+                  print('教材画像が見つかりません。lessonsフォルダを確認してください', file=sys.stderr)
+                  return 2
+              client = boto3.client('s3', endpoint_url=f'https://{account}.r2.cloudflarestorage.com',
+                                    aws_access_key_id=os.environ['R2_ACCESS_KEY_ID'],
+                                    aws_secret_access_key=os.environ['R2_SECRET_ACCESS_KEY'], region_name='auto',
+                                    config=Config(retries={'max_attempts': 5, 'mode': 'standard'}, max_pool_connections=12,
+                                                  connect_timeout=15, read_timeout=60))
+              bucket = os.environ['R2_BUCKET']
+              failures = list(invalid)
+              totals = {'created': 0, 'skipped': 0, 'source_bytes': 0, 'output_bytes': 0}
+              print(f'対象: {len(paths)}枚 / 認識できない教材データ: {len(invalid)}件', flush=True)
+              def run(path):
+                  try:
+                      return path, process_one(client, bucket, path), None
+                  except Exception as exc:
+                      return path, None, f'{type(exc).__name__}: {str(exc)[:220]}'
+              with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+                  for n, (path, result, error) in enumerate(pool.map(run, paths), 1):
+                      if error:
+                          failures.append(f'{path}: {error}')
+                      else:
+                          state, source_size, output_size = result
+                          totals[state] += 1
+                          totals['source_bytes'] += source_size
+                          totals['output_bytes'] += output_size
+                      if n % 100 == 0 or n == len(paths):
+                          print(f'{n}/{len(paths)} 作成 {totals["created"]} / 完了済 {totals["skipped"]} / エラー {len(failures)}', flush=True)
+              report = {'target_images': len(paths), **totals, 'failures': failures}
+              Path('reel-optimization-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+              print(f'結果: 作成 {totals["created"]}枚、完了済 {totals["skipped"]}枚、エラー {len(failures)}件')
+              if failures:
+                  print('エラーは reel-optimization-report.json に記録しました。修正後、同じ操作を再実行できます。', file=sys.stderr)
+                  return 1
+              return 0
+          
+          
+          if __name__ == '__main__':
+              sys.exit(main())
+          PY
+      - name: 実行結果を保存
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel-optimization-report
+          path: reel-optimization-report.json
+          if-no-files-found: ignore
+          retention-days: 14

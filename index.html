@@ -3540,7 +3540,7 @@ html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-
 html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg path:first-child{fill:currentColor}
 html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-has-comment=true] svg path:last-child{stroke:#18212f}
 #reelDialog .reel-rail button[data-action=heart]>span{position:relative;overflow:visible}
-#reelDialog .reel-heart-particle{position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 2px #333;pointer-events:none}
+#reelDialog .reel-heart-particle{position:absolute;left:50%;top:50%;width:6px;height:6px;border:1px solid #505050;box-sizing:border-box;border-radius:50%;background:#fff;box-shadow:0 1px 3px #333;pointer-events:none;z-index:2}
 
 /* In landscape, show one question-and-answer pair in each half. */
 @media (orientation:landscape) and (max-height:600px){
@@ -7677,13 +7677,13 @@ function reelLikeFeedback(button,liked){
  holder.querySelectorAll('.reel-heart-particle').forEach(dot=>dot.remove());
  if(reduced||!icon.animate)return;
  const lively=livelyOn();
- const frames=liked?(lively?[{transform:'scale(.72)'},{transform:'scale(1.38)',offset:.42},{transform:'scale(.94)',offset:.72},{transform:'scale(1)'}]:[{transform:'scale(.82)'},{transform:'scale(1.18)',offset:.5},{transform:'scale(1)'}]):[{transform:'scale(1)'},{transform:'scale(.78)',offset:.45},{transform:'scale(1)'}];
- icon.animate(frames,{duration:liked?(lively?440:260):200,easing:'ease-out'});
+ const frames=liked?(lively?[{transform:'scale(.68)'},{transform:'scale(1.8)',offset:.38},{transform:'scale(.88)',offset:.66},{transform:'scale(1.14)',offset:.82},{transform:'scale(1)'}]:[{transform:'scale(.82)'},{transform:'scale(1.18)',offset:.5},{transform:'scale(1)'}]):[{transform:'scale(1)'},{transform:'scale(.78)',offset:.45},{transform:'scale(1)'}];
+ icon.animate(frames,{duration:liked?(lively?650:260):200,easing:'ease-out'});
  if(!liked||!lively)return;
- for(let i=0;i<6;i++){
+ for(let i=0;i<8;i++){
   const dot=document.createElement('i');dot.className='reel-heart-particle';dot.setAttribute('aria-hidden','true');holder.append(dot);
-  const angle=(i/6)*Math.PI*2,distance=19;
-  const animation=dot.animate([{transform:'translate(-50%,-50%) scale(.4)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(angle)*distance}px),calc(-50% + ${Math.sin(angle)*distance}px)) scale(.8)`,opacity:0}],{duration:400,easing:'ease-out'});
+  const angle=(i/8)*Math.PI*2,distance=27;
+  const animation=dot.animate([{transform:'translate(-50%,-50%) scale(.4)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(angle)*distance}px),calc(-50% + ${Math.sin(angle)*distance}px)) scale(.8)`,opacity:0}],{duration:600,easing:'ease-out'});
   animation.finished.catch(()=>{}).then(()=>dot.remove());
  }
 }
@@ -8220,6 +8220,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

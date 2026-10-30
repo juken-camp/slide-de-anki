@@ -3657,6 +3657,12 @@ html[data-persona=cyber] #myCollectionList .my-drag-placeholder{border-color:#39
 #app #myCollectionsPanel .my-collection-card{border-width:1px;border-color:#d2b596;box-shadow:0 3px 12px #6c3a2112}
 html[data-persona=cyber] #app #myCollectionsPanel .my-collection-card{border-color:#345b78!important;box-shadow:0 2px 12px #00bde80d!important}
 html[data-persona=cyber] #app #myCollectionsPanel .my-page-actions .tool{border-width:1px;box-shadow:0 2px 10px #00c7ea10!important}
+</style><style>
+#collectionDialog .collection-picker-controls{grid-template-columns:repeat(3,minmax(0,1fr));}
+#collectionDialog .collection-picker-controls select{width:100%;min-width:0;padding-left:5px;padding-right:3px;font-size:12px}
+#collectionDialog #collectionSubject:has(+ #collectionField[hidden]){grid-column:auto}
+#collectionDialog .collection-picker-controls:has(#collectionField[hidden]){grid-template-columns:repeat(2,minmax(0,1fr))}
+#collectionDialog #collectionLessonSearch{grid-column:1/-1}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3877,7 +3883,7 @@ html[data-persona=cyber] #app #myCollectionsPanel .my-page-actions .tool{border-
  <div class="collection-editor-body" id="collectionEditorBody">
   <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="まとめの名前を入れるにゃ" autocomplete="off">
   <details class="collection-picker" id="collectionPicker" open><summary id="collectionPickerToggle" role="button" aria-controls="collectionPickerContent">＋ 教材をえらぶにゃ</summary><div id="collectionPickerContent">
-   <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><select id="collectionField" aria-label="分野を絞り込む" hidden></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
+   <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><select id="collectionField" aria-label="分野を絞り込む" hidden></select><select id="collectionGrade" aria-label="学年を絞り込む"><option value="all">すべての学年</option><option value="1">中１</option><option value="2">中２</option><option value="3">中３</option></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
    <div id="collectionLessonPicker" role="listbox" aria-multiselectable="true" tabindex="0" aria-label="追加する教材の一覧"></div>
    <div class="collection-picker-actions"><button class="secondary-button" id="collectionAddWhole" type="button">丸ごと入れるにゃ</button><button class="secondary-button" id="collectionPickCards" type="button">問題を選ぶにゃ</button></div>
   </div></details>
@@ -5692,12 +5698,12 @@ function updateCollectionPickerSelection() {
   $('collectionAddWhole').disabled=$('collectionPickCards').disabled=!selected.size;
 }
 function fillCollectionLessons() {
-  const list=$('collectionLessonPicker'),subject=$('collectionSubject').value,field=$('collectionField').value||'all';
+  const list=$('collectionLessonPicker'),subject=$('collectionSubject').value,field=$('collectionField').value||'all',grade=$('collectionGrade').value;
   const q=$('collectionLessonSearch').value.normalize('NFKC').trim().toLocaleLowerCase();list.replaceChildren();
   let count=0;
   for(const sub of [...new Set(meta.map(m=>m.subject))]) {
     if(subject!=='all' && subject!==sub)continue;
-    const items=meta.filter(m=>isListedLesson(m) && m.subject===sub && (field==='all'||m.field===field) && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
+    const items=meta.filter(m=>isListedLesson(m) && m.subject===sub && (field==='all'||m.field===field) && (grade==='all'||examSetGrade(m)==='other'||examSetGrade(m)===grade) && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
     if(!items.length)continue;
     if(q || subject==='all'){const heading=collectionNode('div',subjectLabel(sub),'collection-list-subject');heading.setAttribute('role','presentation');list.append(heading);}
     for(const m of items) {
@@ -5763,7 +5769,7 @@ async function openCollectionEditor(id=null) {
   pause();collectionEditSequence++;
   collectionEditor={id:existing?.id||null,updated:existing?.updated,cards:new Map(),pickerSelection:new Set(),activeId:null,activeRaw:null};
   for(const r of existing?.cards||[]){if(!collectionEditor.cards.has(r.lessonId))collectionEditor.cards.set(r.lessonId,new Set());collectionEditor.cards.get(r.lessonId).add(r.cardId);}
-  $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';$('collectionField').value='all';
+  $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';$('collectionField').value='all';$('collectionGrade').value='all';
   $('collectionDialogTitle').textContent=existing?'まとめを編集するにゃ':'まとめを作るにゃ';
   $('collectionSave').disabled=false;$('collectionActive').inert=false;$('collectionActive').hidden=true;$('collectionGrid').replaceChildren();$('collectionPicker').open=!existing?.cards.length;editorStatus();fillCollectionSubjects();renderCollectionTabs();updateCollectionTotal();
   collectionEditor.signature=collectionSignature();$('collectionDialog').classList.toggle('motion-off',reduced);$('collectionDialog').showModal();updateCollectionViewport();$('collectionEditorBody').scrollTop=0;$('collectionDialogTitle').focus({preventScroll:true});
@@ -5950,7 +5956,7 @@ $('unitCollectionSave').onclick=async()=>{
  }catch{$('unitCollectionStatus').textContent='教材を読み込めませんでした。通信を確認してもう一度お試しください。';}finally{unitCollectionBusy=false;unitCollectionCount();}
 };
 
-$('collectionSubject').onchange=()=>{ $('collectionField').value='all';fillCollectionFields();fillCollectionLessons(); };$('collectionField').onchange=fillCollectionLessons;$('collectionLessonSearch').oninput=fillCollectionLessons;
+$('collectionSubject').onchange=()=>{ $('collectionField').value='all';fillCollectionFields();fillCollectionLessons(); };$('collectionField').onchange=fillCollectionLessons;$('collectionGrade').onchange=fillCollectionLessons;$('collectionLessonSearch').oninput=fillCollectionLessons;
 async function addSelectedCollectionMaterials(whole) {
   const editor=collectionEditor,ids=[...(editor?.pickerSelection||[])];if(!editor || !ids.length)return;
   const seq=++collectionEditSequence;
@@ -8466,6 +8472,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

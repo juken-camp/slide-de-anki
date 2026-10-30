@@ -7,7 +7,7 @@
   document.documentElement.dataset.persona = cyber ? 'cyber' : 'neko';
   if (cyber) document.querySelector('meta[name="theme-color"]')?.setAttribute('content','#050510');
 })();
-</script><meta name="application-name" content="スライドで暗記"><meta name="apple-mobile-web-app-title" content="スライドで暗記"><title>Nekoponのスライドで暗記</title><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="manifest" href="/manifest.webmanifest?v=20261019-pwa"><link rel="apple-touch-icon" sizes="180x180" href="/icons/nekopon-180-v1.png"><link rel="icon" type="image/png" sizes="32x32" href="/icons/nekopon-32-v1.png"><link rel="preload" as="script" href="asset-config.js">
+</script><meta name="application-name" content="スライドで暗記"><meta name="apple-mobile-web-app-title" content="スライドで暗記"><title>Nekoponのスライドで暗記</title><meta name="description" content="📚 一問一答で沖縄県立高校入試まで対策！中3専門塾が開発した暗記アプリで、Nekoponと一緒に合格を目指そう！🌸"><meta property="og:description" content="📚 一問一答で沖縄県立高校入試まで対策！中3専門塾が開発した暗記アプリで、Nekoponと一緒に合格を目指そう！🌸"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="manifest" href="/manifest.webmanifest?v=20261019-pwa"><link rel="apple-touch-icon" sizes="180x180" href="/icons/nekopon-180-v1.png"><link rel="icon" type="image/png" sizes="32x32" href="/icons/nekopon-32-v1.png"><link rel="preload" as="script" href="asset-config.js">
 <link rel="preload" as="script" href="asset-origin.js">
 <link rel="preload" as="script" href="catalog.js?v=qa20261026-8950b1a4e7ac">
 <!-- Google tag (gtag.js) -->
@@ -8531,7 +8531,7 @@ $('importForm').onsubmit=async e=>{
     const url = new URL(location.href);
     url.search = ''; url.hash = '';
     if (url.pathname.endsWith('/index.html')) url.pathname = url.pathname.slice(0, -10);
-    const shareData = {title: 'Nekoponのスライドで暗記', text: '無料で使えて、チャットで質問できるよ！スライドで楽しく暗記しよう！', url: url.href};
+    const shareData = {title: 'Nekoponのスライドで暗記', text: '塾の先生がつくった理科と社会の暗記アプリ！', url: url.href};
     if (navigator.share) {
       try { await navigator.share(shareData); return; }
       catch (error) { if (error.name === 'AbortError') return; }
@@ -8546,6 +8546,7 @@ $('importForm').onsubmit=async e=>{
   });
 })();
 </script></body></html>
+
 
 
 

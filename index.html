@@ -3552,6 +3552,9 @@ html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-
  #reelDialog .reel-rail svg{width:20px;height:20px}
  #reelDialog .reel-rail small{font-size:9px}
  /* Keep controls near the outer lower edges, clear of cutouts and gestures. */
+ /* Reserve space for the controls and center each slide in the remaining area. */
+ #reelDialog .reel-question-row:first-child{padding-left:calc(48px + max(8px,env(safe-area-inset-left,0px)));box-sizing:border-box}
+ #reelDialog .reel-question-row:nth-child(2){padding-right:calc(48px + max(8px,env(safe-area-inset-right,0px)));box-sizing:border-box}
  #reelDialog .reel-question-row .reel-rail{top:auto;bottom:max(10px,env(safe-area-inset-bottom,0px));transform:none}
  #reelDialog .reel-question-row:first-child .reel-rail{left:max(8px,env(safe-area-inset-left,0px));right:auto}
  #reelDialog .reel-question-row:nth-child(2) .reel-rail{left:auto;right:max(8px,env(safe-area-inset-right,0px))}
@@ -8190,6 +8193,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

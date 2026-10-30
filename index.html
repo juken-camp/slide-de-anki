@@ -3638,6 +3638,13 @@ html[data-persona=cyber] :is(input,textarea):not(#placeholder-style-specificity#
 #textbookUnitList .textbook-unit-title{flex:1;min-width:0}#textbookUnitList .textbook-unit-page{flex:none;font-size:11px;opacity:.72}
 html[data-persona=cyber] #textbookUnitList details{border-color:#315b81}html[data-persona=cyber] #textbookUnitList label input{accent-color:#00cddd}
 @supports (-webkit-touch-callout:none){#unitTextbookBox .textbook-book select{font-size:16px}}
+</style><style>
+#myCollectionsPanel .my-collection-header{display:flex;align-items:flex-start;gap:8px;min-width:0}
+#myCollectionsPanel .my-collection-header h3{flex:1;min-width:0}
+#myCollectionsPanel .my-order-controls{display:flex;gap:4px;flex:none}
+#myCollectionsPanel .my-order-controls button{display:grid;place-items:center;box-sizing:border-box;width:36px;height:36px;padding:0;border:1px solid #d0ae8e;border-radius:10px;background:#fffaf2;color:#875431;font-size:16px;line-height:1;cursor:pointer}
+#myCollectionsPanel .my-order-controls button:disabled{opacity:.3;cursor:default}
+html[data-persona=cyber] #app #myCollectionsPanel .my-order-controls button{background:#10213d;color:#b9edff;border-color:#39759a}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3658,8 +3665,8 @@ html[data-persona=cyber] #textbookUnitList details{border-color:#315b81}html[dat
   <p id="questionSearchStatus" class="question-search-status" role="status"></p><div id="questionSearchSelection" class="search-selection-tools" hidden><span data-search-count role="status" aria-live="polite"></span><div><button type="button" class="tool" data-search-select-all>検索した問題をすべて選ぶにゃ</button><button type="button" class="link-button" data-search-clear>選択を解除</button><button type="button" class="tool" data-search-save>まとめに保存にゃ</button></div></div><details class="catalog-milestones" id="catalogMilestones"><summary>達成マークを確かめるにゃ</summary><p>✓は、全問を「おぼえた」にした教材に付くにゃ。🏅は、確認チャレンジのランダム10問（候補が少なければ全問）を自動判定で全問正解すると付くにゃ。自己判定の正解は🏅の対象外にゃ。</p></details>
   <div class="catalog-list-tools"><span id="visibleCount" aria-live="polite"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
   <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
- <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>まとめを<br>作るにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を<br>追加するにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト範囲から<br>作るにゃ</span></button></div>
- <div class="my-collection-heading"><h3 id="myCollectionsTitle">作成したまとめ教材</h3></div><div id="myCollectionList"></div>
+ <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>まとめを<br>作るにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト範囲から<br>作るにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を<br>追加するにゃ</span></button></div>
+ <div class="my-collection-heading"><h3 id="myCollectionsTitle">作成した教材</h3></div><div id="myCollectionList"></div>
  <section class="my-added-section" aria-labelledby="myAddedTitle"><div class="my-collection-heading"><h3 id="myAddedTitle">追加したオリジナル教材</h3></div><div id="myAddedLessons"></div></section>
 </section>
   <div id="catalogGroups" class="catalog-groups"></div>
@@ -5541,7 +5548,7 @@ function syncCollectionCatalog() {
   $('catalogGroups').hidden=on; if(on)$('catalogEmpty').hidden=true;
   $('openImport').hidden=true;
   $('catalogSearch').placeholder=newsDemoMode&&!on?(document.documentElement.dataset.persona==='cyber'?'ニュースを探すぜ':'ニュースを探すにゃ'):on?(document.documentElement.dataset.persona==='cyber'?'自分の教材を探すぜ':'自分の教材をさがすにゃ'):(document.documentElement.dataset.persona==='cyber'?'攻略する教材を探すぜ':'全教材からさがすにゃ');
-  $('catalogSearch').setAttribute('aria-label',newsDemoMode&&!on?'ニュースを検索':on?'作成したまとめ教材・追加したオリジナル教材を検索':'教材名・問題文・解答で検索');
+  $('catalogSearch').setAttribute('aria-label',newsDemoMode&&!on?'ニュースを検索':on?'作成した教材・追加したオリジナル教材を検索':'教材名・問題文・解答で検索');
   if(on)$('quickReview').hidden=true;
   $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
 }
@@ -5564,17 +5571,32 @@ function renderMyAddedLessons(){
  }));box.append(buttons);root.append(box);}
 }
 
+const COLLECTION_ORDER_KEY='jc-image-quiz-collection-order-v1';
+function orderedMyCollections(all){
+ let order=[];try{const saved=JSON.parse(localStorage.getItem(COLLECTION_ORDER_KEY)||'[]');if(Array.isArray(saved))order=saved.filter(x=>typeof x==='string');}catch{}
+ const index=new Map(order.map((id,i)=>[id,i]));
+ return [...all].sort((a,b)=>{const ai=index.get(a.id),bi=index.get(b.id);if(ai!==undefined||bi!==undefined)return (ai??Number.MAX_SAFE_INTEGER)-(bi??Number.MAX_SAFE_INTEGER);return Number(b.name==='いいねしたスライド')-Number(a.name==='いいねしたスライド');});
+}
+function moveMyCollection(id,direction){
+ const ordered=orderedMyCollections(readCollections()),q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase();
+ const visible=ordered.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q)),at=visible.findIndex(c=>c.id===id),other=visible[at+direction];
+ if(at<0||!other)return;const a=ordered.findIndex(c=>c.id===id),b=ordered.findIndex(c=>c.id===other.id);[ordered[a],ordered[b]]=[ordered[b],ordered[a]];
+ try{localStorage.setItem(COLLECTION_ORDER_KEY,JSON.stringify(ordered.map(c=>c.id)));}catch{toast('並び順を保存できませんでした');return;}
+ renderMyCollections();const controls=[...$('myCollectionList').querySelectorAll('[data-collection]')].find(el=>el.dataset.collection===id);controls?.querySelector(direction<0?'[data-order=up]':'[data-order=down]')?.focus({preventScroll:true});
+}
 function renderMyCollections() {
   renderMyAddedLessons();
   const root=$('myCollectionList');root.replaceChildren();
-  const q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=readCollections();
-  const items=all.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q)).sort((a,b)=>Number(b.name==='いいねしたスライド')-Number(a.name==='いいねしたスライド'));
+  const q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=orderedMyCollections(readCollections());
+  const items=all.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q));
   if (!items.length) {
     const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'そのまとめは見つからないにゃ':'自分だけのまとめを作るにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'好きな問題を選んで、名前をつけて保存するにゃ。'));if(!all.length)makeMyEmptyAction(e,()=>openCollectionEditor(),'まとめを作るにゃ');root.append(e);return;
   }
   for(const c of items) {
     const box=collectionNode('article',undefined,'my-collection-card'),ids=[...new Set(c.cards.map(r=>r.lessonId))];
-    box.dataset.collection=c.id;box.append(collectionNode('h3',c.name),collectionNode('p',`${ids.length}教材から ${c.cards.length}問 · おぼえた ${collectionKnown(c)}問`));
+    box.dataset.collection=c.id;const heading=collectionNode('div',undefined,'my-collection-header'),orderControls=collectionNode('div',undefined,'my-order-controls');
+    for(const [direction,symbol,label] of [[-1,'↑','上へ移動'],[1,'↓','下へ移動']]){const control=collectionButton(symbol,'my-order-button',()=>moveMyCollection(c.id,direction));control.dataset.order=direction<0?'up':'down';control.setAttribute('aria-label',`${c.name}を${label}`);control.title=label;const position=items.findIndex(item=>item.id===c.id);control.disabled=direction<0?position===0:position===items.length-1;orderControls.append(control);}
+    heading.append(collectionNode('h3',c.name),orderControls);box.append(heading,collectionNode('p',`${ids.length}教材から ${c.cards.length}問 · おぼえた ${collectionKnown(c)}問`));
     const buttons=collectionNode('div',undefined,'my-collection-actions');
     buttons.append(collectionButton('はじめるにゃ','primary-button',()=>startCollection(c.id)),collectionButton('編集にゃ','tool',()=>openCollectionEditor(c.id)),collectionButton('削除','link-button',()=>{
       if(!confirmWithPersona(`「${c.name}」を削除するにゃ？ 元の教材や学習記録は残るにゃ。`, `「${c.name}」を削除するか？ 元の教材や学習記録は残るぜ。`))return;
@@ -5914,7 +5936,7 @@ $('collectionPreviewClose').onclick=()=>$('collectionPreview').close();
 $('collectionPreviewFlip').onclick=()=>{collectionPreviewAnswer=!collectionPreviewAnswer;syncCollectionPreview();};
 $('collectionPreviewSelect').onclick=()=>{if(collectionPreviewCard)toggleCollectionCard(collectionPreviewCard.id);};
 $('collectionPreview').addEventListener('close',()=>{collectionPreviewCard=null;$('collectionPreviewImage').removeAttribute('src');});
-window.addEventListener('storage',e=>{if(e.key===COLLECTION_KEY && catalogIsCollections && !collectionEditor)renderMyCollections();});
+window.addEventListener('storage',e=>{if((e.key===COLLECTION_KEY||e.key===COLLECTION_ORDER_KEY) && catalogIsCollections && !collectionEditor)renderMyCollections();});
 
 // Dated activity lives beside, never in place of, the original records or image database.
 const historyDatabaseName='jc-image-quiz-study-log',historyFallbackKey='jc-image-quiz-study-log-v1';
@@ -8399,6 +8421,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

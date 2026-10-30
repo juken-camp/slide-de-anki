@@ -3641,10 +3641,14 @@ html[data-persona=cyber] #textbookUnitList details{border-color:#315b81}html[dat
 </style><style>
 #myCollectionsPanel .my-collection-header{display:flex;align-items:flex-start;gap:8px;min-width:0}
 #myCollectionsPanel .my-collection-header h3{flex:1;min-width:0}
-#myCollectionsPanel .my-order-controls{display:flex;gap:4px;flex:none}
-#myCollectionsPanel .my-order-controls button{display:grid;place-items:center;box-sizing:border-box;width:36px;height:36px;padding:0;border:1px solid #d0ae8e;border-radius:10px;background:#fffaf2;color:#875431;font-size:16px;line-height:1;cursor:pointer}
-#myCollectionsPanel .my-order-controls button:disabled{opacity:.3;cursor:default}
-html[data-persona=cyber] #app #myCollectionsPanel .my-order-controls button{background:#10213d;color:#b9edff;border-color:#39759a}
+#myCollectionsPanel .my-drag-handle{display:grid;place-items:center;flex:none;width:38px;height:38px;margin:-4px -4px 0 0;padding:0;border:0;border-radius:10px;background:transparent;color:#9c7960;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+#myCollectionsPanel .my-drag-handle svg{width:18px;height:18px;pointer-events:none}
+#myCollectionsPanel .my-drag-handle:active{cursor:grabbing;background:#d7b99733}
+html[data-persona=cyber] #app #myCollectionsPanel .my-drag-handle{color:#8bb4ce}
+#myCollectionsPanel .my-collection-card.my-dragging{position:fixed!important;z-index:9999!important;margin:0!important;pointer-events:none;opacity:.96;box-shadow:0 14px 35px #0005!important}
+#myCollectionList .my-drag-placeholder{box-sizing:border-box;border:2px dashed #b99270;border-radius:19px;background:#c9976720;margin:0 1px 9px}
+html[data-persona=cyber] #myCollectionList .my-drag-placeholder{border-color:#39b5d6;background:#00ddff12}
+#myCollectionList.is-dragging,#myCollectionList.is-dragging *{user-select:none;-webkit-user-select:none}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -5582,8 +5586,40 @@ function moveMyCollection(id,direction){
  const visible=ordered.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q)),at=visible.findIndex(c=>c.id===id),other=visible[at+direction];
  if(at<0||!other)return;const a=ordered.findIndex(c=>c.id===id),b=ordered.findIndex(c=>c.id===other.id);[ordered[a],ordered[b]]=[ordered[b],ordered[a]];
  try{localStorage.setItem(COLLECTION_ORDER_KEY,JSON.stringify(ordered.map(c=>c.id)));}catch{toast('並び順を保存できませんでした');return;}
- renderMyCollections();const controls=[...$('myCollectionList').querySelectorAll('[data-collection]')].find(el=>el.dataset.collection===id);controls?.querySelector(direction<0?'[data-order=up]':'[data-order=down]')?.focus({preventScroll:true});
+ renderMyCollections();const controls=[...$('myCollectionList').querySelectorAll('[data-collection]')].find(el=>el.dataset.collection===id);controls?.querySelector('.my-drag-handle')?.focus({preventScroll:true});
 }
+let collectionDrag=null;
+function attachCollectionDrag(handle,row,list){
+ handle.addEventListener('contextmenu',event=>event.preventDefault());
+ handle.addEventListener('pointerdown',event=>{
+  if(collectionDrag||(event.pointerType==='mouse'&&event.button!==0)||list.querySelectorAll('[data-collection]').length<2)return;
+  event.preventDefault();event.stopPropagation();const rect=row.getBoundingClientRect(),placeholder=collectionNode('div',undefined,'my-drag-placeholder');placeholder.style.height=rect.height+'px';row.before(placeholder);
+  collectionDrag={handle,row,list,placeholder,pointerId:event.pointerId,y:event.clientY,offset:event.clientY-rect.top,moved:false,startY:event.clientY,raf:0};
+  row.classList.add('my-dragging');Object.assign(row.style,{top:rect.top+'px',left:rect.left+'px',width:rect.width+'px',boxSizing:'border-box'});list.classList.add('is-dragging');
+  try{handle.setPointerCapture(event.pointerId);}catch{}
+  document.addEventListener('pointermove',collectionDragMove,{passive:false});document.addEventListener('pointerup',collectionDragEnd);document.addEventListener('pointercancel',collectionDragCancel);
+ });
+}
+function collectionDragPlace(){
+ const d=collectionDrag;if(!d)return;d.row.style.top=(d.y-d.offset)+'px';const siblings=[...d.list.querySelectorAll('[data-collection]')].filter(x=>x!==d.row);let before=null;for(const sibling of siblings){const rect=sibling.getBoundingClientRect();if(d.y<rect.top+rect.height/2){before=sibling;break;}}
+ if(before)d.list.insertBefore(d.placeholder,before);else d.list.append(d.placeholder);
+}
+function collectionDragTick(){
+ const d=collectionDrag;if(!d)return;const edge=Math.min(90,innerHeight/4),speed=d.y<edge?-10:d.y>innerHeight-edge?10:0;if(speed){window.scrollBy(0,speed);collectionDragPlace();}d.raf=requestAnimationFrame(collectionDragTick);
+}
+function collectionDragMove(event){
+ const d=collectionDrag;if(!d||event.pointerId!==d.pointerId)return;event.preventDefault();d.y=event.clientY;if(Math.abs(d.y-d.startY)>4)d.moved=true;collectionDragPlace();if(!d.raf)d.raf=requestAnimationFrame(collectionDragTick);
+}
+function collectionDragFinish(event,cancel){
+ const d=collectionDrag;if(!d||event.pointerId!==d.pointerId)return;document.removeEventListener('pointermove',collectionDragMove);document.removeEventListener('pointerup',collectionDragEnd);document.removeEventListener('pointercancel',collectionDragCancel);if(d.raf)cancelAnimationFrame(d.raf);
+ try{d.handle.releasePointerCapture(d.pointerId);}catch{}d.placeholder.before(d.row);d.placeholder.remove();d.row.classList.remove('my-dragging');d.row.removeAttribute('style');d.list.classList.remove('is-dragging');collectionDrag=null;
+ if(!cancel&&d.moved){const ids=[...d.list.querySelectorAll('[data-collection]')].map(el=>el.dataset.collection),all=orderedMyCollections(readCollections()),visible=new Set(ids),byId=new Map(all.map(item=>[item.id,item]));let n=0;const newOrder=all.map(item=>visible.has(item.id)?byId.get(ids[n++]):item).filter(Boolean);
+  if(newOrder.length===all.length){try{localStorage.setItem(COLLECTION_ORDER_KEY,JSON.stringify(newOrder.map(item=>item.id)));}catch{toast('並び順を保存できませんでした');}}
+ }
+ renderMyCollections();
+}
+function collectionDragEnd(event){collectionDragFinish(event,false)}
+function collectionDragCancel(event){collectionDragFinish(event,true)}
 function renderMyCollections() {
   renderMyAddedLessons();
   const root=$('myCollectionList');root.replaceChildren();
@@ -5594,9 +5630,10 @@ function renderMyCollections() {
   }
   for(const c of items) {
     const box=collectionNode('article',undefined,'my-collection-card'),ids=[...new Set(c.cards.map(r=>r.lessonId))];
-    box.dataset.collection=c.id;const heading=collectionNode('div',undefined,'my-collection-header'),orderControls=collectionNode('div',undefined,'my-order-controls');
-    for(const [direction,symbol,label] of [[-1,'↑','上へ移動'],[1,'↓','下へ移動']]){const control=collectionButton(symbol,'my-order-button',()=>moveMyCollection(c.id,direction));control.dataset.order=direction<0?'up':'down';control.setAttribute('aria-label',`${c.name}を${label}`);control.title=label;const position=items.findIndex(item=>item.id===c.id);control.disabled=direction<0?position===0:position===items.length-1;orderControls.append(control);}
-    heading.append(collectionNode('h3',c.name),orderControls);box.append(heading,collectionNode('p',`${ids.length}教材から ${c.cards.length}問 · おぼえた ${collectionKnown(c)}問`));
+    box.dataset.collection=c.id;const heading=collectionNode('div',undefined,'my-collection-header'),handle=collectionButton('','my-drag-handle',()=>{});
+    handle.setAttribute('aria-label',`${c.name}を並べ替え。上下の矢印キーでも移動できます`);handle.title='ドラッグして並べ替え';handle.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg>';
+    handle.addEventListener('keydown',event=>{if(event.key==='ArrowUp'||event.key==='ArrowDown'){event.preventDefault();moveMyCollection(c.id,event.key==='ArrowUp'?-1:1);}});attachCollectionDrag(handle,box,root);
+    heading.append(collectionNode('h3',c.name),handle);box.append(heading,collectionNode('p',`${ids.length}教材から ${c.cards.length}問 · おぼえた ${collectionKnown(c)}問`));
     const buttons=collectionNode('div',undefined,'my-collection-actions');
     buttons.append(collectionButton('はじめるにゃ','primary-button',()=>startCollection(c.id)),collectionButton('編集にゃ','tool',()=>openCollectionEditor(c.id)),collectionButton('削除','link-button',()=>{
       if(!confirmWithPersona(`「${c.name}」を削除するにゃ？ 元の教材や学習記録は残るにゃ。`, `「${c.name}」を削除するか？ 元の教材や学習記録は残るぜ。`))return;
@@ -8421,6 +8458,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

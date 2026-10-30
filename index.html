@@ -703,7 +703,7 @@ body:not(.slide-focus) .actions .done{box-shadow:0 3px 0 #8b2e50}
 #collectionDialog .collection-picker>summary::-webkit-details-marker{display:none}
 #collectionDialog .collection-picker>summary::after{content:'⌄';font-size:16px;font-weight:800}
 #collectionDialog .collection-picker[open]>summary::after{content:'⌃'}
-#collectionDialog .collection-picker-controls{grid-template-columns:94px minmax(0,1fr);margin:12px 10px 9px;gap:8px}
+#collectionDialog .collection-picker-controls{grid-template-columns:repeat(2,minmax(0,1fr));margin:12px 10px 9px;gap:8px}#collectionDialog #collectionLessonSearch{grid-column:1/-1;width:100%}#collectionDialog #collectionSubject:has(+ #collectionField[hidden]){grid-column:1/-1}#collectionDialog #collectionField[hidden]{display:none!important}
 #collectionDialog #collectionLessonPicker{width:calc(100% - 20px);margin:0 10px;height:146px;min-height:44px;padding:4px;border-radius:10px;font-size:13px}
 #collectionDialog .collection-picker-actions{margin:10px;gap:8px}
 #collectionDialog .collection-picker-actions button{min-width:0;min-height:40px;padding:7px 5px;font-size:12px;line-height:1.4;border-width:1.5px;border-radius:11px;box-shadow:0 2px 0 #e6ceb4}
@@ -3389,6 +3389,18 @@ html[data-play-effects="lively"] #app :is(.subject-icon,.stat-icon,.persona-icon
 /* Sound studio dialogs use the same visual response as every other button. */
 html[data-play-effects="lively"] body dialog .quiz-icon-active{animation:none!important}
 @media(prefers-reduced-motion:reduce){html[data-play-effects] body :is(#app,dialog) button{scale:1!important;transition:none!important}}
+#app .my-page-actions #unitCollectionOpen{grid-column:1/-1;min-height:44px}
+#unitCollectionDialog .homework-setup-body>label{display:block;font-weight:700;font-size:12px;margin:12px 0 5px}
+#unitCollectionDialog input[type=text],#unitCollectionDialog input:not([type]),#unitCollectionDialog select{width:100%;box-sizing:border-box;min-height:42px;font-size:16px}
+#unitCollectionDialog .unit-collection-help{font-size:12px;line-height:1.6;margin:12px 0}
+#unitCollectionList details{margin:8px 0;border:1px solid #d4ad85;border-radius:12px;overflow:hidden}
+#unitCollectionList summary{padding:10px 12px;cursor:pointer;font-weight:700;font-size:13px}
+#unitCollectionList .unit-collection-check{display:flex;gap:10px;align-items:center;padding:9px 12px;font-size:13px;line-height:1.5;cursor:pointer}
+#unitCollectionList .unit-collection-check input{width:19px;height:19px;flex:none;accent-color:#af602c}
+#unitCollectionDialog .homework-setup-foot span{display:block;margin-bottom:6px;font-size:12px}
+#unitCollectionStatus{font-size:12px;min-height:1em}
+html[data-persona=cyber] #unitCollectionList details{border-color:#315b81}
+html[data-persona=cyber] #unitCollectionList .unit-collection-check input{accent-color:#00cddd}
 /* Reels are isolated from the existing study view. */
 body.reel-open{overflow:hidden!important}
 html[data-persona] body #reelDialog{--reel-bg:#fffaf4;--reel-line:#d9b894;--reel-fg:#805434;--reel-accent:#ac5929;--reel-control:#fff2e1;position:fixed;inset:0;width:100%;height:100dvh;max-width:100%;max-height:100dvh;margin:0;padding:0;border:0;border-radius:0;background:var(--reel-bg)!important;color:var(--reel-fg)!important;overflow:hidden;box-shadow:none!important;animation:none!important;translate:none!important}
@@ -3605,7 +3617,7 @@ html[data-persona=cyber] body #app #studyReel{border-color:#258db6!important;col
   <p id="questionSearchStatus" class="question-search-status" role="status"></p><div id="questionSearchSelection" class="search-selection-tools" hidden><span data-search-count role="status" aria-live="polite"></span><div><button type="button" class="tool" data-search-select-all>検索した問題をすべて選ぶにゃ</button><button type="button" class="link-button" data-search-clear>選択を解除</button><button type="button" class="tool" data-search-save>まとめに保存にゃ</button></div></div><details class="catalog-milestones" id="catalogMilestones"><summary>達成マークを確かめるにゃ</summary><p>✓は、全問を「おぼえた」にした教材に付くにゃ。🏅は、確認チャレンジのランダム10問（候補が少なければ全問）を自動判定で全問正解すると付くにゃ。自己判定の正解は🏅の対象外にゃ。</p></details>
   <div class="catalog-list-tools"><span id="visibleCount" aria-live="polite"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
   <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
- <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection">＋ まとめを作るにゃ</button><button class="tool" type="button" id="myAddLesson">＋ 教材を追加するにゃ</button></div>
+ <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection">＋ まとめを作るにゃ</button><button class="tool" type="button" id="myAddLesson">＋ 教材を追加するにゃ</button><button class="tool" type="button" id="unitCollectionOpen">📚 テスト範囲から作る</button></div>
  <div class="my-collection-heading"><h3 id="myCollectionsTitle">作成したまとめ教材</h3></div><div id="myCollectionList"></div>
  <section class="my-added-section" aria-labelledby="myAddedTitle"><div class="my-collection-heading"><h3 id="myAddedTitle">追加したオリジナル教材</h3></div><div id="myAddedLessons"></div></section>
 </section>
@@ -3691,7 +3703,7 @@ html[data-persona=cyber] body #app #studyReel{border-color:#258db6!important;col
 </section>
 
 <section id="settingsScreen" class="settings-screen" aria-labelledby="settingsTitle" hidden><div class="catalog-heading page-heading"><div><h2 class="screen-title" id="settingsTitle" tabindex="-1">設定</h2></div></div><section class="persona-chooser" aria-labelledby="personaTitle"><h3 id="personaTitle">🎭 着せ替え</h3><div class="persona-options" role="group" aria-label="キャラクターとデザインを選ぶ"><button type="button" class="persona-option" data-persona-choice="neko" aria-pressed="true"><span class="persona-icon" aria-hidden="true">😺</span><span class="persona-copy"><strong>Nekopon</strong></span></button><button type="button" class="persona-option" data-persona-choice="cyber" aria-pressed="false"><span class="persona-icon" aria-hidden="true">😎</span><span class="persona-copy"><strong>Yorupon</strong></span></button></div><p class="persona-hint" id="personaHint" hidden></p></section><div class="daily-goal"><div class="goal-top"><span id="goalMessage">今日は10問からはじめるにゃ</span><label>目標 <select id="goalSelect" aria-label="1日の学習目標"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="100">100問</option><option value="200">200問</option><option value="custom">自分で決める</option></select></label></div><form id="goalCustomForm" class="goal-custom" hidden novalidate><label for="goalCustomInput">好きな問数にするにゃ</label><div><input id="goalCustomInput" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" aria-describedby="goalInputNote" aria-label="1日の目標の問数"><span>問</span><button class="tool" type="submit">設定</button></div><p id="goalInputNote" role="status"></p></form><progress id="goalProgress" value="0" max="10" aria-label="今日、解答を確認した問題数"></progress><span id="goalCaption">解答を確認した問題を数えるにゃ</span></div><div class="neko-stats"><button class="stat-bubble" type="button" data-neko-stat="daily" aria-label="今日の学習をみるにゃ"><span class="stat-icon" aria-hidden="true">🐾</span> 今日 <b id="dailyCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="known" aria-label="おぼえた問題数をみるにゃ"><span class="stat-icon" aria-hidden="true">⭐</span> おぼえた <b id="knownCount">0</b>問</button><button class="stat-bubble" type="button" data-neko-stat="level" aria-label="レベルをみるにゃ"><span class="stat-icon" aria-hidden="true">🏅</span> Lv.<b id="levelCount">1</b></button></div><div class="record-settings"><div class="settings-panel"><div class="settings-profile"><label for="reportNameInput">名前（任意）</label><input id="reportNameInput" maxlength="24" placeholder="生徒名・ニックネーム" autocomplete="off" aria-describedby="profileNameNote" disabled><small id="profileNameNote" hidden></small></div><div class="settings-brand"><h3>自分だけのタイトルにできるにゃ</h3><label for="brandTitleInput">タイトル <small id="brandTitleLimit">（全角9文字・半角18文字まで）</small></label><input id="brandTitleInput" placeholder="スライドで暗記" autocomplete="off" aria-describedby="brandTitleLimit"><label for="brandSubtitleInput">サブタイトル <small id="brandSubtitleLimit">（全角16文字・半角32文字まで）</small></label><input id="brandSubtitleInput" placeholder="by JUKEN CAMP × AI" autocomplete="off" aria-describedby="brandSubtitleLimit"><button id="resetBrand" class="link-button" type="button">元にもどすにゃ</button></div><section class="neko-ai-prefs" id="nekoAiSettings"><h3>Nekoponの解説</h3><label class="sound-setting"><span>解説と質問バブル</span><input type="checkbox" id="nekoAiEnabled" role="switch" checked></label><div class="test-explain-prefs"><label>解説のわかりやすさ<select data-neko-pref="taste"><option value="simple">やさしく</option><option value="standard">ふつう</option><option value="exam">入試向け</option></select></label><label>解説のボリューム<select data-neko-pref="amount"><option value="short">ひとこと</option><option value="points">ちゃんと</option><option value="deep">じっくり</option></select></label></div><details class="settings-info"><summary>AIの使い方を見るにゃ</summary><p>解説では、問題と入力した答えをAIに送るにゃ。用語の補足では、その言葉と説明の一部も送るにゃ。名前は送らないにゃ。追加質問では、この問題の最初の解説と直近のやり取りも送るにゃ。利用回数を数えるために、ブラウザーごとのランダムな識別子も送るにゃ。</p></details></section><div class="settings-sound"><label class="sound-setting" for="soundToggle"><span>効果音</span><input type="checkbox" id="soundToggle" role="switch" checked aria-label="効果音"></label><button class="tool" id="openSoundStudio" type="button">音色・音量 <span aria-hidden="true">›</span></button></div><div class="settings-display"><h3>学習画面の表示</h3><label class="sound-setting"><span>横向きでスライドを大きく</span><input type="checkbox" id="landscapeToggle" role="switch" checked aria-describedby="landscapeNote"></label><small id="landscapeNote" hidden></small></div><div class="settings-play"><h3>Nekoponとのあそび</h3><div class="play-mode-setting"><span id="playModeLabel">演出モード</span><div class="play-mode-options" role="group" aria-labelledby="playModeLabel"><button class="tool" type="button" data-play-mode="normal" aria-pressed="true">通常</button><button class="tool" type="button" data-play-mode="lively" aria-pressed="false">にぎやか</button></div><small>にぎやかは、下の「タップとお祝いの演出」と「飾りの動き」がオンのときに楽しめます。</small></div><label class="sound-setting"><span>タップとお祝いの演出</span><input type="checkbox" id="tapPlayToggle" role="switch" checked></label><label class="sound-setting"><span>飾りの動き</span><input type="checkbox" id="motionToggle" role="switch" checked></label><label class="sound-setting"><span>傾けてNekoponとあそぶ <small id="tiltState">許可待ち</small></span><input type="checkbox" id="tiltToggle" role="switch" checked aria-describedby="tiltStatus"></label><button class="tool" type="button" id="tiltPermission" hidden>傾きセンサーを許可するにゃ</button><button class="link-button" type="button" id="tiltReload" hidden>許可画面が出ないときは開き直すにゃ ↻</button><p id="tiltStatus" role="status" aria-live="polite"></p></div><details class="settings-info"><summary>保存のしくみを見るにゃ</summary><p>学習記録とテスト結果は、このブラウザーに自動保存するにゃ。別の端末とは同期しないにゃ。ブラウザーのデータを消すと、記録も消えるにゃ。</p></details></div></div><div class="neko-playground" hidden aria-hidden="true"><div><strong>ひと休みするにゃ</strong><p>タップするとお返事するにゃ🐾</p></div><button class="home-mascot" id="mascotPlay" type="button" aria-label="Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="mascotFace" aria-hidden="true">🐱</span></span><i aria-hidden="true">✦</i><i aria-hidden="true">✧</i></button><div class="neko-play-card" id="homePlayCards" role="button" tabindex="0" aria-label="カードであそぶにゃ"><span id="homeCardFace" aria-hidden="true">🐾</span></div></div></section>
-</main><dialog id="reelDialog" aria-label="リール"><div class="reel-shell"><div class="reel-main"><header class="reel-top"><div><strong id="reelLesson"></strong></div><button id="reelHideAnswers" type="button" aria-label="解答を隠す" aria-pressed="false" title="解答を隠す"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h9M7 14h6"/><path class="hide-slash" d="M3 21 21 3"/></svg></button><span id="reelPosition"></span></header><div id="reelFeed" tabindex="0" role="region" aria-label="問題と解答。上下にスワイプして移動"></div><p id="reelHint" hidden>↑ 上にスワイプして次の問題へ</p></div><footer class="reel-bottom"><p id="reelStatus" role="status" aria-live="polite"></p></footer></div></dialog>
+</main><dialog id="unitCollectionDialog" class="homework-setup" aria-labelledby="unitCollectionTitle"><div class="homework-setup-head"><h2 id="unitCollectionTitle">テスト範囲から作る</h2><button id="unitCollectionClose" class="tool ui-close" type="button" aria-label="閉じる">×</button></div><div class="homework-setup-body"><label for="unitCollectionName">まとめ教材の名前</label><input id="unitCollectionName" maxlength="50" value="テスト対策" autocomplete="off"><label for="unitCollectionSubject">教科・分野</label><select id="unitCollectionSubject"><option value="science">理科</option><option value="geography">社会・地理</option><option value="history">社会・歴史</option><option value="civics">社会・公民</option></select><p class="unit-collection-help">テスト範囲の単元を選んでください。複数の教科から選べます。</p><div id="unitCollectionList"></div><p id="unitCollectionStatus" role="status" aria-live="polite"></p></div><div class="homework-setup-foot"><span id="unitCollectionCount" aria-live="polite">0単元を選択中</span><button id="unitCollectionSave" class="primary-button" type="button" disabled>まとめ教材を作る</button></div></dialog><dialog id="reelDialog" aria-label="リール"><div class="reel-shell"><div class="reel-main"><header class="reel-top"><div><strong id="reelLesson"></strong></div><button id="reelHideAnswers" type="button" aria-label="解答を隠す" aria-pressed="false" title="解答を隠す"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h9M7 14h6"/><path class="hide-slash" d="M3 21 21 3"/></svg></button><span id="reelPosition"></span></header><div id="reelFeed" tabindex="0" role="region" aria-label="問題と解答。上下にスワイプして移動"></div><p id="reelHint" hidden>↑ 上にスワイプして次の問題へ</p></div><footer class="reel-bottom"><p id="reelStatus" role="status" aria-live="polite"></p></footer></div></dialog>
 <dialog id="reelFolderDialog" aria-labelledby="reelFolderTitle"><div class="folder-head"><h2 id="reelFolderTitle">保存先を選ぶ</h2><button id="reelFolderClose" type="button" class="tool ui-close" aria-label="閉じる">×</button></div><div class="folder-body"><p id="reelFolderDescription" class="folder-description"></p><div id="reelFolderList" class="folder-list"></div><button id="reelFolderNewToggle" type="button" class="tool folder-new-toggle">＋ 新しいまとめを作る</button><div id="reelFolderNew" class="folder-new" hidden><input id="reelFolderName" maxlength="50" placeholder="まとめの名前" aria-label="新しいまとめの名前"><button id="reelFolderAdd" type="button" class="tool">追加</button></div><p id="reelFolderStatus" class="folder-status" role="status"></p></div><div class="folder-actions"><button id="reelFolderCancel" type="button" class="tool">やめる</button><button id="reelFolderApply" type="button" class="primary-button">保存する</button></div></dialog>
 <dialog id="reelCommentDialog" aria-labelledby="reelCommentTitle"><div class="reel-comment-head"><h2 id="reelCommentTitle">自分のコメント</h2><button id="reelCommentClose" type="button" class="tool ui-close" aria-label="コメントを閉じる">×</button></div><textarea id="reelCommentText" maxlength="1000" placeholder="この問題についてメモを残せます" aria-label="コメント"></textarea><p class="reel-comment-note">コメントはこの端末に保存されます。</p><p id="reelCommentStatus" role="status"></p><div class="reel-comment-actions"><button id="reelCommentCancel" type="button" class="tool">やめる</button><button id="reelCommentSave" type="button" class="primary-button">保存</button></div></dialog>
 <dialog id="reelExportDialog" aria-labelledby="reelExportTitle"><div class="reel-export-head"><h2 id="reelExportTitle">問題と解答を画像に保存</h2><button id="reelExportClose" type="button" class="tool ui-close" aria-label="画像保存を閉じる">×</button></div><img id="reelExportPreview" alt="保存する問題と解答の画像"><p id="reelExportNotice"></p><div class="reel-export-actions"><button id="reelShare" type="button" class="primary-button">シェア・画像保存</button><a id="reelDownload" class="tool">画像をダウンロード</a></div></dialog>
@@ -3805,7 +3817,7 @@ html[data-persona=cyber] body #app #studyReel{border-color:#258db6!important;col
  <div class="collection-editor-body" id="collectionEditorBody">
   <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="まとめの名前を入れるにゃ" autocomplete="off">
   <details class="collection-picker" id="collectionPicker" open><summary id="collectionPickerToggle" role="button" aria-controls="collectionPickerContent">＋ 教材をえらぶにゃ</summary><div id="collectionPickerContent">
-   <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
+   <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><select id="collectionField" aria-label="分野を絞り込む" hidden></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
    <div id="collectionLessonPicker" role="listbox" aria-multiselectable="true" tabindex="0" aria-label="追加する教材の一覧"></div>
    <div class="collection-picker-actions"><button class="secondary-button" id="collectionAddWhole" type="button">丸ごと入れるにゃ</button><button class="secondary-button" id="collectionPickCards" type="button">問題を選ぶにゃ</button></div>
   </div></details>
@@ -5548,7 +5560,13 @@ function collectionSignature() {return JSON.stringify({name:$('collectionName').
 function fillCollectionSubjects() {
   const select=$('collectionSubject'),value=select.value;select.replaceChildren();
   for(const [id,label] of [['all','すべて'],...[...new Set(meta.map(m=>m.subject))].map(id=>[id,subjectLabel(id)])]){const option=collectionNode('option',label);option.value=id;select.append(option);}
-  select.value=[...select.options].some(o=>o.value===value)?value:'all';fillCollectionLessons();
+  select.value=[...select.options].some(o=>o.value===value)?value:'all';fillCollectionFields();fillCollectionLessons();
+}
+function fillCollectionFields(){
+ const subject=$('collectionSubject').value,select=$('collectionField'),prior=select.value;select.replaceChildren();
+ const groups={science:[['biology','生物'],['chemistry','化学'],['physics','物理'],['earth','地学']],social:[['geography','地理'],['history','歴史'],['civics','公民']]};
+ select.hidden=!groups[subject];for(const [id,label] of [['all','すべての分野'],...(groups[subject]||[])]){const option=collectionNode('option',label);option.value=id;select.append(option);}
+ select.value=[...select.options].some(o=>o.value===prior)?prior:'all';
 }
 function chooseCollectionMaterial(id) {
   if(!collectionEditor || !id)return;
@@ -5566,12 +5584,12 @@ function updateCollectionPickerSelection() {
   $('collectionAddWhole').disabled=$('collectionPickCards').disabled=!selected.size;
 }
 function fillCollectionLessons() {
-  const list=$('collectionLessonPicker'),subject=$('collectionSubject').value;
+  const list=$('collectionLessonPicker'),subject=$('collectionSubject').value,field=$('collectionField').value||'all';
   const q=$('collectionLessonSearch').value.normalize('NFKC').trim().toLocaleLowerCase();list.replaceChildren();
   let count=0;
   for(const sub of [...new Set(meta.map(m=>m.subject))]) {
-    if(!q && subject!=='all' && subject!==sub)continue;
-    const items=meta.filter(m=>isListedLesson(m) && m.subject===sub && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
+    if(subject!=='all' && subject!==sub)continue;
+    const items=meta.filter(m=>isListedLesson(m) && m.subject===sub && (field==='all'||m.field===field) && (!q||`${m.title} ${m.grade||''} ${fieldLabel(m.field,m.subject)}`.normalize('NFKC').toLocaleLowerCase().includes(q)));
     if(!items.length)continue;
     if(q || subject==='all'){const heading=collectionNode('div',subjectLabel(sub),'collection-list-subject');heading.setAttribute('role','presentation');list.append(heading);}
     for(const m of items) {
@@ -5637,7 +5655,7 @@ async function openCollectionEditor(id=null) {
   pause();collectionEditSequence++;
   collectionEditor={id:existing?.id||null,updated:existing?.updated,cards:new Map(),pickerSelection:new Set(),activeId:null,activeRaw:null};
   for(const r of existing?.cards||[]){if(!collectionEditor.cards.has(r.lessonId))collectionEditor.cards.set(r.lessonId,new Set());collectionEditor.cards.get(r.lessonId).add(r.cardId);}
-  $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';
+  $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';$('collectionField').value='all';
   $('collectionDialogTitle').textContent=existing?'まとめを編集するにゃ':'まとめを作るにゃ';
   $('collectionSave').disabled=false;$('collectionActive').inert=false;$('collectionActive').hidden=true;$('collectionGrid').replaceChildren();$('collectionPicker').open=!existing?.cards.length;editorStatus();fillCollectionSubjects();renderCollectionTabs();updateCollectionTotal();
   collectionEditor.signature=collectionSignature();$('collectionDialog').classList.toggle('motion-off',reduced);$('collectionDialog').showModal();updateCollectionViewport();$('collectionEditorBody').scrollTop=0;$('collectionDialogTitle').focus({preventScroll:true});
@@ -5728,7 +5746,37 @@ function saveCollectionEditor() {
 }
 $('myAddLesson').onclick=()=>$('openImport').click();
 $('newMyCollection').onclick=()=>openCollectionEditor();
-$('collectionSubject').onchange=fillCollectionLessons;$('collectionLessonSearch').oninput=fillCollectionLessons;
+// Build a saved collection from the existing lesson chapter metadata.
+const unitCollectionSelected=new Map();let unitCollectionBusy=false;
+function unitCollectionKey(lessonId,chapterId){return JSON.stringify([lessonId,chapterId]);}
+function unitCollectionCount(){const n=unitCollectionSelected.size;$('unitCollectionCount').textContent=`${n}単元を選択中`;$('unitCollectionSave').disabled=!n||unitCollectionBusy;}
+function unitCollectionRender(){
+ const value=$('unitCollectionSubject').value,list=$('unitCollectionList');list.replaceChildren();
+ const choices=meta.filter(m=>isListedLesson(m)&&m.series==='unit'&&(value==='science'?m.subject==='science':m.subject==='social'&&m.field===value)&&Array.isArray(m.chapters)&&m.chapters.length);
+ for(const m of choices){const group=document.createElement('details'),summary=collectionNode('summary',`${m.title}${m.grade?' ・ '+m.grade:''}`);group.append(summary);
+  for(const ch of m.chapters){const key=unitCollectionKey(m.id,ch.id),label=collectionNode('label',undefined,'unit-collection-check'),input=document.createElement('input');input.type='checkbox';input.checked=unitCollectionSelected.has(key);input.addEventListener('change',()=>{if(input.checked)unitCollectionSelected.set(key,{lessonId:m.id,chapterId:ch.id});else unitCollectionSelected.delete(key);unitCollectionCount();});label.append(input,collectionNode('span',ch.title));group.append(label);}
+  list.append(group);
+ }
+ if(!choices.length)list.append(collectionNode('p','選べる単元がありません。'));
+}
+$('unitCollectionOpen').onclick=()=>{unitCollectionSelected.clear();unitCollectionBusy=false;$('unitCollectionName').value='テスト対策';$('unitCollectionSubject').value='science';$('unitCollectionStatus').textContent='';unitCollectionRender();unitCollectionCount();$('unitCollectionDialog').showModal();};
+$('unitCollectionClose').onclick=()=>{if(!unitCollectionBusy)$('unitCollectionDialog').close();};
+$('unitCollectionDialog').addEventListener('cancel',event=>{if(unitCollectionBusy)event.preventDefault();});
+$('unitCollectionSubject').onchange=unitCollectionRender;
+$('unitCollectionSave').onclick=async()=>{
+ if(unitCollectionBusy||!unitCollectionSelected.size)return;const name=$('unitCollectionName').value.trim();if(!name){$('unitCollectionStatus').textContent='まとめ教材の名前を入力してください。';return;}
+ const selected=[...unitCollectionSelected.values()],ids=[...new Set(selected.map(x=>x.lessonId))],choices=ids.map(id=>meta.find(m=>m.id===id));
+ if(choices.some(x=>!x)){$('unitCollectionStatus').textContent='教材が見つかりません。選び直してください。';return;}
+ unitCollectionBusy=true;unitCollectionCount();$('unitCollectionStatus').textContent='問題を集めています…';
+ try{const raws=await Promise.all(choices.map(getLesson)),refs=[],seen=new Set();for(let i=0;i<raws.length;i++){const allowed=new Set(selected.filter(x=>x.lessonId===ids[i]).map(x=>x.chapterId));for(const c of raws[i].cards){if(!allowed.has(c.chapter))continue;const key=cardKey(ids[i],c.id);if(!seen.has(key)){seen.add(key);refs.push({lessonId:ids[i],cardId:c.id});}}}
+ if(!refs.length){$('unitCollectionStatus').textContent='選んだ単元に問題が見つかりません。';return;}
+ const item={id:'collection-'+(crypto.randomUUID?.()||Date.now().toString(36)+'-'+Math.random().toString(36).slice(2)),name,cards:refs,updated:new Date().toISOString()};
+ if(!writeCollections([...readCollections(),item])){$('unitCollectionStatus').textContent='保存できませんでした。';return;}
+ $('unitCollectionDialog').close();catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問のまとめ教材を作りました`);
+ }catch{$('unitCollectionStatus').textContent='教材を読み込めませんでした。通信を確認してもう一度お試しください。';}finally{unitCollectionBusy=false;unitCollectionCount();}
+};
+
+$('collectionSubject').onchange=()=>{ $('collectionField').value='all';fillCollectionFields();fillCollectionLessons(); };$('collectionField').onchange=fillCollectionLessons;$('collectionLessonSearch').oninput=fillCollectionLessons;
 async function addSelectedCollectionMaterials(whole) {
   const editor=collectionEditor,ids=[...(editor?.pickerSelection||[])];if(!editor || !ids.length)return;
   const seq=++collectionEditSequence;
@@ -8244,6 +8292,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

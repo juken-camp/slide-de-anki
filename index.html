@@ -3682,6 +3682,10 @@ html[data-persona] #app #myCollectionsPanel #myCollectionList .my-collection-act
 html[data-persona] #app #myCollectionsPanel #myCollectionList .my-collection-actions .primary-button{width:100%;font-size:12px!important}
 html[data-persona] #app #myCollectionsPanel #myCollectionList .my-collection-actions .link-button{text-decoration:none;opacity:.8}
 html[data-persona=cyber] #app #myCollectionsPanel #myCollectionList .my-collection-actions .primary-button{box-shadow:0 0 8px #00cfe02a!important}
+</style><style>
+html[data-persona] body #app #catalogScreen #catalogDock[hidden]{display:none!important}
+html[data-persona] body dialog#collectionDialog #collectionLessonTabs button{max-width:min(85%,320px);min-width:0;height:auto;white-space:normal;overflow-wrap:anywhere;word-break:normal;text-overflow:clip;justify-content:flex-start;text-align:left;padding:8px 10px;line-height:1.4}
+html[data-persona] body dialog#collectionDialog #collectionLessonTabs button:before{display:none;content:none}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3900,7 +3904,7 @@ html[data-persona=cyber] #app #myCollectionsPanel #myCollectionList .my-collecti
 <dialog id="collectionDialog" aria-labelledby="collectionDialogTitle">
  <div class="collection-editor-head"><h2 id="collectionDialogTitle" tabindex="-1">まとめを作るにゃ</h2><button id="collectionEditorClose" type="button" aria-label="編集を閉じるにゃ" class="ui-close">×</button></div>
  <div class="collection-editor-body" id="collectionEditorBody">
-  <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="まとめの名前を入れるにゃ" autocomplete="off">
+  <label for="collectionName" class="collection-name-label">教材の名前</label><input id="collectionName" maxlength="50" placeholder="教材の名前を入れるにゃ" autocomplete="off">
   <details class="collection-picker" id="collectionPicker" open><summary id="collectionPickerToggle" role="button" aria-controls="collectionPickerContent">＋ 教材をえらぶにゃ</summary><div id="collectionPickerContent">
    <div class="collection-picker-controls"><label class="collection-filter-label">教科<select id="collectionSubject" aria-label="教科を絞り込む"></select></label><label class="collection-filter-label collection-field-label">分野<select id="collectionField" aria-label="分野を絞り込む" hidden></select></label><label class="collection-filter-label">学年<select id="collectionGrade" aria-label="学年を絞り込む"><option value="all">すべて</option><option value="1">中１</option><option value="2">中２</option><option value="3">中３</option></select></label><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
    <div id="collectionLessonPicker" role="listbox" aria-multiselectable="true" tabindex="0" aria-label="追加する教材の一覧"></div>
@@ -5116,7 +5120,7 @@ function renderCatalog() {
   $('browseSwitch').hidden = catalogSubject !== 'science';
   $('socialSwitch').hidden = !social;
   const subjectFocus = document.activeElement?.dataset?.subject;
-  $('catalogDock').hidden=newsDemoMode&&!catalogIsCollections;document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('news-active',newsDemoMode&&!catalogIsCollections);
+  $('catalogDock').hidden=catalogIsCollections||newsDemoMode;document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('news-active',newsDemoMode&&!catalogIsCollections);
   $('catalogSubjects').replaceChildren();
   for (const id of [...new Set(['science','social',...meta.map(m=>m.subject)])]) {
     const b=document.createElement('button'); b.type='button'; b.dataset.subject=id;
@@ -5784,15 +5788,15 @@ $('collectionPickerToggle').addEventListener('click',()=>{
 });
 
 async function openCollectionEditor(id=null) {
-  const existing=readCollections().find(c=>c.id===id);if(id&&!existing){toast('まとめが見つからないにゃ');return;}
+  const existing=readCollections().find(c=>c.id===id);if(id&&!existing){toast('教材が見つからないにゃ');return;}
   pause();collectionEditSequence++;
   collectionEditor={id:existing?.id||null,updated:existing?.updated,cards:new Map(),pickerSelection:new Set(),activeId:null,activeRaw:null};
   for(const r of existing?.cards||[]){if(!collectionEditor.cards.has(r.lessonId))collectionEditor.cards.set(r.lessonId,new Set());collectionEditor.cards.get(r.lessonId).add(r.cardId);}
   $('collectionName').value=existing?.name||'';$('collectionName').removeAttribute('aria-invalid');$('collectionNumbers').value='';$('collectionLessonSearch').value='';$('collectionSubject').value='all';$('collectionField').value='all';$('collectionGrade').value='all';
-  $('collectionDialogTitle').textContent=existing?'まとめを編集するにゃ':'まとめを作るにゃ';
+  $('collectionDialogTitle').textContent=existing?'教材を編集するにゃ':'教材を作るにゃ';
   $('collectionSave').disabled=false;$('collectionActive').inert=false;$('collectionActive').hidden=true;$('collectionGrid').replaceChildren();$('collectionPicker').open=!existing?.cards.length;editorStatus();fillCollectionSubjects();renderCollectionTabs();updateCollectionTotal();
   collectionEditor.signature=collectionSignature();$('collectionDialog').classList.toggle('motion-off',reduced);$('collectionDialog').showModal();updateCollectionViewport();$('collectionEditorBody').scrollTop=0;$('collectionDialogTitle').focus({preventScroll:true});
-  if(existing?.cards.length)await loadCollectionGrid(existing.cards[0].lessonId);
+  if(existing?.cards.length)await loadCollectionGrid(existing.cards[0].lessonId);$('collectionLessonTabs').scrollLeft=0;
 }
 function closeCollectionEditor() {
   if(collectionEditor && collectionSignature()!==collectionEditor.signature && !confirmWithPersona('まだ保存していないにゃ。編集をやめるにゃ？', 'まだ保存してないぜ。編集をやめるか？'))return;
@@ -5868,14 +5872,14 @@ function syncCollectionPreview() {
 function saveCollectionEditor() {
   if(!collectionEditor)return;
   const name=$('collectionName').value.trim(),refs=collectionEditorRefs();
-  if(!name){$('collectionName').setAttribute('aria-invalid','true');editorStatus('まとめの名前を入れてにゃ。');$('collectionName').focus();return;}
+  if(!name){$('collectionName').setAttribute('aria-invalid','true');editorStatus('教材の名前を入れてにゃ。');$('collectionName').focus();return;}
   if(!refs.length){editorStatus('問題を1問以上選んでにゃ。');return;}
   const items=readCollections(),existing=items.find(c=>c.id===collectionEditor.id);
   if(collectionEditor.id && (!existing || existing.updated!==collectionEditor.updated)){editorStatus('別の画面で変更されたにゃ。一度閉じて、編集し直してにゃ。');return;}
   const c={id:collectionEditor.id||'collection-'+(crypto.randomUUID?.()||Date.now().toString(36)),name,cards:refs,updated:new Date().toISOString()};
   const at=items.findIndex(x=>x.id===c.id);if(at<0)items.push(c);else items[at]=c;
   if(!writeCollections(items))return;
-  collectionEditSequence++;collectionThumbObserver?.disconnect();$('collectionDialog').close();collectionEditor=null;catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問のまとめを保存したにゃ🐾`);
+  collectionEditSequence++;collectionThumbObserver?.disconnect();$('collectionDialog').close();collectionEditor=null;catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問の教材を保存したにゃ🐾`);
 }
 $('myAddLesson').onclick=()=>$('openImport').click();
 $('newMyCollection').onclick=()=>openCollectionEditor();
@@ -6608,7 +6612,7 @@ function saveSearchSelection(event){
  item.updated=new Date().toISOString();
  if(!writeCollections(items)){$('searchSaveStatus').textContent='保存できなかったにゃ。端末の空き容量と保存設定を確認してにゃ。';return;}
  $('searchSaveDialog').close();searchSelectedQuestions.clear();syncSearchSelection();
- toast(target?(added?`${added}問を追加したにゃ（合計${item.cards.length}問）`:'選んだ問題はすでに保存済みにゃ'):`${item.cards.length}問のまとめを保存したにゃ🐾`);
+ toast(target?(added?`${added}問を追加したにゃ（合計${item.cards.length}問）`:'選んだ問題はすでに保存済みにゃ'):`${item.cards.length}問の教材を保存したにゃ🐾`);
 }
 $('searchSaveForm').onsubmit=saveSearchSelection;
 $('searchSaveTarget').onchange=()=>{$('searchSaveNameField').hidden=!!$('searchSaveTarget').value;$('searchSaveStatus').textContent='';};
@@ -8491,6 +8495,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

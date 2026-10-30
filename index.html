@@ -3670,7 +3670,19 @@ html[data-persona=cyber] #app #myCollectionsPanel .my-page-actions .tool{border-
 #collectionDialog .collection-picker-controls:has(#collectionField[hidden]){grid-template-columns:repeat(2,minmax(0,1fr))}
 #collectionDialog .collection-picker-controls #collectionLessonSearch{grid-column:1/-1}
 @media(pointer:coarse){#collectionDialog .collection-picker-controls .collection-filter-label select{font-size:16px}}
-</style><style>#unitManualBox .unit-collection-filters.social-filters{grid-template-columns:repeat(2,minmax(0,1fr))}#unitCollectionGradeLabel[hidden]{display:none!important}</style></head>
+</style><style>#unitManualBox .unit-collection-filters.social-filters{grid-template-columns:repeat(2,minmax(0,1fr))}#unitCollectionGradeLabel[hidden]{display:none!important}</style><style>
+#app #myCollectionsPanel #myCollectionList .my-collection-card{padding:10px 12px;gap:5px;margin-bottom:8px;border-radius:15px}
+#app #myCollectionsPanel #myCollectionList .my-collection-header{align-items:center;gap:6px}
+#app #myCollectionsPanel #myCollectionList .my-collection-info{flex:1;min-width:0}
+#app #myCollectionsPanel #myCollectionList .my-collection-info h3{font-size:14px;line-height:1.35;margin:0}
+#app #myCollectionsPanel #myCollectionList .my-collection-info p{font-size:11px;line-height:1.3;margin:3px 0 0}
+#app #myCollectionsPanel #myCollectionList .my-drag-handle{margin:0;width:40px;height:40px}
+#app #myCollectionsPanel #myCollectionList .my-collection-actions{grid-template-columns:minmax(0,1fr) auto auto;gap:6px}
+html[data-persona] #app #myCollectionsPanel #myCollectionList .my-collection-actions :is(.primary-button,.tool,.link-button){grid-column:auto;width:auto;min-height:40px!important;height:40px!important;padding:5px 10px!important;font-size:11px!important;border-radius:9px;border-width:1px;box-shadow:none!important}
+html[data-persona] #app #myCollectionsPanel #myCollectionList .my-collection-actions .primary-button{width:100%;font-size:12px!important}
+html[data-persona] #app #myCollectionsPanel #myCollectionList .my-collection-actions .link-button{text-decoration:none;opacity:.8}
+html[data-persona=cyber] #app #myCollectionsPanel #myCollectionList .my-collection-actions .primary-button{box-shadow:0 0 8px #00cfe02a!important}
+</style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   
@@ -5654,7 +5666,7 @@ function renderMyCollections() {
     box.dataset.collection=c.id;const heading=collectionNode('div',undefined,'my-collection-header'),handle=collectionButton('','my-drag-handle',()=>{});
     handle.setAttribute('aria-label',`${c.name}を並べ替え。上下の矢印キーでも移動できます`);handle.title='ドラッグして並べ替え';handle.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg>';
     handle.addEventListener('keydown',event=>{if(event.key==='ArrowUp'||event.key==='ArrowDown'){event.preventDefault();moveMyCollection(c.id,event.key==='ArrowUp'?-1:1);}});attachCollectionDrag(handle,box,root);
-    heading.append(collectionNode('h3',c.name),handle);box.append(heading,collectionNode('p',`${ids.length}教材から ${c.cards.length}問 · おぼえた ${collectionKnown(c)}問`));
+    const info=collectionNode('div',undefined,'my-collection-info');info.append(collectionNode('h3',c.name),collectionNode('p',`${ids.length}教材から ${c.cards.length}問 · おぼえた ${collectionKnown(c)}問`));heading.append(info,handle);box.append(heading);
     const buttons=collectionNode('div',undefined,'my-collection-actions');
     buttons.append(collectionButton('はじめるにゃ','primary-button',()=>startCollection(c.id)),collectionButton('編集にゃ','tool',()=>openCollectionEditor(c.id)),collectionButton('削除','link-button',()=>{
       if(!confirmWithPersona(`「${c.name}」を削除するにゃ？ 元の教材や学習記録は残るにゃ。`, `「${c.name}」を削除するか？ 元の教材や学習記録は残るぜ。`))return;
@@ -8479,6 +8491,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

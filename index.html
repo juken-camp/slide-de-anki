@@ -3551,8 +3551,13 @@ html[data-persona] body #reelDialog .reel-rail button[data-action=comment][data-
  #reelDialog .reel-rail button>span{width:29px;height:29px}
  #reelDialog .reel-rail svg{width:20px;height:20px}
  #reelDialog .reel-rail small{font-size:9px}
- #reelDialog .reel-question-row:nth-child(2) .reel-rail{left:4px;right:auto}
- html[data-persona] body #reelDialog .reel-comment-preview{left:50%;right:auto;bottom:6px;transform:translateX(-50%);width:min(280px,calc(100% - 100px));max-width:calc(100% - 100px);text-align:center}
+ /* Keep controls near the outer lower edges, clear of cutouts and gestures. */
+ #reelDialog .reel-question-row .reel-rail{top:auto;bottom:max(10px,env(safe-area-inset-bottom,0px));transform:none}
+ #reelDialog .reel-question-row:first-child .reel-rail{left:max(8px,env(safe-area-inset-left,0px));right:auto}
+ #reelDialog .reel-question-row:nth-child(2) .reel-rail{left:auto;right:max(8px,env(safe-area-inset-right,0px))}
+ html[data-persona] body #reelDialog .reel-comment-preview{bottom:6px;transform:none;width:min(280px,calc(100% - 110px));max-width:calc(100% - 110px)}
+ html[data-persona] body #reelDialog .reel-question-row:first-child .reel-comment-preview{left:auto;right:8px;text-align:right}
+ html[data-persona] body #reelDialog .reel-question-row:nth-child(2) .reel-comment-preview{left:8px;right:auto;text-align:left}
 }
 
 /* Keep the selection dock centered when the viewport rotates. */
@@ -8185,6 +8190,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

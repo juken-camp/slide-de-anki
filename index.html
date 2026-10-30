@@ -7667,7 +7667,7 @@ $('reelDialog').addEventListener('close',()=>{if($('appHeader').parentElement!==
 let reelScrollFrame=0;$('reelFeed').addEventListener('scroll',()=>{if(reelScrollFrame)return;reelScrollFrame=requestAnimationFrame(()=>{reelScrollFrame=0;if(!reel.loaded)return;const index=Math.max(0,Math.min(Math.ceil(reel.cards.length/2)-1,Math.round($('reelFeed').scrollTop/Math.max(1,$('reelFeed').clientHeight))));if(index!==reel.index){reel.index=index;reelMessage('');$('reelHint').hidden=true;reelMount();reelSync();reelPreloadAhead();reelSharePrepareVisible();}});},{passive:true});
 $('reelFeed').addEventListener('keydown',e=>{if(['ArrowDown','ArrowUp','PageDown','PageUp'].includes(e.key)){e.preventDefault();const dir=['ArrowDown','PageDown'].includes(e.key)?1:-1;$('reelFeed').scrollTo({top:Math.max(0,Math.min(Math.ceil(reel.cards.length/2)-1,reel.index+dir))*$('reelFeed').clientHeight,behavior:reduced?'instant':'smooth'});}});
 window.addEventListener('resize',()=>{if(reel.loaded&&$('reelDialog').open)$('reelFeed').scrollTop=reel.index*$('reelFeed').clientHeight;});
-function reelSave(c){if(!c)return;let items=readCollections();const groups=items.filter(x=>x.id==='reel-saved-v1'||x.name==='いいねしたスライド');let item=groups.find(x=>x.name==='いいねしたスライド'&&x.id!=='reel-saved-v1')||groups[0];if(!item){item={id:'reel-saved-v1',name:'いいねしたスライド',cards:[]};items.push(item);}if(groups.length>1){const seen=new Set(item.cards.map(r=>cardKey(r.lessonId,r.cardId)));for(const group of groups)if(group!==item)for(const ref of group.cards){const key=cardKey(ref.lessonId,ref.cardId);if(!seen.has(key)){item.cards.push(ref);seen.add(key);}}items=items.filter(x=>!groups.includes(x)||x===item);}item.name='いいねしたスライド';const index=item.cards.findIndex(x=>x.lessonId===c.lessonId&&x.cardId===c.originalId);if(index>=0)item.cards.splice(index,1);else item.cards.push({lessonId:c.lessonId,cardId:c.originalId});item.updated=new Date().toISOString();if(!writeCollections(items)){reelMessage('保存できませんでした');return;}reelSync();reelMessage(index>=0?'いいねを取り消しました':'いいねしました');return index<0;}
+function reelSave(c){if(!c)return;let items=readCollections();const groups=items.filter(x=>x.id==='reel-saved-v1'||x.name==='いいねしたスライド');let item=groups.find(x=>x.name==='いいねしたスライド'&&x.id!=='reel-saved-v1')||groups[0];if(!item){item={id:'reel-saved-v1',name:'いいねしたスライド',cards:[]};items.push(item);}if(groups.length>1){const seen=new Set(item.cards.map(r=>cardKey(r.lessonId,r.cardId)));for(const group of groups)if(group!==item)for(const ref of group.cards){const key=cardKey(ref.lessonId,ref.cardId);if(!seen.has(key)){item.cards.push(ref);seen.add(key);}}items=items.filter(x=>!groups.includes(x)||x===item);}item.name='いいねしたスライド';const index=item.cards.findIndex(x=>x.lessonId===c.lessonId&&x.cardId===c.originalId);if(index>=0)item.cards.splice(index,1);else item.cards.push({lessonId:c.lessonId,cardId:c.originalId});item.updated=new Date().toISOString();if(!writeCollections(items)){reelMessage('保存できませんでした');return;}reelSync();return index<0;}
 
 // Animate only after the like was saved successfully; rapid taps replace the previous effect.
 function reelLikeFeedback(button,liked){
@@ -8220,6 +8220,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

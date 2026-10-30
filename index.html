@@ -3649,6 +3649,14 @@ html[data-persona=cyber] #app #myCollectionsPanel .my-drag-handle{color:#8bb4ce}
 #myCollectionList .my-drag-placeholder{box-sizing:border-box;border:2px dashed #b99270;border-radius:19px;background:#c9976720;margin:0 1px 9px}
 html[data-persona=cyber] #myCollectionList .my-drag-placeholder{border-color:#39b5d6;background:#00ddff12}
 #myCollectionList.is-dragging,#myCollectionList.is-dragging *{user-select:none;-webkit-user-select:none}
+</style><style>
+/* Compact actions and lighter outlines on the personal materials screen. */
+#app #myCollectionsPanel .my-page-actions .tool{min-height:62px;gap:5px;padding:7px 2px;font-size:clamp(9px,2.65vw,11px);line-height:1.25;white-space:nowrap;border-width:1px;box-shadow:0 2px 7px #6c3a2110}
+#app #myCollectionsPanel .my-page-actions .tool span:not(.my-action-icon){white-space:nowrap;letter-spacing:-.03em}
+#app #myCollectionsPanel .my-page-actions #unitCollectionOpen{min-height:62px}
+#app #myCollectionsPanel .my-collection-card{border-width:1px;border-color:#d2b596;box-shadow:0 3px 12px #6c3a2112}
+html[data-persona=cyber] #app #myCollectionsPanel .my-collection-card{border-color:#345b78!important;box-shadow:0 2px 12px #00bde80d!important}
+html[data-persona=cyber] #app #myCollectionsPanel .my-page-actions .tool{border-width:1px;box-shadow:0 2px 10px #00c7ea10!important}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3669,7 +3677,7 @@ html[data-persona=cyber] #myCollectionList .my-drag-placeholder{border-color:#39
   <p id="questionSearchStatus" class="question-search-status" role="status"></p><div id="questionSearchSelection" class="search-selection-tools" hidden><span data-search-count role="status" aria-live="polite"></span><div><button type="button" class="tool" data-search-select-all>検索した問題をすべて選ぶにゃ</button><button type="button" class="link-button" data-search-clear>選択を解除</button><button type="button" class="tool" data-search-save>まとめに保存にゃ</button></div></div><details class="catalog-milestones" id="catalogMilestones"><summary>達成マークを確かめるにゃ</summary><p>✓は、全問を「おぼえた」にした教材に付くにゃ。🏅は、確認チャレンジのランダム10問（候補が少なければ全問）を自動判定で全問正解すると付くにゃ。自己判定の正解は🏅の対象外にゃ。</p></details>
   <div class="catalog-list-tools"><span id="visibleCount" aria-live="polite"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
   <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
- <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>まとめを<br>作るにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト範囲から<br>作るにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を<br>追加するにゃ</span></button></div>
+ <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>まとめを作るにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト対策するにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を追加するにゃ</span></button></div>
  <div class="my-collection-heading"><h3 id="myCollectionsTitle">作成した教材</h3></div><div id="myCollectionList"></div>
  <section class="my-added-section" aria-labelledby="myAddedTitle"><div class="my-collection-heading"><h3 id="myAddedTitle">追加したオリジナル教材</h3></div><div id="myAddedLessons"></div></section>
 </section>
@@ -8458,6 +8466,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

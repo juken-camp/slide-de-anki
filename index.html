@@ -3389,7 +3389,10 @@ html[data-play-effects="lively"] #app :is(.subject-icon,.stat-icon,.persona-icon
 /* Sound studio dialogs use the same visual response as every other button. */
 html[data-play-effects="lively"] body dialog .quiz-icon-active{animation:none!important}
 @media(prefers-reduced-motion:reduce){html[data-play-effects] body :is(#app,dialog) button{scale:1!important;transition:none!important}}
-#app .my-page-actions #unitCollectionOpen{grid-column:1/-1;min-height:44px}
+#app .my-page-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+#app .my-page-actions .tool{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;min-width:0;min-height:72px;padding:7px 3px;line-height:1.35;font-size:clamp(10px,2.8vw,12px);text-align:center;white-space:normal;word-break:keep-all}
+#app .my-page-actions .my-action-icon{font-size:20px;line-height:1.1}
+#app .my-page-actions #unitCollectionOpen{grid-column:auto;min-height:72px}
 #unitCollectionDialog .homework-setup-body>label{display:block;font-weight:700;font-size:12px;margin:12px 0 5px}
 #unitCollectionDialog input[type=text],#unitCollectionDialog input:not([type]),#unitCollectionDialog select{width:100%;box-sizing:border-box;min-height:42px;font-size:16px}
 #unitCollectionDialog .unit-collection-help{font-size:12px;line-height:1.6;margin:12px 0}
@@ -3618,7 +3621,7 @@ html[data-persona=cyber] body #app #studyReel{border-color:#258db6!important;col
   <p id="questionSearchStatus" class="question-search-status" role="status"></p><div id="questionSearchSelection" class="search-selection-tools" hidden><span data-search-count role="status" aria-live="polite"></span><div><button type="button" class="tool" data-search-select-all>検索した問題をすべて選ぶにゃ</button><button type="button" class="link-button" data-search-clear>選択を解除</button><button type="button" class="tool" data-search-save>まとめに保存にゃ</button></div></div><details class="catalog-milestones" id="catalogMilestones"><summary>達成マークを確かめるにゃ</summary><p>✓は、全問を「おぼえた」にした教材に付くにゃ。🏅は、確認チャレンジのランダム10問（候補が少なければ全問）を自動判定で全問正解すると付くにゃ。自己判定の正解は🏅の対象外にゃ。</p></details>
   <div class="catalog-list-tools"><span id="visibleCount" aria-live="polite"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
   <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
- <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection">＋ まとめを作るにゃ</button><button class="tool" type="button" id="myAddLesson">＋ 教材を追加するにゃ</button><button class="tool" type="button" id="unitCollectionOpen">📝 テスト範囲から作るにゃ</button></div>
+ <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>まとめを<br>作るにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を<br>追加するにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト範囲から<br>作るにゃ</span></button></div>
  <div class="my-collection-heading"><h3 id="myCollectionsTitle">作成したまとめ教材</h3></div><div id="myCollectionList"></div>
  <section class="my-added-section" aria-labelledby="myAddedTitle"><div class="my-collection-heading"><h3 id="myAddedTitle">追加したオリジナル教材</h3></div><div id="myAddedLessons"></div></section>
 </section>
@@ -8299,6 +8302,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

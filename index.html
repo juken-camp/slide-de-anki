@@ -3663,6 +3663,13 @@ html[data-persona=cyber] #app #myCollectionsPanel .my-page-actions .tool{border-
 #collectionDialog #collectionSubject:has(+ #collectionField[hidden]){grid-column:auto}
 #collectionDialog .collection-picker-controls:has(#collectionField[hidden]){grid-template-columns:repeat(2,minmax(0,1fr))}
 #collectionDialog #collectionLessonSearch{grid-column:1/-1}
+</style><style>
+#collectionDialog .collection-picker-controls .collection-filter-label{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:11px;font-weight:700;line-height:1.3}
+#collectionDialog .collection-picker-controls .collection-field-label:has(select[hidden]){display:none}
+#collectionDialog .collection-picker-controls .collection-filter-label select{box-sizing:border-box;width:100%;min-width:0;margin:0;padding:6px 24px 6px 7px;font-size:14px;line-height:1.3}
+#collectionDialog .collection-picker-controls:has(#collectionField[hidden]){grid-template-columns:repeat(2,minmax(0,1fr))}
+#collectionDialog .collection-picker-controls #collectionLessonSearch{grid-column:1/-1}
+@media(pointer:coarse){#collectionDialog .collection-picker-controls .collection-filter-label select{font-size:16px}}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3883,7 +3890,7 @@ html[data-persona=cyber] #app #myCollectionsPanel .my-page-actions .tool{border-
  <div class="collection-editor-body" id="collectionEditorBody">
   <label for="collectionName" class="collection-name-label">まとめの名前</label><input id="collectionName" maxlength="50" placeholder="まとめの名前を入れるにゃ" autocomplete="off">
   <details class="collection-picker" id="collectionPicker" open><summary id="collectionPickerToggle" role="button" aria-controls="collectionPickerContent">＋ 教材をえらぶにゃ</summary><div id="collectionPickerContent">
-   <div class="collection-picker-controls"><select id="collectionSubject" aria-label="教科を絞り込む"></select><select id="collectionField" aria-label="分野を絞り込む" hidden></select><select id="collectionGrade" aria-label="学年を絞り込む"><option value="all">すべての学年</option><option value="1">中１</option><option value="2">中２</option><option value="3">中３</option></select><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
+   <div class="collection-picker-controls"><label class="collection-filter-label">教科<select id="collectionSubject" aria-label="教科を絞り込む"></select></label><label class="collection-filter-label collection-field-label">分野<select id="collectionField" aria-label="分野を絞り込む" hidden></select></label><label class="collection-filter-label">学年<select id="collectionGrade" aria-label="学年を絞り込む"><option value="all">すべて</option><option value="1">中１</option><option value="2">中２</option><option value="3">中３</option></select></label><input type="search" id="collectionLessonSearch" placeholder="教材をさがすにゃ" aria-label="追加する教材を検索"></div>
    <div id="collectionLessonPicker" role="listbox" aria-multiselectable="true" tabindex="0" aria-label="追加する教材の一覧"></div>
    <div class="collection-picker-actions"><button class="secondary-button" id="collectionAddWhole" type="button">丸ごと入れるにゃ</button><button class="secondary-button" id="collectionPickCards" type="button">問題を選ぶにゃ</button></div>
   </div></details>
@@ -5679,7 +5686,7 @@ function fillCollectionSubjects() {
 function fillCollectionFields(){
  const subject=$('collectionSubject').value,select=$('collectionField'),prior=select.value;select.replaceChildren();
  const groups={science:[['biology','生物'],['chemistry','化学'],['physics','物理'],['earth','地学']],social:[['geography','地理'],['history','歴史'],['civics','公民']]};
- select.hidden=!groups[subject];for(const [id,label] of [['all','すべての分野'],...(groups[subject]||[])]){const option=collectionNode('option',label);option.value=id;select.append(option);}
+ select.hidden=!groups[subject];for(const [id,label] of [['all','すべて'],...(groups[subject]||[])]){const option=collectionNode('option',label);option.value=id;select.append(option);}
  select.value=[...select.options].some(o=>o.value===prior)?prior:'all';
 }
 function chooseCollectionMaterial(id) {
@@ -8472,6 +8479,7 @@ $('importForm').onsubmit=async e=>{
 })();
 </script>
 </body></html>
+
 
 
 

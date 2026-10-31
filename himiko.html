@@ -822,10 +822,12 @@ function playSendSound(){appSound('chatSend');}
 function playReceiveSound(){appSound('chatReceive');}
 document.addEventListener('pointerdown',event=>{if(event.target.matches('#search-input,#msg-input'))appSound('tap',event);});
 document.addEventListener('click',event=>{
+  const card=event.target.closest('.char-card');
+  if(card && !event.target.closest('.fav-btn')){appSound('open',event);return;}
   const button=event.target.closest('button,.fav-btn,.header-tap');
   if(!button || button.disabled || button.id==='send-btn' || button.classList.contains('suggestion-btn'))return;
   appSound('tap',event);
-});
+},true);
 
 async function sendMessage(text){
   if(!text||!text.trim()||isLoading||!currentChar||!chatReady)return;

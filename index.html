@@ -8605,7 +8605,7 @@ $('importForm').onsubmit=async e=>{
     if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.type!=='himiko-input-focus')return;
     inputActive=!!event.data.active;schedule();setTimeout(schedule,150);setTimeout(schedule,400);
   });
-  document.getElementById('navCollections')?.addEventListener('click',schedule);
+  document.getElementById('navCollections')?.addEventListener('click',()=>{schedule();scheduleMediaSounds(30,soundNotes('open',soundStyle(),0));});
   document.querySelectorAll('#appNavigation button:not(#navCollections)').forEach(button=>button.addEventListener('click',()=>{inputActive=false;root.classList.remove('himiko-keyboard-open');}));
   window.addEventListener('resize',schedule);window.visualViewport?.addEventListener('resize',schedule);window.visualViewport?.addEventListener('scroll',schedule);
   window.addEventListener('orientationchange',()=>{inputActive=false;root.classList.remove('himiko-keyboard-open');setTimeout(()=>{baseline=window.visualViewport?.height||window.innerHeight;schedule()},300)});

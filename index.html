@@ -3860,6 +3860,48 @@ html.himiko-chat-active #app #himikoScreen{overflow:hidden!important;}
   align-items:center;
 }
 </style>
+<style id="nekopon-catalog-floating-dock-20261031">
+/* The learning selection dock has its own visual elevation.
+   Only the dock surface is changed: layout, actions, floating motion
+   and the start button's existing glow are preserved. */
+html[data-persona] body #app #catalogScreen #catalogDock{
+  position:fixed;
+  isolation:isolate;
+  overflow:visible;
+  background:#f6e7d7!important;
+  border:1px solid #ce986c!important;
+  border-radius:20px;
+  box-shadow:
+    0 19px 43px rgba(86,39,11,.38),
+    0 6px 17px rgba(145,72,26,.16),
+    inset 0 1px 0 rgba(255,255,255,.58)!important;
+}
+html[data-persona] body #app #catalogScreen #catalogDock::before{
+  content:"";
+  position:absolute;
+  top:-1px;
+  left:16px;
+  right:16px;
+  height:3px;
+  z-index:1;
+  pointer-events:none;
+  border-radius:0 0 5px 5px;
+  background:linear-gradient(90deg,#ff853c 0%,#f2b238 55%,#ffe18d 100%);
+  box-shadow:0 2px 9px rgba(214,116,35,.28);
+}
+html[data-persona="cyber"] body #app #catalogScreen #catalogDock{
+  background:#080d20!important;
+  border:1px solid #44688a!important;
+  box-shadow:
+    0 22px 48px rgba(0,0,0,.74),
+    0 8px 20px rgba(0,133,192,.18),
+    0 0 0 1px rgba(0,245,255,.12)!important;
+}
+html[data-persona="cyber"] body #app #catalogScreen #catalogDock::before{
+  background:linear-gradient(90deg,#00ecf4 0%,#37a8ff 45%,#9259ff 100%);
+  box-shadow:0 2px 11px rgba(0,245,255,.28);
+}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

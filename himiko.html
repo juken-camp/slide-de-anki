@@ -550,6 +550,7 @@ html[data-persona="cyber"] #list-view .filter-count-icon{filter:drop-shadow(0 0 
 #list-view .himiko-mode-guide{margin:12px 0 1px;padding:12px 11px 10px;
  border:1px solid #dcc4ad;border-radius:13px;background:#fffaf3;color:#754b2f;}
 #list-view .himiko-mode-guide[hidden]{display:none!important}
+#list-view .himiko-mode-guide-item[hidden]{display:none!important}
 #list-view .himiko-mode-guide-title{font-size:12px;font-weight:900;letter-spacing:.015em;margin:0 0 9px}
 #list-view .himiko-mode-guide-item{display:grid;grid-template-columns:minmax(96px,auto) minmax(0,1fr);
  align-items:start;gap:9px;padding:7px 0;border-top:1px solid #e9d4c1;}
@@ -939,11 +940,11 @@ function renderTags(){
  container.innerHTML=tabs+Object.entries(filterGroups).map(([group,config])=>{
   const chosen=selectedFilters[group];
   return `<section id="himiko-options-${group}" class="filter-section" ${openedFilterGroup===group?'':'hidden'}><h3 class="filter-heading">${config.label}</h3><div class="himiko-filter-scroll"><div class="filter-buttons" data-group="${group}" aria-label="${config.label}">${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}" title="${escAttr(key+(group==='era'?'：'+eraDates[key]:''))}"><span class="filter-choice-label">${filterLabelHTML(key)}</span>${group==='era'?`<small class="era-date">${filterDateHTML(key)}</small>`:''}</button>`).join('')}</div></div></section>`;
- }).join('')+`<div class="himiko-mode-guide" ${openedFilterGroup==='special'?'':'hidden'} role="note" aria-label="解説モードと配慮について">
+ }).join('')+`<div class="himiko-mode-guide" ${openedFilterGroup==='special'&&['解説モード','歴史的教訓','敬意配慮'].some(key=>selectedFilters.special.has(key))?'':'hidden'} role="note" aria-label="選択した表示の理由">
    <p class="himiko-mode-guide-title">📚 この表示になっている理由</p>
-   <div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-explain">📖 解説モード</span><span class="himiko-mode-explain"><span class="copy-neko">本人の発言だと誤解させないよう、歴史の先生が説明するにゃ。</span><span class="copy-cyber">本人の発言だと誤解させないよう、歴史の先生が説明するぜ。</span></span></div>
-   <div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-lesson">⚠️ 歴史的教訓</span><span class="himiko-mode-explain"><span class="copy-neko">戦争・独裁などを美化せず、問題点や教訓を学ぶにゃ。</span><span class="copy-cyber">戦争・独裁などを美化せず、問題点や教訓を学ぶぜ。</span></span></div>
-   <div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-respect">🕊️ 敬意配慮</span><span class="himiko-mode-explain"><span class="copy-neko">宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介するにゃ。</span><span class="copy-cyber">宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介するぜ。</span></span></div>
+   <div class="himiko-mode-guide-item" ${selectedFilters.special.has('解説モード')?'':'hidden'}><span class="himiko-mode-chip mode-explain">📖 解説モード</span><span class="himiko-mode-explain"><span class="copy-neko">本人の発言だと誤解させないよう、歴史の先生が説明するにゃ。</span><span class="copy-cyber">本人の発言だと誤解させないよう、歴史の先生が説明するぜ。</span></span></div>
+   <div class="himiko-mode-guide-item" ${selectedFilters.special.has('歴史的教訓')?'':'hidden'}><span class="himiko-mode-chip mode-lesson">⚠️ 歴史的教訓</span><span class="himiko-mode-explain"><span class="copy-neko">戦争・独裁などを美化せず、問題点や教訓を学ぶにゃ。</span><span class="copy-cyber">戦争・独裁などを美化せず、問題点や教訓を学ぶぜ。</span></span></div>
+   <div class="himiko-mode-guide-item" ${selectedFilters.special.has('敬意配慮')?'':'hidden'}><span class="himiko-mode-chip mode-respect">🕊️ 敬意配慮</span><span class="himiko-mode-explain"><span class="copy-neko">宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介するにゃ。</span><span class="copy-cyber">宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介するぜ。</span></span></div>
  </div>`;
  container.querySelectorAll('.filter-buttons').forEach(row=>{
   row.scrollLeft=positions[row.dataset.group]||0;

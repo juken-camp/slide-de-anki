@@ -950,13 +950,12 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
 }
 </style>
 
-<style id="nekopon-list-heading-grid-seam-fix-20261101">
-/* Preserve the original square 36px grid. Both line layers share the same 18px vertical phase;
-   the list header border is suppressed to avoid a doubled seam. */
-html[data-persona="cyber"] {
-  background-position:0 18px,0 18px,center top,center center!important;
-}
-#list-view .header{border-top:0!important;box-shadow:none!important;}
+
+<style id="nekopon-list-heading-border-only-20261101">
+/* Do not alter grid background dimensions, phase, or repeat behavior. */
+#list-view > .header { border:0!important; border-top:0!important; border-bottom:0!important; box-shadow:none!important; }
+#list-view .header-inner { border:0!important; box-shadow:none!important; }
+#list-view .himiko-page-title { border:0!important; box-shadow:none!important; }
 </style>
 </head>
 <body>

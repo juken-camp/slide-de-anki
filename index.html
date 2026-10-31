@@ -3733,6 +3733,13 @@ html.himiko-keyboard-open #app{position:fixed;inset:0;width:100%;max-width:900px
 /* Extend the embedded page to the app edges, while its contents retain the usual inset. */
 #app #himikoScreen{width:calc(100% + 40px);margin-left:-20px;margin-right:-20px}
 @media(max-width:600px){#app #himikoScreen{width:calc(100% + 24px);margin-left:-12px;margin-right:-12px}}
+</style><style>
+/* Keep the initial frame surface consistent with the selected theme. */
+#app #himikoScreen{background:#fff8f0}
+html[data-persona="cyber"] #app #himikoScreen{background:#080d20}
+#app #himikoFrame:not(.himiko-ready){visibility:hidden}
+html.himiko-keyboard-open #app{top:var(--himiko-viewport-top,0px)!important;bottom:auto!important;height:var(--himiko-viewport-height,100dvh)!important;min-height:0!important}
+html.himiko-keyboard-open #app #himikoFrame{min-height:0!important}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -8571,8 +8578,31 @@ $('importForm').onsubmit=async e=>{
   });
 })();
 </script><script>
-(()=>{const frame=document.getElementById('himikoFrame'),screen=document.getElementById('himikoScreen');if(!frame||!screen)return;let inputActive=false;const resize=()=>{if(screen.hidden)return;const viewport=window.visualViewport,available=viewport?viewport.height:window.innerHeight,top=frame.getBoundingClientRect().top;frame.style.setProperty('--himiko-frame-height',Math.max(180,Math.floor(available-Math.max(0,top)-4))+'px');};window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.type!=='himiko-input-focus')return;inputActive=!!event.data.active;document.documentElement.classList.toggle('himiko-keyboard-open',inputActive);requestAnimationFrame(resize);setTimeout(resize,100);setTimeout(resize,350);});document.getElementById('navCollections')?.addEventListener('click',()=>requestAnimationFrame(resize));document.querySelectorAll('#appNavigation button:not(#navCollections)').forEach(button=>button.addEventListener('click',()=>{inputActive=false;document.documentElement.classList.remove('himiko-keyboard-open')}));window.addEventListener('resize',resize);window.visualViewport?.addEventListener('resize',resize);})();
+(()=>{
+  const frame=document.getElementById('himikoFrame'),screen=document.getElementById('himikoScreen');
+  if(!frame||!screen)return;
+  let inputActive=false,frameQueued=false;
+  frame.addEventListener('load',()=>{if(!frame.getAttribute('src'))return;frame.classList.add('himiko-ready');schedule();});
+  const resize=()=>{
+    frameQueued=false;if(screen.hidden)return;
+    const viewport=window.visualViewport,available=viewport?.height||window.innerHeight,offset=viewport?.offsetTop||0;
+    if(inputActive){document.documentElement.style.setProperty('--himiko-viewport-top',offset+'px');document.documentElement.style.setProperty('--himiko-viewport-height',available+'px');}
+    const relativeTop=frame.getBoundingClientRect().top-(inputActive?offset:0);
+    frame.style.setProperty('--himiko-frame-height',Math.max(inputActive?80:240,Math.floor(available-Math.max(0,relativeTop)-4))+'px');
+  };
+  function schedule(){if(!frameQueued){frameQueued=true;requestAnimationFrame(resize)}}
+  window.addEventListener('message',event=>{
+    if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.type!=='himiko-input-focus')return;
+    inputActive=!!event.data.active;document.documentElement.classList.toggle('himiko-keyboard-open',inputActive);
+    if(!inputActive){document.documentElement.style.removeProperty('--himiko-viewport-top');document.documentElement.style.removeProperty('--himiko-viewport-height');}
+    schedule();setTimeout(schedule,100);setTimeout(schedule,350);
+  });
+  document.getElementById('navCollections')?.addEventListener('click',schedule);
+  document.querySelectorAll('#appNavigation button:not(#navCollections)').forEach(button=>button.addEventListener('click',()=>{inputActive=false;document.documentElement.classList.remove('himiko-keyboard-open');}));
+  window.addEventListener('resize',schedule);window.visualViewport?.addEventListener('resize',schedule);window.visualViewport?.addEventListener('scroll',schedule);
+})();
 </script></body></html>
+
 
 
 

@@ -2,7 +2,7 @@
 
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><script>try{document.documentElement.dataset.persona=localStorage.getItem('nekopon-character-theme-v1')==='cyber'?'cyber':'neko'}catch(_){}</script><style>html,body{background:#fff8f0}html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20}</style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>卑弥呼と受験対策 | JUKEN CAMP</title>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -993,6 +993,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 (()=>{const input=document.getElementById('msg-input');if(!input)return;const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};input.addEventListener('touchstart',()=>{try{if(window.parent!==window&&window.parent.location.origin===location.origin)window.parent.document.documentElement.classList.add('himiko-keyboard-open')}catch(_){}},{passive:true});input.addEventListener('touchend',()=>setTimeout(()=>{if(document.activeElement!==input)tell(false)},500),{passive:true});input.addEventListener('touchcancel',()=>tell(false),{passive:true});input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));})();
 </script></body>
 </html>
+
 
 
 

@@ -486,6 +486,52 @@ html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-li
 @media(hover:hover) and (pointer:fine){html[data-play-effects="lively"] #list-view :is(.nekopon-filter-tab,.filter-choice,.char-card):hover{filter:brightness(1.12);transform:translateY(-2px)}}
 @media(prefers-reduced-motion:reduce){html[data-play-effects="lively"] :is(.nekopon-filter-tab,.filter-choice,.char-card){animation:none!important;transition:none!important}}
 </style>
+
+<style id="nekopon-himiko-uniform-square-tiles-20261031">
+/* Every filter category uses the same four-column square tile dimensions. */
+#list-view .nekopon-search-panel .filter-buttons{
+  align-items:start!important;
+}
+#list-view .nekopon-search-panel .filter-choice,
+#list-view #himiko-options-era .filter-choice{
+  box-sizing:border-box!important;
+  width:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  height:auto!important;
+  aspect-ratio:1 / 1!important;
+  padding:3px 2px!important;
+  gap:2px!important;
+  justify-content:center!important;
+  align-self:start!important;
+  overflow:hidden!important;
+}
+#list-view .nekopon-search-panel .filter-choice .filter-choice-label{
+  flex:none!important;
+  min-width:0!important;
+  max-width:100%!important;
+  margin:0!important;
+  font-size:clamp(10px,2.8vw,12px)!important;
+  line-height:1.15!important;
+  word-break:keep-all!important;
+}
+#list-view .nekopon-search-panel .filter-choice .era-date{
+  flex:none!important;
+  margin:0!important;
+  font-size:clamp(7.5px,2.25vw,10px)!important;
+  line-height:1.12!important;
+  font-weight:600!important;
+  letter-spacing:-.04em!important;
+  word-break:keep-all!important;
+}
+@media(max-width:370px){
+  #list-view .nekopon-search-panel .filter-choice,
+  #list-view #himiko-options-era .filter-choice{
+    padding:2px 1px!important;gap:1px!important;
+    border-width:2px!important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -814,6 +860,11 @@ function matchesGroup(ch,group,key){
  return filterGroups[group].items[key]?.has(ch.name)||false;
 }
 const smartFilterLabels={
+ '世界の古代':['世界の','古代'],
+ '弥生・古墳':['弥生・','古墳'],
+ '飛鳥・奈良':['飛鳥・','奈良'],
+ '安土桃山':['安土','桃山'],
+ '大正・昭和':['大正・','昭和'],
  '王・皇帝・天皇':['王・皇帝','天皇'],
  '政治家・指導者':['政治家','指導者'],
  '宗教に関わる人':['宗教に','関わる人'],

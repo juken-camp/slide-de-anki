@@ -912,6 +912,14 @@ html[data-chat-open] #chat-view .messages.nekopon-initial-greeting > .messages-i
   scroll-snap-stop:always;
 }
 </style>
+<style id="nekopon-initial-bubble-top-gap-20261101">
+/* Keep the existing native bounce and snap, but separate the greeting
+   bubble from the fixed character header when the scroller rests at top. */
+html[data-chat-open] #chat-view .messages.nekopon-initial-greeting > .messages-inner {
+  padding-top:20px!important;
+  box-sizing:border-box!important;
+}
+</style>
 </head>
 <body>
 

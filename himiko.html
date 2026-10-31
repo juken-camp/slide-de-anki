@@ -424,11 +424,21 @@ html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-filter-scrol
 html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-filter-scroll::after{
  background:linear-gradient(270deg,rgba(0,245,255,.13),rgba(10,20,41,.8) 32%,transparent)!important;
 }
+/* Match the main catalog series scrollbar's bright cyber-cyan thumb and glow. */
 html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons{
- scrollbar-color:#315b81 transparent!important;
+ scrollbar-color:#39cdeb #10243d!important;
+ scrollbar-width:thin!important;
 }
-html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-thumb{background:#315b81!important}
-html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-track{background:#0f1430!important}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar{
+ height:4px!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-thumb{
+ background:#36bdda!important;border-radius:10px!important;
+ box-shadow:0 0 9px #00f5ff66!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-track{
+ background:#10243d!important;border-radius:10px!important;
+}
 @media(max-width:370px){
  #list-view .nekopon-search-panel .filter-buttons{--series-gap:5px}
  #list-view .nekopon-search-panel .filter-choice{padding:7px 1px!important;border-radius:14px!important}
@@ -860,11 +870,15 @@ function toggleFilterGroup(group){
 }
 function toggleFilter(group,key){const set=selectedFilters[group];set.has(key)?set.delete(key):set.add(key);renderTags();renderCards();}
 function clearFilters(){Object.values(selectedFilters).forEach(set=>set.clear());renderTags();renderCards();}
+new MutationObserver((changes)=>{
+  if(changes.some(change=>change.attributeName==='data-persona') &&
+     !document.getElementById('list-view')?.classList.contains('hidden'))renderCards();
+}).observe(document.documentElement,{attributes:true,attributeFilter:['data-persona']});
 function renderCards(){
  const q=document.getElementById('search-input').value.trim().toLowerCase();
  let list=allChars.filter(ch=>Object.entries(selectedFilters).every(([group,set])=>!set.size||[...set].some(key=>matchesGroup(ch,group,key))));
  if(q)list=list.filter(c=>c.name.toLowerCase().includes(q)||c.period.toLowerCase().includes(q)||c.catchphrase.toLowerCase().includes(q));
- document.getElementById('filter-count').textContent=`${list.length}人`;
+ document.getElementById('filter-count').textContent=`${list.length}人いる${document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ'}`;
   const el=document.getElementById("card-list");
   if(!list.length){el.innerHTML=selectedFilters.special.has('お気に入り')?`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">⭐</div><div style="font-weight:700">お気に入りはまだないよ</div><div style="font-size:13px;color:#94a3b8;margin-top:4px">カードの ☆ ボタンを押して追加しよう！</div></div>`:`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">🔍</div><div style="font-weight:700">該当する人物が見つかりません</div></div>`;return;}
   el.innerHTML=list.map((ch,i)=>{

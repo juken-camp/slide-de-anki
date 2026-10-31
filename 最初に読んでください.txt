@@ -1,0 +1,10 @@
+【2026年10月31日 GitHubに反映するための統合更新ZIP】
+2026-10-31 17:20頃のGitHub mainを比較して作成。GitHubは72名の画像、himiko.htmlは端バウンド復元版でした。
+このZIPは「未反映の第19・20・21回12名の画像」と「2回目以降の点々を吹き出しに入れる修正」を含みます。
+使い方: ZIPを展開して、GitHub juken-camp/slide-de-anki のmainブランチの同じ階層に
+himiko.html、history-icons-manifest.csv、HISTORY_ICONS_README.txtを上書き、
+history-icons/ の12ファイルを新規追加してください。
+GitHubのhistory-icons/既存72ファイルは削除しないでください。
+index.htmlはGitHubで拡大防止修正済みと確認したため、変更しません。
+第22回の4名はまだ未登録で、従来どおり絵文字が表示されます。
+iPhone実機による吹き出し・スクロールの検証は未確認です。

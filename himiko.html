@@ -628,6 +628,53 @@ html[data-chat-open] #chat-view .input-area{
  font-weight:500;
 }
 </style>
+
+<style id="nekopon-himiko-profile-tap-cyber-fix-20261031">
+/* The current persona owns the composer placeholder; never inherit the old brown tint. */
+html[data-persona="cyber"] #chat-view #msg-input::placeholder,
+html[data-persona="cyber"] #chat-view #msg-input::-webkit-input-placeholder{
+  color:#a8c7e4!important;
+  -webkit-text-fill-color:#a8c7e4!important;
+  opacity:1!important;
+}
+/* The name opens a profile: it is an unboxed text control, not a neon card.
+   Retain the existing :active press-in transform and click sound. */
+#chat-view #header-tap,
+#chat-view #header-tap:hover,
+#chat-view #header-tap:active,
+#chat-view #header-tap.himiko-lively-flash,
+html[data-persona="cyber"] #chat-view #header-tap:active,
+html[data-persona="cyber"][data-play-effects="lively"] #chat-view #header-tap.himiko-lively-flash{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border-color:transparent!important;
+  filter:none!important;
+  -webkit-tap-highlight-color:transparent;
+}
+/* Keep the profile sheet in the same cyber palette as the chat: no white sheet flash. */
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  background:#111b35!important;
+  color:#dceaff!important;
+  border:2px solid #315b81;
+  box-shadow:0 -12px 36px #0005;
+}
+html[data-persona="cyber"] #profile-modal .modal-handle{background:#4e7994!important;}
+html[data-persona="cyber"] #profile-modal .modal-close{
+  background:#162743!important;color:#c6eaff!important;
+  border:1px solid #365f7d!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet > div:not(.modal-handle) div[style*="color:#1e293b"]{
+  color:#e3f1ff!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet div[style*="color:#94a3b8"]{
+  color:#a5c6e3!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet div[style*="color:#374151"]{
+  color:#d5e8fa!important;
+  background:#172c43!important;
+}
+</style>
 </head>
 <body>
 
@@ -1609,6 +1656,9 @@ document.getElementById("messages").addEventListener("click",function(e){
    if(!control || control.disabled || !control.isConnected)return;
    const r=control.getBoundingClientRect(),x=event.detail&&Number.isFinite(event.clientX)?event.clientX:r.left+r.width/2;
    const y=event.detail&&Number.isFinite(event.clientY)?event.clientY:r.top+r.height/2;
+   // Profile-name header is unboxed: the existing press-in and appSound stay,
+   // but no rectangular glow, white flash or inherited parent ripple is added.
+   if(control.matches('#chat-view .header-tap'))return;
    // Filters render fresh DOM buttons after click: animate the *new* selected button too.
    const group=control.dataset.filterTab, value=control.dataset.value;
    highlight(control);

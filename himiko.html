@@ -957,6 +957,21 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
 #list-view .header-inner { border:0!important; box-shadow:none!important; }
 #list-view .himiko-page-title { border:0!important; box-shadow:none!important; }
 </style>
+<style id="nekopon-heading-grid-single-line-fix-20261101">
+/* Keep the global 36px square grid untouched. In the title strip, prevent
+   horizontal grid strokes from appearing as extra heading separators. */
+html[data-persona="cyber"] #list-view > .header {
+  background-color:#050510!important;
+  background-image:
+    linear-gradient(90deg,#00f5ff09 1px,transparent 1px),
+    radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),
+    radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+  background-size:36px 36px,cover,cover!important;
+  background-attachment:fixed!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+</style>
 </head>
 <body>
 

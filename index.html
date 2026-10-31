@@ -2559,16 +2559,6 @@ body.homework-capture .neko-lively-particle{display:none!important}
 #reelDialog #reelFeed:focus-visible{outline:none!important;box-shadow:none!important}
 html[data-persona] body #reelDialog #appHeader{padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));}
 @media(min-width:601px){html[data-persona] body #reelDialog #appHeader{padding-left:max(calc((100vw - 840px)/2 + 20px),env(safe-area-inset-left,0px));padding-right:max(calc((100vw - 840px)/2 + 20px),env(safe-area-inset-right,0px));padding-top:calc(16px + env(safe-area-inset-top,0px));}}
-
-
-/* Header-only fix: preserve original page headings and content spacing. */
-#app{overflow-x:visible!important}
-#appHeader{position:fixed!important;top:0!important;left:50%;transform:translateX(-50%);width:min(100%,960px);box-sizing:border-box;padding:16px 20px 8px!important;margin:0!important;z-index:150;background:var(--cream)!important;isolation:isolate}
-#appHeader::before{display:none!important}
-html[data-persona="cyber"] body #appHeader{background-color:#050510!important;background-image:linear-gradient(rgba(0,245,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.055) 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%)!important;background-size:36px 36px,36px 36px,100% 100%!important;background-attachment:fixed!important}
-#appHeaderSpacer{height:var(--fixed-header-space,60px);pointer-events:none}
-@media(max-width:600px){#appHeader{padding:16px 12px 8px!important}}
-html.himiko-chat-active #appHeader{position:fixed!important}
 </style>
 <style>
 /* Cyber controls in dialogs override the generic dialog button skin. */
@@ -3939,22 +3929,27 @@ html[data-persona="cyber"] #app #himikoScreen,
 html.himiko-view-active[data-persona="cyber"] #app #himikoFrame {
   background:transparent!important;
 }
+
+/* Unified iOS sticky header: keep original flow and page-heading spacing. */
+html,body{overflow-x:visible!important}
+body #app.app{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important}
+body #app #appHeader.compact-header{position:sticky!important;top:0!important;z-index:150!important;transform:none!important;margin-bottom:10px!important;background:transparent!important}
+/* The header's surface uses the same Cyber grid as the page, not a solid black band. */
+html[data-persona=cyber] body #app #appHeader.is-scrolled::before{
+ background-color:rgba(3,12,23,.93)!important;
+ background-image:linear-gradient(rgba(0,245,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.055) 1px,transparent 1px)!important;
+ background-size:38px 38px!important;
+ opacity:1!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+html[data-persona=cyber] body #app #appHeader:not(.is-scrolled)::before{opacity:0!important}
 </style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   
   
-<nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navRecords" type="button">テスト</button><button id="navCollections" type="button">質問</button><button id="navSettings" type="button">設定</button></nav></header><div id="appHeaderSpacer" aria-hidden="true"></div><script>
-(function(){
- const header=document.getElementById('appHeader');
- const spacer=document.getElementById('appHeaderSpacer');
- if(!header||!spacer)return;
- const sync=()=>{const h=header.getBoundingClientRect().height;spacer.style.height=Math.max(0,h-16)+'px';document.documentElement.style.setProperty('--app-header-height',h+'px')};
- sync();window.addEventListener('resize',sync,{passive:true});
- if(window.ResizeObserver)new ResizeObserver(sync).observe(header);
-})();
-</script>
+<nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navRecords" type="button">テスト</button><button id="navCollections" type="button">質問</button><button id="navSettings" type="button">設定</button></nav></header>
+
 
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>

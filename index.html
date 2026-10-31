@@ -3838,6 +3838,28 @@ html.himiko-chat-active,html.himiko-chat-active body{
 html.himiko-chat-active #app{overflow:visible!important;}
 html.himiko-chat-active #app #himikoScreen{overflow:hidden!important;}
 </style>
+
+<style id="nekopon-page-heading-alignment-20261031">
+/* All five navigation screens start at the same vertical position. */
+#app #catalogScreen,
+#app #studyScreen,
+#app #reportScreen,
+#app #settingsScreen,
+#app #himikoScreen { margin-top:12px!important; }
+/* Reserve exactly one shared title row, including pages with icon buttons. */
+#app #catalogScreen > .page-heading,
+#app #studyScreen > .page-heading,
+#app #reportScreen > .page-heading,
+#app #settingsScreen > .page-heading {
+  box-sizing:border-box;
+  height:44px;
+  min-height:44px;
+  margin:0 0 12px!important;
+  padding:0;
+  display:flex;
+  align-items:center;
+}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

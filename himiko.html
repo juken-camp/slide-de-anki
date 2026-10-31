@@ -10,9 +10,9 @@
     * { box-sizing:border-box; margin:0; padding:0; }
     html { height:100%; overflow:hidden; background:#fff; }
     html, body { overflow-x:hidden; max-width:100%; }
-    body { font-family:'M PLUS Rounded 1c',sans-serif; background:#fff; height:100%; overflow-y:auto; }
+    body { font-family:'M PLUS Rounded 1c',sans-serif; background:#fff; height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; }
     .hidden{display:none!important}
-    #list-view{min-height:100vh;background:#f0f4ff}
+    #list-view{min-height:calc(100dvh + 2px);background:#f0f4ff}
     #chat-view{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;overflow:hidden;max-width:100%;background:#fff;}
     .input-area{padding:11px 12px calc(20px + env(safe-area-inset-bottom, 0px));background:#fff;border-top:2px solid #f1f5f9;flex-shrink:0;}
     .header{background:#fff;border-bottom:3px solid #e2e8f0;padding:0 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.07)}
@@ -1255,6 +1255,18 @@ const smartEraDateLines={
 };
 function filterLabelHTML(key){return (smartFilterLabels[key]||[key]).map(esc).join('<br>');}
 function filterDateHTML(key){return (smartEraDateLines[key]||[eraDates[key]]).map(esc).join('<br>');}
+const filterLearningNotes={"era":{"縄文":"狩り・漁・採集を中心に生活し、縄文土器や竪穴住居を使った時代。貝塚や土偶も重要な手がかりだ。","世界の古代":"メソポタミア・エジプト・インダス・中国などで文明が発達。文字や法律、都市の成立に注目しよう。","弥生・古墳":"弥生時代は稲作と金属器が広まり、むら同士の争いが起きた。古墳時代にはヤマト政権が勢力を広げた。","飛鳥・奈良":"聖徳太子の政治や大化の改新を経て律令国家づくりが進んだ。平城京や東大寺、天平文化が重要だ。","平安":"794年に平安京へ遷都。藤原氏の摂関政治、国風文化、院政と武士の成長を押さえよう。","鎌倉":"源頼朝の武家政権と御恩・奉公の関係が基本。承久の乱、元寇、鎌倉仏教も重要だ。","室町":"足利氏の幕府のもと守護大名が力を持った。日明貿易、金閣・銀閣、応仁の乱から戦国時代への流れを学ぼう。","安土桃山":"織田信長と豊臣秀吉が全国統一を進めた。楽市・楽座、太閤検地、刀狩、南蛮貿易と桃山文化を覚えよう。","江戸":"徳川家康が幕府を開き、幕藩体制が続いた。参勤交代、対外政策、三大改革、元禄・化政文化が重要だ。","明治":"明治維新で近代国家づくりが進んだ。廃藩置県、地租改正、自由民権運動、大日本帝国憲法、条約改正を押さえよう。","大正・昭和":"大正デモクラシーが進む一方、昭和には戦争が拡大した。戦後の民主化や高度経済成長までの流れが重要だ。","現代":"冷戦終結やグローバル化、情報化が進んだ。国際協力や環境問題など、世界と日本のつながりに注目しよう。"},"region":{"日本":"縄文・弥生から武士の政治、明治維新、戦後の民主化まで、政治・文化・外交の変化をつなげて学ぼう。","アジア":"中国やインドなどで古代文明・宗教・王朝が発展した。シルクロードなどの交流は日本にも大きな影響を与えた。","ヨーロッパ":"古代ギリシャ・ローマからルネサンス、宗教改革、市民革命、産業革命へ。近代社会の成立をつかもう。","アメリカ":"独立宣言、南北戦争、公民権運動などが重要。自由と平等をめぐる社会の変化に注目しよう。","アフリカ":"多様な王国や文化が栄え、近代には植民地支配を受けた地域も多い。独立と人種差別撤廃の歴史を学ぼう。","西アジア・中東":"メソポタミア文明が生まれ、ユダヤ教・キリスト教・イスラム教に深く関わる地域。交易と文化交流も重要だ。"},"role":{"武士・武将":"武士は土地を守る集団から政治を担う存在へ成長した。鎌倉・室町・江戸の武家政権を比べよう。","王・皇帝・天皇":"国や地域を治めた君主たち。権力の仕組みと政治・宗教との関係が時代によってどう変わったかに注目しよう。","政治家・指導者":"制度や社会を変えた人物たち。何を改革し、どのような影響を残したかを出来事とセットで覚えよう。","宗教に関わる人":"仏教・キリスト教・イスラム教などは社会や文化に大きな影響を与えた。開祖と教えの広まりを整理しよう。","作家・文化人":"文学や文化は当時の社会を映す。代表作品・作者・時代背景を組み合わせて覚えよう。","芸術家":"絵画や彫刻などの表現から時代の文化や価値観が見えてくる。代表作品と人物を結びつけよう。","科学者・医師":"観察や実験で新しい知識を広めた人々。発見・研究内容と社会への影響を確認しよう。","探検家":"航海と探検は世界の交流を広げた一方、植民地化にもつながった。航路とその影響を地図で確かめよう。","思想家・教育者":"社会や人間のあり方を考えた人々。主張した考えと政治・教育への影響を整理しよう。","社会を変えた人":"差別や不平等の解消、権利の拡大を目指した人々。運動の目的と実現した変化を学ぼう。"},"special":{"お気に入り":"星を付けた人物をまとめて復習できる機能だ。気になる人物を比べて覚えよう。","女性の人物":"卑弥呼の政治、紫式部の文学、平塚らいてうの女性解放運動など、各時代の女性の活躍を学ぼう。","AI先生":"歴史の疑問を質問できる先生だ。出来事の背景や重要語句を確かめよう。","解説モード":"本人の発言だと誤解させないよう、歴史の先生が説明する。","歴史的教訓":"戦争・独裁などを美化せず、問題点や教訓を学ぶ。","敬意配慮":"宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介する。"}};
+function filterGuideHTML(){
+ if(!openedFilterGroup)return '';
+ const chosen=[...selectedFilters[openedFilterGroup]];
+ if(!chosen.length)return '';
+ const rows=chosen.map(key=>{
+  const note=filterLearningNotes[openedFilterGroup]?.[key];
+  if(!note)return '';
+  return `<div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-explain">${esc(key)}</span><span class="himiko-mode-explain">${esc(note)}</span></div>`;
+ }).join('');
+ return `<div class="himiko-mode-guide" role="note" aria-label="選択項目の学習ポイント"><p class="himiko-mode-guide-title">📚 学習ポイント</p>${rows}</div>`;
+}
 function renderTags(){
  const container=document.getElementById('tag-bar');
  const positions=Object.fromEntries([...container.querySelectorAll('.filter-buttons')].map(row=>[row.dataset.group,row.scrollLeft]));
@@ -1265,12 +1277,7 @@ function renderTags(){
  container.innerHTML=tabs+Object.entries(filterGroups).map(([group,config])=>{
   const chosen=selectedFilters[group];
   return `<section id="himiko-options-${group}" class="filter-section" ${openedFilterGroup===group?'':'hidden'}><h3 class="filter-heading">${config.label}</h3><div class="himiko-filter-scroll"><div class="filter-buttons" data-group="${group}" aria-label="${config.label}">${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}" title="${escAttr(key+(group==='era'?'：'+eraDates[key]:''))}"><span class="filter-choice-label">${filterLabelHTML(key)}</span>${group==='era'?`<small class="era-date">${filterDateHTML(key)}</small>`:''}</button>`).join('')}</div></div></section>`;
- }).join('')+`<div class="himiko-mode-guide" ${openedFilterGroup==='special'&&['解説モード','歴史的教訓','敬意配慮'].some(key=>selectedFilters.special.has(key))?'':'hidden'} role="note" aria-label="選択した表示の理由">
-   <p class="himiko-mode-guide-title">📚 この表示になっている理由</p>
-   <div class="himiko-mode-guide-item" ${selectedFilters.special.has('解説モード')?'':'hidden'}><span class="himiko-mode-chip mode-explain">📖 解説モード</span><span class="himiko-mode-explain"><span class="copy-neko">本人の発言だと誤解させないよう、歴史の先生が説明するにゃ。</span><span class="copy-cyber">本人の発言だと誤解させないよう、歴史の先生が説明するぜ。</span></span></div>
-   <div class="himiko-mode-guide-item" ${selectedFilters.special.has('歴史的教訓')?'':'hidden'}><span class="himiko-mode-chip mode-lesson">⚠️ 歴史的教訓</span><span class="himiko-mode-explain"><span class="copy-neko">戦争・独裁などを美化せず、問題点や教訓を学ぶにゃ。</span><span class="copy-cyber">戦争・独裁などを美化せず、問題点や教訓を学ぶぜ。</span></span></div>
-   <div class="himiko-mode-guide-item" ${selectedFilters.special.has('敬意配慮')?'':'hidden'}><span class="himiko-mode-chip mode-respect">🕊️ 敬意配慮</span><span class="himiko-mode-explain"><span class="copy-neko">宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介するにゃ。</span><span class="copy-cyber">宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介するぜ。</span></span></div>
- </div>`;
+ }).join('')+filterGuideHTML();
  container.querySelectorAll('.filter-buttons').forEach(row=>{
   row.scrollLeft=positions[row.dataset.group]||0;
   const shell=row.closest('.himiko-filter-scroll');

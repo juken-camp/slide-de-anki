@@ -740,6 +740,46 @@ html[data-persona="cyber"] #profile-modal .modal-sheet{
 html[data-persona="cyber"] #list-view #filter-count .count-neko{display:none!important;}
 html[data-persona="cyber"] #list-view #filter-count .count-yoru{display:inline!important;}
 </style>
+
+<style id="nekopon-himiko-focus-unification-20261031">
+/* The two text-entry fields use the same visual hierarchy as the catalog
+   search: strong INNER border + softer OUTER focus ring.  Keep focus visible. */
+html[data-persona="neko"] #chat-view #msg-input{
+  background:#fff!important;
+  color:#754b2f!important;
+  border:2px solid #c8a789!important;
+  caret-color:#d2691e;
+}
+html[data-persona="neko"] #chat-view #msg-input::placeholder{
+  color:#a58e7c!important;
+  -webkit-text-fill-color:#a58e7c!important;
+  opacity:1!important;
+}
+html[data-persona="neko"] #chat-view #msg-input:is(:focus,:focus-visible){
+  border-color:#d2691e!important;
+  outline:2px solid #d2691e77!important;
+  outline-offset:2px!important;
+  box-shadow:none!important;
+}
+/* Keep search and chat both on the same opacity, not two full-strength rings. */
+html[data-persona="neko"] #list-view .nekopon-search-panel .himiko-search:focus-within{
+  border-color:#d2691e!important;
+  outline:2px solid #d2691e77!important;
+  outline-offset:2px!important;
+  box-shadow:none!important;
+}
+/* Cyber remains neon: focused border is vivid, only its outer ring is translucent. */
+html[data-persona="cyber"] #chat-view #msg-input:is(:focus,:focus-visible){
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ff83!important;
+  outline-offset:2px!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search:focus-within{
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ff83!important;
+  outline-offset:2px!important;
+}
+</style>
 </head>
 <body>
 

@@ -220,6 +220,27 @@ html[data-persona="cyber"] :is(#search-input,#msg-input):focus{border:2px solid 
 html[data-persona="cyber"] :is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{filter:brightness(1.18);box-shadow:0 0 14px #00f5ff80!important;border-color:#00e9f5!important}
 @media(prefers-reduced-motion:reduce){:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{transform:none}}
 #list-view .main-content{padding-top:14px}
+
+.filter-panel{border:1px solid #e4cbb3;border-radius:16px;background:#fffaf2;padding:10px 12px;margin:0 0 12px}
+.filter-section+.filter-section{border-top:1px solid #ead2b9}
+.filter-heading{width:100%;min-height:42px;display:flex;align-items:center;justify-content:space-between;text-align:left;border:0;background:transparent;color:#754b2f;font-family:inherit;font-size:13px;font-weight:700;line-height:1.5;cursor:pointer}
+.filter-heading small{font-size:10px;color:#a17150}
+.filter-buttons{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0 12px}
+.filter-buttons[hidden]{display:none}
+.filter-choice{min-height:38px;padding:7px 11px;border:1.5px solid #dfbb99;border-radius:11px;background:#fffdf8;color:#854b26;font-family:inherit;font-size:12px;font-weight:700;line-height:1.4;cursor:pointer}
+.filter-choice .era-date{display:block;font-size:9px;font-weight:500;line-height:1.25;margin-top:3px;opacity:.85}
+.filter-choice.active{background:#fff0df;border-color:#d2691e;color:#8b4513;box-shadow:0 0 0 1px #d2691e}
+.filter-clear{display:block;margin:5px 0 0 auto;padding:7px;border:0;background:transparent;color:#9a6946;font-family:inherit;font-size:11px;font-weight:600;cursor:pointer}
+.filter-clear[hidden]{display:none}
+.filter-hint{font-size:10px;line-height:1.5;color:#a17150;margin:2px 0 6px}html[data-persona="cyber"] .filter-hint{color:#9cb9d4}
+.filter-count{font-size:11px;color:#a17150;text-align:right;margin:0 0 8px}
+html[data-persona="cyber"] .filter-panel{background:#0f1430;border-color:#315576}
+html[data-persona="cyber"] .filter-section+.filter-section{border-color:#315576}
+html[data-persona="cyber"] .filter-heading,html[data-persona="cyber"] .filter-count,html[data-persona="cyber"] .filter-clear{color:#c5edff}
+html[data-persona="cyber"] .filter-heading small{color:#9cb9d4}
+html[data-persona="cyber"] .filter-choice{background:#101b35;border-color:#315b81;color:#c5ddf0}
+html[data-persona="cyber"] .filter-choice.active{background:#083c4c;border-color:#00e9f5;color:#e1ffff;box-shadow:0 0 12px #00e9f577,inset 0 0 8px #00e9f529}
+html[data-persona="cyber"] :is(.filter-choice,.filter-heading,.filter-clear):active{filter:brightness(1.2);box-shadow:0 0 12px #00e9f577}
 </style></head>
 <body>
 
@@ -239,7 +260,7 @@ html[data-persona="cyber"] :is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-rese
     </div>
   </div>
   <div class="main-content">
-    <div class="tag-bar" id="tag-bar"></div>
+    <div id="tag-bar" class="filter-panel"></div><p class="filter-hint">世界の人物は、おもに活躍したころの日本の時代で分類しています。時代の区切りは目安です。</p><p id="filter-count" class="filter-count" aria-live="polite"></p>
     <div class="card-list" id="card-list"></div>
   </div>
 </div>
@@ -523,21 +544,44 @@ function saveFavs(s){localStorage.setItem("nekopon-himiko-favs-v1",JSON.stringif
 function toggleFav(id,ev){if(ev){ev.stopPropagation();ev.preventDefault();}const s=getFavs();if(s.has(id))s.delete(id);else s.add(id);saveFavs(s);renderTags();renderCards();}
 function isFav(id){return getFavs().has(id);}
 
-function renderTags(){
-  document.getElementById("tag-bar").innerHTML=TAGS.map(t=>{
-    const eraTags=["古代","中世","近世","近代","現代"];const cnt=t.id==="all"?allChars.length:t.id==="fav"?getFavs().size:t.id==="special"?1:t.id==="kaisetsu"?CHARACTERS.filter(c=>c.isExplainer||c.isNarrator).length:t.id==="explainer"?CHARACTERS.filter(c=>c.isExplainer).length:t.id==="narrator"?CHARACTERS.filter(c=>c.isNarrator).length:eraTags.includes(t.id)?CHARACTERS.filter(c=>getEra(c.period).id===t.id).length:CHARACTERS.filter(c=>c.tag===t.id).length;
-    return`<button class="tag-btn${currentTag===t.id?" active":""}" onclick="setTag('${t.id}')">${t.emoji} ${t.label} <span style="opacity:.65;font-size:11px">(${cnt})</span></button>`;
-  }).join("");
+// Categories may overlap: an individual can belong to several groups.
+const filterGroups={
+ era:{label:'時代から探す',items:{'縄文':'','世界の古代':'ハンムラビ王、釈迦（ブッダ）、孔子、ペリクレス、ソクラテス、アレクサンドロス大王、始皇帝、カエサル、イエス・キリスト','弥生・古墳':'卑弥呼、雄略天皇','飛鳥・奈良':'ムハンマド、聖徳太子、中大兄皇子、行基、鑑真、聖武天皇','平安':'桓武天皇、最澄、空海、藤原道長、紫式部、平清盛','鎌倉':'法然、源頼朝、北条政子、源義経、チンギス・カン、親鸞、北条泰時、道元、フビライ・ハン、日蓮、一遍、マルコ・ポーロ','室町':'後醍醐天皇、足利尊氏、足利義満、雪舟、コロンブス、レオナルド・ダ・ヴィンチ、マゼラン、ルター','安土桃山':'織田信長、豊臣秀吉、徳川家康、ガリレオ・ガリレイ','江戸':'徳川家康、ロック、松尾芭蕉、徳川綱吉、近松門左衛門、新井白石、モンテスキュー、ルソー、本居宣長、ワシントン、杉田玄白、ナポレオン','明治':'西郷隆盛、大久保利通、福沢諭吉、坂本龍馬、板垣退助、伊藤博文、陸奥宗光、明治天皇、夏目漱石、リンカーン、ダーウィン、ビスマルク、マルクス、野口英世、与謝野晶子','大正・昭和':'夏目漱石、ガンジー、レーニン、チャーチル、野口英世、与謝野晶子、吉田茂、ルーズベルト、東条英機、平塚らいてう、ヒトラー、毛沢東、昭和天皇、田中角栄、キング牧師','現代':'マンデラ、ゴルバチョフ、毛沢東、昭和天皇、田中角栄'}},
+ region:{label:'地域から探す',items:{'日本':'卑弥呼、雄略天皇、聖徳太子、中大兄皇子、行基、鑑真、聖武天皇、桓武天皇、最澄、空海、藤原道長、紫式部、平清盛、法然、源頼朝、北条政子、源義経、親鸞、北条泰時、道元、日蓮、一遍、後醍醐天皇、足利尊氏、足利義満、雪舟、織田信長、豊臣秀吉、徳川家康、松尾芭蕉、徳川綱吉、近松門左衛門、新井白石、本居宣長、杉田玄白、西郷隆盛、大久保利通、福沢諭吉、坂本龍馬、板垣退助、伊藤博文、陸奥宗光、明治天皇、夏目漱石、野口英世、与謝野晶子、吉田茂、東条英機、平塚らいてう、昭和天皇、田中角栄','アジア':'釈迦（ブッダ）、孔子、始皇帝、鑑真、チンギス・カン、フビライ・ハン、ガンジー、毛沢東','ヨーロッパ':'ペリクレス、ソクラテス、アレクサンドロス大王、カエサル、マルコ・ポーロ、コロンブス、レオナルド・ダ・ヴィンチ、マゼラン、ルター、ガリレオ・ガリレイ、ロック、モンテスキュー、ルソー、ナポレオン、ダーウィン、ビスマルク、マルクス、レーニン、チャーチル、ヒトラー、ゴルバチョフ','アメリカ':'ワシントン、リンカーン、ルーズベルト、キング牧師','アフリカ':'マンデラ','西アジア・中東':'ハンムラビ王、イエス・キリスト、ムハンマド'}},
+ role:{label:'どんな人？',items:{'武士・武将':'平清盛、源頼朝、北条政子、源義経、北条泰時、足利尊氏、足利義満、織田信長、豊臣秀吉、徳川家康、徳川綱吉、西郷隆盛、坂本龍馬','王・皇帝・天皇':'ハンムラビ王、アレクサンドロス大王、始皇帝、卑弥呼、雄略天皇、聖武天皇、桓武天皇、後醍醐天皇、チンギス・カン、フビライ・ハン、ナポレオン、明治天皇、昭和天皇','政治家・指導者':'ハンムラビ王、ペリクレス、アレクサンドロス大王、始皇帝、カエサル、卑弥呼、聖徳太子、中大兄皇子、藤原道長、平清盛、源頼朝、北条政子、北条泰時、チンギス・カン、フビライ・ハン、後醍醐天皇、足利尊氏、足利義満、織田信長、豊臣秀吉、徳川家康、徳川綱吉、新井白石、ワシントン、ナポレオン、リンカーン、ビスマルク、西郷隆盛、大久保利通、坂本龍馬、板垣退助、伊藤博文、陸奥宗光、ガンジー、レーニン、チャーチル、吉田茂、ルーズベルト、東条英機、ヒトラー、毛沢東、田中角栄、マンデラ、ゴルバチョフ','宗教に関わる人':'釈迦（ブッダ）、イエス・キリスト、ムハンマド、行基、鑑真、最澄、空海、法然、親鸞、道元、日蓮、一遍、ルター、キング牧師','作家・文化人':'紫式部、雪舟、レオナルド・ダ・ヴィンチ、松尾芭蕉、近松門左衛門、本居宣長、福沢諭吉、夏目漱石、与謝野晶子','芸術家':'雪舟、レオナルド・ダ・ヴィンチ','科学者・医師':'レオナルド・ダ・ヴィンチ、ガリレオ・ガリレイ、杉田玄白、ダーウィン、野口英世','探検家':'マルコ・ポーロ、コロンブス、マゼラン','思想家・教育者':'孔子、ソクラテス、ロック、モンテスキュー、ルソー、本居宣長、マルクス、福沢諭吉','社会を変えた人':'板垣退助、ガンジー、平塚らいてう、キング牧師、マンデラ'}},
+ special:{label:'そのほか',items:{'お気に入り':null,'女性の人物':'卑弥呼、紫式部、北条政子、与謝野晶子、平塚らいてう','AI先生':null,'解説モード':null,'歴史的教訓':null,'敬意配慮':null}}
+};
+for(const group of Object.values(filterGroups))for(const [key,value] of Object.entries(group.items))if(typeof value==='string')group.items[key]=new Set(value.split('、'));
+const eraDates={'縄文':'約1万6千年前〜紀元前10世紀頃','世界の古代':'紀元前の人物など','弥生・古墳':'紀元前10世紀頃〜6世紀','飛鳥・奈良':'6世紀末〜794年','平安':'794〜1185年','鎌倉':'1185〜1333年','室町':'1336〜1573年','安土桃山':'1573〜1603年','江戸':'1603〜1868年','明治':'1868〜1912年','大正・昭和':'1912〜1989年','現代':'1989年〜'};
+const selectedFilters={era:new Set(),region:new Set(),role:new Set(),special:new Set()};
+const expandedFilters={era:true,region:false,role:false,special:false};
+function matchesGroup(ch,group,key){
+ if(group==='special'){
+  if(key==='お気に入り')return isFav(ch.id);
+  if(key==='AI先生')return !!ch.isSpecial;
+  if(key==='解説モード')return !!(ch.isExplainer||ch.isNarrator);
+  if(key==='歴史的教訓')return !!ch.isExplainer;
+  if(key==='敬意配慮')return !!ch.isNarrator;
+ }
+ return filterGroups[group].items[key]?.has(ch.name)||false;
 }
-
-function setTag(id){currentTag=id;renderTags();renderCards();}
-
+function renderTags(){
+ const container=document.getElementById('tag-bar');
+ container.innerHTML=Object.entries(filterGroups).map(([group,config])=>{
+  const chosen=selectedFilters[group],open=expandedFilters[group];
+  return `<section class="filter-section"><button type="button" class="filter-heading" onclick="toggleFilterGroup('${group}')" aria-expanded="${open}"><span>${config.label}${chosen.size?' <small>（'+chosen.size+'つ選択）</small>':''}</span><span aria-hidden="true">${open?'−':'＋'}</span></button><div class="filter-buttons" ${open?'':'hidden'}>${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}">${esc(key)}${group==='era'?`<small class="era-date">${esc(eraDates[key])}</small>`:''}</button>`).join('')}</div></section>`;
+ }).join('')+`<button type="button" class="filter-clear" onclick="clearFilters()" ${Object.values(selectedFilters).some(set=>set.size)?'':'hidden'}>絞り込みを解除</button>`;
+}
+function toggleFilterGroup(group){expandedFilters[group]=!expandedFilters[group];renderTags();}
+function toggleFilter(group,key){const set=selectedFilters[group];set.has(key)?set.delete(key):set.add(key);renderTags();renderCards();}
+function clearFilters(){Object.values(selectedFilters).forEach(set=>set.clear());renderTags();renderCards();}
 function renderCards(){
-  const q=document.getElementById("search-input").value.toLowerCase();
-  const eraTags2=["古代","中世","近世","近代","現代"];let list=currentTag==="special"?[AI_SENSEI]:currentTag==="all"?allChars:currentTag==="fav"?allChars.filter(c=>isFav(c.id)):currentTag==="kaisetsu"?CHARACTERS.filter(c=>c.isExplainer||c.isNarrator):currentTag==="explainer"?CHARACTERS.filter(c=>c.isExplainer):currentTag==="narrator"?CHARACTERS.filter(c=>c.isNarrator):eraTags2.includes(currentTag)?CHARACTERS.filter(c=>getEra(c.period).id===currentTag):[AI_SENSEI,...CHARACTERS.filter(c=>c.tag===currentTag)];
-  if(q)list=list.filter(c=>c.name.toLowerCase().includes(q)||c.period.toLowerCase().includes(q)||c.catchphrase.toLowerCase().includes(q));
+ const q=document.getElementById('search-input').value.trim().toLowerCase();
+ let list=allChars.filter(ch=>Object.entries(selectedFilters).every(([group,set])=>!set.size||[...set].some(key=>matchesGroup(ch,group,key))));
+ if(q)list=list.filter(c=>c.name.toLowerCase().includes(q)||c.period.toLowerCase().includes(q)||c.catchphrase.toLowerCase().includes(q));
+ document.getElementById('filter-count').textContent=`${list.length}人`;
   const el=document.getElementById("card-list");
-  if(!list.length){el.innerHTML=currentTag==="fav"?`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">⭐</div><div style="font-weight:700">お気に入りはまだないよ</div><div style="font-size:13px;color:#94a3b8;margin-top:4px">カードの ☆ ボタンを押して追加しよう！</div></div>`:`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">🔍</div><div style="font-weight:700">該当する人物が見つかりません</div></div>`;return;}
+  if(!list.length){el.innerHTML=selectedFilters.special.has('お気に入り')?`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">⭐</div><div style="font-weight:700">お気に入りはまだないよ</div><div style="font-size:13px;color:#94a3b8;margin-top:4px">カードの ☆ ボタンを押して追加しよう！</div></div>`:`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">🔍</div><div style="font-weight:700">該当する人物が見つかりません</div></div>`;return;}
   el.innerHTML=list.map((ch,i)=>{
     const ai=ch.isSpecial;
     const faved=isFav(ch.id);
@@ -552,7 +596,7 @@ function renderCards(){
         <div class="card-info">
           <div class="card-name-row">
             <span style="font-size:16px;font-weight:900;color:#1e293b">${esc(ch.name)}</span>
-            ${!ai?(function(){const e=getEra(ch.period);return '<span style="font-size:9px;padding:1px 6px;border-radius:100px;background:'+e.bg+';color:'+e.color+';font-weight:800">'+e.label+'</span>';})():""}
+            ${!ai?(function(){const e=getEra(ch.period),label=Object.keys(filterGroups.era.items).filter(k=>matchesGroup(ch,'era',k)).join('・');return '<span style="font-size:9px;padding:1px 6px;border-radius:100px;background:'+e.bg+';color:'+e.color+';font-weight:800">'+esc(label)+'</span>'; })():""}
             ${ai?`<span class="online-badge">オンライン</span>`:""}
           </div>
           <div style="font-size:11px;color:#94a3b8;margin-bottom:3px;display:flex;flex-wrap:wrap;align-items:center;gap:5px"><span class="character-period">${esc(ch.period)}</span>${hasNarrator?`<span class="narrator-badge">📖 解説</span>`:""}</div>

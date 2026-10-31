@@ -3949,6 +3949,15 @@ body #app #appHeader.compact-header{position:fixed!important;top:var(--neko-head
 #nekoHeaderPlaceholder{display:block;pointer-events:none;}
 html[data-persona="cyber"] body #app #appHeader::before{opacity:1!important;inset:0 -20px!important;background-color:rgba(3,12,23,.96)!important;background-image:linear-gradient(rgba(0,245,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.055) 1px,transparent 1px)!important;background-size:36px 36px!important;background-position:0 0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
 html:not([data-persona="cyber"]) body #app #appHeader::before{opacity:1!important;background:var(--cream)!important;}
+/* Keep the fixed header visually aligned with the viewport-fixed Cyber grid.
+   The body grid uses 36px cells and is anchored to the viewport, not the document. */
+html[data-persona="cyber"] body #app #appHeader::before{
+ background-color:rgba(3,12,23,.96)!important;
+ background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px)!important;
+ background-size:36px 36px!important;
+ background-position:var(--neko-grid-x,0px) var(--neko-grid-y,0px)!important;
+}
+
 </style>
 <script id="nekopon-fixed-header-init-20261101">
 document.addEventListener('DOMContentLoaded',()=>{
@@ -3961,6 +3970,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   const width=ar.width-parseFloat(cs.paddingLeft||0)-parseFloat(cs.paddingRight||0);
   h.style.setProperty('--neko-header-left',left+'px');h.style.setProperty('--neko-header-width',width+'px');
   spacer.style.height=h.getBoundingClientRect().height+'px';
+  h.style.setProperty('--neko-grid-x',(-left-20)+'px');
+  h.style.setProperty('--neko-grid-y',(-parseFloat(getComputedStyle(h).top||0))+'px');
  }
  function request(){if(busy)return;busy=true;requestAnimationFrame(()=>{busy=false;sync()})}
  sync();window.addEventListener('resize',request,{passive:true});window.addEventListener('orientationchange',request,{passive:true});

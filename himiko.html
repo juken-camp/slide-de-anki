@@ -329,6 +329,112 @@ html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-section{
 #list-view .nekopon-filter-tabs .nekopon-filter-tab:focus-visible,#list-view .filter-choice:focus-visible{outline:2px solid #d2691e;outline-offset:2px}
 html[data-persona="cyber"] #list-view .nekopon-filter-tabs .nekopon-filter-tab:focus-visible,html[data-persona="cyber"] #list-view .filter-choice:focus-visible{outline-color:#00f5ff}
 </style>
+<style id="nekopon-himiko-catalog-final-20261031">
+/* Align the heading-to-panel rhythm with 教材の目次: remove the subtitle gap. */
+#list-view .header-inner{padding:8px 0 0!important;gap:0!important}
+#list-view .himiko-page-title{margin:4px 0 0!important}
+#list-view .main-content{padding:18px 12px 80px!important}
+#list-view .nekopon-search-panel{margin:0 0 14px!important}
+/* Use the exact category-button typography used by the top-level subjects (理科・社会・ニュース). */
+#list-view .nekopon-filter-tabs{gap:8px!important}
+#list-view .nekopon-filter-tabs .nekopon-filter-tab{
+ min-height:42px!important;padding:6px 3px!important;border-width:2px!important;
+ border-radius:13px!important;box-shadow:0 3px 0 #e7cfb7!important;
+ font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif!important;
+ font-size:12px!important;font-weight:900!important;line-height:1.5!important;
+ letter-spacing:0!important;
+}
+#list-view .nekopon-filter-tabs .nekopon-filter-tab small{margin-left:2px;font-size:9px}
+/* Series row: same four-at-a-time grid and 4px scrollbar as #catalogSeries. */
+#list-view .nekopon-search-panel .filter-section:not([hidden]){
+ border-top:2px solid #ebdbc9!important;margin:12px 0 0!important;
+ padding:12px 0 0!important;
+}
+#list-view .nekopon-search-panel .himiko-filter-scroll{position:relative;min-width:0}
+#list-view .nekopon-search-panel .himiko-filter-scroll::before,
+#list-view .nekopon-search-panel .himiko-filter-scroll::after{
+ content:"";position:absolute;top:1px;bottom:7px;width:20px;z-index:2;
+ pointer-events:none;opacity:0;transition:opacity .15s;
+}
+#list-view .nekopon-search-panel .himiko-filter-scroll::before{
+ left:-1px;background:linear-gradient(90deg,#8e542b32,rgba(255,251,244,.76) 35%,transparent);
+ border-radius:14px 0 0 14px;
+}
+#list-view .nekopon-search-panel .himiko-filter-scroll::after{
+ right:-1px;background:linear-gradient(270deg,#8e542b32,rgba(255,251,244,.76) 35%,transparent);
+ border-radius:0 14px 14px 0;
+}
+#list-view .nekopon-search-panel .himiko-filter-scroll.has-left::before,
+#list-view .nekopon-search-panel .himiko-filter-scroll.has-right::after{opacity:1}
+#list-view .nekopon-search-panel .filter-buttons{
+ --series-gap:7px;
+ display:grid!important;grid-auto-flow:column!important;grid-template-columns:none!important;
+ grid-auto-columns:calc((100% - 3 * var(--series-gap)) / 4)!important;
+ gap:var(--series-gap)!important;
+ width:100%!important;min-width:0!important;max-width:100%!important;
+ padding:5px 1px 10px!important;margin:0!important;
+ overflow-x:auto!important;overflow-y:hidden!important;
+ overscroll-behavior-x:contain!important;scroll-snap-type:x proximity!important;
+ scroll-padding-inline:1px!important;
+ scrollbar-width:thin!important;scrollbar-color:#cfaa87 transparent!important;
+ -webkit-overflow-scrolling:touch;
+}
+#list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar{display:block!important;height:4px!important}
+#list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-thumb{background:#cfaa87!important;border-radius:10px!important}
+#list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-track{background:#f5ecdf!important;border-radius:10px!important}
+#list-view .nekopon-search-panel .filter-choice{
+ box-sizing:border-box!important;flex:none!important;scroll-snap-align:start!important;
+ display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;
+ gap:4px!important;width:100%!important;min-width:0!important;min-height:64px!important;
+ padding:7px 3px!important;border-width:3px!important;border-radius:16px!important;
+ font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif!important;
+ font-size:12px!important;font-weight:900!important;line-height:1.35!important;
+ letter-spacing:0!important;text-align:center!important;white-space:nowrap!important;
+ box-shadow:0 4px 0 #e7cfb7!important;
+}
+#list-view .nekopon-search-panel .filter-choice .filter-choice-label{
+ display:block!important;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+ font-size:12px!important;font-weight:900!important;line-height:1.35!important;
+}
+#list-view .nekopon-search-panel .filter-choice .era-date{
+ display:block!important;max-width:100%;font-size:10px!important;font-weight:500!important;
+ line-height:1.25!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap!important;
+ margin:0!important;opacity:.85;
+}
+#list-view .nekopon-search-panel .filter-choice.active{box-shadow:0 0 12px #d2691e33!important}
+html[data-persona="cyber"] #list-view .nekopon-filter-tabs .nekopon-filter-tab{
+ background:#0a1127!important;color:#cbdcf4!important;
+ border:2px solid #365d7b!important;box-shadow:0 3px 0 #0a182c!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-filter-tabs .nekopon-filter-tab[aria-expanded="true"]{
+ border-color:#00e9f5!important;background:#083c4c!important;
+ color:#bffaff!important;box-shadow:0 0 12px #00e9f566!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-choice{
+ background:#0a1127!important;color:#cbdcf4!important;border:3px solid #365d7b!important;
+ box-shadow:0 4px 0 #0b172e!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-choice.active{
+ border-color:#00e9f5!important;background:#083c4c!important;
+ color:#bffaff!important;box-shadow:0 0 12px #00e9f566!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-filter-scroll::before{
+ background:linear-gradient(90deg,rgba(0,245,255,.13),rgba(10,20,41,.8) 32%,transparent)!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-filter-scroll::after{
+ background:linear-gradient(270deg,rgba(0,245,255,.13),rgba(10,20,41,.8) 32%,transparent)!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons{
+ scrollbar-color:#315b81 transparent!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-thumb{background:#315b81!important}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-track{background:#0f1430!important}
+@media(max-width:370px){
+ #list-view .nekopon-search-panel .filter-buttons{--series-gap:5px}
+ #list-view .nekopon-search-panel .filter-choice{padding:7px 1px!important;border-radius:14px!important}
+ #list-view .nekopon-search-panel .filter-choice .filter-choice-label{font-size:10px!important}
+}
+</style>
 </head>
 <body>
 
@@ -341,16 +447,16 @@ html[data-persona="cyber"] #list-view .nekopon-filter-tabs .nekopon-filter-tab:f
         
         <div>
           <h2 class="himiko-page-title"><span class="himiko-heading">チャットで質問</span><span class="himiko-credit">feat. 卑弥呼と受験対策</span></h2>
-          <div class="himiko-subtitle">わからないことはチャットで聞いてみようにゃ</div>
+          
         </div>
       </div>
     </div>
   </div>
   <div class="main-content">
     <div class="nekopon-search-panel" aria-label="人物の検索と絞り込み">
-      <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前・時代で検索" aria-label="名前・時代で検索" oninput="renderCards()"></div>
+      <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前や時代で検索するぜ" aria-label="名前や時代で検索するぜ" oninput="renderCards()"></div>
       <div id="tag-bar" class="filter-panel"></div>
-    </div><p class="filter-hint">世界の人物は、おもに活躍したころの日本の時代で分類しています。時代の区切りは目安です。</p><p id="filter-count" class="filter-count" aria-live="polite"></p>
+    </div><p class="filter-hint">世界の人物は、おもに活躍したころの日本の時代で分けているぜ。時代の区切りは目安だぜ。</p><p id="filter-count" class="filter-count" aria-live="polite"></p>
     <div class="card-list" id="card-list"></div>
   </div>
 </div>
@@ -665,9 +771,18 @@ function renderTags(){
  }).join('')}</nav>`;
  container.innerHTML=tabs+Object.entries(filterGroups).map(([group,config])=>{
   const chosen=selectedFilters[group];
-  return `<section id="himiko-options-${group}" class="filter-section" ${openedFilterGroup===group?'':'hidden'}><h3 class="filter-heading">${config.label}${chosen.size?' <small>（'+chosen.size+'つ選択）</small>':''}</h3><div class="filter-buttons" data-group="${group}" aria-label="${config.label}">${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}">${esc(key)}${group==='era'?`<small class="era-date">${esc(eraDates[key])}</small>`:''}</button>`).join('')}</div></section>`;
+  return `<section id="himiko-options-${group}" class="filter-section" ${openedFilterGroup===group?'':'hidden'}><h3 class="filter-heading">${config.label}${chosen.size?' <small>（'+chosen.size+'つ選択）</small>':''}</h3><div class="himiko-filter-scroll"><div class="filter-buttons" data-group="${group}" aria-label="${config.label}">${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}" title="${escAttr(key+(group==='era'?'：'+eraDates[key]:''))}"><span class="filter-choice-label">${esc(key)}</span>${group==='era'?`<small class="era-date">${esc(eraDates[key])}</small>`:''}</button>`).join('')}</div></div></section>`;
  }).join('')+`<button type="button" class="filter-clear" onclick="clearFilters()" ${Object.values(selectedFilters).some(set=>set.size)?'':'hidden'}>絞り込みを解除</button>`;
- container.querySelectorAll('.filter-buttons').forEach(row=>{row.scrollLeft=positions[row.dataset.group]||0});
+ container.querySelectorAll('.filter-buttons').forEach(row=>{
+  row.scrollLeft=positions[row.dataset.group]||0;
+  const shell=row.closest('.himiko-filter-scroll');
+  const syncEdges=()=>{
+   shell.classList.toggle('has-left',row.scrollLeft>2);
+   shell.classList.toggle('has-right',row.scrollLeft+row.clientWidth<row.scrollWidth-2);
+  };
+  row.addEventListener('scroll',syncEdges,{passive:true});
+  syncEdges();
+ });
 }
 function toggleFilterGroup(group){
  if(!Object.prototype.hasOwnProperty.call(filterTabNames,group))return;

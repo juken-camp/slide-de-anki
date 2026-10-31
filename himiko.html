@@ -816,7 +816,7 @@ syncHimikoSubtitle();
 window.addEventListener('message',event=>{if(event.origin===location.origin&&event.data?.type==='nekopon-persona')syncHimikoSubtitle();});
 // Use the app's sound palette, volume and mute setting when embedded.
 function appSound(kind,event){
-  try { if(window.parent!==window && window.parent.location.origin===location.origin && typeof window.parent.beep==='function') window.parent.beep(kind,event); } catch(_) {}
+  try { if(window.parent!==window && window.parent.location.origin===location.origin && typeof window.parent.nekoponChatSound==='function') window.parent.nekoponChatSound(kind,event); } catch(_) {}
 }
 function playSendSound(){appSound('chatSend');}
 function playReceiveSound(){appSound('chatReceive');}

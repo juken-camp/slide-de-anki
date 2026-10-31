@@ -8069,6 +8069,12 @@ $('studyReel').onclick=()=>{if(lesson)openReel(state.lessonIds,deck().map(c=>c.i
 $('examSetReel').onclick=()=>{const keys=[...examSet.keys];if(!keys.length)return;$('examSetDialog').close();openReel([...new Set(keys.map(k=>hSplit(k).lessonId))],keys,$('openExamSet'));};
 const reelButtonObserver=new MutationObserver(()=>{$('openReel').disabled=$('startStudy').disabled;});reelButtonObserver.observe($('startStudy'),{attributes:true,attributeFilter:['disabled']});$('openReel').disabled=$('startStudy').disabled;
 
+// Same-origin embedded chat uses the existing sound settings and engine.
+window.nekoponChatSound=(kind,event)=>{
+  if(!['tap','open','chatSend','chatReceive'].includes(kind))return;
+  return beep(kind,event);
+};
+$('navCollections')?.addEventListener('click',()=>scheduleMediaSounds(30,soundNotes('open',soundStyle(),0)));
 showScreen('catalog');
 })();
 
@@ -8605,7 +8611,7 @@ $('importForm').onsubmit=async e=>{
     if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.type!=='himiko-input-focus')return;
     inputActive=!!event.data.active;schedule();setTimeout(schedule,150);setTimeout(schedule,400);
   });
-  document.getElementById('navCollections')?.addEventListener('click',()=>{schedule();scheduleMediaSounds(30,soundNotes('open',soundStyle(),0));});
+  document.getElementById('navCollections')?.addEventListener('click',schedule);
   document.querySelectorAll('#appNavigation button:not(#navCollections)').forEach(button=>button.addEventListener('click',()=>{inputActive=false;root.classList.remove('himiko-keyboard-open');}));
   window.addEventListener('resize',schedule);window.visualViewport?.addEventListener('resize',schedule);window.visualViewport?.addEventListener('scroll',schedule);
   window.addEventListener('orientationchange',()=>{inputActive=false;root.classList.remove('himiko-keyboard-open');setTimeout(()=>{baseline=window.visualViewport?.height||window.innerHeight;schedule()},300)});

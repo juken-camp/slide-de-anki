@@ -3989,6 +3989,24 @@ document.addEventListener('DOMContentLoaded',()=>{
 </script>
 </head>
 <body><main id="app" class="app">
+<style id="reel-header-alignment-fix-20261101">
+/* Reel header stays in the normal flow, at the same size as the five-tab header. */
+html[data-persona] body #app #reelDialog .reel-shell{display:flex!important;flex-direction:column!important;width:100%!important;max-width:none!important;height:100%!important;padding:0!important;overflow:hidden!important;}
+html[data-persona] body #app #reelDialog #appHeader.compact-header{
+ position:relative!important;top:auto!important;left:auto!important;right:auto!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ height:62px!important;min-height:62px!important;flex:0 0 62px!important;
+ padding:0 12px!important;margin:0!important;box-sizing:border-box!important;
+ display:flex!important;align-items:center!important;overflow:visible!important;
+ transform:none!important;z-index:20!important;
+}
+html[data-persona] body #app #reelDialog #appHeader .app-navigation{min-width:0!important;max-width:48vw!important;}
+html[data-persona] body #app #reelDialog .reel-main{position:relative!important;inset:auto!important;flex:1 1 0!important;min-height:0!important;overflow:hidden!important;}
+html[data-persona] body #app #reelDialog #reelFeed{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;}
+html[data-persona] body #app #reelDialog .reel-page{height:100%!important;min-height:100%!important;}
+html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
+@media(max-width:370px){html[data-persona] body #app #reelDialog #appHeader.compact-header{padding-left:8px!important;padding-right:8px!important;gap:4px!important}}
+</style>
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   
   

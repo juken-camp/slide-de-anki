@@ -205,6 +205,13 @@ html[data-persona="cyber"] .send-btn:not(:disabled){background:linear-gradient(1
 #msg-input{box-sizing:border-box;height:44px;min-height:44px;padding:11px 12px;line-height:20px}
 #msg-input::placeholder{font-size:14px;line-height:20px}
 #msg-input{display:block;min-width:0;overflow-y:auto;-webkit-appearance:none}
+#list-view .header-inner{padding-top:8px;gap:0}
+#list-view .himiko-page-title{display:flex;align-items:baseline;gap:8px;white-space:nowrap;min-width:0;margin:4px 0 0}
+#list-view .himiko-heading{font:800 18px/1.45 system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;flex:none}
+#list-view .himiko-credit{font:700 clamp(9px,2.6vw,12px)/1.4 "M PLUS Rounded 1c",sans-serif;color:#a17150;min-width:0}
+html[data-persona="cyber"] #list-view .himiko-credit{color:#9cb9d4}
+#list-view .himiko-subtitle{margin:10px 0 14px}
+#list-view .main-content{padding-top:14px}
 </style></head>
 <body>
 
@@ -216,7 +223,7 @@ html[data-persona="cyber"] .send-btn:not(:disabled){background:linear-gradient(1
       <div style="flex:1;display:flex;align-items:center;gap:10px">
         
         <div>
-          <h2 class="himiko-page-title">卑弥呼と受験対策</h2>
+          <h2 class="himiko-page-title"><span class="himiko-heading">チャットで質問</span><span class="himiko-credit">feat. 卑弥呼と受験対策</span></h2>
           <div class="himiko-subtitle">わからないことはチャットで聞いてみよう</div>
         </div>
       </div>

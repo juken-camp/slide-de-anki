@@ -823,6 +823,53 @@ html,body{overscroll-behavior-x:none;overscroll-behavior-y:none;-webkit-text-siz
   #msg-input,#list-view input,#list-view select,#chat-view input,#chat-view textarea{font-size:16px!important;}
 }
 </style>
+
+<style id="nekopon-himiko-persona-background-unification-20261031">
+/* Keep the embedded list, chat header, message timeline and composer on the
+   SAME background as the parent app. Do not recolor text fields or buttons. */
+html,html[data-chat-open] {
+  --himiko-persona-bg:#fff8f0;
+  background-color:var(--himiko-persona-bg)!important;
+  background-image:
+    radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),
+    radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),
+    radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%)!important;
+  background-size:cover!important;
+  background-attachment:fixed!important;
+}
+html[data-persona="cyber"],html[data-persona="cyber"][data-chat-open] {
+  --himiko-persona-bg:#050510;
+  background-color:var(--himiko-persona-bg)!important;
+  /* Exact grid rhythm and tint of the usual Yorupon app background. */
+  background-image:
+    linear-gradient(#00f5ff09 1px,transparent 1px),
+    linear-gradient(90deg,#00f5ff09 1px,transparent 1px),
+    radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),
+    radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+  background-size:36px 36px,36px 36px,cover,cover!important;
+  background-attachment:fixed!important;
+}
+/* A solid background from the previous embedded-page styles used to hide the
+   grid specifically on chat open; make those surfaces truly transparent. */
+html body,
+html[data-chat-open] body,
+html[data-persona="cyber"] body,
+html[data-persona="cyber"][data-chat-open] body,
+html #list-view,
+html #list-view .header,
+html #chat-view,
+html[data-chat-open] #chat-view,
+html[data-persona="cyber"][data-chat-open] #chat-view,
+html #chat-view .messages,
+html #chat-view .chat-header,
+html #chat-view .chat-storage-status,
+html #chat-view .input-area {
+  background:transparent!important;
+  background-image:none!important;
+}
+/* Keep a single subtle separator instead of a dark solid header/composer. */
+html #chat-view .chat-header { box-shadow:none!important; }
+</style>
 </head>
 <body>
 

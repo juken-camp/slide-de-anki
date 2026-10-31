@@ -675,6 +675,75 @@ html[data-persona="cyber"] #profile-modal .modal-sheet div[style*="color:#374151
   background:#172c43!important;
 }
 </style>
+
+<style id="nekopon-himiko-profile-sheet-and-composer-stability-20261031">
+/* Inside an iframe, only the message list scrolls; the composer is a fixed flex row.
+   This prevents a swipe on past messages from moving the chat input or the frame. */
+html[data-chat-open],html[data-chat-open] body{
+  height:100%!important; min-height:0!important;
+  overflow:hidden!important; overscroll-behavior:none!important;
+}
+html[data-chat-open] #chat-view{
+  position:fixed!important;inset:0!important;
+  width:100%!important;height:100%!important;min-height:0!important;
+  display:flex!important;flex-direction:column!important;overflow:hidden!important;
+}
+html[data-chat-open] #chat-view .chat-header{flex:0 0 auto!important;}
+html[data-chat-open] #chat-view .messages{
+  flex:1 1 0%!important;min-height:0!important;height:auto!important;
+  overflow-y:auto!important;-webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;
+}
+html[data-chat-open] #chat-view .input-area{
+  position:relative!important;inset:auto!important;
+  transform:none!important;z-index:5!important;
+  flex:0 0 auto!important;width:100%!important;min-height:0!important;
+  /* Apply safe-area padding once. The composer must not be a scroll child. */
+  padding:8px 12px calc(10px + env(safe-area-inset-bottom,0px))!important;
+}
+/* A bottom sheet covers the composer while it is open; it must not leave any
+   underlying input or a blue rectangular border visible through the sheet. */
+#profile-modal:not(.hidden){
+  position:fixed!important;inset:0!important;
+  width:100%!important;height:100%!important;z-index:10000!important;
+  pointer-events:none;
+}
+#profile-modal .modal-overlay{
+  position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;
+  z-index:1!important;pointer-events:auto;
+  overflow:hidden;
+}
+#profile-modal .modal-sheet,
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  border:0!important;outline:0!important;
+  box-shadow:0 -14px 34px rgba(0,0,0,.16)!important;
+  position:relative;
+  margin:0 auto!important;
+  max-height:calc(100% - 18px);
+  overflow-y:auto;
+  padding-bottom:calc(26px + env(safe-area-inset-bottom,0px));
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  background:#111b35!important;
+  box-shadow:0 -14px 34px rgba(0,0,0,.30)!important;
+}
+#profile-modal .modal-close{
+  display:grid;place-items:center;float:right;
+  width:42px;height:42px;min-width:42px;min-height:42px;
+  padding:0!important;border-radius:12px;font-size:24px;
+  line-height:1;
+}
+</style>
+
+<style id="nekopon-mascot-count-20261031">
+/* Match the Nekopon / Yorupon icon used by the app's character selector. */
+#list-view #filter-count .filter-count-icon{font-size:23px;line-height:1;filter:none!important;text-shadow:none!important;}
+#list-view #filter-count .count-neko{display:inline!important;}
+#list-view #filter-count .count-yoru{display:none!important;}
+html[data-persona="cyber"] #list-view #filter-count .count-neko{display:none!important;}
+html[data-persona="cyber"] #list-view #filter-count .count-yoru{display:inline!important;}
+</style>
 </head>
 <body>
 
@@ -696,7 +765,7 @@ html[data-persona="cyber"] #profile-modal .modal-sheet div[style*="color:#374151
     <div class="nekopon-search-panel" aria-label="人物の検索と絞り込み">
       <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前や時代で検索するぜ" aria-label="名前や時代で検索するぜ" oninput="renderCards()"></div>
       <div id="tag-bar" class="filter-panel"></div>
-    </div><p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true">🙋</span><span class="filter-count-text"></span></p>
+    </div><p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true"><span class="count-neko">😺</span><span class="count-yoru">😎</span></span><span class="filter-count-text"></span></p>
     <div class="card-list" id="card-list"></div>
   </div>
 </div>
@@ -1450,7 +1519,7 @@ function showProfile(){
   modal.innerHTML=`<div class="modal-overlay" id="modal-overlay" onclick="closeProfile(event)">
     <div class="modal-sheet" id="modal-sheet">
       <div class="modal-handle"></div>
-      <button class="modal-close" onclick="closeProfile()">✕ 閉じる</button>
+      <button type="button" class="modal-close" aria-label="閉じる" title="閉じる" onclick="closeProfile()">×</button>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
         <div style="width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,${ch.color},${ch.accent});display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">${ch.emoji}</div>
         <div>

@@ -3830,7 +3830,15 @@ html.himiko-chat-active #app #himikoScreen{
  margin:0!important;overflow:hidden!important;
 }
 html.himiko-chat-active #app #himikoFrame{display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important}
-</style></head>
+</style>
+<style id="nekopon-himiko-viewport-composer-stability-20261031">
+html.himiko-chat-active,html.himiko-chat-active body{
+  overflow:hidden!important;overscroll-behavior:none!important;
+}
+html.himiko-chat-active #app{overflow:visible!important;}
+html.himiko-chat-active #app #himikoScreen{overflow:hidden!important;}
+</style>
+</head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   
@@ -8699,6 +8707,7 @@ $('importForm').onsubmit=async e=>{
   let inputActive=false,chatActive=false,queued=false;
   let baseline=window.visualViewport?.height||window.innerHeight;
   let beforeChatY=0;
+  let chatAnchorTop=null;
   function update(){
     queued=false;
     if(screen.hidden){root.classList.remove('himiko-keyboard-open');return;}
@@ -8708,8 +8717,15 @@ $('importForm').onsubmit=async e=>{
     const keyboard=inputActive && baseline-available>100;
     root.classList.toggle('himiko-keyboard-open',keyboard);
     if(chatActive){
-      const top=keyboard?offset:Math.max(0,Math.min(available-180,(header?.getBoundingClientRect().bottom||56)+4));
-      const height=Math.max(180,Math.floor(available-(keyboard?0:top)));
+      // Cache the header boundary for the duration of a conversation. Recomputing
+      // from header.getBoundingClientRect() during each visualViewport scroll event
+      // makes the entire chat (including the composer) jump on iOS Safari.
+      if(chatAnchorTop===null){
+        chatAnchorTop=Math.max(0,Math.min(available-180,(header?.getBoundingClientRect().bottom||56)+4));
+      }
+      const top=keyboard?offset:chatAnchorTop;
+      // Visible bottom is offsetTop + height, not height alone (iOS keyboard).
+      const height=Math.max(150,Math.floor(offset+available-top));
       root.style.setProperty('--himiko-chat-top',Math.round(top)+'px');
       root.style.setProperty('--himiko-chat-height',height+'px');
       root.style.removeProperty('--himiko-viewport-top');
@@ -8731,10 +8747,12 @@ $('importForm').onsubmit=async e=>{
     chatActive=open;
     if(open){
       beforeChatY=window.scrollY||0;
+      chatAnchorTop=null;
       inputActive=false;
       window.scrollTo({top:0,behavior:'instant'});
       root.classList.add('himiko-chat-active');
     }else{
+      chatAnchorTop=null;
       root.classList.remove('himiko-chat-active','himiko-keyboard-open');
       root.style.removeProperty('--himiko-chat-top');root.style.removeProperty('--himiko-chat-height');
       inputActive=false;
@@ -8763,6 +8781,7 @@ $('importForm').onsubmit=async e=>{
   window.visualViewport?.addEventListener('resize',schedule);
   window.visualViewport?.addEventListener('scroll',schedule);
   window.addEventListener('orientationchange',()=>{
+    chatAnchorTop=null;
     inputActive=false;root.classList.remove('himiko-keyboard-open');
     setTimeout(()=>{baseline=window.visualViewport?.height||window.innerHeight;schedule()},300);
   });

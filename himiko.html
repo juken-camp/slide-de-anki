@@ -949,6 +949,16 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
   padding-bottom:26px!important;
 }
 </style>
+
+<style id="nekopon-list-heading-single-line-20261101">
+/* Hide only the doubled grid seam immediately above the list heading.
+   The surrounding grid, cards and chat scroll remain unchanged. */
+#list-view .header{position:relative!important;}
+html[data-persona="cyber"] #list-view .header::before{
+ content:"";position:absolute;left:0;right:0;top:0;height:3px;
+ background:#080d20;pointer-events:none;z-index:1;
+}
+</style>
 </head>
 <body>
 

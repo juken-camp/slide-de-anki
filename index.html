@@ -3958,6 +3958,15 @@ html[data-persona="cyber"] body #app #appHeader::before{
  background-position:var(--neko-grid-x,0px) var(--neko-grid-y,0px)!important;
 }
 
+/* Header background must be painted in viewport coordinates, not as a moving overlay. */
+html[data-persona="cyber"] body #app #appHeader.compact-header{
+ background-color:#050510!important;
+ background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+ background-size:36px 36px,36px 36px,100vw 100vh,100vw 100vh!important;
+ background-attachment:fixed!important;
+ background-position:0 0!important;
+}
+html[data-persona="cyber"] body #app #appHeader.compact-header::before{display:none!important;}
 </style>
 <script id="nekopon-fixed-header-init-20261101">
 document.addEventListener('DOMContentLoaded',()=>{

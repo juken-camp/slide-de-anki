@@ -944,6 +944,11 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting) > .mess
   padding-top:0!important;
 }
 </style>
+<style id="nekopon-reply-bottom-visibility-20261101">
+html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
+  padding-bottom:26px!important;
+}
+</style>
 </head>
 <body>
 
@@ -1482,6 +1487,17 @@ function scrollChatToEnd(smooth=false, force=false){
     el.scrollTo({top:end,behavior:smooth&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches?"smooth":"auto"});
   });
 }
+// Track real content height (including late font/layout changes), not only
+// the height at the instant a reply bubble was appended.
+const chatContentSizeObserver=new ResizeObserver(()=>{
+  if(!currentChar || userReadingHistory || !activeReveal)return;
+  scrollChatToEnd(false);
+});
+function watchChatContent(){
+  chatContentSizeObserver.disconnect();
+  const inner=messageInner();
+  if(inner)chatContentSizeObserver.observe(inner);
+}
 function appendChatNode(node,follow=false){
   const inner=messageInner();if(!inner)return;
   inner.append(node);
@@ -1520,6 +1536,7 @@ function renderMessages(resetScroll=true){
   const followups=messages.length>1&&messages.at(-1)?.role==="assistant"?dynamicSuggestions:[];
   const el=document.getElementById("messages");
   el.innerHTML=`<div class="messages-inner">${older}${markup}${suggestionHTML(ch,initial,true)}${suggestionHTML(ch,followups)}</div>`;
+  watchChatContent();
   el.classList.toggle('nekopon-initial-greeting',messages.length===1); if(resetScroll){el.scrollTop=messages.length>1?el.scrollHeight:0;previousChatScroll=el.scrollTop;userReadingHistory=false;}
   updateSendBtn();
 }
@@ -1569,6 +1586,7 @@ function startReveal(ch,reply,suggestions){
   appendChatNode(group,false);
   const state={group,ch,chunks,suggestions,index:0,timer:null,status:null};
   activeReveal=state;
+  watchChatContent();
   const addNext=()=>{
     if(activeReveal!==state||currentChar!==ch||!group.isConnected)return;
     state.status?.remove();state.status=null;
@@ -1583,7 +1601,13 @@ function startReveal(ch,reply,suggestions){
       activeReveal=null;
       if(suggestions.length)group.after(nodeFromHTML(suggestionHTML(ch,suggestions)));
     }
-    scrollChatToEnd(true);
+    // Newly inserted bubbles can grow after the first layout frame on iOS.
+    // During automatic reveal, settle at the true end without a competing
+    // smooth-scroll animation. Respect manual reading of older messages.
+    scrollChatToEnd(false);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(currentChar===ch && !userReadingHistory)scrollChatToEnd(false);
+    }));
   };
   // 回答の最初から表示する。先頭へのジャンプや表示前の画面移動はしない。
   addNext();

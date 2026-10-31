@@ -210,7 +210,15 @@ html[data-persona="cyber"] .send-btn:not(:disabled){background:linear-gradient(1
 #list-view .himiko-heading{font:800 18px/1.45 "Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;letter-spacing:0;flex:none}
 #list-view .himiko-credit{font:700 clamp(9px,2.6vw,12px)/1.4 "M PLUS Rounded 1c",sans-serif;color:#a17150;min-width:0}
 html[data-persona="cyber"] #list-view .himiko-credit{color:#9cb9d4}
-#list-view .himiko-subtitle{margin:18px 0 22px}
+#list-view .himiko-subtitle{margin:10px 0 22px;font-family:"Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;font-size:11px;font-weight:600;line-height:1.5;color:#8c6042}
+html[data-persona="cyber"] #list-view .himiko-subtitle{color:#c5edff}
+/* Match the app's focus ring and pressed feedback. */
+#search-input:focus,#msg-input:focus{outline:2px solid #d2691e;outline-offset:2px;border-color:#d2691e}
+html[data-persona="cyber"] :is(#search-input,#msg-input):focus{border:2px solid #00f5ff!important;outline:2px solid #00f5ff83!important;outline-offset:2px;box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16!important;caret-color:#00f5ff}
+:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close){-webkit-tap-highlight-color:transparent;transition:transform .14s,filter .14s,box-shadow .14s,border-color .14s}
+:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{transform:scale(.98);filter:brightness(.96)}
+html[data-persona="cyber"] :is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{filter:brightness(1.18);box-shadow:0 0 14px #00f5ff80!important;border-color:#00e9f5!important}
+@media(prefers-reduced-motion:reduce){:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{transform:none}}
 #list-view .main-content{padding-top:14px}
 </style></head>
 <body>
@@ -224,7 +232,7 @@ html[data-persona="cyber"] #list-view .himiko-credit{color:#9cb9d4}
         
         <div>
           <h2 class="himiko-page-title"><span class="himiko-heading">チャットで質問</span><span class="himiko-credit">feat. 卑弥呼と受験対策</span></h2>
-          <div class="himiko-subtitle">わからないことはチャットで聞いてみよう</div>
+          <div class="himiko-subtitle">わからないことはチャットで聞いてみようにゃ</div>
         </div>
       </div>
       <input id="search-input" placeholder="🔍 名前・時代で検索" oninput="renderCards()">
@@ -802,12 +810,17 @@ function getFallbackSuggestions(ch){
   return ["もう少し詳しく教えて","入試ではどう出題されるの？","他の人物との関係を教えて"];
 }
 
+// Keep the subtitle in step with the app's selected character.
+function syncHimikoSubtitle(){const el=document.querySelector('.himiko-subtitle');if(el)el.textContent=document.documentElement.dataset.persona==='cyber'?'わからないことはチャットで聞こうぜ':'わからないことはチャットで聞いてみようにゃ';}
+syncHimikoSubtitle();
+window.addEventListener('message',event=>{if(event.origin===location.origin&&event.data?.type==='nekopon-persona')syncHimikoSubtitle();});
 // Use the app's sound palette, volume and mute setting when embedded.
 function appSound(kind,event){
   try { if(window.parent!==window && window.parent.location.origin===location.origin && typeof window.parent.beep==='function') window.parent.beep(kind,event); } catch(_) {}
 }
 function playSendSound(){appSound('chatSend');}
 function playReceiveSound(){appSound('chatReceive');}
+document.addEventListener('pointerdown',event=>{if(event.target.matches('#search-input,#msg-input'))appSound('tap',event);});
 document.addEventListener('click',event=>{
   const button=event.target.closest('button,.fav-btn,.header-tap');
   if(!button || button.disabled || button.id==='send-btn' || button.classList.contains('suggestion-btn'))return;

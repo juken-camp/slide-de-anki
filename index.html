@@ -3743,7 +3743,85 @@ html.himiko-keyboard-open #app #himikoFrame{height:100%!important;min-height:0!i
 #app #myCollectionsPanel .my-page-search-panel{padding:12px;border:1px solid #e4cbb3;border-radius:16px;background:#fffaf2;margin:0 0 20px}
 #app #myCollectionsPanel .my-page-search-panel .my-page-actions{margin-bottom:0}
 html[data-persona="cyber"] #app #myCollectionsPanel .my-page-search-panel{background:#0f1430;border-color:#315576}
-</style></head>
+</style><style id="nekopon-layout-match-20261031">
+/* 目次と新しい教材：同じ外枠、検索窓、文字サイズを共有する。 */
+#app #catalogScreen .catalog-search-panel,
+#app #myCollectionsPanel .my-page-search-panel{
+  width:100%;min-width:0;box-sizing:border-box;
+  padding:12px; border:2px solid #dcc4ad;border-radius:17px;
+  background:#fffdf8;box-shadow:none;
+}
+#app #myCollectionsPanel .my-page-search-panel{margin:0 0 20px}
+#app #catalogScreen .catalog-search-panel .catalog-search,
+#app #myCollectionsPanel .my-page-search-panel .catalog-search{
+  box-sizing:border-box;width:100%;min-width:0;height:48px;min-height:48px;
+  display:flex;align-items:center;gap:10px;padding:0 14px;
+  margin:0;border:2px solid #c8a789;border-radius:13px;
+  background:#fff;color:#754b2f;box-shadow:none;
+}
+#app #catalogScreen .catalog-search-panel .catalog-search > span,
+#app #myCollectionsPanel .my-page-search-panel .catalog-search > span{
+  flex:none;font-size:24px;line-height:1;
+}
+#app #catalogScreen .catalog-search-panel .catalog-search input#catalogSearch,
+#app #myCollectionsPanel .my-page-search-panel .catalog-search input#myCollectionsSearch{
+  display:block;flex:1;min-width:0;width:100%;height:44px;min-height:44px;
+  padding:0;margin:0;border:0!important;outline:0!important;
+  border-radius:0;background:transparent!important;background-image:none!important;
+  box-shadow:none!important;-webkit-box-shadow:none!important;
+  font-size:16px;line-height:1.4;color:inherit;
+}
+#app #catalogScreen .catalog-search-panel .catalog-search input#catalogSearch::placeholder,
+#app #myCollectionsPanel .my-page-search-panel .catalog-search input#myCollectionsSearch::placeholder{
+  font-size:14px!important;line-height:1.4;opacity:1;
+}
+#app #catalogScreen .catalog-search-panel .catalog-search:focus-within,
+#app #myCollectionsPanel .my-page-search-panel .catalog-search:focus-within{
+  border-color:#d2691e;outline:2px solid #d2691e77;outline-offset:2px;
+}
+#app #myCollectionsPanel .my-page-search-panel .my-page-actions{
+  margin:12px 0 0;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;
+}
+#app #myCollectionsPanel .my-page-search-panel .my-page-actions .tool{
+  min-width:0;min-height:64px;padding:7px 2px;
+  border:2px solid #d5b99b;border-radius:13px;
+  background:#fffaf2;color:#754b2f;box-shadow:none;
+  font-size:clamp(10px,2.9vw,13px);font-weight:800;
+}
+html[data-persona="cyber"] #app #catalogScreen .catalog-search-panel,
+html[data-persona="cyber"] #app #myCollectionsPanel .my-page-search-panel{
+  background:#0f1430!important;border:2px solid #315576!important;
+  color:#e0eaff!important;box-shadow:0 0 20px #00f5ff0d!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .catalog-search-panel .catalog-search,
+html[data-persona="cyber"] #app #myCollectionsPanel .my-page-search-panel .catalog-search{
+  background:#0b1831!important;border:2px solid #3c6f94!important;
+  color:#dffaff!important;box-shadow:0 0 11px #00f5ff2c!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .catalog-search-panel .catalog-search:focus-within,
+html[data-persona="cyber"] #app #myCollectionsPanel .my-page-search-panel .catalog-search:focus-within{
+  border-color:#00f5ff!important;outline:2px solid #00f5ff83!important;
+  box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .catalog-search-panel .catalog-search input#catalogSearch,
+html[data-persona="cyber"] #app #myCollectionsPanel .my-page-search-panel .catalog-search input#myCollectionsSearch{
+  background:transparent!important;background-color:transparent!important;
+  border:0!important;box-shadow:none!important;color:#e0eaff!important;
+}
+html[data-persona="cyber"] #app #catalogScreen .catalog-search-panel .catalog-search input#catalogSearch::placeholder,
+html[data-persona="cyber"] #app #myCollectionsPanel .my-page-search-panel .catalog-search input#myCollectionsSearch::placeholder{
+  color:#9fbad2!important;-webkit-text-fill-color:#9fbad2!important;opacity:1!important;
+}
+html[data-persona="cyber"] #app #myCollectionsPanel .my-page-search-panel .my-page-actions .tool{
+  background:#0a1127!important;border:2px solid #365d7b!important;
+  color:#cbdcf4!important;box-shadow:0 0 10px #00f5ff12!important;
+}
+@media(max-width:370px){
+ #app #catalogScreen .catalog-search-panel,#app #myCollectionsPanel .my-page-search-panel{padding:10px}
+ #app #catalogScreen .catalog-search-panel .catalog-search,#app #myCollectionsPanel .my-page-search-panel .catalog-search{padding:0 10px}
+}
+</style>
+</head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   

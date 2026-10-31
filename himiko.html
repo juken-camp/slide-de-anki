@@ -1866,6 +1866,42 @@ document.getElementById("messages").addEventListener("click",function(e){
 })();
 </script>
 
+<script id="nekopon-initial-bounce-rest-position-20261101">
+/* A 4px scroll range enables native iOS bounce for the first message.
+   Restore the exact top position after the gesture settles; do not touch
+   normal conversations that have real scrollable content. */
+(() => {
+  const scroller = document.getElementById('messages');
+  if (!scroller) return;
+  let settleTimer = null;
+  let touching = false;
+  const isShort = () =>
+    document.documentElement.hasAttribute('data-chat-open') &&
+    scroller.scrollHeight - scroller.clientHeight <= 8;
+  const restore = () => {
+    if (touching || !isShort()) return;
+    if (scroller.scrollTop !== 0) scroller.scrollTop = 0;
+  };
+  const schedule = () => {
+    clearTimeout(settleTimer);
+    if (!isShort()) return;
+    settleTimer = setTimeout(restore, 280);
+  };
+  scroller.addEventListener('touchstart', () => {
+    touching = true;
+    clearTimeout(settleTimer);
+  }, {passive:true});
+  scroller.addEventListener('touchend', () => {
+    touching = false;
+    schedule();
+  }, {passive:true});
+  scroller.addEventListener('touchcancel', () => {
+    touching = false;
+    schedule();
+  }, {passive:true});
+  scroller.addEventListener('scrollend', restore, {passive:true});
+})();
+</script>
 </body>
 </html>
 

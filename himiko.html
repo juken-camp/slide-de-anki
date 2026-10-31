@@ -950,14 +950,14 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
 }
 </style>
 
-<style id="nekopon-list-heading-single-line-20261101">
-/* Hide only the doubled grid seam immediately above the list heading.
-   The surrounding grid, cards and chat scroll remain unchanged. */
-#list-view .header{position:relative!important;}
-html[data-persona="cyber"] #list-view .header::before{
- content:"";position:absolute;left:0;right:0;top:0;height:3px;
- background:#080d20;pointer-events:none;z-index:1;
+<style id="nekopon-list-heading-grid-seam-fix-20261101">
+/* The parent page and embedded history list draw separate 36px grids.
+   Offset the embedded grid so its first horizontal line does not sit
+   immediately beside the parent header boundary. No overlay or border. */
+html[data-persona="cyber"] {
+  background-position:0 18px,0 0,center top,center center!important;
 }
+#list-view .header{border-top:0!important;box-shadow:none!important;}
 </style>
 </head>
 <body>

@@ -958,18 +958,42 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
 #list-view .himiko-page-title { border:0!important; box-shadow:none!important; }
 </style>
 <style id="nekopon-heading-grid-single-line-fix-20261101">
-/* Keep the global 36px square grid untouched. In the title strip, prevent
-   horizontal grid strokes from appearing as extra heading separators. */
-html[data-persona="cyber"] #list-view > .header {
+/* One grid painter only: the document root. A second grid on the sticky
+   heading gets a different phase while iOS rubber-bands the list. */
+html[data-persona="cyber"] #list-view > .header,
+html[data-persona="cyber"] #list-view .header-inner,
+html[data-persona="cyber"] #list-view .himiko-page-title {
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+/* Do not allow the embedded document itself to rubber-band beyond the top;
+   the parent app owns page-level overscroll. Ordinary list scrolling stays. */
+html:not([data-chat-open]),html:not([data-chat-open]) body {
+  overscroll-behavior-y:none!important;
+}
+</style>
+
+<style id="nekopon-list-continuous-square-grid-20261101">
+/* The list's entire scroll canvas is one grid. The title must never be a solid strip. */
+html[data-persona="cyber"] body {
   background-color:#050510!important;
   background-image:
+    linear-gradient(#00f5ff09 1px,transparent 1px),
     linear-gradient(90deg,#00f5ff09 1px,transparent 1px),
     radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),
     radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
-  background-size:36px 36px,cover,cover!important;
+  background-size:36px 36px,36px 36px,100% 100%,100% 100%!important;
   background-attachment:fixed!important;
-  border:0!important;
-  box-shadow:none!important;
+  background-position:0 0!important;
+}
+html[data-persona="cyber"] #list-view,
+html[data-persona="cyber"] #list-view > .header,
+html[data-persona="cyber"] #list-view .header-inner,
+html[data-persona="cyber"] #list-view .himiko-page-title {
+  background-color:transparent!important;
+  background-image:none!important;
 }
 </style>
 </head>

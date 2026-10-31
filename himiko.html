@@ -951,11 +951,10 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
 </style>
 
 <style id="nekopon-list-heading-grid-seam-fix-20261101">
-/* The parent page and embedded history list draw separate 36px grids.
-   Offset the embedded grid so its first horizontal line does not sit
-   immediately beside the parent header boundary. No overlay or border. */
+/* Preserve the original square 36px grid. Both axes share the same origin;
+   the list header border is suppressed to avoid a doubled seam. */
 html[data-persona="cyber"] {
-  background-position:0 18px,0 0,center top,center center!important;
+  background-position:0 0,0 0,center top,center center!important;
 }
 #list-view .header{border-top:0!important;box-shadow:none!important;}
 </style>

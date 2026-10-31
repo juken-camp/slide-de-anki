@@ -3720,7 +3720,13 @@ html[data-persona="cyber"] #app #settingsScreen .settings-share{background:#101b
 #app #himikoScreen{margin:12px 0 0;min-width:0}
 #app #himikoFrame{display:block;width:100%;height:calc(100dvh - 100px);min-height:320px;border:0;border-radius:16px;background:transparent}
 @media(max-width:430px){#app .app-navigation button{padding-left:5px;padding-right:5px}#app #himikoFrame{height:calc(100dvh - 88px)}}
-</style></head>
+</style><style>
+/* Align both headings, keep the search field seamless, and center navigation labels. */
+#app #myCollectionsPanel .my-page-title{font-size:18px;line-height:1.45;font-weight:800;letter-spacing:0}
+html[data-persona="cyber"] #app #catalogScreen .my-collections-search input#myCollectionsSearch{background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important;-webkit-box-shadow:none!important;outline:0}
+#app #appNavigation button{display:flex;align-items:center;justify-content:center;text-align:center;padding-left:0!important;padding-right:0!important;letter-spacing:0;min-width:0;white-space:nowrap}
+@media(max-width:370px){#app #appNavigation button{font-size:clamp(9px,2.6vw,11px)}}
+</style><style>#app #himikoFrame{border-radius:0;background:transparent}</style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   
@@ -8558,6 +8564,7 @@ $('importForm').onsubmit=async e=>{
   });
 })();
 </script></body></html>
+
 
 
 

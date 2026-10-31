@@ -140,7 +140,36 @@ html[data-persona="cyber"] #msg-input{background:#0a1127;color:#e0eaff;border-co
 html[data-persona="cyber"] .back-btn{color:#b7eaff}
 
 @media(max-width:420px){.header-inner{flex-wrap:wrap;gap:8px}.header-inner>div{flex:1 1 100%!important}#search-input{width:100%}}
-</style><script>try{document.documentElement.dataset.persona=localStorage.getItem('nekopon-character-theme-v1')==='cyber'?'cyber':'neko'}catch(_){}window.addEventListener('message',e=>{if(e.origin===location.origin&&e.data?.type==='nekopon-persona')document.documentElement.dataset.persona=e.data.persona==='cyber'?'cyber':'neko'});</script></head>
+</style><script>try{document.documentElement.dataset.persona=localStorage.getItem('nekopon-character-theme-v1')==='cyber'?'cyber':'neko'}catch(_){}window.addEventListener('message',e=>{if(e.origin===location.origin&&e.data?.type==='nekopon-persona')document.documentElement.dataset.persona=e.data.persona==='cyber'?'cyber':'neko'});</script><style>
+/* Prevent iOS focus zoom and keep badges legible in narrow cards. */
+#msg-input,#search-input{font-size:16px}
+.card-info .character-period{min-width:0;overflow-wrap:anywhere}
+.card-info .narrator-badge{white-space:nowrap;flex:none;line-height:1.4}
+html[data-persona="cyber"] .bubble.assistant,html[data-persona="cyber"] .typing{background:#162743;color:#e5f2ff;box-shadow:0 2px 8px #0003}
+html[data-persona="cyber"] .bubble.user{background:linear-gradient(135deg,#07516b,#19447a)!important;color:#f0fbff;box-shadow:0 3px 10px #001c2f55!important}
+html[data-persona="cyber"] .suggestion-btn{background:#112540!important;border-color:#366783!important;color:#c5edff!important;box-shadow:none}
+html[data-persona="cyber"] .suggestion-btn:active{background:#16445b!important}
+html[data-persona="cyber"] .suggestions-label{color:#a9c6df}
+html[data-persona="cyber"] .chat-reset,html[data-persona="cyber"] .older-history,html[data-persona="cyber"] .reveal-skip{background:#10233d;border-color:#39637f;color:#c5edff}
+html[data-persona="cyber"] .send-btn:disabled{background:#23334d;color:#849bb5}
+</style><style>
+/* Let the app background show through the chat without changing the bubbles. */
+html[data-chat-open],html[data-chat-open] body,html[data-chat-open] #chat-view,html[data-chat-open] .messages{background:transparent!important;background-image:none!important}
+html[data-chat-open] .chat-header,html[data-chat-open] .chat-storage-status,html[data-chat-open] .input-area{background:transparent!important;box-shadow:none;border-color:#d9c5b5}
+html[data-persona="cyber"][data-chat-open] .chat-header,html[data-persona="cyber"][data-chat-open] .chat-storage-status,html[data-persona="cyber"][data-chat-open] .input-area{border-color:#315576}
+/* The status badges have their own row, leaving room for the full name and dates. */
+.chat-header{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:6px 8px;padding:10px 12px}
+.chat-header .back-btn{grid-column:1;grid-row:1;min-height:40px}
+.chat-header .header-tap{grid-column:2;grid-row:1;min-width:0;display:flex;padding:2px 0;gap:9px}
+.chat-header .header-tap>div:last-child{min-width:0}
+.chat-header #chat-name{overflow:visible!important;text-overflow:clip!important;white-space:normal!important;overflow-wrap:anywhere;line-height:1.3}
+.chat-header #chat-period{white-space:normal;overflow-wrap:anywhere;line-height:1.45}
+.chat-header .chat-reset{grid-column:3;grid-row:1;min-height:40px;white-space:nowrap}
+.chat-header #online-badge,.chat-header #explainer-badge,.chat-header #narrator-badge{grid-column:2 / 4;grid-row:2;justify-self:start}
+.chat-header :is(#explainer-badge,#narrator-badge){flex-direction:row!important;flex-wrap:wrap;gap:5px!important}
+.chat-header :is(#online-badge,#explainer-badge,#narrator-badge).hidden{display:none!important}
+@media(max-width:390px){.chat-header{grid-template-columns:26px minmax(0,1fr) auto;gap:5px}.chat-header .chat-avatar{width:38px;height:38px;font-size:20px}.chat-header .chat-reset{padding:6px 7px;font-size:11px}.chat-header #chat-name{font-size:14px!important}}
+</style></head>
 <body>
 
 <!-- LIST VIEW -->
@@ -152,7 +181,7 @@ html[data-persona="cyber"] .back-btn{color:#b7eaff}
         <div class="logo-box">🌙</div>
         <div>
           <div style="font-weight:900;font-size:18px;color:#1e293b;letter-spacing:-0.5px">卑弥呼と受験対策</div>
-          <div class="himiko-subtitle">歴史の人物と話してみよう</div>
+          <div class="himiko-subtitle">わからないことはチャットで聞いてみよう</div>
         </div>
       </div>
       <input id="search-input" placeholder="🔍 名前・時代で検索" oninput="renderCards()">
@@ -475,7 +504,7 @@ function renderCards(){
             ${!ai?(function(){const e=getEra(ch.period);return '<span style="font-size:9px;padding:1px 6px;border-radius:100px;background:'+e.bg+';color:'+e.color+';font-weight:800">'+e.label+'</span>';})():""}
             ${ai?`<span class="online-badge">オンライン</span>`:""}
           </div>
-          <div style="font-size:11px;color:#94a3b8;margin-bottom:3px;display:flex;align-items:center;gap:5px">${esc(ch.period)}${hasNarrator?`<span class="narrator-badge">📖 解説</span>`:""}</div>
+          <div style="font-size:11px;color:#94a3b8;margin-bottom:3px;display:flex;flex-wrap:wrap;align-items:center;gap:5px"><span class="character-period">${esc(ch.period)}</span>${hasNarrator?`<span class="narrator-badge">📖 解説</span>`:""}</div>
           <div style="font-size:12px;font-weight:700;color:${ch.color};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${ai?"💬 ":""}${esc(ch.catchphrase)}</div>
         </div>
         <span class="fav-btn${faved?" faved":""}" onclick="toggleFav(${ch.id},event)" title="お気に入り">${faved?"★":"☆"}</span>
@@ -506,6 +535,7 @@ async function openChat(id){
   document.getElementById("msg-input").placeholder=ai?"AI先生に質問しよう！":(ch.isExplainer||ch.isNarrator)?`${ch.name}について質問しよう！`:`${ch.name}に質問してみよう！`;
   document.getElementById("list-view").classList.add("hidden");
   document.getElementById("chat-view").classList.remove("hidden");
+  document.documentElement.dataset.chatOpen="true";
   document.getElementById("msg-input").value="";
   document.getElementById("chat-reset").disabled=true;
   setChatStorageStatus("保存した会話を読み込み中…");
@@ -536,6 +566,7 @@ async function openChat(id){
 function showList(){
   chatEpoch++;cancelReveal(false);isLoading=false;chatReady=false;
   document.getElementById("chat-view").classList.add("hidden");
+  delete document.documentElement.dataset.chatOpen;
   document.getElementById("list-view").classList.remove("hidden");
   currentChar=null;messages=[];dynamicSuggestions=[];
   setTimeout(()=>{
@@ -925,3 +956,4 @@ document.getElementById("messages").addEventListener("click",function(e){
 
 </body>
 </html>
+

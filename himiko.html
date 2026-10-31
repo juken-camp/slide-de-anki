@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8"><script>try{document.documentElement.dataset.persona=localStorage.getItem('nekopon-character-theme-v1')==='cyber'?'cyber':'neko'}catch(_){}</script><style>html,body{background:#fff8f0}html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20}</style>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <title>卑弥呼と受験対策 | JUKEN CAMP</title>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
@@ -810,6 +810,18 @@ html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search:focus
 .history-emoji-fallback {display:flex;align-items:center;justify-content:center;width:100%;height:100%;line-height:1;}
 .history-avatar-image {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;z-index:1;}
 .avatar .online-dot{z-index:2;}
+</style>
+
+<style id="himiko-mobile-gesture-and-overscroll-20261031">
+/* Only inside the question/chat iframe, keep LINE-like fixed viewport scale. */
+html,body{overscroll-behavior-x:none;overscroll-behavior-y:none;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+#list-view,#chat-view,#chat-view .messages{touch-action:pan-y;overscroll-behavior-y:contain;}
+#list-view button,#chat-view button,#chat-view textarea,#list-view input,
+#chat-view input,#list-view select{touch-action:manipulation;}
+/* A 12px focused field triggers involuntary iOS Safari zoom, so use 16px inputs only on touch phones. */
+@media(max-width:600px) and (pointer:coarse){
+  #msg-input,#list-view input,#list-view select,#chat-view input,#chat-view textarea{font-size:16px!important;}
+}
 </style>
 </head>
 <body>
@@ -1825,6 +1837,19 @@ document.getElementById("messages").addEventListener("click",function(e){
       setTimeout(()=>badge.remove(),900);
    }
  },true);
+})();
+</script>
+
+<script id="himiko-disable-pinch-in-frame-20261031">
+(()=>{
+  // Gestures do not bubble from an iframe into the parent; protect this document too.
+  const cancel=e=>{if(e.cancelable)e.preventDefault();};
+  ['gesturestart','gesturechange','gestureend'].forEach(name=>{
+    document.addEventListener(name,cancel,{passive:false,capture:true});
+  });
+  document.addEventListener('touchmove',e=>{
+    if(e.touches&&e.touches.length>1)cancel(e);
+  },{passive:false,capture:true});
 })();
 </script>
 </body>

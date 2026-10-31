@@ -3903,6 +3903,20 @@ html[data-persona="cyber"] body #app #catalogScreen #catalogDock {
   html[data-persona] body #app #catalogScreen #catalogDock {animation:none!important;}
 }
 </style>
+
+<style id="nekopon-himiko-only-no-zoom-20261031">
+html.himiko-view-active,html.himiko-view-active body{
+  overscroll-behavior-y:none!important;overflow-y:hidden!important;
+}
+html.himiko-view-active #app #himikoScreen,
+html.himiko-view-active #app #himikoFrame{
+  touch-action:pan-y!important;
+  overscroll-behavior-y:contain!important;
+}
+/* Keep the embedded list surface filled even when mobile viewport dimensions change. */
+html.himiko-view-active #app #himikoFrame{background:#fff8f0!important;}
+html.himiko-view-active[data-persona="cyber"] #app #himikoFrame{background:#080d20!important;}
+</style>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -8851,7 +8865,39 @@ $('importForm').onsubmit=async e=>{
     setTimeout(()=>{baseline=window.visualViewport?.height||window.innerHeight;schedule()},300);
   });
 })();
-</script></body></html>
+</script>
+<script id="nekopon-himiko-only-disable-pinch-20261031">
+(()=>{
+  const screen=document.getElementById('himikoScreen');
+  const viewportMeta=document.querySelector('meta[name="viewport"]');
+  if(!screen)return;
+  const originalMeta=viewportMeta?.getAttribute('content')||'';
+  const fixedMeta='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover';
+  let wasActive=false;
+  const isActive=()=>!screen.hidden;
+  function sync(){
+    const active=isActive();
+    document.documentElement.classList.toggle('himiko-view-active',active);
+    if(active&&!wasActive)window.scrollTo({top:0,behavior:'instant'});
+    if(viewportMeta){
+      const desired=active?fixedMeta:originalMeta;
+      if(viewportMeta.getAttribute('content')!==desired)viewportMeta.setAttribute('content',desired);
+    }
+    wasActive=active;
+  }
+  new MutationObserver(sync).observe(screen,{attributes:true,attributeFilter:['hidden']});
+  sync();
+  const prevent=e=>{if(isActive()&&e.cancelable)e.preventDefault();};
+  ['gesturestart','gesturechange','gestureend'].forEach(name=>{
+    document.addEventListener(name,prevent,{passive:false,capture:true});
+  });
+  document.addEventListener('touchmove',e=>{
+    if(isActive()&&e.touches&&e.touches.length>1)prevent(e);
+  },{passive:false,capture:true});
+  // The child iframe separately blocks gestures, since they don't bubble to this document.
+})();
+</script>
+</body></html>
 
 
 

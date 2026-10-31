@@ -574,15 +574,11 @@ html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none
 </style>
 
 <style id="nekopon-himiko-region-label-friendly-count-20261031">
-/* Soft, friendly raised-hand person icon instead of a dark silhouette. */
-#list-view .filter-count-icon{
-  border-radius:50%;width:29px!important;height:29px!important;
-  background:#fff1de;border:1px solid #e7cfb7;
-  font-size:18px!important;filter:none!important;box-shadow:none!important;
-}
-html[data-persona="cyber"] #list-view .filter-count-icon{
-  background:#0d2840;border-color:#346886;
-  filter:none!important;box-shadow:0 0 7px #00e9f528!important;
+/* The mascot emoji must be bare: no round badge, border, fill, or glow. */
+#list-view #filter-count .filter-count-icon{
+  background:none!important;border:0!important;border-radius:0!important;
+  width:auto!important;height:auto!important;padding:0!important;
+  box-shadow:none!important;filter:none!important;text-shadow:none!important;
 }
 /* Labels remain readable in square tiles on the narrowest phones. */
 #list-view [data-group="region"] [data-value="西アジア・中東"] .filter-choice-label{

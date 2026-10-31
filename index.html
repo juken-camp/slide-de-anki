@@ -3860,46 +3860,47 @@ html.himiko-chat-active #app #himikoScreen{overflow:hidden!important;}
   align-items:center;
 }
 </style>
-<style id="nekopon-catalog-floating-dock-20261031">
-/* The learning selection dock has its own visual elevation.
-   Only the dock surface is changed: layout, actions, floating motion
-   and the start button's existing glow are preserved. */
-html[data-persona] body #app #catalogScreen #catalogDock{
+<style id="nekopon-catalog-floating-dock-depth-20261031">
+/* Continuous silhouette, not a detached line along only the top. The two
+   CSS background layers paint the panel face and ALL FOUR SIDES of its border.
+   Leave the selector, child layout, start-button shine and float animation alone. */
+html[data-persona] body #app #catalogScreen #catalogDock {
   position:fixed;
   isolation:isolate;
   overflow:visible;
-  background:#f6e7d7!important;
-  border:1px solid #ce986c!important;
-  border-radius:20px;
+  border:2px solid transparent!important;
+  border-radius:21px;
+  background:
+    linear-gradient(160deg,#fff7ec 0%,#f8e8d9 100%) padding-box,
+    linear-gradient(135deg,#f8aa58 0%,#efcc8d 32%,#cc8a56 67%,#f6ba66 100%) border-box!important;
   box-shadow:
-    0 19px 43px rgba(86,39,11,.38),
-    0 6px 17px rgba(145,72,26,.16),
-    inset 0 1px 0 rgba(255,255,255,.58)!important;
+    0 8px 14px rgba(84,41,14,.31),
+    0 23px 45px rgba(75,34,13,.36),
+    0 33px 65px rgba(87,41,9,.18),
+    0 0 14px rgba(224,149,69,.18),
+    inset 0 1px 0 rgba(255,255,255,.80)!important;
 }
-html[data-persona] body #app #catalogScreen #catalogDock::before{
-  content:"";
-  position:absolute;
-  top:-1px;
-  left:16px;
-  right:16px;
-  height:3px;
-  z-index:1;
-  pointer-events:none;
-  border-radius:0 0 5px 5px;
-  background:linear-gradient(90deg,#ff853c 0%,#f2b238 55%,#ffe18d 100%);
-  box-shadow:0 2px 9px rgba(214,116,35,.28);
+/* The previous implementation put a free-standing glowing strip on top.
+   Removing its pseudo-element is crucial; there must be no double edge. */
+html[data-persona] body #app #catalogScreen #catalogDock::before {
+  content:none!important;
+  display:none!important;
 }
-html[data-persona="cyber"] body #app #catalogScreen #catalogDock{
-  background:#080d20!important;
-  border:1px solid #44688a!important;
+html[data-persona="cyber"] body #app #catalogScreen #catalogDock {
+  border:2px solid transparent!important;
+  background:
+    linear-gradient(162deg,#0b1730 0%,#080f23 52%,#070c1b 100%) padding-box,
+    linear-gradient(135deg,#42dce9 0%,#427b9e 24%,#446b9a 48%,#7663bf 75%,#ab78e9 100%) border-box!important;
   box-shadow:
-    0 22px 48px rgba(0,0,0,.74),
-    0 8px 20px rgba(0,133,192,.18),
-    0 0 0 1px rgba(0,245,255,.12)!important;
+    0 8px 16px rgba(0,0,0,.74),
+    0 23px 50px rgba(0,0,0,.78),
+    0 36px 73px rgba(0,0,0,.38),
+    0 0 16px rgba(58,178,224,.20),
+    inset 0 1px 0 rgba(183,230,255,.13)!important;
 }
-html[data-persona="cyber"] body #app #catalogScreen #catalogDock::before{
-  background:linear-gradient(90deg,#00ecf4 0%,#37a8ff 45%,#9259ff 100%);
-  box-shadow:0 2px 11px rgba(0,245,255,.28);
+@media(prefers-reduced-motion:reduce) {
+  /* Honor the app's global reduced-motion rule; keep surface/edges visible. */
+  html[data-persona] body #app #catalogScreen #catalogDock {animation:none!important;}
 }
 </style>
 </head>

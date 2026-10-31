@@ -532,6 +532,45 @@ html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-li
   }
 }
 </style>
+
+<style id="himiko-count-guide-layout-20261031">
+/* Leave air between the filter box and the number of displayed people. */
+#list-view .nekopon-search-panel{margin-bottom:0!important}
+#list-view #filter-count.filter-count{
+ display:flex!important;align-items:center;justify-content:flex-start;
+ gap:9px;min-height:28px;margin:20px 0 14px!important;padding:0 2px!important;
+ text-align:left!important;font-size:14px!important;font-weight:800!important;
+ line-height:1.6!important;color:#855a3c!important;
+}
+#list-view .filter-count-icon{display:inline-flex;align-items:center;justify-content:center;
+ flex:none;font-size:19px;line-height:1;width:25px;height:25px}
+html[data-persona="cyber"] #list-view #filter-count.filter-count{color:#c9edff!important}
+html[data-persona="cyber"] #list-view .filter-count-icon{filter:drop-shadow(0 0 6px #00e9f58f)}
+/* Explanation replaces the old filter reset button, shown with the 'その他' choices. */
+#list-view .himiko-mode-guide{margin:12px 0 1px;padding:12px 11px 10px;
+ border:1px solid #dcc4ad;border-radius:13px;background:#fffaf3;color:#754b2f;}
+#list-view .himiko-mode-guide[hidden]{display:none!important}
+#list-view .himiko-mode-guide-title{font-size:12px;font-weight:900;letter-spacing:.015em;margin:0 0 9px}
+#list-view .himiko-mode-guide-item{display:grid;grid-template-columns:minmax(96px,auto) minmax(0,1fr);
+ align-items:start;gap:9px;padding:7px 0;border-top:1px solid #e9d4c1;}
+#list-view .himiko-mode-chip{font-size:10px;font-weight:900;border-radius:9px;padding:4px 6px;
+ display:inline-block;white-space:nowrap;max-width:max-content;line-height:1.35}
+#list-view .mode-explain{background:#efe9ff;color:#6645a1}
+#list-view .mode-lesson{background:#fff0d0;color:#986010}
+#list-view .mode-respect{background:#def5e7;color:#23784e}
+#list-view .himiko-mode-explain{font-size:11px;font-weight:650;line-height:1.65;overflow-wrap:anywhere}
+#list-view .himiko-mode-guide .copy-cyber{display:none}
+html[data-persona="cyber"] #list-view .himiko-mode-guide{
+ background:#0b1831;border-color:#315576;color:#c5edff;}
+html[data-persona="cyber"] #list-view .himiko-mode-guide-item{border-top-color:#315576}
+html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-cyber{display:inline}
+html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none}
+@media(max-width:370px){
+ #list-view .himiko-mode-guide{padding:10px 8px}
+ #list-view .himiko-mode-guide-item{grid-template-columns:1fr;gap:3px;padding:8px 0}
+ #list-view .himiko-mode-explain{font-size:11px}
+}
+</style>
 </head>
 <body>
 
@@ -553,7 +592,7 @@ html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-li
     <div class="nekopon-search-panel" aria-label="人物の検索と絞り込み">
       <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前や時代で検索するぜ" aria-label="名前や時代で検索するぜ" oninput="renderCards()"></div>
       <div id="tag-bar" class="filter-panel"></div>
-    </div><p id="filter-count" class="filter-count" aria-live="polite"></p>
+    </div><p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true">👥</span><span class="filter-count-text"></span></p>
     <div class="card-list" id="card-list"></div>
   </div>
 </div>
@@ -900,7 +939,12 @@ function renderTags(){
  container.innerHTML=tabs+Object.entries(filterGroups).map(([group,config])=>{
   const chosen=selectedFilters[group];
   return `<section id="himiko-options-${group}" class="filter-section" ${openedFilterGroup===group?'':'hidden'}><h3 class="filter-heading">${config.label}</h3><div class="himiko-filter-scroll"><div class="filter-buttons" data-group="${group}" aria-label="${config.label}">${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}" title="${escAttr(key+(group==='era'?'：'+eraDates[key]:''))}"><span class="filter-choice-label">${filterLabelHTML(key)}</span>${group==='era'?`<small class="era-date">${filterDateHTML(key)}</small>`:''}</button>`).join('')}</div></div></section>`;
- }).join('')+`<button type="button" class="filter-clear" onclick="clearFilters()" ${Object.values(selectedFilters).some(set=>set.size)?'':'hidden'}>絞り込みを解除</button>`;
+ }).join('')+`<div class="himiko-mode-guide" ${openedFilterGroup==='special'?'':'hidden'} role="note" aria-label="解説モードと配慮について">
+   <p class="himiko-mode-guide-title">📚 この表示になっている理由</p>
+   <div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-explain">📖 解説モード</span><span class="himiko-mode-explain"><span class="copy-neko">本人の発言だと誤解させないよう、歴史の先生が説明するにゃ。</span><span class="copy-cyber">本人の発言だと誤解させないよう、歴史の先生が説明するぜ。</span></span></div>
+   <div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-lesson">⚠️ 歴史的教訓</span><span class="himiko-mode-explain"><span class="copy-neko">戦争・独裁などを美化せず、問題点や教訓を学ぶにゃ。</span><span class="copy-cyber">戦争・独裁などを美化せず、問題点や教訓を学ぶぜ。</span></span></div>
+   <div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-respect">🕊️ 敬意配慮</span><span class="himiko-mode-explain"><span class="copy-neko">宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介するにゃ。</span><span class="copy-cyber">宗教の開祖や天皇などは、敬意を大切にして本人になりきらず紹介するぜ。</span></span></div>
+ </div>`;
  container.querySelectorAll('.filter-buttons').forEach(row=>{
   row.scrollLeft=positions[row.dataset.group]||0;
   const shell=row.closest('.himiko-filter-scroll');
@@ -929,7 +973,7 @@ function renderCards(){
  const q=document.getElementById('search-input').value.trim().toLowerCase();
  let list=allChars.filter(ch=>Object.entries(selectedFilters).every(([group,set])=>!set.size||[...set].some(key=>matchesGroup(ch,group,key))));
  if(q)list=list.filter(c=>c.name.toLowerCase().includes(q)||c.period.toLowerCase().includes(q)||c.catchphrase.toLowerCase().includes(q));
- document.getElementById('filter-count').textContent=`${list.length}人いる${document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ'}`;
+ document.querySelector('#filter-count .filter-count-text').textContent=`${list.length}人いる${document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ'}`;
   const el=document.getElementById("card-list");
   if(!list.length){el.innerHTML=selectedFilters.special.has('お気に入り')?`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">⭐</div><div style="font-weight:700">お気に入りはまだないよ</div><div style="font-size:13px;color:#94a3b8;margin-top:4px">カードの ☆ ボタンを押して追加しよう！</div></div>`:`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">🔍</div><div style="font-weight:700">該当する人物が見つかりません</div></div>`;return;}
   el.innerHTML=list.map((ch,i)=>{

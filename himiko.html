@@ -189,7 +189,19 @@ html[data-chat-open] .input-inner{align-items:center}
 #list-view .himiko-subtitle{font-size:11px;line-height:1.5}
 #list-view #search-input{width:100%;min-height:44px}
 html[data-persona="cyber"] #list-view .himiko-page-title{color:#e0eaff;text-shadow:0 0 12px #00f5ff22}
-</style></head>
+</style><style>
+html,body{-webkit-text-size-adjust:100%;text-size-adjust:100%;font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif}
+#list-view .himiko-page-title{font-family:inherit;font-size:18px;font-weight:800;line-height:1.45;letter-spacing:0}
+#list-view .himiko-subtitle{font-family:inherit;font-size:11px;font-weight:600;line-height:1.5}
+html[data-persona="cyber"] #search-input::placeholder{color:#9fbad2;opacity:1}
+html[data-persona="cyber"] #search-input::-webkit-input-placeholder{color:#9fbad2;opacity:1}
+#chat-storage-status:not([data-state="error"]){display:none!important}
+#chat-storage-status[data-state="error"]{border:0;padding:5px 12px;font-size:11px;min-height:0}
+html[data-chat-open] .chat-header{border-bottom:1px solid #ead2b9!important}
+html[data-persona="cyber"][data-chat-open] .chat-header{border-bottom-color:#315576!important}
+html[data-persona="cyber"] .send-btn:disabled{background:#1c3049!important;color:#7899b1!important;border:1px solid #315576;box-shadow:none!important}
+html[data-persona="cyber"] .send-btn:not(:disabled){background:linear-gradient(135deg,#00d9df,#2baee4)!important;color:#062539!important;border:1px solid #42e9f6;box-shadow:none!important}
+</style><style>#list-view .header-inner,#list-view .main-content{max-width:800px}</style></head>
 <body>
 
 <!-- LIST VIEW -->
@@ -974,7 +986,10 @@ document.getElementById("messages").addEventListener("click",function(e){
 });
 </script>
 
-</body>
+<script>
+(()=>{const input=document.getElementById('msg-input');if(!input)return;const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));})();
+</script></body>
 </html>
+
 
 

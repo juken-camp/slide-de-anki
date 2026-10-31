@@ -587,16 +587,6 @@ html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none
 }
 </style>
 
-<style id="himiko-initial-bubble-rubberband-20261031">
-/* iOS: even the initial greeting can spring back at the top/bottom of the message viewport. */
-#chat-view .messages{overflow-y:auto!important;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;}
-#chat-view .messages-inner.himiko-rubber-dragging{will-change:transform;transition:none!important;}
-#chat-view .messages-inner.himiko-rubber-rebounding{will-change:transform;transition:transform 560ms cubic-bezier(.18,1.38,.35,1)!important;}
-@media(prefers-reduced-motion:reduce){
- #chat-view .messages-inner.himiko-rubber-dragging,
- #chat-view .messages-inner.himiko-rubber-rebounding{transition:none!important;transform:none!important}
-}
-</style>
 <style id="himiko-one-question-chat-typography-20261031">
  /* User and assistant must have the same type scale, leading and inset. */
  #chat-view .bubble.user,
@@ -816,6 +806,8 @@ html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search:focus
 /* Only inside the question/chat iframe, keep LINE-like fixed viewport scale. */
 html,body{overscroll-behavior-x:none;overscroll-behavior-y:none;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 #list-view,#chat-view,#chat-view .messages{touch-action:pan-y;overscroll-behavior-y:contain;}
+/* The people list uses body scrolling; allow its own iOS edge bounce without pulling the parent app. */
+html:not([data-chat-open]) body{overscroll-behavior-y:contain!important;-webkit-overflow-scrolling:touch!important;}
 #list-view button,#chat-view button,#chat-view textarea,#list-view input,
 #chat-view input,#list-view select{touch-action:manipulation;}
 /* A 12px focused field triggers involuntary iOS Safari zoom, so use 16px inputs only on touch phones. */
@@ -869,6 +861,27 @@ html #chat-view .input-area {
 }
 /* Keep a single subtle separator instead of a dark solid header/composer. */
 html #chat-view .chat-header { box-shadow:none!important; }
+</style>
+
+<style id="nekopon-himiko-stable-native-scroll-20261031">
+/* Restore the native iOS rubber-band only inside the independent message scroller. */
+html[data-chat-open] #chat-view .messages{
+  overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+  scroll-behavior:auto;
+}
+html[data-chat-open] #chat-view .messages-inner{
+  transform:none!important;
+  transition:none!important;
+  will-change:auto!important;
+}
+/* The fixed header and composer do not participate in the swipe. */
+html[data-chat-open] #chat-view .chat-header,
+html[data-chat-open] #chat-view .input-area{
+  touch-action:pan-y;
+}
 </style>
 </head>
 <body>
@@ -1040,7 +1053,7 @@ const CHARACTERS = [
 const TAGS=[{id:"all",label:"すべて",emoji:"📋"},{id:"fav",label:"お気に入り",emoji:"⭐"},{id:"special",label:"AI先生",emoji:"🤖"},{id:"日本史",label:"日本史",emoji:"🏯"},{id:"世界史",label:"世界史",emoji:"🌍"},{id:"古代",label:"古代",emoji:"🏺"},{id:"中世",label:"中世",emoji:"⚔️"},{id:"近世",label:"近世",emoji:"🏯"},{id:"近代",label:"近代",emoji:"🚂"},{id:"現代",label:"現代",emoji:"🌐"},{id:"kaisetsu",label:"解説モード",emoji:"📖"},{id:"explainer",label:"歴史的教訓",emoji:"⚠️"},{id:"narrator",label:"敬意配慮",emoji:"🕊️"}];
 const allChars=[AI_SENSEI,...CHARACTERS];
 // 絵文字から順次入れ替える歴史人物アイコン。画像がない場合は既存の絵文字を維持。
-const HISTORY_ICON_REVISIONS = {"0":"c7bbedb46b","1":"ae7af00164","2":"f70f7370c2","3":"e3edac9491","4":"075b09a9f3","5":"4e5bede0e5","6":"4bc41bf075","7":"7fc3b15118","8":"214a4574b8","9":"96b502146f","10":"8f0a87e90a","11":"d86e1e8e7f","12":"c5b50dd3d6","13":"89cc1a7e64","14":"660926b4b4","15":"6854cbd697","16":"61cdd4a154","17":"b8df7fd656","18":"8f46dfbfd1","19":"cc222c2c42","20":"05ded1192f","21":"c6318cfc46","24":"ed7766bb8c","33":"2a235fd07c","34":"6d3ab220b4","35":"ad0a60722e","36":"cd5653f031","37":"be4f48524b","38":"42b3011fa8","39":"35b6459a0e","40":"d507462b61","41":"2d95306df4","42":"173b661b4e","43":"9e560025e9","44":"48eb8f227a","57":"36f1147588","58":"882eecc814","59":"fbadc875dd","60":"f7712f2ed2","61":"7fe314dfd2","62":"59bde1adef","67":"f1045ae5f7","68":"b79268cec4","72":"9c2200560b","75":"3f1f3129ae","76":"f2f370542a","77":"035e39bd48","80":"d5453da246","81":"b973cb5b3e","82":"fba14ff17d","83":"f747bef6dc","84":"07f29fb3df","85":"f9b0a9690e","86":"46d6022131","87":"32935c9ea7","88":"6cc5c0a515","89":"99f982b92e","90":"f0d0905ef1","91":"6b38b2674b","92":"2d2e92ab3b","93":"6520955fb4","94":"9d731f4a74","95":"1fea184d1a","96":"0cd7376e09","97":"05191a2eab","98":"233ea693cd","99":"4f85ed44a2","100":"cdd734461d","101":"c7ffabdb3a","102":"fdadc10531","103":"cd112debd0","104":"6de9647d91"};
+const HISTORY_ICON_REVISIONS = {"0":"c7bbedb46b","1":"ae7af00164","2":"f70f7370c2","3":"e3edac9491","4":"075b09a9f3","5":"4e5bede0e5","6":"4bc41bf075","7":"7fc3b15118","8":"214a4574b8","9":"96b502146f","10":"8f0a87e90a","11":"d86e1e8e7f","12":"c5b50dd3d6","13":"89cc1a7e64","14":"660926b4b4","15":"6854cbd697","16":"61cdd4a154","17":"b8df7fd656","18":"8f46dfbfd1","19":"cc222c2c42","20":"05ded1192f","21":"c6318cfc46","22":"952ee3f0cd","23":"077030effb","24":"ed7766bb8c","26":"4c7cf1f9ed","27":"ab78b00865","33":"2a235fd07c","34":"6d3ab220b4","35":"ad0a60722e","36":"cd5653f031","37":"be4f48524b","38":"42b3011fa8","39":"35b6459a0e","40":"d507462b61","41":"2d95306df4","42":"173b661b4e","43":"9e560025e9","44":"48eb8f227a","45":"f5cc64f588","46":"4887ce7834","50":"53e1ccde4e","51":"4076a38f36","57":"36f1147588","58":"882eecc814","59":"fbadc875dd","60":"f7712f2ed2","61":"7fe314dfd2","62":"59bde1adef","67":"f1045ae5f7","68":"b79268cec4","72":"9c2200560b","75":"3f1f3129ae","76":"f2f370542a","77":"035e39bd48","80":"d5453da246","81":"b973cb5b3e","82":"fba14ff17d","83":"f747bef6dc","84":"07f29fb3df","85":"f9b0a9690e","86":"46d6022131","87":"32935c9ea7","88":"6cc5c0a515","89":"99f982b92e","90":"f0d0905ef1","91":"6b38b2674b","92":"2d2e92ab3b","93":"6520955fb4","94":"9d731f4a74","95":"1fea184d1a","96":"0cd7376e09","97":"05191a2eab","98":"233ea693cd","99":"4f85ed44a2","100":"cdd734461d","101":"c7ffabdb3a","102":"fdadc10531","103":"cd112debd0","104":"6de9647d91"};
 function historyAvatarHTML(ch){
   const ident = Number(ch.id);
   const fallback = `<span class="history-emoji-fallback" aria-hidden="true">${ch.emoji||"👤"}</span>`;
@@ -1737,79 +1750,6 @@ chatScroller.addEventListener("keydown",e=>{
   if(["ArrowUp","PageUp","Home"].includes(e.key))pauseChatFollow();
   else if(["ArrowDown","PageDown","End"].includes(e.key)){chatUserMovingDown=true;resumeChatFollowIfAtBottom();}
 },{passive:true});
-
-// Scroll-edge rubber band. The greeting bubble is already in the DOM on entering chat,
-// so the spring must work even before the first exchange, without moving the fixed input.
-// Touch listeners are passive and do not block ordinary history scrolling or taps.
-(()=>{
- const scroller=chatScroller;
- const lessMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
- let startY=null, offset=0, resetTimer=null, wheelAt=0;
- const bubbleContent=()=>scroller.querySelector('.messages-inner');
- const chatVisible=()=>document.documentElement.dataset.chatOpen==='true';
- function clearMotion(){
-   const el=bubbleContent();
-   if(resetTimer!==null){clearTimeout(resetTimer);resetTimer=null;}
-   if(el){el.classList.remove('himiko-rubber-dragging','himiko-rubber-rebounding');el.style.removeProperty('transform');}
-   offset=0;
- }
- function move(amount){
-   const el=bubbleContent();if(!el||!chatVisible()||lessMotion.matches)return;
-   if(resetTimer!==null){clearTimeout(resetTimer);resetTimer=null;}
-   el.classList.remove('himiko-rubber-rebounding');
-   el.classList.add('himiko-rubber-dragging');
-   offset=amount;
-   el.style.transform=`translate3d(0, ${amount.toFixed(2)}px, 0)`;
- }
- function rebound(){
-   const el=bubbleContent();
-   if(!el||!offset){clearMotion();return;}
-   if(lessMotion.matches){clearMotion();return;}
-   el.classList.remove('himiko-rubber-dragging');
-   el.classList.add('himiko-rubber-rebounding');
-   // Force a transition only on release; never shift the viewport or the send bar.
-   el.style.transform='translate3d(0, 0px, 0)';
-   offset=0;
-   resetTimer=setTimeout(()=>{
-     if(el.isConnected){el.classList.remove('himiko-rubber-rebounding');el.style.removeProperty('transform');}
-     resetTimer=null;
-   },600);
- }
- scroller.addEventListener('touchstart',event=>{
-   if(!chatVisible()||lessMotion.matches)return;
-   if(event.touches.length!==1){startY=null;rebound();return;}
-   if(offset)rebound();
-   startY=event.touches[0].clientY;
- },{passive:true});
- scroller.addEventListener('touchmove',event=>{
-   if(startY===null||!chatVisible()||lessMotion.matches||event.touches.length!==1)return;
-   const delta=event.touches[0].clientY-startY;
-   const maxScroll=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
-   const atTop=scroller.scrollTop<=1;
-   const atBottom=scroller.scrollTop>=maxScroll-1;
-   const pullingTop=delta>4&&atTop;
-   const pullingBottom=delta< -4&&atBottom;
-   if(pullingTop||pullingBottom){
-     // Short initial conversations are not scrollable: both directions still rebound.
-     move(Math.sign(delta)*Math.min(40,(Math.abs(delta)-4)*.30));
-   }else if(offset){rebound();}
- },{passive:true});
- const release=()=>{startY=null;rebound();};
- scroller.addEventListener('touchend',release,{passive:true});
- scroller.addEventListener('touchcancel',release,{passive:true});
- // Trackpads/wheels can also reveal the elastic feedback at an edge.
- scroller.addEventListener('wheel',event=>{
-   if(!chatVisible()||lessMotion.matches||offset||Date.now()-wheelAt<650)return;
-   const maxScroll=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
-   const edge=(event.deltaY<0&&scroller.scrollTop<=1)||(event.deltaY>0&&scroller.scrollTop>=maxScroll-1);
-   if(!edge)return;
-   wheelAt=Date.now();move(event.deltaY<0?18:-18);
-   requestAnimationFrame(rebound);
- },{passive:true});
- // Reset on entering/leaving conversations; the first greeting is always eligible.
- new MutationObserver(()=>{if(!chatVisible()){startY=null;clearMotion();}})
-   .observe(document.documentElement,{attributes:true,attributeFilter:['data-chat-open']});
-})();
 
 
 document.getElementById("messages").addEventListener("click",function(e){

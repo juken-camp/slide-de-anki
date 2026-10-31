@@ -602,11 +602,30 @@ html[data-persona="cyber"] #list-view .filter-count-icon{
 }
 </style>
 <style id="himiko-one-question-chat-typography-20261031">
-/* Match the reply bubbles to the 12px / 1.9 line-height used by Nekopon's one-question-one-answer chat. */
-#chat-view .bubble.assistant{
-  font-size:12px;
-  line-height:1.9;
-  padding:8px 11px;
+ /* User and assistant must have the same type scale, leading and inset. */
+ #chat-view .bubble.user,
+ #chat-view .bubble.assistant{
+   font-size:12px;
+   line-height:1.9;
+   padding:9px 12px;
+   font-weight:500;
+ }
+</style>
+<style id="nekopon-himiko-sendbar-position-20261031">
+/* Restore the comfortable gap underneath the composer. The fixed input bar itself
+   remains anchored to the viewport; only its contents gain 8px of breathing room.
+   The padding for the bottom safe-area inset is applied exactly once. */
+html[data-chat-open] #chat-view .input-area{
+ padding:8px 12px calc(18px + env(safe-area-inset-bottom, 0px))!important;
+}
+/* Match outgoing and incoming message bubbles exactly, including browser font overrides. */
+#chat-view .messages .bubble.user,
+#chat-view .messages .bubble.assistant{
+ font-family:inherit;
+ font-size:12px!important;
+ line-height:1.9!important;
+ padding:9px 12px!important;
+ font-weight:500;
 }
 </style>
 </head>
@@ -1417,13 +1436,16 @@ renderTags();renderCards();
 // iOS Safariの慣性スクロールやプログラムによるscrollイベントは、
 // 「読書中のユーザーが最下部に戻った」根拠にしない。
 const chatScroller=document.getElementById("messages");
-let chatTouchStartY=null,chatUserMovingDown=false;
+let chatTouchStartY=null,chatUserMovingDown=false,chatTouchDirection=null;
 function pauseChatFollow(){
+  // A touchmove/wheel stream must never reset the native kinetic scroll on every event.
+  // Reading older messages disables future auto-follow without touching scrollTop.
+  if(userReadingHistory)return;
   userReadingHistory=true;
   chatUserMovingDown=false;
+  // Cancel future auto-follow requests without forcing scrollTop or a scrollTo().
+  // iOS needs its own upward drag and inertial scroll to keep full control.
   automaticChatScrollUntil=0;
-  // すでに開始したsmoothスクロールも止める。
-  chatScroller.scrollTo({top:chatScroller.scrollTop,behavior:"instant"});
 }
 function resumeChatFollowIfAtBottom(){
   if(chatUserMovingDown&&nearChatBottom(45)){
@@ -1439,14 +1461,25 @@ chatScroller.addEventListener("wheel",e=>{
   if(e.deltaY<0)pauseChatFollow();
   else if(e.deltaY>0){chatUserMovingDown=true;resumeChatFollowIfAtBottom();}
 },{passive:true});
-chatScroller.addEventListener("touchstart",e=>{chatTouchStartY=e.touches?.[0]?.clientY??null;},{passive:true});
-chatScroller.addEventListener("touchmove",e=>{
-  const y=e.touches?.[0]?.clientY;
-  if(y===undefined||chatTouchStartY===null)return;
-  if(y>chatTouchStartY+8){pauseChatFollow();chatTouchStartY=y;}
-  else if(y<chatTouchStartY-8){chatUserMovingDown=true;chatTouchStartY=y;resumeChatFollowIfAtBottom();}
+chatScroller.addEventListener("touchstart",e=>{
+  chatTouchStartY=e.touches?.length===1?e.touches[0].clientY:null;
+  chatTouchDirection=null;
 },{passive:true});
-chatScroller.addEventListener("touchend",()=>{chatTouchStartY=null;},{passive:true});
+chatScroller.addEventListener("touchmove",e=>{
+  const y=e.touches?.length===1?e.touches[0].clientY:null;
+  if(y===null||chatTouchStartY===null)return;
+  const delta=y-chatTouchStartY;
+  if(chatTouchDirection===null&&Math.abs(delta)>8){
+    chatTouchDirection=delta>0?'older':'newer';
+    if(chatTouchDirection==='older')pauseChatFollow();
+    else chatUserMovingDown=true;
+  }
+  // While dragging, let iOS handle scroll offset and inertia natively.
+  if(chatTouchDirection==='newer')resumeChatFollowIfAtBottom();
+},{passive:true});
+const endChatTouch=()=>{chatTouchStartY=null;chatTouchDirection=null;};
+chatScroller.addEventListener("touchend",endChatTouch,{passive:true});
+chatScroller.addEventListener("touchcancel",endChatTouch,{passive:true});
 chatScroller.addEventListener("keydown",e=>{
   if(["ArrowUp","PageUp","Home"].includes(e.key))pauseChatFollow();
   else if(["ArrowDown","PageDown","End"].includes(e.key)){chatUserMovingDown=true;resumeChatFollowIfAtBottom();}

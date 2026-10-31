@@ -5029,6 +5029,21 @@ function livelyCelebrate(element,count){
  livelyRoot();livelyBurst(x,y,count>=8?22:14);
  livelyEffect('star',x,y,'🌟',0,-80);
 }
+function sendHimikoPlaySettings(){
+ const frame=$('himikoFrame');
+ if(!frame?.contentWindow||!frame.getAttribute('src'))return;
+ frame.contentWindow.postMessage({type:'nekopon-play-settings',enabled:livelyOn(),mode:data.neko.playMode},location.origin);
+}
+window.NekoPushHimikoPlaySettings=sendHimikoPlaySettings;
+window.addEventListener('message',event=>{
+ const frame=$('himikoFrame');
+ if(event.origin!==location.origin||event.source!==frame?.contentWindow||event.data?.type!=='nekopon-himiko-ui-tap')return;
+ if(!livelyOn()||$('himikoScreen').hidden)return;
+ const fx=Number(event.data.x),fy=Number(event.data.y),r=frame.getBoundingClientRect();
+ if(!Number.isFinite(fx)||!Number.isFinite(fy)||fx<0||fy<0||fx>r.width||fy>r.height)return;
+ const x=r.left+fx,y=r.top+fy;
+ livelyRoot();livelyEffect('ripple',x,y,'');livelyBurst(x,y,9);
+});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){clearLively();document.documentElement.dataset.playEffects='normal';}else syncPlaySettings();});
 // Unlock sound inside a user gesture on iPhone as well as desktop browsers.
 for(const type of ['pointerup','click','keydown'])document.addEventListener(type,unlockAudio,{passive:true,capture:true});
@@ -5115,7 +5130,7 @@ function showScreen(next) {
     if (next===target && (target!=='catalog'||!catalogIsCollections) || target==='collections'&&next==='catalog'&&catalogIsCollections || target==='report'&&next==='test') $(id).setAttribute('aria-current','page'); else $(id).removeAttribute('aria-current');
   }
   syncLandscape();
-  if (next === 'catalog') renderCatalog(); if(next==='himiko'){const frame=$('himikoFrame');if(!frame.src)frame.src=frame.dataset.src;else frame.contentWindow?.postMessage({type:'nekopon-persona',persona:document.documentElement.dataset.persona},location.origin);} stats();
+  if (next === 'catalog') renderCatalog(); if(next==='himiko'){const frame=$('himikoFrame');if(!frame.src)frame.src=frame.dataset.src;else frame.contentWindow?.postMessage({type:'nekopon-persona',persona:document.documentElement.dataset.persona},location.origin);sendHimikoPlaySettings();} stats();
   window.scrollTo?.({ top: 0, behavior: 'instant' });
   if (next === 'catalog') $('catalogTitle').focus({ preventScroll: true });
   if (next === 'settings') $('settingsTitle').focus({preventScroll:true});
@@ -7945,6 +7960,7 @@ function syncPlaySettings() {
   document.querySelectorAll('[data-play-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.playMode===(data.neko.playMode==='lively'?'lively':'normal'))));
   document.documentElement.dataset.playEffects=livelyOn()?'lively':'normal';
   if(!livelyOn())clearLively();
+  sendHimikoPlaySettings();
   updateTilt();
 }
 document.querySelectorAll('[data-play-mode]').forEach(button=>button.addEventListener('click',()=>{data.neko.playMode=button.dataset.playMode==='lively'?'lively':'normal';save();syncPlaySettings();}));
@@ -8670,7 +8686,7 @@ $('importForm').onsubmit=async e=>{
   if(!frame||!screen)return;
   let inputActive=false,queued=false,baseline=window.visualViewport?.height||window.innerHeight;
   const root=document.documentElement;
-  frame.addEventListener('load',()=>{if(!frame.getAttribute('src'))return;frame.classList.add('himiko-ready');schedule();});
+  frame.addEventListener('load',()=>{if(!frame.getAttribute('src'))return;frame.classList.add('himiko-ready');window.NekoPushHimikoPlaySettings?.();schedule();});
   function resize(){
     queued=false;
     if(screen.hidden){root.classList.remove('himiko-keyboard-open');return;}

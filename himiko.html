@@ -435,6 +435,47 @@ html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-we
  #list-view .nekopon-search-panel .filter-choice .filter-choice-label{font-size:10px!important}
 }
 </style>
+<style id="nekopon-himiko-text-and-tap-effects-20261031">
+/* Text stays fully readable. Each deliberate <br> is a meaningful break; no ellipsis. */
+#list-view .nekopon-search-panel .filter-choice{
+ min-height:78px!important;height:auto!important;padding:8px 3px!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ line-height:1.3!important;gap:3px!important;
+}
+#list-view #himiko-options-era .filter-choice{min-height:94px!important}
+#list-view .nekopon-search-panel .filter-choice .filter-choice-label{
+ display:block!important;width:100%!important;max-width:100%!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ overflow-wrap:break-word!important;word-break:keep-all!important;
+ font-size:12px!important;line-height:1.32!important;
+}
+#list-view .nekopon-search-panel .filter-choice .era-date{
+ display:block!important;width:100%!important;max-width:100%!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ overflow-wrap:break-word!important;word-break:keep-all!important;
+ font-size:10px!important;line-height:1.28!important;
+}
+#list-view .filter-hint{display:none!important}
+/* Mirror main-app lively neon glow and spring feedback on embedded controls. */
+html[data-play-effects="lively"] #list-view :is(.nekopon-filter-tab,.filter-choice,.char-card,.filter-clear,.fav-btn){
+ transition:filter .16s, box-shadow .16s, border-color .16s,transform .16s!important;
+}
+html[data-play-effects="lively"] #list-view .himiko-lively-flash{
+ filter:brightness(1.23)!important;border-color:#ffb44c!important;
+ box-shadow:0 0 13px #ffb44c,0 0 29px #ffb44c99,inset 0 0 16px #ffb44c55!important;
+}
+html[data-persona="cyber"][data-play-effects="lively"] #list-view .himiko-lively-flash,
+html[data-persona="cyber"][data-play-effects="lively"] #chat-view .himiko-lively-flash{
+ filter:brightness(1.25)!important;border-color:#00eaff!important;
+ box-shadow:0 0 13px #00eaff,0 0 29px #00eaff99,inset 0 0 16px #00eaff55!important;
+}
+html[data-play-effects="lively"] #chat-view .himiko-lively-flash{
+ filter:brightness(1.23)!important;box-shadow:0 0 13px #ffb44c,0 0 29px #ffb44c99!important;
+}
+html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-lively-flash){filter:brightness(1.09)}
+@media(hover:hover) and (pointer:fine){html[data-play-effects="lively"] #list-view :is(.nekopon-filter-tab,.filter-choice,.char-card):hover{filter:brightness(1.12);transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){html[data-play-effects="lively"] :is(.nekopon-filter-tab,.filter-choice,.char-card){animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
 
@@ -456,7 +497,7 @@ html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-we
     <div class="nekopon-search-panel" aria-label="人物の検索と絞り込み">
       <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前や時代で検索するぜ" aria-label="名前や時代で検索するぜ" oninput="renderCards()"></div>
       <div id="tag-bar" class="filter-panel"></div>
-    </div><p class="filter-hint">世界の人物は、おもに活躍したころの日本の時代で分けているぜ。時代の区切りは目安だぜ。</p><p id="filter-count" class="filter-count" aria-live="polite"></p>
+    </div><p id="filter-count" class="filter-count" aria-live="polite"></p>
     <div class="card-list" id="card-list"></div>
   </div>
 </div>
@@ -762,16 +803,42 @@ function matchesGroup(ch,group,key){
  }
  return filterGroups[group].items[key]?.has(ch.name)||false;
 }
+const smartFilterLabels={
+ '王・皇帝・天皇':['王・皇帝','天皇'],
+ '政治家・指導者':['政治家','指導者'],
+ '宗教に関わる人':['宗教に','関わる人'],
+ '思想家・教育者':['思想家','教育者'],
+ '社会を変えた人':['社会を','変えた人'],
+ '科学者・医師':['科学者','医師'],
+ '作家・文化人':['作家','文化人'],
+ '武士・武将':['武士・武将']
+};
+const smartEraDateLines={
+ '縄文':['約1万6千年前','〜紀元前10','世紀頃'],
+ '世界の古代':['紀元前の','人物など'],
+ '弥生・古墳':['紀元前10世紀','頃〜6世紀'],
+ '飛鳥・奈良':['6世紀末〜','794年'],
+ '平安':['794〜','1185年'],
+ '鎌倉':['1185〜','1333年'],
+ '室町':['1336〜','1573年'],
+ '安土桃山':['1573〜','1603年'],
+ '江戸':['1603〜','1868年'],
+ '明治':['1868〜','1912年'],
+ '大正・昭和':['1912〜','1989年'],
+ '現代':['1989年〜']
+};
+function filterLabelHTML(key){return (smartFilterLabels[key]||[key]).map(esc).join('<br>');}
+function filterDateHTML(key){return (smartEraDateLines[key]||[eraDates[key]]).map(esc).join('<br>');}
 function renderTags(){
  const container=document.getElementById('tag-bar');
  const positions=Object.fromEntries([...container.querySelectorAll('.filter-buttons')].map(row=>[row.dataset.group,row.scrollLeft]));
  const tabs=`<nav class="nekopon-filter-tabs" aria-label="人物の検索分類">${Object.entries(filterTabNames).map(([group,label])=>{
-  const active=openedFilterGroup===group, count=selectedFilters[group].size;
-  return `<button type="button" class="nekopon-filter-tab${active?' active':''}" data-filter-tab="${group}" aria-controls="himiko-options-${group}" aria-expanded="${active}" aria-pressed="${active}" onclick="toggleFilterGroup('${group}')">${label}${count?` <small>${count}</small>`:''}</button>`;
+  const active=openedFilterGroup===group;
+  return `<button type="button" class="nekopon-filter-tab${active?' active':''}" data-filter-tab="${group}" aria-controls="himiko-options-${group}" aria-expanded="${active}" aria-pressed="${active}" onclick="toggleFilterGroup('${group}')">${label}</button>`;
  }).join('')}</nav>`;
  container.innerHTML=tabs+Object.entries(filterGroups).map(([group,config])=>{
   const chosen=selectedFilters[group];
-  return `<section id="himiko-options-${group}" class="filter-section" ${openedFilterGroup===group?'':'hidden'}><h3 class="filter-heading">${config.label}${chosen.size?' <small>（'+chosen.size+'つ選択）</small>':''}</h3><div class="himiko-filter-scroll"><div class="filter-buttons" data-group="${group}" aria-label="${config.label}">${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}" title="${escAttr(key+(group==='era'?'：'+eraDates[key]:''))}"><span class="filter-choice-label">${esc(key)}</span>${group==='era'?`<small class="era-date">${esc(eraDates[key])}</small>`:''}</button>`).join('')}</div></div></section>`;
+  return `<section id="himiko-options-${group}" class="filter-section" ${openedFilterGroup===group?'':'hidden'}><h3 class="filter-heading">${config.label}</h3><div class="himiko-filter-scroll"><div class="filter-buttons" data-group="${group}" aria-label="${config.label}">${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}" title="${escAttr(key+(group==='era'?'：'+eraDates[key]:''))}"><span class="filter-choice-label">${filterLabelHTML(key)}</span>${group==='era'?`<small class="era-date">${filterDateHTML(key)}</small>`:''}</button>`).join('')}</div></div></section>`;
  }).join('')+`<button type="button" class="filter-clear" onclick="clearFilters()" ${Object.values(selectedFilters).some(set=>set.size)?'':'hidden'}>絞り込みを解除</button>`;
  container.querySelectorAll('.filter-buttons').forEach(row=>{
   row.scrollLeft=positions[row.dataset.group]||0;
@@ -1250,7 +1317,63 @@ document.getElementById("messages").addEventListener("click",function(e){
   const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};
   input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));
 })();
-</script></body>
+</script><script id="nekopon-himiko-lively-bridge-20261031">
+(()=>{
+ const root=document.documentElement;
+ const preference=window.matchMedia?.('(prefers-reduced-motion: reduce)');
+ const modeOn=()=>root.dataset.playEffects==='lively' && !preference?.matches && !document.hidden;
+ function fromSavedSettings(){
+  try {const p=JSON.parse(localStorage.getItem('jc-image-quiz-v1')||'{}')?.neko||{};
+   root.dataset.playEffects=(p.playMode==='lively' && p.tapPlay!==false && p.decorativeMotion!==false && !preference?.matches)?'lively':'normal';
+  }catch{root.dataset.playEffects='normal';}
+ }
+ fromSavedSettings();
+ window.addEventListener('message',event=>{
+  if(event.origin!==location.origin || event.source!==window.parent || event.data?.type!=='nekopon-play-settings')return;
+  root.dataset.playEffects=event.data.enabled && !preference?.matches?'lively':'normal';
+ });
+ let lastTap=0;
+ const timers=new WeakMap();
+ function highlight(control){
+   clearTimeout(timers.get(control));
+   control.classList.remove('himiko-lively-flash');
+   void control.offsetWidth;
+   control.classList.add('himiko-lively-flash');
+   if(control.animate){control.animate([
+    {transform:'scale(1)'},{transform:'scale(1.10)',offset:.13},
+    {transform:'scale(.95)',offset:.26},{transform:'scale(1.07)',offset:.42},
+    {transform:'scale(.99)',offset:.66},{transform:'scale(1)'}
+   ],{duration:620,easing:'cubic-bezier(.25,.46,.45,.94)'});}
+   timers.set(control,setTimeout(()=>control.classList.remove('himiko-lively-flash'),650));
+ }
+ document.addEventListener('click',event=>{
+   if(!modeOn())return;
+   const control=event.target.closest('#list-view button,#chat-view button,#list-view .fav-btn,#chat-view .header-tap');
+   if(!control || control.disabled || !control.isConnected)return;
+   const r=control.getBoundingClientRect(),x=event.detail&&Number.isFinite(event.clientX)?event.clientX:r.left+r.width/2;
+   const y=event.detail&&Number.isFinite(event.clientY)?event.clientY:r.top+r.height/2;
+   // Filters render fresh DOM buttons after click: animate the *new* selected button too.
+   const group=control.dataset.filterTab, value=control.dataset.value;
+   highlight(control);
+   queueMicrotask(()=>{
+     let updated=null;
+     if(group) updated=document.querySelector(`[data-filter-tab="${group}"]`);
+     else if(value) updated=[...document.querySelectorAll('.filter-choice')].find(item=>item.dataset.value===value);
+     if(updated && updated!==control)highlight(updated);
+   });
+   if(window.parent!==window){
+      try {window.parent.postMessage({type:'nekopon-himiko-ui-tap',x,y},location.origin);}catch{}
+   }else{ // Retain the same energetic response for standalone preview.
+      const badge=document.createElement('span');badge.textContent=root.dataset.persona==='cyber'?'⚡✨':'🐾✨';
+      badge.style.cssText=`position:fixed;left:${x}px;top:${y}px;z-index:99999;pointer-events:none;font-size:22px;`;
+      document.body.append(badge);
+      badge.animate?.([{opacity:1,transform:'translate(-50%,-50%) scale(.6)'},{opacity:0,transform:'translate(-50%,-90px) scale(1.5)'}],{duration:850});
+      setTimeout(()=>badge.remove(),900);
+   }
+ },true);
+})();
+</script>
+</body>
 </html>
 
 

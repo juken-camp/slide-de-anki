@@ -3740,6 +3740,9 @@ html[data-persona="cyber"] #app #himikoScreen{background:#080d20}
 /* The chat alone follows the visible area when the software keyboard is open. */
 html.himiko-keyboard-open #app #himikoScreen{position:fixed!important;z-index:1000;top:var(--himiko-viewport-top,0px);left:50%;transform:translateX(-50%);width:min(100%,900px);height:var(--himiko-viewport-height,100dvh);margin:0!important;overflow:hidden}
 html.himiko-keyboard-open #app #himikoFrame{height:100%!important;min-height:0!important}
+#app #myCollectionsPanel .my-page-search-panel{padding:12px;border:1px solid #e4cbb3;border-radius:16px;background:#fffaf2;margin:0 0 20px}
+#app #myCollectionsPanel .my-page-search-panel .my-page-actions{margin-bottom:0}
+html[data-persona="cyber"] #app #myCollectionsPanel .my-page-search-panel{background:#0f1430;border-color:#315576}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -3762,9 +3765,9 @@ html.himiko-keyboard-open #app #himikoFrame{height:100%!important;min-height:0!i
 
   <div id="catalogGroups" class="catalog-groups"></div>
   <div id="catalogEmpty" class="catalog-empty" hidden><span aria-hidden="true">📚</span><h3 id="catalogEmptyTitle"></h3><p id="catalogEmptyText"></p></div>
-  <section id="myCollectionsPanel" aria-label="新しい教材"><h2 class="screen-title my-page-title">新しい教材</h2><div class="catalog-search my-collections-search"><span aria-hidden="true">⌕</span><input type="search" id="myCollectionsSearch" placeholder="自分の教材をさがすにゃ" aria-label="自分の教材を検索"></div>
+  <section id="myCollectionsPanel" aria-label="新しい教材"><h2 class="screen-title my-page-title">新しい教材</h2><div class="my-page-search-panel"><div class="catalog-search my-collections-search"><span aria-hidden="true">⌕</span><input type="search" id="myCollectionsSearch" placeholder="自分の教材をさがすにゃ" aria-label="自分の教材を検索"></div>
  <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>教材を作るにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト対策するにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を追加するにゃ</span></button></div>
- <div class="my-collection-heading"><h3 id="myCollectionsTitle">作成した教材</h3></div><div id="myCollectionList"></div>
+ </div><div class="my-collection-heading"><h3 id="myCollectionsTitle">作成した教材</h3></div><div id="myCollectionList"></div>
  <section class="my-added-section" aria-labelledby="myAddedTitle"><div class="my-collection-heading"><h3 id="myAddedTitle">追加したオリジナル教材</h3></div><div id="myAddedLessons"></div></section>
 </section>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>

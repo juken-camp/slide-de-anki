@@ -241,6 +241,20 @@ html[data-persona="cyber"] .filter-heading small{color:#9cb9d4}
 html[data-persona="cyber"] .filter-choice{background:#101b35;border-color:#315b81;color:#c5ddf0}
 html[data-persona="cyber"] .filter-choice.active{background:#083c4c;border-color:#00e9f5;color:#e1ffff;box-shadow:0 0 12px #00e9f577,inset 0 0 8px #00e9f529}
 html[data-persona="cyber"] :is(.filter-choice,.filter-heading,.filter-clear):active{filter:brightness(1.2);box-shadow:0 0 12px #00e9f577}
+
+/* Match the catalogue search and horizontal selection rows. */
+#list-view .himiko-search{display:flex;align-items:center;gap:8px;padding:0 14px;min-height:46px;border:1px solid #ead5c2;background:#fff;border-radius:13px}
+#list-view .himiko-search>span{font-size:27px;line-height:1;color:#b78058}
+#list-view .himiko-search #search-input{flex:1;min-width:0;min-height:46px;padding:0;border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;color:inherit;font-family:"Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;font-size:16px}
+#list-view .himiko-search input::placeholder{font-size:13px;color:#b49a86}
+#list-view .himiko-search:focus-within{outline:2px solid #d2691e;outline-offset:2px}
+html[data-persona="cyber"] #list-view .himiko-search{background:#0b1831;border:2px solid #3c6f94;color:#dffaff;box-shadow:0 0 11px #00f5ff2c}
+html[data-persona="cyber"] #list-view .himiko-search>span{color:#00f5ff}
+html[data-persona="cyber"] #list-view .himiko-search:focus-within{border-color:#00f5ff;outline:2px solid #00f5ff83;outline-offset:2px;box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16}
+#list-view .filter-section+.filter-section{border:0}
+#list-view .filter-heading{min-height:0;padding:8px 0;font-size:12px}
+#list-view .filter-buttons{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;gap:7px;padding:0 1px 10px;scrollbar-width:thin}
+#list-view .filter-choice{flex:0 0 auto;white-space:nowrap;min-width:78px;min-height:46px}
 </style></head>
 <body>
 
@@ -256,7 +270,7 @@ html[data-persona="cyber"] :is(.filter-choice,.filter-heading,.filter-clear):act
           <div class="himiko-subtitle">わからないことはチャットで聞いてみようにゃ</div>
         </div>
       </div>
-      <input id="search-input" placeholder="🔍 名前・時代で検索" oninput="renderCards()">
+      <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前・時代で検索" aria-label="名前・時代で検索" oninput="renderCards()"></div>
     </div>
   </div>
   <div class="main-content">
@@ -567,12 +581,13 @@ function matchesGroup(ch,group,key){
 }
 function renderTags(){
  const container=document.getElementById('tag-bar');
+ const positions=Object.fromEntries([...container.querySelectorAll('.filter-buttons')].map(row=>[row.dataset.group,row.scrollLeft]));
  container.innerHTML=Object.entries(filterGroups).map(([group,config])=>{
-  const chosen=selectedFilters[group],open=expandedFilters[group];
-  return `<section class="filter-section"><button type="button" class="filter-heading" onclick="toggleFilterGroup('${group}')" aria-expanded="${open}"><span>${config.label}${chosen.size?' <small>（'+chosen.size+'つ選択）</small>':''}</span><span aria-hidden="true">${open?'−':'＋'}</span></button><div class="filter-buttons" ${open?'':'hidden'}>${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}">${esc(key)}${group==='era'?`<small class="era-date">${esc(eraDates[key])}</small>`:''}</button>`).join('')}</div></section>`;
+  const chosen=selectedFilters[group];
+  return `<section class="filter-section"><div class="filter-heading">${config.label}${chosen.size?' <small>（'+chosen.size+'つ選択）</small>':''}</div><div class="filter-buttons" data-group="${group}" aria-label="${config.label}">${Object.keys(config.items).map(key=>`<button type="button" class="filter-choice ${chosen.has(key)?'active':''}" aria-pressed="${chosen.has(key)}" onclick="toggleFilter('${group}',this.dataset.value)" data-value="${escAttr(key)}">${esc(key)}${group==='era'?`<small class="era-date">${esc(eraDates[key])}</small>`:''}</button>`).join('')}</div></section>`;
  }).join('')+`<button type="button" class="filter-clear" onclick="clearFilters()" ${Object.values(selectedFilters).some(set=>set.size)?'':'hidden'}>絞り込みを解除</button>`;
+ container.querySelectorAll('.filter-buttons').forEach(row=>{row.scrollLeft=positions[row.dataset.group]||0});
 }
-function toggleFilterGroup(group){expandedFilters[group]=!expandedFilters[group];renderTags();}
 function toggleFilter(group,key){const set=selectedFilters[group];set.has(key)?set.delete(key):set.add(key);renderTags();renderCards();}
 function clearFilters(){Object.values(selectedFilters).forEach(set=>set.clear());renderTags();renderCards();}
 function renderCards(){

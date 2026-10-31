@@ -901,6 +901,17 @@ html[data-chat-open] #chat-view .messages-inner {
   transition:none!important;
 }
 </style>
+<style id="nekopon-initial-bounce-snap-20261101">
+/* Native rubber band stays enabled. On the initial greeting only,
+   the tiny artificial 4px range must settle at its original 0px position. */
+html[data-chat-open] #chat-view .messages.nekopon-initial-greeting {
+  scroll-snap-type:y mandatory!important;
+}
+html[data-chat-open] #chat-view .messages.nekopon-initial-greeting > .messages-inner {
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+</style>
 </head>
 <body>
 
@@ -1477,7 +1488,7 @@ function renderMessages(resetScroll=true){
   const followups=messages.length>1&&messages.at(-1)?.role==="assistant"?dynamicSuggestions:[];
   const el=document.getElementById("messages");
   el.innerHTML=`<div class="messages-inner">${older}${markup}${suggestionHTML(ch,initial,true)}${suggestionHTML(ch,followups)}</div>`;
-  if(resetScroll){el.scrollTop=messages.length>1?el.scrollHeight:0;previousChatScroll=el.scrollTop;userReadingHistory=false;}
+  el.classList.toggle('nekopon-initial-greeting',messages.length===1); if(resetScroll){el.scrollTop=messages.length>1?el.scrollHeight:0;previousChatScroll=el.scrollTop;userReadingHistory=false;}
   updateSendBtn();
 }
 
@@ -1866,42 +1877,6 @@ document.getElementById("messages").addEventListener("click",function(e){
 })();
 </script>
 
-<script id="nekopon-initial-bounce-rest-position-20261101">
-/* A 4px scroll range enables native iOS bounce for the first message.
-   Restore the exact top position after the gesture settles; do not touch
-   normal conversations that have real scrollable content. */
-(() => {
-  const scroller = document.getElementById('messages');
-  if (!scroller) return;
-  let settleTimer = null;
-  let touching = false;
-  const isShort = () =>
-    document.documentElement.hasAttribute('data-chat-open') &&
-    scroller.scrollHeight - scroller.clientHeight <= 8;
-  const restore = () => {
-    if (touching || !isShort()) return;
-    if (scroller.scrollTop !== 0) scroller.scrollTop = 0;
-  };
-  const schedule = () => {
-    clearTimeout(settleTimer);
-    if (!isShort()) return;
-    settleTimer = setTimeout(restore, 280);
-  };
-  scroller.addEventListener('touchstart', () => {
-    touching = true;
-    clearTimeout(settleTimer);
-  }, {passive:true});
-  scroller.addEventListener('touchend', () => {
-    touching = false;
-    schedule();
-  }, {passive:true});
-  scroller.addEventListener('touchcancel', () => {
-    touching = false;
-    schedule();
-  }, {passive:true});
-  scroller.addEventListener('scrollend', restore, {passive:true});
-})();
-</script>
 </body>
 </html>
 

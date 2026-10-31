@@ -3929,6 +3929,10 @@ html[data-persona="cyber"] #app #himikoScreen,
 html.himiko-view-active[data-persona="cyber"] #app #himikoFrame {
   background:transparent!important;
 }
+/* Header sticky fix: do not let the app wrapper become a scroll container. */
+#app.app{overflow-x:visible!important;overflow-y:visible!important}
+#app #appHeader{position:-webkit-sticky!important;position:sticky!important;top:0!important;z-index:150!important;align-self:stretch}
+html{overflow-x:clip}
 </style>
 </head>
 <body><main id="app" class="app">

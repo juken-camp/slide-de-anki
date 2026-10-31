@@ -169,6 +169,26 @@ html[data-persona="cyber"][data-chat-open] .chat-header,html[data-persona="cyber
 .chat-header :is(#explainer-badge,#narrator-badge){flex-direction:row!important;flex-wrap:wrap;gap:5px!important}
 .chat-header :is(#online-badge,#explainer-badge,#narrator-badge).hidden{display:none!important}
 @media(max-width:390px){.chat-header{grid-template-columns:26px minmax(0,1fr) auto;gap:5px}.chat-header .chat-avatar{width:38px;height:38px;font-size:20px}.chat-header .chat-reset{padding:6px 7px;font-size:11px}.chat-header #chat-name{font-size:14px!important}}
+</style><style>
+/* Match the test chat surfaces, including inside the embedded frame. */
+html[data-chat-open],html[data-chat-open] body,html[data-chat-open] #chat-view,html[data-chat-open] .messages{background:#fffcf7!important;background-image:none!important}
+html[data-persona="cyber"][data-chat-open],html[data-persona="cyber"][data-chat-open] body,html[data-persona="cyber"][data-chat-open] #chat-view,html[data-persona="cyber"][data-chat-open] .messages{background:#0f1430!important;background-image:none!important}
+html[data-chat-open] .chat-header,html[data-chat-open] .chat-storage-status,html[data-chat-open] .input-area{background:#fffcf7!important;border-color:#ead2b9}
+html[data-persona="cyber"][data-chat-open] .chat-header,html[data-persona="cyber"][data-chat-open] .chat-storage-status,html[data-persona="cyber"][data-chat-open] .input-area{background:#0f1430!important;border-color:#315576}
+html[data-persona="cyber"] .bubble.assistant,html[data-persona="cyber"] .typing{background:#0d223a;color:#e5f2ff;border:1px solid #3c7793;box-shadow:none}
+html[data-persona="cyber"] .suggestion-btn{background:#0d223a!important;border:1px solid #3c7793!important;color:#c5edff!important}
+html[data-chat-open] .input-area{padding:8px 12px 10px}
+html[data-chat-open] .input-inner{align-items:center}
+#msg-input{font-size:16px;min-height:44px;padding:9px 12px;line-height:1.5;resize:none}
+#msg-input::placeholder{font-size:12px;opacity:1}
+</style><style>
+#list-view .header{position:static;background:transparent;border:0;box-shadow:none;padding:0 12px}
+#list-view .header-inner{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:8px 0 0}
+#list-view .header-inner>div{width:100%}
+#list-view .himiko-page-title{margin:0;font-size:18px;font-weight:800;line-height:1.45;letter-spacing:0;color:#754b2f}
+#list-view .himiko-subtitle{font-size:11px;line-height:1.5}
+#list-view #search-input{width:100%;min-height:44px}
+html[data-persona="cyber"] #list-view .himiko-page-title{color:#e0eaff;text-shadow:0 0 12px #00f5ff22}
 </style></head>
 <body>
 
@@ -178,9 +198,9 @@ html[data-persona="cyber"][data-chat-open] .chat-header,html[data-persona="cyber
   <div class="header">
     <div class="header-inner">
       <div style="flex:1;display:flex;align-items:center;gap:10px">
-        <div class="logo-box">🌙</div>
+        
         <div>
-          <div style="font-weight:900;font-size:18px;color:#1e293b;letter-spacing:-0.5px">卑弥呼と受験対策</div>
+          <h2 class="himiko-page-title">卑弥呼と受験対策</h2>
           <div class="himiko-subtitle">わからないことはチャットで聞いてみよう</div>
         </div>
       </div>
@@ -956,4 +976,5 @@ document.getElementById("messages").addEventListener("click",function(e){
 
 </body>
 </html>
+
 

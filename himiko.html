@@ -950,51 +950,26 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
 }
 </style>
 
-
-<style id="nekopon-list-heading-border-only-20261101">
-/* Do not alter grid background dimensions, phase, or repeat behavior. */
-#list-view > .header { border:0!important; border-top:0!important; border-bottom:0!important; box-shadow:none!important; }
-#list-view .header-inner { border:0!important; box-shadow:none!important; }
-#list-view .himiko-page-title { border:0!important; box-shadow:none!important; }
-</style>
-<style id="nekopon-heading-grid-single-line-fix-20261101">
-/* One grid painter only: the document root. A second grid on the sticky
-   heading gets a different phase while iOS rubber-bands the list. */
-html[data-persona="cyber"] #list-view > .header,
-html[data-persona="cyber"] #list-view .header-inner,
-html[data-persona="cyber"] #list-view .himiko-page-title {
-  background:transparent!important;
-  background-image:none!important;
-  border:0!important;
-  box-shadow:none!important;
+<style id="nekopon-single-grid-native-list-bounce-20261101">
+/* One continuous background: do not create an independent grid on list/title. */
+html[data-persona="cyber"]{
+ background-color:#050510!important;
+ background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+ background-size:36px 36px,36px 36px,cover,cover!important;
+ background-attachment:fixed!important;
 }
-/* Do not allow the embedded document itself to rubber-band beyond the top;
-   the parent app owns page-level overscroll. Ordinary list scrolling stays. */
-html:not([data-chat-open]),html:not([data-chat-open]) body {
-  overscroll-behavior-y:none!important;
-}
-</style>
-
-<style id="nekopon-list-continuous-square-grid-20261101">
-/* The list's entire scroll canvas is one grid. The title must never be a solid strip. */
-html[data-persona="cyber"] body {
-  background-color:#050510!important;
-  background-image:
-    linear-gradient(#00f5ff09 1px,transparent 1px),
-    linear-gradient(90deg,#00f5ff09 1px,transparent 1px),
-    radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),
-    radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
-  background-size:36px 36px,36px 36px,100% 100%,100% 100%!important;
-  background-attachment:fixed!important;
-  background-position:0 0!important;
-}
+html[data-persona="cyber"] body,
 html[data-persona="cyber"] #list-view,
 html[data-persona="cyber"] #list-view > .header,
 html[data-persona="cyber"] #list-view .header-inner,
-html[data-persona="cyber"] #list-view .himiko-page-title {
-  background-color:transparent!important;
-  background-image:none!important;
+html[data-persona="cyber"] #list-view .himiko-page-title{
+ background-color:transparent!important; background-image:none!important;
 }
+/* No added title separator: the regular grid alone is visible. */
+#list-view > .header,#list-view .header-inner,#list-view .himiko-page-title{border:0!important;box-shadow:none!important}
+/* Preserve native body scroller and its iOS rubber-band. */
+html:not([data-chat-open]) body{overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-y:auto!important;touch-action:pan-y!important}
+html:not([data-chat-open]){overscroll-behavior-y:auto!important}
 </style>
 </head>
 <body>

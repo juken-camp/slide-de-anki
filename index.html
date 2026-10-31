@@ -3727,8 +3727,7 @@ html[data-persona="cyber"] #app #catalogScreen .my-collections-search input#myCo
 #app #appNavigation button{display:flex;align-items:center;justify-content:center;text-align:center;padding-left:0!important;padding-right:0!important;letter-spacing:0;min-width:0;white-space:nowrap}
 @media(max-width:370px){#app #appNavigation button{font-size:clamp(9px,2.6vw,11px)}}
 </style><style>#app #himikoFrame{border-radius:0;background:transparent}</style><style>#app #himikoFrame{height:var(--himiko-frame-height,calc(100dvh - 88px));min-height:240px}</style><style>
-html.himiko-keyboard-open,html.himiko-keyboard-open body{overflow:hidden!important;overscroll-behavior:none}
-html.himiko-keyboard-open #app{position:fixed;inset:0;width:100%;max-width:900px;margin:auto;overflow:hidden!important}
+
 </style><style>
 /* Extend the embedded page to the app edges, while its contents retain the usual inset. */
 #app #himikoScreen{width:calc(100% + 40px);margin-left:-20px;margin-right:-20px}
@@ -3738,8 +3737,9 @@ html.himiko-keyboard-open #app{position:fixed;inset:0;width:100%;max-width:900px
 #app #himikoScreen{background:#fff8f0}
 html[data-persona="cyber"] #app #himikoScreen{background:#080d20}
 #app #himikoFrame:not(.himiko-ready){visibility:hidden}
-html.himiko-keyboard-open #app{top:var(--himiko-viewport-top,0px)!important;bottom:auto!important;height:var(--himiko-viewport-height,100dvh)!important;min-height:0!important}
-html.himiko-keyboard-open #app #himikoFrame{min-height:0!important}
+/* The chat alone follows the visible area when the software keyboard is open. */
+html.himiko-keyboard-open #app #himikoScreen{position:fixed!important;z-index:1000;top:var(--himiko-viewport-top,0px);left:50%;transform:translateX(-50%);width:min(100%,900px);height:var(--himiko-viewport-height,100dvh);margin:0!important;overflow:hidden}
+html.himiko-keyboard-open #app #himikoFrame{height:100%!important;min-height:0!important}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
@@ -8581,25 +8581,34 @@ $('importForm').onsubmit=async e=>{
 (()=>{
   const frame=document.getElementById('himikoFrame'),screen=document.getElementById('himikoScreen');
   if(!frame||!screen)return;
-  let inputActive=false,frameQueued=false;
+  let inputActive=false,queued=false,baseline=window.visualViewport?.height||window.innerHeight;
+  const root=document.documentElement;
   frame.addEventListener('load',()=>{if(!frame.getAttribute('src'))return;frame.classList.add('himiko-ready');schedule();});
-  const resize=()=>{
-    frameQueued=false;if(screen.hidden)return;
+  function resize(){
+    queued=false;
+    if(screen.hidden){root.classList.remove('himiko-keyboard-open');return;}
     const viewport=window.visualViewport,available=viewport?.height||window.innerHeight,offset=viewport?.offsetTop||0;
-    if(inputActive){document.documentElement.style.setProperty('--himiko-viewport-top',offset+'px');document.documentElement.style.setProperty('--himiko-viewport-height',available+'px');}
-    const relativeTop=frame.getBoundingClientRect().top-(inputActive?offset:0);
-    frame.style.setProperty('--himiko-frame-height',Math.max(inputActive?80:240,Math.floor(available-Math.max(0,relativeTop)-4))+'px');
-  };
-  function schedule(){if(!frameQueued){frameQueued=true;requestAnimationFrame(resize)}}
+    if(!inputActive)baseline=available;
+    const keyboard=inputActive && baseline-available>100;
+    root.classList.toggle('himiko-keyboard-open',keyboard);
+    if(keyboard){
+      root.style.setProperty('--himiko-viewport-top',Math.round(offset)+'px');
+      root.style.setProperty('--himiko-viewport-height',Math.round(available)+'px');
+    }else{
+      root.style.removeProperty('--himiko-viewport-top');root.style.removeProperty('--himiko-viewport-height');
+      const relativeTop=frame.getBoundingClientRect().top-offset;
+      frame.style.setProperty('--himiko-frame-height',Math.max(240,Math.floor(available-Math.max(0,relativeTop)-4))+'px');
+    }
+  }
+  function schedule(){if(!queued){queued=true;requestAnimationFrame(resize)}}
   window.addEventListener('message',event=>{
     if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.type!=='himiko-input-focus')return;
-    inputActive=!!event.data.active;document.documentElement.classList.toggle('himiko-keyboard-open',inputActive);
-    if(!inputActive){document.documentElement.style.removeProperty('--himiko-viewport-top');document.documentElement.style.removeProperty('--himiko-viewport-height');}
-    schedule();setTimeout(schedule,100);setTimeout(schedule,350);
+    inputActive=!!event.data.active;schedule();setTimeout(schedule,150);setTimeout(schedule,400);
   });
   document.getElementById('navCollections')?.addEventListener('click',schedule);
-  document.querySelectorAll('#appNavigation button:not(#navCollections)').forEach(button=>button.addEventListener('click',()=>{inputActive=false;document.documentElement.classList.remove('himiko-keyboard-open');}));
+  document.querySelectorAll('#appNavigation button:not(#navCollections)').forEach(button=>button.addEventListener('click',()=>{inputActive=false;root.classList.remove('himiko-keyboard-open');}));
   window.addEventListener('resize',schedule);window.visualViewport?.addEventListener('resize',schedule);window.visualViewport?.addEventListener('scroll',schedule);
+  window.addEventListener('orientationchange',()=>{inputActive=false;root.classList.remove('himiko-keyboard-open');setTimeout(()=>{baseline=window.visualViewport?.height||window.innerHeight;schedule()},300)});
 })();
 </script></body></html>
 

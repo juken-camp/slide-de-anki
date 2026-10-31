@@ -203,7 +203,8 @@ html[data-persona="cyber"] .send-btn:disabled{background:#1c3049!important;color
 html[data-persona="cyber"] .send-btn:not(:disabled){background:linear-gradient(135deg,#00d9df,#2baee4)!important;color:#062539!important;border:1px solid #42e9f6;box-shadow:none!important}
 </style><style>#list-view .header-inner,#list-view .main-content{max-width:800px}</style><style>
 #msg-input{box-sizing:border-box;height:44px;min-height:44px;padding:11px 12px;line-height:20px}
-#msg-input::placeholder{font-size:12px;line-height:20px}
+#msg-input::placeholder{font-size:14px;line-height:20px}
+#msg-input{display:block;min-width:0;overflow-y:auto;-webkit-appearance:none}
 </style></head>
 <body>
 
@@ -794,47 +795,17 @@ function getFallbackSuggestions(ch){
   return ["もう少し詳しく教えて","入試ではどう出題されるの？","他の人物との関係を教えて"];
 }
 
-// LINE風効果音
-let audioCtx=null;
-function getAudioCtx(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();return audioCtx;}
-function playSendSound(){
-  try{
-    const ctx=getAudioCtx();const t=ctx.currentTime;
-    // 柔らかい「ポコッ」— 丸みのある短いアタック
-    const o=ctx.createOscillator();const g=ctx.createGain();
-    const f=ctx.createBiquadFilter();
-    o.connect(f);f.connect(g);g.connect(ctx.destination);
-    f.type="lowpass";f.frequency.setValueAtTime(2000,t);
-    o.type="sine";
-    o.frequency.setValueAtTime(1400,t);
-    o.frequency.exponentialRampToValueAtTime(800,t+0.07);
-    g.gain.setValueAtTime(0,t);
-    g.gain.linearRampToValueAtTime(0.18,t+0.008);
-    g.gain.setValueAtTime(0.18,t+0.025);
-    g.gain.exponentialRampToValueAtTime(0.001,t+0.09);
-    o.start(t);o.stop(t+0.1);
-  }catch(e){}
+// Use the app's sound palette, volume and mute setting when embedded.
+function appSound(kind,event){
+  try { if(window.parent!==window && window.parent.location.origin===location.origin && typeof window.parent.beep==='function') window.parent.beep(kind,event); } catch(_) {}
 }
-function playReceiveSound(){
-  try{
-    const ctx=getAudioCtx();const t=ctx.currentTime;
-    // 「ティロリン♪」— 3音の明るい下降メロディ
-    const notes=[{freq:1567.98,start:0,dur:0.1},{freq:1318.51,start:0.09,dur:0.1},{freq:1046.50,start:0.18,dur:0.18}];
-    notes.forEach(n=>{
-      const o=ctx.createOscillator();const g=ctx.createGain();
-      const f=ctx.createBiquadFilter();
-      o.connect(f);f.connect(g);g.connect(ctx.destination);
-      f.type="lowpass";f.frequency.setValueAtTime(3000,t+n.start);
-      o.type="triangle";
-      o.frequency.setValueAtTime(n.freq,t+n.start);
-      g.gain.setValueAtTime(0,t+n.start);
-      g.gain.linearRampToValueAtTime(0.13,t+n.start+0.01);
-      g.gain.setValueAtTime(0.13,t+n.start+n.dur*0.4);
-      g.gain.exponentialRampToValueAtTime(0.001,t+n.start+n.dur);
-      o.start(t+n.start);o.stop(t+n.start+n.dur);
-    });
-  }catch(e){}
-}
+function playSendSound(){appSound('chatSend');}
+function playReceiveSound(){appSound('chatReceive');}
+document.addEventListener('click',event=>{
+  const button=event.target.closest('button,.fav-btn,.header-tap');
+  if(!button || button.disabled || button.id==='send-btn' || button.classList.contains('suggestion-btn'))return;
+  appSound('tap',event);
+});
 
 async function sendMessage(text){
   if(!text||!text.trim()||isLoading||!currentChar||!chatReady)return;
@@ -990,7 +961,11 @@ document.getElementById("messages").addEventListener("click",function(e){
 </script>
 
 <script>
-(()=>{const input=document.getElementById('msg-input');if(!input)return;const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};input.addEventListener('touchstart',()=>{try{if(window.parent!==window&&window.parent.location.origin===location.origin)window.parent.document.documentElement.classList.add('himiko-keyboard-open')}catch(_){}},{passive:true});input.addEventListener('touchend',()=>setTimeout(()=>{if(document.activeElement!==input)tell(false)},500),{passive:true});input.addEventListener('touchcancel',()=>tell(false),{passive:true});input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));})();
+(()=>{
+  const input=document.getElementById('msg-input');if(!input)return;
+  const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};
+  input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));
+})();
 </script></body>
 </html>
 

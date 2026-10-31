@@ -3941,28 +3941,32 @@ html[data-persona=cyber] body #app #appHeader.is-scrolled::before{
  background-size:38px 38px!important;
  opacity:1!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
 }
-html[data-persona=cyber] body #app #appHeader:not(.is-scrolled)::before{opacity:1!important}
+html[data-persona=cyber] body #app #appHeader:not(.is-scrolled)::before{opacity:0!important}
 </style>
 <style id="nekopon-fixed-header-final-20261101">
-/* Keep the existing fixed header and placeholder. A single viewport-fixed
-   backdrop supplies the grid, so it cannot scroll independently. */
-body #app #appHeader.compact-header{position:fixed!important;top:var(--neko-header-top,0px)!important;left:var(--neko-header-left,0px)!important;width:var(--neko-header-width,100%)!important;box-sizing:border-box!important;z-index:190!important;margin:0!important;transform:none!important;background:transparent!important;background-image:none!important;isolation:isolate!important;}
+/* Fixed viewport header on all five tabs; preserve its original in-flow space. */
+body #app #appHeader.compact-header{position:fixed!important;top:var(--neko-header-top,0px)!important;left:var(--neko-header-left,0px)!important;width:var(--neko-header-width,100%)!important;box-sizing:border-box!important;z-index:190!important;margin:0!important;transform:none!important;}
 #nekoHeaderPlaceholder{display:block;pointer-events:none;}
-html[data-persona="cyber"] body #app #appHeader.compact-header::before{
- content:""!important;display:block!important;position:absolute!important;
- inset:0 -16px!important;z-index:-1!important;opacity:1!important;
- background:#050510!important;box-shadow:none!important;
- backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
-}
-/* Draw the exact same grid as the body, aligned to viewport coordinates. */
-html[data-persona="cyber"] body #app #appHeader.compact-header::after{
- content:""!important;display:block!important;position:absolute!important;
- inset:0 -16px!important;z-index:-1!important;pointer-events:none!important;
+html[data-persona="cyber"] body #app #appHeader::before{opacity:1!important;inset:0 -20px!important;background-color:rgba(3,12,23,.96)!important;background-image:linear-gradient(rgba(0,245,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.055) 1px,transparent 1px)!important;background-size:36px 36px!important;background-position:0 0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
+html:not([data-persona="cyber"]) body #app #appHeader::before{opacity:1!important;background:var(--cream)!important;}
+/* Keep the fixed header visually aligned with the viewport-fixed Cyber grid.
+   The body grid uses 36px cells and is anchored to the viewport, not the document. */
+html[data-persona="cyber"] body #app #appHeader::before{
+ background-color:rgba(3,12,23,.96)!important;
  background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px)!important;
  background-size:36px 36px!important;
  background-position:var(--neko-grid-x,0px) var(--neko-grid-y,0px)!important;
 }
-html:not([data-persona="cyber"]) body #app #appHeader.compact-header::before{opacity:1!important;background:var(--cream)!important;}
+
+/* Header background must be painted in viewport coordinates, not as a moving overlay. */
+html[data-persona="cyber"] body #app #appHeader.compact-header{
+ background-color:#050510!important;
+ background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+ background-size:36px 36px,36px 36px,100vw 100vh,100vw 100vh!important;
+ background-attachment:fixed!important;
+ background-position:0 0!important;
+}
+html[data-persona="cyber"] body #app #appHeader.compact-header::before{display:none!important;}
 </style>
 <script id="nekopon-fixed-header-init-20261101">
 document.addEventListener('DOMContentLoaded',()=>{

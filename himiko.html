@@ -201,7 +201,10 @@ html[data-chat-open] .chat-header{border-bottom:1px solid #ead2b9!important}
 html[data-persona="cyber"][data-chat-open] .chat-header{border-bottom-color:#315576!important}
 html[data-persona="cyber"] .send-btn:disabled{background:#1c3049!important;color:#7899b1!important;border:1px solid #315576;box-shadow:none!important}
 html[data-persona="cyber"] .send-btn:not(:disabled){background:linear-gradient(135deg,#00d9df,#2baee4)!important;color:#062539!important;border:1px solid #42e9f6;box-shadow:none!important}
-</style><style>#list-view .header-inner,#list-view .main-content{max-width:800px}</style></head>
+</style><style>#list-view .header-inner,#list-view .main-content{max-width:800px}</style><style>
+#msg-input{box-sizing:border-box;height:44px;min-height:44px;padding:11px 12px;line-height:20px}
+#msg-input::placeholder{font-size:12px;line-height:20px}
+</style></head>
 <body>
 
 <!-- LIST VIEW -->
@@ -987,9 +990,10 @@ document.getElementById("messages").addEventListener("click",function(e){
 </script>
 
 <script>
-(()=>{const input=document.getElementById('msg-input');if(!input)return;const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));})();
+(()=>{const input=document.getElementById('msg-input');if(!input)return;const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};input.addEventListener('touchstart',()=>{try{if(window.parent!==window&&window.parent.location.origin===location.origin)window.parent.document.documentElement.classList.add('himiko-keyboard-open')}catch(_){}},{passive:true});input.addEventListener('touchend',()=>setTimeout(()=>{if(document.activeElement!==input)tell(false)},500),{passive:true});input.addEventListener('touchcancel',()=>tell(false),{passive:true});input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));})();
 </script></body>
 </html>
+
 
 
 

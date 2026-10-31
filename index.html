@@ -2559,6 +2559,11 @@ body.homework-capture .neko-lively-particle{display:none!important}
 #reelDialog #reelFeed:focus-visible{outline:none!important;box-shadow:none!important}
 html[data-persona] body #reelDialog #appHeader{padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));}
 @media(min-width:601px){html[data-persona] body #reelDialog #appHeader{padding-left:max(calc((100vw - 840px)/2 + 20px),env(safe-area-inset-left,0px));padding-right:max(calc((100vw - 840px)/2 + 20px),env(safe-area-inset-right,0px));padding-top:calc(16px + env(safe-area-inset-top,0px));}}
+
+/* 2026-11-01: allow the shared sticky header to stick to the viewport.
+   The app's overflow-x:hidden/clip created a clipping/scroll ancestor on iOS. */
+html body #app.app { overflow: visible !important; overflow-x: visible !important; overflow-y: visible !important; }
+html body #app #appHeader { position: -webkit-sticky !important; position: sticky !important; top: 0 !important; z-index: 900 !important; }
 </style>
 <style>
 /* Cyber controls in dialogs override the generic dialog button skin. */
@@ -3929,11 +3934,6 @@ html[data-persona="cyber"] #app #himikoScreen,
 html.himiko-view-active[data-persona="cyber"] #app #himikoFrame {
   background:transparent!important;
 }
-
-/* 2026-11-01: robust viewport-pinned header on all main screens. */
-#app #appHeader.neko-header-pinned{position:fixed!important;top:0!important;left:var(--neko-header-left)!important;width:var(--neko-header-width)!important;max-width:none!important;z-index:900!important;margin:0!important;box-sizing:border-box}
-#nekoHeaderSpacer{display:none;pointer-events:none}
-#nekoHeaderSpacer.neko-header-spacer-active{display:block}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -4571,42 +4571,6 @@ updateHeaderHeight();
 const updateHeaderScroll = () => $('appHeader').classList.toggle('is-scrolled', window.scrollY > 8);
 window.addEventListener('scroll',updateHeaderScroll,{passive:true});
 updateHeaderScroll();
-// Pin the shared title + five navigation tabs to the viewport while scrolling.
-// Fixed positioning avoids iOS WebKit sticky failures caused by ancestor clipping.
-const nekoHeader = $('appHeader');
-const nekoHeaderSpacer = document.createElement('div');
-nekoHeaderSpacer.id = 'nekoHeaderSpacer';
-nekoHeader.setAttribute('data-neko-header','shared');
-nekoHeader.after(nekoHeaderSpacer);
-let nekoHeaderTop = 0;
-let nekoHeaderPinned = false;
-function nekoHeaderSync(){
-  if(nekoHeader.parentElement !== $('app') || nekoHeader.hidden || document.documentElement.classList.contains('himiko-view-active') || document.body.classList.contains('reel-open')){
-    nekoHeader.classList.remove('neko-header-pinned');
-    nekoHeaderSpacer.classList.remove('neko-header-spacer-active');
-    nekoHeaderPinned=false;
-    return;
-  }
-  if(!nekoHeaderPinned) nekoHeaderTop=nekoHeader.getBoundingClientRect().top+window.scrollY;
-  const pin=window.scrollY>nekoHeaderTop;
-  if(pin){
-    const rect=$('app').getBoundingClientRect();
-    const style=getComputedStyle(nekoHeader);
-    const height=nekoHeader.getBoundingClientRect().height;
-    nekoHeaderSpacer.style.height=`${height+parseFloat(style.marginBottom||0)}px`;
-    document.documentElement.style.setProperty('--neko-header-left',`${rect.left+parseFloat(getComputedStyle($('app')).paddingLeft||0)}px`);
-    document.documentElement.style.setProperty('--neko-header-width',`${$('app').clientWidth-parseFloat(getComputedStyle($('app')).paddingLeft||0)-parseFloat(getComputedStyle($('app')).paddingRight||0)}px`);
-    nekoHeaderSpacer.classList.add('neko-header-spacer-active');
-    nekoHeader.classList.add('neko-header-pinned');
-  }else{
-    nekoHeader.classList.remove('neko-header-pinned');
-    nekoHeaderSpacer.classList.remove('neko-header-spacer-active');
-  }
-  nekoHeaderPinned=pin;
-}
-window.addEventListener('scroll',nekoHeaderSync,{passive:true});
-window.addEventListener('resize',nekoHeaderSync,{passive:true});
-requestAnimationFrame(nekoHeaderSync);
 const selected = new Set(state.lessonIds);
 const motionPreference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
 let reduced = !!motionPreference?.matches || data.neko.decorativeMotion === false;

@@ -3712,12 +3712,20 @@ html[data-persona="cyber"] #app #settingsScreen :is(.settings-group,.settings-pa
 html[data-persona="cyber"] #app #settingsScreen .settings-group :is(.settings-profile,.settings-brand,.settings-sound,.settings-display,.settings-play){background:transparent!important;box-shadow:none!important}
 html[data-persona="cyber"] #app #settingsScreen .settings-group :is(.settings-profile,.settings-sound,.settings-display){border-bottom-color:#315576!important}
 html[data-persona="cyber"] #app #settingsScreen .settings-share{background:#101b35!important;border-color:#315b81!important;color:#d9f5ff!important;box-shadow:none!important}
+</style><style>
+#app #myCollectionsPanel{padding:18px 0 22px;scroll-margin-top:100px}
+#app #myCollectionsPanel .my-page-title{margin:4px 0 14px;font-size:20px}
+#app #myCollectionsPanel .my-collections-search{margin:0 0 12px}
+#app #myCollectionsPanel .my-collections-search input{width:100%}
+#app #himikoScreen{margin:12px 0 0;min-width:0}
+#app #himikoFrame{display:block;width:100%;height:calc(100dvh - 100px);min-height:320px;border:0;border-radius:16px;background:transparent}
+@media(max-width:430px){#app .app-navigation button{padding-left:5px;padding-right:5px}#app #himikoFrame{height:calc(100dvh - 88px)}}
 </style></head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>
   
   
-<nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navCollections" type="button">教材</button><button id="navRecords" type="button">テスト</button><button id="navSettings" type="button">設定</button></nav></header>
+<nav class="app-navigation" id="appNavigation" aria-label="メインメニュー"><button id="openCatalog" type="button" aria-label="教材の目次">目次</button><button id="returnToStudy" type="button" disabled>学習</button><button id="navRecords" type="button">テスト</button><button id="navCollections" type="button">卑弥呼</button><button id="navSettings" type="button">設定</button></nav></header>
 
 
 
@@ -3731,15 +3739,17 @@ html[data-persona="cyber"] #app #settingsScreen .settings-share{background:#101b
   
   <p id="questionSearchStatus" class="question-search-status" role="status"></p><div id="questionSearchSelection" class="search-selection-tools" hidden><span data-search-count role="status" aria-live="polite"></span><div><button type="button" class="tool" data-search-select-all>検索した問題をすべて選ぶにゃ</button><button type="button" class="link-button" data-search-clear>選択を解除</button><button type="button" class="tool" data-search-save>まとめに保存にゃ</button></div></div><details class="catalog-milestones" id="catalogMilestones"><summary>達成マークを確かめるにゃ</summary><p>✓は、全問を「おぼえた」にした教材に付くにゃ。🏅は、確認チャレンジのランダム10問（候補が少なければ全問）を自動判定で全問正解すると付くにゃ。自己判定の正解は🏅の対象外にゃ。</p></details>
   <div class="catalog-list-tools"><span id="visibleCount" aria-live="polite"></span><button class="link-button" id="selectVisible">まとめて選ぶにゃ</button></div>
-  <section id="myCollectionsPanel" hidden aria-label="自分のまとめと教材">
+
+  <div id="catalogGroups" class="catalog-groups"></div>
+  <div id="catalogEmpty" class="catalog-empty" hidden><span aria-hidden="true">📚</span><h3 id="catalogEmptyTitle"></h3><p id="catalogEmptyText"></p></div>
+  <section id="myCollectionsPanel" aria-label="新しい教材"><h2 class="screen-title my-page-title">新しい教材</h2><div class="catalog-search my-collections-search"><span aria-hidden="true">⌕</span><input type="search" id="myCollectionsSearch" placeholder="自分の教材をさがすにゃ" aria-label="自分の教材を検索"></div>
  <div class="my-page-actions"><button class="tool" type="button" id="newMyCollection"><span class="my-action-icon" aria-hidden="true">📚</span><span>教材を作るにゃ</span></button><button class="tool" type="button" id="unitCollectionOpen"><span class="my-action-icon" aria-hidden="true">📝</span><span>テスト対策するにゃ</span></button><button class="tool" type="button" id="myAddLesson"><span class="my-action-icon" aria-hidden="true">📷</span><span>教材を追加するにゃ</span></button></div>
  <div class="my-collection-heading"><h3 id="myCollectionsTitle">作成した教材</h3></div><div id="myCollectionList"></div>
  <section class="my-added-section" aria-labelledby="myAddedTitle"><div class="my-collection-heading"><h3 id="myAddedTitle">追加したオリジナル教材</h3></div><div id="myAddedLessons"></div></section>
 </section>
-  <div id="catalogGroups" class="catalog-groups"></div>
-  <div id="catalogEmpty" class="catalog-empty" hidden><span aria-hidden="true">📚</span><h3 id="catalogEmptyTitle"></h3><p id="catalogEmptyText"></p></div>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>
 </section>
+<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html"></iframe></section>
 <section aria-labelledby="sessionSummary" id="studyScreen" aria-label="スライド学習" hidden>
 <div class="study-heading page-heading"><h2 class="screen-title" tabindex="-1" id="sessionSummary"></h2><button id="studyReel" class="tool" type="button" aria-label="リールで見る" title="リール"><span aria-hidden="true">🎞️</span></button><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden hidden></p><p id="saveWarning" class="save-warning" hidden></p>
@@ -4997,14 +5007,14 @@ function showScreen(next) {
   const catalogReturn = next==='catalog' && !catalogIsCollections && screen!=='catalog' ? catalogQuestionReturn : null;
   if(next==='catalog'&&!catalogReturn)catalogQuestionReturn=null;
   if (screen !== next) { pause(); imageView.cancel(); homeworkImageView.cancel(); homeworkImageLoader.pause(); ++testImageToken; } if(next!=='report'&&next!=='test')toggleHomeworkCapture(false);screen = next; $('app').dataset.screen = next;
-  for (const name of ['catalog','study','settings','report','test']) $(name+'Screen').hidden = name !== next;
+  for (const name of ['catalog','study','settings','report','test','himiko']) $(name+'Screen').hidden = name !== next;
   $('appHeader').hidden = false;
   $('returnToStudy').disabled = !lesson && !state.lessonIds.some(id=>meta.some(m=>m.id===id));
-  for (const [id,target] of [['openCatalog','catalog'],['returnToStudy','study'],['navCollections','collections'],['navRecords','report'],['navSettings','settings']]) {
+  for (const [id,target] of [['openCatalog','catalog'],['returnToStudy','study'],['navCollections','himiko'],['navRecords','report'],['navSettings','settings']]) {
     if (next===target && (target!=='catalog'||!catalogIsCollections) || target==='collections'&&next==='catalog'&&catalogIsCollections || target==='report'&&next==='test') $(id).setAttribute('aria-current','page'); else $(id).removeAttribute('aria-current');
   }
   syncLandscape();
-  if (next === 'catalog') renderCatalog(); stats();
+  if (next === 'catalog') renderCatalog(); if(next==='himiko'){const frame=$('himikoFrame');if(!frame.src)frame.src=frame.dataset.src;else frame.contentWindow?.postMessage({type:'nekopon-persona',persona:document.documentElement.dataset.persona},location.origin);} stats();
   window.scrollTo?.({ top: 0, behavior: 'instant' });
   if (next === 'catalog') $('catalogTitle').focus({ preventScroll: true });
   if (next === 'settings') $('settingsTitle').focus({preventScroll:true});
@@ -5137,6 +5147,7 @@ function renderCatalog() {
   $('catalogScreen').classList.toggle('news-view',!!(newsDemoMode&&!catalogIsCollections));
   if(!catalogIsCollections) normalizeCatalogScope();
   syncCollectionCatalog();
+  renderMyCollections();
   $('visibleCount').hidden=!!(newsDemoMode&&!catalogIsCollections);
   const focusedLesson = document.activeElement?.dataset?.lesson;
   const focusedFilter = document.activeElement?.parentElement?.id === 'catalogFilters' ? document.activeElement.textContent : null;
@@ -5146,7 +5157,7 @@ function renderCatalog() {
   $('browseSwitch').hidden = catalogSubject !== 'science';
   $('socialSwitch').hidden = !social;
   const subjectFocus = document.activeElement?.dataset?.subject;
-  $('catalogDock').hidden=catalogIsCollections||newsDemoMode;document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('news-active',newsDemoMode&&!catalogIsCollections);
+  $('catalogDock').hidden=catalogIsCollections||newsDemoMode||!selected.size;document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('news-active',newsDemoMode&&!catalogIsCollections);
   $('catalogSubjects').replaceChildren();
   for (const id of [...new Set(['science','social',...meta.map(m=>m.subject)])]) {
     const b=document.createElement('button'); b.type='button'; b.dataset.subject=id;
@@ -5178,8 +5189,8 @@ function renderCatalog() {
     const count=document.createElement('span'); count.className='series-count'; count.textContent=`${catalogScopeLessons().filter(m=>lessonSeries(m)===s.id).length}教材`;
     b.append(label,count); b.onclick=()=>setCatalogContext({series:s.id}); $('catalogSeries').append(b);
   }
-  const searching = !!catalogQuery(), visible = visibleLessons();
-  const all = catalogSeriesLessons(), keys = [...new Set((searching ? visible : all).map(groupKey))];
+  const searching = !!catalogQuery(), showLessons=!!catalogSubject||searching, visible = showLessons?visibleLessons():[];
+  const all = showLessons?catalogSeriesLessons():[], keys = [...new Set((searching ? visible : all).map(groupKey))];
   if (usesGrades()) keys.sort((a,b) => (a === 'other' ? 9 : Number(a)) - (b === 'other' ? 9 : Number(b)));
   else keys.sort((a,b) => Object.keys(fields).indexOf(a) - Object.keys(fields).indexOf(b));
   $('catalogFilters').replaceChildren();
@@ -5217,7 +5228,7 @@ function renderCatalog() {
     }
     section.append(list); $('catalogGroups').append(section);
   }
-  $('catalogEmpty').hidden = !!visible.length;
+  $('catalogEmpty').hidden = !showLessons || !!visible.length; document.querySelector('#catalogScreen .catalog-list-tools').hidden=!showLessons;
   const preparing = !searching && !all.length;
   $('catalogEmptyTitle').textContent = preparing ? `${social && socialField ? groupLabel(socialField) : subjectLabel(catalogSubject)}の教材は準備中にゃ` : 'その教材は見つからないにゃ';
   $('catalogEmptyText').textContent = preparing ? '「＋ 教材追加にゃ」から新しい教材を入れられるにゃ。' : 'さがし方を変えてみてにゃ。';
@@ -5602,13 +5613,13 @@ function writeCollections(items) {
 }
 function collectionSnapshot(c) {return {id:c.id,name:c.name,cardKeys:c.cards.map(r=>cardKey(r.lessonId,r.cardId))};}
 function collectionKnown(c) {return c.cards.filter(r=>data.records[r.lessonId]?.[r.cardId]?.status==='known').length;}
-function syncMainNavigation(){if(screen!=='catalog')return;$('openCatalog').toggleAttribute('aria-current',!catalogIsCollections);$('navCollections').toggleAttribute('aria-current',catalogIsCollections);if(!catalogIsCollections)$('openCatalog').setAttribute('aria-current','page');else $('navCollections').setAttribute('aria-current','page');}
+function syncMainNavigation(){if(screen!=='catalog')return;$('openCatalog').setAttribute('aria-current','page');$('navCollections').removeAttribute('aria-current');}
 function syncCollectionCatalog() {
   const on=catalogIsCollections;
   $('questionSearchSelection').hidden=on||(!catalogQuery()&&!searchSelectedQuestions.size);
   $('questionSearchStatus').hidden=on;$('catalogMilestones').hidden=on||!!catalogQuery();
   syncMainNavigation();$('catalogTitle').textContent=on?'新しい教材':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('is-my-page',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
-  $('myCollectionsPanel').hidden=!on;
+  $('myCollectionsPanel').hidden=false;
   document.querySelector('#catalogScreen .catalog-filter-row').hidden=on || !catalogSubject;
   $('seriesScroller').hidden=on; $('catalogSeries').hidden=on; $('catalogDock').hidden=on;
   document.querySelector('#catalogScreen .catalog-list-tools').hidden=on;
@@ -5617,15 +5628,15 @@ function syncCollectionCatalog() {
   $('catalogSearch').placeholder=newsDemoMode&&!on?(document.documentElement.dataset.persona==='cyber'?'ニュースを探すぜ':'ニュースを探すにゃ'):on?(document.documentElement.dataset.persona==='cyber'?'自分の教材を探すぜ':'自分の教材をさがすにゃ'):(document.documentElement.dataset.persona==='cyber'?'攻略する教材を探すぜ':'全教材からさがすにゃ');
   $('catalogSearch').setAttribute('aria-label',newsDemoMode&&!on?'ニュースを検索':on?'作成した教材・追加したオリジナル教材を検索':'教材名・問題文・解答で検索');
   if(on)$('quickReview').hidden=true;
-  $('catalogScreen').style.paddingBottom=on?'30px':($('catalogDock').offsetHeight+48)+'px';
+  $('catalogScreen').style.paddingBottom=(!selected.size||on)?'30px':($('catalogDock').offsetHeight+48)+'px';
 }
-function openMyCollections() {catalogIsCollections=true;showScreen('catalog');}
+function openMyCollections() {catalogIsCollections=false;showScreen('catalog');requestAnimationFrame(()=>$('myCollectionsPanel').scrollIntoView({block:'start',behavior:'smooth'}));}
 function makeMyEmptyAction(element,action,label){
  element.classList.add('my-empty-action');element.setAttribute('role','button');element.tabIndex=0;element.setAttribute('aria-label',label);element.onclick=action;
  element.onkeydown=e=>{if(e.target===element&&(e.key==='Enter'||e.key===' ')){e.preventDefault();if(!e.repeat)action();}};
 }
 function renderMyAddedLessons(){
- const root=$('myAddedLessons'),q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase();root.replaceChildren();
+ const root=$('myAddedLessons'),q=$('myCollectionsSearch').value.normalize('NFKC').trim().toLocaleLowerCase();root.replaceChildren();
  const all=meta.filter(m=>m.imported),items=all.filter(m=>m.title.normalize('NFKC').toLocaleLowerCase().includes(q));
  if(!items.length){const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'その教材は見つからないにゃ':'自分の教材を追加するにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'問題と解答の画像を取り込んで、この端末に保存するにゃ。'));if(!all.length)makeMyEmptyAction(e,()=>$('myAddLesson').click(),'教材を追加するにゃ');root.append(e);return;}
  for(const m of items){const box=collectionNode('article',undefined,'my-collection-card my-added-card');box.dataset.myLesson=m.id;
@@ -5645,7 +5656,7 @@ function orderedMyCollections(all){
  return [...all].sort((a,b)=>{const ai=index.get(a.id),bi=index.get(b.id);if(ai!==undefined||bi!==undefined)return (ai??Number.MAX_SAFE_INTEGER)-(bi??Number.MAX_SAFE_INTEGER);return Number(b.name==='いいねしたスライド')-Number(a.name==='いいねしたスライド');});
 }
 function moveMyCollection(id,direction){
- const ordered=orderedMyCollections(readCollections()),q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase();
+ const ordered=orderedMyCollections(readCollections()),q=$('myCollectionsSearch').value.normalize('NFKC').trim().toLocaleLowerCase();
  const visible=ordered.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q)),at=visible.findIndex(c=>c.id===id),other=visible[at+direction];
  if(at<0||!other)return;const a=ordered.findIndex(c=>c.id===id),b=ordered.findIndex(c=>c.id===other.id);[ordered[a],ordered[b]]=[ordered[b],ordered[a]];
  try{localStorage.setItem(COLLECTION_ORDER_KEY,JSON.stringify(ordered.map(c=>c.id)));}catch{toast('並び順を保存できませんでした');return;}
@@ -5686,7 +5697,7 @@ function collectionDragCancel(event){collectionDragFinish(event,true)}
 function renderMyCollections() {
   renderMyAddedLessons();
   const root=$('myCollectionList');root.replaceChildren();
-  const q=$('catalogSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=orderedMyCollections(readCollections());
+  const q=$('myCollectionsSearch').value.normalize('NFKC').trim().toLocaleLowerCase(),all=orderedMyCollections(readCollections());
   const items=all.filter(c=>!q||c.name.normalize('NFKC').toLocaleLowerCase().includes(q));
   if (!items.length) {
     const e=collectionNode('div',undefined,'my-collection-empty');e.append(collectionNode('span','🐾','paw'),collectionNode('h3',all.length?'そのまとめは見つからないにゃ':'自分だけのまとめを作るにゃ'),collectionNode('p',all.length?'さがし方を変えてみてにゃ。':'好きな問題を選んで、名前をつけて保存するにゃ。'));if(!all.length)makeMyEmptyAction(e,()=>openCollectionEditor(),'まとめを作るにゃ');root.append(e);return;
@@ -5905,7 +5916,7 @@ function saveCollectionEditor() {
   const c={id:collectionEditor.id||'collection-'+(crypto.randomUUID?.()||Date.now().toString(36)),name,cards:refs,updated:new Date().toISOString()};
   const at=items.findIndex(x=>x.id===c.id);if(at<0)items.push(c);else items[at]=c;
   if(!writeCollections(items))return;
-  collectionEditSequence++;collectionThumbObserver?.disconnect();$('collectionDialog').close();collectionEditor=null;catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問の教材を保存したにゃ🐾`);
+  collectionEditSequence++;collectionThumbObserver?.disconnect();$('collectionDialog').close();collectionEditor=null;catalogIsCollections=false;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問の教材を保存したにゃ🐾`);
 }
 $('myAddLesson').onclick=()=>$('openImport').click();
 $('newMyCollection').onclick=()=>openCollectionEditor();
@@ -6001,7 +6012,7 @@ $('unitCollectionSave').onclick=async()=>{
  if(!refs.length){$('unitCollectionStatus').textContent='選んだ単元に問題が見つかりません。';return;}
  const item={id:'collection-'+(crypto.randomUUID?.()||Date.now().toString(36)+'-'+Math.random().toString(36).slice(2)),name,cards:refs,updated:new Date().toISOString()};
  if(!writeCollections([...readCollections(),item])){$('unitCollectionStatus').textContent='保存できませんでした。';return;}
- $('unitCollectionDialog').close();catalogIsCollections=true;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問のまとめ教材を作りました`);
+ $('unitCollectionDialog').close();catalogIsCollections=false;$('catalogSearch').value='';renderCatalog();toast(`${refs.length}問のまとめ教材を作りました`);
  }catch{$('unitCollectionStatus').textContent='教材を読み込めませんでした。通信を確認してもう一度お試しください。';}finally{unitCollectionBusy=false;unitCollectionCount();}
 };
 
@@ -6036,7 +6047,7 @@ $('collectionPreviewClose').onclick=()=>$('collectionPreview').close();
 $('collectionPreviewFlip').onclick=()=>{collectionPreviewAnswer=!collectionPreviewAnswer;syncCollectionPreview();};
 $('collectionPreviewSelect').onclick=()=>{if(collectionPreviewCard)toggleCollectionCard(collectionPreviewCard.id);};
 $('collectionPreview').addEventListener('close',()=>{collectionPreviewCard=null;$('collectionPreviewImage').removeAttribute('src');});
-window.addEventListener('storage',e=>{if((e.key===COLLECTION_KEY||e.key===COLLECTION_ORDER_KEY) && catalogIsCollections && !collectionEditor)renderMyCollections();});
+window.addEventListener('storage',e=>{if((e.key===COLLECTION_KEY||e.key===COLLECTION_ORDER_KEY) && screen==='catalog' && !collectionEditor)renderMyCollections();});
 
 // Dated activity lives beside, never in place of, the original records or image database.
 const historyDatabaseName='jc-image-quiz-study-log',historyFallbackKey='jc-image-quiz-study-log-v1';
@@ -7636,7 +7647,8 @@ $('quickReview').onclick = () => {
 $('quickPause').onclick = pause;
 $('brandHome').onclick = () => playWithCat($('brandHome'));
 $('navSettings').onclick = () => showScreen('settings');
-$('openCatalog').onclick = () => {catalogIsCollections=false;showScreen('catalog');};$('navCollections').onclick=openMyCollections; $('returnToStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
+$('myCollectionsSearch').addEventListener('input',()=>renderMyCollections());
+$('openCatalog').onclick = () => {catalogIsCollections=false;showScreen('catalog');};$('navCollections').onclick=()=>showScreen('himiko'); $('returnToStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
 $('startStudy').onclick = () => {state.subject = catalogSubject || meta.find(m=>selected.has(m.id))?.subject || state.subject; beep('open');return selectLessons(selectedCatalogLessons().map(m => m.id));};
 $('clearSelection').onclick = () => { selected.clear(); renderCatalog(); };
 $('selectVisible').onclick = () => toggleGroup(visibleLessons()); $('catalogSearch').oninput = ()=>{
@@ -7730,7 +7742,7 @@ $('studyOptions').addEventListener('toggle',()=>{ if ($('studyOptions').open) pa
 $('zoomImage').onclick = () => { pause(); imageView.zoom(); };
 if (typeof ResizeObserver !== 'undefined') {
   new ResizeObserver(() => {
-    if (!$('catalogScreen').hidden && !catalogIsCollections) $('catalogScreen').style.paddingBottom = ($('catalogDock').offsetHeight + 48) + 'px';
+    if (!$('catalogScreen').hidden && !catalogIsCollections) $('catalogScreen').style.paddingBottom = $('catalogDock').hidden ? '30px' : ($('catalogDock').offsetHeight + 48) + 'px';
   }).observe($('catalogDock'));
 }
 
@@ -8546,6 +8558,7 @@ $('importForm').onsubmit=async e=>{
   });
 })();
 </script></body></html>
+
 
 
 

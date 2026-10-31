@@ -3930,26 +3930,23 @@ html.himiko-view-active[data-persona="cyber"] #app #himikoFrame {
   background:transparent!important;
 }
 </style>
-<style id="nekopon-global-fixed-header-20261101">
-/* 2026-11-01: Keep the global title and navigation pinned to the viewport.
-   Fixed positioning avoids iOS sticky failures caused by scroll containers. */
+<style id="nekopon-header-cyber-matched-20261101">
+/* Keep the already working fixed behavior, but restore the chat page's grid background and breathing room. */
 html:not(.himiko-chat-active):not(.himiko-view-active) body:not(.slide-focus):not(.homework-capture) #app > #appHeader {
- position:fixed!important;
- top:0!important;
- left:50%!important;
- transform:translateX(-50%)!important;
- width:min(100%,840px)!important;
- box-sizing:border-box!important;
- padding:calc(16px + env(safe-area-inset-top,0px)) 20px 0!important;
- z-index:1000!important;
+ position:fixed!important;top:0!important;left:50%!important;transform:translateX(-50%)!important;
+ width:min(100%,840px)!important;box-sizing:border-box!important;z-index:1000!important;
+ padding:calc(16px + env(safe-area-inset-top,0px)) 20px 16px!important;
  background:var(--cream)!important;
 }
-html:not(.himiko-chat-active):not(.himiko-view-active) body:not(.slide-focus):not(.homework-capture) #app {padding-top:var(--nekopon-fixed-header-space,145px)!important;}
-@media(max-width:600px){
- html:not(.himiko-chat-active):not(.himiko-view-active) body:not(.slide-focus):not(.homework-capture) #app > #appHeader {padding-left:12px!important;padding-right:12px!important;}
+html[data-persona="cyber"]:not(.himiko-chat-active):not(.himiko-view-active) body:not(.slide-focus):not(.homework-capture) #app > #appHeader {
+ background-color:#050510!important;
+ background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%)!important;
+ background-size:38px 38px,38px 38px,100% 100%!important;
 }
+html:not(.himiko-chat-active):not(.himiko-view-active) body:not(.slide-focus):not(.homework-capture) #app {padding-top:var(--nekopon-fixed-header-space,145px)!important;}
+@media(max-width:600px){html:not(.himiko-chat-active):not(.himiko-view-active) body:not(.slide-focus):not(.homework-capture) #app > #appHeader {padding-left:12px!important;padding-right:12px!important;}}
 </style>
-<script>document.addEventListener("DOMContentLoaded",()=>{const h=document.getElementById("appHeader");if(!h)return;const sync=()=>document.documentElement.style.setProperty("--nekopon-fixed-header-space",Math.ceil(h.getBoundingClientRect().height+16)+"px");sync();if(window.ResizeObserver)new ResizeObserver(sync).observe(h);window.addEventListener("resize",sync);});</script>
+<script>document.addEventListener("DOMContentLoaded",()=>{const h=document.getElementById("appHeader");if(!h)return;const sync=()=>document.documentElement.style.setProperty("--nekopon-fixed-header-space",Math.ceil(h.getBoundingClientRect().height+20)+"px");sync();if(window.ResizeObserver)new ResizeObserver(sync).observe(h);window.addEventListener("resize",sync);});</script>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

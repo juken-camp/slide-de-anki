@@ -572,7 +572,35 @@ html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none
  #list-view .himiko-mode-explain{font-size:11px}
 }
 </style>
-</head>
+
+<style id="nekopon-himiko-region-label-friendly-count-20261031">
+/* Soft, friendly raised-hand person icon instead of a dark silhouette. */
+#list-view .filter-count-icon{
+  border-radius:50%;width:29px!important;height:29px!important;
+  background:#fff1de;border:1px solid #e7cfb7;
+  font-size:18px!important;filter:none!important;box-shadow:none!important;
+}
+html[data-persona="cyber"] #list-view .filter-count-icon{
+  background:#0d2840;border-color:#346886;
+  filter:none!important;box-shadow:0 0 7px #00e9f528!important;
+}
+/* Labels remain readable in square tiles on the narrowest phones. */
+#list-view [data-group="region"] [data-value="西アジア・中東"] .filter-choice-label{
+  white-space:normal!important;word-break:keep-all!important;
+  line-height:1.17!important;
+}
+</style>
+<style id="nekopon-himiko-chat-input-stable-20261031">
+/* Confine scrolling to messages; the header and send panel never scroll with history. */
+html[data-chat-open],html[data-chat-open] body{height:100%;overflow:hidden!important;overscroll-behavior:none}
+html[data-chat-open] #chat-view{position:fixed!important;inset:0!important;height:100%!important;min-height:0;display:flex;flex-direction:column;overflow:hidden!important}
+html[data-chat-open] #chat-view .chat-header,html[data-chat-open] #chat-view .input-area{flex:none;position:relative;z-index:2;transform:none!important}
+html[data-chat-open] #chat-view .messages{flex:1 1 0;min-height:0;overflow-y:auto!important;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+html[data-chat-open] #chat-view .input-area{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
+html[data-persona="cyber"] #chat-view #msg-input::placeholder{color:#b6d6ee!important;opacity:1}
+html[data-persona="cyber"] #chat-view #msg-input{color:#e3f4ff!important;border-color:#3c7793!important;background:#09172d!important}
+html[data-persona="cyber"] #chat-view #msg-input:focus{border-color:#00e9f5!important;box-shadow:0 0 12px #00eaff44}
+</style></head>
 <body>
 
 <!-- LIST VIEW -->
@@ -593,7 +621,7 @@ html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none
     <div class="nekopon-search-panel" aria-label="人物の検索と絞り込み">
       <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前や時代で検索するぜ" aria-label="名前や時代で検索するぜ" oninput="renderCards()"></div>
       <div id="tag-bar" class="filter-panel"></div>
-    </div><p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true">👥</span><span class="filter-count-text"></span></p>
+    </div><p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true">🙋</span><span class="filter-count-text"></span></p>
     <div class="card-list" id="card-list"></div>
   </div>
 </div>
@@ -912,7 +940,8 @@ const smartFilterLabels={
  '社会を変えた人':['社会を','変えた人'],
  '科学者・医師':['科学者','医師'],
  '作家・文化人':['作家','文化人'],
- '武士・武将':['武士・武将']
+ '武士・武将':['武士・武将'],
+ '西アジア・中東':['西アジア・','中東']
 };
 const smartEraDateLines={
  '縄文':['約1万6千年前','〜紀元前10','世紀頃'],
@@ -1026,6 +1055,7 @@ async function openChat(id){
   document.getElementById("list-view").classList.add("hidden");
   document.getElementById("chat-view").classList.remove("hidden");
   document.documentElement.dataset.chatOpen="true";
+   if(window.parent!==window)window.parent.postMessage({type:"himiko-chat-state",open:true},location.origin);
   document.getElementById("msg-input").value="";
   document.getElementById("chat-reset").disabled=true;
   setChatStorageStatus("保存した会話を読み込み中…");
@@ -1057,6 +1087,7 @@ function showList(){
   chatEpoch++;cancelReveal(false);isLoading=false;chatReady=false;
   document.getElementById("chat-view").classList.add("hidden");
   delete document.documentElement.dataset.chatOpen;
+   if(window.parent!==window)window.parent.postMessage({type:"himiko-chat-state",open:false},location.origin);
   document.getElementById("list-view").classList.remove("hidden");
   currentChar=null;messages=[];dynamicSuggestions=[];
   setTimeout(()=>{

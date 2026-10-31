@@ -802,6 +802,15 @@ html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search:focus
 }
 #list-view .main-content{padding-top:12px!important;}
 </style>
+
+<style id="history-character-portraits-20261031">
+/* Square portraits; retain emoji as fallback when an image is not loaded. */
+.avatar,.chat-avatar,.bubble-avatar,.history-profile-avatar {position:relative;}
+.history-profile-avatar {overflow:hidden;}
+.history-emoji-fallback {display:flex;align-items:center;justify-content:center;width:100%;height:100%;line-height:1;}
+.history-avatar-image {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;z-index:1;}
+.avatar .online-dot{z-index:2;}
+</style>
 </head>
 <body>
 
@@ -971,6 +980,17 @@ const CHARACTERS = [
 
 const TAGS=[{id:"all",label:"すべて",emoji:"📋"},{id:"fav",label:"お気に入り",emoji:"⭐"},{id:"special",label:"AI先生",emoji:"🤖"},{id:"日本史",label:"日本史",emoji:"🏯"},{id:"世界史",label:"世界史",emoji:"🌍"},{id:"古代",label:"古代",emoji:"🏺"},{id:"中世",label:"中世",emoji:"⚔️"},{id:"近世",label:"近世",emoji:"🏯"},{id:"近代",label:"近代",emoji:"🚂"},{id:"現代",label:"現代",emoji:"🌐"},{id:"kaisetsu",label:"解説モード",emoji:"📖"},{id:"explainer",label:"歴史的教訓",emoji:"⚠️"},{id:"narrator",label:"敬意配慮",emoji:"🕊️"}];
 const allChars=[AI_SENSEI,...CHARACTERS];
+// 絵文字から順次入れ替える歴史人物アイコン。画像がない場合は既存の絵文字を維持。
+const HISTORY_ICON_REVISIONS = {"0":"c7bbedb46b","4":"075b09a9f3","5":"4e5bede0e5","6":"4bc41bf075","7":"7fc3b15118","8":"214a4574b8","10":"8f0a87e90a","11":"d86e1e8e7f","12":"c5b50dd3d6","13":"89cc1a7e64","14":"660926b4b4","15":"6854cbd697","16":"61cdd4a154","17":"b8df7fd656","18":"8f46dfbfd1","20":"05ded1192f","33":"2a235fd07c","34":"6d3ab220b4","37":"be4f48524b","38":"42b3011fa8","39":"35b6459a0e","40":"d507462b61","41":"2d95306df4","42":"173b661b4e","43":"9e560025e9","44":"48eb8f227a","58":"882eecc814","59":"fbadc875dd","62":"59bde1adef","67":"f1045ae5f7","72":"9c2200560b","77":"035e39bd48","80":"d5453da246","81":"b973cb5b3e","82":"fba14ff17d","83":"f747bef6dc","84":"07f29fb3df","85":"f9b0a9690e","87":"32935c9ea7","88":"6cc5c0a515","89":"99f982b92e","90":"f0d0905ef1","91":"6b38b2674b","92":"2d2e92ab3b","93":"6520955fb4","94":"9d731f4a74","96":"0cd7376e09","97":"05191a2eab","101":"c7ffabdb3a","102":"fdadc10531","103":"cd112debd0","104":"6de9647d91"};
+function historyAvatarHTML(ch){
+  const ident = Number(ch.id);
+  const fallback = `<span class="history-emoji-fallback" aria-hidden="true">${ch.emoji||"👤"}</span>`;
+  if(!Object.prototype.hasOwnProperty.call(HISTORY_ICON_REVISIONS, ident)) return fallback;
+  const key=String(ident).padStart(3,"0");
+  const revision=HISTORY_ICON_REVISIONS[ident];
+  return fallback + `<img class="history-avatar-image" src="history-icons/${key}.png?v=${revision}" alt="" loading="lazy" decoding="async" onerror="this.remove()">`;
+}
+
 let currentTag="all",currentChar=null,messages=[],isLoading=false,dynamicSuggestions=[];
 let chatEpoch=0,activeReveal=null,userReadingHistory=false,previousChatScroll=0;
 let automaticChatScrollUntil=0;
@@ -1217,7 +1237,7 @@ function renderCards(){
     return`<button class="char-card" onclick="openChat(${ch.id})" style="animation-delay:${Math.min(i*0.03,0.4)}s;${bdr}">
       <div class="card-inner">
         <div class="avatar" style="background:linear-gradient(135deg,${ch.color},${ch.accent});${anim}">
-          ${ch.emoji}${ai?`<div class="online-dot"></div>`:""}
+          ${historyAvatarHTML(ch)}${ai?`<div class="online-dot"></div>`:""}
         </div>
         <div class="card-info">
           <div class="card-name-row">
@@ -1245,7 +1265,7 @@ async function openChat(id){
   messages=[{role:"assistant",content:currentChar.greeting}];
   const ch=currentChar,ai=ch.isSpecial;
   const av=document.getElementById("chat-avatar");
-  av.textContent=ch.emoji;
+  av.innerHTML=historyAvatarHTML(ch);
   av.style.background=`linear-gradient(135deg,${ch.color},${ch.accent})`;
   av.style.animation=ai?"float 3s ease-in-out infinite":"none";
   document.getElementById("chat-name").textContent=ch.name;
@@ -1328,7 +1348,7 @@ function appendChatNode(node,follow=false){
 }
 function assistantRowHTML(ch,text,first=true,animate=false){
   return `<div class="bubble-row assistant${first?"":" continuation"}${animate?" is-new":""}">
-    ${first?`<div class="bubble-avatar" style="background:linear-gradient(135deg,${ch.color},${ch.accent})">${ch.emoji}</div>`:`<div class="bubble-avatar-spacer" aria-hidden="true"></div>`}
+    ${first?`<div class="bubble-avatar" style="background:linear-gradient(135deg,${ch.color},${ch.accent})">${historyAvatarHTML(ch)}</div>`:`<div class="bubble-avatar-spacer" aria-hidden="true"></div>`}
     <div class="bubble assistant">${esc(text)}</div></div>`;
 }
 function userRowHTML(ch,text,animate=false){
@@ -1343,7 +1363,7 @@ function suggestionHTML(ch,questions,initial=false){
 }
 function typingHTML(ch){
   return `<div class="bubble-row assistant typing-row" role="status" aria-label="回答を作成しています">
-    <div class="bubble-avatar" style="background:linear-gradient(135deg,${ch.color},${ch.accent})">${ch.emoji}</div>
+    <div class="bubble-avatar" style="background:linear-gradient(135deg,${ch.color},${ch.accent})">${historyAvatarHTML(ch)}</div>
     <div class="typing">${[0,.2,.4].map(d=>`<span class="typing-dot" style="background:${ch.color};animation-delay:${d}s"></span>`).join("")}</div>
   </div>`;
 }
@@ -1579,7 +1599,7 @@ function showProfile(){
       <div class="modal-handle"></div>
       <button type="button" class="modal-close" aria-label="閉じる" title="閉じる" onclick="closeProfile()">×</button>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-        <div style="width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,${ch.color},${ch.accent});display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">${ch.emoji}</div>
+        <div class="history-profile-avatar" style="width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,${ch.color},${ch.accent});display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">${historyAvatarHTML(ch)}</div>
         <div>
           <div style="font-weight:900;font-size:18px;color:#1e293b">${esc(ch.name)}</div>
           <div style="font-size:11px;color:#94a3b8;margin-top:2px">${esc(ch.period)}</div>

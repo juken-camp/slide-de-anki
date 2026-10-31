@@ -3943,6 +3943,30 @@ html[data-persona=cyber] body #app #appHeader.is-scrolled::before{
 }
 html[data-persona=cyber] body #app #appHeader:not(.is-scrolled)::before{opacity:0!important}
 </style>
+<style id="nekopon-fixed-header-final-20261101">
+/* Fixed viewport header on all five tabs; preserve its original in-flow space. */
+body #app #appHeader.compact-header{position:fixed!important;top:var(--neko-header-top,0px)!important;left:var(--neko-header-left,0px)!important;width:var(--neko-header-width,100%)!important;box-sizing:border-box!important;z-index:190!important;margin:0!important;transform:none!important;}
+#nekoHeaderPlaceholder{display:block;pointer-events:none;}
+html[data-persona="cyber"] body #app #appHeader::before{opacity:1!important;inset:0 -20px!important;background-color:rgba(3,12,23,.96)!important;background-image:linear-gradient(rgba(0,245,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.055) 1px,transparent 1px)!important;background-size:36px 36px!important;background-position:0 0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
+html:not([data-persona="cyber"]) body #app #appHeader::before{opacity:1!important;background:var(--cream)!important;}
+</style>
+<script id="nekopon-fixed-header-init-20261101">
+document.addEventListener('DOMContentLoaded',()=>{
+ const app=document.getElementById('app'),h=document.getElementById('appHeader');if(!app||!h)return;
+ const spacer=document.createElement('div');spacer.id='nekoHeaderPlaceholder';h.after(spacer);
+ let busy=false;
+ function sync(){
+  const ar=app.getBoundingClientRect(),cs=getComputedStyle(app);
+  const left=ar.left+parseFloat(cs.paddingLeft||0);
+  const width=ar.width-parseFloat(cs.paddingLeft||0)-parseFloat(cs.paddingRight||0);
+  h.style.setProperty('--neko-header-left',left+'px');h.style.setProperty('--neko-header-width',width+'px');
+  spacer.style.height=h.getBoundingClientRect().height+'px';
+ }
+ function request(){if(busy)return;busy=true;requestAnimationFrame(()=>{busy=false;sync()})}
+ sync();window.addEventListener('resize',request,{passive:true});window.addEventListener('orientationchange',request,{passive:true});
+ if(window.ResizeObserver)new ResizeObserver(request).observe(app);
+});
+</script>
 </head>
 <body><main id="app" class="app">
 <header id="appHeader" class="compact-header"><button id="brandHome" class="brand-home" aria-label="スライドで暗記 by JUKEN CAMP × AI・Nekoponとあそぶにゃ"><span class="cat-tilt"><span id="headerCatFace" aria-hidden="true">🐱</span></span><span class="brand-lockup"><span class="brand-name" id="brandTitle">スライドで暗記</span><span class="brand-credit" id="brandSubtitle">by JUKEN CAMP × AI</span></span></button>

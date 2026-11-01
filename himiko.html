@@ -1016,8 +1016,24 @@ html.nekopon-embedded body{position:relative;z-index:1;background:transparent!im
 })();
 </script>
 <style id="nekopon-parent-owned-list-heading-20261101">
-/* Embedded list title is rendered by the parent using the same row as all tabs. */
+/* The heading and list share the native iframe scroller. The row has the
+   same 44px height and 12px bottom gap as the parent app headings. */
 html.nekopon-embedded #list-view > .header{display:none!important;}
+.embedded-page-heading{display:none;}
+html.nekopon-embedded #list-view > .embedded-page-heading{
+ box-sizing:border-box;display:flex;position:static;align-items:center;
+ width:calc(100% - 40px);max-width:800px;height:44px;min-height:44px;
+ margin:0 auto 12px;padding:0;border:0;background:transparent;
+}
+html.nekopon-embedded .embedded-page-heading h2{
+ display:flex;align-items:center;gap:8px;white-space:nowrap;
+ margin:0;padding:0;font-family:inherit;font-size:18px;font-weight:800;line-height:1.45;
+ letter-spacing:0;color:#754b2f;
+}
+html.nekopon-embedded[data-persona="cyber"] .embedded-page-heading h2{color:#e0eaff;text-shadow:0 0 12px #00f5ff22;}
+.embedded-heading-credit{font:700 clamp(9px,2.6vw,12px)/1.4 "M PLUS Rounded 1c",sans-serif;color:#a17150;}
+html[data-persona="cyber"] .embedded-heading-credit{color:#9cb9d4;}
+@media(max-width:600px){html.nekopon-embedded #list-view > .embedded-page-heading{width:calc(100% - 24px);}}
 html.nekopon-embedded #list-view .main-content{padding-top:0!important;}
 </style>
 </head>
@@ -1026,6 +1042,7 @@ html.nekopon-embedded #list-view .main-content{padding-top:0!important;}
 <!-- LIST VIEW -->
 
 <div id="list-view">
+  <div class="embedded-page-heading"><h2><span>チャットで質問</span><span class="embedded-heading-credit">feat. 卑弥呼と受験対策</span></h2></div>
   <div class="header">
     <div class="header-inner">
       <div style="flex:1;display:flex;align-items:center;gap:10px">

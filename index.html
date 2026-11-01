@@ -3944,29 +3944,49 @@ html[data-persona=cyber] body #app #appHeader.is-scrolled::before{
 html[data-persona=cyber] body #app #appHeader:not(.is-scrolled)::before{opacity:0!important}
 </style>
 <style id="nekopon-fixed-header-final-20261101">
-/* Fixed viewport header on all five tabs; preserve its original in-flow space. */
-body #app #appHeader.compact-header{position:fixed!important;top:var(--neko-header-top,0px)!important;left:var(--neko-header-left,0px)!important;width:var(--neko-header-width,100%)!important;box-sizing:border-box!important;z-index:190!important;margin:0!important;transform:none!important;}
+/* One viewport-sized canvas: neither the grid nor the glow uses document height.
+   A fixed element also works on iOS, where background-attachment:fixed may scroll. */
+:root{
+ --neko-page-color:var(--cream);
+ --neko-page-image:radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%);
+ --neko-page-size:100vw 100vh;
+ --neko-page-size:100vw 100lvh;
+}
+html[data-persona="cyber"]{
+ --neko-page-color:#050510;
+ --neko-page-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%);
+ --neko-page-size:36px 36px,36px 36px,100vw 100vh,100vw 100vh;
+ --neko-page-size:36px 36px,36px 36px,100vw 100lvh,100vw 100lvh;
+}
+html[data-persona]{background-color:var(--neko-page-color)!important;}
+html[data-persona] body{background:transparent!important;}
+html[data-persona] body::before{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+ background-color:var(--neko-page-color);
+ background-image:var(--neko-page-image);
+ background-size:var(--neko-page-size);
+ background-position:0 0;background-repeat:repeat,repeat,no-repeat,no-repeat;
+}
+/* Keep all five tabs at the same comfortable distance below the status area. */
+body #app #appHeader.compact-header{
+ position:fixed!important;top:var(--neko-header-top,0px)!important;
+ left:var(--neko-header-left,0px)!important;width:var(--neko-header-width,100%)!important;
+ box-sizing:border-box!important;z-index:190!important;margin:0!important;transform:none!important;
+ padding-top:calc(env(safe-area-inset-top,0px) + 12px)!important;padding-bottom:6px!important;
+ min-height:70px;background:transparent!important;
+}
 #nekoHeaderPlaceholder{display:block;pointer-events:none;}
-html[data-persona="cyber"] body #app #appHeader::before{opacity:1!important;inset:0 -20px!important;background-color:rgba(3,12,23,.96)!important;background-image:linear-gradient(rgba(0,245,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.055) 1px,transparent 1px)!important;background-size:36px 36px!important;background-position:0 0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
-html:not([data-persona="cyber"]) body #app #appHeader::before{opacity:1!important;background:var(--cream)!important;}
-/* Keep the fixed header visually aligned with the viewport-fixed Cyber grid.
-   The body grid uses 36px cells and is anchored to the viewport, not the document. */
-html[data-persona="cyber"] body #app #appHeader::before{
- background-color:rgba(3,12,23,.96)!important;
- background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px)!important;
- background-size:36px 36px!important;
- background-position:var(--neko-grid-x,0px) var(--neko-grid-y,0px)!important;
+/* Mask scrolling content across the full screen using the same canvas coordinates.
+   This includes the side gutters and the new space above the title and tabs. */
+html[data-persona] body #app #appHeader.compact-header::before{
+ content:"";display:block!important;position:fixed!important;
+ inset:0 0 auto!important;width:auto!important;height:var(--app-header-height,70px)!important;
+ z-index:-1;pointer-events:none;opacity:1!important;
+ background-color:var(--neko-page-color)!important;
+ background-image:var(--neko-page-image)!important;
+ background-size:var(--neko-page-size)!important;
+ background-position:0 0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
 }
-
-/* Header background must be painted in viewport coordinates, not as a moving overlay. */
-html[data-persona="cyber"] body #app #appHeader.compact-header{
- background-color:#050510!important;
- background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
- background-size:36px 36px,36px 36px,100vw 100vh,100vw 100vh!important;
- background-attachment:fixed!important;
- background-position:0 0!important;
-}
-html[data-persona="cyber"] body #app #appHeader.compact-header::before{display:none!important;}
 </style>
 <script id="nekopon-fixed-header-init-20261101">
 document.addEventListener('DOMContentLoaded',()=>{
@@ -3978,7 +3998,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   const left=ar.left+parseFloat(cs.paddingLeft||0);
   const width=ar.width-parseFloat(cs.paddingLeft||0)-parseFloat(cs.paddingRight||0);
   h.style.setProperty('--neko-header-left',left+'px');h.style.setProperty('--neko-header-width',width+'px');
-  spacer.style.height=h.getBoundingClientRect().height+'px';
+  const height=h.getBoundingClientRect().height;
+  spacer.style.height=height+'px';
+  document.documentElement.style.setProperty('--app-header-height',height+'px');
   h.style.setProperty('--neko-grid-x',(-left-20)+'px');
   h.style.setProperty('--neko-grid-y',(-parseFloat(getComputedStyle(h).top||0))+'px');
  }
@@ -3995,8 +4017,8 @@ html[data-persona] body #app #reelDialog .reel-shell{display:flex!important;flex
 html[data-persona] body #app #reelDialog #appHeader.compact-header{
  position:relative!important;top:auto!important;left:auto!important;right:auto!important;
  width:100%!important;max-width:100%!important;min-width:0!important;
- height:62px!important;min-height:62px!important;flex:0 0 62px!important;
- padding:0 12px!important;margin:0!important;box-sizing:border-box!important;
+ height:auto!important;min-height:calc(env(safe-area-inset-top,0px) + 70px)!important;flex:0 0 auto!important;
+ padding:calc(env(safe-area-inset-top,0px) + 12px) 12px 6px!important;margin:0!important;box-sizing:border-box!important;
  display:flex!important;align-items:center!important;overflow:visible!important;
  transform:none!important;z-index:20!important;
 }

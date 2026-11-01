@@ -5282,6 +5282,19 @@ document.addEventListener('click',event => {
   if ((selectionControl || tapPlay()) && !control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton','examSetStudy','examSetSave','reelHideAnswers'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
   if(!control.hasAttribute('data-sound-style'))tapSpark(control,event);
   livelyFeedback(control,event);
+  // These catalog buttons are replaced synchronously by renderCatalog().
+  // Keep their identity and flash the newly rendered equivalent after the click.
+  const parentId=control.parentElement?.id;
+  const keys={catalogSubjects:'subject',socialSwitch:'socialField',catalogSeries:'series'};
+  const key=keys[parentId],value=key&&control.dataset[key];
+  if(key&&value&&livelyOn())setTimeout(()=>{
+    if(!livelyOn()||control.isConnected)return;
+    const replacement=[...($(parentId)?.querySelectorAll('button')||[])].find(button=>button.dataset[key]===value);
+    if(replacement?.isConnected&&!replacement.disabled){
+      livelyHighlight(replacement);
+      livelyAnimate(replacement,[{scale:'1'},{scale:'1.06',offset:.3},{scale:'1'}],450);
+    }
+  },0);
 },true);
 function selectionChangeSound(event){
  const input=event.target;
@@ -5510,7 +5523,7 @@ function renderCatalog() {
     $('catalogSubjects').append(b);
   }
 
-  const newsButton=document.createElement('button');newsButton.type='button';newsButton.textContent='📰 ニュース';newsButton.classList.toggle('active',newsDemoMode&&!catalogIsCollections);newsButton.setAttribute('aria-pressed',String(newsDemoMode&&!catalogIsCollections));newsButton.onclick=()=>{newsDemoMode=true;catalogIsCollections=false;newsTool='';newsField='';newsQuery='';newsHistoryOpen=false;$('catalogSearch').value='';if(newsSelectedDate&&newsSelectedDate!==newsToday()){newsSelectedDate=null;newsLoadedDate=null;newsDates=null;}renderCatalog();};$('catalogSubjects').append(newsButton);
+  const newsButton=document.createElement('button');newsButton.type='button';newsButton.dataset.subject='news';newsButton.textContent='📰 ニュース';newsButton.classList.toggle('active',newsDemoMode&&!catalogIsCollections);newsButton.setAttribute('aria-pressed',String(newsDemoMode&&!catalogIsCollections));newsButton.onclick=()=>{newsDemoMode=true;catalogIsCollections=false;newsTool='';newsField='';newsQuery='';newsHistoryOpen=false;$('catalogSearch').value='';if(newsSelectedDate&&newsSelectedDate!==newsToday()){newsSelectedDate=null;newsLoadedDate=null;newsDates=null;}renderCatalog();};$('catalogSubjects').append(newsButton);
   if(newsDemoMode&&!catalogIsCollections){renderNewsDemo();return;}
   if(catalogIsCollections) [...$('catalogSubjects').querySelectorAll('[data-subject]')].forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
   if(subjectFocus) [...$('catalogSubjects').children].find(b=>b.dataset.subject===subjectFocus)?.focus({preventScroll:true});

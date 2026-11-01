@@ -950,8 +950,8 @@ html[data-persona=cyber]{color-scheme:dark;--primary-brown:#dcecff;--light-brown
 html[data-persona=cyber] body{background:#050510!important;background-image:radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;color:#e0eaff}
 html[data-persona=cyber] body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px);background-size:36px 36px}
 html[data-persona=cyber] .app{position:relative;z-index:1}
-html[data-persona=cyber] .app::before{content:'⚡';opacity:.09}
-html[data-persona=cyber] .app::after{content:'✦';opacity:.09}
+html[data-persona=cyber] .app::before{content:none}
+html[data-persona=cyber] .app::after{content:none}
 html[data-persona=cyber] #appHeader.is-scrolled::before{background:#050510;opacity:.96}
 html[data-persona=cyber] .compact-header .brand-name{color:#00f5ff;background:transparent!important;box-shadow:none!important;border:0!important;text-shadow:0 0 6px rgba(0,245,255,.35),0 0 14px rgba(0,245,255,.18);filter:drop-shadow(0 0 5px rgba(0,245,255,.16));-webkit-text-stroke:0}\nhtml[data-persona=cyber] .compact-header .brand-home,html[data-persona=cyber] .compact-header .brand-home>.brand-lockup{background:transparent!important;box-shadow:none!important;border-color:transparent!important}
 html[data-persona=cyber] .compact-header .brand-credit{color:#9988e2}
@@ -4018,7 +4018,13 @@ html:not(.himiko-chat-active):not(.himiko-keyboard-open) #app #himikoFrame{
  position:relative;top:calc(-1 * var(--himiko-list-overlap,0px));
 }
 </style>
-</head>
+<style id="himiko-group-settings-layout">
+#app #settingsScreen .settings-group .himiko-group-settings{padding:14px 0 0;margin-top:10px;border-top:1px solid #ead9ca}
+#app #settingsScreen .himiko-group-settings h3{font-size:12px;font-weight:700;margin:0 0 4px}
+#app #settingsScreen .himiko-group-settings .sound-setting{width:100%;max-width:none;min-height:44px;margin:0;padding:9px 0;border:0;border-radius:0;background:transparent;box-shadow:none;font-size:12px;font-weight:500}
+#app #settingsScreen .himiko-group-settings #himiko-auto-status:empty{display:none}
+html[data-persona="cyber"] #app #settingsScreen .settings-group .himiko-group-settings{border-top-color:#315576}
+</style></head>
 <body><main id="app" class="app">
 <style id="reel-header-alignment-fix-20261101">
 /* Reel header stays in the normal flow, at the same size as the five-tab header. */
@@ -9091,7 +9097,7 @@ $('importForm').onsubmit=async e=>{
   // The child iframe separately blocks gestures, since they don't bubble to this document.
 })();
 </script>
-<script src="himiko-activity.js?v=3"></script>
+<script src="himiko-activity.js?v=4"></script>
 </body></html>
 
 

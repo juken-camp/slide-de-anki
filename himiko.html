@@ -776,7 +776,7 @@ html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search:focus
 <style id="nekopon-himiko-heading-alignment-20261031">
 /* The embedded Question page uses the same 44px title row and 12px gap as
    catalogue, study, test and settings in the parent app. */
-#list-view .header{padding:20px 12px 0!important;}
+#list-view .header{padding:0 12px!important;}
 #list-view .header-inner{
   box-sizing:border-box;
   padding:0!important;
@@ -1015,6 +1015,11 @@ html.nekopon-embedded body{position:relative;z-index:1;background:transparent!im
  }
 })();
 </script>
+<style id="nekopon-parent-owned-list-heading-20261101">
+/* Embedded list title is rendered by the parent using the same row as all tabs. */
+html.nekopon-embedded #list-view > .header{display:none!important;}
+html.nekopon-embedded #list-view .main-content{padding-top:0!important;}
+</style>
 </head>
 <body>
 

@@ -2,6 +2,7 @@
 
 <html lang="ja">
 <head>
+<script>if(window.parent!==window)document.documentElement.classList.add("nekopon-embedded");</script>
   <meta charset="UTF-8"><script>try{document.documentElement.dataset.persona=localStorage.getItem('nekopon-character-theme-v1')==='cyber'?'cyber':'neko'}catch(_){}</script><style>html,body{background:#fff8f0}html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20}</style>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <title>卑弥呼と受験対策 | JUKEN CAMP</title>
@@ -970,6 +971,18 @@ html[data-persona="cyber"] #list-view .himiko-page-title{
 /* Preserve native body scroller and its iOS rubber-band. */
 html:not([data-chat-open]) body{overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-y:auto!important;touch-action:pan-y!important}
 html:not([data-chat-open]){overscroll-behavior-y:auto!important}
+</style>
+<style id="nekopon-embedded-single-background-20261101">
+/* The parent already paints the viewport-fixed grid. A second iframe canvas
+   restarts at the frame boundary, making the first row look compressed.
+   Embedded list AND chat share the parent's one continuous background. */
+html.nekopon-embedded,
+html.nekopon-embedded[data-persona="cyber"],
+html.nekopon-embedded[data-chat-open],
+html.nekopon-embedded[data-persona="cyber"][data-chat-open]{
+ background:transparent!important;
+ background-image:none!important;
+}
 </style>
 </head>
 <body>

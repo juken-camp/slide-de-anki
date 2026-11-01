@@ -2840,7 +2840,7 @@ module.exports = async function handler(req, res) {
         model: process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5',
         max_tokens: setting('HIMIKO_MAX_OUTPUT_TOKENS', input.isGroup ? 2048 : 1536, 1024, 4096),
         thinking: { type: 'disabled' },
-        system: input.isGroup ? buildGroupPrompt(groupPlan) : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
+        system: input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
         messages: input.messages,
         ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:buildGroupSchema(groupPlan)}}} : {})
       })
@@ -2898,3 +2898,5 @@ module.exports = async function handler(req, res) {
     return res.status(502).json({ error: '接続が不安定なため回答を受け取れませんでした。もう一度送ってください。' });
   } finally { clearTimeout(timer); }
 };
+
+module.exports.personaName=id=>PERSONAS.get(id)?.name||'';

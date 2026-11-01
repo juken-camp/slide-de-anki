@@ -8,7 +8,7 @@
  let requestQueue=Promise.resolve();
  function api(action,extra={}){const run=async()=>{for(let attempt=0;attempt<4;attempt++){
   const r=await fetch('/api/himiko-inbox',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify({action,...extra}),signal:AbortSignal.timeout(15000)});
-  const d=await r.json();if(r.ok)return d;if(r.status!==409||attempt===3)throw Error(d.error||'接続できませんでした');await new Promise(resolve=>setTimeout(resolve,300*(attempt+1)));
+  const d=await r.json();if(r.ok)return d;if(r.status!==409||attempt===3)throw Error((document.documentElement?.dataset.persona==='cyber'&&d.error==='自動会話のサーバー設定がまだ完了していません')?'自動会話のサーバー設定がまだ完了していないぜ':(d.error||'接続できませんでした'));await new Promise(resolve=>setTimeout(resolve,300*(attempt+1)));
  }};const pending=requestQueue.catch(()=>{}).then(run);requestQueue=pending;return pending}
 
  async function badge(n){unread=n;send({type:'himiko-inbox-count',count:n});try{if(n&&navigator.setAppBadge)await navigator.setAppBadge(n);else if(navigator.clearAppBadge)await navigator.clearAppBadge();reg?.active?.postMessage({type:'himiko-badge',count:n})}catch{}}

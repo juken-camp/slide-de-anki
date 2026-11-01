@@ -38,7 +38,7 @@
     .avatar{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:25px;flex-shrink:0;position:relative}
     .online-dot{position:absolute;bottom:-1px;right:-1px;background:#22c55e;border-radius:50%;width:11px;height:11px;border:2px solid #fff}
     .card-info{flex:1;min-width:0}
-    .card-name-row{display:flex;align-items:center;gap:7px;margin-bottom:3px}
+    .card-name-row{display:flex;align-items:center;flex-wrap:wrap;gap:4px 7px;margin-bottom:3px}.era-badge{display:inline-block;white-space:nowrap;font-size:9px;padding:1px 6px;border-radius:100px;font-weight:800}
     .card-tag{font-size:10px;padding:2px 8px;border-radius:100px;font-weight:800;flex-shrink:0}
     .online-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:#dcfce7;color:#16a34a;font-weight:800}
     .explainer-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:#ede9fe;color:#6d28d9;font-weight:800;border:1px solid #ddd6fe}
@@ -3071,6 +3071,7 @@ function toggleFav(id,ev){if(ev){ev.stopPropagation();ev.preventDefault();}const
 function isFav(id){return getFavs().has(id);}
 
 // Categories may overlap: an individual can belong to several groups.
+const ERA_BADGE_COLORS = {"縄文": {"color": "#713f12", "bg": "#fef3c7"}, "世界の古代": {"color": "#92400e", "bg": "#ffedd5"}, "弥生・古墳": {"color": "#9a3412", "bg": "#fed7aa"}, "飛鳥・奈良": {"color": "#b45309", "bg": "#fef3c7"}, "平安": {"color": "#9d174d", "bg": "#fce7f3"}, "鎌倉": {"color": "#1e40af", "bg": "#dbeafe"}, "室町": {"color": "#065f46", "bg": "#d1fae5"}, "安土桃山": {"color": "#9f1239", "bg": "#ffe4e6"}, "江戸": {"color": "#6b21a8", "bg": "#f3e8ff"}, "明治": {"color": "#9a3412", "bg": "#ffedd5"}, "大正・昭和": {"color": "#155e75", "bg": "#cffafe"}, "現代": {"color": "#0f766e", "bg": "#ccfbf1"}};
 const filterGroups={
  era:{label:'時代から探す',items:{'縄文':'','世界の古代':'ハンムラビ王、釈迦（ブッダ）、孔子、ペリクレス、ソクラテス、アレクサンドロス大王、始皇帝、カエサル、イエス・キリスト','弥生・古墳':'卑弥呼、雄略天皇','飛鳥・奈良':'ムハンマド、聖徳太子、中大兄皇子、行基、鑑真、聖武天皇','平安':'桓武天皇、最澄、空海、藤原道長、紫式部、平清盛','鎌倉':'法然、源頼朝、北条政子、源義経、チンギス・カン、親鸞、北条泰時、道元、フビライ・ハン、日蓮、一遍、マルコ・ポーロ','室町':'後醍醐天皇、足利尊氏、足利義満、雪舟、コロンブス、レオナルド・ダ・ヴィンチ、マゼラン、ルター','安土桃山':'織田信長、豊臣秀吉、徳川家康、ガリレオ・ガリレイ','江戸':'徳川家康、ロック、松尾芭蕉、徳川綱吉、近松門左衛門、新井白石、モンテスキュー、ルソー、本居宣長、ワシントン、杉田玄白、ナポレオン','明治':'西郷隆盛、大久保利通、福沢諭吉、坂本龍馬、板垣退助、伊藤博文、陸奥宗光、明治天皇、夏目漱石、リンカーン、ダーウィン、ビスマルク、マルクス、野口英世、与謝野晶子','大正・昭和':'夏目漱石、ガンジー、レーニン、チャーチル、野口英世、与謝野晶子、吉田茂、ルーズベルト、東条英機、平塚らいてう、ヒトラー、毛沢東、昭和天皇、田中角栄、キング牧師','現代':'マンデラ、ゴルバチョフ、毛沢東、昭和天皇、田中角栄'}},
  region:{label:'地域から探す',items:{'日本':'卑弥呼、雄略天皇、聖徳太子、中大兄皇子、行基、鑑真、聖武天皇、桓武天皇、最澄、空海、藤原道長、紫式部、平清盛、法然、源頼朝、北条政子、源義経、親鸞、北条泰時、道元、日蓮、一遍、後醍醐天皇、足利尊氏、足利義満、雪舟、織田信長、豊臣秀吉、徳川家康、松尾芭蕉、徳川綱吉、近松門左衛門、新井白石、本居宣長、杉田玄白、西郷隆盛、大久保利通、福沢諭吉、坂本龍馬、板垣退助、伊藤博文、陸奥宗光、明治天皇、夏目漱石、野口英世、与謝野晶子、吉田茂、東条英機、平塚らいてう、昭和天皇、田中角栄','アジア':'釈迦（ブッダ）、孔子、始皇帝、鑑真、チンギス・カン、フビライ・ハン、ガンジー、毛沢東','ヨーロッパ':'ペリクレス、ソクラテス、アレクサンドロス大王、カエサル、マルコ・ポーロ、コロンブス、レオナルド・ダ・ヴィンチ、マゼラン、ルター、ガリレオ・ガリレイ、ロック、モンテスキュー、ルソー、ナポレオン、ダーウィン、ビスマルク、マルクス、レーニン、チャーチル、ヒトラー、ゴルバチョフ','アメリカ':'ワシントン、リンカーン、ルーズベルト、キング牧師','アフリカ':'マンデラ','西アジア・中東':'ハンムラビ王、イエス・キリスト、ムハンマド'}},
@@ -3195,7 +3196,7 @@ function renderCards(){
         <div class="card-info">
           <div class="card-name-row">
             <span style="font-size:16px;font-weight:900;color:#1e293b">${esc(ch.name)}</span>
-            ${!ai?(function(){const e=getEra(ch.period),label=Object.keys(filterGroups.era.items).filter(k=>matchesGroup(ch,'era',k)).join('・');return '<span style="font-size:9px;padding:1px 6px;border-radius:100px;background:'+e.bg+';color:'+e.color+';font-weight:800">'+esc(label)+'</span>'; })():""}
+            ${!ai?Object.keys(filterGroups.era.items).filter(k=>matchesGroup(ch,'era',k)).map(k=>{const e=ERA_BADGE_COLORS[k];return `<span class="era-badge" style="background:${e.bg};color:${e.color}">${esc(k)}</span>`;}).join(''):""}
             ${ai?`<span class="online-badge">オンライン</span>`:""}
           </div>
           <div style="font-size:11px;color:#94a3b8;margin-bottom:3px;display:flex;flex-wrap:wrap;align-items:center;gap:5px"><span class="character-period">${esc(ch.period)}</span>${hasNarrator?`<span class="narrator-badge">📖 解説</span>`:""}</div>

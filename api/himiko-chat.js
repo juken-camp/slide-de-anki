@@ -2732,6 +2732,11 @@ function completedReply(text) {
 
 const GROUP_FIGURES = [...PERSONAS.values()].filter(p=>p.id!==AI_SENSEI.id);
 const GROUP_FIGURES_BY_NAME = new Map(GROUP_FIGURES.map(p=>[p.name,p]));
+function cleanGroupSpeakerLabel(text,name){
+ const escaped=name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+ const prefix=new RegExp('^\\s*(?:【'+escaped+'】\\s*[：:]?|'+escaped+'\\s*[：:])\\s*');
+ return String(text).replace(prefix,'').trim();
+}
 function createGroupPlan(){
  const draw=randomInt(100),total=draw<50?3:draw<85?4:5,teacher=randomInt(100)<80;
  return {total,teacher,figures:total-(teacher?1:0),style:randomInt(3)};
@@ -2791,7 +2796,7 @@ answerExamplesは、生徒がそのまま発言できる短い返答の例を3�
 【分量と補足】
 一言の反応から少し詳しい説明まで、その発言に必要な長さで話す。本題は100〜180文字程度、ほかは15〜100文字程度が目安。全員が同じ長さで話さない。短い発言も何に反応したか伝わるものにする。
 AI先生が参加する回は最後に40〜100文字程度で、混同しやすい点、難語、歴史のつながり、現代との違いなど役立つ一点を補う。人物の話を最初から説明し直さない。問いかけ後は答えを明かさず、答えやすい視点を短く添えてもよい。
-指定JSONでtopicContext、historicalReplies、teacherSupplement、studentQuestion、suggestionsを一度に返す。本文は平文。
+指定JSONでtopicContext、historicalReplies、teacherSupplement、studentQuestion、suggestionsを一度に返す。本文は平文。発言者名は画面に別表示するため、本文の先頭に「名前：」などのラベルや台本のト書きを付けない。
 
 【歴史上の参加者名簿】
 `+JSON.stringify(roster)+`
@@ -2861,11 +2866,13 @@ module.exports = async function handler(req, res) {
       for(let i=1;i<=groupPlan.figures;i++){
         const x=obj.historicalReplies?.['speaker'+i],name=typeof x?.name==='string'?x.name.trim():'';
         if(!GROUP_FIGURES_BY_NAME.has(name)||chosen.has(name)||typeof x.text!=='string'||!x.text.trim())return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
-        chosen.add(name);replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:x.text.trim().slice(0,1500)});
+        const cleaned=cleanGroupSpeakerLabel(x.text,name);if(!cleaned)return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
+        chosen.add(name);replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:cleaned.slice(0,1500)});
       }
       if(groupPlan.teacher){
         if(typeof obj.teacherSupplement!=='string'||!obj.teacherSupplement.trim())return res.status(502).json({error:'補足を受け取れませんでした。もう一度送ってください。'});
-        replies.push({id:AI_SENSEI.id,text:obj.teacherSupplement.trim().slice(0,800)});
+        const cleaned=cleanGroupSpeakerLabel(obj.teacherSupplement,AI_SENSEI.name);if(!cleaned)return res.status(502).json({error:'補足を受け取れませんでした。もう一度送ってください。'});
+        replies.push({id:AI_SENSEI.id,text:cleaned.slice(0,800)});
       }
       const invitation=obj.studentQuestion;
       let suggestionKind='questions',suggestions;

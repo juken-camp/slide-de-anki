@@ -1971,18 +1971,32 @@ document.getElementById("messages").addEventListener("click",function(e){
   root.dataset.playEffects=event.data.enabled && !preference?.matches?'lively':'normal';
  });
  let lastTap=0;
- const timers=new WeakMap();
- function highlight(control){
-   clearTimeout(timers.get(control));
+ const flashes=new WeakMap();
+ function restore(control){
+   const previous=flashes.get(control);if(!previous)return;
+   clearTimeout(previous.timer);
+   for(const [name,value,priority] of previous.styles){
+    if(value)control.style.setProperty(name,value,priority);else control.style.removeProperty(name);
+   }
    control.classList.remove('himiko-lively-flash');
-   void control.offsetWidth;
+   flashes.delete(control);
+ }
+ function highlight(control){
+   restore(control);
+   const styles=['filter','box-shadow','border-color'].map(name=>[name,control.style.getPropertyValue(name),control.style.getPropertyPriority(name)]);
+   const cyber=root.dataset.persona==='cyber',glow=cyber?'#00eaff':'#ffb44c';
    control.classList.add('himiko-lively-flash');
+   // Inline important wins over the themed button skins; restore the exact
+   // previous styles when the temporary glow finishes.
+   control.style.setProperty('filter','brightness(1.23)','important');
+   control.style.setProperty('border-color',glow,'important');
+   control.style.setProperty('box-shadow',`0 0 13px ${glow},0 0 29px ${glow}99,inset 0 0 16px ${glow}55`,'important');
    if(control.animate){control.animate([
     {transform:'scale(1)'},{transform:'scale(1.10)',offset:.13},
     {transform:'scale(.95)',offset:.26},{transform:'scale(1.07)',offset:.42},
     {transform:'scale(.99)',offset:.66},{transform:'scale(1)'}
    ],{duration:620,easing:'cubic-bezier(.25,.46,.45,.94)'});}
-   timers.set(control,setTimeout(()=>control.classList.remove('himiko-lively-flash'),650));
+   flashes.set(control,{styles,timer:setTimeout(()=>restore(control),650)});
  }
  document.addEventListener('click',event=>{
    if(!modeOn())return;

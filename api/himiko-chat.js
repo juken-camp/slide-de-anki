@@ -1,7 +1,7 @@
 // /api/himiko-chat.js — Vercel Node.js Serverless Function (CommonJS)
 // Required: ANTHROPIC_API_KEY. Model remains claude-haiku-5-5 unless the
 // operator sets ANTHROPIC_MODEL. No model keys or Redis tokens belong in HTML.
-const { createHash } = require('node:crypto');
+const { createHash, randomInt } = require('node:crypto');
 
 const AI_SENSEI = {
   "id": 0,
@@ -2732,14 +2732,20 @@ function completedReply(text) {
 
 const GROUP_FIGURES = [...PERSONAS.values()].filter(p=>p.id!==AI_SENSEI.id);
 const GROUP_FIGURES_BY_NAME = new Map(GROUP_FIGURES.map(p=>[p.name,p]));
-const GROUP_OUTPUT_SCHEMA = {
- type:'object',properties:{
+function createGroupPlan(){
+ const draw=randomInt(100),total=draw<50?3:draw<85?4:5,teacher=randomInt(100)<80;
+ return {total,teacher,figures:total-(teacher?1:0),style:randomInt(3)};
+}
+function buildGroupSchema(plan){
+ const speaker={type:'object',properties:{name:{type:'string',enum:GROUP_FIGURES.map(p=>p.name)},text:{type:'string'}},required:['name','text'],additionalProperties:false};
+ const slots=Object.fromEntries(Array.from({length:plan.figures},(_,i)=>['speaker'+(i+1),speaker]));
+ return {type:'object',properties:{
   topicContext:{type:'object',properties:{period:{type:'string'},region:{type:'string'}},required:['period','region'],additionalProperties:false},
-  historicalReplies:{type:'array',minItems:1,items:{type:'object',properties:{name:{type:'string',enum:GROUP_FIGURES.map(p=>p.name)},text:{type:'string'}},required:['name','text'],additionalProperties:false}},
-  teacherSupplement:{type:['string','null']},
+  historicalReplies:{type:'object',properties:slots,required:Object.keys(slots),additionalProperties:false},
+  teacherSupplement:{type:plan.teacher?'string':'null'},
   suggestions:{type:'array',items:{type:'string'}}
- },required:['topicContext','historicalReplies','teacherSupplement','suggestions'],additionalProperties:false
-};
+ },required:['topicContext','historicalReplies','teacherSupplement','suggestions'],additionalProperties:false};
+}
 function parseGroupOutput(text) {
  const source=text.trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim();
  try{return JSON.parse(source)}catch{}
@@ -2754,9 +2760,9 @@ function parseGroupOutput(text) {
  }
  return JSON.parse(repaired);
 }
-function buildGroupPrompt() {
+function buildGroupPrompt(plan) {
  const roster=GROUP_FIGURES.map(p=>({name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,voice:p.learning.voice,keywords:p.learning.keywords,basicFacts:p.learning.facts}));
- return HISTORY_CHAT_RULES+"\n【グループチャットの役割】\n相手は中学生。歴史上の人物が必ず先に答え、AI先生は後から短く補足する。AI先生だけの回答や、AI先生が本題を全部説明して人物が相づちだけになる回答は作らない。\n\n【その場で人物を選ぶ基準】\n質問と直近の会話から、用語・制度・出来事の時代と地域をtopicContextに簡潔な語句で示す。「それ」「もっと」などは直前の話題を引き継ぐ。比較なら複数の時代・地域でもよい。\n名指しされた人物がいれば優先する。呼ばれた偉人だけと指定されたらその人だけにし、AI先生の補足もnullにする。AI先生への質問でも、本題とつながる人物が先に短く話し、AI先生が説明を補う。\n直接の当事者である必要はない。当事者に加え、同じ時代・近い時代の人物や、地域・役割・活動の近い人物も、その時代を知る人として自然に説明できるなら積極的に選ぶ。グループチャットでは誰が当事者かだけで狭く絞りすぎず、適切な時代感と話題のつながりを重視する。直接経験したと確認できない事柄は「私が実際に見た」「私が実施した」と捏造せず、知識として説明する。\n近代の制度なら近代の関係者を選ぶ。時代の異なる人物を単に有名だから、直前に出たから、毎回違う人にするために選ばない。同じ話題を掘り下げている間は、同じ適任者が続けて答えてよい。\n現代の生活や勉強の相談では、その主題と活動・考えがつながる人物を選ぶ。当時の体験と現代の知識を混同せず、本人が現代で経験した出来事を捏造しない。細かな現代の説明はAI先生が補足する。\n当事者が名簿にいなくても、同じ時代や近い時代の人物が話題を説明する。話題が広いときは、その中の一つの時代や出来事から人物が答え始めてよい。直接関わっていないことを理由に、すぐAI先生へ任せない。無関係な時代へ飛ばない。\n人物名は名簿どおりに返す。historicalRepliesの回答者は通常1〜2人。複数人なら立場の違い・比較・つながりが分かる役割分担にし、同じ説明を繰り返さない。各人物は本題に直接答える。\nmodeがexplainerの人物は本人になりきらず、その人についての第三者の解説をする。roleplayの人物は名簿の口調を保つ。\n\n【AI先生の補足】\nteacherSupplementは原則として短く添える。人物の説明を受け、中学生が混同しがちな点、歴史のつながり、難語の言い換え、現代との違いのどれかを一つ補う。AI先生が補足に登場する機会は多くてよい。ただし最初からの説明し直しや、人物と同じ内容の復唱はしない。役立つ追加がない挨拶・短い相づちや、偉人だけの指定ではnullにする。\n人物は各120〜220文字程度、AI先生は60〜120文字程度を目安に、質問に必要な長さで話す。回答と質問候補を一度に作る。\n\n【出力形式】\n指定のJSON形式で、topicContext、historicalReplies、teacherSupplement、suggestionsを返す。本文は平文。suggestionsは直前の回答から自然につながる、生徒の視点の質問を3つ。原則8〜45文字程度で「？」で終え、既に聞いた質問や直前の回答と同じ内容を繰り返さない。人物への名指しの質問もよい。\n【歴史上の参加者名簿】\n"+JSON.stringify(roster);
+ return HISTORY_CHAT_RULES+"\n【グループチャットの役割】\n相手は中学生。歴史上の人物が必ず先に答え、AI先生は後から短く補足する。AI先生だけの回答や、AI先生が本題を全部説明して人物が相づちだけになる回答は作らない。\n\n【その場で人物を選ぶ基準】\n質問と直近の会話から、用語・制度・出来事の時代と地域をtopicContextに簡潔な語句で示す。「それ」「もっと」などは直前の話題を引き継ぐ。比較なら複数の時代・地域でもよい。\n名指しされた人物がいれば優先する。呼ばれた偉人だけと指定されたらその人だけにし、その人物を中心にし、他の人は質問を奪わず短い反応にする。AI先生への質問でも、本題とつながる人物が先に短く話し、AI先生が説明を補う。\n直接の当事者である必要はない。当事者に加え、同じ時代・近い時代の人物や、地域・役割・活動の近い人物も、その時代を知る人として自然に説明できるなら積極的に選ぶ。グループチャットでは誰が当事者かだけで狭く絞りすぎず、適切な時代感と話題のつながりを重視する。直接経験したと確認できない事柄は「私が実際に見た」「私が実施した」と捏造せず、知識として説明する。\n近代の制度なら近代の関係者を選ぶ。本題の回答者は話題の時代とのつながりを優先する。後から入る人は別の時代でも、関連する制度や暮らし、考え方を比べる意味があれば参加してよい。単に有名だから、毎回違う人にするために選ばない。同じ話題を掘り下げている間は、同じ適任者が中心になってよい。後から入る人の組み合わせや反応には変化をつける。\n現代の生活や勉強の相談では、その主題と活動・考えがつながる人物を選ぶ。当時の体験と現代の知識を混同せず、本人が現代で経験した出来事を捏造しない。細かな現代の説明はAI先生が補足する。\n当事者が名簿にいなくても、同じ時代や近い時代の人物が話題を説明する。話題が広いときは、その中の一つの時代や出来事から人物が答え始めてよい。直接関わっていないことを理由に、すぐAI先生へ任せない。無関係な時代へ飛ばない。\n人物名は名簿どおりに返す。historicalRepliesはspeaker1から順番に、指定人数の異なる人物を入れる。speaker1が本題の答えを話す。後から入る人は、先の発言を受けた短い相づち、一言の具体例、別の立場や「私の時代では〜」という比較で自然に会話へ加わる。全員が同じ長さの解説を順番に発表する形にはしない。相づちだけでも、何に反応したのか分かる一言にする。前の話を繰り返すだけの水増しはしない。\nmodeがexplainerの人物は本人になりきらず、その人についての第三者の解説をする。roleplayの人物は名簿の口調を保つ。\n\n【AI先生の補足】\nteacherSupplementは原則として短く添える。人物の説明を受け、中学生が混同しがちな点、歴史のつながり、難語の言い換え、現代との違いのどれかを一つ補う。AI先生が補足に登場する機会は多くてよい。ただし最初からの説明し直しや、人物と同じ内容の復唱はしない。役立つ追加がない挨拶・短い相づちや、偉人だけの指定ではnullにする。\n人物ごとに返答の長さを変える。短い相づちは15〜40文字、補足や比較は40〜100文字、本題の説明は100〜180文字程度を目安にする。AI先生も40〜100文字程度で、追加の意味がある一言にする。回答と質問候補を一度に作る。\n\n【出力形式】\n指定のJSON形式で、topicContext、historicalReplies、teacherSupplement、suggestionsを返す。本文は平文。suggestionsは直前の回答から自然につながる、生徒の視点の質問を3つ。原則8〜45文字程度で「？」で終え、既に聞いた質問や直前の回答と同じ内容を繰り返さない。人物への名指しの質問もよい。\n【歴史上の参加者名簿】\n"+JSON.stringify(roster)+`\n【今回の会話の構成・最優先】\n参加者は合計${plan.total}人。そのうち歴史上の人物は${plan.figures}人。historicalRepliesのspeaker1〜speaker${plan.figures}に、互いに異なる人物を一人ずつ割り当てる。AI先生は歴史上の人物の枠に入れない。${plan.teacher?'最後にAI先生が短い有益な補足で加わる。teacherSupplementを空欄にしない。':'今回はAI先生は休み。teacherSupplementはnullにする。'}\n${['主役が説明し、別の人が短く反応し、もう一人が比較するように、長短をはっきり変える。','最初は短い結論、次の人が一つ具体例、続く人が一言の反応や比較を添える。','主役の説明を軸に、一人は短く相づちを打ち、別の人は自分の時代との違いを少し詳しく話す。'][plan.style]} 人物の選択は話題への関係で行い、人数と話す長さの変化だけをこの構成に合わせる。`;
 }
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
@@ -2781,6 +2787,7 @@ module.exports = async function handler(req, res) {
     res.setHeader('Retry-After', String(rate.retryAfter));
     return res.status(429).json({ error: rate.bucket === 1 ? '短時間の質問が多くなっています。少し待ってから送ってください。' : '本日の質問回数の上限に達しました。また明日ご利用ください。' });
   }
+  const groupPlan=input.isGroup?createGroupPlan():null;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), setting('HIMIKO_API_TIMEOUT_MS', 20000, 5000, 45000));
   try {
@@ -2791,9 +2798,9 @@ module.exports = async function handler(req, res) {
         model: process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5',
         max_tokens: setting('HIMIKO_MAX_OUTPUT_TOKENS', input.isGroup ? 2048 : 1536, 1024, 4096),
         thinking: { type: 'disabled' },
-        system: input.isGroup ? buildGroupPrompt() : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
+        system: input.isGroup ? buildGroupPrompt(groupPlan) : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
         messages: input.messages,
-        ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:GROUP_OUTPUT_SCHEMA}}} : {})
+        ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:buildGroupSchema(groupPlan)}}} : {})
       })
     });
     if (!response.ok) {
@@ -2813,13 +2820,16 @@ module.exports = async function handler(req, res) {
     }
     if (input.isGroup) {
       let obj; try { obj=parseGroupOutput(text); } catch { return res.status(502).json({error:'回答を読み取れませんでした。質問は残っています。もう一度送ってください。'}); }
-      const chosen=new Set();
-      const replies=(Array.isArray(obj.historicalReplies)?obj.historicalReplies:[]).filter(x=>{
-        if(!x||typeof x.name!=='string'||typeof x.text!=='string'||!x.text.trim())return false;
-        const name=x.name.trim();if(!GROUP_FIGURES_BY_NAME.has(name)||chosen.has(name))return false;chosen.add(name);return true;
-      }).slice(0,2).map(x=>({id:GROUP_FIGURES_BY_NAME.get(x.name.trim()).id,text:x.text.trim().slice(0,1500)}));
-      if(!replies.length)return res.status(502).json({error:'人物の回答を受け取れませんでした。もう一度送ってください。'});
-      if(typeof obj.teacherSupplement==='string'&&obj.teacherSupplement.trim())replies.push({id:AI_SENSEI.id,text:obj.teacherSupplement.trim().slice(0,800)});
+      const chosen=new Set(),replies=[];
+      for(let i=1;i<=groupPlan.figures;i++){
+        const x=obj.historicalReplies?.['speaker'+i],name=typeof x?.name==='string'?x.name.trim():'';
+        if(!GROUP_FIGURES_BY_NAME.has(name)||chosen.has(name)||typeof x.text!=='string'||!x.text.trim())return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
+        chosen.add(name);replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:x.text.trim().slice(0,1500)});
+      }
+      if(groupPlan.teacher){
+        if(typeof obj.teacherSupplement!=='string'||!obj.teacherSupplement.trim())return res.status(502).json({error:'補足を受け取れませんでした。もう一度送ってください。'});
+        replies.push({id:AI_SENSEI.id,text:obj.teacherSupplement.trim().slice(0,800)});
+      }
       const suggestions=[...new Set((Array.isArray(obj.suggestions)?obj.suggestions:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100&&!input.messages.some(m=>m.role==='user'&&m.content===x)))].slice(0,3);
       return res.status(200).json({replies,suggestions});
     }

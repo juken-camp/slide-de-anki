@@ -484,7 +484,10 @@ html[data-persona="cyber"][data-play-effects="lively"] #chat-view .himiko-lively
 html[data-play-effects="lively"] #chat-view .himiko-lively-flash{
  filter:brightness(1.23)!important;box-shadow:0 0 13px #ffb44c,0 0 29px #ffb44c99!important;
 }
-html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-lively-flash){filter:brightness(1.09)}
+/* Selected tiles keep their light inside the rounded edge after the tap halo
+   ends; an outer shadow/filter would still be cropped by the scrolling row. */
+html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-lively-flash){filter:none!important;box-shadow:inset 0 0 12px #ffb44c55!important}
+html[data-persona="cyber"][data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-lively-flash){box-shadow:inset 0 0 12px #00e9f555!important}
 @media(hover:hover) and (pointer:fine){html[data-play-effects="lively"] #list-view :is(.nekopon-filter-tab,.filter-choice,.char-card):hover{filter:brightness(1.12);transform:translateY(-2px)}}
 @media(prefers-reduced-motion:reduce){html[data-play-effects="lively"] :is(.nekopon-filter-tab,.filter-choice,.char-card){animation:none!important;transition:none!important}}
 </style>
@@ -496,6 +499,8 @@ html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-li
 }
 #list-view .nekopon-search-panel .filter-choice,
 #list-view #himiko-options-era .filter-choice{
+  -webkit-appearance:none!important;
+  appearance:none!important;
   box-sizing:border-box!important;
   width:100%!important;
   min-width:0!important;
@@ -1106,6 +1111,30 @@ html.nekopon-embedded #list-view .main-content{padding-top:0!important;}
 <script>
 // ★ APIキーはここに書かない。/api/chat（Vercel Serverless Function）経由で呼び出す ★
 
+// App guidance follows the outfit; historical characters and chat content keep
+// their own voices. Always choose from source copy so switching is reversible.
+function himikoUi(neko,cyber){return document.documentElement.dataset.persona==='cyber'?cyber:neko;}
+function himikoGuideCopy(text){
+ return text.replace(/([^。]+)。/g,(_,sentence)=>{
+  if(document.documentElement.dataset.persona!=='cyber')return sentence.replace(/だ$/,'')+'にゃ。';
+  return sentence+(/だ$/.test(sentence)?'ぜ':/[るたいうくぐすつぬぶむ]$/.test(sentence)?'ぜ':'だぜ')+'。';
+ });
+}
+function syncHimikoPrompt(){
+ const ch=typeof currentChar==='undefined'?null:currentChar;
+ const subject=ch?(ch.isSpecial?'AI先生に':ch.name+((ch.isExplainer||ch.isNarrator)?'について':'に')):'';
+ document.getElementById('msg-input').placeholder=himikoUi(subject+'質問してみようにゃ！',subject+'質問してみようぜ！');
+ const search=document.getElementById('search-input');
+ search.placeholder=himikoUi('名前や時代で検索するにゃ','名前や時代で検索するぜ');
+ search.setAttribute('aria-label',search.placeholder);
+ document.getElementById('chat-reset').textContent=himikoUi('新しい会話を始めるにゃ','新しい会話を始めるぜ');
+ document.querySelectorAll('.suggestions-label').forEach(el=>{
+  el.textContent=el.dataset.initial==='true'?himikoUi('💡 こんな質問をしてみようにゃ','💡 こんな質問をしてみようぜ'):himikoUi('💬 さらに聞いてみようにゃ','💬 さらに聞いてみようぜ');
+ });
+ document.querySelectorAll('.reveal-skip').forEach(el=>el.textContent=himikoUi('すべて表示するにゃ','すべて表示するぜ'));
+ document.querySelectorAll('.older-history').forEach(el=>el.textContent=himikoUi('↑ 過去の会話を表示するにゃ','↑ 過去の会話を表示するぜ')+`（残り${el.dataset.remaining}往復）`);
+}
+
 const AI_SENSEI = {
   id:0,name:"AI先生",period:"歴史なんでもナビゲーター",emoji:"🤖",
   catchphrase:"受験対策から雑談まで何でもOK！",color:"#6366f1",accent:"#a5b4fc",
@@ -1232,7 +1261,18 @@ const CHAT_DB_NAME="himiko-conversations-v1",CHAT_DB_STORE="conversations";
 let chatDbPromise=null,chatWrites=Promise.resolve();
 function setChatStorageStatus(text,state="ok"){
   const el=document.getElementById("chat-storage-status");
-  el.textContent=text;el.dataset.state=state;
+  const copy={
+   '会話を読み込み中…':['会話を読み込んでいるにゃ…','会話を読み込んでいるぜ…'],
+   '保存した会話を読み込み中…':['保存した会話を読み込んでいるにゃ…','保存した会話を読み込んでいるぜ…'],
+   '保存中…':['会話を保存しているにゃ…','会話を保存しているぜ…'],
+   '✓ この端末に会話を保存済み':['✓ この端末に会話を保存したにゃ','✓ この端末に会話を保存したぜ'],
+   '✓ この端末の会話を復元しました':['✓ この端末の会話を復元したにゃ','✓ この端末の会話を復元したぜ'],
+   '✓ この端末に会話を自動保存':['✓ この端末に会話を自動保存するにゃ','✓ この端末に会話を自動保存するぜ'],
+   '⚠️ 会話を保存できません。ブラウザの保存設定をご確認ください':['⚠️ 会話を保存できなかったにゃ。ブラウザの保存設定を確認してみてにゃ','⚠️ 会話を保存できなかったぜ。ブラウザの保存設定を確認してくれよ'],
+   '⚠️ 保存データを読み込めません。会話の保存ができない可能性があります':['⚠️ 保存データを読み込めなかったにゃ。会話も保存できないかもしれないにゃ','⚠️ 保存データを読み込めなかったぜ。会話も保存できないかもしれないぜ']
+  }[text];
+  el.dataset.sourceCopy=text;
+  el.textContent=copy?himikoUi(...copy):text;el.dataset.state=state;
 }
 function openChatDB(){
   if(!chatDbPromise){
@@ -1315,7 +1355,7 @@ function buildApiConversation(question){
 }
 async function resetCurrentChat(){
   const ch=currentChar;if(!ch||!chatReady||isLoading)return;
-  if(!confirm(`${ch.name}との保存済みの会話を削除して、新しい会話を始めますか？\nこの操作は取り消せません。`))return;
+  if(!confirm(himikoUi(`${ch.name}との保存済みの会話を削除して、新しい会話を始めるにゃ？\nこの操作は取り消せないにゃ。`,`${ch.name}との保存済みの会話を削除して、新しい会話を始めるか？\nこの操作は取り消せないぜ。`)))return;
   chatEpoch++;cancelReveal(false);isLoading=false;
   messages=[{role:"assistant",content:ch.greeting}];dynamicSuggestions=[];historyVisiblePairs=HISTORY_PAGE_PAIRS;
   document.getElementById("msg-input").value="";
@@ -1418,7 +1458,7 @@ function filterGuideHTML(){
  const rows=chosen.map(key=>{
   const note=filterLearningNotes[openedFilterGroup]?.[key];
   if(!note)return '';
-  return `<div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-explain">${esc(key)}</span><span class="himiko-mode-explain">${esc(note)}</span></div>`;
+  return `<div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-explain">${esc(key)}</span><span class="himiko-mode-explain">${esc(himikoGuideCopy(note))}</span></div>`;
  }).join('');
  return `<div class="himiko-mode-guide" role="note" aria-label="選択項目の学習ポイント"><p class="himiko-mode-guide-title">📚 学習ポイント</p>${rows}</div>`;
 }
@@ -1455,7 +1495,10 @@ function toggleFilter(group,key){const set=selectedFilters[group];set.has(key)?s
 function clearFilters(){Object.values(selectedFilters).forEach(set=>set.clear());renderTags();renderCards();}
 new MutationObserver((changes)=>{
   if(changes.some(change=>change.attributeName==='data-persona') &&
-     !document.getElementById('list-view')?.classList.contains('hidden'))renderCards();
+     !document.getElementById('list-view')?.classList.contains('hidden')){renderTags();renderCards();}
+  syncHimikoPrompt();
+  const status=document.getElementById('chat-storage-status');
+  setChatStorageStatus(status.dataset.sourceCopy||'会話を読み込み中…',status.dataset.state||'ok');
 }).observe(document.documentElement,{attributes:true,attributeFilter:['data-persona']});
 function renderCards(){
  const q=document.getElementById('search-input').value.trim().toLowerCase();
@@ -1463,7 +1506,7 @@ function renderCards(){
  if(q)list=list.filter(c=>c.name.toLowerCase().includes(q)||c.period.toLowerCase().includes(q)||c.catchphrase.toLowerCase().includes(q));
  document.querySelector('#filter-count .filter-count-text').textContent=`${list.length}人いる${document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ'}`;
   const el=document.getElementById("card-list");
-  if(!list.length){el.innerHTML=selectedFilters.special.has('お気に入り')?`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">⭐</div><div style="font-weight:700">お気に入りはまだないよ</div><div style="font-size:13px;color:#94a3b8;margin-top:4px">カードの ☆ ボタンを押して追加しよう！</div></div>`:`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">🔍</div><div style="font-weight:700">該当する人物が見つかりません</div></div>`;return;}
+  if(!list.length){el.innerHTML=selectedFilters.special.has('お気に入り')&&!getFavs().size?`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">⭐</div><div style="font-weight:700">${himikoUi('お気に入りはまだないにゃ','お気に入りはまだないぜ')}</div><div style="font-size:13px;color:#94a3b8;margin-top:4px">${himikoUi('カードの ☆ ボタンを押して追加するにゃ！','カードの ☆ ボタンを押して追加しようぜ！')}</div></div>`:`<div class="empty-state"><div style="font-size:36px;margin-bottom:10px">🔍</div><div style="font-weight:700">${himikoUi('該当する人物が見つからないにゃ','該当する人物が見つからないぜ')}</div></div>`;return;}
   el.innerHTML=list.map((ch,i)=>{
     const ai=ch.isSpecial;
     const faved=isFav(ch.id);
@@ -1509,7 +1552,7 @@ async function openChat(id){
   document.getElementById("online-badge").classList.toggle("hidden",!ai);
   document.getElementById("explainer-badge").classList.toggle("hidden",!ch.isExplainer);
   document.getElementById("narrator-badge").classList.toggle("hidden",!ch.isNarrator);
-  document.getElementById("msg-input").placeholder=ai?"AI先生に質問しよう！":(ch.isExplainer||ch.isNarrator)?`${ch.name}について質問しよう！`:`${ch.name}に質問してみよう！`;
+  syncHimikoPrompt();
   document.getElementById("list-view").classList.add("hidden");
   document.getElementById("chat-view").classList.remove("hidden");
   document.documentElement.dataset.chatOpen="true";
@@ -1604,12 +1647,12 @@ function userRowHTML(ch,text,animate=false){
 function suggestionHTML(ch,questions,initial=false){
   if(!questions.length)return "";
   return `<div class="suggestions" aria-label="次の質問候補">
-    <div class="suggestions-label">${initial?"💡 こんな質問をしてみよう":"💬 さらに聞いてみよう"}</div>
+    <div class="suggestions-label" data-initial="${initial}">${initial?himikoUi('💡 こんな質問をしてみようにゃ','💡 こんな質問をしてみようぜ'):himikoUi('💬 さらに聞いてみようにゃ','💬 さらに聞いてみようぜ')}</div>
     <div class="suggestions-list">${questions.map(q=>`<button type="button" class="suggestion-btn" style="border:2px solid ${ch.color}38;color:${ch.color}" data-suggestion="${escAttr(q)}">${esc(q)}</button>`).join("")}</div>
   </div>`;
 }
 function typingHTML(ch){
-  return `<div class="bubble-row assistant typing-row" role="status" aria-label="回答を作成しています">
+  return `<div class="bubble-row assistant typing-row" role="status" aria-label="${himikoUi('回答を作成しているにゃ','回答を作成しているぜ')}">
     <button type="button" class="bubble-avatar" aria-label="${escAttr(ch.name)}のプロフィールを見る" title="プロフィールを見る" onclick="showProfile()" style="background:linear-gradient(135deg,${ch.color},${ch.accent})">${historyAvatarHTML(ch)}</button>
     <div class="typing">${[0,.2,.4].map(d=>`<span class="typing-dot" style="background:${ch.color};animation-delay:${d}s"></span>`).join("")}</div>
   </div>`;
@@ -1621,7 +1664,7 @@ function renderMessages(resetScroll=true){
   const visible=olderCount?messages.slice(1+olderCount*2):messages;
   const markup=visible.map((m,i)=>m.role==="user"?userRowHTML(ch,m.content):
     `<div class="bubble-group">${(olderCount===0&&i===0?[m.content]:splitReplyBubbles(m.content)).map((part,index)=>assistantRowHTML(ch,part,index===0)).join("")}</div>`).join("");
-  const older=olderCount?`<button type="button" class="older-history" data-older="1">↑ 過去の会話を表示（残り${olderCount}往復）</button>`:"";
+  const older=olderCount?`<button type="button" class="older-history" data-older="1" data-remaining="${olderCount}">${himikoUi('↑ 過去の会話を表示するにゃ','↑ 過去の会話を表示するぜ')}（残り${olderCount}往復）</button>`:"";
   const initial=messages.length<=1?ch.qs||[]:[];
   const followups=messages.length>1&&messages.at(-1)?.role==="assistant"?dynamicSuggestions:[];
   const el=document.getElementById("messages");
@@ -1661,9 +1704,9 @@ function splitReplyBubbles(text){
   return chunks.length?chunks:[source];
 }
 function makeRevealStatus(ch){
-  return nodeFromHTML(`<div class="reveal-status" role="status" aria-label="続きの吹き出しを順番に表示しています">
+  return nodeFromHTML(`<div class="reveal-status" role="status" aria-label="${himikoUi('続きの吹き出しを順番に表示するにゃ','続きの吹き出しを順番に表示するぜ')}">
     <div class="typing reveal-typing-bubble" aria-hidden="true">${[0,.2,.4].map(d=>`<span class="typing-dot" style="background:${ch.color};animation-delay:${d}s"></span>`).join("")}</div>
-    <button type="button" class="reveal-skip">すべて表示</button>
+    <button type="button" class="reveal-skip">${himikoUi('すべて表示するにゃ','すべて表示するぜ')}</button>
   </div>`);
 }
 // 回答は取得済みの1回分を、1つずつDOMに追加する。
@@ -1825,7 +1868,7 @@ async function sendMessage(text){
     if(epoch!==chatEpoch||currentChar!==ch)return;
     // API障害の回答や未完了の質問を保存・次のAPIリクエストに混入させない。
     messages.pop();
-    const message=`⚠️ 接続エラーが発生しました。(${e.message}) 質問を残しましたので、もう一度送信してください。`;
+    const message=himikoUi(`⚠️ 接続エラーが起きたにゃ。(${e.message}) 質問は残してあるにゃ。もう一度送ってみてにゃ。`,`⚠️ 接続エラーが起きたぜ。(${e.message}) 質問は残してあるぜ。もう一度送ってくれよ。`);
     dynamicSuggestions=[];
     typingRow.remove();userRow.remove();
     document.getElementById("msg-input").value=question;
@@ -1885,7 +1928,7 @@ function closeProfile(e){
   },220);
 }
 
-renderTags();renderCards();
+renderTags();renderCards();syncHimikoPrompt();setChatStorageStatus('会話を読み込み中…');
 
 // iOS Safariの慣性スクロールやプログラムによるscrollイベントは、
 // 「読書中のユーザーが最下部に戻った」根拠にしない。
@@ -1973,9 +2016,34 @@ document.getElementById("messages").addEventListener("click",function(e){
  let lastTap=0;
  const replayedClicks=new WeakSet(),pendingClicks=new WeakSet();
  const flashes=new WeakMap();
+ // A scroll container clips outer shadows to a rectangle. Draw a tile's halo
+ // beside the scroller, and keep only the rounded fill/inset light on the tile.
+ function tileHalo(control,radius,cyber){
+   const halo=document.createElement('span');
+   halo.setAttribute('aria-hidden','true');
+   halo.style.cssText='position:fixed;display:block;pointer-events:none;z-index:120;box-sizing:border-box;background:transparent;';
+   halo.style.borderRadius=radius;
+   halo.style.border=`2px solid ${cyber?'#00f5ff':'#ffc63c'}`;
+   halo.style.boxShadow=cyber?'0 0 12px #00f5ff,0 0 25px #00eaffaa':'0 0 12px #ffc63c,0 0 25px #ffad46aa';
+   document.body.append(halo);
+   const state={halo,frame:0};
+   const follow=()=>{
+     if(!control.isConnected||!modeOn()){restore(control);return;}
+     const rect=control.getBoundingClientRect();
+     const row=control.closest('.filter-buttons').getBoundingClientRect();
+     // Never paint a horizontally scrolled-off tile outside its viewport.
+     halo.style.visibility=rect.width>0&&rect.left>=row.left-1&&rect.right<=row.right+1?'visible':'hidden';
+     halo.style.left=rect.left+'px';halo.style.top=rect.top+'px';
+     halo.style.width=rect.width+'px';halo.style.height=rect.height+'px';
+     state.frame=requestAnimationFrame(follow);
+   };
+   state.frame=requestAnimationFrame(follow);
+   return state;
+ }
  function restore(control){
    const previous=flashes.get(control);if(!previous)return;
    clearTimeout(previous.timer);
+   if(previous.halo){cancelAnimationFrame(previous.halo.frame);previous.halo.halo.remove();}
    for(const [name,value,priority] of previous.styles){
     if(value)control.style.setProperty(name,value,priority);else control.style.removeProperty(name);
    }
@@ -1984,13 +2052,14 @@ document.getElementById("messages").addEventListener("click",function(e){
  }
  function highlight(control){
    restore(control);
-   const styles=['filter','box-shadow','border-color','background-image','background-color','color','border-radius','background-clip'].map(name=>[name,control.style.getPropertyValue(name),control.style.getPropertyPriority(name)]);
+   const styles=['filter','box-shadow','border-color','background-image','background-color','color','border-radius','background-clip','clip-path','transform'].map(name=>[name,control.style.getPropertyValue(name),control.style.getPropertyPriority(name)]);
    const cyber=root.dataset.persona==='cyber',glow=cyber?'#00eaff':'#ffb44c';
    control.classList.add('himiko-lively-flash');
    // Inline important wins over the themed button skins; restore the exact
    // previous styles when the temporary glow finishes.
-   const radius=getComputedStyle(control).borderRadius;
-   control.style.setProperty('border-radius',parseFloat(radius)>0?radius:'12px','important');
+   const computedRadius=getComputedStyle(control).borderRadius;
+   const radius=parseFloat(computedRadius)>0?computedRadius:'12px';
+   control.style.setProperty('border-radius',radius,'important');
    control.style.setProperty('background-clip','padding-box','important');
    control.style.setProperty('filter','none','important');
    control.style.setProperty('border-color',glow,'important');
@@ -2006,12 +2075,20 @@ document.getElementById("messages").addEventListener("click",function(e){
     control.style.setProperty('color','#653509','important');
     control.style.setProperty('box-shadow','0 0 16px #ffc63c,0 0 36px #ffad46cc,inset 0 0 20px #fffbe5','important');
    }
-   if(control.animate){control.animate([
+   const tile=control.matches('.filter-choice')&&control.closest('.filter-buttons');
+   let halo=null;
+   if(tile){
+    // Clip the bright fill explicitly as well, including Safari's button paint.
+    control.style.setProperty('clip-path',`inset(0 round ${radius})`,'important');
+    control.style.setProperty('transform','none','important');
+    control.style.setProperty('box-shadow',cyber?'inset 0 0 20px #c5ffff99':'inset 0 0 20px #fffbe5','important');
+    halo=tileHalo(control,radius,cyber);
+   }else if(control.animate){control.animate([
     {transform:'scale(1)'},{transform:'scale(1.10)',offset:.13},
     {transform:'scale(.95)',offset:.26},{transform:'scale(1.07)',offset:.42},
     {transform:'scale(.99)',offset:.66},{transform:'scale(1)'}
    ],{duration:620,easing:'cubic-bezier(.25,.46,.45,.94)'});}
-   flashes.set(control,{styles,timer:setTimeout(()=>restore(control),650)});
+   flashes.set(control,{styles,halo,timer:setTimeout(()=>restore(control),650)});
  }
  document.addEventListener('click',event=>{
    if(!modeOn()||replayedClicks.has(event))return;

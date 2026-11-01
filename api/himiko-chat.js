@@ -2743,8 +2743,9 @@ function buildGroupSchema(plan){
   topicContext:{type:'object',properties:{period:{type:'string'},region:{type:'string'}},required:['period','region'],additionalProperties:false},
   historicalReplies:{type:'object',properties:slots,required:Object.keys(slots),additionalProperties:false},
   teacherSupplement:{type:plan.teacher?'string':'null'},
+  studentQuestion:{type:'object',properties:{asker:{type:'string',enum:['',...GROUP_FIGURES.map(p=>p.name),AI_SENSEI.name]},question:{type:'string'},answerExamples:{type:'array',items:{type:'string'}}},required:['asker','question','answerExamples'],additionalProperties:false},
   suggestions:{type:'array',items:{type:'string'}}
- },required:['topicContext','historicalReplies','teacherSupplement','suggestions'],additionalProperties:false};
+ },required:['topicContext','historicalReplies','teacherSupplement','studentQuestion','suggestions'],additionalProperties:false};
 }
 function parseGroupOutput(text) {
  const source=text.trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim();
@@ -2761,8 +2762,43 @@ function parseGroupOutput(text) {
  return JSON.parse(repaired);
 }
 function buildGroupPrompt(plan) {
- const roster=GROUP_FIGURES.map(p=>({name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,voice:p.learning.voice,keywords:p.learning.keywords,basicFacts:p.learning.facts}));
- return HISTORY_CHAT_RULES+"\n【グループチャットの役割】\n相手は中学生。歴史上の人物が必ず先に答え、AI先生は後から短く補足する。AI先生だけの回答や、AI先生が本題を全部説明して人物が相づちだけになる回答は作らない。\n\n【その場で人物を選ぶ基準】\n質問と直近の会話から、用語・制度・出来事の時代と地域をtopicContextに簡潔な語句で示す。「それ」「もっと」などは直前の話題を引き継ぐ。比較なら複数の時代・地域でもよい。\n名指しされた人物がいれば優先する。呼ばれた偉人だけと指定されたらその人だけにし、その人物を中心にし、他の人は質問を奪わず短い反応にする。AI先生への質問でも、本題とつながる人物が先に短く話し、AI先生が説明を補う。\n直接の当事者である必要はない。当事者に加え、同じ時代・近い時代の人物や、地域・役割・活動の近い人物も、その時代を知る人として自然に説明できるなら積極的に選ぶ。グループチャットでは誰が当事者かだけで狭く絞りすぎず、適切な時代感と話題のつながりを重視する。直接経験したと確認できない事柄は「私が実際に見た」「私が実施した」と捏造せず、知識として説明する。\n近代の制度なら近代の関係者を選ぶ。本題の回答者は話題の時代とのつながりを優先する。後から入る人は別の時代でも、関連する制度や暮らし、考え方を比べる意味があれば参加してよい。単に有名だから、毎回違う人にするために選ばない。同じ話題を掘り下げている間は、同じ適任者が中心になってよい。後から入る人の組み合わせや反応には変化をつける。\n現代の生活や勉強の相談では、その主題と活動・考えがつながる人物を選ぶ。当時の体験と現代の知識を混同せず、本人が現代で経験した出来事を捏造しない。細かな現代の説明はAI先生が補足する。\n当事者が名簿にいなくても、同じ時代や近い時代の人物が話題を説明する。話題が広いときは、その中の一つの時代や出来事から人物が答え始めてよい。直接関わっていないことを理由に、すぐAI先生へ任せない。無関係な時代へ飛ばない。\n人物名は名簿どおりに返す。historicalRepliesはspeaker1から順番に、指定人数の異なる人物を入れる。speaker1が本題の答えを話す。後から入る人は、先の発言を受けた短い相づち、一言の具体例、別の立場や「私の時代では〜」という比較で自然に会話へ加わる。全員が同じ長さの解説を順番に発表する形にはしない。相づちだけでも、何に反応したのか分かる一言にする。前の話を繰り返すだけの水増しはしない。\nmodeがexplainerの人物は本人になりきらず、その人についての第三者の解説をする。roleplayの人物は名簿の口調を保つ。\n\n【AI先生の補足】\nteacherSupplementは原則として短く添える。人物の説明を受け、中学生が混同しがちな点、歴史のつながり、難語の言い換え、現代との違いのどれかを一つ補う。AI先生が補足に登場する機会は多くてよい。ただし最初からの説明し直しや、人物と同じ内容の復唱はしない。役立つ追加がない挨拶・短い相づちや、偉人だけの指定ではnullにする。\n人物ごとに返答の長さを変える。短い相づちは15〜40文字、補足や比較は40〜100文字、本題の説明は100〜180文字程度を目安にする。AI先生も40〜100文字程度で、追加の意味がある一言にする。回答と質問候補を一度に作る。\n\n【出力形式】\n指定のJSON形式で、topicContext、historicalReplies、teacherSupplement、suggestionsを返す。本文は平文。suggestionsは直前の回答から自然につながる、生徒の視点の質問を3つ。原則8〜45文字程度で「？」で終え、既に聞いた質問や直前の回答と同じ内容を繰り返さない。人物への名指しの質問もよい。\n【歴史上の参加者名簿】\n"+JSON.stringify(roster)+`\n【今回の会話の構成・最優先】\n参加者は合計${plan.total}人。そのうち歴史上の人物は${plan.figures}人。historicalRepliesのspeaker1〜speaker${plan.figures}に、互いに異なる人物を一人ずつ割り当てる。AI先生は歴史上の人物の枠に入れない。${plan.teacher?'最後にAI先生が短い有益な補足で加わる。teacherSupplementを空欄にしない。':'今回はAI先生は休み。teacherSupplementはnullにする。'}\n${['主役が説明し、別の人が短く反応し、もう一人が比較するように、長短をはっきり変える。','最初は短い結論、次の人が一つ具体例、続く人が一言の反応や比較を添える。','主役の説明を軸に、一人は短く相づちを打ち、別の人は自分の時代との違いを少し詳しく話す。'][plan.style]} 人物の選択は話題への関係で行い、人数と話す長さの変化だけをこの構成に合わせる。`;
+ const roster=GROUP_FIGURES.map(p=>({name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,pronoun:p.learning.pronoun,voice:p.learning.voice,perspective:p.learning.perspective,keywords:p.learning.keywords,basicFacts:p.learning.facts,cautions:p.learning.cautions,example:p.learning.examples?.[0]}));
+ return HISTORY_CHAT_RULES+`
+【異次元のグループチャット】
+相手は中学生。歴史上の人物が集い、生徒と互いの話を聞きながら会話する。毎回、偉人がまず生徒の本題にきちんと答える。AI先生だけの回答や、AI先生が全て説明して偉人は賛成するだけの回答にはしない。
+
+【人物の選び方】
+質問と直近の会話から時代・地域をtopicContextに短く示す。生徒の短い返答、「それ」「もっと」は前の発言や問いかけとつなげて解釈する。
+最初の回答者は、当事者、同時代・近い時代、地域・役割・活動が近い人物から選ぶ。直接の当事者でなくても、その時代や制度を自然に説明できればよい。近代の家禄などの本題を、無関係な古代の人物に任せない。当事者が名簿にいないだけでAI先生へ丸投げしない。
+名指しされた人物は優先し、その人への問いをほかの人が奪わない。AI先生への質問でも、関連する偉人がまず本題につながる話をし、AI先生が補う。後から加わる人は別時代・別地域でも、話題や前の発言への意味のある関心があればよい。有名さや無作為な名前選びを理由に参加させない。
+現代の話なら、主題と活動・考えのつながる偉人が話し、現代の細部はAI先生が補う。名簿のmodeがexplainerなら本人の発言を創作せず、第三者の解説を保つ。
+
+【参加の仕方に決まった型を作らない】
+人物は自分の時代の常識、立場、関心、価値観、確認できる活動や考え方を持って、ほかの時代の話を初めて聞くこともできる。後世の知識を聞いて反応することと、自分が後世を生きたかのように語ることを区別する。
+相づちや時代比較は数ある参加の仕方の例であり、必須の役ではない。意外に思う、疑問を持つ、別の人物へ尋ねる、同意しつつ条件を添える、異なる立場を示す、身近な場面に置き換える、誤解に気づく、前の人物を受けて見方を変えるなど、会話に合った参加を自由に選ぶ。この列挙を順番に消化したり、毎回同じ決まり文句で始めたりしない。
+その人物らしさは「〜じゃ」などの語尾だけでなく、何に注目し、何を大切にするかに表す。驚きや意見の違いも、学びにつながる自然なやりとりにする。全員が独立した解説を発表したり、既出の内容を復唱したりしない。人物間の問いは、その後の参加者が答えてよい。生徒への問いとは区別する。
+推測する感情や反応は、史料に残る実際の発言として断定しない。架空の引用、経験、他の人物との交流を史実にしない。人物の価値観を描いても加害・差別の正当化や被害の軽視にしない。
+
+【生徒と続ける会話】
+履歴の人物への返答や意見を受けたら、まずその中身に反応する。正しい理解は具体的に認め、誤解は人物らしい言葉でやさしく直し、別の見方・理由・つながりへ一歩広げる。返答例を押したことを理由に、初めて聞いた独立の質問として扱わない。以前の生徒の関心や発言を再び取り上げてもよいが、履歴にない記憶は捏造しない。
+最後に生徒へ短い問いを一つ投げてもよい。毎回は不要。直前に問いかけたばかりなら、その答えを受け止める会話を優先し、質問攻めや終わらない小テストにしない。元の質問への答えを後回しにして当てさせない。生徒が話題を変えたらついていく。
+問いは知識確認だけでなく、理由の予想、立場による見え方、自分ならどう考えるか、気になった点など、話の流れと人物の関心から選ぶ。意見の問いに唯一の正解を設けない。
+生徒へ答えてほしい問いは本文へ直接書かず、studentQuestionにasker（今回参加した人物名）、question（150文字以内）、answerExamples（3つ）を入れる。システムがその人物の発言の末尾に問いを付ける。終盤の人物が自然に問いを投げる形を基本に、偉人が尋ねた後のAI先生はその答えを先取りせず短い橋渡しをする。問いを消すような新しい質問を重ねない。
+answerExamplesは、生徒がそのまま発言できる短い返答の例を3つ（各100文字以内）。問いへの回答例や考え方の例を中心に、必要なら「まだわからないからヒントがほしい」も含める。意見なら異なる妥当な考え方、事実確認なら正しい答え方や理由の表し方を用意し、誤答を正解例のように並べない。疑問文に限定しない。個人情報の開示を誘わない。
+生徒への問いがない回はstudentQuestionを{"asker":"","question":"","answerExamples":[]}とし、suggestionsに次に生徒から聞ける質問を3つ（各8〜60文字程度）入れる。問いがある回のsuggestionsは空配列。本文の人物間の会話はこの返答候補に置き換えない。
+
+【分量と補足】
+一言の反応から少し詳しい説明まで、その発言に必要な長さで話す。本題は100〜180文字程度、ほかは15〜100文字程度が目安。全員が同じ長さで話さない。短い発言も何に反応したか伝わるものにする。
+AI先生が参加する回は最後に40〜100文字程度で、混同しやすい点、難語、歴史のつながり、現代との違いなど役立つ一点を補う。人物の話を最初から説明し直さない。問いかけ後は答えを明かさず、答えやすい視点を短く添えてもよい。
+指定JSONでtopicContext、historicalReplies、teacherSupplement、studentQuestion、suggestionsを一度に返す。本文は平文。
+
+【歴史上の参加者名簿】
+`+JSON.stringify(roster)+`
+【今回の構成】
+参加者は合計${plan.total}人。historicalRepliesのspeaker1〜speaker${plan.figures}に異なる偉人を一人ずつ入れ、speaker1が本題に答える。AI先生はこの枠へ入れない。
+${plan.teacher?'最後にAI先生が短い有益な補足で加わる。teacherSupplementは空欄にしない。':'今回はAI先生は休み。teacherSupplementはnullにする。'}
+${['今回は要点が伝わる簡潔な会話を意識する。','今回は一つの話を少し掘り下げてもよい。','今回は視点の違いが自然に生まれれば生かす。'][plan.style]}
+これは会話の軽い変化の目安で、人物の役や反応を固定する指示ではない。誰が何に反応するか、問いかけるかどうかは会話の内容に合わせる。`;
 }
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
@@ -2830,8 +2866,22 @@ module.exports = async function handler(req, res) {
         if(typeof obj.teacherSupplement!=='string'||!obj.teacherSupplement.trim())return res.status(502).json({error:'補足を受け取れませんでした。もう一度送ってください。'});
         replies.push({id:AI_SENSEI.id,text:obj.teacherSupplement.trim().slice(0,800)});
       }
-      const suggestions=[...new Set((Array.isArray(obj.suggestions)?obj.suggestions:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100&&!input.messages.some(m=>m.role==='user'&&m.content===x)))].slice(0,3);
-      return res.status(200).json({replies,suggestions});
+      const invitation=obj.studentQuestion;
+      let suggestionKind='questions',suggestions;
+      if(invitation&&typeof invitation.question!=='string')return res.status(502).json({error:'会話の続きを受け取れませんでした。もう一度送ってください。'});
+      if(invitation?.question?.trim()){
+        const name=typeof invitation.asker==='string'?invitation.asker.trim():'';
+        const asker=name===AI_SENSEI.name?AI_SENSEI:GROUP_FIGURES_BY_NAME.get(name);
+        const reply=asker&&replies.find(r=>r.id===asker.id);
+        const question=invitation.question.trim();
+        const examples=[...new Set((Array.isArray(invitation.answerExamples)?invitation.answerExamples:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100))].slice(0,3);
+        if(!reply||question.length>150||examples.length!==3)return res.status(502).json({error:'会話の続きを受け取れませんでした。もう一度送ってください。'});
+        if(!reply.text.includes(question))reply.text+='\n\n'+question;
+        suggestionKind='answers';suggestions=examples;
+      }else{
+        suggestions=[...new Set((Array.isArray(obj.suggestions)?obj.suggestions:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100&&!input.messages.some(m=>m.role==='user'&&m.content===x)))].slice(0,3);
+      }
+      return res.status(200).json({replies,suggestions,suggestionKind});
     }
     return res.status(200).json(data);
   } catch (error) {

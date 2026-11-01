@@ -973,17 +973,48 @@ html:not([data-chat-open]) body{overflow-y:auto!important;-webkit-overflow-scrol
 html:not([data-chat-open]){overscroll-behavior-y:auto!important}
 </style>
 <style id="nekopon-embedded-single-background-20261101">
-/* The parent already paints the viewport-fixed grid. A second iframe canvas
-   restarts at the frame boundary, making the first row look compressed.
-   Embedded list AND chat share the parent's one continuous background. */
-html.nekopon-embedded,
-html.nekopon-embedded[data-persona="cyber"],
-html.nekopon-embedded[data-chat-open],
-html.nekopon-embedded[data-persona="cyber"][data-chat-open]{
- background:transparent!important;
- background-image:none!important;
+/* Paint an opaque canvas inside WebKit's iframe. Use the parent canvas sizes
+   and its viewport origin, so cells continue across the frame boundary. */
+html.nekopon-embedded{background:#fff8f0!important;background-image:none!important;}
+html.nekopon-embedded[data-persona="cyber"]{background:#050510!important;background-image:none!important;}
+html.nekopon-embedded::before{
+ content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+ background-color:var(--embedded-bg-color,#fff8f0);
+ background-image:var(--embedded-bg-image,none);
+ background-size:var(--embedded-bg-size,auto);
+ background-position:var(--embedded-bg-x,0px) var(--embedded-bg-y,0px);
+ background-repeat:repeat;
 }
+html.nekopon-embedded body{position:relative;z-index:1;background:transparent!important;}
 </style>
+<script id="nekopon-embedded-canvas-alignment">
+(()=>{
+ if(window.parent===window)return;
+ const root=document.documentElement;
+ function sync(){
+  try{
+   const frame=window.frameElement;if(!frame)return;
+   const rect=frame.getBoundingClientRect();
+   const bg=parent.getComputedStyle(parent.document.body,'::before');
+   root.style.setProperty('--embedded-bg-color',bg.backgroundColor);
+   root.style.setProperty('--embedded-bg-image',bg.backgroundImage);
+   root.style.setProperty('--embedded-bg-size',bg.backgroundSize);
+   root.style.setProperty('--embedded-bg-x',(-rect.left)+'px');
+   root.style.setProperty('--embedded-bg-y',(-rect.top)+'px');
+  }catch(_){}
+ }
+ let pending=false;
+ function schedule(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;sync()});}
+ sync();window.addEventListener('load',schedule);
+ parent.addEventListener('resize',schedule,{passive:true});
+ parent.addEventListener('scroll',schedule,{passive:true});
+ parent.visualViewport?.addEventListener('resize',schedule,{passive:true});
+ if(window.ResizeObserver)new ResizeObserver(schedule).observe(window.frameElement);
+ for(const element of [parent.document.documentElement,parent.document.getElementById('himikoScreen'),window.frameElement]){
+  if(element)new MutationObserver(schedule).observe(element,{attributes:true,attributeFilter:['class','style','hidden','data-persona']});
+ }
+})();
+</script>
 </head>
 <body>
 

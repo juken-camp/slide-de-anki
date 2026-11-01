@@ -2732,7 +2732,7 @@ function completedReply(text) {
 
 const GROUP_OUTPUT_SCHEMA = {
  type:'object',properties:{
-  replies:{type:'array',items:{type:'object',properties:{id:{type:'integer',enum:[...PERSONAS.keys()]},text:{type:'string'}},required:['id','text'],additionalProperties:false}},
+  replies:{type:'array',items:{type:'object',properties:{name:{type:'string',enum:[...PERSONAS.values()].map(p=>p.name)},text:{type:'string'}},required:['name','text'],additionalProperties:false}},
   suggestions:{type:'array',items:{type:'string'}}
  },required:['replies','suggestions'],additionalProperties:false
 };
@@ -2751,8 +2751,8 @@ function parseGroupOutput(text) {
  return JSON.parse(repaired);
 }
 function buildGroupPrompt() {
- const roster=[...PERSONAS.values()].map(p=>({id:p.id,name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,voice:p.learning.voice}));
- return HISTORY_CHAT_RULES+`\nこれは中学生向けの歴史グループチャット。生徒の質問に関係し詳しい人物を、以下の全参加者の中からその都度選ぶ。名前を呼ばれた人物がいれば優先し、呼ばれた人だけと指定されたらその人だけ。AI先生も必要なとき現代の知識や補足を話せる。人物は互いの発言を受け、普通は1〜3人、短く自然に話す。解説者モードの人物は本人になりきらず、人物について第三者として解説する。史実と創作を区別。参加者以外を作らない。返信はJSONのみ {"replies":[{"id":人物ID,"text":"本文"}],"suggestions":["次に生徒が聞ける質問？","別の質問？","さらに別の質問？"]}。各textは平文。suggestionsは会話の内容に沿った生徒の視点の質問を3つ。直前に答えた内容や生徒が既に聞いた質問を繰り返さず、質問は8〜45文字を目安にし「？」で終える。人物の名前を使って名指ししてもよい。`+JSON.stringify(roster);
+ const roster=[...PERSONAS.values()].map(p=>({id:p.id,name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,voice:p.learning.voice,keywords:p.learning.keywords}));
+ return HISTORY_CHAT_RULES+`\nこれは中学生向けの歴史グループチャット。まず質問の用語・制度・出来事の時代と地域、当事者の立場を内部で整理し、その時代・地域・立場に直接関係する人物を以下の全参加者からその都度選ぶ。一般知識として答えられるというだけで、無関係な時代の人物を選ばない。該当する当事者が参加者にいないときは、近い時代や地域の関係者を選び、適切な人物がいなければAI先生が補足する。名前を呼ばれた人物がいれば優先し、呼ばれた人だけと指定されたらその人だけ。歴史の質問は、その出来事・時代・地域に関わる歴史上の人物を優先して選ぶ。AI先生を司会役や最初の回答者に固定しない。一般的な歴史の説明をAI先生が先にまとめる必要はない。関連する人物が説明できる質問なら、その人物が最初から説明する。AI先生は現代の生活・技術・入試の勉強方法などを聞かれた場合や、歴史上の人物だけでは説明しにくい補足が必要な場合に選ぶ。生徒がAI先生を名指ししたときはその指定を優先する。複数の時代や立場を比べる質問には、それぞれの関係者を選ぶ。人物の多様さだけのために無関係な人物を参加させない。人物は互いの発言を受け、普通は1〜3人、短く自然に話す。解説者モードの人物は本人になりきらず、人物について第三者として解説する。史実と創作を区別。参加者以外を作らない。返信はJSONのみ {"replies":[{"name":"参加者名を名簿どおりに","text":"本文"}],"suggestions":["次に生徒が聞ける質問？","別の質問？","さらに別の質問？"]}。各textは平文。suggestionsは会話の内容に沿った生徒の視点の質問を3つ。直前に答えた内容や生徒が既に聞いた質問を繰り返さず、質問は8〜45文字を目安にし「？」で終える。人物の名前を使って名指ししてもよい。`+JSON.stringify(roster);
 }
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
@@ -2810,7 +2810,8 @@ module.exports = async function handler(req, res) {
     if (input.isGroup) {
       let obj; try { obj=parseGroupOutput(text); } catch { return res.status(502).json({error:'回答を読み取れませんでした。質問は残っています。もう一度送ってください。'}); }
       if (!Array.isArray(obj.replies)) return res.status(502).json({error:'回答を受け取れませんでした。もう一度送ってください。'});
-      const replies=obj.replies.filter(x=>x && Number.isInteger(x.id) && PERSONAS.has(x.id) && typeof x.text==='string' && x.text.trim()).slice(0,3).map(x=>({id:x.id,text:x.text.trim().slice(0,1500)}));
+      const byName=new Map([...PERSONAS.values()].map(p=>[p.name,p]));
+      const replies=obj.replies.filter(x=>x && typeof x.name==='string' && byName.has(x.name.trim()) && typeof x.text==='string' && x.text.trim()).slice(0,3).map(x=>({id:byName.get(x.name.trim()).id,text:x.text.trim().slice(0,1500)}));
       if(!replies.length) return res.status(502).json({error:'回答を受け取れませんでした。もう一度送ってください。'});
       const suggestions=[...new Set((Array.isArray(obj.suggestions)?obj.suggestions:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100&&!input.messages.some(m=>m.role==='user'&&m.content===x)))].slice(0,3);
       return res.status(200).json({replies,suggestions});

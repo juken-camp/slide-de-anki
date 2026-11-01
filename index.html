@@ -4011,6 +4011,13 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+<style id="nekopon-question-scroll-boundary-20261101">
+/* The iframe clips at the same bottom edge as the fixed app header.
+   Its initial inset lives INSIDE the scroller, so it scrolls away. */
+html:not(.himiko-chat-active):not(.himiko-keyboard-open) #app #himikoFrame{
+ position:relative;top:calc(-1 * var(--himiko-list-overlap,0px));
+}
+</style>
 </head>
 <body><main id="app" class="app">
 <style id="reel-header-alignment-fix-20261101">
@@ -4058,7 +4065,7 @@ html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
 </section>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>
 </section>
-<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261101-heading-spacing-v7"></iframe></section>
+<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261101-header-boundary-v8"></iframe></section>
 <section aria-labelledby="sessionSummary" id="studyScreen" aria-label="スライド学習" hidden>
 <div class="study-heading page-heading"><h2 class="screen-title" tabindex="-1" id="sessionSummary"></h2><button id="studyReel" class="tool" type="button" aria-label="リールで見る" title="リール"><span aria-hidden="true">🎞️</span></button><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden hidden></p><p id="saveWarning" class="save-warning" hidden></p>
@@ -8928,6 +8935,10 @@ $('importForm').onsubmit=async e=>{
     }else{
       root.style.removeProperty('--himiko-viewport-top');
       root.style.removeProperty('--himiko-viewport-height');
+      const oldOverlap=parseFloat(root.style.getPropertyValue('--himiko-list-overlap'))||0;
+      const normalTop=frame.getBoundingClientRect().top+oldOverlap;
+      const overlap=Math.max(0,normalTop-(header?.getBoundingClientRect().bottom||0));
+      root.style.setProperty('--himiko-list-overlap',overlap+'px');
       const relativeTop=frame.getBoundingClientRect().top-offset;
       frame.style.setProperty('--himiko-frame-height',Math.max(240,Math.floor(available-Math.max(0,relativeTop)-4))+'px');
     }

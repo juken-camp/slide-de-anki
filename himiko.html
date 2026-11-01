@@ -996,6 +996,7 @@ html.nekopon-embedded body{position:relative;z-index:1;background:transparent!im
    const frame=window.frameElement;if(!frame)return;
    const rect=frame.getBoundingClientRect();
    const bg=parent.getComputedStyle(parent.document.body,'::before');
+   root.style.setProperty('--embedded-list-top-inset',parent.getComputedStyle(parent.document.documentElement).getPropertyValue('--himiko-list-overlap').trim()||'0px');
    root.style.setProperty('--embedded-bg-color',bg.backgroundColor);
    root.style.setProperty('--embedded-bg-image',bg.backgroundImage);
    root.style.setProperty('--embedded-bg-size',bg.backgroundSize);
@@ -1018,7 +1019,7 @@ html.nekopon-embedded body{position:relative;z-index:1;background:transparent!im
 <style id="nekopon-parent-owned-list-heading-20261101">
 /* The heading and list share the native iframe scroller. The row has the
    same 44px height and 12px bottom gap as the parent app headings. */
-html.nekopon-embedded #list-view{padding-top:20px!important;}
+html.nekopon-embedded #list-view{padding-top:var(--embedded-list-top-inset,0px)!important;}
 html.nekopon-embedded #list-view > .header{display:none!important;}
 .embedded-page-heading{display:none;}
 html.nekopon-embedded #list-view > .embedded-page-heading{

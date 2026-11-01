@@ -2644,7 +2644,8 @@ function requestData(req) {
   try { size = Buffer.byteLength(JSON.stringify(body)); } catch { size = Infinity; }
   if (size > LIMITS.bodyBytes) throw Object.assign(new Error('送信内容が大きすぎます。質問を短くしてください。'), { status: 413 });
   const { characterId, messages } = body;
-  if (!Number.isInteger(characterId) || !PERSONAS.has(characterId)) throw Object.assign(new Error('人物の設定を確認できません。画面を再読み込みしてください。'), { status: 400 });
+  const isGroup = body.mode === 'group';
+  if (!isGroup && (!Number.isInteger(characterId) || !PERSONAS.has(characterId))) throw Object.assign(new Error('人物の設定を確認できません。画面を再読み込みしてください。'), { status: 400 });
   if (!Array.isArray(messages) || !messages.length || messages.length > LIMITS.messages || messages.length % 2 !== 1) throw Object.assign(new Error('会話の形式が正しくありません。新しく画面を開き直してください。'), { status: 400 });
   let total = 0;
   const clean = messages.map((message, index) => {
@@ -2658,7 +2659,7 @@ function requestData(req) {
   });
   if (total > LIMITS.totalChars) throw Object.assign(new Error('会話が長くなっています。新しい会話で質問してください。'), { status: 400 });
   // Never use body.system, body.model, body.thinking or body.max_tokens.
-  return { character: PERSONAS.get(characterId), messages: clean };
+  return { character: PERSONAS.get(characterId), messages: clean, isGroup };
 }
 
 function rateBuckets(req, now = Date.now()) {
@@ -2729,6 +2730,10 @@ function completedReply(text) {
   try { return !!JSON.parse(match[1]).trim(); } catch { return false; }
 }
 
+function buildGroupPrompt() {
+ const roster=[...PERSONAS.values()].map(p=>({id:p.id,name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,voice:p.learning.voice}));
+ return HISTORY_CHAT_RULES+`\nこれは中学生向けの歴史グループチャット。生徒の質問に関係し詳しい人物を、以下の全参加者の中からその都度選ぶ。名前を呼ばれた人物がいれば優先し、呼ばれた人だけと指定されたらその人だけ。AI先生も必要なとき現代の知識や補足を話せる。人物は互いの発言を受け、普通は1〜3人、短く自然に話す。解説者モードの人物は本人になりきらず、人物について第三者として解説する。史実と創作を区別。参加者以外を作らない。返信はJSONのみ {"replies":[{"id":人物ID,"text":"本文"}]}。各textは平文。`+JSON.stringify(roster);
+}
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -2762,7 +2767,7 @@ module.exports = async function handler(req, res) {
         model: process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5',
         max_tokens: setting('HIMIKO_MAX_OUTPUT_TOKENS', 1536, 1024, 4096),
         thinking: { type: 'disabled' },
-        system: buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
+        system: input.isGroup ? buildGroupPrompt() : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
         messages: input.messages
       })
     });
@@ -2778,8 +2783,15 @@ module.exports = async function handler(req, res) {
     const data = await response.json();
     const text = Array.isArray(data.content) ? data.content.filter(b => b.type === 'text' && typeof b.text === 'string').map(b => b.text).join('') : '';
     if (!text.trim()) return res.status(502).json({ error: '回答を受け取れませんでした。もう一度送ってください。' });
-    if (['max_tokens', 'model_context_window_exceeded'].includes(data.stop_reason) && !completedReply(text)) {
+    if (['max_tokens', 'model_context_window_exceeded'].includes(data.stop_reason) && (input.isGroup || !completedReply(text))) {
       return res.status(502).json({ error: '回答が長くなり、最後まで取得できませんでした。質問を分けてもう一度送ってください。' });
+    }
+    if (input.isGroup) {
+      let obj; try { obj=JSON.parse(text.replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim()); } catch { return res.status(502).json({error:'回答の形式を確認できませんでした。もう一度送ってください。'}); }
+      if (!Array.isArray(obj.replies)) return res.status(502).json({error:'回答を受け取れませんでした。もう一度送ってください。'});
+      const replies=obj.replies.filter(x=>x && Number.isInteger(x.id) && PERSONAS.has(x.id) && typeof x.text==='string' && x.text.trim()).slice(0,3).map(x=>({id:x.id,text:x.text.trim().slice(0,1500)}));
+      if(!replies.length) return res.status(502).json({error:'回答を受け取れませんでした。もう一度送ってください。'});
+      return res.status(200).json({replies});
     }
     return res.status(200).json(data);
   } catch (error) {

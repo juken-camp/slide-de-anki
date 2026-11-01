@@ -1738,7 +1738,11 @@ html[data-strip-open] #group-view > .chat-header{border-bottom:0!important}
 .group-unread{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;border-radius:12px;padding:0 5px;font-family:inherit;font-weight:700;font-size:11px;color:#fff;background:#e05e62;flex:none}.group-unread[hidden]{display:none}
 html[data-persona="cyber"] .history-day{color:#a9c6df}html[data-persona="cyber"] .history-day span{background:#18324b}html[data-persona="cyber"] .history-message-time{color:#8eaec4}
 </style>
-</head>
+<style>
+.history-day{position:relative;flex-shrink:0;line-height:1.5;padding:3px 0}.history-day span{padding:3px 12px;font-weight:500;background:rgba(114,83,57,.25);opacity:.78}
+html[data-persona="cyber"] .history-day span{background:rgba(77,111,137,.28)}
+.history-floating{position:sticky;top:3px;z-index:7;height:0;display:flex;justify-content:center;pointer-events:none;opacity:0;transition:opacity .2s ease}.history-floating.is-visible{opacity:1}.history-floating span{height:max-content;padding:3px 12px;border-radius:20px;font-size:11px;line-height:1.5;color:#fff;background:rgba(114,83,57,.7)}html[data-persona="cyber"] .history-floating span{background:rgba(77,111,137,.8);color:#eefaff}
+</style></head>
 <body>
 
 <!-- LIST VIEW -->
@@ -4020,7 +4024,7 @@ function appendChatNode(node,follow=false){
 }
 function historyDay(at){return at?new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo'}).format(new Date(at)):''}
 function historyClock(at){return at?new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(at)):''}
-function historyDateHTML(at,previous){if(!at||historyDay(at)===historyDay(previous))return '';const key=historyDay(at),today=historyDay(Date.now()),yesterday=historyDay(Date.now()-86400000);const label=key===today?'今日':key===yesterday?'昨日':new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',weekday:'short'}).format(new Date(at));return `<div class="history-day"><span>${esc(label)}</span></div>`}
+function historyDateHTML(at,previous){if(!at||historyDay(at)===historyDay(previous))return '';const key=historyDay(at),today=historyDay(Date.now()),yesterday=historyDay(Date.now()-86400000);const label=key===today?'今日':key===yesterday?'昨日':new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',weekday:'short'}).format(new Date(at));return `<div class="history-day" data-date="${key}"><span>${esc(label)}</span></div>`}
 function historyMeta(at,read=false){return at?`<span class="history-message-time">${read?'既読<br>':''}${esc(historyClock(at))}</span>`:''}
 function historyActivity(){if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-activity'},location.origin)}
 function assistantRowHTML(ch,text,first=true,animate=false,at=null){
@@ -4695,7 +4699,12 @@ document.getElementById("messages").addEventListener("click",function(e){
  window.addEventListener('resize',scan,{passive:true});scan();
 })();
 </script>
-</body>
+<script>
+(()=>{for(const id of ['messages','group-messages']){const box=document.getElementById(id);if(!box)continue;const floating=document.createElement('div');floating.className='history-floating';floating.setAttribute('aria-hidden','true');const label=document.createElement('span');floating.append(label);let timer,userUntil=0,down=false;
+function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
+box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
+box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
+</script></body>
 </html>
 
 

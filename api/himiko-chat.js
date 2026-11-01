@@ -2652,7 +2652,7 @@ function requestData(req) {
     const role = index % 2 === 0 ? 'user' : 'assistant';
     if (!message || typeof message !== 'object' || message.role !== role || typeof message.content !== 'string' || !message.content.trim()) throw Object.assign(new Error('会話の内容が正しくありません。'), { status: 400 });
     const content = message.content.trim();
-    const cap = role === 'user' ? LIMITS.userChars : LIMITS.assistantChars;
+    const cap = role === 'user' ? (req.himikoAutomatic===true ? 6500 : LIMITS.userChars) : LIMITS.assistantChars;
     if (content.length > cap) throw Object.assign(new Error(role === 'user' ? '質問は2,000文字以内で送ってください。' : '会話が長くなっています。新しい会話で質問してください。'), { status: 400 });
     total += content.length;
     return { role, content }; // Drop tools, images, model options, and other fields.
@@ -2737,8 +2737,8 @@ function cleanGroupSpeakerLabel(text,name){
  const prefix=new RegExp('^\\s*(?:【'+escaped+'】\\s*[：:]?|'+escaped+'\\s*[：:])\\s*');
  return String(text).replace(prefix,'').trim();
 }
-function createGroupPlan(){
- const draw=randomInt(100),total=draw<50?3:draw<85?4:5,teacher=randomInt(100)<80;
+function createGroupPlan(automatic=false){
+ const draw=randomInt(100),total=draw<50?3:draw<85?4:5,teacher=randomInt(100)<(automatic?25:80);
  return {total,teacher,figures:total-(teacher?1:0),style:randomInt(3)};
 }
 function buildGroupSchema(plan){
@@ -2829,7 +2829,7 @@ module.exports = async function handler(req, res) {
     res.setHeader('Retry-After', String(rate.retryAfter));
     return res.status(429).json({ error: rate.bucket === 1 ? '短時間の質問が多くなっています。少し待ってから送ってください。' : '本日の質問回数の上限に達しました。また明日ご利用ください。' });
   }
-  const groupPlan=input.isGroup?createGroupPlan():null;
+  const groupPlan=input.isGroup?createGroupPlan(req.himikoAutomatic===true):null;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), setting('HIMIKO_API_TIMEOUT_MS', 20000, 5000, 45000));
   try {
@@ -2840,7 +2840,7 @@ module.exports = async function handler(req, res) {
         model: process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5',
         max_tokens: setting('HIMIKO_MAX_OUTPUT_TOKENS', input.isGroup ? 2048 : 1536, 1024, 4096),
         thinking: { type: 'disabled' },
-        system: input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
+        system: input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。今回は生徒の質問への回答ではないので、本題に答える・入試の要点でまとめるという通常回答の構成より、入力の会話方針を優先する。偉人が互いの言葉を受け止めて話を進める。短い発言を中心に、説明の独演会にしない。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
         messages: input.messages,
         ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:buildGroupSchema(groupPlan)}}} : {})
       })

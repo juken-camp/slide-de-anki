@@ -4065,7 +4065,7 @@ html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
 </section>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>
 </section>
-<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261101-cyber-button-glow-v9"></iframe></section>
+<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261101-cyber-brighter-v10"></iframe></section>
 <section aria-labelledby="sessionSummary" id="studyScreen" aria-label="スライド学習" hidden>
 <div class="study-heading page-heading"><h2 class="screen-title" tabindex="-1" id="sessionSummary"></h2><button id="studyReel" class="tool" type="button" aria-label="リールで見る" title="リール"><span aria-hidden="true">🎞️</span></button><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden hidden></p><p id="saveWarning" class="save-warning" hidden></p>
@@ -5185,12 +5185,18 @@ function restoreLivelyHighlight(element){
 }
 function livelyHighlight(element){
  restoreLivelyHighlight(element);
- const names=['filter','box-shadow','border-color'];
+ const names=['filter','box-shadow','border-color','background-image','background-color','color'];
  const original=names.map(name=>[name,element.style.getPropertyValue(name),element.style.getPropertyPriority(name)]);
  const cyber=document.documentElement.dataset.persona==='cyber',glow=cyber?'#00eaff':'#ffb44c';
  element.style.setProperty('filter','brightness(1.2)','important');
  element.style.setProperty('box-shadow',`0 0 12px ${glow},0 0 28px ${glow}aa,inset 0 0 16px ${glow}66`,'important');
  element.style.setProperty('border-color',glow,'important');
+ if(cyber){
+  element.style.setProperty('background-color','#087b96','important');
+  element.style.setProperty('background-image','linear-gradient(135deg,#12b8ce,#126da7)','important');
+  element.style.setProperty('color','#ffffff','important');
+  element.style.setProperty('box-shadow','0 0 16px #00f5ff,0 0 36px #00eaffcc,inset 0 0 20px #c5ffff99','important');
+ }
  livelyHighlights.set(element,{original,timer:setTimeout(()=>restoreLivelyHighlight(element),650)});
 }
 function livelyIconFeedback(element,kind='sparkle'){

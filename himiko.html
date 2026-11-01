@@ -1687,8 +1687,9 @@ html[data-persona="cyber"] #group-members .member-hint{color:#92c7e5}
 #group-members .self-avatar{background:linear-gradient(135deg,#ffe4c2,#f3bc87)}html[data-persona="cyber"] #group-members .self-avatar{background:linear-gradient(135deg,#18365a,#246079)}
 #group-members .member-error{max-width:700px;margin:0 auto 8px;color:#df5858;font-size:12px}
 #group-view .group-examples{margin-top:12px}#group-view .group-examples .suggestion-btn{border:1px solid #d8b894;color:#805037}html[data-persona="cyber"] #group-view .group-examples .suggestion-btn{border:1px solid #315d78;background:#0d2138;color:#d4e8fa}
-#card-list .char-card.group-met{background:#fff0d6}
-html[data-persona="cyber"] #card-list .char-card.group-met{background:#1a3d50}
+#card-list .char-card.group-met .avatar::after{content:"";position:absolute;right:-1px;bottom:-1px;width:11px;height:11px;box-sizing:border-box;background:#35c9ed;border:2px solid #fff;border-radius:50%;z-index:3;pointer-events:none}
+#card-list .char-card.group-met .avatar .online-dot{right:13px}
+html[data-persona="cyber"] #card-list .char-card.group-met .avatar::after{background:#57d7f4;border-color:#e4f6ff}
 #list-view .group-chat-placeholder{margin:9px 0 0;cursor:pointer}
 </style>
 <style id="history-test-chat-bubbles">

@@ -4065,7 +4065,7 @@ html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
 </section>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>
 </section>
-<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261101-all-buttons-v11"></iframe></section>
+<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261101-all-feedback-v12"></iframe></section>
 <section aria-labelledby="sessionSummary" id="studyScreen" aria-label="スライド学習" hidden>
 <div class="study-heading page-heading"><h2 class="screen-title" tabindex="-1" id="sessionSummary"></h2><button id="studyReel" class="tool" type="button" aria-label="リールで見る" title="リール"><span aria-hidden="true">🎞️</span></button><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden hidden></p><p id="saveWarning" class="save-warning" hidden></p>
@@ -5274,14 +5274,33 @@ window.addEventListener('message',event=>{
 document.addEventListener('visibilitychange',()=>{if(document.hidden){clearLively();document.documentElement.dataset.playEffects='normal';}else syncPlaySettings();});
 // Unlock sound inside a user gesture on iPhone as well as desktop browsers.
 for(const type of ['pointerup','click','keydown'])document.addEventListener(type,unlockAudio,{passive:true,capture:true});
+const nekoReplayedClicks=new WeakSet(),nekoPendingClicks=new WeakSet();
 document.addEventListener('click',event => {
   const control=event.target.closest('button,summary,a');
   if (!control || control.disabled) return;
-  if(control.matches('.neko-question-bubble')){livelyFeedback(control,event);return;}
+  const replayed=nekoReplayedClicks.has(event);
+  if(control.matches('.neko-question-bubble')){if(!replayed)livelyFeedback(control,event);return;}
+  if(!replayed){
   const selectionControl=control.matches('.lesson-choice,.collection-check,.collection-material-row,[data-search-select-all],[data-search-clear],#selectVisible,#clearSelection,#testLessonSelectVisible,#testLessonClear');
   if ((selectionControl || tapPlay()) && !control.dataset.nekoStat && !['mascotPlay','resultCat','homePlayCards','knownButton','weakButton','prevButton','nextButton','chooseLessons','startStudy','brandHome','revealButton','soundPreview','dialogSoundToggle','quickSound','quickReview','homeTitle','shuffleButton','examSetStudy','examSetSave','reelHideAnswers'].includes(control.id) && !control.dataset.soundStyle) beep('tap');
   if(!control.hasAttribute('data-sound-style'))tapSpark(control,event);
   livelyFeedback(control,event);
+  // Trusted-gesture APIs and special touch controls must run in the original tap.
+  const nativeAction=control.matches('#shareAppButton,#reelShare,#reelExportClose') || control.closest('#reelDialog') || event.target.closest('label');
+  if(event.isTrusted && livelyOn() && control.tagName==='BUTTON' && !nativeAction && !control.matches('.lesson-text-toggle,.lesson-text-question,.question-search-hit,.inline-text-tools button')){
+    event.preventDefault();event.stopImmediatePropagation();
+    if(nekoPendingClicks.has(control))return;
+    nekoPendingClicks.add(control);
+    const target=event.target,view=event.view||window;
+    const options={bubbles:true,cancelable:true,composed:true,view,detail:event.detail,clientX:event.clientX,clientY:event.clientY,button:event.button,buttons:event.buttons,ctrlKey:event.ctrlKey,shiftKey:event.shiftKey,altKey:event.altKey,metaKey:event.metaKey};
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      nekoPendingClicks.delete(control);
+      if(!control.isConnected||control.disabled||!target.isConnected)return;
+      const replay=new MouseEvent('click',options);nekoReplayedClicks.add(replay);document.__nekoActionReplayed=true;try{target.dispatchEvent(replay)}finally{document.__nekoActionReplayed=false;}
+    }));
+    return;
+  }
+  }
   // These catalog buttons are replaced synchronously by renderCatalog().
   // Keep their identity and flash the newly rendered equivalent after the click.
   const parentId=control.parentElement?.id;
@@ -7949,7 +7968,19 @@ async function nekoGradeReview(){
  if(nekoReviewBusy===testSession?.id||!typedTest()||testSession.finishedAt||!nekoPreferences().enabled)return;const session=testSession,pending=session.refs.filter(k=>session.judgements[k]?.source==='pending'&&!session.imageFailures?.[k]&&!nekoCached(k,'initial').result).slice(0,20);if(!pending.length)return;nekoReviewBusy=session.id;$('nekoAIReviewNext').hidden=true;let done=0,failed=false;const status=$('nekoAIReviewState');status.textContent=`Nekoponが解答を確認中にゃ · 0 / ${pending.length}問`;
  try{if(!await nekoAiStatus()){status.textContent='模範解答と比べて○×をつけてにゃ。Nekoponの解説は今は利用できないにゃ。';return;}let cursor=0;await Promise.all(Array.from({length:Math.min(2,pending.length)},async()=>{while(cursor<pending.length){const key=pending[cursor++];if(testSession?.id!==session.id||session.finishedAt)return;if(session.judgements[key]?.source!=='pending')continue;try{await nekoAsk(key);}catch{failed=true;}done++;if(testSession?.id===session.id&&screen==='test')status.textContent=`Nekoponが解答を確認中にゃ · ${done} / ${pending.length}問`;}}));if(testSession?.id===session.id&&!session.finishedAt&&session.phase==='review'&&screen==='test'){renderTestAnswerReview();$('nekoAIReviewState').textContent=failed?'確認できなかった解答は、模範解答と照らし合わせて○×をつけてにゃ。':'Nekoponの判定がついたにゃ。気になる判定は訂正できるにゃ。';$('nekoAIReviewNext').hidden=!session.refs.some(k=>session.judgements[k]?.source==='pending'&&!session.imageFailures?.[k]&&!session.tutor?.[k]?.initial);}}finally{if(nekoReviewBusy===session.id)nekoReviewBusy=false;}}
 function nekoImproveResult(){if(!testSession)return;const prior=nekoLatestMarks(studyHistory.tests.filter(t=>t.id!==testSession.id&&t.finishedAt<testSession.finishedAt)),oldWrong=testSession.refs.filter(k=>prior.get(k)?.outcome==='retry'),improved=oldWrong.filter(k=>testSession.answers[k]==='pass');if(oldWrong.length)$('testResultCheer').textContent=`前に間違えた${oldWrong.length}問のうち、今日は${improved.length}問できたにゃ。${oldWrong.length===improved.length?'全部、次の正解に変えられたにゃ！':'残りも一つずつ確かめよう。'}`;else if(testSession.kind!=='challenge'){$('testResultCheer').textContent=testSession.refs.every(k=>testSession.answers[k]==='pass')?'全問できたにゃ！ 次は範囲を広げて挑戦してみよう。':'';}const brand=$('testResultCard').querySelector('.report-brand');brand.textContent='🐾 '+(testSession.kind==='practice'?nekoModeTitle():'Nekoponの'+nekoModeTitle());$('testResultScope').textContent=testSession.examSetLabel?'範囲：'+testSession.examSetLabel:testSession.testMode==='ability'?'範囲：選んだ教材から出題（未学習を含む）':testSession.testMode==='wrong'?'範囲：間違いテストで選んだ問題':testSession.testMode==='practice'?'一問ずつ解説を確認した練習':$('testResultScope').textContent;}
-for(const b of document.querySelectorAll('[data-test-kind]'))b.onclick=()=>nekoOpenSetup(b.dataset.testKind);
+// Let the tapped control paint its lively feedback before setup work starts.
+// Other modes keep the original immediate action, and repeated taps open once.
+let pendingTestSetup=false;
+function openTestAfterFeedback(action){
+ if(pendingTestSetup)return;
+ if(!livelyOn() || document.__nekoActionReplayed){action();return;}
+ pendingTestSetup=true;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  pendingTestSetup=false;
+  if(screen==='report')action();
+ }));
+}
+for(const b of document.querySelectorAll('[data-test-kind]'))b.onclick=()=>openTestAfterFeedback(()=>nekoOpenSetup(b.dataset.testKind));
 $('testField').onchange=()=>{for(const id of [...selectedHomeworkLessons])if(!meta.some(m=>m.id===id&&($('testField').value==='all'||m.field===$('testField').value)))selectedHomeworkLessons.delete(id);filterHomeworkLessons();updateHomeworkCandidates();};
 $('nekoAIReviewNext').onclick=nekoGradeReview;$('testIncludeRecovered').onchange=updateHomeworkCandidates;$('testSubject').addEventListener('change',()=>{nekoFilterField();fillHomeworkTestLessons();});$('nekoRelatedClose').onclick=()=>$('nekoRelatedDialog').close();
 $('nekoAiEnabled').checked=nekoPreferences().enabled;$('nekoAiEnabled').onchange=()=>{nekoSavePrefs({enabled:$('nekoAiEnabled').checked});nekoAiAvailable=null;};
@@ -7964,7 +7995,7 @@ function examSetFilter(){if(!examSet.data)return;const subject=$('examSetSubject
 function examSetYearsRender(){const root=$('examSetYears');root.replaceChildren();const years=[...new Set(Object.values(examSet.data.questions).map(q=>q.year).filter(Number.isInteger))].sort((a,b)=>b-a);const all=collectionButton('すべて','tool',()=>{examSet.years.clear();examSetYearsRender();examSetFilter();});all.setAttribute('aria-pressed',String(!examSet.years.size));root.append(all);for(const y of years){const b=collectionButton(examSetYearLabel(y),'tool',()=>{if(examSet.years.has(y))examSet.years.delete(y);else examSet.years.add(y);examSetYearsRender();examSetFilter();});b.setAttribute('aria-pressed',String(examSet.years.has(y)));root.append(b);}}
 function examSetName(){const years=examSet.years.size?[...examSet.years].sort((a,b)=>b-a).map(examSetYearLabel).join('・'):'全年度',subject=$('examSetSubject').selectedOptions[0].textContent,field=$('examSetField').selectedOptions[0].textContent;const grade=$('examSetGrade').selectedOptions[0].textContent;return `入試過去問 ${years} ${subject}${field==='すべて'?'':' '+field}${$('examSetSubject').value!=='science'||grade==='すべて'?'':' '+grade}`.slice(0,45);}
 async function openExamSet(){if(examSet.loading)return;await studyHistoryReady;const active=nekoGetActiveTest('exam'),pending=studyHistory.pendingBatches?.exam;$('examResumeBox').hidden=!active&&!pending;$('examResumeInfo').textContent=active?nekoActiveProgress(active):pending?`残り ${pending.refs.length}問`:'';examSet.loading=true;$('examSetDialog').showModal();$('examSetTitle').focus({preventScroll:true});$('examSetNotice').textContent='';$('examSetSummary').textContent='読み込み中にゃ…';try{await Promise.all([studyHistoryReady,importedLessonsReady,ensureAssessmentData()]);if(!examSet.data){const r=await fetch('exam-past-data.json?v=20261028-r8-1');if(!r.ok)throw Error('過去問のデータを読み込めなかったにゃ。');const d=await r.json();if(d.schemaVersion!==1||!d.questions||!d.slides)throw Error('過去問のデータを確認できなかったにゃ。');examSet.data=d;}examSetFieldOptions();examSetYearsRender();examSetFilter();}catch(e){$('examSetSummary').textContent='';$('examSetNotice').textContent=(e.message||'読み込めなかったにゃ。')+' 一度閉じて開き直してにゃ。';}finally{examSet.loading=false;}}
-$('openExamSet').onclick=()=>{openExamSet();};$('examSetClose').onclick=()=>{if(typedLaunching)testLoadRequest++;$('examSetDialog').close();};$('examSetDialog').addEventListener('cancel',()=>{if(typedLaunching)testLoadRequest++;});$('examSetSubject').onchange=()=>{const science=$('examSetSubject').value==='science';$('examSetGradeLabel').hidden=!science;if(!science)$('examSetGrade').value='all';examSetFieldOptions();examSetFilter();};for(const id of ['examSetField','examSetGrade'])$(id).onchange=examSetFilter;
+$('openExamSet').onclick=()=>openTestAfterFeedback(openExamSet);$('examSetClose').onclick=()=>{if(typedLaunching)testLoadRequest++;$('examSetDialog').close();};$('examSetDialog').addEventListener('cancel',()=>{if(typedLaunching)testLoadRequest++;});$('examSetSubject').onchange=()=>{const science=$('examSetSubject').value==='science';$('examSetGradeLabel').hidden=!science;if(!science)$('examSetGrade').value='all';examSetFieldOptions();examSetFilter();};for(const id of ['examSetField','examSetGrade'])$(id).onchange=examSetFilter;
 $('examSetStudy').onclick=()=>{if(!examSet.keys.length)return;const keys=[...examSet.keys],name=examSetName(),ids=[...new Set(keys.map(k=>hSplit(k).lessonId))];$('examSetDialog').close();beep('open');selectLessons(ids,{collection:{id:'exam-set',name,cardKeys:keys}});};
 $('examSetSave').onclick=()=>{if(!examSet.keys.length)return;const all=readCollections(),base=examSetName(),name=all.some(c=>c.name===base)?`${base.slice(0,43)} (${all.filter(c=>c.name.startsWith(base)).length+1})`:base,c={id:'collection-'+(crypto.randomUUID?.()||Date.now().toString(36)),name,cards:examSet.keys.map(hSplit),updated:new Date().toISOString()};if(writeCollections([...all,c])){beep('open');$('examSetNotice').textContent='「'+name+'」を教材のまとめに保存したにゃ。';}else $('examSetNotice').textContent='保存できなかったにゃ。端末の保存設定を確認してにゃ。';};
 $('examSetTest').onclick=async()=>{if(!examSet.eligible.length||typedLaunching)return;const keys=shuffle([...examSet.eligible]);$('examSetTest').disabled=true;$('examSetNotice').textContent='問題を準備しているにゃ…';try{await launchTypedTest(keys.slice(0,10),{wanted:Math.min(10,keys.length),keepOrder:true,remainingRefs:keys.slice(10),kind:'test',testMode:'ability',examSetLabel:examSetName(),allDates:true,subject:$('examSetSubject').value});}finally{if($('examSetDialog').open){$('examSetTest').disabled=false;if($('examSetNotice').textContent==='問題を準備しているにゃ…')$('examSetNotice').textContent='';}}};

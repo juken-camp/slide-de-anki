@@ -1971,6 +1971,7 @@ document.getElementById("messages").addEventListener("click",function(e){
   root.dataset.playEffects=event.data.enabled && !preference?.matches?'lively':'normal';
  });
  let lastTap=0;
+ const replayedClicks=new WeakSet(),pendingClicks=new WeakSet();
  const flashes=new WeakMap();
  function restore(control){
    const previous=flashes.get(control);if(!previous)return;
@@ -2010,7 +2011,7 @@ document.getElementById("messages").addEventListener("click",function(e){
    flashes.set(control,{styles,timer:setTimeout(()=>restore(control),650)});
  }
  document.addEventListener('click',event=>{
-   if(!modeOn())return;
+   if(!modeOn()||replayedClicks.has(event))return;
    const control=event.target.closest('#list-view button,#chat-view button,#list-view .fav-btn,#chat-view .header-tap');
    if(!control || control.disabled || !control.isConnected)return;
    const r=control.getBoundingClientRect(),x=event.detail&&Number.isFinite(event.clientX)?event.clientX:r.left+r.width/2;
@@ -2027,6 +2028,21 @@ document.getElementById("messages").addEventListener("click",function(e){
      else if(value) updated=[...document.querySelectorAll('.filter-choice')].find(item=>item.dataset.value===value);
      if(updated && updated!==control)highlight(updated);
    });
+   if(event.isTrusted && control.tagName==='BUTTON' && !event.target.closest('label')){
+     event.preventDefault();event.stopImmediatePropagation();
+     if(!pendingClicks.has(control)){
+       pendingClicks.add(control);
+       const target=event.target,options={bubbles:true,cancelable:true,composed:true,view:window,detail:event.detail,clientX:event.clientX,clientY:event.clientY,button:event.button};
+       requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        pendingClicks.delete(control);
+        if(!control.isConnected||control.disabled||!target.isConnected)return;
+        const replay=new MouseEvent('click',options);replayedClicks.add(replay);target.dispatchEvent(replay);
+        // A selected filter can be replaced by its own click handler.
+        const updated=group?document.querySelector(`[data-filter-tab="${group}"]`):value?[...document.querySelectorAll('.filter-choice')].find(item=>item.dataset.value===value):null;
+        if(updated&&updated!==control)highlight(updated);
+       }));
+     }
+   }
    if(window.parent!==window){
       try {window.parent.postMessage({type:'nekopon-himiko-ui-tap',x,y},location.origin);}catch{}
    }else{ // Retain the same energetic response for standalone preview.

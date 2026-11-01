@@ -2730,9 +2730,29 @@ function completedReply(text) {
   try { return !!JSON.parse(match[1]).trim(); } catch { return false; }
 }
 
+const GROUP_OUTPUT_SCHEMA = {
+ type:'object',properties:{
+  replies:{type:'array',items:{type:'object',properties:{id:{type:'integer',enum:[...PERSONAS.keys()]},text:{type:'string'}},required:['id','text'],additionalProperties:false}},
+  suggestions:{type:'array',items:{type:'string'}}
+ },required:['replies','suggestions'],additionalProperties:false
+};
+function parseGroupOutput(text) {
+ const source=text.trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim();
+ try{return JSON.parse(source)}catch{}
+ const start=source.indexOf('{'),end=source.lastIndexOf('}');
+ if(start<0||end<start)throw new Error('group output');
+ // Some older responses put a preface or literal line breaks around JSON.
+ let repaired='',inside=false,escaped=false;
+ for(const c of source.slice(start,end+1)){
+  if(inside){if(escaped){repaired+=c;escaped=false;continue}if(c==='\\'){repaired+=c;escaped=true;continue}if(c==='"')inside=false;else if(c.charCodeAt(0)<32){repaired+=JSON.stringify(c).slice(1,-1);continue}}
+  else if(c==='"')inside=true;
+  repaired+=c;
+ }
+ return JSON.parse(repaired);
+}
 function buildGroupPrompt() {
  const roster=[...PERSONAS.values()].map(p=>({id:p.id,name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,voice:p.learning.voice}));
- return HISTORY_CHAT_RULES+`\nこれは中学生向けの歴史グループチャット。生徒の質問に関係し詳しい人物を、以下の全参加者の中からその都度選ぶ。名前を呼ばれた人物がいれば優先し、呼ばれた人だけと指定されたらその人だけ。AI先生も必要なとき現代の知識や補足を話せる。人物は互いの発言を受け、普通は1〜3人、短く自然に話す。解説者モードの人物は本人になりきらず、人物について第三者として解説する。史実と創作を区別。参加者以外を作らない。返信はJSONのみ {"replies":[{"id":人物ID,"text":"本文"}]}。各textは平文。`+JSON.stringify(roster);
+ return HISTORY_CHAT_RULES+`\nこれは中学生向けの歴史グループチャット。生徒の質問に関係し詳しい人物を、以下の全参加者の中からその都度選ぶ。名前を呼ばれた人物がいれば優先し、呼ばれた人だけと指定されたらその人だけ。AI先生も必要なとき現代の知識や補足を話せる。人物は互いの発言を受け、普通は1〜3人、短く自然に話す。解説者モードの人物は本人になりきらず、人物について第三者として解説する。史実と創作を区別。参加者以外を作らない。返信はJSONのみ {"replies":[{"id":人物ID,"text":"本文"}],"suggestions":["次に生徒が聞ける質問？","別の質問？","さらに別の質問？"]}。各textは平文。suggestionsは会話の内容に沿った生徒の視点の質問を3つ。直前に答えた内容や生徒が既に聞いた質問を繰り返さず、質問は8〜45文字を目安にし「？」で終える。人物の名前を使って名指ししてもよい。`+JSON.stringify(roster);
 }
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
@@ -2768,7 +2788,8 @@ module.exports = async function handler(req, res) {
         max_tokens: setting('HIMIKO_MAX_OUTPUT_TOKENS', 1536, 1024, 4096),
         thinking: { type: 'disabled' },
         system: input.isGroup ? buildGroupPrompt() : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
-        messages: input.messages
+        messages: input.messages,
+        ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:GROUP_OUTPUT_SCHEMA}}} : {})
       })
     });
     if (!response.ok) {
@@ -2787,11 +2808,12 @@ module.exports = async function handler(req, res) {
       return res.status(502).json({ error: '回答が長くなり、最後まで取得できませんでした。質問を分けてもう一度送ってください。' });
     }
     if (input.isGroup) {
-      let obj; try { obj=JSON.parse(text.replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim()); } catch { return res.status(502).json({error:'回答の形式を確認できませんでした。もう一度送ってください。'}); }
+      let obj; try { obj=parseGroupOutput(text); } catch { return res.status(502).json({error:'回答を読み取れませんでした。質問は残っています。もう一度送ってください。'}); }
       if (!Array.isArray(obj.replies)) return res.status(502).json({error:'回答を受け取れませんでした。もう一度送ってください。'});
       const replies=obj.replies.filter(x=>x && Number.isInteger(x.id) && PERSONAS.has(x.id) && typeof x.text==='string' && x.text.trim()).slice(0,3).map(x=>({id:x.id,text:x.text.trim().slice(0,1500)}));
       if(!replies.length) return res.status(502).json({error:'回答を受け取れませんでした。もう一度送ってください。'});
-      return res.status(200).json({replies});
+      const suggestions=[...new Set((Array.isArray(obj.suggestions)?obj.suggestions:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100&&!input.messages.some(m=>m.role==='user'&&m.content===x)))].slice(0,3);
+      return res.status(200).json({replies,suggestions});
     }
     return res.status(200).json(data);
   } catch (error) {

@@ -1984,12 +1984,15 @@ document.getElementById("messages").addEventListener("click",function(e){
  }
  function highlight(control){
    restore(control);
-   const styles=['filter','box-shadow','border-color','background-image','background-color','color'].map(name=>[name,control.style.getPropertyValue(name),control.style.getPropertyPriority(name)]);
+   const styles=['filter','box-shadow','border-color','background-image','background-color','color','border-radius','background-clip'].map(name=>[name,control.style.getPropertyValue(name),control.style.getPropertyPriority(name)]);
    const cyber=root.dataset.persona==='cyber',glow=cyber?'#00eaff':'#ffb44c';
    control.classList.add('himiko-lively-flash');
    // Inline important wins over the themed button skins; restore the exact
    // previous styles when the temporary glow finishes.
-   control.style.setProperty('filter','brightness(1.23)','important');
+   const radius=getComputedStyle(control).borderRadius;
+   control.style.setProperty('border-radius',parseFloat(radius)>0?radius:'12px','important');
+   control.style.setProperty('background-clip','padding-box','important');
+   control.style.setProperty('filter','none','important');
    control.style.setProperty('border-color',glow,'important');
    control.style.setProperty('box-shadow',`0 0 13px ${glow},0 0 29px ${glow}99,inset 0 0 16px ${glow}55`,'important');
    if(cyber){

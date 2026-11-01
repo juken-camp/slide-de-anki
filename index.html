@@ -4065,7 +4065,7 @@ html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
 </section>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>
 </section>
-<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261101-all-feedback-v12"></iframe></section>
+<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261101-rounded-glow-v13"></iframe></section>
 <section aria-labelledby="sessionSummary" id="studyScreen" aria-label="スライド学習" hidden>
 <div class="study-heading page-heading"><h2 class="screen-title" tabindex="-1" id="sessionSummary"></h2><button id="studyReel" class="tool" type="button" aria-label="リールで見る" title="リール"><span aria-hidden="true">🎞️</span></button><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden hidden></p><p id="saveWarning" class="save-warning" hidden></p>
@@ -5183,12 +5183,27 @@ function restoreLivelyHighlight(element){
  for(const [name,value,priority] of record.original){if(value)element.style.setProperty(name,value,priority);else element.style.removeProperty(name);}
  livelyHighlights.delete(element);
 }
+function livelySurface(control){
+ // Text-only action buttons inside a framed card belong to that whole surface.
+ const style=getComputedStyle(control),bg=style.backgroundColor.replace(/\s/g,'');
+ const transparent=bg==='transparent'||bg==='rgba(0,0,0,0)';
+ const unframed=['Top','Right','Bottom','Left'].every(side=>parseFloat(style['border'+side+'Width'])===0||style['border'+side+'Style']==='none');
+ if(transparent && style.backgroundImage==='none' && unframed && !control.matches('.link-button')){
+  const card=control.closest('.homework-test-history-item,.my-collection-card,.my-added-lesson,.lesson-card-shell');
+  if(card)return card;
+ }
+ return control;
+}
 function livelyHighlight(element){
+ element=livelySurface(element);
  restoreLivelyHighlight(element);
- const names=['filter','box-shadow','border-color','background-image','background-color','color'];
+ const names=['filter','box-shadow','border-color','background-image','background-color','color','border-radius','background-clip'];
  const original=names.map(name=>[name,element.style.getPropertyValue(name),element.style.getPropertyPriority(name)]);
  const cyber=document.documentElement.dataset.persona==='cyber',glow=cyber?'#00eaff':'#ffb44c';
- element.style.setProperty('filter','brightness(1.2)','important');
+ const radius=getComputedStyle(element).borderRadius;
+ element.style.setProperty('border-radius',parseFloat(radius)>0?radius:'12px','important');
+ element.style.setProperty('background-clip','padding-box','important');
+ element.style.setProperty('filter','none','important');
  element.style.setProperty('box-shadow',`0 0 12px ${glow},0 0 28px ${glow}aa,inset 0 0 16px ${glow}66`,'important');
  element.style.setProperty('border-color',glow,'important');
  if(cyber){
@@ -5243,7 +5258,7 @@ function livelyFeedback(control,event){
  const face=control.querySelector('.cat-tilt > span');
  if(face)livelyIconFeedback(face,'cat');
  else{
-  livelyAnimate(control,[{scale:'1'},{scale:'1.10',offset:.1},{scale:'.95',offset:.2},{scale:'1.08',offset:.3},{scale:'.98',offset:.4},{scale:'1.05',offset:.5},{scale:'.99',offset:.6},{scale:'1.02',offset:.7},{scale:'.995',offset:.8},{scale:'1.01',offset:.9},{scale:'1'}],600);
+  livelyAnimate(livelySurface(control),[{scale:'1'},{scale:'1.10',offset:.1},{scale:'.95',offset:.2},{scale:'1.08',offset:.3},{scale:'.98',offset:.4},{scale:'1.05',offset:.5},{scale:'.99',offset:.6},{scale:'1.02',offset:.7},{scale:'.995',offset:.8},{scale:'1.01',offset:.9},{scale:'1'}],600);
  }
  const icon=control.querySelector('.subject-icon,.stat-icon,.persona-icon');
  if(icon)livelyIconFeedback(icon,control.dataset.nekoStat==='level'?'trophy':control.dataset.nekoStat==='known'?'fire':'sparkle');

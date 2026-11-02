@@ -1738,6 +1738,11 @@ html[data-strip-open] #group-view > .chat-header{border-bottom:0!important}
 .bubble-row.user .history-message-time{order:-1;text-align:right}.history-reply-content,.group-reply-content{position:relative}.history-reply-content>.history-message-time,.group-reply-content>.history-message-time{text-align:right}
 .group-unread{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;border-radius:12px;padding:0 5px;font-family:inherit;font-weight:700;font-size:11px;color:#fff;background:#e05e62;flex:none}.group-unread[hidden]{display:none}
 html[data-persona="cyber"] .history-day{color:#a9c6df}html[data-persona="cyber"] .history-day span{background:#18324b}html[data-persona="cyber"] .history-message-time{color:#8eaec4}
+/* Incoming timestamps sit beside the bubble, sharing its bottom edge. */
+#chat-view .history-reply-content,#group-view .group-reply-content{display:grid;grid-template-columns:minmax(0,1fr) max-content;column-gap:10px;width:fit-content;max-width:82%;min-width:0;align-items:end}
+#chat-view .history-reply-name,#group-view .group-reply-name{grid-column:1 / -1}
+#chat-view .history-reply-content>.bubble,#group-view .group-reply-content>.bubble{grid-column:1;min-width:0;margin:0}
+#chat-view .history-reply-content>.history-message-time,#group-view .group-reply-content>.history-message-time{grid-column:2;align-self:end;margin:0 0 3px;text-align:left}
 </style>
 <style>
 .history-day{position:relative;flex-shrink:0;line-height:1.5;padding:3px 0}.history-day span{padding:3px 12px;font-weight:500;background:rgba(114,83,57,.25);opacity:.78}

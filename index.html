@@ -4025,7 +4025,18 @@ html:not(.himiko-chat-active):not(.himiko-keyboard-open) #app #himikoFrame{
 #app #settingsScreen .himiko-group-settings .sound-setting{width:100%;max-width:none;min-height:44px;margin:0;padding:9px 0;border:0;border-radius:0;background:transparent;box-shadow:none;font-size:12px;font-weight:500}
 #app #settingsScreen .himiko-group-settings #himiko-auto-status:empty{display:none}
 html[data-persona="cyber"] #app #settingsScreen .settings-group .himiko-group-settings{border-top-color:#315576}
-</style><style>.himiko-frequency th,.himiko-frequency td{padding:8px 5px;border-bottom:1px solid #8b9db244;vertical-align:top}.himiko-frequency th{font-weight:700}.himiko-frequency p{line-height:1.7}</style></head>
+</style><style>.himiko-frequency th,.himiko-frequency td{padding:8px 5px;border-bottom:1px solid #8b9db244;vertical-align:top}.himiko-frequency th{font-weight:700}.himiko-frequency p{line-height:1.7}</style>
+<style id="test-chat-persona-avatars">
+/* Keep the avatar outside the existing bubble shape, including saved replies. */
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble{
+ margin-left:40px!important;width:calc(100% - 40px)!important;max-width:calc(100% - 40px)!important;min-width:0;box-sizing:border-box;
+}
+html[data-persona] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble::after{
+ content:"🐱"!important;display:flex!important;position:absolute!important;left:-40px!important;top:2px!important;width:30px!important;height:34px!important;align-items:center;justify-content:center;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;font-size:28px!important;line-height:1!important;background:none!important;border:0!important;box-shadow:none!important;transform:none!important;pointer-events:none;
+}
+html[data-persona="cyber"] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble::after{content:"😎"!important}
+</style>
+</head>
 <body><main id="app" class="app">
 <style id="reel-header-alignment-fix-20261101">
 /* Reel header stays in the normal flow, at the same size as the five-tab header. */

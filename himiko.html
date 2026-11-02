@@ -1796,6 +1796,9 @@ html[data-persona="cyber"] #group-view .group-send-failed{color:#e6a0a5}
 :is(#chat-view #msg-input,#group-view #group-input){resize:none;-webkit-appearance:none;appearance:none;scrollbar-width:none}
 :is(#chat-view #msg-input,#group-view #group-input)::-webkit-scrollbar{width:0;height:0;display:none}
 </style>
+<style id="chat-autoexpand-input">
+:is(#chat-view #msg-input,#group-view #group-input){min-height:44px;max-height:124px;overflow-y:auto;box-sizing:border-box}
+</style>
 </head>
 <body>
 
@@ -4544,6 +4547,15 @@ document.getElementById("messages").addEventListener("click",function(e){
   const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};
   input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));
 })();
+</script><script id="chat-autoexpand-input-script">
+(()=>{
+ for(const id of ['msg-input','group-input']){
+  const el=document.getElementById(id);if(!el)continue;let last=null,lastWidth=0;
+  function resize(){if(!el.isConnected||!el.clientWidth)return;const value=el.value,width=el.clientWidth;if(value===last&&width===lastWidth)return;last=value;lastWidth=width;el.style.height='44px';const height=Math.min(124,Math.max(44,el.scrollHeight+el.offsetHeight-el.clientHeight));el.style.height=height+'px';}
+  el.addEventListener('input',resize);el.addEventListener('focus',()=>{last=null;resize()});
+  setInterval(resize,500);resize();
+ }
+})();
 </script><script id="nekopon-himiko-lively-bridge-20261031">
 (()=>{
  const root=document.documentElement;
@@ -4717,15 +4729,14 @@ document.getElementById("messages").addEventListener("click",function(e){
   // Most posts collect readers quickly; about one in five has a quieter start.
   const age=now-Number(at),slow=Math.abs(Math.floor(Number(at)/1000)*2654435761)%10<2;
   const count=readLags.filter(lag=>age>=lag*(slow&&lag<300000?4:1)).length;
-  let legacy=0;try{const old=JSON.parse(localStorage.getItem('himiko-group-read-lags-v1')||'[]');if(Array.isArray(old))legacy=old.filter(lag=>Number.isFinite(lag)&&lag>0&&age>=lag).length;}catch{}
-  return Math.min(88,Math.max(count,legacy));
+  return Math.min(88,count);
  }
  function groupReadMeta(at){const count=readCount(at);return at?`<span class="history-message-time">${count?'既読 '+count+'<br>':''}${esc(historyClock(at))}</span>`:''}
 
  function refreshReadCounts(){
   if($('group-view').hidden)return;
   const rows=[...$('group-messages-inner').querySelectorAll('[data-group-sent-at]')];let floor=0,readCountsDirty=false;
-  for(const row of rows.reverse()){const at=Number(row.dataset.groupSentAt);const turn=state.turns.find(t=>!t.automatic&&Number(t.at)===at);floor=Math.min(88,Math.max(floor,readCount(at),Number(turn?.readCount)||0));if(turn&&turn.readCount!==floor){turn.readCount=floor;readCountsDirty=true;}const time=row.querySelector('.history-message-time');if(time)time.innerHTML=(floor?'既読 '+floor+'<br>':'')+esc(historyClock(at));}
+  for(const row of rows.reverse()){const at=Number(row.dataset.groupSentAt);const turn=state.turns.find(t=>!t.automatic&&Number(t.at)===at);floor=Math.min(88,Math.max(floor,readCount(at)));if(turn&&turn.readCount!==floor){turn.readCount=floor;readCountsDirty=true;}const time=row.querySelector('.history-message-time');if(time)time.innerHTML=(floor?'既読 '+floor+'<br>':'')+esc(historyClock(at));}
   if(readCountsDirty)save();
  }
  function planLocalReplies(replies){

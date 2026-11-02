@@ -109,7 +109,7 @@
   panel.querySelectorAll('.member-card[data-id]').forEach(card=>{
    const ch=person(Number(card.dataset.id));if(!ch)return;
    const p=presence(ch);let badge=card.querySelector('.member-presence');
-   if(!badge){badge=document.createElement('span');badge.className='online-badge member-presence';card.querySelector('.member-name')?.after(badge);}
+   if(!badge){badge=document.createElement('span');badge.className='online-badge member-presence';card.querySelector('.member-name-row')?.append(badge);}
    if(badge.textContent!==p.label){badge.textContent=p.label;badge.style.color=p.color;badge.style.background=p.color+'20';}
   });
  }

@@ -2739,16 +2739,19 @@ function cleanGroupSpeakerLabel(text,name){
 }
 function createGroupPlan(automatic=false){
  const draw=randomInt(100),total=draw<50?3:draw<85?4:5,teacher=randomInt(100)<(automatic?25:80);
- return {total,teacher,figures:total-(teacher?1:0),style:randomInt(3)};
+ return {total,teacher,figures:total-(teacher?1:0),style:randomInt(3),automatic};
+}
+function groupFiguresFor(plan){
+ return plan.automatic?GROUP_FIGURES.filter(p=>!p.isExplainer&&p.learning.mode!=='explainer'):GROUP_FIGURES;
 }
 function buildGroupSchema(plan){
- const speaker={type:'object',properties:{name:{type:'string',enum:GROUP_FIGURES.map(p=>p.name)},text:{type:'string'}},required:['name','text'],additionalProperties:false};
+ const speaker={type:'object',properties:{name:{type:'string',enum:groupFiguresFor(plan).map(p=>p.name)},text:{type:'string'}},required:['name','text'],additionalProperties:false};
  const slots=Object.fromEntries(Array.from({length:plan.figures},(_,i)=>['speaker'+(i+1),speaker]));
  return {type:'object',properties:{
   topicContext:{type:'object',properties:{period:{type:'string'},region:{type:'string'}},required:['period','region'],additionalProperties:false},
   historicalReplies:{type:'object',properties:slots,required:Object.keys(slots),additionalProperties:false},
   teacherSupplement:{type:plan.teacher?'string':'null'},
-  studentQuestion:{type:'object',properties:{asker:{type:'string',enum:['',...GROUP_FIGURES.map(p=>p.name),AI_SENSEI.name]},question:{type:'string'},answerExamples:{type:'array',items:{type:'string'}}},required:['asker','question','answerExamples'],additionalProperties:false},
+  studentQuestion:{type:'object',properties:{asker:{type:'string',enum:['',...groupFiguresFor(plan).map(p=>p.name),AI_SENSEI.name]},question:{type:'string'},answerExamples:{type:'array',items:{type:'string'}}},required:['asker','question','answerExamples'],additionalProperties:false},
   suggestions:{type:'array',items:{type:'string'}}
  },required:['topicContext','historicalReplies','teacherSupplement','studentQuestion','suggestions'],additionalProperties:false};
 }
@@ -2767,7 +2770,7 @@ function parseGroupOutput(text) {
  return JSON.parse(repaired);
 }
 function buildGroupPrompt(plan) {
- const roster=GROUP_FIGURES.map(p=>({name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,pronoun:p.learning.pronoun,voice:p.learning.voice,perspective:p.learning.perspective,keywords:p.learning.keywords,basicFacts:p.learning.facts,cautions:p.learning.cautions,example:p.learning.examples?.[0]}));
+ const roster=groupFiguresFor(plan).map(p=>({name:p.name,period:p.period,bio:p.bio,mode:p.learning.mode,pronoun:p.learning.pronoun,voice:p.learning.voice,perspective:p.learning.perspective,keywords:p.learning.keywords,basicFacts:p.learning.facts,cautions:p.learning.cautions,example:p.learning.examples?.[0]}));
  return HISTORY_CHAT_RULES+`
 【異次元のグループチャット】
 相手は中学生。歴史上の人物が集い、生徒と互いの話を聞きながら会話する。毎回、偉人がまず生徒の本題にきちんと答える。AI先生だけの回答や、AI先生が全て説明して偉人は賛成するだけの回答にはしない。
@@ -2840,7 +2843,7 @@ module.exports = async function handler(req, res) {
         model: process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5',
         max_tokens: setting('HIMIKO_MAX_OUTPUT_TOKENS', input.isGroup ? 2048 : 1536, 1024, 4096),
         thinking: { type: 'disabled' },
-        system: input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。今回は生徒の質問への回答ではないので、本題に答える・入試の要点でまとめるという通常回答の構成より、入力の会話方針を優先する。偉人が互いの言葉を受け止めて話を進める。短い発言を中心に、説明の独演会にしない。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
+        system: input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。今回は生徒の質問への回答ではないので、本題に答える・入試の要点でまとめるという通常回答の構成より、入力の会話方針を優先する。偉人が互いの言葉を受け止めて話を進める。短い発言を中心に、説明の独演会にしない。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。今回の名簿は自動会話に参加できる人物だけで、解説扱いの人物は含まれない。冒頭の人物自身が具体的な疑問・発見・関心を持ち出し、その後の人物が実際に出た発言に反応する。内部の話題指定を聞かれた質問に変換しない。まだ誰も言っていない話を「〜の話か」「〜について聞きたいのか」などと受けない。自分の名前を呼びかけ先にしたり、他人に語りかけるように自分へ返答したりしない。出力前に全発言について、話者・呼びかけ先・受けている発言が一致するか確認する。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
         messages: input.messages,
         ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:buildGroupSchema(groupPlan)}}} : {})
       })
@@ -2865,7 +2868,7 @@ module.exports = async function handler(req, res) {
       const chosen=new Set(),replies=[];
       for(let i=1;i<=groupPlan.figures;i++){
         const x=obj.historicalReplies?.['speaker'+i],name=typeof x?.name==='string'?x.name.trim():'';
-        if(!GROUP_FIGURES_BY_NAME.has(name)||chosen.has(name)||typeof x.text!=='string'||!x.text.trim())return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
+        if(!groupFiguresFor(groupPlan).some(p=>p.name===name)||chosen.has(name)||typeof x.text!=='string'||!x.text.trim())return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
         const cleaned=cleanGroupSpeakerLabel(x.text,name);if(!cleaned)return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
         chosen.add(name);replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:cleaned.slice(0,1500)});
       }

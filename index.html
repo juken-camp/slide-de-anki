@@ -4059,13 +4059,16 @@ html[data-persona=cyber] #app #scienceFilters button.active{background:linear-gr
 #scienceFilters button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 @media(max-width:370px){.science-filter-line{grid-template-columns:42px minmax(0,1fr);gap:6px}.science-filter-line nav{gap:4px}}
 /* Shared outer frame distinguishes the static headings from selectable options. */
-#scienceFilters{position:relative;gap:6px;padding-bottom:6px}
+#scienceFilters{position:relative;gap:0;padding-bottom:0}
 #scienceFilters::before{content:"";position:absolute;pointer-events:none;box-sizing:border-box;left:0;top:9px;bottom:0;width:62px;border:2px solid #e3cfb9;border-radius:15px;background:#f1e6d7}
-.science-filter-line{grid-template-columns:62px minmax(0,1fr);align-items:center;position:relative}
-.science-filter-line>span{margin:6px;min-height:36px;background:#fffaf2;box-shadow:none;font-weight:800}
+.science-filter-line{grid-template-columns:62px minmax(0,1fr);align-items:center;position:relative;min-height:44px}
+.science-filter-line>span{margin:4px 6px;min-height:36px;background:#fffaf2;box-shadow:none;font-weight:800}
 html[data-persona=cyber] #app #scienceFilters::before{border-color:#426780;background:#101b32}
 html[data-persona=cyber] #app #scienceFilters .science-filter-line>span{box-shadow:none;background:#0a1127}
 @media(max-width:370px){.science-filter-line{grid-template-columns:56px minmax(0,1fr)}#scienceFilters::before{width:56px}}
+#app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])){row-gap:6px}
+#app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])) #catalogSeries{padding-top:2px;padding-bottom:4px}
+#app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])) .catalog-resume{margin:0}
 </style>
 </head>
 <body><main id="app" class="app">

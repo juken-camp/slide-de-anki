@@ -1783,6 +1783,10 @@ html[data-persona="cyber"] #list-view .presence-guide{color:#a9c6df}
 html[data-persona="cyber"] #list-view #card-list .personal-unread,html[data-persona="cyber"] #list-view #group-unread{box-shadow:0 0 0 2px #101b32}
 #list-view .group-chat-placeholder .card-name-row{padding-right:12px}
 </style>
+<style id="chat-back-no-flash">
+:is(#chat-view,#group-view) .back-btn:active{background:transparent!important;box-shadow:none!important;border-color:transparent!important;filter:none!important;transform:none!important;outline:none}
+:is(#chat-view,#group-view) .back-btn:focus:not(:focus-visible){outline:none;box-shadow:none!important}
+</style>
 </head>
 <body>
 
@@ -4631,7 +4635,7 @@ document.getElementById("messages").addEventListener("click",function(e){
    const y=event.detail&&Number.isFinite(event.clientY)?event.clientY:r.top+r.height/2;
    // Profile-name header is unboxed: the existing press-in and appSound stay,
    // but no rectangular glow, white flash or inherited parent ripple is added.
-   if(control.matches('#chat-view .header-tap'))return;
+   if(control.matches('#chat-view .header-tap, #chat-view .back-btn'))return;
    // Filters render fresh DOM buttons after click: animate the *new* selected button too.
    const group=control.dataset.filterTab, value=control.dataset.value;
    highlight(control);

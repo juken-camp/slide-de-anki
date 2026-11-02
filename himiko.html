@@ -3932,7 +3932,7 @@ function renderCards(){
             ${ai?`<span class="online-badge">オンライン</span>`:""}
           </div>
           <div style="font-size:11px;color:#94a3b8;margin-bottom:3px;display:flex;flex-wrap:wrap;align-items:center;gap:5px"><span class="character-period">${esc(ch.period)}</span>${hasNarrator?`<span class="narrator-badge">📖 解説</span>`:""}</div>
-          <div style="font-size:12px;font-weight:700;color:${ch.color};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${ai?"💬 ":""}${esc(ch.catchphrase)}</div>
+          <div style="font-size:12px;font-weight:700;color:${ch.color};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(ch.catchphrase)}</div>
         </div>
         <span class="fav-btn${faved?" faved":""}" onclick="toggleFav(${ch.id},event)" title="お気に入り">${faved?"★":"☆"}</span>
       </div>
@@ -3972,7 +3972,7 @@ async function openChat(id){
   try{
     const saved=await readSavedChat(ch.id);
     if(epoch!==chatEpoch||currentChar!==ch)return;
-    const savedTurns=Array.isArray(saved?.turns)?saved.turns:[];
+    const savedTurns=Array.isArray(saved?.turns)?saved.turns.map(m=>m.role==='assistant'?{...m,content:cleanReplyText(m.content)}:m):[];
     // 壊れた形式の保存データをチャット／APIに流さない。
     const validTurns=completedChatTurns([{role:"assistant",content:ch.greeting},...savedTurns]);
     messages=[{role:"assistant",content:ch.greeting},...validTurns];
@@ -4141,6 +4141,7 @@ function startReveal(ch,reply,suggestions){
     state.status?.remove();state.status=null;
     const i=state.index++;const saved=messages.at(-1);if(saved?.role==='assistant'){saved.chunkTimes||=[];saved.chunkTimes[i]=Date.now();persistCurrentChat(ch);}
     group.append(nodeFromHTML(assistantRowHTML(ch,chunks[i],i===0,true,Date.now())));
+    window.dispatchEvent(new CustomEvent('himiko-person-bubble',{detail:{id:ch.id,text:chunks[i]}}));
     if(state.index<chunks.length){
       state.status=makeRevealStatus(ch);
       group.append(state.status);
@@ -4180,10 +4181,17 @@ function cancelReveal(showRest=false,showQuestions=false){
 
 
 // Replies accept JSON and legacy question tags. The server owns model instructions.
+function looseSuggestionSection(value){
+ const raw=String(value||'');const match=/(?:^|\n)\s*["']?suggestions["']?\s*:\s*(?=\[)/i.exec(raw);
+ if(!match)return {text:raw,suggestions:[]};
+ const section=raw.slice(match.index+match[0].length).trim();let suggestions=[];
+ try{const a=JSON.parse(section.replace(/[,}\s]+$/,''));if(Array.isArray(a))suggestions=a;}catch{try{suggestions=JSON.parse(section.slice(0,section.lastIndexOf(']')+1))}catch{}}
+ return {text:raw.slice(0,match.index).trim(),suggestions};
+}
 function cleanReplyText(value){
   // Keep normal historical prose, punctuation and angle brackets as text.
   // Remove only transport/formatting artifacts; display still passes through esc().
-  return String(value||'').replace(/\r\n?/g,'\n')
+  return looseSuggestionSection(value).text.replace(/\r\n?/g,'\n')
     .replace(/\[\/?SUGGESTIONS\b[^\]]*\]/gi,'')
     .replace(/^\s*```(?:json|text|markdown)?\s*$/gim,'')
     .replace(/^\s{0,3}#{1,6}\s+/gm,'')
@@ -4268,8 +4276,9 @@ function parseSuggestions(value,ch=currentChar){
   }
   // Legacy [SUGGESTIONS] is intentionally supported for existing API behavior.
   // Cut from the opening marker even when the closing marker never arrived.
+  const loose=looseSuggestionSection(raw);raw=loose.text;
   const marker=raw.search(/\[SUGGESTIONS\b/i);
-  let candidates=[];
+  let candidates=loose.suggestions;
   if(marker>=0){
     const section=raw.slice(marker).replace(/^\[SUGGESTIONS\]?/i,'').split(/\[\/SUGGESTIONS\]/i)[0];
     candidates=section.split(/\||\n|(?=[①②③])/).map(s=>s.trim());
@@ -4808,7 +4817,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=20261102b"></script>
+</script><script src="himiko-presence.js?v=20261102c"></script>
 </body>
 </html>
 

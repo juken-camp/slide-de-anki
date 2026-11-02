@@ -18,6 +18,12 @@
   if(hour>=7&&hour<23&&draw<online)return {label:'オンライン',color:'#22c55e',delay:0};
   return draw<88&&hour>=7&&hour<23?{label:'離席中',color:'#eab308',delay:60000+hash(ch.id+':away:'+slot)%240001}:{label:'あとで戻る',color:'#94a3b8',delay:600000+hash(ch.id+':later:'+slot)%1200001};
  }
+ function previewText(e,ch){
+  if(!e.preview)return String(ch.catchphrase||'').replace(/^💬\s*/,'');
+  const text=e.previewRole==='user'?e.preview:cleanReplyText(e.preview);
+  const last=e.previewRole==='user'?text:splitReplyBubbles(text).at(-1)||text;
+  return '💬 '+last.replace(/\s+/g,' ').trim();
+ }
  function sorted(list){return [...list].sort((a,b)=>model.defaultOrder?allChars.indexOf(a)-allChars.indexOf(b):(entry(b.id).activity||0)-(entry(a.id).activity||0))}
  function restoreOrder(){model.defaultOrder=true;save();renderCards()}
  function touch(id){model.defaultOrder=false;entry(id).activity=Date.now();save()}
@@ -31,7 +37,7 @@
    const badge=document.createElement('span');badge.className='online-badge';badge.textContent=p.label;badge.style.color=p.color;badge.style.background=p.color+'20';row?.append(badge);
    const av=el.querySelector('.avatar');av?.querySelector('.online-dot')?.remove();if(av){const dot=document.createElement('div');dot.className='online-dot';dot.style.background=p.color;av.append(dot)}
    const preview=el.querySelector('.card-info>div:last-child');if(preview){
-    preview.classList.add('personal-preview');preview.replaceChildren();const text=document.createElement('span');text.className='personal-preview-text';text.textContent=entry(id).preview||((ch.id===0?'💬 ':'')+ch.catchphrase);preview.append(text);
+    preview.classList.add('personal-preview');preview.replaceChildren();const text=document.createElement('span');text.className='personal-preview-text';text.textContent=previewText(entry(id),ch);preview.append(text);
     const dots=document.createElement('span');dots.className='personal-card-typing';dots.setAttribute('aria-label','返信を準備中');dots.hidden=!isTyping(id);for(let i=0;i<3;i++)dots.append(document.createElement('i'));preview.append(dots);
    }
    if(entry(id).unread){const n=document.createElement('span');n.className='personal-unread';n.textContent=entry(id).unread;row?.append(n)}
@@ -53,7 +59,7 @@
  sendMessage=async function(text){if(!text?.trim()||!currentChar||!chatReady||isLoading)return;
   const ch=currentChar,e=entry(ch.id),p=presence(ch);touch(ch.id);
   if(!p.delay)e.onlineUntil=Date.now()+600000;
-  e.preview=text.trim();e.error='';
+  e.preview=text.trim();e.previewRole='user';e.error='';
   const previous=JSON.stringify(e.queue);e.queue.push({key:Date.now()+':'+Math.random(),text:text.trim(),at:Date.now(),due:e.queue[0]?.due||Date.now()+(p.delay||1500+Math.floor(Math.random()*3500))});
   if(!save()){e.queue=JSON.parse(previous);return;}
   $('msg-input').value='';playSendSound();pending();scrollChatToEnd(true);updateSendBtn();
@@ -78,17 +84,18 @@
    if(!selected.every(j=>e.queue.some(x=>x.key===j.key)))return;
    const answerAt=Date.now(),user={role:'user',content:question,at:selected[0].at,read:true},answer={role:'assistant',content:parsed.text,at:answerAt,chunkTimes:[]};
    await writeSavedChat(ch.id,{turns:[...turns,user,answer],suggestions:parsed.suggestions});
-   e.queue=e.queue.filter(j=>!chosen.has(j.key));e.onlineUntil=answerAt+600000;e.activity=answerAt;model.defaultOrder=false;e.preview=parsed.text;e.unread+=(currentChar?.id===ch.id?0:1);e.error='';save();
+   e.queue=e.queue.filter(j=>!chosen.has(j.key));e.onlineUntil=answerAt+600000;e.activity=answerAt;model.defaultOrder=false;e.preview=parsed.text;e.previewRole='assistant';e.unread+=(currentChar?.id===ch.id?0:1);e.error='';save();
    if(currentChar?.id===ch.id&&chatReady){$('personal-pending')?.remove();messages=[{role:'assistant',content:ch.greeting},...turns,user];dynamicSuggestions=[];renderMessages();messages.push(answer);dynamicSuggestions=parsed.suggestions;playReceiveSound();startReveal(ch,parsed.text,parsed.suggestions);pending();}
    else renderCards();
   }catch(err){e.error=String(err.message);e.queue.forEach(j=>{if(chosen.has(j.key))j.due=Date.now()+60000});save();if(currentChar?.id===ch.id)setChatStorageStatus('返信を取得できませんでした。送信内容を保持して再試行します','error');}
   finally{processing=false;processingId=null;}
  }
+ window.addEventListener('himiko-person-bubble',event=>{const e=entry(event.detail.id);e.preview=event.detail.text;e.previewRole='assistant';save();});
  window.addEventListener('himiko-person-reset',event=>{entry(event.detail.id).queue=[];entry(event.detail.id).unread=0;entry(event.detail.id).preview='';save();pendingStamp='';});
  let stamp='';setInterval(()=>{deliver();if(currentChar)pending();else if(!$('list-view').classList.contains('hidden')){const next=allChars.map(ch=>ch.id+presence(ch).label+entry(ch.id).activity+entry(ch.id).unread+isTyping(ch.id)+entry(ch.id).preview+!!model.defaultOrder).join('|');if(next!==stamp){stamp=next;renderCards()}}},1000);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden){deliver();pending();renderCards()}});
- const list=$('card-list');if(list){const tools=document.createElement('div');tools.className='personal-list-tools';const reset=document.createElement('button');reset.id='personal-order-reset';reset.type='button';reset.textContent='元の順番に戻す';reset.onclick=restoreOrder;tools.append(reset);list.before(tools);}
+ const list=$('card-list');if(list){const tools=document.createElement('div');tools.className='personal-list-tools';const reset=document.createElement('button');reset.id='personal-order-reset';reset.type='button';reset.textContent='元の順番に戻す';reset.onclick=restoreOrder;tools.append(reset);const count=$('filter-count');if(count)count.before(tools);else list.before(tools);}
  const style=document.createElement('style');style.textContent='.personal-list-tools{display:flex;justify-content:flex-end;margin:0 0 10px}.personal-list-tools button{font:inherit;font-size:11px;color:inherit;background:transparent;border:1px solid currentColor;border-radius:8px;padding:5px 9px;cursor:pointer}.personal-list-tools button:disabled{opacity:.4;cursor:default}.personal-preview{display:flex;align-items:center;gap:6px;min-height:22px}.personal-preview-text{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.personal-card-typing{display:inline-flex;flex:0 0 30px;height:20px;align-items:center;justify-content:center;gap:3px;border-radius:12px;background:#dce8ef;color:#527086}.personal-card-typing[hidden]{display:inline-flex!important;visibility:hidden}.personal-card-typing i{width:4px;height:4px;border-radius:50%;background:currentColor;animation:groupEntryDot 1.2s infinite}.personal-card-typing i:nth-child(2){animation-delay:.18s}.personal-card-typing i:nth-child(3){animation-delay:.36s}@media(prefers-reduced-motion:reduce){.personal-card-typing i{animation:none}}.personal-wait{font-size:11px;color:#94a3b8;text-align:right;margin:6px 0 12px}.personal-unread{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:20px;background:#19aab5;color:white;font-size:11px;padding:0 4px}';document.head.append(style);
- openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(records=>{for(const r of records){const last=r.turns?.at(-1),at=last?.at;if(at&&person(r.id)){const e=entry(r.id);if(at>=(e.activity||0)){e.activity=at;e.preview=last.content;}}}save();renderCards()}).catch(()=>{});
+ openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(records=>{for(const r of records){const last=r.turns?.at(-1),at=last?.at;if(at&&person(r.id)){const e=entry(r.id);if(at>=(e.activity||0)){e.activity=at;e.preview=last.content;e.previewRole=last.role;}}}save();renderCards()}).catch(()=>{});
  renderCards();
 })();

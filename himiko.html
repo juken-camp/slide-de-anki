@@ -4731,6 +4731,8 @@ document.getElementById("messages").addEventListener("click",function(e){
   const count=readLags.filter(lag=>age>=lag*(slow&&lag<300000?4:1)).length;
   return Math.min(88,count);
  }
+ function groupCanType(turn=state.turns.findLast(t=>!t.automatic&&!t.error)){return !turn||(!turn.error&&readCount(turn.at,Date.now()-700)>0)}
+ function refreshPendingDots(){if(!groupRequest||$('group-view').hidden)return;const turn=state.turns.find(t=>t.requestId===groupRequest);if(turn&&groupCanType(turn)){if(!$('group-typing'))groupAppend(groupTyping(null),groupFollow())}else $('group-typing')?.remove();}
  function groupReadMeta(at){const count=readCount(at);return at?`<span class="history-message-time">${count?'既読 '+count+'<br>':''}${esc(historyClock(at))}</span>`:''}
 
  function refreshReadCounts(){
@@ -4758,6 +4760,7 @@ document.getElementById("messages").addEventListener("click",function(e){
   const wait=Math.max(0,(item.due||Date.now())-Date.now());
   const quiet=wait>15000;
   busy=!quiet;updateGroupSend();$('group-typing')?.remove();
+  if(!quiet&&!groupCanType(reveal.turn.automatic?undefined:reveal.turn)){timer=setTimeout(scheduleReveal,Math.min(500,wait||500));return;}
   if(!quiet){groupAppend(groupTyping(item.person),groupFollow());const typing=$('group-typing');typing?.setAttribute('aria-label',item.person.name+'が入力中');}
   timer=setTimeout(quiet?scheduleReveal:revealNext,quiet?Math.min(60000,wait-10000):wait);
  }
@@ -4825,7 +4828,7 @@ document.getElementById("messages").addEventListener("click",function(e){
   if(groupRequest)return;
   const pending=state.turns.find(t=>t.pending&&!t.error);if(!pending)return;
   const id=pending.requestId;groupRequest=id;
-  if(!$('group-view').hidden){busy=true;updateGroupSend();if(!$('group-typing'))groupAppend(groupTyping(null),groupFollow());}
+  if(!$('group-view').hidden){busy=true;updateGroupSend();if(groupCanType(pending)&&!$('group-typing'))groupAppend(groupTyping(null),groupFollow());}
   try{
    const r=await fetch('/api/himiko-chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:'group',messages:groupHistory(pending.question)})});
    const d=await r.json();if(!r.ok)throw Error(d.error||'接続できませんでした');
@@ -4872,15 +4875,15 @@ document.getElementById("messages").addEventListener("click",function(e){
   const pending=state.turns.findLast(t=>!t.automatic&&t.questionsReady===false);
   const item=pending?timedItems(pending)[Number(pending.visibleCount)||0]:null;
   const due=groupReveal?.items[groupReveal.index]?.due||item?.due||inboxData?.typing?.[0]?.at||0;
-  badge.hidden=!(busy||due&&due-Date.now()<=15000&&due-Date.now()>-60000);
+  badge.hidden=!groupCanType(pending)||!(busy||due&&due-Date.now()<=15000&&due-Date.now()>-60000);
  }
  function refreshAutomaticDots(){
   if($('group-view').hidden||document.hidden||busy||groupReveal)return;
   const next=inboxData?.typing?.[0],wait=next?next.at-Date.now():0;
-  if(next&&wait>0&&wait<=15000){if(!$('group-typing'))groupAppend(groupTyping(allChars.find(p=>p.name===next.name)||null),groupFollow());}
+  if(next&&wait>0&&wait<=15000&&groupCanType()){if(!$('group-typing'))groupAppend(groupTyping(allChars.find(p=>p.name===next.name)||null),groupFollow());}
   else if(!groupReveal)$('group-typing')?.remove();
  }
- setInterval(()=>{deliverPendingGroup();advanceClosedReplies();refreshGroupUnread();refreshReadCounts();refreshAutomaticDots();refreshEntryDots()},1000);
+ setInterval(()=>{deliverPendingGroup();advanceClosedReplies();refreshGroupUnread();refreshReadCounts();refreshPendingDots();refreshAutomaticDots();refreshEntryDots()},1000);
  load();syncGroupName();renderCards();window.addEventListener('pageshow',()=>{load();syncGroupName()});window.addEventListener('storage',e=>{if(e.key===KEY){load();syncGroupName()}});openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(rows=>{const ids=rows.filter(r=>Array.isArray(r.turns)&&r.turns.some(t=>t.role==='user')&&r.turns.some(t=>t.role==='assistant')).map(r=>Number(r.id)).filter(id=>ch(id));if(ids.length){mark(ids);renderCards()}}).catch(()=>{});
 })();
 </script>

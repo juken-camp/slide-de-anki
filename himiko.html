@@ -1768,6 +1768,18 @@ html[data-persona="cyber"] .group-entry-typing{background:#24435c;color:#bcefff}
 #chat-view .chat-header #online-badge{grid-row:2}
 #chat-view .chat-header #explainer-badge,#chat-view .chat-header #narrator-badge{grid-row:3}
 </style>
+<style id="chat-presence-guide">
+#list-view .presence-guide{margin:0 2px 14px;font-family:inherit;font-size:11px;font-weight:500;line-height:1.65;letter-spacing:0;color:#8c6042;overflow-wrap:anywhere}
+#list-view .presence-guide-statuses{display:flex;flex-wrap:wrap;gap:3px 14px}
+#list-view .presence-guide-statuses>span{display:inline-flex;align-items:baseline;max-width:100%;min-width:0}
+#list-view .presence-guide p{margin:4px 0 0;font:inherit;color:inherit}
+#list-view .presence-guide-dot{display:inline-block;flex:none;width:7px;height:7px;margin-right:4px;border-radius:50%;background:#22c55e}
+#list-view .presence-guide-dot.is-away{background:#eab308}
+#list-view .presence-guide-dot.is-later{background:#94a3b8}
+#list-view .presence-guide-dot.is-met{background:#35c9ed}
+#list-view .presence-guide-key{display:inline-block;margin-left:10px}
+html[data-persona="cyber"] #list-view .presence-guide{color:#a9c6df}
+</style>
 </head>
 <body>
 
@@ -1800,6 +1812,16 @@ html[data-persona="cyber"] .group-entry-typing{background:#24435c;color:#bcefff}
         <span id="group-fav" class="fav-btn" role="button" tabindex="0" aria-label="グループチャットをお気に入りに追加" aria-pressed="false" onclick="toggleFav('group',event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFav('group',event)}">☆</span>
       </div>
     </button><p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true"><span class="count-neko">😺</span><span class="count-yoru">😎</span></span><span class="filter-count-text"></span></p>
+    <div class="presence-guide" aria-label="チャットのマークの意味">
+      <div class="presence-guide-statuses">
+        <span><i class="presence-guide-dot is-online" aria-hidden="true"></i>オンライン：返信が早め</span>
+        <span><i class="presence-guide-dot is-away" aria-hidden="true"></i>離席中：少し待ってね</span>
+        <span><i class="presence-guide-dot is-later" aria-hidden="true"></i>あとで戻る：返信はゆっくり</span>
+        <span>解説受付中：本人役ではなく解説</span>
+      </div>
+      <p>離席中でも送信OK。返信はあとから届きます。</p>
+      <p><i class="presence-guide-dot is-met" aria-hidden="true"></i>水色の丸：会話済み<span class="presence-guide-key">…：返信準備中</span><span class="presence-guide-key">数字：未読件数</span></p>
+    </div>
     <div class="card-list" id="card-list"></div>
 
 

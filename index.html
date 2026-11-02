@@ -4058,6 +4058,14 @@ html[data-persona=cyber] #app #scienceFilters{border-top-color:var(--cy-line,#31
 html[data-persona=cyber] #app #scienceFilters button.active{background:linear-gradient(130deg,#064258,#1b3261);color:#dffcff;border-color:#00f5ff;box-shadow:0 0 13px #00f5ff63}
 #scienceFilters button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 @media(max-width:370px){.science-filter-line{grid-template-columns:42px minmax(0,1fr);gap:6px}.science-filter-line nav{gap:4px}}
+/* Shared outer frame distinguishes the static headings from selectable options. */
+#scienceFilters{position:relative;gap:6px;padding-bottom:6px}
+#scienceFilters::before{content:"";position:absolute;pointer-events:none;box-sizing:border-box;left:0;top:9px;bottom:0;width:62px;border:2px solid #e3cfb9;border-radius:15px;background:#f1e6d7}
+.science-filter-line{grid-template-columns:62px minmax(0,1fr);align-items:center;position:relative}
+.science-filter-line>span{margin:6px;min-height:36px;background:#fffaf2;box-shadow:none;font-weight:800}
+html[data-persona=cyber] #app #scienceFilters::before{border-color:#426780;background:#101b32}
+html[data-persona=cyber] #app #scienceFilters .science-filter-line>span{box-shadow:none;background:#0a1127}
+@media(max-width:370px){.science-filter-line{grid-template-columns:56px minmax(0,1fr)}#scienceFilters::before{width:56px}}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -5528,8 +5536,8 @@ function renderScienceFilters(){
  const focused=document.activeElement?.dataset?.scienceOption,focusGroup=document.activeElement?.dataset?.scienceGroup;
  const items=catalogChoices();
  const grades=['1','2','3','other'].filter(k=>items.some(m=>gradeKey(m)===k));
- const fieldKeys=[...new Set(items.map(m=>m.field||'other'))];fieldKeys.sort((a,b)=>Object.keys(fields).indexOf(a)-Object.keys(fields).indexOf(b));
- for(const [id,values,chosen,label] of [['scienceGradeFilters',grades,scienceGrades,k=>k==='other'?'学年共通':'中'+k],['scienceFieldFilters',fieldKeys,scienceFields,k=>fieldLabel(k,'science')]]){
+ const fieldKeys=[...new Set(items.map(m=>m.field||'other'))];fieldKeys.sort((a,b)=>Number(/横断/.test(fieldLabel(a,'science')))-Number(/横断/.test(fieldLabel(b,'science')))||Object.keys(fields).indexOf(a)-Object.keys(fields).indexOf(b));
+ for(const [id,values,chosen,label] of [['scienceGradeFilters',grades,scienceGrades,k=>k==='other'?'学年共通':'中'+k],['scienceFieldFilters',fieldKeys,scienceFields,k=>fieldLabel(k,'science').replace('分野横断','横断')]]){
   const nav=$(id);nav.replaceChildren();
   nav.style.setProperty('--science-options',values.length);
   for(const key of values){const b=document.createElement('button');b.type='button';b.dataset.scienceOption=key;b.dataset.scienceGroup=id;b.textContent=key==='all'?'すべて':label(key);const on=key==='all'?!chosen.size:chosen.has(key);b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));b.onclick=()=>{if(key==='all')chosen.clear();else if(chosen.has(key))chosen.delete(key);else chosen.add(key);renderCatalog()};nav.append(b);}

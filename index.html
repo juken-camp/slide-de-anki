@@ -4047,9 +4047,6 @@ html[data-persona="cyber"] body #app #testScreen .neko-chat-scroll .neko-explana
 #app #settingsScreen .personal-order-setting small{flex-basis:100%;margin:0;font-size:10px}
 #app #settingsScreen .personal-order-setting small[hidden]{display:none!important}
 </style>
-<style id="science-combined-filters">
-#scienceFilters{display:grid;gap:9px;min-width:0;margin-top:3px}#scienceFilters[hidden]{display:none!important}.science-filter-line{display:grid;grid-template-columns:30px minmax(0,1fr);gap:7px;align-items:start}.science-filter-line>span{padding-top:10px;font-family:inherit;font-size:11px;font-weight:700;color:inherit}.science-filter-line nav{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:3px;min-width:0}#scienceFilters button{font-family:inherit;font-size:11px;font-weight:700;line-height:1.4;min-height:36px;padding:6px 9px;border:2px solid #d5b99b;border-radius:11px;color:#805b40;background:#fffaf2;box-shadow:0 2px 0 #ead9c5}#scienceFilters button.active{color:#fff;background:#a65123;border-color:#a65123;box-shadow:0 2px 0 #7f3a16}html[data-persona=cyber] #app #scienceFilters button{color:#cce5f7;background:#101d34;border-color:#3b6480;box-shadow:0 2px 0 #152e44}html[data-persona=cyber] #app #scienceFilters button.active{color:#dffcff;background:linear-gradient(130deg,#064258,#1b3261);border-color:#00f5ff;box-shadow:0 0 10px #00f5ff50}#scienceFilters button:focus-visible{outline:2px solid currentColor;outline-offset:3px}@media(max-width:370px){.science-filter-line{grid-template-columns:26px minmax(0,1fr);gap:5px}#scienceFilters button{padding:6px 7px}}
-</style>
 </head>
 <body><main id="app" class="app">
 <style id="reel-header-alignment-fix-20261101">
@@ -4079,7 +4076,7 @@ html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
 
 <section id="catalogScreen" class="catalog-screen" aria-labelledby="catalogTitle" hidden>
   <div class="catalog-heading page-heading"><div><h2 class="screen-title" id="catalogTitle" tabindex="-1">教材の目次</h2></div><button class="tool" id="openImport">＋ 教材追加</button></div>
-  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材を検索" aria-label="教材名・問題文・解答で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div id="scienceFilters" hidden><div class="science-filter-line"><span>学年</span><nav id="scienceGradeFilters" aria-label="理科の学年"></nav></div><div class="science-filter-line"><span>分野</span><nav id="scienceFieldFilters" aria-label="理科の分野"></nav></div></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" aria-pressed="false">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" aria-pressed="false">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="link-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
+  <div aria-label="教材の検索と絞り込み" class="catalog-search-panel"><div class="catalog-search-top"><div class="catalog-search"><span aria-hidden="true">⌕</span><input type="search" id="catalogSearch" placeholder="教材を検索" aria-label="教材名・問題文・解答で検索"></div><nav class="subjects" id="catalogSubjects" aria-label="教科"><button data-subject="science"><span class="subject-icon" aria-hidden="true">🔬</span> 理科</button><button data-subject="social"><span class="subject-icon" aria-hidden="true">🌏</span> 社会</button></nav></div><div class="catalog-filter-row"><div id="browseSwitch" class="browse-switch" aria-label="目次の並べ方"><button data-browse="grade" aria-pressed="false">学年</button><button data-browse="field" aria-pressed="false">分野</button></div><div id="socialSwitch" class="browse-switch" aria-label="地理・歴史・公民の切り替え" hidden><button data-social-field="geography" aria-pressed="false">地理</button><button data-social-field="history" aria-pressed="false">歴史</button><button data-social-field="civics" aria-pressed="false">公民</button></div><nav id="catalogFilters" class="catalog-filters" aria-label="目次の絞り込み"></nav></div><div id="seriesScroller" class="series-scroller"><nav id="catalogSeries" class="catalog-series" aria-label="教材のシリーズ"></nav></div><div class="catalog-resume"><button class="link-button home-review" id="quickReview" hidden>おぼえてないのを復習するにゃ</button></div></div>
   
   
   
@@ -4690,7 +4687,6 @@ let catTaps=0, titleTaps=0, cardTaps=0, playfulParticles=0, lastPlaySound=-1000,
 let noticeTimer, imageWaitTimer, suppressUntil = 0, navBusy = false;
 const imageLoader = window.createNekoImageLoader();
 let browse = null, catalogFilter = 'all', catalogSubject = null;
-const scienceGrades=new Set(),scienceFields=new Set();
 let socialField = null, catalogSeries = null, selectionCount = -1;
 const reviewLessons = new Set([
   'social-geography-world-review', 'social-geography-japan-review',
@@ -5497,7 +5493,7 @@ function setCatalogContext(change = {}) {
   catalogIsCollections=false;
   if(Object.hasOwn(change,'subject')) {
     catalogSubject=change.subject===catalogSubject ? null : change.subject;
-    browse= catalogSubject==='science'?'grade':null;socialField=null;catalogSeries=null;catalogFilter='all';scienceGrades.clear();scienceFields.clear();
+    browse=null;socialField=null;catalogSeries=null;catalogFilter='all';
   }
   if(Object.hasOwn(change,'field')) {
     socialField=change.field===socialField ? null : change.field;
@@ -5513,25 +5509,12 @@ function renderSeriesReview() {
   $('quickReview').parentElement.hidden = weak === 0;
   $('quickReview').textContent = `↻ おぼえてないの${weak}問にゃ`;
 }
-function matchesScienceFilters(m){return (!scienceGrades.size||scienceGrades.has(gradeKey(m)))&&(!scienceFields.size||scienceFields.has(m.field||'other'));}
-function renderScienceFilters(){
- const panel=$('scienceFilters');panel.hidden=catalogSubject!=='science'||!!catalogQuery()||catalogIsCollections||newsDemoMode;if(panel.hidden)return;
- const focused=document.activeElement?.dataset?.scienceOption,focusGroup=document.activeElement?.dataset?.scienceGroup;
- const items=catalogChoices();
- const grades=['1','2','3','other'].filter(k=>items.some(m=>gradeKey(m)===k));
- const fieldKeys=[...new Set(items.map(m=>m.field||'other'))];fieldKeys.sort((a,b)=>Object.keys(fields).indexOf(a)-Object.keys(fields).indexOf(b));
- for(const [id,values,chosen,label] of [['scienceGradeFilters',grades,scienceGrades,k=>k==='other'?'学年共通':'中'+k],['scienceFieldFilters',fieldKeys,scienceFields,k=>fieldLabel(k,'science')]]){
-  const nav=$(id);nav.replaceChildren();
-  for(const key of ['all',...values]){const b=document.createElement('button');b.type='button';b.dataset.scienceOption=key;b.dataset.scienceGroup=id;b.textContent=key==='all'?'すべて':label(key);const on=key==='all'?!chosen.size:chosen.has(key);b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));b.onclick=()=>{if(key==='all')chosen.clear();else if(chosen.has(key))chosen.delete(key);else chosen.add(key);renderCatalog()};nav.append(b);}
- }
- if(focused)Array.from($(focusGroup)?.children||[]).find(b=>b.dataset.scienceOption===focused)?.focus({preventScroll:true});
-}
 function visibleLessons() {
   const normalizeSearch = value => String(value).normalize('NFKC').replace(/\s+/g,'').toLocaleLowerCase();
   const query = catalogQuery();
   return (query ? meta.filter(isListedLesson) : catalogSeriesLessons()).filter(m => {
     const inScope = catalogSubject === 'social' || catalogFilter === 'all' || groupKey(m) === catalogFilter;
-    return (query || inScope) && (query||catalogSubject!=='science'||matchesScienceFilters(m)) && (!query || (normalizeSearch(`${m.title} ${m.grade} ${fieldLabel(m.field,m.subject)} ${subjectLabel(m.subject)}`).includes(query) || questionSearchMatchesLesson(m,query)));
+    return (query || inScope) && (!query || (normalizeSearch(`${m.title} ${m.grade} ${fieldLabel(m.field,m.subject)} ${subjectLabel(m.subject)}`).includes(query) || questionSearchMatchesLesson(m,query)));
   });
 }
 function toggleGroup(items) {
@@ -5590,7 +5573,7 @@ function renderCatalog() {
   const focusedSeries = document.activeElement?.closest('[data-series]')?.dataset.series;
   const focusedField = document.activeElement?.dataset.socialField;
   const social = catalogSubject === 'social';
-  $('browseSwitch').hidden = true;$('browseSwitch').parentElement.style.display=catalogSubject==='science'?'none':'';renderScienceFilters();
+  $('browseSwitch').hidden = catalogSubject !== 'science';
   $('socialSwitch').hidden = !social;
   const subjectFocus = document.activeElement?.dataset?.subject;
   $('catalogDock').hidden=catalogIsCollections||newsDemoMode||!selected.size;document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('news-active',newsDemoMode&&!catalogIsCollections);
@@ -5630,9 +5613,9 @@ function renderCatalog() {
   if (usesGrades()) keys.sort((a,b) => (a === 'other' ? 9 : Number(a)) - (b === 'other' ? 9 : Number(b)));
   else keys.sort((a,b) => Object.keys(fields).indexOf(a) - Object.keys(fields).indexOf(b));
   $('catalogFilters').replaceChildren();
-  $('catalogFilters').hidden = social || catalogSubject==='science' || !catalogSubject || !browse;
+  $('catalogFilters').hidden = social || !catalogSubject || !browse;
   $('seriesScroller').hidden = !catalogSubject;
-  for (const key of social || catalogSubject==='science' || !catalogSubject || !browse ? [] : keys) {
+  for (const key of social || !catalogSubject || !browse ? [] : keys) {
     const active = catalogFilter === key;
     const b = document.createElement('button'); b.type = 'button'; b.textContent = key === 'all' ? 'すべて' : groupLabel(key);
     b.className = active ? 'active' : ''; b.setAttribute('aria-pressed',String(active));
@@ -5666,9 +5649,8 @@ function renderCatalog() {
   }
   $('catalogEmpty').hidden = !showLessons || !!visible.length; document.querySelector('#catalogScreen .catalog-list-tools').hidden=!showLessons;
   const preparing = !searching && !all.length;
-  const scienceFiltered=!searching&&catalogSubject==='science'&&(scienceGrades.size||scienceFields.size);
-  $('catalogEmptyTitle').textContent = preparing ? `${social && socialField ? groupLabel(socialField) : subjectLabel(catalogSubject)}の教材は準備中にゃ` : scienceFiltered?'この条件に合う教材はないにゃ':'その教材は見つからないにゃ';
-  $('catalogEmptyText').textContent = preparing ? '「＋ 教材追加にゃ」から新しい教材を入れられるにゃ。' : scienceFiltered?'学年・分野を選び直すか、「すべて」に戻してみてにゃ。':'さがし方を変えてみてにゃ。';
+  $('catalogEmptyTitle').textContent = preparing ? `${social && socialField ? groupLabel(socialField) : subjectLabel(catalogSubject)}の教材は準備中にゃ` : 'その教材は見つからないにゃ';
+  $('catalogEmptyText').textContent = preparing ? '「＋ 教材追加にゃ」から新しい教材を入れられるにゃ。' : 'さがし方を変えてみてにゃ。';
   selectionSummary(); renderSeriesReview(); $('returnToStudy').disabled = !lesson && !state.lessonIds.some(id=>meta.some(m=>m.id===id));
   if (focusedLesson) [...document.querySelectorAll('[data-lesson]')].find(b => b.dataset.lesson === focusedLesson)?.focus({preventScroll:true});
   if (focusedFilter) [...$('catalogFilters').children].find(b => b.textContent === focusedFilter)?.focus({preventScroll:true});
@@ -7142,7 +7124,7 @@ function newsDateLabel(date=new Date()){
  const holiday=holidays[`${v.year}-${v.month}-${v.day}`];return `${v.month}月${v.day}日(${v.weekday})${holiday?'・'+holiday:''} 今日の7問`;
 }
 function renderNewsDemo(){
- for(const id of ['scienceFilters','browseSwitch','socialSwitch','catalogFilters','seriesScroller','quickReview','questionSearchSelection','catalogMilestones','selectVisible','catalogEmpty'])$(id).hidden=true;
+ for(const id of ['browseSwitch','socialSwitch','catalogFilters','seriesScroller','quickReview','questionSearchSelection','catalogMilestones','selectVisible','catalogEmpty'])$(id).hidden=true;
  $('questionSearchStatus').hidden=true;const showing=newsSelectedDate||newsToday();
  $('catalogTitle').textContent='今日のニュース';
  const groups=$('catalogGroups');groups.replaceChildren();

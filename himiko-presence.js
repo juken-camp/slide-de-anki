@@ -18,16 +18,22 @@
   if(hour>=7&&hour<23&&draw<online)return {label:'オンライン',color:'#22c55e',delay:0};
   return draw<88&&hour>=7&&hour<23?{label:'離席中',color:'#eab308',delay:60000+hash(ch.id+':away:'+slot)%240001}:{label:'あとで戻る',color:'#94a3b8',delay:600000+hash(ch.id+':later:'+slot)%1200001};
  }
- function sorted(list){return [...list].sort((a,b)=>(entry(b.id).activity||0)-(entry(a.id).activity||0))}
- function touch(id){entry(id).activity=Date.now();save()}
+ function sorted(list){return [...list].sort((a,b)=>model.defaultOrder?allChars.indexOf(a)-allChars.indexOf(b):(entry(b.id).activity||0)-(entry(a.id).activity||0))}
+ function restoreOrder(){model.defaultOrder=true;save();renderCards()}
+ function touch(id){model.defaultOrder=false;entry(id).activity=Date.now();save()}
  // Keep the original order for people who have not exchanged messages yet.
  const baseCards=renderCards;
  renderCards=function(){baseCards();const box=$('card-list');if(!box)return;const cards=[...box.querySelectorAll('.char-card[onclick]')];
   const ids=cards.map(el=>({el,id:Number(el.getAttribute('onclick')?.match(/openChat\((\d+)\)/)?.[1])})).filter(x=>person(x.id));
-  ids.sort((a,b)=>(entry(b.id).activity||0)-(entry(a.id).activity||0));
+  ids.sort((a,b)=>model.defaultOrder?allChars.indexOf(person(a.id))-allChars.indexOf(person(b.id)):(entry(b.id).activity||0)-(entry(a.id).activity||0));
+  if($('personal-order-reset'))$('personal-order-reset').disabled=!!model.defaultOrder||!ids.some(x=>entry(x.id).activity);
   for(const {el,id} of ids){box.append(el);const ch=person(id),p=presence(ch),row=el.querySelector('.card-name-row');row?.querySelector('.online-badge')?.remove();
    const badge=document.createElement('span');badge.className='online-badge';badge.textContent=p.label;badge.style.color=p.color;badge.style.background=p.color+'20';row?.append(badge);
    const av=el.querySelector('.avatar');av?.querySelector('.online-dot')?.remove();if(av){const dot=document.createElement('div');dot.className='online-dot';dot.style.background=p.color;av.append(dot)}
+   const preview=el.querySelector('.card-info>div:last-child');if(preview){
+    preview.classList.add('personal-preview');preview.replaceChildren();const text=document.createElement('span');text.className='personal-preview-text';text.textContent=entry(id).preview||((ch.id===0?'💬 ':'')+ch.catchphrase);preview.append(text);
+    const dots=document.createElement('span');dots.className='personal-card-typing';dots.setAttribute('aria-label','返信を準備中');dots.hidden=!isTyping(id);for(let i=0;i<3;i++)dots.append(document.createElement('i'));preview.append(dots);
+   }
    if(entry(id).unread){const n=document.createElement('span');n.className='personal-unread';n.textContent=entry(id).unread;row?.append(n)}
   }
  };
@@ -42,22 +48,24 @@
  }
  const baseOpen=openChat;
  openChat=async function(id){await baseOpen(id);if(currentChar?.id===Number(id)){entry(id).unread=0;save();pending();}};
+ function isTyping(id,now=Date.now()){const e=entry(id);return processingId===id||!!(e.queue.length&&!e.error&&e.queue[0].due-now<=10000)}
  const baseSend=sendMessage;
  sendMessage=async function(text){if(!text?.trim()||!currentChar||!chatReady||isLoading)return;
   const ch=currentChar,e=entry(ch.id),p=presence(ch);touch(ch.id);
-  if(!p.delay&&!e.queue.length){e.onlineUntil=Date.now()+600000;save();await baseSend(text);touch(ch.id);header();return;}
-  const previous=JSON.stringify(e.queue);e.queue.push({key:Date.now()+':'+Math.random(),text:text.trim(),at:Date.now(),due:e.queue[0]?.due||Date.now()+p.delay});
+  if(!p.delay)e.onlineUntil=Date.now()+600000;
+  e.preview=text.trim();e.error='';
+  const previous=JSON.stringify(e.queue);e.queue.push({key:Date.now()+':'+Math.random(),text:text.trim(),at:Date.now(),due:e.queue[0]?.due||Date.now()+(p.delay||1500+Math.floor(Math.random()*3500))});
   if(!save()){e.queue=JSON.parse(previous);return;}
   $('msg-input').value='';playSendSound();pending();scrollChatToEnd(true);updateSendBtn();
  };
- let processing=false;
+ let processing=false,processingId=null;
  async function deliver(){
   if(processing||isLoading||activeReveal)return;
   const now=Date.now(),ch=allChars.find(ch=>entry(ch.id).queue.length&&entry(ch.id).queue[0].due<=now&&!entry(ch.id).paused);if(!ch)return;
-  processing=true;const e=entry(ch.id),batch=[...e.queue],keys=new Set(batch.map(j=>j.key));
+  processing=true;processingId=ch.id;const e=entry(ch.id),batch=[...e.queue],keys=new Set(batch.map(j=>j.key));
   // Batch small follow-up messages, keeping the entire input rather than truncating it.
-  const selected=[];let length=0;for(const j of batch){if(length+j.text.length+2>2000)break;selected.push(j);length+=j.text.length+2}
-  if(!selected.length){e.paused=true;save();processing=false;return}
+  const selected=[];let length=0;for(const j of batch){if(length+j.text.length+(selected.length?2:0)>2000)break;selected.push(j);length+=j.text.length+2}
+  if(!selected.length){e.paused=true;save();processing=false;processingId=null;return}
   const question=selected.map(j=>j.text).join('\n\n'),chosen=new Set(selected.map(j=>j.key));
   try{
    const prior=await readSavedChat(ch.id),turns=prior?.turns||[];let used=question.length;const history=[];
@@ -70,16 +78,17 @@
    if(!selected.every(j=>e.queue.some(x=>x.key===j.key)))return;
    const answerAt=Date.now(),user={role:'user',content:question,at:selected[0].at,read:true},answer={role:'assistant',content:parsed.text,at:answerAt,chunkTimes:[]};
    await writeSavedChat(ch.id,{turns:[...turns,user,answer],suggestions:parsed.suggestions});
-   e.queue=e.queue.filter(j=>!chosen.has(j.key));e.onlineUntil=answerAt+600000;e.activity=answerAt;e.unread+=(currentChar?.id===ch.id?0:1);e.error='';save();
-   if(currentChar?.id===ch.id&&chatReady){$('personal-pending')?.remove();messages=[{role:'assistant',content:ch.greeting},...turns,user,answer];dynamicSuggestions=parsed.suggestions;renderMessages();playReceiveSound();pending();}
+   e.queue=e.queue.filter(j=>!chosen.has(j.key));e.onlineUntil=answerAt+600000;e.activity=answerAt;model.defaultOrder=false;e.preview=parsed.text;e.unread+=(currentChar?.id===ch.id?0:1);e.error='';save();
+   if(currentChar?.id===ch.id&&chatReady){$('personal-pending')?.remove();messages=[{role:'assistant',content:ch.greeting},...turns,user];dynamicSuggestions=[];renderMessages();messages.push(answer);dynamicSuggestions=parsed.suggestions;playReceiveSound();startReveal(ch,parsed.text,parsed.suggestions);pending();}
    else renderCards();
   }catch(err){e.error=String(err.message);e.queue.forEach(j=>{if(chosen.has(j.key))j.due=Date.now()+60000});save();if(currentChar?.id===ch.id)setChatStorageStatus('返信を取得できませんでした。送信内容を保持して再試行します','error');}
-  finally{processing=false;}
+  finally{processing=false;processingId=null;}
  }
- window.addEventListener('himiko-person-reset',event=>{entry(event.detail.id).queue=[];entry(event.detail.id).unread=0;save();pendingStamp='';});
- let stamp='';setInterval(()=>{deliver();if(currentChar)pending();else if(!$('list-view').classList.contains('hidden')){const next=allChars.map(ch=>ch.id+presence(ch).label+entry(ch.id).activity+entry(ch.id).unread).join('|');if(next!==stamp){stamp=next;renderCards()}}},1000);
+ window.addEventListener('himiko-person-reset',event=>{entry(event.detail.id).queue=[];entry(event.detail.id).unread=0;entry(event.detail.id).preview='';save();pendingStamp='';});
+ let stamp='';setInterval(()=>{deliver();if(currentChar)pending();else if(!$('list-view').classList.contains('hidden')){const next=allChars.map(ch=>ch.id+presence(ch).label+entry(ch.id).activity+entry(ch.id).unread+isTyping(ch.id)+entry(ch.id).preview+!!model.defaultOrder).join('|');if(next!==stamp){stamp=next;renderCards()}}},1000);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden){deliver();pending();renderCards()}});
- const style=document.createElement('style');style.textContent='.personal-wait{font-size:11px;color:#94a3b8;text-align:right;margin:6px 0 12px}.personal-unread{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:20px;background:#19aab5;color:white;font-size:11px;padding:0 4px}';document.head.append(style);
- openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(records=>{for(const r of records){const at=r.turns?.at(-1)?.at;if(at&&person(r.id))entry(r.id).activity=Math.max(entry(r.id).activity||0,at)}save();renderCards()}).catch(()=>{});
+ const list=$('card-list');if(list){const tools=document.createElement('div');tools.className='personal-list-tools';const reset=document.createElement('button');reset.id='personal-order-reset';reset.type='button';reset.textContent='元の順番に戻す';reset.onclick=restoreOrder;tools.append(reset);list.before(tools);}
+ const style=document.createElement('style');style.textContent='.personal-list-tools{display:flex;justify-content:flex-end;margin:0 0 10px}.personal-list-tools button{font:inherit;font-size:11px;color:inherit;background:transparent;border:1px solid currentColor;border-radius:8px;padding:5px 9px;cursor:pointer}.personal-list-tools button:disabled{opacity:.4;cursor:default}.personal-preview{display:flex;align-items:center;gap:6px;min-height:22px}.personal-preview-text{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.personal-card-typing{display:inline-flex;flex:0 0 30px;height:20px;align-items:center;justify-content:center;gap:3px;border-radius:12px;background:#dce8ef;color:#527086}.personal-card-typing[hidden]{display:inline-flex!important;visibility:hidden}.personal-card-typing i{width:4px;height:4px;border-radius:50%;background:currentColor;animation:groupEntryDot 1.2s infinite}.personal-card-typing i:nth-child(2){animation-delay:.18s}.personal-card-typing i:nth-child(3){animation-delay:.36s}@media(prefers-reduced-motion:reduce){.personal-card-typing i{animation:none}}.personal-wait{font-size:11px;color:#94a3b8;text-align:right;margin:6px 0 12px}.personal-unread{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;border-radius:20px;background:#19aab5;color:white;font-size:11px;padding:0 4px}';document.head.append(style);
+ openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(records=>{for(const r of records){const last=r.turns?.at(-1),at=last?.at;if(at&&person(r.id)){const e=entry(r.id);if(at>=(e.activity||0)){e.activity=at;e.preview=last.content;}}}save();renderCards()}).catch(()=>{});
  renderCards();
 })();

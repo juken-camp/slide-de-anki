@@ -19,6 +19,7 @@
   return draw<88&&hour>=7&&hour<23?{label:'離席中',color:'#eab308',delay:60000+hash(ch.id+':away:'+slot)%240001}:{label:'あとで戻る',color:'#94a3b8',delay:600000+hash(ch.id+':later:'+slot)%1200001};
  }
  window.himikoPersonPresence=presence;
+ window.himikoPersonalUnreadCount=id=>entry(Number(id)).unread||0;
  function previewText(e,ch){
   if(!e.preview)return String(ch.catchphrase||'').replace(/^💬\s*/,'');
   const text=e.previewRole==='user'?e.preview:cleanReplyText(e.preview);
@@ -60,10 +61,12 @@
  }
  const baseOpen=openChat;
  openChat=async function(id){
-  const opened=baseOpen(id);
-  if(currentChar?.id===Number(id)){entry(id).unread=0;save();renderCards();}
+  const opened=baseOpen(id),epoch=chatEpoch;
   await opened;
-  if(currentChar?.id===Number(id))pending();
+  if(epoch===chatEpoch&&currentChar?.id===Number(id)&&chatReady){
+   if(messages.length>1){entry(id).unread=0;save();renderCards();}
+   pending();
+  }
  };
  function isTyping(id,now=Date.now()){const e=entry(id);return processingId===id||!!(e.queue.length&&!e.error&&typingReady(e.queue[0],now))}
  const baseSend=sendMessage;

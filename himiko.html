@@ -1751,7 +1751,7 @@ html[data-persona="cyber"] .history-day{color:#a9c6df}html[data-persona="cyber"]
 .history-day{position:relative;flex-shrink:0;line-height:1.5;padding:3px 0}.history-day span{padding:3px 12px;font-weight:500;background:rgba(114,83,57,.25);opacity:.78}
 html[data-persona="cyber"] .history-day span{background:rgba(77,111,137,.28)}
 .history-floating{position:sticky;top:3px;z-index:7;height:0;display:flex;justify-content:center;pointer-events:none;opacity:0;transition:opacity .2s ease}.history-floating.is-visible{opacity:1}.history-floating span{height:max-content;padding:3px 12px;border-radius:20px;font-size:11px;line-height:1.5;color:#fff;background:rgba(114,83,57,.7)}html[data-persona="cyber"] .history-floating span{background:rgba(77,111,137,.8);color:#eefaff}
-</style><style>#group-unread-divider{display:flex;align-items:center;gap:10px;margin:18px 0;padding:6px 0;font-size:11px;color:var(--text-sub,#8d705b)}#group-unread-divider::before,#group-unread-divider::after{content:"";height:1px;flex:1;background:currentColor;opacity:.22}html[data-persona="cyber"] #group-unread-divider{color:#a9c6df}</style><style>.group-entry-heading{text-align:left;margin:16px 0 10px}#list-view .group-chat-placeholder{margin:0 0 18px;cursor:pointer}.group-heading-yoru{display:none}html[data-persona="cyber"] .group-heading-neko{display:none}html[data-persona="cyber"] .group-heading-yoru{display:inline}.profile-image-view{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px}.profile-image-view img{display:block;width:min(86vw,500px);max-height:80dvh;object-fit:contain;border-radius:12px}.profile-image-close{position:absolute;right:20px;top:max(20px,env(safe-area-inset-top));border:0;background:transparent;color:white;font-size:36px;line-height:1;cursor:pointer}</style><style>
+</style><style>:is(#group-unread-divider,#personal-unread-divider){display:flex;align-items:center;gap:10px;margin:18px 0;padding:6px 0;font-size:11px;color:var(--text-sub,#8d705b)}:is(#group-unread-divider,#personal-unread-divider)::before,:is(#group-unread-divider,#personal-unread-divider)::after{content:"";height:1px;flex:1;background:currentColor;opacity:.22}html[data-persona="cyber"] :is(#group-unread-divider,#personal-unread-divider){color:#a9c6df}</style><style>.group-entry-heading{text-align:left;margin:16px 0 10px}#list-view .group-chat-placeholder{margin:0 0 18px;cursor:pointer}.group-heading-yoru{display:none}html[data-persona="cyber"] .group-heading-neko{display:none}html[data-persona="cyber"] .group-heading-yoru{display:inline}.profile-image-view{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px}.profile-image-view img{display:block;width:min(86vw,500px);max-height:80dvh;object-fit:contain;border-radius:12px}.profile-image-close{position:absolute;right:20px;top:max(20px,env(safe-area-inset-top));border:0;background:transparent;color:white;font-size:36px;line-height:1;cursor:pointer}</style><style>
 #list-view #group-entry-heading.filter-count{display:flex;align-items:center;justify-content:flex-start;gap:9px;min-height:28px;margin:28px 0 14px!important;padding:0 2px!important;text-align:left;font-size:14px!important;font-weight:800!important;line-height:1.6!important;color:#855a3c}
 #list-view #group-entry-heading .filter-count-icon{background:none!important;border:0!important;width:auto!important;height:auto!important;padding:0!important;font-size:23px;line-height:1;filter:none!important;text-shadow:none!important}
 #list-view #group-entry-heading .count-neko{display:inline}#list-view #group-entry-heading .count-yoru{display:none}html[data-persona="cyber"] #list-view #group-entry-heading.filter-count{color:#c9edff!important}html[data-persona="cyber"] #list-view #group-entry-heading .count-neko{display:none}html[data-persona="cyber"] #list-view #group-entry-heading .count-yoru{display:inline}
@@ -3716,6 +3716,7 @@ function historyAvatarHTML(ch){
 
 let currentTag="all",currentChar=null,messages=[],isLoading=false,dynamicSuggestions=[];
 let chatEpoch=0,activeReveal=null,userReadingHistory=false,previousChatScroll=0;
+let personalUnreadIndex=-1,personalUnreadAnchorPending=false;
 let automaticChatScrollUntil=0;
 let chatReady=false,historyVisiblePairs=40;
 const HISTORY_PAGE_PAIRS=40;
@@ -3996,6 +3997,8 @@ function renderCards(){
 let listScrollY=0;
 
 async function openChat(id){
+  personalUnreadIndex=-1;personalUnreadAnchorPending=false;
+  const openingUnread=Math.max(0,Number(window.himikoPersonalUnreadCount?.(id))||0);
   chatEpoch++;cancelReveal(false);isLoading=false;dynamicSuggestions=[];chatReady=false;
   const epoch=chatEpoch;
   listScrollY=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;
@@ -4038,6 +4041,12 @@ async function openChat(id){
   }
   if(epoch!==chatEpoch||currentChar!==ch)return;
   historyVisiblePairs=HISTORY_PAGE_PAIRS;
+  if(openingUnread){
+    const incoming=messages.map((m,i)=>m.role==='assistant'&&i>0?i:-1).filter(i=>i>=0);
+    personalUnreadIndex=incoming[Math.max(0,incoming.length-openingUnread)]??-1;
+    personalUnreadAnchorPending=personalUnreadIndex>=0;
+    if(personalUnreadAnchorPending)historyVisiblePairs=Math.max(historyVisiblePairs,Math.ceil((messages.length-personalUnreadIndex)/2)+1);
+  }
   chatReady=true;
   document.getElementById("chat-reset").disabled=false;
   renderMessages();
@@ -4138,7 +4147,7 @@ function renderMessages(resetScroll=true){
   // 保存済みの長い会話をすべて一度にDOM化せず、40往復ずつ遡れる。
   const olderCount=Math.max(0,Math.floor((messages.length-1)/2)-historyVisiblePairs);
   const visible=olderCount?messages.slice(1+olderCount*2):messages;
-  const markup=visible.map((m,i)=>historyDateHTML(m.at,visible[i-1]?.at)+(m.role==="user"?userRowHTML(ch,m.content,false,m.at,m.read):
+  const markup=visible.map((m,i)=>historyDateHTML(m.at,visible[i-1]?.at)+(i+(olderCount?1+olderCount*2:0)===personalUnreadIndex?'<div id="personal-unread-divider" role="separator">ここから未読メッセージ</div>':'')+(m.role==="user"?userRowHTML(ch,m.content,false,m.at,m.read):
     `<div class="bubble-group">${(olderCount===0&&i===0?[m.content]:splitReplyBubbles(m.content)).map((part,index)=>assistantRowHTML(ch,part,index===0,false,m.chunkTimes?.[index]||m.at)).join("")}</div>`)).join("");
   const older=olderCount?`<button type="button" class="older-history" data-older="1" data-remaining="${olderCount}">${himikoUi('↑ 過去の会話を表示するにゃ','↑ 過去の会話を表示するぜ')}（残り${olderCount}往復）</button>`:"";
   const initial=messages.length<=1?ch.qs||[]:[];
@@ -4148,6 +4157,11 @@ function renderMessages(resetScroll=true){
   if(followups.length&&Number(messages.at(-1)?.questionsAt)>Date.now())schedulePersonalSuggestions(ch,followups,messages.at(-1));
   watchChatContent();
   el.classList.toggle('nekopon-initial-greeting',messages.length===1); if(resetScroll){el.scrollTop=messages.length>1?el.scrollHeight:0;previousChatScroll=el.scrollTop;userReadingHistory=false;}
+  if(personalUnreadAnchorPending){
+    personalUnreadAnchorPending=false;const epoch=chatEpoch;
+    const anchor=()=>{if(epoch!==chatEpoch||currentChar!==ch)return;const divider=document.getElementById('personal-unread-divider');if(!divider)return;userReadingHistory=true;automaticChatScrollUntil=Date.now()+200;el.scrollTop+=divider.getBoundingClientRect().top-el.getBoundingClientRect().top-12;previousChatScroll=el.scrollTop;};
+    anchor();requestAnimationFrame(anchor);
+  }
   updateSendBtn();
 }
 
@@ -4959,7 +4973,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=presence-receipts-20261103"></script>
+</script><script src="himiko-presence.js?v=personal-unread-20261103"></script>
 </body>
 </html>
 

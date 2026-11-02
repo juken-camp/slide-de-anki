@@ -1743,7 +1743,7 @@ html[data-persona="cyber"] .history-day{color:#a9c6df}html[data-persona="cyber"]
 .history-day{position:relative;flex-shrink:0;line-height:1.5;padding:3px 0}.history-day span{padding:3px 12px;font-weight:500;background:rgba(114,83,57,.25);opacity:.78}
 html[data-persona="cyber"] .history-day span{background:rgba(77,111,137,.28)}
 .history-floating{position:sticky;top:3px;z-index:7;height:0;display:flex;justify-content:center;pointer-events:none;opacity:0;transition:opacity .2s ease}.history-floating.is-visible{opacity:1}.history-floating span{height:max-content;padding:3px 12px;border-radius:20px;font-size:11px;line-height:1.5;color:#fff;background:rgba(114,83,57,.7)}html[data-persona="cyber"] .history-floating span{background:rgba(77,111,137,.8);color:#eefaff}
-</style><style>#group-unread-divider{display:flex;align-items:center;gap:10px;margin:18px 0;padding:6px 0;font-size:11px;color:var(--text-sub,#8d705b)}#group-unread-divider::before,#group-unread-divider::after{content:"";height:1px;flex:1;background:currentColor;opacity:.22}html[data-persona="cyber"] #group-unread-divider{color:#a9c6df}</style></head>
+</style><style>#group-unread-divider{display:flex;align-items:center;gap:10px;margin:18px 0;padding:6px 0;font-size:11px;color:var(--text-sub,#8d705b)}#group-unread-divider::before,#group-unread-divider::after{content:"";height:1px;flex:1;background:currentColor;opacity:.22}html[data-persona="cyber"] #group-unread-divider{color:#a9c6df}</style><style>.group-entry-heading{text-align:left;margin:16px 0 10px}#list-view .group-chat-placeholder{margin:0 0 18px;cursor:pointer}.group-heading-yoru{display:none}html[data-persona="cyber"] .group-heading-neko{display:none}html[data-persona="cyber"] .group-heading-yoru{display:inline}.profile-image-view{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px}.profile-image-view img{display:block;width:min(86vw,500px);max-height:80dvh;object-fit:contain;border-radius:12px}.profile-image-close{position:absolute;right:20px;top:max(20px,env(safe-area-inset-top));border:0;background:transparent;color:white;font-size:36px;line-height:1;cursor:pointer}</style></head>
 <body>
 
 <!-- LIST VIEW -->
@@ -1765,9 +1765,7 @@ html[data-persona="cyber"] .history-day span{background:rgba(77,111,137,.28)}
     <div class="nekopon-search-panel" aria-label="人物の検索と絞り込み">
       <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前や時代で検索するぜ" aria-label="名前や時代で検索するぜ" oninput="renderCards()"></div>
       <div id="tag-bar" class="filter-panel"></div>
-    </div><p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true"><span class="count-neko">😺</span><span class="count-yoru">😎</span></span><span class="filter-count-text"></span></p>
-    <div class="card-list" id="card-list"></div>
-    <button type="button" class="group-chat-placeholder char-card" aria-label="グループチャットを開く" onclick="openGroupChat()">
+    </div><div id="group-entry-heading" class="filter-count group-entry-heading"><span class="filter-count-icon" aria-hidden="true"><span class="count-neko">😺</span><span class="count-yoru">😎</span></span><span class="group-heading-neko">歴史上の偉人たちが、君のために集まってるにゃ！</span><span class="group-heading-yoru">歴史上の偉人たちが、君のために集まってるぜ！</span></div>    <button type="button" class="group-chat-placeholder char-card" aria-label="グループチャットを開く" onclick="openGroupChat()">
       <div class="card-inner">
         <div class="avatar group-chat-avatar" aria-hidden="true">
           <img class="history-avatar-image" src="history-icons/group-chat.png?v=timemachine1" alt="" onerror="this.remove()">
@@ -1776,7 +1774,9 @@ html[data-persona="cyber"] .history-day span{background:rgba(77,111,137,.28)}
         <div class="card-info"><div class="card-name-row"><span class="group-chat-title">グループチャット</span><span id="group-unread" class="group-unread" hidden></span></div><div class="group-chat-caption">みんなで楽しい異次元の会話</div></div>
         <span id="group-fav" class="fav-btn" role="button" tabindex="0" aria-label="グループチャットをお気に入りに追加" aria-pressed="false" onclick="toggleFav('group',event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFav('group',event)}">☆</span>
       </div>
-    </button>
+    </button><p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true"><span class="count-neko">😺</span><span class="count-yoru">😎</span></span><span class="filter-count-text"></span></p>
+    <div class="card-list" id="card-list"></div>
+
 
   </div>
 </div>
@@ -4362,7 +4362,7 @@ function showProfile(){
       <div class="modal-handle"></div>
       <button type="button" class="modal-close" aria-label="閉じる" title="閉じる" onclick="closeProfile()">×</button>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-        <div class="history-profile-avatar" style="width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,${ch.color},${ch.accent});display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">${historyAvatarHTML(ch)}</div>
+        <button type="button" class="history-profile-avatar" onclick="openProfileImage()" aria-label="人物の画像を拡大" style="border:0;padding:0;cursor:pointer;width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,${ch.color},${ch.accent});display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">${historyAvatarHTML(ch)}</button>
         <div>
           <div style="font-weight:900;font-size:18px;color:#1e293b">${esc(ch.name)}</div>
           <div style="font-size:11px;color:#94a3b8;margin-top:2px">${esc(ch.period)}</div>
@@ -4375,6 +4375,10 @@ function showProfile(){
   modal.classList.remove("hidden");
 }
 
+function openProfileImage(){
+ const source=document.querySelector('#profile-modal .history-profile-avatar img');if(!source)return;
+ const view=document.createElement('div');view.className='profile-image-view';view.setAttribute('role','dialog');view.setAttribute('aria-modal','true');view.setAttribute('aria-label','人物の画像');const img=document.createElement('img');img.src=source.currentSrc||source.src;img.alt=currentChar.name+'の画像';const close=document.createElement('button');close.type='button';close.className='profile-image-close';close.setAttribute('aria-label','画像を閉じる');close.textContent='×';const dismiss=()=>{document.removeEventListener('keydown',onkey);view.remove();document.querySelector('#profile-modal .history-profile-avatar')?.focus()};const onkey=e=>{if(e.key==='Escape')dismiss()};close.onclick=dismiss;view.onclick=e=>{if(e.target===view)dismiss()};view.append(img,close);document.body.append(view);document.addEventListener('keydown',onkey);close.focus();
+}
 function closeProfile(e){
   if(e&&e.target!==document.getElementById("modal-overlay"))return;
   const overlay=document.getElementById("modal-overlay");
@@ -4611,10 +4615,10 @@ document.getElementById("messages").addEventListener("click",function(e){
 
 <script>
 (()=>{
- const KEY='himiko-group-v1', SEEN='himiko-met-v1';let lastUserMessageAt=0,state={name:'グループチャット',turns:[]}, busy=false,epoch=0,timer=null,groupListScroll=0,groupReveal=null;let unreadEntryPending=false,unreadEntryKey=null;
+ const KEY='himiko-group-v1', SEEN='himiko-met-v1';let lastUserMessageAt=0,state={name:'異次元グルチャ',turns:[]}, busy=false,epoch=0,timer=null,groupListScroll=0,groupReveal=null;let unreadEntryPending=false,unreadEntryKey=null;
  const $=id=>document.getElementById(id), ch=id=>allChars.find(p=>p.id===id), safe=t=>esc(String(t));
  function cleanSpeakerLabel(text,name){const escaped=String(name).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');return String(text).replace(new RegExp('^\\s*(?:【'+escaped+'】\\s*[：:]?|'+escaped+'\\s*[：:])\\s*'),'').trim()}
- function load(){if(busy)return;try{const a=JSON.parse(localStorage.getItem(KEY)||'null');if(a&&typeof a.name==='string'&&Array.isArray(a.turns))state={name:a.name.slice(0,30),turns:a.turns.slice(-100)};}catch{}}
+ function load(){if(busy)return;try{const a=JSON.parse(localStorage.getItem(KEY)||'null');if(a&&typeof a.name==='string'&&Array.isArray(a.turns))state={name:(a.name==='グループチャット'?'異次元グルチャ':a.name).slice(0,30),turns:a.turns.slice(-100)};}catch{}}
  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{$('group-status').textContent='会話を保存できません';$('group-status').hidden=false;}}
  function seen(){try{return new Set(JSON.parse(localStorage.getItem(SEEN)||'[]').filter(Number.isInteger));}catch{return new Set()}}
  function mark(ids){const x=seen();ids.forEach(v=>x.add(v));try{localStorage.setItem(SEEN,JSON.stringify([...x]))}catch{} }
@@ -4673,7 +4677,7 @@ document.getElementById("messages").addEventListener("click",function(e){
  setInterval(()=>{if(retryReadAt&&Date.now()>=retryReadAt){retryReadAt=0;$('group-messages-inner').querySelectorAll('.bubble-row[data-inbox-key]').forEach(el=>{const end=el.querySelector('.history-message-time')||el;end.dataset.inboxKey=el.dataset.inboxKey;inboxObserver?.unobserve(end);inboxObserver?.observe(end)})}presence();if(!busy&&inboxData)receiveInbox(inboxData)},60000);document.addEventListener('visibilitychange',()=>{if(document.hidden)inboxAction('presence',{active:false});else presence()});
  if(window.parent!==window)window.parent.postMessage({type:'himiko-inbox-ready'},location.origin);
  const oldSend=sendMessage;sendMessage=async function(text){const person=currentChar,before=completedChatTurns().length;await oldSend(text);if(person&&person===currentChar&&completedChatTurns().length>before){mark([person.id])}};
- const oldRender=renderCards;renderCards=function(){oldRender();const met=seen();const list=allChars.filter(p=>Object.entries(selectedFilters).every(([g,set])=>!set.size||[...set].some(k=>matchesGroup(p,g,k)))).filter(p=>{const q=$('search-input').value.trim().toLowerCase();return !q||p.name.toLowerCase().includes(q)||p.period.toLowerCase().includes(q)||p.catchphrase.toLowerCase().includes(q)});const n=list.filter(p=>met.has(p.id)).length;const fav=isFav('group'),star=$('group-fav'),banner=document.querySelector('.group-chat-placeholder');star.textContent=fav?'★':'☆';star.classList.toggle('faved',fav);star.setAttribute('aria-pressed',String(fav));star.setAttribute('aria-label',fav?'グループチャットをお気に入りから外す':'グループチャットをお気に入りに追加');const favOnly=selectedFilters.special.has('お気に入り');const q=$('search-input').value.trim().toLowerCase();const otherFilters=Object.entries(selectedFilters).some(([g,set])=>g==='special'?[...set].some(x=>x!=='お気に入り'):set.size>0);const showGroup=!favOnly||(fav&&!otherFilters&&(!q||state.name.toLowerCase().includes(q)));banner.style.display=showGroup?'':'none';if(favOnly&&showGroup&&!list.length)$('card-list').innerHTML='';document.querySelectorAll('#card-list .char-card').forEach((card,i)=>{if(list[i]&&met.has(list[i].id))card.classList.add('group-met')});const suffix=document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ';$('filter-count').querySelector('.filter-count-text').textContent=`${list.length}人いる${suffix}。そのうち${n}人と話した${suffix}`;};
+ const oldRender=renderCards;renderCards=function(){oldRender();const met=seen();const list=allChars.filter(p=>Object.entries(selectedFilters).every(([g,set])=>!set.size||[...set].some(k=>matchesGroup(p,g,k)))).filter(p=>{const q=$('search-input').value.trim().toLowerCase();return !q||p.name.toLowerCase().includes(q)||p.period.toLowerCase().includes(q)||p.catchphrase.toLowerCase().includes(q)});const n=list.filter(p=>met.has(p.id)).length;const fav=isFav('group'),star=$('group-fav'),banner=document.querySelector('.group-chat-placeholder');star.textContent=fav?'★':'☆';star.classList.toggle('faved',fav);star.setAttribute('aria-pressed',String(fav));star.setAttribute('aria-label',fav?'グループチャットをお気に入りから外す':'グループチャットをお気に入りに追加');const favOnly=selectedFilters.special.has('お気に入り');const q=$('search-input').value.trim().toLowerCase();const otherFilters=Object.entries(selectedFilters).some(([g,set])=>g==='special'?[...set].some(x=>x!=='お気に入り'):set.size>0);const showGroup=!favOnly||(fav&&!otherFilters&&(!q||state.name.toLowerCase().includes(q)));banner.style.display=showGroup?'':'none';$('group-entry-heading').hidden=!showGroup;$('group-entry-heading').style.display=showGroup?'':'none';if(favOnly&&showGroup&&!list.length)$('card-list').innerHTML='';document.querySelectorAll('#card-list .char-card').forEach((card,i)=>{if(list[i]&&met.has(list[i].id))card.classList.add('group-met')});const suffix=document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ';$('filter-count').querySelector('.filter-count-text').textContent=`${list.length}人いる${suffix}。そのうち${n}人と話してる${suffix}`;};
  load();syncGroupName();renderCards();window.addEventListener('pageshow',()=>{load();syncGroupName()});window.addEventListener('storage',e=>{if(e.key===KEY){load();syncGroupName()}});openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(rows=>{const ids=rows.filter(r=>Array.isArray(r.turns)&&r.turns.some(t=>t.role==='user')&&r.turns.some(t=>t.role==='assistant')).map(r=>Number(r.id)).filter(id=>ch(id));if(ids.length){mark(ids);renderCards()}}).catch(()=>{});
 })();
 </script>

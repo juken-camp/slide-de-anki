@@ -1754,7 +1754,7 @@ html[data-persona="cyber"] .history-day span{background:rgba(77,111,137,.28)}
 .group-chat-caption{display:flex!important;align-items:center;gap:8px;min-height:26px}
 .group-caption-text{flex:1 1 auto;min-width:0}
 .group-entry-typing{display:inline-flex;flex:0 0 44px;box-sizing:border-box;position:relative;justify-content:center;gap:4px;align-items:center;width:44px;height:24px;padding:0;border-radius:14px;background:#e4ded7;color:#816d5b;vertical-align:middle}
-.group-entry-typing::before{content:"";position:absolute;left:0;bottom:-2px;width:9px;height:9px;border-radius:0 0 9px 0;background:inherit}
+.group-entry-typing::before{content:"";position:absolute;left:2px;bottom:-3px;width:10px;height:9px;background:inherit;clip-path:polygon(0 0,100% 0,0 100%)}
 html[data-persona="cyber"] .group-entry-typing{background:#24435c;color:#bcefff}
 
 .group-entry-typing[hidden]{display:inline-flex!important;visibility:hidden!important;animation:none!important}
@@ -4860,7 +4860,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=20261102i"></script>
+</script><script src="himiko-presence.js?v=20261102k"></script>
 </body>
 </html>
 

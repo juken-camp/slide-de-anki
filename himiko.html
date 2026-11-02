@@ -4644,18 +4644,27 @@ document.getElementById("messages").addEventListener("click",function(e){
  function mark(ids){const x=seen();ids.forEach(v=>x.add(v));try{localStorage.setItem(SEEN,JSON.stringify([...x]))}catch{} }
  function avatar(p){return `<span class="avatar" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</span>`}
 
- const READ_KEY='himiko-group-read-lags-v1';
+ const READ_KEY='himiko-group-read-lags-v2';
  function readerLags(){
   try{const a=JSON.parse(localStorage.getItem(READ_KEY)||'null');if(Array.isArray(a)&&a.length===88&&a.every(x=>Number.isFinite(x)&&x>0))return a;}catch{}
-  const a=Array.from({length:88},(_,i)=>Math.round(i<12?1500+Math.random()*28000:i<60?30000+Math.random()*1770000:i<80?1800000+Math.random()*19800000:21600000+Math.random()*410400000)).sort((a,b)=>a-b);
+  const a=Array.from({length:88},(_,i)=>Math.round(i===0?700+Math.random()*500:i<25?1300+Math.random()*6700:i<60?8000+Math.random()*37000:i<80?45000+Math.random()*255000:i<86?300000+Math.random()*6900000:21600000+Math.random()*237600000)).sort((a,b)=>a-b);
   try{localStorage.setItem(READ_KEY,JSON.stringify(a))}catch{}return a;
  }
  const readLags=readerLags();
- function readCount(at,now=Date.now()){return readLags.filter(lag=>now-Number(at)>=lag).length}
+ function readCount(at,now=Date.now()){
+  // Most posts collect readers quickly; about one in five has a quieter start.
+  const age=now-Number(at),slow=Math.abs(Math.floor(Number(at)/1000)*2654435761)%10<2;
+  const count=readLags.filter(lag=>age>=lag*(slow&&lag<300000?4:1)).length;
+  let legacy=0;try{const old=JSON.parse(localStorage.getItem('himiko-group-read-lags-v1')||'[]');if(Array.isArray(old))legacy=old.filter(lag=>Number.isFinite(lag)&&lag>0&&age>=lag).length;}catch{}
+  return Math.min(88,Math.max(count,legacy));
+ }
+ function groupReadMeta(at){const count=readCount(at);return at?`<span class="history-message-time">${count?'既読 '+count+'<br>':''}${esc(historyClock(at))}</span>`:''}
+
  function refreshReadCounts(){
   if($('group-view').hidden)return;
-  const rows=[...$('group-messages-inner').querySelectorAll('[data-group-sent-at]')];let floor=0;
-  for(const row of rows.reverse()){const at=Number(row.dataset.groupSentAt);floor=Math.max(floor,readCount(at));const time=row.querySelector('.history-message-time');if(time)time.innerHTML=(floor?'既読 '+floor+'<br>':'')+esc(historyClock(at));}
+  const rows=[...$('group-messages-inner').querySelectorAll('[data-group-sent-at]')];let floor=0,readCountsDirty=false;
+  for(const row of rows.reverse()){const at=Number(row.dataset.groupSentAt);const turn=state.turns.find(t=>!t.automatic&&Number(t.at)===at);floor=Math.min(88,Math.max(floor,readCount(at),Number(turn?.readCount)||0));if(turn&&turn.readCount!==floor){turn.readCount=floor;readCountsDirty=true;}const time=row.querySelector('.history-message-time');if(time)time.innerHTML=(floor?'既読 '+floor+'<br>':'')+esc(historyClock(at));}
+  if(readCountsDirty)save();
  }
  function planLocalReplies(replies){
   let at=Date.now()+10000;
@@ -4678,7 +4687,7 @@ document.getElementById("messages").addEventListener("click",function(e){
   if(!quiet){groupAppend(groupTyping(item.person),groupFollow());const typing=$('group-typing');typing?.setAttribute('aria-label',item.person.name+'が入力中');}
   timer=setTimeout(quiet?scheduleReveal:revealNext,quiet?Math.min(60000,wait-10000):wait);
  }
- function rowUser(text,at=null,read=false){return `<div class="bubble-row user is-new" data-group-sent-at="${Number(at)||Date.now()}"><div class="bubble user">${safe(text)}</div>${historyMeta(at,false)}</div>`}
+ function rowUser(text,at=null,read=false){return `<div class="bubble-row user is-new" data-group-sent-at="${Number(at)||Date.now()}"><div class="bubble user">${safe(text)}</div>${groupReadMeta(at)}</div>`}
  function rowReplyPart(p,text,first,animate=false,meta={}){return `<div ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:""} class="bubble-row assistant${first?'':' continuation'}${animate?' is-new':''}">${first?`<button type="button" class="bubble-avatar group-person-avatar" data-id="${p.id}" aria-label="${safe(p.name)}の個別チャットへ" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</button>`:'<div class="bubble-avatar-spacer" aria-hidden="true"></div>'}<div class="group-reply-content">${first?`<div class="group-reply-name">${safe(p.name)}${p.isNarrator||p.isExplainer?'（解説）':''}${p.isSpecial||!p.period?'':` <span class="group-reply-period">（${safe(p.period.replace(/[（(]/g,'・').replace(/[）)]/g,''))}）</span>`}</div>`:''}<div class="bubble assistant">${safe(cleanSpeakerLabel(text,p.name))}</div>${historyMeta(meta.at)}</div></div>`}
  function rowReply(x){const p=ch(x.id);if(!p)return '';return `<div class="bubble-group">${splitReplyBubbles(x.text).map((part,i)=>rowReplyPart(p,part,i===0)).join('')}</div>`}
  function groupTyping(p){const color=p?.color||'#6b90a8';return `<div id="group-typing" class="bubble-row assistant typing-row" role="status" aria-label="次のメッセージを準備中"><div class="bubble-avatar-spacer" aria-hidden="true"></div><div class="typing">${[0,.2,.4].map(d=>`<span class="typing-dot" style="background:${color};animation-delay:${d}s"></span>`).join('')}</div></div>`}

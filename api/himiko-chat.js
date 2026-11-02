@@ -3407,6 +3407,8 @@ async function rateLimit(req) {
     return localRateLimit(buckets);
   }
   if (!url || !token || !/^https:\/\//.test(url)) throw new Error('rate-limit configuration');
+  const batchPlans=req.himikoAutomatic===true&&req.himikoBatch===true?Array.from({length:5},()=>createGroupPlan(true)):null;
+  const batchSchema=batchPlans?{type:'object',properties:Object.fromEntries(batchPlans.map((p,i)=>['scene'+(i+1),buildGroupSchema(p)])),required:batchPlans.map((_,i)=>'scene'+(i+1)),additionalProperties:false}:null;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 3000);
   try {
@@ -3460,6 +3462,38 @@ function buildGroupSchema(plan){
   studentQuestion:{type:'object',properties:{asker:{type:'string',enum:['',...groupFiguresFor(plan).map(p=>p.name),AI_SENSEI.name]},question:{type:'string'},answerExamples:{type:'array',items:{type:'string'}}},required:['asker','question','answerExamples'],additionalProperties:false},
   suggestions:{type:'array',items:{type:'string'}}
  },required:['topicContext','historicalReplies','teacherSupplement','studentQuestion','suggestions'],additionalProperties:false};
+}
+function parseGroupScene(obj,groupPlan,input){
+      const chosen=new Set(),replies=[];
+      for(let i=1;i<=groupPlan.figures;i++){
+        const x=obj.historicalReplies?.['speaker'+i],name=typeof x?.name==='string'?x.name.trim():'';
+        if(!groupFiguresFor(groupPlan).some(p=>p.name===name)||typeof x.text!=='string'||!x.text.trim())throw Error('参加者の回答を受け取れませんでした。もう一度送ってください。');
+        const cleaned=cleanGroupSpeakerLabel(x.text,name);if(!cleaned)throw Error('参加者の回答を受け取れませんでした。もう一度送ってください。');
+        chosen.add(name);replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:cleaned.slice(0,1500)});
+      }
+      if(groupPlan.automatic&&hasUnspokenOpening(replies[0]?.text))throw Error('自動会話の冒頭を再生成します。');
+      if(chosen.size<2)throw Error('掛け合いを受け取れませんでした。もう一度送ってください。');
+      if(groupPlan.teacher){
+        if(typeof obj.teacherSupplement!=='string'||!obj.teacherSupplement.trim())throw Error('補足を受け取れませんでした。もう一度送ってください。');
+        const cleaned=cleanGroupSpeakerLabel(obj.teacherSupplement,AI_SENSEI.name);if(!cleaned)throw Error('補足を受け取れませんでした。もう一度送ってください。');
+        replies.push({id:AI_SENSEI.id,text:cleaned.slice(0,800)});
+      }
+      const invitation=obj.studentQuestion;
+      let suggestionKind='questions',suggestions;
+      if(invitation&&typeof invitation.question!=='string')throw Error('会話の続きを受け取れませんでした。もう一度送ってください。');
+      if(invitation?.question?.trim()){
+        const name=typeof invitation.asker==='string'?invitation.asker.trim():'';
+        const asker=name===AI_SENSEI.name?AI_SENSEI:GROUP_FIGURES_BY_NAME.get(name);
+        const reply=asker&&replies.findLast(r=>r.id===asker.id);
+        const question=invitation.question.trim();
+        const examples=[...new Set((Array.isArray(invitation.answerExamples)?invitation.answerExamples:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100))].slice(0,3);
+        if(!reply||question.length>150||examples.length!==3)throw Error('会話の続きを受け取れませんでした。もう一度送ってください。');
+        if(!reply.text.includes(question))reply.text+='\n\n'+question;
+        suggestionKind='answers';suggestions=examples;
+      }else{
+        suggestions=[...new Set((Array.isArray(obj.suggestions)?obj.suggestions:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100&&!input.messages.some(m=>m.role==='user'&&m.content===x)))].slice(0,3);
+      }
+      return {replies,suggestions,suggestionKind};
 }
 function parseGroupOutput(text) {
  const source=text.trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim();
@@ -3542,19 +3576,21 @@ module.exports = async function handler(req, res) {
     return res.status(429).json({ error: rate.bucket === 1 ? '短時間の質問が多くなっています。少し待ってから送ってください。' : '本日の質問回数の上限に達しました。また明日ご利用ください。' });
   }
   const groupPlan=input.isGroup?createGroupPlan(req.himikoAutomatic===true):null;
+  const batchPlans=req.himikoAutomatic===true&&req.himikoBatch===true?Array.from({length:5},()=>createGroupPlan(true)):null;
+  const batchSchema=batchPlans?{type:'object',properties:Object.fromEntries(batchPlans.map((p,i)=>['scene'+(i+1),buildGroupSchema(p)])),required:batchPlans.map((_,i)=>'scene'+(i+1)),additionalProperties:false}:null;
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), setting('HIMIKO_API_TIMEOUT_MS', 20000, 5000, 45000));
+  const timer = setTimeout(() => controller.abort(), setting('HIMIKO_API_TIMEOUT_MS', batchPlans?45000:20000, 5000, 45000));
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST', signal: controller.signal,
       headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
         model: process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5',
-        max_tokens: setting('HIMIKO_MAX_OUTPUT_TOKENS', input.isGroup ? 2048 : 1536, 1024, 4096),
+        max_tokens: batchPlans?10000:setting('HIMIKO_MAX_OUTPUT_TOKENS', input.isGroup ? 2048 : 1536, 1024, 4096),
         thinking: { type: 'disabled' },
-        system: input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。今回は生徒の質問への回答ではないので、本題に答える・入試の要点でまとめるという通常回答の構成より、入力の会話方針を優先する。偉人が互いの言葉を受け止めて話を進める。短い発言を中心に、説明の独演会にしない。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。今回の名簿は自動会話に参加できる人物だけで、解説扱いの人物は含まれない。冒頭の人物自身が具体的な疑問・発見・関心を持ち出し、その後の人物が実際に出た発言に反応する。内部の話題指定を聞かれた質問に変換しない。まだ誰も言っていない話を「〜の話か」「〜について聞きたいのか」などと受けない。自分の名前を呼びかけ先にしたり、他人に語りかけるように自分へ返答したりしない。出力前に全発言について、話者・呼びかけ先・受けている発言が一致するか確認する。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX,
+        system: (batchPlans?'【5回分の自動おしゃべりをまとめて作成】scene1〜scene5の5場面を一度に返す。それぞれ後で順番に配信される。各場面の参加人数とAI先生の有無は各JSONスキーマに従う。以下の単一場面向け構成指定よりこの指示と各スキーマを優先する。各場面を短くても意味のある掛け合いにし、長さ・人物の組合せ・出だし・話題・結末を全体で変える。話題に関係する人物を選び、人数合わせをしない。独立した話と自然な続きの両方を混ぜる。続きは前場面で実際に述べた発言を受ける。場面をまたぐ未回答の問いを乱発しない。配信時刻は未確定なので朝・夜・今日の時刻を断定しない。\n':'')+(input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。今回は生徒の質問への回答ではないので、本題に答える・入試の要点でまとめるという通常回答の構成より、入力の会話方針を優先する。偉人が互いの言葉を受け止めて話を進める。短い発言を中心に、説明の独演会にしない。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。今回の名簿は自動会話に参加できる人物だけで、解説扱いの人物は含まれない。冒頭の人物自身が具体的な疑問・発見・関心を持ち出し、その後の人物が実際に出た発言に反応する。内部の話題指定を聞かれた質問に変換しない。まだ誰も言っていない話を「〜の話か」「〜について聞きたいのか」などと受けない。自分の名前を呼びかけ先にしたり、他人に語りかけるように自分へ返答したりしない。出力前に全発言について、話者・呼びかけ先・受けている発言が一致するか確認する。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX),
         messages: input.messages,
-        ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:buildGroupSchema(groupPlan)}}} : {})
+        ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:batchSchema||buildGroupSchema(groupPlan)}}} : {})
       })
     });
     if (!response.ok) {
@@ -3574,36 +3610,10 @@ module.exports = async function handler(req, res) {
     }
     if (input.isGroup) {
       let obj; try { obj=parseGroupOutput(text); } catch { return res.status(502).json({error:'回答を読み取れませんでした。質問は残っています。もう一度送ってください。'}); }
-      const chosen=new Set(),replies=[];
-      for(let i=1;i<=groupPlan.figures;i++){
-        const x=obj.historicalReplies?.['speaker'+i],name=typeof x?.name==='string'?x.name.trim():'';
-        if(!groupFiguresFor(groupPlan).some(p=>p.name===name)||typeof x.text!=='string'||!x.text.trim())return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
-        const cleaned=cleanGroupSpeakerLabel(x.text,name);if(!cleaned)return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
-        chosen.add(name);replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:cleaned.slice(0,1500)});
+      if(batchPlans){
+        try{return res.status(200).json({scenes:batchPlans.map((plan,i)=>parseGroupScene(obj['scene'+(i+1)],plan,input))})}catch{return res.status(502).json({error:'まとめた会話を読み取れませんでした。'});}
       }
-      if(req.himikoAutomatic===true&&hasUnspokenOpening(replies[0]?.text))return res.status(502).json({error:'自動会話の冒頭を再生成します。'});
-      if(chosen.size<2)return res.status(502).json({error:'掛け合いを受け取れませんでした。もう一度送ってください。'});
-      if(groupPlan.teacher){
-        if(typeof obj.teacherSupplement!=='string'||!obj.teacherSupplement.trim())return res.status(502).json({error:'補足を受け取れませんでした。もう一度送ってください。'});
-        const cleaned=cleanGroupSpeakerLabel(obj.teacherSupplement,AI_SENSEI.name);if(!cleaned)return res.status(502).json({error:'補足を受け取れませんでした。もう一度送ってください。'});
-        replies.push({id:AI_SENSEI.id,text:cleaned.slice(0,800)});
-      }
-      const invitation=obj.studentQuestion;
-      let suggestionKind='questions',suggestions;
-      if(invitation&&typeof invitation.question!=='string')return res.status(502).json({error:'会話の続きを受け取れませんでした。もう一度送ってください。'});
-      if(invitation?.question?.trim()){
-        const name=typeof invitation.asker==='string'?invitation.asker.trim():'';
-        const asker=name===AI_SENSEI.name?AI_SENSEI:GROUP_FIGURES_BY_NAME.get(name);
-        const reply=asker&&replies.findLast(r=>r.id===asker.id);
-        const question=invitation.question.trim();
-        const examples=[...new Set((Array.isArray(invitation.answerExamples)?invitation.answerExamples:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100))].slice(0,3);
-        if(!reply||question.length>150||examples.length!==3)return res.status(502).json({error:'会話の続きを受け取れませんでした。もう一度送ってください。'});
-        if(!reply.text.includes(question))reply.text+='\n\n'+question;
-        suggestionKind='answers';suggestions=examples;
-      }else{
-        suggestions=[...new Set((Array.isArray(obj.suggestions)?obj.suggestions:[]).filter(x=>typeof x==='string').map(x=>x.trim()).filter(x=>x&&x.length<=100&&!input.messages.some(m=>m.role==='user'&&m.content===x)))].slice(0,3);
-      }
-      return res.status(200).json({replies,suggestions,suggestionKind});
+      try{return res.status(200).json(parseGroupScene(obj,groupPlan,input))}catch{return res.status(502).json({error:'会話の続きを受け取れませんでした。もう一度送ってください。'});}
     }
     return res.status(200).json(data);
   } catch (error) {

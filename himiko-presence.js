@@ -101,6 +101,7 @@
   }catch(err){e.error=String(err.message);e.queue.forEach(j=>{if(chosen.has(j.key))j.due=Date.now()+60000});save();if(currentChar?.id===ch.id)setChatStorageStatus('返信を取得できませんでした。送信内容を保持して再試行します','error');}
   finally{processing=false;processingId=null;}
  }
+ window.addEventListener('himiko-group-speaker',event=>{const {id,at}=event.detail||{};if(!person(id)||!Number.isFinite(at)||at>Date.now()||at<Date.now()-600000)return;const e=entry(id),until=at+600000;if(until>(e.onlineUntil||0)){e.onlineUntil=until;save();}});
  window.addEventListener('himiko-person-bubble',event=>{const e=entry(event.detail.id);e.preview=event.detail.text;e.previewRole='assistant';save();});
  window.addEventListener('himiko-person-reset',event=>{entry(event.detail.id).queue=[];entry(event.detail.id).unread=0;entry(event.detail.id).preview='';save();pendingStamp='';});
  function updateMemberPresence(){

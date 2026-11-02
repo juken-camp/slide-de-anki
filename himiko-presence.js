@@ -43,10 +43,16 @@
   }
  };
  function header(){if(!currentChar)return;const p=presence(currentChar),b=$('online-badge');b.classList.remove('hidden');b.textContent=(p.delay?'● ':'🟢 ')+p.label;b.style.color=p.color;b.style.background=p.color+'20';}
+ // Latch receipts so navigating away or a retry never makes a read message unread.
+ function updateQueueReads(e,now=Date.now()){
+  let changed=false;
+  for(const job of e.queue){const readAt=Number.isFinite(job.readAt)?job.readAt:Math.max(job.at||0,job.due-5000);if(!job.read&&now>=readAt){job.read=true;changed=true}}
+  if(changed)save();
+ }
  let pendingStamp='';
- function pending(){const ch=currentChar;if(!ch||!chatReady)return;header();const e=entry(ch.id),stamp=ch.id+':'+chatEpoch+':'+e.queue.map(j=>j.key).join(',')+':'+(e.queue[0]?.due-Date.now()<=10000);if(stamp===pendingStamp&&$('personal-pending'))return;pendingStamp=stamp;$('personal-pending')?.remove();if(!e.queue.length)return;
+ function pending(){const ch=currentChar;if(!ch||!chatReady)return;header();const e=entry(ch.id);updateQueueReads(e);const stamp=ch.id+':'+chatEpoch+':'+e.queue.map(j=>j.key+':'+!!j.read).join(',')+':'+(e.queue[0]?.due-Date.now()<=10000);if(stamp===pendingStamp&&$('personal-pending'))return;pendingStamp=stamp;$('personal-pending')?.remove();if(!e.queue.length)return;
   const node=document.createElement('div');node.id='personal-pending';
-  for(const job of e.queue)node.append(nodeFromHTML(userRowHTML(ch,job.text,false,job.at,false)));
+  for(const job of e.queue)node.append(nodeFromHTML(userRowHTML(ch,job.text,false,job.at,!!job.read)));
   if(e.queue[0].due-Date.now()<=10000)node.append(nodeFromHTML(typingHTML(ch)));
   appendChatNode(node,false);
  }
@@ -64,7 +70,7 @@
   const ch=currentChar,e=entry(ch.id),p=presence(ch);touch(ch.id);
   if(!p.delay)e.onlineUntil=Date.now()+600000;
   e.preview=text.trim();e.previewRole='user';e.error='';
-  const previous=JSON.stringify(e.queue);e.queue.push({key:Date.now()+':'+Math.random(),text:text.trim(),at:Date.now(),due:e.queue[0]?.due||Date.now()+(p.delay||1500+Math.floor(Math.random()*3500))});
+  const previous=JSON.stringify(e.queue),at=Date.now(),due=e.queue[0]?.due||at+(p.delay||1500+Math.floor(Math.random()*3500));e.queue.push({key:at+':'+Math.random(),text:text.trim(),at,due,readAt:p.delay?Math.max(at,due-5000):at+700,read:false});
   if(!save()){e.queue=JSON.parse(previous);return;}
   $('msg-input').value='';playSendSound();pending();scrollChatToEnd(true);updateSendBtn();
  };

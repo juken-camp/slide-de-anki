@@ -21,7 +21,7 @@
   if(raw){const saved=JSON.parse(raw);saved.defaultOrder=true;localStorage.setItem(key,JSON.stringify(saved));}
   send({type:'himiko-personal-order-reset'});
  }
- const orderRow=document.createElement('div');orderRow.className='play-mode-setting';
+ const orderRow=document.createElement('div');orderRow.className='play-mode-setting personal-order-setting';
  orderRow.innerHTML='<span>人物の並び順</span><div class="play-mode-options"><button class="tool" type="button">元の順番に戻す</button></div><small role="status" hidden></small>';
  orderRow.querySelector('button').onclick=()=>{const note=orderRow.querySelector('small');note.hidden=false;try{resetPersonalOrder();note.textContent='元の順番に戻しました。';}catch{note.textContent='並び順を保存できませんでした。もう一度お試しください。';}};
  panel.insertBefore(orderRow,panel.querySelector('#himiko-auto-status'));

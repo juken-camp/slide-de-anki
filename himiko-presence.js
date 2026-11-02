@@ -96,13 +96,25 @@
  }
  window.addEventListener('himiko-person-bubble',event=>{const e=entry(event.detail.id);e.preview=event.detail.text;e.previewRole='assistant';save();});
  window.addEventListener('himiko-person-reset',event=>{entry(event.detail.id).queue=[];entry(event.detail.id).unread=0;entry(event.detail.id).preview='';save();pendingStamp='';});
+ function updateMemberPresence(){
+  const panel=$('group-members');if(!panel||panel.hidden)return;
+  panel.querySelectorAll('.member-card[data-id]').forEach(card=>{
+   const ch=person(Number(card.dataset.id));if(!ch)return;
+   const p=presence(ch);let badge=card.querySelector('.member-presence');
+   if(!badge){badge=document.createElement('span');badge.className='online-badge member-presence';card.querySelector('.member-name')?.after(badge);}
+   if(badge.textContent!==p.label){badge.textContent=p.label;badge.style.color=p.color;badge.style.background=p.color+'20';}
+  });
+ }
+ const baseShowMembers=window.showGroupMembers;
+ if(baseShowMembers)window.showGroupMembers=function(){baseShowMembers();updateMemberPresence()};
+ setInterval(updateMemberPresence,5000);
  let stamp='';setInterval(()=>{deliver();if(currentChar)pending();else if(!$('list-view').classList.contains('hidden')){const next=allChars.map(ch=>ch.id+presence(ch).label+entry(ch.id).activity+entry(ch.id).unread+isTyping(ch.id)+entry(ch.id).preview+!!model.defaultOrder).join('|');if(next!==stamp){stamp=next;renderCards()}}},1000);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden){deliver();pending();renderCards()}});
  window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==window.parent)return;
   if(event.data?.type==='himiko-personal-order-reset')restoreOrder();
  });
- const style=document.createElement('style');style.textContent='#list-view #card-list .char-card .card-inner{gap:10px}#list-view #card-list .char-card .card-info{min-width:0}#list-view #card-list .char-card .card-name-row{padding-right:12px}.personal-preview{display:flex;align-items:center;gap:6px;min-height:22px}.personal-preview-text{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.personal-card-typing{position:relative;overflow:visible;display:inline-flex;flex:0 0 30px;height:20px;align-items:center;justify-content:center;gap:3px;border-radius:12px;background:#e4ded7;color:#816d5b}.personal-card-typing::before{content:"";position:absolute;left:2px;bottom:-3px;width:9px;height:8px;background:inherit;clip-path:polygon(0 0,100% 0,0 100%)}html[data-persona=cyber] .personal-card-typing{background:#24435c;color:#bcefff}.personal-card-typing[hidden]{display:none!important}.personal-card-typing i{width:4px;height:4px;border-radius:50%;background:currentColor;animation:groupEntryDot 1.2s infinite}.personal-card-typing i:nth-child(2){animation-delay:.18s}.personal-card-typing i:nth-child(3){animation-delay:.36s}@media(prefers-reduced-motion:reduce){.personal-card-typing i{animation:none}}';document.head.append(style);
+ const style=document.createElement('style');style.textContent='#group-members .member-presence{display:inline-block;vertical-align:middle;margin-left:7px;white-space:nowrap;font-family:inherit;font-size:10px;line-height:1.4}#list-view #card-list .char-card .card-inner{gap:10px}#list-view #card-list .char-card .card-info{min-width:0}#list-view #card-list .char-card .card-name-row{padding-right:12px}.personal-preview{display:flex;align-items:center;gap:6px;min-height:22px}.personal-preview-text{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.personal-card-typing{position:relative;overflow:visible;display:inline-flex;flex:0 0 30px;height:20px;align-items:center;justify-content:center;gap:3px;border-radius:12px;background:#e4ded7;color:#816d5b}.personal-card-typing::before{content:"";position:absolute;left:2px;bottom:-3px;width:9px;height:8px;background:inherit;clip-path:polygon(0 0,100% 0,0 100%)}html[data-persona=cyber] .personal-card-typing{background:#24435c;color:#bcefff}.personal-card-typing[hidden]{display:none!important}.personal-card-typing i{width:4px;height:4px;border-radius:50%;background:currentColor;animation:groupEntryDot 1.2s infinite}.personal-card-typing i:nth-child(2){animation-delay:.18s}.personal-card-typing i:nth-child(3){animation-delay:.36s}@media(prefers-reduced-motion:reduce){.personal-card-typing i{animation:none}}';document.head.append(style);
  openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(records=>{for(const r of records){const last=r.turns?.at(-1),at=last?.at;if(at&&person(r.id)){const e=entry(r.id);if(at>=(e.activity||0)){e.activity=at;e.preview=last.content;e.previewRole=last.role;}}}save();renderCards()}).catch(()=>{});
  renderCards();
 })();

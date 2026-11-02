@@ -4027,12 +4027,15 @@ html:not(.himiko-chat-active):not(.himiko-keyboard-open) #app #himikoFrame{
 html[data-persona="cyber"] #app #settingsScreen .settings-group .himiko-group-settings{border-top-color:#315576}
 </style><style>.himiko-frequency th,.himiko-frequency td{padding:8px 5px;border-bottom:1px solid #8b9db244;vertical-align:top}.himiko-frequency th{font-weight:700}.himiko-frequency p{line-height:1.7}</style>
 <style id="test-chat-persona-avatars">
+/* Use the outer chat inset once: avoid stacking it with the section padding. */
+html[data-persona] body #app #testScreen .neko-chat-section{padding-left:0!important;padding-right:0!important}
+
 /* Keep the avatar outside the existing bubble shape, including saved replies. */
 html[data-persona] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble{
- margin-left:40px!important;width:calc(100% - 40px)!important;max-width:calc(100% - 40px)!important;min-width:0;box-sizing:border-box;
+ margin-left:36px!important;width:calc(100% - 36px)!important;max-width:calc(100% - 36px)!important;min-width:0;box-sizing:border-box;
 }
 html[data-persona] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble::after{
- content:"🐱"!important;display:flex!important;position:absolute!important;left:-40px!important;top:2px!important;width:30px!important;height:34px!important;align-items:center;justify-content:center;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;font-size:28px!important;line-height:1!important;background:none!important;border:0!important;box-shadow:none!important;transform:none!important;pointer-events:none;
+ content:"🐱"!important;display:flex!important;position:absolute!important;left:-38px!important;top:-10px!important;width:32px!important;height:34px!important;align-items:center;justify-content:center;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;font-size:32px!important;line-height:1!important;background:none!important;border:0!important;box-shadow:none!important;transform:none!important;pointer-events:none;
 }
 html[data-persona="cyber"] body #app #testScreen .neko-chat-scroll .neko-explanation-bubble::after{content:"😎"!important}
 </style>

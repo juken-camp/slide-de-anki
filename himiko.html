@@ -4180,7 +4180,6 @@ function splitReplyBubbles(text){
 function makeRevealStatus(ch){
   return nodeFromHTML(`<div class="reveal-status" role="status" aria-label="${himikoUi('続きの吹き出しを順番に表示するにゃ','続きの吹き出しを順番に表示するぜ')}">
     <div class="typing reveal-typing-bubble" aria-hidden="true">${[0,.2,.4].map(d=>`<span class="typing-dot" style="background:${ch.color};animation-delay:${d}s"></span>`).join("")}</div>
-    <button type="button" class="reveal-skip">${himikoUi('すべて表示するにゃ','すべて表示するぜ')}</button>
   </div>`);
 }
 // 回答は取得済みの1回分を、1つずつDOMに追加する。
@@ -4733,6 +4732,7 @@ document.getElementById("messages").addEventListener("click",function(e){
  function readCount(at,now=Date.now()){
   const turn=state.turns.find(t=>!t.automatic&&Number(t.at)===Number(at));
   if(!turn||turn.error||!window.himikoPersonPresence||now<Number(at))return 0;
+  if(!Array.isArray(turn.readerIds)&&turn.receiptLegacyCount===undefined)turn.receiptLegacyCount=Math.max(0,Math.min(allChars.length,Number(turn.readCount)||0));
   const before=JSON.stringify([turn.readerIds,turn.readerCandidates,turn.readCount]);
   const readers=new Set((turn.readerIds||[]).filter(id=>allChars.some(p=>p.id===id)));
   const candidates=turn.readerCandidates||{};
@@ -4746,9 +4746,9 @@ document.getElementById("messages").addEventListener("click",function(e){
    const delay=night?30000+jitter%150001:8000+jitter%82001;
    if(now-start>=delay){readers.add(person.id);delete candidates[person.id];}
   }
-  turn.readerIds=[...readers];turn.readerCandidates=candidates;turn.readCount=readers.size;turn.receiptLastCheck=now;
+  turn.readerIds=[...readers];turn.readerCandidates=candidates;turn.readCount=Math.max(Number(turn.receiptLegacyCount)||0,readers.size);turn.receiptLastCheck=now;
   if(before!==JSON.stringify([turn.readerIds,turn.readerCandidates,turn.readCount]))save();
-  return readers.size;
+  return turn.readCount;
  }
  function groupCanType(turn=state.turns.findLast(t=>!t.automatic&&!t.error)){return !turn||(!turn.error&&readCount(turn.at)>0)}
  function refreshPendingDots(){if(!groupRequest||$('group-view').hidden)return;const turn=state.turns.find(t=>t.requestId===groupRequest);if(turn&&Number(turn.firstReplyAt)-Date.now()<=15000&&groupCanType(turn)){if(!$('group-typing'))groupAppend(groupTyping(null),groupFollow())}else $('group-typing')?.remove();}

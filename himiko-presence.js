@@ -49,11 +49,12 @@
   for(const job of e.queue){const readAt=Number.isFinite(job.readAt)?job.readAt:Math.max(job.at||0,job.due-5000);if(!job.read&&now>=readAt){job.read=true;changed=true}}
   if(changed)save();
  }
+ function typingReady(job,now=Date.now()){if(!job)return false;const readAt=Number.isFinite(job.readAt)?job.readAt:Math.max(job.at||0,job.due-5000);return now>=readAt+500&&job.due-now<=10000}
  let pendingStamp='';
- function pending(){const ch=currentChar;if(!ch||!chatReady)return;header();const e=entry(ch.id);updateQueueReads(e);const stamp=ch.id+':'+chatEpoch+':'+e.queue.map(j=>j.key+':'+!!j.read).join(',')+':'+(e.queue[0]?.due-Date.now()<=10000);if(stamp===pendingStamp&&$('personal-pending'))return;pendingStamp=stamp;$('personal-pending')?.remove();if(!e.queue.length)return;
+ function pending(){const ch=currentChar;if(!ch||!chatReady)return;header();const e=entry(ch.id);updateQueueReads(e);const stamp=ch.id+':'+chatEpoch+':'+e.queue.map(j=>j.key+':'+!!j.read).join(',')+':'+typingReady(e.queue[0]);if(stamp===pendingStamp&&$('personal-pending'))return;pendingStamp=stamp;$('personal-pending')?.remove();if(!e.queue.length)return;
   const node=document.createElement('div');node.id='personal-pending';
   for(const job of e.queue)node.append(nodeFromHTML(userRowHTML(ch,job.text,false,job.at,!!job.read)));
-  if(e.queue[0].due-Date.now()<=10000)node.append(nodeFromHTML(typingHTML(ch)));
+  if(typingReady(e.queue[0]))node.append(nodeFromHTML(typingHTML(ch)));
   appendChatNode(node,false);
  }
  const baseOpen=openChat;
@@ -63,7 +64,7 @@
   await opened;
   if(currentChar?.id===Number(id))pending();
  };
- function isTyping(id,now=Date.now()){const e=entry(id);return processingId===id||!!(e.queue.length&&!e.error&&e.queue[0].due-now<=10000)}
+ function isTyping(id,now=Date.now()){const e=entry(id);return processingId===id||!!(e.queue.length&&!e.error&&typingReady(e.queue[0],now))}
  const baseSend=sendMessage;
  sendMessage=async function(text){if(!text?.trim()||!currentChar||!chatReady||isLoading)return;
   clearTimeout(personalSuggestionTimer);messageInner()?.querySelectorAll('.suggestions').forEach(n=>n.remove());

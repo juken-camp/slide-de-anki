@@ -4912,7 +4912,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=20261102o"></script>
+</script><script src="himiko-presence.js?v=20261102p"></script>
 </body>
 </html>
 

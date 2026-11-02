@@ -57,6 +57,7 @@
  function isTyping(id,now=Date.now()){const e=entry(id);return processingId===id||!!(e.queue.length&&!e.error&&e.queue[0].due-now<=10000)}
  const baseSend=sendMessage;
  sendMessage=async function(text){if(!text?.trim()||!currentChar||!chatReady||isLoading)return;
+  clearTimeout(personalSuggestionTimer);messageInner()?.querySelectorAll('.suggestions').forEach(n=>n.remove());
   const ch=currentChar,e=entry(ch.id),p=presence(ch);touch(ch.id);
   if(!p.delay)e.onlineUntil=Date.now()+600000;
   e.preview=text.trim();e.previewRole='user';e.error='';

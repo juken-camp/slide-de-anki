@@ -3437,6 +3437,12 @@ function cleanGroupSpeakerLabel(text,name){
  const prefix=new RegExp('^\\s*(?:【'+escaped+'】\\s*[：:]?|'+escaped+'\\s*[：:])\\s*');
  return String(text).replace(prefix,'').trim();
 }
+// An automatic batch has no preceding spoken prompt. Reject clear replies to
+// an imagined topic announcement rather than sending the rest without context.
+function hasUnspokenOpening(text){
+ const first=String(text).split(/[。！？!?\n]/,1)[0].trim();
+ return /^(?:(?:ふむ|ほう|なるほど|さて|そうか)[、,\s]*)?(?:(?:今日は|今回は|今度は|今は)[、,\s]*)?[^。！？!?\n]{1,35}(?:の話(?:題)?(?:か|だな|なのですね|なのだな|ですね)|について(?:の話)?(?:聞きたい|知りたい)(?:のか|のですね)|という質問(?:か|だな|ですね))[。！？!?]?$/u.test(first);
+}
 function createGroupPlan(automatic=false){
  const draw=randomInt(100),total=draw<25?2:draw<65?3:draw<90?4:5,teacher=total>=3&&randomInt(100)<(automatic?15:45);
  return {total,teacher,figures:total-(teacher?1:0),style:randomInt(3),automatic};
@@ -3575,6 +3581,7 @@ module.exports = async function handler(req, res) {
         const cleaned=cleanGroupSpeakerLabel(x.text,name);if(!cleaned)return res.status(502).json({error:'参加者の回答を受け取れませんでした。もう一度送ってください。'});
         chosen.add(name);replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:cleaned.slice(0,1500)});
       }
+      if(req.himikoAutomatic===true&&hasUnspokenOpening(replies[0]?.text))return res.status(502).json({error:'自動会話の冒頭を再生成します。'});
       if(chosen.size<2)return res.status(502).json({error:'掛け合いを受け取れませんでした。もう一度送ってください。'});
       if(groupPlan.teacher){
         if(typeof obj.teacherSupplement!=='string'||!obj.teacherSupplement.trim())return res.status(502).json({error:'補足を受け取れませんでした。もう一度送ってください。'});

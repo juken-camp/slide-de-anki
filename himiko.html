@@ -1762,7 +1762,13 @@ html[data-persona="cyber"] .group-entry-typing{background:#24435c;color:#bcefff}
 .group-entry-typing i:nth-child(2){animation-delay:.18s}.group-entry-typing i:nth-child(3){animation-delay:.36s}
 @keyframes groupEntryDot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){.group-entry-typing i{animation:none}}
-</style></head>
+</style><style id="compact-list-explanation-label">
+#list-view #card-list .card-info .narrator-badge{font-size:10px;line-height:1.35;padding:1px 5px;white-space:nowrap}
+/* Presence and the explanatory labels occupy separate rows. */
+#chat-view .chat-header #online-badge{grid-row:2}
+#chat-view .chat-header #explainer-badge,#chat-view .chat-header #narrator-badge{grid-row:3}
+</style>
+</head>
 <body>
 
 <!-- LIST VIEW -->
@@ -3931,7 +3937,7 @@ function renderCards(){
             ${!ai?Object.keys(filterGroups.era.items).filter(k=>matchesGroup(ch,'era',k)).map(k=>{const e=ERA_BADGE_COLORS[k];return `<span class="era-badge" style="background:${e.bg};color:${e.color}">${esc(k)}</span>`;}).join(''):""}
             ${ai?`<span class="online-badge">オンライン</span>`:""}
           </div>
-          <div style="font-size:11px;color:#94a3b8;margin-bottom:3px;display:flex;flex-wrap:wrap;align-items:center;gap:5px"><span class="character-period">${esc(ch.period)}</span>${hasNarrator?`<span class="narrator-badge">📖 解説</span>`:""}</div>
+          <div style="font-size:11px;color:#94a3b8;margin-bottom:3px;display:flex;flex-wrap:wrap;align-items:center;gap:5px"><span class="character-period">${esc(ch.period)}</span>${hasNarrator?`<span class="narrator-badge">解説</span>`:""}</div>
           <div style="font-size:12px;font-weight:700;color:${ch.color};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(ch.catchphrase)}</div>
         </div>
         <span class="fav-btn${faved?" faved":""}" onclick="toggleFav(${ch.id},event)" title="お気に入り">${faved?"★":"☆"}</span>
@@ -4069,7 +4075,18 @@ function typingHTML(ch){
     <div class="typing">${[0,.2,.4].map(d=>`<span class="typing-dot" style="background:${ch.color};animation-delay:${d}s"></span>`).join("")}</div>
   </div>`;
 }
+let personalSuggestionTimer=null;
+function schedulePersonalSuggestions(ch,questions,turn){
+ clearTimeout(personalSuggestionTimer);
+ if(!questions.length)return;
+ personalSuggestionTimer=setTimeout(()=>{
+  if(currentChar!==ch||messages.at(-1)!==turn||activeReveal)return;
+  const inner=messageInner();if(!inner||inner.querySelector('.suggestions'))return;
+  appendChatNode(nodeFromHTML(suggestionHTML(ch,questions)),false);scrollChatToEnd(false);
+ },Math.max(0,(Number(turn?.questionsAt)||0)-Date.now()));
+}
 function renderMessages(resetScroll=true){
+  clearTimeout(personalSuggestionTimer);
   const ch=currentChar;if(!ch)return;
   // 保存済みの長い会話をすべて一度にDOM化せず、40往復ずつ遡れる。
   const olderCount=Math.max(0,Math.floor((messages.length-1)/2)-historyVisiblePairs);
@@ -4080,7 +4097,8 @@ function renderMessages(resetScroll=true){
   const initial=messages.length<=1?ch.qs||[]:[];
   const followups=messages.length>1&&messages.at(-1)?.role==="assistant"?dynamicSuggestions:[];
   const el=document.getElementById("messages");
-  el.innerHTML=`<div class="messages-inner">${older}${markup}${suggestionHTML(ch,initial,true)}${suggestionHTML(ch,followups)}</div>`;
+  el.innerHTML=`<div class="messages-inner">${older}${markup}${suggestionHTML(ch,initial,true)}${suggestionHTML(ch,Date.now()>=(Number(messages.at(-1)?.questionsAt)||0)?followups:[])}</div>`;
+  if(followups.length&&Number(messages.at(-1)?.questionsAt)>Date.now())schedulePersonalSuggestions(ch,followups,messages.at(-1));
   watchChatContent();
   el.classList.toggle('nekopon-initial-greeting',messages.length===1); if(resetScroll){el.scrollTop=messages.length>1?el.scrollHeight:0;previousChatScroll=el.scrollTop;userReadingHistory=false;}
   updateSendBtn();
@@ -4149,7 +4167,9 @@ function startReveal(ch,reply,suggestions){
       state.timer=setTimeout(addNext,readingTime);
     }else{
       activeReveal=null;
-      if(suggestions.length)group.after(nodeFromHTML(suggestionHTML(ch,suggestions)));
+      if(suggestions.length){
+        const turn=messages.at(-1);if(turn?.role==='assistant'){turn.questionsAt=Date.now()+10000;persistCurrentChat(ch);schedulePersonalSuggestions(ch,suggestions,turn);}
+      }
     }
     // Newly inserted bubbles can grow after the first layout frame on iOS.
     // During automatic reveal, settle at the true end without a competing
@@ -4163,6 +4183,7 @@ function startReveal(ch,reply,suggestions){
   addNext();
 }
 function cancelReveal(showRest=false,showQuestions=false){
+  clearTimeout(personalSuggestionTimer);
   const state=activeReveal;if(!state)return;
   clearTimeout(state.timer);
   activeReveal=null;
@@ -4719,19 +4740,26 @@ document.getElementById("messages").addEventListener("click",function(e){
    while(index<items.length&&items[index].due<=Date.now()){
     const item=items[index++];item.reply.chunkTimes||=[];item.reply.chunkTimes[item.partIndex]=item.due;turn.closedUnread=(Number(turn.closedUnread)||0)+1;changed=true;
    }
-   turn.visibleCount=index;if(index===items.length){turn.questionsReady=true;changed=true;}
+   turn.visibleCount=index;if(index===items.length){turn.questionsReady=true;turn.questionsAt=(items.at(-1)?.due||Date.now())+10000;changed=true;}
   }
   if(changed)save();
  }
- function groupFinish(complete=false){clearTimeout(timer);timer=null;$('group-typing')?.remove();if(complete&&groupReveal){groupReveal.turn.questionsReady=true;save()}groupReveal=null;busy=false;updateGroupSend();appendGroupSuggestions()}
+ function groupFinish(complete=false){clearTimeout(timer);timer=null;$('group-typing')?.remove();if(complete&&groupReveal){groupReveal.turn.questionsReady=true;groupReveal.turn.questionsAt=Date.now()+10000;save()}groupReveal=null;busy=false;updateGroupSend();appendGroupSuggestions()}
  function revealNext(){const reveal=groupReveal;if(!reveal||reveal.epoch!==epoch)return;const follow=groupFollow();$('group-typing')?.remove();if(reveal.index>=reveal.items.length){groupFinish(true);return}const item=reveal.items[reveal.index++];if(!reveal.turn.automatic){item.at=Date.now();item.reply.chunkTimes||=[];item.reply.chunkTimes[item.partIndex]=item.at;}groupAppend(rowReplyPart(item.person,item.text,item.first,true,{...item,at:item.at||Date.now()}),follow);reveal.turn.visibleCount=reveal.index;save();const next=reveal.items[reveal.index];if(next)next.due=Math.max(next.due||0,Date.now()+historyReadingDelay(item.text));scheduleReveal()}
  function startGroupReveal(replies,current,turn=state.turns.at(-1)){clearTimeout(timer);const items=timedItems(turn);if(!items.length){groupFinish();return}const index=Math.max(0,Math.min(items.length,Number(turn.visibleCount)||0));groupReveal={items,index,epoch:current,turn};scheduleReveal()}
  const examples=['織田信長と豊臣秀吉は何が違うの？','鎌倉幕府と室町幕府はどう違うの？','聖徳太子はどんな政治をしたの？','江戸幕府はどうして長く続いたの？','明治維新で日本はどう変わったの？','戦国時代を終わらせたのは誰？','卑弥呼の時代の暮らしを教えて！','革命によって社会はどう変わったの？','日本と世界の歴史はどうつながっているの？','入試に出やすい歴史のつながりを教えて！'];
  function groupQuestions(values,answers=false){const asked=new Set(state.turns.map(t=>t.question));const unique=[...new Set((Array.isArray(values)?values:[]).filter(q=>typeof q==='string').map(q=>q.trim()).filter(q=>q&&q.length<=100&&(answers||!asked.has(q))))];return unique.slice(0,3)}
  function nextQuestions(){const latest=state.turns.at(-1);const qs=groupQuestions(latest?.suggestions,latest?.suggestionKind==='answers');if(latest?.suggestionKind==='answers'&&qs.length)return qs;return [...new Set([...qs,'今の話をもっとやさしく説明して？','今の話はほかの出来事とどうつながるの？','今の話で覚えておきたい言葉は？'])].slice(0,3)}
  function groupQuestionHTML(questions){const answers=state.turns.at(-1)?.suggestionKind==='answers';return `<div class="suggestions group-examples" aria-label="${answers?'返答の例':'次の質問候補'}">${answers?'<div class="suggestions-label">返答の例</div>':''}<div class="suggestions-list">${questions.map(q=>`<button type="button" class="suggestion-btn" data-group-question="${escAttr(q)}">${safe(q)}</button>`).join('')}</div></div>`}
- function appendGroupSuggestions(){$('group-messages-inner').querySelector('.group-examples')?.remove();if(state.turns.length&&state.turns.at(-1).questionsReady!==false&&!busy){const follow=groupFollow();groupAppend(groupQuestionHTML(nextQuestions()),follow)}}
- function render(){const scroller=$('group-messages'),priorTop=scroller.scrollTop,follow=groupFollow();if(unreadEntryPending&&inboxData){unreadEntryKey=state.turns.flatMap(t=>t.replies||[]).find(r=>r.key&&!acknowledgedKeys.has(r.key))?.key||null;unreadEntryPending=false;}let lastAt=null;let h=state.turns.length?'':groupQuestionHTML(examples);for(const t of state.turns){if(typeof t.question!=='string'||!Array.isArray(t.replies))continue;h+=historyDateHTML(t.at||t.replies[0]?.at,lastAt);lastAt=t.at||t.replies.at(-1)?.at||lastAt;if(!t.automatic)h+=rowUser(t.question,t.at,t.read);const items=revealItems(t.replies);const visible=t.questionsReady===false?Math.max(0,Number(t.visibleCount)||0):items.length;h+=items.slice(0,visible).map(item=>((item.first&&item.reply.key===unreadEntryKey)?'<div id="group-unread-divider" role="separator" aria-label="ここから未読メッセージ">ここから未読メッセージ</div>':'')+rowReplyPart(item.person,item.text,item.first,false,item)).join('')}if(state.turns.length&&state.turns.at(-1).questionsReady!==false)h+=groupQuestionHTML(nextQuestions());$('group-messages-inner').innerHTML=h;const divider=$('group-unread-divider');if(unreadEntryKey&&divider&&!scroller.dataset.unreadAnchored){scroller.scrollTop+=divider.getBoundingClientRect().top-scroller.getBoundingClientRect().top-12;scroller.dataset.unreadAnchored='true';}else if(unreadEntryPending||(!follow&&scroller.dataset.unreadAnchored))scroller.scrollTop=priorTop;else scroller.scrollTop=state.turns.length?scroller.scrollHeight:0;syncGroupName();updateGroupSend();refreshReadCounts()}
+ let groupSuggestionTimer=null;
+ function appendGroupSuggestions(){
+  clearTimeout(groupSuggestionTimer);$('group-messages-inner').querySelector('.group-examples')?.remove();
+  const turn=state.turns.at(-1);if(!turn||turn.questionsReady===false||busy||$('group-view').hidden)return;
+  const wait=(Number(turn.questionsAt)||0)-Date.now();
+  if(wait>0){groupSuggestionTimer=setTimeout(appendGroupSuggestions,wait);return;}
+  const follow=groupFollow();groupAppend(groupQuestionHTML(nextQuestions()),follow);
+ }
+ function render(){const scroller=$('group-messages'),priorTop=scroller.scrollTop,follow=groupFollow();if(unreadEntryPending&&inboxData){unreadEntryKey=state.turns.flatMap(t=>t.replies||[]).find(r=>r.key&&!acknowledgedKeys.has(r.key))?.key||null;unreadEntryPending=false;}let lastAt=null;let h=state.turns.length?'':groupQuestionHTML(examples);for(const t of state.turns){if(typeof t.question!=='string'||!Array.isArray(t.replies))continue;h+=historyDateHTML(t.at||t.replies[0]?.at,lastAt);lastAt=t.at||t.replies.at(-1)?.at||lastAt;if(!t.automatic)h+=rowUser(t.question,t.at,t.read);const items=revealItems(t.replies);const visible=t.questionsReady===false?Math.max(0,Number(t.visibleCount)||0):items.length;h+=items.slice(0,visible).map(item=>((item.first&&item.reply.key===unreadEntryKey)?'<div id="group-unread-divider" role="separator" aria-label="ここから未読メッセージ">ここから未読メッセージ</div>':'')+rowReplyPart(item.person,item.text,item.first,false,item)).join('')}$('group-messages-inner').innerHTML=h;const divider=$('group-unread-divider');if(unreadEntryKey&&divider&&!scroller.dataset.unreadAnchored){scroller.scrollTop+=divider.getBoundingClientRect().top-scroller.getBoundingClientRect().top-12;scroller.dataset.unreadAnchored='true';}else if(unreadEntryPending||(!follow&&scroller.dataset.unreadAnchored))scroller.scrollTop=priorTop;else scroller.scrollTop=state.turns.length?scroller.scrollHeight:0;syncGroupName();updateGroupSend();refreshReadCounts();if(state.turns.length)appendGroupSuggestions()}
 
  function syncGroupName(){$('group-title').textContent=state.name;$('group-settings-name').textContent=state.name;document.querySelector('#list-view .group-chat-title').textContent=state.name}
  function updateGroupSend(){$('group-send').disabled=(busy&&!groupReveal)||!$('group-input').value.trim();$('group-reset').disabled=!busy&&!state.turns.length}
@@ -4761,7 +4789,7 @@ document.getElementById("messages").addEventListener("click",function(e){
  let inboxData=null,serverUnread=0;
  function inboxAction(action,extra={}){if(window.parent!==window)window.parent.postMessage({type:'himiko-inbox-action',action,...extra},location.origin)}
  function interruptAutomatic(){if(!groupReveal?.turn?.automatic)return;const t=groupReveal.turn,items=groupReveal.items.slice(0,groupReveal.index),kept=[];for(const item of items){let r=kept.find(r=>r.key===item.reply.key);if(!r){r={id:item.person.id,key:item.reply.key,text:'',at:item.at};kept.push(r)}r.text+=(r.text?'\n\n':'')+item.text;}inboxAction('interrupt',{batchId:t.batchId,seen:kept.map(r=>({key:r.key,text:r.text}))});t.replies=kept;t.interrupted=true;t.questionsReady=true;clearTimeout(timer);groupReveal=null;busy=false;$('group-typing')?.remove();save();updateGroupSend()}
- function receiveInbox(d){inboxData=d;serverUnread=Number(d.unread)||0;for(const k of d.readKeys||[])acknowledgedKeys.add(k);const badge=$('group-unread');if(badge){badge.textContent=d.unread?String(d.unread):'';badge.hidden=!d.unread;}if(busy||state.turns.some(t=>!t.automatic&&t.questionsReady===false))return;const open=!$('group-view').hidden;let fresh=null,changed=false,revealFrom=0;for(const b of d.batches||[]){let t=state.turns.find(t=>t.batchId===b.id);if(t?.interrupted)continue;const replies=b.replies.filter(r=>ch(r.id));if(!replies.length)continue;if(t){if(t.replies.length>=replies.length)continue;revealFrom=revealItems(t.replies).length;t.replies=replies;fresh=t;changed=true;}else {t={automatic:true,batchId:b.id,at:b.createdAt,question:'',replies,suggestions:b.suggestions||[],suggestionKind:b.suggestionKind||'questions',questionsReady:true};state.turns.push(t);fresh=t;revealFrom=0;changed=true;}}if(!changed){if(open&&unreadEntryPending)render();return;}state.turns=state.turns.slice(-100);save();if(open){const entering=unreadEntryPending;render();if(!entering&&fresh&&Date.now()-fresh.replies.at(-1).at<90000){fresh.questionsReady=false;fresh.visibleCount=revealFrom;render();startGroupReveal(fresh.replies,epoch,fresh);updateGroupSend()}}}
+ function receiveInbox(d){inboxData=d;serverUnread=Number(d.unread)||0;for(const k of d.readKeys||[])acknowledgedKeys.add(k);const badge=$('group-unread');if(badge){badge.textContent=d.unread?String(d.unread):'';badge.hidden=!d.unread;}if(busy||state.turns.some(t=>!t.automatic&&t.questionsReady===false))return;const open=!$('group-view').hidden;let fresh=null,changed=false,revealFrom=0;for(const b of d.batches||[]){let t=state.turns.find(t=>t.batchId===b.id);if(t?.interrupted)continue;const replies=b.replies.filter(r=>ch(r.id));if(!replies.length)continue;if(t){if(t.replies.length>=replies.length)continue;revealFrom=revealItems(t.replies).length;t.replies=replies;t.questionsAt=(replies.at(-1)?.at||Date.now())+10000;fresh=t;changed=true;}else {t={automatic:true,batchId:b.id,at:b.createdAt,question:'',replies,suggestions:b.suggestions||[],suggestionKind:b.suggestionKind||'questions',questionsAt:(replies.at(-1)?.at||Date.now())+10000,questionsReady:true};state.turns.push(t);fresh=t;revealFrom=0;changed=true;}}if(!changed){if(open&&unreadEntryPending)render();return;}state.turns=state.turns.slice(-100);save();if(open){const entering=unreadEntryPending;render();if(!entering&&fresh&&Date.now()-fresh.replies.at(-1).at<90000){fresh.questionsReady=false;fresh.visibleCount=revealFrom;render();startGroupReveal(fresh.replies,epoch,fresh);updateGroupSend()}}}
  window.addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==window.parent)return;const m=e.data;if(m?.type==='himiko-inbox-data')receiveInbox(m.data);if(m?.type==='himiko-inbox-count'){serverUnread=Number(m.count)||0;refreshGroupUnread();}if(m?.type==='himiko-inbox-error'&&m.action==='read'){for(const k of m.keys||[])acknowledgedKeys.delete(k);retryReadAt=Date.now()+5000;}if(m?.type==='himiko-open-group')window.openGroupChat();});
  const acknowledgedKeys=new Set();let retryReadAt=0;
  const inboxObserver=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{if(document.hidden||$('group-view').hidden)return;const keys=entries.filter(x=>x.isIntersecting&&x.intersectionRatio>.8).map(x=>x.target.dataset.inboxKey).filter(k=>!acknowledgedKeys.has(k));if(keys.length){keys.forEach(k=>acknowledgedKeys.add(k));inboxAction('read',{keys})}},{root:$('group-messages'),threshold:.8}):null;
@@ -4817,7 +4845,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=20261102f"></script>
+</script><script src="himiko-presence.js?v=20261102g"></script>
 </body>
 </html>
 

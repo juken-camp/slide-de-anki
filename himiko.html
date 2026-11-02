@@ -4219,6 +4219,7 @@ function startReveal(ch,reply,suggestions){
     state.status?.remove();state.status=null;
     const i=state.index++;const saved=messages.at(-1);if(saved?.role==='assistant'){saved.chunkTimes||=[];saved.chunkTimes[i]=Date.now();persistCurrentChat(ch);}
     group.append(nodeFromHTML(assistantRowHTML(ch,chunks[i],i===0,true,Date.now())));
+    playReceiveSound();
     window.dispatchEvent(new CustomEvent('himiko-person-bubble',{detail:{id:ch.id,text:chunks[i]}}));
     if(state.index<chunks.length){
       state.status=makeRevealStatus(ch);
@@ -4436,7 +4437,6 @@ async function sendMessage(text){
     // API応答の完了した往復だけを保存。画面描画の完了を待つ必要はない。
     persistCurrentChat(ch);
     typingRow.remove();
-    playReceiveSound();
     startReveal(ch,parsed.text,dynamicSuggestions);
   }catch(e){
     if(epoch!==chatEpoch||currentChar!==ch)return;
@@ -4830,7 +4830,7 @@ document.getElementById("messages").addEventListener("click",function(e){
   if(changed)save();
  }
  function groupFinish(complete=false){clearTimeout(timer);timer=null;$('group-typing')?.remove();if(complete&&groupReveal){groupReveal.turn.questionsReady=true;groupReveal.turn.questionsAt=Date.now()+10000;save()}groupReveal=null;busy=false;updateGroupSend();appendGroupSuggestions()}
- function revealNext(){const reveal=groupReveal;if(!reveal||reveal.epoch!==epoch)return;const follow=groupFollow();$('group-typing')?.remove();if(reveal.index>=reveal.items.length){groupFinish(true);return}const item=reveal.items[reveal.index++];if(!reveal.turn.automatic){item.at=Date.now();item.reply.chunkTimes||=[];item.reply.chunkTimes[item.partIndex]=item.at;}groupAppend(rowReplyPart(item.person,item.text,item.first,true,{...item,at:item.at||Date.now()}),follow);reveal.turn.visibleCount=reveal.index;save();const next=reveal.items[reveal.index];if(next)next.due=Math.max(next.due||0,Date.now()+Math.min(14000,4000+String(item.text).length*60)+Math.floor(Math.random()*2001));scheduleReveal()}
+ function revealNext(){const reveal=groupReveal;if(!reveal||reveal.epoch!==epoch)return;const follow=groupFollow();$('group-typing')?.remove();if(reveal.index>=reveal.items.length){groupFinish(true);return}const item=reveal.items[reveal.index++];if(!reveal.turn.automatic){item.at=Date.now();item.reply.chunkTimes||=[];item.reply.chunkTimes[item.partIndex]=item.at;}groupAppend(rowReplyPart(item.person,item.text,item.first,true,{...item,at:item.at||Date.now()}),follow);playReceiveSound();reveal.turn.visibleCount=reveal.index;save();const next=reveal.items[reveal.index];if(next)next.due=Math.max(next.due||0,Date.now()+Math.min(14000,4000+String(item.text).length*60)+Math.floor(Math.random()*2001));scheduleReveal()}
  function startGroupReveal(replies,current,turn=state.turns.at(-1)){clearTimeout(timer);const items=timedItems(turn);if(!items.length){groupFinish();return}const index=Math.max(0,Math.min(items.length,Number(turn.visibleCount)||0));groupReveal={items,index,epoch:current,turn};scheduleReveal()}
  const examples=['織田信長と豊臣秀吉は何が違うの？','鎌倉幕府と室町幕府はどう違うの？','聖徳太子はどんな政治をしたの？','江戸幕府はどうして長く続いたの？','明治維新で日本はどう変わったの？','戦国時代を終わらせたのは誰？','卑弥呼の時代の暮らしを教えて！','革命によって社会はどう変わったの？','日本と世界の歴史はどうつながっているの？','入試に出やすい歴史のつながりを教えて！'];
  function groupQuestions(values,answers=false){const asked=new Set(state.turns.map(t=>t.question));const unique=[...new Set((Array.isArray(values)?values:[]).filter(q=>typeof q==='string').map(q=>q.trim()).filter(q=>q&&q.length<=100&&(answers||!asked.has(q))))];return unique.slice(0,3)}
@@ -4973,7 +4973,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=personal-unread-20261103"></script>
+</script><script src="himiko-presence.js?v=all-bubble-sound-20261103"></script>
 </body>
 </html>
 

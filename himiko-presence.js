@@ -100,7 +100,7 @@
    const answerAt=Date.now(),user={role:'user',content:question,at:selected[0].at,read:true},answer={role:'assistant',content:parsed.text,at:answerAt,chunkTimes:[]};
    await writeSavedChat(ch.id,{turns:[...turns,user,answer],suggestions:parsed.suggestions});
    e.queue=e.queue.filter(j=>!chosen.has(j.key));e.onlineUntil=answerAt+600000;e.activity=answerAt;model.defaultOrder=false;e.preview=parsed.text;e.previewRole='assistant';e.unread+=(currentChar?.id===ch.id?0:1);e.error='';save();
-   if(currentChar?.id===ch.id&&chatReady){$('personal-pending')?.remove();messages=[{role:'assistant',content:ch.greeting},...turns,user];dynamicSuggestions=[];renderMessages();messages.push(answer);dynamicSuggestions=parsed.suggestions;playReceiveSound();startReveal(ch,parsed.text,parsed.suggestions);pending();}
+   if(currentChar?.id===ch.id&&chatReady){$('personal-pending')?.remove();messages=[{role:'assistant',content:ch.greeting},...turns,user];dynamicSuggestions=[];renderMessages();messages.push(answer);dynamicSuggestions=parsed.suggestions;startReveal(ch,parsed.text,parsed.suggestions);pending();}
    else renderCards();
   }catch(err){e.error=String(err.message);e.queue.forEach(j=>{if(chosen.has(j.key))j.due=Date.now()+60000});save();if(currentChar?.id===ch.id)setChatStorageStatus('返信を取得できませんでした。送信内容を保持して再試行します','error');}
   finally{processing=false;processingId=null;}

@@ -18,6 +18,7 @@
   if(hour>=7&&hour<23&&draw<online)return {label:'オンライン',color:'#22c55e',delay:0};
   return draw<88&&hour>=7&&hour<23?{label:'離席中',color:'#eab308',delay:60000+hash(ch.id+':away:'+slot)%240001}:{label:'あとで戻る',color:'#94a3b8',delay:600000+hash(ch.id+':later:'+slot)%1200001};
  }
+ window.himikoPersonPresence=presence;
  function previewText(e,ch){
   if(!e.preview)return String(ch.catchphrase||'').replace(/^💬\s*/,'');
   const text=e.previewRole==='user'?e.preview:cleanReplyText(e.preview);

@@ -1796,9 +1796,9 @@ html[data-persona="cyber"] #list-view #card-list .personal-unread,html[data-pers
 :is(#chat-view,#group-view) .back-btn:focus:not(:focus-visible){outline:none;box-shadow:none!important}
 </style>
 <style id="group-retry-message">
-#group-view .group-send-failed{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:2px 8px 12px;font-family:inherit;font-size:11px;line-height:1.5;color:#b47878}
-#group-view .group-send-failed button{font:inherit;color:inherit;border:0;background:transparent;padding:4px 2px;text-decoration:underline;cursor:pointer}
-html[data-persona="cyber"] #group-view .group-send-failed{color:#e6a0a5}
+#group-view .group-send-failed{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:2px 8px 12px;font-family:inherit;font-size:11px;line-height:1.5;color:#9b806b}
+#group-view .group-send-failed button{font:inherit;color:inherit;border:0;background:transparent;padding:4px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+html[data-persona="cyber"] #group-view .group-send-failed{color:#8eaec4}
 </style>
 <style id="chat-input-scrollbar-cleanup">
 :is(#chat-view #msg-input,#group-view #group-input){resize:none;-webkit-appearance:none;appearance:none;scrollbar-width:none}
@@ -4729,28 +4729,35 @@ document.getElementById("messages").addEventListener("click",function(e){
  function mark(ids){const x=seen();ids.forEach(v=>x.add(v));try{localStorage.setItem(SEEN,JSON.stringify([...x]))}catch{} }
  function avatar(p){return `<span class="avatar" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</span>`}
 
- const READ_KEY='himiko-group-read-lags-v2';
- function readerLags(){
-  try{const a=JSON.parse(localStorage.getItem(READ_KEY)||'null');if(Array.isArray(a)&&a.length===88&&a.every(x=>Number.isFinite(x)&&x>0))return a;}catch{}
-  const a=Array.from({length:88},(_,i)=>Math.round(i===0?700+Math.random()*500:i<25?1300+Math.random()*6700:i<60?8000+Math.random()*37000:i<80?45000+Math.random()*255000:i<86?300000+Math.random()*6900000:21600000+Math.random()*237600000)).sort((a,b)=>a-b);
-  try{localStorage.setItem(READ_KEY,JSON.stringify(a))}catch{}return a;
- }
- const readLags=readerLags();
+ // Use the same per-person presence as the member list; receipts accumulate by ID.
  function readCount(at,now=Date.now()){
-  // Most posts collect readers quickly; about one in five has a quieter start.
-  const age=now-Number(at),slow=Math.abs(Math.floor(Number(at)/1000)*2654435761)%10<2;
-  const count=readLags.filter(lag=>age>=lag*(slow&&lag<300000?4:1)).length;
-  return Math.min(88,count);
+  const turn=state.turns.find(t=>!t.automatic&&Number(t.at)===Number(at));
+  if(!turn||turn.error||!window.himikoPersonPresence||now<Number(at))return 0;
+  const before=JSON.stringify([turn.readerIds,turn.readerCandidates,turn.readCount]);
+  const readers=new Set((turn.readerIds||[]).filter(id=>allChars.some(p=>p.id===id)));
+  const candidates=turn.readerCandidates||{};
+  if(now-Number(turn.receiptLastCheck||0)>120000)for(const id of Object.keys(candidates))delete candidates[id];
+  const hour=new Date(now+9*3600000).getUTCHours(),night=hour<7||hour>=23;
+  for(const person of allChars){
+   if(readers.has(person.id))continue;
+   if(window.himikoPersonPresence(person,now).label!=='オンライン'){delete candidates[person.id];continue;}
+   const start=Number(candidates[person.id])||now;candidates[person.id]=start;
+   const jitter=(Math.imul(person.id+1,2654435761)^Math.floor(Number(at)/1000))>>>0;
+   const delay=night?30000+jitter%150001:8000+jitter%82001;
+   if(now-start>=delay){readers.add(person.id);delete candidates[person.id];}
+  }
+  turn.readerIds=[...readers];turn.readerCandidates=candidates;turn.readCount=readers.size;turn.receiptLastCheck=now;
+  if(before!==JSON.stringify([turn.readerIds,turn.readerCandidates,turn.readCount]))save();
+  return readers.size;
  }
- function groupCanType(turn=state.turns.findLast(t=>!t.automatic&&!t.error)){return !turn||(!turn.error&&readCount(turn.at,Date.now()-700)>0)}
+ function groupCanType(turn=state.turns.findLast(t=>!t.automatic&&!t.error)){return !turn||(!turn.error&&readCount(turn.at)>0)}
  function refreshPendingDots(){if(!groupRequest||$('group-view').hidden)return;const turn=state.turns.find(t=>t.requestId===groupRequest);if(turn&&Number(turn.firstReplyAt)-Date.now()<=15000&&groupCanType(turn)){if(!$('group-typing'))groupAppend(groupTyping(null),groupFollow())}else $('group-typing')?.remove();}
  function groupReadMeta(at){const count=readCount(at);return at?`<span class="history-message-time">${count?'既読 '+count+'<br>':''}${esc(historyClock(at))}</span>`:''}
 
  function refreshReadCounts(){
   if($('group-view').hidden)return;
-  const rows=[...$('group-messages-inner').querySelectorAll('[data-group-sent-at]')];let floor=0,readCountsDirty=false;
-  for(const row of rows.reverse()){const at=Number(row.dataset.groupSentAt);const turn=state.turns.find(t=>!t.automatic&&Number(t.at)===at);floor=Math.min(88,Math.max(floor,readCount(at)));if(turn&&turn.readCount!==floor){turn.readCount=floor;readCountsDirty=true;}const time=row.querySelector('.history-message-time');if(time)time.innerHTML=(floor?'既読 '+floor+'<br>':'')+esc(historyClock(at));}
-  if(readCountsDirty)save();
+  const rows=[...$('group-messages-inner').querySelectorAll('[data-group-sent-at]')];
+  for(const row of rows){const at=Number(row.dataset.groupSentAt),count=readCount(at);const time=row.querySelector('.history-message-time');if(time)time.innerHTML=(count?'既読 '+count+'<br>':'')+esc(historyClock(at));}
  }
  function planLocalReplies(replies,firstAt=Date.now()+120000+Math.floor(Math.random()*360001)){
   let at=Math.max(Date.now()+10000,firstAt);
@@ -4817,7 +4824,7 @@ document.getElementById("messages").addEventListener("click",function(e){
   const follow=groupFollow();groupAppend(groupQuestionHTML(nextQuestions()),follow);
  }
  function refreshGroupSuggestions(){const turn=state.turns.at(-1);if(!turn||turn.pending||turn.questionsReady===false||busy||$('group-view').hidden)return;if(Date.now()<(Number(turn.questionsAt)||0))return;if(!$('group-messages-inner').querySelector('.group-examples'))appendGroupSuggestions();}
- function render(){const scroller=$('group-messages'),priorTop=scroller.scrollTop,follow=groupFollow();if(unreadEntryPending&&inboxData){unreadEntryKey=state.turns.flatMap(t=>t.replies||[]).find(r=>r.key&&!acknowledgedKeys.has(r.key))?.key||null;unreadEntryPending=false;}let lastAt=null;let h=state.turns.length?'':groupQuestionHTML(examples);for(const t of state.turns){if(typeof t.question!=='string'||!Array.isArray(t.replies))continue;h+=historyDateHTML(t.at||t.replies[0]?.at,lastAt);lastAt=t.at||t.replies.at(-1)?.at||lastAt;if(!t.automatic)h+=rowUser(t.question,t.at,t.read,!!t.error,t.quote)+(t.error?`<div class="group-send-failed"><span>返信を受け取れませんでした</span><button type="button" data-group-retry="${escAttr(t.requestId)}">再試行</button></div>`:'');const items=revealItems(t.replies);const visible=t.questionsReady===false?Math.max(0,Number(t.visibleCount)||0):items.length;h+=items.slice(0,visible).map(item=>((item.first&&item.reply.key===unreadEntryKey)?'<div id="group-unread-divider" role="separator" aria-label="ここから未読メッセージ">ここから未読メッセージ</div>':'')+rowReplyPart(item.person,item.text,item.first,false,item)).join('')}$('group-messages-inner').innerHTML=h;const divider=$('group-unread-divider');if(unreadEntryKey&&divider&&!scroller.dataset.unreadAnchored){scroller.scrollTop+=divider.getBoundingClientRect().top-scroller.getBoundingClientRect().top-12;scroller.dataset.unreadAnchored='true';}else if(unreadEntryPending||(!follow&&scroller.dataset.unreadAnchored))scroller.scrollTop=priorTop;else scroller.scrollTop=state.turns.length?scroller.scrollHeight:0;syncGroupName();updateGroupSend();refreshReadCounts();if(state.turns.length)appendGroupSuggestions()}
+ function render(){const scroller=$('group-messages'),priorTop=scroller.scrollTop,follow=groupFollow();if(unreadEntryPending&&inboxData){unreadEntryKey=state.turns.flatMap(t=>t.replies||[]).find(r=>r.key&&!acknowledgedKeys.has(r.key))?.key||null;unreadEntryPending=false;}let lastAt=null;let h=state.turns.length?'':groupQuestionHTML(examples);for(const t of state.turns){if(typeof t.question!=='string'||!Array.isArray(t.replies))continue;h+=historyDateHTML(t.at||t.replies[0]?.at,lastAt);lastAt=t.at||t.replies.at(-1)?.at||lastAt;if(!t.automatic)h+=rowUser(t.question,t.at,t.read,!!t.error,t.quote)+(t.error?`<div class="group-send-failed"><span>送信できませんでした</span><button type="button" data-group-retry="${escAttr(t.requestId)}" aria-label="再試行" title="再試行"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3v6h-6"/><path d="M21 9a9 9 0 1 0 .1 5"/></svg></button></div>`:'');const items=revealItems(t.replies);const visible=t.questionsReady===false?Math.max(0,Number(t.visibleCount)||0):items.length;h+=items.slice(0,visible).map(item=>((item.first&&item.reply.key===unreadEntryKey)?'<div id="group-unread-divider" role="separator" aria-label="ここから未読メッセージ">ここから未読メッセージ</div>':'')+rowReplyPart(item.person,item.text,item.first,false,item)).join('')}$('group-messages-inner').innerHTML=h;const divider=$('group-unread-divider');if(unreadEntryKey&&divider&&!scroller.dataset.unreadAnchored){scroller.scrollTop+=divider.getBoundingClientRect().top-scroller.getBoundingClientRect().top-12;scroller.dataset.unreadAnchored='true';}else if(unreadEntryPending||(!follow&&scroller.dataset.unreadAnchored))scroller.scrollTop=priorTop;else scroller.scrollTop=state.turns.length?scroller.scrollHeight:0;syncGroupName();updateGroupSend();refreshReadCounts();if(state.turns.length)appendGroupSuggestions()}
 
  function syncGroupName(){$('group-title').textContent=state.name;$('group-settings-name').textContent=state.name;document.querySelector('#list-view .group-chat-title').textContent=state.name+' ('+(allChars.length+1)+')'}
  function updateGroupSend(){$('group-send').disabled=!!groupRequest||(busy&&!groupReveal)||!$('group-input').value.trim();$('group-reset').disabled=!busy&&!state.turns.length}
@@ -4857,7 +4864,7 @@ document.getElementById("messages").addEventListener("click",function(e){
    mark(replies.map(x=>x.id));historyActivity();save();
    if(!$('group-view').hidden){$('group-typing')?.remove();render();startGroupReveal(turn.replies,epoch,turn);}
   }catch(err){
-   const turn=state.turns.find(t=>t.requestId===id);if(turn){turn.error=String(err.message);save();if(!$('group-view').hidden){busy=false;$('group-typing')?.remove();render();}}
+   const turn=state.turns.find(t=>t.requestId===id);if(turn){turn.error=String(err.message);turn.readerIds=[];turn.readerCandidates={};turn.readCount=0;save();if(!$('group-view').hidden){busy=false;$('group-typing')?.remove();render();}}
   }finally{if(groupRequest===id)groupRequest=null;updateGroupSend();}
  }
  $('group-messages').addEventListener('click',e=>{
@@ -4933,7 +4940,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=members2rows-20261102q"></script>
+</script><script src="himiko-presence.js?v=presence-receipts-20261103"></script>
 </body>
 </html>
 

@@ -4069,10 +4069,6 @@ html[data-persona=cyber] #app #scienceFilters .science-filter-line>span{box-shad
 #app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])){row-gap:6px}
 #app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])) #catalogSeries{padding-top:2px;padding-bottom:4px}
 #app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])) .catalog-resume{margin:0}
-/* Give all four scrollport edges a 40px paint gutter. Compensating width
-   and margins preserve the content width, button sizes and row placement. */
-#app #catalogScreen .series-scroller #catalogSeries{width:calc(100% + 80px);padding:45px 41px 50px;margin:-40px!important;scroll-padding-inline:41px}
-#app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])) #catalogSeries{padding:42px 41px 44px}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -5237,6 +5233,7 @@ function livelyAnimate(element,frames,duration=600){
 function restoreLivelyHighlight(element){
  const record=livelyHighlights.get(element);if(!record)return;
  clearTimeout(record.timer);
+ if(record.halo){cancelAnimationFrame(record.haloFrame);record.halo.remove();}
  for(const [name,value,priority] of record.original){if(value)element.style.setProperty(name,value,priority);else element.style.removeProperty(name);}
  livelyHighlights.delete(element);
 }
@@ -5274,7 +5271,24 @@ function livelyHighlight(element){
   element.style.setProperty('color','#653509','important');
   element.style.setProperty('box-shadow','0 0 16px #ffc63c,0 0 36px #ffad46cc,inset 0 0 20px #fffbe5','important');
  }
- livelyHighlights.set(element,{original,timer:setTimeout(()=>restoreLivelyHighlight(element),650)});
+ const record={original,timer:setTimeout(()=>restoreLivelyHighlight(element),650)};
+ livelyHighlights.set(element,record);
+ if(element.parentElement?.id==='catalogSeries'){
+  // The scrollport clips buttons; a decoration-only halo paints outside it.
+  const halo=document.createElement('span');halo.className='quiz-effect';
+  halo.style.borderRadius=parseFloat(radius)>0?radius:'12px';
+  halo.style.boxShadow=cyber?'0 0 16px #00f5ff,0 0 36px #00eaffcc':'0 0 16px #ffc63c,0 0 36px #ffad46cc';
+  element.style.setProperty('box-shadow',cyber?'inset 0 0 20px #c5ffff99':'inset 0 0 20px #fffbe5','important');
+  record.halo=halo;livelyRoot().append(halo);
+  const follow=()=>{
+   if(!element.isConnected){restoreLivelyHighlight(element);return;}
+   const rect=element.getBoundingClientRect(),viewport=element.parentElement.getBoundingClientRect();
+   const left=Math.max(rect.left,viewport.left),right=Math.min(rect.right,viewport.right);
+   if(right<=left){restoreLivelyHighlight(element);return;}
+   Object.assign(halo.style,{left:left+'px',top:rect.top+'px',width:(right-left)+'px',height:rect.height+'px'});
+   record.haloFrame=requestAnimationFrame(follow);
+  };follow();
+ }
 }
 function livelyIconFeedback(element,kind='sparkle'){
  clearTimeout(livelyIconTimers.get(element));element.classList.add('quiz-icon-active');

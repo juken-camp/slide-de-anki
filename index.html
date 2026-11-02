@@ -4069,9 +4069,10 @@ html[data-persona=cyber] #app #scienceFilters .science-filter-line>span{box-shad
 #app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])){row-gap:6px}
 #app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])) #catalogSeries{padding-top:2px;padding-bottom:4px}
 #app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])) .catalog-resume{margin:0}
-/* Four series fit on screen: let the lively halo extend beyond the row. */
-#app #catalogScreen .series-scroller #catalogSeries.series-fits{overflow:visible;scrollbar-width:none}
-#app #catalogScreen #catalogSeries.series-fits::-webkit-scrollbar{display:none}
+/* Give all four scrollport edges a 40px paint gutter. Compensating width
+   and margins preserve the content width, button sizes and row placement. */
+#app #catalogScreen .series-scroller #catalogSeries{width:calc(100% + 80px);padding:45px 41px 50px;margin:-40px!important;scroll-padding-inline:41px}
+#app #catalogScreen .catalog-search-panel:has(#scienceFilters:not([hidden])) #catalogSeries{padding:42px 41px 44px}
 </style>
 </head>
 <body><main id="app" class="app">
@@ -5649,7 +5650,6 @@ function renderCatalog() {
     const count=document.createElement('span'); count.className='series-count'; count.textContent=`${catalogScopeLessons().filter(m=>lessonSeries(m)===s.id).length}教材`;
     b.append(label,count); b.onclick=()=>setCatalogContext({series:s.id}); $('catalogSeries').append(b);
   }
-  $('catalogSeries').classList.toggle('series-fits', $('catalogSeries').children.length<=4);
   const searching = !!catalogQuery(), showLessons=!!catalogSubject||searching, visible = showLessons?visibleLessons():[];
   const all = showLessons?catalogSeriesLessons():[], keys = [...new Set((searching ? visible : all).map(groupKey))];
   if (usesGrades()) keys.sort((a,b) => (a === 'other' ? 9 : Number(a)) - (b === 'other' ? 9 : Number(b)));

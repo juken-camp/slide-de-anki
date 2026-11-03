@@ -3723,6 +3723,20 @@ module.exports = async function handler(req, res) {
       return res.status(502).json({ error: 'AIに接続できませんでした。しばらくしてからお試しください。' });
     }
     const data = await response.json();
+    // Record token usage even if parsing later fails: the provider may charge for it.
+    // Never include prompts, replies, identifiers, or credentials in these logs.
+    if (data.usage && typeof data.usage === 'object') {
+      const tokenCount = key => Number.isFinite(data.usage[key]) ? data.usage[key] : 0;
+      console.log('[himiko-usage]', JSON.stringify({
+        kind: req.himikoAutomatic === true ? 'group_auto' : input.isGroup ? 'group_reply' : 'personal_reply',
+        model: typeof data.model === 'string' ? data.model : (process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5'),
+        input_tokens: tokenCount('input_tokens'),
+        output_tokens: tokenCount('output_tokens'),
+        cache_creation_input_tokens: tokenCount('cache_creation_input_tokens'),
+        cache_read_input_tokens: tokenCount('cache_read_input_tokens'),
+        stop_reason: typeof data.stop_reason === 'string' ? data.stop_reason : null
+      }));
+    }
     const text = Array.isArray(data.content) ? data.content.filter(b => b.type === 'text' && typeof b.text === 'string').map(b => b.text).join('') : '';
     if (!text.trim()) return res.status(502).json({ error: '回答を受け取れませんでした。もう一度送ってください。' });
     if (['max_tokens', 'model_context_window_exceeded'].includes(data.stop_reason) && (input.isGroup || !completedReply(text))) {

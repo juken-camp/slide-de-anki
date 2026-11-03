@@ -4419,6 +4419,13 @@ async function sendMessage(text){
   const scroller=document.getElementById("messages"),inner=messageInner();
   const suggestions=inner?.querySelectorAll(".suggestions");
   const oldHeight=scroller.scrollHeight,oldTop=scroller.scrollTop;
+  let spacer=null;
+  if(suggestions?.length && inner){
+    spacer=document.createElement('div');
+    spacer.setAttribute('aria-hidden','true');
+    spacer.style.cssText=`height:${suggestions[0].offsetHeight+80}px;pointer-events:none;`;
+    inner.append(spacer);
+  }
   suggestions?.forEach(n=>n.remove());
   messages.push({role:"user",content:question,at:Date.now(),read:false});if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-busy'},location.origin);
   // The first-message-only scroll snap must end immediately when a user
@@ -4436,20 +4443,18 @@ async function sendMessage(text){
   appendChatNode(typingRow,false);
   // Replace disappearing suggestions and their spacing gradually, avoiding
   // the sudden scroll clamp that moves earlier messages down on iOS.
-  if(suggestions?.length && inner){
-    const missing=Math.max(0,oldHeight-scroller.scrollHeight);
-    if(missing>0){
-      const spacer=document.createElement('div');
-      spacer.setAttribute('aria-hidden','true');
-      spacer.style.cssText=`height:${missing}px;transition:height 250ms ease;pointer-events:none;`;
-      inner.insertBefore(spacer,userRow);
-      scroller.scrollTop=oldTop;
-      requestAnimationFrame(()=>requestAnimationFrame(()=>{spacer.style.height='0px';}));
-      setTimeout(()=>spacer.remove(),350);
-    }
+  if(spacer){
+    inner.append(spacer);
+    const needed=Math.max(0,oldHeight-(scroller.scrollHeight-spacer.offsetHeight));
+    spacer.style.height=needed+'px';
+    scroller.scrollTop=oldTop;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      spacer.style.transition='height 300ms ease';spacer.style.height='0px';
+    }));
+    setTimeout(()=>{spacer.remove();if(epoch===chatEpoch&&currentChar===ch)scrollChatToEnd(false);},380);
   }
   // 送信直後は質問と入力中バブルが見える範囲まで。上へ強制ジャンプしない。
-  scrollChatToEnd(true);
+  if(!spacer)scrollChatToEnd(true);
   updateSendBtn();
   playSendSound();
   try{

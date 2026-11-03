@@ -4064,6 +4064,14 @@ async function openChat(id){
   chatReady=true;
   document.getElementById("chat-reset").disabled=false;
   renderMessages();
+  // After layout settles, start at the actual end of the saved conversation.
+  // Unread anchors and a user's own scroll always take priority.
+  if(!openingUnread && messages.length>1){
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(epoch!==chatEpoch || currentChar!==ch || userReadingHistory)return;
+      scrollChatToEnd(false);
+    }));
+  }
   // スマートフォンでキーボードが突然開いて画面が飛ぶのを防ぐ。
 }
 

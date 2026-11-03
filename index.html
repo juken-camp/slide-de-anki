@@ -4122,7 +4122,7 @@ html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
 </section>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>
 </section>
-<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261103-unified-questions"></iframe></section>
+<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261103-roster111-group-v1"></iframe></section>
 <section aria-labelledby="sessionSummary" id="studyScreen" aria-label="スライド学習" hidden>
 <div class="study-heading page-heading"><h2 class="screen-title" tabindex="-1" id="sessionSummary"></h2><button id="studyReel" class="tool" type="button" aria-label="リールで見る" title="リール"><span aria-hidden="true">🎞️</span></button><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden hidden></p><p id="saveWarning" class="save-warning" hidden></p>
@@ -9072,7 +9072,12 @@ $('importForm').onsubmit=async e=>{
     queued=false;
     if(screen.hidden){root.classList.remove('himiko-keyboard-open');return;}
     const viewport=window.visualViewport;
-    const available=viewport?.height||window.innerHeight,offset=viewport?.offsetTop||0;
+    // iOS can restore an obsolete keyboard-sized visual viewport after resume.
+    // Only fall back to the layout viewport when no editor is focused.
+    const visualHeight=viewport?.height||window.innerHeight;
+    const staleViewport=!inputActive && window.innerHeight-visualHeight>120;
+    const available=staleViewport?window.innerHeight:visualHeight;
+    const offset=staleViewport?0:(viewport?.offsetTop||0);
     if(!inputActive)baseline=available;
     const keyboard=inputActive && baseline-available>100;
     root.classList.toggle('himiko-keyboard-open',keyboard);
@@ -9144,6 +9149,13 @@ $('importForm').onsubmit=async e=>{
   window.addEventListener('resize',schedule);
   window.visualViewport?.addEventListener('resize',schedule);
   window.visualViewport?.addEventListener('scroll',schedule);
+  function restoreViewport(){
+    if(screen.hidden)return;
+    if(!inputActive)chatAnchorTop=null;
+    schedule();setTimeout(schedule,150);setTimeout(schedule,500);
+  }
+  window.addEventListener('pageshow',restoreViewport);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)restoreViewport()});
   window.addEventListener('orientationchange',()=>{
     chatAnchorTop=null;
     inputActive=false;root.classList.remove('himiko-keyboard-open');

@@ -3,7 +3,7 @@
  const KEY='himiko-personal-presence-v1';let model;
  try{model=JSON.parse(localStorage.getItem(KEY)||'null')}catch{}
  if(!model||!model.people)model={people:{},seed:Math.floor(Math.random()*1000000)};
- const $=id=>document.getElementById(id),person=id=>allChars.find(p=>p.id===Number(id));
+ const $=id=>document.getElementById(id),person=id=>allHistoryChars.find(p=>p.id===Number(id));
  function entry(id){return model.people[id]||=( {activity:0,onlineUntil:0,queue:[],unread:0} )}
  function save(){try{localStorage.setItem(KEY,JSON.stringify(model));return true}catch{setChatStorageStatus('送信待ちの保存ができません。端末の保存容量を確認してください','error');return false}}
  function hash(text){let h=2166136261;for(const c of text){h=Math.imul(h^c.charCodeAt(0),16777619)}return h>>>0}
@@ -86,7 +86,7 @@
  let processing=false,processingId=null;
  async function deliver(){
   if(processing||isLoading||activeReveal)return;
-  const now=Date.now(),ch=allChars.find(ch=>entry(ch.id).queue.length&&entry(ch.id).queue[0].due<=now&&!entry(ch.id).paused);if(!ch)return;
+  const now=Date.now(),ch=allHistoryChars.find(ch=>entry(ch.id).queue.length&&entry(ch.id).queue[0].due<=now&&!entry(ch.id).paused);if(!ch)return;
   processing=true;processingId=ch.id;const e=entry(ch.id),batch=[...e.queue],keys=new Set(batch.map(j=>j.key));
   // Batch small follow-up messages, keeping the entire input rather than truncating it.
   const selected=[];let length=0;for(const j of batch){if(length+j.text.length+(selected.length?2:0)>2000)break;selected.push(j);length+=j.text.length+2}

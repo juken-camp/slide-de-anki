@@ -96,7 +96,7 @@
    const prior=await readSavedChat(ch.id),turns=prior?.turns||[];let used=question.length;const history=[];
    for(let i=turns.length-2;i>=0&&history.length<16;i-=2){if(used+turns[i].content.length+turns[i+1].content.length>10000)break;history.unshift(turns[i],turns[i+1]);used+=turns[i].content.length+turns[i+1].content.length}
    const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),30000);let r;
-   try{r=await fetch('/api/himiko-chat',{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({characterId:ch.id,messages:[...history,{role:'user',content:question}]})})}finally{clearTimeout(timeout)}
+   try{r=await fetch('/api/himiko-chat',{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({characterId:ch.id,nickname:himikoNickname(),messages:[...history,{role:'user',content:question}]})})}finally{clearTimeout(timeout)}
    const data=await r.json();if(!r.ok)throw Error(data.error||'返信を取得できませんでした');
    const raw=typeof data.reply==='string'?data:(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');const parsed=parseSuggestions(raw,ch);if(!parsed.text)throw Error('返信を読み取れませんでした');
    // A reset during generation invalidates this response.

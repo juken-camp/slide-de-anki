@@ -3557,20 +3557,22 @@ function groupFiguresFor(plan){
  return plan.automatic?GROUP_FIGURES.filter(p=>!p.isExplainer&&p.learning.mode!=='explainer'):GROUP_FIGURES;
 }
 function buildGroupSchema(plan){
- const speaker={type:'object',properties:{name:{type:'string',enum:groupFiguresFor(plan).map(p=>p.name)},text:{type:'string'},...(plan.automatic?{event:{type:'string',enum:['','leave','join','invite','away','return']},target:{type:'string',enum:['',...groupFiguresFor(plan).map(p=>p.name)]}}:{})},required:plan.automatic?['name','text','event','target']:['name','text'],additionalProperties:false};
+ const speaker={type:'object',properties:{name:plan.automatic?{type:'string'}:{type:'string',enum:groupFiguresFor(plan).map(p=>p.name)},text:{type:'string'},...(plan.automatic?{event:{type:'string',enum:['','leave','join','invite','away','return']},target:{type:'string'}}:{})},required:plan.automatic?['name','text','event','target']:['name','text'],additionalProperties:false};
  const slots=Object.fromEntries(Array.from({length:plan.figures},(_,i)=>['speaker'+(i+1),speaker]));
  return {type:'object',properties:{
   topicContext:{type:'object',properties:{period:{type:'string'},region:{type:'string'}},required:['period','region'],additionalProperties:false},
-  historicalReplies:{type:'object',properties:slots,required:Object.keys(slots),additionalProperties:false},
+  historicalReplies:plan.automatic?{type:'array',items:speaker,minItems:1}:{type:'object',properties:slots,required:Object.keys(slots),additionalProperties:false},
   teacherSupplement:{type:plan.teacher?'string':'null'},
-  studentQuestion:{type:'object',properties:{asker:{type:'string',enum:['',...groupFiguresFor(plan).map(p=>p.name),AI_SENSEI.name]},question:{type:'string'},answerExamples:{type:'array',items:{type:'string'}}},required:['asker','question','answerExamples'],additionalProperties:false},
+  studentQuestion:{type:'object',properties:{asker:plan.automatic?{type:'string'}:{type:'string',enum:['',...groupFiguresFor(plan).map(p=>p.name),AI_SENSEI.name]},question:{type:'string'},answerExamples:{type:'array',items:{type:'string'}}},required:['asker','question','answerExamples'],additionalProperties:false},
   suggestions:{type:'array',items:{type:'string'}}
  },required:['topicContext','historicalReplies','teacherSupplement','studentQuestion','suggestions'],additionalProperties:false};
 }
 function parseGroupScene(obj,groupPlan,input){
       const chosen=new Set(),replies=[];
-      for(let i=1;i<=groupPlan.figures;i++){
-        const x=obj.historicalReplies?.['speaker'+i],name=typeof x?.name==='string'?x.name.trim():'';
+      const entries=groupPlan.automatic?(Array.isArray(obj.historicalReplies)?obj.historicalReplies.slice(0,20):[]):Array.from({length:groupPlan.figures},(_,i)=>obj.historicalReplies?.['speaker'+(i+1)]);
+      if(entries.length<2)throw Error('参加者の回答を受け取れませんでした。');
+      for(const x of entries){
+        const name=typeof x?.name==='string'?x.name.trim():'';
         if(!groupFiguresFor(groupPlan).some(p=>p.name===name)||typeof x.text!=='string'||!x.text.trim())throw Error('参加者の回答を受け取れませんでした。もう一度送ってください。');
         const cleaned=cleanGroupSpeakerLabel(x.text,name);if(!cleaned)throw Error('参加者の回答を受け取れませんでした。もう一度送ってください。');
         chosen.add(name);const event=groupPlan.automatic&&['leave','join','invite','away','return'].includes(x.event)?x.event:null;
@@ -3706,14 +3708,14 @@ module.exports = async function handler(req, res) {
         model: process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5',
         max_tokens: batchPlans?16000:setting('HIMIKO_MAX_OUTPUT_TOKENS', input.isGroup ? 4096 : 1536, input.isGroup ? 4096 : 1024, input.isGroup ? 8192 : 4096),
         thinking: { type: 'disabled' },
-        system: (batchPlans?'【5回分の自動おしゃべりをまとめて作成】scene1〜scene5の5場面を一度に返す。それぞれ後で順番に配信される。各場面の発言件数とAI先生の有無は各JSONスキーマに従う。発言件数は人数ではなく、短い反応も一件。各場面は少数の人物が繰り返し応じる。以下の単一場面向け構成指定よりこの指示と各スキーマを優先する。各場面を短くても意味のある掛け合いにし、長さ・人物の組合せ・出だし・話題・結末を全体で変える。話題に関係する人物を選び、人数合わせをしない。独立した話と自然な続きの両方を混ぜる。続きは前場面で実際に述べた発言を受ける。場面をまたぐ未回答の問いを乱発しない。配信時刻は未確定なので朝・夜・今日の時刻を断定しない。\n':'')+(input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。今回は生徒の質問への回答ではないので、本題に答える・入試の要点でまとめるという通常回答の構成より、入力の会話方針を優先する。偉人が互いの言葉を受け止めて話を進める。短い発言を中心に、説明の独演会にしない。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。今回の名簿は自動会話に参加できる人物だけで、解説扱いの人物は含まれない。冒頭の人物自身が具体的な疑問・発見・関心を持ち出し、その後の人物が実際に出た発言に反応する。内部の話題指定を聞かれた質問に変換しない。まだ誰も言っていない話を「〜の話か」「〜について聞きたいのか」などと受けない。自分の名前を呼びかけ先にしたり、他人に語りかけるように自分へ返答したりしない。出力前に全発言について、話者・呼びかけ先・受けている発言が一致するか確認する。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX),
+        system: (batchPlans?'【5回分の自動おしゃべりをまとめて作成】scene1〜scene5の5場面を一度に返す。それぞれ後で順番に配信される。各場面のhistoricalRepliesは発言順の配列で10〜16件。人物名は名簿にある表記を正確に使う。AI先生の有無は各JSONスキーマに従う。発言件数は人数ではなく、短い反応も一件。各場面は少数の人物が繰り返し応じる。以下の単一場面向け構成指定よりこの指示と各スキーマを優先する。各場面を短くても意味のある掛け合いにし、長さ・人物の組合せ・出だし・話題・結末を全体で変える。話題に関係する人物を選び、人数合わせをしない。独立した話と自然な続きの両方を混ぜる。続きは前場面で実際に述べた発言を受ける。場面をまたぐ未回答の問いを乱発しない。配信時刻は未確定なので朝・夜・今日の時刻を断定しない。\n':'')+(input.isGroup ? buildGroupPrompt(groupPlan)+(req.himikoAutomatic===true?'\n【今回の開始方法】これは自動配信用の会話。今回は生徒の質問への回答ではないので、本題に答える・入試の要点でまとめるという通常回答の構成より、入力の会話方針を優先する。偉人が互いの言葉を受け止めて話を進める。短い発言を中心に、説明の独演会にしない。入力文は生徒の発言ではなく生成依頼と確認済みの記録である。依頼への返答や挨拶ではなく、偉人が自然に話し始める。生徒から質問があったように語らない。今回の名簿は自動会話に参加できる人物だけで、解説扱いの人物は含まれない。冒頭の人物自身が具体的な疑問・発見・関心を持ち出し、その後の人物が実際に出た発言に反応する。内部の話題指定を聞かれた質問に変換しない。まだ誰も言っていない話を「〜の話か」「〜について聞きたいのか」などと受けない。自分の名前を呼びかけ先にしたり、他人に語りかけるように自分へ返答したりしない。出力前に全発言について、話者・呼びかけ先・受けている発言が一致するか確認する。':'') : buildCharacterPrompt(input.character) + SUGGESTION_SUFFIX),
         messages: input.messages,
         ...(input.isGroup ? {output_config:{format:{type:'json_schema',schema:batchSchema||buildGroupSchema(groupPlan)}}} : {})
       })
     });
     if (!response.ok) {
       // Avoid returning credentials, infrastructure details, or provider error text.
-      console.error('himiko upstream HTTP status:', response.status);
+      let category='other';if(response.status===400){try{const detail=await response.json();const msg=String(detail?.error?.message||'');if(/schema.*complex|complex.*schema/i.test(msg))category='schema_complexity';else if(/schema/i.test(msg))category='schema_invalid';else if(/credit|balance|billing/i.test(msg))category='billing';else if(/model/i.test(msg))category='model';else if(/token/i.test(msg))category='tokens';else category='invalid_request';}catch{category='unreadable';}}console.error('himiko upstream HTTP status:', response.status, category);
       if (response.status === 429 || response.status === 529) {
         res.setHeader('Retry-After', '10');
         return res.status(503).json({ error: 'ただいまAIへの接続が混み合っています。少し待ってからお試しください。' });

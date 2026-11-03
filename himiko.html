@@ -4784,7 +4784,10 @@ document.getElementById("messages").addEventListener("click",function(e){
  }
  function planLocalReplies(replies,firstAt=Date.now()+120000+Math.floor(Math.random()*360001)){
   let at=Math.max(Date.now()+10000,firstAt);
-  return replies.map((r,i)=>{if(i)at+=Math.min(12000,4000+String(replies[i-1].text).length*60)+Math.floor(Math.random()*2001)+(replies[i-1].id===r.id?0:2000);const result={...r,at,scheduledAt:at};return result;});
+  // Sometimes another person joins after a few minutes; short exchanges still remain common.
+  const possible=replies.map((r,i)=>i>=2&&r.id!==replies[i-1].id?i:-1).filter(i=>i>=0);
+  const pauseIndex=possible.length&&Math.random()<0.4?possible[Math.floor(Math.random()*possible.length)]:-1;
+  return replies.map((r,i)=>{if(i){at+=Math.min(12000,4000+String(replies[i-1].text).length*60)+Math.floor(Math.random()*2001)+(replies[i-1].id===r.id?0:2000);if(i===pauseIndex)at+=120000+Math.floor(Math.random()*240001);}const result={...r,at,scheduledAt:at};return result;});
  }
  function cancelWaitingReplies(){
   for(const t of state.turns){if(t.automatic||t.pending||t.questionsReady!==false)continue;const visible=Number(t.visibleCount)||0;const items=revealItems(t.replies).slice(0,visible),kept=[];

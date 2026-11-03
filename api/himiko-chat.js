@@ -3556,7 +3556,7 @@ function groupFiguresFor(plan){
  return plan.automatic?GROUP_FIGURES.filter(p=>!p.isExplainer&&p.learning.mode!=='explainer'):GROUP_FIGURES;
 }
 function buildGroupSchema(plan){
- const speaker={type:'object',properties:{name:{type:'string',enum:groupFiguresFor(plan).map(p=>p.name)},text:{type:'string'}},required:['name','text'],additionalProperties:false};
+ const speaker={type:'object',properties:{name:{type:'string',enum:groupFiguresFor(plan).map(p=>p.name)},text:{type:'string'},...(plan.automatic?{event:{type:'string',enum:['','leave','join','invite','away','return']},target:{type:'string',enum:['',...groupFiguresFor(plan).map(p=>p.name)]}}:{})},required:plan.automatic?['name','text','event','target']:['name','text'],additionalProperties:false};
  const slots=Object.fromEntries(Array.from({length:plan.figures},(_,i)=>['speaker'+(i+1),speaker]));
  return {type:'object',properties:{
   topicContext:{type:'object',properties:{period:{type:'string'},region:{type:'string'}},required:['period','region'],additionalProperties:false},
@@ -3572,7 +3572,10 @@ function parseGroupScene(obj,groupPlan,input){
         const x=obj.historicalReplies?.['speaker'+i],name=typeof x?.name==='string'?x.name.trim():'';
         if(!groupFiguresFor(groupPlan).some(p=>p.name===name)||typeof x.text!=='string'||!x.text.trim())throw Error('参加者の回答を受け取れませんでした。もう一度送ってください。');
         const cleaned=cleanGroupSpeakerLabel(x.text,name);if(!cleaned)throw Error('参加者の回答を受け取れませんでした。もう一度送ってください。');
-        chosen.add(name);replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:cleaned.slice(0,1500)});
+        chosen.add(name);const event=groupPlan.automatic&&['leave','join','invite','away','return'].includes(x.event)?x.event:null;
+        const target=event&&GROUP_FIGURES_BY_NAME.get(x.target);
+        if(event&&(!target||!groupFiguresFor(groupPlan).some(p=>p.id===target.id)))throw Error('イベントの人物を確認できません');
+        replies.push({id:GROUP_FIGURES_BY_NAME.get(name).id,text:cleaned.slice(0,1500),...(event?{event,targetId:target.id}: {})});
       }
       if(groupPlan.automatic&&hasUnspokenOpening(replies[0]?.text))throw Error('自動会話の冒頭を再生成します。');
       if(chosen.size<2)throw Error('掛け合いを受け取れませんでした。もう一度送ってください。');

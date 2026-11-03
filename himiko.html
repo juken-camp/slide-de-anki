@@ -958,6 +958,10 @@ html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting) > .mess
 html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
   padding-bottom:26px!important;
 }
+/* Keep the final suggested question clear of the composer at rest. */
+html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting) > .messages-inner:has(> .suggestions:last-child){
+  padding-bottom:40px;
+}
 </style>
 
 <style id="nekopon-single-grid-native-list-bounce-20261101">

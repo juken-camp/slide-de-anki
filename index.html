@@ -9107,11 +9107,7 @@ $('importForm').onsubmit=async e=>{
       if(chatAnchorTop===null){
         chatAnchorTop=Math.max(0,Math.min(available-180,(header?.getBoundingClientRect().bottom||56)+4));
       }
-      // Keep the chat header below the iPhone status bar even after the
-      // keyboard opens. Previously using offset alone (often 0) pulled the
-      // shorter group header above the visible screen; the message list then
-      // appeared at the very top with no back button or group name.
-      const top=keyboard?Math.max(chatAnchorTop,offset):chatAnchorTop;
+      const top=keyboard?offset:chatAnchorTop;
       // Visible bottom is offsetTop + height, not height alone (iOS keyboard).
       const height=Math.max(150,Math.floor(offset+available-top));
       root.style.setProperty('--himiko-chat-top',Math.round(top)+'px');

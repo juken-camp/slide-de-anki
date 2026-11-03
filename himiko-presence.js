@@ -44,7 +44,7 @@
    if(entry(id).unread){const n=document.createElement('span');n.className='group-unread personal-unread';n.textContent=entry(id).unread;n.setAttribute('aria-label','未読'+entry(id).unread+'件');el.append(n)}
   }
  };
- function header(){if(!currentChar)return;const p=presence(currentChar),b=$('online-badge');b.classList.remove('hidden');b.textContent=(p.delay?'● ':'🟢 ')+p.label;b.style.color=p.color;b.style.background=p.color+'20';}
+ function header(){if(!currentChar)return;const p=presence(currentChar),b=$('online-badge');b.classList.remove('hidden');b.textContent=p.label;b.style.color=p.color;b.style.background=p.color+'20';}
  // Latch receipts so navigating away or a retry never makes a read message unread.
  function updateQueueReads(e,now=Date.now()){
   let changed=false;

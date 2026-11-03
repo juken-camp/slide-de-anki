@@ -4416,7 +4416,10 @@ async function sendMessage(text){
   if(!text||!text.trim()||isLoading||!currentChar||!chatReady)return;
   cancelReveal(true,false);
   const ch=currentChar,epoch=chatEpoch,question=text.trim();
-  messageInner()?.querySelectorAll(".suggestions").forEach(n=>n.remove());
+  const scroller=document.getElementById("messages"),inner=messageInner();
+  const suggestions=inner?.querySelectorAll(".suggestions");
+  const oldHeight=scroller.scrollHeight,oldTop=scroller.scrollTop;
+  suggestions?.forEach(n=>n.remove());
   messages.push({role:"user",content:question,at:Date.now(),read:false});if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-busy'},location.origin);
   // The first-message-only scroll snap must end immediately when a user
   // sends a question. Otherwise iOS snaps the growing conversation back
@@ -4431,6 +4434,20 @@ async function sendMessage(text){
   const typingRow=nodeFromHTML(typingHTML(ch));
   if(historyDateHTML(messages.at(-1).at,messages.at(-2)?.at))appendChatNode(nodeFromHTML(historyDateHTML(messages.at(-1).at,messages.at(-2)?.at)),false);appendChatNode(userRow,false);
   appendChatNode(typingRow,false);
+  // Replace disappearing suggestions and their spacing gradually, avoiding
+  // the sudden scroll clamp that moves earlier messages down on iOS.
+  if(suggestions?.length && inner){
+    const missing=Math.max(0,oldHeight-scroller.scrollHeight);
+    if(missing>0){
+      const spacer=document.createElement('div');
+      spacer.setAttribute('aria-hidden','true');
+      spacer.style.cssText=`height:${missing}px;transition:height 250ms ease;pointer-events:none;`;
+      inner.insertBefore(spacer,userRow);
+      scroller.scrollTop=oldTop;
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{spacer.style.height='0px';}));
+      setTimeout(()=>spacer.remove(),350);
+    }
+  }
   // 送信直後は質問と入力中バブルが見える範囲まで。上へ強制ジャンプしない。
   scrollChatToEnd(true);
   updateSendBtn();

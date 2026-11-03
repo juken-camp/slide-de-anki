@@ -1861,7 +1861,7 @@ html[data-persona="cyber"] #group-view .group-send-failed{color:#8eaec4}
       <span><i class="presence-guide-dot is-online" aria-hidden="true"></i>オンライン</span>
       <span><i class="presence-guide-dot is-away" aria-hidden="true"></i>離席中</span>
       <span><i class="presence-guide-dot is-later" aria-hidden="true"></i>あとで戻る</span>
-      <span><i class="presence-guide-dot is-met" aria-hidden="true"></i>会話済み</span>
+      <span><i class="presence-guide-dot is-met" aria-hidden="true"></i>トークあり</span>
     </div>
     <div class="card-list" id="card-list"></div>
 
@@ -1896,7 +1896,7 @@ html[data-persona="cyber"] #group-view .group-send-failed{color:#8eaec4}
   <div class="messages" id="messages"></div>
   <div class="input-area">
     <div class="input-inner">
-      <textarea id="msg-input" maxlength="2000" rows="1" placeholder="質問してみよう！"></textarea>
+      <textarea id="msg-input" maxlength="2000" rows="1" placeholder="トークしよう！"></textarea>
       <button class="send-btn" id="send-btn" onclick="handleSend()" disabled>↑</button>
     </div>
 
@@ -1922,8 +1922,8 @@ function himikoGuideCopy(text){
 }
 function syncHimikoPrompt(){
  const ch=typeof currentChar==='undefined'?null:currentChar;
- const subject=ch?(ch.isSpecial?'AI先生に':ch.name+((ch.isExplainer||ch.isNarrator)?'について':'に')):'';
- document.getElementById('msg-input').placeholder=himikoUi(subject+'質問してみようにゃ！',subject+'質問してみようぜ！');
+ const subject=ch?((ch.isExplainer||ch.isNarrator)?'AI先生と'+ch.name+'について':(ch.isSpecial?'AI先生':ch.name)+'と'):'';
+ document.getElementById('msg-input').placeholder=himikoUi(subject+'トークしようにゃ！',subject+'トークしようぜ！');
  const search=document.getElementById('search-input');
  search.placeholder=himikoUi('名前や時代で検索するにゃ','名前や時代で検索するぜ');
  search.setAttribute('aria-label',search.placeholder);

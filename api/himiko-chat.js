@@ -3470,7 +3470,8 @@ function rateBuckets(req, now = Date.now()) {
   let ip = process.env.VERCEL ? (header(req, 'x-vercel-forwarded-for') || header(req, 'x-forwarded-for')).split(',')[0].trim() : '';
   if (!ip && process.env.HIMIKO_TRUST_PROXY === '1') ip = header(req, 'x-forwarded-for').split(',')[0].trim();
   if (!ip) ip = req.socket?.remoteAddress || 'unknown';
-  const digest = createHash('sha256').update((process.env.HIMIKO_RATE_LIMIT_SALT || 'himiko-chat') + ':' + ip).digest('hex');
+  const identity = req.himikoAutomatic === true && /^[a-f0-9]{64}$/.test(req.himikoInboxId || '') ? 'automatic:' + req.himikoInboxId : 'interactive:' + ip;
+  const digest = createHash('sha256').update((process.env.HIMIKO_RATE_LIMIT_SALT || 'himiko-chat') + ':' + identity).digest('hex');
   const minute = Math.floor(now / 60000);
   const day = Math.floor((now + 9 * 3600000) / 86400000); // Japan calendar day.
   const seconds = Math.max(1, Math.ceil(((day + 1) * 86400000 - 9 * 3600000 - now) / 1000));
@@ -3688,6 +3689,7 @@ module.exports = async function handler(req, res) {
     return res.status(503).json({ error: 'ただいま接続が混み合っています。しばらくしてからお試しください。' });
   }
   if (!rate.ok) {
+    if(req.himikoAutomatic===true)console.warn('[group-auto] rate_limited',JSON.stringify({bucket:rate.bucket,retryAfter:rate.retryAfter}));
     res.setHeader('Retry-After', String(rate.retryAfter));
     return res.status(429).json({ error: rate.bucket === 1 ? '短時間の質問が多くなっています。少し待ってから送ってください。' : '本日の質問回数の上限に達しました。また明日ご利用ください。' });
   }

@@ -560,14 +560,14 @@ html[data-persona="cyber"] #list-view .filter-count-icon{filter:drop-shadow(0 0 
 #list-view .himiko-mode-guide[hidden]{display:none!important}
 #list-view .himiko-mode-guide-item[hidden]{display:none!important}
 #list-view .himiko-mode-guide-title{font-size:12px;font-weight:900;letter-spacing:.015em;margin:0 0 9px}
-#list-view .himiko-mode-guide-item{display:grid;grid-template-columns:minmax(96px,auto) minmax(0,1fr);
- align-items:start;gap:9px;padding:7px 0;border-top:1px solid #e9d4c1;}
+#list-view .himiko-mode-guide-item{display:flex;flex-wrap:wrap;align-items:flex-start;gap:5px 9px;padding:7px 0;border-top:1px solid #e9d4c1;}
+#list-view .himiko-mode-guide-item:first-child{border-top:0}
 #list-view .himiko-mode-chip{font-size:10px;font-weight:900;border-radius:9px;padding:4px 6px;
  display:inline-block;white-space:nowrap;max-width:max-content;line-height:1.35}
 #list-view .mode-explain{background:#efe9ff;color:#6645a1}
 #list-view .mode-lesson{background:#fff0d0;color:#986010}
 #list-view .mode-respect{background:#def5e7;color:#23784e}
-#list-view .himiko-mode-explain{font-size:11px;font-weight:650;line-height:1.65;overflow-wrap:anywhere}
+#list-view .himiko-mode-explain{flex:1 1 12em;min-width:0;font-size:11px;font-weight:650;line-height:1.65;overflow-wrap:anywhere}
 #list-view .himiko-mode-guide .copy-cyber{display:none}
 html[data-persona="cyber"] #list-view .himiko-mode-guide{
  background:#0b1831;border-color:#315576;color:#c5edff;}
@@ -576,7 +576,7 @@ html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-cyber{display:inl
 html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none}
 @media(max-width:370px){
  #list-view .himiko-mode-guide{padding:10px 8px}
- #list-view .himiko-mode-guide-item{grid-template-columns:1fr;gap:3px;padding:8px 0}
+ #list-view .himiko-mode-guide-item{gap:5px 9px;padding:8px 0}
  #list-view .himiko-mode-explain{font-size:11px}
 }
 </style>
@@ -3922,9 +3922,11 @@ function filterGuideHTML(){
  const rows=chosen.map(key=>{
   const note=filterLearningNotes[openedFilterGroup]?.[key];
   if(!note)return '';
-  return `<div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-explain">${esc(key)}</span><span class="himiko-mode-explain">${esc(himikoGuideCopy(note))}</span></div>`;
+  const eraColor=openedFilterGroup==='era'?ERA_BADGE_COLORS[key]:null;
+  const chipStyle=eraColor?` style="background:${eraColor.bg};color:${eraColor.color}"`: '';
+  return `<div class="himiko-mode-guide-item"><span class="himiko-mode-chip mode-explain"${chipStyle}>${esc(key)}</span><span class="himiko-mode-explain">${esc(himikoGuideCopy(note))}</span></div>`;
  }).join('');
- return `<div class="himiko-mode-guide" role="note" aria-label="選択項目の学習ポイント"><p class="himiko-mode-guide-title">📚 学習ポイント</p>${rows}</div>`;
+ return `<div class="himiko-mode-guide" role="note" aria-label="選択項目の説明">${rows}</div>`;
 }
 function renderTags(){
  const container=document.getElementById('tag-bar');

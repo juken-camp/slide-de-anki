@@ -1702,20 +1702,20 @@ html[data-persona="cyber"] #card-list .char-card.group-met .avatar::after{backgr
 #list-view .group-chat-placeholder{margin:9px 0 0;cursor:pointer}
 </style>
 <style id="history-test-chat-bubbles">
-:is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn){position:relative;isolation:isolate;overflow:visible!important;border-radius:24px!important;border:1px solid transparent!important;background:transparent!important;background-image:none!important;box-shadow:none!important;padding-left:14px!important;padding-right:14px!important;--chat-bubble-fill:#fff7eb;--chat-bubble-line:#ead2b9}
-:is(#chat-view,#group-view) .messages :is(.bubble.user,.suggestion-btn){--chat-bubble-fill:#f0d9be;--chat-bubble-line:#dab991;color:#75472b!important}
-html[data-persona="cyber"] :is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn){--chat-bubble-fill:#0d223a;--chat-bubble-line:#3c7793;color:#d8edff!important}
-html[data-persona="cyber"] :is(#chat-view,#group-view) .messages :is(.bubble.user,.suggestion-btn){--chat-bubble-fill:#17394d;--chat-bubble-line:#438da8;color:#dbf8ff!important}
-:is(#chat-view,#group-view) .messages .suggestion-btn{--chat-bubble-fill:none!important}
-:is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn)::after{content:none!important}
-:is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn)::before{content:"";position:absolute;left:-7px;top:-1px;width:calc(100% + 14px);height:calc(100% + 2px);z-index:-1;pointer-events:none;background-image:var(--chat-bubble-shape);background-repeat:no-repeat;background-size:100% 100%;border:0!important;border-radius:0!important;transform:none!important}
+:is(#chat-view,#group-view) :is(.messages,.personal-question-dock) :is(.bubble,.typing,.suggestion-btn){position:relative;isolation:isolate;overflow:visible!important;border-radius:24px!important;border:1px solid transparent!important;background:transparent!important;background-image:none!important;box-shadow:none!important;padding-left:14px!important;padding-right:14px!important;--chat-bubble-fill:#fff7eb;--chat-bubble-line:#ead2b9}
+:is(#chat-view,#group-view) :is(.messages,.personal-question-dock) :is(.bubble.user,.suggestion-btn){--chat-bubble-fill:#f0d9be;--chat-bubble-line:#dab991;color:#75472b!important}
+html[data-persona="cyber"] :is(#chat-view,#group-view) :is(.messages,.personal-question-dock) :is(.bubble,.typing,.suggestion-btn){--chat-bubble-fill:#0d223a;--chat-bubble-line:#3c7793;color:#d8edff!important}
+html[data-persona="cyber"] :is(#chat-view,#group-view) :is(.messages,.personal-question-dock) :is(.bubble.user,.suggestion-btn){--chat-bubble-fill:#17394d;--chat-bubble-line:#438da8;color:#dbf8ff!important}
+:is(#chat-view,#group-view) :is(.messages,.personal-question-dock) .suggestion-btn{--chat-bubble-fill:none!important}
+:is(#chat-view,#group-view) :is(.messages,.personal-question-dock) :is(.bubble,.typing,.suggestion-btn)::after{content:none!important}
+:is(#chat-view,#group-view) :is(.messages,.personal-question-dock) :is(.bubble,.typing,.suggestion-btn)::before{content:"";position:absolute;left:-7px;top:-1px;width:calc(100% + 14px);height:calc(100% + 2px);z-index:-1;pointer-events:none;background-image:var(--chat-bubble-shape);background-repeat:no-repeat;background-size:100% 100%;border:0!important;border-radius:0!important;transform:none!important}
 :is(#chat-view,#group-view) .bubble-row.assistant{align-items:flex-start}
 #chat-view .history-reply-content,#group-view .group-reply-content{max-width:82%;min-width:0}
 #chat-view .history-reply-content .bubble{max-width:none}
 .history-reply-name,#group-view .group-reply-name{font-family:inherit;font-size:11px;font-weight:700;line-height:16px;margin:0 0 4px 1px;color:#927057}
 html[data-persona="cyber"] .history-reply-name,html[data-persona="cyber"] #group-view .group-reply-name{color:#b6d4e8}
 :is(#chat-view,#group-view) .typing{min-height:40px}
-:is(#chat-view,#group-view) .messages .suggestion-btn{margin-right:5px}
+:is(#chat-view,#group-view) :is(.messages,.personal-question-dock) .suggestion-btn{margin-right:5px}
 </style>
 <style id="group-participant-strip-style">
 #group-participant-strip[hidden]{display:none!important}
@@ -1826,6 +1826,14 @@ html[data-persona="cyber"] #group-view .group-send-failed{color:#8eaec4}
 <style id="group-quote-style">
 #group-quote-draft{position:relative;max-width:760px;margin:0 auto 6px;padding-right:30px;font-family:inherit}#group-quote-draft[hidden]{display:none}#group-quote-cancel{position:absolute;right:0;top:0;border:0;background:transparent;color:inherit;font:inherit;font-size:22px}.group-quote{display:block;max-width:100%;width:100%;margin:0 0 9px;padding:0 0 9px;border:0;border-bottom:1px solid #00000020;border-radius:0;background:transparent;text-align:left;font-family:inherit;font-size:11px;line-height:1.5;color:inherit;box-shadow:none!important;min-height:0!important;cursor:pointer}.group-quote strong,.group-quote span{display:block}.group-quote strong{font-size:11px;font-weight:600;margin-bottom:3px}.group-quote span{font-size:11px;opacity:.72}.group-quote span{white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.quote-highlight{outline:2px solid #d6a84f;outline-offset:3px}html[data-persona=cyber] .group-quote{background:transparent;border-bottom-color:#ffffff26}#group-messages [data-group-quote-text]{cursor:pointer}
 </style>
+<style id="personal-floating-questions-20261103">
+/* Questions have their own layer above the composer, outside the clipped history. */
+#chat-view .personal-question-dock{flex:0 1 auto;min-height:0;max-height:44%;overflow-y:auto;position:relative;z-index:11;padding:4px 12px 14px;background:transparent;overscroll-behavior:contain;}
+#chat-view .personal-question-dock[hidden]{display:none!important}
+#chat-view .personal-question-dock .suggestions{max-width:700px;margin:0 auto;padding-left:38px;animation:none;}
+#chat-view .personal-question-dock .suggestion-btn{filter:drop-shadow(0 3px 5px #0003);}
+#chat-view .messages-inner{overflow-anchor:none;}
+</style>
 </head>
 <body>
 
@@ -1898,6 +1906,7 @@ html[data-persona="cyber"] #group-view .group-send-failed{color:#8eaec4}
   </div>
   <div id="chat-storage-status" class="chat-storage-status" role="status" aria-live="polite">会話を読み込み中…</div>
   <div class="messages" id="messages"></div>
+  <div id="personal-question-dock" class="personal-question-dock" hidden></div>
   <div class="input-area">
     <div class="input-inner">
       <textarea id="msg-input" maxlength="2000" rows="1" placeholder="トークしよう！"></textarea>
@@ -3835,6 +3844,7 @@ async function resetCurrentChat(){
   const ch=currentChar;if(!ch||!chatReady||isLoading)return;
   if(!confirm(himikoUi(`${ch.name}との保存済みの会話を削除して、新しい会話を始めるにゃ？\nこの操作は取り消せないにゃ。`,`${ch.name}との保存済みの会話を削除して、新しい会話を始めるか？\nこの操作は取り消せないぜ。`)))return;
   window.dispatchEvent(new CustomEvent('himiko-person-reset',{detail:{id:ch.id}}));
+  setPersonalQuestions(currentChar,[]);
   chatEpoch++;cancelReveal(false);isLoading=false;
   messages=[{role:"assistant",content:ch.greeting}];dynamicSuggestions=[];historyVisiblePairs=HISTORY_PAGE_PAIRS;
   document.getElementById("msg-input").value="";
@@ -4013,6 +4023,7 @@ let listScrollY=0;
 async function openChat(id){
   personalUnreadIndex=-1;personalUnreadAnchorPending=false;
   const openingUnread=Math.max(0,Number(window.himikoPersonalUnreadCount?.(id))||0);
+  setPersonalQuestions(currentChar,[]);
   chatEpoch++;cancelReveal(false);isLoading=false;dynamicSuggestions=[];chatReady=false;
   const epoch=chatEpoch;
   listScrollY=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;
@@ -4076,6 +4087,7 @@ async function openChat(id){
 }
 
 function showList(){
+  setPersonalQuestions(currentChar,[]);
   chatEpoch++;cancelReveal(false);isLoading=false;chatReady=false;
   document.getElementById("chat-view").classList.add("hidden");
   delete document.documentElement.dataset.chatOpen;
@@ -4090,6 +4102,30 @@ function showList(){
 }
 
 // 会話を毎回全再描画するとスクロール位置が飛ぶため、新規メッセージはDOMへ追加する。
+function preparePersonalSend(){
+  const scroller=document.getElementById('messages'),inner=messageInner();
+  const dock=personalQuestionDock(),oldTop=scroller.scrollTop;
+  const hadQuestions=!dock.hidden;
+  // Reserve the expanded viewport BEFORE hiding the dock: WebKit must never
+  // clamp scrollTop as the candidates disappear. Real replies fill this space.
+  if(hadQuestions&&inner){
+    const height=inner.offsetHeight+dock.offsetHeight;
+    inner.style.setProperty('min-height',height+'px','important');
+    if(scroller.classList.contains('nekopon-initial-greeting'))
+      inner.style.setProperty('padding-top',getComputedStyle(inner).paddingTop,'important');
+  }
+  setPersonalQuestions(currentChar,[]);
+  scroller.classList.remove('nekopon-initial-greeting');
+  automaticChatScrollUntil=Date.now()+200;
+  scroller.scrollTop=oldTop;previousChatScroll=oldTop;
+  return {hadQuestions,oldTop};
+}
+function personalQuestionDock(){return document.getElementById('personal-question-dock');}
+function setPersonalQuestions(ch,questions,initial=false){
+  const dock=personalQuestionDock();
+  dock.innerHTML=suggestionHTML(ch,questions,initial);
+  dock.hidden=!questions.length;
+}
 function messageInner(){return document.querySelector("#messages .messages-inner");}
 function nodeFromHTML(html){const t=document.createElement("template");t.innerHTML=html.trim();return t.content.firstElementChild;}
 function nearChatBottom(tolerance=125){
@@ -4159,8 +4195,8 @@ function schedulePersonalSuggestions(ch,questions,turn){
  if(!questions.length)return;
  personalSuggestionTimer=setTimeout(()=>{
   if(currentChar!==ch||messages.at(-1)!==turn||activeReveal)return;
-  const inner=messageInner();if(!inner||inner.querySelector('.suggestions'))return;
-  appendChatNode(nodeFromHTML(suggestionHTML(ch,questions)),false);scrollChatToEnd(false);
+  if(!messageInner()||!personalQuestionDock().hidden)return;
+  setPersonalQuestions(ch,questions);scrollChatToEnd(true);
  },Math.max(0,(Number(turn?.questionsAt)||0)-Date.now()));
 }
 function renderMessages(resetScroll=true){
@@ -4175,8 +4211,9 @@ function renderMessages(resetScroll=true){
   const initial=messages.length<=1?ch.qs||[]:[];
   const followups=messages.length>1&&messages.at(-1)?.role==="assistant"?dynamicSuggestions:[];
   const el=document.getElementById("messages");
-  el.innerHTML=`<div class="messages-inner">${older}${markup}${suggestionHTML(ch,initial,true)}${suggestionHTML(ch,Date.now()>=(Number(messages.at(-1)?.questionsAt)||0)?followups:[])}</div>`;
+  el.innerHTML=`<div class="messages-inner">${older}${markup}</div>`;
   if(followups.length&&Number(messages.at(-1)?.questionsAt)>Date.now())schedulePersonalSuggestions(ch,followups,messages.at(-1));
+  setPersonalQuestions(ch,initial.length?initial:(Date.now()>=(Number(messages.at(-1)?.questionsAt)||0)?followups:[]),!!initial.length);
   watchChatContent();
   el.classList.toggle('nekopon-initial-greeting',messages.length===1); if(resetScroll){el.scrollTop=messages.length>1?el.scrollHeight:0;previousChatScroll=el.scrollTop;userReadingHistory=false;}
   if(personalUnreadAnchorPending){
@@ -4277,7 +4314,7 @@ function cancelReveal(showRest=false,showQuestions=false){
       state.group.append(nodeFromHTML(assistantRowHTML(state.ch,state.chunks[i],i===0)));
     }
     if(showQuestions&&state.suggestions.length){
-      state.group.after(nodeFromHTML(suggestionHTML(state.ch,state.suggestions)));
+      setPersonalQuestions(state.ch,state.suggestions);
       scrollChatToEnd(true);
     }
   }
@@ -4417,16 +4454,7 @@ async function sendMessage(text){
   cancelReveal(true,false);
   const ch=currentChar,epoch=chatEpoch,question=text.trim();
   const scroller=document.getElementById("messages"),inner=messageInner();
-  const suggestions=inner?.querySelectorAll(".suggestions");
-  const oldHeight=scroller.scrollHeight,oldTop=scroller.scrollTop;
-  let spacer=null;
-  if(suggestions?.length && inner){
-    spacer=document.createElement('div');
-    spacer.setAttribute('aria-hidden','true');
-    spacer.style.cssText=`height:${suggestions[0].offsetHeight+80}px;pointer-events:none;`;
-    inner.append(spacer);
-  }
-  suggestions?.forEach(n=>n.remove());
+  const {hadQuestions,oldTop}=preparePersonalSend();
   messages.push({role:"user",content:question,at:Date.now(),read:false});if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-busy'},location.origin);
   // The first-message-only scroll snap must end immediately when a user
   // sends a question. Otherwise iOS snaps the growing conversation back
@@ -4441,20 +4469,10 @@ async function sendMessage(text){
   const typingRow=nodeFromHTML(typingHTML(ch));
   if(historyDateHTML(messages.at(-1).at,messages.at(-2)?.at))appendChatNode(nodeFromHTML(historyDateHTML(messages.at(-1).at,messages.at(-2)?.at)),false);appendChatNode(userRow,false);
   appendChatNode(typingRow,false);
-  // Replace disappearing suggestions and their spacing gradually, avoiding
-  // the sudden scroll clamp that moves earlier messages down on iOS.
-  if(spacer){
-    inner.append(spacer);
-    const needed=Math.max(0,oldHeight-(scroller.scrollHeight-spacer.offsetHeight));
-    spacer.style.height=needed+'px';
-    scroller.scrollTop=oldTop;
-    requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      spacer.style.transition='height 300ms ease';spacer.style.height='0px';
-    }));
-    setTimeout(()=>{spacer.remove();if(epoch===chatEpoch&&currentChar===ch)scrollChatToEnd(false);},380);
-  }
-  // 送信直後は質問と入力中バブルが見える範囲まで。上へ強制ジャンプしない。
-  if(!spacer)scrollChatToEnd(true);
+  if(hadQuestions){
+    automaticChatScrollUntil=Date.now()+200;
+    scroller.scrollTop=oldTop;previousChatScroll=oldTop;
+  }else scrollChatToEnd(true);
   updateSendBtn();
   playSendSound();
   try{
@@ -4607,7 +4625,7 @@ chatScroller.addEventListener("keydown",e=>{
 },{passive:true});
 
 
-document.getElementById("messages").addEventListener("click",function(e){
+document.getElementById("chat-view").addEventListener("click",function(e){
   if(e.target.closest("[data-older]")){showOlderHistory();return;}
   const skip=e.target.closest(".reveal-skip");
   if(skip){cancelReveal(true,true);return;}
@@ -4994,7 +5012,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 </script>
 <script id="history-continuous-bubble-shape">
 (()=>{
- const selector=':is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn)';
+ const selector=':is(#chat-view,#group-view) :is(.messages,.personal-question-dock) :is(.bubble,.typing,.suggestion-btn)';
  function shapePath(w,h){
   const x=6.5,right=w+5.5,top=.5,bottom=h-.5,r=Math.min((h-1)/2,23.5),tailR=23.5,tip=w+11;
   // Tail grows out of the top corner, pointing upward, like the reference.
@@ -5020,7 +5038,7 @@ document.getElementById("messages").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=all-bubble-sound-20261103"></script>
+</script><script src="himiko-presence.js?v=floating-questions-20261103"></script>
 </body>
 </html>
 

@@ -71,13 +71,17 @@
  function isTyping(id,now=Date.now()){const e=entry(id);return processingId===id||!!(e.queue.length&&!e.error&&typingReady(e.queue[0],now))}
  const baseSend=sendMessage;
  sendMessage=async function(text){if(!text?.trim()||!currentChar||!chatReady||isLoading)return;
-  clearTimeout(personalSuggestionTimer);messageInner()?.querySelectorAll('.suggestions').forEach(n=>n.remove());
+  clearTimeout(personalSuggestionTimer);
   const ch=currentChar,e=entry(ch.id),p=presence(ch);touch(ch.id);
   if(!p.delay)e.onlineUntil=Date.now()+600000;
   e.preview=text.trim();e.previewRole='user';e.error='';
   const previous=JSON.stringify(e.queue),at=Date.now(),due=e.queue[0]?.due||at+(p.delay||1500+Math.floor(Math.random()*3500));e.queue.push({key:at+':'+Math.random(),text:text.trim(),at,due,readAt:p.delay?Math.max(at,due-5000):at+700,read:false});
   if(!save()){e.queue=JSON.parse(previous);return;}
-  $('msg-input').value='';playSendSound();pending();scrollChatToEnd(true);updateSendBtn();
+  const {hadQuestions,oldTop}=preparePersonalSend();
+  userReadingHistory=false;
+  $('msg-input').value='';playSendSound();pending();
+  if(hadQuestions){$('messages').scrollTop=oldTop;previousChatScroll=oldTop;}else scrollChatToEnd(true);
+  updateSendBtn();
  };
  let processing=false,processingId=null;
  async function deliver(){
@@ -100,7 +104,15 @@
    const answerAt=Date.now(),user={role:'user',content:question,at:selected[0].at,read:true},answer={role:'assistant',content:parsed.text,at:answerAt,chunkTimes:[]};
    await writeSavedChat(ch.id,{turns:[...turns,user,answer],suggestions:parsed.suggestions});
    e.queue=e.queue.filter(j=>!chosen.has(j.key));e.onlineUntil=answerAt+600000;e.activity=answerAt;model.defaultOrder=false;e.preview=parsed.text;e.previewRole='assistant';e.unread+=(currentChar?.id===ch.id?0:1);e.error='';save();
-   if(currentChar?.id===ch.id&&chatReady){$('personal-pending')?.remove();messages=[{role:'assistant',content:ch.greeting},...turns,user];dynamicSuggestions=[];renderMessages();messages.push(answer);dynamicSuggestions=parsed.suggestions;startReveal(ch,parsed.text,parsed.suggestions);pending();}
+   if(currentChar?.id===ch.id&&chatReady){
+    // Keep the existing DOM and viewport, including the send-time height floor.
+    // Rebuilding history here used to jump again when the API reply arrived.
+    const pendingNode=$('personal-pending');
+    const userNode=nodeFromHTML(userRowHTML(ch,question,false,user.at,true));
+    if(pendingNode)pendingNode.replaceWith(userNode);else appendChatNode(userNode,false);
+    messages=[{role:'assistant',content:ch.greeting},...turns,user,answer];
+    dynamicSuggestions=parsed.suggestions;startReveal(ch,parsed.text,parsed.suggestions);pending();
+   }
    else renderCards();
   }catch(err){e.error=String(err.message);e.queue.forEach(j=>{if(chosen.has(j.key))j.due=Date.now()+60000});save();if(currentChar?.id===ch.id)setChatStorageStatus('返信を取得できませんでした。送信内容を保持して再試行します','error');}
   finally{processing=false;processingId=null;}

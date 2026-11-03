@@ -4668,9 +4668,19 @@ document.getElementById("chat-view").addEventListener("click",function(e){
 
 <script>
 (()=>{
-  const input=document.getElementById('msg-input');if(!input)return;
+  // Both the personal and group composers live inside the iframe. Tell the parent
+  // about either keyboard focus so its visualViewport sizing keeps the composer
+  // directly above the iPhone keyboard instead of leaving it offscreen.
+  const inputs=['msg-input','group-input'].map(id=>document.getElementById(id)).filter(Boolean);
   const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};
-  input.addEventListener('focus',()=>tell(true));input.addEventListener('blur',()=>tell(false));
+  for(const input of inputs){
+    input.addEventListener('focus',()=>tell(true));
+    input.addEventListener('blur',()=>{
+      // Switching from one composer to the other must not briefly disable
+      // keyboard layout while a different chat editor is focused.
+      requestAnimationFrame(()=>tell(inputs.includes(document.activeElement)));
+    });
+  }
 })();
 </script><script id="chat-autoexpand-input-script">
 (()=>{

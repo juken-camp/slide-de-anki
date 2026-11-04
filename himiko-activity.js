@@ -4,7 +4,18 @@
  if(!/^[a-f0-9]{64}$/.test(token||'')){token=Array.from(crypto.getRandomValues(new Uint8Array(32)),x=>x.toString(16).padStart(2,'0')).join('');localStorage.setItem(KEY,token)}
  const frame=()=>document.getElementById('himikoFrame')||document.querySelector('iframe[src*="himiko"]');
  function send(d){frame()?.contentWindow?.postMessage(d,location.origin)}
- function stats(){try{if(typeof studyHistory==='undefined'||!historyLoaded)return null;const d=new Date(Date.now()+9*3600000).toISOString().slice(0,10),rows=Object.values(studyHistory.days[d]||{}),tm=studyHistory.timeDays[d]||{};return {day:d,studied:rows.filter(r=>r.v||r.l).length,improved:rows.filter(r=>r.i).length,tests:studyHistory.tests.filter(t=>t.finishedAt&&new Date(t.finishedAt+9*3600000).toISOString().slice(0,10)===d).length,minutes:Math.floor(((Number(tm.slide)||0)+(Number(tm.test)||0))/60000),chats:Number(JSON.parse(localStorage.getItem('himiko-chat-count-v1')||'{}')[d])||0}}catch{return null}}
+ function learningTopics(day){
+  if(typeof meta==='undefined'||!Array.isArray(meta))return [];
+  const counts=new Map();
+  for(const [key,row] of Object.entries(studyHistory.days[day]||{})){
+   if(!row.v&&!row.l)continue;
+   const id=key.slice(0,key.lastIndexOf('/'));counts.set(id,(counts.get(id)||0)+1);
+  }
+  return [...counts].map(([id,count])=>({title:meta.find(m=>m.id===id)?.title,count}))
+   .filter(x=>typeof x.title==='string'&&x.title.trim()).sort((a,b)=>b.count-a.count).slice(0,3)
+   .map(x=>({title:x.title.slice(0,80),count:x.count}));
+ }
+ function stats(){try{if(typeof studyHistory==='undefined'||!historyLoaded)return null;const d=new Date(Date.now()+9*3600000).toISOString().slice(0,10),rows=Object.values(studyHistory.days[d]||{}),tm=studyHistory.timeDays[d]||{};return {day:d,topics:learningTopics(d),studied:rows.filter(r=>r.v||r.l).length,improved:rows.filter(r=>r.i).length,tests:studyHistory.tests.filter(t=>t.finishedAt&&new Date(t.finishedAt+9*3600000).toISOString().slice(0,10)===d).length,minutes:Math.floor(((Number(tm.slide)||0)+(Number(tm.test)||0))/60000),chats:Number(JSON.parse(localStorage.getItem('himiko-chat-count-v1')||'{}')[d])||0}}catch{return null}}
  let requestQueue=Promise.resolve();
  function api(action,extra={}){const run=async()=>{for(let attempt=0;attempt<4;attempt++){
   const r=await fetch('/api/himiko-inbox',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify({action,...extra}),signal:AbortSignal.timeout(15000)});

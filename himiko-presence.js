@@ -123,7 +123,7 @@
  function updateMemberPresence(){
   const panel=$('group-members');if(!panel||panel.hidden)return;
   panel.querySelectorAll('.member-card[data-id]').forEach(card=>{
-   const ch=person(Number(card.dataset.id));if(!ch||card.dataset.left==='true')return;
+   const ch=person(Number(card.dataset.id));if(!ch)return;
    const p=presence(ch);let badge=card.querySelector('.member-presence');
    if(!badge){badge=document.createElement('span');badge.className='online-badge member-presence';card.querySelector('.member-name-row')?.append(badge);}
    if(badge.textContent!==p.label){badge.textContent=p.label;badge.style.color=p.color;badge.style.background=p.color+'20';}
@@ -142,4 +142,5 @@
  openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(records=>{for(const r of records){const last=r.turns?.at(-1),at=last?.at;if(at&&person(r.id)){const e=entry(r.id);if(at>=(e.activity||0)){e.activity=at;e.preview=last.content;e.previewRole=last.role;}}}save();renderCards()}).catch(()=>{});
  renderCards();
 })();
+
 

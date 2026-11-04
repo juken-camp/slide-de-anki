@@ -6115,7 +6115,7 @@ function syncCollectionCatalog() {
   $('questionSearchSelection').hidden=on||(!catalogQuery()&&!searchSelectedQuestions.size);
   $('questionSearchStatus').hidden=on;$('catalogMilestones').hidden=on||!!catalogQuery();
   syncMainNavigation();$('catalogTitle').textContent=on?'新しい教材':'教材の目次';$('catalogSubjects').hidden=on;document.querySelector('#catalogScreen .catalog-search-top').classList.toggle('is-collections',on);document.querySelector('#catalogScreen .catalog-search-panel').classList.toggle('is-my-page',on);document.querySelector('#catalogScreen .catalog-resume').hidden=on;
-  $('myCollectionsPanel').hidden=false;
+  $('myCollectionsPanel').hidden=!!(newsDemoMode&&!on);
   document.querySelector('#catalogScreen .catalog-filter-row').hidden=on || !catalogSubject;
   $('seriesScroller').hidden=on; $('catalogSeries').hidden=on; $('catalogDock').hidden=on;
   document.querySelector('#catalogScreen .catalog-list-tools').hidden=on;
@@ -6126,7 +6126,7 @@ function syncCollectionCatalog() {
   if(on)$('quickReview').hidden=true;
   $('catalogScreen').style.paddingBottom=(!selected.size||on)?'30px':($('catalogDock').offsetHeight+48)+'px';
 }
-function openMyCollections() {catalogIsCollections=false;showScreen('catalog');requestAnimationFrame(()=>$('myCollectionsPanel').scrollIntoView({block:'start',behavior:'smooth'}));}
+function openMyCollections() {newsDemoMode=false;catalogIsCollections=false;showScreen('catalog');renderCatalog();requestAnimationFrame(()=>$('myCollectionsPanel').scrollIntoView({block:'start',behavior:'smooth'}));}
 function makeMyEmptyAction(element,action,label){
  element.classList.add('my-empty-action');element.setAttribute('role','button');element.tabIndex=0;element.setAttribute('aria-label',label);element.onclick=action;
  element.onkeydown=e=>{if(e.target===element&&(e.key==='Enter'||e.key===' ')){e.preventDefault();if(!e.repeat)action();}};
@@ -7201,8 +7201,7 @@ function newsDemoCopy(topic){return document.documentElement.dataset.persona==='
 function newsDemoArticle(topic){return document.documentElement.dataset.persona==='cyber'?topic.articleCyber:topic.articleNeko;}
 function newsDateLabel(date=new Date()){
  const parts=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'numeric',day:'numeric',weekday:'short'}).formatToParts(date),v=Object.fromEntries(parts.map(p=>[p.type,p.value]));
- const holidays={'2026-1-1':'元日','2026-1-12':'成人の日','2026-2-11':'建国記念の日','2026-2-23':'天皇誕生日','2026-3-20':'春分の日','2026-4-29':'昭和の日','2026-5-3':'憲法記念日','2026-5-4':'みどりの日','2026-5-5':'こどもの日','2026-5-6':'振替休日','2026-7-20':'海の日','2026-8-11':'山の日','2026-9-21':'敬老の日','2026-9-22':'休日','2026-9-23':'秋分の日','2026-10-12':'スポーツの日','2026-11-3':'文化の日','2026-11-23':'勤労感謝の日','2027-1-1':'元日','2027-1-11':'成人の日','2027-2-11':'建国記念の日','2027-2-23':'天皇誕生日','2027-3-21':'春分の日','2027-3-22':'振替休日','2027-4-29':'昭和の日','2027-5-3':'憲法記念日','2027-5-4':'みどりの日','2027-5-5':'こどもの日','2027-7-19':'海の日','2027-8-11':'山の日','2027-9-20':'敬老の日','2027-9-23':'秋分の日','2027-10-11':'スポーツの日','2027-11-3':'文化の日','2027-11-23':'勤労感謝の日'};
- const holiday=holidays[`${v.year}-${v.month}-${v.day}`];return `${v.month}月${v.day}日(${v.weekday})${holiday?'・'+holiday:''} 今日の7問`;
+ return `${v.month}月${v.day}日(${v.weekday}) 今日の7問`;
 }
 function renderNewsDemo(){
  for(const id of ['scienceFilters','browseSwitch','socialSwitch','catalogFilters','seriesScroller','quickReview','questionSearchSelection','catalogMilestones','selectVisible','catalogEmpty'])$(id).hidden=true;
@@ -9219,6 +9218,7 @@ $('importForm').onsubmit=async e=>{
 function refresh(){let value='';try{value=localStorage.getItem(key)||''}catch{}button.replaceChildren();const valid=/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(value);document.getElementById('settingsAvatarLabel').textContent=valid?'画像を変更':'画像を設定';if(valid){const img=document.createElement('img');img.alt='';img.src=value;button.append(img)}else button.textContent='👤'}
 function fail(message){status.textContent=message;status.hidden=false}button.addEventListener('click',()=>input.click());document.getElementById('settingsAvatarLabel').addEventListener('click',()=>input.click());input.addEventListener('change',()=>{const file=input.files[0];input.value='';if(!file)return;if(!file.type.startsWith('image/')||file.size>20*1024*1024){fail('20MB以内の画像を選んでください。');return}const reader=new FileReader();reader.onerror=()=>fail('画像を読み込めませんでした。');reader.onload=()=>{const image=new Image();image.onerror=()=>fail('この画像を読み込めませんでした。');image.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=256;const side=Math.min(image.naturalWidth,image.naturalHeight);if(!side)throw Error();const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,256,256);x.drawImage(image,(image.naturalWidth-side)/2,(image.naturalHeight-side)/2,side,side,0,0,256,256);localStorage.setItem(key,c.toDataURL('image/jpeg',.82));status.hidden=true;refresh()}catch{fail('アイコンを保存できませんでした。')}};image.src=reader.result};reader.readAsDataURL(file)});window.addEventListener('storage',e=>{if(e.key===key)refresh()});document.addEventListener('visibilitychange',refresh);refresh()})();
 </script></body></html>
+
 
 
 

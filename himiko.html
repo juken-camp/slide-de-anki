@@ -4075,6 +4075,12 @@ function renderCards(){
   }).join("");
 }
 
+document.getElementById('card-list').addEventListener('click',event=>{
+ const avatar=event.target.closest('.char-card .avatar');if(!avatar)return;
+ const card=avatar.closest('.char-card');const id=Number(card?.getAttribute('onclick')?.match(/openChat\((\d+)\)/)?.[1]);
+ const person=allHistoryChars.find(p=>p.id===id);if(!person)return;
+ event.preventDefault();event.stopPropagation();showProfile(person);
+},true);
 let listScrollY=0;
 
 async function openChat(id){
@@ -4147,6 +4153,7 @@ function showList(){
   setPersonalQuestions(currentChar,[]);
   chatEpoch++;cancelReveal(false);isLoading=false;chatReady=false;
   document.getElementById("chat-view").classList.add("hidden");
+  if(window.himikoReturnToMembers){const restore=window.himikoReturnToMembers;window.himikoReturnToMembers=null;currentChar=null;messages=[];dynamicSuggestions=[];restore();return;}
   delete document.documentElement.dataset.chatOpen;
    if(window.parent!==window)window.parent.postMessage({type:"himiko-chat-state",open:false},location.origin);
   document.getElementById("list-view").classList.remove("hidden");
@@ -5027,7 +5034,10 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  window.showGroupMembers=()=>{syncGroupName();renderMembers();$('group-member-error').hidden=true;document.documentElement.dataset.membersOpen='true';$('group-members').hidden=false;};
  window.hideGroupMembers=()=>{$('group-members').hidden=true;delete document.documentElement.dataset.membersOpen};
  $('group-avatar-input').addEventListener('change',function(){const file=this.files&&this.files[0];this.value='';if(!file)return;const error=$('group-member-error');function fail(message){error.textContent=message;error.hidden=false}if(!file.type.startsWith('image/')){fail('画像ファイルを選んでください。');return}if(file.size>20*1024*1024){fail('画像は20MB以内のものを選んでください。');return}const reader=new FileReader();reader.onerror=()=>fail('画像を読み込めませんでした。');reader.onload=()=>{const img=new Image();img.onerror=()=>fail('この画像を読み込めませんでした。別の画像を選んでください。');img.onload=()=>{try{const canvas=document.createElement('canvas');canvas.width=256;canvas.height=256;const side=Math.min(img.naturalWidth,img.naturalHeight);if(!side)throw Error();const context=canvas.getContext('2d');context.fillStyle='#ffffff';context.fillRect(0,0,256,256);context.drawImage(img,(img.naturalWidth-side)/2,(img.naturalHeight-side)/2,side,side,0,0,256,256);localStorage.setItem(AVATAR_KEY,canvas.toDataURL('image/jpeg',.82));error.hidden=true;renderMembers();renderParticipantStrip()}catch{fail('アイコンを保存できませんでした。ブラウザの保存設定をご確認ください。')}};img.src=reader.result};reader.readAsDataURL(file)});
- function go(e){if(e.target.closest('[data-self]')){$('group-avatar-input').click();return}const b=e.target.closest('[data-id]');if(!b)return;const id=Number(b.dataset.id);if(!ch(id))return;window.closeGroupChat();openChat(id)}
+ function go(e){if(e.target.closest('[data-self]')){$('group-avatar-input').click();return}const b=e.target.closest('[data-id]');if(!b)return;const id=Number(b.dataset.id),person=ch(id);if(!person)return;
+ if(e.currentTarget===$('group-member-list')&&e.target.closest('.avatar')){e.preventDefault();e.stopPropagation();showProfile(person);return;}
+ if(e.currentTarget===$('group-member-list')){const savedScroll=$('group-members').querySelector('.members-scroll').scrollTop,savedGroupListScroll=groupListScroll;window.himikoReturnToMembers=()=>{window.openGroupChat();groupListScroll=savedGroupListScroll;window.showGroupMembers();const el=$('group-members').querySelector('.members-scroll');el.scrollTop=savedScroll;requestAnimationFrame(()=>{el.scrollTop=savedScroll});};}
+ window.closeGroupChat();openChat(id)}
  $('group-member-list').addEventListener('click',go);$('group-participant-icons').addEventListener('click',go);$('group-messages').addEventListener('click',e=>{const button=e.target.closest('.group-person-avatar');if(!button)return;const person=ch(Number(button.dataset.id));if(person)showProfile(person)});
  function groupHistory(question,quote=null){const history=[];let used=question.length;let automatic='';for(const t of state.turns.slice(-6).reverse()){if(!Array.isArray(t.replies))continue;const shown=t.questionsReady===false?revealItems(t.replies).slice(0,Number(t.visibleCount)||0).map(x=>({id:x.person.id,text:x.text})):t.replies;const assistant=shown.map(r=>(ch(r.id)?.name||'')+'：'+r.text).join('\n').slice(0,3000);if(t.automatic){if(!automatic)automatic=assistant;continue}const user=t.question?.slice(0,1000);if(!user?.trim()||!assistant.trim())continue;if(used+user.length+assistant.length>10000)break;history.unshift({role:'user',content:user},{role:'assistant',content:assistant});used+=user.length+assistant.length}if(automatic)history.push({role:'user',content:'グループ内の自動会話（生徒はまだ発言していない場面）'},{role:'assistant',content:automatic.slice(0,3000)});if(quote)history.push({role:'user',content:'次の発言を引用してコメントします。続く私のコメントは、この引用への返信として受け止めてください。'},{role:'assistant',content:quote.name+'：'+quote.text.slice(0,1200)});history.push({role:'user',content:question});return history}
  let groupRequest=null;
@@ -5125,6 +5135,7 @@ box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUnt
 </script><script src="himiko-presence.js?v=membership-status-20261104"></script>
 </body>
 </html>
+
 
 
 

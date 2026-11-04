@@ -3558,7 +3558,7 @@ function createGroupPlan(automatic=false){
  return {total,teacher,figures:total-(teacher?1:0),style:randomInt(3),automatic};
 }
 function groupFiguresFor(plan){
- return plan.automatic?GROUP_FIGURES.filter(p=>!p.isExplainer&&p.learning.mode!=='explainer'):GROUP_FIGURES;
+ const available=GROUP_FIGURES.filter(p=>!(plan.absentIds||[]).includes(p.id));return plan.automatic?available.filter(p=>!p.isExplainer&&p.learning.mode!=='explainer'):available;
 }
 function buildGroupSchema(plan){
  const speaker={type:'object',properties:{name:plan.automatic?{type:'string'}:{type:'string',enum:groupFiguresFor(plan).map(p=>p.name)},text:{type:'string'},...(plan.automatic?{event:{type:'string',enum:['','leave','join','invite','away','return']},target:{type:'string'}}:{})},required:plan.automatic?['name','text','event','target']:['name','text'],additionalProperties:false};
@@ -3711,6 +3711,8 @@ module.exports = async function handler(req, res) {
   }
   const groupPlan=input.isGroup?createGroupPlan(req.himikoAutomatic===true):null;
   const batchPlans=req.himikoAutomatic===true&&req.himikoBatch===true?Array.from({length:5},()=>createGroupPlan(true)):null;
+  if(groupPlan&&req.himikoAutomatic)groupPlan.absentIds=req.himikoAbsentIds||[];
+  if(batchPlans)batchPlans.forEach(p=>p.absentIds=req.himikoAbsentIds||[]);
   const batchSchema=batchPlans?{type:'object',properties:Object.fromEntries(batchPlans.map((p,i)=>['scene'+(i+1),buildGroupSchema(p)])),required:batchPlans.map((_,i)=>'scene'+(i+1)),additionalProperties:false}:null;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), setting('HIMIKO_API_TIMEOUT_MS', batchPlans?45000:20000, 5000, 45000));
@@ -3761,7 +3763,7 @@ module.exports = async function handler(req, res) {
       if(batchPlans){
         try{if(!Number.isInteger(req.himikoNarrativeScene)||req.himikoNarrativeScene<0||req.himikoNarrativeScene>=5||!hasNarrativeExchange(obj['scene'+(req.himikoNarrativeScene+1)]))throw Error('語りの変化がありません');return res.status(200).json({scenes:batchPlans.map((plan,i)=>parseGroupScene(obj['scene'+(i+1)],plan,input))})}catch{return res.status(502).json({error:'まとめた会話を読み取れませんでした。'});}
       }
-      try{return res.status(200).json(parseGroupScene(obj,groupPlan,input))}catch{return res.status(502).json({error:'会話の続きを受け取れませんでした。もう一度送ってください。'});}
+      try{const result=parseGroupScene(obj,groupPlan,input);const token=header(req,'authorization').replace(/^Bearer /,'');result.membershipInbox=await require('../lib/himiko-inbox').rejoinForAnswer(token,result.replies.map(r=>r.id));return res.status(200).json(result)}catch{return res.status(502).json({error:'会話の続きを受け取れませんでした。もう一度送ってください。'});}
     }
     return res.status(200).json(data);
   } catch (error) {
@@ -3774,3 +3776,6 @@ module.exports = async function handler(req, res) {
 module.exports.personaName=id=>PERSONAS.get(id)?.name||'';
 
 
+
+
+module.exports.groupPersonaIds=()=>GROUP_FIGURES.filter(p=>!p.isExplainer&&p.learning.mode!=='explainer').map(p=>p.id);

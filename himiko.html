@@ -1816,7 +1816,8 @@ html[data-persona="cyber"] #list-view #card-list .personal-unread,html[data-pers
 :is(#chat-view,#group-view) .back-btn:focus:not(:focus-visible){outline:none;box-shadow:none!important}
 </style>
 <style id="group-retry-message">
-#group-view .group-send-failed{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:2px 8px 12px;font-family:inherit;font-size:11px;line-height:1.5;color:#9b806b}
+#group-view .bubble-row.user.send-failed{margin-bottom:2px}
+#group-view .group-send-failed{display:flex;justify-content:flex-end;align-items:center;gap:4px;margin:0 8px 12px;font-family:inherit;font-size:11px;line-height:1.5;color:#9b806b}
 #group-view .group-send-failed button{font:inherit;color:inherit;border:0;background:transparent;padding:4px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
 html[data-persona="cyber"] #group-view .group-send-failed{color:#8eaec4}
 </style>
@@ -4988,7 +4989,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  function setGroupQuote(q){groupQuote=q;const box=$('group-quote-draft');if(!box)return;box.hidden=!q;box.innerHTML=q?quoteHTML(q)+'<button type="button" id="group-quote-cancel" aria-label="引用を解除">×</button>':'';}
  $('group-form').addEventListener('click',e=>{if(e.target.closest('#group-quote-cancel'))setGroupQuote(null)});
  $('group-messages').addEventListener('click',e=>{const jump=e.target.closest('[data-quote-jump]');if(jump){const target=$(jump.dataset.quoteJump);if(target){target.scrollIntoView({block:'center',behavior:'smooth'});target.classList.add('quote-highlight');setTimeout(()=>target.classList.remove('quote-highlight'),1500)}return;}const bubble=e.target.closest('[data-group-quote-text]');if(!bubble||window.getSelection()?.toString())return;setGroupQuote({name:bubble.dataset.groupQuoteName,text:bubble.dataset.groupQuoteText,target:bubble.id});$('group-input').focus();});
- function rowUser(text,at=null,read=false,failed=false,quote=null){return `<div class="bubble-row user is-new" data-group-timeline-at="${Number(at)||0}" data-group-sent-at="${Number(at)||Date.now()}"><div id="${groupBubbleId('user',text,at)}" class="bubble user" data-group-quote-name="あなた" data-group-quote-text="${escAttr(text)}">${quoteHTML(quote)}${safe(text)}</div>${failed?'':groupReadMeta(at)}</div>`}
+ function rowUser(text,at=null,read=false,failed=false,quote=null){return `<div class="bubble-row user is-new${failed?' send-failed':''}" data-group-timeline-at="${Number(at)||0}" data-group-sent-at="${Number(at)||Date.now()}"><div id="${groupBubbleId('user',text,at)}" class="bubble user" data-group-quote-name="あなた" data-group-quote-text="${escAttr(text)}">${quoteHTML(quote)}${safe(text)}</div>${failed?'':groupReadMeta(at)}</div>`}
  function rowReplyPart(p,text,first,animate=false,meta={}){if(meta.reply?.event){
  const event=meta.reply.event,legacy=String(text).match(/（([\s\S]*)）$/),reason=meta.reply.reason||(legacy?legacy[1]:'');
  const label=String(text).replace(/（[\s\S]*）$/,'').replace('グループを退出しました','グループを退会しました');

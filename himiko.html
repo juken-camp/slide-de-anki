@@ -3916,6 +3916,9 @@ addedFilterMap.era["江戸"]+=" 岩倉具視 西郷隆盛 大久保利通 坂本
 addedFilterMap.role["政治家・指導者"]+=" 小野妹子 ペリー マッカーサー";
 addedFilterMap.role["社会を変えた人"]+=" 大塩平八郎 渋沢栄一";
 addedFilterMap.role["探検家"]+=" 伊能忠敬";
+addedFilterMap.era["鎌倉"]+=" 後醍醐天皇 足利尊氏";
+addedFilterMap.era["明治"]+=" 平塚らいてう";
+addedFilterMap.era["大正・昭和"]+=" 大隈重信";
 for(const [group, entries] of Object.entries(addedFilterMap))for(const [key, names] of Object.entries(entries))for(const name of names.split(" "))filterGroups[group].items[key].add(name);
 for(const p of ADDED_CHARACTERS){const region={"小野妹子":"日本","中臣鎌足":"日本","坂上田村麻呂":"日本","菅原道真":"日本","清少納言":"日本","白河上皇":"日本","後鳥羽上皇":"日本","北条時宗":"日本","運慶":"日本","足利義政":"日本","世阿弥":"日本","尚巴志":"日本","ザビエル":"ヨーロッパ","千利休":"日本","徳川家光":"日本","徳川吉宗":"日本","田沼意次":"日本","松平定信":"日本","水野忠邦":"日本","大塩平八郎":"日本","伊能忠敬":"日本","葛飾北斎":"日本","歌川広重":"日本","ペリー":"アメリカ","井伊直弼":"日本","徳川慶喜":"日本","木戸孝允（桂小五郎）":"日本","岩倉具視":"日本","大隈重信":"日本","小村寿太郎":"日本","尚泰":"日本","田中正造":"日本","津田梅子":"日本","北里柴三郎":"日本","樋口一葉":"日本","渋沢栄一":"日本","原敬":"日本","吉野作造":"日本","マッカーサー":"アメリカ","佐藤栄作":"日本","バスコ・ダ・ガマ":"ヨーロッパ","ワット":"ヨーロッパ","孫文":"アジア","ウィルソン":"アメリカ"}[p.name];filterGroups.region.items[region].add(p.name);}
 for(const name of ["清少納言","津田梅子","樋口一葉"])filterGroups.special.items["女性の人物"].add(name);

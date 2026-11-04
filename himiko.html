@@ -1936,7 +1936,7 @@ function himikoGuideCopy(text){
 }
 function syncHimikoPrompt(){
  const ch=typeof currentChar==='undefined'?null:currentChar;
- const subject=ch?((ch.isExplainer||ch.isNarrator)?'AI先生と'+ch.name+'について':(ch.isSpecial?'AI先生':ch.name)+'と'):'';
+ const subject=ch?((ch.isExplainer||ch.isNarrator)?ch.name+'について':(ch.isSpecial?'AI先生':ch.name)+'と'):'';
  document.getElementById('msg-input').placeholder=himikoUi(subject+'トークしようにゃ！',subject+'トークしようぜ！');
  const search=document.getElementById('search-input');
  search.placeholder=himikoUi('名前や時代で検索するにゃ','名前や時代で検索するぜ');

@@ -4874,6 +4874,26 @@ document.getElementById("chat-view").addEventListener("click",function(e){
 })();
 </script>
 
+<script id="group-horizontal-bounce-guard">
+(()=>{
+ const box=document.getElementById('group-messages');
+ let start=null, direction=null;
+ box.addEventListener('touchstart',e=>{
+  start=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;
+  direction=null;
+ },{passive:true});
+ box.addEventListener('touchmove',e=>{
+  if(!start||e.touches.length!==1)return;
+  const dx=e.touches[0].clientX-start.x,dy=e.touches[0].clientY-start.y;
+  if(!direction&&Math.max(Math.abs(dx),Math.abs(dy))>4)direction=Math.abs(dx)>Math.abs(dy)?'horizontal':'vertical';
+  if(direction==='horizontal'&&e.cancelable)e.preventDefault();
+ },{passive:false});
+ const reset=()=>{start=null;direction=null};
+ box.addEventListener('touchend',reset,{passive:true});
+ box.addEventListener('touchcancel',reset,{passive:true});
+})();
+</script>
+
 <script id="himiko-disable-pinch-in-frame-20261031">
 (()=>{
   // Gestures do not bubble from an iframe into the parent; protect this document too.

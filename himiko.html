@@ -4187,6 +4187,7 @@ function preparePersonalSend(){
 }
 function setPersonalQuestions(ch,questions,initial=false){
   const inner=messageInner();if(!inner)return;
+  if(questions.length&&(isLoading||messages.at(-1)?.role==='user'))return;
   inner.querySelectorAll('.suggestions').forEach(node=>node.remove());
   if(questions.length)inner.append(nodeFromHTML(suggestionHTML(ch,questions,initial)));
 }
@@ -4528,6 +4529,8 @@ async function sendMessage(text){
   document.getElementById("msg-input").value="";
   dynamicSuggestions=[];
   isLoading=true;
+  clearTimeout(personalSuggestionTimer);
+  scroller.querySelectorAll('.suggestions').forEach(node=>node.remove());
   userReadingHistory=false; // 自分が送信したときは最新メッセージへ戻す
   const userRow=nodeFromHTML(userRowHTML(ch,question,true,messages.at(-1).at));
   const typingRow=nodeFromHTML(typingHTML(ch));
@@ -5174,6 +5177,7 @@ box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUnt
 </script><script src="himiko-presence.js?v=membership-status-20261104"></script>
 </body>
 </html>
+
 
 
 

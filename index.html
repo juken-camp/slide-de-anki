@@ -4142,7 +4142,7 @@ html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
 </section>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>
 </section>
-<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261104-membership-status-v11"></iframe></section>
+<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261104-member-button-v12"></iframe></section>
 <section aria-labelledby="sessionSummary" id="studyScreen" aria-label="スライド学習" hidden>
 <div class="study-heading page-heading"><h2 class="screen-title" tabindex="-1" id="sessionSummary"></h2><button id="studyReel" class="tool" type="button" aria-label="リールで見る" title="リール"><span aria-hidden="true">🎞️</span></button><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden hidden></p><p id="saveWarning" class="save-warning" hidden></p>
@@ -9226,6 +9226,7 @@ $('importForm').onsubmit=async e=>{
 function refresh(){let value='';try{value=localStorage.getItem(key)||''}catch{}button.replaceChildren();const valid=/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(value);document.getElementById('settingsAvatarLabel').textContent=valid?'画像を変更':'画像を設定';if(valid){const img=document.createElement('img');img.alt='';img.src=value;button.append(img)}else button.textContent='👤'}
 function fail(message){status.textContent=message;status.hidden=false}button.addEventListener('click',()=>input.click());document.getElementById('settingsAvatarLabel').addEventListener('click',()=>input.click());input.addEventListener('change',()=>{const file=input.files[0];input.value='';if(!file)return;if(!file.type.startsWith('image/')||file.size>20*1024*1024){fail('20MB以内の画像を選んでください。');return}const reader=new FileReader();reader.onerror=()=>fail('画像を読み込めませんでした。');reader.onload=()=>{const image=new Image();image.onerror=()=>fail('この画像を読み込めませんでした。');image.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=256;const side=Math.min(image.naturalWidth,image.naturalHeight);if(!side)throw Error();const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,256,256);x.drawImage(image,(image.naturalWidth-side)/2,(image.naturalHeight-side)/2,side,side,0,0,256,256);localStorage.setItem(key,c.toDataURL('image/jpeg',.82));status.hidden=true;refresh()}catch{fail('アイコンを保存できませんでした。')}};image.src=reader.result};reader.readAsDataURL(file)});window.addEventListener('storage',e=>{if(e.key===key)refresh()});document.addEventListener('visibilitychange',refresh);refresh()})();
 </script></body></html>
+
 
 
 

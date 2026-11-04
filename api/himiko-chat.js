@@ -3761,7 +3761,17 @@ module.exports = async function handler(req, res) {
     if (input.isGroup) {
       let obj; try { obj=parseGroupOutput(text); } catch { return res.status(502).json({error:'回答を読み取れませんでした。質問は残っています。もう一度送ってください。'}); }
       if(batchPlans){
-        try{if(!Number.isInteger(req.himikoNarrativeScene)||req.himikoNarrativeScene<0||req.himikoNarrativeScene>=5||!hasNarrativeExchange(obj['scene'+(req.himikoNarrativeScene+1)]))throw Error('語りの変化がありません');return res.status(200).json({scenes:batchPlans.map((plan,i)=>parseGroupScene(obj['scene'+(i+1)],plan,input))})}catch{return res.status(502).json({error:'まとめた会話を読み取れませんでした。'});}
+        const scenes=[];
+        for(let i=0;i<batchPlans.length;i++){
+          try{
+            const raw=obj['scene'+(i+1)];
+            // Server membership events must not invalidate unrelated conversation scenes.
+            const ordinary=Array.isArray(raw?.historicalReplies)?raw.historicalReplies.filter(r=>!r?.event):[];
+            scenes.push(parseGroupScene({...raw,historicalReplies:ordinary},batchPlans[i],input));
+          }catch{console.warn('[group-auto] scene_rejected',JSON.stringify({scene:i+1}));}
+        }
+        if(!scenes.length)return res.status(502).json({error:'まとめた会話を読み取れませんでした。'});
+        return res.status(200).json({scenes});
       }
       try{const result=parseGroupScene(obj,groupPlan,input);const token=header(req,'authorization').replace(/^Bearer /,'');result.membershipInbox=await require('../lib/himiko-inbox').rejoinForAnswer(token,result.replies.map(r=>r.id));return res.status(200).json(result)}catch{return res.status(502).json({error:'会話の続きを受け取れませんでした。もう一度送ってください。'});}
     }

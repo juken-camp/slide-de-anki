@@ -5107,6 +5107,20 @@ document.getElementById("chat-view").addEventListener("click",function(e){
   const id=pending.requestId;groupRequest=id;
   if(!$('group-view').hidden){busy=true;updateGroupSend();if(Number(pending.firstReplyAt)-Date.now()<=15000&&groupCanType(pending)&&!$('group-typing'))groupAppend(groupTyping(null),groupFollow());}
   try{
+   if(pending.interruption&&!pending.interruptionSynced){
+    const token=localStorage.getItem('himiko-inbox-token-v1')||'';
+    if(token){
+     let sync;
+     for(let attempt=0;attempt<3;attempt++){
+      sync=await fetch('/api/himiko-inbox',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify({action:'interrupt',...pending.interruption})});
+      if(sync.status!==409)break;
+      await new Promise(resolve=>setTimeout(resolve,250*(attempt+1)));
+     }
+     if(!sync.ok)throw Error('会話を更新できませんでした。もう一度送ってください。');
+     receiveInbox(await sync.json());
+    }
+    pending.interruptionSynced=true;save();
+   }
    const r=await fetch('/api/himiko-chat',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+(localStorage.getItem('himiko-inbox-token-v1')||'')},body:JSON.stringify({mode:'group',nickname:himikoNickname(),messages:groupHistory(pending.question,pending.quote)})});
    const d=await r.json();if(!r.ok)throw Error(d.error||'接続できませんでした');if(d.membershipInbox){receiveInbox(d.membershipInbox);window.parent.postMessage({type:'himiko-inbox-refresh'},location.origin);}
    const turn=state.turns.find(t=>t.requestId===id);if(!turn)return;
@@ -5126,16 +5140,23 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  });
  $('group-form').addEventListener('submit',e=>{
   e.preventDefault();const question=$('group-input').value.trim();if(!question||groupRequest||(busy&&!groupReveal))return;
-  interruptAutomatic();cancelWaitingReplies();lastUserMessageAt=Date.now();inboxAction('presence',{active:true});
+  const interruption=interruptAutomatic();cancelWaitingReplies();lastUserMessageAt=Date.now();inboxAction('presence',{active:true});
   const retry=state.turns.findLast(t=>t.pending&&t.error&&t.question===question);
   if(retry){retry.error='';retry.questionsReady=false;}
   else state.turns.push({requestId:Date.now()+':'+Math.random(),question,quote:groupQuote,firstReplyAt:Date.now()+120000+Math.floor(Math.random()*360001),at:Date.now(),read:false,replies:[],pending:true,visibleCount:0,questionsReady:false,suggestions:[]});
+  const outgoing=state.turns.at(-1);if(outgoing?.pending)outgoing.interruption={...interruption,requestId:outgoing.requestId,at:outgoing.at,context:[...groupHistory(question,groupQuote).slice(-5).map(m=>m.content)]};
   state.turns=state.turns.slice(-100);save();setGroupQuote(null);busy=true;$('group-input').value='';$('group-status').hidden=true;render();deliverPendingGroup();
  });
 
  let inboxData=null,serverUnread=0;
  function inboxAction(action,extra={}){if(window.parent!==window)window.parent.postMessage({type:'himiko-inbox-action',action,...extra},location.origin)}
- function interruptAutomatic(){if(!groupReveal?.turn?.automatic)return;const t=groupReveal.turn,items=groupReveal.items.slice(0,groupReveal.index),kept=[];for(const item of items){let r=kept.find(r=>r.key===item.reply.key);if(!r){r={...item.reply,id:item.person.id,key:item.reply.key,text:'',at:item.at};kept.push(r)}r.text+=(r.text?'\n\n':'')+item.text;}inboxAction('interrupt',{batchId:t.batchId,seen:kept.map(r=>({key:r.key,text:r.text}))});t.replies=kept;t.interrupted=true;t.questionsReady=true;clearTimeout(timer);groupReveal=null;busy=false;$('group-typing')?.remove();save();updateGroupSend()}
+ function interruptAutomatic(){
+  if(!groupReveal?.turn?.automatic)return null;
+  const t=groupReveal.turn,items=groupReveal.items.slice(0,groupReveal.index),kept=[];
+  for(const item of items){let r=kept.find(r=>r.key===item.reply.key);if(!r){r={...item.reply,id:item.person.id,key:item.reply.key,text:'',at:item.at};kept.push(r)}r.text+=(r.text?'\n\n':'')+item.text;}
+  const snapshot={batchId:t.batchId,seen:kept.map(r=>({key:r.key,text:r.text}))};
+  t.replies=kept;t.interrupted=true;t.questionsReady=true;clearTimeout(timer);groupReveal=null;busy=false;$('group-typing')?.remove();save();updateGroupSend();return snapshot;
+ }
  function receiveInbox(d){let memberRowsAdded=false;for(const b of d.batches||[]){if(!b.membershipOnly||state.turns.some(t=>t.batchId===b.id))continue;state.turns.push({automatic:true,batchId:b.id,at:b.createdAt,question:'',replies:b.replies,suggestions:[],questionsReady:true});memberRowsAdded=true;}state.turns.sort((a,b)=>(a.at||0)-(b.at||0));if(memberRowsAdded)save();const previousMembers=JSON.stringify(inboxData?.membership?.absentIds);inboxData=d;if(previousMembers!==JSON.stringify(d.membership?.absentIds)){syncGroupName();if(!$('group-members').hidden)renderMembers();if(!$('group-participant-strip').hidden)renderParticipantStrip();}for(const b of d.batches||[])for(const r of b.replies||[])if(!r.event&&r.at<=Date.now()&&r.at>Date.now()-600000)window.dispatchEvent(new CustomEvent('himiko-group-speaker',{detail:{id:r.id,at:r.at}}));inboxData=d;serverUnread=Number(d.unread)||0;for(const k of d.readKeys||[])acknowledgedKeys.add(k);refreshGroupUnread();const conversationBusy=busy||state.turns.some(t=>!t.automatic&&!t.error&&t.questionsReady===false);const open=!$('group-view').hidden;let fresh=null,changed=false,revealFrom=0;for(const b of d.batches||[]){let t=state.turns.find(t=>t.batchId===b.id);if(t?.interrupted)continue;const replies=b.replies.filter(r=>ch(r.id));if(!replies.length)continue;if(t){if(t.replies.length>=replies.length)continue;revealFrom=revealItems(t.replies).length;t.replies=replies;t.questionsAt=(replies.at(-1)?.at||Date.now())+10000;fresh=t;changed=true;}else {t={automatic:true,batchId:b.id,at:b.createdAt,question:'',replies,suggestions:b.suggestions||[],suggestionKind:b.suggestionKind||'questions',questionsAt:(replies.at(-1)?.at||Date.now())+10000,questionsReady:true};state.turns.push(t);fresh=t;revealFrom=0;changed=true;}}if(!changed){if(open&&(unreadEntryPending||memberRowsAdded))render();return;}state.turns.sort((a,b)=>(a.at||0)-(b.at||0));state.turns=state.turns.slice(-100);save();if(!open)syncGroupName();if(open){const entering=unreadEntryPending;render();if(!conversationBusy&&!entering&&fresh&&Date.now()-fresh.replies.at(-1).at<90000){fresh.questionsReady=false;fresh.visibleCount=revealFrom;render();startGroupReveal(fresh.replies,epoch,fresh);updateGroupSend()}}}
  window.addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==window.parent)return;const m=e.data;if(m?.type==='himiko-inbox-data')receiveInbox(m.data);if(m?.type==='himiko-inbox-count'){serverUnread=Number(m.count)||0;refreshGroupUnread();}if(m?.type==='himiko-inbox-error'&&m.action==='read'){for(const k of m.keys||[])acknowledgedKeys.delete(k);retryReadAt=Date.now()+5000;}if(m?.type==='himiko-open-group')window.openGroupChat();});
  const acknowledgedKeys=new Set();let retryReadAt=0;

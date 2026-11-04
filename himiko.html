@@ -1755,6 +1755,8 @@ html[data-persona="cyber"] .history-day{color:#a9c6df}html[data-persona="cyber"]
 /* Incoming timestamps sit beside the bubble, sharing its bottom edge. */
 #chat-view .history-reply-content,#group-view .group-reply-content{display:grid;grid-template-columns:minmax(0,1fr) max-content;column-gap:6px;width:fit-content;max-width:82%;min-width:0;align-items:end}
 #chat-view .history-reply-name,#group-view .group-reply-name{grid-column:1 / -1}
+/* A long sender name must not widen a short group message. */
+#group-view .group-reply-name{width:0;min-width:0;white-space:nowrap}
 #chat-view .history-reply-content>.bubble,#group-view .group-reply-content>.bubble{grid-column:1;min-width:0;margin:0}
 #chat-view .history-reply-content>.history-message-time,#group-view .group-reply-content>.history-message-time{grid-column:2;align-self:end;margin:0 0 3px;text-align:left}
 </style>

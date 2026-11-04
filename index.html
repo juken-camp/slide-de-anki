@@ -8164,7 +8164,7 @@ $('quickPause').onclick = pause;
 $('brandHome').onclick = () => playWithCat($('brandHome'));
 $('navSettings').onclick = () => showScreen('settings');
 $('myCollectionsSearch').addEventListener('input',()=>renderMyCollections());
-$('openCatalog').onclick = () => {catalogIsCollections=false;showScreen('catalog');};$('navCollections').onclick=()=>showScreen('himiko'); $('returnToStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
+$('openCatalog').onclick = () => {catalogIsCollections=false;showScreen('catalog');};$('navCollections').onclick=()=>{const frame=$('himikoFrame');if(frame?.getAttribute('src'))frame.contentWindow?.postMessage({type:'himiko-return-top'},location.origin);showScreen('himiko');}; $('returnToStudy').onclick = () => lesson ? showScreen('study') : selectLessons(state.lessonIds,{resume:true});
 $('startStudy').onclick = () => {state.subject = catalogSubject || meta.find(m=>selected.has(m.id))?.subject || state.subject; beep('open');return selectLessons(selectedCatalogLessons().map(m => m.id));};
 $('clearSelection').onclick = () => { selected.clear(); renderCatalog(); };
 $('selectVisible').onclick = () => toggleGroup(visibleLessons()); $('catalogSearch').oninput = ()=>{

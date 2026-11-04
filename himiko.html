@@ -4632,6 +4632,19 @@ function closeProfile(e){
   },220);
 }
 
+window.addEventListener('message', event => {
+  if (event.origin !== location.origin || event.source !== window.parent || event.data?.type !== 'himiko-return-top') return;
+  document.activeElement?.blur?.();
+  document.querySelectorAll('.profile-image-view .profile-image-close').forEach(button => button.click());
+  if (!document.getElementById('profile-modal').classList.contains('hidden')) closeProfile();
+  window.himikoReturnToMembers = null;
+  listScrollY = 0;
+  if (!document.getElementById('chat-view').classList.contains('hidden')) showList();
+  if (!document.getElementById('group-view').hidden) window.closeGroupChat();
+  const top = () => { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; };
+  top(); requestAnimationFrame(top); setTimeout(top, 80);
+});
+
 renderTags();renderCards();syncHimikoPrompt();setChatStorageStatus('会話を読み込み中…');
 
 // iOS Safariの慣性スクロールやプログラムによるscrollイベントは、

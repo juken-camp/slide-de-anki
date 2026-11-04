@@ -582,7 +582,7 @@ html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none
 </style>
 
 <style>
-.group-system-event{text-align:center;margin:16px 12px;color:var(--muted,#9bb7c9);font-size:11px;line-height:1.6}.group-system-event>span{display:inline-block;padding:5px 12px;border-radius:14px;background:#8299b51c}.group-system-event .message-meta{position:static}
+.group-system-event{text-align:center;margin:16px 12px;color:var(--muted,#9bb7c9);font-size:11px;line-height:1.6}.group-system-event>span{display:inline-block;max-width:100%;padding:6px 12px;border-radius:14px;background:#8299b51c;overflow-wrap:anywhere}.group-system-event time{display:block;font-size:inherit;color:inherit;line-height:1.4}.group-system-event .group-event-label{display:block;line-height:1.5}
 </style>
 <style id="nekopon-himiko-region-label-friendly-count-20261031">
 /* The mascot emoji must be bare: no round badge, border, fill, or glow. */
@@ -4924,7 +4924,13 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  $('group-form').addEventListener('click',e=>{if(e.target.closest('#group-quote-cancel'))setGroupQuote(null)});
  $('group-messages').addEventListener('click',e=>{const jump=e.target.closest('[data-quote-jump]');if(jump){const target=$(jump.dataset.quoteJump);if(target){target.scrollIntoView({block:'center',behavior:'smooth'});target.classList.add('quote-highlight');setTimeout(()=>target.classList.remove('quote-highlight'),1500)}return;}const bubble=e.target.closest('[data-group-quote-text]');if(!bubble||window.getSelection()?.toString())return;setGroupQuote({name:bubble.dataset.groupQuoteName,text:bubble.dataset.groupQuoteText,target:bubble.id});$('group-input').focus();});
  function rowUser(text,at=null,read=false,failed=false,quote=null){return `<div class="bubble-row user is-new" data-group-sent-at="${Number(at)||Date.now()}"><div id="${groupBubbleId('user',text,at)}" class="bubble user" data-group-quote-name="あなた" data-group-quote-text="${escAttr(text)}">${quoteHTML(quote)}${safe(text)}</div>${failed?'':groupReadMeta(at)}</div>`}
- function rowReplyPart(p,text,first,animate=false,meta={}){if(meta.reply?.event)return `<div class="group-system-event" ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:''}><span>${safe(text)}</span>${historyMeta(meta.at)}</div>`;const at=Number(meta.due||meta.at||meta.reply?.at);if(at&&at<=Date.now()&&at>Date.now()-600000)window.dispatchEvent(new CustomEvent('himiko-group-speaker',{detail:{id:p.id,at}}));return `<div ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:""} class="bubble-row assistant${first?'':' continuation'}${animate?' is-new':''}">${first?`<button type="button" class="bubble-avatar group-person-avatar" data-id="${p.id}" aria-label="${safe(p.name)}のプロフィールを見る" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</button>`:'<div class="bubble-avatar-spacer" aria-hidden="true"></div>'}<div class="group-reply-content">${first?`<div class="group-reply-name">${safe(p.name)}${p.isNarrator||p.isExplainer?'（解説）':''}${p.isSpecial||!p.period?'':` <span class="group-reply-period">（${safe(p.period.replace(/[（(]/g,'・').replace(/[）)]/g,''))}）</span>`}</div>`:''}<div id="${groupBubbleId(p.id,text,meta.at||meta.reply?.at)}" class="bubble assistant" data-group-quote-name="${escAttr(p.name)}" data-group-quote-text="${escAttr(text)}">${first?quoteHTML(replyQuote(meta.reply)):''}${safe(cleanSpeakerLabel(text,p.name))}</div>${historyMeta(meta.at)}</div></div>`}
+ function rowReplyPart(p,text,first,animate=false,meta={}){if(meta.reply?.event){
+ const event=meta.reply.event,legacy=String(text).match(/（([\s\S]*)）$/),reason=meta.reply.reason||(legacy?legacy[1]:'');
+ const label=String(text).replace(/（[\s\S]*）$/,'').replace('グループを退出しました','グループを退会しました');
+ const notice=`<div class="group-system-event" ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:''}><span>${meta.at?`<time>${safe(historyClock(meta.at))}</time>`:''}<span class="group-event-label">${safe(label)}</span></span></div>`;
+ const speech=reason?rowReplyPart(p,reason,true,animate,{at:meta.at}):'';
+ return ['leave','away','invite'].includes(event)?speech+notice:notice+speech;
+}const at=Number(meta.due||meta.at||meta.reply?.at);if(at&&at<=Date.now()&&at>Date.now()-600000)window.dispatchEvent(new CustomEvent('himiko-group-speaker',{detail:{id:p.id,at}}));return `<div ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:""} class="bubble-row assistant${first?'':' continuation'}${animate?' is-new':''}">${first?`<button type="button" class="bubble-avatar group-person-avatar" data-id="${p.id}" aria-label="${safe(p.name)}のプロフィールを見る" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</button>`:'<div class="bubble-avatar-spacer" aria-hidden="true"></div>'}<div class="group-reply-content">${first?`<div class="group-reply-name">${safe(p.name)}${p.isNarrator||p.isExplainer?'（解説）':''}${p.isSpecial||!p.period?'':` <span class="group-reply-period">（${safe(p.period.replace(/[（(]/g,'・').replace(/[）)]/g,''))}）</span>`}</div>`:''}<div id="${groupBubbleId(p.id,text,meta.at||meta.reply?.at)}" class="bubble assistant" data-group-quote-name="${escAttr(p.name)}" data-group-quote-text="${escAttr(text)}">${first?quoteHTML(replyQuote(meta.reply)):''}${safe(cleanSpeakerLabel(text,p.name))}</div>${historyMeta(meta.at)}</div></div>`}
  function rowReply(x){const p=ch(x.id);if(!p)return '';return `<div class="bubble-group">${splitReplyBubbles(x.text).map((part,i)=>rowReplyPart(p,part,i===0)).join('')}</div>`}
  function groupTyping(p){const color=p?.color||'#6b90a8';return `<div id="group-typing" class="bubble-row assistant typing-row" role="status" aria-label="次のメッセージを準備中"><div class="bubble-avatar-spacer" aria-hidden="true"></div><div class="typing">${[0,.2,.4].map(d=>`<span class="typing-dot" style="background:${color};animation-delay:${d}s"></span>`).join('')}</div></div>`}
  function groupFollow(){const scroller=$('group-messages');return scroller.scrollHeight-scroller.scrollTop-scroller.clientHeight<120}
@@ -5090,6 +5096,7 @@ box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUnt
 </script><script src="himiko-presence.js?v=roster111-header-status-20261104"></script>
 </body>
 </html>
+
 
 
 

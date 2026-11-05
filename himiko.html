@@ -3475,12 +3475,51 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  if(e.currentTarget===$('group-member-list')){const savedScroll=$('group-members').querySelector('.members-scroll').scrollTop,savedGroupListScroll=groupListScroll;window.himikoReturnToMembers=()=>{window.openGroupChat();groupListScroll=savedGroupListScroll;window.showGroupMembers();const el=$('group-members').querySelector('.members-scroll');el.scrollTop=savedScroll;requestAnimationFrame(()=>{el.scrollTop=savedScroll});};}
  window.closeGroupChat();openChat(id)}
  $('group-member-list').addEventListener('click',go);$('group-participant-icons').addEventListener('click',go);$('group-messages').addEventListener('click',e=>{const button=e.target.closest('.group-person-avatar');if(!button)return;const person=ch(Number(button.dataset.id));if(person)showProfile(person)});
+ function groupHistoryLine(entry){
+  const at=Number(entry.at),stamp=Number.isFinite(at)&&at>0?historyDay(at)+' '+historyClock(at):'時刻不明';
+  return '['+stamp+'] '+entry.text;
+ }
+ function groupTimeContext(question,entries,now=Date.now()){
+  const q=String(question).normalize('NFKC');
+  const refs=[...q.matchAll(/(午前|午後)?\s*(\d{1,2})(?:[:：]([0-5]\d)|時(?:([0-5]?\d)分?)?)/g)]
+   .filter(m=>Number(m[2])<24).map(m=>{let hour=Number(m[2]);if(m[1]&&hour<=12)hour=hour%12+(m[1]==='午後'?12:0);const min=m[3]??m[4];return {minute:hour*60+Number(min||0),hourOnly:min===undefined};}).slice(0,2);
+  if(!refs.length)return null;
+  const referenceIntent=/(会話|発言|やりとり|やり取り|の話|した話|話して|話した|話の|話って|どういう|説明|意味|さっき|先ほど|以降|以後|のやつ|の部分|のところ|の件|のこと)/.test(q)||refs.length===2||/^(?:午前|午後)?\s*\d{1,2}(?::[0-5]\d|時(?:[0-5]?\d分?)?)\s*[？?]?$/u.test(q);
+  if(!referenceIntent)return null;
+  const rows=entries.filter(e=>Number(e.at)>0&&e.at<=now).map(e=>{const clock=historyClock(e.at),[h,m]=clock.split(':').map(Number);return {...e,day:historyDay(e.at),minute:h*60+m};});
+  const since=refs.length===1&&/(以降|以後|から|より後|の後|のあと)/.test(q);
+  const range=refs.length===2&&/(から|まで|[〜～~\-])/u.test(q);
+  const matches=e=>range?(refs[1].minute>=refs[0].minute?e.minute>=refs[0].minute&&e.minute<=refs[1].minute:e.minute>=refs[0].minute||e.minute<=refs[1].minute):since?e.minute>=refs[0].minute:refs.some(r=>r.hourOnly?Math.floor(e.minute/60)===Math.floor(r.minute/60):e.minute===r.minute);
+  let selectedDay=null;
+  const date=q.match(/(\d{4})-(\d{1,2})-(\d{1,2})/)||q.match(/(?:(\d{4})[年/])?(\d{1,2})[月/](\d{1,2})日?/);
+  if(/一昨日|おととい/.test(q))selectedDay=historyDay(now-2*86400000);
+  else if(/昨日|きのう/.test(q))selectedDay=historyDay(now-86400000);
+  else if(/今日|きょう/.test(q))selectedDay=historyDay(now);
+  else if(date){const year=date[1]||historyDay(now).slice(0,4);selectedDay=year+'-'+date[2].padStart(2,'0')+'-'+date[3].padStart(2,'0');}
+  else selectedDay=rows.filter(e=>range&&refs[1].minute<refs[0].minute?e.minute>=refs[0].minute:matches(e)).map(e=>e.day).sort().at(-1)||null;
+  if(!selectedDay&&range&&refs[1].minute<refs[0].minute){const endDay=rows.filter(e=>e.minute<=refs[1].minute).map(e=>e.day).sort().at(-1);if(endDay)selectedDay=historyDay(Date.parse(endDay+'T00:00:00+09:00')-86400000);}
+  const midnight=selectedDay?Date.parse(selectedDay+'T00:00:00+09:00'):NaN;
+  const start=midnight+refs[0].minute*60000;
+  const end=range?midnight+refs[1].minute*60000+(refs[1].minute<refs[0].minute?86400000:0)+60000:since?now+1:start+(refs[0].hourOnly?3600000:60000);
+  const relevant=selectedDay?rows.filter(e=>since||range?e.at>=start&&e.at<end:e.day===selectedDay&&matches(e)):[];
+  if(!relevant.length)return {found:false,count:0,day:selectedDay,content:'参照結果：保存されている表示済み履歴には、指定された日時に対応する発言を確認できません。画面上に時刻がないという意味ではありません。利用者に発言の引用や内容の一部をお願いしてください。'};
+  // Include the immediately preceding context without pushing matches out of budget.
+  const first=rows.indexOf(relevant[0]),prior=rows.slice(Math.max(0,first-2),first).filter(e=>e.day===selectedDay);
+  const selected=[];let used=0;
+  for(const entry of relevant){const line=groupHistoryLine(entry).slice(0,1300);if(used+line.length+1>3900)break;selected.push(line);used+=line.length+1;}
+  const context=[];for(const entry of prior.reverse()){const line=groupHistoryLine(entry).slice(0,650);if(used+line.length+1>4300)break;context.unshift(line);used+=line.length+1;}
+  const note='参照日：'+selectedDay+'（日本時間）。指定に該当する発言は'+relevant.length+'件、そのうち'+selected.length+'件を掲載。'+(context.length?'冒頭の'+context.length+'行は直前の文脈。':'')+(selected.length<relevant.length?'全件ではなく冒頭からの抜粋です。':'');
+  return {found:true,count:relevant.length,day:selectedDay,content:note+'\n'+[...context,...selected].join('\n')};
+ }
+
  function groupHistory(question,quote=null,pendingTurn=null){
-  const history=[],lines=[];let used=0;
-  for(const entry of groupVisibleEntries(pendingTurn).slice(-80).reverse()){
-   const text=entry.text.slice(0,1200);if(used+text.length+1>4800)break;lines.unshift(text);used+=text.length+1;
+  const history=[],lines=[],entries=groupVisibleEntries(pendingTurn);let used=0;
+  for(const entry of entries.slice(-80).reverse()){
+   const text=groupHistoryLine(entry).slice(0,1200);if(used+text.length+1>4800)break;lines.unshift(text);used+=text.length+1;
   }
-  if(lines.length)history.push({role:'user',content:'以下は画面に表示済みのグループ会話です。記載順が実際に読まれた順です。名前が「あなた」の行は利用者、それ以外はメンバーの発言です。最後の利用者メッセージへ返してください。'},{role:'assistant',content:lines.join('\n')});
+  if(lines.length)history.push({role:'user',content:'以下は画面に表示済みのグループ会話です。[日付 時刻]は各発言の画面と同じ日本時間です。記載順が実際に読まれた順です。名前が「あなた」の行は利用者、それ以外はメンバーの発言です。最後の利用者メッセージへ返してください。'},{role:'assistant',content:lines.join('\n')});
+  const reference=groupTimeContext(question,entries);
+  if(reference)history.push({role:'user',content:'利用者が時刻で指した会話を、端末に保存されている表示済み履歴から抽出しました。直近の履歴より前の発言も含めて探した結果です。以下の参照結果を使い、指定の会話の意味や流れを説明してください。存在しない発言を補わず、時刻表示がないとも言わないでください。同じ分に複数の人が発言していても、まず一連の会話を説明してください。'},{role:'assistant',content:reference.content});
   if(quote)history.push({role:'user',content:'次の発言を引用してコメントします。続く私のコメントは、この引用への返信として受け止めてください。'},{role:'assistant',content:quote.name+'：'+quote.text.slice(0,1200)});
   history.push({role:'user',content:question});return history;
  }

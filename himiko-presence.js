@@ -108,7 +108,7 @@
    if(!ids.length&&!box.querySelector('.empty-state')){const empty=document.createElement('div');empty.className='empty-state';empty.textContent='該当する人物が見つかりません';box.append(empty)}
    const count=$('filter-count')?.querySelector('.filter-count-text');if(count){const met=ids.filter(item=>item.el.classList.contains('group-met')).length;const suffix=document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ';count.textContent=`${ids.length}人いる${suffix}。そのうち${met}人と話してる${suffix}`}
   }
-  ids.sort((a,b)=>mode()!=='conversation'?allChars.indexOf(person(a.id))-allChars.indexOf(person(b.id)):(entry(b.id).activity||0)-(entry(a.id).activity||0));
+  ids.sort((a,b)=>mode()==='conversation'?(entry(b.id).activity||0)-(entry(a.id).activity||0):a.id===0?-1:b.id===0?1:(birthInfo(person(a.id)).sort-birthInfo(person(b.id)).sort)||allChars.indexOf(person(a.id))-allChars.indexOf(person(b.id)));
   for(const {el,id} of ids){box.append(el);const ch=person(id),p=presence(ch),row=el.querySelector('.card-name-row');row?.querySelector('.online-badge')?.remove();
    const badge=document.createElement('span');badge.className='online-badge';badge.textContent=p.label;badge.style.color=p.color;badge.style.background=p.color+'20';row?.append(badge);
    const av=el.querySelector('.avatar');av?.querySelector('.online-dot')?.remove();if(av){const dot=document.createElement('div');dot.className='online-dot';dot.style.background=p.color;av.append(dot)}

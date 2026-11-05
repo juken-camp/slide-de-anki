@@ -63,7 +63,7 @@
  const worldEraForId=new Map(worldSections.flatMap(([key,title,date,ids])=>ids.map(id=>[id,key])));worldEraForId.set(84,'medieval');
  const japaneseWithAncient=japaneseSections;
  const relatedWorldIds=new Set([84,9,117,128,143,147,51,49,52]);
- const estimatedCentury={1:3,81:null,105:6,109:10,113:12,155:17,162:17};
+ const estimatedCentury={1:3,105:6,109:10,113:12,155:17,162:17};
  const mode=()=>['conversation','world','birth'].includes(model.listMode)?model.listMode:'era';
  function groupEraCards(box,ids){
   const sections=mode()==='world'?worldSections:japaneseWithAncient;

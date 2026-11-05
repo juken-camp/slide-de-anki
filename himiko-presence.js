@@ -28,6 +28,7 @@
  }
  function sorted(list){return [...list].sort((a,b)=>model.defaultOrder?allChars.indexOf(a)-allChars.indexOf(b):(entry(b.id).activity||0)-(entry(a.id).activity||0))}
  function restoreOrder(){model.defaultOrder=true;save();renderCards()}
+ window.himikoRestorePersonalOrder=()=>{if(!confirm('人物の並びを元の順番に戻しますか？\n会話履歴は消えません。'))return;restoreOrder()};
  function touch(id){model.defaultOrder=false;entry(id).activity=Date.now();save()}
  // Keep the original order for people who have not exchanged messages yet.
  const baseCards=renderCards;
@@ -142,5 +143,6 @@
  openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(records=>{for(const r of records){const last=r.turns?.at(-1),at=last?.at;if(at&&person(r.id)){const e=entry(r.id);if(at>=(e.activity||0)){e.activity=at;e.preview=last.content;e.previewRole=last.role;}}}save();renderCards()}).catch(()=>{});
  renderCards();
 })();
+
 
 

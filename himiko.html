@@ -3219,38 +3219,79 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  const KEY='himiko-group-v1', SEEN='himiko-met-v1';let lastUserMessageAt=0,state={name:'異次元グルチャ',turns:[]}, busy=false,epoch=0,timer=null,groupListScroll=0,groupReveal=null;let unreadEntryPending=false,unreadEntryKey=null;
  const $=id=>document.getElementById(id), ch=id=>allHistoryChars.find(p=>p.id===id), safe=t=>esc(String(t));
  function cleanSpeakerLabel(text,name){const escaped=String(name).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');return String(text).replace(new RegExp('^\\s*(?:【'+escaped+'】\\s*[：:]?|'+escaped+'\\s*[：:])\\s*'),'').trim()}
- function load(){if(busy)return;try{const a=JSON.parse(localStorage.getItem(KEY)||'null');if(a&&typeof a.name==='string'&&Array.isArray(a.turns))state={name:(a.name==='グループチャット'?'異次元グルチャ':a.name).slice(0,30),turns:a.turns.slice(-100)};}catch{}}
+ function load(){if(busy)return;try{const a=JSON.parse(localStorage.getItem(KEY)||'null');if(a&&typeof a.name==='string'&&Array.isArray(a.turns))state={name:(a.name==='グループチャット'?'異次元グルチャ':a.name).slice(0,30),turns:a.turns.slice(-100),timelineRows:a.timelineRows&&typeof a.timelineRows==='object'&&!Array.isArray(a.timelineRows)?a.timelineRows:{},timelineCounter:Number(a.timelineCounter)||0,readerCursors:a.readerCursors&&typeof a.readerCursors==='object'&&!Array.isArray(a.readerCursors)?a.readerCursors:{}};}catch{}}
  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{$('group-status').textContent='会話を保存できません';$('group-status').hidden=false;}}
  function seen(){try{return new Set(JSON.parse(localStorage.getItem(SEEN)||'[]').filter(Number.isInteger));}catch{return new Set()}}
  function mark(ids){const x=seen();ids.forEach(v=>x.add(v));try{localStorage.setItem(SEEN,JSON.stringify([...x]))}catch{} }
  function avatar(p){return `<span class="avatar" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</span>`}
 
+ // Display order and read positions persist independently of server schedule times.
+ function groupRowKey(row){return row.dataset.groupRowKey||(row.dataset.groupRowKey=row.querySelector('.bubble[id]')?.id||('event:'+row.dataset.groupEvent+':'+row.dataset.groupEventPerson+':'+row.dataset.groupTimelineAt+':'+(row.dataset.inboxKey||'')));}
+ function groupUserOrder(turn){return Number(state.timelineRows?.[groupBubbleId('user',turn.question,turn.at)]?.order)||0;}
+ function markGroupReadThrough(id,turn){
+  if(!ch(Number(id))||!turn||turn.automatic||turn.error)return;
+  const order=groupUserOrder(turn);state.readerCursors||={};
+  if(order)state.readerCursors[id]=Math.max(Number(state.readerCursors[id])||0,order);
+  // A direct reply proves this message was read, even if its author later left.
+  turn.readerIds=[...new Set([...(turn.readerIds||[]),Number(id)])];
+ }
+ function groupVisibleEntries(excludeTurn=null){
+  const entries=[];
+  for(const t of state.turns){
+   if(t===excludeTurn||t.error)continue;
+   if(!t.automatic&&t.question){const key=groupBubbleId('user',t.question,t.at),slot=state.timelineRows?.[key];entries.push({order:slot?.order||0,at:slot?.at||t.at,text:'あなた：'+t.question,role:'user',turn:t});}
+   const items=revealItems(t.replies||[]),visible=t.questionsReady===false?Number(t.visibleCount)||0:items.length;
+   for(const item of items.slice(0,visible)){
+    if(item.reply.event)continue;
+    const slot=state.timelineRows?.[groupBubbleId(item.person.id,item.text,item.at||item.reply.at)];
+    entries.push({order:slot?.order||0,at:slot?.at||item.at||item.due,text:item.person.name+'：'+item.text,role:'assistant',turn:t,id:item.person.id});
+   }
+  }
+  return entries.sort((a,b)=>a.order&&b.order?a.order-b.order:(a.at||0)-(b.at||0));
+ }
+ function groupResponseTiming(now=Date.now(),random=Math.random){
+  const hour=new Date(now+9*3600000).getUTCHours(),night=hour<7||hour>=23;
+  const latest=groupVisibleEntries().filter(x=>x.role==='assistant'&&x.at<=now).at(-1);
+  const warm=!!latest&&now-latest.at<=5*60000;
+  const range=warm?(night?[30000,90000]:[15000,45000]):(night?[240000,600000]:[120000,480000]);
+  return {warm,night,at:now+range[0]+Math.floor(Math.max(0,Math.min(.999999,random()))*(range[1]-range[0]+1))};
+ }
+
  // Use the same per-person presence as the member list; receipts accumulate by ID.
  function memberAt(id,at){let present=true;for(const e of [...(inboxData?.membership?.events||[])].sort((a,b)=>a.at-b.at)){if(e.id===id&&e.at<=at)present=e.event!=='leave';}return present;}
  function readCount(at,now=Date.now()){
   const turn=state.turns.find(t=>!t.automatic&&Number(t.at)===Number(at));
-  if(!turn||turn.error||!window.himikoPersonPresence||now<Number(at))return 0;
+  if(!turn||turn.error||now<Number(at))return 0;
   if(!Array.isArray(turn.readerIds)&&turn.receiptLegacyCount===undefined)turn.receiptLegacyCount=Math.max(0,Math.min(allChars.filter(p=>memberAt(p.id,Number(at))).length,Number(turn.readCount)||0));
   const absent=groupAbsentMembers();
-  const before=JSON.stringify([turn.readerIds,turn.readerCandidates,turn.readCount]);
+  const before=JSON.stringify([turn.readerIds,turn.readerCandidates,turn.readCount,state.readerCursors]);
   // Keep historical readers even after they leave the current member roster.
   const readers=new Set((turn.readerIds||[]).filter(id=>allHistoryChars.some(p=>p.id===id)));
   const candidates=turn.readerCandidates||{};
+  const targetOrder=groupUserOrder(turn);
+  if(targetOrder)for(const [id,cursor] of Object.entries(state.readerCursors||{}))if(Number(cursor)>=targetOrder&&ch(Number(id)))readers.add(Number(id));
   // A speaker reads shortly before their first scheduled reply, including on resume.
-  for(const item of timedItems({...turn,replies:turn.replies||[]})){if(absent.has(item.person.id)||!memberAt(item.person.id,Number(at))||!item.first||item.reply?.event||!Number(item.due)||now<Math.max(Number(turn.at),Number(item.due)-15000))continue;readers.add(item.person.id);window.dispatchEvent(new CustomEvent('himiko-group-speaker',{detail:{id:item.person.id,at:Math.min(now,Number(item.due))}}));}
+  for(const [index,item] of timedItems({...turn,replies:turn.replies||[]}).entries()){
+   if(!item.first||item.reply?.event)continue;
+   const shown=turn.questionsReady!==false||index<(Number(turn.visibleCount)||0);
+   const imminent=!absent.has(item.person.id)&&memberAt(item.person.id,Number(at))&&Number(item.due)&&now>=Math.max(Number(turn.at),Number(item.due)-15000);
+   if(!shown&&!imminent)continue;
+   readers.add(item.person.id);markGroupReadThrough(item.person.id,turn);
+   window.dispatchEvent(new CustomEvent('himiko-group-speaker',{detail:{id:item.person.id,at:Math.min(now,Number(item.due)||now)}}));
+  }
   if(now-Number(turn.receiptLastCheck||0)>120000)for(const id of Object.keys(candidates))delete candidates[id];
   const hour=new Date(now+9*3600000).getUTCHours(),night=hour<7||hour>=23;
   for(const person of allChars){
    if(absent.has(person.id)||!memberAt(person.id,Number(at))){delete candidates[person.id];continue;}
    if(readers.has(person.id))continue;
-   if(window.himikoPersonPresence(person,now).label!=='オンライン'){delete candidates[person.id];continue;}
+   if(!window.himikoPersonPresence||window.himikoPersonPresence(person,now).label!=='オンライン'){delete candidates[person.id];continue;}
    const start=Number(candidates[person.id])||now;candidates[person.id]=start;
    const jitter=(Math.imul(person.id+1,2654435761)^Math.floor(Number(at)/1000))>>>0;
    const delay=night?30000+jitter%150001:8000+jitter%82001;
-   if(now-start>=delay){readers.add(person.id);delete candidates[person.id];}
+   if(now-start>=delay){readers.add(person.id);markGroupReadThrough(person.id,turn);delete candidates[person.id];}
   }
   turn.readerIds=[...readers];turn.readerCandidates=candidates;turn.readCount=Math.max(Number(turn.receiptLegacyCount)||0,readers.size);turn.receiptLastCheck=now;
-  if(before!==JSON.stringify([turn.readerIds,turn.readerCandidates,turn.readCount]))save();
+  if(before!==JSON.stringify([turn.readerIds,turn.readerCandidates,turn.readCount,state.readerCursors]))save();
   return turn.readCount;
  }
  function groupCanType(turn=state.turns.findLast(t=>!t.automatic&&!t.error)){return !turn||(!turn.error&&readCount(turn.at)>0)}
@@ -3289,7 +3330,21 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  }
  let groupQuote=null;
  function groupBubbleId(id,text,at){let hash=2166136261;for(const c of String(id)+':'+String(at||0)+':'+text)hash=Math.imul(hash^c.charCodeAt(0),16777619);return 'group-bubble-'+(hash>>>0)}
- function replyQuote(reply){const q=reply?.quote;if(!q)return null;if(q.kind==='older-question')return q;const turn=state.turns.find(t=>(t.replies||[]).includes(reply));return turn&&q.name==='あなた'&&q.text===turn.question?null:q;}
+ function replyQuote(reply){
+  if(!reply)return null;
+  const turn=state.turns.find(t=>(t.replies||[]).includes(reply)),q=reply.quote;
+  if(q){if(q.kind==='older-question')return q;return turn&&q.name==='あなた'&&q.text===turn.question?null:q;}
+  const first=splitReplyBubbles(reply.text)[0],alreadyShown=state.timelineRows?.[groupBubbleId(reply.id,first,reply.chunkTimes?.[0]||reply.at)];
+  if(alreadyShown)return null;
+  const newer=turn&&state.turns.some(t=>!t.automatic&&!t.error&&Number(t.at)>Number(turn.at));
+  if(!newer)return null;
+  if(!turn.automatic)return reply.quote={kind:'older-question',name:'あなた',text:turn.question,target:groupBubbleId('user',turn.question,turn.at)};
+  const prior=turn.replies.slice(0,turn.replies.indexOf(reply)).findLast(r=>!r.event&&ch(r.id));
+  if(!prior)return null;
+  const parts=splitReplyBubbles(prior.text),part=parts.length-1;
+  return reply.quote={kind:'older-conversation',name:ch(prior.id).name,text:parts[part],target:groupBubbleId(prior.id,parts[part],prior.chunkTimes?.[part]||prior.at)};
+ }
+
  function quoteHTML(q){return q?`<button type="button" class="group-quote" data-quote-jump="${escAttr(q.target||'')}"><strong>${safe(q.name)}</strong><span>${safe(q.text.slice(0,200))}</span></button>`:''}
  function setGroupQuote(q){groupQuote=q;const box=$('group-quote-draft');if(!box)return;box.hidden=!q;box.innerHTML=q?quoteHTML(q)+'<button type="button" id="group-quote-cancel" aria-label="引用を解除">×</button>':'';}
  $('group-form').addEventListener('click',e=>{if(e.target.closest('#group-quote-cancel'))setGroupQuote(null)});
@@ -3308,31 +3363,47 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  function normalizeGroupTimeline(){
   const box=$('group-messages-inner');
   const rows=[...box.children].filter(el=>el.hasAttribute('data-group-timeline-at'));
+  state.timelineRows||={};
+  const slots=state.timelineRows,known=Object.values(slots);
+  let order=Math.max(Number(state.timelineCounter)||0,...known.map(x=>Number(x.order)||0));
+  let lastAt=Math.max(0,...known.map(x=>Number(x.at)||0));
+  const migrating=order===0;
+  const keys=new Set(),kept=[];
   rows.sort((a,b)=>Number(a.dataset.groupTimelineAt)-Number(b.dataset.groupTimelineAt));
-  const keys=new Set(),membership=new Map(),kept=[];
+  let changed=false;
   for(const row of rows){
-    const key=row.dataset.inboxKey;
-    if(key&&keys.has(key)){row.remove();continue;}
-    if(key)keys.add(key);
-    const event=row.dataset.groupEvent,person=row.dataset.groupEventPerson;
-    if(event==='join'||event==='leave'){
-      if(membership.get(person)===event){row.remove();continue;}
-      membership.set(person,event);
-    }
-    kept.push(row);
+   const key=groupRowKey(row);
+   if(keys.has(key)){row.remove();continue;}keys.add(key);
+   if(!slots[key]){
+    const original=Number(row.dataset.groupTimelineAt)||Date.now();
+    // Old history is migrated once. New arrivals always follow what was shown.
+    const at=migrating?original:Math.max(lastAt,row.matches('.user')?original:Date.now());
+    slots[key]={order:++order,at};lastAt=Math.max(lastAt,at);changed=true;
+   }
+   const slot=slots[key];row.dataset.groupTimelineAt=slot.at;row.dataset.groupDisplayOrder=slot.order;
+   if(!row.matches('.user')){
+    const clock=row.querySelector('.history-message-time, time');
+    if(clock)clock.textContent=historyClock(slot.at);
+   }
+   kept.push(row);
   }
+  kept.sort((a,b)=>Number(a.dataset.groupDisplayOrder)-Number(b.dataset.groupDisplayOrder));
   box.querySelectorAll(':scope > .history-day').forEach(el=>el.remove());
   const divider=$('group-unread-divider');if(divider)divider.remove();
   const tail=box.querySelector(':scope > .group-examples, :scope > #group-typing');
-  let lastAt=null;
+  let previousAt=null;
   for(const row of kept){
-    const at=Number(row.dataset.groupTimelineAt);
-    const day=historyDateHTML(at,lastAt);
-    if(day){const holder=document.createElement('template');holder.innerHTML=day;box.insertBefore(holder.content,tail);}
-    if(divider&&row.dataset.inboxKey===unreadEntryKey)box.insertBefore(divider,tail);
-    box.insertBefore(row,tail);lastAt=at||lastAt;
+   const at=Number(row.dataset.groupTimelineAt),day=historyDateHTML(at,previousAt);
+   if(day){const holder=document.createElement('template');holder.innerHTML=day;box.insertBefore(holder.content,tail);}
+   if(divider&&row.dataset.inboxKey===unreadEntryKey)box.insertBefore(divider,tail);
+   box.insertBefore(row,tail);previousAt=at||previousAt;
   }
+  state.timelineCounter=order;
+  // Bound extra metadata alongside the existing 100-turn history limit.
+  if(known.length>6000){const keep=new Set([...keys,...Object.entries(slots).sort((a,b)=>b[1].order-a[1].order).slice(0,4000).map(([key])=>key)]);for(const key of Object.keys(slots))if(!keep.has(key))delete slots[key];changed=true;}
+  if(changed)save();
  }
+
  function groupAppend(markup,follow){const box=$('group-messages-inner'),scroller=$('group-messages'),top=scroller.scrollTop;box.insertAdjacentHTML('beforeend',markup);normalizeGroupTimeline();if(follow)scroller.scrollTop=scroller.scrollHeight;else scroller.scrollTop=top}
  function revealItems(replies){const items=[];let due=0;for(const reply of replies){const person=ch(reply.id);if(person){const parts=reply.event?[reply.text]:splitReplyBubbles(reply.text);parts.forEach((text,i)=>{due=Math.max(due,reply.scheduledAt||reply.at||0);if(i)due+=10000;items.push({person,text,reply,partIndex:i,first:i===0,due,at:reply.chunkTimes?.[i]||reply.at,key:i===parts.length-1?reply.key:null})})}}return items}
  function timedItems(turn){return revealItems(turn.replies).map((item,i)=>({...item,due:turn.deliveryDue?.[i]||item.due}))}
@@ -3353,7 +3424,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  if(reveal.turn.automatic){reveal.index++;reveal.turn.visibleCount=reveal.index;save();scheduleReveal();return;}
  if(reveal.rejoining)return;reveal.rejoining=true;
  fetch('/api/himiko-inbox',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+(localStorage.getItem('himiko-inbox-token-v1')||'')},body:JSON.stringify({action:'rejoin',ids:[upcoming.person.id]})}).then(async r=>{const d=await r.json();if(!r.ok)throw Error();receiveInbox(d);}).catch(()=>{}).finally(()=>{reveal.rejoining=false;if(groupReveal===reveal)timer=setTimeout(revealNext,1000)});return;
- }const item=reveal.items[reveal.index++];if(!reveal.turn.automatic){item.at=Date.now();item.reply.chunkTimes||=[];item.reply.chunkTimes[item.partIndex]=item.at;}groupAppend(rowReplyPart(item.person,item.text,item.first,true,{...item,at:item.at||Date.now()}),follow);playReceiveSound();reveal.turn.visibleCount=reveal.index;syncGroupName();save();const next=reveal.items[reveal.index];if(next)next.due=Math.max(next.due||0,Date.now()+Math.min(14000,4000+String(item.text).length*60)+Math.floor(Math.random()*2001));scheduleReveal()}
+ }const item=reveal.items[reveal.index++];if(!reveal.turn.automatic){if(!item.reply?.event)markGroupReadThrough(item.person.id,reveal.turn);item.at=Date.now();item.reply.chunkTimes||=[];item.reply.chunkTimes[item.partIndex]=item.at;}groupAppend(rowReplyPart(item.person,item.text,item.first,true,{...item,at:item.at||Date.now()}),follow);playReceiveSound();reveal.turn.visibleCount=reveal.index;syncGroupName();save();const next=reveal.items[reveal.index];if(next)next.due=Math.max(next.due||0,Date.now()+Math.min(14000,4000+String(item.text).length*60)+Math.floor(Math.random()*2001));scheduleReveal()}
  function startGroupReveal(replies,current,turn=state.turns.at(-1)){clearTimeout(timer);const items=timedItems(turn);if(!items.length){groupFinish();return}const index=Math.max(0,Math.min(items.length,Number(turn.visibleCount)||0));groupReveal={items,index,epoch:current,turn};scheduleReveal()}
  const examples=['織田信長と豊臣秀吉は何が違うの？','鎌倉幕府と室町幕府はどう違うの？','聖徳太子はどんな政治をしたの？','江戸幕府はどうして長く続いたの？','明治維新で日本はどう変わったの？','戦国時代を終わらせたのは誰？','卑弥呼の時代の暮らしを教えて！','革命によって社会はどう変わったの？','日本と世界の歴史はどうつながっているの？','入試に出やすい歴史のつながりを教えて！'];
  function groupQuestions(values,answers=false){const asked=new Set(state.turns.map(t=>t.question));const unique=[...new Set((Array.isArray(values)?values:[]).filter(q=>typeof q==='string').map(q=>q.trim()).filter(q=>q&&q.length<=100&&(answers||!asked.has(q))))];return unique.slice(0,3)}
@@ -3384,7 +3455,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  $('group-messages').addEventListener('click',e=>{const b=e.target.closest('[data-group-question]');if(!b||(busy&&!groupReveal))return;$('group-input').value=b.dataset.groupQuestion||'';updateGroupSend();$('group-form').requestSubmit()});
  window.openGroupChat=()=>{if(!$('group-view').hidden)return;unreadEntryPending=true;unreadEntryKey=null;delete $('group-messages').dataset.unreadAnchored;load();epoch++;groupListScroll=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;document.documentElement.dataset.groupOpen='true';$('list-view').classList.add('hidden');$('group-view').hidden=false;$('group-count').textContent='('+(allChars.length+1)+')';$('group-member-heading').textContent='('+(allChars.length+1)+')';document.documentElement.dataset.chatOpen='true';if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-state',open:true},location.origin);state.turns.forEach(t=>t.closedUnread=0);save();render();refreshGroupUnread();presence();inboxAction('poll');const pending=state.turns.findLast(t=>t.questionsReady===false);if(pending&&!pending.pending)startGroupReveal(pending.replies,epoch,pending);deliverPendingGroup();};
  window.closeGroupChat=()=>{if(groupReveal){groupReveal.turn.deliveryDue=groupReveal.items.map(x=>x.due);save();}inboxAction('presence',{active:false});epoch++;clearTimeout(timer);groupReveal=null;busy=false;updateGroupSend();$('group-view').hidden=true;$('group-members').hidden=true;$('group-participant-strip').hidden=true;$('group-header-avatar').setAttribute('aria-expanded','false');$('group-title').setAttribute('aria-expanded','false');$('group-count').setAttribute('aria-expanded','false');delete document.documentElement.dataset.membersOpen;delete document.documentElement.dataset.stripOpen;delete document.documentElement.dataset.groupOpen;delete document.documentElement.dataset.chatOpen;$('list-view').classList.remove('hidden');window.scrollTo(0,groupListScroll);document.body.scrollTop=groupListScroll;document.documentElement.scrollTop=groupListScroll;if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-state',open:false},location.origin);syncGroupName();renderCards();};
- window.resetGroupChat=()=>{if(!state.turns.length&&!busy)return;if(!confirm('このグループの会話をリセットしますか？'))return;epoch++;clearTimeout(timer);timer=null;groupReveal=null;busy=false;inboxAction('reset');state.turns=[];setGroupQuote(null);$('group-input').value='';$('group-status').hidden=true;save();render();updateGroupSend()};
+ window.resetGroupChat=()=>{if(!state.turns.length&&!busy)return;if(!confirm('このグループの会話をリセットしますか？'))return;epoch++;clearTimeout(timer);timer=null;groupReveal=null;busy=false;inboxAction('reset');state.turns=[];state.timelineRows={};state.timelineCounter=0;state.readerCursors={};setGroupQuote(null);$('group-input').value='';$('group-status').hidden=true;save();render();updateGroupSend()};
  window.renameGroupChat=()=>{const n=prompt('グループ名を入力してください（30文字まで）',state.name);if(n===null)return;if(n.trim()){state.name=n.trim().slice(0,30);save();syncGroupName();}};
  const AVATAR_KEY='himiko-group-avatar-v1';
  function ownAvatar(){try{const url=localStorage.getItem(AVATAR_KEY)||'';if(/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(url))return `<img src="${url}" alt="">`;}catch{}return '👤'}
@@ -3404,7 +3475,15 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  if(e.currentTarget===$('group-member-list')){const savedScroll=$('group-members').querySelector('.members-scroll').scrollTop,savedGroupListScroll=groupListScroll;window.himikoReturnToMembers=()=>{window.openGroupChat();groupListScroll=savedGroupListScroll;window.showGroupMembers();const el=$('group-members').querySelector('.members-scroll');el.scrollTop=savedScroll;requestAnimationFrame(()=>{el.scrollTop=savedScroll});};}
  window.closeGroupChat();openChat(id)}
  $('group-member-list').addEventListener('click',go);$('group-participant-icons').addEventListener('click',go);$('group-messages').addEventListener('click',e=>{const button=e.target.closest('.group-person-avatar');if(!button)return;const person=ch(Number(button.dataset.id));if(person)showProfile(person)});
- function groupHistory(question,quote=null){const history=[];let used=question.length;let automatic='';for(const t of state.turns.slice(-6).reverse()){if(!Array.isArray(t.replies))continue;const shown=t.questionsReady===false?revealItems(t.replies).slice(0,Number(t.visibleCount)||0).map(x=>({id:x.person.id,text:x.text})):t.replies;const assistant=shown.map(r=>(ch(r.id)?.name||'')+'：'+r.text).join('\n').slice(0,3000);if(t.automatic){if(!automatic)automatic=assistant;continue}const user=t.question?.slice(0,1000);if(!user?.trim()||!assistant.trim())continue;if(used+user.length+assistant.length>10000)break;history.unshift({role:'user',content:user},{role:'assistant',content:assistant});used+=user.length+assistant.length}if(automatic)history.push({role:'user',content:'グループ内の自動会話（生徒はまだ発言していない場面）'},{role:'assistant',content:automatic.slice(0,3000)});if(quote)history.push({role:'user',content:'次の発言を引用してコメントします。続く私のコメントは、この引用への返信として受け止めてください。'},{role:'assistant',content:quote.name+'：'+quote.text.slice(0,1200)});history.push({role:'user',content:question});return history}
+ function groupHistory(question,quote=null,pendingTurn=null){
+  const history=[],lines=[];let used=0;
+  for(const entry of groupVisibleEntries(pendingTurn).slice(-80).reverse()){
+   const text=entry.text.slice(0,1200);if(used+text.length+1>4800)break;lines.unshift(text);used+=text.length+1;
+  }
+  if(lines.length)history.push({role:'user',content:'以下は画面に表示済みのグループ会話です。記載順が実際に読まれた順です。名前が「あなた」の行は利用者、それ以外はメンバーの発言です。最後の利用者メッセージへ返してください。'},{role:'assistant',content:lines.join('\n')});
+  if(quote)history.push({role:'user',content:'次の発言を引用してコメントします。続く私のコメントは、この引用への返信として受け止めてください。'},{role:'assistant',content:quote.name+'：'+quote.text.slice(0,1200)});
+  history.push({role:'user',content:question});return history;
+ }
  let groupRequest=null;
  async function deliverPendingGroup(){
   if(groupRequest)return;
@@ -3412,7 +3491,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
   const id=pending.requestId;groupRequest=id;
   if(!$('group-view').hidden){busy=true;updateGroupSend();if(Number(pending.firstReplyAt)-Date.now()<=15000&&groupCanType(pending)&&!$('group-typing'))groupAppend(groupTyping(null),groupFollow());}
   try{
-   const r=await fetch('/api/himiko-chat',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+(localStorage.getItem('himiko-inbox-token-v1')||'')},body:JSON.stringify({mode:'group',nickname:himikoNickname(),messages:groupHistory(pending.question,pending.quote)})});
+   const r=await fetch('/api/himiko-chat',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+(localStorage.getItem('himiko-inbox-token-v1')||'')},body:JSON.stringify({mode:'group',nickname:himikoNickname(),messages:groupHistory(pending.question,pending.quote,pending)})});
    const d=await r.json();if(!r.ok)throw Error(d.error||'接続できませんでした');if(d.membershipInbox){receiveInbox(d.membershipInbox);window.parent.postMessage({type:'himiko-inbox-refresh'},location.origin);}
    const turn=state.turns.find(t=>t.requestId===id);if(!turn)return;
    const replies=Array.isArray(d.replies)?d.replies.filter(x=>ch(x.id)&&typeof x.text==='string').map(x=>({...x,text:cleanSpeakerLabel(x.text,ch(x.id).name)})).filter(x=>x.text):[];
@@ -3434,7 +3513,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
   interruptAutomatic();cancelWaitingReplies();lastUserMessageAt=Date.now();inboxAction('presence',{active:true});
   const retry=state.turns.findLast(t=>t.pending&&t.error&&t.question===question);
   if(retry){retry.error='';retry.questionsReady=false;}
-  else state.turns.push({requestId:Date.now()+':'+Math.random(),question,quote:groupQuote,firstReplyAt:Date.now()+120000+Math.floor(Math.random()*360001),at:Date.now(),read:false,replies:[],pending:true,visibleCount:0,questionsReady:false,suggestions:[]});
+  else state.turns.push({requestId:Date.now()+':'+Math.random(),question,quote:groupQuote,firstReplyAt:groupResponseTiming().at,at:Date.now(),read:false,replies:[],pending:true,visibleCount:0,questionsReady:false,suggestions:[]});
   state.turns=state.turns.slice(-100);save();setGroupQuote(null);busy=true;$('group-input').value='';$('group-status').hidden=true;render();deliverPendingGroup();
  });
 
@@ -3446,7 +3525,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  const acknowledgedKeys=new Set();let retryReadAt=0;
  const inboxObserver=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{if(document.hidden||$('group-view').hidden)return;const keys=entries.filter(x=>x.isIntersecting&&x.intersectionRatio>.8).map(x=>x.target.dataset.inboxKey).filter(k=>!acknowledgedKeys.has(k));if(keys.length){keys.forEach(k=>acknowledgedKeys.add(k));refreshGroupUnread();inboxAction('read',{keys})}},{root:$('group-messages'),threshold:.8}):null;
  if(inboxObserver&&typeof MutationObserver==='function')new MutationObserver(()=>{$('group-messages-inner').querySelectorAll('.bubble-row[data-inbox-key], .group-system-event[data-inbox-key]').forEach(el=>{if(!el.inboxWatched){el.inboxWatched=true;const end=el.querySelector('.history-message-time, time')||el;end.dataset.inboxKey=el.dataset.inboxKey;inboxObserver.observe(end)}})}).observe($('group-messages-inner'),{childList:true,subtree:true});
- function presence(){if(!$('group-view').hidden&&!document.hidden)inboxAction('presence',{active:(busy&&!groupReveal)||Date.now()-lastUserMessageAt<90000||!!$('group-input').value.trim(),context:state.turns.slice(-3).flatMap(t=>[t.automatic?'':t.question,(t.questionsReady===false?revealItems(t.replies).slice(0,Number(t.visibleCount)||0).map(x=>({id:x.person.id,text:x.text})):t.replies).map(r=>(ch(r.id)?.name||'')+'：'+r.text).join('\n')]).filter(Boolean)});}
+ function presence(){if(!$('group-view').hidden&&!document.hidden)inboxAction('presence',{active:(busy&&!groupReveal)||Date.now()-lastUserMessageAt<90000||!!$('group-input').value.trim(),context:groupVisibleEntries().slice(-6).map(entry=>entry.text.slice(0,600))});}
  setInterval(()=>{if(retryReadAt&&Date.now()>=retryReadAt){retryReadAt=0;$('group-messages-inner').querySelectorAll('.bubble-row[data-inbox-key], .group-system-event[data-inbox-key]').forEach(el=>{const end=el.querySelector('.history-message-time, time')||el;end.dataset.inboxKey=el.dataset.inboxKey;inboxObserver?.unobserve(end);inboxObserver?.observe(end)})}presence();if(!busy&&inboxData)receiveInbox(inboxData)},60000);document.addEventListener('visibilitychange',()=>{if(document.hidden)inboxAction('presence',{active:false});else presence()});
  if(window.parent!==window)window.parent.postMessage({type:'himiko-inbox-ready'},location.origin);
  const oldSend=sendMessage;sendMessage=async function(text){const person=currentChar,before=completedChatTurns().length;await oldSend(text);if(person&&person===currentChar&&completedChatTurns().length>before){mark([person.id])}};

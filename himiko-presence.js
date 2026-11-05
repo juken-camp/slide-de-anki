@@ -31,19 +31,62 @@
  window.himikoRestorePersonalOrder=()=>{if(!confirm('人物の並びを元の順番に戻しますか？\n会話履歴は消えません。'))return;restoreOrder()};
  function touch(id){model.defaultOrder=false;entry(id).activity=Date.now();save()}
  // Keep the original order for people who have not exchanged messages yet.
+
+ const ERA_SECTIONS=[
+ ['jomon','縄文時代','約1万6千年前〜紀元前10世紀頃',[]],
+ ['ancient','世界の古代','紀元前〜5世紀頃',[80,81,34,33,75]],
+ ['yayoi','弥生時代','紀元前10世紀頃〜3世紀頃',[1]],
+ ['kofun','古墳時代','3世紀中頃〜6世紀末',[61]],
+ ['asuka','飛鳥時代','6世紀末〜710年',[2,3,105,106]],
+ ['nara','奈良時代','710〜794年',[57,84,4]],
+ ['heian','平安時代','794〜1185年',[96,58,62,5,6,72,107,108,109,110,159]],
+ ['medieval','世界の中世','5〜15世紀頃',[35,36,9]],
+ ['kamakura','鎌倉時代','1185〜1333年',[97,7,8,85,98,86,99,100,60,111,112,113,152]],
+ ['muromachi','室町時代','1336〜1573年',[59,87,10,11,114,115,116,160,161,164]],
+ ['earlymodern','世界の近世','15〜18世紀頃',[37,77,88,38,117,90,91,40,39,145,146]],
+ ['momoyama','安土桃山時代','1573〜1603年',[12,13,118,158]],
+ ['edo','江戸時代','1603〜1868年',[14,89,101,15,102,17,16,18,119,120,121,122,123,124,125,126,127,129,130,149,153,154,155,156,157,162]],
+ ['modern','世界の近代','18世紀末〜1945年頃',[41,43,42,46,45,51,49,147,148,128]],
+ ['meiji','明治時代','1868〜1912年',[92,93,20,94,21,95,19,24,23,22,131,132,133,134,135,136,137,138,139,140,151]],
+ ['taisho','大正時代','1912〜1926年',[25,141,142]],
+ ['showa','昭和時代','1926〜1989年',[27,53,144]],
+ ['contemporary','世界の現代','1945年頃〜現在',[52,143]],
+ ['heisei','平成時代','1989〜2019年',[]],
+ ['reiwa','令和時代','2019年〜現在',[]]
+ ];
+ const eraForId=new Map(ERA_SECTIONS.flatMap(([key,title,date,ids])=>ids.map(id=>[id,key])));
+ const mode=()=>model.listMode==='conversation'?'conversation':'era';
+ function groupEraCards(box,ids){
+  const rows=new Map(ERA_SECTIONS.map(([key])=>[key,[]]));
+  for(const item of ids){if(item.id===0){box.append(item.el);continue}const key=eraForId.get(item.id);if(!key)throw Error('人物の時代分類がありません: '+item.id);rows.get(key).push(item.el)}
+  const noFilters=!$('search-input').value.trim()&&Object.values(selectedFilters).every(set=>!set.size);
+  for(const [key,title,date] of ERA_SECTIONS){
+   const cards=rows.get(key),showEmpty=(noFilters&&['jomon','kofun','heisei','reiwa'].includes(key))||(key==='jomon'&&selectedFilters.era.has('縄文')&&!$('search-input').value.trim());
+   if(!cards.length&&!showEmpty)continue;
+   if(showEmpty)box.querySelector('.empty-state')?.remove();
+   const section=document.createElement('section');section.className='history-era-section';section.dataset.era=key;
+   const heading=document.createElement('h3');heading.className='history-era-heading';
+   const label=document.createElement('span');label.textContent=title;const years=document.createElement('span');years.className='history-era-years';years.textContent='（'+date+'）';heading.append(label,years);section.append(heading);
+   if(cards.length)section.append(...cards);else{const empty=document.createElement('p');empty.className='history-era-empty';empty.textContent='この時代の人物はまだいません';section.append(empty)}box.append(section);
+  }
+ }
+ function syncListMode(){document.querySelectorAll('[data-history-list-mode]').forEach(button=>{const active=button.dataset.historyListMode===mode();button.setAttribute('aria-pressed',String(active));button.classList.toggle('active',active)})}
+ window.setHistoryListMode=value=>{if(!['era','conversation'].includes(value))return;model.listMode=value;save();renderCards()};
+
  const baseCards=renderCards;
  renderCards=function(){baseCards();const box=$('card-list');if(!box)return;const cards=[...box.querySelectorAll('.char-card[onclick]')];
   const ids=cards.map(el=>({el,id:Number(el.getAttribute('onclick')?.match(/openChat\((\d+)\)/)?.[1])})).filter(x=>person(x.id));
-  ids.sort((a,b)=>model.defaultOrder?allChars.indexOf(person(a.id))-allChars.indexOf(person(b.id)):(entry(b.id).activity||0)-(entry(a.id).activity||0));
+  ids.sort((a,b)=>mode()==='era'?allChars.indexOf(person(a.id))-allChars.indexOf(person(b.id)):(entry(b.id).activity||0)-(entry(a.id).activity||0));
   for(const {el,id} of ids){box.append(el);const ch=person(id),p=presence(ch),row=el.querySelector('.card-name-row');row?.querySelector('.online-badge')?.remove();
    const badge=document.createElement('span');badge.className='online-badge';badge.textContent=p.label;badge.style.color=p.color;badge.style.background=p.color+'20';row?.append(badge);
    const av=el.querySelector('.avatar');av?.querySelector('.online-dot')?.remove();if(av){const dot=document.createElement('div');dot.className='online-dot';dot.style.background=p.color;av.append(dot)}
    const preview=el.querySelector('.card-info>div:last-child');if(preview){
-    preview.classList.add('personal-preview');preview.replaceChildren();const text=document.createElement('span');text.className='personal-preview-text';text.textContent=previewText(entry(id),ch);preview.append(text);
+    preview.classList.add('personal-preview');preview.classList.toggle('is-description',mode()==='era');preview.replaceChildren();const text=document.createElement('span');text.className='personal-preview-text';text.textContent=mode()==='era'?ch.catchphrase:previewText(entry(id),ch);preview.append(text);
     const dots=document.createElement('span');dots.className='personal-card-typing';dots.setAttribute('aria-label','返信を準備中');dots.hidden=!isTyping(id);for(let i=0;i<3;i++)dots.append(document.createElement('i'));preview.append(dots);
    }
    if(entry(id).unread){const n=document.createElement('span');n.className='group-unread personal-unread';n.textContent=entry(id).unread;n.setAttribute('aria-label','未読'+entry(id).unread+'件');el.append(n)}
   }
+  if(mode()==='era')groupEraCards(box,ids);syncListMode();
  };
  function header(){if(!currentChar)return;const p=presence(currentChar),b=$('online-badge');b.classList.remove('hidden');b.textContent=p.label;b.style.color=p.color;b.style.background=p.color+'20';}
  // Latch receipts so navigating away or a retry never makes a read message unread.
@@ -143,6 +186,7 @@
  openChatDB().then(db=>new Promise((resolve,reject)=>{const r=db.transaction(CHAT_DB_STORE,'readonly').objectStore(CHAT_DB_STORE).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})).then(records=>{for(const r of records){const last=r.turns?.at(-1),at=last?.at;if(at&&person(r.id)){const e=entry(r.id);if(at>=(e.activity||0)){e.activity=at;e.preview=last.content;e.previewRole=last.role;}}}save();renderCards()}).catch(()=>{});
  renderCards();
 })();
+
 
 
 

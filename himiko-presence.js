@@ -61,8 +61,10 @@
  const eraForId=new Map(ERA_SECTIONS.flatMap(([key,title,date,ids])=>ids.map(id=>[id,key])));
  const japaneseWorldEras={80:'ancient',81:'ancient',34:'ancient',33:'ancient',75:'ancient',35:'asuka',36:'kamakura',9:'kamakura',37:'muromachi',77:'muromachi',88:'muromachi',38:'muromachi',117:'muromachi',145:'muromachi',90:'edo',91:'edo',40:'edo',39:'edo',146:'edo',128:'edo',41:'edo',43:'edo',42:'meiji',46:'meiji',45:'meiji',147:'meiji',148:'taisho',51:'showa',49:'showa',52:'showa',143:'showa'};
  const worldEraForId=new Map(worldSections.flatMap(([key,title,date,ids])=>ids.map(id=>[id,key])));worldEraForId.set(84,'medieval');
- const japaneseWithAncient=[worldSections[0],...japaneseSections];
- const mode=()=>['conversation','world'].includes(model.listMode)?model.listMode:'era';
+ const japaneseWithAncient=japaneseSections;
+ const relatedWorldIds=new Set([84,9,117,128,143,147,51,49,52]);
+ const estimatedCentury={1:3,81:null,105:6,109:10,113:12,155:17,162:17};
+ const mode=()=>['conversation','world','birth'].includes(model.listMode)?model.listMode:'era';
  function groupEraCards(box,ids){
   const sections=mode()==='world'?worldSections:japaneseWithAncient;
   const rows=new Map(sections.map(([key])=>[key,[]]));
@@ -78,15 +80,31 @@
    if(cards.length)section.append(...cards);else{const empty=document.createElement('p');empty.className='history-era-empty';empty.textContent='この時代の人物はまだいません';section.append(empty)}box.append(section);
   }
  }
+ function birthInfo(ch){
+  const period=String(ch.period||'');
+  if(Object.prototype.hasOwnProperty.call(estimatedCentury,ch.id)){const century=estimatedCentury[ch.id];return century?{sort:century*100-0.5,century,estimated:true}:{sort:Infinity,century:null,estimated:true};}
+  const match=period.match(/(?:紀元前\s*)?(\d+)年?頃?(?:〜|～|－|–|-)/);
+  if(match){const bc=match[0].includes('紀元前'),year=Number(match[1]),sort=bc?1-year:year;return {sort,century:bc?-Math.ceil(year/100):Math.ceil(year/100),estimated:false};}
+  const before=period.match(/紀元前(\d+)世紀/);if(before){const c=Number(before[1]);return {sort:1-c*100,century:-c,estimated:true};}
+  return {sort:Infinity,century:null,estimated:true};
+ }
+ function groupBirthCards(box,ids){
+  const ai=ids.find(item=>item.id===0);if(ai)box.append(ai.el);
+  const list=ids.filter(item=>item.id!==0).map(item=>({...item,info:birthInfo(person(item.id))}));
+  list.sort((a,b)=>a.info.sort-b.info.sort||allChars.indexOf(person(a.id))-allChars.indexOf(person(b.id)));
+  let currentKey=null,section=null;
+  for(const item of list){const c=item.info.century,key=c===null?'unknown':String(c);if(key!==currentKey){currentKey=key;section=document.createElement('section');section.className='history-era-section';section.dataset.era='birth-'+key;const h=document.createElement('h3');h.className='history-era-heading';const label=document.createElement('span');const years=document.createElement('span');years.className='history-era-years';if(c===null){label.textContent='生年不詳'}else if(c<0){const n=-c;label.textContent='紀元前'+n+'世紀';years.textContent='（紀元前'+(n*100)+'〜'+((n-1)*100+1)+'年）'}else{label.textContent=c+'世紀';years.textContent='（'+((c-1)*100+1)+'〜'+(c*100)+'年）'}h.append(label,years);section.append(h);box.append(section)}section.append(item.el)}
+ }
  function syncListMode(){document.querySelectorAll('[data-history-list-mode]').forEach(button=>{const active=button.dataset.historyListMode===mode();button.setAttribute('aria-pressed',String(active));button.classList.toggle('active',active)})}
- window.setHistoryListMode=value=>{if(!['era','world','conversation'].includes(value))return;model.listMode=value;save();renderCards()};
+ window.setHistoryListMode=value=>{if(!['era','world','birth','conversation'].includes(value))return;model.listMode=value;save();renderCards()};
 
  const baseCards=renderCards;
  renderCards=function(){baseCards();const box=$('card-list');if(!box)return;const cards=[...box.querySelectorAll('.char-card[onclick]')];
   let ids=cards.map(el=>({el,id:Number(el.getAttribute('onclick')?.match(/openChat\((\d+)\)/)?.[1])})).filter(x=>person(x.id));
-  if(mode()==='world'){
-   for(const item of ids)if(item.id!==0&&!worldIds.has(item.id))item.el.remove();
-   ids=ids.filter(item=>item.id===0||worldIds.has(item.id));
+  if(mode()==='world'||mode()==='era'){
+   const allowed=item=>item.id===0||mode()==='world'?item.id===0||worldIds.has(item.id):!worldIds.has(item.id)||relatedWorldIds.has(item.id);
+   for(const item of ids)if(!allowed(item))item.el.remove();
+   ids=ids.filter(allowed);
    if(!ids.length&&!box.querySelector('.empty-state')){const empty=document.createElement('div');empty.className='empty-state';empty.textContent='該当する人物が見つかりません';box.append(empty)}
    const count=$('filter-count')?.querySelector('.filter-count-text');if(count){const met=ids.filter(item=>item.el.classList.contains('group-met')).length;const suffix=document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ';count.textContent=`${ids.length}人いる${suffix}。そのうち${met}人と話してる${suffix}`}
   }
@@ -100,7 +118,7 @@
    }
    if(entry(id).unread){const n=document.createElement('span');n.className='group-unread personal-unread';n.textContent=entry(id).unread;n.setAttribute('aria-label','未読'+entry(id).unread+'件');el.append(n)}
   }
-  if(mode()!=='conversation')groupEraCards(box,ids);syncListMode();
+  if(mode()==='birth')groupBirthCards(box,ids);else if(mode()!=='conversation')groupEraCards(box,ids);syncListMode();
  };
 
  function header(){if(!currentChar)return;const p=presence(currentChar),b=$('online-badge');b.classList.remove('hidden');b.textContent=p.label;b.style.color=p.color;b.style.background=p.color+'20';}

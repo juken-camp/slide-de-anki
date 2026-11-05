@@ -1866,7 +1866,7 @@ html[data-persona="cyber"] #group-member-list .membership-section-title{color:#b
 #list-view .presence-guide{gap:clamp(4px,1.5vw,10px)}
 </style>
 <style id="history-era-layout">
-.history-list-mode{display:flex;gap:3px;max-width:280px;margin:18px 0 20px;padding:4px;border:1px solid #dbc9b6;background:#f4e9da;border-radius:13px}
+.history-list-mode{display:flex;gap:3px;max-width:none;margin:18px 0 20px;padding:4px;border:1px solid #dbc9b6;background:#f4e9da;border-radius:13px}
 .history-list-mode button{flex:1;min-height:38px;border:0;border-radius:9px;background:transparent;color:#8c705b;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
 .history-list-mode button.active{background:#fffaf3;color:#65432d;box-shadow:0 1px 4px #5b38251a}
 #card-list .history-era-section{display:flex;flex-direction:column;gap:12px;min-width:0;margin-top:12px}
@@ -1920,7 +1920,7 @@ html[data-persona="cyber"] .history-era-years,html[data-persona="cyber"] #card-l
       <span><i class="presence-guide-dot is-later" aria-hidden="true"></i>あとで戻る</span>
       <span><i class="presence-guide-dot is-met" aria-hidden="true"></i>トークあり</span><button type="button" id="history-name-mask" aria-label="人物の名前を隠す" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h9M7 14h6"/><path class="hide-slash" d="M3 21 21 3"/></svg></button>
     </div>
-    <div class="history-list-mode" role="group" aria-label="人物の並び順"><button type="button" data-history-list-mode="era" aria-pressed="true" onclick="setHistoryListMode('era')">時代順</button><button type="button" data-history-list-mode="conversation" aria-pressed="false" onclick="setHistoryListMode('conversation')">会話順</button></div><div class="card-list" id="card-list"></div>
+    <div class="history-list-mode" role="group" aria-label="人物の並び順"><button type="button" data-history-list-mode="era" aria-pressed="true" onclick="setHistoryListMode('era')">時代順</button><button type="button" data-history-list-mode="world" aria-pressed="false" onclick="setHistoryListMode('world')">世界の人物</button><button type="button" data-history-list-mode="conversation" aria-pressed="false" onclick="setHistoryListMode('conversation')">会話順</button></div><div class="card-list" id="card-list"></div>
 
 
   </div>
@@ -3471,7 +3471,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
 function attach(){if(floating.parentNode!==box)box.prepend(floating)}attach();new MutationObserver(attach).observe(box,{childList:true});
 box.addEventListener('pointerdown',()=>{down=true},{passive:true});for(const type of ['pointerup','pointercancel','pointerleave'])box.addEventListener(type,()=>{down=false;userUntil=Date.now()+1400},{passive:true});box.addEventListener('wheel',()=>{userUntil=Date.now()+1400},{passive:true});box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))userUntil=Date.now()+1400});
 box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUntil=Date.now()+1400;const edge=box.getBoundingClientRect().top+3;const dates=[...box.querySelectorAll('.history-day')];const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);if(active){label.textContent=active.textContent;floating.classList.add('is-visible')}else floating.classList.remove('is-visible');clearTimeout(timer);timer=setTimeout(()=>floating.classList.remove('is-visible'),1400)},{passive:true});}})();
-</script><script src="himiko-presence.js?v=catchphrases-20261105"></script>
+</script><script src="himiko-presence.js?v=three-modes-20261105"></script>
 </body>
 </html>
 

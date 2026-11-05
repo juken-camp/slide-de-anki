@@ -54,14 +54,22 @@
  ['heisei','平成時代','1989〜2019年',[]],
  ['reiwa','令和時代','2019年〜現在',[]]
  ];
+ const WORLD_KEYS=new Set(['ancient','medieval','earlymodern','modern','contemporary']);
+ const worldSections=ERA_SECTIONS.filter(([key])=>WORLD_KEYS.has(key));
+ const japaneseSections=ERA_SECTIONS.filter(([key])=>!WORLD_KEYS.has(key));
+ const worldIds=new Set([...worldSections.flatMap(section=>section[3]),84]);
  const eraForId=new Map(ERA_SECTIONS.flatMap(([key,title,date,ids])=>ids.map(id=>[id,key])));
- const mode=()=>model.listMode==='conversation'?'conversation':'era';
+ const japaneseWorldEras={80:'ancient',81:'ancient',34:'ancient',33:'ancient',75:'ancient',35:'asuka',36:'kamakura',9:'kamakura',37:'muromachi',77:'muromachi',88:'muromachi',38:'muromachi',117:'muromachi',145:'muromachi',90:'edo',91:'edo',40:'edo',39:'edo',146:'edo',128:'edo',41:'edo',43:'edo',42:'meiji',46:'meiji',45:'meiji',147:'meiji',148:'taisho',51:'showa',49:'showa',52:'showa',143:'showa'};
+ const worldEraForId=new Map(worldSections.flatMap(([key,title,date,ids])=>ids.map(id=>[id,key])));worldEraForId.set(84,'medieval');
+ const japaneseWithAncient=[worldSections[0],...japaneseSections];
+ const mode=()=>['conversation','world'].includes(model.listMode)?model.listMode:'era';
  function groupEraCards(box,ids){
-  const rows=new Map(ERA_SECTIONS.map(([key])=>[key,[]]));
-  for(const item of ids){if(item.id===0){box.append(item.el);continue}const key=eraForId.get(item.id);if(!key)throw Error('人物の時代分類がありません: '+item.id);rows.get(key).push(item.el)}
+  const sections=mode()==='world'?worldSections:japaneseWithAncient;
+  const rows=new Map(sections.map(([key])=>[key,[]]));
+  for(const item of ids){if(item.id===0){box.append(item.el);continue}const key=mode()==='world'?worldEraForId.get(item.id):(japaneseWorldEras[item.id]||eraForId.get(item.id));if(!rows.has(key))continue;rows.get(key).push(item.el)}
   const noFilters=!$('search-input').value.trim()&&Object.values(selectedFilters).every(set=>!set.size);
-  for(const [key,title,date] of ERA_SECTIONS){
-   const cards=rows.get(key),showEmpty=(noFilters&&['jomon','kofun','heisei','reiwa'].includes(key))||(key==='jomon'&&selectedFilters.era.has('縄文')&&!$('search-input').value.trim());
+  for(const [key,title,date] of sections){
+   const cards=rows.get(key),showEmpty=mode()==='era'&&((noFilters&&['jomon','kofun','heisei','reiwa'].includes(key))||(key==='jomon'&&selectedFilters.era.has('縄文')&&!$('search-input').value.trim()));
    if(!cards.length&&!showEmpty)continue;
    if(showEmpty)box.querySelector('.empty-state')?.remove();
    const section=document.createElement('section');section.className='history-era-section';section.dataset.era=key;
@@ -71,23 +79,30 @@
   }
  }
  function syncListMode(){document.querySelectorAll('[data-history-list-mode]').forEach(button=>{const active=button.dataset.historyListMode===mode();button.setAttribute('aria-pressed',String(active));button.classList.toggle('active',active)})}
- window.setHistoryListMode=value=>{if(!['era','conversation'].includes(value))return;model.listMode=value;save();renderCards()};
+ window.setHistoryListMode=value=>{if(!['era','world','conversation'].includes(value))return;model.listMode=value;save();renderCards()};
 
  const baseCards=renderCards;
  renderCards=function(){baseCards();const box=$('card-list');if(!box)return;const cards=[...box.querySelectorAll('.char-card[onclick]')];
-  const ids=cards.map(el=>({el,id:Number(el.getAttribute('onclick')?.match(/openChat\((\d+)\)/)?.[1])})).filter(x=>person(x.id));
-  ids.sort((a,b)=>mode()==='era'?allChars.indexOf(person(a.id))-allChars.indexOf(person(b.id)):(entry(b.id).activity||0)-(entry(a.id).activity||0));
+  let ids=cards.map(el=>({el,id:Number(el.getAttribute('onclick')?.match(/openChat\((\d+)\)/)?.[1])})).filter(x=>person(x.id));
+  if(mode()==='world'){
+   for(const item of ids)if(item.id!==0&&!worldIds.has(item.id))item.el.remove();
+   ids=ids.filter(item=>item.id===0||worldIds.has(item.id));
+   if(!ids.length&&!box.querySelector('.empty-state')){const empty=document.createElement('div');empty.className='empty-state';empty.textContent='該当する人物が見つかりません';box.append(empty)}
+   const count=$('filter-count')?.querySelector('.filter-count-text');if(count){const met=ids.filter(item=>item.el.classList.contains('group-met')).length;const suffix=document.documentElement.dataset.persona==='cyber'?'ぜ':'にゃ';count.textContent=`${ids.length}人いる${suffix}。そのうち${met}人と話してる${suffix}`}
+  }
+  ids.sort((a,b)=>mode()!=='conversation'?allChars.indexOf(person(a.id))-allChars.indexOf(person(b.id)):(entry(b.id).activity||0)-(entry(a.id).activity||0));
   for(const {el,id} of ids){box.append(el);const ch=person(id),p=presence(ch),row=el.querySelector('.card-name-row');row?.querySelector('.online-badge')?.remove();
    const badge=document.createElement('span');badge.className='online-badge';badge.textContent=p.label;badge.style.color=p.color;badge.style.background=p.color+'20';row?.append(badge);
    const av=el.querySelector('.avatar');av?.querySelector('.online-dot')?.remove();if(av){const dot=document.createElement('div');dot.className='online-dot';dot.style.background=p.color;av.append(dot)}
    const preview=el.querySelector('.card-info>div:last-child');if(preview){
-    preview.classList.add('personal-preview');preview.classList.toggle('is-description',mode()==='era');preview.replaceChildren();const text=document.createElement('span');text.className='personal-preview-text';text.textContent=mode()==='era'?ch.catchphrase:previewText(entry(id),ch);preview.append(text);
+    preview.classList.add('personal-preview');preview.classList.toggle('is-description',mode()!=='conversation');preview.replaceChildren();const text=document.createElement('span');text.className='personal-preview-text';text.textContent=mode()!=='conversation'?ch.catchphrase:previewText(entry(id),ch);preview.append(text);
     const dots=document.createElement('span');dots.className='personal-card-typing';dots.setAttribute('aria-label','返信を準備中');dots.hidden=!isTyping(id);for(let i=0;i<3;i++)dots.append(document.createElement('i'));preview.append(dots);
    }
    if(entry(id).unread){const n=document.createElement('span');n.className='group-unread personal-unread';n.textContent=entry(id).unread;n.setAttribute('aria-label','未読'+entry(id).unread+'件');el.append(n)}
   }
-  if(mode()==='era')groupEraCards(box,ids);syncListMode();
+  if(mode()!=='conversation')groupEraCards(box,ids);syncListMode();
  };
+
  function header(){if(!currentChar)return;const p=presence(currentChar),b=$('online-badge');b.classList.remove('hidden');b.textContent=p.label;b.style.color=p.color;b.style.background=p.color+'20';}
  // Latch receipts so navigating away or a retry never makes a read message unread.
  function updateQueueReads(e,now=Date.now()){

@@ -4150,7 +4150,7 @@ html[data-persona] body #app #reelDialog .reel-bottom{flex:0 0 0!important;}
 </section>
   <div id="catalogDock" class="catalog-dock"><div class="selection-top"><details id="selectionDetails"><summary id="selectionSummary" aria-live="polite">教材を選ぶにゃ</summary><div id="selectedLessons" class="selected-lessons"></div></details><button class="link-button" id="clearSelection">選択を外すにゃ</button></div><div class="reel-entry-actions"><button class="tool" id="openReel" type="button" disabled>🎞️ リールだにゃ</button><button class="primary-button" id="startStudy" disabled>はじめるにゃ</button></div></div>
 </section>
-<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261106-group-search-focus-v2"></iframe></section>
+<section id="himikoScreen" aria-label="卑弥呼と受験対策" hidden><iframe id="himikoFrame" title="卑弥呼と受験対策" data-src="himiko.html?v=20261106-group-search-keyboard-v3"></iframe></section>
 <section aria-labelledby="sessionSummary" id="studyScreen" aria-label="スライド学習" hidden>
 <div class="study-heading page-heading"><h2 class="screen-title" tabindex="-1" id="sessionSummary"></h2><button id="studyReel" class="tool" type="button" aria-label="リールで見る" title="リール"><span aria-hidden="true">🎞️</span></button><button id="quickPause" class="tool" type="button" hidden>Ⅱ 停止</button></div>
 <p class="resume-note" id="resumeNote" hidden hidden></p><p id="saveWarning" class="save-warning" hidden></p>
@@ -9095,7 +9095,7 @@ $('importForm').onsubmit=async e=>{
   const frame=document.getElementById('himikoFrame'),screen=document.getElementById('himikoScreen'),header=document.getElementById('appHeader');
   if(!frame||!screen)return;
   const root=document.documentElement;
-  let inputActive=false,chatActive=false,queued=false;
+  let inputActive=false,chatActive=false,queued=false,searchFocused=false;
   let baseline=Math.max(window.innerHeight,root.clientHeight,window.visualViewport?.height||0);
   let restoringUntil=0;
   let beforeChatY=0;
@@ -9103,7 +9103,7 @@ $('importForm').onsubmit=async e=>{
   function update(){
     queued=false;
     if(screen.hidden){root.classList.remove('himiko-keyboard-open');return;}
-    try{const active=frame.contentDocument?.activeElement;inputActive=!!active?.matches('input:focus,textarea:focus,[contenteditable="true"]:focus');}catch(_){}
+    try{const active=frame.contentDocument?.activeElement;inputActive=!!active?.matches('input:focus,textarea:focus,[contenteditable="true"]:focus');searchFocused=active?.id==='group-search-input';}catch(_){}
     const viewport=window.visualViewport;
     // iOS can restore an obsolete keyboard-sized visual viewport after resume.
     // Only fall back to the layout viewport when no editor is focused.
@@ -9123,7 +9123,7 @@ $('importForm').onsubmit=async e=>{
       if(chatAnchorTop===null){
         chatAnchorTop=Math.max(0,Math.min(available-180,(header?.getBoundingClientRect().bottom||56)+4));
       }
-      const top=keyboard?offset:chatAnchorTop;
+      const top=keyboard?(searchFocused?Math.max(offset,chatAnchorTop):offset):chatAnchorTop;
       // Visible bottom is offsetTop + height, not height alone (iOS keyboard).
       const height=Math.max(150,Math.floor(offset+available-top));
       root.style.setProperty('--himiko-chat-top',Math.round(top)+'px');

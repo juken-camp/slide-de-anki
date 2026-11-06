@@ -135,3 +135,12 @@ button{border:0;border-radius:12px;min-height:44px;padding:9px 14px;font-size:13
 @media(max-width:390px){.portal-portrait{width:88px;height:97px}.portal-portrait img{width:53px;height:53px}.welcome{gap:12px}.tagline{font-size:11px}.feature-strip span{font-size:9px}.manage-pane{width:min(335px,calc(100vw - 24px))}.chat-tools-label{font-size:9px}.chat-tools{gap:4px}.room-heading h2{font-size:14px}}
 @media(max-width:340px){.feature-strip{grid-template-columns:1fr;gap:4px}.feature-strip span{padding:5px}.welcome{gap:8px}.portal-portrait{transform:scale(.9);transform-origin:left center;width:78px}.welcome h1{font-size:20px}.tagline{font-size:10px}.nav-brand{font-size:11px}.chat-room-mark{display:none}.chat-tools-label{display:none}.chat-tools{justify-content:space-between}}
 @media(prefers-reduced-motion:reduce){button{transition:none!important}}
+
+/* Prelaunch page is public; pilot sign-in appears only with explicit test mode. */
+.coming-soon-panel{text-align:center;padding:30px 22px 28px}
+.prelaunch-chip{display:inline-flex;align-items:center;justify-content:center;max-width:100%;border-radius:999px;padding:6px 12px;margin-bottom:13px;background:var(--panel-soft);border:1px solid var(--border-strong);color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.025em}
+.prelaunch-symbol{font-size:30px;line-height:1.3;margin:5px auto 12px}
+.coming-soon-panel h2{font-size:21px;font-weight:900;margin-bottom:12px}
+.coming-soon-panel p{font-size:13px;font-weight:700;line-height:1.9;color:var(--text);margin:0 0 7px}
+.coming-soon-panel .prelaunch-foot{font-size:11px;color:var(--muted);margin:21px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.login-panel .prelaunch-chip{margin-bottom:15px}

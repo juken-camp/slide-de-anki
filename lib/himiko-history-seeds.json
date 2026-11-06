@@ -1,0 +1,789 @@
+{
+  "version": 1,
+  "note": "既存一問一答から選んだ会話の種。特定の教科書の引用でも、得点向上の保証でもない。",
+  "topics": [
+    {
+      "id": "h019",
+      "era": "古代",
+      "family": "h019",
+      "term": "高床倉庫",
+      "question": "縄文時代の終わりごろ稲作が伝わったころ、米を保管するための建物を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "019"
+    },
+    {
+      "id": "h020",
+      "era": "古代",
+      "family": "tenpyo",
+      "term": "聖武天皇",
+      "question": "奈良時代に仏教の世界に近づこうと東大寺の大仏造立を決めた天皇は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "020"
+    },
+    {
+      "id": "h032",
+      "era": "古代",
+      "family": "h032",
+      "term": "邪馬台国",
+      "question": "3世紀に女王卑弥呼が魏に使いを送った国は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "032"
+    },
+    {
+      "id": "h036",
+      "era": "古代",
+      "family": "kojiki",
+      "term": "古事記",
+      "question": "奈良時代に神話や国の成り立ちを記録した、日本最古の歴史書は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "036"
+    },
+    {
+      "id": "h041",
+      "era": "古代",
+      "family": "tenpyo",
+      "term": "天平文化",
+      "question": "奈良時代、聖武天皇の時代に都を中心に栄えた、仏教と唐の影響の強い国際的な文化を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "041"
+    },
+    {
+      "id": "h044",
+      "era": "古代",
+      "family": "h044",
+      "term": "中大兄皇子",
+      "question": "大化の改新を始め、のちに即位して天智天皇となった人物は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "044"
+    },
+    {
+      "id": "h049",
+      "era": "古代",
+      "family": "h049",
+      "term": "万葉集",
+      "question": "奈良時代にまとめられた、庶民から貴族までの和歌を収めた日本最古の歌集は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "049"
+    },
+    {
+      "id": "h051",
+      "era": "古代",
+      "family": "ritsuryo",
+      "term": "口分田",
+      "question": "701年に大宝律令が制定され、班田収授法により6歳以上の人々に割り当てられた土地を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "051"
+    },
+    {
+      "id": "h054",
+      "era": "古代",
+      "family": "h054",
+      "term": "飛鳥文化",
+      "question": "日本で最初の仏教文化で、中国やインド・西アジアなどの影響が見られる文化を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "054"
+    },
+    {
+      "id": "h061",
+      "era": "古代",
+      "family": "h061",
+      "term": "青銅器",
+      "question": "弥生時代の祭りに使われた銅鏡や銅鐸などの金属器を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "061"
+    },
+    {
+      "id": "h065",
+      "era": "古代",
+      "family": "h065",
+      "term": "古墳",
+      "question": "大和政権の時代に王や豪族の墓として造られた土を盛り上げた墓を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "065"
+    },
+    {
+      "id": "h074",
+      "era": "古代",
+      "family": "land",
+      "term": "墾田永年私財法",
+      "question": "743年に定められた、新たに開墾した土地を永久に私有してよいと認めた法令を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "074"
+    },
+    {
+      "id": "h082",
+      "era": "古代",
+      "family": "ritsuryo",
+      "term": "大宝律令",
+      "question": "701年に唐の法律にならって定められ、政治を行う決まりや刑罰を定めた法は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "082"
+    },
+    {
+      "id": "h090",
+      "era": "古代",
+      "family": "tenpyo",
+      "term": "正倉院",
+      "question": "奈良時代に建てられ、聖武天皇の愛用品が納められた建物は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "090"
+    },
+    {
+      "id": "h093",
+      "era": "古代",
+      "family": "ritsuryo",
+      "term": "国司",
+      "question": "大宝律令によって、都から国ごとに派遣され、地方の政治を行った役人は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "093"
+    },
+    {
+      "id": "h099",
+      "era": "古代",
+      "family": "jinshin",
+      "term": "天武天皇",
+      "question": "壬申の乱に勝利して即位し、政治の中心を飛鳥地方に戻した天皇は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "099"
+    },
+    {
+      "id": "h043",
+      "era": "平安",
+      "family": "h043",
+      "term": "平安京",
+      "question": "桓武天皇が794年に都を移した、京都の碁盤の目のような通りを持つ都は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "043"
+    },
+    {
+      "id": "h045",
+      "era": "平安",
+      "family": "h045",
+      "term": "枕草子",
+      "question": "清少納言がかな文字で書いた随筆は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "045"
+    },
+    {
+      "id": "h062",
+      "era": "平安",
+      "family": "h062",
+      "term": "平等院",
+      "question": "11世紀、藤原頼通が建てた平安時代の浄土信仰を表す建築物は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "062"
+    },
+    {
+      "id": "h001",
+      "era": "鎌倉・室町",
+      "family": "h001",
+      "term": "応仁の乱",
+      "question": "祇園祭が11年間の争いで行われず、京都の町が荒廃した。その争いの名称を書きなさい。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "001"
+    },
+    {
+      "id": "h022",
+      "era": "鎌倉・室町",
+      "family": "ginkaku",
+      "term": "書院造",
+      "question": "室町幕府第8代将軍足利義政が銀閣と同じ慈照寺の敷地内にある東求堂同仁斎に取り入れた建築様式を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "022"
+    },
+    {
+      "id": "h029",
+      "era": "鎌倉・室町",
+      "family": "kenmu",
+      "term": "後醍醐天皇",
+      "question": "鎌倉幕府が滅びたあと、京都で建武の新政を始めた天皇は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "029"
+    },
+    {
+      "id": "h031",
+      "era": "鎌倉・室町",
+      "family": "h031",
+      "term": "承久の乱",
+      "question": "1221年に後鳥羽上皇が鎌倉幕府に対して兵を挙げた戦いは何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "031"
+    },
+    {
+      "id": "h033",
+      "era": "鎌倉・室町",
+      "family": "ming",
+      "term": "勘合",
+      "question": "足利義満が明との貿易で倭寇を取り締まるために用いた、相手国に認められた証明書を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "033"
+    },
+    {
+      "id": "h037",
+      "era": "鎌倉・室町",
+      "family": "h037",
+      "term": "狂言",
+      "question": "室町時代、能の合間に演じられ、民衆の生活や感情をこっけいに表現した喜劇を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "037"
+    },
+    {
+      "id": "h042",
+      "era": "鎌倉・室町",
+      "family": "ming",
+      "term": "足利義満",
+      "question": "南北朝を統一し、明との勘合貿易を行った室町幕府第3代将軍は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "042"
+    },
+    {
+      "id": "h046",
+      "era": "鎌倉・室町",
+      "family": "kenmu",
+      "term": "建武の新政",
+      "question": "後醍醐天皇が鎌倉幕府を滅ぼした後に行った政治を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "046"
+    },
+    {
+      "id": "h050",
+      "era": "鎌倉・室町",
+      "family": "h050",
+      "term": "地頭",
+      "question": "鎌倉幕府が荘園や公領に置き、年貢の取り立てや土地の管理などを行った役職を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "050"
+    },
+    {
+      "id": "h055",
+      "era": "鎌倉・室町",
+      "family": "h055",
+      "term": "定期市",
+      "question": "宋や明との貿易で輸入された銅銭が国内で流通したころ、毎月決められた日に開かれた市を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "055"
+    },
+    {
+      "id": "h066",
+      "era": "鎌倉・室町",
+      "family": "ming",
+      "term": "南北朝の統一",
+      "question": "室町幕府第3代将軍足利義満が1392年に実現し、約60年間の内乱を終わらせたことを何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "066"
+    },
+    {
+      "id": "h069",
+      "era": "鎌倉・室町",
+      "family": "h069",
+      "term": "二毛作",
+      "question": "鎌倉時代、同じ土地で夏は米、冬は麦など、1年に二つの作物を栽培する方法を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "069"
+    },
+    {
+      "id": "h076",
+      "era": "鎌倉・室町",
+      "family": "h076",
+      "term": "北条時宗",
+      "question": "鎌倉時代に2度にわたって元軍が来襲した元寇のとき、鎌倉幕府の執権だった人物は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "076"
+    },
+    {
+      "id": "h086",
+      "era": "鎌倉・室町",
+      "family": "h086",
+      "term": "能",
+      "question": "室町時代に大成され、現在まで続いている歌や舞を中心とした劇を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "086"
+    },
+    {
+      "id": "h095",
+      "era": "鎌倉・室町",
+      "family": "h095",
+      "term": "北条泰時",
+      "question": "鎌倉時代、御家人と荘園領主の土地争いが増えたことを背景に、御成敗式目を制定した執権は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "095"
+    },
+    {
+      "id": "h098",
+      "era": "鎌倉・室町",
+      "family": "kongo",
+      "term": "東大寺南大門",
+      "question": "鎌倉時代の武士の気風を反映した文化財で、運慶・快慶らの金剛力士像がある門を漢字6字で答えなさい。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "098"
+    },
+    {
+      "id": "h102",
+      "era": "鎌倉・室町",
+      "family": "kongo",
+      "term": "金剛力士像",
+      "question": "東大寺南大門の運慶らが制作した彫像の名称を漢字5字で答えなさい。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "102"
+    },
+    {
+      "id": "h010",
+      "era": "戦国・江戸",
+      "family": "h010",
+      "term": "刀狩",
+      "question": "豊臣秀吉が農民から武器を取り上げた法令を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "010"
+    },
+    {
+      "id": "h011",
+      "era": "戦国・江戸",
+      "family": "sakoku",
+      "term": "徳川家光",
+      "question": "オランダ商館を長崎の出島に移すなど、鎖国を完成させた江戸幕府の第3代将軍は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "011"
+    },
+    {
+      "id": "h012",
+      "era": "戦国・江戸",
+      "family": "h012",
+      "term": "石高",
+      "question": "豊臣秀吉の太閤検地で土地の予想収穫量を米の収穫量で表したものを漢字2字で何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "012"
+    },
+    {
+      "id": "h013",
+      "era": "戦国・江戸",
+      "family": "taisei",
+      "term": "徳川慶喜",
+      "question": "倒幕を目指す動きが高まるなかで、大政奉還により政権を朝廷に返した江戸幕府の第15代将軍は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "013"
+    },
+    {
+      "id": "h023",
+      "era": "戦国・江戸",
+      "family": "h023",
+      "term": "武家諸法度",
+      "question": "江戸幕府が大名の統制のために定めた、城の修理や婚姻などを制限する法律の名称を書きなさい。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "023"
+    },
+    {
+      "id": "h034",
+      "era": "戦国・江戸",
+      "family": "shuinsen",
+      "term": "朱印状",
+      "question": "17世紀、徳川家康が日本人商人に海外への渡航を許した書状を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "034"
+    },
+    {
+      "id": "h040",
+      "era": "戦国・江戸",
+      "family": "h040",
+      "term": "参勤交代",
+      "question": "江戸時代、大名が1年おきに江戸と領地を行き来した制度を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "040"
+    },
+    {
+      "id": "h047",
+      "era": "戦国・江戸",
+      "family": "h047",
+      "term": "南蛮貿易",
+      "question": "16〜17世紀に日本とポルトガル・スペインの間で行われた貿易を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "047"
+    },
+    {
+      "id": "h052",
+      "era": "戦国・江戸",
+      "family": "h052",
+      "term": "朝鮮通信使",
+      "question": "江戸時代、将軍の代替わりなどに朝鮮から日本に来た使節を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "052"
+    },
+    {
+      "id": "h053",
+      "era": "戦国・江戸",
+      "family": "h053",
+      "term": "化政文化",
+      "question": "18世紀末から19世紀初めの江戸を中心に栄えた元号にちなんだ文化を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "053"
+    },
+    {
+      "id": "h058",
+      "era": "戦国・江戸",
+      "family": "h058",
+      "term": "分国法",
+      "question": "戦国大名が、それぞれの領国を支配するために定めた法を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "058"
+    },
+    {
+      "id": "h063",
+      "era": "戦国・江戸",
+      "family": "h063",
+      "term": "外様大名",
+      "question": "江戸時代、関ケ原の戦い以降に徳川家に従った大名を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "063"
+    },
+    {
+      "id": "h064",
+      "era": "戦国・江戸",
+      "family": "h064",
+      "term": "天下の台所",
+      "question": "江戸時代、商業の中心地として全国の年貢米や特産物が集まった大阪を何と呼んだか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "064"
+    },
+    {
+      "id": "h067",
+      "era": "戦国・江戸",
+      "family": "taisei",
+      "term": "大政奉還",
+      "question": "1867年、徳川慶喜が政権を朝廷に返した出来事を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "067"
+    },
+    {
+      "id": "h070",
+      "era": "戦国・江戸",
+      "family": "h070",
+      "term": "十返舎一九",
+      "question": "江戸時代、五街道に関する滑稽本『東海道中膝栗毛』を書いた人物は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "070"
+    },
+    {
+      "id": "h073",
+      "era": "戦国・江戸",
+      "family": "h073",
+      "term": "伊能忠敬",
+      "question": "江戸幕府の命令で全国の沿岸を測量し、正確な日本地図を作成した人物は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "073"
+    },
+    {
+      "id": "h075",
+      "era": "戦国・江戸",
+      "family": "shuinsen",
+      "term": "朱印船貿易",
+      "question": "徳川家康が海外渡航を許す朱印状を与えて行わせた貿易を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "075"
+    },
+    {
+      "id": "h078",
+      "era": "戦国・江戸",
+      "family": "kansei",
+      "term": "寛政の改革",
+      "question": "1787年、松平定信が行った江戸幕府の政治改革を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "078"
+    },
+    {
+      "id": "h085",
+      "era": "戦国・江戸",
+      "family": "kansei",
+      "term": "松平定信",
+      "question": "江戸時代に寛政の改革を進めた老中は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "085"
+    },
+    {
+      "id": "h096",
+      "era": "戦国・江戸",
+      "family": "h096",
+      "term": "下剋上",
+      "question": "戦国大名が登場したころ、実力のある者が身分の上の者を倒す風潮を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "096"
+    },
+    {
+      "id": "h100",
+      "era": "戦国・江戸",
+      "family": "edo-start",
+      "term": "徳川家康",
+      "question": "1603年に江戸幕府を開いた人物は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "100"
+    },
+    {
+      "id": "h105",
+      "era": "戦国・江戸",
+      "family": "h105",
+      "term": "工場制手工業",
+      "question": "江戸時代、働き手が作業所に集まり、分業で製品を大量生産する仕組みを漢字6字で何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "105"
+    },
+    {
+      "id": "h006",
+      "era": "明治",
+      "family": "unequal-treaty",
+      "term": "井伊直弼",
+      "question": "日米修好通商条約を結んだ江戸幕府の大老は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "006"
+    },
+    {
+      "id": "h007",
+      "era": "明治",
+      "family": "h007",
+      "term": "富国強兵",
+      "question": "徴兵制や殖産興業など、欧米諸国に対抗して経済と軍隊を強くする政策を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "007"
+    },
+    {
+      "id": "h021",
+      "era": "明治",
+      "family": "h021",
+      "term": "廃藩置県",
+      "question": "1868年の五箇条の御誓文の後に行われた、藩を廃止して県に置き換えた改革を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "021"
+    },
+    {
+      "id": "h038",
+      "era": "明治",
+      "family": "h038",
+      "term": "ビスマルク",
+      "question": "1882年、伊藤博文がヨーロッパで憲法を調査した当時、ドイツの首相であった人物は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "038"
+    },
+    {
+      "id": "h056",
+      "era": "明治",
+      "family": "h056",
+      "term": "開拓使",
+      "question": "明治政府が北海道に置いた、開拓を進めるための役所は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "056"
+    },
+    {
+      "id": "h059",
+      "era": "明治",
+      "family": "h059",
+      "term": "青鞜社",
+      "question": "明治時代、平塚らいてうらが女性解放を目指して設立した団体は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "059"
+    },
+    {
+      "id": "h068",
+      "era": "明治",
+      "family": "treaty-revision",
+      "term": "領事裁判権",
+      "question": "1894年、イギリスとの間で日本が撤廃に成功した、外国人を日本の法律で裁けない権利を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "068"
+    },
+    {
+      "id": "h072",
+      "era": "明治",
+      "family": "h072",
+      "term": "福沢諭吉",
+      "question": "明治時代、『学問のすゝめ』で「天は人の上に人をつくらず」という言葉を残した人物は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "072"
+    },
+    {
+      "id": "h079",
+      "era": "明治",
+      "family": "unequal-treaty",
+      "term": "関税",
+      "question": "1858年に結ばれた日米修好通商条約で、日本が自主的に決める権利のなかった税を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "079"
+    },
+    {
+      "id": "h080",
+      "era": "明治",
+      "family": "h080",
+      "term": "イギリス",
+      "question": "義和団事件の後、日本が1902年にロシアとの衝突に備えて同盟を結んだ相手国はどこか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "080"
+    },
+    {
+      "id": "h081",
+      "era": "明治",
+      "family": "h081",
+      "term": "五箇条の御誓文",
+      "question": "1867年王政復古の大号令が発せられた翌年に、天皇が神に誓う形で示した明治政府の政治方針は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "081"
+    },
+    {
+      "id": "h087",
+      "era": "明治",
+      "family": "h087",
+      "term": "八幡製鉄所",
+      "question": "日清戦争の賠償金をもとに福岡県で建設され、1901年から製鉄を始めた官営工場は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "087"
+    },
+    {
+      "id": "h091",
+      "era": "明治",
+      "family": "h091",
+      "term": "伊藤博文",
+      "question": "1885年に内閣制度ができたとき、初代の内閣総理大臣となった人物は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "091"
+    },
+    {
+      "id": "h097",
+      "era": "明治",
+      "family": "h097",
+      "term": "自由党",
+      "question": "1881年に板垣退助を党首として結成された政党は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "097"
+    },
+    {
+      "id": "h103",
+      "era": "明治",
+      "family": "h103",
+      "term": "樋口一葉",
+      "question": "明治時代に「たけくらべ」「にごりえ」などの小説を発表し、2004年発行の五千円札に肖像が使われた女流文学者は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "103"
+    },
+    {
+      "id": "h106",
+      "era": "明治",
+      "family": "h106",
+      "term": "生糸",
+      "question": "1858年の日米修好通商条約で開港した横浜港などから大量に輸出された品目第1位を漢字2字で答えなさい。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "106"
+    },
+    {
+      "id": "h002",
+      "era": "近現代",
+      "family": "h002",
+      "term": "サンフランシスコ平和条約",
+      "question": "1951年に日本がアメリカなどと調印し、翌1952年の発効で独立を回復することになった条約の名称を書きなさい。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "002"
+    },
+    {
+      "id": "h015",
+      "era": "近現代",
+      "family": "h015",
+      "term": "非核三原則",
+      "question": "核兵器を「持たず、作らず、持ち込ませず」という原則を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "015"
+    },
+    {
+      "id": "h030",
+      "era": "近現代",
+      "family": "h030",
+      "term": "農地改革",
+      "question": "第二次世界大戦後、GHQの民主化政策によって自作農を増やした政策を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "030"
+    },
+    {
+      "id": "h088",
+      "era": "近現代",
+      "family": "h088",
+      "term": "ソ連",
+      "question": "1956年、日本が共同宣言を結んで国交を回復した相手国はどこか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "088"
+    },
+    {
+      "id": "h092",
+      "era": "近現代",
+      "family": "h092",
+      "term": "普通選挙法",
+      "question": "1925年に成立し、満25歳以上のすべての男子に選挙権を与えた法律は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "092"
+    },
+    {
+      "id": "h005",
+      "era": "世界史",
+      "family": "h005",
+      "term": "十字軍",
+      "question": "11世紀末に聖地エルサレムをイスラム教勢力から奪回するために組織された軍隊を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "005"
+    },
+    {
+      "id": "h014",
+      "era": "世界史",
+      "family": "h014",
+      "term": "五・四運動",
+      "question": "1919年のパリ講和会議で山東省の権益が日本に引き継がれると決まり、中国で起こった抗議運動を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "014"
+    },
+    {
+      "id": "h057",
+      "era": "世界史",
+      "family": "h057",
+      "term": "くさび形文字",
+      "question": "ハンムラビ法典碑などに刻まれた、メソポタミア文明で使われた文字は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "057"
+    },
+    {
+      "id": "h060",
+      "era": "世界史",
+      "family": "h060",
+      "term": "孔子",
+      "question": "中国の春秋時代、仁の思想を説き、儒教の祖といわれる思想家は誰か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "060"
+    },
+    {
+      "id": "h071",
+      "era": "世界史",
+      "family": "h071",
+      "term": "ルネサンス",
+      "question": "古代ギリシャ・ローマ文化をもとに14世紀ごろからヨーロッパに広がった新しい芸術・学問の風潮を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "071"
+    },
+    {
+      "id": "h084",
+      "era": "世界史",
+      "family": "h084",
+      "term": "ベルサイユ条約",
+      "question": "第一次世界大戦後の1919年のパリ講和会議で、敗戦国ドイツに賠償金や軍備縮小などを課した条約は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "084"
+    },
+    {
+      "id": "h101",
+      "era": "世界史",
+      "family": "h101",
+      "term": "世界恐慌",
+      "question": "1929年、ニューヨークでの株価大暴落をきっかけに世界中に広がった経済危機は何か。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "101"
+    },
+    {
+      "id": "h104",
+      "era": "世界史",
+      "family": "h104",
+      "term": "三国協商",
+      "question": "第一次世界大戦前にイギリス・フランス・ロシアが結んだ国際関係を何というか。",
+      "source": "grading-data/social-history-entrance-107-20261026.json",
+      "cardId": "104"
+    }
+  ]
+}

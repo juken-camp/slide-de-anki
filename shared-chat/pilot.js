@@ -3,22 +3,102 @@
  try { document.documentElement.dataset.persona = localStorage.getItem('nekopon-character-theme-v1') === 'cyber' ? 'cyber' : 'neko'; } catch (_) { document.documentElement.dataset.persona = 'neko'; }
  const $=id=>document.getElementById(id);
  // The pilot sign-in remains available while the UI is labeled as prelaunch.
- let config,accessToken='',roomId='',view=null,before=null,running=false,otpAt=0,loginEmail='',requestId=null;
+ let config,accessToken='',refreshToken='',tokenExpiresAt=0,refreshInFlight=null,roomId='',view=null,before=null,running=false,otpAt=0,loginEmail='',requestId=null;
+ // Keep the login until the user explicitly logs out (Supabase token rotation).
+ // This is scoped to this origin / browser profile, not a server-side permanent login.
+ const SESSION_KEY='nekopon-shared-chat-session-v1';
+ function getSavedSession(){
+  try{
+   const d=JSON.parse(localStorage.getItem(SESSION_KEY)||'null');
+   if(d&&typeof d.refreshToken==='string'&&d.refreshToken.length>10)return d;
+  }catch(_){}return null;
+ }
+ function rememberSession(d){
+  if(!d||typeof d.access_token!=='string'||typeof d.refresh_token!=='string'||!d.access_token||!d.refresh_token)throw Error('ログイン情報を保存できませんでした。もう一度ログインしてください。');
+  accessToken=d.access_token;
+  refreshToken=d.refresh_token;
+  tokenExpiresAt=Number(d.expires_at)>0?Number(d.expires_at)*1000:Date.now()+Math.max(60,Number(d.expires_in)||3600)*1000;
+  try{localStorage.setItem(SESSION_KEY,JSON.stringify({accessToken,refreshToken,tokenExpiresAt}));return true;}catch(_){return false;}
+ }
+ async function renewToken(force=false){
+  if(!refreshToken)return false;
+  if(refreshInFlight)return refreshInFlight;
+  if(!force&&accessToken&&Date.now()<tokenExpiresAt-90000)return true;
+  const usedToken=refreshToken;
+  refreshInFlight=(async()=>{
+   let r;
+   try{
+    r=await fetch(config.url+'/auth/v1/token?grant_type=refresh_token',{
+     method:'POST',headers:{apikey:config.key,'Content-Type':'application/json'},
+     body:JSON.stringify({refresh_token:usedToken}),cache:'no-store'
+    });
+   }catch(_){throw Error('通信できずログインを更新できません。接続を確認してください。');}
+   const d=await r.json().catch(()=>({}));
+   if(!r.ok){
+    // Only authentication failures invalidate the saved session. Temporary
+    // server errors must not force the user to sign in again.
+    if([400,401,403].includes(r.status)){
+     if(refreshToken!==usedToken)return true; // another tab rotated it
+     clearSession();
+     throw Error('ログインの有効期限が切れました。もう一度認証コードでログインしてください。');
+    }
+    throw Error('サーバーに接続できずログインを更新できません。あとで再試行してください。');
+   }
+   if(refreshToken!==usedToken)return true;
+   rememberSession(d);
+   return true;
+  })();
+  try{return await refreshInFlight;}finally{refreshInFlight=null;}
+ }
+ async function restoreSavedSession(){
+  const saved=getSavedSession();if(!saved||!config)return;
+  refreshToken=saved.refreshToken;
+  accessToken=typeof saved.accessToken==='string'?saved.accessToken:'';
+  tokenExpiresAt=Number(saved.tokenExpiresAt)||0;
+  try{
+   await renewToken();
+   $('login').hidden=true;$('lobby').hidden=false;
+   $('join-panel').hidden=!inviteToken;
+   status('');
+   await list();
+  }catch(e){
+   // If the server is temporarily offline, preserve the saved login and show
+   // the lobby/retry control instead of forcing an OTP flow.
+   if(refreshToken){$('login').hidden=true;$('lobby').hidden=false;$('join-panel').hidden=!inviteToken;}
+   status(e.message);
+  }
+ }
  let inviteToken=new URLSearchParams(location.hash.slice(1)).get('invite')||'';
  history.replaceState(null,'',location.pathname+location.search);
  if(!/^[a-f0-9]{64}$/.test(inviteToken))inviteToken='';
  const status=message=>{ $('status').textContent=message; $('chat-status').textContent=message; };
  const node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
  async function rpc(action,payload={}){
-  const r=await
- fetch('/api/shared-chat',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+accessToken},body:JSON.stringify({action,payload}),cache:'no-store'});
-  const d=await r.json();if(!r.ok){if(r.status===401)clearSession();throw Error(d.error||'接続できませんでした。');}return d;
+  if(!config)throw Error('共有グルチャに接続できません。');
+  if(refreshToken)await renewToken();
+  const post=()=>fetch('/api/shared-chat',{
+   method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+accessToken},
+   body:JSON.stringify({action,payload}),cache:'no-store'
+  });
+  let r=await post();
+  if(r.status===401&&refreshToken){await renewToken(true);r=await post();}
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok){
+   if(r.status===401){clearSession();throw Error('ログインの更新が必要です。認証コードでログインしてください。');}
+   throw Error(d.error||'接続できませんでした。');
+  }return d;
  }
  async function auth(path,payload){
   const r=await fetch(config.url+'/auth/v1/'+path,{method:'POST',headers:{apikey:config.key,'Content-Type':'application/json',...(accessToken?{Authorization:'Bearer '+accessToken}:{})},body:JSON.stringify(payload)});
   const d=await r.json().catch(()=>({}));if(!r.ok)throw Error('認証できませんでした。メールアドレスとコードをご確認ください。');return d;
  }
- function clearSession(){accessToken='';roomId='';view=null;before=null;$('text').value='';$('messages').replaceChildren();$('messages').dataset.fingerprint='';$('members').replaceChildren();$('rooms').replaceChildren();$('notification-control').hidden=true;$('invite-link').value='';$('lobby').hidden=true;$('chat').hidden=true;$('login').hidden=false;}
+ function clearSession(){
+  try{localStorage.removeItem(SESSION_KEY);}catch(_){}
+  setChatVisible(false);accessToken='';refreshToken='';tokenExpiresAt=0;roomId='';view=null;before=null;
+  $('text').value='';$('messages').replaceChildren();$('messages').dataset.fingerprint='';
+  $('members').replaceChildren();$('rooms').replaceChildren();$('notification-control').hidden=true;
+  $('invite-link').value='';$('lobby').hidden=true;$('chat').hidden=true;$('login').hidden=false;
+ }
  async function run(fn){if(running)return;running=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);try{await fn();}catch(e){status(e.message);}finally{running=false;document.querySelectorAll('button').forEach(b=>b.disabled=b.dataset.pending==='1');if(view)$('older').disabled=!view.messages.length||view.messages[0].seq<=1;}}
  async function list(){
   const d=await rpc('list');$('rooms').replaceChildren();
@@ -32,7 +112,7 @@
    if(r.unread&&r.status!=='pending')trailing.append(node('span',r.unread>99?'99+':String(r.unread),'room-unread'));
    trailing.append(node('span',r.status==='pending'?'…':'›','room-entry-chevron'));
    button.append(icon,info,trailing);
-   button.onclick=()=>run(async()=>{roomId=r.id;before=null;$('lobby').hidden=true;$('chat').hidden=false;status('');await sync(true);});
+   button.onclick=()=>run(async()=>{roomId=r.id;before=null;$('lobby').hidden=true;setChatVisible(true);status('');await sync(true);});
    $('rooms').append(button);
   }
   if(!d.rooms.length)$('rooms').append(node('p','まだ参加中のグループはありません。招待リンクから参加するか、新しい部屋を作れます。','room-empty'));
@@ -40,7 +120,7 @@
  function roomAction(action,extra={}){return rpc(action,{room_id:roomId,...extra});}
  async function sync(first=false){
   const id=roomId;if(!id)return;
-  let d;try{d=await roomAction('sync',before?{before_seq:before}:{});}catch(e){if(id===roomId){roomId='';$('chat').hidden=true;$('lobby').hidden=false;$('messages').replaceChildren();$('members').replaceChildren();$('invite-link').value='';}throw e;}
+  let d;try{d=await roomAction('sync',before?{before_seq:before}:{});}catch(e){if(id===roomId){roomId='';setChatVisible(false);$('lobby').hidden=false;$('messages').replaceChildren();$('members').replaceChildren();$('invite-link').value='';}throw e;}
   if(roomId!==id)return;
   view=d;$('title').textContent=d.room.name;$('admin').hidden=!d.room.owner;$('leave').hidden=d.room.owner;
   const aiOn=d.room.ai_enabled===true;
@@ -82,12 +162,12 @@
  }
  async function markRead(){if(!view||document.hidden||$('chat').hidden)return;const box=$('messages');if(box.scrollHeight-box.scrollTop-box.clientHeight>80)return;const last=view.messages.at(-1)?.seq||0;if(last>view.last_read_seq){await roomAction('read',{seq:last});view.last_read_seq=last;}}
  $('otp').onclick=()=>run(async()=>{if(!config)throw Error('共有グルチャは準備中です。');const email=$('email').value.trim();if(!$('email').checkValidity()||!email)throw Error('メールアドレスを入力してください。');if(Date.now()-otpAt<60000)throw Error('コードの再送は1分お待ちください。');await auth('otp',{email,create_user:true});otpAt=Date.now();loginEmail=email;status('メールに届いたコードを入力してください。');});
- $('verify').onclick=()=>run(async()=>{if(!config||!loginEmail)throw Error('先に認証コードを送ってください。');const d=await auth('verify',{email:loginEmail,token:$('code').value.trim(),type:'email'});if(!d.access_token)throw Error('ログインできませんでした。');accessToken=d.access_token;$('code').value='';$('login').hidden=true;$('lobby').hidden=false;$('join-panel').hidden=!inviteToken;status('ログインしました。');await list();});
- $('logout').onclick=()=>run(async()=>{try{await auth('logout',{});}finally{clearSession();status('ログアウトしました。');}});
+ $('verify').onclick=()=>run(async()=>{if(!config||!loginEmail)throw Error('先に認証コードを送ってください。');const d=await auth('verify',{email:loginEmail,token:$('code').value.trim(),type:'email'});if(!d.access_token)throw Error('ログインできませんでした。');const stored=rememberSession(d);$('code').value='';$('login').hidden=true;$('lobby').hidden=false;$('join-panel').hidden=!inviteToken;status(stored?'ログインしました。次回からは自動でログインします。':'ログインしました。このブラウザではログイン情報を保存できないため、次回は認証が必要です。');await list();});
+ $('logout').onclick=()=>run(async()=>{try{if(accessToken)await auth('logout',{});}finally{clearSession();status('ログアウトしました。');}});
  $('refresh').onclick=()=>run(list);
- $('create').onclick=()=>run(async()=>{const d=await rpc('create',{name:$('room-name').value,nickname:$('owner-name').value});roomId=d.room_id;before=null;$('lobby').hidden=true;$('chat').hidden=false;await sync(true);status('グループを作成しました。参加者・管理から招待できます。');});
+ $('create').onclick=()=>run(async()=>{const d=await rpc('create',{name:$('room-name').value,nickname:$('owner-name').value});roomId=d.room_id;before=null;$('lobby').hidden=true;setChatVisible(true);await sync(true);status('グループを作成しました。参加者・管理から招待できます。');});
  $('join').onclick=()=>run(async()=>{await rpc('join',{token:inviteToken,nickname:$('nickname').value});inviteToken='';$('join-panel').hidden=true;status('参加を申請しました。管理者の承認をお待ちください。');await list();});
- $('back').onclick=()=>run(async()=>{roomId='';view=null;$('messages').replaceChildren();$('messages').dataset.fingerprint='';$('members').replaceChildren();$('invite-link').value='';$('chat').hidden=true;$('lobby').hidden=false;await list();});
+ $('back').onclick=()=>run(async()=>{roomId='';view=null;$('messages').replaceChildren();$('messages').dataset.fingerprint='';$('members').replaceChildren();$('invite-link').value='';setChatVisible(false);$('lobby').hidden=false;await list();});
  $('send').onclick=()=>run(async()=>{const text=$('text').value.trim();if(!text)throw Error('メッセージを入力してください。');requestId||={id:crypto.randomUUID(),text};if(requestId.text!==text)requestId={id:crypto.randomUUID(),text};await roomAction('send',{text,client_id:requestId.id});requestId=null;$('text').value='';before=null;await sync(true);status('');});
  $('invite').onclick=()=>run(async()=>{const d=await roomAction('invite');$('invite-link').value=location.origin+'/shared-chat.html#invite='+d.token;status('招待リンクを発行しました。');});
  $('copy').onclick=()=>run(async()=>{if(!$('invite-link').value)throw Error('先にリンクを発行してください。');await navigator.clipboard.writeText($('invite-link').value);status('コピーしました。');});
@@ -112,21 +192,89 @@
   const subscription=await worker.pushManager.getSubscription()||await worker.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:toU8(config.vapidPublicKey)});
   await roomAction('subscribe',{subscription:subscription.toJSON()});await sync();status('この部屋の通知をONにしました。');
  });
- $('leave').onclick=()=>run(async()=>{if(!confirm('退出すると会話を読めなくなります。退出しますか？'))return;await roomAction('leave');roomId='';view=null;$('messages').replaceChildren();$('members').replaceChildren();$('chat').hidden=true;$('lobby').hidden=false;await list();status('退出しました。');});
+ $('leave').onclick=()=>run(async()=>{if(!confirm('退出すると会話を読めなくなります。退出しますか？'))return;await roomAction('leave');roomId='';view=null;$('messages').replaceChildren();$('members').replaceChildren();setChatVisible(false);$('lobby').hidden=false;await list();status('退出しました。');});
  $('older').onclick=()=>run(async()=>{if(view?.messages.length){before=view.messages[0].seq;await sync(true);}});
  $('latest').onclick=()=>run(async()=>{before=null;await sync(true);});
  $('messages').addEventListener('scroll',()=>{if(!running&&accessToken&&roomId)run(markRead);});
- document.addEventListener('visibilitychange',()=>{if(!document.hidden&&accessToken)run(roomId?sync:list);});
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&refreshToken)run(roomId?sync:list);});
+ window.addEventListener('online',()=>{if(refreshToken&&!running)run(roomId?sync:list);});
+ window.addEventListener('storage',e=>{
+  if(e.key!==SESSION_KEY)return;
+  if(!e.newValue){if(accessToken||refreshToken){clearSession();status('別のタブでログアウトされました。');}return;}
+  const d=getSavedSession();if(!d)return;
+  // Supabase refresh tokens rotate. Keep parallel tabs in sync.
+  accessToken=typeof d.accessToken==='string'?d.accessToken:'';
+  refreshToken=d.refreshToken;tokenExpiresAt=Number(d.tokenExpiresAt)||0;
+ });
  setInterval(()=>{if(accessToken&&!document.hidden&&!running)run(roomId?sync:list);},5000);
- // Keep the composer inside the visual viewport when the iOS keyboard opens.
- function updateChatViewport(){
-  const vv=window.visualViewport;if(!vv)return;
-  document.documentElement.style.setProperty('--chat-viewport-height',Math.round(vv.height)+'px');
-  document.documentElement.style.setProperty('--chat-viewport-top',Math.round(vv.offsetTop)+'px');
+ // Like the existing Himiko group view, the header and composer are fixed
+ // siblings of the *only* scrolling area (#messages). Do not allow the lobby
+ // document to continue scrolling behind the room: iOS otherwise scrolls the
+ // entire page to reveal the keyboard and moves the chat out of the viewport.
+ let savedLobbyScroll=0;
+ function setChatVisible(open){
+  const chat=$('chat');
+  const locked=document.documentElement.hasAttribute('data-shared-chat-open');
+  if(open){
+   if(!locked){
+    savedLobbyScroll=window.scrollY||document.documentElement.scrollTop||0;
+    document.documentElement.setAttribute('data-shared-chat-open','');
+   }
+   chat.hidden=false;
+   updateChatViewport();
+  }else{
+   chat.hidden=true;
+   chat.classList.remove('keyboard-visible');
+   if(locked){
+    document.documentElement.removeAttribute('data-shared-chat-open');
+    window.scrollTo(0,savedLobbyScroll);
+   }
+  }
  }
- if(window.visualViewport){visualViewport.addEventListener('resize',updateChatViewport);visualViewport.addEventListener('scroll',updateChatViewport);updateChatViewport();}
+ // During iOS keyboard animation, the visual viewport is shorter than the
+ // layout viewport. Measure this once per frame rather than on every event,
+ // preventing repeated top/height writes that visibly jiggle the header.
+ let pendingViewportFrame=0;
+ function updateChatViewport(){
+  if($('chat').hidden)return;
+  const vv=window.visualViewport;
+  const chat=$('chat');
+  const height=Math.max(1,Math.round(vv?.height||window.innerHeight));
+  const top=Math.max(0,Math.round(vv?.offsetTop||0));
+  const heightValue=height+'px',topValue=top+'px';
+  if(chat.style.getPropertyValue('--chat-viewport-height')!==heightValue)chat.style.setProperty('--chat-viewport-height',heightValue);
+  if(chat.style.getPropertyValue('--chat-viewport-top')!==topValue)chat.style.setProperty('--chat-viewport-top',topValue);
+  chat.classList.toggle('keyboard-visible',document.activeElement===$('text')&&window.innerHeight-height>120);
+ }
+ function scheduleChatViewport(){
+  if(pendingViewportFrame)return;
+  pendingViewportFrame=requestAnimationFrame(()=>{pendingViewportFrame=0;updateChatViewport();});
+ }
+ if(window.visualViewport){
+  visualViewport.addEventListener('resize',scheduleChatViewport,{passive:true});
+  visualViewport.addEventListener('scroll',scheduleChatViewport,{passive:true});
+ }
+ window.addEventListener('resize',scheduleChatViewport,{passive:true});
+ $('text').addEventListener('focus',scheduleChatViewport);
+ $('text').addEventListener('blur',scheduleChatViewport);
+ // Prevent dragging fixed headers / composer from dragging the whole page.
+ // Preserve native kinetic scrolling within messages and the management menu.
+ let touchY=0;
+ $('chat').addEventListener('touchstart',e=>{if(e.touches.length===1)touchY=e.touches[0].clientY;},{passive:true});
+ $('chat').addEventListener('touchmove',e=>{
+  if(e.touches.length!==1||!document.documentElement.hasAttribute('data-shared-chat-open'))return;
+  const scroller=e.target.closest('#messages,.manage-pane,textarea');
+  if(!scroller||scroller.scrollHeight<=scroller.clientHeight+1){e.preventDefault();return;}
+  const dy=e.touches[0].clientY-touchY;
+  if((dy>0&&scroller.scrollTop<=0)||(dy<0&&scroller.scrollTop+scroller.clientHeight>=scroller.scrollHeight-1))e.preventDefault();
+ },{passive:false});
  $('text').addEventListener('input',()=>{const el=$('text');el.style.height='44px';el.style.height=Math.min(el.scrollHeight,118)+'px';});
  $('text').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){e.preventDefault();$('send').click();}});
  $('return-app').addEventListener('click',e=>{if(history.length>1){e.preventDefault();history.back();}});
- fetch('/api/shared-chat',{cache:'no-store'}).then(async r=>{const d=await r.json();if(!r.ok)throw Error(d.error);config=d;status(inviteToken?'招待リンクを受け取りました。ログイン後、参加を申請してください。':'');}).catch(e=>status(e.message||'共有グルチャは準備中です。'));
+ fetch('/api/shared-chat',{cache:'no-store'}).then(async r=>{
+  const d=await r.json();if(!r.ok)throw Error(d.error);
+  config=d;
+  status(inviteToken?'招待リンクを受け取りました。ログイン後、参加を申請してください。':'');
+  await restoreSavedSession();
+ }).catch(e=>status(e.message||'共有グルチャは準備中です。'));
 })();

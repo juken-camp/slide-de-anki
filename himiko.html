@@ -598,6 +598,9 @@ html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none
 
 <style>
 .group-system-event{text-align:center;margin:16px 12px;color:var(--muted,#9bb7c9);font-size:11px;line-height:1.6}.group-system-event>span{display:inline-block;max-width:100%;padding:6px 12px;border-radius:14px;background:#8299b51c;overflow-wrap:anywhere}.group-system-event time{display:block;font-size:inherit;color:inherit;line-height:1.4}.group-system-event .group-event-label{display:block;line-height:1.5}
+/* Membership notice names open the existing profile, without visually changing the notice. */
+.group-system-event .group-event-person-name{appearance:none;-webkit-appearance:none;display:inline;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:inherit;font:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:none;text-align:inherit;vertical-align:baseline;cursor:pointer}
+.group-system-event .group-event-person-name:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:2px}
 </style>
 <style id="nekopon-himiko-region-label-friendly-count-20261031">
 /* The mascot emoji must be bare: no round badge, border, fill, or glow. */
@@ -1999,7 +2002,7 @@ html[data-persona="cyber"] #group-view .group-search-current{outline-color:#53c9
       <span><i class="presence-guide-dot is-later" aria-hidden="true"></i>あとで戻る</span>
       <span><i class="presence-guide-dot is-met" aria-hidden="true"></i>トークあり</span><button type="button" id="history-name-mask" aria-label="人物の名前を隠す" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h9M7 14h6"/><path class="hide-slash" d="M3 21 21 3"/></svg></button>
     </div>
-    <div class="history-list-mode" role="group" aria-label="人物の並び順"><button type="button" data-history-list-mode="era" aria-pressed="true" onclick="setHistoryListMode('era')">時代順</button><button type="button" data-history-list-mode="world" aria-pressed="false" onclick="setHistoryListMode('world')">世界史</button><button type="button" data-history-list-mode="birth" aria-pressed="false" onclick="setHistoryListMode('birth')">生年順</button><button type="button" data-history-list-mode="conversation" aria-pressed="false" onclick="setHistoryListMode('conversation')">会話順</button></div><div class="card-list" id="card-list"></div>
+    <div class="history-list-mode" role="group" aria-label="人物の並び順"><button type="button" data-history-list-mode="era" aria-pressed="true" onclick="setHistoryListMode('era')">日本史</button><button type="button" data-history-list-mode="world" aria-pressed="false" onclick="setHistoryListMode('world')">世界史</button><button type="button" data-history-list-mode="birth" aria-pressed="false" onclick="setHistoryListMode('birth')">生年順</button><button type="button" data-history-list-mode="conversation" aria-pressed="false" onclick="setHistoryListMode('conversation')">会話順</button></div><div class="card-list" id="card-list"></div>
 
 
   </div>
@@ -3497,7 +3500,11 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  function rowReplyPart(p,text,first,animate=false,meta={}){if(meta.reply?.event){
  const event=meta.reply.event,legacy=String(text).match(/（([\s\S]*)）$/),reason=meta.reply.reason||(legacy?legacy[1]:'');
  const label=String(text).replace(/（[\s\S]*）$/,'').replace('グループを退出しました','グループを退会しました');
- const notice=`<div class="group-system-event" data-group-timeline-at="${Number(meta.at)||0}" data-group-event="${escAttr(event)}" data-group-event-person="${Number(meta.reply.targetId||p.id)}" ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:''}><span>${meta.at?`<time>${safe(historyClock(meta.at))}</time>`:''}<span class="group-event-label">${safe(label)}</span></span></div>`;
+ const eventPerson=ch(Number(meta.reply.targetId||p.id))||p;
+ const nameIndex=label.indexOf(eventPerson.name);
+ // Only the person's name is interactive; the rest of the sentence and its appearance stay unchanged.
+ const eventLabel=nameIndex<0?safe(label):safe(label.slice(0,nameIndex))+`<button type="button" class="group-event-person-name" data-id="${Number(eventPerson.id)}" aria-label="${escAttr(eventPerson.name)}のプロフィールを見る">${safe(eventPerson.name)}</button>`+safe(label.slice(nameIndex+eventPerson.name.length));
+ const notice=`<div class="group-system-event" data-group-timeline-at="${Number(meta.at)||0}" data-group-event="${escAttr(event)}" data-group-event-person="${Number(meta.reply.targetId||p.id)}" ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:''}><span>${meta.at?`<time>${safe(historyClock(meta.at))}</time>`:''}<span class="group-event-label">${eventLabel}</span></span></div>`;
  const speech=reason?rowReplyPart(p,reason,true,animate,{at:meta.at}):'';
  return ['leave','away','invite'].includes(event)?speech+notice:notice+speech;
 }const at=Number(meta.due||meta.at||meta.reply?.at);if(at&&at<=Date.now()&&at>Date.now()-600000)window.dispatchEvent(new CustomEvent('himiko-group-speaker',{detail:{id:p.id,at}}));return `<div data-group-timeline-at="${Number(meta.at||meta.reply?.at)||0}" ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:""} class="bubble-row assistant${first?'':' continuation'}${animate?' is-new':''}">${first?`<button type="button" class="bubble-avatar group-person-avatar" data-id="${p.id}" aria-label="${safe(p.name)}のプロフィールを見る" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</button>`:'<div class="bubble-avatar-spacer" aria-hidden="true"></div>'}<div class="group-reply-content">${first?`<div class="group-reply-name"><span class="group-name-label">${safe(p.name)}${p.isNarrator||p.isExplainer?'（解説）':''}${p.isSpecial||!p.period?'':` <span class="group-reply-period">（${safe(p.period.replace(/[（(]/g,'・').replace(/[）)]/g,''))}）</span>`}</span></div>`:''}<div id="${groupBubbleId(p.id,text,meta.at||meta.reply?.at)}" class="bubble assistant" data-group-quote-name="${escAttr(p.name)}" data-group-quote-text="${escAttr(text)}">${first?quoteHTML(replyQuote(meta.reply)):''}${safe(cleanSpeakerLabel(text,p.name))}</div>${historyMeta(meta.at)}</div></div>`}
@@ -3618,7 +3625,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  if(e.currentTarget===$('group-member-list')&&e.target.closest('.avatar')){e.preventDefault();e.stopPropagation();showProfile(person);return;}
  if(e.currentTarget===$('group-member-list')){const savedScroll=$('group-members').querySelector('.members-scroll').scrollTop,savedGroupListScroll=groupListScroll;window.himikoReturnToMembers=()=>{window.openGroupChat();groupListScroll=savedGroupListScroll;window.showGroupMembers();const el=$('group-members').querySelector('.members-scroll');el.scrollTop=savedScroll;requestAnimationFrame(()=>{el.scrollTop=savedScroll});};}
  window.closeGroupChat();openChat(id)}
- $('group-member-list').addEventListener('click',go);$('group-participant-icons').addEventListener('click',go);$('group-messages').addEventListener('click',e=>{const button=e.target.closest('.group-person-avatar');if(!button)return;const person=ch(Number(button.dataset.id));if(person)showProfile(person)});
+ $('group-member-list').addEventListener('click',go);$('group-participant-icons').addEventListener('click',go);$('group-messages').addEventListener('click',e=>{const button=e.target.closest('.group-person-avatar, .group-event-person-name');if(!button)return;const person=ch(Number(button.dataset.id));if(person)showProfile(person)});
  function groupHistoryLine(entry){
   const at=Number(entry.at),stamp=Number.isFinite(at)&&at>0?historyDay(at)+' '+historyClock(at):'時刻不明';
   return '['+stamp+'] '+entry.text;

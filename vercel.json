@@ -1,6 +1,14 @@
 {
   "functions": {
-    "api/nekopon.js": {"maxDuration":60,"includeFiles":"nekopon-data/assessment-06ce35ab7c44.json"},
-    "api/himiko-deliver.js": {"maxDuration":60}
+    "api/nekopon.js": {
+      "maxDuration": 60,
+      "includeFiles": "nekopon-data/assessment-06ce35ab7c44.json"
+    },
+    "api/himiko-deliver.js": {
+      "maxDuration": 60
+    },
+    "api/shared-chat-tick.js": {
+      "maxDuration": 60
+    }
   }
 }

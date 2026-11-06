@@ -1,0 +1,13 @@
+Nekopon みんなで異次元グルチャ / 歴史人物AI 第2段階
+
+これはGitHub最新版（1fbf93fedd4f4d912439b7a87dc94ec2d112c5ef）向けの「変更ファイルのみ」セットです。
+ZIPを展開し、フォルダ階層を維持して各ファイルをGitHubの同じ場所にアップロード/上書きしてください。
+
+導入の全手順：shared-chat/PHASE2_導入手順.md
+
+Supabaseはすでに設定済みなので、001_shared_chat.sqlは再実行しないでください。
+追加で実行するのはshared-chat/002_shared_chat_ai.sqlのみです。
+共有AIは初期状態OFFです。管理者が画面でONにするまでAnthropic APIの生成は呼ばれません。
+
+テスト：tests/shared-ai.test.cjs、既存tests/api.test.cjs とも Node.js v22 で通過。
+Supabase本番通信・Vercel本番ジョブ・実機プッシュ通知は未検証です。

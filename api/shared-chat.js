@@ -1,6 +1,6 @@
 'use strict';
 // Isolated pilot API. Uses the end user's JWT; never uses a service-role key.
-const ACTIONS=new Set(['list','create','join','sync','send','read','invite','revoke_invites','approve','remove','hide','leave']);
+const ACTIONS=new Set(['list','create','join','sync','send','read','invite','revoke_invites','approve','remove','hide','leave','ai_toggle','subscribe']);
 module.exports=async function(req,res){
  res.setHeader('Cache-Control','no-store');
  res.setHeader('X-Content-Type-Options','nosniff');
@@ -9,7 +9,7 @@ module.exports=async function(req,res){
  let publicKey=false;
  try{publicKey=key?.startsWith('sb_publishable_')||JSON.parse(Buffer.from(key.split('.')[1],'base64url').toString()).role==='anon';}catch{}
  if(!publicKey||process.env.SHARED_CHAT_ENABLED!=='1'||!url||!key)return res.status(503).json({error:'共有グルチャは準備中です。'});
- if(req.method==='GET')return res.status(200).json({url,key,stage:'human-pilot',aiAvailable:false,pushAvailable:false});
+ if(req.method==='GET')return res.status(200).json({url,key,stage:'shared-ai',aiAvailable:process.env.SHARED_CHAT_AI_ENABLED==='1',pushAvailable:!!(process.env.HIMIKO_VAPID_PUBLIC_KEY&&process.env.HIMIKO_VAPID_PRIVATE_KEY&&process.env.HIMIKO_VAPID_SUBJECT),vapidPublicKey:process.env.HIMIKO_VAPID_PUBLIC_KEY||''});
  if(req.method!=='POST'){res.setHeader('Allow','GET, POST');return res.status(405).json({error:'POSTで送信してください。'});}
  if(req.headers.origin!==`https://${req.headers.host}` && !(process.env.NODE_ENV!=='production'&&req.headers.origin===`http://${req.headers.host}`))return res.status(403).json({error:'アプリから操作してください。'});
  const auth=req.headers.authorization;

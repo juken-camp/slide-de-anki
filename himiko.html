@@ -3,7 +3,15 @@
 <html lang="ja">
 <head>
 <script>if(window.parent!==window)document.documentElement.classList.add("nekopon-embedded");</script>
-  <meta charset="UTF-8"><script>try{document.documentElement.dataset.persona=localStorage.getItem('nekopon-character-theme-v1')==='cyber'?'cyber':'neko'}catch(_){}</script><style>html,body{background:#fff8f0}html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20}</style>
+  <meta charset="UTF-8"><script>try{document.documentElement.dataset.persona=localStorage.getItem('nekopon-character-theme-v1')==='cyber'?'cyber':'neko'}catch(_){}</script><style>html,body{background:#fff8f0}html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20}
+/* Shared group pilot entry, kept separate from the personal group. */
+.shared-chat-join-entry{display:flex;align-items:center;gap:10px;margin:10px 0 17px;padding:12px 15px;border:1px solid #e8d5c5;border-radius:13px;background:#fffbf6;color:#694c35;text-decoration:none;font-size:13px;font-weight:800}
+.shared-chat-join-entry span:nth-child(2){flex:1;min-width:0}
+.shared-chat-join-entry small{display:block;margin-top:2px;font-size:11px;font-weight:500;line-height:1.45;color:#97775f}
+.shared-chat-join-entry:focus-visible{outline:3px solid #bc8d59;outline-offset:2px}
+html[data-persona="cyber"] .shared-chat-join-entry{background:#0d2436;color:#c5ebf7;border-color:#315576}
+html[data-persona="cyber"] .shared-chat-join-entry small{color:#8badc0}
+</style>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <title>卑弥呼と受験対策 | JUKEN CAMP</title>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -1965,6 +1973,9 @@ html[data-persona="cyber"] #group-view .group-search-current{outline-color:#53c9
       </div>
       <span id="group-unread" class="group-unread" hidden></span>
     </div>
+    <a class="shared-chat-join-entry" href="/shared-chat.html" target="_top" rel="noopener" aria-label="みんなで異次元グルチャを開く">
+      <span aria-hidden="true">👥</span><span>みんなで異次元グルチャ<small>家族や友達と、歴史人物も参加する共有ルームへ</small></span><span aria-hidden="true">›</span>
+    </a>
     <p id="filter-count" class="filter-count" aria-live="polite"><span class="filter-count-icon" aria-hidden="true"><span class="count-neko">💬</span><span class="count-yoru">💬</span></span><span class="filter-count-text"></span></p>
     <div class="nekopon-search-panel" aria-label="人物の検索と絞り込み">
       <div class="himiko-search"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="名前や時代で検索するぜ" aria-label="名前や時代で検索するぜ" oninput="renderCards()"></div>

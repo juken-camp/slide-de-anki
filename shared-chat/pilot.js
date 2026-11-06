@@ -2,11 +2,7 @@
 (()=>{
  try { document.documentElement.dataset.persona = localStorage.getItem('nekopon-character-theme-v1') === 'cyber' ? 'cyber' : 'neko'; } catch (_) { document.documentElement.dataset.persona = 'neko'; }
  const $=id=>document.getElementById(id);
- // The public entry is a coming-soon page. Test operators use ?test=1.
- // This is a UI gate, not a server-side access-control boundary.
- const testMode=new URLSearchParams(location.search).get('test')==='1';
- $('coming-soon').hidden=testMode;
- $('login').hidden=!testMode;
+ // The pilot sign-in remains available while the UI is labeled as prelaunch.
  let config,accessToken='',roomId='',view=null,before=null,running=false,otpAt=0,loginEmail='',requestId=null;
  let inviteToken=new URLSearchParams(location.hash.slice(1)).get('invite')||'';
  history.replaceState(null,'',location.pathname+location.search);
@@ -132,7 +128,5 @@
  $('text').addEventListener('input',()=>{const el=$('text');el.style.height='44px';el.style.height=Math.min(el.scrollHeight,118)+'px';});
  $('text').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){e.preventDefault();$('send').click();}});
  $('return-app').addEventListener('click',e=>{if(history.length>1){e.preventDefault();history.back();}});
- if(testMode){
-  fetch('/api/shared-chat',{cache:'no-store'}).then(async r=>{const d=await r.json();if(!r.ok)throw Error(d.error);config=d;status(inviteToken?'招待リンクを受け取りました。ログイン後、参加を申請してください。':'');}).catch(e=>status(e.message||'共有グルチャは準備中です。'));
- }
+ fetch('/api/shared-chat',{cache:'no-store'}).then(async r=>{const d=await r.json();if(!r.ok)throw Error(d.error);config=d;status(inviteToken?'招待リンクを受け取りました。ログイン後、参加を申請してください。':'');}).catch(e=>status(e.message||'共有グルチャは準備中です。'));
 })();

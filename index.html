@@ -9088,19 +9088,22 @@ $('importForm').onsubmit=async e=>{
   if(!frame||!screen)return;
   const root=document.documentElement;
   let inputActive=false,chatActive=false,queued=false;
-  let baseline=window.visualViewport?.height||window.innerHeight;
+  let baseline=Math.max(window.innerHeight,root.clientHeight,window.visualViewport?.height||0);
+  let restoringUntil=0;
   let beforeChatY=0;
   let chatAnchorTop=null;
   function update(){
     queued=false;
     if(screen.hidden){root.classList.remove('himiko-keyboard-open');return;}
-    try{const active=frame.contentDocument?.activeElement;inputActive=!!active?.matches('#msg-input:focus,#group-input:focus');}catch(_){}
+    try{const active=frame.contentDocument?.activeElement;inputActive=!!active?.matches('input:focus,textarea:focus,[contenteditable="true"]:focus');}catch(_){}
     const viewport=window.visualViewport;
     // iOS can restore an obsolete keyboard-sized visual viewport after resume.
     // Only fall back to the layout viewport when no editor is focused.
     const visualHeight=viewport?.height||window.innerHeight;
-    const staleViewport=!inputActive && window.innerHeight-visualHeight>120;
-    const available=staleViewport?window.innerHeight:visualHeight;
+    const layoutHeight=Math.max(window.innerHeight,root.clientHeight);
+    const normalHeight=Math.max(layoutHeight,baseline);
+    const staleViewport=!inputActive && (normalHeight-visualHeight>120||Date.now()<restoringUntil);
+    const available=staleViewport?normalHeight:visualHeight;
     const offset=staleViewport?0:(viewport?.offsetTop||0);
     if(!inputActive)baseline=available;
     const keyboard=inputActive && baseline-available>100;
@@ -9165,7 +9168,7 @@ $('importForm').onsubmit=async e=>{
       inputActive=!!event.data.active;schedule();setTimeout(schedule,150);setTimeout(schedule,400);
     }
   });
-  document.getElementById('navCollections')?.addEventListener('click',schedule);
+  document.getElementById('navCollections')?.addEventListener('click',restoreViewport);
   document.querySelectorAll('#appNavigation button:not(#navCollections)').forEach(button=>button.addEventListener('click',()=>{
     if(chatActive)setChatOpen(false);
     inputActive=false;root.classList.remove('himiko-keyboard-open');
@@ -9177,15 +9180,23 @@ $('importForm').onsubmit=async e=>{
     if(screen.hidden)return;
     try{frame.contentDocument?.activeElement?.blur();}catch(_){}
     inputActive=false;root.classList.remove('himiko-keyboard-open');
+    restoringUntil=Date.now()+1500;
+    root.style.removeProperty('--himiko-viewport-top');
+    root.style.removeProperty('--himiko-viewport-height');
+    root.style.removeProperty('--himiko-chat-top');
+    root.style.removeProperty('--himiko-chat-height');
+    frame.style.removeProperty('--himiko-frame-height');
     chatAnchorTop=null;
-    schedule();setTimeout(schedule,150);setTimeout(schedule,500);
+    schedule();[150,500,1000,1600].forEach(delay=>setTimeout(schedule,delay));
   }
+  new MutationObserver(()=>{if(!screen.hidden)restoreViewport()}).observe(screen,{attributes:true,attributeFilter:['hidden']});
   window.addEventListener('pageshow',restoreViewport);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)restoreViewport()});
   window.addEventListener('orientationchange',()=>{
     chatAnchorTop=null;
     inputActive=false;root.classList.remove('himiko-keyboard-open');
-    setTimeout(()=>{baseline=window.visualViewport?.height||window.innerHeight;schedule()},300);
+    baseline=0;
+    setTimeout(()=>{baseline=Math.max(window.innerHeight,root.clientHeight,window.visualViewport?.height||0);restoreViewport()},300);
   });
 })();
 </script>

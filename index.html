@@ -4031,6 +4031,14 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+<style id="nekopon-list-stable-viewport-20261106">
+/* List height must not retain a keyboard-sized JS pixel measurement.
+   Small viewport units stay independent of the software keyboard. */
+html:not(.himiko-chat-active):not(.himiko-keyboard-open) #app #himikoFrame{
+ height:max(240px,calc(100vh - var(--himiko-list-viewport-inset,88px)))!important;
+ height:max(240px,calc(100svh - var(--himiko-list-viewport-inset,88px)))!important;
+}
+</style>
 <style id="nekopon-question-scroll-boundary-20261101">
 /* The iframe clips at the same bottom edge as the fixed app header.
    Its initial inset lives INSIDE the scroller, so it scrolls away. */
@@ -9106,7 +9114,7 @@ $('importForm').onsubmit=async e=>{
     const available=staleViewport?normalHeight:visualHeight;
     const offset=staleViewport?0:(viewport?.offsetTop||0);
     if(!inputActive)baseline=available;
-    const keyboard=inputActive && baseline-available>100;
+    const keyboard=inputActive && baseline-available>100 && Date.now()>=restoringUntil;
     root.classList.toggle('himiko-keyboard-open',keyboard);
     if(chatActive){
       // Cache the header boundary for the duration of a conversation. Recomputing
@@ -9134,7 +9142,10 @@ $('importForm').onsubmit=async e=>{
       const overlap=Math.max(0,normalTop-(header?.getBoundingClientRect().bottom||0));
       root.style.setProperty('--himiko-list-overlap',overlap+'px');
       const relativeTop=frame.getBoundingClientRect().top-offset;
-      frame.style.setProperty('--himiko-frame-height',Math.max(240,Math.floor(available-Math.max(0,relativeTop)-4))+'px');
+      // Only the top inset is measured. The full height belongs to CSS,
+      // so stale innerHeight/visualViewport values cannot clip the list.
+      root.style.setProperty('--himiko-list-viewport-inset',Math.max(0,Math.round(relativeTop))+4+'px');
+      frame.style.removeProperty('--himiko-frame-height');
     }
   }
   function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}
@@ -9159,7 +9170,7 @@ $('importForm').onsubmit=async e=>{
   frame.addEventListener('load',()=>{
     if(!frame.getAttribute('src'))return;
     frame.classList.add('himiko-ready');
-    window.NekoPushHimikoPlaySettings?.();schedule();
+    window.NekoPushHimikoPlaySettings?.();restoreViewport();
   });
   window.addEventListener('message',event=>{
     if(event.origin!==location.origin||event.source!==frame.contentWindow)return;

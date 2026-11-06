@@ -1,0 +1,30 @@
+/* Additional layout only; all existing chat styling is inherited from himiko.html. */
+html,body{height:100%;width:100%;margin:0;overflow:hidden!important;overscroll-behavior:none}
+#group-view{width:100%;height:100%;position:fixed;inset:0;display:flex;flex-direction:column;overflow:hidden}
+#group-view .chat-header{flex-shrink:0}
+#group-messages{min-height:0;flex:1 1 auto;overflow-y:auto!important;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+#group-messages-inner{min-height:100%;padding-bottom:max(24px,env(safe-area-inset-bottom,0px))}
+#group-title{cursor:default;display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:8px 0}
+#group-view .group-heading-text{min-width:0;gap:8px}
+#sengoku-period-badge{flex:none;border:1px solid #dcb68b;color:#a56538;border-radius:9px;font-size:10px;font-weight:800;padding:3px 7px;white-space:nowrap}
+.sengoku-avatar-placeholder{display:block!important;flex-shrink:0;border:1.5px dashed #d1a985!important;background:rgba(182,127,71,.06)!important;border-radius:14px;overflow:hidden}
+#group-header-avatar{width:40px;height:40px;cursor:default!important}
+.sengoku-avatar-placeholder img{display:block;height:100%;width:100%;object-fit:cover}
+#sengoku-empty,#sengoku-empty-members{padding:60px 20px 20px;text-align:center;font-size:13px;font-weight:700;opacity:.65}
+#group-messages .bubble-row.assistant{align-items:flex-start}
+#group-messages .bubble-row.user{justify-content:flex-end}
+#group-messages .bubble-row.user .group-reply-content{max-width:82%}
+#group-messages .bubble-avatar{overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#group-messages .bubble-avatar img{width:100%;height:100%;object-fit:cover}
+#group-messages .group-reply-name{display:block}
+#group-messages .history-message-time{font-size:10px;opacity:.6;margin-top:3px}
+#group-messages .sengoku-date{padding:14px 0 8px;text-align:center;font-size:10px;font-weight:700;opacity:.6}
+#group-members{background:#fffcf7!important}
+#group-member-list .sengoku-member{display:flex;align-items:center;gap:10px;border-bottom:1px solid #ead2b9;padding:9px 4px;font-size:13px;font-weight:700}
+#group-member-list .sengoku-member .bubble-avatar{width:34px;height:34px;border-radius:12px;background:#f2dabd;display:grid;place-items:center;overflow:hidden}
+#group-member-list .sengoku-member img{width:100%;height:100%;object-fit:cover}
+html[data-persona="cyber"] #group-members{background:#0f1430!important}
+html[data-persona="cyber"] #sengoku-period-badge{color:#8fd6ec;border-color:#446e89}
+html[data-persona="cyber"] .sengoku-avatar-placeholder{background:#10283d!important;border-color:#446e89!important}
+html[data-persona="cyber"] #group-member-list .sengoku-member{border-color:#315576}
+@media(max-width:360px){#sengoku-period-badge{padding:2px 5px;font-size:9px}#group-view .group-heading-text{gap:4px}}

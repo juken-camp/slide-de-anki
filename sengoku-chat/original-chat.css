@@ -1,0 +1,2009 @@
+html,body{background:#fff8f0}html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20}
+/* Shared room entry: use the original group card geometry; image slot stays empty. */
+#list-view .shared-chat-join-entry{display:block;margin:10px 0 0;text-decoration:none;cursor:pointer;animation:none}
+#list-view .shared-chat-join-entry .card-inner{gap:10px}
+#list-view .shared-chat-join-entry .shared-entry-placeholder{flex:none;width:50px;height:50px;border-radius:15px;border:1.5px dashed #d1a985;background:rgba(182,127,71,.06);overflow:hidden}
+#list-view .shared-chat-join-entry .shared-entry-placeholder img{display:block;width:100%;height:100%;object-fit:cover}
+#list-view .shared-chat-join-entry .card-info{flex:1;min-width:0}
+#list-view .shared-entry-title{font-size:16px;font-weight:900;line-height:1.4;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#1e293b}
+#list-view .shared-entry-caption{font-size:12px;font-weight:700;line-height:1.6;margin-top:4px;color:#a07960}
+#list-view .shared-chat-join-entry:focus-visible{outline:2px solid #bc8d59;outline-offset:3px}
+#list-view .shared-chat-join-entry:active{transform:scale(.99)}
+html[data-persona="cyber"] #list-view .shared-entry-placeholder{border-color:#446e89;background:rgba(30,112,150,.08)}
+html[data-persona="cyber"] #list-view .shared-entry-title{color:#e0eaff}
+html[data-persona="cyber"] #list-view .shared-entry-caption{color:#92c7e5}
+@media(max-width:390px){#list-view .shared-entry-title{font-size:14px}#list-view .shared-entry-caption{font-size:11px}}
+
+/* ----- original chat style block ----- */
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { height:100%; overflow:hidden; background:#fff; }
+    html, body { overflow-x:hidden; max-width:100%; }
+    body { font-family:'M PLUS Rounded 1c',sans-serif; background:#fff; height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+    .hidden{display:none!important}
+    #list-view{min-height:calc(100dvh + 2px);background:#f0f4ff}
+    #chat-view{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;overflow:hidden;max-width:100%;background:#fff;}
+    .input-area{padding:11px 12px calc(20px + env(safe-area-inset-bottom, 0px));background:#fff;border-top:2px solid #f1f5f9;flex-shrink:0;}
+    .header{background:#fff;border-bottom:3px solid #e2e8f0;padding:0 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.07)}
+    .header-inner{max-width:700px;margin:0 auto;padding:12px 0;display:flex;align-items:center;gap:12px}
+    .logo-box{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:12px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    #search-input{background:#f8fafc;border:2px solid #e2e8f0;border-radius:12px;padding:8px 14px;font-size:13px;color:#1e293b;width:155px;font-family:inherit;min-width:0}
+    @media (max-width:375px){#search-input{width:100px;padding:8px 10px}}
+    @media (max-width:320px){#search-input{width:75px;padding:8px 8px;font-size:12px}}
+    .main-content{max-width:700px;margin:0 auto;padding:16px 12px 80px}
+    .hero{background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 55%,#a78bfa 100%);border-radius:20px;padding:22px 20px;margin-bottom:18px;animation:fadeUp 0.5s;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;right:-10px;top:-10px;font-size:90px;opacity:0.08;animation:float 4s ease-in-out infinite}
+    .tag-bar{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:2px 0}
+    .tag-btn{flex:0 0 auto;padding:8px 16px;border-radius:100px;border:2px solid #e2e8f0;background:#fff;color:#64748b;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap;transition:all 0.2s}
+    .tag-btn.active{border-color:#6366f1;background:#6366f1;color:#fff}
+    .fav-btn{font-size:20px;color:#cbd5e1;cursor:pointer;transition:all 0.2s;line-height:1;padding:4px;flex-shrink:0;align-self:center}
+    .fav-btn.faved{color:#f59e0b}
+    @media(hover:hover){.fav-btn:hover{color:#f59e0b;transform:scale(1.2)}}
+    .card-list{display:flex;flex-direction:column;gap:9px}
+    .char-card{background:#fff;border:2px solid #f1f5f9;border-radius:16px;padding:13px 15px;cursor:pointer;text-align:left;transition:all 0.18s;width:100%;box-shadow:0 1px 6px rgba(0,0,0,0.05);animation:fadeUp 0.4s ease-out both}
+    .char-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.10)}
+    .card-inner{display:flex;align-items:center;gap:13px}
+    .avatar{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:25px;flex-shrink:0;position:relative}
+    .online-dot{position:absolute;bottom:-1px;right:-1px;background:#22c55e;border-radius:50%;width:11px;height:11px;border:2px solid #fff}
+    .card-info{flex:1;min-width:0}
+    .card-name-row{display:flex;align-items:center;flex-wrap:wrap;gap:4px 7px;margin-bottom:3px}.era-badge{display:inline-block;white-space:nowrap;font-size:9px;padding:1px 6px;border-radius:100px;font-weight:800}
+    .card-tag{font-size:10px;padding:2px 8px;border-radius:100px;font-weight:800;flex-shrink:0}
+    .online-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:#dcfce7;color:#16a34a;font-weight:800}
+    .explainer-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:#ede9fe;color:#6d28d9;font-weight:800;border:1px solid #ddd6fe}
+    .narrator-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:#ede9fe;color:#6d28d9;font-weight:800;border:1px solid #ddd6fe}
+    .chat-header{background:#fff;border-bottom:2px solid #f1f5f9;padding:10px 14px;display:flex;align-items:center;gap:11px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.06);position:relative;z-index:10;}
+    .back-btn{background:none;border:none;padding:4px 8px 4px 0;color:#94a3b8;cursor:pointer;font-size:20px;font-weight:700;line-height:1;flex-shrink:0;transition:color 0.15s}
+    .back-btn:active{color:#6366f1}
+    .chat-avatar{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .messages{flex:1;min-height:0;overflow-y:auto;overflow-anchor:none;padding:14px 12px 22px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:#f0f4ff;}
+    .messages-inner{max-width:700px;margin:0 auto;}
+    .bio-card{background:#fff;border-radius:16px;padding:13px 15px;margin-bottom:12px;animation:fadeUp 0.4s}
+    .bio-inner{display:flex;gap:10px;align-items:flex-start}
+    /* 質問候補は送信メッセージと同じ右側に配置 */
+    .suggestions{display:flex;flex-direction:column;align-items:flex-end;gap:7px;margin:14px 0 18px 38px;animation:messageArrive .32s ease-out both;}
+    .suggestions-label{font-size:11px;color:#64748b;font-weight:700;text-align:right;}
+    .suggestions-list{display:flex;flex-direction:column;align-items:flex-end;width:100%;gap:8px;}
+    .suggestion-btn{display:block;width:fit-content;max-width:94%;min-height:40px;background:#fff;border-radius:16px 16px 5px 16px;padding:9px 13px;font-size:12px;line-height:1.7;font-weight:700;cursor:pointer;transition:transform .13s,background-color .13s,box-shadow .13s;text-align:left;overflow-wrap:anywhere;touch-action:manipulation;box-shadow:0 2px 6px rgba(0,0,0,.035);}
+    .suggestion-btn:active{transform:translateY(1px) scale(.98);background:#f8fafc;box-shadow:none;}
+    .suggestion-btn:focus-visible,.reveal-skip:focus-visible{outline:2px solid #4f46e5;outline-offset:3px;}
+    @media(hover:hover){.suggestion-btn:hover{background:#f8fafc;}}
+    .bubble-group{margin-bottom:14px;}
+    .bubble-row{display:flex;margin-bottom:10px;gap:8px;align-items:flex-end;}
+    .bubble-row.user{justify-content:flex-end;margin-bottom:15px;}
+    .bubble-row.is-new{animation:bubbleMessageArrive .4s cubic-bezier(.2,.7,.2,1) backwards;}
+    .bubble-row.continuation{margin-top:-3px;}
+    .bubble-avatar,.bubble-avatar-spacer{width:33px;min-width:33px;height:33px;flex-shrink:0;}
+    .bubble-avatar{border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px;padding:0;border:0;appearance:none;cursor:pointer;touch-action:manipulation;}
+    .bubble-avatar:focus-visible{outline:3px solid #66aacc;outline-offset:3px;}
+    .bubble{max-width:82%;padding:11px 15px;font-size:14px;line-height:1.85;font-weight:500;white-space:pre-wrap;overflow-wrap:anywhere;}
+    .bubble.user{border-radius:18px 18px 4px 18px;color:#fff;}
+    .bubble.assistant{border-radius:18px 18px 18px 4px;background:#fff;color:#1e293b;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+    .typing{padding:12px 16px;border-radius:18px 18px 18px 4px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;gap:5px;align-items:center;min-height:40px;}
+    .typing-dot{width:7px;height:7px;border-radius:50%;animation:himikoTyping 1.1s ease-in-out infinite;}
+    .reveal-status{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:82%;margin:1px 0 12px 41px;}
+    .reveal-typing-bubble{display:flex;align-items:center;gap:5px;flex:0 0 auto;min-height:40px;box-sizing:border-box;}
+    .reveal-skip{border:1px solid #cbd5e1;background:#fff;color:#475569;padding:7px 11px;border-radius:999px;font:700 11px 'M PLUS Rounded 1c',sans-serif;cursor:pointer;white-space:nowrap;min-height:36px;}
+    .reveal-skip:active{transform:scale(.97);}
+    @keyframes messageArrive{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes bubbleMessageArrive{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes himikoTyping{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-5px);opacity:1}}
+    @media(prefers-reduced-motion:reduce){.bubble-row.is-new,.suggestions,.typing-dot{animation:none!important}.suggestion-btn,.reveal-skip{transition:none!important}}
+    .error-msg{text-align:center;padding:9px 14px;background:#fef2f2;border:2px solid #fecaca;border-radius:12px;color:#ef4444;font-size:12px;font-weight:700;margin-bottom:11px}
+    .input-inner{display:flex;gap:8px;max-width:640px;margin:0 auto;align-items:flex-end}
+    #msg-input{flex:1;background:#f8fafc;border:2px solid #e2e8f0;border-radius:13px;padding:11px 15px;font-size:14px;line-height:1.6;font-family:inherit;color:#1e293b;transition:border-color 0.2s}
+    .send-btn{width:44px;height:44px;border-radius:13px;border:none;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s}
+    .send-btn:disabled{background:#f1f5f9;color:#94a3b8;cursor:default;box-shadow:none}
+    .empty-state{text-align:center;padding:40px;color:#94a3b8}
+    /* プロフィールモーダル */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200;display:flex;align-items:flex-end;justify-content:center;animation:fadeIn 0.2s}
+    .modal-overlay.closing{animation:fadeOut 0.2s forwards}
+    .modal-sheet{background:#fff;border-radius:24px 24px 0 0;padding:20px 20px 36px;width:100%;max-width:700px;animation:slideUp 0.28s cubic-bezier(0.34,1.56,0.64,1)}
+    .modal-sheet.closing{animation:slideDown 0.22s ease-in forwards}
+    .modal-handle{width:40px;height:4px;background:#e2e8f0;border-radius:4px;margin:0 auto 18px}
+    .modal-close{float:right;background:#f1f5f9;border:none;border-radius:10px;padding:6px 12px;font-size:12px;font-weight:800;color:#64748b;cursor:pointer}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes fadeOut{from{opacity:1}to{opacity:0}}
+    @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+    @keyframes slideDown{from{transform:translateY(0)}to{transform:translateY(100%)}}
+    .header-tap{cursor:pointer;display:flex;align-items:center;gap:10px;flex:1;padding:4px 6px;border-radius:12px;transition:background 0.15s}
+    .header-tap:active{background:#f1f5f9}
+    .info-hint{font-size:10px;color:#94a3b8;font-weight:700;margin-top:1px}
+    .chat-header .header-tap{min-width:0}
+    .chat-reset{flex-shrink:0;padding:7px 9px;border:1px solid #e2e8f0;border-radius:10px;background:#fff;color:#475569;font:800 11px 'M PLUS Rounded 1c',sans-serif;cursor:pointer;white-space:nowrap}
+    .chat-reset:disabled{opacity:.4;cursor:default}
+    .chat-reset:focus-visible,.older-history:focus-visible{outline:2px solid #6366f1;outline-offset:3px}
+    .chat-storage-status{min-height:19px;padding:3px 13px 4px;border-bottom:1px solid #edf2f7;background:#fff;color:#64748b;font-size:10px;font-weight:700;text-align:right;flex-shrink:0}
+    .chat-storage-status[data-state="error"]{color:#b91c1c;background:#fff7f7}
+    .older-history{display:block;max-width:270px;margin:4px auto 18px;padding:8px 13px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;color:#4f46e5;font:800 12px 'M PLUS Rounded 1c',sans-serif;cursor:pointer}
+    .history-loading{padding:24px;text-align:center;color:#64748b;font-weight:700;font-size:12px}
+    @media(max-width:360px){#chat-name{font-size:13px!important}.chat-reset{padding:6px 7px;font-size:10px}.chat-header{gap:5px;padding:7px 9px}.chat-avatar{width:35px;height:35px;font-size:19px}}
+    @media(prefers-reduced-motion:reduce){.older-history,.chat-reset{transition:none}}
+  
+/* ----- original chat style block ----- */
+
+/* Match the surrounding app while keeping the original avatars and chat bubbles. */
+html,body,#list-view{background:#fff8f0;color:#754b2f}
+.header{background:#fffaf4;border-bottom:1px solid #e4cbb3;box-shadow:none}
+.logo-box{background:#f3dfc6}
+.himiko-subtitle{font-size:10px;color:#a17150;font-weight:700;margin-top:2px}
+#search-input{background:#fffdf8;border:1px solid #dbbd9f;color:#754b2f}
+.tag-btn{background:#fffaf4;border:1px solid #dcc2aa;color:#8c6042}
+.tag-btn.active{background:#a85c2d;border-color:#a85c2d;color:#fff}
+.char-card{background:#fffdf8;border:1px solid #e4cbb3;box-shadow:none}
+.main-content{padding-top:14px}
+html[data-persona="cyber"],html[data-persona="cyber"] body,html[data-persona="cyber"] #list-view{background:#080d20;color:#dceaff}
+html[data-persona="cyber"] .header{background:#0f1430;border-color:#315576}
+html[data-persona="cyber"] .header-inner>div>div>div:first-child{color:#def5ff!important}
+html[data-persona="cyber"] .himiko-subtitle{color:#9cb9d4}
+html[data-persona="cyber"] .logo-box{background:#11344a}
+html[data-persona="cyber"] #search-input{background:#0a1127;border-color:#315b81;color:#e0eaff}
+html[data-persona="cyber"] .tag-btn{background:#101b35;border-color:#315576;color:#beddf0}
+html[data-persona="cyber"] .tag-btn.active{background:#083c4c;border-color:#00dce9;color:#bffaff}
+html[data-persona="cyber"] .char-card{background:#101b35;border-color:#315576!important;box-shadow:none!important}
+html[data-persona="cyber"] .card-name-row>span:first-child{color:#e0eaff!important}
+html[data-persona="cyber"] .card-info>div:last-child{color:#a8d8f3!important}
+html[data-persona="cyber"] .empty-state{color:#c8dff2}
+html[data-persona="cyber"] #chat-view{background:#080d20}
+html[data-persona="cyber"] .chat-header,html[data-persona="cyber"] .chat-storage-status,html[data-persona="cyber"] .input-area{background:#101b35;border-color:#315576}
+html[data-persona="cyber"] #chat-name{color:#e0eaff!important}
+html[data-persona="cyber"] .chat-storage-status,html[data-persona="cyber"] #chat-period{color:#a9c6df!important}
+html[data-persona="cyber"] .messages{background:#080d20}
+html[data-persona="cyber"] #msg-input{background:#0a1127;color:#e0eaff;border-color:#315576}
+html[data-persona="cyber"] .back-btn{color:#b7eaff}
+
+@media(max-width:420px){.header-inner{flex-wrap:wrap;gap:8px}.header-inner>div{flex:1 1 100%!important}#search-input{width:100%}}
+
+/* ----- original chat style block ----- */
+
+/* Prevent iOS focus zoom and keep badges legible in narrow cards. */
+#msg-input,#search-input{font-size:16px}
+.card-info .character-period{min-width:0;overflow-wrap:anywhere}
+.card-info .narrator-badge{white-space:nowrap;flex:none;line-height:1.4}
+html[data-persona="cyber"] .bubble.assistant,html[data-persona="cyber"] .typing{background:#162743;color:#e5f2ff;box-shadow:0 2px 8px #0003}
+html[data-persona="cyber"] .bubble.user{background:linear-gradient(135deg,#07516b,#19447a)!important;color:#f0fbff;box-shadow:0 3px 10px #001c2f55!important}
+html[data-persona="cyber"] .suggestion-btn{background:#112540!important;border-color:#366783!important;color:#c5edff!important;box-shadow:none}
+html[data-persona="cyber"] .suggestion-btn:active{background:#16445b!important}
+html[data-persona="cyber"] .suggestions-label{color:#a9c6df}
+html[data-persona="cyber"] .chat-reset,html[data-persona="cyber"] .older-history,html[data-persona="cyber"] .reveal-skip{background:#10233d;border-color:#39637f;color:#c5edff}
+html[data-persona="cyber"] .send-btn:disabled{background:#23334d;color:#849bb5}
+
+/* ----- original chat style block ----- */
+
+/* Let the app background show through the chat without changing the bubbles. */
+html[data-chat-open],html[data-chat-open] body,html[data-chat-open] #chat-view,html[data-chat-open] .messages{background:transparent!important;background-image:none!important}
+html[data-chat-open] .chat-header,html[data-chat-open] .chat-storage-status,html[data-chat-open] .input-area{background:transparent!important;box-shadow:none;border-color:#d9c5b5}
+html[data-persona="cyber"][data-chat-open] .chat-header,html[data-persona="cyber"][data-chat-open] .chat-storage-status,html[data-persona="cyber"][data-chat-open] .input-area{border-color:#315576}
+/* The status badges have their own row, leaving room for the full name and dates. */
+.chat-header{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:6px 8px;padding:10px 12px}
+.chat-header .back-btn{grid-column:1;grid-row:1;min-height:40px}
+.chat-header .header-tap{grid-column:2;grid-row:1;min-width:0;display:flex;padding:2px 0;gap:9px}
+.chat-header .header-tap>div:last-child{min-width:0}
+.chat-header #chat-name{overflow:visible!important;text-overflow:clip!important;white-space:normal!important;overflow-wrap:anywhere;line-height:1.3}
+.chat-header .chat-name-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 7px;min-width:0}.chat-header .chat-name-row #online-badge{flex:none;white-space:nowrap}.chat-header #chat-period{white-space:normal;overflow-wrap:anywhere;line-height:1.45}
+.chat-header .chat-reset{grid-column:3;grid-row:1;height:38px;min-height:38px;width:38px;min-width:38px;padding:0!important;display:grid;place-items:center;font-family:system-ui,sans-serif!important;font-size:26px!important;font-weight:700;line-height:1;white-space:nowrap}
+.chat-header #online-badge,.chat-header #explainer-badge,.chat-header #narrator-badge{grid-column:2 / 4;grid-row:2;justify-self:start}
+.chat-header :is(#explainer-badge,#narrator-badge){flex-direction:row!important;flex-wrap:wrap;gap:5px!important}
+.chat-header :is(#online-badge,#explainer-badge,#narrator-badge).hidden{display:none!important}
+@media(max-width:390px){.chat-header{grid-template-columns:26px minmax(0,1fr) auto;gap:5px}.chat-header .chat-avatar{width:38px;height:38px;font-size:20px}.chat-header .chat-reset{padding:6px 7px;font-size:11px}.chat-header #chat-name{font-size:14px!important}}
+
+/* ----- original chat style block ----- */
+
+/* Match the test chat surfaces, including inside the embedded frame. */
+html[data-chat-open],html[data-chat-open] body,html[data-chat-open] #chat-view,html[data-chat-open] .messages{background:#fffcf7!important;background-image:none!important}
+html[data-persona="cyber"][data-chat-open],html[data-persona="cyber"][data-chat-open] body,html[data-persona="cyber"][data-chat-open] #chat-view,html[data-persona="cyber"][data-chat-open] .messages{background:#0f1430!important;background-image:none!important}
+html[data-chat-open] .chat-header,html[data-chat-open] .chat-storage-status,html[data-chat-open] .input-area{background:#fffcf7!important;border-color:#ead2b9}
+html[data-persona="cyber"][data-chat-open] .chat-header,html[data-persona="cyber"][data-chat-open] .chat-storage-status,html[data-persona="cyber"][data-chat-open] .input-area{background:#0f1430!important;border-color:#315576}
+html[data-persona="cyber"] .bubble.assistant,html[data-persona="cyber"] .typing{background:#0d223a;color:#e5f2ff;border:1px solid #3c7793;box-shadow:none}
+html[data-persona="cyber"] .suggestion-btn{background:#0d223a!important;border:1px solid #3c7793!important;color:#c5edff!important}
+html[data-chat-open] .input-area{padding:8px 12px 10px}
+html[data-chat-open] .input-inner{align-items:center}
+#msg-input{font-size:16px;min-height:44px;padding:9px 12px;line-height:1.5;resize:none}
+#msg-input::placeholder{font-size:12px;opacity:1}
+
+/* ----- original chat style block ----- */
+
+#list-view .header{position:static;background:transparent;border:0;box-shadow:none;padding:0 12px}
+#list-view .header-inner{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:8px 0 0}
+#list-view .header-inner>div{width:100%}
+#list-view .himiko-page-title{margin:0;font-size:18px;font-weight:800;line-height:1.45;letter-spacing:0;color:#754b2f}
+#list-view .himiko-subtitle{font-size:11px;line-height:1.5}
+#list-view #search-input{width:100%;min-height:44px}
+html[data-persona="cyber"] #list-view .himiko-page-title{color:#e0eaff;text-shadow:0 0 12px #00f5ff22}
+
+/* ----- original chat style block ----- */
+
+html,body{-webkit-text-size-adjust:100%;text-size-adjust:100%;font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif}
+#list-view .himiko-page-title{font-family:inherit;font-size:18px;font-weight:800;line-height:1.45;letter-spacing:0}
+#list-view .himiko-subtitle{font-family:inherit;font-size:11px;font-weight:600;line-height:1.5}
+html[data-persona="cyber"] #search-input::placeholder{color:#9fbad2;opacity:1}
+html[data-persona="cyber"] #search-input::-webkit-input-placeholder{color:#9fbad2;opacity:1}
+#chat-storage-status:not([data-state="error"]){display:none!important}
+#chat-storage-status[data-state="error"]{border:0;padding:5px 12px;font-size:11px;min-height:0}
+html[data-chat-open] .chat-header{border-bottom:1px solid #ead2b9!important}
+html[data-persona="cyber"][data-chat-open] .chat-header{border-bottom-color:#315576!important}
+html[data-persona="cyber"] .send-btn:disabled{background:#1c3049!important;color:#7899b1!important;border:1px solid #315576;box-shadow:none!important}
+html[data-persona="cyber"] .send-btn:not(:disabled){background:linear-gradient(135deg,#00d9df,#2baee4)!important;color:#062539!important;border:1px solid #42e9f6;box-shadow:none!important}
+
+/* ----- original chat style block ----- */
+#list-view .header-inner,#list-view .main-content{max-width:800px}
+/* ----- original chat style block ----- */
+
+#msg-input{box-sizing:border-box;height:44px;min-height:44px;padding:11px 12px;line-height:20px}
+#msg-input::placeholder{font-size:14px;line-height:20px}
+#msg-input{display:block;min-width:0;overflow-y:auto;-webkit-appearance:none}
+#list-view .header-inner{padding-top:8px;gap:0}
+#list-view .himiko-page-title{display:flex;align-items:baseline;gap:8px;white-space:nowrap;min-width:0;margin:4px 0 0}
+#list-view .himiko-heading{font:800 18px/1.45 "Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;letter-spacing:0;flex:none}
+#list-view .himiko-credit{font:700 clamp(9px,2.6vw,12px)/1.4 "M PLUS Rounded 1c",sans-serif;color:#a17150;min-width:0}
+html[data-persona="cyber"] #list-view .himiko-credit{color:#9cb9d4}
+#list-view .himiko-subtitle{margin:10px 0 22px;font-family:"Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;font-size:11px;font-weight:600;line-height:1.5;color:#8c6042}
+html[data-persona="cyber"] #list-view .himiko-subtitle{color:#c5edff}
+/* Match the app's focus ring and pressed feedback. */
+#search-input:focus,#msg-input:focus{outline:2px solid #d2691e;outline-offset:2px;border-color:#d2691e}
+html[data-persona="cyber"] :is(#search-input,#msg-input):focus{border:2px solid #00f5ff!important;outline:2px solid #00f5ff83!important;outline-offset:2px;box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16!important;caret-color:#00f5ff}
+:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close){-webkit-tap-highlight-color:transparent;transition:transform .14s,filter .14s,box-shadow .14s,border-color .14s}
+:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{transform:scale(.98);filter:brightness(.96)}
+html[data-persona="cyber"] :is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{filter:brightness(1.18);box-shadow:0 0 14px #00f5ff80!important;border-color:#00e9f5!important}
+@media(prefers-reduced-motion:reduce){:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{transform:none}}
+#list-view .main-content{padding-top:14px}
+
+.filter-panel{border:1px solid #e4cbb3;border-radius:16px;background:#fffaf2;padding:10px 12px;margin:0 0 12px}
+.filter-section+.filter-section{border-top:1px solid #ead2b9}
+.filter-heading{width:100%;min-height:42px;display:flex;align-items:center;justify-content:space-between;text-align:left;border:0;background:transparent;color:#754b2f;font-family:inherit;font-size:13px;font-weight:700;line-height:1.5;cursor:pointer}
+.filter-heading small{font-size:10px;color:#a17150}
+.filter-buttons{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0 12px}
+.filter-buttons[hidden]{display:none}
+.filter-choice{min-height:38px;padding:7px 11px;border:1.5px solid #dfbb99;border-radius:11px;background:#fffdf8;color:#854b26;font-family:inherit;font-size:12px;font-weight:700;line-height:1.4;cursor:pointer}
+.filter-choice .era-date{display:block;font-size:9px;font-weight:500;line-height:1.25;margin-top:3px;opacity:.85}
+.filter-choice.active{background:#fff0df;border-color:#d2691e;color:#8b4513;box-shadow:0 0 0 1px #d2691e}
+.filter-clear{display:block;margin:5px 0 0 auto;padding:7px;border:0;background:transparent;color:#9a6946;font-family:inherit;font-size:11px;font-weight:600;cursor:pointer}
+.filter-clear[hidden]{display:none}
+.filter-hint{font-size:10px;line-height:1.5;color:#a17150;margin:2px 0 6px}html[data-persona="cyber"] .filter-hint{color:#9cb9d4}
+.filter-count{font-size:11px;color:#a17150;text-align:right;margin:0 0 8px}
+html[data-persona="cyber"] .filter-panel{background:#0f1430;border-color:#315576}
+html[data-persona="cyber"] .filter-section+.filter-section{border-color:#315576}
+html[data-persona="cyber"] .filter-heading,html[data-persona="cyber"] .filter-count,html[data-persona="cyber"] .filter-clear{color:#c5edff}
+html[data-persona="cyber"] .filter-heading small{color:#9cb9d4}
+html[data-persona="cyber"] .filter-choice{background:#101b35;border-color:#315b81;color:#c5ddf0}
+html[data-persona="cyber"] .filter-choice.active{background:#083c4c;border-color:#00e9f5;color:#e1ffff;box-shadow:0 0 12px #00e9f577,inset 0 0 8px #00e9f529}
+html[data-persona="cyber"] :is(.filter-choice,.filter-heading,.filter-clear):active{filter:brightness(1.2);box-shadow:0 0 12px #00e9f577}
+
+/* Match the catalogue search and horizontal selection rows. */
+#list-view .himiko-search{display:flex;align-items:center;gap:8px;padding:0 14px;min-height:46px;border:1px solid #ead5c2;background:#fff;border-radius:13px}
+#list-view .himiko-search>span{font-size:27px;line-height:1;color:#b78058}
+#list-view .himiko-search #search-input{flex:1;min-width:0;min-height:46px;padding:0;border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;color:inherit;font-family:"Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;font-size:16px}
+#list-view .himiko-search input::placeholder{font-size:13px;color:#b49a86}
+#list-view .himiko-search:focus-within{outline:2px solid #d2691e;outline-offset:2px}
+html[data-persona="cyber"] #list-view .himiko-search{background:#0b1831;border:2px solid #3c6f94;color:#dffaff;box-shadow:0 0 11px #00f5ff2c}
+html[data-persona="cyber"] #list-view .himiko-search>span{color:#00f5ff}
+html[data-persona="cyber"] #list-view .himiko-search:focus-within{border-color:#00f5ff;outline:2px solid #00f5ff83;outline-offset:2px;box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16}
+#list-view .filter-section+.filter-section{border:0}
+#list-view .filter-heading{min-height:0;padding:8px 0;font-size:12px}
+#list-view .filter-buttons{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;gap:7px;padding:0 1px 10px;scrollbar-width:thin}
+#list-view .filter-choice{flex:0 0 auto;white-space:nowrap;min-width:78px;min-height:46px}
+
+/* ----- original chat style block ----- */
+
+/* カタログと同じ一枚のパネル。検索欄も枠内に収める。 */
+#list-view .nekopon-search-panel{width:100%;min-width:0;padding:12px;border:2px solid #dcc4ad;
+ border-radius:17px;background:#fffdf8;margin:0 0 14px;box-shadow:none}
+#list-view .nekopon-search-panel .himiko-search{box-sizing:border-box;width:100%;min-height:48px;height:48px;
+ display:flex;align-items:center;gap:10px;padding:0 14px;margin:0 0 12px;
+ border:2px solid #c8a789;border-radius:13px;background:#fff;color:#754b2f;box-shadow:none}
+#list-view .nekopon-search-panel .himiko-search>span{font-size:24px;line-height:1;color:#a16b43}
+#list-view .nekopon-search-panel .himiko-search #search-input{display:block;flex:1;width:100%;min-width:0;
+ height:44px;min-height:44px;margin:0;padding:0;border:0!important;outline:0!important;
+ background:transparent!important;background-image:none!important;box-shadow:none!important;
+ font-size:16px;color:inherit}
+#list-view .nekopon-search-panel #search-input::placeholder{font-size:14px!important;color:#a58e7c!important;opacity:1!important}
+#list-view .nekopon-search-panel .himiko-search:focus-within{border-color:#d2691e;outline:2px solid #d2691e77;outline-offset:2px}
+#list-view .nekopon-search-panel .filter-panel{margin:0;padding:0;border:0;background:transparent;box-shadow:none}
+#list-view .nekopon-filter-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;
+ min-width:0;margin:0;padding:0;align-items:stretch}
+#list-view .nekopon-filter-tabs button{display:flex;align-items:center;justify-content:center;min-width:0;
+ min-height:48px;padding:7px 2px;border:3px solid #c8a789;border-radius:13px;
+ background:#fffaf4;color:#754b2f;box-shadow:0 2px 0 #e7cfb7;
+ font:800 clamp(11px,3.2vw,15px)/1.3 'M PLUS Rounded 1c',system-ui,sans-serif;white-space:nowrap;cursor:pointer}
+#list-view .nekopon-filter-tabs button[aria-expanded="true"]{background:#ffe7c8;border-color:#d2691e;color:#763b1d}
+#list-view .nekopon-filter-tabs button .filter-tab-count{margin-left:2px;font-size:10px;opacity:.9}
+#list-view .filter-section[hidden]{display:none!important}
+#list-view .nekopon-search-panel .filter-section{margin:12px 0 0;padding:13px 2px 0;
+ border-top:2px solid #ebdbc9!important}
+#list-view .nekopon-search-panel .filter-heading{display:none}
+#list-view .nekopon-search-panel .filter-buttons{display:flex;flex-wrap:wrap;align-items:stretch;
+ gap:8px;padding:0 0 4px;margin:0;overflow:visible;max-width:100%}
+#list-view .nekopon-search-panel .filter-choice{flex:0 1 auto;min-width:80px;min-height:46px;
+ padding:8px 12px;border:3px solid #c8a789;border-radius:13px;background:#fffaf4;
+ color:#754b2f;font-size:13px;font-weight:800;white-space:normal;box-shadow:0 2px 0 #e7cfb7}
+#list-view .nekopon-search-panel .filter-choice.active{background:#ffe7c8;border-color:#d2691e;color:#763b1d;box-shadow:0 0 0 1px #d2691e}
+#list-view .nekopon-search-panel .filter-clear{margin:9px 0 0 auto;min-height:35px}
+html[data-persona="cyber"] #list-view .nekopon-search-panel{background:#0f1430!important;
+ border:2px solid #315576!important;color:#e0eaff!important;box-shadow:0 0 20px #00f5ff0d!important}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search{background:#0b1831!important;
+ border:2px solid #3c6f94!important;color:#dffaff!important;box-shadow:0 0 11px #00f5ff2c!important}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search>span{color:#00f5ff!important}
+html[data-persona="cyber"] #list-view .nekopon-search-panel #search-input{color:#e0eaff!important;
+ background:transparent!important;border:0!important;box-shadow:none!important;-webkit-text-fill-color:#e0eaff!important}
+html[data-persona="cyber"] #list-view .nekopon-search-panel #search-input::placeholder,
+html[data-persona="cyber"] #list-view .nekopon-search-panel #search-input::-webkit-input-placeholder{
+ color:#9fbad2!important;-webkit-text-fill-color:#9fbad2!important;opacity:1!important;font-size:14px!important}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search:focus-within{
+ border-color:#00f5ff!important;outline:2px solid #00f5ff83!important;
+ box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16!important}
+html[data-persona="cyber"] #list-view .nekopon-filter-tabs button,
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-choice{
+ background:#0a1127!important;color:#cbdcf4!important;border:3px solid #365d7b!important;
+ box-shadow:0 0 10px #00f5ff12!important}
+html[data-persona="cyber"] #list-view .nekopon-filter-tabs button[aria-expanded="true"],
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-choice.active{
+ background:#083c4c!important;color:#bffaff!important;border-color:#00e9f5!important;
+ box-shadow:0 0 12px #00e9f566!important}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-section{
+ border-top-color:#315576!important}
+@media(max-width:370px){#list-view .nekopon-search-panel{padding:10px}
+ #list-view .nekopon-filter-tabs{gap:5px}#list-view .nekopon-filter-tabs button{padding:7px 1px;font-size:11px}
+ #list-view .nekopon-search-panel .himiko-search{padding:0 10px}}
+@media(prefers-reduced-motion:reduce){#list-view .nekopon-filter-tabs button{transition:none}}
+/* Search and filters occupy one full-width card, matching catalogue. */
+#list-view .main-content{padding:12px 12px 80px}
+#list-view .header-inner{padding-bottom:5px}
+#list-view .nekopon-search-panel .filter-section[hidden]{display:none!important}
+#list-view .nekopon-search-panel .filter-section:not([hidden]){display:block}
+#list-view .nekopon-search-panel .filter-choice{white-space:normal;min-height:48px}
+#list-view .nekopon-search-panel .filter-buttons{scrollbar-width:none;-webkit-overflow-scrolling:touch}
+#list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar{display:none}
+#list-view .nekopon-search-panel .filter-heading{display:none}
+#list-view .nekopon-search-panel .himiko-search{margin:0 0 12px}
+#list-view .nekopon-filter-tabs .nekopon-filter-tab:focus-visible,#list-view .filter-choice:focus-visible{outline:2px solid #d2691e;outline-offset:2px}
+html[data-persona="cyber"] #list-view .nekopon-filter-tabs .nekopon-filter-tab:focus-visible,html[data-persona="cyber"] #list-view .filter-choice:focus-visible{outline-color:#00f5ff}
+
+/* ----- original chat style block ----- */
+
+/* Align the heading-to-panel rhythm with 教材の目次: remove the subtitle gap. */
+#list-view .header-inner{padding:8px 0 0!important;gap:0!important}
+#list-view .himiko-page-title{margin:4px 0 0!important}
+#list-view .main-content{padding:18px 12px 80px!important}
+#list-view .nekopon-search-panel{margin:0 0 14px!important}
+/* Use the exact category-button typography used by the top-level subjects (理科・社会・ニュース). */
+#list-view .nekopon-filter-tabs{gap:8px!important}
+#list-view .nekopon-filter-tabs .nekopon-filter-tab{
+ min-height:42px!important;padding:6px 3px!important;border-width:2px!important;
+ border-radius:13px!important;box-shadow:0 3px 0 #e7cfb7!important;
+ font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif!important;
+ font-size:12px!important;font-weight:900!important;line-height:1.5!important;
+ letter-spacing:0!important;
+}
+#list-view .nekopon-filter-tabs .nekopon-filter-tab small{margin-left:2px;font-size:9px}
+/* Series row: same four-at-a-time grid and 4px scrollbar as #catalogSeries. */
+#list-view .nekopon-search-panel .filter-section:not([hidden]){
+ border-top:2px solid #ebdbc9!important;margin:12px 0 0!important;
+ padding:12px 0 0!important;
+}
+#list-view .nekopon-search-panel .himiko-filter-scroll{position:relative;min-width:0}
+#list-view .nekopon-search-panel .himiko-filter-scroll::before,
+#list-view .nekopon-search-panel .himiko-filter-scroll::after{
+ content:"";position:absolute;top:1px;bottom:7px;width:20px;z-index:2;
+ pointer-events:none;opacity:0;transition:opacity .15s;
+}
+#list-view .nekopon-search-panel .himiko-filter-scroll::before{
+ left:-1px;background:linear-gradient(90deg,#8e542b32,rgba(255,251,244,.76) 35%,transparent);
+ border-radius:14px 0 0 14px;
+}
+#list-view .nekopon-search-panel .himiko-filter-scroll::after{
+ right:-1px;background:linear-gradient(270deg,#8e542b32,rgba(255,251,244,.76) 35%,transparent);
+ border-radius:0 14px 14px 0;
+}
+#list-view .nekopon-search-panel .himiko-filter-scroll.has-left::before,
+#list-view .nekopon-search-panel .himiko-filter-scroll.has-right::after{opacity:1}
+#list-view .nekopon-search-panel .filter-buttons{
+ --series-gap:7px;
+ display:grid!important;grid-auto-flow:column!important;grid-template-columns:none!important;
+ grid-auto-columns:calc((100% - 3 * var(--series-gap)) / 4)!important;
+ gap:var(--series-gap)!important;
+ width:100%!important;min-width:0!important;max-width:100%!important;
+ padding:5px 1px 10px!important;margin:0!important;
+ overflow-x:auto!important;overflow-y:hidden!important;
+ overscroll-behavior-x:contain!important;scroll-snap-type:x proximity!important;
+ scroll-padding-inline:1px!important;
+ scrollbar-width:thin!important;scrollbar-color:#cfaa87 transparent!important;
+ -webkit-overflow-scrolling:touch;
+}
+#list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar{display:block!important;height:4px!important}
+#list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-thumb{background:#cfaa87!important;border-radius:10px!important}
+#list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-track{background:#f5ecdf!important;border-radius:10px!important}
+#list-view .nekopon-search-panel .filter-choice{
+ box-sizing:border-box!important;flex:none!important;scroll-snap-align:start!important;
+ display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;
+ gap:4px!important;width:100%!important;min-width:0!important;min-height:64px!important;
+ padding:7px 3px!important;border-width:3px!important;border-radius:16px!important;
+ font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif!important;
+ font-size:12px!important;font-weight:900!important;line-height:1.35!important;
+ letter-spacing:0!important;text-align:center!important;white-space:nowrap!important;
+ box-shadow:0 4px 0 #e7cfb7!important;
+}
+#list-view .nekopon-search-panel .filter-choice .filter-choice-label{
+ display:block!important;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+ font-size:12px!important;font-weight:900!important;line-height:1.35!important;
+}
+#list-view .nekopon-search-panel .filter-choice .era-date{
+ display:block!important;max-width:100%;font-size:10px!important;font-weight:500!important;
+ line-height:1.25!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap!important;
+ margin:0!important;opacity:.85;
+}
+#list-view .nekopon-search-panel .filter-choice.active{box-shadow:0 0 12px #d2691e33!important}
+html[data-persona="cyber"] #list-view .nekopon-filter-tabs .nekopon-filter-tab{
+ background:#0a1127!important;color:#cbdcf4!important;
+ border:2px solid #365d7b!important;box-shadow:0 3px 0 #0a182c!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-filter-tabs .nekopon-filter-tab[aria-expanded="true"]{
+ border-color:#00e9f5!important;background:#083c4c!important;
+ color:#bffaff!important;box-shadow:0 0 12px #00e9f566!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-choice{
+ background:#0a1127!important;color:#cbdcf4!important;border:3px solid #365d7b!important;
+ box-shadow:0 4px 0 #0b172e!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-choice.active{
+ border-color:#00e9f5!important;background:#083c4c!important;
+ color:#bffaff!important;box-shadow:0 0 12px #00e9f566!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-filter-scroll::before{
+ background:linear-gradient(90deg,rgba(0,245,255,.13),rgba(10,20,41,.8) 32%,transparent)!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-filter-scroll::after{
+ background:linear-gradient(270deg,rgba(0,245,255,.13),rgba(10,20,41,.8) 32%,transparent)!important;
+}
+/* Match the main catalog series scrollbar's bright cyber-cyan thumb and glow. */
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons{
+ scrollbar-color:#39cdeb #10243d!important;
+ scrollbar-width:thin!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar{
+ height:4px!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-thumb{
+ background:#36bdda!important;border-radius:10px!important;
+ box-shadow:0 0 9px #00f5ff66!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .filter-buttons::-webkit-scrollbar-track{
+ background:#10243d!important;border-radius:10px!important;
+}
+@media(max-width:370px){
+ #list-view .nekopon-search-panel .filter-buttons{--series-gap:5px}
+ #list-view .nekopon-search-panel .filter-choice{padding:7px 1px!important;border-radius:14px!important}
+ #list-view .nekopon-search-panel .filter-choice .filter-choice-label{font-size:10px!important}
+}
+
+/* ----- original chat style block ----- */
+
+/* Text stays fully readable. Each deliberate <br> is a meaningful break; no ellipsis. */
+#list-view .nekopon-search-panel .filter-choice{
+ min-height:78px!important;height:auto!important;padding:8px 3px!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ line-height:1.3!important;gap:3px!important;
+}
+#list-view #himiko-options-era .filter-choice{min-height:94px!important}
+#list-view .nekopon-search-panel .filter-choice .filter-choice-label{
+ display:block!important;width:100%!important;max-width:100%!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ overflow-wrap:break-word!important;word-break:keep-all!important;
+ font-size:12px!important;line-height:1.32!important;
+}
+#list-view .nekopon-search-panel .filter-choice .era-date{
+ display:block!important;width:100%!important;max-width:100%!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ overflow-wrap:break-word!important;word-break:keep-all!important;
+ font-size:10px!important;line-height:1.28!important;
+}
+#list-view .filter-hint{display:none!important}
+/* Mirror main-app lively neon glow and spring feedback on embedded controls. */
+html[data-play-effects="lively"] #list-view :is(.nekopon-filter-tab,.filter-choice,.char-card,.filter-clear,.fav-btn){
+ transition:filter .16s, box-shadow .16s, border-color .16s,transform .16s!important;
+}
+html[data-play-effects="lively"] #list-view .himiko-lively-flash{
+ filter:brightness(1.23)!important;border-color:#ffb44c!important;
+ box-shadow:0 0 13px #ffb44c,0 0 29px #ffb44c99,inset 0 0 16px #ffb44c55!important;
+}
+html[data-persona="cyber"][data-play-effects="lively"] #list-view .himiko-lively-flash,
+html[data-persona="cyber"][data-play-effects="lively"] #chat-view .himiko-lively-flash{
+ filter:brightness(1.25)!important;border-color:#00eaff!important;
+ box-shadow:0 0 13px #00eaff,0 0 29px #00eaff99,inset 0 0 16px #00eaff55!important;
+}
+html[data-play-effects="lively"] #chat-view .himiko-lively-flash{
+ filter:brightness(1.23)!important;box-shadow:0 0 13px #ffb44c,0 0 29px #ffb44c99!important;
+}
+/* Selected tiles keep their light inside the rounded edge after the tap halo
+   ends; an outer shadow/filter would still be cropped by the scrolling row. */
+html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-lively-flash){filter:none!important;box-shadow:inset 0 0 12px #ffb44c55!important}
+html[data-persona="cyber"][data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-lively-flash){box-shadow:inset 0 0 12px #00e9f555!important}
+@media(hover:hover) and (pointer:fine){html[data-play-effects="lively"] #list-view :is(.nekopon-filter-tab,.filter-choice,.char-card):hover{filter:brightness(1.12);transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){html[data-play-effects="lively"] :is(.nekopon-filter-tab,.filter-choice,.char-card){animation:none!important;transition:none!important}}
+
+/* ----- original chat style block ----- */
+
+/* Every filter category uses the same four-column square tile dimensions. */
+#list-view .nekopon-search-panel .filter-buttons{
+  align-items:start!important;
+}
+#list-view .nekopon-search-panel .filter-choice,
+#list-view #himiko-options-era .filter-choice{
+  -webkit-appearance:none!important;
+  appearance:none!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  height:auto!important;
+  aspect-ratio:1 / 1!important;
+  padding:3px 2px!important;
+  gap:2px!important;
+  justify-content:center!important;
+  align-self:start!important;
+  overflow:hidden!important;
+}
+#list-view .nekopon-search-panel .filter-choice .filter-choice-label{
+  flex:none!important;
+  min-width:0!important;
+  max-width:100%!important;
+  margin:0!important;
+  font-size:clamp(10px,2.8vw,12px)!important;
+  line-height:1.15!important;
+  word-break:keep-all!important;
+}
+#list-view .nekopon-search-panel .filter-choice .era-date{
+  flex:none!important;
+  margin:0!important;
+  font-size:clamp(7.5px,2.25vw,10px)!important;
+  line-height:1.12!important;
+  font-weight:600!important;
+  letter-spacing:-.04em!important;
+  word-break:keep-all!important;
+}
+@media(max-width:370px){
+  #list-view .nekopon-search-panel .filter-choice,
+  #list-view #himiko-options-era .filter-choice{
+    padding:2px 1px!important;gap:1px!important;
+    border-width:2px!important;
+  }
+}
+
+/* ----- original chat style block ----- */
+
+/* Leave air between the filter box and the number of displayed people. */
+#list-view .nekopon-search-panel{margin-bottom:0!important}
+#list-view #filter-count.filter-count{
+ display:flex!important;align-items:center;justify-content:flex-start;
+ gap:9px;min-height:28px;margin:20px 0 14px!important;padding:0 2px!important;
+ text-align:left!important;font-size:14px!important;font-weight:800!important;
+ line-height:1.6!important;color:#855a3c!important;
+}
+#list-view .filter-count-icon{display:inline-flex;align-items:center;justify-content:center;
+ flex:none;font-size:19px;line-height:1;width:25px;height:25px}
+html[data-persona="cyber"] #list-view #filter-count.filter-count{color:#c9edff!important}
+html[data-persona="cyber"] #list-view .filter-count-icon{filter:drop-shadow(0 0 6px #00e9f58f)}
+/* Explanation replaces the old filter reset button, shown with the 'その他' choices. */
+#list-view .himiko-mode-guide{margin:12px 0 1px;padding:12px 11px 10px;
+ border:1px solid #dcc4ad;border-radius:13px;background:#fffaf3;color:#754b2f;}
+#list-view .himiko-mode-guide[hidden]{display:none!important}
+#list-view .himiko-mode-guide-item[hidden]{display:none!important}
+#list-view .himiko-mode-guide-title{font-size:12px;font-weight:900;letter-spacing:.015em;margin:0 0 9px}
+#list-view .himiko-mode-guide-item{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:7px 0;border-top:1px solid #e9d4c1;}
+#list-view .himiko-mode-guide-item:first-child{border-top:0}
+#list-view .himiko-mode-chip{font-size:10px;font-weight:900;border-radius:9px;padding:4px 6px;
+ display:inline-block;white-space:nowrap;max-width:max-content;line-height:1.35}
+#list-view .mode-explain{background:#efe9ff;color:#6645a1}
+#list-view .mode-lesson{background:#fff0d0;color:#986010}
+#list-view .mode-respect{background:#def5e7;color:#23784e}
+#list-view .himiko-mode-explain{width:100%;min-width:0;font-size:11px;font-weight:650;line-height:1.65;overflow-wrap:anywhere}
+#list-view .himiko-mode-guide .copy-cyber{display:none}
+html[data-persona="cyber"] #list-view .himiko-mode-guide{
+ background:#0b1831;border-color:#315576;color:#c5edff;}
+html[data-persona="cyber"] #list-view .himiko-mode-guide-item{border-top-color:#315576}
+html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-cyber{display:inline}
+html[data-persona="cyber"] #list-view .himiko-mode-guide .copy-neko{display:none}
+@media(max-width:370px){
+ #list-view .himiko-mode-guide{padding:10px 8px}
+ #list-view .himiko-mode-guide-item{gap:5px 9px;padding:8px 0}
+ #list-view .himiko-mode-explain{font-size:11px}
+}
+
+/* ----- original chat style block ----- */
+
+.group-system-event{text-align:center;margin:16px 12px;color:var(--muted,#9bb7c9);font-size:11px;line-height:1.6}.group-system-event>span{display:inline-block;max-width:100%;padding:6px 12px;border-radius:14px;background:#8299b51c;overflow-wrap:anywhere}.group-system-event time{display:block;font-size:inherit;color:inherit;line-height:1.4}.group-system-event .group-event-label{display:block;line-height:1.5}
+/* Membership notice names open the existing profile, without visually changing the notice. */
+.group-system-event .group-event-person-name{appearance:none;-webkit-appearance:none;display:inline;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:inherit;font:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:none;text-align:inherit;vertical-align:baseline;cursor:pointer}
+.group-system-event .group-event-person-name:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:2px}
+
+/* ----- original chat style block ----- */
+
+/* The mascot emoji must be bare: no round badge, border, fill, or glow. */
+#list-view #filter-count .filter-count-icon{
+  background:none!important;border:0!important;border-radius:0!important;
+  width:auto!important;height:auto!important;padding:0!important;
+  box-shadow:none!important;filter:none!important;text-shadow:none!important;
+}
+/* Labels remain readable in square tiles on the narrowest phones. */
+#list-view [data-group="region"] [data-value="西アジア・中東"] .filter-choice-label{
+  white-space:normal!important;word-break:keep-all!important;
+  line-height:1.17!important;
+}
+
+/* ----- original chat style block ----- */
+
+ /* User and assistant must have the same type scale, leading and inset. */
+ #chat-view .bubble.user,
+ #chat-view .bubble.assistant{
+   font-size:12px;
+   line-height:1.9;
+   padding:9px 12px;
+   font-weight:500;
+ }
+
+/* ----- original chat style block ----- */
+
+/* Restore the comfortable gap underneath the composer. The fixed input bar itself
+   remains anchored to the viewport; only its contents gain 8px of breathing room.
+   The padding for the bottom safe-area inset is applied exactly once. */
+html[data-chat-open] #chat-view .input-area{
+ padding:8px 12px calc(18px + env(safe-area-inset-bottom, 0px))!important;
+}
+/* Match outgoing and incoming message bubbles exactly, including browser font overrides. */
+#chat-view .messages .bubble.user,
+#chat-view .messages .bubble.assistant{
+ font-family:inherit;
+ font-size:12px!important;
+ line-height:1.9!important;
+ padding:9px 12px!important;
+ font-weight:500;
+}
+
+/* ----- original chat style block ----- */
+
+/* The current persona owns the composer placeholder; never inherit the old brown tint. */
+html[data-persona="cyber"] #chat-view #msg-input::placeholder,
+html[data-persona="cyber"] #chat-view #msg-input::-webkit-input-placeholder{
+  color:#a8c7e4!important;
+  -webkit-text-fill-color:#a8c7e4!important;
+  opacity:1!important;
+}
+/* The name opens a profile: it is an unboxed text control, not a neon card.
+   Retain the existing :active press-in transform and click sound. */
+#chat-view #header-tap,
+#chat-view #header-tap:hover,
+#chat-view #header-tap:active,
+#chat-view #header-tap.himiko-lively-flash,
+html[data-persona="cyber"] #chat-view #header-tap:active,
+html[data-persona="cyber"][data-play-effects="lively"] #chat-view #header-tap.himiko-lively-flash{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border-color:transparent!important;
+  filter:none!important;
+  -webkit-tap-highlight-color:transparent;
+}
+/* Keep the profile sheet in the same cyber palette as the chat: no white sheet flash. */
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  background:#111b35!important;
+  color:#dceaff!important;
+  border:2px solid #315b81;
+  box-shadow:0 -12px 36px #0005;
+}
+html[data-persona="cyber"] #profile-modal .modal-handle{background:#4e7994!important;}
+html[data-persona="cyber"] #profile-modal .modal-close{
+  background:#162743!important;color:#c6eaff!important;
+  border:1px solid #365f7d!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet > div:not(.modal-handle) div[style*="color:#1e293b"]{
+  color:#e3f1ff!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet div[style*="color:#94a3b8"]{
+  color:#a5c6e3!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet div[style*="color:#374151"]{
+  color:#d5e8fa!important;
+  background:#172c43!important;
+}
+
+/* ----- original chat style block ----- */
+
+/* Inside an iframe, only the message list scrolls; the composer is a fixed flex row.
+   This prevents a swipe on past messages from moving the chat input or the frame. */
+html[data-chat-open],html[data-chat-open] body{
+  height:100%!important; min-height:0!important;
+  overflow:hidden!important; overscroll-behavior:none!important;
+}
+html[data-chat-open] #chat-view{
+  position:fixed!important;inset:0!important;
+  width:100%!important;height:100%!important;min-height:0!important;
+  display:flex!important;flex-direction:column!important;overflow:hidden!important;
+}
+html[data-chat-open] #chat-view .chat-header{flex:0 0 auto!important;}
+html[data-chat-open] #chat-view .messages{
+  flex:1 1 0%!important;min-height:0!important;height:auto!important;
+  overflow-y:auto!important;-webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;
+}
+html[data-chat-open] #chat-view .input-area{
+  position:relative!important;inset:auto!important;
+  transform:none!important;z-index:5!important;
+  flex:0 0 auto!important;width:100%!important;min-height:0!important;
+  /* Apply safe-area padding once. The composer must not be a scroll child. */
+  padding:8px 12px calc(10px + env(safe-area-inset-bottom,0px))!important;
+}
+/* A bottom sheet covers the composer while it is open; it must not leave any
+   underlying input or a blue rectangular border visible through the sheet. */
+#profile-modal:not(.hidden){
+  position:fixed!important;inset:0!important;
+  width:100%!important;height:100%!important;z-index:10000!important;
+  pointer-events:none;
+}
+#profile-modal .modal-overlay{
+  position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;
+  z-index:1!important;pointer-events:auto;
+  overflow:hidden;
+}
+#profile-modal .modal-sheet,
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  border:0!important;outline:0!important;
+  box-shadow:0 -14px 34px rgba(0,0,0,.16)!important;
+  position:relative;
+  margin:0 auto!important;
+  max-height:calc(100% - 18px);
+  overflow-y:auto;
+  padding-bottom:calc(26px + env(safe-area-inset-bottom,0px));
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  background:#111b35!important;
+  box-shadow:0 -14px 34px rgba(0,0,0,.30)!important;
+}
+#profile-modal .modal-close{
+  display:grid;place-items:center;float:right;
+  width:42px;height:42px;min-width:42px;min-height:42px;
+  padding:0!important;border-radius:12px;font-size:24px;
+  line-height:1;
+}
+
+/* ----- original chat style block ----- */
+
+/* Match the Nekopon / Yorupon icon used by the app's character selector. */
+#list-view #filter-count .filter-count-icon{font-size:23px;line-height:1;filter:none!important;text-shadow:none!important;}
+#list-view #filter-count .count-neko{display:inline!important;}
+#list-view #filter-count .count-yoru{display:none!important;}
+html[data-persona="cyber"] #list-view #filter-count .count-neko{display:none!important;}
+html[data-persona="cyber"] #list-view #filter-count .count-yoru{display:inline!important;}
+
+/* ----- original chat style block ----- */
+
+/* The two text-entry fields use the same visual hierarchy as the catalog
+   search: strong INNER border + softer OUTER focus ring.  Keep focus visible. */
+html[data-persona="neko"] #chat-view #msg-input{
+  background:#fff!important;
+  color:#754b2f!important;
+  border:2px solid #c8a789!important;
+  caret-color:#d2691e;
+}
+html[data-persona="neko"] #chat-view #msg-input::placeholder{
+  color:#a58e7c!important;
+  -webkit-text-fill-color:#a58e7c!important;
+  opacity:1!important;
+}
+html[data-persona="neko"] #chat-view #msg-input:is(:focus,:focus-visible){
+  border-color:#d2691e!important;
+  outline:2px solid #d2691e77!important;
+  outline-offset:2px!important;
+  box-shadow:none!important;
+}
+/* Keep search and chat both on the same opacity, not two full-strength rings. */
+html[data-persona="neko"] #list-view .nekopon-search-panel .himiko-search:focus-within{
+  border-color:#d2691e!important;
+  outline:2px solid #d2691e77!important;
+  outline-offset:2px!important;
+  box-shadow:none!important;
+}
+/* Cyber remains neon: focused border is vivid, only its outer ring is translucent. */
+html[data-persona="cyber"] #chat-view #msg-input:is(:focus,:focus-visible){
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ff83!important;
+  outline-offset:2px!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search:focus-within{
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ff83!important;
+  outline-offset:2px!important;
+}
+
+/* ----- original chat style block ----- */
+
+/* The embedded Question page uses the same 44px title row and 12px gap as
+   catalogue, study, test and settings in the parent app. */
+#list-view .header{padding:0 12px!important;}
+#list-view .header-inner{
+  box-sizing:border-box;
+  padding:0!important;
+  gap:0!important;
+  min-height:44px;
+}
+#list-view .himiko-page-title{
+  box-sizing:border-box;
+  display:flex!important;
+  align-items:center!important;
+  height:44px!important;
+  min-height:44px!important;
+  margin:0!important;
+  line-height:1.45;
+}
+#list-view .main-content{padding-top:12px!important;}
+
+/* ----- original chat style block ----- */
+
+/* Square portraits; retain emoji as fallback when an image is not loaded. */
+.avatar,.chat-avatar,.bubble-avatar,.history-profile-avatar {position:relative;}
+.history-profile-avatar {overflow:hidden;}
+.history-emoji-fallback {display:flex;align-items:center;justify-content:center;width:100%;height:100%;line-height:1;}
+.history-avatar-image[src*="/023.webp"]{clip-path:inset(0 4.7% 4.7% 0 round 12%);transform:scale(1.0493);transform-origin:top left}
+.profile-image-view img[src*="/023.png"]{clip-path:inset(0 4.7% 1.5% 0 round 3%)}
+.history-avatar-image {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;z-index:1;}
+.avatar .online-dot{z-index:2;}
+
+/* ----- original chat style block ----- */
+
+/* Only inside the question/chat iframe, keep LINE-like fixed viewport scale. */
+html,body{overscroll-behavior-x:none;overscroll-behavior-y:none;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+#list-view,#chat-view,#chat-view .messages{touch-action:pan-y;overscroll-behavior-y:contain;}
+/* The people list uses body scrolling; allow its own iOS edge bounce without pulling the parent app. */
+html:not([data-chat-open]) body{overscroll-behavior-y:contain!important;-webkit-overflow-scrolling:touch!important;}
+#list-view button,#chat-view button,#chat-view textarea,#list-view input,
+#chat-view input,#list-view select{touch-action:manipulation;}
+/* A 12px focused field triggers involuntary iOS Safari zoom, so use 16px inputs only on touch phones. */
+@media(max-width:600px) and (pointer:coarse){
+  #msg-input,#list-view input,#list-view select,#chat-view input,#chat-view textarea{font-size:16px!important;}
+}
+
+/* ----- original chat style block ----- */
+
+/* Keep the embedded list, chat header, message timeline and composer on the
+   SAME background as the parent app. Do not recolor text fields or buttons. */
+html,html[data-chat-open] {
+  --himiko-persona-bg:#fff8f0;
+  background-color:var(--himiko-persona-bg)!important;
+  background-image:
+    radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),
+    radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),
+    radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%)!important;
+  background-size:cover!important;
+  background-attachment:fixed!important;
+}
+html[data-persona="cyber"],html[data-persona="cyber"][data-chat-open] {
+  --himiko-persona-bg:#050510;
+  background-color:var(--himiko-persona-bg)!important;
+  /* Exact grid rhythm and tint of the usual Yorupon app background. */
+  background-image:
+    linear-gradient(#00f5ff09 1px,transparent 1px),
+    linear-gradient(90deg,#00f5ff09 1px,transparent 1px),
+    radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),
+    radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+  background-size:36px 36px,36px 36px,cover,cover!important;
+  background-attachment:fixed!important;
+}
+/* A solid background from the previous embedded-page styles used to hide the
+   grid specifically on chat open; make those surfaces truly transparent. */
+html body,
+html[data-chat-open] body,
+html[data-persona="cyber"] body,
+html[data-persona="cyber"][data-chat-open] body,
+html #list-view,
+html #list-view .header,
+html #chat-view,
+html[data-chat-open] #chat-view,
+html[data-persona="cyber"][data-chat-open] #chat-view,
+html #chat-view .messages,
+html #chat-view .chat-header,
+html #chat-view .chat-storage-status,
+html #chat-view .input-area {
+  background:transparent!important;
+  background-image:none!important;
+}
+/* Keep a single subtle separator instead of a dark solid header/composer. */
+html #chat-view .chat-header { box-shadow:none!important; }
+
+/* ----- original chat style block ----- */
+
+/* Restore the native iOS rubber-band only inside the independent message scroller. */
+html[data-chat-open] #chat-view .messages{
+  overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+  scroll-behavior:auto;
+}
+html[data-chat-open] #chat-view .messages-inner{
+  transform:none!important;
+  transition:none!important;
+  will-change:auto!important;
+}
+/* The fixed header and composer do not participate in the swipe. */
+html[data-chat-open] #chat-view .chat-header,
+html[data-chat-open] #chat-view .input-area{
+  touch-action:pan-y;
+}
+
+/* ----- original chat style block ----- */
+
+/* Give short conversations an actual scroll range so iOS WebKit uses the
+   same native rubber-band as it does after the first exchange. */
+html[data-chat-open] #chat-view .messages {
+  overflow-y:scroll!important;
+  -webkit-overflow-scrolling:touch!important;
+  overscroll-behavior-y:contain!important;
+  touch-action:pan-y!important;
+}
+html[data-chat-open] #chat-view .messages-inner {
+  min-height:calc(100% + 4px)!important;
+  transform:none!important;
+  transition:none!important;
+}
+
+/* ----- original chat style block ----- */
+
+/* Native rubber band stays enabled. On the initial greeting only,
+   the tiny artificial 4px range must settle at its original 0px position. */
+html[data-chat-open] #chat-view .messages.nekopon-initial-greeting {
+  scroll-snap-type:y mandatory!important;
+}
+html[data-chat-open] #chat-view .messages.nekopon-initial-greeting > .messages-inner {
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+
+/* ----- original chat style block ----- */
+
+/* Keep the existing native bounce and snap, but separate the greeting
+   bubble from the fixed character header when the scroller rests at top. */
+html[data-chat-open] #chat-view .messages.nekopon-initial-greeting > .messages-inner {
+  padding-top:20px!important;
+  box-sizing:border-box!important;
+}
+
+/* ----- original chat style block ----- */
+
+/* Match the fine separator below the character header. */
+html[data-chat-open] #chat-view .input-area {
+  border-top-width:1px!important;
+  border-top-style:solid!important;
+  box-shadow:none!important;
+}
+html[data-persona="cyber"][data-chat-open] #chat-view .input-area {
+  border-top-color:#315576!important;
+}
+
+/* ----- original chat style block ----- */
+
+html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
+  scroll-snap-type:none!important;
+  scroll-padding-top:0!important;
+}
+html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting) > .messages-inner{
+  scroll-snap-align:none!important;
+  scroll-snap-stop:normal!important;
+  min-height:100%!important;
+  padding-top:0!important;
+}
+
+/* ----- original chat style block ----- */
+
+html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting){
+  padding-bottom:26px!important;
+}
+/* Keep the final suggested question clear of the composer at rest. */
+html[data-chat-open] #chat-view .messages:not(.nekopon-initial-greeting) > .messages-inner:has(> .suggestions:last-child){
+  padding-bottom:40px;
+}
+
+/* ----- original chat style block ----- */
+
+/* One continuous background: do not create an independent grid on list/title. */
+html[data-persona="cyber"]{
+ background-color:#050510!important;
+ background-image:linear-gradient(#00f5ff09 1px,transparent 1px),linear-gradient(90deg,#00f5ff09 1px,transparent 1px),radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+ background-size:36px 36px,36px 36px,cover,cover!important;
+ background-attachment:fixed!important;
+}
+html[data-persona="cyber"] body,
+html[data-persona="cyber"] #list-view,
+html[data-persona="cyber"] #list-view > .header,
+html[data-persona="cyber"] #list-view .header-inner,
+html[data-persona="cyber"] #list-view .himiko-page-title{
+ background-color:transparent!important; background-image:none!important;
+}
+/* No added title separator: the regular grid alone is visible. */
+#list-view > .header,#list-view .header-inner,#list-view .himiko-page-title{border:0!important;box-shadow:none!important}
+/* Preserve native body scroller and its iOS rubber-band. */
+html:not([data-chat-open]) body{overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-y:auto!important;touch-action:pan-y!important}
+html:not([data-chat-open]){overscroll-behavior-y:auto!important}
+
+/* ----- original chat style block ----- */
+
+/* Paint an opaque canvas inside WebKit's iframe. Use the parent canvas sizes
+   and its viewport origin, so cells continue across the frame boundary. */
+html.nekopon-embedded{background:#fff8f0!important;background-image:none!important;}
+html.nekopon-embedded[data-persona="cyber"]{background:#050510!important;background-image:none!important;}
+html.nekopon-embedded::before{
+ content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+ background-color:var(--embedded-bg-color,#fff8f0);
+ background-image:var(--embedded-bg-image,none);
+ background-size:var(--embedded-bg-size,auto);
+ background-position:var(--embedded-bg-x,0px) var(--embedded-bg-y,0px);
+ background-repeat:repeat;
+}
+html.nekopon-embedded body{position:relative;z-index:1;background:transparent!important;}
+
+/* ----- original chat style block ----- */
+
+/* The heading and list share the native iframe scroller. The row has the
+   same 44px height and 12px bottom gap as the parent app headings. */
+html.nekopon-embedded #list-view{padding-top:var(--embedded-list-top-inset,0px)!important;}
+html.nekopon-embedded #list-view > .header{display:none!important;}
+.embedded-page-heading{display:none;}
+html.nekopon-embedded #list-view > .embedded-page-heading{
+ box-sizing:border-box;display:flex;position:static;align-items:center;
+ width:calc(100% - 40px);max-width:800px;height:44px;min-height:44px;
+ margin:0 auto 12px;padding:0;border:0;background:transparent;
+}
+html.nekopon-embedded .embedded-page-heading h2{
+ display:flex;align-items:center;gap:8px;white-space:nowrap;
+ margin:0;padding:0;font-family:inherit;font-size:18px;font-weight:800;line-height:1.45;
+ letter-spacing:0;color:#754b2f;
+}
+html.nekopon-embedded[data-persona="cyber"] .embedded-page-heading h2{color:#e0eaff;text-shadow:0 0 12px #00f5ff22;}
+.embedded-heading-credit{font:700 clamp(9px,2.6vw,12px)/1.4 "M PLUS Rounded 1c",sans-serif;color:#a17150;}
+html[data-persona="cyber"] .embedded-heading-credit{color:#9cb9d4;}
+@media(max-width:600px){html.nekopon-embedded #list-view > .embedded-page-heading{width:calc(100% - 24px);}}
+html.nekopon-embedded #list-view .main-content{padding-top:0!important;}
+
+/* ----- original chat style block ----- */
+
+#list-view .group-chat-placeholder{margin:0 0 9px;cursor:default;animation:none}
+#list-view .group-chat-placeholder:hover{transform:none;box-shadow:none}
+#list-view .group-chat-avatar{border:0;padding:0;cursor:pointer;color:#aa6432;background:linear-gradient(135deg,#fff2df,#f6d7b7)}
+#list-view .group-chat-title{font-size:16px;font-weight:900;color:#1e293b}
+#list-view .group-chat-caption{font-size:12px;font-weight:700;color:#a07960}
+html[data-persona="cyber"] #list-view .group-chat-avatar{color:#58ddff;background:linear-gradient(135deg,#18365a,#16465d)}
+html[data-persona="cyber"] #list-view .group-chat-title{color:#e0eaff}
+html[data-persona="cyber"] #list-view .group-chat-caption{color:#92c7e5}
+
+/* ----- original chat style block ----- */
+
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { height:100%; overflow:hidden; background:#fff; }
+    html, body { overflow-x:hidden; max-width:100%; }
+    body { font-family:'M PLUS Rounded 1c',sans-serif; background:#fff; height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+    .hidden{display:none!important}
+    #list-view{min-height:calc(100dvh + 2px);background:#f0f4ff}
+    #group-view{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;overflow:hidden;max-width:100%;background:#fff;}
+    .input-area{padding:11px 12px calc(20px + env(safe-area-inset-bottom, 0px));background:#fff;border-top:2px solid #f1f5f9;flex-shrink:0;}
+    .header{background:#fff;border-bottom:3px solid #e2e8f0;padding:0 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.07)}
+    .header-inner{max-width:700px;margin:0 auto;padding:12px 0;display:flex;align-items:center;gap:12px}
+    .logo-box{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:12px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    #search-input{background:#f8fafc;border:2px solid #e2e8f0;border-radius:12px;padding:8px 14px;font-size:13px;color:#1e293b;width:155px;font-family:inherit;min-width:0}
+    @media (max-width:375px){#search-input{width:100px;padding:8px 10px}}
+    @media (max-width:320px){#search-input{width:75px;padding:8px 8px;font-size:12px}}
+    .main-content{max-width:700px;margin:0 auto;padding:16px 12px 80px}
+    .hero{background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 55%,#a78bfa 100%);border-radius:20px;padding:22px 20px;margin-bottom:18px;animation:fadeUp 0.5s;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;right:-10px;top:-10px;font-size:90px;opacity:0.08;animation:float 4s ease-in-out infinite}
+    .tag-bar{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:2px 0}
+    .tag-btn{flex:0 0 auto;padding:8px 16px;border-radius:100px;border:2px solid #e2e8f0;background:#fff;color:#64748b;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap;transition:all 0.2s}
+    .tag-btn.active{border-color:#6366f1;background:#6366f1;color:#fff}
+    .fav-btn{font-size:20px;color:#cbd5e1;cursor:pointer;transition:all 0.2s;line-height:1;padding:4px;flex-shrink:0;align-self:center}
+    .fav-btn.faved{color:#f59e0b}
+    @media(hover:hover){.fav-btn:hover{color:#f59e0b;transform:scale(1.2)}}
+    .card-list{display:flex;flex-direction:column;gap:9px}
+    .char-card{background:#fff;border:2px solid #f1f5f9;border-radius:16px;padding:13px 15px;cursor:pointer;text-align:left;transition:all 0.18s;width:100%;box-shadow:0 1px 6px rgba(0,0,0,0.05);animation:fadeUp 0.4s ease-out both}
+    .char-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.10)}
+    .card-inner{display:flex;align-items:center;gap:13px}
+    .avatar{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:25px;flex-shrink:0;position:relative}
+    .online-dot{position:absolute;bottom:-1px;right:-1px;background:#22c55e;border-radius:50%;width:11px;height:11px;border:2px solid #fff}
+    .card-info{flex:1;min-width:0}
+    .card-name-row{display:flex;align-items:center;flex-wrap:wrap;gap:4px 7px;margin-bottom:3px}.era-badge{display:inline-block;white-space:nowrap;font-size:9px;padding:1px 6px;border-radius:100px;font-weight:800}
+    .card-tag{font-size:10px;padding:2px 8px;border-radius:100px;font-weight:800;flex-shrink:0}
+    .online-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:#dcfce7;color:#16a34a;font-weight:800}
+    .explainer-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:#ede9fe;color:#6d28d9;font-weight:800;border:1px solid #ddd6fe}
+    .narrator-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:#ede9fe;color:#6d28d9;font-weight:800;border:1px solid #ddd6fe}
+    .chat-header{background:#fff;border-bottom:2px solid #f1f5f9;padding:10px 14px;display:flex;align-items:center;gap:11px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.06);position:relative;z-index:10;}
+    .back-btn{background:none;border:none;padding:4px 8px 4px 0;color:#94a3b8;cursor:pointer;font-size:20px;font-weight:700;line-height:1;flex-shrink:0;transition:color 0.15s}
+    .back-btn:active{color:#6366f1}
+    .chat-avatar{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .messages{flex:1;min-height:0;overflow-y:auto;overflow-anchor:none;padding:14px 12px 22px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:#f0f4ff;}
+    .messages-inner{max-width:700px;margin:0 auto;}
+    .bio-card{background:#fff;border-radius:16px;padding:13px 15px;margin-bottom:12px;animation:fadeUp 0.4s}
+    .bio-inner{display:flex;gap:10px;align-items:flex-start}
+    /* 質問候補は送信メッセージと同じ右側に配置 */
+    .suggestions{display:flex;flex-direction:column;align-items:flex-end;gap:7px;margin:14px 0 18px 38px;animation:messageArrive .32s ease-out both;}
+    .suggestions-label{font-size:11px;color:#64748b;font-weight:700;text-align:right;}
+    .suggestions-list{display:flex;flex-direction:column;align-items:flex-end;width:100%;gap:8px;}
+    .suggestion-btn{display:block;width:fit-content;max-width:94%;min-height:40px;background:#fff;border-radius:16px 16px 5px 16px;padding:9px 13px;font-size:12px;line-height:1.7;font-weight:700;cursor:pointer;transition:transform .13s,background-color .13s,box-shadow .13s;text-align:left;overflow-wrap:anywhere;touch-action:manipulation;box-shadow:0 2px 6px rgba(0,0,0,.035);}
+    .suggestion-btn:active{transform:translateY(1px) scale(.98);background:#f8fafc;box-shadow:none;}
+    .suggestion-btn:focus-visible,.reveal-skip:focus-visible{outline:2px solid #4f46e5;outline-offset:3px;}
+    @media(hover:hover){.suggestion-btn:hover{background:#f8fafc;}}
+    .bubble-group{margin-bottom:14px;}
+    .bubble-row{display:flex;margin-bottom:10px;gap:8px;align-items:flex-end;}
+    .bubble-row.user{justify-content:flex-end;margin-bottom:15px;}
+    .bubble-row.is-new{animation:bubbleMessageArrive .4s cubic-bezier(.2,.7,.2,1) backwards;}
+    .bubble-row.continuation{margin-top:-3px;}
+    .bubble-avatar,.bubble-avatar-spacer{width:33px;min-width:33px;height:33px;flex-shrink:0;}
+    .bubble-avatar{border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px;padding:0;border:0;appearance:none;cursor:pointer;touch-action:manipulation;}
+    .bubble-avatar:focus-visible{outline:3px solid #66aacc;outline-offset:3px;}
+    .bubble{max-width:82%;padding:11px 15px;font-size:14px;line-height:1.85;font-weight:500;white-space:pre-wrap;overflow-wrap:anywhere;}
+    .bubble.user{border-radius:18px 18px 4px 18px;color:#fff;}
+    .bubble.assistant{border-radius:18px 18px 18px 4px;background:#fff;color:#1e293b;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+    .typing{padding:12px 16px;border-radius:18px 18px 18px 4px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;gap:5px;align-items:center;min-height:40px;}
+    .typing-dot{width:7px;height:7px;border-radius:50%;animation:himikoTyping 1.1s ease-in-out infinite;}
+    .reveal-status{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:82%;margin:1px 0 12px 41px;}
+    .reveal-typing-bubble{display:flex;align-items:center;gap:5px;flex:0 0 auto;min-height:40px;box-sizing:border-box;}
+    .reveal-skip{border:1px solid #cbd5e1;background:#fff;color:#475569;padding:7px 11px;border-radius:999px;font:700 11px 'M PLUS Rounded 1c',sans-serif;cursor:pointer;white-space:nowrap;min-height:36px;}
+    .reveal-skip:active{transform:scale(.97);}
+    @keyframes messageArrive{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes bubbleMessageArrive{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes himikoTyping{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-5px);opacity:1}}
+    @media(prefers-reduced-motion:reduce){.bubble-row.is-new,.suggestions,.typing-dot{animation:none!important}.suggestion-btn,.reveal-skip{transition:none!important}}
+    .error-msg{text-align:center;padding:9px 14px;background:#fef2f2;border:2px solid #fecaca;border-radius:12px;color:#ef4444;font-size:12px;font-weight:700;margin-bottom:11px}
+    .input-inner{display:flex;gap:8px;max-width:640px;margin:0 auto;align-items:flex-end}
+    #group-input{flex:1;background:#f8fafc;border:2px solid #e2e8f0;border-radius:13px;padding:11px 15px;font-size:14px;line-height:1.6;font-family:inherit;color:#1e293b;transition:border-color 0.2s}
+    .send-btn{width:44px;height:44px;border-radius:13px;border:none;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s}
+    .send-btn:disabled{background:#f1f5f9;color:#94a3b8;cursor:default;box-shadow:none}
+    .empty-state{text-align:center;padding:40px;color:#94a3b8}
+    /* プロフィールモーダル */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200;display:flex;align-items:flex-end;justify-content:center;animation:fadeIn 0.2s}
+    .modal-overlay.closing{animation:fadeOut 0.2s forwards}
+    .modal-sheet{background:#fff;border-radius:24px 24px 0 0;padding:20px 20px 36px;width:100%;max-width:700px;animation:slideUp 0.28s cubic-bezier(0.34,1.56,0.64,1)}
+    .modal-sheet.closing{animation:slideDown 0.22s ease-in forwards}
+    .modal-handle{width:40px;height:4px;background:#e2e8f0;border-radius:4px;margin:0 auto 18px}
+    .modal-close{float:right;background:#f1f5f9;border:none;border-radius:10px;padding:6px 12px;font-size:12px;font-weight:800;color:#64748b;cursor:pointer}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes fadeOut{from{opacity:1}to{opacity:0}}
+    @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+    @keyframes slideDown{from{transform:translateY(0)}to{transform:translateY(100%)}}
+    .header-tap{cursor:pointer;display:flex;align-items:center;gap:10px;flex:1;padding:4px 6px;border-radius:12px;transition:background 0.15s}
+    .header-tap:active{background:#f1f5f9}
+    .info-hint{font-size:10px;color:#94a3b8;font-weight:700;margin-top:1px}
+    .chat-header .header-tap{min-width:0}
+    .chat-reset{flex-shrink:0;padding:7px 9px;border:1px solid #e2e8f0;border-radius:10px;background:#fff;color:#475569;font:800 11px 'M PLUS Rounded 1c',sans-serif;cursor:pointer;white-space:nowrap}
+    .chat-reset:disabled{opacity:.4;cursor:default}
+    .chat-reset:focus-visible,.older-history:focus-visible{outline:2px solid #6366f1;outline-offset:3px}
+    .chat-storage-status{min-height:19px;padding:3px 13px 4px;border-bottom:1px solid #edf2f7;background:#fff;color:#64748b;font-size:10px;font-weight:700;text-align:right;flex-shrink:0}
+    .chat-storage-status[data-state="error"]{color:#b91c1c;background:#fff7f7}
+    .older-history{display:block;max-width:270px;margin:4px auto 18px;padding:8px 13px;border:1px solid #c7d2fe;border-radius:999px;background:#fff;color:#4f46e5;font:800 12px 'M PLUS Rounded 1c',sans-serif;cursor:pointer}
+    .history-loading{padding:24px;text-align:center;color:#64748b;font-weight:700;font-size:12px}
+    @media(max-width:360px){#chat-name{font-size:13px!important}.chat-reset{padding:6px 7px;font-size:10px}.chat-header{gap:5px;padding:7px 9px}.chat-avatar{width:35px;height:35px;font-size:19px}}
+    @media(prefers-reduced-motion:reduce){.older-history,.chat-reset{transition:none}}
+  
+
+/* Match the surrounding app while keeping the original avatars and chat bubbles. */
+html,body,#list-view{background:#fff8f0;color:#754b2f}
+.header{background:#fffaf4;border-bottom:1px solid #e4cbb3;box-shadow:none}
+.logo-box{background:#f3dfc6}
+.himiko-subtitle{font-size:10px;color:#a17150;font-weight:700;margin-top:2px}
+#search-input{background:#fffdf8;border:1px solid #dbbd9f;color:#754b2f}
+.tag-btn{background:#fffaf4;border:1px solid #dcc2aa;color:#8c6042}
+.tag-btn.active{background:#a85c2d;border-color:#a85c2d;color:#fff}
+.char-card{background:#fffdf8;border:1px solid #e4cbb3;box-shadow:none}
+.main-content{padding-top:14px}
+html[data-persona="cyber"],html[data-persona="cyber"] body,html[data-persona="cyber"] #list-view{background:#080d20;color:#dceaff}
+html[data-persona="cyber"] .header{background:#0f1430;border-color:#315576}
+html[data-persona="cyber"] .header-inner>div>div>div:first-child{color:#def5ff!important}
+html[data-persona="cyber"] .himiko-subtitle{color:#9cb9d4}
+html[data-persona="cyber"] .logo-box{background:#11344a}
+html[data-persona="cyber"] #search-input{background:#0a1127;border-color:#315b81;color:#e0eaff}
+html[data-persona="cyber"] .tag-btn{background:#101b35;border-color:#315576;color:#beddf0}
+html[data-persona="cyber"] .tag-btn.active{background:#083c4c;border-color:#00dce9;color:#bffaff}
+html[data-persona="cyber"] .char-card{background:#101b35;border-color:#315576!important;box-shadow:none!important}
+html[data-persona="cyber"] .card-name-row>span:first-child{color:#e0eaff!important}
+html[data-persona="cyber"] .card-info>div:last-child{color:#a8d8f3!important}
+html[data-persona="cyber"] .empty-state{color:#c8dff2}
+html[data-persona="cyber"] #group-view{background:#080d20}
+html[data-persona="cyber"] .chat-header,html[data-persona="cyber"] .chat-storage-status,html[data-persona="cyber"] .input-area{background:#101b35;border-color:#315576}
+html[data-persona="cyber"] #chat-name{color:#e0eaff!important}
+html[data-persona="cyber"] .chat-storage-status,html[data-persona="cyber"] #chat-period{color:#a9c6df!important}
+html[data-persona="cyber"] .messages{background:#080d20}
+html[data-persona="cyber"] #group-input{background:#0a1127;color:#e0eaff;border-color:#315576}
+html[data-persona="cyber"] .back-btn{color:#b7eaff}
+
+@media(max-width:420px){.header-inner{flex-wrap:wrap;gap:8px}.header-inner>div{flex:1 1 100%!important}#search-input{width:100%}}
+
+
+/* Prevent iOS focus zoom and keep badges legible in narrow cards. */
+#group-input,#search-input{font-size:16px}
+.card-info .character-period{min-width:0;overflow-wrap:anywhere}
+.card-info .narrator-badge{white-space:nowrap;flex:none;line-height:1.4}
+html[data-persona="cyber"] .bubble.assistant,html[data-persona="cyber"] .typing{background:#162743;color:#e5f2ff;box-shadow:0 2px 8px #0003}
+html[data-persona="cyber"] .bubble.user{background:linear-gradient(135deg,#07516b,#19447a)!important;color:#f0fbff;box-shadow:0 3px 10px #001c2f55!important}
+html[data-persona="cyber"] .suggestion-btn{background:#112540!important;border-color:#366783!important;color:#c5edff!important;box-shadow:none}
+html[data-persona="cyber"] .suggestion-btn:active{background:#16445b!important}
+html[data-persona="cyber"] .suggestions-label{color:#a9c6df}
+html[data-persona="cyber"] .chat-reset,html[data-persona="cyber"] .older-history,html[data-persona="cyber"] .reveal-skip{background:#10233d;border-color:#39637f;color:#c5edff}
+html[data-persona="cyber"] .send-btn:disabled{background:#23334d;color:#849bb5}
+
+
+/* Let the app background show through the chat without changing the bubbles. */
+html[data-chat-open],html[data-chat-open] body,html[data-chat-open] #group-view,html[data-chat-open] .messages{background:transparent!important;background-image:none!important}
+html[data-chat-open] .chat-header,html[data-chat-open] .chat-storage-status,html[data-chat-open] .input-area{background:transparent!important;box-shadow:none;border-color:#d9c5b5}
+html[data-persona="cyber"][data-chat-open] .chat-header,html[data-persona="cyber"][data-chat-open] .chat-storage-status,html[data-persona="cyber"][data-chat-open] .input-area{border-color:#315576}
+/* The status badges have their own row, leaving room for the full name and dates. */
+.chat-header{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:6px 8px;padding:10px 12px}
+.chat-header .back-btn{grid-column:1;grid-row:1;min-height:40px}
+.chat-header .header-tap{grid-column:2;grid-row:1;min-width:0;display:flex;padding:2px 0;gap:9px}
+.chat-header .header-tap>div:last-child{min-width:0}
+.chat-header #chat-name{overflow:visible!important;text-overflow:clip!important;white-space:normal!important;overflow-wrap:anywhere;line-height:1.3}
+.chat-header #chat-period{white-space:normal;overflow-wrap:anywhere;line-height:1.45}
+.chat-header .chat-reset{grid-column:3;grid-row:1;height:38px;min-height:38px;width:38px;min-width:38px;padding:0!important;display:grid;place-items:center;font-family:system-ui,sans-serif!important;font-size:26px!important;font-weight:700;line-height:1;white-space:nowrap}
+.chat-header #online-badge,.chat-header #explainer-badge,.chat-header #narrator-badge{grid-column:2 / 4;grid-row:2;justify-self:start}
+.chat-header :is(#explainer-badge,#narrator-badge){flex-direction:row!important;flex-wrap:wrap;gap:5px!important}
+.chat-header :is(#online-badge,#explainer-badge,#narrator-badge).hidden{display:none!important}
+@media(max-width:390px){.chat-header{grid-template-columns:26px minmax(0,1fr) auto;gap:5px}.chat-header .chat-avatar{width:38px;height:38px;font-size:20px}.chat-header .chat-reset{padding:6px 7px;font-size:11px}.chat-header #chat-name{font-size:14px!important}}
+
+
+/* Match the test chat surfaces, including inside the embedded frame. */
+html[data-chat-open],html[data-chat-open] body,html[data-chat-open] #group-view,html[data-chat-open] .messages{background:#fffcf7!important;background-image:none!important}
+html[data-persona="cyber"][data-chat-open],html[data-persona="cyber"][data-chat-open] body,html[data-persona="cyber"][data-chat-open] #group-view,html[data-persona="cyber"][data-chat-open] .messages{background:#0f1430!important;background-image:none!important}
+html[data-chat-open] .chat-header,html[data-chat-open] .chat-storage-status,html[data-chat-open] .input-area{background:#fffcf7!important;border-color:#ead2b9}
+html[data-persona="cyber"][data-chat-open] .chat-header,html[data-persona="cyber"][data-chat-open] .chat-storage-status,html[data-persona="cyber"][data-chat-open] .input-area{background:#0f1430!important;border-color:#315576}
+html[data-persona="cyber"] .bubble.assistant,html[data-persona="cyber"] .typing{background:#0d223a;color:#e5f2ff;border:1px solid #3c7793;box-shadow:none}
+html[data-persona="cyber"] .suggestion-btn{background:#0d223a!important;border:1px solid #3c7793!important;color:#c5edff!important}
+html[data-chat-open] .input-area{padding:8px 12px 10px}
+html[data-chat-open] .input-inner{align-items:center}
+#group-input{font-size:16px;min-height:44px;padding:9px 12px;line-height:1.5;resize:none}
+#group-input::placeholder{font-size:12px;opacity:1}
+
+
+#group-input{box-sizing:border-box;height:44px;min-height:44px;padding:11px 12px;line-height:20px}
+#group-input::placeholder{font-size:14px;line-height:20px}
+#group-input{display:block;min-width:0;overflow-y:auto;-webkit-appearance:none}
+#list-view .header-inner{padding-top:8px;gap:0}
+#list-view .himiko-page-title{display:flex;align-items:baseline;gap:8px;white-space:nowrap;min-width:0;margin:4px 0 0}
+#list-view .himiko-heading{font:800 18px/1.45 "Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;letter-spacing:0;flex:none}
+#list-view .himiko-credit{font:700 clamp(9px,2.6vw,12px)/1.4 "M PLUS Rounded 1c",sans-serif;color:#a17150;min-width:0}
+html[data-persona="cyber"] #list-view .himiko-credit{color:#9cb9d4}
+#list-view .himiko-subtitle{margin:10px 0 22px;font-family:"Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;font-size:11px;font-weight:600;line-height:1.5;color:#8c6042}
+html[data-persona="cyber"] #list-view .himiko-subtitle{color:#c5edff}
+/* Match the app's focus ring and pressed feedback. */
+#search-input:focus,#group-input:focus{outline:2px solid #d2691e;outline-offset:2px;border-color:#d2691e}
+html[data-persona="cyber"] :is(#search-input,#group-input):focus{border:2px solid #00f5ff!important;outline:2px solid #00f5ff83!important;outline-offset:2px;box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16!important;caret-color:#00f5ff}
+:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close){-webkit-tap-highlight-color:transparent;transition:transform .14s,filter .14s,box-shadow .14s,border-color .14s}
+:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{transform:scale(.98);filter:brightness(.96)}
+html[data-persona="cyber"] :is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{filter:brightness(1.18);box-shadow:0 0 14px #00f5ff80!important;border-color:#00e9f5!important}
+@media(prefers-reduced-motion:reduce){:is(.char-card,.tag-btn,.fav-btn,.back-btn,.chat-reset,.header-tap,.suggestion-btn,.send-btn,.older-history,.reveal-skip,.modal-close):active{transform:none}}
+#list-view .main-content{padding-top:14px}
+
+.filter-panel{border:1px solid #e4cbb3;border-radius:16px;background:#fffaf2;padding:10px 12px;margin:0 0 12px}
+.filter-section+.filter-section{border-top:1px solid #ead2b9}
+.filter-heading{width:100%;min-height:42px;display:flex;align-items:center;justify-content:space-between;text-align:left;border:0;background:transparent;color:#754b2f;font-family:inherit;font-size:13px;font-weight:700;line-height:1.5;cursor:pointer}
+.filter-heading small{font-size:10px;color:#a17150}
+.filter-buttons{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0 12px}
+.filter-buttons[hidden]{display:none}
+.filter-choice{min-height:38px;padding:7px 11px;border:1.5px solid #dfbb99;border-radius:11px;background:#fffdf8;color:#854b26;font-family:inherit;font-size:12px;font-weight:700;line-height:1.4;cursor:pointer}
+.filter-choice .era-date{display:block;font-size:9px;font-weight:500;line-height:1.25;margin-top:3px;opacity:.85}
+.filter-choice.active{background:#fff0df;border-color:#d2691e;color:#8b4513;box-shadow:0 0 0 1px #d2691e}
+.filter-clear{display:block;margin:5px 0 0 auto;padding:7px;border:0;background:transparent;color:#9a6946;font-family:inherit;font-size:11px;font-weight:600;cursor:pointer}
+.filter-clear[hidden]{display:none}
+.filter-hint{font-size:10px;line-height:1.5;color:#a17150;margin:2px 0 6px}html[data-persona="cyber"] .filter-hint{color:#9cb9d4}
+.filter-count{font-size:11px;color:#a17150;text-align:right;margin:0 0 8px}
+html[data-persona="cyber"] .filter-panel{background:#0f1430;border-color:#315576}
+html[data-persona="cyber"] .filter-section+.filter-section{border-color:#315576}
+html[data-persona="cyber"] .filter-heading,html[data-persona="cyber"] .filter-count,html[data-persona="cyber"] .filter-clear{color:#c5edff}
+html[data-persona="cyber"] .filter-heading small{color:#9cb9d4}
+html[data-persona="cyber"] .filter-choice{background:#101b35;border-color:#315b81;color:#c5ddf0}
+html[data-persona="cyber"] .filter-choice.active{background:#083c4c;border-color:#00e9f5;color:#e1ffff;box-shadow:0 0 12px #00e9f577,inset 0 0 8px #00e9f529}
+html[data-persona="cyber"] :is(.filter-choice,.filter-heading,.filter-clear):active{filter:brightness(1.2);box-shadow:0 0 12px #00e9f577}
+
+/* Match the catalogue search and horizontal selection rows. */
+#list-view .himiko-search{display:flex;align-items:center;gap:8px;padding:0 14px;min-height:46px;border:1px solid #ead5c2;background:#fff;border-radius:13px}
+#list-view .himiko-search>span{font-size:27px;line-height:1;color:#b78058}
+#list-view .himiko-search #search-input{flex:1;min-width:0;min-height:46px;padding:0;border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;color:inherit;font-family:"Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif;font-size:16px}
+#list-view .himiko-search input::placeholder{font-size:13px;color:#b49a86}
+#list-view .himiko-search:focus-within{outline:2px solid #d2691e;outline-offset:2px}
+html[data-persona="cyber"] #list-view .himiko-search{background:#0b1831;border:2px solid #3c6f94;color:#dffaff;box-shadow:0 0 11px #00f5ff2c}
+html[data-persona="cyber"] #list-view .himiko-search>span{color:#00f5ff}
+html[data-persona="cyber"] #list-view .himiko-search:focus-within{border-color:#00f5ff;outline:2px solid #00f5ff83;outline-offset:2px;box-shadow:0 0 18px #00f5ff55,inset 0 0 10px #00f5ff16}
+#list-view .filter-section+.filter-section{border:0}
+#list-view .filter-heading{min-height:0;padding:8px 0;font-size:12px}
+#list-view .filter-buttons{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;gap:7px;padding:0 1px 10px;scrollbar-width:thin}
+#list-view .filter-choice{flex:0 0 auto;white-space:nowrap;min-width:78px;min-height:46px}
+
+
+/* Text stays fully readable. Each deliberate <br> is a meaningful break; no ellipsis. */
+#list-view .nekopon-search-panel .filter-choice{
+ min-height:78px!important;height:auto!important;padding:8px 3px!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ line-height:1.3!important;gap:3px!important;
+}
+#list-view #himiko-options-era .filter-choice{min-height:94px!important}
+#list-view .nekopon-search-panel .filter-choice .filter-choice-label{
+ display:block!important;width:100%!important;max-width:100%!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ overflow-wrap:break-word!important;word-break:keep-all!important;
+ font-size:12px!important;line-height:1.32!important;
+}
+#list-view .nekopon-search-panel .filter-choice .era-date{
+ display:block!important;width:100%!important;max-width:100%!important;
+ white-space:normal!important;overflow:visible!important;text-overflow:clip!important;
+ overflow-wrap:break-word!important;word-break:keep-all!important;
+ font-size:10px!important;line-height:1.28!important;
+}
+#list-view .filter-hint{display:none!important}
+/* Mirror main-app lively neon glow and spring feedback on embedded controls. */
+html[data-play-effects="lively"] #list-view :is(.nekopon-filter-tab,.filter-choice,.char-card,.filter-clear,.fav-btn){
+ transition:filter .16s, box-shadow .16s, border-color .16s,transform .16s!important;
+}
+html[data-play-effects="lively"] #list-view .himiko-lively-flash{
+ filter:brightness(1.23)!important;border-color:#ffb44c!important;
+ box-shadow:0 0 13px #ffb44c,0 0 29px #ffb44c99,inset 0 0 16px #ffb44c55!important;
+}
+html[data-persona="cyber"][data-play-effects="lively"] #list-view .himiko-lively-flash,
+html[data-persona="cyber"][data-play-effects="lively"] #group-view .himiko-lively-flash{
+ filter:brightness(1.25)!important;border-color:#00eaff!important;
+ box-shadow:0 0 13px #00eaff,0 0 29px #00eaff99,inset 0 0 16px #00eaff55!important;
+}
+html[data-play-effects="lively"] #group-view .himiko-lively-flash{
+ filter:brightness(1.23)!important;box-shadow:0 0 13px #ffb44c,0 0 29px #ffb44c99!important;
+}
+/* Selected tiles keep their light inside the rounded edge after the tap halo
+   ends; an outer shadow/filter would still be cropped by the scrolling row. */
+html[data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-lively-flash){filter:none!important;box-shadow:inset 0 0 12px #ffb44c55!important}
+html[data-persona="cyber"][data-play-effects="lively"] #list-view .filter-choice.active:not(.himiko-lively-flash){box-shadow:inset 0 0 12px #00e9f555!important}
+@media(hover:hover) and (pointer:fine){html[data-play-effects="lively"] #list-view :is(.nekopon-filter-tab,.filter-choice,.char-card):hover{filter:brightness(1.12);transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){html[data-play-effects="lively"] :is(.nekopon-filter-tab,.filter-choice,.char-card){animation:none!important;transition:none!important}}
+
+
+ /* User and assistant must have the same type scale, leading and inset. */
+ #group-view .bubble.user,
+ #group-view .bubble.assistant{
+   font-size:12px;
+   line-height:1.9;
+   padding:9px 12px;
+   font-weight:500;
+ }
+
+
+/* Restore the comfortable gap underneath the composer. The fixed input bar itself
+   remains anchored to the viewport; only its contents gain 8px of breathing room.
+   The padding for the bottom safe-area inset is applied exactly once. */
+html[data-chat-open] #group-view .input-area{
+ padding:8px 12px calc(18px + env(safe-area-inset-bottom, 0px))!important;
+}
+/* Match outgoing and incoming message bubbles exactly, including browser font overrides. */
+#group-view .messages .bubble.user,
+#group-view .messages .bubble.assistant{
+ font-family:inherit;
+ font-size:12px!important;
+ line-height:1.9!important;
+ padding:9px 12px!important;
+ font-weight:500;
+}
+
+
+/* The current persona owns the composer placeholder; never inherit the old brown tint. */
+html[data-persona="cyber"] #group-view #group-input::placeholder,
+html[data-persona="cyber"] #group-view #group-input::-webkit-input-placeholder{
+  color:#a8c7e4!important;
+  -webkit-text-fill-color:#a8c7e4!important;
+  opacity:1!important;
+}
+/* The name opens a profile: it is an unboxed text control, not a neon card.
+   Retain the existing :active press-in transform and click sound. */
+#group-view #header-tap,
+#group-view #header-tap:hover,
+#group-view #header-tap:active,
+#group-view #header-tap.himiko-lively-flash,
+html[data-persona="cyber"] #group-view #header-tap:active,
+html[data-persona="cyber"][data-play-effects="lively"] #group-view #header-tap.himiko-lively-flash{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border-color:transparent!important;
+  filter:none!important;
+  -webkit-tap-highlight-color:transparent;
+}
+/* Keep the profile sheet in the same cyber palette as the chat: no white sheet flash. */
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  background:#111b35!important;
+  color:#dceaff!important;
+  border:2px solid #315b81;
+  box-shadow:0 -12px 36px #0005;
+}
+html[data-persona="cyber"] #profile-modal .modal-handle{background:#4e7994!important;}
+html[data-persona="cyber"] #profile-modal .modal-close{
+  background:#162743!important;color:#c6eaff!important;
+  border:1px solid #365f7d!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet > div:not(.modal-handle) div[style*="color:#1e293b"]{
+  color:#e3f1ff!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet div[style*="color:#94a3b8"]{
+  color:#a5c6e3!important;
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet div[style*="color:#374151"]{
+  color:#d5e8fa!important;
+  background:#172c43!important;
+}
+
+
+/* Inside an iframe, only the message list scrolls; the composer is a fixed flex row.
+   This prevents a swipe on past messages from moving the chat input or the frame. */
+html[data-chat-open],html[data-chat-open] body{
+  height:100%!important; min-height:0!important;
+  overflow:hidden!important; overscroll-behavior:none!important;
+}
+html[data-chat-open] #group-view{
+  position:fixed!important;inset:0!important;
+  width:100%!important;height:100%!important;min-height:0!important;
+  display:flex!important;flex-direction:column!important;overflow:hidden!important;
+}
+html[data-chat-open] #group-view .chat-header{flex:0 0 auto!important;}
+html[data-chat-open] #group-view .messages{
+  flex:1 1 0%!important;min-height:0!important;height:auto!important;
+  overflow-y:auto!important;-webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;
+}
+html[data-chat-open] #group-view .input-area{
+  position:relative!important;inset:auto!important;
+  transform:none!important;z-index:5!important;
+  flex:0 0 auto!important;width:100%!important;min-height:0!important;
+  /* Apply safe-area padding once. The composer must not be a scroll child. */
+  padding:8px 12px calc(10px + env(safe-area-inset-bottom,0px))!important;
+}
+/* A bottom sheet covers the composer while it is open; it must not leave any
+   underlying input or a blue rectangular border visible through the sheet. */
+#profile-modal:not(.hidden){
+  position:fixed!important;inset:0!important;
+  width:100%!important;height:100%!important;z-index:10000!important;
+  pointer-events:none;
+}
+#profile-modal .modal-overlay{
+  position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;
+  z-index:1!important;pointer-events:auto;
+  overflow:hidden;
+}
+#profile-modal .modal-sheet,
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  border:0!important;outline:0!important;
+  box-shadow:0 -14px 34px rgba(0,0,0,.16)!important;
+  position:relative;
+  margin:0 auto!important;
+  max-height:calc(100% - 18px);
+  overflow-y:auto;
+  padding-bottom:calc(26px + env(safe-area-inset-bottom,0px));
+}
+html[data-persona="cyber"] #profile-modal .modal-sheet{
+  background:#111b35!important;
+  box-shadow:0 -14px 34px rgba(0,0,0,.30)!important;
+}
+#profile-modal .modal-close{
+  display:grid;place-items:center;float:right;
+  width:42px;height:42px;min-width:42px;min-height:42px;
+  padding:0!important;border-radius:12px;font-size:24px;
+  line-height:1;
+}
+
+
+/* The two text-entry fields use the same visual hierarchy as the catalog
+   search: strong INNER border + softer OUTER focus ring.  Keep focus visible. */
+html[data-persona="neko"] #group-view #group-input{
+  background:#fff!important;
+  color:#754b2f!important;
+  border:2px solid #c8a789!important;
+  caret-color:#d2691e;
+}
+html[data-persona="neko"] #group-view #group-input::placeholder{
+  color:#a58e7c!important;
+  -webkit-text-fill-color:#a58e7c!important;
+  opacity:1!important;
+}
+html[data-persona="neko"] #group-view #group-input:is(:focus,:focus-visible){
+  border-color:#d2691e!important;
+  outline:2px solid #d2691e77!important;
+  outline-offset:2px!important;
+  box-shadow:none!important;
+}
+/* Keep search and chat both on the same opacity, not two full-strength rings. */
+html[data-persona="neko"] #list-view .nekopon-search-panel .himiko-search:focus-within{
+  border-color:#d2691e!important;
+  outline:2px solid #d2691e77!important;
+  outline-offset:2px!important;
+  box-shadow:none!important;
+}
+/* Cyber remains neon: focused border is vivid, only its outer ring is translucent. */
+html[data-persona="cyber"] #group-view #group-input:is(:focus,:focus-visible){
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ff83!important;
+  outline-offset:2px!important;
+}
+html[data-persona="cyber"] #list-view .nekopon-search-panel .himiko-search:focus-within{
+  border-color:#00f5ff!important;
+  outline:2px solid #00f5ff83!important;
+  outline-offset:2px!important;
+}
+
+
+/* Only inside the question/chat iframe, keep LINE-like fixed viewport scale. */
+html,body{overscroll-behavior-x:none;overscroll-behavior-y:none;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+#list-view,#group-view,#group-view .messages{touch-action:pan-y;overscroll-behavior-y:contain;}
+/* The people list uses body scrolling; allow its own iOS edge bounce without pulling the parent app. */
+html:not([data-chat-open]) body{overscroll-behavior-y:contain!important;-webkit-overflow-scrolling:touch!important;}
+#list-view button,#group-view button,#group-view textarea,#list-view input,
+#group-view input,#list-view select{touch-action:manipulation;}
+/* A 12px focused field triggers involuntary iOS Safari zoom, so use 16px inputs only on touch phones. */
+@media(max-width:600px) and (pointer:coarse){
+  #group-input,#list-view input,#list-view select,#group-view input,#group-view textarea{font-size:16px!important;}
+}
+
+
+/* Keep the embedded list, chat header, message timeline and composer on the
+   SAME background as the parent app. Do not recolor text fields or buttons. */
+html,html[data-chat-open] {
+  --himiko-persona-bg:#fff8f0;
+  background-color:var(--himiko-persona-bg)!important;
+  background-image:
+    radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),
+    radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),
+    radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%)!important;
+  background-size:cover!important;
+  background-attachment:fixed!important;
+}
+html[data-persona="cyber"],html[data-persona="cyber"][data-chat-open] {
+  --himiko-persona-bg:#050510;
+  background-color:var(--himiko-persona-bg)!important;
+  /* Exact grid rhythm and tint of the usual Yorupon app background. */
+  background-image:
+    linear-gradient(#00f5ff09 1px,transparent 1px),
+    linear-gradient(90deg,#00f5ff09 1px,transparent 1px),
+    radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),
+    radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+  background-size:36px 36px,36px 36px,cover,cover!important;
+  background-attachment:fixed!important;
+}
+/* A solid background from the previous embedded-page styles used to hide the
+   grid specifically on chat open; make those surfaces truly transparent. */
+html body,
+html[data-chat-open] body,
+html[data-persona="cyber"] body,
+html[data-persona="cyber"][data-chat-open] body,
+html #list-view,
+html #list-view .header,
+html #group-view,
+html[data-chat-open] #group-view,
+html[data-persona="cyber"][data-chat-open] #group-view,
+html #group-view .messages,
+html #group-view .chat-header,
+html #group-view .chat-storage-status,
+html #group-view .input-area {
+  background:transparent!important;
+  background-image:none!important;
+}
+/* Keep a single subtle separator instead of a dark solid header/composer. */
+html #group-view .chat-header { box-shadow:none!important; }
+
+
+/* Restore the native iOS rubber-band only inside the independent message scroller. */
+html[data-chat-open] #group-view .messages{
+  overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+  scroll-behavior:auto;
+}
+html[data-chat-open] #group-view .messages-inner{
+  transform:none!important;
+  transition:none!important;
+  will-change:auto!important;
+}
+/* The fixed header and composer do not participate in the swipe. */
+html[data-chat-open] #group-view .chat-header,
+html[data-chat-open] #group-view .input-area{
+  touch-action:pan-y;
+}
+
+
+/* Give short conversations an actual scroll range so iOS WebKit uses the
+   same native rubber-band as it does after the first exchange. */
+html[data-chat-open] #group-view .messages {
+  overflow-y:scroll!important;
+  -webkit-overflow-scrolling:touch!important;
+  overscroll-behavior-y:contain!important;
+  touch-action:pan-y!important;
+}
+html[data-chat-open] #group-view .messages-inner {
+  min-height:calc(100% + 4px)!important;
+  transform:none!important;
+  transition:none!important;
+}
+
+
+/* Native rubber band stays enabled. On the initial greeting only,
+   the tiny artificial 4px range must settle at its original 0px position. */
+html[data-chat-open] #group-view .messages.nekopon-initial-greeting {
+  scroll-snap-type:y mandatory!important;
+}
+html[data-chat-open] #group-view .messages.nekopon-initial-greeting > .messages-inner {
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+
+
+/* Keep the existing native bounce and snap, but separate the greeting
+   bubble from the fixed character header when the scroller rests at top. */
+html[data-chat-open] #group-view .messages.nekopon-initial-greeting > .messages-inner {
+  padding-top:20px!important;
+  box-sizing:border-box!important;
+}
+
+
+/* Match the fine separator below the character header. */
+html[data-chat-open] #group-view .input-area {
+  border-top-width:1px!important;
+  border-top-style:solid!important;
+  box-shadow:none!important;
+}
+html[data-persona="cyber"][data-chat-open] #group-view .input-area {
+  border-top-color:#315576!important;
+}
+
+
+html[data-chat-open] #group-view .messages:not(.nekopon-initial-greeting){
+  scroll-snap-type:none!important;
+  scroll-padding-top:0!important;
+}
+html[data-chat-open] #group-view .messages:not(.nekopon-initial-greeting) > .messages-inner{
+  scroll-snap-align:none!important;
+  scroll-snap-stop:normal!important;
+  min-height:100%!important;
+  padding-top:0!important;
+}
+
+
+html[data-chat-open] #group-view .messages:not(.nekopon-initial-greeting){
+  padding-bottom:26px!important;
+}
+
+html[data-group-open] #list-view,html[data-group-open] #chat-view{display:none!important}
+html[data-chat-open] #group-view[hidden],#group-view[hidden],#group-members[hidden],#group-status[hidden]{display:none!important}
+#group-view{position:fixed;inset:0;z-index:9000;display:flex;flex-direction:column;overflow:hidden;color:#49372d}
+#group-view .chat-header{grid-template-columns:32px minmax(0,1fr) auto;}
+#group-view .group-heading{grid-column:2;display:flex;align-items:center;min-width:0;gap:9px}
+#group-header-avatar{padding:0;border:0;overflow:hidden;cursor:pointer;background:#f2dabd}
+#group-header-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+#group-view .group-heading-text{display:flex;align-items:center;min-width:0;gap:3px;flex:1}
+html[data-persona="cyber"] #group-header-avatar{background:#1a435b}
+#group-title,#group-count{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:8px 0}
+#group-title{font-weight:900;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#group-count{flex:none;font-size:14px;font-weight:700}html[data-persona="cyber"] #group-view{color:#e0eaff}
+#group-messages .group-reply-content{max-width:82%;min-width:0}
+#group-messages .group-reply-content .bubble{max-width:none}
+#group-messages .group-reply-name{font-size:11px;font-weight:700;margin:0 0 3px 4px}
+#group-messages .bubble.user{background:linear-gradient(135deg,#d2691e,#e6a252);color:#fff}
+html[data-persona="cyber"] #group-messages .bubble.user{background:linear-gradient(135deg,#087caa,#405ac7);color:#fff}
+#group-messages .typing-row .typing{display:flex;flex:0 0 auto;gap:5px;align-items:center}
+#group-messages .typing-dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%}
+#group-messages .reveal-skip{margin-left:auto}
+#group-view .input-area{border-top:1px solid #ead2b9}html[data-persona="cyber"] #group-view .input-area{border-top-color:#315576}
+#group-send:not(:disabled){background:linear-gradient(135deg,#d2691e,#e6a252);color:#fff}
+#group-status{font-size:12px;text-align:center;color:#d64b4b;padding:5px}
+#group-members{position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;min-height:0;background:transparent;color:#49372d}
+html[data-persona="cyber"] #group-members{background:transparent;color:#e0eaff}
+html[data-members-open] #group-view > :not(#group-members){display:none!important}
+#group-members .members-header{flex:0 0 auto;display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #ead2b9;min-height:61px}
+html[data-persona="cyber"] #group-members .members-header{border-bottom-color:#315576}
+#group-members .members-title{font-family:inherit;font-size:16px;font-weight:900;line-height:1.3;margin:0}
+#group-members .members-scroll{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:12px 12px calc(18px + env(safe-area-inset-bottom,0px))}
+#group-member-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
+#group-members .member-card{font-family:inherit;animation:none}
+#group-members .member-card .card-inner{display:flex;align-items:center;gap:12px}
+#group-members .member-card .avatar{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;flex:none;overflow:hidden;font-size:22px}
+#group-members .member-card .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+#group-members .member-name{font-family:inherit;font-size:16px;font-weight:900;color:#1e293b;line-height:1.4}
+html[data-persona="cyber"] #group-members .member-name{color:#e0eaff}
+#group-members .member-hint{display:block;margin-top:3px;font-size:11px;font-weight:700;color:#a07960}
+html[data-persona="cyber"] #group-members .member-hint{color:#92c7e5}
+#group-members .self-avatar{background:linear-gradient(135deg,#ffe4c2,#f3bc87)}html[data-persona="cyber"] #group-members .self-avatar{background:linear-gradient(135deg,#18365a,#246079)}
+#group-members .member-error{max-width:700px;margin:0 auto 8px;color:#df5858;font-size:12px}
+#group-view .group-examples{margin-top:12px}#group-view .group-examples .suggestion-btn{border:1px solid #d8b894;color:#805037}html[data-persona="cyber"] #group-view .group-examples .suggestion-btn{border:1px solid #315d78;background:#0d2138;color:#d4e8fa}
+#card-list .char-card.group-met .avatar::after{content:"";position:absolute;right:-1px;bottom:-1px;width:11px;height:11px;box-sizing:border-box;background:#35c9ed;border:2px solid #fff;border-radius:50%;z-index:3;pointer-events:none}
+#card-list .char-card.group-met .avatar .online-dot{right:13px}
+html[data-persona="cyber"] #card-list .char-card.group-met .avatar::after{background:#57d7f4;border-color:#e4f6ff}
+#list-view .group-chat-placeholder{margin:9px 0 0;cursor:pointer}
+
+/* ----- original chat style block ----- */
+
+:is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn){position:relative;isolation:isolate;overflow:visible!important;border-radius:24px!important;border:1px solid transparent!important;background:transparent!important;background-image:none!important;box-shadow:none!important;padding-left:14px!important;padding-right:14px!important;--chat-bubble-fill:#fff7eb;--chat-bubble-line:#ead2b9}
+:is(#chat-view,#group-view) .messages :is(.bubble.user,.suggestion-btn){--chat-bubble-fill:#f0d9be;--chat-bubble-line:#dab991;color:#75472b!important}
+html[data-persona="cyber"] :is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn){--chat-bubble-fill:#0d223a;--chat-bubble-line:#3c7793;color:#d8edff!important}
+html[data-persona="cyber"] :is(#chat-view,#group-view) .messages :is(.bubble.user,.suggestion-btn){--chat-bubble-fill:#17394d;--chat-bubble-line:#438da8;color:#dbf8ff!important}
+:is(#chat-view,#group-view) .messages .suggestion-btn{--chat-bubble-fill:none!important}
+:is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn)::after{content:none!important}
+:is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn)::before{content:"";position:absolute;left:-7px;top:-1px;width:calc(100% + 14px);height:calc(100% + 2px);z-index:-1;pointer-events:none;background-image:var(--chat-bubble-shape);background-repeat:no-repeat;background-size:100% 100%;border:0!important;border-radius:0!important;transform:none!important}
+:is(#chat-view,#group-view) .bubble-row.assistant{align-items:flex-start}
+#chat-view .history-reply-content,#group-view .group-reply-content{max-width:82%;min-width:0}
+#chat-view .history-reply-content .bubble{max-width:none}
+.history-reply-name,#group-view .group-reply-name{font-family:inherit;font-size:11px;font-weight:700;line-height:16px;margin:0 0 4px 1px;color:#927057}
+html[data-persona="cyber"] .history-reply-name,html[data-persona="cyber"] #group-view .group-reply-name{color:#b6d4e8}
+:is(#chat-view,#group-view) .typing{min-height:40px}
+:is(#chat-view,#group-view) .messages .suggestion-btn{margin-right:5px}
+
+/* ----- original chat style block ----- */
+
+#group-participant-strip[hidden]{display:none!important}
+#group-participant-strip{display:flex;align-items:center;gap:8px;flex:0 0 auto;padding:10px 12px;border-bottom:1px solid #ead2b9}
+html[data-persona="cyber"] #group-participant-strip{border-bottom-color:#315576}
+#group-participant-icons{display:flex;align-items:center;gap:10px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;touch-action:pan-x;-webkit-overflow-scrolling:touch}
+#group-participant-icons::-webkit-scrollbar{display:none}
+#group-participant-icons button{flex:0 0 40px;border:0;padding:0;background:transparent;cursor:pointer}
+#group-participant-icons .avatar{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;overflow:hidden;font-size:20px;position:relative}
+#group-participant-icons .avatar img{width:100%;height:100%;object-fit:cover}
+#group-participant-icons .self-avatar{background:#f2dabd}html[data-persona="cyber"] #group-participant-icons .self-avatar{background:#1a435b}
+#group-members-arrow{flex:0 0 30px;height:40px;border:0;padding:0;font:32px/1 system-ui,sans-serif;color:inherit;background:transparent;cursor:pointer}
+
+/* ----- original chat style block ----- */
+
+#group-view .group-reply-period{display:inline-block;max-width:100%;font-size:10px;font-weight:500;color:#a08069;overflow-wrap:anywhere;vertical-align:baseline}
+html[data-persona="cyber"] #group-view .group-reply-period{color:#8eaec4}
+
+/* ----- original chat style block ----- */
+
+#group-members .members-title{display:flex;align-items:center;flex-wrap:wrap;gap:2px 6px;min-width:0}
+#group-members #group-settings-name{border:0;padding:0;background:transparent;color:inherit;font:inherit;line-height:inherit;text-align:left;max-width:100%;overflow-wrap:anywhere;cursor:pointer}
+#group-members #group-member-heading{font-size:13px;font-weight:700;white-space:nowrap}
+html[data-strip-open] #group-view > .chat-header{border-bottom:0!important}
+#group-participant-icons.has-more-right{-webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 30px),transparent 100%);mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 30px),transparent 100%)}
+
+/* ----- original chat style block ----- */
+#group-members .member-name-row{display:flex;align-items:center;gap:7px;min-width:0}#group-members .member-name-row .member-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#group-members .member-name-row .member-presence{flex:none;margin-left:0}#group-members .member-period{display:block;margin-top:3px;max-width:100%;font-size:11px;font-weight:500;line-height:1.5;color:#a08069;overflow-wrap:anywhere;vertical-align:baseline}html[data-persona="cyber"] #group-members .member-period{color:#8eaec4}
+/* ----- original chat style block ----- */
+
+.history-day{text-align:center;margin:15px 0;clear:both;font:inherit;font-size:11px;color:#8d705b}.history-day span{display:inline-block;padding:4px 10px;border-radius:20px;background:#f0e3d6}
+.history-message-time{display:block;flex:none;align-self:flex-end;font-family:inherit;font-size:9px;line-height:1.35;color:#9b806b;white-space:nowrap;margin:3px 4px 0}
+.bubble-row.user .history-message-time{order:-1;text-align:right}.history-reply-content,.group-reply-content{position:relative}.history-reply-content>.history-message-time,.group-reply-content>.history-message-time{text-align:right}
+.group-unread{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;border-radius:12px;padding:0 5px;font-family:inherit;font-weight:700;font-size:11px;color:#fff;background:#e05e62;flex:none}.group-unread[hidden]{display:none}
+html[data-persona="cyber"] .history-day{color:#a9c6df}html[data-persona="cyber"] .history-day span{background:#18324b}html[data-persona="cyber"] .history-message-time{color:#8eaec4}
+/* Keep sent read receipts and timestamps close to their bubble too. */
+:is(#chat-view,#group-view) .bubble-row.user{gap:6px}
+:is(#chat-view,#group-view) .bubble-row.user>.history-message-time{margin-left:0;margin-right:0}
+/* Incoming timestamps sit beside the bubble, sharing its bottom edge. */
+#chat-view .history-reply-content,#group-view .group-reply-content{display:grid;grid-template-columns:minmax(0,1fr) max-content;column-gap:6px;width:fit-content;max-width:82%;min-width:0;align-items:end}
+#chat-view .history-reply-name,#group-view .group-reply-name{grid-column:1 / -1}
+/* A long sender name must not widen a short group message. */
+#group-view .group-reply-name{width:0;min-width:0;white-space:normal}
+#group-view .group-reply-name>span.group-name-label{display:block;width:max-content;max-width:calc(100vw - 90px);overflow-wrap:anywhere}
+#chat-view .history-reply-content>.bubble,#group-view .group-reply-content>.bubble{grid-column:1;min-width:0;margin:0}
+#chat-view .history-reply-content>.history-message-time,#group-view .group-reply-content>.history-message-time{grid-column:2;align-self:end;margin:0 0 3px;text-align:left}
+
+/* ----- original chat style block ----- */
+
+.history-day{position:relative;flex-shrink:0;line-height:1.5;padding:3px 0}.history-day span{padding:3px 12px;font-weight:500;background:rgba(114,83,57,.25);opacity:.78}
+html[data-persona="cyber"] .history-day span{background:rgba(77,111,137,.28)}
+.history-floating{position:sticky;top:3px;z-index:7;height:0;display:flex;justify-content:center;pointer-events:none;opacity:0;transition:opacity .2s ease}.history-floating.is-visible{opacity:1}.history-floating span{height:max-content;padding:3px 12px;border-radius:20px;font-size:11px;line-height:1.5;color:#fff;background:rgba(114,83,57,.7)}html[data-persona="cyber"] .history-floating span{background:rgba(77,111,137,.8);color:#eefaff}
+
+/* ----- original chat style block ----- */
+:is(#group-unread-divider,#personal-unread-divider){display:flex;align-items:center;gap:10px;margin:18px 0;padding:6px 0;font-size:11px;color:var(--text-sub,#8d705b)}:is(#group-unread-divider,#personal-unread-divider)::before,:is(#group-unread-divider,#personal-unread-divider)::after{content:"";height:1px;flex:1;background:currentColor;opacity:.22}html[data-persona="cyber"] :is(#group-unread-divider,#personal-unread-divider){color:#a9c6df}
+/* ----- original chat style block ----- */
+.group-entry-heading{text-align:left;margin:16px 0 10px}#list-view .group-chat-placeholder{margin:0 0 18px;cursor:pointer}.group-heading-yoru{display:none}html[data-persona="cyber"] .group-heading-neko{display:none}html[data-persona="cyber"] .group-heading-yoru{display:inline}.profile-image-view{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px}.profile-image-view img{display:block;width:min(86vw,500px);max-height:80dvh;object-fit:contain;border-radius:12px}.profile-image-close{position:absolute;right:20px;top:max(20px,env(safe-area-inset-top));border:0;background:transparent;color:white;font-size:36px;line-height:1;cursor:pointer}
+/* ----- original chat style block ----- */
+
+#list-view #group-entry-heading.filter-count{display:flex;align-items:center;justify-content:flex-start;gap:9px;min-height:28px;margin:28px 0 14px!important;padding:0 2px!important;text-align:left;font-size:14px!important;font-weight:800!important;line-height:1.6!important;color:#855a3c}
+#list-view #group-entry-heading .filter-count-icon{background:none!important;border:0!important;width:auto!important;height:auto!important;padding:0!important;font-size:23px;line-height:1;filter:none!important;text-shadow:none!important}
+#list-view #group-entry-heading .count-neko{display:inline}#list-view #group-entry-heading .count-yoru{display:none}html[data-persona="cyber"] #list-view #group-entry-heading.filter-count{color:#c9edff!important}html[data-persona="cyber"] #list-view #group-entry-heading .count-neko{display:none}html[data-persona="cyber"] #list-view #group-entry-heading .count-yoru{display:inline}
+
+/* ----- original chat style block ----- */
+
+#list-view #group-entry-heading.filter-count{margin-top:0!important}#list-view .group-chat-placeholder{margin-bottom:0!important}#list-view #filter-count.filter-count{margin-top:32px!important}
+#group-members .members-header{grid-template-columns:32px 42px minmax(0,1fr)}#group-members .group-members-avatar{width:42px;height:42px;padding:0;border:0;border-radius:12px;background:transparent;cursor:pointer;overflow:hidden}#group-members .group-members-avatar img{display:block;width:100%;height:100%;object-fit:contain}
+
+/* ----- original chat style block ----- */
+
+.group-chat-caption{display:flex!important;align-items:center;gap:8px;min-height:26px}
+
+#list-view .group-chat-placeholder .card-inner{gap:10px}
+#list-view .group-chat-placeholder .card-name-row{flex-wrap:nowrap;min-width:0}
+#list-view .group-chat-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#list-view .group-chat-placeholder .group-chat-caption{width:100%;gap:0}
+#list-view .group-chat-placeholder .group-entry-typing[hidden]{display:none!important}
+
+.group-caption-text{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.group-entry-typing{display:inline-flex;flex:0 0 44px;box-sizing:border-box;position:relative;justify-content:center;gap:4px;align-items:center;width:44px;height:24px;padding:0;border-radius:14px;background:#e4ded7;color:#816d5b;vertical-align:middle}
+.group-entry-typing::before{content:"";position:absolute;left:2px;bottom:-3px;width:10px;height:9px;background:inherit;clip-path:polygon(0 0,100% 0,0 100%)}
+html[data-persona="cyber"] .group-entry-typing{background:#24435c;color:#bcefff}
+
+.group-entry-typing[hidden]{display:inline-flex!important;visibility:hidden!important;animation:none!important}
+.group-entry-typing i{display:block;width:5px;height:5px;border-radius:50%;background:currentColor;animation:groupEntryDot 1.2s infinite ease-in-out}
+.group-entry-typing i:nth-child(2){animation-delay:.18s}.group-entry-typing i:nth-child(3){animation-delay:.36s}
+@keyframes groupEntryDot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.group-entry-typing i{animation:none}}
+
+/* ----- original chat style block ----- */
+
+#list-view #card-list .card-info .narrator-badge{font-size:10px;line-height:1.35;padding:1px 5px;white-space:nowrap}
+/* Presence and the explanatory labels occupy separate rows. */
+#chat-view .chat-header #online-badge{grid-row:2}
+#chat-view .chat-header #explainer-badge,#chat-view .chat-header #narrator-badge{grid-row:3}
+
+/* ----- original chat style block ----- */
+
+#list-view .presence-guide{display:flex;flex-wrap:nowrap;align-items:center;gap:clamp(6px,2vw,12px);margin:14px 10px;font-family:inherit;font-size:clamp(9px,2.7vw,11px);font-weight:500;line-height:1.6;letter-spacing:0;color:#8c6042;white-space:nowrap}
+#list-view .presence-guide #history-name-mask{margin-left:auto;flex:none;border:0;background:transparent;color:inherit;padding:3px;display:grid;place-items:center;cursor:pointer}#history-name-mask svg{width:20px;height:20px}#history-name-mask .hide-slash{display:none}#history-name-mask[aria-pressed="true"] .hide-slash{display:block}#card-list .history-name.masked{filter:blur(6px);user-select:none}#list-view .presence-guide>span{display:inline-flex;align-items:center;flex:none;gap:4px}
+#list-view .presence-guide-dot{display:inline-block;flex:none;width:6px;height:6px;border-radius:50%;background:#22c55e}
+#list-view .presence-guide-dot.is-away{background:#eab308}
+#list-view .presence-guide-dot.is-later{background:#94a3b8}
+#list-view .presence-guide-dot.is-met{background:#35c9ed}
+html[data-persona="cyber"] #list-view .presence-guide{color:#a9c6df}
+
+/* ----- original chat style block ----- */
+
+#list-view .char-card{position:relative;overflow:visible}
+#list-view #card-list .personal-unread,#list-view #group-unread{position:absolute;top:-3px;right:-2px;z-index:2;box-sizing:border-box;min-width:22px;height:22px;padding:0 5px;border-radius:12px;font-family:inherit;font-size:12px;font-weight:700;line-height:1;background:#e05e62;color:#fff;pointer-events:none;box-shadow:0 0 0 2px #fff8f0}
+html[data-persona="cyber"] #list-view #card-list .personal-unread,html[data-persona="cyber"] #list-view #group-unread{box-shadow:0 0 0 2px #101b32}
+#list-view .group-chat-placeholder .card-name-row{padding-right:12px}
+
+/* ----- original chat style block ----- */
+
+:is(#chat-view,#group-view) .back-btn:active{background:transparent!important;box-shadow:none!important;border-color:transparent!important;filter:none!important;transform:none!important;outline:none}
+:is(#chat-view,#group-view) .back-btn:focus:not(:focus-visible){outline:none;box-shadow:none!important}
+
+/* ----- original chat style block ----- */
+
+#group-view .group-send-failed{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:2px 8px 12px;font-family:inherit;font-size:11px;line-height:1.5;color:#9b806b}
+#group-view .group-send-failed button{font:inherit;color:inherit;border:0;background:transparent;padding:4px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+html[data-persona="cyber"] #group-view .group-send-failed{color:#8eaec4}
+
+/* ----- original chat style block ----- */
+
+:is(#chat-view #msg-input,#group-view #group-input){resize:none;-webkit-appearance:none;appearance:none;scrollbar-width:none}
+:is(#chat-view #msg-input,#group-view #group-input)::-webkit-scrollbar{width:0;height:0;display:none}
+
+/* ----- original chat style block ----- */
+
+:is(#chat-view #msg-input,#group-view #group-input){min-height:44px;max-height:124px;overflow-y:auto;box-sizing:border-box}
+
+/* ----- original chat style block ----- */
+
+#group-quote-draft{position:relative;max-width:760px;margin:0 auto 6px;padding-right:30px;font-family:inherit}#group-quote-draft[hidden]{display:none}#group-quote-cancel{position:absolute;right:0;top:0;border:0;background:transparent;color:inherit;font:inherit;font-size:22px}.group-quote{display:block;max-width:100%;width:100%;margin:0 0 9px;padding:0 0 9px;border:0;border-bottom:1px solid #00000020;border-radius:0;background:transparent;text-align:left;font-family:inherit;font-size:11px;line-height:1.5;color:inherit;box-shadow:none!important;min-height:0!important;cursor:pointer}.group-quote strong,.group-quote span{display:block}.group-quote strong{font-size:11px;font-weight:600;margin-bottom:3px}.group-quote span{font-size:11px;opacity:.72}.group-quote span{white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.quote-highlight{outline:2px solid #d6a84f;outline-offset:3px}html[data-persona=cyber] .group-quote{background:transparent;border-bottom-color:#ffffff26}#group-messages [data-group-quote-text]{cursor:pointer}
+
+/* ----- original chat style block ----- */
+
+/* Answers and questions share ONE native iOS scrolling/bouncing surface. */
+#chat-view #messages > .messages-inner{display:flex;flex-direction:column;box-sizing:border-box!important;}
+#chat-view #messages > .messages-inner > *{flex-shrink:0;}
+#chat-view #messages .suggestions{margin:14px 0 0 38px;padding-bottom:0;animation:none;}
+#chat-view #messages > .messages-inner > .suggestions:last-child{margin-top:auto;padding-top:14px;padding-bottom:0!important;}
+html[data-chat-open] #chat-view #messages:not(.nekopon-initial-greeting) > .messages-inner:has(> .suggestions:last-child){padding-bottom:0;}
+html[data-chat-open] #chat-view #messages{padding-bottom:14px!important;}
+
+/* ----- original chat style block ----- */
+
+#group-member-list .membership-section-title{font-family:inherit;font-size:14px;font-weight:700;line-height:1.6;margin:18px 0 12px;color:var(--text-main,#60412f)}
+#group-member-list .membership-section-title:first-child{margin-top:16px}
+html[data-persona="cyber"] #group-member-list .membership-section-title{color:#b9dff3}
+
+
+/* ----- original chat style block ----- */
+
+#group-view .group-header-actions{grid-column:3;grid-row:1;display:flex;align-items:center;gap:5px;flex:none}
+#group-view .group-header-actions .chat-reset{position:static;display:grid;place-items:center;flex:none;width:34px;min-width:34px;height:34px;min-height:34px;padding:0!important;font-size:23px!important;line-height:1}
+#group-view #group-members-direct svg{display:block;width:22px;height:22px}
+@media(max-width:360px){#group-view .group-header-actions{gap:3px}#group-view .group-header-actions .chat-reset{width:32px;min-width:32px;height:32px;min-height:32px}}
+
+/* ----- original chat style block ----- */
+
+#group-members .members-header{grid-template-columns:32px minmax(0,1fr) 73px;gap:6px 8px;padding:10px 12px}
+#group-members .members-heading{grid-column:2;display:flex;align-items:center;gap:9px;min-width:0}
+#group-members .group-members-avatar{width:42px;height:42px;flex:none}
+#group-members .members-title{display:flex;align-items:center;flex-wrap:nowrap;gap:3px;min-width:0;margin:0;line-height:1.3}
+#group-title,#group-settings-name{font-family:inherit;font-size:16px;font-weight:900;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#group-members #group-member-heading,#group-count{font-family:inherit;font-size:14px;font-weight:700;line-height:1.3;white-space:nowrap}
+@media(max-width:390px){#group-members .members-header{gap:5px}#group-members .group-members-avatar{width:38px;height:38px}}
+@media(max-width:360px){#group-members .members-header{grid-template-columns:32px minmax(0,1fr) 67px}}
+
+/* ----- original chat style block ----- */
+
+#list-view .presence-guide #history-order-reset{margin-left:auto;flex:none;border:0;background:transparent;color:inherit;padding:3px;display:grid;place-items:center;cursor:pointer}
+#history-order-reset svg{width:20px;height:20px}
+#list-view .presence-guide #history-name-mask{margin-left:0}
+#list-view .presence-guide{gap:clamp(4px,1.5vw,10px)}
+
+/* ----- original chat style block ----- */
+
+.history-list-mode{display:flex;gap:3px;max-width:none;margin:18px 0 20px;padding:4px;border:1px solid #dbc9b6;background:#f4e9da;border-radius:13px}
+.history-list-mode button{flex:1;min-width:0;white-space:nowrap;padding:0 2px;min-height:38px;border:0;border-radius:9px;background:transparent;color:#8c705b;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.history-list-mode button.active{background:#fffaf3;color:#65432d;box-shadow:0 1px 4px #5b38251a}
+#card-list .history-era-section{display:flex;flex-direction:column;gap:12px;min-width:0;margin-top:12px}
+#card-list .history-era-heading{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:3px;row-gap:2px;margin:7px 0 1px;padding:0 0 9px;border-bottom:1px solid #b99a773d;color:#77553e;font-size:15px;font-weight:800;line-height:1.6}
+.history-era-years{font-size:11px;font-weight:500;color:#987b65}
+#card-list .history-era-empty{margin:0 0 5px;padding:0 2px;color:#9a8573;font-size:12px;line-height:1.8}
+html[data-persona="cyber"] .history-list-mode{border-color:#3c6383;background:#0d1b30}
+html[data-persona="cyber"] .history-list-mode button{color:#94b5cc}
+html[data-persona="cyber"] .history-list-mode button.active{background:#173c50;color:#66edfa;box-shadow:0 0 8px #00e8ff15}
+html[data-persona="cyber"] #card-list .history-era-heading{color:#bdeafa;border-color:#5d9bbb40}
+html[data-persona="cyber"] .history-era-years,html[data-persona="cyber"] #card-list .history-era-empty{color:#8eaec3}
+.history-list-mode button:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+
+/* ----- original chat style block ----- */
+#card-list .personal-preview.is-description .personal-preview-text{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;line-height:1.55}#card-list .personal-preview.is-description{align-items:flex-start}#card-list .personal-preview.is-description .personal-card-typing{display:none}
+/* ----- original chat style block ----- */
+
+/* Keep the longer profile within the existing bottom sheet in both themes. */
+#profile-modal .modal-sheet{
+  overflow-x:hidden;
+  overscroll-behavior-y:contain;
+  -webkit-overflow-scrolling:touch;
+}
+#profile-modal .modal-close{position:sticky;top:0;z-index:2;}
+#profile-modal .profile-episode{margin-top:12px;overflow-wrap:anywhere;}
+#profile-modal .profile-episode-title{margin:0 0 6px;font-size:14px;font-weight:900;line-height:1.6;}
+#profile-modal .profile-episode-body{margin:0;font-size:13px;font-weight:500;line-height:1.8;}
+html[data-persona="cyber"] #profile-modal .profile-episode{background:#172c43!important;color:#d5e8fa!important;}
+html[data-persona="cyber"] #profile-modal .profile-episode-title{color:#e3f1ff;}
+
+/* ----- original chat style block ----- */
+
+/* Conversation search replaces the group title row, leaving chat layout intact. */
+#group-view .group-header-actions{gap:4px}
+#group-view .group-header-actions .chat-reset{width:32px;min-width:32px;height:34px;min-height:34px;touch-action:manipulation}
+#group-view .group-header-actions .chat-reset svg,#group-view #group-members-direct svg{display:block;width:18px;height:18px;flex:none}
+#group-view .group-search-header[hidden],#group-search-nav[hidden],#group-search-clear[hidden]{display:none!important}
+#group-view[data-search-open] > .chat-header{min-height:var(--group-search-header-height,64px)}
+#group-view[data-search-open] > .chat-header > :not(.group-search-header){display:none!important}
+#group-view[data-search-open] > #group-form{display:none!important}
+#group-view .group-search-header{grid-column:1/-1;display:flex;align-items:center;gap:8px;width:100%;min-width:0;margin:0}
+#group-view .group-search-field{display:flex;align-items:center;gap:8px;flex:1;min-width:0;height:38px;padding:0 10px;border:1px solid #d9c4b3;border-radius:10px;background:#fff9f2;color:#76523c}
+#group-view .group-search-field > svg{width:18px;height:18px;flex:none}
+#group-view #group-search-input{display:block;flex:1;min-width:0;width:0;height:36px;margin:0;padding:0;border:0;border-radius:0;outline:none;background:transparent;color:inherit;font-family:inherit;font-size:16px;font-weight:500;line-height:normal;-webkit-appearance:none;appearance:none}
+#group-search-input::-webkit-search-cancel-button{display:none}
+#group-search-input::placeholder{color:#9a8473;opacity:1}
+#group-view .group-search-icon-button{display:grid;place-items:center;flex:none;width:34px;height:38px;padding:0;border:0;border-radius:8px;background:transparent;color:inherit;cursor:pointer;touch-action:manipulation}
+#group-view .group-search-icon-button svg{width:20px;height:20px;display:block}
+#group-view #group-search-clear{width:24px;height:32px;color:inherit}
+#group-view #group-search-clear svg{width:16px;height:16px}
+#group-search-nav{display:flex;align-items:center;gap:8px;flex:0 0 auto;min-height:52px;padding:7px 14px calc(7px + env(safe-area-inset-bottom,0px));border-top:1px solid #ead2b9;background:#fff8f0;color:#76523c}
+#group-search-count{flex:1;min-width:0;font-family:inherit;font-size:12px;line-height:1.5;font-weight:700;overflow-wrap:anywhere}
+#group-search-nav .group-search-icon-button{width:40px;height:38px;border:1px solid #d9c4b3;background:#fff9f2}
+#group-view .group-search-icon-button:disabled{opacity:.3;cursor:default}
+#group-view .group-search-icon-button:focus-visible,#group-search-toggle:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+#group-view .group-search-field:focus-within{border-color:#b17b43;box-shadow:0 0 0 1px #b17b4326}
+#group-view .group-search-match{padding:0;border-radius:2px;background:#f7d77b;color:#3d2a16;font:inherit;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#group-view .group-search-current{outline:2px solid #b87920;outline-offset:4px}
+html[data-persona="cyber"] #group-view .group-search-field{border-color:#315576;background:#10283d;color:#d2edf9}
+html[data-persona="cyber"] #group-search-input::placeholder{color:#86acc4}
+html[data-persona="cyber"] #group-search-nav{border-top-color:#315576;background:#091c2c;color:#b9dff3}
+html[data-persona="cyber"] #group-search-nav .group-search-icon-button{border-color:#315576;background:#10283d;color:#b9dff3}
+html[data-persona="cyber"] #group-view .group-search-field:focus-within{border-color:#53c9df;box-shadow:0 0 0 1px #53c9df26}
+html[data-persona="cyber"] #group-view .group-search-match{background:#a4e2ed;color:#061c2c}
+html[data-persona="cyber"] #group-view .group-search-current{outline-color:#53c9df}
+@media(max-width:390px){
+ #group-view .chat-header{grid-template-columns:26px minmax(0,1fr) auto;gap:5px;padding:10px}
+ #group-view .group-heading{gap:7px}
+ #group-view #group-title{font-size:15px}
+ #group-view .group-header-actions{gap:3px}
+}
+@media(max-width:340px){#group-view .group-header-actions .chat-reset{width:30px;min-width:30px}#group-view .group-header-actions{gap:3px}}
+
+
+/* ----- original chat style block ----- */
+
+#list-view .sengoku-chat-entry{margin:10px 0 0;cursor:pointer;animation:none}
+#list-view .sengoku-chat-entry .card-inner{gap:10px}
+#list-view .sengoku-entry-placeholder{flex:none;width:50px;height:50px;border-radius:15px;border:1.5px dashed #d1a985;background:rgba(182,127,71,.06);overflow:hidden}
+#list-view .sengoku-entry-placeholder img{display:block;width:100%;height:100%;object-fit:cover}
+#list-view .sengoku-chat-entry .card-info{flex:1;min-width:0}
+#list-view .sengoku-entry-name-row{display:flex;align-items:center;min-width:0;gap:8px;flex-wrap:nowrap}
+#list-view .sengoku-entry-title{font-size:16px;font-weight:900;line-height:1.4;color:#1e293b;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#list-view .sengoku-entry-limited{font-size:10px;font-weight:800;color:#ab6535;border:1px solid #dcb68b;border-radius:9px;padding:2px 7px;white-space:nowrap;flex:none}
+#list-view .sengoku-entry-caption{font-size:12px;font-weight:700;line-height:1.6;margin-top:4px;color:#a07960}
+#list-view .sengoku-chat-entry:focus-visible{outline:2px solid #bc8d59;outline-offset:3px}
+html[data-persona="cyber"] #list-view .sengoku-entry-placeholder{border-color:#446e89;background:rgba(30,112,150,.08)}
+html[data-persona="cyber"] #list-view .sengoku-entry-title{color:#e0eaff}
+html[data-persona="cyber"] #list-view .sengoku-entry-limited{color:#8fd6ec;border-color:#446e89}
+html[data-persona="cyber"] #list-view .sengoku-entry-caption{color:#92c7e5}
+@media(max-width:390px){#list-view .sengoku-entry-title{font-size:14px}#list-view .sengoku-entry-caption{font-size:11px}}
+#sengoku-panel{position:fixed;inset:0;z-index:9500;display:flex;flex-direction:column;overflow:hidden;background:#fffcf7}
+#sengoku-panel[hidden]{display:none!important}
+html[data-persona="cyber"] #sengoku-panel{background:#0f1430}
+#sengoku-frame{display:block;flex:1;min-height:0;width:100%;height:100%;border:0;background:transparent}

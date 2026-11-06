@@ -4,6 +4,8 @@
  const $=id=>document.getElementById(id);
  // The pilot sign-in remains available while the UI is labeled as prelaunch.
  let config,accessToken='',refreshToken='',tokenExpiresAt=0,refreshInFlight=null,roomId='',view=null,before=null,running=false,otpAt=0,loginEmail='',requestId=null;
+ // Avoid repainting messages, members and the lobby on every background refresh.
+ let lastRoomsSignature='', lastMembersSignature='', lastMessageRoomId='', renderedMessageKeys=[];
  // Keep the login until the user explicitly logs out (Supabase token rotation).
  // This is scoped to this origin / browser profile, not a server-side permanent login.
  const SESSION_KEY='nekopon-shared-chat-session-v1';
@@ -71,7 +73,9 @@
  let inviteToken=new URLSearchParams(location.hash.slice(1)).get('invite')||'';
  history.replaceState(null,'',location.pathname+location.search);
  if(!/^[a-f0-9]{64}$/.test(inviteToken))inviteToken='';
- const status=message=>{ $('status').textContent=message; $('chat-status').textContent=message; };
+ const setText=(id,value)=>{const el=$(id);if(el.textContent!==value)el.textContent=value;};
+ const setHidden=(id,hidden)=>{const el=$(id);if(el.hidden!==Boolean(hidden))el.hidden=Boolean(hidden);};
+ const status=message=>{setText('status',message);setText('chat-status',message);};
  const node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
  async function rpc(action,payload={}){
   if(!config)throw Error('共有グルチャに接続できません。');
@@ -85,7 +89,7 @@
   const d=await r.json().catch(()=>({}));
   if(!r.ok){
    if(r.status===401){clearSession();throw Error('ログインの更新が必要です。認証コードでログインしてください。');}
-   throw Error(d.error||'接続できませんでした。');
+   const error=new Error(d.error||'接続できませんでした。');error.httpStatus=r.status;throw error;
   }return d;
  }
  async function auth(path,payload){
@@ -95,13 +99,22 @@
  function clearSession(){
   try{localStorage.removeItem(SESSION_KEY);}catch(_){}
   setChatVisible(false);accessToken='';refreshToken='';tokenExpiresAt=0;roomId='';view=null;before=null;
-  $('text').value='';$('messages').replaceChildren();$('messages').dataset.fingerprint='';
+  $('text').value='';$('message-flow').replaceChildren();renderedMessageKeys=[];lastMessageRoomId='';lastMembersSignature='';lastRoomsSignature='';
   $('members').replaceChildren();$('rooms').replaceChildren();$('notification-control').hidden=true;
   $('invite-link').value='';$('lobby').hidden=true;$('chat').hidden=true;$('login').hidden=false;
  }
- async function run(fn){if(running)return;running=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);try{await fn();}catch(e){status(e.message);}finally{running=false;document.querySelectorAll('button').forEach(b=>b.disabled=b.dataset.pending==='1');if(view)$('older').disabled=!view.messages.length||view.messages[0].seq<=1;}}
+ async function run(fn){
+  // The old implementation disabled EVERY button on each request. Since the
+  // room polls frequently, that caused the whole UI to visibly flash.
+  if(running)return;running=true;
+  try{await fn();}catch(e){status(e.message);}finally{running=false;}
+ }
  async function list(){
-  const d=await rpc('list');$('rooms').replaceChildren();
+  const d=await rpc('list');
+  const signature=JSON.stringify(d.rooms.map(r=>[r.id,r.name,r.status,r.unread]));
+  if(signature===lastRoomsSignature)return; // keep existing DOM and scroll/focus
+  lastRoomsSignature=signature;
+  $('rooms').replaceChildren();
   for(const r of d.rooms){
    const button=node('button',undefined,'room-entry');button.type='button';
    button.disabled=r.status==='pending';button.dataset.pending=r.status==='pending'?'1':'';
@@ -120,20 +133,33 @@
  function roomAction(action,extra={}){return rpc(action,{room_id:roomId,...extra});}
  async function sync(first=false){
   const id=roomId;if(!id)return;
-  let d;try{d=await roomAction('sync',before?{before_seq:before}:{});}catch(e){if(id===roomId){roomId='';setChatVisible(false);$('lobby').hidden=false;$('messages').replaceChildren();$('members').replaceChildren();$('invite-link').value='';}throw e;}
+  let d;try{d=await roomAction('sync',before?{before_seq:before}:{});}catch(e){
+    // A temporary 429/5xx/network failure must NEVER kick everyone out of
+    // the room or blink the whole screen during its 5s polling cycle.
+    if(id===roomId && [403,404].includes(e.httpStatus)){roomId='';setChatVisible(false);$('lobby').hidden=false;$('message-flow').replaceChildren();renderedMessageKeys=[];lastMessageRoomId='';lastMembersSignature='';$('members').replaceChildren();$('invite-link').value='';}
+    throw e;
+  }
   if(roomId!==id)return;
-  view=d;$('title').textContent=d.room.name;$('admin').hidden=!d.room.owner;$('leave').hidden=d.room.owner;
+  view=d;setText('title',d.room.name);setHidden('admin',!d.room.owner);setHidden('leave',d.room.owner);
   const aiOn=d.room.ai_enabled===true;
-  $('ai-notice').textContent=aiOn?'歴史人物がこの部屋でも会話中です。AIの発言は創作です。':'歴史人物の自動会話は停止中です。';
-  $('ai-control').hidden=!config?.aiAvailable;
-  $('ai-toggle').textContent=aiOn?'歴史人物の自動会話を停止':'歴史人物の自動会話を開始';
-  $('notification-control').hidden=!config?.pushAvailable;
-  $('push-toggle').textContent=d.notifications_enabled?'このグループの通知をOFF':'このグループの通知をON';
-  const box=$('messages'),atBottom=first||box.scrollHeight-box.scrollTop-box.clientHeight<80,oldTop=box.scrollTop;
-  const fingerprint=JSON.stringify([before,d.messages,d.room.owner]);
-  if(box.dataset.fingerprint!==fingerprint){
-    box.replaceChildren();
-    for(const m of d.messages){
+  setText('ai-notice',aiOn?'歴史人物がこの部屋でも会話中です。AIの発言は創作です。':'歴史人物の自動会話は停止中です。');
+  setHidden('ai-control',!config?.aiAvailable);
+  setText('ai-toggle',aiOn?'歴史人物の自動会話を停止':'歴史人物の自動会話を開始');
+  setHidden('notification-control',!config?.pushAvailable);
+  setText('push-toggle',d.notifications_enabled?'このグループの通知をOFF':'このグループの通知をON');
+  const box=$('messages'),flow=$('message-flow');
+  const atBottom=first||box.scrollHeight-box.scrollTop-box.clientHeight<80,oldTop=box.scrollTop;
+  // Keep stable nodes while other members read/reply. Only new messages should
+  // appear; metadata used for server reads must not recreate all bubbles.
+  if(lastMessageRoomId!==roomId){
+    lastMessageRoomId=roomId;renderedMessageKeys=[];flow.replaceChildren();
+  }
+  const keys=d.messages.map(m=>JSON.stringify([m.seq,m.user_id,m.name,m.kind,m.speaker_id,m.text,m.sent_at,m.hidden,d.self_id,d.room.owner]));
+  const unchanged=keys.length===renderedMessageKeys.length && keys.every((v,i)=>v===renderedMessageKeys[i]);
+  const append=keys.length>=renderedMessageKeys.length && renderedMessageKeys.every((v,i)=>keys[i]===v);
+  if(!unchanged){
+    if(!append)flow.replaceChildren();
+    for(const m of d.messages.slice(append?renderedMessageKeys.length:0)){
       const own=m.user_id===d.self_id;
       const wrap=node('article',undefined,'message'+(own?' own':''));
       if(m.kind==='ai')wrap.classList.add('ai');
@@ -151,13 +177,18 @@
       const time=new Date(m.sent_at).toLocaleString('ja-JP',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Tokyo'});
       const meta=node('div',m.name+' · '+time,'meta');
       if(d.room.owner&&!m.hidden){const b=node('button','削除','message-delete');b.type='button';b.setAttribute('aria-label',m.name+'の投稿を削除');b.onclick=()=>run(async()=>{if(!confirm('この投稿を削除しますか？'))return;await roomAction('hide',{seq:m.seq});await sync();});meta.append(b);}
-      main.append(meta,node('div',m.hidden?'管理者が削除しました':m.text,'body'));wrap.append(main);box.append(wrap);
+      main.append(meta,node('div',m.hidden?'管理者が削除しました':m.text,'body'));wrap.append(main);flow.append(wrap);
     }
-    box.dataset.fingerprint=fingerprint;
-    if(atBottom)box.scrollTop=box.scrollHeight;else box.scrollTop=oldTop;
+    renderedMessageKeys=keys;
+    if(atBottom)box.scrollTop=box.scrollHeight;
+    else if(!append)box.scrollTop=oldTop;
   }
   $('older').disabled=!d.messages.length||d.messages[0].seq<=1;
-  $('members').replaceChildren();for(const m of d.members){const line=node('div',m.name+(m.status==='pending'?'（承認待ち）':m.status==='removed'?'（退出済み）':''),'person');if(d.room.owner&&m.user_id!==d.self_id&&m.status!=='removed'){for(const [action,label] of (m.status==='pending'?[['approve','承認'],['remove','却下']]:[['remove','退出処理']])){const b=node('button',label,'subtle');b.onclick=()=>run(async()=>{if(action==='remove'&&!confirm('この参加者を退出扱いにしますか？'))return;await roomAction(action,{user_id:m.user_id});await sync();});line.append(b);}}$('members').append(line);}
+  const membersSignature=JSON.stringify([d.room.owner,d.self_id,d.members]);
+  if(membersSignature!==lastMembersSignature){
+   lastMembersSignature=membersSignature;
+   $('members').replaceChildren();for(const m of d.members){const line=node('div',m.name+(m.status==='pending'?'（承認待ち）':m.status==='removed'?'（退出済み）':''),'person');if(d.room.owner&&m.user_id!==d.self_id&&m.status!=='removed'){for(const [action,label] of (m.status==='pending'?[['approve','承認'],['remove','却下']]:[['remove','退出処理']])){const b=node('button',label,'subtle');b.onclick=()=>run(async()=>{if(action==='remove'&&!confirm('この参加者を退出扱いにしますか？'))return;await roomAction(action,{user_id:m.user_id});await sync();});line.append(b);}}$('members').append(line);}
+  }
   await markRead();
  }
  async function markRead(){if(!view||document.hidden||$('chat').hidden)return;const box=$('messages');if(box.scrollHeight-box.scrollTop-box.clientHeight>80)return;const last=view.messages.at(-1)?.seq||0;if(last>view.last_read_seq){await roomAction('read',{seq:last});view.last_read_seq=last;}}
@@ -167,8 +198,8 @@
  $('refresh').onclick=()=>run(list);
  $('create').onclick=()=>run(async()=>{const d=await rpc('create',{name:$('room-name').value,nickname:$('owner-name').value});roomId=d.room_id;before=null;$('lobby').hidden=true;setChatVisible(true);await sync(true);status('グループを作成しました。参加者・管理から招待できます。');});
  $('join').onclick=()=>run(async()=>{await rpc('join',{token:inviteToken,nickname:$('nickname').value});inviteToken='';$('join-panel').hidden=true;status('参加を申請しました。管理者の承認をお待ちください。');await list();});
- $('back').onclick=()=>run(async()=>{roomId='';view=null;$('messages').replaceChildren();$('messages').dataset.fingerprint='';$('members').replaceChildren();$('invite-link').value='';setChatVisible(false);$('lobby').hidden=false;await list();});
- $('send').onclick=()=>run(async()=>{const text=$('text').value.trim();if(!text)throw Error('メッセージを入力してください。');requestId||={id:crypto.randomUUID(),text};if(requestId.text!==text)requestId={id:crypto.randomUUID(),text};await roomAction('send',{text,client_id:requestId.id});requestId=null;$('text').value='';before=null;await sync(true);status('');});
+ $('back').onclick=()=>run(async()=>{roomId='';view=null;$('message-flow').replaceChildren();renderedMessageKeys=[];lastMessageRoomId='';lastMembersSignature='';$('members').replaceChildren();$('invite-link').value='';setChatVisible(false);$('lobby').hidden=false;await list();});
+ $('send').onclick=()=>run(async()=>{const text=$('text').value.trim();if(!text)throw Error('メッセージを入力してください。');requestId||={id:crypto.randomUUID(),text};if(requestId.text!==text)requestId={id:crypto.randomUUID(),text};await roomAction('send',{text,client_id:requestId.id});requestId=null;$('text').value='';$('send').disabled=true;before=null;await sync(true);status('');});
  $('invite').onclick=()=>run(async()=>{const d=await roomAction('invite');$('invite-link').value=location.origin+'/shared-chat.html#invite='+d.token;status('招待リンクを発行しました。');});
  $('copy').onclick=()=>run(async()=>{if(!$('invite-link').value)throw Error('先にリンクを発行してください。');await navigator.clipboard.writeText($('invite-link').value);status('コピーしました。');});
  $('revoke').onclick=()=>run(async()=>{await roomAction('revoke_invites');$('invite-link').value='';status('招待リンクを無効にしました。');});
@@ -192,12 +223,25 @@
   const subscription=await worker.pushManager.getSubscription()||await worker.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:toU8(config.vapidPublicKey)});
   await roomAction('subscribe',{subscription:subscription.toJSON()});await sync();status('この部屋の通知をONにしました。');
  });
- $('leave').onclick=()=>run(async()=>{if(!confirm('退出すると会話を読めなくなります。退出しますか？'))return;await roomAction('leave');roomId='';view=null;$('messages').replaceChildren();$('members').replaceChildren();setChatVisible(false);$('lobby').hidden=false;await list();status('退出しました。');});
+ $('leave').onclick=()=>run(async()=>{if(!confirm('退出すると会話を読めなくなります。退出しますか？'))return;await roomAction('leave');roomId='';view=null;$('message-flow').replaceChildren();renderedMessageKeys=[];lastMessageRoomId='';lastMembersSignature='';$('members').replaceChildren();setChatVisible(false);$('lobby').hidden=false;await list();status('退出しました。');});
  $('older').onclick=()=>run(async()=>{if(view?.messages.length){before=view.messages[0].seq;await sync(true);}});
  $('latest').onclick=()=>run(async()=>{before=null;await sync(true);});
  $('messages').addEventListener('scroll',()=>{if(!running&&accessToken&&roomId)run(markRead);});
- document.addEventListener('visibilitychange',()=>{if(!document.hidden&&refreshToken)run(roomId?sync:list);});
- window.addEventListener('online',()=>{if(refreshToken&&!running)run(roomId?sync:list);});
+ // Background refresh must not disable controls, replace unchanged nodes,
+ // or alter keyboard focus while someone is reading or composing a message.
+ let quietPollRunning=false,lastQuietPollError='';
+ async function quietPoll(){
+  if(quietPollRunning||running||!refreshToken||document.hidden)return;
+  quietPollRunning=true;
+  try{
+   await (roomId?sync():list());
+   if(lastQuietPollError&&$('chat-status').textContent===lastQuietPollError)status('');
+   lastQuietPollError='';
+  }catch(e){lastQuietPollError=e.message||'更新できませんでした。';status(lastQuietPollError);}
+  finally{quietPollRunning=false;}
+ }
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)void quietPoll();});
+ window.addEventListener('online',()=>{void quietPoll();});
  window.addEventListener('storage',e=>{
   if(e.key!==SESSION_KEY)return;
   if(!e.newValue){if(accessToken||refreshToken){clearSession();status('別のタブでログアウトされました。');}return;}
@@ -206,7 +250,7 @@
   accessToken=typeof d.accessToken==='string'?d.accessToken:'';
   refreshToken=d.refreshToken;tokenExpiresAt=Number(d.tokenExpiresAt)||0;
  });
- setInterval(()=>{if(accessToken&&!document.hidden&&!running)run(roomId?sync:list);},5000);
+ setInterval(()=>{if(accessToken)void quietPoll();},5000);
  // Like the existing Himiko group view, the header and composer are fixed
  // siblings of the *only* scrolling area (#messages). Do not allow the lobby
  // document to continue scrolling behind the room: iOS otherwise scrolls the
@@ -259,16 +303,15 @@
  $('text').addEventListener('blur',scheduleChatViewport);
  // Prevent dragging fixed headers / composer from dragging the whole page.
  // Preserve native kinetic scrolling within messages and the management menu.
- let touchY=0;
- $('chat').addEventListener('touchstart',e=>{if(e.touches.length===1)touchY=e.touches[0].clientY;},{passive:true});
  $('chat').addEventListener('touchmove',e=>{
   if(e.touches.length!==1||!document.documentElement.hasAttribute('data-shared-chat-open'))return;
+  // Let WebKit own the finger drag, momentum and rubber-band inside the
+  // message scroller (as in the existing solo Himiko group chat). In
+  // particular, never preventDefault at the top/bottom boundary.
   const scroller=e.target.closest('#messages,.manage-pane,textarea');
-  if(!scroller||scroller.scrollHeight<=scroller.clientHeight+1){e.preventDefault();return;}
-  const dy=e.touches[0].clientY-touchY;
-  if((dy>0&&scroller.scrollTop<=0)||(dy<0&&scroller.scrollTop+scroller.clientHeight>=scroller.scrollHeight-1))e.preventDefault();
+  if(!scroller)e.preventDefault(); // still lock header/composer/backdrop
  },{passive:false});
- $('text').addEventListener('input',()=>{const el=$('text');el.style.height='44px';el.style.height=Math.min(el.scrollHeight,118)+'px';});
+ $('text').addEventListener('input',()=>{const el=$('text');el.style.height='44px';el.style.height=Math.min(el.scrollHeight,118)+'px';$('send').disabled=!el.value.trim();});
  $('text').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){e.preventDefault();$('send').click();}});
  $('return-app').addEventListener('click',e=>{if(history.length>1){e.preventDefault();history.back();}});
  fetch('/api/shared-chat',{cache:'no-store'}).then(async r=>{

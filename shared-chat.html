@@ -64,10 +64,10 @@
 
 <section id="chat" class="chat-screen" aria-label="共有グループチャット" hidden>
   <div class="chat-header">
-    <button id="back" class="icon-btn" type="button" aria-label="グループ一覧に戻る">‹</button>
+    <button id="back" class="icon-btn" type="button" aria-label="グループ一覧に戻る">＜</button>
     <div class="chat-room-mark" aria-hidden="true">🌀</div>
     <div class="room-heading"><h2 id="title">グループ</h2><p><span class="live-dot" aria-hidden="true"></span> みんなと歴史人物の共有トーク</p></div>
-    <details class="manage-menu"><summary title="参加者・管理" aria-label="参加者・管理">⋯</summary>
+    <details class="manage-menu"><summary title="参加者・管理" aria-label="参加者・管理"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="7.5" cy="8" r=".7" fill="currentColor" stroke="none"/><circle cx="7.5" cy="12" r=".7" fill="currentColor" stroke="none"/><circle cx="7.5" cy="16" r=".7" fill="currentColor" stroke="none"/><path d="M11 8h6M11 12h6M11 16h6"/></svg></summary>
       <div class="manage-pane">
         <div class="manage-title"><h3>参加者・管理</h3><p>部屋の設定はこちら</p></div>
         <p class="manage-caption">歴史人物の発言は創作です。個人情報の投稿は控えてください。</p>
@@ -81,8 +81,8 @@
   </div>
   <div class="chat-tools"><button id="older" class="quiet" type="button">↑ 前の会話</button><span class="chat-tools-label">みんなに同じ会話が届くよ</span><button id="latest" class="quiet" type="button">最新へ ↓</button></div>
   <p id="chat-status" class="chat-status" role="status" aria-live="polite"></p>
-  <div id="messages" class="message-list" role="log" aria-live="polite" tabindex="0"></div>
-  <div class="composer"><label class="sr-only" for="text">メッセージ</label><textarea id="text" maxlength="2000" rows="1" placeholder="おしゃべりしよう！"></textarea><button id="send" class="send-btn" type="button" aria-label="メッセージを送信">送信 <span aria-hidden="true">➤</span></button></div>
+  <div id="messages" class="message-list" role="log" aria-live="polite" tabindex="0"><div id="message-flow" class="message-flow"></div></div>
+  <div class="composer"><label class="sr-only" for="text">メッセージ</label><textarea id="text" maxlength="2000" rows="1" placeholder="おしゃべりしよう！"></textarea><button id="send" class="send-btn" type="button" aria-label="メッセージを送信" disabled>↑</button></div>
 </section>
 </body>
 </html>

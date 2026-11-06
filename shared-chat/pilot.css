@@ -156,3 +156,31 @@ html[data-shared-chat-open] .app-shell{
 .coming-soon-panel p{font-size:13px;font-weight:700;line-height:1.9;color:var(--text);margin:0 0 7px}
 .coming-soon-panel .prelaunch-foot{font-size:11px;color:var(--muted);margin:21px 0 0;padding-top:14px;border-top:1px solid var(--line)}
 .login-panel .prelaunch-chip{margin-bottom:15px}
+
+/* 2026-11-06: Match the solo historical group chat's native iOS bounce. */
+.message-list{
+  overscroll-behavior-y:contain;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+}
+/* A 2px overflow also allows rubber-band gestures in short conversations.
+   The inner wrapper holds all messages without changing their order. */
+.message-flow{min-height:calc(100% + 2px);}
+/* The alert must never push the scroll surface or composer up/down. */
+.chat-screen .chat-status:not(:empty){
+  position:absolute;z-index:7;top:calc(115px + env(safe-area-inset-top));
+  left:12px;right:12px;margin:0;
+  box-shadow:var(--shadow);pointer-events:none;
+}
+/* Use the same compact send-arrow button as the existing Himiko group chat. */
+.chat-screen .send-btn{
+  width:46px;min-width:46px;height:44px;min-height:44px;
+  border-radius:12px;padding:0;
+  font-size:25px;line-height:1;
+  background:var(--accent);color:var(--accent-text);
+}
+.chat-screen .composer{align-items:center;}
+.chat-screen .icon-btn{font-size:26px;font-weight:500;}
+
+/* Reuse the member-list symbol used in the original Himiko group header. */
+.manage-menu>summary svg{width:20px;height:20px;display:block;}

@@ -1893,6 +1893,49 @@ html[data-persona="cyber"] .history-era-years,html[data-persona="cyber"] #card-l
 html[data-persona="cyber"] #profile-modal .profile-episode{background:#172c43!important;color:#d5e8fa!important;}
 html[data-persona="cyber"] #profile-modal .profile-episode-title{color:#e3f1ff;}
 </style>
+<style id="group-conversation-search-20261106">
+/* Conversation search replaces the group title row, leaving chat layout intact. */
+#group-view .group-header-actions{gap:4px}
+#group-view .group-header-actions .chat-reset{width:32px;min-width:32px;height:34px;min-height:34px;touch-action:manipulation}
+#group-view .group-header-actions .chat-reset svg,#group-view #group-members-direct svg{display:block;width:18px;height:18px;flex:none}
+#group-view .group-search-header[hidden],#group-search-nav[hidden],#group-search-clear[hidden]{display:none!important}
+#group-view[data-search-open] > .chat-header{min-height:var(--group-search-header-height,64px)}
+#group-view[data-search-open] > .chat-header > :not(.group-search-header){display:none!important}
+#group-view[data-search-open] > #group-form{display:none!important}
+#group-view .group-search-header{grid-column:1/-1;display:flex;align-items:center;gap:8px;width:100%;min-width:0;margin:0}
+#group-view .group-search-field{display:flex;align-items:center;gap:8px;flex:1;min-width:0;height:38px;padding:0 10px;border:1px solid #d9c4b3;border-radius:10px;background:#fff9f2;color:#76523c}
+#group-view .group-search-field > svg{width:18px;height:18px;flex:none}
+#group-view #group-search-input{display:block;flex:1;min-width:0;width:0;height:36px;margin:0;padding:0;border:0;border-radius:0;outline:none;background:transparent;color:inherit;font-family:inherit;font-size:16px;font-weight:500;line-height:normal;-webkit-appearance:none;appearance:none}
+#group-search-input::-webkit-search-cancel-button{display:none}
+#group-search-input::placeholder{color:#9a8473;opacity:1}
+#group-view .group-search-icon-button{display:grid;place-items:center;flex:none;width:34px;height:38px;padding:0;border:0;border-radius:8px;background:transparent;color:inherit;cursor:pointer;touch-action:manipulation}
+#group-view .group-search-icon-button svg{width:20px;height:20px;display:block}
+#group-view #group-search-clear{width:24px;height:32px;color:inherit}
+#group-view #group-search-clear svg{width:16px;height:16px}
+#group-search-nav{display:flex;align-items:center;gap:8px;flex:0 0 auto;min-height:52px;padding:7px 14px calc(7px + env(safe-area-inset-bottom,0px));border-top:1px solid #ead2b9;background:#fff8f0;color:#76523c}
+#group-search-count{flex:1;min-width:0;font-family:inherit;font-size:12px;line-height:1.5;font-weight:700;overflow-wrap:anywhere}
+#group-search-nav .group-search-icon-button{width:40px;height:38px;border:1px solid #d9c4b3;background:#fff9f2}
+#group-view .group-search-icon-button:disabled{opacity:.3;cursor:default}
+#group-view .group-search-icon-button:focus-visible,#group-search-toggle:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+#group-view .group-search-field:focus-within{border-color:#b17b43;box-shadow:0 0 0 1px #b17b4326}
+#group-view .group-search-match{padding:0;border-radius:2px;background:#f7d77b;color:#3d2a16;font:inherit;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#group-view .group-search-current{outline:2px solid #b87920;outline-offset:4px}
+html[data-persona="cyber"] #group-view .group-search-field{border-color:#315576;background:#10283d;color:#d2edf9}
+html[data-persona="cyber"] #group-search-input::placeholder{color:#86acc4}
+html[data-persona="cyber"] #group-search-nav{border-top-color:#315576;background:#091c2c;color:#b9dff3}
+html[data-persona="cyber"] #group-search-nav .group-search-icon-button{border-color:#315576;background:#10283d;color:#b9dff3}
+html[data-persona="cyber"] #group-view .group-search-field:focus-within{border-color:#53c9df;box-shadow:0 0 0 1px #53c9df26}
+html[data-persona="cyber"] #group-view .group-search-match{background:#a4e2ed;color:#061c2c}
+html[data-persona="cyber"] #group-view .group-search-current{outline-color:#53c9df}
+@media(max-width:390px){
+ #group-view .chat-header{grid-template-columns:26px minmax(0,1fr) auto;gap:5px;padding:10px}
+ #group-view .group-heading{gap:7px}
+ #group-view #group-title{font-size:15px}
+ #group-view .group-header-actions{gap:3px}
+}
+@media(max-width:340px){#group-view .group-header-actions .chat-reset{width:30px;min-width:30px}#group-view .group-header-actions{gap:3px}}
+
+</style>
 </head>
 <body>
 
@@ -1973,7 +2016,7 @@ html[data-persona="cyber"] #profile-modal .profile-episode-title{color:#e3f1ff;}
   </div>
 </div>
 
-<section id="group-view" hidden aria-label="グループチャット"><header class="chat-header"><button class="back-btn" type="button" onclick="closeGroupChat()" aria-label="戻る">＜</button><div class="group-heading"><button type="button" id="group-header-avatar" class="chat-avatar" onclick="openGroupImage(this)" aria-label="グループ画像を拡大"><img src="history-icons/group-chat.png?v=timemachine1" alt="タイムマシーン" onerror="this.hidden=true;this.parentElement.textContent='💬'"></button><div class="group-heading-text"><button type="button" id="group-title" onclick="toggleGroupParticipants()" aria-label="参加者アイコンを表示" aria-expanded="false">グループチャット</button><button type="button" id="group-count" onclick="toggleGroupParticipants()" aria-label="参加者アイコンを表示" aria-expanded="false">(132)</button></div></div><div class="group-header-actions"><button type="button" id="group-members-direct" class="chat-reset" onclick="showGroupMembers()" aria-label="参加者一覧を開く" title="参加者一覧"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="7.5" cy="8" r=".8" fill="currentColor" stroke="none"/><circle cx="7.5" cy="12" r=".8" fill="currentColor" stroke="none"/><circle cx="7.5" cy="16" r=".8" fill="currentColor" stroke="none"/><path d="M11 8h6M11 12h6M11 16h6"/></svg></button><button type="button" id="group-reset" class="chat-reset" onclick="resetGroupChat()" aria-label="会話をリセット" title="会話をリセット" disabled>↻</button></div></header><div id="group-participant-strip" hidden><div id="group-participant-icons" aria-label="参加者アイコン"></div><button type="button" id="group-members-arrow" onclick="showGroupMembers()" aria-label="参加者一覧を開く">›</button></div><div id="group-status" role="alert" hidden></div><div id="group-messages" class="messages" aria-live="polite"><div id="group-messages-inner" class="messages-inner"></div></div><form id="group-form" class="input-area"><div id="group-quote-draft" hidden></div><div class="input-inner"><textarea id="group-input" rows="1" maxlength="2000" placeholder="おしゃべりしよう！"></textarea><button class="send-btn" id="group-send" type="submit" aria-label="送信" disabled>↑</button></div></form><div id="group-members" hidden><header class="members-header"><button class="back-btn" type="button" onclick="hideGroupMembers()" aria-label="グループチャットへ戻る">＜</button><div class="members-heading"><button type="button" class="group-members-avatar" onclick="openGroupImage(this)" aria-label="グループ画像を拡大"><img src="history-icons/group-chat.png?v=timemachine1" alt=""></button><h2 class="members-title"><button type="button" id="group-settings-name" onclick="renameGroupChat()" aria-label="グループ名を変更">グループチャット</button><span id="group-member-heading">(132)</span></h2></div></header><div class="members-scroll"><p id="group-member-error" class="member-error" role="alert" hidden></p><div id="group-member-list"></div></div><input id="group-avatar-input" type="file" accept="image/*" hidden></div></section>
+<section id="group-view" hidden aria-label="グループチャット"><header class="chat-header"><button class="back-btn" type="button" onclick="closeGroupChat()" aria-label="戻る">＜</button><div class="group-heading"><button type="button" id="group-header-avatar" class="chat-avatar" onclick="openGroupImage(this)" aria-label="グループ画像を拡大"><img src="history-icons/group-chat.png?v=timemachine1" alt="タイムマシーン" onerror="this.hidden=true;this.parentElement.textContent='💬'"></button><div class="group-heading-text"><button type="button" id="group-title" onclick="toggleGroupParticipants()" aria-label="参加者アイコンを表示" aria-expanded="false">グループチャット</button><button type="button" id="group-count" onclick="toggleGroupParticipants()" aria-label="参加者アイコンを表示" aria-expanded="false">(132)</button></div></div><div class="group-header-actions"><button type="button" id="group-search-toggle" class="chat-reset" onclick="openGroupSearch()" aria-label="会話を検索" title="会話を検索" aria-expanded="false" aria-controls="group-search-form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button><button type="button" id="group-members-direct" class="chat-reset" onclick="showGroupMembers()" aria-label="参加者一覧を開く" title="参加者一覧"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="7.5" cy="8" r=".8" fill="currentColor" stroke="none"/><circle cx="7.5" cy="12" r=".8" fill="currentColor" stroke="none"/><circle cx="7.5" cy="16" r=".8" fill="currentColor" stroke="none"/><path d="M11 8h6M11 12h6M11 16h6"/></svg></button><button type="button" id="group-reset" class="chat-reset" onclick="resetGroupChat()" aria-label="会話をリセット" title="会話をリセット" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M19.3 7.3a8 8 0 1 0 .5 8.6"/></svg></button></div><form id="group-search-form" class="group-search-header" role="search" aria-label="グループの会話を検索" hidden><div class="group-search-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input type="search" id="group-search-input" maxlength="200" placeholder="会話を検索" aria-label="会話内の検索キーワード" enterkeyhint="search" autocomplete="off" autocapitalize="off" spellcheck="false"><button type="button" id="group-search-clear" class="group-search-icon-button" aria-label="検索語を消す" title="検索語を消す" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><button type="button" id="group-search-close" class="group-search-icon-button" aria-label="検索を閉じる" title="検索を閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></form></header><div id="group-participant-strip" hidden><div id="group-participant-icons" aria-label="参加者アイコン"></div><button type="button" id="group-members-arrow" onclick="showGroupMembers()" aria-label="参加者一覧を開く">›</button></div><div id="group-status" role="alert" hidden></div><div id="group-messages" class="messages" aria-live="polite"><div id="group-messages-inner" class="messages-inner"></div></div><div id="group-search-nav" aria-label="検索結果の移動" hidden><span id="group-search-count" role="status" aria-live="polite" aria-atomic="true">会話内を検索</span><button type="button" id="group-search-prev" class="group-search-icon-button" aria-label="前の検索結果へ" title="前の検索結果" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button><button type="button" id="group-search-next" class="group-search-icon-button" aria-label="次の検索結果へ" title="次の検索結果" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div><form id="group-form" class="input-area"><div id="group-quote-draft" hidden></div><div class="input-inner"><textarea id="group-input" rows="1" maxlength="2000" placeholder="おしゃべりしよう！"></textarea><button class="send-btn" id="group-send" type="submit" aria-label="送信" disabled>↑</button></div></form><div id="group-members" hidden><header class="members-header"><button class="back-btn" type="button" onclick="hideGroupMembers()" aria-label="グループチャットへ戻る">＜</button><div class="members-heading"><button type="button" class="group-members-avatar" onclick="openGroupImage(this)" aria-label="グループ画像を拡大"><img src="history-icons/group-chat.png?v=timemachine1" alt=""></button><h2 class="members-title"><button type="button" id="group-settings-name" onclick="renameGroupChat()" aria-label="グループ名を変更">グループチャット</button><span id="group-member-heading">(132)</span></h2></div></header><div class="members-scroll"><p id="group-member-error" class="member-error" role="alert" hidden></p><div id="group-member-list"></div></div><input id="group-avatar-input" type="file" accept="image/*" hidden></div></section>
 <!-- PROFILE MODAL -->
 
 <div id="profile-modal" class="hidden"></div>
@@ -3043,7 +3086,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
   // Both the personal and group composers live inside the iframe. Tell the parent
   // about either keyboard focus so its visualViewport sizing keeps the composer
   // directly above the iPhone keyboard instead of leaving it offscreen.
-  const inputs=['msg-input','group-input'].map(id=>document.getElementById(id)).filter(Boolean);
+  const inputs=['msg-input','group-input','group-search-input'].map(id=>document.getElementById(id)).filter(Boolean);
   const tell=active=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-input-focus',active},location.origin)};
   for(const input of inputs){
     input.addEventListener('focus',()=>tell(true));
@@ -3225,6 +3268,84 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  function mark(ids){const x=seen();ids.forEach(v=>x.add(v));try{localStorage.setItem(SEEN,JSON.stringify([...x]))}catch{} }
  function avatar(p){return `<span class="avatar" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</span>`}
 
+ // Local-only search: never changes stored messages or sends a search to AI.
+ const groupSearchState={open:false,query:'',matches:[],index:-1,targetId:null,composing:false,timer:null};
+ function clearGroupSearchMarks(){
+  const box=$('group-messages-inner');
+  for(const mark of box.querySelectorAll('mark.group-search-match')){const parent=mark.parentNode;mark.replaceWith(document.createTextNode(mark.textContent));parent?.normalize();}
+  box.querySelectorAll('.group-search-current').forEach(el=>el.classList.remove('group-search-current'));
+ }
+ function groupSearchPattern(query){return new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'giu');}
+ function highlightGroupSearchBubble(bubble,pattern){
+  const nodes=[],walker=document.createTreeWalker(bubble,NodeFilter.SHOW_TEXT);
+  while(walker.nextNode()){const node=walker.currentNode;if(!node.parentElement?.closest('.group-quote'))nodes.push(node);}
+  let found=false;
+  for(const node of nodes){
+   pattern.lastIndex=0;const hits=[...node.textContent.matchAll(pattern)];if(!hits.length)continue;
+   found=true;const fragment=document.createDocumentFragment();let end=0;
+   for(const hit of hits){fragment.append(document.createTextNode(node.textContent.slice(end,hit.index)));const mark=document.createElement('mark');mark.className='group-search-match';mark.textContent=hit[0];fragment.append(mark);end=hit.index+hit[0].length;}
+   fragment.append(document.createTextNode(node.textContent.slice(end)));node.replaceWith(fragment);
+  }
+  return found;
+ }
+ function updateGroupSearchControls(){
+  const state=groupSearchState,count=state.matches.length;
+  $('group-search-count').textContent=!state.query?'会話内を検索':count?(state.index+1)+' / '+count:'見つかりませんでした';
+  $('group-search-count').setAttribute('aria-label',!state.query?'検索する言葉を入力してください':count?count+'件中'+(state.index+1)+'件目':'検索結果0件');
+  $('group-search-prev').disabled=!count||state.index<=0;
+  $('group-search-next').disabled=!count||state.index>=count-1;
+  $('group-search-clear').hidden=!$('group-search-input').value;
+ }
+ function focusGroupSearchMatch(move=false){
+  $('group-messages-inner').querySelectorAll('.group-search-current').forEach(el=>el.classList.remove('group-search-current'));
+  const target=groupSearchState.matches[groupSearchState.index];groupSearchState.targetId=target?.id||null;
+  if(target){
+   target.classList.add('group-search-current');
+   if(move){const scroller=$('group-messages'),a=target.getBoundingClientRect(),b=scroller.getBoundingClientRect();scroller.scrollTo({top:Math.max(0,scroller.scrollTop+a.top-b.top-(scroller.clientHeight-a.height)/2),behavior:'auto'});}
+  }
+  updateGroupSearchControls();
+ }
+ function refreshGroupSearch(move=false){
+  const state=groupSearchState;if(!state.open||state.composing)return;
+  const query=$('group-search-input').value.trim(),changed=query!==state.query,prior=state.targetId;
+  state.query=query;clearGroupSearchMarks();state.matches=[];
+  if(query){const pattern=groupSearchPattern(query);for(const bubble of $('group-messages-inner').querySelectorAll('.bubble[id]'))if(highlightGroupSearchBubble(bubble,pattern))state.matches.push(bubble);}
+  const kept=changed?-1:state.matches.findIndex(el=>el.id===prior);
+  state.index=kept>=0?kept:state.matches.length-1;focusGroupSearchMatch(move);
+ }
+ function closeGroupSearch(restoreFocus=false){
+  const state=groupSearchState;if(!state.open)return;
+  clearTimeout(state.timer);state.timer=null;state.open=false;state.query='';state.matches=[];state.index=-1;state.targetId=null;state.composing=false;
+  clearGroupSearchMarks();$('group-search-input').blur();$('group-search-input').value='';
+  $('group-search-form').hidden=true;$('group-search-nav').hidden=true;delete $('group-view').dataset.searchOpen;
+  $('group-view').style.removeProperty('--group-search-header-height');$('group-search-toggle').setAttribute('aria-expanded','false');
+  if(restoreFocus)$('group-search-toggle').focus({preventScroll:true});
+ }
+ window.openGroupSearch=()=>{
+  if($('group-view').hidden)return;
+  if(!$('group-participant-strip').hidden)window.toggleGroupParticipants();
+  const header=$('group-view').querySelector(':scope > .chat-header');
+  $('group-view').style.setProperty('--group-search-header-height',header.getBoundingClientRect().height+'px');
+  groupSearchState.open=true;$('group-messages').dataset.unreadAnchored='true';$('group-view').dataset.searchOpen='true';$('group-search-form').hidden=false;$('group-search-nav').hidden=false;
+  $('group-search-toggle').setAttribute('aria-expanded','true');refreshGroupSearch();
+  $('group-search-input').focus({preventScroll:true});
+ };
+ window.closeGroupSearch=()=>closeGroupSearch(true);
+ function stepGroupSearch(direction){
+  if(!groupSearchState.open||!groupSearchState.matches.length)return;
+  groupSearchState.index=Math.max(0,Math.min(groupSearchState.matches.length-1,groupSearchState.index+direction));focusGroupSearchMatch(true);
+ }
+ $('group-search-input').addEventListener('compositionstart',()=>{groupSearchState.composing=true;clearTimeout(groupSearchState.timer)});
+ $('group-search-input').addEventListener('compositionend',()=>{groupSearchState.composing=false;refreshGroupSearch(true)});
+ $('group-search-input').addEventListener('input',e=>{if(e.isComposing||groupSearchState.composing)return;clearTimeout(groupSearchState.timer);groupSearchState.timer=setTimeout(()=>refreshGroupSearch(true),100)});
+ $('group-search-input').addEventListener('keydown',e=>{if(e.isComposing||groupSearchState.composing)return;if(e.key==='Escape'){e.preventDefault();closeGroupSearch(true)}else if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();clearTimeout(groupSearchState.timer);refreshGroupSearch();stepGroupSearch(e.key==='ArrowUp'?-1:1)}});
+ $('group-search-form').addEventListener('submit',e=>{e.preventDefault();if(groupSearchState.composing)return;clearTimeout(groupSearchState.timer);refreshGroupSearch(true);$('group-search-input').blur()});
+ $('group-search-close').addEventListener('click',()=>closeGroupSearch(true));
+ $('group-search-clear').addEventListener('click',()=>{clearTimeout(groupSearchState.timer);$('group-search-input').value='';refreshGroupSearch();$('group-search-input').focus({preventScroll:true})});
+ $('group-search-prev').addEventListener('click',()=>stepGroupSearch(-1));
+ $('group-search-next').addEventListener('click',()=>stepGroupSearch(1));
+ for(const id of ['group-search-prev','group-search-next','group-search-clear'])$(id).addEventListener('pointerdown',e=>e.preventDefault());
+
  // Display order and read positions persist independently of server schedule times.
  function groupRowKey(row){return row.dataset.groupRowKey||(row.dataset.groupRowKey=row.querySelector('.bubble[id]')?.id||('event:'+row.dataset.groupEvent+':'+row.dataset.groupEventPerson+':'+row.dataset.groupTimelineAt+':'+(row.dataset.inboxKey||'')));}
  function groupUserOrder(turn){return Number(state.timelineRows?.[groupBubbleId('user',turn.question,turn.at)]?.order)||0;}
@@ -3348,7 +3469,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  function quoteHTML(q){return q?`<button type="button" class="group-quote" data-quote-jump="${escAttr(q.target||'')}"><strong>${safe(q.name)}</strong><span>${safe(q.text.slice(0,200))}</span></button>`:''}
  function setGroupQuote(q){groupQuote=q;const box=$('group-quote-draft');if(!box)return;box.hidden=!q;box.innerHTML=q?quoteHTML(q)+'<button type="button" id="group-quote-cancel" aria-label="引用を解除">×</button>':'';}
  $('group-form').addEventListener('click',e=>{if(e.target.closest('#group-quote-cancel'))setGroupQuote(null)});
- $('group-messages').addEventListener('click',e=>{const jump=e.target.closest('[data-quote-jump]');if(jump){const target=$(jump.dataset.quoteJump);if(target){target.scrollIntoView({block:'center',behavior:'smooth'});target.classList.add('quote-highlight');setTimeout(()=>target.classList.remove('quote-highlight'),1500)}return;}const bubble=e.target.closest('[data-group-quote-text]');if(!bubble||window.getSelection()?.toString())return;setGroupQuote({name:bubble.dataset.groupQuoteName,text:bubble.dataset.groupQuoteText,target:bubble.id});$('group-input').focus();});
+ $('group-messages').addEventListener('click',e=>{if(groupSearchState.open)return;const jump=e.target.closest('[data-quote-jump]');if(jump){const target=$(jump.dataset.quoteJump);if(target){target.scrollIntoView({block:'center',behavior:'smooth'});target.classList.add('quote-highlight');setTimeout(()=>target.classList.remove('quote-highlight'),1500)}return;}const bubble=e.target.closest('[data-group-quote-text]');if(!bubble||window.getSelection()?.toString())return;setGroupQuote({name:bubble.dataset.groupQuoteName,text:bubble.dataset.groupQuoteText,target:bubble.id});$('group-input').focus();});
  function rowUser(text,at=null,read=false,failed=false,quote=null){return `<div class="bubble-row user is-new" data-group-timeline-at="${Number(at)||0}" data-group-sent-at="${Number(at)||Date.now()}"><div id="${groupBubbleId('user',text,at)}" class="bubble user" data-group-quote-name="あなた" data-group-quote-text="${escAttr(text)}">${quoteHTML(quote)}${safe(text)}</div>${failed?'':groupReadMeta(at)}</div>`}
  function rowReplyPart(p,text,first,animate=false,meta={}){if(meta.reply?.event){
  const event=meta.reply.event,legacy=String(text).match(/（([\s\S]*)）$/),reason=meta.reply.reason||(legacy?legacy[1]:'');
@@ -3359,7 +3480,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
 }const at=Number(meta.due||meta.at||meta.reply?.at);if(at&&at<=Date.now()&&at>Date.now()-600000)window.dispatchEvent(new CustomEvent('himiko-group-speaker',{detail:{id:p.id,at}}));return `<div data-group-timeline-at="${Number(meta.at||meta.reply?.at)||0}" ${meta.key?`data-inbox-key="${escAttr(meta.key)}"`:""} class="bubble-row assistant${first?'':' continuation'}${animate?' is-new':''}">${first?`<button type="button" class="bubble-avatar group-person-avatar" data-id="${p.id}" aria-label="${safe(p.name)}のプロフィールを見る" style="background:linear-gradient(135deg,${p.color},${p.accent})">${historyAvatarHTML(p)}</button>`:'<div class="bubble-avatar-spacer" aria-hidden="true"></div>'}<div class="group-reply-content">${first?`<div class="group-reply-name"><span class="group-name-label">${safe(p.name)}${p.isNarrator||p.isExplainer?'（解説）':''}${p.isSpecial||!p.period?'':` <span class="group-reply-period">（${safe(p.period.replace(/[（(]/g,'・').replace(/[）)]/g,''))}）</span>`}</span></div>`:''}<div id="${groupBubbleId(p.id,text,meta.at||meta.reply?.at)}" class="bubble assistant" data-group-quote-name="${escAttr(p.name)}" data-group-quote-text="${escAttr(text)}">${first?quoteHTML(replyQuote(meta.reply)):''}${safe(cleanSpeakerLabel(text,p.name))}</div>${historyMeta(meta.at)}</div></div>`}
  function rowReply(x){const p=ch(x.id);if(!p)return '';return `<div class="bubble-group">${splitReplyBubbles(x.text).map((part,i)=>rowReplyPart(p,part,i===0)).join('')}</div>`}
  function groupTyping(p){const color=p?.color||'#6b90a8';return `<div id="group-typing" class="bubble-row assistant typing-row" role="status" aria-label="次のメッセージを準備中"><div class="bubble-avatar-spacer" aria-hidden="true"></div><div class="typing">${[0,.2,.4].map(d=>`<span class="typing-dot" style="background:${color};animation-delay:${d}s"></span>`).join('')}</div></div>`}
- function groupFollow(){const scroller=$('group-messages');return scroller.scrollHeight-scroller.scrollTop-scroller.clientHeight<120}
+ function groupFollow(){if(groupSearchState.open)return false;const scroller=$('group-messages');return scroller.scrollHeight-scroller.scrollTop-scroller.clientHeight<120}
  function normalizeGroupTimeline(){
   const box=$('group-messages-inner');
   const rows=[...box.children].filter(el=>el.hasAttribute('data-group-timeline-at'));
@@ -3404,7 +3525,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
   if(changed)save();
  }
 
- function groupAppend(markup,follow){const box=$('group-messages-inner'),scroller=$('group-messages'),top=scroller.scrollTop;box.insertAdjacentHTML('beforeend',markup);normalizeGroupTimeline();if(follow)scroller.scrollTop=scroller.scrollHeight;else scroller.scrollTop=top}
+ function groupAppend(markup,follow){const box=$('group-messages-inner'),scroller=$('group-messages'),top=scroller.scrollTop;box.insertAdjacentHTML('beforeend',markup);normalizeGroupTimeline();if(follow&&!groupSearchState.open)scroller.scrollTop=scroller.scrollHeight;else scroller.scrollTop=top;refreshGroupSearch()}
  function revealItems(replies){const items=[];let due=0;for(const reply of replies){const person=ch(reply.id);if(person){const parts=reply.event?[reply.text]:splitReplyBubbles(reply.text);parts.forEach((text,i)=>{due=Math.max(due,reply.scheduledAt||reply.at||0);if(i)due+=10000;items.push({person,text,reply,partIndex:i,first:i===0,due,at:reply.chunkTimes?.[i]||reply.at,key:i===parts.length-1?reply.key:null})})}}return items}
  function timedItems(turn){return revealItems(turn.replies).map((item,i)=>({...item,due:turn.deliveryDue?.[i]||item.due}))}
  function advanceClosedReplies(){
@@ -3434,7 +3555,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
   if(state.turns.length)$('group-messages-inner').querySelector('.group-examples')?.remove();
  }
  function refreshGroupSuggestions(){appendGroupSuggestions();}
- function render(){const scroller=$('group-messages'),priorTop=scroller.scrollTop,follow=groupFollow();if(unreadEntryPending&&inboxData){unreadEntryKey=state.turns.flatMap(t=>t.replies||[]).find(r=>r.key&&!acknowledgedKeys.has(r.key))?.key||null;unreadEntryPending=false;}let lastAt=null;let h=state.turns.length?'':groupQuestionHTML(examples);for(const t of state.turns){if(typeof t.question!=='string'||!Array.isArray(t.replies))continue;h+=historyDateHTML(t.at||t.replies[0]?.at,lastAt);lastAt=t.at||t.replies.at(-1)?.at||lastAt;if(!t.automatic)h+=rowUser(t.question,t.at,t.read,!!t.error,t.quote)+(t.error?`<div class="group-send-failed" data-group-timeline-at="${Number(t.at)||0}"><span>送信できませんでした</span><button type="button" data-group-retry="${escAttr(t.requestId)}" aria-label="再試行" title="再試行"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3v6h-6"/><path d="M21 9a9 9 0 1 0 .1 5"/></svg></button></div>`:'');const items=revealItems(t.replies);const visible=t.questionsReady===false?Math.max(0,Number(t.visibleCount)||0):items.length;h+=items.slice(0,visible).map(item=>((item.first&&item.reply.key===unreadEntryKey)?'<div id="group-unread-divider" role="separator" aria-label="ここから未読メッセージ">ここから未読メッセージ</div>':'')+rowReplyPart(item.person,item.text,item.first,false,item)).join('')}$('group-messages-inner').innerHTML=h;normalizeGroupTimeline();const divider=$('group-unread-divider');if(unreadEntryKey&&divider&&!scroller.dataset.unreadAnchored){scroller.scrollTop+=divider.getBoundingClientRect().top-scroller.getBoundingClientRect().top-12;scroller.dataset.unreadAnchored='true';}else if(unreadEntryPending||(!follow&&scroller.dataset.unreadAnchored))scroller.scrollTop=priorTop;else scroller.scrollTop=state.turns.length?scroller.scrollHeight:0;syncGroupName();updateGroupSend();refreshReadCounts();if(state.turns.length)appendGroupSuggestions()}
+ function render(){const scroller=$('group-messages'),priorTop=scroller.scrollTop,follow=groupFollow();if(unreadEntryPending&&inboxData){unreadEntryKey=state.turns.flatMap(t=>t.replies||[]).find(r=>r.key&&!acknowledgedKeys.has(r.key))?.key||null;unreadEntryPending=false;}let lastAt=null;let h=state.turns.length?'':groupQuestionHTML(examples);for(const t of state.turns){if(typeof t.question!=='string'||!Array.isArray(t.replies))continue;h+=historyDateHTML(t.at||t.replies[0]?.at,lastAt);lastAt=t.at||t.replies.at(-1)?.at||lastAt;if(!t.automatic)h+=rowUser(t.question,t.at,t.read,!!t.error,t.quote)+(t.error?`<div class="group-send-failed" data-group-timeline-at="${Number(t.at)||0}"><span>送信できませんでした</span><button type="button" data-group-retry="${escAttr(t.requestId)}" aria-label="再試行" title="再試行"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3v6h-6"/><path d="M21 9a9 9 0 1 0 .1 5"/></svg></button></div>`:'');const items=revealItems(t.replies);const visible=t.questionsReady===false?Math.max(0,Number(t.visibleCount)||0):items.length;h+=items.slice(0,visible).map(item=>((item.first&&item.reply.key===unreadEntryKey)?'<div id="group-unread-divider" role="separator" aria-label="ここから未読メッセージ">ここから未読メッセージ</div>':'')+rowReplyPart(item.person,item.text,item.first,false,item)).join('')}$('group-messages-inner').innerHTML=h;normalizeGroupTimeline();const divider=$('group-unread-divider');if(unreadEntryKey&&divider&&!scroller.dataset.unreadAnchored){scroller.scrollTop+=divider.getBoundingClientRect().top-scroller.getBoundingClientRect().top-12;scroller.dataset.unreadAnchored='true';}else if(groupSearchState.open||unreadEntryPending||(!follow&&scroller.dataset.unreadAnchored))scroller.scrollTop=priorTop;else scroller.scrollTop=state.turns.length?scroller.scrollHeight:0;syncGroupName();updateGroupSend();refreshReadCounts();if(state.turns.length)appendGroupSuggestions();refreshGroupSearch()}
 
  function refreshGroupPreview(){
   const label=document.querySelector('#list-view .group-caption-text');if(!label)return;
@@ -3454,7 +3575,7 @@ document.getElementById("chat-view").addEventListener("click",function(e){
  $('group-input').addEventListener('input',updateGroupSend);
  $('group-messages').addEventListener('click',e=>{const b=e.target.closest('[data-group-question]');if(!b||(busy&&!groupReveal))return;$('group-input').value=b.dataset.groupQuestion||'';updateGroupSend();$('group-form').requestSubmit()});
  window.openGroupChat=()=>{if(!$('group-view').hidden)return;unreadEntryPending=true;unreadEntryKey=null;delete $('group-messages').dataset.unreadAnchored;load();epoch++;groupListScroll=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;document.documentElement.dataset.groupOpen='true';$('list-view').classList.add('hidden');$('group-view').hidden=false;$('group-count').textContent='('+(allChars.length+1)+')';$('group-member-heading').textContent='('+(allChars.length+1)+')';document.documentElement.dataset.chatOpen='true';if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-state',open:true},location.origin);state.turns.forEach(t=>t.closedUnread=0);save();render();refreshGroupUnread();presence();inboxAction('poll');const pending=state.turns.findLast(t=>t.questionsReady===false);if(pending&&!pending.pending)startGroupReveal(pending.replies,epoch,pending);deliverPendingGroup();};
- window.closeGroupChat=()=>{if(groupReveal){groupReveal.turn.deliveryDue=groupReveal.items.map(x=>x.due);save();}inboxAction('presence',{active:false});epoch++;clearTimeout(timer);groupReveal=null;busy=false;updateGroupSend();$('group-view').hidden=true;$('group-members').hidden=true;$('group-participant-strip').hidden=true;$('group-header-avatar').setAttribute('aria-expanded','false');$('group-title').setAttribute('aria-expanded','false');$('group-count').setAttribute('aria-expanded','false');delete document.documentElement.dataset.membersOpen;delete document.documentElement.dataset.stripOpen;delete document.documentElement.dataset.groupOpen;delete document.documentElement.dataset.chatOpen;$('list-view').classList.remove('hidden');window.scrollTo(0,groupListScroll);document.body.scrollTop=groupListScroll;document.documentElement.scrollTop=groupListScroll;if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-state',open:false},location.origin);syncGroupName();renderCards();};
+ window.closeGroupChat=()=>{closeGroupSearch(false);if(groupReveal){groupReveal.turn.deliveryDue=groupReveal.items.map(x=>x.due);save();}inboxAction('presence',{active:false});epoch++;clearTimeout(timer);groupReveal=null;busy=false;updateGroupSend();$('group-view').hidden=true;$('group-members').hidden=true;$('group-participant-strip').hidden=true;$('group-header-avatar').setAttribute('aria-expanded','false');$('group-title').setAttribute('aria-expanded','false');$('group-count').setAttribute('aria-expanded','false');delete document.documentElement.dataset.membersOpen;delete document.documentElement.dataset.stripOpen;delete document.documentElement.dataset.groupOpen;delete document.documentElement.dataset.chatOpen;$('list-view').classList.remove('hidden');window.scrollTo(0,groupListScroll);document.body.scrollTop=groupListScroll;document.documentElement.scrollTop=groupListScroll;if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-state',open:false},location.origin);syncGroupName();renderCards();};
  window.resetGroupChat=()=>{if(!state.turns.length&&!busy)return;if(!confirm('このグループの会話をリセットしますか？'))return;epoch++;clearTimeout(timer);timer=null;groupReveal=null;busy=false;inboxAction('reset');state.turns=[];state.timelineRows={};state.timelineCounter=0;state.readerCursors={};setGroupQuote(null);$('group-input').value='';$('group-status').hidden=true;save();render();updateGroupSend()};
  window.renameGroupChat=()=>{const n=prompt('グループ名を入力してください（30文字まで）',state.name);if(n===null)return;if(n.trim()){state.name=n.trim().slice(0,30);save();syncGroupName();}};
  const AVATAR_KEY='himiko-group-avatar-v1';

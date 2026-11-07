@@ -124,25 +124,100 @@
     }
     return ids;
   }
+  // Use exactly the original Himiko presence function. Never invent an online state.
+  // The five mapped IDs come from sengoku-chat/config.json; unmapped cast gets no badge.
+  function hostWindow(){
+    try{return window.parent!==window&&window.parent.location.origin===location.origin?window.parent:null;}
+    catch(_){return null;}
+  }
+  function personalPresence(person){
+    const host=hostWindow(),id=person?.appCharacterId;
+    if(!Number.isInteger(id)||typeof host?.himikoPersonPresence!=='function')return null;
+    try{
+      const result=host.himikoPersonPresence({id,name:person.name});
+      if(!result||!['オンライン','離席中','あとで戻る'].includes(result.label))return null;
+      return result;
+    }catch(_){return null;}
+  }
+  function profileAvailable(person){return Number.isInteger(person?.appCharacterId)&&!!hostWindow()?.document?.getElementById('card-list');}
+  function openOriginalProfile(person){
+    if(!profileAvailable(person))return;
+    const host=hostWindow(),list=host.document.getElementById('card-list');
+    // Hand the click to the EXISTING avatar->showProfile handler in Himiko.
+    // This lets Himiko's lexical allHistoryChars/profile data remain the single
+    // source of truth, without copying profiles or modifying the main app.
+    const probe=host.document.createElement('button');
+    probe.type='button';probe.className='char-card';
+    probe.setAttribute('onclick','openChat('+person.appCharacterId+')');
+    probe.tabIndex=-1;probe.setAttribute('aria-hidden','true');
+    probe.style.cssText='position:absolute!important;left:-99999px!important;top:-99999px!important;visibility:hidden!important';
+    const avatar=host.document.createElement('span');avatar.className='avatar';probe.append(avatar);
+    list.append(probe);
+    try{avatar.dispatchEvent(new host.MouseEvent('click',{bubbles:true,cancelable:true}));}
+    finally{probe.remove();}
+  }
+  function appendMemberCard(list,person){
+    const hasProfile=profileAvailable(person);
+    const card=document.createElement(hasProfile?'button':'div');
+    if(hasProfile){card.type='button';card.addEventListener('click',()=>openOriginalProfile(person));}
+    card.className='char-card member-card sengoku-member-card';
+    card.dataset.sengokuSpeakerId=person.id;
+    if(hasProfile)card.setAttribute('aria-label',person.name+'のプロフィールを開く');
+    else card.classList.add('sengoku-member-static');
+    const content=document.createElement('span');content.className='card-inner';
+    const avatar=document.createElement('span');avatar.className='avatar';
+    imageInto(person.avatar,avatar);if(!avatar.childElementCount)avatar.textContent='👤';
+    const info=document.createElement('span');info.className='card-info';
+    const nameLine=document.createElement('span');nameLine.className='member-name-row';
+    const name=document.createElement('span');name.className='member-name';name.textContent=person.name;
+    nameLine.append(name);
+    const state=personalPresence(person);
+    if(state){
+      const badge=document.createElement('span');badge.className='online-badge member-presence';
+      badge.textContent=state.label;badge.style.color=state.color;badge.style.background=state.color+'20';
+      nameLine.append(badge);
+    }
+    info.append(nameLine);
+    if(person.role!=='modern'){
+      const period=periodBySender[person.id];
+      if(period){const sub=document.createElement('span');sub.className='member-period';sub.textContent='（'+period+'）';info.append(sub);}
+    }
+    content.append(avatar,info);card.append(content);list.append(card);
+  }
+  function refreshMemberPresence(){
+    if(!room||$('group-members').hidden)return;
+    for(const card of $('group-member-list').querySelectorAll('[data-sengoku-speaker-id]')){
+      const person=room.people.get(card.dataset.sengokuSpeakerId);
+      const state=personalPresence(person);let badge=card.querySelector('.member-presence');
+      if(!state){badge?.remove();continue;}
+      if(!badge){badge=document.createElement('span');badge.className='online-badge member-presence';card.querySelector('.member-name-row')?.append(badge);}
+      if(badge.textContent!==state.label||badge.style.color!==state.color){
+        badge.textContent=state.label;badge.style.color=state.color;badge.style.background=state.color+'20';
+      }
+    }
+  }
   function updatePeople(state){
     if(!state)return;
-    const ids=activeAt(state.time),names=[...ids].join('|');
+    const active=activeAt(state.time),names=[...active].join('|');
     const key=state.cycle+'|'+names+'|'+room.title;
-    if(key===lastActiveKey)return;
+    if(key===lastActiveKey){refreshMemberPresence();return;}
     lastActiveKey=key;
-    const label=`${room.title} (${ids.size})`;
+    const label=room.title+' ('+active.size+')';
     $('group-title').textContent=label;
     $('sengoku-period-badge').textContent=room.label;
     document.querySelector('.members-title').textContent=label;
     const list=$('group-member-list');list.replaceChildren();
-    for(const id of ids){
-      const p=room.people.get(id);if(!p)continue;
-      const row=document.createElement('div');row.className='sengoku-member';
-      const avatar=document.createElement('span');avatar.className='bubble-avatar';imageInto(p.avatar,avatar);
-      if(!avatar.childElementCount)avatar.textContent='👤';
-      const text=document.createElement('span');text.textContent=p.name;
-      row.append(avatar,text);list.append(row);
-    }
+    const missing=room.participants.filter(p=>!active.has(p.id));
+    const joined=room.participants.filter(p=>active.has(p.id));
+    const section=(icon,count,text)=>{
+      const heading=document.createElement('h3');heading.className='membership-section-title';
+      const emoji=document.createElement('span');emoji.setAttribute('aria-hidden','true');emoji.textContent=icon;
+      heading.append(emoji,' '+count+'人が'+text+'です');list.append(heading);
+    };
+    section('🚪',missing.length,'退会中');
+    for(const p of missing)appendMemberCard(list,p);
+    section('👋',joined.length,'参加中');
+    for(const p of joined)appendMemberCard(list,p);
     imageInto(room.image,$('group-header-avatar'));
     imageInto(room.image,document.querySelector('.group-members-avatar'));
     publishRoomTitle(label);
@@ -272,8 +347,11 @@
     const modern=m.role==='modern';
     const row=document.createElement('div');row.className='bubble-row '+(modern?'user':'assistant');row.dataset.messageId=m.id;
     if(!modern){
-      const icon=document.createElement('span');icon.className='bubble-avatar';
-      imageInto(room.people.get(m.senderId)?.avatar,icon);
+      const person=room.people.get(m.senderId),canOpen=profileAvailable(person);
+      const icon=document.createElement(canOpen?'button':'span');
+      if(canOpen){icon.type='button';icon.classList.add('sengoku-profile-button');icon.setAttribute('aria-label',m.name+'のプロフィールを開く');icon.addEventListener('click',()=>openOriginalProfile(person));}
+      icon.classList.add('bubble-avatar');
+      imageInto(person?.avatar,icon);
       if(!icon.childElementCount)icon.textContent='👤';row.append(icon);
     }
     const bubble=document.createElement('button');bubble.type='button';bubble.className='bubble sengoku-bubble '+(modern?'user':'assistant');
@@ -286,7 +364,9 @@
     else{
       const content=document.createElement('div');content.className='group-reply-content';
       const name=document.createElement('div');name.className='group-reply-name';
-      const label=document.createElement('span');label.className='group-name-label';label.textContent=m.name;
+      const person=room.people.get(m.senderId),canOpen=profileAvailable(person);
+      const label=document.createElement(canOpen?'button':'span');label.className='group-name-label';label.textContent=m.name;
+      if(canOpen){label.type='button';label.classList.add('sengoku-name-profile');label.setAttribute('aria-label',m.name+'のプロフィールを開く');label.addEventListener('click',()=>openOriginalProfile(person));}
       const period=periodBySender[m.senderId];if(period){
         const sub=document.createElement('span');sub.className='group-reply-period';sub.textContent=`（${period}）`;label.append(' ',sub);
       }
@@ -426,8 +506,10 @@
     requestAnimationFrame(()=>{scrollPending=false;updateReadFromViewport();});
   },{passive:true});
 
-  $('group-members-direct').addEventListener('click',()=>{$('group-members').hidden=false;document.documentElement.dataset.membersOpen='true';});
+  $('group-members-direct').addEventListener('click',()=>{$('group-members').hidden=false;document.documentElement.dataset.membersOpen='true';refreshMemberPresence();});
   $('group-members-back').addEventListener('click',()=>{$('group-members').hidden=true;delete document.documentElement.dataset.membersOpen;});
+  setInterval(refreshMemberPresence,5000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshMemberPresence();});
   function search(open){
     searchOpen=open;$('group-search-form').hidden=!open;
     $('group-view').toggleAttribute('data-search-open',open);

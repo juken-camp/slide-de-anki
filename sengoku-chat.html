@@ -10,7 +10,40 @@
  <link rel="stylesheet" href="sengoku-chat/original-chat.css?v=1">
  <link rel="stylesheet" href="sengoku-chat/room.css?v=ui20261107-2">
  <script src="sengoku-chat/schedule-core.js?v=1" defer></script>
- <script src="sengoku-chat/room.js?v=explain-story-20261107-v1" defer></script>
+ <script src="sengoku-chat/room.js?v=members-profile-20261107-v1" defer></script>
+
+<style id="sengoku-members-himiko-style-20261107">
+/* Group members: same card / section / type hierarchy as Himiko's group view. */
+#group-members .members-header{display:grid;grid-template-columns:32px minmax(0,1fr) 73px;gap:6px 8px;padding:10px 12px;align-items:center}
+#group-members .members-heading{grid-column:2;display:flex;align-items:center;gap:9px;min-width:0}
+#group-members .group-members-avatar{width:42px;height:42px;flex:none}
+#group-members .members-title{display:flex;align-items:center;min-width:0;margin:0;font-size:16px;font-weight:900;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#group-members .members-scroll{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;padding:12px 12px calc(18px + env(safe-area-inset-bottom,0px))}
+#group-members #group-member-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
+#group-members #group-member-list .membership-section-title{font-family:inherit;font-size:14px;font-weight:700;line-height:1.6;margin:18px 0 12px;color:var(--text-main,#60412f)}
+#group-members #group-member-list .membership-section-title:first-child{margin-top:16px}
+html[data-persona="cyber"] #group-members #group-member-list .membership-section-title{color:#b9dff3}
+#group-members .sengoku-member-card{display:block;width:100%;font-family:inherit;animation:none;text-align:left;cursor:pointer;background:#fff;border:2px solid #f1f5f9;border-radius:16px;padding:13px 15px;box-shadow:0 1px 6px rgba(0,0,0,.05);min-height:72px}
+#group-members .sengoku-member-card .card-inner{display:flex;align-items:center;gap:12px}
+#group-members .sengoku-member-card .avatar{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;flex:none;overflow:hidden;font-size:22px;background:#f3d3a9}
+#group-members .sengoku-member-card .avatar img{display:block;width:100%;height:100%;object-fit:cover}
+#group-members .sengoku-member-card .card-info{min-width:0;flex:1}
+#group-members .sengoku-member-card .member-name-row{display:flex;align-items:center;gap:7px;min-width:0}
+#group-members .sengoku-member-card .member-name{font-size:16px;font-weight:900;color:#1e293b;line-height:1.4;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#group-members .sengoku-member-card .member-presence{display:inline-block;flex:none;margin-left:0;white-space:nowrap;font-size:10px;font-weight:800;line-height:1.4;padding:2px 7px;border-radius:100px}
+#group-members .sengoku-member-card .member-period{display:block;margin-top:3px;max-width:100%;font-size:11px;font-weight:500;line-height:1.5;color:#a08069;overflow-wrap:anywhere}
+#group-members .sengoku-member-card.sengoku-member-static{cursor:default}
+#group-members .sengoku-member-card.sengoku-member-static:hover{transform:none;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+#group-members .sengoku-member-card:focus-visible,.sengoku-profile-button:focus-visible,.sengoku-name-profile:focus-visible{outline:2px solid #03cadc;outline-offset:3px}
+html[data-persona="cyber"] #group-members .sengoku-member-card{background:#101b35;border-color:#315576!important;box-shadow:none!important}
+html[data-persona="cyber"] #group-members .sengoku-member-card .member-name{color:#e0eaff}
+html[data-persona="cyber"] #group-members .sengoku-member-card .member-period{color:#8eaec4}
+html[data-persona="cyber"] #group-members .sengoku-member-card .avatar{background:#253956}
+#group-messages .sengoku-profile-button{appearance:none;-webkit-appearance:none;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;cursor:pointer;touch-action:manipulation;flex-shrink:0}
+#group-messages .sengoku-profile-button img{display:block;width:100%;height:100%;object-fit:cover}
+#group-messages .sengoku-name-profile{appearance:none;-webkit-appearance:none;margin:0;padding:0;background:transparent;border:0;border-radius:0;color:inherit;font:inherit;font-size:inherit;font-weight:inherit;text-align:left;cursor:pointer;touch-action:manipulation}
+@media(max-width:390px){#group-members .group-members-avatar{width:38px;height:38px}}
+</style>
 </head>
 <body>
 <section id="group-view" aria-label="戦国の反省会・閲覧専用">

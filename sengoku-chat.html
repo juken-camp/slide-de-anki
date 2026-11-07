@@ -25,7 +25,7 @@
  <link rel="stylesheet" href="sengoku-chat/original-chat.css?v=1">
  <link rel="stylesheet" href="sengoku-chat/room.css?v=ui20261107-2">
  <script src="sengoku-chat/schedule-core.js?v=1" defer></script>
- <script src="sengoku-chat/room.js?v=episode-30min-explanation-toggle-20261107-v3" defer></script>
+ <script src="sengoku-chat/room.js?v=local-clock-bottom-align-20261107-v1" defer></script>
 
 <style id="sengoku-members-himiko-style-20261107">
 /* Group members: same card / section / type hierarchy as Himiko's group view. */
@@ -84,6 +84,13 @@ html[data-persona="cyber"] #group-members .sengoku-member-card .avatar{backgroun
  html,body{background:#fffcf7!important}
  html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20!important}
  </style>
+<style id="sengoku-bottom-alignment-20261107">
+/* Himiko group already reserves bottom space in the messages scroller itself.
+   Sengoku added a second 24px inset to messages-inner, leaving its last bubble
+   noticeably higher. Remove only that duplicate inset. The explanation bar
+   retains its existing height and scrolling behavior. */
+#group-view #group-messages > #group-messages-inner{padding-bottom:0!important}
+</style>
 </head>
 <body>
 <section id="group-view" aria-label="戦国の反省会・閲覧専用">

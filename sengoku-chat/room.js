@@ -45,7 +45,29 @@
   // A separate storage key prevents the old 3-second test from being resumed.
   // Switching enabled=false restores the original three-day shared schedule.
   const COMPACT_BROADCAST={enabled:true,episodeGapMs:30*60*1000,key:'sengoku-compact-start-20261107-30min-v1'};
+  // Local-only test playback uses the device's clock, never a potentially cached
+  // HTTP Date header. Migrate the existing device's progress once, without
+  // restarting its 12-episode run or changing the shared schedule.
+  const COMPACT_LOCAL_CLOCK_MIGRATED='sengoku-compact-local-clock-20261107-v1';
   let screeningStart=null;
+  function migrateCompactClock(legacyOffset){
+    if(!COMPACT_BROADCAST.enabled)return;
+    try{
+      if(localStorage.getItem(COMPACT_LOCAL_CLOCK_MIGRATED)==='1')return;
+      const oldStart=Number(localStorage.getItem(COMPACT_BROADCAST.key));
+      if(Number.isFinite(oldStart)&&oldStart>0){
+        const finalOffset=Math.max(0,ordered.at(-1)?.offsetMs||0);
+        // Preserve how far the viewer had progressed on the previous clock.
+        // A misdated cached response must not leave all messages "yesterday"
+        // or show future timestamps after this migration.
+        const elapsed=Math.min(finalOffset+60000,Math.max(0,Date.now()+legacyOffset-oldStart));
+        const fixedStart=Date.now()-elapsed;
+        localStorage.setItem(COMPACT_BROADCAST.key,String(fixedStart));
+        screeningStart=fixedStart;
+      }
+      localStorage.setItem(COMPACT_LOCAL_CLOCK_MIGRATED,'1');
+    }catch(_){/* Private mode: the device clock is still the only source. */}
+  }
   function rapidStart(){
     if(screeningStart!==null)return screeningStart;
     try{
@@ -679,9 +701,13 @@
       if(!response.ok||!settingsResponse.ok)throw Error('配信データを取得できません');
       const fetchedAt=Date.now(),serverDate=response.headers.get('Date');
       const age=Math.max(0,Number(response.headers.get('Age'))||0);
+      let legacyOffset=0;
       if(serverDate){const serverMs=Date.parse(serverDate);
-        if(Number.isFinite(serverMs)&&Math.abs(serverMs+age*1000-fetchedAt)<3*DAY_MS)serverOffsetMs=serverMs+age*1000-fetchedAt;
+        if(Number.isFinite(serverMs)&&Math.abs(serverMs+age*1000-fetchedAt)<3*DAY_MS)legacyOffset=serverMs+age*1000-fetchedAt;
       }
+      // Keep the original three-day shared broadcaster's server-time handling.
+      // The temporary per-device 30-minute-gap broadcaster must use local time.
+      serverOffsetMs=COMPACT_BROADCAST.enabled?0:legacyOffset;
       const [data,config]=await Promise.all([response.json(),settingsResponse.json()]);
       const nextChecksum=JSON.stringify(data)+'|'+JSON.stringify(config);
       if(nextChecksum!==checksum){
@@ -692,6 +718,9 @@
         if(preview){previewCount=Math.min(previewCount,ordered.length);previewLabel();}
         if(selectedId){const saved=messageById.get(selectedId);if(saved)selectExplanation(saved);}
       }
+      // Do this only after the ordered timeline has been loaded; the final
+      // scheduled offset determines whether an old session had already ended.
+      if(COMPACT_BROADCAST.enabled)migrateCompactClock(legacyOffset);
       render();
     }catch(error){
       console.error('Sengoku room v2:',error);

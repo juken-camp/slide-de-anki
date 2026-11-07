@@ -46,6 +46,23 @@
     if(window.parent!==window){window.parent.postMessage({type:'sengoku-close'},location.origin)}
     else if(history.length>1)history.back();else location.href='index.html';
   }
+  // Reuse the exact audio pathway of the parent Himiko chat (tap/open),
+  // including the main app's volume and mute preferences.
+  // Iframe clicks don't bubble to the parent, so forward the genuine click event.
+  function originalChatSound(kind,event){
+    try{
+      const host=window.parent!==window&&window.parent.location.origin===location.origin?window.parent:null;
+      if(typeof host?.appSound==='function')host.appSound(kind,event);
+    }catch(_){/* standalone and cross-origin embeds stay silent */}
+  }
+  document.addEventListener('click',event=>{
+    const control=event.target.closest('button, .sengoku-member-card');
+    if(!control||control.disabled)return;
+    originalChatSound(control.classList.contains('sengoku-member-card')?'open':'tap',event);
+  },true);
+  document.addEventListener('pointerdown',event=>{
+    if(event.target.closest('#group-search-input'))originalChatSound('tap',event);
+  },{passive:true});
   $('back').addEventListener('click',close);
   window.addEventListener('message',event=>{
     if(event.origin!==location.origin)return;
@@ -433,15 +450,18 @@
     if(!target){existing?.remove();liveTypingId='';return;}
     if(existing&&liveTypingId===target.id)return;
     existing?.remove();liveTypingId=target.id;
-    const row=document.createElement('div');row.id='sengoku-live-typing';row.className='bubble-row assistant sengoku-live-typing';
-    const icon=document.createElement('span');icon.className='bubble-avatar';imageInto(room.people.get(target.senderId)?.avatar,icon);
-    if(!icon.childElementCount)icon.textContent='👤';
-    const body=document.createElement('div');body.className='group-reply-content';
-    const name=document.createElement('div');name.className='group-reply-name';name.textContent=target.name;
-    const typing=document.createElement('div');typing.className='bubble typing sengoku-typing-dots';
-    typing.setAttribute('aria-label',target.name+'が入力中');
-    for(let i=0;i<3;i++){const dot=document.createElement('span');dot.className='sengoku-typing-dot';dot.textContent='●';dot.style.animationDelay=(i*.18)+'s';typing.append(dot);}
-    body.append(name,typing);row.append(icon,body);inner.append(row);
+    // Mirrors Himiko's groupTyping(): the sender name/period is never squeezed
+    // into the 0-width name grid while the bubble is still being prepared.
+    const row=document.createElement('div');row.id='sengoku-live-typing';
+    row.className='bubble-row assistant typing-row sengoku-live-typing';
+    row.setAttribute('role','status');row.setAttribute('aria-label',target.name+'が入力中');
+    const spacer=document.createElement('div');spacer.className='bubble-avatar-spacer';spacer.setAttribute('aria-hidden','true');
+    const typing=document.createElement('div');typing.className='typing';
+    for(let i=0;i<3;i++){
+      const dot=document.createElement('span');dot.className='typing-dot';
+      dot.style.background='#6b90a8';dot.style.animationDelay=(i*.2)+'s';typing.append(dot);
+    }
+    row.append(spacer,typing);inner.append(row);
   }
   function render(){
     const state=phase();if(!state)return;
@@ -628,16 +648,16 @@
     #group-messages .sengoku-system-event>span{display:inline-block;max-width:100%;padding:6px 12px;border-radius:14px;background:#8299b51c;overflow-wrap:anywhere}
     #group-messages .sengoku-system-event time{display:block;font-size:inherit;color:inherit;line-height:1.4}
     #group-messages .sengoku-system-event .group-event-label{display:block;line-height:1.5}
-    #group-messages .sengoku-unread-divider{display:flex;align-items:center;gap:10px;margin:18px 0;padding:6px 0;color:#df596d;font-size:11px;font-weight:800;white-space:nowrap;animation:sengoku-unread-glow 2s ease-in-out infinite}
-    #group-messages .sengoku-unread-divider::before,#group-messages .sengoku-unread-divider::after{content:'';height:1px;flex:1;background:currentColor;opacity:.4}
-    @keyframes sengoku-unread-glow{0%,100%{opacity:.66}50%{opacity:1;text-shadow:0 0 7px #ef507e88}}
-    @media(prefers-reduced-motion:reduce){#group-messages .sengoku-unread-divider{animation:none;opacity:1}}
-    html[data-persona=cyber] #group-messages .sengoku-unread-divider{color:#ff768f}
-    #group-messages .sengoku-live-typing {pointer-events:none;margin-top:6px}
-    #group-messages .sengoku-typing-dots {display:inline-flex;align-items:center;gap:4px;min-width:55px;min-height:32px;padding:7px 15px;font-size:11px;line-height:1;color:inherit}
-    .sengoku-typing-dot {display:inline-block;animation:sengoku-dot 1.12s infinite ease-in-out;opacity:.28;transform:translateY(0)}
-    @keyframes sengoku-dot{0%,60%,100%{opacity:.28;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
-    @media(prefers-reduced-motion:reduce){.sengoku-typing-dot{animation:none;opacity:.75}}
+    /* The same quiet unread separator used by the original Himiko group chat. */
+    #group-messages .sengoku-unread-divider{display:flex;align-items:center;gap:10px;margin:18px 0;padding:6px 0;font-size:11px;font-weight:normal;color:var(--text-sub,#8d705b);white-space:nowrap;animation:none}
+    #group-messages .sengoku-unread-divider::before,#group-messages .sengoku-unread-divider::after{content:'';height:1px;flex:1;background:currentColor;opacity:.22}
+    html[data-persona=cyber] #group-messages .sengoku-unread-divider{color:#a9c6df}
+    /* Same spacer, 40px bubble, and three 7px dots as Himiko's groupTyping(). */
+    #group-messages .sengoku-live-typing{pointer-events:none;margin-top:6px}
+    #group-messages .sengoku-live-typing .bubble-avatar-spacer{width:33px;min-width:33px;height:33px;flex:none}
+    #group-messages .sengoku-live-typing .typing{display:flex;align-items:center;gap:5px;flex:0 0 auto;min-height:40px;padding:12px 16px;box-sizing:border-box}
+    #group-messages .sengoku-live-typing .typing-dot{display:block;flex:0 0 7px;width:7px;height:7px;border-radius:50%;animation:himikoTyping 1.1s ease-in-out infinite}
+    @media(prefers-reduced-motion:reduce){#group-messages .sengoku-live-typing .typing-dot{animation:none!important}}
   `;document.head.append(extra);
 })();
 

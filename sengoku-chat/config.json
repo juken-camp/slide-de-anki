@@ -1,0 +1,36 @@
+{
+  "startDate": "2026-11-07",
+  "repeat": true,
+  "label": "期間限定",
+  "image": "",
+  "participants": {
+    "oda_nobunaga": {
+      "appCharacterId": 12,
+      "avatar": "history-icons/012.webp"
+    },
+    "toyotomi_hideyoshi": {
+      "appCharacterId": 13,
+      "avatar": "history-icons/013.webp"
+    },
+    "tokugawa_ieyasu": {
+      "appCharacterId": 14,
+      "avatar": "history-icons/014.webp"
+    },
+    "akechi_mitsuhide": {
+      "appCharacterId": null,
+      "avatar": ""
+    },
+    "takeda_shingen": {
+      "appCharacterId": 160,
+      "avatar": "history-icons/160.webp"
+    },
+    "uesugi_kenshin": {
+      "appCharacterId": 161,
+      "avatar": "history-icons/161.webp"
+    },
+    "modern_student": {
+      "appCharacterId": null,
+      "avatar": ""
+    }
+  }
+}

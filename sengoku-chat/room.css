@@ -28,3 +28,23 @@ html[data-persona="cyber"] #sengoku-period-badge{color:#8fd6ec;border-color:#446
 html[data-persona="cyber"] .sengoku-avatar-placeholder{background:#10283d!important;border-color:#446e89!important}
 html[data-persona="cyber"] #group-member-list .sengoku-member{border-color:#315576}
 @media(max-width:360px){#sengoku-period-badge{padding:2px 5px;font-size:9px}#group-view .group-heading-text{gap:4px}}
+/* Fixed explanation space in place of the send composer. Never changes height on selection. */
+#sengoku-explanation{flex:0 0 clamp(154px,29dvh,265px);width:100%;min-height:0;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;box-sizing:border-box;padding:13px 15px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid #ead2b9;background:#fffcf7;color:#49372d;scrollbar-width:thin}
+#sengoku-explanation-text{max-width:700px;margin:0 auto;font-size:14px;line-height:1.85;font-weight:500;white-space:pre-wrap;overflow-wrap:anywhere}
+html[data-persona="cyber"] #sengoku-explanation{background:#0f1430;border-color:#315576;color:#e0eaff}
+#group-messages .sengoku-bubble{display:block;border:0;appearance:none;font-family:inherit;text-align:left;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+#group-messages .sengoku-bubble:focus-visible{outline:2px solid #b87920;outline-offset:3px}
+#group-messages .bubble-row.user .sengoku-bubble{text-align:left}
+#sengoku-preview-controls[hidden]{display:none!important}
+#sengoku-preview-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px;padding:5px 8px;background:#f7e5cf;border-bottom:1px solid #ead2b9;flex:0 0 auto;z-index:2}
+#sengoku-preview-controls button{border:1px solid #bd926a;border-radius:8px;background:#fffaf5;color:#754b2f;padding:5px 8px;font:700 10px 'M PLUS Rounded 1c',sans-serif;min-height:27px;cursor:pointer;touch-action:manipulation}
+#sengoku-preview-progress{font-size:10px;font-weight:700;white-space:nowrap}
+html[data-persona="cyber"] #sengoku-preview-controls{background:#142941;border-color:#315576;color:#b8e9ff}
+html[data-persona="cyber"] #sengoku-preview-controls button{background:#17394d;border-color:#39637f;color:#dcf4ff}
+
+/* Preserve the original LINE-like colored balloons: the extracted base CSS has later transparent overrides. */
+#group-messages .sengoku-bubble.assistant{background:#fff!important;color:#49372d!important;border:1px solid #e2cfb8!important;box-shadow:0 2px 7px #63482c13!important}
+#group-messages .sengoku-bubble.user{background:linear-gradient(135deg,#d2691e,#e6a252)!important;color:#fff!important;border:1px solid transparent!important;box-shadow:0 2px 7px #63482c20!important}
+html[data-persona="cyber"] #group-messages .sengoku-bubble.assistant{background:#162743!important;color:#e5f2ff!important;border-color:#397496!important;box-shadow:0 2px 8px #0003!important}
+html[data-persona="cyber"] #group-messages .sengoku-bubble.user{background:linear-gradient(135deg,#07516b,#19447a)!important;color:#f0fbff!important;border-color:#305a84!important}
+#group-messages .group-reply-name>span.group-name-label{width:max-content;max-width:calc(100vw - 100px);display:block;white-space:normal;overflow-wrap:anywhere}

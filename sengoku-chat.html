@@ -8,8 +8,9 @@
  <title>戦国の反省会 | JUKEN CAMP</title>
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap">
  <link rel="stylesheet" href="sengoku-chat/original-chat.css?v=1">
- <link rel="stylesheet" href="sengoku-chat/room.css?v=1">
- <script src="sengoku-chat/room.js?v=1" defer></script>
+ <link rel="stylesheet" href="sengoku-chat/room.css?v=2">
+ <script src="sengoku-chat/schedule-core.js?v=1" defer></script>
+ <script src="sengoku-chat/room.js?v=2" defer></script>
 </head>
 <body>
 <section id="group-view" aria-label="戦国の反省会・閲覧専用">
@@ -28,7 +29,12 @@
    <button type="button" id="group-search-close" class="group-search-icon-button" aria-label="検索を閉じる">×</button>
   </form>
  </header>
+ <div id="sengoku-preview-controls" hidden aria-label="台本テスト再生">
+  <button type="button" id="sengoku-preview-play">▶ 自動再生</button><button type="button" id="sengoku-preview-next">次の1件</button><button type="button" id="sengoku-preview-reset">最初へ</button>
+  <button type="button" id="sengoku-preview-day1">Day 1まで</button><button type="button" id="sengoku-preview-day2">Day 2まで</button><button type="button" id="sengoku-preview-day3">Day 3まで</button><button type="button" id="sengoku-preview-all">全314件</button><span id="sengoku-preview-progress" aria-live="polite"></span>
+ </div>
  <div id="group-messages" class="messages" role="log" aria-live="polite" tabindex="0"><div id="group-messages-inner" class="messages-inner"><p id="sengoku-empty">会話はこれから始まるぜ！</p></div></div>
+ <div id="sengoku-explanation" role="region" aria-label="選択した発言の解説"><div id="sengoku-explanation-text" aria-live="polite"></div></div>
  <!-- There is intentionally NO input-area, textarea, form or send button. -->
  <div id="group-members" hidden>
   <header class="members-header"><button id="group-members-back" class="back-btn" type="button" aria-label="チャットに戻る">＜</button><div class="members-heading"><span class="group-members-avatar sengoku-avatar-placeholder" aria-hidden="true"></span><h2 class="members-title">戦国の反省会</h2></div></header>

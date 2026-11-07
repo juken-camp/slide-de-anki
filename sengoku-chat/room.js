@@ -18,7 +18,7 @@
     uesugi_kenshin:'戦国時代・1530〜1578年'
   };
   let room=null,ordered=[],messageById=new Map(),settings={},checksum='';
-  let currentKey='',drawnIds=[],rendered=[],drawnDay='',unreadIndex=-1;
+  let currentKey='',drawnIds=[],rendered=[],drawnDay='',unreadIndex=-1,entryUnreadIndex=-1;
   let searchOpen=false,searchTerm='',selectedId=null,previousCycle=null;
   let serverOffsetMs=0,firstLoad=true,liveTypingId='',previewCount=0,previewTimer=null;
   let lastActiveKey='',lastUnreadBadge=-1,readingAnchorId=null;
@@ -44,7 +44,7 @@
     const day=jstKey(ms),today=jstKey(Date.now()+serverOffsetMs);
     if(day===today)return '今日';
     if(day===jstKey(Date.now()+serverOffsetMs-DAY_MS))return '昨日';
-    const [y,m,d]=day.split('-').map(Number);return `${m}月${d}日`;
+    return new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',weekday:'short'}).format(new Date(ms));
   }
   function clock(ms){return new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false}).format(ms);}
   function now(){return Date.now()+serverOffsetMs;}
@@ -126,6 +126,7 @@
     }
     imageInto(room.image,$('group-header-avatar'));
     imageInto(room.image,document.querySelector('.group-members-avatar'));
+    publishRoomTitle(label);
   }
 
   function storageKey(cycle){return 'sengoku-last-read-v2:'+room.startDate+':'+cycle;}
@@ -142,39 +143,64 @@
     try{localStorage.setItem(storageKey(state.cycle),state.visible[n].id);}catch(_){/* private mode */}
     updateUnread(state);
   }
+  function parentDocument(){
+    try{return window.parent!==window&&window.parent.location.origin===location.origin
+      ?window.parent.document:null;}
+    catch(_){return null;}
+  }
+  function parentEntry(){return parentDocument()?.querySelector('.sengoku-chat-entry')||null;}
+  function isRoomVisible(){
+    const panel=parentDocument()?.getElementById('sengoku-panel');
+    return !panel||!panel.hidden;
+  }
+  function publishRoomTitle(title){
+    const entry=parentEntry();if(!entry)return;
+    const label=entry.querySelector('.sengoku-entry-title');
+    if(label&&label.textContent!==title)label.textContent=title;
+  }
   function publishUnread(count){
-    if(count===lastUnreadBadge)return;
-    lastUnreadBadge=count;
-    // The separate iframe is same-origin. This updates the already-open parent list, too.
-    try{
-      const doc=window.parent?.document;
-      const entry=doc?.querySelector('.sengoku-chat-entry');
-      if(entry){
-        let badge=entry.querySelector('.sengoku-unread-badge');
-        if(!badge){badge=doc.createElement('span');badge.className='sengoku-unread-badge';
-          badge.style.cssText='display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 4px;border-radius:99px;background:#e6404b;color:#fff;font:700 11px sans-serif;margin-left:6px;';
-          entry.querySelector('.sengoku-entry-name-row')?.append(badge);}
-        badge.hidden=count===0;badge.textContent=count>99?'99+':String(count);
+    count=Math.max(0,Number(count)||0);
+    const entry=parentEntry();
+    // Never create or display a red "0". Use the same no-badge behavior as Himiko.
+    if(entry){
+      let badge=entry.querySelector('.sengoku-unread-badge');
+      if(count===0){badge?.remove();}
+      else{
+        if(!badge){
+          badge=entry.ownerDocument.createElement('span');
+          badge.className='sengoku-unread-badge';
+          badge.style.cssText='display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 4px;border-radius:99px;background:#e6404b;color:#fff;font:800 11px sans-serif;margin-left:6px;';
+          entry.querySelector('.sengoku-entry-name-row')?.append(badge);
+        }
+        badge.hidden=false;
+        badge.style.display='inline-grid';
+        badge.textContent=count>99?'99+':String(count);
       }
-    }catch(_){/* standalone or cross-origin */}
-    if(window.parent!==window)window.parent.postMessage({type:'sengoku-unread',count},location.origin);
+    }
+    if(lastUnreadBadge===count)return;
+    lastUnreadBadge=count;
+    if(window.parent!==window){try{window.parent.postMessage({type:'sengoku-unread',count},location.origin);}catch(_){/* opaque local test origin */}}
   }
   function updateUnread(state){
-    if(!state||preview||searchTerm)return;
-    const next=Math.min(unreadIndex+1,state.visible.length),unread=state.visible.length-next;
-    publishUnread(unread);
+    if(!state||preview)return;
+    const next=Math.min(unreadIndex+1,state.visible.length);
+    publishUnread(Math.max(0,state.visible.length-next));
+    if(searchTerm)return;
     const existing=inner.querySelector('.sengoku-unread-divider');
-    if(unread<=0){existing?.remove();return;}
-    const target=inner.querySelector(`[data-timeline-index="${next}"]`);
+    // This marks the messages unread on ENTRY. It does not jump forward or flicker
+    // while the user reads, exactly like the original group's entry divider.
+    const target=entryUnreadIndex>=0?inner.querySelector(`[data-timeline-index="${entryUnreadIndex}"]`):null;
     if(!target){existing?.remove();return;}
-    // Leave the divider in place unless its target actually changes (no 1s flicker).
     if(existing&&existing.nextSibling===target)return;
     existing?.remove();
-    const divider=document.createElement('div');divider.className='sengoku-unread-divider';divider.textContent='ここから未読メッセージ';
+    const divider=document.createElement('div');
+    divider.className='sengoku-unread-divider';divider.setAttribute('role','separator');
+    divider.setAttribute('aria-label','ここから未読メッセージ');
+    divider.textContent='ここから未読メッセージ';
     inner.insertBefore(divider,target);
   }
   function updateReadFromViewport(){
-    if(document.hidden||preview||searchTerm||!room)return;
+    if(document.hidden||!isRoomVisible()||preview||searchTerm||!room)return;
     const state=phase();if(!state||state.cycle!==previousCycle)return;
     const bounds=box.getBoundingClientRect();let max=unreadIndex;
     // Mark only rows actually visible at the bottom of the reader's viewport.
@@ -232,12 +258,23 @@
     }
     return row;
   }
-  function systemRow(e){const row=document.createElement('div');row.className='sengoku-system-event';row.textContent=e.text;return row;}
+  function systemRow(e,state){
+    const row=document.createElement('div');row.className='group-system-event sengoku-system-event';
+    const capsule=document.createElement('span');
+    const time=document.createElement('time');time.textContent=clock(state.start+e.offsetMs);
+    time.setAttribute('datetime',new Date(state.start+e.offsetMs).toISOString());
+    const label=document.createElement('span');label.className='group-event-label';label.textContent=e.text;
+    capsule.append(time,label);row.append(capsule);return row;
+  }
   function addRow(e,state,index){
     const actual=state.start+e.offsetMs;
     const day=jstKey(actual);
-    if(day!==drawnDay){const head=document.createElement('div');head.className='sengoku-date';head.dataset.date=day;head.textContent=dateLabel(actual);inner.append(head);drawnDay=day;}
-    const node=e.kind==='system'?systemRow(e):messageRow(e,state);
+    if(day!==drawnDay){
+      const head=document.createElement('div');head.className='history-day sengoku-date';head.dataset.date=day;
+      const label=document.createElement('span');label.textContent=dateLabel(actual);head.append(label);
+      inner.append(head);drawnDay=day;
+    }
+    const node=e.kind==='system'?systemRow(e,state):messageRow(e,state);
     node.dataset.timelineIndex=String(index);node.dataset.timelineId=e.id;
     inner.append(node);drawnIds.push(e.id);rendered.push(e);
   }
@@ -259,7 +296,8 @@
     for(const head of inner.querySelectorAll('.sengoku-date')){
       const ms=core.startTime(head.dataset.date);
       const val=ms===null?'':dateLabel(ms);
-      if(val&&head.textContent!==val)head.textContent=val;
+      const span=head.querySelector('span');
+      if(val&&span&&span.textContent!==val)span.textContent=val;
     }
   }
   function updateTyping(state){
@@ -289,7 +327,12 @@
     const view=searchTerm?state.visible.filter(e=>e.kind==='message'&&(e.text+' '+e.name+' '+e.explanation).toLocaleLowerCase().includes(searchTerm)):state.visible;
     const key=String(state.cycle)+'|'+state.status+'|'+searchTerm+'|'+state.start;
     const same=key===currentKey,append=same&&drawnIds.length<=view.length&&drawnIds.every((id,i)=>id===view[i].id);
-    if(state.cycle!==previousCycle){previousCycle=state.cycle;unreadIndex=getReadIndex(state);firstLoad=true;selectedId=null;explanationText.textContent='';}
+    if(state.cycle!==previousCycle){
+      previousCycle=state.cycle;
+      unreadIndex=getReadIndex(state);
+      entryUnreadIndex=state.visible.length>unreadIndex+1 ? unreadIndex+1 : -1;
+      firstLoad=true;selectedId=null;explanationText.textContent='';
+    }
     const nearBottom=box.scrollHeight-box.scrollTop-box.clientHeight<115;
     const previousTop=box.scrollTop;
     let changed=false;
@@ -307,7 +350,7 @@
     if(changed){
       requestAnimationFrame(()=>{
         if(firstLoad&&!preview&&!searchTerm&&state.visible.length&&unreadIndex<state.visible.length-1){
-          const firstUnread=inner.querySelector(`[data-timeline-index="${unreadIndex+1}"]`);
+          const firstUnread=inner.querySelector(`[data-timeline-index="${entryUnreadIndex}"]`);
           if(firstUnread)box.scrollTop=Math.max(0,firstUnread.offsetTop-box.offsetTop-45);
           firstLoad=false;
         }else if(nearBottom&&!searchTerm){box.scrollTop=box.scrollHeight;firstLoad=false;}
@@ -316,6 +359,26 @@
       });
     }
   }
+  // Same transient floating date used by Himiko's group: follows the scroll position.
+  const floating=document.createElement('div');floating.className='history-floating';floating.setAttribute('aria-hidden','true');
+  const floatingLabel=document.createElement('span');floating.append(floatingLabel);
+  box.prepend(floating);
+  let floatingTimer,scrollTouch=false,scrollUntil=0;
+  box.addEventListener('pointerdown',()=>{scrollTouch=true;},{passive:true});
+  for(const event of ['pointerup','pointercancel','pointerleave'])box.addEventListener(event,()=>{scrollTouch=false;scrollUntil=Date.now()+1400;},{passive:true});
+  box.addEventListener('wheel',()=>{scrollUntil=Date.now()+1400;},{passive:true});
+  box.addEventListener('keydown',e=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key))scrollUntil=Date.now()+1400;});
+  box.addEventListener('scroll',()=>{
+    if(!scrollTouch&&Date.now()>scrollUntil)return;
+    scrollUntil=Date.now()+1400;
+    const edge=box.getBoundingClientRect().top+3;
+    const dates=[...inner.querySelectorAll('.history-day')];
+    const active=dates.filter(d=>d.getBoundingClientRect().bottom<edge).at(-1);
+    if(active){floatingLabel.textContent=active.textContent;floating.classList.add('is-visible');}
+    else floating.classList.remove('is-visible');
+    clearTimeout(floatingTimer);floatingTimer=setTimeout(()=>floating.classList.remove('is-visible'),1400);
+  },{passive:true});
+
   // Mark visible rows as read without triggering an entire chat repaint or scroll jump.
   let scrollPending=false;
   box.addEventListener('scroll',()=>{
@@ -395,6 +458,21 @@
     }
   }
   load();
+  // The original Himiko screen keeps this iframe mounted when returning to its list.
+  // Treat each reopen as a new reading session, rather than reusing an old unread divider.
+  const hostPanel=parentDocument()?.getElementById('sengoku-panel');
+  if(hostPanel&&typeof MutationObserver==='function'){
+    new MutationObserver(()=>{
+      if(hostPanel.hidden||!room)return;
+      requestAnimationFrame(()=>{
+        if(hostPanel.hidden)return;
+        const state=phase();if(!state)return;
+        unreadIndex=getReadIndex(state);
+        entryUnreadIndex=state.visible.length>unreadIndex+1?unreadIndex+1:-1;
+        firstLoad=true;currentKey='';render();
+      });
+    }).observe(hostPanel,{attributes:true,attributeFilter:['hidden']});
+  }
   setInterval(()=>{if(!document.hidden)render();},1000);
   setInterval(()=>{if(!document.hidden)load();},300000);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden){render();load();}});
@@ -402,10 +480,25 @@
 
   // Small styles only for new features. The original room's CSS and bubble geometry remain unchanged.
   const extra=document.createElement('style');extra.textContent=`
+    #sengoku-explanation{flex:0 0 calc(70px + env(safe-area-inset-bottom,0px))!important;height:calc(70px + env(safe-area-inset-bottom,0px))!important;max-height:none!important;padding:8px 12px calc(18px + env(safe-area-inset-bottom,0px))!important;box-sizing:border-box;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
     #group-messages .sengoku-time {white-space:pre-line;line-height:1.45;text-align:center;min-width:31px}
-    #group-messages .sengoku-system-event {clear:both;text-align:center;max-width:92%;width:max-content;margin:15px auto 12px;padding:5px 13px;border-radius:99px;background:rgba(129,107,88,.13);font-size:11px;font-weight:600;line-height:1.7;color:inherit;opacity:.85}
-    #group-messages .sengoku-unread-divider {display:flex;align-items:center;gap:9px;color:#c8414e;font-size:11px;font-weight:800;margin:16px 5px 12px;white-space:nowrap}
-    #group-messages .sengoku-unread-divider::before,#group-messages .sengoku-unread-divider::after {content:'';height:1px;flex:1;background:#dc828b}
+    #group-messages .history-floating{position:sticky;top:3px;z-index:7;height:0;display:flex;justify-content:center;pointer-events:none;opacity:0;transition:opacity .2s ease}
+    #group-messages .history-floating.is-visible{opacity:1}
+    #group-messages .history-floating span{height:max-content;padding:3px 12px;border-radius:20px;font-size:11px;line-height:1.5;color:#fff;background:rgba(114,83,57,.7)}
+    html[data-persona=cyber] #group-messages .history-floating span{background:rgba(77,111,137,.8);color:#eefaff}
+    #group-messages .sengoku-date.history-day{display:flex;align-items:center;justify-content:center;min-height:26px;padding:8px 0;line-height:1.5;pointer-events:none}
+    #group-messages .history-day span{padding:3px 12px;border-radius:20px;font-size:11px;font-weight:500;background:rgba(114,83,57,.25);opacity:.8}
+    html[data-persona=cyber] #group-messages .history-day span{background:rgba(77,111,137,.28)}
+    /* Exact structure used by original group for join / leave / invite */
+    #group-messages .sengoku-system-event{clear:both;text-align:center;margin:16px 12px;color:var(--muted,#9bb7c9);font-size:11px;line-height:1.6}
+    #group-messages .sengoku-system-event>span{display:inline-block;max-width:100%;padding:6px 12px;border-radius:14px;background:#8299b51c;overflow-wrap:anywhere}
+    #group-messages .sengoku-system-event time{display:block;font-size:inherit;color:inherit;line-height:1.4}
+    #group-messages .sengoku-system-event .group-event-label{display:block;line-height:1.5}
+    #group-messages .sengoku-unread-divider{display:flex;align-items:center;gap:10px;margin:18px 0;padding:6px 0;color:#df596d;font-size:11px;font-weight:800;white-space:nowrap;animation:sengoku-unread-glow 2s ease-in-out infinite}
+    #group-messages .sengoku-unread-divider::before,#group-messages .sengoku-unread-divider::after{content:'';height:1px;flex:1;background:currentColor;opacity:.4}
+    @keyframes sengoku-unread-glow{0%,100%{opacity:.66}50%{opacity:1;text-shadow:0 0 7px #ef507e88}}
+    @media(prefers-reduced-motion:reduce){#group-messages .sengoku-unread-divider{animation:none;opacity:1}}
+    html[data-persona=cyber] #group-messages .sengoku-unread-divider{color:#ff768f}
     #group-messages .sengoku-live-typing {pointer-events:none;margin-top:6px}
     #group-messages .sengoku-typing-dots {display:inline-flex;align-items:center;gap:4px;min-width:55px;min-height:32px;padding:7px 15px;font-size:11px;line-height:1;color:inherit}
     .sengoku-typing-dot {display:inline-block;animation:sengoku-dot 1.12s infinite ease-in-out;opacity:.28;transform:translateY(0)}

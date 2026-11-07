@@ -67,10 +67,12 @@
   }
   function clock(ms){return new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false}).format(ms);}
   function now(){return Date.now()+serverOffsetMs;}
+  // Display label only. Speaker IDs, timeline keys, and the original v2 JSON stay unchanged.
+  function displaySpeakerName(id,name){return id==='modern_student'?'受験生':name;}
   function mergeScript(script,config){
     if(!core?.parseMessages)throw Error('配信エンジンがありません');
     if(!script?.presentation||!Array.isArray(script.systemEvents)||!Array.isArray(script.timelineOrder))throw Error('台本第2稿ではありません');
-    const messages=core.parseMessages(script);
+    const messages=core.parseMessages(script).map(m=>m.senderId==='modern_student'?{...m,name:displaySpeakerName(m.senderId,m.name)}:m);
     if(messages.length!==328||script.systemEvents.length!==8||script.timelineOrder.length!==336)throw Error('第2稿の件数が不一致です');
     const people=new Map(script.speakerCatalog.map(p=>[p.speakerId,p]));
     const byId=new Map(messages.map(m=>[m.id,{...m,kind:'message'}]));
@@ -93,7 +95,7 @@
     if(!Array.isArray(initial)||!initial.length||initial.some(id=>!people.has(id)))throw Error('初期メンバーが不正です');
     if(config.startDate!==null&&core.startTime(config.startDate)===null)throw Error('開始日が不正です');
     const participants=script.speakerCatalog.map(p=>({
-      id:p.speakerId,name:p.speakerName,role:p.speakerType,
+      id:p.speakerId,name:displaySpeakerName(p.speakerId,p.speakerName),role:p.speakerType,
       avatar:config.participants?.[p.speakerId]?.avatar||'',appCharacterId:config.participants?.[p.speakerId]?.appCharacterId??null
     }));
     return {script,config,people:new Map(participants.map(p=>[p.id,p])),participants,entries,messages,
@@ -365,12 +367,16 @@
       const content=document.createElement('div');content.className='group-reply-content';
       const name=document.createElement('div');name.className='group-reply-name';
       const person=room.people.get(m.senderId),canOpen=profileAvailable(person);
-      const label=document.createElement(canOpen?'button':'span');label.className='group-name-label';label.textContent=m.name;
-      if(canOpen){label.type='button';label.classList.add('sengoku-name-profile');label.setAttribute('aria-label',m.name+'のプロフィールを開く');label.addEventListener('click',()=>openOriginalProfile(person));}
+      // Preserve Himiko's ORIGINAL span.group-name-label wrapper: it provides
+      // the intrinsic width while the parent grid's name line intentionally has width:0.
+      const wrapper=document.createElement('span');wrapper.className='group-name-label';
+      const label=document.createElement(canOpen?'button':'span');label.textContent=m.name;
+      if(canOpen){label.type='button';label.className='sengoku-name-profile';label.setAttribute('aria-label',m.name+'のプロフィールを開く');label.addEventListener('click',()=>openOriginalProfile(person));}
+      wrapper.append(label);
       const period=periodBySender[m.senderId];if(period){
-        const sub=document.createElement('span');sub.className='group-reply-period';sub.textContent=`（${period}）`;label.append(' ',sub);
+        const sub=document.createElement('span');sub.className='group-reply-period';sub.textContent=`（${period}）`;wrapper.append(' ',sub);
       }
-      name.append(label);content.append(name,bubble,at);row.append(content);
+      name.append(wrapper);content.append(name,bubble,at);row.append(content);
     }
     return row;
   }
@@ -608,7 +614,7 @@
     #group-messages .sengoku-bubble.sengoku-bubble-selected:focus-visible{outline:2px solid #4ee6ff;outline-offset:2px;}
     #sengoku-explanation.has-selected-bubble{border-top-color:#d89539!important;}
     html[data-persona=cyber] #sengoku-explanation.has-selected-bubble{border-top-color:#4ee6ff!important;}
-    #sengoku-explanation{flex:0 0 calc(70px + env(safe-area-inset-bottom,0px))!important;height:calc(70px + env(safe-area-inset-bottom,0px))!important;max-height:none!important;padding:8px 12px calc(18px + env(safe-area-inset-bottom,0px))!important;box-sizing:border-box;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+    #sengoku-explanation{flex:0 0 calc(62px + env(safe-area-inset-bottom,0px))!important;height:calc(62px + env(safe-area-inset-bottom,0px))!important;max-height:none!important;padding:8px 12px calc(10px + env(safe-area-inset-bottom,0px))!important;box-sizing:border-box;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
     #group-messages .sengoku-time {white-space:pre-line;line-height:1.45;text-align:center;min-width:31px}
     #group-messages .history-floating{position:sticky;top:3px;z-index:7;height:0;display:flex;justify-content:center;pointer-events:none;opacity:0;transition:opacity .2s ease}
     #group-messages .history-floating.is-visible{opacity:1}

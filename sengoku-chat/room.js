@@ -40,20 +40,21 @@
     const candidate=keep.join('').trim();
     return candidate.length>=40?candidate:m.explanation;
   }
-  // Temporary 12-episode consecutive screening: 336 events at three-second intervals.
-  // First load on this device starts the run; reopens catch up to the persisted timestamp.
-  // Turning enabled=false restores the original three-day common broadcast unchanged.
-  const RAPID_SCREENING={enabled:true,stepMs:3000,key:'sengoku-marathon-start-20261107-v1'};
+  // Temporary natural-paced screening: preserve every interval within each episode.
+  // Only the 11 multi-hour gaps between episodes are shortened to 30 minutes.
+  // A separate storage key prevents the old 3-second test from being resumed.
+  // Switching enabled=false restores the original three-day shared schedule.
+  const COMPACT_BROADCAST={enabled:true,episodeGapMs:30*60*1000,key:'sengoku-compact-start-20261107-30min-v1'};
   let screeningStart=null;
   function rapidStart(){
     if(screeningStart!==null)return screeningStart;
     try{
-      const stored=Number(localStorage.getItem(RAPID_SCREENING.key));
+      const stored=Number(localStorage.getItem(COMPACT_BROADCAST.key));
       if(Number.isFinite(stored)&&stored>0&&stored<=now()+60000&&stored>now()-30*DAY_MS)screeningStart=stored;
     }catch(_){/* private browsing */}
     if(screeningStart===null){
       screeningStart=now();
-      try{localStorage.setItem(RAPID_SCREENING.key,String(screeningStart));}catch(_){}
+      try{localStorage.setItem(COMPACT_BROADCAST.key,String(screeningStart));}catch(_){}
     }
     return screeningStart;
   }
@@ -139,12 +140,22 @@
     }
     if(entries.length!==byId.size)throw Error('時系列の項目が不足しています');
     for(let i=1;i<entries.length;i++)if(entries[i].offsetMs<entries[i-1].offsetMs)throw Error('時系列が逆転しています');
-    // Validate chronological v2 source first. Then compress only the playback view,
-    // not IDs, texts, explanations, read plans, events, or the source JSON.
-    if(RAPID_SCREENING.enabled){
+    // Validate the original timeline before altering playback offsets. The on-screen
+    // texts, IDs, read plans, system events and JSON remain exactly as authored.
+    if(COMPACT_BROADCAST.enabled){
+      let compactOffset=0;
       entries.forEach((entry,index)=>{
-        entry.originalOffsetMs=entry.offsetMs;
-        entry.offsetMs=index*RAPID_SCREENING.stepMs;
+        const originalOffset=entry.offsetMs;
+        if(index){
+          const previous=entries[index-1];
+          const originalGap=Math.max(0,originalOffset-previous.originalOffsetMs);
+          const nextGap=entry.episodeId!==previous.episodeId
+            ?Math.min(originalGap,COMPACT_BROADCAST.episodeGapMs)
+            :originalGap;
+          compactOffset+=nextGap;
+        }
+        entry.originalOffsetMs=originalOffset;
+        entry.offsetMs=compactOffset;
       });
     }
     const initial=script.presentation.initialActiveSpeakerIds;
@@ -160,13 +171,13 @@
   }
   function phase(){
     if(!room)return null;
-    const start=RAPID_SCREENING.enabled?rapidStart():core.startTime(room.startDate);
+    const start=COMPACT_BROADCAST.enabled?rapidStart():core.startTime(room.startDate);
     if(start===null)return {status:'unconfigured',cycle:0,start:null,visible:[],time:0};
     if(preview){const visible=ordered.slice(0,previewCount);return {status:'preview',cycle:0,start,visible,time:visible.at(-1)?.offsetMs??0};}
-    if(RAPID_SCREENING.enabled){
+    if(COMPACT_BROADCAST.enabled){
       const elapsed=Math.max(0,now()-start);
       const visible=ordered.filter(entry=>entry.offsetMs<=elapsed);
-      const done=elapsed>=(ordered.at(-1)?.offsetMs??0)+RAPID_SCREENING.stepMs;
+      const done=elapsed>=(ordered.at(-1)?.offsetMs??0)+COMPACT_BROADCAST.episodeGapMs;
       return {status:done?'finished':'running',cycle:0,start,visible,time:elapsed};
     }
     const elapsed=now()-start;
@@ -287,7 +298,7 @@
     publishRoomTitle(label);
   }
 
-  function storageKey(cycle){return (RAPID_SCREENING.enabled?'sengoku-marathon-last-read-v1:':'sengoku-last-read-v2:')+room.startDate+':'+cycle;}
+  function storageKey(cycle){return (COMPACT_BROADCAST.enabled?'sengoku-compact-last-read-30min-v1:':'sengoku-last-read-v2:')+room.startDate+':'+cycle;}
   function getReadIndex(state){
     if(preview||!state)return -1;
     let key='';try{key=localStorage.getItem(storageKey(state.cycle))||'';}catch(_){/* private mode */}
@@ -428,8 +439,10 @@
     window.dispatchEvent(new Event('sengoku-bubble-selection'));
   }
   function selectExplanation(message){
-    selectedId=message.id;
-    explanationText.textContent=betterExplanation(message); // text only, no HTML, no heading
+    // Second tap on the same bubble clears the explanation and its highlight.
+    const wasSelected=selectedId===message.id;
+    selectedId=wasSelected?null:message.id;
+    explanationText.textContent=wasSelected?'':betterExplanation(message);
     explanation.scrollTop=0;
     paintSelectedBubble();
   }
@@ -447,7 +460,7 @@
     const bubble=document.createElement('button');bubble.type='button';bubble.className='bubble sengoku-bubble '+(modern?'user':'assistant');
     bubble.setAttribute('aria-pressed',m.id===selectedId?'true':'false');
     if(m.id===selectedId)bubble.classList.add('sengoku-bubble-selected');
-    bubble.textContent=m.text;bubble.setAttribute('aria-label',m.name+'の発言、タップして解説を表示');
+    bubble.textContent=m.text;bubble.setAttribute('aria-label',m.name+'の発言、タップで解説を表示または閉じる');
     bubble.addEventListener('click',()=>selectExplanation(m));
     const at=timeNode(m,state);
     if(modern)row.append(bubble,at);
@@ -476,19 +489,7 @@
     const label=document.createElement('span');label.className='group-event-label';label.textContent=e.text;
     capsule.append(time,label);row.append(capsule);return row;
   }
-  let drawnEpisode='';
   function addRow(e,state,index){
-    if(RAPID_SCREENING.enabled&&e.episodeId!==drawnEpisode){
-      const number=room.script.episodes.findIndex(ep=>ep.episodeId===e.episodeId);
-      if(number>=0){
-        const heading=document.createElement('div');heading.className='sengoku-episode-heading';
-        const title=e.episodeId==='ep-01'?'本能寺の変、光秀に直撃':room.script.episodes[number].title;
-        heading.textContent=`第${number+1}話 / ${room.script.episodes.length}話　${title}`;
-        heading.setAttribute('role','heading');heading.setAttribute('aria-level','3');
-        inner.append(heading);
-      }
-      drawnEpisode=e.episodeId;
-    }
     const actual=state.start+e.offsetMs;
     const day=jstKey(actual);
     if(day!==drawnDay){
@@ -507,7 +508,7 @@
       state.status==='preview'?'再生ボタンで会話を確認できます':'新しい会話を待っています';
     inner.append(p);
   }
-  function resetRows(){inner.replaceChildren();drawnIds=[];rendered=[];drawnDay='';drawnEpisode='';liveTypingId='';}
+  function resetRows(){inner.replaceChildren();drawnIds=[];rendered=[];drawnDay='';liveTypingId='';}
   function updateTimes(state){
     for(const e of rendered){
       if(e.kind!=='message'||e.role!=='modern')continue;
@@ -527,11 +528,20 @@
     if(!state||preview||searchTerm||!['running'].includes(state.status)){
       existing?.remove();liveTypingId='';return;
     }
-    const first=ordered.find(e=>e.kind==='message'&&e.role==='historical'&&e.offsetMs>state.time);
-    let target=null;
-    if(first&&Number(first.typingLeadSeconds)>0&&first.offsetMs-state.time<=first.typingLeadSeconds*1000)target=first;
+    // Show dots only for the *next scheduled timeline item*.
+    // Looking ahead past a student message or a system event made dots appear
+    // above subsequently appended bubbles while the historical speaker waited.
+    const next=ordered.find(e=>e.offsetMs>state.time);
+    const lead=Number(next?.typingLeadSeconds)||0;
+    const target=next?.kind==='message'&&next.role==='historical'
+      &&lead>0&&next.offsetMs-state.time<=lead*1000 ? next : null;
     if(!target){existing?.remove();liveTypingId='';return;}
-    if(existing&&liveTypingId===target.id)return;
+    if(existing&&liveTypingId===target.id){
+      // A newly received bubble or event may have been appended after the dots.
+      // Keep typing at the very bottom until the incoming bubble replaces it.
+      if(existing!==inner.lastElementChild)inner.append(existing);
+      return;
+    }
     existing?.remove();liveTypingId=target.id;
     // Mirrors Himiko's groupTyping(): the sender name/period is never squeezed
     // into the 0-width name grid while the bubble is still being prepared.
@@ -728,8 +738,6 @@
     html[data-persona=cyber] #group-messages .history-day span{background:rgba(77,111,137,.28)}
     /* Exact structure used by original group for join / leave / invite */
     #group-messages .sengoku-system-event{clear:both;text-align:center;margin:16px 12px;color:var(--muted,#9bb7c9);font-size:11px;line-height:1.6}
-    #group-messages .sengoku-episode-heading{display:block;text-align:center;margin:14px 4px 10px;padding:7px 10px;border-radius:12px;font-size:11px;font-weight:750;line-height:1.6;color:#80583d;background:rgba(156,121,83,.10);overflow-wrap:anywhere}
-    html[data-persona=cyber] #group-messages .sengoku-episode-heading{color:#b9dff3;background:rgba(55,116,147,.18)}
     #group-messages .sengoku-system-event>span{display:inline-block;max-width:100%;padding:6px 12px;border-radius:14px;background:#8299b51c;overflow-wrap:anywhere}
     #group-messages .sengoku-system-event time{display:block;font-size:inherit;color:inherit;line-height:1.4}
     #group-messages .sengoku-system-event .group-event-label{display:block;line-height:1.5}

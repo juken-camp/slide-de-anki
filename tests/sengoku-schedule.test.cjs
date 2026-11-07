@@ -47,13 +47,19 @@ test('repeat=false keeps the completed 314 messages',()=>{
  const state=core.view(data,messages,jst('2026-11-23T10:00:00'));
  assert.equal(state.status,'finished');assert.equal(state.visible.length,314);
 });
-test('preview safety: no start date means no public messages',()=>{
- assert.equal(config.startDate,null);
- assert.equal(core.view({...script,...config},messages,Date.now()).status,'unconfigured');
- assert.equal(core.view({...script,...config},messages,Date.now()).visible.length,0);
+test('production start date is 2026-11-07 JST for every viewer',()=>{
+ assert.equal(config.startDate,'2026-11-07');
+ assert.equal(core.view({...script,...config},messages,jst('2026-11-07T07:35:00')).visible.length,1);
+ assert.equal(core.view({...script,...config},messages,jst('2026-11-10T07:35:00')).visible.length,1);
 });
 test('tampered speaker/empty explanation/duplicate id errors do not silently mix messages',()=>{
  const copy=JSON.parse(JSON.stringify(script));copy.messages[0].speakerId='oda_nobunaga';assert.throws(()=>core.parseMessages(copy),/人物ID/);
  const copy2=JSON.parse(JSON.stringify(script));copy2.messages[2].explanation='';assert.throws(()=>core.parseMessages(copy2),/解説/);
  const copy3=JSON.parse(JSON.stringify(script));copy3.messages[1].id=copy3.messages[0].id;assert.throws(()=>core.parseMessages(copy3),/重複/);
+});
+
+test('Date-header clock sync references exported day length, never an undefined variable',()=>{
+ const source=fs.readFileSync(path.resolve(__dirname,'../sengoku-chat/room.js'),'utf8');
+ assert.match(source,/3\*core\.DAY_MS/);
+ assert.doesNotMatch(source,/3\*DAY_MS(?![A-Za-z])/);
 });

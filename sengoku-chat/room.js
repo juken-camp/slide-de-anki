@@ -152,7 +152,14 @@
    const serverDate=response.headers.get('Date');
    // Approximate CDN age, if the server supplies it. Falls back to device clock.
    const age=Math.max(0,Number(response.headers.get('Age'))||0);
-   if(serverDate){const serverMs=Date.parse(serverDate);if(Number.isFinite(serverMs)&&Math.abs(serverMs+age*1000-fetchedAt)<3*DAY_MS)serverOffsetMs=serverMs+age*1000-fetchedAt}
+   if(serverDate){
+    const serverMs=Date.parse(serverDate);
+    // Use the value exported by schedule-core.js: an undefined DAY_MS here used
+    // to abort all data loading whenever the HTTP response supplied a Date header.
+    if(Number.isFinite(serverMs)&&Math.abs(serverMs+age*1000-fetchedAt)<3*core.DAY_MS){
+     serverOffsetMs=serverMs+age*1000-fetchedAt;
+    }
+   }
    const [data,settings]=await Promise.all([response.json(),settingsResponse.json()]);
    const parsed=core.parseMessages(data); // fail safely if any message/person/explanation mismatches
    if(settings.startDate!==null&&core.startTime(settings.startDate)===null)throw Error('配信開始日が不正です');

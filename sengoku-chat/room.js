@@ -6,6 +6,14 @@
  const explanationPanel=$('sengoku-explanation');
  const explanationText=$('sengoku-explanation-text');
  const isPreview=new URLSearchParams(location.search).get('sengokuPreview')==='1';
+ const periodBySender={
+  oda_nobunaga:'戦国〜安土桃山時代・1534〜1582年',
+  toyotomi_hideyoshi:'安土桃山時代・1537〜1598年',
+  tokugawa_ieyasu:'江戸時代・1543〜1616年',
+  akechi_mitsuhide:'戦国時代・生年不詳〜1582年',
+  takeda_shingen:'戦国時代・1521〜1573年',
+  uesugi_kenshin:'戦国時代・1530〜1578年'
+ };
  let room={title:'戦国の反省会',label:'期間限定',image:'',participants:[],messages:[],repeat:true,startDate:null};
  let entries=[],searchOpen=false,searchQuery='',rendered=[],renderedCycle='',currentDay='';
  let selectedId=null,serverOffsetMs=0,previewCount=0,previewTimer=null,version='',displayedCycle=null;
@@ -55,15 +63,25 @@
    imageNode(room.participants?.find(p=>p.id===m.senderId)?.avatar,icon);
    if(!icon.childNodes.length)icon.textContent='👤';row.append(icon);
   }
-  const content=document.createElement('div');content.className='group-reply-content';
-  if(!modern){const name=document.createElement('div');name.className='group-reply-name';const label=document.createElement('span');label.className='group-name-label';label.textContent=m.name;name.append(label);content.append(name)}
   const bubble=document.createElement('button');bubble.type='button';bubble.className='bubble sengoku-bubble '+(modern?'user':'assistant');
-  bubble.textContent=m.text; // verbatim: do not rewrite jokes, text, punctuation, or newlines
+  bubble.textContent=m.text; // preserve the submitted script exactly
   bubble.setAttribute('aria-label',m.name+'の発言、タップして解説を表示');
   bubble.addEventListener('click',()=>selectExplanation(m));
-  content.append(bubble);
-  const at=document.createElement('div');at.className='history-message-time';at.textContent=clockJP(cycleStart+m.offsetMs);content.append(at);
-  row.append(content);return row;
+  const at=document.createElement('span');at.className='history-message-time';at.textContent=clockJP(cycleStart+m.offsetMs);
+  if(modern){
+   // The existing group chat renders outgoing messages as sibling bubble/time.
+   // The native CSS then places the timestamp at the lower LEFT of the bubble.
+   row.append(bubble,at);
+  }else{
+   const content=document.createElement('div');content.className='group-reply-content';
+   const name=document.createElement('div');name.className='group-reply-name';
+   const label=document.createElement('span');label.className='group-name-label';label.textContent=m.name;
+   const period=periodBySender[m.senderId];
+   if(period){const sub=document.createElement('span');sub.className='group-reply-period';sub.textContent='（'+period+'）';label.append(' ',sub)}
+   name.append(label);
+   content.append(name,bubble,at);row.append(content);
+  }
+  return row;
  }
  function append(m,start){
   const messageMs=start+m.offsetMs,day=dateJP(messageMs);
@@ -185,4 +203,28 @@
  setInterval(()=>{if(!document.hidden)render()},3000);
  setInterval(()=>{if(!document.hidden)load()},300000);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden){render();load()}});
+})();
+
+
+/* The exact LINE-style balloon outline renderer from the original group chat. */
+(()=>{
+ const selector=':is(#chat-view,#group-view) .messages :is(.bubble,.typing,.suggestion-btn)';
+ function shapePath(w,h){
+  const x=6.5,right=w+5.5,top=.5,bottom=h-.5,r=Math.min((h-1)/2,23.5),tailR=23.5,tip=w+11;
+  // Tail grows out of the top corner, pointing upward, like the reference.
+  return `M${x+r} ${top} H${right-tailR} C${right-tailR*.72} ${top} ${right-tailR*.5} ${top+1} ${right-9} ${top+4} C${right-4} ${top+5} ${right+1} ${top+3} ${tip} ${top+.5} C${tip-.6} ${top+5} ${right+3} ${top+9} ${right-1} ${top+12} C${right} ${top+15} ${right} ${top+17} ${right} ${top+18} V${bottom-r} A${r} ${r} 0 0 1 ${right-r} ${bottom} H${x+r} A${r} ${r} 0 0 1 ${x} ${bottom-r} V${top+r} A${r} ${r} 0 0 1 ${x+r} ${top} Z`;
+ }
+ function paint(el){
+  const w=el.offsetWidth,h=el.offsetHeight;if(w<10||h<24)return;
+  const style=getComputedStyle(el),draft=el.classList.contains('suggestion-btn'),fill=draft?'none':(style.getPropertyValue('--chat-bubble-fill').trim()||'#fff7eb'),line=style.getPropertyValue('--chat-bubble-line').trim()||'#ead2b9';
+  const left=el.classList.contains('assistant')||el.classList.contains('typing'),stamp=[w,h,fill,line,left].join('|');if(el.nekoShapeStamp===stamp)return;el.nekoShapeStamp=stamp;
+  const transform=left?`transform="translate(${w+12} 0) scale(-1 1)"`:'';
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${w+12}" height="${h}" viewBox="0 0 ${w+12} ${h}"><path ${transform} d="${shapePath(w,h)}" fill="${fill}" stroke="${line}" stroke-width="1" stroke-linejoin="round"/></svg>`;
+  el.style.setProperty('--chat-bubble-shape',`url("data:image/svg+xml,${encodeURIComponent(svg)}")`);
+ }
+ const observed=new Set(),resizer=typeof ResizeObserver==='function'?new ResizeObserver(entries=>entries.forEach(e=>paint(e.target))):null;
+ let pending=false;function scan(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;for(const el of observed){if(!el.isConnected){resizer?.unobserve(el);observed.delete(el);}}for(const el of document.querySelectorAll(selector)){paint(el);if(!observed.has(el)){observed.add(el);resizer?.observe(el);}}});}
+ const app=document.body;if(app)new MutationObserver(scan).observe(app,{childList:true,subtree:true});
+ new MutationObserver(scan).observe(document.documentElement,{attributes:true,attributeFilter:['data-persona']});
+ window.addEventListener('resize',scan,{passive:true});scan();
 })();

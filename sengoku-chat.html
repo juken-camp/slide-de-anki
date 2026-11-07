@@ -6,11 +6,26 @@
  <meta name="referrer" content="same-origin">
  <meta name="theme-color" content="#fffcf7">
  <title>戦国の反省会 | JUKEN CAMP</title>
+ <script id="sengoku-theme-before-paint">
+ // Choose the parent app's real outfit before fetching CSS, eliminating the temporary Nekopon palette.
+ (()=>{
+   let mode='';
+   try {if(window.parent!==window && window.parent.location.origin===location.origin)
+     mode=window.parent.document.documentElement.dataset.persona||'';} catch(_){}
+   if(mode!=='cyber'&&mode!=='neko'){
+     try {mode=localStorage.getItem('nekopon-character-theme-v1')||'';}catch(_){}
+   }
+   mode=mode==='cyber'?'cyber':'neko';
+   document.documentElement.dataset.persona=mode;
+   document.documentElement.style.colorScheme=mode==='cyber'?'dark':'light';
+   document.querySelector('meta[name="theme-color"]')?.setAttribute('content',mode==='cyber'?'#080d20':'#fffcf7');
+ })();
+ </script>
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap">
  <link rel="stylesheet" href="sengoku-chat/original-chat.css?v=1">
  <link rel="stylesheet" href="sengoku-chat/room.css?v=ui20261107-2">
  <script src="sengoku-chat/schedule-core.js?v=1" defer></script>
- <script src="sengoku-chat/room.js?v=group-typing-sound-unread-20261107-v1" defer></script>
+ <script src="sengoku-chat/room.js?v=student-story-theme-firstpaint-20261107-v1" defer></script>
 
 <style id="sengoku-members-himiko-style-20261107">
 /* Group members: same card / section / type hierarchy as Himiko's group view. */
@@ -65,6 +80,10 @@ html[data-persona="cyber"] #group-members .sengoku-member-card .avatar{backgroun
 #group-view #group-search-close svg{width:20px;height:20px;display:block}
 #group-view #group-search-clear svg{width:16px;height:16px;display:block}
 </style>
+<style id="sengoku-initial-theme-background">
+ html,body{background:#fffcf7!important}
+ html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20!important}
+ </style>
 </head>
 <body>
 <section id="group-view" aria-label="戦国の反省会・閲覧専用">

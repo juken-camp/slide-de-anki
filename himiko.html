@@ -3561,11 +3561,15 @@ document.getElementById("chat-view").addEventListener("click",function(e){
    if(keys.has(key)){row.remove();continue;}keys.add(key);
    if(!slots[key]){
     const original=Number(row.dataset.groupTimelineAt)||Date.now();
-    // Old history is migrated once. New arrivals always follow what was shown.
-    const at=migrating?original:Math.max(lastAt,row.matches('.user')?original:Date.now());
+    // 発言の元時刻を保つ。読み込み・開封した時刻では上書きしない。
+    const at=original;
     slots[key]={order:++order,at};lastAt=Math.max(lastAt,at);changed=true;
    }
-   const slot=slots[key];row.dataset.groupTimelineAt=slot.at;row.dataset.groupDisplayOrder=slot.order;
+   const slot=slots[key];
+   // 古い表示処理で保存された開封時刻も、元データの時刻があれば修復する。
+   const sourceAt=Number(row.dataset.groupTimelineAt);
+   if(Number.isFinite(sourceAt)&&sourceAt>0&&slot.at!==sourceAt){slot.at=sourceAt;changed=true;}
+   row.dataset.groupTimelineAt=slot.at;row.dataset.groupDisplayOrder=slot.order;
    if(!row.matches('.user')){
     const clock=row.querySelector('.history-message-time, time');
     if(clock)clock.textContent=historyClock(slot.at);

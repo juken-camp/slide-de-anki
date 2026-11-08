@@ -6,7 +6,7 @@ ROOT = pathlib.Path(__file__).resolve().parent
 ASSETS = ROOT / 'authentic_images'
 ASSETS.mkdir(exist_ok=True)
 ITEMS = json.loads((ROOT / 'real-materials.json').read_text(encoding='utf-8'))['items']
-BATCH = max(1, min(50, int(os.environ.get('HISTORY202_BATCH', '25'))))
+BATCH = max(1, min(50, int(os.environ.get('HISTORY202_BATCH', '5'))))
 DELAY = max(2.0, float(os.environ.get('HISTORY202_DELAY', '5')))
 
 def candidates(item):

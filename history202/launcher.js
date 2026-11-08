@@ -6,12 +6,12 @@ window.__history202LauncherInstalled=true;
 const style=document.createElement('style');style.textContent=`
 #list-view .h202-entry{margin:10px 0 0;cursor:pointer;animation:none}
 #list-view .h202-entry .card-inner{gap:10px}
-#list-view .h202-entry .h202-card-avatar{display:grid;place-items:center;flex:none;width:50px;height:50px;border:1.5px solid #e4c39d;background:#fff4df;border-radius:15px;font-size:26px}
+#list-view .h202-entry .h202-card-avatar{display:grid;place-items:center;flex:none;width:50px;height:50px;border:1.5px dashed #d1a985;background:rgba(182,127,71,.06);border-radius:15px;font-size:26px}
 #list-view .h202-entry .card-info{flex:1;min-width:0}
 #list-view .h202-entry .h202-card-name{font-size:16px;font-weight:900;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#1e293b}
 #list-view .h202-entry .h202-card-caption{font-size:12px;font-weight:700;line-height:1.6;margin-top:4px;color:#a07960}
 #list-view .h202-entry:focus-visible{outline:2px solid #bc8d59;outline-offset:3px}
-html[data-persona=cyber] #list-view .h202-entry .h202-card-avatar{background:#0d3650;border-color:#446e89}
+html[data-persona=cyber] #list-view .h202-entry .h202-card-avatar{background:rgba(30,112,150,.08);border-color:#446e89}
 html[data-persona=cyber] #list-view .h202-entry .h202-card-name{color:#e0eaff}
 html[data-persona=cyber] #list-view .h202-entry .h202-card-caption{color:#92c7e5}
 #history202-panel{position:fixed;inset:0;z-index:9550;display:flex;flex-direction:column;background:#fffcf7;overflow:hidden}
@@ -23,7 +23,7 @@ html[data-persona=cyber] #history202-panel{background:#080d20}
 const list=document.getElementById('list-view');const sengokuEntry=list?.querySelector('.sengoku-chat-entry');
 if(!list){console.error('history202: list-view is not available');return;}
 const card=document.createElement('div');card.className='h202-entry char-card';card.setAttribute('role','button');card.tabIndex=0;card.setAttribute('aria-label','歴史の暗記202グルチャを開く');
-card.innerHTML='<div class="card-inner"><span class="h202-card-avatar" aria-hidden="true">📜</span><div class="card-info"><div class="h202-card-name">歴史の暗記202グルチャ</div><div class="h202-card-caption">31の物語で、歴史の重要事項202を覚えよう！</div></div></div>';
+card.innerHTML='<div class="card-inner"><span class="h202-card-avatar" aria-hidden="true"></span><div class="card-info"><div class="h202-card-name">歴史の暗記202グルチャ</div><div class="h202-card-caption">31の物語で、歴史の重要事項202を覚えよう！</div></div></div>';
 if(sengokuEntry)sengokuEntry.insertAdjacentElement('afterend',card);
 else list.querySelector('.shared-chat-join-entry')?.insertAdjacentElement('beforebegin',card) || list.prepend(card);
 const panel=document.createElement('section');panel.id='history202-panel';panel.hidden=true;panel.setAttribute('aria-label','歴史の暗記202グルチャ');
@@ -32,7 +32,7 @@ let lastScroll=0;
 const theme=()=>document.documentElement.dataset.persona==='cyber'?'cyber':'neko';
 const notify=open=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-state',open},location.origin)};
 const sendTheme=()=>{try{frame.contentWindow?.postMessage({type:'history202-theme',persona:theme()},location.origin)}catch(_){}};
-function open(){if(!panel.hidden)return;lastScroll=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;document.documentElement.dataset.history202Open='true';document.documentElement.dataset.chatOpen='true';list.classList.add('hidden');panel.hidden=false;if(!frame.getAttribute('src'))frame.setAttribute('src','history202-chat.html?v=20261108');sendTheme();notify(true)}
+function open(){if(!panel.hidden)return;lastScroll=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;document.documentElement.dataset.history202Open='true';document.documentElement.dataset.chatOpen='true';list.classList.add('hidden');panel.hidden=false;if(!frame.getAttribute('src'))frame.setAttribute('src','history202-chat.html?v=identical20261108-v3');sendTheme();notify(true)}
 function close(){if(panel.hidden)return;panel.hidden=true;delete document.documentElement.dataset.history202Open;delete document.documentElement.dataset.chatOpen;list.classList.remove('hidden');requestAnimationFrame(()=>{window.scrollTo(0,lastScroll);document.body.scrollTop=lastScroll;document.documentElement.scrollTop=lastScroll});notify(false)}
 card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
 frame.addEventListener('load',sendTheme);

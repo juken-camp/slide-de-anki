@@ -1,41 +1,50 @@
 <!doctype html>
-<html lang="ja" data-persona="neko">
+<html lang="ja" data-chat-open="true" data-group-open="true" data-persona="neko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-  <meta name="theme-color" content="#fffcf7">
-  <meta name="referrer" content="same-origin">
-  <title>歴史の暗記202グルチャ | JUKEN CAMP</title>
-  <script>
-  (()=>{let mode='';try{if(parent!==window&&parent.location.origin===location.origin)mode=parent.document.documentElement.dataset.persona||''}catch(_){ }if(!mode)try{mode=localStorage.getItem('nekopon-character-theme-v1')||''}catch(_){}document.documentElement.dataset.persona=mode==='cyber'?'cyber':'neko';})();
-  </script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap">
-  <link rel="stylesheet" href="history202/room.css?v=20261108-1">
-  <script src="history202/room.js?v=20261108-1" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="referrer" content="same-origin">
+<meta name="theme-color" content="#fffcf7">
+<title>歴史の暗記202グルチャ | JUKEN CAMP</title>
+<script id="history202-theme-before-paint">(()=>{let mode='';try{if(parent!==window&&parent.location.origin===location.origin)mode=parent.document.documentElement.dataset.persona||''}catch(_){}if(mode!=='cyber'&&mode!=='neko')try{mode=localStorage.getItem('nekopon-character-theme-v1')||''}catch(_){}mode=mode==='cyber'?'cyber':'neko';document.documentElement.dataset.persona=mode;document.documentElement.style.colorScheme=mode==='cyber'?'dark':'light';})();</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap">
+<!-- 戦国グルチャが使用する正規のチャットCSSをそのまま使う -->
+<link rel="stylesheet" href="sengoku-chat/original-chat.css?v=1">
+<link rel="stylesheet" href="sengoku-chat/room.css?v=ui20261107-2">
+<link rel="stylesheet" href="history202/room.css?v=identical20261108-v3">
+<script src="history202/room.js?v=identical20261108-v3" defer></script>
 </head>
 <body>
-<section class="h202-screen" aria-label="歴史の暗記202グルチャ">
-  <header class="h202-header">
-    <button class="h202-icon-btn" id="h202-back" aria-label="グルチャ一覧へ戻る" title="戻る" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
-    <div class="h202-heading">
-      <span class="h202-heading-icon" aria-hidden="true">📜</span>
-      <div class="h202-heading-text"><strong>歴史の暗記202グルチャ</strong><small id="h202-total-caption">31話・202重要事項</small></div>
-    </div>
-    <button class="h202-icon-btn" id="h202-search-button" aria-label="今の話から検索" title="検索" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg></button>
-    <button class="h202-icon-btn" id="h202-index-button" aria-label="目次を開く" title="目次" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8h9M9 12h9M9 16h9"/><path d="M6 8h0M6 12h0M6 16h0"/></svg></button>
-  </header>
-  <div class="h202-search" id="h202-search" hidden><input id="h202-search-input" type="search" aria-label="会話を検索" placeholder="この話の会話を検索" autocomplete="off" enterkeyhint="search"><span id="h202-search-count"></span><button id="h202-search-clear" type="button" aria-label="検索を消す">×</button></div>
-  <div class="h202-chapter-bar"><button id="h202-chapter-current" type="button" aria-label="目次から話を選ぶ"><span class="h202-chapter-no" id="h202-chapter-num">第1話</span><span class="h202-chapter-title" id="h202-chapter-title">読み込み中…</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></button></div>
-  <div class="h202-chat-scroll" id="h202-scroll" role="log" aria-live="polite" tabindex="0"><div id="h202-messages" class="h202-messages"><p class="h202-loading">会話を読み込んでいます…</p></div></div>
-  <div class="h202-explain" id="h202-explain" role="region" aria-label="選択した吹き出しの補足解説" tabindex="0"><div class="h202-explain-guide" id="h202-explain-guide">吹き出しをタップすると、重要事項の補足解説を表示します。もう一度タップすると解除されます。</div><div class="h202-explain-body" id="h202-explain-body" hidden></div></div>
+<section id="group-view" aria-label="歴史の暗記202グルチャ・閲覧専用">
+ <header class="chat-header">
+  <button type="button" id="h202-back" class="back-btn" aria-label="グルチャ一覧に戻る">＜</button>
+  <div class="group-heading">
+   <span id="group-header-avatar" class="chat-avatar sengoku-avatar-placeholder" aria-hidden="true"></span>
+   <div class="group-heading-text"><button type="button" id="group-title" title="31話の目次を表示" aria-label="31話の目次を開く">歴史の暗記202グルチャ</button><span id="sengoku-period-badge">31話・202項目</span></div>
+  </div>
+  <div class="group-header-actions">
+   <button type="button" id="group-search-toggle" class="chat-reset" aria-label="会話を検索" title="会話を検索" aria-expanded="false" aria-controls="group-search-form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+   <button type="button" id="group-members-direct" class="chat-reset" aria-label="参加者一覧を開く" title="参加者一覧"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="7.5" cy="8" r=".8" stroke="none" fill="currentColor"/><circle cx="7.5" cy="12" r=".8" stroke="none" fill="currentColor"/><circle cx="7.5" cy="16" r=".8" stroke="none" fill="currentColor"/><path d="M11 8h6M11 12h6M11 16h6"/></svg></button>
+  </div>
+  <form id="group-search-form" class="group-search-header" role="search" aria-label="会話を検索" hidden>
+   <div class="group-search-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input type="search" id="group-search-input" placeholder="この話の会話を検索" enterkeyhint="search" aria-label="検索キーワード"><button type="button" id="group-search-clear" class="group-search-icon-button" aria-label="検索語を消す" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+   <button type="button" id="group-search-close" class="group-search-icon-button" aria-label="検索を閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  </form>
+ </header>
+ <div id="group-messages" class="messages" role="log" aria-live="polite" tabindex="0"><div id="group-messages-inner" class="messages-inner"><p id="h202-empty">会話を読み込んでいます…</p></div></div>
+ <div id="h202-explain" role="region" aria-label="タップした発言の解説"><div id="h202-explain-text" aria-live="polite"></div></div>
+ <!-- 戦国グルチャと同じ、送信欄なしの閲覧専用画面 -->
+ <div id="group-members" hidden>
+  <header class="members-header"><button id="group-members-back" class="back-btn" type="button" aria-label="チャットに戻る">＜</button><div class="members-heading"><span class="group-members-avatar sengoku-avatar-placeholder" aria-hidden="true"></span><h2 class="members-title">歴史の暗記202グルチャ</h2></div></header>
+  <div class="members-scroll"><div id="group-member-list"></div></div>
+ </div>
 </section>
-<div class="h202-index-layer" id="h202-index-layer" hidden>
-  <div class="h202-index-backdrop" id="h202-index-backdrop"></div>
-  <aside class="h202-index-panel" aria-label="全31話の目次" role="dialog" aria-modal="true">
-    <div class="h202-index-heading"><div><strong>31話の目次</strong><small>読みたいカテゴリーを選択</small></div><button type="button" class="h202-close" id="h202-index-close" aria-label="目次を閉じる">×</button></div>
-    <div class="h202-index-list" id="h202-index-list"></div>
-    <div class="h202-index-footer">全31カテゴリー・202項目。会話は創作です。出来事や年代は学習用に整理しています。</div>
-  </aside>
+<div id="h202-index-layer" hidden>
+ <div id="h202-index-backdrop"></div>
+ <section id="h202-index-panel" role="dialog" aria-modal="true" aria-label="全31話の目次">
+  <header class="members-header"><button id="h202-index-back" class="back-btn" type="button" aria-label="チャットに戻る">＜</button><div class="members-heading"><h2 class="members-title">31話の目次</h2></div></header>
+  <div id="h202-index-list" class="members-scroll"></div>
+ </section>
 </div>
 </body>
 </html>

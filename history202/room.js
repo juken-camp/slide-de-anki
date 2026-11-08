@@ -71,7 +71,18 @@ function replaceFakeCards(chapters,realMaterials){
   const additions=items.filter(it=>Number(it.chapter)===Number(ch.id));
   for(const item of additions){
    const imageUrl=item.image||item.imageUrl;
-   if(typeof imageUrl!=='string'||!/^https:\/\/commons\.wikimedia\.org\/(?:wiki\/Special:Redirect\/file\/|w\/index\.php\?title=Special%3ARedirect%2Ffile%2F)/.test(imageUrl))continue;
+   // Authentic materials also come from public museums, libraries and archival collections.
+   // Permit only the explicit asset hosts used in the source manifest.
+   const acceptedImageHosts=new Set([
+    'commons.wikimedia.org','upload.wikimedia.org','codh.rois.ac.jp','online.bunka.go.jp',
+    'www.wul.waseda.ac.jp','www.law.nihon-u.ac.jp','www.pref.gifu.lg.jp','www.pref.gunma.jp',
+    'www.med.nagoya-u.ac.jp','www.archives.go.jp','www.nier.go.jp','www.ndl.go.jp',
+    'assets.st-note.com','archive.wul.waseda.ac.jp','search.showakan.go.jp',
+    'www.library.metro.tokyo.lg.jp','www.jacar.go.jp','images.metmuseum.org','jaa2100.org'
+   ]);
+   let resolvedImage;
+   try{resolvedImage=new URL(imageUrl)}catch(_){continue}
+   if(resolvedImage.protocol!=='https:'||!acceptedImageHosts.has(resolvedImage.hostname))continue;
    const m={id:item.id,speaker:'AI先生',role:'historical',kind:'real-image',text:'資料：'+item.caption,
     caption:item.caption,image:imageUrl,sourceUrl:item.sourceUrl,credit:item.credit,license:item.license||'出典ページで確認',
     explanation:item.explanation};
@@ -245,7 +256,7 @@ let saveTimeout=null;box.addEventListener('scroll',()=>{clearTimeout(saveTimeout
 async function load(){try{const responses=await Promise.all(['history202/chapters.json','history202/participants.json','history202/config.json'].map(url=>fetch(url,{cache:'no-store'})));
  for(const response of responses)if(!response.ok)throw Error('読み込みに失敗しました: '+response.status);
  const [script,people,config]=await Promise.all(responses.map(r=>r.json()));
- let realMaterials={items:[]};try{const r=await fetch('history202/real-materials.json',{cache:'no-store'});if(!r.ok)throw Error('資料データ HTTP '+r.status);realMaterials=await r.json();if(!Array.isArray(realMaterials.items)||realMaterials.items.length!==157)throw Error('資料データが157点ではありません')}catch(e){state.materialLoadError='歴史資料画像データを読み込めませんでした。画像の設定ファイルを確認してください。';console.warn('real materials unavailable',e)}
+ let realMaterials={items:[]};try{const r=await fetch('history202/real-materials.json',{cache:'no-store'});if(!r.ok)throw Error('資料データ HTTP '+r.status);realMaterials=await r.json();if(!Array.isArray(realMaterials.items)||realMaterials.items.length<157)throw Error('歴史資料データが不足しています')}catch(e){state.materialLoadError='歴史資料画像データを読み込めませんでした。画像の設定ファイルを確認してください。';console.warn('real materials unavailable',e)}
  if(!Array.isArray(script.chapters)||script.chapters.length!==31||script.chapters.reduce((n,c)=>n+(c.entries?.length||0),0)!==202)throw Error('重要事項が31話・202項目ではありません');
  const ids=new Set();for(const ch of script.chapters){if(!Array.isArray(ch.messages)||!ch.messages.length)throw Error('空の話があります');for(const m of ch.messages){if(!m.id||!m.text||!m.speaker||ids.has(m.id))throw Error('会話IDの重複または不足があります');ids.add(m.id)}}
  state.chapters=replaceFakeCards(script.chapters,realMaterials);state.people=people;state.config=config;

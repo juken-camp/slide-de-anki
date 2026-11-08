@@ -12,6 +12,20 @@ function safeTime(v){if(!v)return null;const n=Date.parse(v);return Number.isFin
 function applyTheme(mode){const theme=mode==='cyber'?'cyber':'neko';document.documentElement.dataset.persona=theme;document.documentElement.style.colorScheme=theme==='cyber'?'dark':'light';document.querySelector('meta[name="theme-color"]')?.setAttribute('content',theme==='cyber'?'#080d20':'#fffcf7');requestShapes()}
 window.addEventListener('message',e=>{if(e.origin!==location.origin||!e.data)return;if(e.data.type==='history202-theme'||e.data.type==='nekopon-persona')applyTheme(e.data.persona)});
 function close(){if(parent!==window)parent.postMessage({type:'history202-close'},location.origin);else if(history.length>1)history.back();else location.assign('himiko.html')}
+// 既存の戦国グルチャと同じ音声経路。iframe内のタップを親画面へ渡す。
+function originalChatSound(kind,event){
+ try{const host=hostWindow();if(typeof host?.appSound==='function')host.appSound(kind,event)}
+ catch(_){/* ブラウザの自動再生・ミュート設定には従う */}
+}
+document.addEventListener('click',event=>{
+ const control=event.target.closest('button, .sengoku-member-card');
+ if(!control||control.disabled)return;
+ originalChatSound(control.classList.contains('sengoku-member-card')?'open':'tap',event);
+},true);
+document.addEventListener('pointerdown',event=>{
+ if(event.target.closest('#group-search-input'))originalChatSound('tap',event);
+},{passive:true});
+
 $('h202-back').addEventListener('click',close);
 function hostWindow(){try{return parent!==window&&parent.location.origin===location.origin?parent:null}catch(_){return null}}
 function profileId(person){const m=String(person?.image||'').match(/^history-icons\/(\d+)\.(?:webp|png)$/);return m?Number(m[1]):null}
@@ -44,29 +58,79 @@ function scheduleInfo(chapterIndex,messageIndex){
  t+=messageIndex*interval;return {visible:Date.now()>=t,when:t};
 }
 function visibleMessages(ch,index){return ch.messages.map((m,i)=>({m,time:scheduleInfo(index,i)})).filter(x=>x.time.visible)}
-function closeSearch(){searchForm.hidden=true;$('group-search-toggle').setAttribute('aria-expanded','false');searchInput.value='';state.search='';render();}
-function openSearch(){searchForm.hidden=false;$('group-search-toggle').setAttribute('aria-expanded','true');searchInput.focus()}
+// 戦国版と同様、検索中は元ヘッダーの全要素を隠して検索フォームだけを表示。
+function setSearchOpen(open){
+ searchForm.hidden=!open;
+ $('group-view').toggleAttribute('data-search-open',open);
+ $('group-search-toggle').setAttribute('aria-expanded',String(open));
+ if(open)searchInput.focus();
+ else{searchInput.value='';state.search='';$('group-search-clear').hidden=true;render()}
+}
+function closeSearch(){setSearchOpen(false)}
+function openSearch(){setSearchOpen(true)}
 $('group-search-toggle').addEventListener('click',()=>{if(searchForm.hidden)openSearch();else closeSearch()});
 $('group-search-close').addEventListener('click',closeSearch);
 $('group-search-clear').addEventListener('click',()=>{searchInput.value='';state.search='';$('group-search-clear').hidden=true;render();searchInput.focus()});
-searchForm.addEventListener('submit',e=>e.preventDefault());
+searchForm.addEventListener('submit',e=>{e.preventDefault();searchInput.blur()});
 searchInput.addEventListener('input',()=>{state.search=searchInput.value.trim().toLocaleLowerCase('ja');$('group-search-clear').hidden=!state.search;render()});
 function openMembers(){if(!state.chapters.length)return;renderMembers();$('group-members').hidden=false;$('group-members-back').focus()}
 function closeMembers(){$('group-members').hidden=true;$('group-members-direct').focus()}
 $('group-members-direct').addEventListener('click',openMembers);$('group-members-back').addEventListener('click',closeMembers);
+// 戦国グルチャの参加者一覧と同じカード階層（section → char-card → name-row → period）。
+// 年号などの推測表示を避け、時代名は本文で確かに扱うものだけを載せる。
+const personPeriods={
+ 'ソクラテス':'古代ギリシャ','ハンムラビ王':'古代メソポタミア','始皇帝':'秦','卑弥呼':'弥生時代',
+ '聖徳太子':'飛鳥時代','中大兄皇子':'飛鳥時代','聖武天皇':'奈良時代',
+ '桓武天皇':'奈良〜平安時代','最澄':'平安時代','空海':'平安時代','藤原道長':'平安時代',
+ '紫式部':'平安時代','白河上皇':'平安時代','平清盛':'平安時代',
+ '源頼朝':'平安〜鎌倉時代','北条泰時':'鎌倉時代','親鸞':'鎌倉時代',
+ '足利義満':'室町時代','雪舟':'室町時代',
+ '織田信長':'戦国〜安土桃山時代','豊臣秀吉':'安土桃山時代',
+ '徳川家康':'安土桃山〜江戸時代','徳川家光':'江戸時代','徳川綱吉':'江戸時代',
+ '徳川吉宗':'江戸時代','本居宣長':'江戸時代','伊能忠敬':'江戸時代',
+ '吉田松陰':'江戸時代（幕末）','坂本龍馬':'江戸時代（幕末）','ペリー':'19世紀・アメリカ',
+ '板垣退助':'明治時代','伊藤博文':'明治時代','大久保利通':'明治時代',
+ 'ルター':'16世紀・ドイツ','マゼラン':'16世紀・大航海時代','孫文':'清末〜中華民国',
+ '小村寿太郎':'明治時代'
+};
+function personalPresence(name,person){
+ const host=hostWindow(),id=profileId(person);
+ if(!Number.isInteger(id)||typeof host?.himikoPersonPresence!=='function')return null;
+ try{
+  const result=host.himikoPersonPresence({id,name});
+  if(!result||!['オンライン','離席中','あとで戻る'].includes(result.label))return null;
+  return result;
+ }catch(_){return null}
+}
 function renderMembers(){
- const ul=$('group-member-list');ul.replaceChildren();const names=[];
- for(const ch of state.chapters)for(const m of ch.messages)if(m.role!=='modern'&&!names.includes(m.speaker))names.push(m.speaker);
- const title=document.createElement('h3');title.className='membership-section-title';title.textContent=names.length+'人が登場します';ul.append(title);
- for(const name of names){const person=state.people[name]||{},click=profileAvailable(person);const card=document.createElement(click?'button':'div');
- if(click){card.type='button';card.addEventListener('click',()=>openOriginalProfile(person))}
- card.className='char-card member-card h202-member';if(click)card.setAttribute('aria-label',name+'のプロフィールを開く');
- const row=document.createElement('span');row.className='card-inner';const img=document.createElement('span');img.className='avatar';imageInto(person,img);
- const meta=document.createElement('span');meta.className='card-info';const label=document.createElement('span');label.className='member-name';label.textContent=name;meta.append(label);
- if(click){const hint=document.createElement('span');hint.className='member-sub';hint.style.display='block';hint.textContent='タップしてプロフィールを見る';meta.append(hint)}
- row.append(img,meta);card.append(row);ul.append(card);
+ const list=$('group-member-list');list.replaceChildren();const names=[];
+ for(const ch of state.chapters)for(const m of ch.messages)
+  if(m.role!=='modern'&&!names.includes(m.speaker))names.push(m.speaker);
+ // 参加者一覧は「退会・招待の演出」を持たないが、同じ区分見出しにする。
+ const section=document.createElement('h3');section.className='membership-section-title';
+ const emoji=document.createElement('span');emoji.setAttribute('aria-hidden','true');emoji.textContent='👋';
+ section.append(emoji,' '+names.length+'人が参加中です');list.append(section);
+ document.querySelector('#group-members .members-title').textContent='歴史の暗記202グルチャ ('+names.length+')';
+ for(const name of names){
+  const person=state.people[name]||{},hasProfile=profileAvailable(person);
+  const card=document.createElement(hasProfile?'button':'div');
+  if(hasProfile){card.type='button';card.addEventListener('click',()=>openOriginalProfile(person))}
+  card.className='char-card member-card sengoku-member-card'+(hasProfile?'':' sengoku-member-static');
+  if(hasProfile)card.setAttribute('aria-label',name+'のプロフィールを開く');
+  const row=document.createElement('span');row.className='card-inner';
+  const photo=document.createElement('span');photo.className='avatar';imageInto(person,photo);
+  const meta=document.createElement('span');meta.className='card-info';
+  const nameLine=document.createElement('span');nameLine.className='member-name-row';
+  const label=document.createElement('span');label.className='member-name';label.textContent=name;nameLine.append(label);
+  const presence=personalPresence(name,person);
+  if(presence){const badge=document.createElement('span');badge.className='online-badge member-presence';
+   badge.textContent=presence.label;badge.style.color=presence.color;badge.style.background=presence.color+'20';nameLine.append(badge)}
+  meta.append(nameLine);
+  const period=personPeriods[name];if(period){const sub=document.createElement('span');sub.className='member-period';sub.textContent='（'+period+'）';meta.append(sub)}
+  row.append(photo,meta);card.append(row);list.append(card);
  }
 }
+
 function openIndex(){if(!state.chapters.length)return;indexLayer.hidden=false;const current=indexList.querySelector('.is-current');current?.scrollIntoView({block:'nearest'});$('h202-index-back').focus()}
 function closeIndex(){indexLayer.hidden=true;$('group-title').focus()}
 $('group-title').addEventListener('click',openIndex);
@@ -105,7 +169,7 @@ function render(){const ci=Math.max(0,state.selected-1),ch=chapterAt(ci);if(!ch)
  else if(!state.search){const end=document.createElement('p');end.className='h202-story-end';end.textContent=state.config.mode==='broadcast'&&!isPreview?'現在の配信はここまで':'第'+ch.id+'話・ここまで。次の話はタイトルから選べます。';inner.append(end)}
  requestShapes();
 }
-function chooseChapter(id,restore=false){const chapter=state.chapters.find(x=>x.id===id);if(!chapter)return;state.selected=id;searchForm.hidden=true;$('group-search-toggle').setAttribute('aria-expanded','false');searchInput.value='';state.search='';
+function chooseChapter(id,restore=false){const chapter=state.chapters.find(x=>x.id===id);if(!chapter)return;state.selected=id;searchForm.hidden=true;$('group-view').removeAttribute('data-search-open');$('group-search-toggle').setAttribute('aria-expanded','false');searchInput.value='';state.search='';$('group-search-clear').hidden=true;
  try{localStorage.setItem('history202-last-chapter',String(id))}catch(_){}
  render();renderIndex();indexLayer.hidden=true;
  if(restore){try{box.scrollTop=Number(localStorage.getItem(LAST+id))||0}catch(_){box.scrollTop=0}}else box.scrollTop=0;

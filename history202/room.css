@@ -100,3 +100,41 @@ html[data-persona="cyber"] #h202-index-list button.is-current{border-color:#4ee6
 /* Reader mode never fabricates a send time. Keep the same timestamp column width without showing a fake clock. */
 #group-view #group-messages .h202-time-empty{visibility:hidden}
 #h202-index-panel #h202-index-list{flex:1;min-height:0}
+
+/* 2026-11-08: 戦国グルチャの検索ヘッダーと同じ状態切替。
+   背後の戻るボタン・部屋名・検索／名簿ボタンを完全に非表示にする。 */
+#group-view[data-search-open] > .chat-header{min-height:var(--group-search-header-height,64px)}
+#group-view[data-search-open] > .chat-header > :not(.group-search-header){display:none!important}
+#group-view .group-search-header{grid-column:1/-1;grid-row:1;z-index:5;display:flex;align-items:center;gap:8px;width:100%;min-width:0;margin:0}
+#group-view .group-search-header[hidden]{display:none!important}
+#group-view #group-search-close svg{display:block;width:20px;height:20px;flex:none}
+#group-view #group-search-clear svg{display:block;width:16px;height:16px;flex:none}
+/* 最新の部屋に統一：テーマ変更後の章末メッセージもCyber用の文字色にする。 */
+html[data-persona="cyber"] #group-view .h202-story-end,
+html[data-persona="cyber"] #group-view .h202-status,
+html[data-persona="cyber"] #group-view #h202-empty{color:#a9c6df!important}
+/* 戦国の反省会の参加者カードを寸法・書体・状態表示まで合わせる。 */
+#group-members #group-member-list .membership-section-title{font-family:inherit;font-size:14px;font-weight:700;line-height:1.6;margin:18px 0 12px;color:var(--text-main,#60412f);padding:0 2px}
+#group-members #group-member-list .membership-section-title:first-child{margin-top:16px}
+html[data-persona="cyber"] #group-members #group-member-list .membership-section-title{color:#b9dff3}
+#group-members .sengoku-member-card{display:block;width:100%;font-family:inherit;animation:none;text-align:left;cursor:pointer;background:#fff;border:2px solid #f1f5f9;border-radius:16px;padding:13px 15px;box-shadow:0 1px 6px rgba(0,0,0,.05);min-height:72px}
+#group-members .sengoku-member-card .card-inner{display:flex;align-items:center;gap:12px}
+#group-members .sengoku-member-card .avatar{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;flex:none;overflow:hidden;font-size:22px;background:#f3d3a9}
+#group-members .sengoku-member-card .avatar img{display:block;width:100%;height:100%;object-fit:cover}
+#group-members .sengoku-member-card .card-info{min-width:0;flex:1}
+#group-members .sengoku-member-card .member-name-row{display:flex;align-items:center;gap:7px;min-width:0}
+#group-members .sengoku-member-card .member-name{font-size:16px;font-weight:900;color:#1e293b;line-height:1.4;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#group-members .sengoku-member-card .member-presence{display:inline-block;flex:none;margin-left:0;white-space:nowrap;font-size:10px;font-weight:800;line-height:1.4;padding:2px 7px;border-radius:100px}
+#group-members .sengoku-member-card .member-period{display:block;margin-top:3px;max-width:100%;font-size:11px;font-weight:500;line-height:1.5;color:#a08069;overflow-wrap:anywhere}
+#group-members .sengoku-member-card.sengoku-member-static{cursor:default}
+#group-members .sengoku-member-card.sengoku-member-static:hover{transform:none;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+#group-members .sengoku-member-card:focus-visible{outline:2px solid #03cadc;outline-offset:3px}
+html[data-persona="cyber"] #group-members .sengoku-member-card{background:#101b35;border-color:#315576!important;box-shadow:none!important}
+html[data-persona="cyber"] #group-members .sengoku-member-card .member-name{color:#e0eaff}
+html[data-persona="cyber"] #group-members .sengoku-member-card .member-period{color:#8eaec4}
+html[data-persona="cyber"] #group-members .sengoku-member-card .avatar{background:#253956}
+/* 戦国と同じプロフィール用ボタン。バブル自体の輪郭処理は変更しない。 */
+#group-messages .h202-profile-button{appearance:none;-webkit-appearance:none;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;cursor:pointer;touch-action:manipulation;flex-shrink:0}
+#group-messages .h202-profile-button img{display:block;width:100%;height:100%;object-fit:cover}
+#group-messages .h202-name-profile{appearance:none;-webkit-appearance:none;margin:0;padding:0;background:transparent;border:0;border-radius:0;color:inherit;font:inherit;font-size:inherit;font-weight:inherit;text-align:left;cursor:pointer;touch-action:manipulation}
+@media(max-width:390px){#group-members .group-members-avatar{width:38px;height:38px}}

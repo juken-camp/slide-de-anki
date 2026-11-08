@@ -1,0 +1,746 @@
+{
+  "total": 256,
+  "downloaded": 71,
+  "failed": [
+    {
+      "id": "wmc-motoori",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "wmc-yoshino",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h10-real-30",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-lincoln",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-luther",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-roosevelt",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-sunyatsen",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-wilson",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-037",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-038",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-010",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-011",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-039",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-012",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-013",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "authentic-2026-014",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-015",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-034",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h16-real-09",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h16-real-10",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "h17-real-11",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "authentic-2026-016",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h18-real-12",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h18-real-34",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-017",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-018",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-019",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-sinojapanese",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-020",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h21-real-35",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-021",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h22-real-36",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h22-real-37",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-022",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-023",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h23-real-13",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h23-real-14",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h24-real-15",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h24-real-38",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-portsmouth",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-securitytreaty",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-anglojapanese",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-koreaannex",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-040",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h26-real-16",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-024",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-025",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-026",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-027",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-028",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-029",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-030",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-031",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-032",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "h27-real-17",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h27-real-18",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h27-real-19",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h27-real-20",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h27-real-21",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h27-real-22",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h27-real-23",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h27-real-24",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-041",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h29-real-25",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h29-real-26",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "h30-real-39",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-033",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-feb26",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "wmc-mayfourth",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-042",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-043",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-044",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-045",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-046",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-047",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-048",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-050",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-051",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-052",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-053",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "authentic-2026-continued-054",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-055",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-056",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-057",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-058",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-059",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "authentic-2026-continued-060",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-061",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "authentic-2026-continued-062",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-063",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-064",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-065",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-066",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-067",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-068",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-069",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-070",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-071",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-072",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-073",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-074",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-075",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "authentic-2026-continued-076",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-077",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-078",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-079",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-080",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-081",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-082",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "authentic-2026-continued-083",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-084",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-085",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-086",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "authentic-2026-continued-087",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "law-17article",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "law-ryogige",
+      "error": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
+    },
+    {
+      "id": "law-katanagari",
+      "error": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
+    },
+    {
+      "id": "law-buke",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "doc-ippen",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "doc-nichiren",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "doc-reiwa",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "doc-heisei",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch01-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch02-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch02-06",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch02-07",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "term-cover-ch02-09",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch02-13",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch02-14",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch02-15",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch03-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch03-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch03-06",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch04-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch04-02",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch04-03",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch04-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch04-05",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch08-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch08-05",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch10-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch10-10",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch12-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch12-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch13-03",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch15-01",
+      "error": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
+    },
+    {
+      "id": "term-cover-ch16-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "term-cover-ch17-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch17-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "term-cover-ch18-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "term-cover-ch18-03",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch18-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "term-cover-ch20-02",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "term-cover-ch21-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch23-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch25-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch25-05",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch25-06",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch25-07",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "term-cover-ch26-03",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch26-04",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch26-05",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch26-06",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch26-07",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch26-08",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch27-10",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch29-01",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "term-cover-ch29-02",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch30-02",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch30-03",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch30-05",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "term-cover-ch30-06",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "period-1879-conscription-cartoon",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "period-1898-china-carving",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "period-1887-korea-fishing",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "verified-1858-treaty",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "verified-hakodate-goryokaku",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "verified-conscription-1879",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "verified-haihan-context",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (f061ab2)"
+    },
+    {
+      "id": "verified-emancipation-context",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "verified-antimonopoly-context",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "verified-konden-743",
+      "error": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
+    },
+    {
+      "id": "verified-konden-ch15",
+      "error": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
+    },
+    {
+      "id": "verified-kango-document-1468",
+      "error": "HTTPError: HTTP Error 429: Too many requests (1059162); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    },
+    {
+      "id": "verified-edo-farmland-context",
+      "error": "HTTPError: HTTP Error 429: Too many requests (f061ab2); HTTPError: HTTP Error 429: Too many requests (1059162)"
+    }
+  ]
+}

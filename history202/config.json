@@ -1,0 +1,7 @@
+{
+  "mode": "reader",
+  "startAt": null,
+  "messageIntervalSeconds": 11,
+  "chapterGapMinutes": 60,
+  "note": "readerは全話を通常の読み物として表示します。将来の一斉配信はmode=broadcastかつstartAtをISO 8601日本時間で指定します。再生ボタンは未実装。"
+}

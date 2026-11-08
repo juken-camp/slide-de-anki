@@ -4,10 +4,12 @@
 const $ = id => document.getElementById(id);
 const box=$('group-messages'), inner=$('group-messages-inner'),explain=$('h202-explain'),explainText=$('h202-explain-text');
 const indexLayer=$('h202-index-layer'),indexList=$('h202-index-list'),searchForm=$('group-search-form'),searchInput=$('group-search-input');
-const state={chapters:[],people:{},config:{mode:'reader'},selected:1,activeId:null,search:'',savedScroll:null};
+const state={chapters:[],people:{},config:{mode:'reader'},selected:1,activeId:null,search:'',savedScroll:null,materialLoadError:''};
 const isPreview=new URLSearchParams(location.search).get('preview')==='1';
 const LAST='history202-last-position-v1:';
 let firstLoad=true,paintQueued=false;
+const realAssetsById=new Map();
+
 function safeTime(v){if(!v)return null;const n=Date.parse(v);return Number.isFinite(n)?n:null}
 function applyTheme(mode){const theme=mode==='cyber'?'cyber':'neko';document.documentElement.dataset.persona=theme;document.documentElement.style.colorScheme=theme==='cyber'?'dark':'light';document.querySelector('meta[name="theme-color"]')?.setAttribute('content',theme==='cyber'?'#080d20':'#fffcf7');requestShapes()}
 window.addEventListener('message',e=>{if(e.origin!==location.origin||!e.data)return;if(e.data.type==='history202-theme'||e.data.type==='nekopon-persona')applyTheme(e.data.persona)});
@@ -58,6 +60,29 @@ function scheduleInfo(chapterIndex,messageIndex){
  t+=messageIndex*interval;return {visible:Date.now()>=t,when:t};
 }
 function visibleMessages(ch,index){return ch.messages.map((m,i)=>({m,time:scheduleInfo(index,i)})).filter(x=>x.time.visible)}
+
+function replaceFakeCards(chapters,realMaterials){
+ const items=Array.isArray(realMaterials?.items)?realMaterials.items:[];
+ for(const ch of chapters){
+  // Previous 202 word cards / 16 hand-drawn cards were not genuine historical sources.
+  ch.messages=ch.messages.filter(m=>!(m.kind==='image'&&/history202\/(?:term_cards|materials)\//.test(m.image||''))&&!/^h\d+-(?:termimg-|img-)/.test(m.id||''));
+  const additions=items.filter(it=>Number(it.chapter)===Number(ch.id));
+  for(const item of additions){
+   const imageUrl=item.image||item.imageUrl;
+   if(typeof imageUrl!=='string'||!/^https:\/\/commons\.wikimedia\.org\/(?:wiki\/Special:Redirect\/file\/|w\/index\.php\?title=Special%3ARedirect%2Ffile%2F)/.test(imageUrl))continue;
+   const m={id:item.id,speaker:'AI先生',role:'historical',kind:'real-image',text:'資料：'+item.caption,
+    caption:item.caption,image:imageUrl,sourceUrl:item.sourceUrl,credit:item.credit,license:item.license||'出典ページで確認',
+    explanation:item.explanation+'\n出典：'+item.credit+'\n'+item.sourceUrl};
+   const index=ch.messages.findIndex(v=>v.id===item.after);
+   if(index===-1){console.warn('歴史資料の配置先が存在しません',item.id,item.after);continue;}
+   // Multiple historical sources anchored after one line retain source-list order.
+   let at=index+1;while(at<ch.messages.length&&ch.messages[at]._h202After===item.after)at++;
+   m._h202After=item.after;ch.messages.splice(at,0,m);realAssetsById.set(m.id,m);
+  }
+ }
+ return chapters;
+}
+
 // 戦国版と同様、検索中は元ヘッダーの全要素を隠して検索フォームだけを表示。
 function setSearchOpen(open){
  searchForm.hidden=!open;
@@ -166,29 +191,50 @@ function renderIndex(){indexList.replaceChildren();for(const ch of state.chapter
  const sub=document.createElement('small');sub.textContent=ch.category;name.append(sub);const count=document.createElement('span');count.className='h202-count';count.textContent=ch.count+'項目';row.append(no,name,count);row.addEventListener('click',()=>chooseChapter(ch.id));indexList.append(row);
 }}
 function clearExplanation(){state.activeId=null;explainText.textContent='';explain.classList.remove('has-selected-bubble');inner.querySelectorAll('.h202-bubble[aria-pressed="true"]').forEach(b=>b.setAttribute('aria-pressed','false'));requestShapes()}
-function selectExplanation(m,b){const same=state.activeId===m.id;clearExplanation();if(same)return;state.activeId=m.id;b.setAttribute('aria-pressed','true');explainText.textContent=m.explanation||'';explain.classList.add('has-selected-bubble');explain.scrollTop=0;requestShapes()}
+function selectExplanation(m,b){const same=state.activeId===m.id;clearExplanation();if(same)return;state.activeId=m.id;b.setAttribute('aria-pressed','true');explainText.textContent=m.explanation||'';
+ if(m.kind==='real-image'&&m.sourceUrl){const a=document.createElement('a');a.href=m.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';a.className='h202-image-source-link';a.textContent='原資料のページ（撮影者・利用条件）を開く';explainText.append(document.createTextNode('\n利用条件：'+(m.license||'出典ページで確認')+'\n'),a)}
+ explain.classList.add('has-selected-bubble');explain.scrollTop=0;requestShapes()}
 function timeNode(stamp){const el=document.createElement('span');el.className='history-message-time sengoku-time';if(stamp!=null)el.textContent=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false}).format(stamp);else{el.textContent='00:00';el.classList.add('h202-time-empty');el.setAttribute('aria-hidden','true')}return el}
 function addRow(m,when,previous){
  const modern=m.role==='modern',continuation=previous?.speaker===m.speaker&&previous?.role===m.role;
  const row=document.createElement('div');row.className='bubble-row '+(modern?'user':'assistant')+(continuation?' continuation':'');row.dataset.messageId=m.id;
  if(!modern){if(continuation){const space=document.createElement('span');space.className='bubble-avatar-spacer';row.append(space)}else row.append(avatar(m.speaker))}
- const bubble=document.createElement('button');bubble.type='button';bubble.className='bubble sengoku-bubble h202-bubble '+(modern?'user':'assistant');bubble.setAttribute('aria-pressed','false');bubble.textContent=m.text;bubble.setAttribute('aria-label',m.speaker+'の発言、タップで解説を表示または閉じる');bubble.addEventListener('click',()=>selectExplanation(m,bubble));
+ const bubble=document.createElement('button');bubble.type='button';bubble.className='bubble sengoku-bubble h202-bubble '+(modern?'user':'assistant');bubble.setAttribute('aria-pressed','false');bubble.textContent=m.text;
+ if(m.kind==='real-image'){
+  bubble.classList.add('h202-real-image-bubble');bubble.replaceChildren();
+  const photo=document.createElement('img');photo.alt=m.caption;photo.loading='lazy';photo.decoding='async';
+  // Keep remote Wikimedia media non-blocking on mobile; show an explicit source fallback on failure.
+  photo.referrerPolicy='no-referrer';
+  photo.addEventListener('load',requestShapes);
+  photo.addEventListener('error',()=>{const hint=document.createElement('span');hint.className='h202-image-load-failure';hint.textContent='画像を読み込めませんでした。ここをタップして、下の解説から資料の原ページを確認できます。';photo.replaceWith(hint);requestShapes()});
+  photo.src=m.image;
+  const caption=document.createElement('span');caption.className='h202-real-image-caption';caption.textContent=m.caption;
+  const credit=document.createElement('small');credit.className='h202-real-image-credit';credit.textContent='出典：'+m.credit;credit.title='画像ごとの利用条件はタップ後の資料ページで確認してください';
+  bubble.append(photo,caption,credit);
+ }
+ bubble.setAttribute('aria-label',m.speaker+'の発言、タップで解説を表示または閉じる');bubble.addEventListener('click',()=>selectExplanation(m,bubble));
  const time=timeNode(when);
  if(modern){row.append(bubble,time)}else{
-  const container=document.createElement('div');container.className='group-reply-content';
+  const container=document.createElement('div');container.className='group-reply-content'+(m.kind==='real-image'?' h202-has-image':'');
   if(!continuation){const name=document.createElement('div');name.className='group-reply-name';const wrapper=document.createElement('span');wrapper.className='group-name-label';const person=state.people[m.speaker]||{};const can=profileAvailable(person);const label=document.createElement(can?'button':'span');label.textContent=m.speaker;
    if(can){label.type='button';label.className='h202-name-profile';label.setAttribute('aria-label',m.speaker+'のプロフィールを開く');label.addEventListener('click',()=>openOriginalProfile(person));}
    wrapper.append(label);name.append(wrapper);container.append(name);
   }
-  container.append(bubble,time);row.append(container);
+  container.append(bubble);
+  if(m.kind==='real-image'&&m.sourceUrl){
+   const link=document.createElement('a');link.className='h202-image-source-always';link.href=m.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='出典・撮影者・利用条件を確認';
+   link.setAttribute('aria-label',m.caption+'の出典ページを開く');container.append(link);
+  }
+  container.append(time);row.append(container);
  }
  inner.append(row);
 }
 function render(){const ci=Math.max(0,state.selected-1),ch=chapterAt(ci);if(!ch)return;clearExplanation();inner.replaceChildren();
  const heading=document.createElement('div');heading.className='h202-episode-heading';const btn=document.createElement('button');btn.type='button';btn.setAttribute('aria-label','第'+ch.id+'話。タップで31話の目次を開く');btn.append(document.createTextNode('第'+ch.id+'話　'+ch.category+'（'+ch.count+'項目）'));
  const title=document.createElement('strong');title.textContent=ch.title;const sub=document.createElement('small');sub.textContent=ch.subtitle;btn.append(title,sub);btn.addEventListener('click',openIndex);heading.append(btn);inner.append(heading);
+ if(state.materialLoadError){const warn=document.createElement('p');warn.className='h202-material-load-warning';warn.textContent=state.materialLoadError;inner.append(warn)}
  const visible=visibleMessages(ch,ci);let shown=visible;
- if(state.search)shown=visible.filter(({m})=>(m.text+' '+m.speaker+' '+(m.explanation||'')).toLocaleLowerCase('ja').includes(state.search));
+ if(state.search)shown=visible.filter(({m})=>((m.text||'')+' '+(m.caption||'')+' '+m.speaker+' '+(m.explanation||'')).toLocaleLowerCase('ja').includes(state.search));
  let previous=null;for(const {m,time} of shown){addRow(m,time.when,previous);previous=m}
  if(!shown.length){const p=document.createElement('p');p.className='h202-status';p.textContent=state.search?'該当する会話はありません':state.config.mode==='broadcast'&&!isPreview?'配信されると、会話がここに届きます':'会話がありません';inner.append(p)}
  else if(!state.search){const end=document.createElement('p');end.className='h202-story-end';end.textContent=state.config.mode==='broadcast'&&!isPreview?'現在の配信はここまで':'第'+ch.id+'話・ここまで。次の話はタイトルから選べます。';inner.append(end)}
@@ -203,9 +249,10 @@ let saveTimeout=null;box.addEventListener('scroll',()=>{clearTimeout(saveTimeout
 async function load(){try{const responses=await Promise.all(['history202/chapters.json','history202/participants.json','history202/config.json'].map(url=>fetch(url,{cache:'no-store'})));
  for(const response of responses)if(!response.ok)throw Error('読み込みに失敗しました: '+response.status);
  const [script,people,config]=await Promise.all(responses.map(r=>r.json()));
+ let realMaterials={items:[]};try{const r=await fetch('history202/real-materials.json',{cache:'no-store'});if(!r.ok)throw Error('資料データ HTTP '+r.status);realMaterials=await r.json();if(!Array.isArray(realMaterials.items)||realMaterials.items.length!==157)throw Error('資料データが157点ではありません')}catch(e){state.materialLoadError='歴史資料画像データを読み込めませんでした。画像の設定ファイルを確認してください。';console.warn('real materials unavailable',e)}
  if(!Array.isArray(script.chapters)||script.chapters.length!==31||script.chapters.reduce((n,c)=>n+(c.entries?.length||0),0)!==202)throw Error('重要事項が31話・202項目ではありません');
  const ids=new Set();for(const ch of script.chapters){if(!Array.isArray(ch.messages)||!ch.messages.length)throw Error('空の話があります');for(const m of ch.messages){if(!m.id||!m.text||!m.speaker||ids.has(m.id))throw Error('会話IDの重複または不足があります');ids.add(m.id)}}
- state.chapters=script.chapters;state.people=people;state.config=config;
+ state.chapters=replaceFakeCards(script.chapters,realMaterials);state.people=people;state.config=config;
  let saved=1;try{saved=Number(localStorage.getItem('history202-last-chapter'))||1}catch(_){}
  chooseChapter(state.chapters.some(c=>c.id===saved)?saved:1,true);firstLoad=false;
  }catch(err){inner.replaceChildren();const p=document.createElement('p');p.className='h202-status';p.textContent='会話の読み込みに失敗しました。\n'+String(err.message||err);inner.append(p);console.error(err)}}

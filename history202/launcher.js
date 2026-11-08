@@ -22,17 +22,17 @@ html[data-persona=cyber] #history202-panel{background:#080d20}
 `;document.head.append(style);
 const list=document.getElementById('list-view');const sengokuEntry=list?.querySelector('.sengoku-chat-entry');
 if(!list){console.error('history202: list-view is not available');return;}
-const card=document.createElement('div');card.className='h202-entry char-card';card.setAttribute('role','button');card.tabIndex=0;card.setAttribute('aria-label','歴史の暗記202グルチャを開く');
-card.innerHTML='<div class="card-inner"><span class="h202-card-avatar" aria-hidden="true"></span><div class="card-info"><div class="h202-card-name">歴史の暗記202グルチャ</div><div class="h202-card-caption">31の物語で、歴史の重要事項202を覚えよう！</div></div></div>';
+const card=document.createElement('div');card.className='h202-entry char-card';card.setAttribute('role','button');card.tabIndex=0;card.setAttribute('aria-label','歴史の重要ワード202を開く');
+card.innerHTML='<div class="card-inner"><span class="h202-card-avatar" aria-hidden="true"></span><div class="card-info"><div class="card-name-row sengoku-entry-name-row"><span class="h202-card-name sengoku-entry-title">歴史の重要ワード202</span><span class="sengoku-entry-limited">入試対策</span></div><div class="h202-card-caption">31の物語で、歴史の重要ワード202を覚えよう！</div></div></div>';
 if(sengokuEntry)sengokuEntry.insertAdjacentElement('afterend',card);
 else list.querySelector('.shared-chat-join-entry')?.insertAdjacentElement('beforebegin',card) || list.prepend(card);
-const panel=document.createElement('section');panel.id='history202-panel';panel.hidden=true;panel.setAttribute('aria-label','歴史の暗記202グルチャ');
-const frame=document.createElement('iframe');frame.id='history202-frame';frame.title='歴史の暗記202グルチャ';frame.loading='lazy';panel.append(frame);document.body.append(panel);
+const panel=document.createElement('section');panel.id='history202-panel';panel.hidden=true;panel.setAttribute('aria-label','歴史の重要ワード202');
+const frame=document.createElement('iframe');frame.id='history202-frame';frame.title='歴史の重要ワード202';frame.loading='lazy';panel.append(frame);document.body.append(panel);
 let lastScroll=0;
 const theme=()=>document.documentElement.dataset.persona==='cyber'?'cyber':'neko';
 const notify=open=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-state',open},location.origin)};
 const sendTheme=()=>{try{frame.contentWindow?.postMessage({type:'history202-theme',persona:theme()},location.origin)}catch(_){}};
-function open(){if(!panel.hidden)return;lastScroll=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;document.documentElement.dataset.history202Open='true';document.documentElement.dataset.chatOpen='true';list.classList.add('hidden');panel.hidden=false;if(!frame.getAttribute('src'))frame.setAttribute('src','history202-chat.html?v=cyber-labels-count-fit-20261108-v7');sendTheme();notify(true)}
+function open(){if(!panel.hidden)return;lastScroll=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;document.documentElement.dataset.history202Open='true';document.documentElement.dataset.chatOpen='true';list.classList.add('hidden');panel.hidden=false;if(!frame.getAttribute('src'))frame.setAttribute('src','history202-chat.html?v=20261108-history202-expanded-v8');sendTheme();notify(true)}
 function close(){if(panel.hidden)return;panel.hidden=true;delete document.documentElement.dataset.history202Open;delete document.documentElement.dataset.chatOpen;list.classList.remove('hidden');requestAnimationFrame(()=>{window.scrollTo(0,lastScroll);document.body.scrollTop=lastScroll;document.documentElement.scrollTop=lastScroll});notify(false)}
 card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
 frame.addEventListener('load',sendTheme);

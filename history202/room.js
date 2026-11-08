@@ -110,7 +110,7 @@ function renderMembers(){
  const section=document.createElement('h3');section.className='membership-section-title';
  const emoji=document.createElement('span');emoji.setAttribute('aria-hidden','true');emoji.textContent='👋';
  section.append(emoji,' '+names.length+'人が参加中です');list.append(section);
- document.querySelector('#group-members .members-title').textContent='歴史の暗記202グルチャ ('+names.length+')';
+ document.querySelector('#group-members .members-title').textContent='歴史の重要ワード202 ('+names.length+')';
  for(const name of names){
   const person=state.people[name]||{},hasProfile=profileAvailable(person);
   const card=document.createElement(hasProfile?'button':'div');

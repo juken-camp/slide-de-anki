@@ -81,10 +81,10 @@ function replaceFakeCards(chapters,realMaterials){
     'www.library.metro.tokyo.lg.jp','www.jacar.go.jp','images.metmuseum.org','jaa2100.org'
    ]);
    let resolvedImage;
-   try{resolvedImage=new URL(imageUrl)}catch(_){continue}
-   if(resolvedImage.protocol!=='https:'||!acceptedImageHosts.has(resolvedImage.hostname))continue;
+   try{resolvedImage=new URL(imageUrl,location.href)}catch(_){continue}
+   if(!item.localImage&&(resolvedImage.protocol!=='https:'||!acceptedImageHosts.has(resolvedImage.hostname)))continue;
    const m={id:item.id,speaker:'AI先生',role:'historical',kind:'real-image',text:'資料：'+item.caption,
-    caption:item.caption,image:imageUrl,sourceUrl:item.sourceUrl,credit:item.credit,license:item.license||'出典ページで確認',
+    caption:item.caption,image:imageUrl,remoteImage:item.localImage?(item.imageOriginal||null):null,sourceUrl:item.sourceUrl,credit:item.credit,license:item.license||'出典ページで確認',
     explanation:item.explanation};
    const index=ch.messages.findIndex(v=>v.id===item.after);
    if(index===-1){console.warn('歴史資料の配置先が存在しません',item.id,item.after);continue;}
@@ -207,6 +207,41 @@ function clearExplanation(){state.activeId=null;explainText.textContent='';expla
 function selectExplanation(m,b){const same=state.activeId===m.id;clearExplanation();if(same)return;state.activeId=m.id;b.setAttribute('aria-pressed','true');explainText.textContent=m.explanation||'';
  explain.classList.add('has-selected-bubble');explain.scrollTop=0;requestShapes()}
 function timeNode(stamp){const el=document.createElement('span');el.className='history-message-time sengoku-time';if(stamp!=null)el.textContent=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false}).format(stamp);else{el.textContent='00:00';el.classList.add('h202-time-empty');el.setAttribute('aria-hidden','true')}return el}
+// Image recovery: try Commons file path and a smaller thumbnail when the first URL fails.
+// Keep the source page accessible even if all remote image hosts are blocked.
+function historicalImageCandidates(m){
+ const urls=[m.image];
+ try{
+  const src=new URL(m.sourceUrl||'');
+  if(src.hostname==='commons.wikimedia.org'&&src.pathname.startsWith('/wiki/File:')){
+   const name=decodeURIComponent(src.pathname.slice('/wiki/File:'.length));
+   urls.push('https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(name)+'?width=600');
+   urls.push('https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(name));
+  }
+  const original=new URL(m.image);
+  if(original.hostname==='commons.wikimedia.org'&&original.searchParams.has('width')){
+   original.searchParams.set('width','360');urls.push(original.href);
+  }
+ }catch(_){}
+ return [...new Set(urls.filter(Boolean))];
+}
+function installHistoricalPhoto(photo,m){
+ const candidates=historicalImageCandidates(m);let attempt=0;
+ photo.addEventListener('load',requestShapes);
+ photo.addEventListener('error',()=>{
+  attempt++;
+  if(attempt<candidates.length){photo.src=candidates[attempt];return;}
+  const hint=document.createElement('span');hint.className='h202-image-load-failure';
+  hint.textContent='画像を表示できませんでした。';
+  const src=m.sourceUrl;
+  if(src){try{const url=new URL(src);if(url.protocol==='https:'){
+   const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';
+   link.textContent=' 資料の原本ページを開く';link.addEventListener('click',e=>e.stopPropagation());hint.append(link);
+  }}catch(_){}}
+  photo.replaceWith(hint);requestShapes();
+ });
+ photo.src=candidates[0];
+}
 function addRow(m,when,previous){
  const modern=m.role==='modern',continuation=previous?.speaker===m.speaker&&previous?.role===m.role;
  const row=document.createElement('div');row.className='bubble-row '+(modern?'user':'assistant')+(continuation?' continuation':'');row.dataset.messageId=m.id;
@@ -217,9 +252,7 @@ function addRow(m,when,previous){
   const photo=document.createElement('img');photo.alt=m.caption;photo.loading='lazy';photo.decoding='async';
   // Keep remote historical media responsive on mobile.
   photo.referrerPolicy='no-referrer';
-  photo.addEventListener('load',requestShapes);
-  photo.addEventListener('error',()=>{const hint=document.createElement('span');hint.className='h202-image-load-failure';hint.textContent='画像を読み込めませんでした';photo.replaceWith(hint);requestShapes()});
-  photo.src=m.image;
+  installHistoricalPhoto(photo,m);
   const caption=document.createElement('span');caption.className='h202-real-image-caption';caption.textContent=m.caption;
   bubble.append(photo,caption);
  }
@@ -256,7 +289,8 @@ let saveTimeout=null;box.addEventListener('scroll',()=>{clearTimeout(saveTimeout
 async function load(){try{const responses=await Promise.all(['history202/chapters.json','history202/participants.json','history202/config.json'].map(url=>fetch(url,{cache:'no-store'})));
  for(const response of responses)if(!response.ok)throw Error('読み込みに失敗しました: '+response.status);
  const [script,people,config]=await Promise.all(responses.map(r=>r.json()));
- let realMaterials={items:[]};try{const r=await fetch('history202/real-materials.json',{cache:'no-store'});if(!r.ok)throw Error('資料データ HTTP '+r.status);realMaterials=await r.json();if(!Array.isArray(realMaterials.items)||realMaterials.items.length<157)throw Error('歴史資料データが不足しています')}catch(e){state.materialLoadError='歴史資料画像データを読み込めませんでした。画像の設定ファイルを確認してください。';console.warn('real materials unavailable',e)}
+ let localImages={};try{const localResponse=await fetch('history202/local-images.json',{cache:'no-store'});if(localResponse.ok)localImages=await localResponse.json()}catch(e){console.warn('local image index unavailable',e)}
+ let realMaterials={items:[]};try{const r=await fetch('history202/real-materials.json',{cache:'no-store'});if(!r.ok)throw Error('資料データ HTTP '+r.status);realMaterials=await r.json();for(const material of realMaterials.items||[]){const local=localImages[material.id];if(typeof local==='string'&&/^history202\/authentic_images\/[a-zA-Z0-9_-]+\.webp$/.test(local)){material.image=local;material.localImage=true}}if(!Array.isArray(realMaterials.items)||realMaterials.items.length<157)throw Error('歴史資料データが不足しています')}catch(e){state.materialLoadError='歴史資料画像データを読み込めませんでした。画像の設定ファイルを確認してください。';console.warn('real materials unavailable',e)}
  if(!Array.isArray(script.chapters)||script.chapters.length!==31||script.chapters.reduce((n,c)=>n+(c.entries?.length||0),0)!==202)throw Error('重要事項が31話・202項目ではありません');
  const ids=new Set();for(const ch of script.chapters){if(!Array.isArray(ch.messages)||!ch.messages.length)throw Error('空の話があります');for(const m of ch.messages){if(!m.id||!m.text||!m.speaker||ids.has(m.id))throw Error('会話IDの重複または不足があります');ids.add(m.id)}}
  state.chapters=replaceFakeCards(script.chapters,realMaterials);state.people=people;state.config=config;

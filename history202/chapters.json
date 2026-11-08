@@ -66,6 +66,81 @@
           "explanation": "メソポタミア：チグリス・ユーフラテス川で栄えた文明\nエジプト：ナイル川流域のピラミッドで有名な文明\nインダス：モヘンジョダロなど計画都市が特徴\n中国：黄河・長江流域で発展した四大文明の一つ\nギリシャ：ポリスや哲学で知られる地中海文明"
         },
         {
+          "id": "h01-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch01_01.png",
+          "alt": "メソポタミアの図解カード",
+          "caption": "図解：メソポタミア",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "メソポタミア"
+          ],
+          "explanation": "メソポタミア：チグリス・ユーフラテス川で栄えた文明"
+        },
+        {
+          "id": "h01-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch01_02.png",
+          "alt": "エジプトの図解カード",
+          "caption": "図解：エジプト",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "エジプト"
+          ],
+          "explanation": "エジプト：ナイル川流域のピラミッドで有名な文明"
+        },
+        {
+          "id": "h01-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch01_03.png",
+          "alt": "インダスの図解カード",
+          "caption": "図解：インダス",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "インダス"
+          ],
+          "explanation": "インダス：モヘンジョダロなど計画都市が特徴"
+        },
+        {
+          "id": "h01-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch01_04.png",
+          "alt": "中国の図解カード",
+          "caption": "図解：中国",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "中国"
+          ],
+          "explanation": "中国：黄河・長江流域で発展した四大文明の一つ"
+        },
+        {
+          "id": "h01-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch01_05.png",
+          "alt": "ギリシャの図解カード",
+          "caption": "図解：ギリシャ",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ギリシャ"
+          ],
+          "explanation": "ギリシャ：ポリスや哲学で知られる地中海文明"
+        },
+        {
           "speaker": "受験生",
           "text": "四大文明なのに、5つあるの？",
           "role": "modern",
@@ -922,6 +997,261 @@
           "explanation": "縄文：土器や狩猟採集生活が特徴の時代\n弥生：稲作が伝わり金属器が普及した時代\n古墳：巨大な古墳が権力の象徴とされた時代\n飛鳥：仏教文化と中央集権体制が始まった時代\n奈良：平城京に都が置かれた仏教文化の時代\n平安：794年、都が平安京へ移った後、貴族文化が栄えた時代。\n鎌倉：武士が権力を握り幕府を開いた時代\n南北朝：1336〜1392年ごろ、朝廷が南北に分かれた時代。室町時代と重なる。\n室町：足利氏が京都を中心に統治した時代\n戦国：室町後期に各地の戦国大名が勢力を争った時代。\n安土桃山：織田・豊臣が統一を目指した華やかな時代\n江戸：徳川幕府が約260年続いた安定の時代\n明治：近代化と文明開化が進んだ激動の時代\n大正：民主主義と文化が栄えた短い時代\n昭和：戦争・復興・高度経済成長があった時代\n平成：1989〜2019年。バブル崩壊や社会の変化が続いた時代\n令和：新しい日本の時代で現在も続いている"
         },
         {
+          "id": "h02-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_01.png",
+          "alt": "縄文の図解カード",
+          "caption": "図解：縄文",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "縄文"
+          ],
+          "explanation": "縄文：土器や狩猟採集生活が特徴の時代"
+        },
+        {
+          "id": "h02-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_02.png",
+          "alt": "弥生の図解カード",
+          "caption": "図解：弥生",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "弥生"
+          ],
+          "explanation": "弥生：稲作が伝わり金属器が普及した時代"
+        },
+        {
+          "id": "h02-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_03.png",
+          "alt": "古墳の図解カード",
+          "caption": "図解：古墳",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "古墳"
+          ],
+          "explanation": "古墳：巨大な古墳が権力の象徴とされた時代"
+        },
+        {
+          "id": "h02-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_04.png",
+          "alt": "飛鳥の図解カード",
+          "caption": "図解：飛鳥",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "飛鳥"
+          ],
+          "explanation": "飛鳥：仏教文化と中央集権体制が始まった時代"
+        },
+        {
+          "id": "h02-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_05.png",
+          "alt": "奈良の図解カード",
+          "caption": "図解：奈良",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "奈良"
+          ],
+          "explanation": "奈良：平城京に都が置かれた仏教文化の時代"
+        },
+        {
+          "id": "h02-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_06.png",
+          "alt": "平安の図解カード",
+          "caption": "図解：平安",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "平安"
+          ],
+          "explanation": "平安：794年、都が平安京へ移った後、貴族文化が栄えた時代。"
+        },
+        {
+          "id": "h02-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_07.png",
+          "alt": "鎌倉の図解カード",
+          "caption": "図解：鎌倉",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "鎌倉"
+          ],
+          "explanation": "鎌倉：武士が権力を握り幕府を開いた時代"
+        },
+        {
+          "id": "h02-termimg-08",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_08.png",
+          "alt": "南北朝の図解カード",
+          "caption": "図解：南北朝",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "南北朝"
+          ],
+          "explanation": "南北朝：1336〜1392年ごろ、朝廷が南北に分かれた時代。室町時代と重なる。"
+        },
+        {
+          "id": "h02-termimg-09",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_09.png",
+          "alt": "室町の図解カード",
+          "caption": "図解：室町",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "室町"
+          ],
+          "explanation": "室町：足利氏が京都を中心に統治した時代"
+        },
+        {
+          "id": "h02-termimg-10",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_10.png",
+          "alt": "戦国の図解カード",
+          "caption": "図解：戦国",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "戦国"
+          ],
+          "explanation": "戦国：室町後期に各地の戦国大名が勢力を争った時代。"
+        },
+        {
+          "id": "h02-termimg-11",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_11.png",
+          "alt": "安土桃山の図解カード",
+          "caption": "図解：安土桃山",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "安土桃山"
+          ],
+          "explanation": "安土桃山：織田・豊臣が統一を目指した華やかな時代"
+        },
+        {
+          "id": "h02-termimg-12",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_12.png",
+          "alt": "江戸の図解カード",
+          "caption": "図解：江戸",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "江戸"
+          ],
+          "explanation": "江戸：徳川幕府が約260年続いた安定の時代"
+        },
+        {
+          "id": "h02-termimg-13",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_13.png",
+          "alt": "明治の図解カード",
+          "caption": "図解：明治",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "明治"
+          ],
+          "explanation": "明治：近代化と文明開化が進んだ激動の時代"
+        },
+        {
+          "id": "h02-termimg-14",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_14.png",
+          "alt": "大正の図解カード",
+          "caption": "図解：大正",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "大正"
+          ],
+          "explanation": "大正：民主主義と文化が栄えた短い時代"
+        },
+        {
+          "id": "h02-termimg-15",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_15.png",
+          "alt": "昭和の図解カード",
+          "caption": "図解：昭和",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "昭和"
+          ],
+          "explanation": "昭和：戦争・復興・高度経済成長があった時代"
+        },
+        {
+          "id": "h02-termimg-16",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_16.png",
+          "alt": "平成の図解カード",
+          "caption": "図解：平成",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "平成"
+          ],
+          "explanation": "平成：1989〜2019年。バブル崩壊や社会の変化が続いた時代"
+        },
+        {
+          "id": "h02-termimg-17",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch02_17.png",
+          "alt": "令和の図解カード",
+          "caption": "図解：令和",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "令和"
+          ],
+          "explanation": "令和：新しい日本の時代で現在も続いている"
+        },
+        {
           "speaker": "受験生",
           "text": "長い……。これを全部覚えるの？",
           "role": "modern",
@@ -946,6 +1276,21 @@
             "縄文"
           ],
           "explanation": "縄文：土器や狩猟採集生活が特徴の時代"
+        },
+        {
+          "id": "h02-img-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "ここで資料も見ておこう。縄文土器はこんなイメージ！",
+          "image": "history202/materials/jomon_doki.png",
+          "alt": "縄文土器の資料カード",
+          "caption": "資料：縄文土器",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "縄文土器"
+          ],
+          "explanation": "縄文土器は、厚手で縄目の模様がある土器。縄文時代のくらしでは、木の実などを煮るのに使われた。写真や絵で見たら、まず「縄目」「厚そう」「古い土器」を手がかりにしよう。"
         },
         {
           "id": "h02-deep-01-1",
@@ -1082,6 +1427,21 @@
           "explanation": "弥生：稲作が伝わり金属器が普及した時代"
         },
         {
+          "id": "h02-img-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "弥生時代の資料で超定番なのがこれ。",
+          "image": "history202/materials/dotaku.png",
+          "alt": "銅鐸の資料カード",
+          "caption": "資料：銅鐸",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "銅鐸"
+          ],
+          "explanation": "銅鐸は弥生時代の青銅器。主に祭りに使われたと考えられている。米づくりが広がった時代の資料としてよく出るので、「弥生＝銅鐸・祭り・青銅器」をセットで覚えると強い。"
+        },
+        {
           "speaker": "受験生",
           "text": "そうか、米づくりと国づくりもつながるんだね。",
           "role": "modern",
@@ -1098,6 +1458,22 @@
             "古墳"
           ],
           "explanation": "古墳：巨大な古墳が権力の象徴とされた時代"
+        },
+        {
+          "id": "h02-img-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "古墳時代の見分け問題では、埴輪もよく出るよ。",
+          "image": "history202/materials/haniwa.png",
+          "alt": "埴輪の資料カード",
+          "caption": "資料：埴輪",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "埴輪",
+            "古墳"
+          ],
+          "explanation": "埴輪は古墳のまわりに置かれた土製品。有力者の墓である古墳と結びついて出題されることが多い。人物・馬・家などいろいろな形があるが、「古墳時代の資料」と分かればまず正解に近づける。"
         },
         {
           "id": "h02-deep-03-1",
@@ -2348,6 +2724,126 @@
           "explanation": "卑弥呼：邪馬台国の女王で魏志倭人伝に記録あり\n聖徳太子：冠位十二階や十七条憲法を制定した皇子\n藤原道長：「この世をば」の歌で知られる権力者\n平清盛：平氏政権を確立し日宋貿易を推進した武士\n源頼朝：鎌倉幕府を開いた初代征夷大将軍\n足利義満：室町幕府の最盛期を築き金閣寺を建立\n織田信長：戦国大名。全国統一を進めたが1582年の本能寺の変で倒れた\n豊臣秀吉：刀狩や全国統一を成し遂げた天下人"
         },
         {
+          "id": "h03-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch03_01.png",
+          "alt": "卑弥呼の図解カード",
+          "caption": "図解：卑弥呼",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "卑弥呼"
+          ],
+          "explanation": "卑弥呼：邪馬台国の女王で魏志倭人伝に記録あり"
+        },
+        {
+          "id": "h03-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch03_02.png",
+          "alt": "聖徳太子の図解カード",
+          "caption": "図解：聖徳太子",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "聖徳太子"
+          ],
+          "explanation": "聖徳太子：冠位十二階や十七条憲法を制定した皇子"
+        },
+        {
+          "id": "h03-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch03_03.png",
+          "alt": "藤原道長の図解カード",
+          "caption": "図解：藤原道長",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "藤原道長"
+          ],
+          "explanation": "藤原道長：「この世をば」の歌で知られる権力者"
+        },
+        {
+          "id": "h03-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch03_04.png",
+          "alt": "平清盛の図解カード",
+          "caption": "図解：平清盛",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "平清盛"
+          ],
+          "explanation": "平清盛：平氏政権を確立し日宋貿易を推進した武士"
+        },
+        {
+          "id": "h03-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch03_05.png",
+          "alt": "源頼朝の図解カード",
+          "caption": "図解：源頼朝",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "源頼朝"
+          ],
+          "explanation": "源頼朝：鎌倉幕府を開いた初代征夷大将軍"
+        },
+        {
+          "id": "h03-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch03_06.png",
+          "alt": "足利義満の図解カード",
+          "caption": "図解：足利義満",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "足利義満"
+          ],
+          "explanation": "足利義満：室町幕府の最盛期を築き金閣寺を建立"
+        },
+        {
+          "id": "h03-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch03_07.png",
+          "alt": "織田信長の図解カード",
+          "caption": "図解：織田信長",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "織田信長"
+          ],
+          "explanation": "織田信長：戦国大名。全国統一を進めたが1582年の本能寺の変で倒れた"
+        },
+        {
+          "id": "h03-termimg-08",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch03_08.png",
+          "alt": "豊臣秀吉の図解カード",
+          "caption": "図解：豊臣秀吉",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "豊臣秀吉"
+          ],
+          "explanation": "豊臣秀吉：刀狩や全国統一を成し遂げた天下人"
+        },
+        {
           "speaker": "受験生",
           "text": "名前の列じゃなくて、話のつながりで覚えたい。",
           "role": "modern",
@@ -3221,6 +3717,96 @@
           "explanation": "天智天皇：中大兄皇子として645年の政変に関わり、のちに即位した天皇\n聖武天皇：東大寺の建立や仏教の振興を推進\n桓武天皇：平安京遷都を行い律令制を整えた天皇\n白河上皇：1086年ごろから院政を始め、天皇の位を退いても政治を主導した。\n後鳥羽上皇：承久の乱を起こし幕府と対立\n後醍醐天皇：建武の新政を行い武士と対立した天皇"
         },
         {
+          "id": "h04-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch04_01.png",
+          "alt": "天智天皇の図解カード",
+          "caption": "図解：天智天皇",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "天智天皇"
+          ],
+          "explanation": "天智天皇：中大兄皇子として645年の政変に関わり、のちに即位した天皇"
+        },
+        {
+          "id": "h04-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch04_02.png",
+          "alt": "聖武天皇の図解カード",
+          "caption": "図解：聖武天皇",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "聖武天皇"
+          ],
+          "explanation": "聖武天皇：東大寺の建立や仏教の振興を推進"
+        },
+        {
+          "id": "h04-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch04_03.png",
+          "alt": "桓武天皇の図解カード",
+          "caption": "図解：桓武天皇",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "桓武天皇"
+          ],
+          "explanation": "桓武天皇：平安京遷都を行い律令制を整えた天皇"
+        },
+        {
+          "id": "h04-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch04_04.png",
+          "alt": "白河上皇の図解カード",
+          "caption": "図解：白河上皇",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "白河上皇"
+          ],
+          "explanation": "白河上皇：1086年ごろから院政を始め、天皇の位を退いても政治を主導した。"
+        },
+        {
+          "id": "h04-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch04_05.png",
+          "alt": "後鳥羽上皇の図解カード",
+          "caption": "図解：後鳥羽上皇",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "後鳥羽上皇"
+          ],
+          "explanation": "後鳥羽上皇：承久の乱を起こし幕府と対立"
+        },
+        {
+          "id": "h04-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch04_06.png",
+          "alt": "後醍醐天皇の図解カード",
+          "caption": "図解：後醍醐天皇",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "後醍醐天皇"
+          ],
+          "explanation": "後醍醐天皇：建武の新政を行い武士と対立した天皇"
+        },
+        {
           "speaker": "AI先生",
           "text": "天皇ごとに「国の仕組みが何から何へ変わったか」を追ってみよう。",
           "id": "h04-003",
@@ -3868,6 +4454,81 @@
           "explanation": "家康：1603年に江戸幕府を開いた初代将軍\n家光：参勤交代を定め幕府の基盤を強固にした将軍\n綱吉：生類憐みの令を出した第5代将軍\n吉宗：享保の改革で財政改善に努めた名将軍\n慶喜：大政奉還を行い幕末に幕府を終わらせた将軍"
         },
         {
+          "id": "h05-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch05_01.png",
+          "alt": "家康の図解カード",
+          "caption": "図解：家康",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "家康"
+          ],
+          "explanation": "家康：1603年に江戸幕府を開いた初代将軍"
+        },
+        {
+          "id": "h05-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch05_02.png",
+          "alt": "家光の図解カード",
+          "caption": "図解：家光",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "家光"
+          ],
+          "explanation": "家光：参勤交代を定め幕府の基盤を強固にした将軍"
+        },
+        {
+          "id": "h05-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch05_03.png",
+          "alt": "綱吉の図解カード",
+          "caption": "図解：綱吉",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "綱吉"
+          ],
+          "explanation": "綱吉：生類憐みの令を出した第5代将軍"
+        },
+        {
+          "id": "h05-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch05_04.png",
+          "alt": "吉宗の図解カード",
+          "caption": "図解：吉宗",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "吉宗"
+          ],
+          "explanation": "吉宗：享保の改革で財政改善に努めた名将軍"
+        },
+        {
+          "id": "h05-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch05_05.png",
+          "alt": "慶喜の図解カード",
+          "caption": "図解：慶喜",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "慶喜"
+          ],
+          "explanation": "慶喜：大政奉還を行い幕末に幕府を終わらせた将軍"
+        },
+        {
           "speaker": "徳川家康",
           "text": "1603年、江戸幕府を開いた初代将軍が私、徳川家康だ。",
           "id": "h05-003",
@@ -4413,6 +5074,96 @@
             "大隈重信"
           ],
           "explanation": "井伊直弼：日米修好通商条約を結び、安政の大獄で反対派を処罰した大老\n吉田松陰：長州藩の思想家で多くの志士を育成\n坂本龍馬：薩長同盟の成立を後押しし、幕末の政治に関わった人物\n西郷隆盛：明治維新後の政治家で西南戦争を主導\n板垣退助：自由民権運動を推進した政治家\n大隈重信：憲政党を結成し立憲政治を進めた政治家"
+        },
+        {
+          "id": "h06-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch06_01.png",
+          "alt": "井伊直弼の図解カード",
+          "caption": "図解：井伊直弼",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "井伊直弼"
+          ],
+          "explanation": "井伊直弼：日米修好通商条約を結び、安政の大獄で反対派を処罰した大老"
+        },
+        {
+          "id": "h06-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch06_02.png",
+          "alt": "吉田松陰の図解カード",
+          "caption": "図解：吉田松陰",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "吉田松陰"
+          ],
+          "explanation": "吉田松陰：長州藩の思想家で多くの志士を育成"
+        },
+        {
+          "id": "h06-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch06_03.png",
+          "alt": "坂本龍馬の図解カード",
+          "caption": "図解：坂本龍馬",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "坂本龍馬"
+          ],
+          "explanation": "坂本龍馬：薩長同盟の成立を後押しし、幕末の政治に関わった人物"
+        },
+        {
+          "id": "h06-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch06_04.png",
+          "alt": "西郷隆盛の図解カード",
+          "caption": "図解：西郷隆盛",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "西郷隆盛"
+          ],
+          "explanation": "西郷隆盛：明治維新後の政治家で西南戦争を主導"
+        },
+        {
+          "id": "h06-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch06_05.png",
+          "alt": "板垣退助の図解カード",
+          "caption": "図解：板垣退助",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "板垣退助"
+          ],
+          "explanation": "板垣退助：自由民権運動を推進した政治家"
+        },
+        {
+          "id": "h06-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch06_06.png",
+          "alt": "大隈重信の図解カード",
+          "caption": "図解：大隈重信",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "大隈重信"
+          ],
+          "explanation": "大隈重信：憲政党を結成し立憲政治を進めた政治家"
         },
         {
           "speaker": "AI先生",
@@ -5065,6 +5816,81 @@
           "explanation": "伊藤博文：日本初の総理で明治憲法を起草\n原敬：1918年、本格的な政党内閣を組織した「平民宰相」\n犬養毅：1932年の五・一五事件で暗殺され、政党内閣が途絶える転機となった首相\n吉田茂：サンフランシスコ平和条約に署名し、戦後の独立回復を進めた首相\n佐藤栄作：沖縄返還を実現しノーベル平和賞受賞"
         },
         {
+          "id": "h07-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch07_01.png",
+          "alt": "伊藤博文の図解カード",
+          "caption": "図解：伊藤博文",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "伊藤博文"
+          ],
+          "explanation": "伊藤博文：日本初の総理で明治憲法を起草"
+        },
+        {
+          "id": "h07-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch07_02.png",
+          "alt": "原敬の図解カード",
+          "caption": "図解：原敬",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "原敬"
+          ],
+          "explanation": "原敬：1918年、本格的な政党内閣を組織した「平民宰相」"
+        },
+        {
+          "id": "h07-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch07_03.png",
+          "alt": "犬養毅の図解カード",
+          "caption": "図解：犬養毅",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "犬養毅"
+          ],
+          "explanation": "犬養毅：1932年の五・一五事件で暗殺され、政党内閣が途絶える転機となった首相"
+        },
+        {
+          "id": "h07-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch07_04.png",
+          "alt": "吉田茂の図解カード",
+          "caption": "図解：吉田茂",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "吉田茂"
+          ],
+          "explanation": "吉田茂：サンフランシスコ平和条約に署名し、戦後の独立回復を進めた首相"
+        },
+        {
+          "id": "h07-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch07_05.png",
+          "alt": "佐藤栄作の図解カード",
+          "caption": "図解：佐藤栄作",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "佐藤栄作"
+          ],
+          "explanation": "佐藤栄作：沖縄返還を実現しノーベル平和賞受賞"
+        },
+        {
           "speaker": "AI先生",
           "text": "1885年、内閣制度が始まり、日本初の総理大臣になったのが伊藤博文だ。1889年に発布された大日本帝国憲法の制定にも中心的に関わった。",
           "id": "h07-003",
@@ -5595,6 +6421,96 @@
             "一遍"
           ],
           "explanation": "空海：真言宗を開き高野山を拠点とした僧\n最澄：天台宗を開き比叡山延暦寺を建立\n親鸞：浄土真宗を広め念仏信仰を進めた僧侶\n日蓮：日蓮宗を開き南無妙法蓮華経を広めた僧\n道元：曹洞宗を開き坐禅を重視した禅僧\n一遍：時宗を広め、踊念仏でも知られる僧"
+        },
+        {
+          "id": "h08-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch08_01.png",
+          "alt": "空海の図解カード",
+          "caption": "図解：空海",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "空海"
+          ],
+          "explanation": "空海：真言宗を開き高野山を拠点とした僧"
+        },
+        {
+          "id": "h08-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch08_02.png",
+          "alt": "最澄の図解カード",
+          "caption": "図解：最澄",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "最澄"
+          ],
+          "explanation": "最澄：天台宗を開き比叡山延暦寺を建立"
+        },
+        {
+          "id": "h08-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch08_03.png",
+          "alt": "親鸞の図解カード",
+          "caption": "図解：親鸞",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "親鸞"
+          ],
+          "explanation": "親鸞：浄土真宗を広め念仏信仰を進めた僧侶"
+        },
+        {
+          "id": "h08-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch08_04.png",
+          "alt": "日蓮の図解カード",
+          "caption": "図解：日蓮",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日蓮"
+          ],
+          "explanation": "日蓮：日蓮宗を開き南無妙法蓮華経を広めた僧"
+        },
+        {
+          "id": "h08-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch08_05.png",
+          "alt": "道元の図解カード",
+          "caption": "図解：道元",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "道元"
+          ],
+          "explanation": "道元：曹洞宗を開き坐禅を重視した禅僧"
+        },
+        {
+          "id": "h08-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch08_06.png",
+          "alt": "一遍の図解カード",
+          "caption": "図解：一遍",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "一遍"
+          ],
+          "explanation": "一遍：時宗を広め、踊念仏でも知られる僧"
         },
         {
           "speaker": "AI先生",
@@ -6219,6 +7135,81 @@
           "explanation": "本居宣長：国学を確立し『古事記伝』を著した学者\n杉田玄白：『解体新書』を翻訳し医学を進歩させた医師\n伊能忠敬：日本各地を測量し、死後に精密な地図が完成する土台をつくった\n福沢諭吉：『学問のすすめ』を著し教育の重要性を説く\n吉野作造：民本主義を提唱し大正デモクラシーを推進"
         },
         {
+          "id": "h09-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch09_01.png",
+          "alt": "本居宣長の図解カード",
+          "caption": "図解：本居宣長",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "本居宣長"
+          ],
+          "explanation": "本居宣長：国学を確立し『古事記伝』を著した学者"
+        },
+        {
+          "id": "h09-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch09_02.png",
+          "alt": "杉田玄白の図解カード",
+          "caption": "図解：杉田玄白",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "杉田玄白"
+          ],
+          "explanation": "杉田玄白：『解体新書』を翻訳し医学を進歩させた医師"
+        },
+        {
+          "id": "h09-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch09_03.png",
+          "alt": "伊能忠敬の図解カード",
+          "caption": "図解：伊能忠敬",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "伊能忠敬"
+          ],
+          "explanation": "伊能忠敬：1800年から日本各地を歩いて測量し、死後の1821年に弟子たちが精密な地図を完成させた。"
+        },
+        {
+          "id": "h09-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch09_04.png",
+          "alt": "福沢諭吉の図解カード",
+          "caption": "図解：福沢諭吉",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "福沢諭吉"
+          ],
+          "explanation": "福沢諭吉：『学問のすすめ』を著し教育の重要性を説く"
+        },
+        {
+          "id": "h09-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch09_05.png",
+          "alt": "吉野作造の図解カード",
+          "caption": "図解：吉野作造",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "吉野作造"
+          ],
+          "explanation": "吉野作造：民本主義を提唱し大正デモクラシーを推進"
+        },
+        {
           "speaker": "AI先生",
           "text": "学び方が変わると社会も変わるんだ。江戸時代、本居宣長は古い日本の文学を研究し、『古事記伝』を書いた。国学の発展に大きく貢献した。",
           "id": "h09-003",
@@ -6307,6 +7298,37 @@
             "杉田玄白"
           ],
           "explanation": "杉田玄白：『解体新書』を翻訳し医学を進歩させた医師"
+        },
+        {
+          "id": "h09-img-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "蘭学の定番資料も送るね。",
+          "image": "history202/materials/kaitai_shinsho.png",
+          "alt": "解体新書の資料カード",
+          "caption": "資料：解体新書",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "解体新書"
+          ],
+          "explanation": "『解体新書』は1774年、杉田玄白らがオランダ語の医学書を日本語に訳した本。江戸時代に西洋の学問が広がったことを示す代表的な資料で、「蘭学」「杉田玄白」「前野良沢」とつながる。"
+        },
+        {
+          "id": "h09-img-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "地図の資料ではこれも超重要。",
+          "image": "history202/materials/inozu.png",
+          "alt": "伊能図の資料カード",
+          "caption": "資料：伊能図",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "伊能図",
+            "伊能忠敬"
+          ],
+          "explanation": "伊能図は、伊能忠敬が全国を歩いて測量し、その成果をもとに完成した日本地図。実測による正確な地図として有名で、江戸時代の科学や測量技術の進歩を示す資料でもある。"
         },
         {
           "id": "h09-deep-02-1",
@@ -6814,6 +7836,156 @@
             "ペリー"
           ],
           "explanation": "マゼラン：率いた船団が1522年に世界一周。本人は途中のフィリピンで死去\nルター：16世紀の宗教改革を始め、のちのプロテスタント諸教会の広がりに影響を与えた。\n鑑真：日本に戒律を伝え唐招提寺を開いた僧\nザビエル：キリスト教を日本に伝えた宣教師\n孫文：辛亥革命を指導し中華民国を建国\nリンカーン：南北戦争中、1863年に奴隷解放宣言を出した米大統領\nルーズベルト：フランクリン・ルーズベルト。世界恐慌に対してニューディール政策を進めた米大統領\nウィルソン：国際連盟の設立を提唱したアメリカ大統領\nガンディー：非暴力主義でインド独立を指導\nペリー：1853年に黒船で来航。1854年の日米和親条約につながった。"
+        },
+        {
+          "id": "h10-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_01.png",
+          "alt": "マゼランの図解カード",
+          "caption": "図解：マゼラン",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "マゼラン"
+          ],
+          "explanation": "マゼラン：率いた船団が1522年に世界一周。本人は途中のフィリピンで死去"
+        },
+        {
+          "id": "h10-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_02.png",
+          "alt": "ルターの図解カード",
+          "caption": "図解：ルター",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ルター"
+          ],
+          "explanation": "ルター：16世紀の宗教改革を始め、のちのプロテスタント諸教会の広がりに影響を与えた。"
+        },
+        {
+          "id": "h10-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_03.png",
+          "alt": "鑑真の図解カード",
+          "caption": "図解：鑑真",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "鑑真"
+          ],
+          "explanation": "鑑真：日本に戒律を伝え唐招提寺を開いた僧"
+        },
+        {
+          "id": "h10-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_04.png",
+          "alt": "ザビエルの図解カード",
+          "caption": "図解：ザビエル",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ザビエル"
+          ],
+          "explanation": "ザビエル：キリスト教を日本に伝えた宣教師"
+        },
+        {
+          "id": "h10-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_05.png",
+          "alt": "孫文の図解カード",
+          "caption": "図解：孫文",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "孫文"
+          ],
+          "explanation": "孫文：辛亥革命を指導し中華民国を建国"
+        },
+        {
+          "id": "h10-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_06.png",
+          "alt": "リンカーンの図解カード",
+          "caption": "図解：リンカーン",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "リンカーン"
+          ],
+          "explanation": "リンカーン：南北戦争中、1863年に奴隷解放宣言を出した米大統領"
+        },
+        {
+          "id": "h10-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_07.png",
+          "alt": "ルーズベルトの図解カード",
+          "caption": "図解：ルーズベルト",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ルーズベルト"
+          ],
+          "explanation": "ルーズベルト：フランクリン・ルーズベルト。世界恐慌に対してニューディール政策を進めた米大統領"
+        },
+        {
+          "id": "h10-termimg-08",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_08.png",
+          "alt": "ウィルソンの図解カード",
+          "caption": "図解：ウィルソン",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ウィルソン"
+          ],
+          "explanation": "ウィルソン：国際連盟の設立を提唱したアメリカ大統領"
+        },
+        {
+          "id": "h10-termimg-09",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_09.png",
+          "alt": "ガンディーの図解カード",
+          "caption": "図解：ガンディー",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ガンディー"
+          ],
+          "explanation": "ガンディー：非暴力主義でインド独立を指導"
+        },
+        {
+          "id": "h10-termimg-10",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch10_10.png",
+          "alt": "ペリーの図解カード",
+          "caption": "図解：ペリー",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ペリー"
+          ],
+          "explanation": "ペリー：1853年に黒船で来航。1854年の日米和親条約につながった。"
         },
         {
           "speaker": "AI先生",
@@ -7732,6 +8904,96 @@
           "explanation": "十七条の憲法：聖徳太子が制定した道徳的な指針\n大宝律令：律令国家の基本法として定められた法令\n墾田永年私財法：開墾地の永久私有を認めた法令\n御成敗式目：鎌倉幕府が制定した武士の法令\n刀狩令：秀吉が農民などから武器を集め、身分の区別を強めた命令\n武家諸法度：武士の行動を規定した幕府の基本法"
         },
         {
+          "id": "h11-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch11_01.png",
+          "alt": "十七条の憲法の図解カード",
+          "caption": "図解：十七条の憲法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "十七条の憲法"
+          ],
+          "explanation": "十七条の憲法：聖徳太子が制定した道徳的な指針"
+        },
+        {
+          "id": "h11-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch11_02.png",
+          "alt": "大宝律令の図解カード",
+          "caption": "図解：大宝律令",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "大宝律令"
+          ],
+          "explanation": "大宝律令：律令国家の基本法として定められた法令"
+        },
+        {
+          "id": "h11-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch11_03.png",
+          "alt": "墾田永年私財法の図解カード",
+          "caption": "図解：墾田永年私財法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "墾田永年私財法"
+          ],
+          "explanation": "墾田永年私財法：開墾地の永久私有を認めた法令"
+        },
+        {
+          "id": "h11-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch11_04.png",
+          "alt": "御成敗式目の図解カード",
+          "caption": "図解：御成敗式目",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "御成敗式目"
+          ],
+          "explanation": "御成敗式目：鎌倉幕府が制定した武士の法令"
+        },
+        {
+          "id": "h11-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch11_05.png",
+          "alt": "刀狩令の図解カード",
+          "caption": "図解：刀狩令",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "刀狩令"
+          ],
+          "explanation": "刀狩令：秀吉が農民などから武器を集め、身分の区別を強めた命令"
+        },
+        {
+          "id": "h11-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch11_06.png",
+          "alt": "武家諸法度の図解カード",
+          "caption": "図解：武家諸法度",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "武家諸法度"
+          ],
+          "explanation": "武家諸法度：武士の行動を規定した幕府の基本法"
+        },
+        {
           "speaker": "聖徳太子",
           "text": "十七条の憲法は、役人がどうふるまうべきか示したと伝わる。今の憲法とは意味が違う。",
           "id": "h11-003",
@@ -8339,6 +9601,111 @@
             "国家総動員法"
           ],
           "explanation": "徳政令：借金帳消しを命じた幕府の法令\n分国法：戦国大名が領地支配のために定めた法令\n慶安の御触書：1649年の幕府法令と伝えられた文書。近年は幕府が出した法令だったか疑問視されている\n異国船打払令：鎖国政策を守るための命令\n大日本帝国憲法：明治憲法とも呼ばれる近代憲法\n治安維持法：思想弾圧のために制定された法律\n国家総動員法：戦時体制下の労働や物資を管理する法"
+        },
+        {
+          "id": "h12-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch12_01.png",
+          "alt": "徳政令の図解カード",
+          "caption": "図解：徳政令",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "徳政令"
+          ],
+          "explanation": "徳政令：借金帳消しを命じた幕府の法令"
+        },
+        {
+          "id": "h12-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch12_02.png",
+          "alt": "分国法の図解カード",
+          "caption": "図解：分国法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "分国法"
+          ],
+          "explanation": "分国法：戦国大名が領地支配のために定めた法令"
+        },
+        {
+          "id": "h12-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch12_03.png",
+          "alt": "慶安の御触書の図解カード",
+          "caption": "図解：慶安の御触書",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "慶安の御触書"
+          ],
+          "explanation": "慶安の御触書：「慶安の御触書」は、1649年の幕府法令と長く教えられたが、現在は全国へ出された幕府法令ではないと考える研究が有力。"
+        },
+        {
+          "id": "h12-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch12_04.png",
+          "alt": "異国船打払令の図解カード",
+          "caption": "図解：異国船打払令",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "異国船打払令"
+          ],
+          "explanation": "異国船打払令：鎖国政策を守るための命令"
+        },
+        {
+          "id": "h12-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch12_05.png",
+          "alt": "大日本帝国憲法の図解カード",
+          "caption": "図解：大日本帝国憲法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "大日本帝国憲法"
+          ],
+          "explanation": "大日本帝国憲法：明治憲法とも呼ばれる近代憲法"
+        },
+        {
+          "id": "h12-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch12_06.png",
+          "alt": "治安維持法の図解カード",
+          "caption": "図解：治安維持法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "治安維持法"
+          ],
+          "explanation": "治安維持法：思想弾圧のために制定された法律"
+        },
+        {
+          "id": "h12-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch12_07.png",
+          "alt": "国家総動員法の図解カード",
+          "caption": "図解：国家総動員法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "国家総動員法"
+          ],
+          "explanation": "国家総動員法：戦時体制下の労働や物資を管理する法"
         },
         {
           "speaker": "AI先生",
@@ -8958,6 +10325,66 @@
           "explanation": "摂関政治：藤原氏が権力を握った平安時代の政治形態\n院政：上皇が政治を主導した平安後期の形態\n執権政治：鎌倉幕府の執権が実権を握った体制\n建武の新政：後醍醐天皇が行った中央集権的な政治"
         },
         {
+          "id": "h13-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch13_01.png",
+          "alt": "摂関政治の図解カード",
+          "caption": "図解：摂関政治",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "摂関政治"
+          ],
+          "explanation": "摂関政治：藤原氏が権力を握った平安時代の政治形態"
+        },
+        {
+          "id": "h13-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch13_02.png",
+          "alt": "院政の図解カード",
+          "caption": "図解：院政",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "院政"
+          ],
+          "explanation": "院政：上皇が政治を主導した平安後期の形態"
+        },
+        {
+          "id": "h13-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch13_03.png",
+          "alt": "執権政治の図解カード",
+          "caption": "図解：執権政治",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "執権政治"
+          ],
+          "explanation": "執権政治：鎌倉幕府の執権が実権を握った体制"
+        },
+        {
+          "id": "h13-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch13_04.png",
+          "alt": "建武の新政の図解カード",
+          "caption": "図解：建武の新政",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "建武の新政"
+          ],
+          "explanation": "建武の新政：後醍醐天皇が行った中央集権的な政治"
+        },
+        {
           "speaker": "藤原道長",
           "text": "平安時代、私たち藤原氏は天皇と親族になり、摂政や関白として政治を行った。摂関政治だ。",
           "id": "h13-003",
@@ -9535,6 +10962,66 @@
           "explanation": "享保の改革：吉宗が行った幕府財政の立て直し政策\n田沼意次の改革：商業重視の政策を推進した改革\n寛政の改革：松平定信が行った倹約と農民救済の政策\n天保の改革：水野忠邦が行った幕府の財政再建政策"
         },
         {
+          "id": "h14-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch14_01.png",
+          "alt": "享保の改革の図解カード",
+          "caption": "図解：享保の改革",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "享保の改革"
+          ],
+          "explanation": "享保の改革：吉宗が行った幕府財政の立て直し政策"
+        },
+        {
+          "id": "h14-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch14_02.png",
+          "alt": "田沼意次の改革の図解カード",
+          "caption": "図解：田沼意次の改革",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "田沼意次の改革"
+          ],
+          "explanation": "田沼意次の改革：商業重視の政策を推進した改革"
+        },
+        {
+          "id": "h14-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch14_03.png",
+          "alt": "寛政の改革の図解カード",
+          "caption": "図解：寛政の改革",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "寛政の改革"
+          ],
+          "explanation": "寛政の改革：松平定信が行った倹約と農民救済の政策"
+        },
+        {
+          "id": "h14-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch14_04.png",
+          "alt": "天保の改革の図解カード",
+          "caption": "図解：天保の改革",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "天保の改革"
+          ],
+          "explanation": "天保の改革：水野忠邦が行った幕府の財政再建政策"
+        },
+        {
           "speaker": "AI先生",
           "text": "お金の不足や社会の変化で問題が起きたから。8代将軍吉宗の享保の改革は、倹約や年貢の確保で幕府の財政を立て直そうとした。",
           "id": "h14-003",
@@ -10096,6 +11583,96 @@
             "農地改革"
           ],
           "explanation": "班田収授法：土地を6年ごとに再分配した律令制度\n墾田永年私財法：開墾地の私有を認めた土地制度\n太閤検地：豊臣秀吉が全国の土地を調査した制度\n新田開発：江戸時代に行われた農地の拡大事業\n地租改正：明治時代の土地税制の改革\n農地改革：戦後に行われた農民への土地配分政策"
+        },
+        {
+          "id": "h15-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch15_01.png",
+          "alt": "班田収授法の図解カード",
+          "caption": "図解：班田収授法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "班田収授法"
+          ],
+          "explanation": "班田収授法：土地を6年ごとに再分配した律令制度"
+        },
+        {
+          "id": "h15-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch15_02.png",
+          "alt": "墾田永年私財法の図解カード",
+          "caption": "図解：墾田永年私財法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "墾田永年私財法"
+          ],
+          "explanation": "墾田永年私財法：開墾地の私有を認めた土地制度"
+        },
+        {
+          "id": "h15-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch15_03.png",
+          "alt": "太閤検地の図解カード",
+          "caption": "図解：太閤検地",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "太閤検地"
+          ],
+          "explanation": "太閤検地：豊臣秀吉が全国の土地を調査した制度"
+        },
+        {
+          "id": "h15-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch15_04.png",
+          "alt": "新田開発の図解カード",
+          "caption": "図解：新田開発",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "新田開発"
+          ],
+          "explanation": "新田開発：江戸時代に行われた農地の拡大事業"
+        },
+        {
+          "id": "h15-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch15_05.png",
+          "alt": "地租改正の図解カード",
+          "caption": "図解：地租改正",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "地租改正"
+          ],
+          "explanation": "地租改正：明治時代の土地税制の改革"
+        },
+        {
+          "id": "h15-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch15_06.png",
+          "alt": "農地改革の図解カード",
+          "caption": "図解：農地改革",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "農地改革"
+          ],
+          "explanation": "農地改革：戦後に行われた農民への土地配分政策"
         },
         {
           "speaker": "AI先生",
@@ -10718,6 +12295,141 @@
           "explanation": "地租改正：土地の税制を貨幣納付に改めた政策\n藩閥政治：藩出身者が実権を握った明治政府の体制\n解放令：1871年、江戸時代の身分の呼称を廃止して平民としたが、差別は続いた。\n廃藩置県：藩を廃止し府県制を導入した改革\n版籍奉還：領地と人民を政府に返還した政策\n富国強兵：近代化と軍備強化を進めた国策\n学制：全国に教育制度を整備した政策\n徴兵令：国民皆兵を目指した法律\n殖産興業：工業や産業を振興した政策"
         },
         {
+          "id": "h16-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_01.png",
+          "alt": "地租改正の図解カード",
+          "caption": "図解：地租改正",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "地租改正"
+          ],
+          "explanation": "地租改正：土地の税制を貨幣納付に改めた政策"
+        },
+        {
+          "id": "h16-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_02.png",
+          "alt": "藩閥政治の図解カード",
+          "caption": "図解：藩閥政治",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "藩閥政治"
+          ],
+          "explanation": "藩閥政治：藩出身者が実権を握った明治政府の体制"
+        },
+        {
+          "id": "h16-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_03.png",
+          "alt": "解放令の図解カード",
+          "caption": "図解：解放令",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "解放令"
+          ],
+          "explanation": "解放令：1871年、江戸時代の身分の呼称を廃止して平民としたが、差別は続いた。"
+        },
+        {
+          "id": "h16-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_04.png",
+          "alt": "廃藩置県の図解カード",
+          "caption": "図解：廃藩置県",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "廃藩置県"
+          ],
+          "explanation": "廃藩置県：藩を廃止し府県制を導入した改革"
+        },
+        {
+          "id": "h16-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_05.png",
+          "alt": "版籍奉還の図解カード",
+          "caption": "図解：版籍奉還",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "版籍奉還"
+          ],
+          "explanation": "版籍奉還：領地と人民を政府に返還した政策"
+        },
+        {
+          "id": "h16-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_06.png",
+          "alt": "富国強兵の図解カード",
+          "caption": "図解：富国強兵",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "富国強兵"
+          ],
+          "explanation": "富国強兵：近代化と軍備強化を進めた国策"
+        },
+        {
+          "id": "h16-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_07.png",
+          "alt": "学制の図解カード",
+          "caption": "図解：学制",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "学制"
+          ],
+          "explanation": "学制：全国に教育制度を整備した政策"
+        },
+        {
+          "id": "h16-termimg-08",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_08.png",
+          "alt": "徴兵令の図解カード",
+          "caption": "図解：徴兵令",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "徴兵令"
+          ],
+          "explanation": "徴兵令：国民皆兵を目指した法律"
+        },
+        {
+          "id": "h16-termimg-09",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch16_09.png",
+          "alt": "殖産興業の図解カード",
+          "caption": "図解：殖産興業",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "殖産興業"
+          ],
+          "explanation": "殖産興業：工業や産業を振興した政策"
+        },
+        {
           "speaker": "AI先生",
           "text": "まず各地の大名が支配していた藩の仕組みを変えた。1869年の版籍奉還で、大名は領地と人々を朝廷に返す形をとった。",
           "id": "h16-003",
@@ -11093,6 +12805,22 @@
             "殖産興業"
           ],
           "explanation": "殖産興業：工業や産業を振興した政策"
+        },
+        {
+          "id": "h16-img-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "殖産興業の代表例も画像で押さえよう。",
+          "image": "history202/materials/tomioka.png",
+          "alt": "富岡製糸場の資料カード",
+          "caption": "資料：富岡製糸場",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "富岡製糸場",
+            "殖産興業"
+          ],
+          "explanation": "富岡製糸場は、明治政府がつくった官営工場の代表例。生糸の生産を高め、近代産業を育てるための施設だった。問題では「殖産興業」「官営模範工場」と結びつけて出やすい。"
         },
         {
           "id": "h16-deep-09-3",
@@ -11528,6 +13256,201 @@
           "explanation": "軍隊の解散：敗戦後、旧日本軍が解体されたこと。後に自衛隊が発足した\n天皇の人間宣言：1946年1月1日の詔書の通称。天皇を神とする考えを否定\n極東国際軍事裁判：戦犯を裁くために行われた裁判\n財閥解体：経済の独占を防ぐための改革\n独占禁止法：市場競争を保つための法律\n農地改革：小作農に土地を分配し自作農を増加\n日本国憲法：平和主義と基本的人権を規定\n治安維持法の廃止：思想の自由を確立するための施策\n選挙法の改正：女性参政権を認めた制度改革\n教育勅語の廃止：1948年、国会が教育勅語の排除と失効確認を決議した\n教育基本法：教育の基本理念を定めた法律\n労働組合：労働者の権利を守るための団体\n労働三法：労働者の保護を目的とした三つの法律"
         },
         {
+          "id": "h17-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_01.png",
+          "alt": "軍隊の解散の図解カード",
+          "caption": "図解：軍隊の解散",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "軍隊の解散"
+          ],
+          "explanation": "軍隊の解散：敗戦後、旧日本軍が解体されたこと。後に自衛隊が発足した"
+        },
+        {
+          "id": "h17-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_02.png",
+          "alt": "天皇の人間宣言の図解カード",
+          "caption": "図解：天皇の人間宣言",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "天皇の人間宣言"
+          ],
+          "explanation": "天皇の人間宣言：1946年1月1日の詔書の通称。天皇を神とする考えを否定"
+        },
+        {
+          "id": "h17-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_03.png",
+          "alt": "極東国際軍事裁判の図解カード",
+          "caption": "図解：極東国際軍事裁判",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "極東国際軍事裁判"
+          ],
+          "explanation": "極東国際軍事裁判：戦犯を裁くために行われた裁判"
+        },
+        {
+          "id": "h17-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_04.png",
+          "alt": "財閥解体の図解カード",
+          "caption": "図解：財閥解体",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "財閥解体"
+          ],
+          "explanation": "財閥解体：経済の独占を防ぐための改革"
+        },
+        {
+          "id": "h17-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_05.png",
+          "alt": "独占禁止法の図解カード",
+          "caption": "図解：独占禁止法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "独占禁止法"
+          ],
+          "explanation": "独占禁止法：市場競争を保つための法律"
+        },
+        {
+          "id": "h17-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_06.png",
+          "alt": "農地改革の図解カード",
+          "caption": "図解：農地改革",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "農地改革"
+          ],
+          "explanation": "農地改革：小作農に土地を分配し自作農を増加"
+        },
+        {
+          "id": "h17-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_07.png",
+          "alt": "日本国憲法の図解カード",
+          "caption": "図解：日本国憲法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日本国憲法"
+          ],
+          "explanation": "日本国憲法：平和主義と基本的人権を規定"
+        },
+        {
+          "id": "h17-termimg-08",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_08.png",
+          "alt": "治安維持法の廃止の図解カード",
+          "caption": "図解：治安維持法の廃止",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "治安維持法の廃止"
+          ],
+          "explanation": "治安維持法の廃止：思想の自由を確立するための施策"
+        },
+        {
+          "id": "h17-termimg-09",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_09.png",
+          "alt": "選挙法の改正の図解カード",
+          "caption": "図解：選挙法の改正",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "選挙法の改正"
+          ],
+          "explanation": "選挙法の改正：女性参政権を認めた制度改革"
+        },
+        {
+          "id": "h17-termimg-10",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_10.png",
+          "alt": "教育勅語の廃止の図解カード",
+          "caption": "図解：教育勅語の廃止",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "教育勅語の廃止"
+          ],
+          "explanation": "教育勅語の廃止：1948年、国会が教育勅語の排除と失効確認を決議した"
+        },
+        {
+          "id": "h17-termimg-11",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_11.png",
+          "alt": "教育基本法の図解カード",
+          "caption": "図解：教育基本法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "教育基本法"
+          ],
+          "explanation": "教育基本法：教育の基本理念を定めた法律"
+        },
+        {
+          "id": "h17-termimg-12",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_12.png",
+          "alt": "労働組合の図解カード",
+          "caption": "図解：労働組合",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "労働組合"
+          ],
+          "explanation": "労働組合：労働者の権利を守るための団体"
+        },
+        {
+          "id": "h17-termimg-13",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch17_13.png",
+          "alt": "労働三法の図解カード",
+          "caption": "図解：労働三法",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "労働三法"
+          ],
+          "explanation": "労働三法：労働者の保護を目的とした三つの法律"
+        },
+        {
           "speaker": "AI先生",
           "text": "1945年に日本が敗戦した後、「戦争を繰り返さない」「自由や平等を広げる」ために仕組みが大きく変わった。",
           "id": "h17-003",
@@ -11721,6 +13644,21 @@
             "日本国憲法"
           ],
           "explanation": "日本国憲法：平和主義と基本的人権を規定"
+        },
+        {
+          "id": "h17-img-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "戦後改革では、この資料の見出しも見分けられるようにしたい。",
+          "image": "history202/materials/constitution.png",
+          "alt": "日本国憲法の資料カード",
+          "caption": "資料：日本国憲法",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "日本国憲法"
+          ],
+          "explanation": "日本国憲法は1946年公布、1947年施行。三大原則は国民主権・基本的人権の尊重・平和主義。資料問題では本文や表紙風の画像が出ることもあるので、名前だけでなく時代の転換点として覚えよう。"
         },
         {
           "id": "h17-deep-07-1",
@@ -12532,6 +14470,111 @@
           "explanation": "壬申の乱：天智天皇の後継を巡る内乱\n平治の乱：源平の勢力争いが表面化した内乱\n承久の乱：朝廷と幕府の対立が激化した戦い\n応仁の乱：室町幕府の内紛で全国が混乱\n関ヶ原の戦い：1600年。徳川家康の勝利は江戸幕府を開く足がかりとなった。\n戊辰戦争：明治政府と旧幕府軍が戦った内戦\n西南戦争：西郷隆盛が中心となり政府に反乱"
         },
         {
+          "id": "h18-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch18_01.png",
+          "alt": "壬申の乱の図解カード",
+          "caption": "図解：壬申の乱",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "壬申の乱"
+          ],
+          "explanation": "壬申の乱：天智天皇の後継を巡る内乱"
+        },
+        {
+          "id": "h18-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch18_02.png",
+          "alt": "平治の乱の図解カード",
+          "caption": "図解：平治の乱",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "平治の乱"
+          ],
+          "explanation": "平治の乱：源平の勢力争いが表面化した内乱"
+        },
+        {
+          "id": "h18-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch18_03.png",
+          "alt": "承久の乱の図解カード",
+          "caption": "図解：承久の乱",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "承久の乱"
+          ],
+          "explanation": "承久の乱：朝廷と幕府の対立が激化した戦い"
+        },
+        {
+          "id": "h18-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch18_04.png",
+          "alt": "応仁の乱の図解カード",
+          "caption": "図解：応仁の乱",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "応仁の乱"
+          ],
+          "explanation": "応仁の乱：室町幕府の内紛で全国が混乱"
+        },
+        {
+          "id": "h18-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch18_05.png",
+          "alt": "関ヶ原の戦いの図解カード",
+          "caption": "図解：関ヶ原の戦い",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "関ヶ原の戦い"
+          ],
+          "explanation": "関ヶ原の戦い：1600年。徳川家康の勝利は江戸幕府を開く足がかりとなった。"
+        },
+        {
+          "id": "h18-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch18_06.png",
+          "alt": "戊辰戦争の図解カード",
+          "caption": "図解：戊辰戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "戊辰戦争"
+          ],
+          "explanation": "戊辰戦争：明治政府と旧幕府軍が戦った内戦"
+        },
+        {
+          "id": "h18-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch18_07.png",
+          "alt": "西南戦争の図解カード",
+          "caption": "図解：西南戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "西南戦争"
+          ],
+          "explanation": "西南戦争：西郷隆盛が中心となり政府に反乱"
+        },
+        {
           "speaker": "AI先生",
           "text": "672年の壬申の乱は、天智天皇の死後、後継者をめぐる戦い。勝った大海人皇子は天武天皇になった。",
           "id": "h18-003",
@@ -13218,6 +15261,96 @@
             "米騒動"
           ],
           "explanation": "正長の土一揆：農民が借金帳消しを要求した蜂起\n山城の国一揆：自治的な支配を行った一揆\n一向一揆：本願寺門徒が武力で自治を確立\n島原天草一揆：1637〜38年。重税やキリシタンへの迫害などへの反発が背景にあった。\n大塩平八郎の乱：幕府の腐敗に反発した乱\n米騒動：米価高騰に反発した民衆運動"
+        },
+        {
+          "id": "h19-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch19_01.png",
+          "alt": "正長の土一揆の図解カード",
+          "caption": "図解：正長の土一揆",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "正長の土一揆"
+          ],
+          "explanation": "正長の土一揆：農民が借金帳消しを要求した蜂起"
+        },
+        {
+          "id": "h19-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch19_02.png",
+          "alt": "山城の国一揆の図解カード",
+          "caption": "図解：山城の国一揆",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "山城の国一揆"
+          ],
+          "explanation": "山城の国一揆：自治的な支配を行った一揆"
+        },
+        {
+          "id": "h19-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch19_03.png",
+          "alt": "一向一揆の図解カード",
+          "caption": "図解：一向一揆",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "一向一揆"
+          ],
+          "explanation": "一向一揆：本願寺門徒が武力で自治を確立"
+        },
+        {
+          "id": "h19-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch19_04.png",
+          "alt": "島原天草一揆の図解カード",
+          "caption": "図解：島原天草一揆",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "島原天草一揆"
+          ],
+          "explanation": "島原天草一揆：1637〜38年。重税やキリシタンへの迫害などへの反発が背景にあった。"
+        },
+        {
+          "id": "h19-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch19_05.png",
+          "alt": "大塩平八郎の乱の図解カード",
+          "caption": "図解：大塩平八郎の乱",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "大塩平八郎の乱"
+          ],
+          "explanation": "大塩平八郎の乱：幕府の腐敗に反発した乱"
+        },
+        {
+          "id": "h19-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch19_06.png",
+          "alt": "米騒動の図解カード",
+          "caption": "図解：米騒動",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "米騒動"
+          ],
+          "explanation": "米騒動：米価高騰に反発した民衆運動"
         },
         {
           "speaker": "AI先生",
@@ -13943,6 +16076,66 @@
           "explanation": "日清戦争：1894〜95年、朝鮮への影響力をめぐり日本と清が戦った戦争\n日露戦争：1904〜05年、朝鮮と満州をめぐり日本とロシアが戦った戦争\n日中戦争：1937年から中国で全面的な戦争へ拡大した日本の侵略戦争\n太平洋戦争：真珠湾攻撃から始まる日本の戦争"
         },
         {
+          "id": "h20-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch20_01.png",
+          "alt": "日清戦争の図解カード",
+          "caption": "図解：日清戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日清戦争"
+          ],
+          "explanation": "日清戦争：1894〜95年、朝鮮への影響力をめぐり日本と清が戦った戦争"
+        },
+        {
+          "id": "h20-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch20_02.png",
+          "alt": "日露戦争の図解カード",
+          "caption": "図解：日露戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日露戦争"
+          ],
+          "explanation": "日露戦争：1904〜05年、朝鮮と満州をめぐり日本とロシアが戦った戦争"
+        },
+        {
+          "id": "h20-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch20_03.png",
+          "alt": "日中戦争の図解カード",
+          "caption": "図解：日中戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日中戦争"
+          ],
+          "explanation": "日中戦争：1937年の盧溝橋事件をきっかけに、中国で日本の侵略戦争が全面的に拡大。1931年の満州事変からの流れも大切。"
+        },
+        {
+          "id": "h20-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch20_04.png",
+          "alt": "太平洋戦争の図解カード",
+          "caption": "図解：太平洋戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "太平洋戦争"
+          ],
+          "explanation": "太平洋戦争：1941年12月、真珠湾攻撃などをきっかけに日本とアメリカ・イギリスなどの戦争が始まり、1945年に日本が降伏した。"
+        },
+        {
           "speaker": "AI先生",
           "text": "それだけでは大事な部分を見落とす。1894〜95年の日清戦争は、朝鮮をめぐって日本と清が戦った。",
           "id": "h20-003",
@@ -14512,6 +16705,81 @@
           "explanation": "アヘン戦争：イギリスが清国を屈服させた戦争\n南北戦争：1861〜65年、奴隷制度などをめぐりアメリカの北部と南部が戦った内戦\n第一次世界大戦：同盟国と連合国の間で戦われた大規模戦争\n第二次世界大戦：枢軸国と連合国が争った世界規模の戦争\n朝鮮戦争：朝鮮半島で南北が対立した戦争"
         },
         {
+          "id": "h21-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch21_01.png",
+          "alt": "アヘン戦争の図解カード",
+          "caption": "図解：アヘン戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "アヘン戦争"
+          ],
+          "explanation": "アヘン戦争：イギリスが清国を屈服させた戦争"
+        },
+        {
+          "id": "h21-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch21_02.png",
+          "alt": "南北戦争の図解カード",
+          "caption": "図解：南北戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "南北戦争"
+          ],
+          "explanation": "南北戦争：1861〜65年、奴隷制度などをめぐりアメリカの北部と南部が戦った内戦"
+        },
+        {
+          "id": "h21-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch21_03.png",
+          "alt": "第一次世界大戦の図解カード",
+          "caption": "図解：第一次世界大戦",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "第一次世界大戦"
+          ],
+          "explanation": "第一次世界大戦：同盟国と連合国の間で戦われた大規模戦争"
+        },
+        {
+          "id": "h21-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch21_04.png",
+          "alt": "第二次世界大戦の図解カード",
+          "caption": "図解：第二次世界大戦",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "第二次世界大戦"
+          ],
+          "explanation": "第二次世界大戦：枢軸国と連合国が争った世界規模の戦争"
+        },
+        {
+          "id": "h21-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch21_05.png",
+          "alt": "朝鮮戦争の図解カード",
+          "caption": "図解：朝鮮戦争",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "朝鮮戦争"
+          ],
+          "explanation": "朝鮮戦争：朝鮮半島で南北が対立した戦争"
+        },
+        {
           "speaker": "AI先生",
           "text": "1840年のアヘン戦争は、イギリスと清の戦争。敗れた清は不平等な条約を結ばされた。",
           "id": "h21-003",
@@ -15044,6 +17312,66 @@
           "explanation": "名誉革命：イギリスで王権を制限し議会政治を確立\nフランス革命：1789年に始まった革命。身分制をゆるがし人権宣言が出された\n辛亥革命：中華民国を建国し清朝を滅ぼした革命\nロシア革命：ロシアで社会主義体制を樹立した革命"
         },
         {
+          "id": "h22-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch22_01.png",
+          "alt": "名誉革命の図解カード",
+          "caption": "図解：名誉革命",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "名誉革命"
+          ],
+          "explanation": "名誉革命：イギリスで王権を制限し議会政治を確立"
+        },
+        {
+          "id": "h22-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch22_02.png",
+          "alt": "フランス革命の図解カード",
+          "caption": "図解：フランス革命",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "フランス革命"
+          ],
+          "explanation": "フランス革命：1789年に始まった革命。身分制をゆるがし人権宣言が出された"
+        },
+        {
+          "id": "h22-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch22_03.png",
+          "alt": "辛亥革命の図解カード",
+          "caption": "図解：辛亥革命",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "辛亥革命"
+          ],
+          "explanation": "辛亥革命：中華民国を建国し清朝を滅ぼした革命"
+        },
+        {
+          "id": "h22-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch22_04.png",
+          "alt": "ロシア革命の図解カード",
+          "caption": "図解：ロシア革命",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ロシア革命"
+          ],
+          "explanation": "ロシア革命：ロシアで社会主義体制を樹立した革命"
+        },
+        {
           "speaker": "AI先生",
           "text": "必ずしも同じではない。1688年のイギリスの名誉革命は、王の力を制限し議会の力を強めた。",
           "id": "h22-003",
@@ -15546,6 +17874,66 @@
           "explanation": "日宋貿易：平清盛が推進した宋との貿易\n勘合貿易：明との間で勘合符を用いた貿易\n南蛮貿易：ポルトガルやスペインとの貿易\n朱印船貿易：朱印状を持つ船が行ったアジア貿易"
         },
         {
+          "id": "h23-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch23_01.png",
+          "alt": "日宋貿易の図解カード",
+          "caption": "図解：日宋貿易",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日宋貿易"
+          ],
+          "explanation": "日宋貿易：平清盛が推進した宋との貿易"
+        },
+        {
+          "id": "h23-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch23_02.png",
+          "alt": "勘合貿易の図解カード",
+          "caption": "図解：勘合貿易",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "勘合貿易"
+          ],
+          "explanation": "勘合貿易：明との間で勘合符を用いた貿易"
+        },
+        {
+          "id": "h23-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch23_03.png",
+          "alt": "南蛮貿易の図解カード",
+          "caption": "図解：南蛮貿易",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "南蛮貿易"
+          ],
+          "explanation": "南蛮貿易：ポルトガルやスペインとの貿易"
+        },
+        {
+          "id": "h23-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch23_04.png",
+          "alt": "朱印船貿易の図解カード",
+          "caption": "図解：朱印船貿易",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "朱印船貿易"
+          ],
+          "explanation": "朱印船貿易：朱印状を持つ船が行ったアジア貿易"
+        },
+        {
           "speaker": "平清盛",
           "text": "平安時代の終わり、私が力を入れたのは宋との日宋貿易だ。",
           "id": "h23-003",
@@ -15808,6 +18196,22 @@
           "explanation": "朱印船貿易：朱印状を持つ船が行ったアジア貿易"
         },
         {
+          "id": "h23-img-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "貿易の話は、船の見た目でも覚えやすくなるよ。",
+          "image": "history202/materials/shuinsen.png",
+          "alt": "朱印船の資料カード",
+          "caption": "資料：朱印船",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "朱印船貿易",
+            "朱印船"
+          ],
+          "explanation": "朱印船は、幕府の許可証である朱印状を受けて東南アジアへ向かった船。江戸時代初めの海外貿易を表す重要資料。勘合貿易の勘合札と混同しやすいので、相手・時代・許可証の名前を区別しよう。"
+        },
+        {
           "id": "h23-deep-04-1",
           "speaker": "受験生",
           "text": "朱印船貿易の「朱印」って何のためにあったの？",
@@ -16022,6 +18426,96 @@
           "explanation": "日米和親条約：ペリー来航後、日本が開国した条約\n日米修好通商条約：不平等条約として知られる条約\n下関条約：1895年の日清戦争の講和条約。台湾などを日本へ譲る取り決めがあった\nポーツマス条約：日露戦争の講和条約で仲裁はアメリカ\nサンフランシスコ平和条約：1951年調印、1952年発効。日本の占領が終わり独立を回復した条約\n日米安全保障条約：1951年に締結した条約。1960年に新条約が結ばれた。"
         },
         {
+          "id": "h24-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch24_01.png",
+          "alt": "日米和親条約の図解カード",
+          "caption": "図解：日米和親条約",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日米和親条約"
+          ],
+          "explanation": "日米和親条約：ペリー来航後、日本が開国した条約"
+        },
+        {
+          "id": "h24-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch24_02.png",
+          "alt": "日米修好通商条約の図解カード",
+          "caption": "図解：日米修好通商条約",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日米修好通商条約"
+          ],
+          "explanation": "日米修好通商条約：不平等条約として知られる条約"
+        },
+        {
+          "id": "h24-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch24_03.png",
+          "alt": "下関条約の図解カード",
+          "caption": "図解：下関条約",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "下関条約"
+          ],
+          "explanation": "下関条約：1895年の日清戦争の講和条約。台湾などを日本へ譲る取り決めがあった"
+        },
+        {
+          "id": "h24-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch24_04.png",
+          "alt": "ポーツマス条約の図解カード",
+          "caption": "図解：ポーツマス条約",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ポーツマス条約"
+          ],
+          "explanation": "ポーツマス条約：日露戦争の講和条約で仲裁はアメリカ"
+        },
+        {
+          "id": "h24-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch24_05.png",
+          "alt": "サンフランシスコ平和条約の図解カード",
+          "caption": "図解：サンフランシスコ平和条約",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "サンフランシスコ平和条約"
+          ],
+          "explanation": "サンフランシスコ平和条約：1951年調印、1952年発効。日本の占領が終わり独立を回復した条約"
+        },
+        {
+          "id": "h24-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch24_06.png",
+          "alt": "日米安全保障条約の図解カード",
+          "caption": "図解：日米安全保障条約",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日米安全保障条約"
+          ],
+          "explanation": "日米安全保障条約：1951年に締結した条約。1960年に新条約が結ばれた。"
+        },
+        {
           "speaker": "AI先生",
           "text": "1854年の日米和親条約で、日本は下田・箱館をアメリカ船に開き、鎖国体制を変え始めた。ペリー来航の翌年だ。",
           "id": "h24-003",
@@ -16092,6 +18586,22 @@
           "id": "h24-005",
           "matchedTerms": [],
           "explanation": "和親条約は船の寄港、修好通商条約は貿易。下関とポーツマスは戦争の相手国が違う。"
+        },
+        {
+          "id": "h24-img-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "開国の場面では、このイメージが頭に浮かぶと強い。",
+          "image": "history202/materials/kurofune.png",
+          "alt": "黒船の資料カード",
+          "caption": "資料：黒船",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "黒船",
+            "ペリー"
+          ],
+          "explanation": "黒船は1853年にペリーが率いて来航したアメリカの艦隊を表す言い方。蒸気船の黒い煙や大きな船体の印象とともに、1854年の日米和親条約につながる流れを思い出そう。"
         },
         {
           "speaker": "受験生",
@@ -16607,6 +19117,111 @@
             "日独伊三国同盟"
           ],
           "explanation": "条約改正：日本が不平等条約を改正し独立性を高める\n三国干渉：遼東半島返還を日本に迫った列強の干渉\n日英同盟：日本とイギリスの間で結ばれた軍事同盟\n韓国併合：1910年、日本が韓国を併合し、朝鮮を植民地支配した。\n二十一ヶ条の要求：中国に日本が突きつけた要求\nシベリア出兵：日本がロシア内戦に介入した出来事\n日独伊三国同盟：1940年、日本・ドイツ・イタリアが結んだ軍事同盟"
+        },
+        {
+          "id": "h25-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch25_01.png",
+          "alt": "条約改正の図解カード",
+          "caption": "図解：条約改正",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "条約改正"
+          ],
+          "explanation": "条約改正：日本が不平等条約を改正し独立性を高める"
+        },
+        {
+          "id": "h25-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch25_02.png",
+          "alt": "三国干渉の図解カード",
+          "caption": "図解：三国干渉",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "三国干渉"
+          ],
+          "explanation": "三国干渉：遼東半島返還を日本に迫った列強の干渉"
+        },
+        {
+          "id": "h25-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch25_03.png",
+          "alt": "日英同盟の図解カード",
+          "caption": "図解：日英同盟",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日英同盟"
+          ],
+          "explanation": "日英同盟：日本とイギリスの間で結ばれた軍事同盟"
+        },
+        {
+          "id": "h25-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch25_04.png",
+          "alt": "韓国併合の図解カード",
+          "caption": "図解：韓国併合",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "韓国併合"
+          ],
+          "explanation": "韓国併合：1910年、日本が韓国を併合し、朝鮮を植民地支配した。"
+        },
+        {
+          "id": "h25-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch25_05.png",
+          "alt": "二十一ヶ条の要求の図解カード",
+          "caption": "図解：二十一ヶ条の要求",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "二十一ヶ条の要求"
+          ],
+          "explanation": "二十一ヶ条の要求：中国に日本が突きつけた要求"
+        },
+        {
+          "id": "h25-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch25_06.png",
+          "alt": "シベリア出兵の図解カード",
+          "caption": "図解：シベリア出兵",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "シベリア出兵"
+          ],
+          "explanation": "シベリア出兵：日本がロシア内戦に介入した出来事"
+        },
+        {
+          "id": "h25-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch25_07.png",
+          "alt": "日独伊三国同盟の図解カード",
+          "caption": "図解：日独伊三国同盟",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日独伊三国同盟"
+          ],
+          "explanation": "日独伊三国同盟：1940年、日本・ドイツ・イタリアの三国が結んだ軍事同盟。日本の対米英開戦は翌1941年。"
         },
         {
           "speaker": "AI先生",
@@ -17258,6 +19873,51 @@
           "explanation": "秦：始皇帝が中国を初めて統一\n漢：シルクロードを通じて繁栄した王朝\n魏：三国時代の一国で洛陽を都とした"
         },
         {
+          "id": "h26-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch26_01.png",
+          "alt": "秦の図解カード",
+          "caption": "図解：秦",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "秦"
+          ],
+          "explanation": "秦：始皇帝が中国を初めて統一"
+        },
+        {
+          "id": "h26-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch26_02.png",
+          "alt": "漢の図解カード",
+          "caption": "図解：漢",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "漢"
+          ],
+          "explanation": "漢：シルクロードを通じて繁栄した王朝"
+        },
+        {
+          "id": "h26-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch26_03.png",
+          "alt": "魏の図解カード",
+          "caption": "図解：魏",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "魏"
+          ],
+          "explanation": "魏：三国時代の一国で洛陽を都とした"
+        },
+        {
           "speaker": "AI先生",
           "text": "今回はこの8項目を、前と後で何が変わったか考えながら読もう。\n1．秦\n2．漢\n3．魏\n4．隋\n5．唐\n6．元\n7．明\n8．清",
           "role": "historical",
@@ -17307,6 +19967,81 @@
             "秦"
           ],
           "explanation": "秦：始皇帝が中国を初めて統一"
+        },
+        {
+          "id": "h26-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch26_04.png",
+          "alt": "隋の図解カード",
+          "caption": "図解：隋",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "隋"
+          ],
+          "explanation": "隋：大運河を建設した短命な王朝"
+        },
+        {
+          "id": "h26-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch26_05.png",
+          "alt": "唐の図解カード",
+          "caption": "図解：唐",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "唐"
+          ],
+          "explanation": "唐：長安を都にし国際的に栄えた王朝"
+        },
+        {
+          "id": "h26-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch26_06.png",
+          "alt": "元の図解カード",
+          "caption": "図解：元",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "元"
+          ],
+          "explanation": "元：モンゴルのフビライが中国に立てた王朝。日本へ二度攻めてきた"
+        },
+        {
+          "id": "h26-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch26_07.png",
+          "alt": "明の図解カード",
+          "caption": "図解：明",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "明"
+          ],
+          "explanation": "明：朱元璋が建国し海禁政策を行った"
+        },
+        {
+          "id": "h26-termimg-08",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch26_08.png",
+          "alt": "清の図解カード",
+          "caption": "図解：清",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "清"
+          ],
+          "explanation": "清：満州族が建国し最後の王朝となる"
         },
         {
           "id": "h26-deep-01-3",
@@ -17459,6 +20194,23 @@
             "漢"
           ],
           "explanation": "漢：シルクロードを通じて繁栄した王朝"
+        },
+        {
+          "id": "h26-img-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "中国王朝と日本のつながりでは、この資料は定番。",
+          "image": "history202/materials/gold_seal.png",
+          "alt": "金印の資料カード",
+          "caption": "資料：金印",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "金印",
+            "奴国",
+            "後漢"
+          ],
+          "explanation": "金印は「漢委奴国王」と刻まれた金の印。57年に後漢の皇帝が倭の奴国の王に与えたとされ、のちに志賀島で発見された。後漢・奴国・57年を結ぶ超重要資料。"
         },
         {
           "id": "h26-add-01-3",
@@ -18014,6 +20766,156 @@
           "explanation": "飛鳥：仏教が伝来し文化が発展した時代\n天平：奈良時代に栄えた、東大寺や正倉院で知られる仏教・国際色の強い文化\n国風：平安時代にかな文字や日本風の文学などが発展した文化。\n鎌倉：武士文化や禅宗が広がった時代\n北山：金閣寺に代表される豪華な文化\n東山：銀閣寺に代表される侘び寂びの文化\n桃山：城郭建築や華麗な文化が栄えた時代\n元禄：町人文化や歌舞伎が広がった時代\n化政：江戸後期の浮世絵や文学が栄えた時代\n文明開化：明治期の近代化を象徴する文化"
         },
         {
+          "id": "h27-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_01.png",
+          "alt": "飛鳥の図解カード",
+          "caption": "図解：飛鳥",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "飛鳥"
+          ],
+          "explanation": "飛鳥：仏教が伝来し文化が発展した時代"
+        },
+        {
+          "id": "h27-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_02.png",
+          "alt": "天平の図解カード",
+          "caption": "図解：天平",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "天平"
+          ],
+          "explanation": "天平：奈良時代に栄えた、東大寺や正倉院で知られる仏教・国際色の強い文化"
+        },
+        {
+          "id": "h27-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_03.png",
+          "alt": "国風の図解カード",
+          "caption": "図解：国風",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "国風"
+          ],
+          "explanation": "国風：平安時代にかな文字や日本風の文学などが発展した文化。"
+        },
+        {
+          "id": "h27-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_04.png",
+          "alt": "鎌倉の図解カード",
+          "caption": "図解：鎌倉",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "鎌倉"
+          ],
+          "explanation": "鎌倉：武士文化や禅宗が広がった時代"
+        },
+        {
+          "id": "h27-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_05.png",
+          "alt": "北山の図解カード",
+          "caption": "図解：北山",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "北山"
+          ],
+          "explanation": "北山：金閣寺に代表される豪華な文化"
+        },
+        {
+          "id": "h27-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_06.png",
+          "alt": "東山の図解カード",
+          "caption": "図解：東山",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "東山"
+          ],
+          "explanation": "東山：銀閣寺に代表される侘び寂びの文化"
+        },
+        {
+          "id": "h27-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_07.png",
+          "alt": "桃山の図解カード",
+          "caption": "図解：桃山",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "桃山"
+          ],
+          "explanation": "桃山：城郭建築や華麗な文化が栄えた時代"
+        },
+        {
+          "id": "h27-termimg-08",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_08.png",
+          "alt": "元禄の図解カード",
+          "caption": "図解：元禄",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "元禄"
+          ],
+          "explanation": "元禄：町人文化や歌舞伎が広がった時代"
+        },
+        {
+          "id": "h27-termimg-09",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_09.png",
+          "alt": "化政の図解カード",
+          "caption": "図解：化政",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "化政"
+          ],
+          "explanation": "化政：江戸後期の浮世絵や文学が栄えた時代"
+        },
+        {
+          "id": "h27-termimg-10",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch27_10.png",
+          "alt": "文明開化の図解カード",
+          "caption": "図解：文明開化",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "文明開化"
+          ],
+          "explanation": "文明開化：明治期の近代化を象徴する文化"
+        },
+        {
           "speaker": "AI先生",
           "text": "何を信じ、誰が文化を楽しんだかで追ってみよう。飛鳥文化は仏教の広まりと関係が深く、法隆寺などが有名だ。",
           "id": "h27-003",
@@ -18044,6 +20946,22 @@
             "飛鳥"
           ],
           "explanation": "飛鳥：仏教が伝来し文化が発展した時代"
+        },
+        {
+          "id": "h27-img-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "飛鳥文化の資料はこちら。",
+          "image": "history202/materials/horyuji.png",
+          "alt": "法隆寺の資料カード",
+          "caption": "資料：法隆寺",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "法隆寺",
+            "飛鳥文化"
+          ],
+          "explanation": "法隆寺は飛鳥文化を代表する寺院。仏教が広まり、朝鮮半島や中国からの文化を取り入れた時代の象徴としてよく出題される。飛鳥文化＝法隆寺の組み合わせは必ず押さえたい。"
         },
         {
           "id": "h27-deep-01-3",
@@ -18119,6 +21037,22 @@
           "explanation": "天平：奈良時代に栄えた、東大寺や正倉院で知られる仏教・国際色の強い文化"
         },
         {
+          "id": "h27-img-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "天平文化の見分け資料も。",
+          "image": "history202/materials/todaiji.png",
+          "alt": "東大寺大仏の資料カード",
+          "caption": "資料：東大寺・大仏",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "東大寺",
+            "天平文化"
+          ],
+          "explanation": "東大寺と大仏は天平文化の代表例。奈良時代、聖武天皇のころの大きな国家事業として有名で、正倉院とセットで問われることも多い。天平文化＝奈良・東大寺・正倉院で整理しよう。"
+        },
+        {
           "id": "h27-deep-02-4",
           "speaker": "受験生",
           "text": "天平文化＝奈良・東大寺・正倉院！ 飛鳥文化よりも国際的で大きな文化の広がりを感じる！",
@@ -18192,6 +21126,22 @@
           "explanation": "国風：平安時代にかな文字や日本風の文学などが発展した文化。"
         },
         {
+          "id": "h27-img-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "国風文化は文学の資料も見ておくと整理しやすい。",
+          "image": "history202/materials/genji.png",
+          "alt": "源氏物語絵巻の資料カード",
+          "caption": "資料：源氏物語絵巻",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "国風文化",
+            "源氏物語"
+          ],
+          "explanation": "国風文化では、かな文字が広がり、『源氏物語』など日本らしい文学が育った。資料では絵巻やかな文字の作品が出ることがあるので、「平安・かな文字・国風文化」と結びつけておこう。"
+        },
+        {
           "speaker": "受験生",
           "text": "『源氏物語』だね！",
           "id": "h27-008",
@@ -18230,6 +21180,22 @@
             "鎌倉"
           ],
           "explanation": "鎌倉：武士文化や禅宗が広がった時代"
+        },
+        {
+          "id": "h27-img-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "鎌倉文化では、こんな資料名も頻出。",
+          "image": "history202/materials/moko.png",
+          "alt": "蒙古襲来絵詞の資料カード",
+          "caption": "資料：蒙古襲来絵詞",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "蒙古襲来絵詞",
+            "鎌倉文化"
+          ],
+          "explanation": "蒙古襲来絵詞は、元との戦いの様子を伝える絵巻物。鎌倉時代の武士の姿や戦い方を知る資料として有名で、元寇とセットで覚えたい。鎌倉文化の資料としても狙われやすい。"
         },
         {
           "id": "h27-deep-04-3",
@@ -18305,6 +21271,22 @@
           "explanation": "北山：金閣寺に代表される豪華な文化"
         },
         {
+          "id": "h27-img-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "北山文化の建物は見た目で一発。",
+          "image": "history202/materials/kinkaku.png",
+          "alt": "金閣の資料カード",
+          "caption": "資料：金閣",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "金閣",
+            "北山文化"
+          ],
+          "explanation": "金閣は足利義満のころの北山文化を代表する建物。豪華で華やかな雰囲気が特徴で、東山文化の銀閣とよく対比される。人物名まで結びつけて覚えるのが得点のコツ。"
+        },
+        {
           "id": "h27-deep-05-4",
           "speaker": "受験生",
           "text": "北山＝義満・金閣・豪華！ 次の東山文化と対比すると一気に覚えられそう！",
@@ -18346,6 +21328,22 @@
             "東山"
           ],
           "explanation": "東山：銀閣寺に代表される侘び寂びの文化"
+        },
+        {
+          "id": "h27-img-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "東山文化の建物も対で見よう。",
+          "image": "history202/materials/ginkaku.png",
+          "alt": "銀閣の資料カード",
+          "caption": "資料：銀閣",
+          "source": "教材用資料カード",
+          "matchedTerms": [
+            "銀閣",
+            "東山文化"
+          ],
+          "explanation": "銀閣は足利義政のころの東山文化を代表する建物。金閣より落ち着いた雰囲気で、書院造や水墨画とともに東山文化の特徴を示す。北山の金閣との違いを比べられるようにしたい。"
         },
         {
           "id": "h27-deep-06-3",
@@ -18847,6 +21845,54 @@
           "explanation": "摂政と関白：摂政は幼い天皇などに代わり、関白は成人した天皇を補佐する役\n執権と管領：執権は鎌倉幕府、管領は室町幕府の補佐役\n守護と地頭：守護は軍事指揮、地頭は徴税や治安維持を担当"
         },
         {
+          "id": "h28-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch28_01.png",
+          "alt": "摂政と関白の図解カード",
+          "caption": "図解：摂政と関白",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "摂政",
+            "関白"
+          ],
+          "explanation": "摂政と関白：摂政は幼い天皇などに代わり、関白は成人した天皇を補佐する役"
+        },
+        {
+          "id": "h28-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch28_02.png",
+          "alt": "執権と管領の図解カード",
+          "caption": "図解：執権と管領",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "執権",
+            "管領"
+          ],
+          "explanation": "執権と管領：執権は鎌倉幕府、管領は室町幕府の補佐役"
+        },
+        {
+          "id": "h28-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch28_03.png",
+          "alt": "守護と地頭の図解カード",
+          "caption": "図解：守護と地頭",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "守護",
+            "地頭"
+          ],
+          "explanation": "守護と地頭：守護は軍事指揮、地頭は徴税や治安維持を担当"
+        },
+        {
           "speaker": "AI先生",
           "text": "今回はこの3項目を、前と後で何が変わったか考えながら読もう。\n1．摂政と関白\n2．執権と管領\n3．守護と地頭",
           "role": "historical",
@@ -19339,6 +22385,81 @@
             "人権宣言"
           ],
           "explanation": "ポツダム宣言：1945年に連合国が日本へ示した降伏条件\n日ソ共同宣言：ソ連との国交正常化を果たした宣言\n日中共同声明：中国との国交正常化を宣言した文書\n独立宣言：アメリカがイギリスからの独立を宣言\n人権宣言：フランス革命期に基本的人権を定めた文書"
+        },
+        {
+          "id": "h29-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch29_01.png",
+          "alt": "ポツダム宣言の図解カード",
+          "caption": "図解：ポツダム宣言",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "ポツダム宣言"
+          ],
+          "explanation": "ポツダム宣言：1945年に連合国が日本へ示した降伏条件"
+        },
+        {
+          "id": "h29-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch29_02.png",
+          "alt": "日ソ共同宣言の図解カード",
+          "caption": "図解：日ソ共同宣言",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日ソ共同宣言"
+          ],
+          "explanation": "日ソ共同宣言：ソ連との国交正常化を果たした宣言"
+        },
+        {
+          "id": "h29-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch29_03.png",
+          "alt": "日中共同声明の図解カード",
+          "caption": "図解：日中共同声明",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "日中共同声明"
+          ],
+          "explanation": "日中共同声明：中国との国交正常化を宣言した文書"
+        },
+        {
+          "id": "h29-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch29_04.png",
+          "alt": "独立宣言の図解カード",
+          "caption": "図解：独立宣言",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "独立宣言"
+          ],
+          "explanation": "独立宣言：アメリカがイギリスからの独立を宣言"
+        },
+        {
+          "id": "h29-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch29_05.png",
+          "alt": "人権宣言の図解カード",
+          "caption": "図解：人権宣言",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "人権宣言"
+          ],
+          "explanation": "人権宣言：フランス革命期に基本的人権を定めた文書"
         },
         {
           "speaker": "AI先生",
@@ -19854,6 +22975,111 @@
             "広島"
           ],
           "explanation": "種子島：鉄砲が伝来した歴史的な島\n長崎：鎖国時代の海外交流の窓口\n下田：日米和親条約で開港した港\n函館：1854年の和親条約で開かれ、1859年に横浜・長崎とともに貿易港となった\n根室：北海道の東部。1792年にロシア使節ラックスマンが来航した地\n遼東半島：日清戦争で獲得し三国干渉で返還\n広島：原爆が投下された戦争終結の象徴の地"
+        },
+        {
+          "id": "h30-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch30_01.png",
+          "alt": "種子島の図解カード",
+          "caption": "図解：種子島",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "種子島"
+          ],
+          "explanation": "種子島：鉄砲が伝来した歴史的な島"
+        },
+        {
+          "id": "h30-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch30_02.png",
+          "alt": "長崎の図解カード",
+          "caption": "図解：長崎",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "長崎"
+          ],
+          "explanation": "長崎：鎖国時代の海外交流の窓口"
+        },
+        {
+          "id": "h30-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch30_03.png",
+          "alt": "下田の図解カード",
+          "caption": "図解：下田",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "下田"
+          ],
+          "explanation": "下田：日米和親条約で開港した港"
+        },
+        {
+          "id": "h30-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch30_04.png",
+          "alt": "函館の図解カード",
+          "caption": "図解：函館",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "函館"
+          ],
+          "explanation": "函館：箱館は1854年の日米和親条約で開くことが約束され、1859年に貿易港として開かれた。二つの年を区別しよう。"
+        },
+        {
+          "id": "h30-termimg-05",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch30_05.png",
+          "alt": "根室の図解カード",
+          "caption": "図解：根室",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "根室"
+          ],
+          "explanation": "根室：北海道の東部。1792年にロシアの使節ラクスマンが来航し、通商を求めた地。"
+        },
+        {
+          "id": "h30-termimg-06",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch30_06.png",
+          "alt": "遼東半島の図解カード",
+          "caption": "図解：遼東半島",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "遼東半島"
+          ],
+          "explanation": "遼東半島：日清戦争で獲得し三国干渉で返還"
+        },
+        {
+          "id": "h30-termimg-07",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch30_07.png",
+          "alt": "広島の図解カード",
+          "caption": "図解：広島",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "広島"
+          ],
+          "explanation": "広島：原爆が投下された戦争終結の象徴の地"
         },
         {
           "speaker": "AI先生",
@@ -20594,6 +23820,66 @@
             "二二六事件"
           ],
           "explanation": "三一独立運動：1919年3月1日、朝鮮で日本の植民地支配に反対する独立運動が広がった。\n五四運動：1919年5月4日、中国で学生らの抗議運動が起きた。\n五一五事件：海軍青年将校が首相を暗殺した事件\n二二六事件：陸軍青年将校が起こしたクーデター未遂事件"
+        },
+        {
+          "id": "h31-termimg-01",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch31_01.png",
+          "alt": "三一独立運動の図解カード",
+          "caption": "図解：三一独立運動",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "三一独立運動"
+          ],
+          "explanation": "三一独立運動：1919年3月1日、朝鮮で日本の植民地支配に反対する独立運動が広がった。"
+        },
+        {
+          "id": "h31-termimg-02",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch31_02.png",
+          "alt": "五四運動の図解カード",
+          "caption": "図解：五四運動",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "五四運動"
+          ],
+          "explanation": "五四運動：1919年5月4日、中国で学生らの抗議運動が起きた。"
+        },
+        {
+          "id": "h31-termimg-03",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch31_03.png",
+          "alt": "五一五事件の図解カード",
+          "caption": "図解：五一五事件",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "五一五事件"
+          ],
+          "explanation": "五一五事件：海軍青年将校が首相を暗殺した事件"
+        },
+        {
+          "id": "h31-termimg-04",
+          "speaker": "AI先生",
+          "role": "historical",
+          "kind": "image",
+          "text": "この重要ワードも図で見ておこう。",
+          "image": "history202/term_cards/ch31_04.png",
+          "alt": "二二六事件の図解カード",
+          "caption": "図解：二二六事件",
+          "source": "教材用図解カード",
+          "matchedTerms": [
+            "二二六事件"
+          ],
+          "explanation": "二二六事件：陸軍青年将校が起こしたクーデター未遂事件"
         },
         {
           "speaker": "AI先生",

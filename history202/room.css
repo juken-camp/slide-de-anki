@@ -138,3 +138,9 @@ html[data-persona="cyber"] #group-members .sengoku-member-card .avatar{backgroun
 #group-messages .h202-profile-button img{display:block;width:100%;height:100%;object-fit:cover}
 #group-messages .h202-name-profile{appearance:none;-webkit-appearance:none;margin:0;padding:0;background:transparent;border:0;border-radius:0;color:inherit;font:inherit;font-size:inherit;font-weight:inherit;text-align:left;cursor:pointer;touch-action:manipulation}
 @media(max-width:390px){#group-members .group-members-avatar{width:38px;height:38px}}
+
+/* 2026-11-08: fixed the overlapping chapter index on iOS.
+   Hiding the chat is deliberate: both surfaces must never paint together. */
+#group-view[hidden],body.h202-index-open #group-view{display:none!important;visibility:hidden!important;pointer-events:none!important}
+#h202-index-layer[hidden]{display:none!important}
+body.h202-index-open #h202-index-layer{display:block!important;z-index:2147483647!important;visibility:visible!important;pointer-events:auto!important}

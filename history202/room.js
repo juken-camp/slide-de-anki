@@ -131,8 +131,33 @@ function renderMembers(){
  }
 }
 
-function openIndex(){if(!state.chapters.length)return;indexLayer.hidden=false;const current=indexList.querySelector('.is-current');current?.scrollIntoView({block:'nearest'});$('h202-index-back').focus()}
-function closeIndex(){indexLayer.hidden=true;$('group-title').focus()}
+// The chapter index and the chat must never be visible together.
+// An overlay z-index alone is not sufficient because the inherited chat
+// stylesheet creates its own stacking context on some iOS layouts.
+function setIndexOpen(open){
+  const groupView=$('group-view');
+  if(open){
+    $('group-members').hidden=true;
+    groupView.hidden=true;
+    document.body.classList.add('h202-index-open');
+    indexLayer.hidden=false;
+  }else{
+    indexLayer.hidden=true;
+    document.body.classList.remove('h202-index-open');
+    groupView.hidden=false;
+  }
+}
+function openIndex(){
+  if(!state.chapters.length)return;
+  setIndexOpen(true);
+  const current=indexList.querySelector('.is-current');
+  current?.scrollIntoView({block:'nearest'});
+  $('h202-index-back').focus();
+}
+function closeIndex(){
+  setIndexOpen(false);
+  $('group-title').focus();
+}
 $('group-title').addEventListener('click',openIndex);
 $('h202-index-back').addEventListener('click',closeIndex);
 document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(!indexLayer.hidden)closeIndex();else if(!$('group-members').hidden)closeMembers();else if(!searchForm.hidden)closeSearch()});
@@ -171,7 +196,7 @@ function render(){const ci=Math.max(0,state.selected-1),ch=chapterAt(ci);if(!ch)
 }
 function chooseChapter(id,restore=false){const chapter=state.chapters.find(x=>x.id===id);if(!chapter)return;state.selected=id;searchForm.hidden=true;$('group-view').removeAttribute('data-search-open');$('group-search-toggle').setAttribute('aria-expanded','false');searchInput.value='';state.search='';$('group-search-clear').hidden=true;
  try{localStorage.setItem('history202-last-chapter',String(id))}catch(_){}
- render();renderIndex();indexLayer.hidden=true;
+ render();renderIndex();setIndexOpen(false);
  if(restore){try{box.scrollTop=Number(localStorage.getItem(LAST+id))||0}catch(_){box.scrollTop=0}}else box.scrollTop=0;
 }
 let saveTimeout=null;box.addEventListener('scroll',()=>{clearTimeout(saveTimeout);saveTimeout=setTimeout(()=>{try{localStorage.setItem(LAST+state.selected,String(box.scrollTop))}catch(_){}},350)},{passive:true});

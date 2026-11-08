@@ -32,7 +32,7 @@ let lastScroll=0;
 const theme=()=>document.documentElement.dataset.persona==='cyber'?'cyber':'neko';
 const notify=open=>{if(window.parent!==window)window.parent.postMessage({type:'himiko-chat-state',open},location.origin)};
 const sendTheme=()=>{try{frame.contentWindow?.postMessage({type:'history202-theme',persona:theme()},location.origin)}catch(_){}};
-function open(){if(!panel.hidden)return;lastScroll=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;document.documentElement.dataset.history202Open='true';document.documentElement.dataset.chatOpen='true';list.classList.add('hidden');panel.hidden=false;if(!frame.getAttribute('src'))frame.setAttribute('src','history202-chat.html?v=index-isolation-20261108-v5');sendTheme();notify(true)}
+function open(){if(!panel.hidden)return;lastScroll=window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;document.documentElement.dataset.history202Open='true';document.documentElement.dataset.chatOpen='true';list.classList.add('hidden');panel.hidden=false;if(!frame.getAttribute('src'))frame.setAttribute('src','history202-chat.html?v=cyber-labels-20261108-v6');sendTheme();notify(true)}
 function close(){if(panel.hidden)return;panel.hidden=true;delete document.documentElement.dataset.history202Open;delete document.documentElement.dataset.chatOpen;list.classList.remove('hidden');requestAnimationFrame(()=>{window.scrollTo(0,lastScroll);document.body.scrollTop=lastScroll;document.documentElement.scrollTop=lastScroll});notify(false)}
 card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
 frame.addEventListener('load',sendTheme);

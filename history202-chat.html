@@ -12,70 +12,7 @@
 <link rel="stylesheet" href="sengoku-chat/original-chat.css?v=1">
 <link rel="stylesheet" href="sengoku-chat/room.css?v=ui20261107-2">
 <link rel="stylesheet" href="history202/room.css?v=cyber-labels-count-fit-20261108-v7">
-<script src="history202/room.js?v=20261108-photo-compact-no-source-v2" defer></script>
-<style>
-
-/* History202: mobile-safe, small photographic chat bubbles. No credit or disclaimer UI. */
-#group-view #group-messages,
-#group-view #group-messages-inner,
-#group-view #group-messages .bubble-row{max-width:100%!important;min-width:0!important}
-#group-view #group-messages .bubble-row:has(.h202-real-image-bubble){overflow:visible;min-width:0!important}
-#group-view #group-messages .group-reply-content.h202-has-image{
- display:grid!important;
- grid-template-columns:minmax(0,1fr) auto!important;
- column-gap:5px!important;
- width:min(100%,270px)!important;
- max-width:calc(100vw - 95px)!important;
- min-width:0!important;
- align-items:end!important;
- box-sizing:border-box!important;
-}
-#group-view #group-messages .group-reply-content.h202-has-image>.group-reply-name{
- grid-column:1/-1!important;grid-row:auto!important;min-width:0!important;
-}
-#group-view #group-messages .group-reply-content.h202-has-image>.h202-real-image-bubble{
- display:block!important;
- grid-column:1!important;grid-row:auto!important;
- width:100%!important;max-width:100%!important;min-width:0!important;
- box-sizing:border-box!important;
- height:auto!important;max-height:none!important;
- margin:0!important;padding:7px!important;
- overflow:hidden!important;white-space:normal!important;text-align:left!important;
- line-height:1.4!important;
-}
-#group-view #group-messages .h202-real-image-bubble img{
- display:block!important;
- box-sizing:border-box!important;
- width:100%!important;max-width:100%!important;
- height:clamp(130px,42vw,205px)!important;
- max-height:205px!important;
- min-width:0!important;object-fit:contain!important;
- object-position:center!important;
- border:0!important;border-radius:9px!important;
- margin:0!important;padding:0!important;
- background:rgba(255,255,255,.035)!important;
-}
-#group-view #group-messages .h202-real-image-caption{
- display:block!important;width:100%!important;
- overflow-wrap:anywhere!important;word-break:normal!important;
- margin:5px 1px 0!important;padding:0!important;
- font-size:11px!important;font-weight:700!important;
- line-height:1.45!important;white-space:normal!important;
-}
-#group-view #group-messages .group-reply-content.h202-has-image>.history-message-time{
- grid-column:2!important;grid-row:auto!important;
- align-self:end!important;white-space:nowrap!important;
- margin:0 0 2px 0!important;
-}
-#group-view #group-messages .h202-real-image-credit,
-#group-view #group-messages .h202-image-source-always,
-#group-view #group-messages .h202-image-source-link{display:none!important}
-#group-view #group-messages .h202-image-load-failure{
- display:block!important;white-space:normal!important;
- padding:20px 5px!important;font-size:11px!important;line-height:1.5!important;
-}
-
-</style>
+<script src="history202/room.js?v=20261108-single-photo-no-layers-v3" defer></script>
 </head>
 <body>
 <section id="group-view" aria-label="歴史の重要ワード202・閲覧専用">

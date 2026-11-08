@@ -6,6 +6,7 @@ const box=$('group-messages'), inner=$('group-messages-inner'),explain=$('h202-e
 const indexLayer=$('h202-index-layer'),indexList=$('h202-index-list'),searchForm=$('group-search-form'),searchInput=$('group-search-input');
 const state={chapters:[],people:{},config:{mode:'reader'},selected:1,activeId:null,search:'',savedScroll:null,materialLoadError:''};
 const isPreview=new URLSearchParams(location.search).get('preview')==='1';
+const h202PhotoStyle=document.createElement('style');h202PhotoStyle.id='h202-photo-layout-mobile-v2';h202PhotoStyle.textContent='\n/* History202: mobile-safe, small photographic chat bubbles. No credit or disclaimer UI. */\n#group-view #group-messages,\n#group-view #group-messages-inner,\n#group-view #group-messages .bubble-row{max-width:100%!important;min-width:0!important}\n#group-view #group-messages .bubble-row:has(.h202-real-image-bubble){overflow:visible;min-width:0!important}\n#group-view #group-messages .group-reply-content.h202-has-image{\n display:grid!important;\n grid-template-columns:minmax(0,1fr) auto!important;\n column-gap:5px!important;\n width:min(100%,270px)!important;\n max-width:calc(100vw - 95px)!important;\n min-width:0!important;\n align-items:end!important;\n box-sizing:border-box!important;\n}\n#group-view #group-messages .group-reply-content.h202-has-image>.group-reply-name{\n grid-column:1/-1!important;grid-row:auto!important;min-width:0!important;\n}\n#group-view #group-messages .group-reply-content.h202-has-image>.h202-real-image-bubble{\n display:block!important;\n grid-column:1!important;grid-row:auto!important;\n width:100%!important;max-width:100%!important;min-width:0!important;\n box-sizing:border-box!important;\n height:auto!important;max-height:none!important;\n margin:0!important;padding:7px!important;\n overflow:hidden!important;white-space:normal!important;text-align:left!important;\n line-height:1.4!important;\n}\n#group-view #group-messages .h202-real-image-bubble img{\n display:block!important;\n box-sizing:border-box!important;\n width:100%!important;max-width:100%!important;\n height:clamp(130px,42vw,205px)!important;\n max-height:205px!important;\n min-width:0!important;object-fit:contain!important;\n object-position:center!important;\n border:0!important;border-radius:9px!important;\n margin:0!important;padding:0!important;\n background:rgba(255,255,255,.035)!important;\n}\n#group-view #group-messages .h202-real-image-caption{\n display:block!important;width:100%!important;\n overflow-wrap:anywhere!important;word-break:normal!important;\n margin:5px 1px 0!important;padding:0!important;\n font-size:11px!important;font-weight:700!important;\n line-height:1.45!important;white-space:normal!important;\n}\n#group-view #group-messages .group-reply-content.h202-has-image>.history-message-time{\n grid-column:2!important;grid-row:auto!important;\n align-self:end!important;white-space:nowrap!important;\n margin:0 0 2px 0!important;\n}\n#group-view #group-messages .h202-real-image-credit,\n#group-view #group-messages .h202-image-source-always,\n#group-view #group-messages .h202-image-source-link{display:none!important}\n#group-view #group-messages .h202-image-load-failure{\n display:block!important;white-space:normal!important;\n padding:20px 5px!important;font-size:11px!important;line-height:1.5!important;\n}\n';document.head.append(h202PhotoStyle);
 const LAST='history202-last-position-v1:';
 let firstLoad=true,paintQueued=false;
 const realAssetsById=new Map();
@@ -72,7 +73,7 @@ function replaceFakeCards(chapters,realMaterials){
    if(typeof imageUrl!=='string'||!/^https:\/\/commons\.wikimedia\.org\/(?:wiki\/Special:Redirect\/file\/|w\/index\.php\?title=Special%3ARedirect%2Ffile%2F)/.test(imageUrl))continue;
    const m={id:item.id,speaker:'AI先生',role:'historical',kind:'real-image',text:'資料：'+item.caption,
     caption:item.caption,image:imageUrl,sourceUrl:item.sourceUrl,credit:item.credit,license:item.license||'出典ページで確認',
-    explanation:item.explanation+'\n出典：'+item.credit+'\n'+item.sourceUrl};
+    explanation:item.explanation};
    const index=ch.messages.findIndex(v=>v.id===item.after);
    if(index===-1){console.warn('歴史資料の配置先が存在しません',item.id,item.after);continue;}
    // Multiple historical sources anchored after one line retain source-list order.
@@ -192,7 +193,6 @@ function renderIndex(){indexList.replaceChildren();for(const ch of state.chapter
 }}
 function clearExplanation(){state.activeId=null;explainText.textContent='';explain.classList.remove('has-selected-bubble');inner.querySelectorAll('.h202-bubble[aria-pressed="true"]').forEach(b=>b.setAttribute('aria-pressed','false'));requestShapes()}
 function selectExplanation(m,b){const same=state.activeId===m.id;clearExplanation();if(same)return;state.activeId=m.id;b.setAttribute('aria-pressed','true');explainText.textContent=m.explanation||'';
- if(m.kind==='real-image'&&m.sourceUrl){const a=document.createElement('a');a.href=m.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';a.className='h202-image-source-link';a.textContent='原資料のページ（撮影者・利用条件）を開く';explainText.append(document.createTextNode('\n利用条件：'+(m.license||'出典ページで確認')+'\n'),a)}
  explain.classList.add('has-selected-bubble');explain.scrollTop=0;requestShapes()}
 function timeNode(stamp){const el=document.createElement('span');el.className='history-message-time sengoku-time';if(stamp!=null)el.textContent=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false}).format(stamp);else{el.textContent='00:00';el.classList.add('h202-time-empty');el.setAttribute('aria-hidden','true')}return el}
 function addRow(m,when,previous){
@@ -203,14 +203,13 @@ function addRow(m,when,previous){
  if(m.kind==='real-image'){
   bubble.classList.add('h202-real-image-bubble');bubble.replaceChildren();
   const photo=document.createElement('img');photo.alt=m.caption;photo.loading='lazy';photo.decoding='async';
-  // Keep remote Wikimedia media non-blocking on mobile; show an explicit source fallback on failure.
+  // Keep remote historical media responsive on mobile.
   photo.referrerPolicy='no-referrer';
   photo.addEventListener('load',requestShapes);
-  photo.addEventListener('error',()=>{const hint=document.createElement('span');hint.className='h202-image-load-failure';hint.textContent='画像を読み込めませんでした。ここをタップして、下の解説から資料の原ページを確認できます。';photo.replaceWith(hint);requestShapes()});
+  photo.addEventListener('error',()=>{const hint=document.createElement('span');hint.className='h202-image-load-failure';hint.textContent='画像を読み込めませんでした';photo.replaceWith(hint);requestShapes()});
   photo.src=m.image;
   const caption=document.createElement('span');caption.className='h202-real-image-caption';caption.textContent=m.caption;
-  const credit=document.createElement('small');credit.className='h202-real-image-credit';credit.textContent='出典：'+m.credit;credit.title='画像ごとの利用条件はタップ後の資料ページで確認してください';
-  bubble.append(photo,caption,credit);
+  bubble.append(photo,caption);
  }
  bubble.setAttribute('aria-label',m.speaker+'の発言、タップで解説を表示または閉じる');bubble.addEventListener('click',()=>selectExplanation(m,bubble));
  const time=timeNode(when);
@@ -221,10 +220,6 @@ function addRow(m,when,previous){
    wrapper.append(label);name.append(wrapper);container.append(name);
   }
   container.append(bubble);
-  if(m.kind==='real-image'&&m.sourceUrl){
-   const link=document.createElement('a');link.className='h202-image-source-always';link.href=m.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='出典・撮影者・利用条件を確認';
-   link.setAttribute('aria-label',m.caption+'の出典ページを開く');container.append(link);
-  }
   container.append(time);row.append(container);
  }
  inner.append(row);

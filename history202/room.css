@@ -153,3 +153,17 @@ html[data-persona="cyber"] #h202-index-list .h202-name{color:#e0eaff!important}
 html[data-persona="cyber"] #h202-index-list .h202-name small,
 html[data-persona="cyber"] #h202-index-list .h202-count{color:#9fbed5!important}
 html[data-persona="cyber"] #h202-index-list button.is-current .h202-no{color:#77f5ff!important}
+
+/* 2026-11-08: long participants header: show all 38 participants without clipping.
+   Sengoku's vacant 73px actions column is unused here. Reclaim it in this header only.
+   Keep the title and participant count at natural text size; wrap on small iPhones. */
+#group-members .members-header{grid-template-columns:32px minmax(0,1fr)!important}
+#group-members .members-heading{grid-column:2!important;min-width:0;max-width:100%}
+#group-members .members-heading .members-title{
+  display:block!important;
+  flex:1 1 auto;min-width:0!important;max-width:100%;
+  white-space:normal!important;overflow:visible!important;
+  text-overflow:clip!important;overflow-wrap:anywhere;
+  line-height:1.4!important;
+}
+@media(max-width:390px){#group-members .members-heading .members-title{font-size:14px!important}}

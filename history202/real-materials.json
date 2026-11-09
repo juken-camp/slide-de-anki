@@ -687,10 +687,11 @@
       "explanation": "宗教改革で重要なマルティン・ルターの肖像です。免罪符批判から宗教改革へという流れを覚えやすくします。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMartin_Luther.jpg&width=720",
       "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain (PDM)",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Martin_Luther.jpg"
+      "licenseStatus": "confirmed",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Martin_Luther.jpg",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
     },
     {
       "id": "wmc-roosevelt",
@@ -748,9 +749,10 @@
       "type": "原資料の写真",
       "explanation": "北条泰時らが1232年に制定した御成敗式目の17世紀の写本。制定当時の原本ではない。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Goseibai_Shikimoku_Toyo_Bunko.jpg"
+      "license": "CC BY-SA 4.0",
+      "licenseStatus": "confirmed",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Goseibai_Shikimoku_Toyo_Bunko.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     {
       "id": "h12-real-31",
@@ -823,11 +825,12 @@
       "type": "当時の公文書",
       "explanation": "地租改正では地価をもとに金銭で税を納めるしくみを整えた。地券は土地の所有権などを示す証書。これは1879年に秋田県が発行したもの。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "license": "Public domain",
+      "licenseStatus": "confirmed",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
       "coverageOf": "地租改正",
-      "imageSelection": "reviewed-repositioned"
+      "imageSelection": "reviewed-repositioned",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg"
     },
     {
       "id": "authentic-2026-012",
@@ -840,11 +843,12 @@
       "type": "当時の写真",
       "explanation": "岩倉使節団の写真。薩摩・長州出身の政治家が明治政府で力を持った時代の関連資料。藩閥政治そのものの原文書ではない。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "license": "Public domain",
+      "licenseStatus": "confirmed",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Iwakura_mission.jpg",
       "coverageOf": "藩閥政治",
-      "imageSelection": "related-explicit"
+      "imageSelection": "related-explicit",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Iwakura_mission.jpg"
     },
     {
       "id": "authentic-2026-013",
@@ -857,9 +861,10 @@
       "type": "原資料",
       "explanation": "1868年に明治政府が掲げた基本方針を伝える紙面。話し合いによる政治などを目指した。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:5jonisshi.jpg"
+      "license": "Public domain",
+      "licenseStatus": "confirmed",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:5jonisshi.jpg",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:5jonisshi.jpg"
     },
     {
       "id": "authentic-2026-014",
@@ -872,9 +877,10 @@
       "type": "当時の資料写真",
       "explanation": "1872年に日本初の鉄道が新橋〜横浜間で開業。これは後年の新橋駅の写真で、鉄道が近代化を進めたことを示す。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_1899.jpg"
+      "license": "Public domain (PDM)",
+      "licenseStatus": "confirmed",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_1899.jpg",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
     },
     {
       "id": "authentic-2026-015",
@@ -946,11 +952,12 @@
       "explanation": "日本国憲法の原本。1946年公布・1947年施行を区別して覚えよう。",
       "credit": "日本国政府／パブリックドメイン",
       "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain (Japanese government law)",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
-      "licenseStatus": "source_page_review_needed",
+      "licenseStatus": "confirmed",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo01.jpg",
-      "coverageOf": "日本国憲法"
+      "coverageOf": "日本国憲法",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo01.jpg"
     },
     {
       "id": "authentic-2026-016",
@@ -963,9 +970,10 @@
       "type": "博物館展示",
       "explanation": "戊辰戦争の時代に使われた武器の展示写真。幕末には火器が戦いに大きく関わるようになった。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Weapons_of_the_Boshin_War.jpg"
+      "license": "Public domain",
+      "licenseStatus": "confirmed",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Weapons_of_the_Boshin_War.jpg",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Weapons_of_the_Boshin_War.jpg"
     },
     {
       "id": "h18-real-12",
@@ -1040,9 +1048,10 @@
       "type": "当時の写真",
       "explanation": "1941年12月（ハワイ現地時間7日）、日本軍の真珠湾攻撃で燃える米戦艦アリゾナ。太平洋戦争開戦の資料として重要。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg"
+      "license": "US public domain; international rights require review",
+      "licenseStatus": "source_page_verified",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg"
     },
     {
       "id": "wmc-sinojapanese",
@@ -1191,11 +1200,12 @@
       "explanation": "長崎の出島を描いた歴史画。幕府が相手や場所を絞って貿易を管理していた様子を示す。建物や船の配置は絵に描かれた時代の姿で、現代の写真ではない。",
       "credit": "1820年ごろの絵画／パブリックドメイン",
       "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain (PDM)",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
-      "licenseStatus": "source_page_review_needed",
+      "licenseStatus": "confirmed",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:DejimaInNagasakiBay.jpg",
-      "imageSelection": "anchor-fixed"
+      "imageSelection": "anchor-fixed",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
     },
     {
       "id": "h24-real-15",
@@ -1239,10 +1249,11 @@
       "explanation": "ポーツマス条約の会議場面です。日露戦争の講和という重要な節目を実物資料で確認できます。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTreaty_of_Portsmouth.jpg&width=720",
       "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "license": "US public domain; international rights require review",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Portsmouth.jpg"
+      "licenseStatus": "source_page_verified",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Portsmouth.jpg",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Portsmouth.jpg"
     },
     {
       "id": "wmc-securitytreaty",
@@ -1300,9 +1311,10 @@
       "type": "考古資料の写真",
       "explanation": "秦の始皇帝陵の周辺に造られた等身大の兵士像。中国を初めて統一した秦の皇帝の強い力を感じる資料。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Terracotta_army_xian.jpg"
+      "license": "CC BY-SA 3.0",
+      "licenseStatus": "confirmed",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Terracotta_army_xian.jpg",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
     },
     {
       "id": "h26-real-16",
@@ -1405,9 +1417,10 @@
       "type": "当時の絵画",
       "explanation": "元禄文化で活躍した尾形光琳の風神雷神図。俵屋宗達の同題作とは作者も制作年代も異なるので注意。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Korin_Fujin_Raijin.jpg"
+      "license": "Public domain (PDM)",
+      "licenseStatus": "confirmed",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Korin_Fujin_Raijin.jpg",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
     },
     {
       "id": "authentic-2026-030",
@@ -3647,11 +3660,12 @@
       "credit": "1820年ごろの絵画／パブリックドメイン",
       "explanation": "長崎と関わる歴史資料。長崎の出島を描いた歴史画。幕府が相手や場所を絞って貿易を管理していた様子を示す。建物や船の配置は絵に描かれた時代の姿で、現代の写真ではない。",
       "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "license": "Public domain (PDM)",
+      "licenseStatus": "confirmed",
       "coverageOf": "長崎",
       "sourceId": "h23-real-14",
-      "coverageType": "直接の資料"
+      "coverageType": "直接の資料",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
     },
     {
       "id": "term-cover-ch30-03",

@@ -1,0 +1,66 @@
+{
+  "scope": "Local image integrity audit plus limited manual review of documented Commons source pages; image bytes still unavailable for missing records",
+  "chapters": 31,
+  "media_records": 256,
+  "source_pages_verified_this_turn": 14,
+  "new_files_downloaded_this_turn": 0,
+  "valid_local_files": 75,
+  "no_valid_local_file": 181,
+  "valid_anchors": 256,
+  "invalid_anchors": [],
+  "different_local_image_hashes": 63,
+  "byte_identical_image_groups": [
+    [
+      "h03-real-32",
+      "term-cover-ch13-01",
+      "term-cover-ch28-01"
+    ],
+    [
+      "wmc-hideyoshi",
+      "term-cover-ch02-11"
+    ],
+    [
+      "wmc-nobunaga",
+      "term-cover-ch02-10"
+    ],
+    [
+      "authentic-2026-036",
+      "term-cover-ch02-08",
+      "term-cover-ch13-04"
+    ],
+    [
+      "h05-real-27",
+      "term-cover-ch02-12"
+    ],
+    [
+      "wmc-yoshimune",
+      "term-cover-ch14-01"
+    ],
+    [
+      "law-goseibai",
+      "term-cover-ch28-03"
+    ],
+    [
+      "law-security",
+      "term-cover-ch17-08"
+    ],
+    [
+      "law-farmland",
+      "term-cover-ch15-06"
+    ],
+    [
+      "term-cover-ch17-13",
+      "verified-labor-laws-context"
+    ]
+  ],
+  "license_status_counts": {
+    "confirmed": 13,
+    "source_page_review_needed": 234,
+    "permission_review_required": 6,
+    "source_page_verified": 3
+  },
+  "license_explicitly_confirmed": 13,
+  "source_page_only_verified": 3,
+  "rights_not_explicitly_confirmed": 243,
+  "warning": "File readability does not prove the correct historical subject, source link health, or permission to redistribute."
+}

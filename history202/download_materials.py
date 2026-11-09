@@ -1,84 +1,273 @@
 #!/usr/bin/env python3
-"""Download genuine historical images conservatively, preserving existing verified files."""
-import io, json, os, pathlib, random, time, urllib.error, urllib.parse, urllib.request
-from PIL import Image
+"""Fetch REAL historical-source images into history202/authentic_images.
+
+Resumable, never fabricates images, and never treats a valid local file as missing.
+A successful byte download confirms file readability, NOT subject accuracy or reuse rights.
+The image manifest's existing source/rights information is retained unchanged.
+"""
+import collections
+import concurrent.futures
+import hashlib
+import io
+import html
+import re
+import json
+import os
+import pathlib
+import random
+import shutil
+import threading
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+
+from PIL import Image, ImageOps, UnidentifiedImageError
+
 ROOT = pathlib.Path(__file__).resolve().parent
 ASSETS = ROOT / 'authentic_images'
-ASSETS.mkdir(exist_ok=True)
+ASSETS.mkdir(parents=True, exist_ok=True)
 ITEMS = json.loads((ROOT / 'real-materials.json').read_text(encoding='utf-8'))['items']
-BATCH = max(1, min(50, int(os.environ.get('HISTORY202_BATCH', '5'))))
-DELAY = max(2.0, float(os.environ.get('HISTORY202_DELAY', '5')))
+BATCH = max(1, min(len(ITEMS), int(os.environ.get('HISTORY202_BATCH', str(len(ITEMS))))))
+WORKERS = max(1, min(3, int(os.environ.get('HISTORY202_WORKERS', '2'))))
+DELAY = max(1.8, float(os.environ.get('HISTORY202_DELAY', '3.0')))
+MAX_BYTES = 20_000_000
+REQUEST_TIMEOUT = 30
+USER_AGENT = 'JukenCampHistoryEducation/1.1 (educational archival images; github.com/juken-camp/slide-de-anki)'
 
-def candidates(item):
-    urls = [item['image']]
-    source = item.get('sourceUrl', '')
-    if source.startswith('https://commons.wikimedia.org/wiki/File:'):
-        name = urllib.parse.unquote(source.split('/wiki/File:', 1)[1])
-        for width in (640, 400):
-            urls.append('https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(name) + '?width=' + str(width))
-    return list(dict.fromkeys(urls))
+# One global request gap across parallel workers; do not hammer Commons.
+_lock = threading.Lock()
+_next_request = 0.0
+
+
+def paced_request(url, allow_json=False):
+    global _next_request
+    with _lock:
+        now = time.monotonic()
+        wait = max(0.0, _next_request - now)
+        _next_request = max(now, _next_request) + DELAY + random.uniform(0, 0.4)
+    if wait:
+        time.sleep(wait)
+    req = urllib.request.Request(url, headers={
+        'User-Agent': USER_AGENT,
+        'Accept': 'image/avif,image/webp,image/png,image/jpeg,image/*;q=0.8',
+        'Referer': 'https://commons.wikimedia.org/',
+    })
+    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
+        mime = resp.headers.get('Content-Type', '').split(';')[0].strip().lower()
+        if mime.startswith('text/') or mime == 'application/pdf' or (mime == 'application/json' and not allow_json):
+            raise ValueError(f'not a supported raster image: {mime}')
+        length = resp.headers.get('Content-Length')
+        if length and int(length) > MAX_BYTES:
+            raise ValueError('image exceeds 20 MB')
+        data = resp.read(MAX_BYTES + 1)
+        if len(data) > MAX_BYTES:
+            raise ValueError('image exceeds 20 MB')
+        return data
+
 
 def valid(path):
     try:
-        with Image.open(path) as im:
-            im.verify()
-        return True
-    except Exception:
+        with Image.open(path) as image:
+            image.verify()
+        with Image.open(path) as image:
+            return image.width >= 100 and image.height >= 80
+    except (OSError, ValueError, UnidentifiedImageError):
         return False
 
-def fetch(item):
-    dest = ASSETS / (item['id'] + '.webp')
+
+def commons_filename(item):
+    source = item.get('sourceUrl', '')
+    parsed = urllib.parse.urlparse(source)
+    if parsed.hostname != 'commons.wikimedia.org':
+        return None
+    if '/wiki/File:' not in parsed.path:
+        return None
+    name = urllib.parse.unquote(parsed.path.split('/wiki/File:', 1)[1]).replace(' ', '_')
+    return name if name else None
+
+
+def commons_metadata(item):
+    """Get the canonical Wikimedia thumbnail plus license, when available.
+
+    A successful metadata check is NOT a guarantee that a particular caption is accurate.
+    """
+    name = commons_filename(item)
+    if not name:
+        return None
+    api = ('https://commons.wikimedia.org/w/api.php?' + urllib.parse.urlencode({
+        'action': 'query', 'format': 'json', 'formatversion': 2,
+        'prop': 'imageinfo', 'iiprop': 'url|extmetadata',
+        'iiurlwidth': 720, 'titles': 'File:' + name,
+    }))
+    try:
+        raw = paced_request(api, allow_json=True)
+        res = json.loads(raw)
+        page = res['query']['pages'][0]
+        infos = page.get('imageinfo') or []
+        if not infos:
+            return {'error': 'Wikimedia Commons file does not exist or lacks imageinfo'}
+        info = infos[0]
+        extra = info.get('extmetadata') or {}
+        license_text = html.unescape(re.sub(r'<[^>]*>', '', extra.get('LicenseShortName', {}).get('value',''))).strip()
+        source_url = info.get('descriptionurl', item.get('sourceUrl',''))
+        return {'license': license_text, 'thumb': info.get('thumburl',''),
+                'original': info.get('url',''), 'source': source_url,
+                'restricted': extra.get('Restrictions', {}).get('value', '')}
+    except Exception as exc:
+        return {'error': type(exc).__name__ + ': ' + str(exc)[:160]}
+
+
+def licensed_for_distribution(metadata, item):
+    if item.get('licenseStatus') == 'confirmed':
+        return True
+    if not metadata or metadata.get('error') or metadata.get('restricted'):
+        return False
+    name = metadata.get('license', '').casefold()
+    return any(tag in name for tag in ('public domain', 'cc by', 'cc0', 'pdm', 'creative commons zero'))
+
+
+def candidates(item, metadata=None):
+    urls = []
+    if metadata and not metadata.get('error'):
+        urls.extend([metadata.get('thumb',''), metadata.get('original','')])
+    name = commons_filename(item)
+    if name:
+        encoded = urllib.parse.quote(name, safe='()!$&\'*,;=:@-_.~')
+        base = 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encoded
+        md5 = hashlib.md5(name.encode('utf-8')).hexdigest()
+        thumb_base = f'https://upload.wikimedia.org/wikipedia/commons/thumb/{md5[0]}/{md5[:2]}/{encoded}/'
+        if name.lower().endswith(('.jpg', '.jpeg', '.png', '.webp', '.gif')):
+            urls += [thumb_base + f'{size}px-{encoded}' for size in (640, 320)]
+        urls += [f'https://upload.wikimedia.org/wikipedia/commons/{md5[0]}/{md5[:2]}/{encoded}']
+        urls += [base + '?width=640', base + '?width=360']
+    urls.append(item.get('image',''))
+    return list(dict.fromkeys(x for x in urls if x.startswith('https://')))
+
+
+def decode_and_save(raw, target):
+    with Image.open(io.BytesIO(raw)) as im:
+        im.load()
+        if im.width < 100 or im.height < 80:
+            raise ValueError('image too small (<100x80)')
+        if im.width * im.height > 80_000_000:
+            raise ValueError('image dimensions too large')
+        im = ImageOps.exif_transpose(im)
+        im.thumbnail((1400, 1400))
+        if im.mode not in ('RGB', 'RGBA'):
+            im = im.convert('RGB')
+        temp = target.with_suffix('.webp.part')
+        try:
+            im.save(temp, format='WEBP', quality=84, method=5)
+            if not valid(temp):
+                raise ValueError('saved file failed integrity check')
+            temp.replace(target)
+        finally:
+            if temp.exists():
+                temp.unlink()
+
+
+def fetch_unique(item):
     errors = []
-    for url in candidates(item):
-        for attempt in range(2):
+    metadata = commons_metadata(item)
+    if commons_filename(item):
+        if metadata and metadata.get('restricted'):
+            return None, 'Commons metadata explicitly includes use restrictions; manual review required'
+        # Commons source pages may have permissive licenses even when an API call is rate-limited.
+        # Preserve rights uncertainty in the report rather than hallucinating a license.
+    elif item.get('licenseStatus') != 'confirmed':
+        return None, 'Non-Commons source: redistribution rights not confirmed (not auto-downloaded)'
+    target = ASSETS / (item['id'] + '.webp')
+    for url in candidates(item, metadata):
+        for retry in range(2):
             try:
-                time.sleep(DELAY + random.uniform(0, 1.5))
-                req = urllib.request.Request(url, headers={
-                    'User-Agent': 'JukenCampHistoryEducation/1.0 (educational historical materials; contact via github.com/juken-camp/slide-de-anki)',
-                    'Accept': 'image/webp,image/png,image/jpeg,image/*'})
-                with urllib.request.urlopen(req, timeout=30) as resp:
-                    if int(resp.headers.get('Content-Length', '0')) > 18000000:
-                        raise ValueError('file too large')
-                    raw = resp.read(18000001)
-                if len(raw) > 18000000:
-                    raise ValueError('file too large')
-                with Image.open(io.BytesIO(raw)) as im:
-                    im.load()
-                    if im.width < 100 or im.height < 80:
-                        raise ValueError('image too small')
-                    if im.width * im.height > 70000000:
-                        raise ValueError('image too large')
-                    im.thumbnail((1400, 1400))
-                    if im.mode not in ('RGB', 'RGBA'):
-                        im = im.convert('RGB')
-                    tmp = dest.with_suffix('.tmp')
-                    im.save(tmp, 'WEBP', quality=84, method=5)
-                    tmp.replace(dest)
-                return None
-            except urllib.error.HTTPError as e:
-                errors.append(f'HTTP {e.code}')
-                if e.code == 429:
-                    retry = e.headers.get('Retry-After', '')
-                    try: wait = min(120, max(30, int(retry)))
-                    except ValueError: wait = 45 * (attempt + 1)
-                    print(f'Rate limited; waiting {wait}s', flush=True)
-                    time.sleep(wait)
-                elif e.code in (403, 404):
+                raw = paced_request(url)
+                decode_and_save(raw, target)
+                return (target, None)
+            except urllib.error.HTTPError as exc:
+                errors.append(f'HTTP {exc.code} at {urllib.parse.urlparse(url).hostname}')
+                if exc.code == 429:
+                    wait = exc.headers.get('Retry-After')
+                    try:
+                        seconds = min(90, max(12, int(wait)))
+                    except (TypeError, ValueError):
+                        seconds = min(60, 20 * (retry + 1))
+                    time.sleep(seconds)
+                elif exc.code in (403, 404, 410):
                     break
-            except Exception as e:
-                errors.append(type(e).__name__ + ': ' + str(e)[:100])
-    return '; '.join(errors[-3:]) or 'Unknown error'
+                else:
+                    time.sleep(3 * (retry + 1))
+            except Exception as exc:
+                errors.append(type(exc).__name__ + ': ' + str(exc)[:95])
+                if isinstance(exc, (ValueError, UnidentifiedImageError)):
+                    break
+                time.sleep(2 * (retry + 1))
+    return (None, '; '.join(errors[-5:]) or 'All source URLs failed')
+
+
+def audit_mapping():
+    return {item['id']: f'history202/authentic_images/{item["id"]}.webp'
+            for item in ITEMS if valid(ASSETS / (item['id'] + '.webp'))}
+
+
+def run():
+    items_by_source = collections.defaultdict(list)
+    for item in ITEMS:
+        if not valid(ASSETS / (item['id'] + '.webp')):
+            items_by_source[item.get('sourceUrl') or item['image']].append(item)
+    groups = list(items_by_source.values())
+    selected = []
+    size = 0
+    for group in groups:
+        if size + len(group) > BATCH and selected:
+            break
+        selected.append(group)
+        size += len(group)
+    print(f'Already valid: {len(ITEMS)-sum(map(len, groups))}/{len(ITEMS)}; '
+          f'pending: {sum(map(len, groups))}; selected: {size}; source requests: {len(selected)}', flush=True)
+    failures = {}
+    attempts = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        jobs = {pool.submit(fetch_unique, group[0]): group for group in selected}
+        for k, future in enumerate(concurrent.futures.as_completed(jobs), 1):
+            group = jobs[future]
+            try:
+                target, error = future.result()
+            except Exception as exc:
+                target, error = None, type(exc).__name__ + ': ' + str(exc)
+            if target:
+                for item in group[1:]:
+                    dest = ASSETS / (item['id'] + '.webp')
+                    shutil.copyfile(target, dest)
+                for item in group:
+                    attempts[item['id']] = 'saved'
+            else:
+                for item in group:
+                    attempts[item['id']] = 'failed'
+                    failures[item['id']] = error
+            print(f'{k}/{len(selected)} {group[0]["id"]} ({len(group)} uses): '
+                  f'{"OK" if target else error}', flush=True)
+
+    mapping = audit_mapping()
+    remaining = [item for item in ITEMS if item['id'] not in mapping]
+    report = {
+        'total': len(ITEMS),
+        'downloaded': len(mapping),
+        'missing': len(remaining),
+        'newly_saved_this_run': sum(1 for k, v in attempts.items() if v == 'saved' and k in mapping),
+        'attempted_this_run': len(attempts),
+        'failed': [{'id': item['id'], 'chapter': item['chapter'], 'caption': item['caption'],
+                    'reason': (failures.get(item['id']) or 'Not attempted in this run'),
+                    'sourceUrl': item['sourceUrl']}
+                   for item in remaining],
+        'license_caution': 'Commons media fetched for review; verify copyright, attribution and share-alike before publishing. Non-Commons unverified sources are skipped.',
+        'accuracy_caution': 'Image content and historical attribution require human review.',
+    }
+    (ROOT / 'local-images.json').write_text(json.dumps(mapping, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    (ROOT / 'image-download-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    print(f'Valid local: {len(mapping)}/{len(ITEMS)}, missing: {len(remaining)}', flush=True)
+    return 0
+
 
 if __name__ == '__main__':
-    pending = [i for i in ITEMS if not valid(ASSETS / (i['id'] + '.webp'))]
-    print(f'Already present: {len(ITEMS) - len(pending)}; pending: {len(pending)}; batch: {BATCH}', flush=True)
-    attempted = {}
-    for idx, item in enumerate(pending[:BATCH], 1):
-        error = fetch(item)
-        attempted[item['id']] = error
-        print(f'{idx}/{min(BATCH,len(pending))} {item["id"]}: {"saved" if error is None else error}', flush=True)
-    mapping = {i['id']: str((ASSETS / (i['id'] + '.webp')).relative_to(ROOT.parent)) for i in ITEMS if valid(ASSETS / (i['id'] + '.webp'))}
-    failures = [{'id': i['id'], 'error': attempted.get(i['id']) or 'Not attempted in this batch'} for i in ITEMS if i['id'] not in mapping]
-    (ROOT / 'local-images.json').write_text(json.dumps(mapping, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    (ROOT / 'image-download-report.json').write_text(json.dumps({'total': len(ITEMS), 'downloaded': len(mapping), 'failed': failures, 'attempted_this_run': len(attempted)}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(f'Images saved: {len(mapping)}/{len(ITEMS)}; remaining: {len(failures)}', flush=True)
+    raise SystemExit(run())

@@ -65,7 +65,7 @@ def fetch_commons_metadata(source):
     filename=source['commonsFile'].replace(' ','_')
     url='https://commons.wikimedia.org/w/api.php?'+urllib.parse.urlencode({
         'action':'query','format':'json','formatversion':2,'redirects':1,
-        'prop':'imageinfo','iiprop':'url|extmetadata|sha1', 'iiurlwidth':1000,
+        'prop':'imageinfo','iiprop':'url|extmetadata|sha1|mime', 'iiurlwidth':1000,
         'titles':'File:'+filename})
     payload=json.loads(get_bytes(url,expect_json=True).decode('utf-8'))
     pages=payload.get('query',{}).get('pages') or []
@@ -86,13 +86,17 @@ def fetch_commons_metadata(source):
     if not allowed: raise ValueError('Commons reuse license was not confirmed: '+(license_name or 'missing license'))
     if re.search(r'noncommercial|non-commercial|no.?derivative|no.?redistribution',restrictions,re.I):
         raise ValueError('Commons metadata contains rights restriction: '+restrictions[:110])
-    src=info.get('thumburl') or info.get('url')
-    if not src or not src.startswith('https://'): raise ValueError('Commons did not provide a HTTPS raster URL')
+    # For PDF documents, Commons' preview is a raster rendering of its first page.
+    # Never use the PDF itself as the in-app image or claim the preview is a specific legal clause.
+    mimetype=str(info.get('mime','')).lower()
+    is_pdf=filename.casefold().endswith('.pdf') or mimetype=='application/pdf'
+    src=(info.get('thumburl') if is_pdf else (info.get('thumburl') or info.get('url')))
+    if not src or not src.startswith('https://'): raise ValueError('Commons did not provide a HTTPS raster thumbnail')
     canonical=info.get('descriptionurl') or ('https://commons.wikimedia.org/wiki/File:'+urllib.parse.quote(filename))
     expected=source.get('expectedOriginalSha1')
     if expected and info.get('sha1') and info['sha1'].lower()!=expected.lower():
         raise ValueError('original Commons file SHA1 changed since previous manual identification')
-    return {'url':src,'full_url':info.get('url'),'page':canonical,
+    return {'url':src,'full_url':(None if is_pdf else info.get('url')),'page':canonical,'source_mime':mimetype,
             'license':license_name,'license_url':license_url,
             'restrictions':restrictions,'sha1':info.get('sha1',''),
             'artist':field(meta,'Artist'),'credit':field(meta,'Credit')}
@@ -162,7 +166,7 @@ def run():
             atomic_write(dest,data)
             for key in ('caption','explanation','type','coverageOf'):
                 current[key]=source[key]
-            current['image']=meta['full_url'] or meta['url']
+            current['image']=meta['url']  # Always a displayable raster preview (never a PDF URL)
             current['sourceUrl']=meta['page']
             current['credit']=('Wikimedia Commons／'+source['commonsFile']+
                                ('／'+meta['artist'] if meta['artist'] else ''))
@@ -171,8 +175,8 @@ def run():
             current['licenseStatus']='source_page_verified'
             current['imageSelection']='curated-source-20261109'
             current['localImage']=True
-            current['review']=('原資料を個別確認した候補。Commons APIで再利用条件と画像ファイルを照合・保存。'
-                                '画像の歴史的内容は公開後の教材レビューも必要。')
+            current['review']=('所蔵情報・資料名を出典で確認。Commons APIのライセンス表示と画像ファイルを照合して保存。'
+                                'PDFの場合は先頭ページのプレビュー。該当本文ページ・正確な内容は目視確認が必要。')
             local[item_id]='history202/authentic_images/'+item_id+'.webp'
             rel='history202/authentic_images/'+item_id+'.webp'
             changed_paths.append(rel)
@@ -200,7 +204,7 @@ def run():
     report={'targeted':len(targets),'replaced':changed_count,'retained':len(targets)-changed_count,
             'total_materials':len(items),'local_images_indexed':len(local),
             'changed_image_paths':changed_paths,
-            'note':'Successful downloads and image decoding do not guarantee every learning caption or exhibit claim was independently audited.',
+            'note':'Commons PDF thumbnails show first page only. Source identity and reuse conditions are checked, but page-level historical relevance and captions still require manual review. No replacement occurs on failure.',
             'results':results}
     summary=(json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
     atomic_write(REPORT,summary)

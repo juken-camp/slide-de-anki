@@ -1,0 +1,14 @@
+2026-11-09 | History202 2nd quality replacement batch
+GitHub main manifest is authoritative. The current curated_sources.json contains 5 new IDs.
+Do not restore old application ZIPs or upload real-materials.json from this package.
+Paste these files into history202/ (3 of 4 files are code/JSON, plus this note), preserving folder structure:
+- curate_original_sources.py   (new handling of Commons PDF raster thumbnails and accurate caption logging)
+- curated_sources.json         (5 new candidates; overwrites only prior candidate LIST, NOT actual images)
+- curated_sources_round1.json  (backup of the previous 9-candidate listing)
+- ROUND2_NOTES_20261109.txt    (this file)
+Run existing GitHub Actions: Curate History 202 primary-source images -> Run workflow (main).
+A green check confirms successful workflow execution, NOT 5/5 image substitutions or manual historical accuracy.
+Read history202/curation-batch-result.json after the run; it records every success/failure.
+Existing image files are kept on all failures, and local-image index grows only on verified downloads.
+Important: sword-hunt and conscription source scans are PDF first-page thumbnails. They may display the source's cover, not the clause. Do not label such a preview as the precise article text.
+If the 1879 item succeeds, its old 'satirical cartoon' caption is explicitly changed to a historical legal document. These are different materials.

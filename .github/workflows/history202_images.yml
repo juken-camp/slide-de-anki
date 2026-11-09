@@ -6,7 +6,7 @@ permissions:
 jobs:
   download:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,27 +18,58 @@ jobs:
         run: python -m pip install --disable-pip-version-check pillow
       - name: Download and validate actual historical images
         run: python history202/download_materials.py
-      - name: Show verified download totals
+      # Save the actual image bytes BEFORE the report display or git push.
+      # This step still runs if another step fails; WebP files are already compressed.
+      - name: Back up all locally downloaded images and indexes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-local-images-backup
+          path: |
+            history202/authentic_images/*.webp
+            history202/local-images.json
+            history202/image-download-report.json
+          retention-days: 7
+          compression-level: 0
+          if-no-files-found: warn
+        continue-on-error: true
+      - name: Show downloaded image totals and remaining reasons
+        if: always()
+        continue-on-error: true
         run: |
           python - <<'PY'
-          import json, pathlib
-          root=pathlib.Path('history202')
-          report=json.loads((root/'image-download-report.json').read_text())
-          print('Downloaded:', report['downloaded'], 'of', report['total'])
-          print('Failed:', len(report['failed']))
-          for item in report['failed']:
-              print(item['id'], item['error'][:250])
+          import json
+          from pathlib import Path
+          report_path = Path('history202/image-download-report.json')
+          if not report_path.is_file():
+              print('Download report was not produced.')
+          else:
+              report = json.loads(report_path.read_text(encoding='utf-8'))
+              print('Readable local image files:', report.get('downloaded', '?'),
+                    'of', report.get('total', '?'))
+              print('Still missing:', report.get('missing', '?'))
+              for item in report.get('failed', []):
+                  reason = item.get('reason') or item.get('error') or 'No reason recorded'
+                  print(str(item.get('id', '?')), str(reason)[:250])
+              print('Image bytes being readable does NOT verify historical accuracy.')
           PY
-      - name: Commit verified downloaded images and index
+      - name: Commit locally downloaded images and indexes
+        # Report display is intentionally nonfatal, and the backup runs first.
+        if: success()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add history202/authentic_images/ history202/local-images.json history202/image-download-report.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Store verified authentic history 202 materials locally'
-            git push
+            git commit -m 'Store readable history 202 source images locally'
+            # The main branch may have moved during the 30+ minute download.
+            git fetch origin "${GITHUB_REF_NAME}"
+            git rebase "origin/${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          else
+            echo 'Nothing new to commit.'
           fi
-      - name: Upload failure report
+      - name: Upload download report separately
         if: always()
         uses: actions/upload-artifact@v4
         with:

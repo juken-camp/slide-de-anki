@@ -1,0 +1,59 @@
+name: Curate History 202 primary-source images
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-quality-curation
+  cancel-in-progress: false
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image support
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Fetch vetted primary sources and preserve original files on failure
+        id: curate
+        continue-on-error: true
+        run: python history202/curate_original_sources.py
+      - name: Always upload run results and only the changed image patch
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-curation-batch-results
+          path: history202/curation-export/
+          if-no-files-found: warn
+          compression-level: 6
+      - name: Commit verified images and their mapping from the current checked-out main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add history202/authentic_images/ history202/real-materials.json history202/local-images.json history202/curation-batch-result.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Improve history202 primary source images with curated batch'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No verified changes to commit.'
+          fi
+      - name: Explain remaining sources and flag if none replaced
+        run: |
+          python - <<'PY'
+          import json
+          with open('history202/curation-batch-result.json',encoding='utf-8') as f:
+              r=json.load(f)
+          print('Replaced:',r['replaced'],'of',r['targeted'])
+          print('Retained original:',r['retained'])
+          print('Locally indexed:',r['local_images_indexed'])
+          for item in r['results']:
+              print(item['id'],item['status'],item.get('reason',''))
+          if r['replaced']==0:
+              raise SystemExit('No new source image passed validation. See the uploaded results.')
+          PY

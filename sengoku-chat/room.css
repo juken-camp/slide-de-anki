@@ -7,7 +7,7 @@ html,body{height:100%;width:100%;margin:0;overflow:hidden!important;overscroll-b
 #group-title{cursor:default;display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:8px 0}
 #group-view .group-heading-text{min-width:0;gap:8px}
 #sengoku-period-badge{flex:none;border:1px solid #dcb68b;color:#a56538;border-radius:9px;font-size:10px;font-weight:800;padding:3px 7px;white-space:nowrap}
-.sengoku-avatar-placeholder{display:block!important;flex-shrink:0;border:1.5px dashed #d1a985!important;background:rgba(182,127,71,.06)!important;border-radius:14px;overflow:hidden}
+.sengoku-avatar-placeholder{display:block!important;flex-shrink:0;border:1.5px dashed #d1a985!important;background-color:rgba(182,127,71,.06)!important;border-radius:14px;overflow:hidden}
 #group-header-avatar{width:40px;height:40px;cursor:default!important}
 .sengoku-avatar-placeholder img{display:block;height:100%;width:100%;object-fit:cover}
 #sengoku-empty,#sengoku-empty-members{padding:60px 20px 20px;text-align:center;font-size:13px;font-weight:700;opacity:.65}
@@ -25,7 +25,7 @@ html,body{height:100%;width:100%;margin:0;overflow:hidden!important;overscroll-b
 #group-member-list .sengoku-member img{width:100%;height:100%;object-fit:cover}
 html[data-persona="cyber"] #group-members{background:#0f1430!important}
 html[data-persona="cyber"] #sengoku-period-badge{color:#8fd6ec;border-color:#446e89}
-html[data-persona="cyber"] .sengoku-avatar-placeholder{background:#10283d!important;border-color:#446e89!important}
+html[data-persona="cyber"] .sengoku-avatar-placeholder{background-color:#10283d!important;border-color:#446e89!important}
 html[data-persona="cyber"] #group-member-list .sengoku-member{border-color:#315576}
 @media(max-width:360px){#sengoku-period-badge{padding:2px 5px;font-size:9px}#group-view .group-heading-text{gap:4px}}
 /* Match the original composer line: a SHORT, anchored explanation tray. */
@@ -63,7 +63,7 @@ html[data-persona="cyber"] #sengoku-explanation{background:#0f1430;border-top-co
   display:block!important;
   padding:0!important;
   border:0!important;
-  background:transparent!important;
+  background-color:transparent!important;
   box-shadow:none!important;
   overflow:hidden;
   flex-shrink:0;
@@ -74,7 +74,7 @@ html[data-persona="cyber"] #sengoku-explanation{background:#0f1430;border-top-co
 }
 html[data-persona="cyber"] #group-view #group-header-avatar,
 html[data-persona="cyber"] #group-members .group-members-avatar {
-  border:0!important;background:transparent!important;
+  border:0!important;background-color:transparent!important;
 }
 
 
@@ -89,7 +89,7 @@ html[data-persona="cyber"] #group-members .group-members-avatar {
   padding:10px 12px!important;
   border-bottom:1px solid #ead2b9!important;
   box-shadow:none!important;
-  background:transparent!important;
+  background-color:transparent!important;
 }
 html[data-persona="cyber"] #group-view > .chat-header,
 html[data-persona="cyber"] #group-members > .members-header{border-bottom-color:#315576!important}

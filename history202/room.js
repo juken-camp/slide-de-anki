@@ -31,7 +31,7 @@ document.addEventListener('pointerdown',event=>{
 },{passive:true});
 
 $('h202-back').addEventListener('click',close);
-const ROOM_ICON_SRC='/icons/history202.webp?v=20261109-history202-roomicon-v1';
+const ROOM_ICON_SRC=document.querySelector('#group-header-avatar img')?.getAttribute('src') || '/icons/history202.webp';
 function ensureRoomIcon(node){
  if(!node) return;
  let img=node.querySelector('img');

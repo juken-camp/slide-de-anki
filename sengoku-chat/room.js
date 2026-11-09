@@ -123,9 +123,16 @@
     // The configured room image may be blank. Use the real local Sengoku artwork
     // for both room headers without changing historical speakers' portraits.
     const roomHeader=container && (container.id==='group-header-avatar'||container.classList.contains('group-members-avatar'));
+    // Always keep the self-contained artwork already embedded in the HTML.
+    // The config's image field is intentionally blank for this room.
+    const embedded=roomHeader ? container.querySelector('img[src^="data:image/webp;base64,"]')?.getAttribute('src') : null;
+    const src=roomHeader ? (embedded || '/icons/sengoku.webp') : safeLocalImage(url);
     container.replaceChildren();
-    const src=safeLocalImage(url)||(roomHeader?'/icons/sengoku.webp?v=20261109-sengoku-head-v1':null);
-    if(src){const img=document.createElement('img');img.alt='';img.src=src;img.onerror=()=>img.remove();container.append(img);}
+    if(src){
+      const img=document.createElement('img');img.alt='';img.decoding='async';img.src=src;
+      if(!roomHeader)img.onerror=()=>img.remove();
+      container.append(img);
+    }
   }
   function jstKey(ms){return new Date(ms+JST_MS).toISOString().slice(0,10);}
   function dateLabel(ms){

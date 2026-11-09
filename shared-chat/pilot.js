@@ -118,7 +118,10 @@
   for(const r of d.rooms){
    const button=node('button',undefined,'room-entry');button.type='button';
    button.disabled=r.status==='pending';button.dataset.pending=r.status==='pending'?'1':'';
-   const icon=node('span','🌀','room-entry-icon');icon.setAttribute('aria-hidden','true');
+   const icon=node('span',undefined,'room-entry-icon');icon.setAttribute('aria-hidden','true');
+   const iconImage=document.createElement('img');iconImage.alt='';iconImage.width=256;iconImage.height=256;
+   iconImage.src=document.querySelector('.chat-room-icon')?.getAttribute('src')||'/icons/shared-chat.webp';
+   icon.append(iconImage);
    const info=node('span',undefined,'room-entry-text');
    info.append(node('span',r.name,'room-entry-name'),node('span',r.status==='pending'?'管理者の承認待ち':'タップして会話を開く','room-entry-desc'));
    const trailing=node('span',undefined,'room-entry-trailing');

@@ -200,3 +200,9 @@ html[data-shared-chat-open] .app-shell{
 .chat-room-mark .chat-room-icon{display:block;width:100%;height:100%;object-fit:cover;border-radius:12px}
 @media(max-width:390px){.portal-portrait.portal-shared-art{width:88px;height:88px}.portal-portrait.portal-shared-art .portal-shared-icon{width:100%;height:100%}}
 @media(max-width:340px){.portal-portrait.portal-shared-art{width:78px;height:78px}}
+
+/* The shared room list has the same original 256px artwork as the header. */
+.room-entry-icon:has(img){border:0;background:transparent;overflow:hidden;padding:0}
+.room-entry-icon img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px}
+/* Keep its icon even when the room header becomes narrow. */
+@media(max-width:340px){.chat-room-mark:has(.chat-room-icon){display:grid}}

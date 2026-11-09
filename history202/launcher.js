@@ -23,7 +23,7 @@ html[data-persona=cyber] #history202-panel{background:#080d20}
 const list=document.getElementById('list-view');const sengokuEntry=list?.querySelector('.sengoku-chat-entry');
 if(!list){console.error('history202: list-view is not available');return;}
 const card=document.createElement('div');card.className='h202-entry char-card';card.setAttribute('role','button');card.tabIndex=0;card.setAttribute('aria-label','歴史の重要ワード202を開く');
-card.innerHTML='<div class="card-inner"><span class="h202-card-avatar" aria-hidden="true"></span><div class="card-info"><div class="card-name-row sengoku-entry-name-row"><span class="h202-card-name sengoku-entry-title">歴史の重要ワード202</span><span class="sengoku-entry-limited">入試対策</span></div><div class="h202-card-caption">31の物語で、歴史の重要ワード202を覚えよう！</div></div></div>';
+card.innerHTML='<div class="card-inner"><span class="h202-card-avatar" aria-hidden="true"></span><div class="card-info"><div class="card-name-row sengoku-entry-name-row"><span class="h202-card-name sengoku-entry-title">歴史の重要ワード202</span><span class="sengoku-entry-limited">入試対策</span></div><div class="h202-card-caption">31のチャットで、歴史の重要ワードを攻略！</div></div></div>';
 if(sengokuEntry)sengokuEntry.insertAdjacentElement('afterend',card);
 else list.querySelector('.shared-chat-join-entry')?.insertAdjacentElement('beforebegin',card) || list.prepend(card);
 const panel=document.createElement('section');panel.id='history202-panel';panel.hidden=true;panel.setAttribute('aria-label','歴史の重要ワード202');

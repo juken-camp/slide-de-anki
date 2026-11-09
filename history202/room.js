@@ -31,6 +31,22 @@ document.addEventListener('pointerdown',event=>{
 },{passive:true});
 
 $('h202-back').addEventListener('click',close);
+const ROOM_ICON_SRC='/icons/history202.webp?v=20261109-history202-roomicon-v1';
+function ensureRoomIcon(node){
+ if(!node) return;
+ let img=node.querySelector('img');
+ if(!img){
+  img=document.createElement('img');
+  img.alt='';img.width=256;img.height=256;img.decoding='async';
+  node.replaceChildren(img);
+ }
+ img.src=ROOM_ICON_SRC;
+}
+function syncRoomIcons(){
+ ensureRoomIcon(document.getElementById('group-header-avatar'));
+ ensureRoomIcon(document.querySelector('#group-members .group-members-avatar'));
+}
+
 function hostWindow(){try{return parent!==window&&parent.location.origin===location.origin?parent:null}catch(_){return null}}
 function profileId(person){const m=String(person?.image||'').match(/^history-icons\/(\d+)\.(?:webp|png)$/);return m?Number(m[1]):null}
 function profileAvailable(person){return Number.isInteger(profileId(person))&&!!hostWindow()?.document?.getElementById('card-list')}
@@ -70,7 +86,6 @@ function replaceFakeCards(chapters,realMaterials){
   ch.messages=ch.messages.filter(m=>!(m.kind==='image'&&/history202\/(?:term_cards|materials)\//.test(m.image||''))&&!/^h\d+-(?:termimg-|img-)/.test(m.id||''));
   const additions=items.filter(it=>Number(it.chapter)===Number(ch.id));
   for(const item of additions){
-   // The local-images.json mapping takes precedence once the real scan is saved.
    const imageUrl=item.image||item.imageUrl;
    // Authentic materials also come from public museums, libraries and archival collections.
    // Permit only the explicit asset hosts used in the source manifest.
@@ -84,9 +99,8 @@ function replaceFakeCards(chapters,realMaterials){
    let resolvedImage;
    try{resolvedImage=new URL(imageUrl,location.href)}catch(_){continue}
    if(!item.localImage&&(resolvedImage.protocol!=='https:'||!acceptedImageHosts.has(resolvedImage.hostname)))continue;
-   const directSource=item.sourceUrl;
    const m={id:item.id,speaker:'AI先生',role:'historical',kind:'real-image',text:'資料：'+item.caption,
-    caption:item.caption,image:imageUrl,remoteImage:item.localImage?(item.imageOriginal||null):null,sourceUrl:directSource,credit:item.credit,license:item.license||'出典ページで確認',
+    caption:item.caption,image:imageUrl,remoteImage:item.localImage?(item.imageOriginal||null):null,sourceUrl:item.sourceUrl,credit:item.credit,license:item.license||'出典ページで確認',
     explanation:item.explanation};
    const index=ch.messages.findIndex(v=>v.id===item.after);
    if(index===-1){console.warn('歴史資料の配置先が存在しません',item.id,item.after);continue;}
@@ -113,7 +127,7 @@ $('group-search-close').addEventListener('click',closeSearch);
 $('group-search-clear').addEventListener('click',()=>{searchInput.value='';state.search='';$('group-search-clear').hidden=true;render();searchInput.focus()});
 searchForm.addEventListener('submit',e=>{e.preventDefault();searchInput.blur()});
 searchInput.addEventListener('input',()=>{state.search=searchInput.value.trim().toLocaleLowerCase('ja');$('group-search-clear').hidden=!state.search;render()});
-function openMembers(){if(!state.chapters.length)return;renderMembers();$('group-members').hidden=false;$('group-members-back').focus()}
+function openMembers(){if(!state.chapters.length)return;renderMembers();syncRoomIcons();$('group-members').hidden=false;$('group-members-back').focus()}
 function closeMembers(){$('group-members').hidden=true;$('group-members-direct').focus()}
 $('group-members-direct').addEventListener('click',openMembers);$('group-members-back').addEventListener('click',closeMembers);
 // 戦国グルチャの参加者一覧と同じカード階層（section → char-card → name-row → period）。
@@ -143,6 +157,7 @@ function personalPresence(name,person){
  }catch(_){return null}
 }
 function renderMembers(){
+ syncRoomIcons();
  const list=$('group-member-list');list.replaceChildren();const names=[];
  for(const ch of state.chapters)for(const m of ch.messages)
   if(m.role!=='modern'&&!names.includes(m.speaker))names.push(m.speaker);
@@ -213,10 +228,6 @@ function timeNode(stamp){const el=document.createElement('span');el.className='h
 // Keep the source page accessible even if all remote image hosts are blocked.
 function historicalImageCandidates(m){
  const urls=[m.image];
- // Saved images always take priority; try the original only if the local file fails.
- if(m.remoteImage)urls.push(m.remoteImage);
- // Do not introduce hard-coded scans from libraries with different reuse terms.
- // A verified local WebP is the primary image; fallback details remain in source metadata.
  try{
   const src=new URL(m.sourceUrl||'');
   if(src.hostname==='commons.wikimedia.org'&&src.pathname.startsWith('/wiki/File:')){
@@ -238,12 +249,11 @@ function installHistoricalPhoto(photo,m){
   attempt++;
   if(attempt<candidates.length){photo.src=candidates[attempt];return;}
   const hint=document.createElement('span');hint.className='h202-image-load-failure';
-  const isLocal=/^history202\/authentic_images\//.test(m.image||'');
-  hint.textContent=isLocal?'画像を読み込めませんでした。':'資料画像は未保存です。';
+  hint.textContent='画像を表示できませんでした。';
   const src=m.sourceUrl;
   if(src){try{const url=new URL(src);if(url.protocol==='https:'){
    const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';
-   link.textContent=' 原本サイトで見る';link.addEventListener('click',e=>e.stopPropagation());hint.append(link);
+   link.textContent=' 資料の原本ページを開く';link.addEventListener('click',e=>e.stopPropagation());hint.append(link);
   }}catch(_){}}
   photo.replaceWith(hint);requestShapes();
  });
@@ -282,7 +292,7 @@ function updateEpisodeHeader(ch){
  if(badge){badge.textContent=label;badge.setAttribute('aria-label',label);badge.title=label;}
  const title=$('group-title');if(title){title.title=label+'／31話の目次を開く';title.setAttribute('aria-label','歴史の重要ワード202。'+label+'。目次を開く');}
 }
-function render(){const ci=Math.max(0,state.selected-1),ch=chapterAt(ci);if(!ch)return;updateEpisodeHeader(ch);clearExplanation();inner.replaceChildren();
+function render(){const ci=Math.max(0,state.selected-1),ch=chapterAt(ci);if(!ch)return;syncRoomIcons();updateEpisodeHeader(ch);clearExplanation();inner.replaceChildren();
  const heading=document.createElement('div');heading.className='h202-episode-heading';const btn=document.createElement('button');btn.type='button';btn.setAttribute('aria-label','第'+ch.id+'話。タップで31話の目次を開く');btn.append(document.createTextNode('第'+ch.id+'話　'+ch.category+'（'+ch.count+'項目）'));
  const title=document.createElement('strong');title.textContent=ch.title;const sub=document.createElement('small');sub.textContent=ch.subtitle;btn.append(title,sub);btn.addEventListener('click',openIndex);heading.append(btn);inner.append(heading);
  if(state.materialLoadError){const warn=document.createElement('p');warn.className='h202-material-load-warning';warn.textContent=state.materialLoadError;inner.append(warn)}
@@ -308,7 +318,7 @@ async function load(){try{const responses=await Promise.all(['history202/chapter
  const ids=new Set();for(const ch of script.chapters){if(!Array.isArray(ch.messages)||!ch.messages.length)throw Error('空の話があります');for(const m of ch.messages){if(!m.id||!m.text||!m.speaker||ids.has(m.id))throw Error('会話IDの重複または不足があります');ids.add(m.id)}}
  state.chapters=replaceFakeCards(script.chapters,realMaterials);state.people=people;state.config=config;
  let saved=1;try{saved=Number(localStorage.getItem('history202-last-chapter'))||1}catch(_){}
- chooseChapter(state.chapters.some(c=>c.id===saved)?saved:1,true);firstLoad=false;
+ chooseChapter(state.chapters.some(c=>c.id===saved)?saved:1,true);syncRoomIcons();firstLoad=false;
  }catch(err){inner.replaceChildren();const p=document.createElement('p');p.className='h202-status';p.textContent='会話の読み込みに失敗しました。\n'+String(err.message||err);inner.append(p);console.error(err)}}
 /* Exact copy of Sengoku's existing Himiko bubble-vector function (sengoku-chat/room.js). */
 function shapePath(w,h){

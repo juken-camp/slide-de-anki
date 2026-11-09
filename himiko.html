@@ -7,8 +7,8 @@
 /* Shared room entry: use the original group card geometry; image slot stays empty. */
 #list-view .shared-chat-join-entry{display:block;margin:10px 0 0;text-decoration:none;cursor:pointer;animation:none}
 #list-view .shared-chat-join-entry .card-inner{gap:10px}
-#list-view .shared-chat-join-entry .shared-entry-placeholder{flex:none;width:50px;height:50px;border-radius:15px;border:1.5px dashed #d1a985;background:rgba(182,127,71,.06);overflow:hidden}
-#list-view .shared-chat-join-entry .shared-entry-placeholder img{display:block;width:100%;height:100%;object-fit:cover}
+#list-view .shared-chat-join-entry .shared-entry-placeholder{flex:none;width:50px;height:50px;border-radius:15px;border:0;background:none;overflow:hidden}
+#list-view .shared-chat-join-entry .shared-entry-placeholder img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px}
 #list-view .shared-chat-join-entry .card-info{flex:1;min-width:0}
 #list-view .shared-entry-title{font-size:16px;font-weight:900;line-height:1.4;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#1e293b}
 #list-view .shared-entry-caption{font-size:12px;font-weight:700;line-height:1.6;margin-top:4px;color:#a07960}
@@ -1957,8 +1957,8 @@ html[data-persona="cyber"] #group-view .group-search-current{outline-color:#53c9
 <style id="sengoku-readonly-entry-style">
 #list-view .sengoku-chat-entry{margin:10px 0 0;cursor:pointer;animation:none}
 #list-view .sengoku-chat-entry .card-inner{gap:10px}
-#list-view .sengoku-entry-placeholder{flex:none;width:50px;height:50px;border-radius:15px;border:1.5px dashed #d1a985;background:rgba(182,127,71,.06);overflow:hidden}
-#list-view .sengoku-entry-placeholder img{display:block;width:100%;height:100%;object-fit:cover}
+#list-view .sengoku-entry-placeholder{flex:none;width:50px;height:50px;border-radius:15px;border:0;background:none;overflow:hidden}
+#list-view .sengoku-entry-placeholder img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px}
 #list-view .sengoku-chat-entry .card-info{flex:1;min-width:0}
 #list-view .sengoku-entry-name-row{display:flex;align-items:center;min-width:0;gap:8px;flex-wrap:nowrap}
 #list-view .sengoku-entry-title{font-size:16px;font-weight:900;line-height:1.4;color:#1e293b;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -3843,7 +3843,7 @@ box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUnt
  new MutationObserver(()=>{if(!panel.hidden)sendTheme()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-persona']});
 })();
 </script>
-<script src="history202/launcher.js?v=20261109-threechat-icons-v2" defer></script>
+<script src="history202/launcher.js?v=20261109-threechat-icons-v3" defer></script>
 </body>
 </html>
 

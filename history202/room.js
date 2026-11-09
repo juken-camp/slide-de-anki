@@ -269,7 +269,13 @@ function addRow(m,when,previous){
  }
  inner.append(row);
 }
-function render(){const ci=Math.max(0,state.selected-1),ch=chapterAt(ci);if(!ch)return;clearExplanation();inner.replaceChildren();
+function updateEpisodeHeader(ch){
+ const label='第'+ch.id+'話・'+ch.category+'・'+ch.count+'項目';
+ const badge=$('sengoku-period-badge');
+ if(badge){badge.textContent=label;badge.setAttribute('aria-label',label);badge.title=label;}
+ const title=$('group-title');if(title){title.title=label+'／31話の目次を開く';title.setAttribute('aria-label','歴史の重要ワード202。'+label+'。目次を開く');}
+}
+function render(){const ci=Math.max(0,state.selected-1),ch=chapterAt(ci);if(!ch)return;updateEpisodeHeader(ch);clearExplanation();inner.replaceChildren();
  const heading=document.createElement('div');heading.className='h202-episode-heading';const btn=document.createElement('button');btn.type='button';btn.setAttribute('aria-label','第'+ch.id+'話。タップで31話の目次を開く');btn.append(document.createTextNode('第'+ch.id+'話　'+ch.category+'（'+ch.count+'項目）'));
  const title=document.createElement('strong');title.textContent=ch.title;const sub=document.createElement('small');sub.textContent=ch.subtitle;btn.append(title,sub);btn.addEventListener('click',openIndex);heading.append(btn);inner.append(heading);
  if(state.materialLoadError){const warn=document.createElement('p');warn.className='h202-material-load-warning';warn.textContent=state.materialLoadError;inner.append(warn)}

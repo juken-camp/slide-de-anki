@@ -116,5 +116,41 @@
   },
   "雪舟": {
     "image": "history-icons/011.webp"
+  },
+  "田沼意次": {
+    "image": "history-icons/121.webp"
+  },
+  "松平定信": {
+    "image": "history-icons/122.webp"
+  },
+  "水野忠邦": {
+    "image": "history-icons/123.webp"
+  },
+  "吉田茂": {
+    "image": "history-icons/027.webp"
+  },
+  "マッカーサー": {
+    "image": "history-icons/143.webp"
+  },
+  "原敬": {
+    "image": "history-icons/141.webp"
+  },
+  "佐藤栄作": {
+    "image": "history-icons/144.webp"
+  },
+  "大塩平八郎": {
+    "image": "history-icons/124.webp"
+  },
+  "リンカーン": {
+    "image": "history-icons/043.webp"
+  },
+  "ウィルソン": {
+    "image": "history-icons/148.webp"
+  },
+  "ルーズベルト": {
+    "image": "history-icons/051.webp"
+  },
+  "陸奥宗光": {
+    "image": "history-icons/095.webp"
   }
 }

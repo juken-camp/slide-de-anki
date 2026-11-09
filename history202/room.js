@@ -127,8 +127,8 @@ $('group-search-close').addEventListener('click',closeSearch);
 $('group-search-clear').addEventListener('click',()=>{searchInput.value='';state.search='';$('group-search-clear').hidden=true;render();searchInput.focus()});
 searchForm.addEventListener('submit',e=>{e.preventDefault();searchInput.blur()});
 searchInput.addEventListener('input',()=>{state.search=searchInput.value.trim().toLocaleLowerCase('ja');$('group-search-clear').hidden=!state.search;render()});
-function openMembers(){if(!state.chapters.length)return;renderMembers();syncRoomIcons();$('group-members').hidden=false;$('group-members-back').focus()}
-function closeMembers(){$('group-members').hidden=true;$('group-members-direct').focus()}
+function openMembers(){if(!state.chapters.length)return;renderMembers();syncRoomIcons();$('group-members').hidden=false;document.documentElement.dataset.membersOpen='true';$('group-members-back').focus()}
+function closeMembers(){$('group-members').hidden=true;delete document.documentElement.dataset.membersOpen;$('group-members-direct').focus()}
 $('group-members-direct').addEventListener('click',openMembers);$('group-members-back').addEventListener('click',closeMembers);
 // 戦国グルチャの参加者一覧と同じカード階層（section → char-card → name-row → period）。
 // 年号などの推測表示を避け、時代名は本文で確かに扱うものだけを載せる。

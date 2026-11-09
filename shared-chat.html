@@ -7,22 +7,19 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://*.supabase.co; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="theme-color" content="#080d20">
   <title>みんなで異次元グルチャ | JUKEN CAMP</title>
-  <link rel="stylesheet" href="shared-chat/pilot.css">
+  <link rel="stylesheet" href="shared-chat/pilot.css?v=20261109-shared-icon-v2">
   <script src="shared-chat/pilot.js" defer></script>
 </head>
 <body>
 <div class="app-shell">
   <nav class="site-nav" aria-label="ページ移動">
     <a class="app-back" href="/index.html" id="return-app"><span aria-hidden="true">‹</span> アプリに戻る</a>
-    <span class="nav-brand"><span aria-hidden="true">🌀</span> 異次元グルチャ</span>
+    <span class="nav-brand"><img class="nav-brand-icon" src="/icons/shared-chat.webp?v=20261109-shared-icon-v2" alt="" width="256" height="256" aria-hidden="true"> 異次元グルチャ</span>
   </nav>
   <main>
     <header class="welcome">
-      <div class="portal-portrait" aria-hidden="true">
-        <img class="portrait-one" src="history-icons/001.webp" alt="">
-        <img class="portrait-two" src="history-icons/015.webp" alt="">
-        <img class="portrait-three" src="history-icons/034.webp" alt="">
-        <span class="portal-mark">✦</span>
+      <div class="portal-portrait portal-shared-art" aria-hidden="true">
+        <img class="portal-shared-icon" src="/icons/shared-chat.webp?v=20261109-shared-icon-v2" alt="" width="256" height="256" decoding="async">
       </div>
       <div class="welcome-copy">
         <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> 共有グルチャ・テスト版</p>
@@ -65,7 +62,7 @@
 <section id="chat" class="chat-screen" aria-label="共有グループチャット" hidden>
   <div class="chat-header">
     <button id="back" class="icon-btn" type="button" aria-label="グループ一覧に戻る">＜</button>
-    <div class="chat-room-mark" aria-hidden="true">🌀</div>
+    <div class="chat-room-mark" aria-hidden="true"><img class="chat-room-icon" src="/icons/shared-chat.webp?v=20261109-shared-icon-v2" alt="" width="256" height="256"></div>
     <div class="room-heading"><h2 id="title">グループ</h2><p><span class="live-dot" aria-hidden="true"></span> みんなと歴史人物の共有トーク</p></div>
     <details class="manage-menu"><summary title="参加者・管理" aria-label="参加者・管理"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="7.5" cy="8" r=".7" fill="currentColor" stroke="none"/><circle cx="7.5" cy="12" r=".7" fill="currentColor" stroke="none"/><circle cx="7.5" cy="16" r=".7" fill="currentColor" stroke="none"/><path d="M11 8h6M11 12h6M11 16h6"/></svg></summary>
       <div class="manage-pane">

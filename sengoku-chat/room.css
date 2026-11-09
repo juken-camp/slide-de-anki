@@ -76,3 +76,44 @@ html[data-persona="cyber"] #group-view #group-header-avatar,
 html[data-persona="cyber"] #group-members .group-members-avatar {
   border:0!important;background:transparent!important;
 }
+
+
+/* 2026-11-09: Consistent original group header / members header.
+ * Original Himiko group uses a 61px (including line) header in iPhone layouts.
+ * Keep it identical even with an extra limited-time badge. */
+#group-view > .chat-header,
+#group-members > .members-header{
+  box-sizing:border-box!important;
+  flex:0 0 61px!important;
+  height:61px!important;min-height:61px!important;max-height:61px!important;
+  padding:10px 12px!important;
+  border-bottom:1px solid #ead2b9!important;
+  box-shadow:none!important;
+  background:transparent!important;
+}
+html[data-persona="cyber"] #group-view > .chat-header,
+html[data-persona="cyber"] #group-members > .members-header{border-bottom-color:#315576!important}
+#group-view #group-title{font-size:15px!important;line-height:1.3!important;font-weight:900!important}
+#group-members .members-title{font-size:16px!important;line-height:1.3!important;font-weight:900!important;white-space:nowrap!important}
+/* Main 異次元グルチャ keeps the patterned page visible on members screen. */
+#group-members{background:transparent!important}
+html[data-persona="cyber"] #group-members{background:transparent!important}
+/* Embedded real local artwork: survives a failed image fetch or JS clearing the img.
+ * This intentionally does NOT affect person portraits or the three list-card icons. */
+#group-view #group-header-avatar,
+#group-members .group-members-avatar{
+  background-color:transparent!important;
+  background-size:cover!important;background-position:center!important;
+  background-repeat:no-repeat!important;border:0!important;
+  box-shadow:none!important;overflow:hidden!important;
+}
+#group-view #group-header-avatar img,
+#group-members .group-members-avatar img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+
+/* The main group chat naturally grows to 63px above 390px. Match that too. */
+@media(min-width:391px){
+  #group-view > .chat-header,#group-members > .members-header{
+    flex-basis:63px!important;height:63px!important;min-height:63px!important;max-height:63px!important;
+  }
+  #group-view #group-title{font-size:16px!important}
+}

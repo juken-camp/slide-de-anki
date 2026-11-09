@@ -184,3 +184,19 @@ html[data-shared-chat-open] .app-shell{
 
 /* Reuse the member-list symbol used in the original Himiko group header. */
 .manage-menu>summary svg{width:20px;height:20px;display:block;}
+
+
+/* 2026-11-09: Original local artwork for the shared chat page and its header. */
+.nav-brand{display:inline-flex;align-items:center;gap:5px}
+.nav-brand .nav-brand-icon{width:20px;height:20px;object-fit:cover;border-radius:5px;flex:none}
+.portal-portrait.portal-shared-art{width:104px;height:104px;isolation:auto}
+.portal-portrait.portal-shared-art::before{content:none!important;display:none!important}
+.portal-portrait.portal-shared-art .portal-shared-icon{
+  display:block;position:static;width:100%;height:100%;
+  box-sizing:border-box;object-fit:cover;border:0;border-radius:20px;
+  background:transparent;box-shadow:none;transform:none;
+}
+.chat-room-mark:has(.chat-room-icon){padding:0;overflow:hidden;border:0;background:transparent}
+.chat-room-mark .chat-room-icon{display:block;width:100%;height:100%;object-fit:cover;border-radius:12px}
+@media(max-width:390px){.portal-portrait.portal-shared-art{width:88px;height:88px}.portal-portrait.portal-shared-art .portal-shared-icon{width:100%;height:100%}}
+@media(max-width:340px){.portal-portrait.portal-shared-art{width:78px;height:78px}}

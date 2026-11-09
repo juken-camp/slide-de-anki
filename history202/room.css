@@ -182,3 +182,31 @@ html[data-persona="cyber"] #h202-index-list button.is-current .h202-no{color:#77
 #group-members .group-members-avatar img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px}
 html[data-persona="cyber"] #group-view #group-header-avatar,
 html[data-persona="cyber"] #group-members .group-members-avatar{background:none!important;border:0!important}
+
+
+/* 2026-11-09: Align original group header/members title metrics and border. */
+#group-view > .chat-header,
+#group-members > .members-header{
+  box-sizing:border-box!important;
+  flex:0 0 61px!important;
+  height:61px!important;min-height:61px!important;max-height:61px!important;
+  padding:10px 12px!important;
+  border-bottom:1px solid #ead2b9!important;
+  box-shadow:none!important;background:transparent!important;
+}
+html[data-persona="cyber"] #group-view > .chat-header,
+html[data-persona="cyber"] #group-members > .members-header{border-bottom-color:#315576!important}
+/* Main title uses original 15px even on small phones. The chapter line stays below. */
+#group-view #group-title{font-size:15px!important;font-weight:900!important;line-height:1.3!important;padding:0!important}
+#group-view #sengoku-period-badge{font-size:10px!important;line-height:1.35!important;margin-top:1px!important}
+#group-members .members-heading .members-title{font-size:16px!important;line-height:1.3!important;font-weight:900!important}
+/* Native members screen is transparent; the app's grid remains visible. */
+#group-members, html[data-persona="cyber"] #group-members{background:transparent!important}
+
+/* The main group chat naturally grows to 63px above 390px. Match that too. */
+@media(min-width:391px){
+  #group-view > .chat-header,#group-members > .members-header{
+    flex-basis:63px!important;height:63px!important;min-height:63px!important;max-height:63px!important;
+  }
+  #group-view #group-title{font-size:16px!important}
+}

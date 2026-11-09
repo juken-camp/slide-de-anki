@@ -3820,7 +3820,7 @@ box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUnt
   document.documentElement.dataset.chatOpen='true';
   document.getElementById('list-view').classList.add('hidden');
   panel.hidden=false;
-  const src='sengoku-chat.html?v=20261109-sengoku-head-v1';
+  const src='sengoku-chat.html?v=20261109-ui-unify-v2';
   if(!frame.getAttribute('src'))frame.setAttribute('src',src);
   sendTheme();notify(true);
  };
@@ -3843,7 +3843,7 @@ box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUnt
  new MutationObserver(()=>{if(!panel.hidden)sendTheme()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-persona']});
 })();
 </script>
-<script src="history202/launcher.js?v=20261109-threechat-icons-v3" defer></script>
+<script src="history202/launcher.js?v=20261109-ui-unify-v2" defer></script>
 </body>
 </html>
 

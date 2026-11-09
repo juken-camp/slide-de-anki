@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "description": "入試向け史料の質の改善。各画像の資料同定と公開条件を確認した上で、正常取得したものだけを上書きする。",
+  "items": [
+    {
+      "id": "term-cover-ch12-04",
+      "commonsFile": "MorrisonShip.jpg",
+      "expectedOriginalSha1": "f44776cc970185dbea7f74516d93a9c85e5f0cc1",
+      "category": "史実を示す当時の船の絵",
+      "caption": "異国船打払令で追い払われたモリソン号（1837年の船を描いた絵）",
+      "explanation": "1825年、江戸幕府は日本に近づく外国船を追い払うよう命じました。1837年、日本人の漂流民を送り返そうとしたモリソン号も砲撃されました。この絵はモリソン号の姿を示すもので、砲撃の場面そのものではありません。その後、1842年に幕府は外国船への対応をゆるめました。",
+      "type": "外国船の歴史絵画（砲撃場面ではない）",
+      "coverageOf": "異国船打払令"
+    },
+    {
+      "id": "wmc-shinran",
+      "commonsFile": "Shinran Shonin.jpg",
+      "category": "鎌倉時代の実物肖像画",
+      "caption": "親鸞の肖像画「鏡御影」（鎌倉時代・国宝）",
+      "explanation": "親鸞を描いた鎌倉時代の肖像画「鏡御影」です。近現代の記念像ではなく、親鸞が生きていた時代の作品として伝わります。親鸞は浄土真宗を広めた人物です。",
+      "type": "13世紀の肖像画（西本願寺所蔵）",
+      "coverageOf": "親鸞"
+    },
+    {
+      "id": "h08-real-33",
+      "commonsFile": "最澄像 一乗寺蔵 平安時代.jpg",
+      "category": "平安時代の実物肖像画",
+      "caption": "最澄の肖像画（平安時代・11世紀、一乗寺所蔵）",
+      "explanation": "最澄は比叡山の延暦寺を中心に天台宗を広めました。こちらは最澄が亡くなった後、平安時代に描かれた肖像画です。空海の真言宗・高野山と覚え分けましょう。",
+      "type": "11世紀の肖像画（最澄の死後に制作）",
+      "coverageOf": "最澄"
+    },
+    {
+      "id": "authentic-2026-continued-057",
+      "commonsFile": "Siege of Hara castle.jpg",
+      "category": "17世紀の戦闘絵図",
+      "caption": "島原・天草一揆で原城を攻める様子を描いた17世紀の絵図",
+      "explanation": "1637〜1638年の島原・天草一揆では、多くの一揆勢が原城に立てこもり、幕府軍が城を取り囲みました。原城跡の現代写真ではわかりにくかった軍勢の位置が、この当時の絵図では読み取れます。",
+      "type": "1630年代の原城攻囲の絵図",
+      "coverageOf": "島原・天草一揆"
+    },
+    {
+      "id": "term-cover-ch30-05",
+      "commonsFile": "Northern-Territories-of-Japan-Map-日本の北方領土の地図.png",
+      "category": "学習目的の現在の地図",
+      "caption": "北方領土の位置を示す地図（択捉島・国後島・色丹島・歯舞群島）",
+      "explanation": "北方領土として日本が領有権を主張するのは、択捉島・国後島・色丹島・歯舞群島です。根室沖との位置関係を確かめましょう。これは歴史的な古地図ではなく、四島の位置を理解するための現代の地図です。",
+      "type": "地理を確認するための現代地図",
+      "coverageOf": "北方領土"
+    },
+    {
+      "id": "h22-real-37",
+      "commonsFile": "After the capture of the Winter Palace. Petrograd. Morning on 26 October 1917.jpg",
+      "category": "1917年の写真",
+      "caption": "1917年、冬宮占拠後のペトログラード（ロシア革命当時の写真）",
+      "explanation": "1917年のロシア革命では、皇帝の政治が終わった後も争いが続きました。10月革命ではレーニンたちの勢力が政権を握りました。この写真は冬宮が占拠された後の町の様子で、占拠の瞬間を写したものではありません。",
+      "type": "1917年の現地写真",
+      "coverageOf": "ロシア革命"
+    },
+    {
+      "id": "doc-reiwa",
+      "commonsFile": "Yoshihide Suga announcing new imperial era Reiwa.jpg",
+      "category": "2019年の公式写真",
+      "caption": "2019年4月1日、菅官房長官が新元号「令和」を発表した写真",
+      "explanation": "2019年4月1日、当時の菅義偉官房長官が新しい元号「令和」を発表しました。平成から令和に変わったのは同年5月1日です。発表の日と元号が始まる日を区別しましょう。",
+      "type": "2019年の政府広報写真",
+      "coverageOf": "令和",
+      "governmentReuse": true
+    },
+    {
+      "id": "verified-conscription-1879",
+      "commonsFile": "Number of Army Conscription in 1873.jpg",
+      "category": "1873年の公的文書",
+      "caption": "1873年の徴兵令に関係する『法令全書』の史料（風刺画ではない）",
+      "explanation": "明治政府が1873年に始めた徴兵制は、武士だけでなく国民から兵士を集める制度でした。これは当時の法令を記した資料で、人々の反対を描いた風刺画ではありません。",
+      "type": "1873年の法令資料",
+      "coverageOf": "徴兵令"
+    },
+    {
+      "id": "authentic-2026-016",
+      "commonsFile": "Battle of Ueno 4 July 1868.jpg",
+      "category": "1868年の錦絵",
+      "caption": "戊辰戦争の上野戦争（1868年）を描いた当時の錦絵",
+      "explanation": "1868年に始まった戊辰戦争では、明治新政府軍と旧幕府側の軍が戦いました。この錦絵は、その中で江戸の上野で起きた戦いを描いたものです。実際の戦場写真ではなく、当時作られた絵です。",
+      "type": "戊辰戦争を描いた1868年の錦絵",
+      "coverageOf": "戊辰戦争"
+    }
+  ]
+}

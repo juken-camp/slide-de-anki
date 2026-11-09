@@ -117,3 +117,44 @@ html[data-persona="cyber"] #group-members{background:transparent!important}
   }
   #group-view #group-title{font-size:16px!important}
 }
+
+
+/* 2026-11-09: Use precisely the same continuous persona canvas as the
+   original 異次元グルチャ. The members overlay must reveal this canvas, rather
+   than a solid #0f1430 group-view or html/body background. */
+html,html[data-chat-open],html:not([data-persona="cyber"]){
+  background-color:#fff8f0!important;
+  background-image:
+    radial-gradient(circle at 8% 8%,rgba(255,182,193,.16),transparent 24%),
+    radial-gradient(circle at 92% 15%,rgba(255,215,0,.13),transparent 20%),
+    radial-gradient(circle at 50% 100%,rgba(255,127,80,.12),transparent 28%)!important;
+  background-size:cover!important;
+  background-attachment:fixed!important;
+}
+html[data-persona="cyber"],html[data-persona="cyber"][data-chat-open]{
+  background-color:#050510!important;
+  background-image:
+    linear-gradient(#00f5ff09 1px,transparent 1px),
+    linear-gradient(90deg,#00f5ff09 1px,transparent 1px),
+    radial-gradient(ellipse at 50% 0%,rgba(0,245,255,.09),transparent 54%),
+    radial-gradient(ellipse at 90% 85%,rgba(191,0,255,.10),transparent 55%)!important;
+  background-size:36px 36px,36px 36px,cover,cover!important;
+  background-attachment:fixed!important;
+}
+html body,
+html[data-chat-open] body,
+html[data-persona="cyber"] body,
+html[data-persona="cyber"][data-chat-open] body,
+html body #group-view,
+html[data-persona="cyber"] body #group-view,
+html[data-chat-open] body #group-view,
+html[data-persona="cyber"][data-chat-open] body #group-view,
+html body #group-members,
+html[data-persona="cyber"] body #group-members,
+html[data-chat-open] body #group-members,
+html[data-persona="cyber"][data-chat-open] body #group-members,
+html body #group-members .members-header,
+html body #group-members .members-scroll{
+  background-color:transparent!important;
+  background-image:none!important;
+}

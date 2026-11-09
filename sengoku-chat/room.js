@@ -120,7 +120,11 @@
 
   function safeLocalImage(url){return typeof url==='string'&&/^history-icons\/[A-Za-z0-9_.-]+\.(webp|png|jpg|jpeg)$/.test(url)?url:null;}
   function imageInto(url,container){
-    container.replaceChildren();const src=safeLocalImage(url);
+    // The configured room image may be blank. Use the real local Sengoku artwork
+    // for both room headers without changing historical speakers' portraits.
+    const roomHeader=container && (container.id==='group-header-avatar'||container.classList.contains('group-members-avatar'));
+    container.replaceChildren();
+    const src=safeLocalImage(url)||(roomHeader?'/icons/sengoku.webp?v=20261109-sengoku-head-v1':null);
     if(src){const img=document.createElement('img');img.alt='';img.src=src;img.onerror=()=>img.remove();container.append(img);}
   }
   function jstKey(ms){return new Date(ms+JST_MS).toISOString().slice(0,10);}

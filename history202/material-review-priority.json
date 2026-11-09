@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "purpose": "256件の歴史資料画像の内容品質を点検する際の要差替え・高優先レビュー表",
+  "selectionCriteria": "history202/MATERIAL_SELECTION_CRITERIA.md",
+  "items": [
+    {
+      "id": "term-cover-ch12-04",
+      "chapter": 12,
+      "term": "異国船打払令",
+      "status": "needs_archival_replacement",
+      "current": "小川台場跡の現地写真",
+      "reason": "現代の史跡写真では1825年の命令そのものや当時の外国船の様子を理解しにくい",
+      "preferred": [
+        "1825年の命令を伝える原文書・伝本",
+        "同時代に描かれた異国船の絵図",
+        "1837年モリソン号の絵図（関連事項として明示）"
+      ],
+      "action": "史料の内容と許諾・ライセンスを確認してから差し替える"
+    }
+  ]
+}

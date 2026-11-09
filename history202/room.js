@@ -70,10 +70,8 @@ function replaceFakeCards(chapters,realMaterials){
   ch.messages=ch.messages.filter(m=>!(m.kind==='image'&&/history202\/(?:term_cards|materials)\//.test(m.image||''))&&!/^h\d+-(?:termimg-|img-)/.test(m.id||''));
   const additions=items.filter(it=>Number(it.chapter)===Number(ch.id));
   for(const item of additions){
-   // Page 2 is a verified image of the same Waseda book; keep the old page as fallback.
-   const imageUrl=item.id==='law-ryogige'&&!item.localImage
-    ?'https://archive.wul.waseda.ac.jp/kosho/wa03/wa03_06821/wa03_06821_0001/wa03_06821_0001_p0002.jpg'
-    :(item.image||item.imageUrl);
+   // The local-images.json mapping takes precedence once the real scan is saved.
+   const imageUrl=item.image||item.imageUrl;
    // Authentic materials also come from public museums, libraries and archival collections.
    // Permit only the explicit asset hosts used in the source manifest.
    const acceptedImageHosts=new Set([
@@ -86,13 +84,9 @@ function replaceFakeCards(chapters,realMaterials){
    let resolvedImage;
    try{resolvedImage=new URL(imageUrl,location.href)}catch(_){continue}
    if(!item.localImage&&(resolvedImage.protocol!=='https:'||!acceptedImageHosts.has(resolvedImage.hostname)))continue;
-   // The NDL reference answer is not itself an image-viewing page.
-   // For this Waseda scan, make the "view original" link lead to its actual catalogue.
-   const directSource=item.id==='law-ryogige'
-    ?'https://www.wul.waseda.ac.jp/kotenseki/html/wa03/wa03_06821/index.html'
-    :item.sourceUrl;
+   const directSource=item.sourceUrl;
    const m={id:item.id,speaker:'AI先生',role:'historical',kind:'real-image',text:'資料：'+item.caption,
-    caption:item.caption,image:imageUrl,remoteImage:item.localImage?(item.imageOriginal||null):(item.id==='law-ryogige'?item.image:null),sourceUrl:directSource,credit:item.credit,license:item.license||'出典ページで確認',
+    caption:item.caption,image:imageUrl,remoteImage:item.localImage?(item.imageOriginal||null):null,sourceUrl:directSource,credit:item.credit,license:item.license||'出典ページで確認',
     explanation:item.explanation};
    const index=ch.messages.findIndex(v=>v.id===item.after);
    if(index===-1){console.warn('歴史資料の配置先が存在しません',item.id,item.after);continue;}
@@ -221,10 +215,8 @@ function historicalImageCandidates(m){
  const urls=[m.image];
  // Saved images always take priority; try the original only if the local file fails.
  if(m.remoteImage)urls.push(m.remoteImage);
- // Alternative scan pages of the same actual Waseda collection, not substitute art.
- if(m.id==='law-ryogige'){
-  urls.push('https://archive.wul.waseda.ac.jp/kosho/wa03/wa03_06821/wa03_06821_0001/wa03_06821_0001_p0002.jpg');
- }
+ // Do not introduce hard-coded scans from libraries with different reuse terms.
+ // A verified local WebP is the primary image; fallback details remain in source metadata.
  try{
   const src=new URL(m.sourceUrl||'');
   if(src.hostname==='commons.wikimedia.org'&&src.pathname.startsWith('/wiki/File:')){

@@ -14,6 +14,8 @@ materials = json.loads((ROOT/'real-materials.json').read_text(encoding='utf-8'))
 chapters = json.loads((ROOT/'chapters.json').read_text(encoding='utf-8'))['chapters']
 index = json.loads((ROOT/'local-images.json').read_text(encoding='utf-8'))
 review_path = ROOT/'source-review-evidence-20261109.json'
+download_report_path = ROOT/'image-download-report.json'
+download_report = json.loads(download_report_path.read_text(encoding='utf-8')) if download_report_path.exists() else {}
 source_reviews = ({i['id']:i for i in json.loads(review_path.read_text(encoding='utf-8'))['records']}
                   if review_path.exists() else {})
 all_ids = {m['id'] for c in chapters for m in c['messages']}
@@ -64,11 +66,11 @@ for item in materials:
     })
 
 summary = {
-    'scope': 'Local image integrity audit plus limited manual review of documented Commons source pages; image bytes still unavailable for missing records',
+    'scope': '256-record image integrity and source-rights audit; downloaded image subjects still require human visual review',
     'chapters': len(chapters),
     'media_records': len(materials),
     'source_pages_verified_this_turn': len(source_reviews),
-    'new_files_downloaded_this_turn': 0,
+    'new_files_downloaded_this_turn': download_report.get('newly_saved_this_run', 0),
     'valid_local_files': sum(row['local_image_valid']=='YES' for row in rows),
     'no_valid_local_file': sum(row['local_image_valid']=='NO' for row in rows),
     'valid_anchors': sum(row['anchor_ok']=='YES' for row in rows),

@@ -1,8 +1,8 @@
 {
-  "scope": "Local image integrity audit plus limited manual review of documented Commons source pages; image bytes still unavailable for missing records",
+  "scope": "256-record image integrity and source-rights audit; downloaded image subjects still require human visual review",
   "chapters": 31,
   "media_records": 256,
-  "source_pages_verified_this_turn": 14,
+  "source_pages_verified_this_turn": 18,
   "new_files_downloaded_this_turn": 0,
   "valid_local_files": 75,
   "no_valid_local_file": 181,
@@ -55,12 +55,12 @@
   ],
   "license_status_counts": {
     "confirmed": 13,
-    "source_page_review_needed": 234,
+    "source_page_review_needed": 230,
     "permission_review_required": 6,
-    "source_page_verified": 3
+    "source_page_verified": 7
   },
   "license_explicitly_confirmed": 13,
-  "source_page_only_verified": 3,
+  "source_page_only_verified": 7,
   "rights_not_explicitly_confirmed": 243,
   "warning": "File readability does not prove the correct historical subject, source link health, or permission to redistribute."
 }

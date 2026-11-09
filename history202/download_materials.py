@@ -29,10 +29,10 @@ ASSETS = ROOT / 'authentic_images'
 ASSETS.mkdir(parents=True, exist_ok=True)
 ITEMS = json.loads((ROOT / 'real-materials.json').read_text(encoding='utf-8'))['items']
 BATCH = max(1, min(len(ITEMS), int(os.environ.get('HISTORY202_BATCH', str(len(ITEMS))))))
-WORKERS = max(1, min(3, int(os.environ.get('HISTORY202_WORKERS', '2'))))
-DELAY = max(1.8, float(os.environ.get('HISTORY202_DELAY', '3.0')))
+WORKERS = max(1, min(2, int(os.environ.get('HISTORY202_WORKERS', '1'))))
+DELAY = max(4, float(os.environ.get('HISTORY202_DELAY', '6.0')))
 MAX_BYTES = 20_000_000
-REQUEST_TIMEOUT = 30
+REQUEST_TIMEOUT = 40
 USER_AGENT = 'JukenCampHistoryEducation/1.1 (educational archival images; github.com/juken-camp/slide-de-anki)'
 
 # One global request gap across parallel workers; do not hammer Commons.
@@ -50,7 +50,7 @@ def paced_request(url, allow_json=False):
         time.sleep(wait)
     req = urllib.request.Request(url, headers={
         'User-Agent': USER_AGENT,
-        'Accept': 'image/avif,image/webp,image/png,image/jpeg,image/*;q=0.8',
+        'Accept': ('application/json,*/*;q=0.5' if allow_json else 'image/avif,image/webp,image/png,image/jpeg,image/*;q=0.8'),
         'Referer': 'https://commons.wikimedia.org/',
     })
     with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
@@ -119,15 +119,69 @@ def commons_metadata(item):
 
 
 def licensed_for_distribution(metadata, item):
-    if item.get('licenseStatus') == 'confirmed':
-        return True
+    """Conservative rights gate: no unknown-license downloads in the patch."""
+    if item.get('iiifManifest'):
+        return (item.get('licenseStatus') in ('confirmed', 'source_page_verified')
+                and item.get('license', '').casefold().startswith('cc by-sa 4.0')
+                and item['iiifManifest'].startswith('https://codh.rois.ac.jp/pmjt/book/'))
     if not metadata or metadata.get('error') or metadata.get('restricted'):
         return False
-    name = metadata.get('license', '').casefold()
-    return any(tag in name for tag in ('public domain', 'cc by', 'cc0', 'pdm', 'creative commons zero'))
+    name = metadata.get('license', '').strip().casefold()
+    return (name.startswith(('cc by ', 'cc by-sa ', 'cc0 ', 'public domain',
+                             'pdm ', 'creative commons zero', 'cc-zero'))
+            or name in ('cc0', 'cc-by', 'cc-by-sa', 'pd', 'public domain mark'))
+
+
+def iiif_image_candidates(item):
+    """Resolve a real scan from a known CC BY-SA source's IIIF manifest.
+
+    Supports IIIF Presentation v2/v3. Do not scrape arbitrary third-party images.
+    Canvas indexes are 0 based; title or text matching still requires manual review.
+    """
+    url = item['iiifManifest']
+    raw = paced_request(url, allow_json=True)
+    manifest = json.loads(raw)
+    canvases = ((manifest.get('sequences') or [{}])[0].get('canvases') or
+                manifest.get('items') or [])
+    if not canvases:
+        raise ValueError('IIIF manifest contains no canvas')
+    pos = min(len(canvases) - 1, max(0, int(item.get('iiifPageIndex', 1))))
+    canvas = canvases[pos]
+    if 'images' in canvas:
+        res = (canvas.get('images') or [{}])[0].get('resource') or {}
+    else:
+        apages = canvas.get('items') or []
+        anno = apages[0].get('items', [{}])[0] if apages else {}
+        res = anno.get('body') or {}
+    services = res.get('service') or []
+    if isinstance(services, dict):
+        services = [services]
+    urls = []
+    for service in services:
+        if not isinstance(service, dict):
+            continue
+        sid = service.get('@id') or service.get('id') or ''
+        if sid.endswith('/info.json'):
+            sid = sid[:-10]
+        if sid.startswith('http://'):
+            sid = 'https://' + sid[7:]
+        if not sid.startswith('https://'):
+            continue
+        base = sid.rstrip('/')
+        urls.extend([f'{base}/full/1000,/0/default.jpg',
+                     f'{base}/full/800,/0/default.jpg',
+                     f'{base}/full/720,720/0/default.jpg'])
+    rid = res.get('@id') or res.get('id') or ''
+    if rid.startswith('https://') and rid.lower().split('?')[0].endswith(('.jpg','.jpeg','.png','.webp')):
+        urls.append(rid)
+    if not urls:
+        raise ValueError('IIIF canvas has no usable raster image service')
+    return list(dict.fromkeys(urls))
 
 
 def candidates(item, metadata=None):
+    if item.get('iiifManifest'):
+        return iiif_image_candidates(item)
     urls = []
     if metadata and not metadata.get('error'):
         urls.extend([metadata.get('thumb',''), metadata.get('original','')])
@@ -138,10 +192,10 @@ def candidates(item, metadata=None):
         md5 = hashlib.md5(name.encode('utf-8')).hexdigest()
         thumb_base = f'https://upload.wikimedia.org/wikipedia/commons/thumb/{md5[0]}/{md5[:2]}/{encoded}/'
         if name.lower().endswith(('.jpg', '.jpeg', '.png', '.webp', '.gif')):
-            urls += [thumb_base + f'{size}px-{encoded}' for size in (640, 320)]
+            urls += [thumb_base + f'{size}px-{encoded}' for size in (720, 360)]
         urls += [f'https://upload.wikimedia.org/wikipedia/commons/{md5[0]}/{md5[:2]}/{encoded}']
-        urls += [base + '?width=640', base + '?width=360']
-    urls.append(item.get('image',''))
+        urls += [base + '?width=720', base + '?width=360']
+    urls.append(item.get('image', ''))
     return list(dict.fromkeys(x for x in urls if x.startswith('https://')))
 
 
@@ -169,16 +223,19 @@ def decode_and_save(raw, target):
 
 def fetch_unique(item):
     errors = []
-    metadata = commons_metadata(item)
-    if commons_filename(item):
-        if metadata and metadata.get('restricted'):
-            return None, 'Commons metadata explicitly includes use restrictions; manual review required'
-        # Commons source pages may have permissive licenses even when an API call is rate-limited.
-        # Preserve rights uncertainty in the report rather than hallucinating a license.
-    elif item.get('licenseStatus') != 'confirmed':
-        return None, 'Non-Commons source: redistribution rights not confirmed (not auto-downloaded)'
+    metadata = None if item.get('iiifManifest') else commons_metadata(item)
+    if not licensed_for_distribution(metadata, item):
+        if not item.get('iiifManifest') and not commons_filename(item):
+            return None, 'No confirmed source image redistribution permission'
+        if metadata and metadata.get('error'):
+            return None, 'Could not check Commons license: ' + metadata['error']
+        return None, 'Reuse license not confirmed or has restrictions'
     target = ASSETS / (item['id'] + '.webp')
-    for url in candidates(item, metadata):
+    try:
+        urls = candidates(item, metadata)
+    except Exception as exc:
+        return None, 'Could not resolve IIIF image: ' + str(exc)[:140]
+    for url in urls:
         for retry in range(2):
             try:
                 raw = paced_request(url)
@@ -186,12 +243,12 @@ def fetch_unique(item):
                 return (target, None)
             except urllib.error.HTTPError as exc:
                 errors.append(f'HTTP {exc.code} at {urllib.parse.urlparse(url).hostname}')
-                if exc.code == 429:
+                if exc.code in (429, 503):
                     wait = exc.headers.get('Retry-After')
                     try:
-                        seconds = min(90, max(12, int(wait)))
+                        seconds = min(180, max(30, int(wait)))
                     except (TypeError, ValueError):
-                        seconds = min(60, 20 * (retry + 1))
+                        seconds = min(150, 50 * (retry + 1))
                     time.sleep(seconds)
                 elif exc.code in (403, 404, 410):
                     break
@@ -202,7 +259,7 @@ def fetch_unique(item):
                 if isinstance(exc, (ValueError, UnidentifiedImageError)):
                     break
                 time.sleep(2 * (retry + 1))
-    return (None, '; '.join(errors[-5:]) or 'All source URLs failed')
+    return (None, '; '.join(errors[-5:]) or 'All source image URLs failed')
 
 
 def audit_mapping():
@@ -216,6 +273,13 @@ def run():
         if not valid(ASSETS / (item['id'] + '.webp')):
             items_by_source[item.get('sourceUrl') or item['image']].append(item)
     groups = list(items_by_source.values())
+    # Start with the locally broken 令義解 family and other checked-licensed sources.
+    # Otherwise a long Commons retry queue could run before the highest-priority fix.
+    groups.sort(key=lambda group: (
+        0 if group[0].get('iiifManifest') else 1,
+        0 if group[0].get('licenseStatus') in ('confirmed', 'source_page_verified') else 1,
+        group[0].get('chapter', 99),
+        group[0]['id']))
     selected = []
     size = 0
     for group in groups:
@@ -260,7 +324,7 @@ def run():
                     'reason': (failures.get(item['id']) or 'Not attempted in this run'),
                     'sourceUrl': item['sourceUrl']}
                    for item in remaining],
-        'license_caution': 'Commons media fetched for review; verify copyright, attribution and share-alike before publishing. Non-Commons unverified sources are skipped.',
+        'license_caution': 'Only Commons files with resolved Public Domain/CC BY/CC BY-SA/CC0 metadata and specifically verified CODH IIIF files are saved. Keep credits and share-alike notice.',
         'accuracy_caution': 'Image content and historical attribution require human review.',
     }
     (ROOT / 'local-images.json').write_text(json.dumps(mapping, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')

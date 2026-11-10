@@ -1,0 +1,496 @@
+name: History 202 - Bulk quality upgrade all 256
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-bulk-quality
+  cancel-in-progress: false
+jobs:
+  bulk-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image validator
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Check all 256 and safely update Commons rights metadata and low-res images
+        shell: bash
+        run: |
+          cat > history202/.history202_bulk_runtime.py <<'PY'
+          #!/usr/bin/env python3
+          """History 202: one-shot source rights audit + conservative raster upgrades.
+          
+          Designed for an authoritative, freshly checked-out GitHub main branch.
+          - Never edits chapters, dialogue, design or image mappings.
+          - Never substitutes a historical subject with an arbitrary search result.
+          - Only upgrades a low-resolution local WebP after comparing it with the
+            matching Wikimedia Commons file, with multiple independent checks.
+          - Commons license machine data is recorded as evidence of rights metadata,
+            NOT proof that an image is the correct historical primary source.
+          - On network errors, existing images and existing metadata are preserved.
+          """
+          from __future__ import annotations
+          
+          import argparse
+          import csv
+          from datetime import datetime, timezone
+          import hashlib
+          import html
+          import io
+          import json
+          import math
+          import os
+          from pathlib import Path
+          import re
+          import tempfile
+          import time
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          from collections import Counter, defaultdict
+          from PIL import Image, ImageOps, ImageStat
+          
+          ROOT = Path(__file__).resolve().parent
+          MANIFEST = ROOT / 'real-materials.json'
+          LOCAL = ROOT / 'local-images.json'
+          OUT = ROOT.parent / 'history202_bulk_results'
+          UA = 'JukenCampHistory202QualityAudit/3.0 (educational materials; https://github.com/juken-camp/slide-de-anki)'
+          API = 'https://commons.wikimedia.org/w/api.php'
+          TODAY = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+          
+          # A high-priority shortlist is flagged, NOT silently 'corrected'. The
+          # original 743 law text and the original 1485/1486 diary leaves must be
+          # visually confirmed before a replacement is ever published.
+          HISTORICAL_REVIEW = {
+           'verified-konden-743': '743年の墾田永年私財法の原文ではない『令義解』を表示',
+           'verified-konden-ch15': '743年の墾田永年私財法の原文ではない『令義解』を表示',
+           'authentic-2026-continued-056': '平等院の現代写真。1485年の一揆そのものを写す史料ではない',
+           'term-cover-ch17-04': '1946年の財閥解体写真。1947年の独占禁止法の条文ではない',
+           'verified-antimonopoly-context': '1946年の財閥解体写真。1947年の独占禁止法の条文ではない',
+           'law-bunkoku': '『今川仮名目録』の写本表紙。条文が写っているとは限らない',
+           'law-keian': '慶安期の農政文書。「慶安の御触書」そのものとは断言できない',
+           'law-ryogige': '『令義解』は律令の注釈書。743年の墾田法の原文とは異なる',
+           'authentic-2026-continued-086': '1543年の鉄砲伝来を1817年の北斎が想像して描いた後世の作品',
+           'term-cover-ch12-04': '1825年の異国船打払令と1837年のモリソン号を混同しない',
+           'law-17article': '第一条本文は1939年の書写資料。604年当時の原本ではない',
+           'period-1879-conscription-cartoon': '1873年の徴兵の告諭で、1879年条例や風刺画ではない',
+           'law-gakusei': '1872年『学制』の原文を使用。本文と表紙を区別する',
+           'authentic-2026-032': '北斎の作品は1830年ごろ。原画と後年の複製写真は異なる',
+           'period-1898-china-carving': '風刺画は各国が中国を分ける寓意であり、実際の会議写真ではない',
+           'period-1887-korea-fishing': '風刺画の各国・制作年・政治的背景の個別確認が必要',
+          }
+          
+          class SourceError(Exception):
+              pass
+          
+          
+          def request_bytes(url: str, limit: int = 10_000_000, attempts: int = 3) -> bytes:
+              if not url.startswith(('https://commons.wikimedia.org/', 'https://upload.wikimedia.org/', 'https://upload.wikimedia.org')):
+                  raise SourceError('Host not on allowlist')
+              last = None
+              for n in range(attempts):
+                  try:
+                      req=urllib.request.Request(url,headers={
+                          'User-Agent': UA, 'Accept': 'application/json,image/*;q=0.8,*/*;q=0.4'})
+                      with urllib.request.urlopen(req,timeout=35) as response:
+                          if response.status != 200: raise SourceError('HTTP '+str(response.status))
+                          data=response.read(limit+1)
+                          if len(data)>limit: raise SourceError('Source too large')
+                          return data
+                  except (urllib.error.HTTPError,urllib.error.URLError,TimeoutError,SourceError) as e:
+                      last=e
+                      if isinstance(e,urllib.error.HTTPError) and e.code in (400,401,403,404):break
+                      time.sleep((n+1)*1.2)
+              raise SourceError(str(last)[:240])
+          
+          
+          def commons_title(url: str) -> str|None:
+              try:
+                  u=urllib.parse.urlsplit(url)
+                  if u.netloc.lower() not in ('commons.wikimedia.org','www.commons.wikimedia.org'):return None
+                  if u.path.startswith('/wiki/File:'):
+                      return 'File:'+urllib.parse.unquote(u.path.partition('/wiki/File:')[2]).replace('_',' ')
+                  if u.path=='/w/index.php':
+                      q=urllib.parse.parse_qs(u.query)
+                      t=urllib.parse.unquote(q.get('title',[''])[0])
+                      if t.startswith('File:'):return t.replace('_',' ')
+              except Exception:pass
+              return None
+          
+          
+          def plain(value,limit=220):
+              if not value:return ''
+              value=re.sub(r'<[^>]+>',' ',str(value))
+              value=html.unescape(value)
+              value=re.sub(r'\s+',' ',value).strip()
+              return value[:limit]
+          
+          
+          def meta(ext,field,limit=220):
+              obj=ext.get(field,{})
+              return plain(obj.get('value','') if isinstance(obj,dict) else obj,limit)
+          
+          
+          def get_commons_info(titles):
+              # extmetadata is expensive; small batches and a polite pause.
+              qs=urllib.parse.urlencode({
+                  'action':'query','format':'json','formatversion':2,'prop':'imageinfo',
+                  'iiprop':'url|size|mime|sha1|extmetadata','iiextmetadatalanguage':'en',
+                  'iiurlwidth':'1400','titles':'|'.join(titles)})
+              payload=request_bytes(API+'?'+qs,limit=2_000_000)
+              data=json.loads(payload.decode('utf-8'))
+              if 'error' in data:raise SourceError('Commons API: '+str(data['error'])[:250])
+              pages=data.get('query',{}).get('pages',[])
+              return {p.get('title',''):p for p in pages}
+          
+          
+          def normalized_title(s):
+              return s.replace('_',' ').strip().casefold()
+          
+          
+          def rights_from_commons(ext):
+              name=meta(ext,'LicenseShortName',140)
+              url=meta(ext,'LicenseUrl',500)
+              copyrighted=meta(ext,'Copyrighted',30).lower()
+              restrictions=meta(ext,'Restrictions',220)
+              attr=meta(ext,'AttributionRequired',30).lower()
+              usage=meta(ext,'UsageTerms',200)
+              low=name.lower()
+              is_pd=(bool(re.search(r'public domain|^pd[- ]|^cc0\b|creative commons zero',low))
+                    and copyrighted in ('false','0','no',''))
+              is_cc=bool(re.search(r'\bcc[- ]?by(?:[- ]sa)?\b|creative commons attribution',low)) and (
+                    url.startswith('https://creativecommons.org/licenses/') or
+                    url.startswith('http://creativecommons.org/licenses/'))
+              if 'nc' in low or 'noncommercial' in low or 'nd' in low or 'no derivatives' in low:
+                  is_cc=False
+              # Special conditions are reviewed manually; do not auto-certify.
+              if restrictions and not re.search(r'^none$|no restrictions',restrictions,re.I):
+                  is_pd=is_cc=False
+              success=bool(is_pd or is_cc)
+              return {'machine_rights_confirmed':success,'license_name':name,
+                      'license_url':url,'copyrighted':copyrighted,'restrictions':restrictions,
+                      'attribution_required':attr,'usage_terms':usage}
+          
+          
+          def phash64(im):
+              im=ImageOps.exif_transpose(im).convert('L').resize((9,8),Image.Resampling.LANCZOS)
+              px=list(im.getdata());v=0
+              for y in range(8):
+                  for x in range(8):
+                      v=(v<<1)|int(px[y*9+x]>px[y*9+x+1])
+              return v
+          
+          
+          def changed_candidate(original: Image.Image, new: Image.Image):
+              ow,oh=original.size; nw,nh=new.size
+              if min(ow,oh)>=450:return False,'already at least 450px short-side'
+              if min(nw,nh)<max(650,int(min(ow,oh)*1.6)):
+                  return False,'not a meaningful resolution improvement'
+              if abs(ow/oh-nw/nh)/(ow/oh)>0.022:
+                  return False,'aspect ratio different'
+              hamming=(phash64(original)^phash64(new)).bit_count()
+              if hamming>7:return False,f'perceptual hash mismatch {hamming}/64'
+              # Independent normalized mean-lightness check guards e.g. inversion.
+              small_a=ImageOps.exif_transpose(original).convert('L').resize((64,64))
+              small_b=ImageOps.exif_transpose(new).convert('L').resize((64,64))
+              d=abs(ImageStat.Stat(small_a).mean[0]-ImageStat.Stat(small_b).mean[0])
+              if d>24:return False,f'image brightness mismatch {d:.1f}'
+              return True,f'same-source look confirmed (hash distance {hamming}/64; brightness {d:.1f})'
+          
+          
+          def safe_image_upgrade(item, commons_info, original_path, dry_run):
+              # Absolutely never replace a historical document page, PDF preview, or
+              # any image whose source identity cannot be reconciled to Commons metadata.
+              title=commons_title(item.get('sourceUrl',''))
+              if not title:return None,'not Commons source'
+              if not re.search(r'\.(jpe?g|png|webp|tif|tiff)$',title,re.I):return None,'not a normal raster Commons source'
+              ii=(commons_info or {}).get('imageinfo',[])
+              if not ii:return None,'Commons info unavailable'
+              ii=ii[0]
+              if ii.get('mime','').lower() not in ('image/jpeg','image/png','image/webp','image/tiff'):
+                  return None,'unexpected Commons mime'
+              url=ii.get('thumburl') or ii.get('url')
+              if not url or not url.startswith('https://upload.wikimedia.org/'):
+                  return None,'Commons raster URL is unavailable'
+              with Image.open(original_path) as im:
+                  current=ImageOps.exif_transpose(im).convert('RGB')
+              if min(current.size)>=450:return None,'adequate local size'
+              raw=request_bytes(url,limit=10_000_000)
+              with Image.open(io.BytesIO(raw)) as im:
+                  im.verify()
+              with Image.open(io.BytesIO(raw)) as im:
+                  improved=ImageOps.exif_transpose(im).convert('RGB')
+              eligible,reason=changed_candidate(current,improved)
+              if not eligible:return None,reason
+              improved.thumbnail((1400,1400),Image.Resampling.LANCZOS)
+              out=io.BytesIO();improved.save(out,format='WEBP',quality=85,method=5)
+              b=out.getvalue()
+              if not b.startswith(b'RIFF') or b[8:12]!=b'WEBP':return None,'failed to create WebP'
+              if len(b)>1_800_000:return None,'converted WebP too large'
+              if not dry_run:
+                  with tempfile.NamedTemporaryFile(dir=original_path.parent,prefix='.histquality-',suffix='.webp',delete=False) as f:
+                      tmp=Path(f.name);f.write(b)
+                  try:
+                      with Image.open(tmp) as checked:checked.verify()
+                      tmp.replace(original_path)
+                  finally:tmp.unlink(missing_ok=True)
+              return {'id':item['id'],'before':[current.width,current.height],
+                      'after':list(improved.size),'bytes':len(b),'source':item['sourceUrl'],
+                      'comparison':reason},reason
+          
+          
+          def inspect_image(item,mapping):
+              ident=item['id'];mapped=mapping.get(ident)
+              expected='history202/authentic_images/'+ident+'.webp'
+              if mapped!=expected:raise ValueError(f'Index mismatch {ident}: {mapped}')
+              path=ROOT.parent/mapped
+              if not path.is_file():raise FileNotFoundError(str(path))
+              raw=path.read_bytes()
+              if raw[:4]!=b'RIFF' or raw[8:12]!=b'WEBP':raise ValueError('Not WebP '+str(path))
+              with Image.open(path) as im:
+                  im.verify()
+              with Image.open(path) as im:
+                  wh=im.size
+              return path,raw,wh
+          
+          
+          def run(args):
+              manifest=json.loads(MANIFEST.read_text('utf-8'))
+              mapping=json.loads(LOCAL.read_text('utf-8'))
+              items=manifest['items']
+              assert len(items)==len(mapping)==256,'Expected exact 256 materials'
+              assert len({x['id'] for x in items})==256,'Duplicate IDs'
+              assert {x['id'] for x in items}==set(mapping),'ID to image mapping mismatch'
+              original_ids=[(x['id'],x.get('chapter'),x.get('after')) for x in items]
+              OUT.mkdir(exist_ok=True)
+              artifact_rows=[];local_hash=defaultdict(list);source_titles=defaultdict(list)
+              item_by_id={x['id']:x for x in items}
+              for item in items:
+                  path,raw,wh=inspect_image(item,mapping)
+                  digest=hashlib.sha256(raw).hexdigest()
+                  local_hash[digest].append(item['id'])
+                  name=commons_title(item.get('sourceUrl',''))
+                  if name:source_titles[name].append(item['id'])
+                  artifact_rows.append({'id':item['id'],'chapter':item['chapter'],
+                    'caption':item.get('caption',''),'historical_review':'not_finally_certified',
+                    'sourceUrl':item.get('sourceUrl',''), 'rights_before':item.get('licenseStatus',''),
+                    'rights_after':item.get('licenseStatus',''),'source_kind':'Wikimedia Commons' if name else 'other',
+                    'image_width_before':wh[0],'image_height_before':wh[1],
+                    'image_bytes_before':len(raw),'image_hash_before':digest,
+                    'issues':[], 'changed_pixels':False,'rights_evidence':'','historical_review_note':''})
+              rows={x['id']:x for x in artifact_rows}
+              for group in local_hash.values():
+                  if len(group)>1:
+                      for ident in group: rows[ident]['issues'].append('same_bytes_as:'+','.join(x for x in group if x!=ident))
+              for row in artifact_rows:
+                  id=row['id'];item=item_by_id[id]
+                  if min(row['image_width_before'],row['image_height_before'])<450:
+                      row['issues'].append('short_side_under_450px')
+                  if id in HISTORICAL_REVIEW:
+                      row['issues'].append('targeted_historical_content_review')
+                      row['historical_review_note']=HISTORICAL_REVIEW[id]
+                  if item.get('licenseStatus') in ('source_page_review_needed','permission_review_required',''):
+                      row['issues'].append('rights_still_needs_verification')
+                  if item.get('type')=='写真・絵画など（出典ページで種類を確認）':
+                      row['issues'].append('generic_type_requires_historical_classification')
+              titles=list(source_titles)
+              api_data={};failed_batches=[];changed_rights=[];upgrade_changes=[];upgrade_attempts=[]
+              if not args.no_network:
+                  for n in range(0,len(titles),6):
+                      batch=titles[n:n+6]
+                      try:
+                          pages=get_commons_info(batch)
+                          norm={normalized_title(k):v for k,v in pages.items()}
+                          for t in batch:
+                              page=norm.get(normalized_title(t))
+                              if page is None:
+                                  api_data[t]={'missing':True}
+                              else:api_data[t]=page
+                      except Exception as e:
+                          failed_batches.append({'from':n,'titles':batch,'error':str(e)[:220]})
+                      if (n//6+1)%5==0:
+                          print(f'Commons metadata batches: {min(n+6,len(titles))}/{len(titles)}',flush=True)
+                      time.sleep(0.75)
+              for title,ids in source_titles.items():
+                  page=api_data.get(title,{})
+                  ii=(page.get('imageinfo') or [None])[0]
+                  if not ii:
+                      for ident in ids:rows[ident]['issues'].append('commons_metadata_unavailable')
+                      continue
+                  ext=ii.get('extmetadata') or {}
+                  rights=rights_from_commons(ext)
+                  for ident in ids:
+                      item=item_by_id[ident];row=rows[ident]
+                      if not rights['machine_rights_confirmed']:
+                          row['issues'].append('commons_rights_manual_check')
+                          continue
+                      if item.get('licenseStatus')=='permission_review_required':
+                          row['issues'].append('existing_explicit_permission_issue_not_auto_overridden')
+                          continue
+                      old=item.get('licenseStatus','')
+                      # Machine-readable rights and historical authenticity are SEPARATE.
+                      # This status means only the Commons rights data was verified.
+                      if old not in ('confirmed','source_page_verified','commons_rights_metadata_verified'):
+                          item['licenseStatus']='commons_rights_metadata_verified'
+                          item['commonsRightsCheckedAt']=TODAY
+                          item['commonsFileTitle']=page.get('title',title)
+                          item['commonsLicenseName']=rights['license_name']
+                          item['commonsLicenseUrl']=rights['license_url']
+                          item['commonsArtist']=meta(ext,'Artist',180)
+                          item['commonsCredit']=meta(ext,'Credit',220)
+                          item['commonsOriginalDate']=meta(ext,'DateTimeOriginal',100)
+                          item['commonsSourceSha1']=ii.get('sha1','')
+                          item['commonsUsageTerms']=rights['usage_terms']
+                          item['commonsAttributionRequired']=rights['attribution_required']
+                          # Caption, educational explanation, real historical authorship,
+                          # and the existing user-facing credit are NOT overwritten.
+                          row['rights_after']=item['licenseStatus']
+                          row['rights_evidence']=rights['license_name']+' '+rights['license_url']
+                          changed_rights.append(ident)
+                          if 'rights_still_needs_verification' in row['issues']:
+                              row['issues'].remove('rights_still_needs_verification')
+                      elif old=='commons_rights_metadata_verified':
+                          row['rights_evidence']=rights['license_name']+' '+rights['license_url']
+              if args.upgrade_low_res and not args.no_network:
+                  for row in artifact_rows:
+                      if min(row['image_width_before'],row['image_height_before'])>=450:continue
+                      ident=row['id'];item=item_by_id[ident]
+                      title=commons_title(item.get('sourceUrl',''))
+                      if not title or title not in api_data:continue
+                      page=api_data[title]
+                      try:
+                          path,_,_=inspect_image(item,mapping)
+                          update,note=safe_image_upgrade(item,page,path,args.dry_run)
+                          if update:
+                              upgrade_changes.append(update)
+                              row['changed_pixels']=not args.dry_run
+                              row['upgrade_summary']=note
+                              if not args.dry_run:
+                                  with Image.open(path) as im: row['image_width_after'],row['image_height_after']=im.size
+                              if 'short_side_under_450px' in row['issues'] and min(update['after'])>=450:
+                                  row['issues'].remove('short_side_under_450px')
+                          else:
+                              upgrade_attempts.append({'id':ident,'reason':note})
+                      except Exception as e:
+                          upgrade_attempts.append({'id':ident,'reason':str(e)[:220]})
+              assert len(manifest['items'])==256
+              assert [(x['id'],x.get('chapter'),x.get('after')) for x in items]==original_ids
+              assert set(mapping)==set(x['id'] for x in items)
+              # IMPORTANT: the site must always have the already indexed images.
+              for x in items:inspect_image(x,mapping)
+              if changed_rights and not args.dry_run:
+                  new=json.dumps(manifest,ensure_ascii=False,indent=2)+'\n'
+                  with tempfile.NamedTemporaryFile('w',dir=MANIFEST.parent,encoding='utf-8',delete=False,
+                                                   prefix='.bulk-audit-',suffix='.json') as f:
+                      tmp=Path(f.name);f.write(new)
+                  try:
+                      json.loads(tmp.read_text('utf-8'))
+                      tmp.replace(MANIFEST)
+                  finally:tmp.unlink(missing_ok=True)
+              # The dataset includes unresolved historical claims; do not inflate metrics.
+              rights_counts=Counter(x.get('licenseStatus','') for x in items)
+              issues_counter=Counter(s.split(':')[0] for row in artifact_rows for s in row['issues'])
+              summary={
+                'checked_utc':datetime.now(timezone.utc).isoformat(),
+                'manifest_records':len(items),'image_index_records':len(mapping),
+                'image_files_valid':len(artifact_rows),
+                'unique_local_image_hashes':len(local_hash),
+                'duplicate_additional_uses':sum(len(z)-1 for z in local_hash.values()),
+                'short_side_under_450px_before':sum(min(r['image_width_before'],r['image_height_before'])<450 for r in artifact_rows),
+                'commons_file_titles_examined':len(titles),
+                'commons_file_metadata_received':sum(bool(x.get('imageinfo')) for x in api_data.values()),
+                'commons_failed_query_batches':failed_batches,
+                'rights_newly_verified_from_commons_machine_data':len(changed_rights),
+                'rights_status_after':dict(rights_counts),
+                'high_priority_history_content_flags':len(HISTORICAL_REVIEW),
+                'resolution_upgrades':upgrade_changes,
+                'resolution_upgrade_skips':upgrade_attempts,
+                'issue_counts':dict(issues_counter),
+                'historical_source_validation_complete':False,
+                'notice':'Rights metadata verification is NOT proof that the pictured historical source, date, or event is correct. No unreviewed historical replacements were made.',
+                'mode': 'offline_check' if args.no_network else 'live_commons_audit',
+                'dry_run':args.dry_run}
+              (OUT/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+              with (OUT/'all_256_decisions.csv').open('w',encoding='utf-8-sig',newline='') as f:
+                  fields=['id','chapter','caption','historical_review','historical_review_note',
+                    'sourceUrl','source_kind','rights_before','rights_after','rights_evidence',
+                    'image_width_before','image_height_before','image_width_after','image_height_after',
+                    'image_bytes_before','image_hash_before','changed_pixels','issues']
+                  writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader()
+                  for row in artifact_rows:
+                      row.setdefault('image_width_after',row['image_width_before'])
+                      row.setdefault('image_height_after',row['image_height_before'])
+                      row['issues']=';'.join(row['issues'])
+                      writer.writerow({k:row.get(k,'') for k in fields})
+              (OUT/'README.txt').write_text(
+                '256件の画像監査結果。summary.jsonとall_256_decisions.csvを参照。\n'
+                'Commons API の権利メタデータを照合しても、歴史資料の内容・制作年代・人物の正確性を証明したわけではありません。\n'
+                '低解像度画像の更新は、同一Commonsファイルと絵柄一致を確認できた場合のみ行います。\n'
+                '未確定の法令本文、日記の日付、現代写真は自動差し替えしません。\n'
+                '画像取得失敗時は、すべての既存画像をそのまま維持します。\n',encoding='utf-8')
+              print(json.dumps({k:v for k,v in summary.items() if k not in ('commons_failed_query_batches','resolution_upgrade_skips','resolution_upgrades')},ensure_ascii=False,indent=2),flush=True)
+              return summary
+          
+          if __name__=='__main__':
+              p=argparse.ArgumentParser()
+              p.add_argument('--no-network',action='store_true',help='Only test local structures and make offline audit CSV')
+              p.add_argument('--dry-run',action='store_true',help='Do not change any source file')
+              p.add_argument('--upgrade-low-res',action='store_true',help='Allow matching existing Commons raster to improve resolution')
+              args=p.parse_args()
+              run(args)
+          PY
+          python history202/.history202_bulk_runtime.py --upgrade-low-res
+          rm -f history202/.history202_bulk_runtime.py
+      - name: Commit only verified metadata and matching high-resolution images
+        if: success()
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- history202/real-materials.json history202/authentic_images/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Bulk improve image rights metadata and vetted raster quality for History 202'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No verified changes; original images and metadata retained'
+          fi
+      - name: Publish readable counts in workflow Summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, pathlib, os
+          p=pathlib.Path('history202_bulk_results/summary.json')
+          output=pathlib.Path(os.environ['GITHUB_STEP_SUMMARY'])
+          if not p.is_file():
+              output.write_text('## 256件一括画像点検\n\n結果ファイルが作られませんでした。ログを確認してください。\n',encoding='utf-8')
+          else:
+              s=json.loads(p.read_text('utf-8'))
+              status=s.get('rights_status_after',{})
+              lines=['## 256件・一括画像品質点検',
+                '', '| 項目 | 結果 |', '|---|---:|',
+                f"| 画像検査 | {s['image_files_valid']} / 256 |",
+                f"| Commonsの出典種類 | {s['commons_file_titles_examined']} |",
+                f"| Commonsから取得できた資料情報 | {s['commons_file_metadata_received']} |",
+                f"| 利用条件を新たに確認 | {s['rights_newly_verified_from_commons_machine_data']} |",
+                f"| 同一作品と照合した高画質化 | {len(s['resolution_upgrades'])} |",
+                f"| 追加確認が必要な個別利用許可 | {status.get('permission_review_required',0)} |",
+                f"| 歴史資料としての全件最終認定 | 未完了 |",'',
+                '**注意：Commonsのライセンス情報と、史料の歴史的な正確さは別の確認です。**',
+                '', '詳しくは Artifacts → history202-bulk-quality-256 を確認してください。']
+              output.write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          PY
+      - name: Upload complete 256 item QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-bulk-quality-256
+          path: history202_bulk_results/
+          if-no-files-found: warn

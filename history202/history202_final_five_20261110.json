@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-10",
+  "total": 256,
+  "validWebp": 256,
+  "status": "asset_rights_cleared_five_items_structurally_reviewed_exact_two_leaves_not_found",
+  "changedItemIds": [
+    "law-bunkoku",
+    "law-keian",
+    "law-hanseki",
+    "authentic-2026-continued-056",
+    "verified-antimonopoly-context"
+  ],
+  "changedCount": 5,
+  "replacedImages": [
+    "law-bunkoku",
+    "law-hanseki",
+    "law-keian"
+  ],
+  "licenseStatusCounts": {
+    "confirmed": 18,
+    "commons_rights_metadata_verified": 179,
+    "source_page_verified": 59
+  },
+  "permissionUnresolved": [],
+  "permissionUnresolvedCount": 0,
+  "originalLeafUnverified": [
+    "authentic-2026-continued-056",
+    "verified-antimonopoly-context"
+  ],
+  "duplicateExtraUses": 39,
+  "sourceUrls": {
+    "authentic-2026-continued-056": "https://commons.wikimedia.org/wiki/File:Byodoin-PhoenixHall-M1247.jpg",
+    "law-bunkoku": "https://commons.wikimedia.org/wiki/File:Imagawa_Yoshimoto.jpg",
+    "law-keian": "https://da.lib.kobe-u.ac.jp/da/sc/0100405769/",
+    "law-hanseki": "https://commons.wikimedia.org/wiki/File:WUL-i14_a0122_%E7%89%88%E7%B1%8D%E5%A5%89%E9%82%84%E8%AB%B8%E4%BE%AF%E5%90%8D%E7%B0%BF.pdf",
+    "verified-antimonopoly-context": "https://commons.wikimedia.org/wiki/File:Seizure_of_the_Zaibatsu_families_assets.JPG"
+  },
+  "warning": "3件は利用許可の不明な画像を権利の明確な別資料へ変更（今川は関連錦絵）。2件は原文位置を特定できず画像を維持。全256件の史料内容・利用条件を学術的に独立認証したとは言わない。",
+  "deviceVisualCheck": "pending",
+  "fileIDsPreserved": true,
+  "UIAndChatFilesModified": false
+}

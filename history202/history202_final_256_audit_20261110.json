@@ -147,8 +147,7 @@
   "licenseStatusCounts": {
     "confirmed": 18,
     "commons_rights_metadata_verified": 179,
-    "source_page_verified": 56,
-    "permission_review_required": 3
+    "source_page_verified": 59
   },
   "changedMetadataIds": [],
   "changedMetadataCount": 0,
@@ -2045,7 +2044,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Byodoin-PhoenixHall-M1247.jpg",
       "license": "Public domain（撮影者による権利放棄）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "1485_1486_diary_exact_leaf_unverified_related_location_photo",
+      "educationalReviewStatus": "1485_12_11_and_1486_02_13_article_referenced_exact_leaf_NOT_VERIFIED",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2591,31 +2590,31 @@
     {
       "id": "law-bunkoku",
       "chapter": 12,
-      "caption": "『今川仮名目録』の古写本表紙",
+      "caption": "『今川仮名目録』を追加した今川義元（1867年の錦絵）",
       "file": "history202/authentic_images/law-bunkoku.webp",
       "width": 1125,
       "height": 1400,
-      "bytes": 310654,
-      "sha256": "8039865251d932d1955d713f0676dfbd6e46aeb875e0ae62f9038afb5e46ec29",
-      "sourceUrl": "https://meiji-museum.note.jp/n/n7e78172c70b7",
-      "license": "出典の利用条件を別途確認",
-      "licenseStatus": "permission_review_required",
-      "educationalReviewStatus": "later_copy_cover_exact_leaf_unverified",
+      "bytes": 459664,
+      "sha256": "c4fce53faf304c61cd1cf07b3d8cf1734dc93783d5930c12d4cb723b84368874",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imagawa_Yoshimoto.jpg",
+      "license": "Public domain（歌川芳幾、1867年の浮世絵）",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "related_1867_portrait_not_original_1526_law",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
       "id": "law-keian",
       "chapter": 12,
-      "caption": "江戸後期に広まった「慶安御触書」の文書（1649年の原本ではない）",
+      "caption": "『慶安御触書』1837年刊の資料（後世の本）",
       "file": "history202/authentic_images/law-keian.webp",
       "width": 1400,
       "height": 1065,
-      "bytes": 228904,
-      "sha256": "e5c995175d491fdcadb213d4df88c527f6e6e6a24e3755e86c5639be13c27946",
-      "sourceUrl": "https://www.pref.gunma.jp/site/monjyokan/191736.html",
-      "license": "出典の利用条件を別途確認",
-      "licenseStatus": "permission_review_required",
-      "educationalReviewStatus": "later_Edo_document_not_verified_1649_bakufu_original",
+      "bytes": 53286,
+      "sha256": "6f34c5b37e1ac7bfc39443de363e562fa5081054e84ee960d64f371d51574e0e",
+      "sourceUrl": "https://da.lib.kobe-u.ac.jp/da/sc/0100405769/",
+      "license": "神戸大学附属図書館：出典・加工表示を条件に二次利用可（事前申請不要）",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "1837_keian_document_not_1649_bakufu_original",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2711,16 +2710,16 @@
     {
       "id": "law-hanseki",
       "chapter": 16,
-      "caption": "吉井藩主・吉井信謹の版籍奉還願い（1869年）",
+      "caption": "1869年の『版籍奉還諸侯名簿』（当時の記録）",
       "file": "history202/authentic_images/law-hanseki.webp",
       "width": 521,
       "height": 615,
-      "bytes": 49424,
-      "sha256": "775612dc93fcaa521656569ce12b2cb09a2b643095752a46a7bccfc830cdeca0",
-      "sourceUrl": "https://www.pref.gunma.jp/site/monjyokan/130191.html",
-      "license": "出典の利用条件を別途確認",
-      "licenseStatus": "permission_review_required",
-      "educationalReviewStatus": "unverified",
+      "bytes": 69722,
+      "sha256": "d8b81d68d960007342d46d0d72cdcacda62d10bffb6f68e215950482d103d15d",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-i14_a0122_%E7%89%88%E7%B1%8D%E5%A5%89%E9%82%84%E8%AB%B8%E4%BE%AF%E5%90%8D%E7%B0%BF.pdf",
+      "license": "Public domain（1869年の写本・Commons掲載）",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "1869_roster_not_original_four_domain_petition",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3860,7 +3859,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seizure_of_the_Zaibatsu_families_assets.JPG",
       "license": "日本ではパブリックドメイン（Commons掲載のPD-Japan-oldphotoに基づく）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "1947_original_leaf_unverified_1946_context_photo",
+      "educationalReviewStatus": "1947_04_14_law54_original_found_exact_leaf_NOT_VERIFIED",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -4018,5 +4017,10 @@
   "sourceRightsFollowUpChangedCount": 15,
   "sourceRightsFollowUpPendingCount": 6,
   "sourceRightsPendingCount": 3,
-  "nextSourcesReport": "history202_next_sources_20261110.json"
+  "nextSourcesReport": "history202_next_sources_20261110.json",
+  "sourceReviewFinalFiveReport": "history202_final_five_20261110.json",
+  "sourceReviewOriginalLeavesPending": [
+    "authentic-2026-continued-056",
+    "verified-antimonopoly-context"
+  ]
 }

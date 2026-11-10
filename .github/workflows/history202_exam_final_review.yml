@@ -1,0 +1,248 @@
+name: History 202 - exam source and story placement final check
+on:
+  push:
+    paths:
+      - '.github/workflows/history202_exam_final_review.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-exam-final-review
+  cancel-in-progress: false
+jobs:
+  exam-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image reader
+        run: python -m pip install --disable-pip-version-check pillow
+      - name: Validate 31 stories, all 202 terms and 256 assets, repair 2 wrong positions
+        run: |
+          cat > /tmp/history202_exam_review.py <<'PY'
+          #!/usr/bin/env python3
+          """History 202 — correct two demonstrably mistimed assets and audit 256 images.
+
+          Deliberately does not claim universal historical authentication. Source URLs,
+          original photography and 202 teaching terms are left untouched.
+          """
+          from __future__ import annotations
+          import collections
+          import hashlib
+          import io
+          import json
+          import re
+          from pathlib import Path
+          from PIL import Image
+
+          ROOT = Path('history202')
+          MAT = ROOT / 'real-materials.json'
+          CH = ROOT / 'chapters.json'
+          LOCAL = ROOT / 'local-images.json'
+          REPORT = ROOT / 'exam_readiness_review_20261110.json'
+
+
+          def load(path):
+              return json.loads(path.read_text(encoding='utf-8'))
+
+
+          def save(path, value):
+              path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+
+          def main():
+              manifest=load(MAT)
+              chapter_data=load(CH)
+              local=load(LOCAL)
+              materials=manifest['items']
+              chapters=chapter_data['chapters']
+              assert len(chapters)==31, f'Unexpected number of stories: {len(chapters)}'
+              assert sum(len(ch['entries']) for ch in chapters)==202, 'Expected 202 terms'
+              assert len(materials)==256, 'Expected 256 media items'
+              by_id={m['id']:m for m in materials}
+              assert len(by_id)==256 and len(local)==256 and set(by_id)==set(local),'Media IDs mismatch'
+              by_chapter={c['id']:c for c in chapters}
+              positions={c['id']:{m['id']:i for i,m in enumerate(c['messages'])} for c in chapters}
+              changes=[]
+
+              # These two errors are a mismatch between an actual image and an
+              # earlier unrelated event. Exact destination messages are verified below.
+              new_anchor={
+                'authentic-2026-continued-060':'h21-deep-04-2',
+                'term-cover-ch28-03':'h28-deep-03-2',
+              }
+              for key, anchor in new_anchor.items():
+                  obj=by_id[key]
+                  assert anchor in positions[obj['chapter']], f'Unknown destination for {key}'
+                  if obj['after']!=anchor:
+                      changes.append({'id':key,'oldAfter':obj['after'],'newAfter':anchor})
+                      obj['after']=anchor
+                      obj['reviewDate']='2026-11-10'
+
+              # Distinguish related images from original legal texts and make each
+              # image pedagogically useful, without changing any source/licence claims.
+              revised={
+                'authentic-2026-continued-060':{
+                  'caption':'沖縄戦のあと、収容施設で暮らす住民（1945年7月の写真）',
+                  'explanation':('第二次世界大戦では沖縄も激しい地上戦の場所になりました。'
+                                 'この写真は1945年7月8日、沖縄県辺野古の大浦湾にあった住民収容施設で撮られたものです。'
+                                 '戦闘で家や暮らしを失った人々もいたことがわかります。'
+                                 '1919年のベルサイユ条約や第一次世界大戦の写真ではありません。'),
+                  'educationalReviewStatus':'1945_07_08_okinawa_civilian_photo_placed_in_second_world_war',
+                },
+                'term-cover-ch28-03':{
+                  'caption':'『御成敗式目』の17世紀の写本（守護と地頭に関連する武士の法）',
+                  'explanation':('守護と地頭は鎌倉幕府が地方に置いた役職です。守護は国ごとに軍事・警察など、'
+                                 '地頭は荘園や公領ごとに土地の管理や年貢の取り立てなどを担当しました。'
+                                 'この画像は1232年制定の『御成敗式目』を伝える17世紀の写本で、'
+                                 '守護や地頭の仕事そのものを描いた絵ではありません。'),
+                  'educationalReviewStatus':'related_17th_century_copied_warrior_law_not_role_diagram',
+                },
+                'authentic-2026-continued-056':{
+                  'caption':'山城の国一揆の話し合いが行われた平等院（現在の写真）',
+                  'explanation':('1485年、山城国の地元の武士と農民たちは、争いを続ける畠山氏の軍を追い出し、'
+                                 '約8年間、自分たちで地域を治めました。'
+                                 '『大乗院寺社雑事記』には1485年12月11日の集まりと、'
+                                 '1486年2月13日に平等院で決まりを話し合った記録があります。'
+                                 '写真は現在の平等院で、一揆の場面や当時の日記の原文ではありません。'),
+                  'educationalReviewStatus':'relevant_modern_temple_photo_primary_leaf_not_verified',
+                },
+                'verified-antimonopoly-context':{
+                  'caption':'1946年の財閥解体に関する写真（1947年の独占禁止法の関連資料）',
+                  'explanation':('1946年、戦後改革で財閥家族の資産が差し押さえられました。写真はそのときの記録です。'
+                                 '翌1947年4月14日に公布された独占禁止法は、'
+                                 '大企業の集まりを整理する「財閥解体」とは別に、'
+                                 '企業が不公平に競争を妨げる行為を防ぐ法律です。'
+                                 'この写真は1947年の法律の条文ではありません。'),
+                  'educationalReviewStatus':'relevant_1946_photo_1947_law_original_leaf_not_verified',
+                },
+              }
+              for key, fields in revised.items():
+                  obj=by_id[key]
+                  modified=False
+                  for field,value in fields.items():
+                      if obj.get(field)!=value:
+                          obj[field]=value
+                          modified=True
+                  if modified:
+                      obj['reviewDate']='2026-11-10'
+
+              # Structural checks: all local images, metadata and use in the actual
+              # published stories are present. The old invisible 202 study cards must
+              # NOT be treated as visible output or acceptable image placement anchors.
+              hashes=collections.defaultdict(list)
+              rights=collections.Counter()
+              flagged=[]
+              detailed=[]
+              media_index=collections.Counter()
+              for item in materials:
+                  key=item['id']
+                  ch=item['chapter']
+                  after=item['after']
+                  assert ch in by_chapter and after in positions[ch], f'{key}: bad story position {after}'
+                  assert not re.fullmatch(r'h\d+-(?:termimg-|img-).+',after),f'{key}: anchored to hidden old fake card'
+                  assert isinstance(item.get('caption'),str) and len(item['caption'].strip())>=2,key
+                  assert isinstance(item.get('explanation'),str) and len(item['explanation'].strip())>=26,key
+                  assert isinstance(item.get('sourceUrl'),str) and item['sourceUrl'].startswith('https://'),key
+                  assert item.get('licenseStatus'), key
+                  assert isinstance(local[key],str) and local[key] == f'history202/authentic_images/{key}.webp',key
+                  path=Path(local[key]);assert path.is_file(),f'{key} image not downloaded'
+                  raw=path.read_bytes()
+                  with Image.open(io.BytesIO(raw)) as im:
+                      assert im.format=='WEBP',f'Not WebP: {key}'
+                      w,h=im.size
+                      assert w>=120 and h>=100,f'Bad dimensions {key}'
+                      im.verify()
+                  sha=hashlib.sha256(raw).hexdigest()
+                  hashes[sha].append(key)
+                  media_index[ch]+=1
+                  rights[item.get('licenseStatus','unknown')]+=1
+                  pos=positions[ch][after]
+                  neighborhood=' '.join(m.get('text','') for m in by_chapter[ch]['messages'][max(0,pos-3):min(len(by_chapter[ch]['messages']),pos+4)])
+                  coverage=item.get('coverageOf')
+                  # Alias names and geographically contextual sources can be legitimate,
+                  # so literal mismatch is a review flag, never proof of bad content.
+                  no_lit=bool(coverage and coverage not in neighborhood)
+                  if no_lit:
+                      flagged.append({'id':key,'flag':'coverage_topic_not_literal_near_anchor',
+                                      'coverageOf':coverage,'caption':item['caption'],
+                                      'after':after,'lesson':ch})
+                  detailed.append({
+                     'id':key,'chapter':ch,'caption':item['caption'],'after':after,
+                     'width':w,'height':h,'fileBytes':len(raw),'sha256':sha,
+                     'sourceUrl':item['sourceUrl'],'licenseStatus':item['licenseStatus'],
+                     'educationalReviewStatus':item.get('educationalReviewStatus','not_individually_authenticated'),
+                     'teachingExplanationPresent':True,'sourceAndImageIndividuallyAuthenticated':False,
+                     'placementLiteralReviewFlag':no_lit,
+                  })
+
+              # Ensure the two images are next to the intended topic in the script.
+              for key,words in [('authentic-2026-continued-060','第二次世界大戦'),('term-cover-ch28-03','地頭')]:
+                  x=by_id[key];ch=by_chapter[x['chapter']];p=positions[x['chapter']][x['after']]
+                  assert any(w in ch['messages'][p].get('text','') for w in [words]),f'{key}: wrong narrative anchor'
+              assert len(detailed)==256
+              summary={
+                 'date':'2026-11-10',
+                 'scope':'History 202 — 31 stories, 202 terms, 256 historical images',
+                 'totalImages':256,'allImagesReadable':256,'missingImages':0,
+                 'originalIdsAndImageFilesPreserved':True,
+                 'status':'technical_and_structural_passed; not_all_256_independently_historically_authenticated',
+                 'rightsStatus':dict(rights),
+                 'duplicateUsesExtra':sum(len(s)-1 for s in hashes.values()),
+                 'photoCountByChapter':{str(k):v for k,v in sorted(media_index.items())},
+                 'changedPhotoAnchors':changes,
+                 'changedExplanationsAndCaptions':list(revised),
+                 'chapterTextAndUIUntouched':True,
+                 'originalLeafNotYetIdentified':['authentic-2026-continued-056','verified-antimonopoly-context'],
+                 'photoPositionLiteralMatchReviewFlags':flagged,
+                 'limitations':[
+                    '画像が表示可能でも、全256件の史料の出典・年代を独立鑑定したことにはならない。',
+                    '山城の国一揆は現代の平等院写真であり、1485/1486年の日記原文画像ではない。',
+                    '独占禁止法は1946年の財閥解体関連写真であり、1947年の法律本文ではない。',
+                    '戦国・近代の写真と絵図は、その史料が示す場面と制作年代を必ず区別する。',
+                    '256件のiOS/Safari実機表示や画像の文字の読める大きさは未検証。',
+                    '画像を並べ替える前のチャット本文や他のアプリの画面は編集していない。',
+                 ],
+                 'items':detailed,
+              }
+              save(MAT,manifest)
+              save(REPORT,summary)
+              print('CHAPTERS 31 TERMS 202 IMAGES 256',flush=True)
+              print('CORRECTED_ANCHORS',json.dumps(changes,ensure_ascii=False),flush=True)
+              print('CLEAN_MEDIA',len(detailed),'DUPLICATE_EXTRA',summary['duplicateUsesExtra'],flush=True)
+              print('RIGHTS',dict(rights),flush=True)
+              print('REVIEW_FLAGS',len(flagged),json.dumps(flagged,ensure_ascii=False)[:2000],flush=True)
+              print('PRIMARY_SOURCE_PAGES_UNIDENTIFIED 2; RELATED PHOTOGRAPHS CLEARLY LABELLED',flush=True)
+
+          if __name__=='__main__':main()
+          PY
+          python /tmp/history202_exam_review.py
+
+      - name: Commit only reviewed history material metadata and exam audit
+        run: |
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- history202/real-materials.json history202/exam_readiness_review_20261110.json
+          if git diff --cached --quiet; then
+            echo 'Already reviewed; no changes to commit.'
+          else
+            git commit -m 'Align remaining historical photos with their actual lessons and review all 256'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Preserve 256-item audit for inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-exam-readiness-review-256
+          path: history202/exam_readiness_review_20261110.json
+          if-no-files-found: warn
+          retention-days: 30

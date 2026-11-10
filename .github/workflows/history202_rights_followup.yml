@@ -1,0 +1,216 @@
+name: History 202 - verified sources and rights follow-up
+on:
+  push:
+    paths:
+      - '.github/workflows/history202_rights_followup.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-source-rights-followup
+  cancel-in-progress: false
+jobs:
+  verify-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image reader
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Update source rights and replace restricted photos
+        run: |
+          cat > /tmp/verify_history202_rights.py <<'PYRIGHTS'
+          #!/usr/bin/env python3
+          """Conservative, 256-item historical image rights/source review (2026-11-10)."""
+          import collections
+          import hashlib
+          import io
+          import json
+          import sys
+          from pathlib import Path
+          from PIL import Image
+          
+          ROOT=Path('history202')
+          M=ROOT/'real-materials.json'
+          INDEX=ROOT/'local-images.json'
+          FINAL=ROOT/'history202_final_256_audit_20261110.json'
+          REPORT=ROOT/'history202_source_rights_review_20261110.json'
+          DATE='2026-11-10'
+          NAJ='https://www.archives.go.jp/learning/assets/pdf/terms.pdf'
+          MAYDAY='https://commons.wikimedia.org/wiki/File:17th_Labor_Day_in_Japan.jpg'
+          
+          def load(p):return json.loads(p.read_text(encoding='utf-8'))
+          def save(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          
+          def run():
+            manifest=load(M); local=load(INDEX); items=manifest['items']; by={x['id']:x for x in items}
+            assert len(items)==len(by)==len(local)==256,'Expected original 256 item index'
+            assert set(by)==set(local)
+            assert all(local[i]==f'history202/authentic_images/{i}.webp' for i in local),'Unexpected image paths'
+            for i,p in local.items():
+              with Image.open(p) as im:
+                assert im.format=='WEBP' and im.width>0 and im.height>0,i
+                im.verify()
+            # No content or images are mutated until replacement rights + bytes are verified.
+            offline='--offline' in sys.argv
+            if not offline:
+              sys.path.insert(0,str(ROOT.resolve()))
+              from curate_original_sources import download
+              data,meta=download({'commonsFile':'17th Labor Day in Japan.jpg'})
+              assert 'public domain' in meta['license'].casefold() or meta['license'].casefold() in ('pd','pdm'),meta['license']
+              assert '17th_Labor_Day_in_Japan.jpg' in meta['page'],meta['page']
+              with Image.open(io.BytesIO(data)) as im:
+                assert im.format=='WEBP' and im.width>=300 and im.height>=400
+                im.verify()
+            else:
+              data=None;meta={'license':'Public domain','url':MAYDAY,'page':MAYDAY}
+          
+            changed=set()
+            def set_fields(id,**fields):
+              o=by[id]
+              if any(o.get(k)!=v for k,v in fields.items()):
+                o.update(fields);o['reviewDate']=DATE;changed.add(id)
+          
+            # National Archives of Japan classroom image terms: NAJ-owned material reusable.
+            naj={
+             'law-security': '1925年の治安維持法に関する国立公文書館の学習用資料画像。',
+             'term-cover-ch17-08': '1925年の治安維持法に関する国立公文書館の学習用資料画像。',
+             'law-draft-education': '1947年の教育基本法案提案理由。制定法自体の御署名原本ではない。',
+             'law-farmland': '1947年の農地改革を伝える農林省作成のポスター。',
+             'term-cover-ch15-06': '1947年の農地改革を伝える農林省作成のポスター。'
+            }
+            for id,description in naj.items():
+              set_fields(id,license='国立公文書館所蔵の学習資料画像：任意利用可（学習コンテンツ利用規約）',
+                licenseStatus='source_page_verified',licenseUrl=NAJ,attributionUrl=by[id]['sourceUrl'],
+                rightsReviewStatus='NAJ_owned_classroom_image_reuse_allowed',rightsEvidenceUrl=NAJ,
+                educationalReviewStatus='source_kind_confirmed_exact_leaf_not_independently_verified',
+                review='国立公文書館学習コンテンツ利用規約により同館所蔵資料の画像は任意利用可。他機関所蔵画像は除外。'+description+'実機確認・原本葉の個別照合は別。')
+            set_fields('law-draft-education',caption='教育基本法案の提案理由（1947年3月5日起案）',
+              type='1947年教育基本法案の提案理由（公布原本ではない）',
+              explanation='1947年3月31日に教育基本法が公布されました。画像は、その約4週間前の3月5日に、文部省が「なぜ教育基本法をつくるのか」を説明するために作った文書です。戦前の教育勅語とは違い、国民の代表がつくる法律として教育の基本方針を決めました。1947年に公布された法律そのものの原本ではありません。',
+              primarySourceUrl='https://www.digital.archives.go.jp/item/918395')
+          
+            # Replace two restricted Showakan copies with A DIFFERENT verified-PD 1946 event.
+            text='1946年5月1日の第17回メーデーの写真。戦後、労働者が集まり、生活や働く条件の改善を求める運動が広がりました。労働組合法（1945年）、労働関係調整法（1946年）、労働基準法（1947年）を区別しましょう。写真は1946年5月16日の国鉄従業員デモではなく、5月1日のメーデーです。'
+            for id in ('term-cover-ch17-13','verified-labor-laws-context'):
+              set_fields(id,caption='1946年5月1日の第17回メーデー（当時の写真）',explanation=text,
+                image=meta['url'],sourceUrl=MAYDAY,
+                credit='1946年5月1日・第17回メーデー／共同通信社「戦後20年写真集」掲載写真・Wikimedia Commons',
+                type='1946年5月1日のメーデーを写した当時の写真',
+                license='Public domain（Wikimedia Commonsで日本・米国ともPDと記載）',
+                licenseStatus='source_page_verified',licenseUrl=MAYDAY,attributionUrl=MAYDAY,
+                rightsReviewStatus='Commons_public_domain_Japan_and_US',rightsEvidenceUrl=MAYDAY,
+                educationalReviewStatus='historical_1946_mayday_not_railway_May16',
+                imageSelection='reviewed_PD_1946_May_Day_replacement',localImage=True,
+                review='昭和館の画像は無断転載が禁止されているため、1946年5月1日のメーデー写真へ差替え。旧画像は1946年5月16日の国鉄従業員デモで、別の出来事なので日付と説明も変更。Commonsの日本・米国PD表示を照合。')
+          
+            # Never mislabel restricted or undetermined reproductions as cleared.
+            pending={
+              'law-taiko':('岐阜県HPは画像等の無断複製・転用を禁止。1589年の「写し」であり原本と断定しない。','https://www.pref.gifu.lg.jp/page/79328.html'),
+              'law-bunkoku':('明治大学博物館掲載の写本表紙写真。サイト画像の転載許諾は未確認。','https://meiji-museum.note.jp/n/n7e78172c70b7'),
+              'law-keian':('群馬県の原文掲載画像の二次利用は未確認。1649年の幕府原本ではない。','https://www.pref.gunma.jp/site/monjyokan/130131.html'),
+              'law-mobilization':('名古屋大学医学部分館は画像等の著作権を主張、転載許可の確認が必要。','https://www.med.nagoya-u.ac.jp/medlib/history/notice.html'),
+              'law-human':('国立国会図書館「日本国憲法の誕生」の画像は転載依頼が必要。','https://www.ndl.go.jp/constitution/etc/about.html'),
+              'law-hanseki':('群馬県公式HPの文書写真で無断転載の許可が未確認。','https://www.pref.gunma.jp/site/monjyokan/130191.html')
+            }
+            for id,(note,source) in pending.items():
+              set_fields(id,license='画像二次利用の許可・権利条件を要確認',licenseStatus='permission_review_required',
+                rightsReviewStatus='permission_required_or_not_confirmed',rightsEvidenceUrl=source,
+                review=note)
+            set_fields('law-taiko',caption='1589年の太閤検地帳の写し（美濃・牧村）',
+              type='天正17年（1589年）の検地帳の写し',
+              explanation='1589年、豊臣秀吉は美濃で田畑の広さや米のとれ高を統一した基準で調べました。この写真は美濃国牧村の検地帳の写しです。田畑の広さや石高が記録され、年貢を集めたり大名の領地を管理したりするために使われました。')
+            set_fields('law-keian',caption='江戸後期に広まった「慶安御触書」の文書（1649年の原本ではない）',
+              type='江戸後期に広まった農村向けの文書',
+              educationalReviewStatus='later_Edo_document_not_verified_1649_bakufu_original',
+              researchSourceUrl='https://www.pref.gunma.jp/site/monjyokan/130131.html')
+            set_fields('law-hanseki',caption='吉井藩主・吉井信謹の版籍奉還願い（1869年）',
+              researchSourceUrl='https://www.archives.go.jp/ayumi/kobetsu/m02_1869_01.html')
+            set_fields('authentic-2026-continued-056',
+              educationalReviewStatus='1485_1486_diary_exact_leaf_unverified_related_location_photo',
+              researchSourceUrl='https://www.digital.archives.go.jp/file/3694662?page=3',
+              primarySourceCitation='国立公文書館所蔵「大乗院寺社雑事記」1485年12月11日条／1486年2月13日条。所蔵簿冊は確認、当該の原本葉は未特定。現在は平等院の現代写真（関連資料）。')
+            set_fields('verified-antimonopoly-context',
+              educationalReviewStatus='1947_original_leaf_unverified_1946_context_photo',
+              researchSourceUrl='https://www.archives.go.jp/ayumi/kobetsu/s22_1947_03.html',
+              primarySourceCitation='国立公文書館「私的独占の禁止及び公正取引の確保に関する法律」1947年4月14日公布・法律第54号、御署名原本・御30250。法律本文の該当葉は未確認。現在は1946年財閥解体の関連写真。')
+          
+            # Integrity validation after both replacements (no uploads of an entire old ZIP).
+            if not offline:
+              for id in ('term-cover-ch17-13','verified-labor-laws-context'):
+                Path(local[id]).write_bytes(data)
+            checked=[];hashes=collections.defaultdict(list)
+            for id,path in local.items():
+              p=Path(path);blob=p.read_bytes()
+              with Image.open(io.BytesIO(blob)) as im:
+                assert im.format=='WEBP',id
+                w,h=im.size
+                im.verify()
+              dig=hashlib.sha256(blob).hexdigest()
+              hashes[dig].append(id)
+              obj=by[id]
+              checked.append({'id':id,'chapter':obj['chapter'],'caption':obj.get('caption',''),
+                              'licenseStatus':obj.get('licenseStatus',''),
+                              'educationalReviewStatus':obj.get('educationalReviewStatus','unverified'),
+                              'sourceUrl':obj.get('sourceUrl',''),
+                              'width':w,'height':h,'bytes':len(blob),'sha256':dig})
+            counts=dict(collections.Counter(x.get('licenseStatus','unknown') for x in items))
+            report={'reviewDate':DATE,'status':'source_rights_improved_historical_full_authentication_not_done',
+                    'totalImages':256,'readableImages':len(checked),'updatedMetadataIds':sorted(changed),
+                    'updatedMetadataCount':len(changed),'nationalArchivesReuseVerifiedIds':sorted(naj),
+                    'replacedRestrictedPhotoIds':([] if offline else ['term-cover-ch17-13','verified-labor-laws-context']),
+                    'permissionOrAlternateSourceStillRequiredIds':sorted(pending),
+                    'unverifiedOriginalLeafIds':['authentic-2026-continued-056','verified-antimonopoly-context'],
+                    'licenseStatusCounts':counts,'duplicateExtraUses':sum(len(v)-1 for v in hashes.values()),
+                    'historicalContentAuthenticated':False,'items':checked,
+                    'caution':'利用条件の確認と原資料の葉・歴史的内容の検証は別。端末表示は未検査。'}
+            save(M,manifest)
+            save(REPORT,report)
+            if FINAL.exists():
+              old=load(FINAL)
+              old['licenseStatusCounts']=counts
+              old['sourceRightsFollowUp']=str(REPORT.relative_to(ROOT))
+              old['sourceRightsFollowUpChangedCount']=len(changed)
+              old['sourceRightsFollowUpPendingCount']=len(pending)
+              old['extraDuplicateUses']=report['duplicateExtraUses']
+              old['distinctHashes']=len(hashes)
+              bycheck={x['id']:x for x in checked}
+              for entry in old.get('items',[]):
+                data_=bycheck.get(entry.get('id'))
+                if data_:entry.update(data_)
+              save(FINAL,old)
+            print('RIGHTS_COUNTS',counts)
+            print('SOURCE_REVIEW_CHANGED',len(changed),'PERMISSION_REMAINING',len(pending))
+            print('IMAGES_READABLE',len(checked),'REPLACED_1946_MAYDAY',0 if offline else 2)
+          
+          if __name__=='__main__':run()
+          PYRIGHTS
+          python /tmp/verify_history202_rights.py
+      - name: Commit only History 202 sources and 2 images
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- history202/real-materials.json history202/history202_source_rights_review_20261110.json history202/history202_final_256_audit_20261110.json history202/authentic_images/term-cover-ch17-13.webp history202/authentic_images/verified-labor-laws-context.webp
+          if ! git diff --cached --quiet; then
+            git commit -m 'Verify History 202 archival reproduction rights and replace restricted labor photos'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          else
+            echo 'Already up to date; no changes.'
+          fi
+      - name: Save rights/source review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-source-rights-review
+          path: |
+            history202/history202_source_rights_review_20261110.json
+            history202/history202_final_256_audit_20261110.json
+          if-no-files-found: warn

@@ -254,3 +254,19 @@ html body #group-members .members-scroll{
   background-color:transparent!important;
   background-image:none!important;
 }
+
+/* 2026-11-10: The 31-chapter index must show the SAME persona canvas as the members screen.
+   Its former solid background (#0f1430 in Cyber / #fffcf7 in Nekopon)
+   hid the global grid/gradient even after other history screens were unified.
+   Only the index surfaces become transparent: chapter cards and all chat UI are untouched. */
+html body #h202-index-layer,
+html[data-persona="cyber"] body #h202-index-layer,
+html body #h202-index-panel,
+html[data-persona="cyber"] body #h202-index-panel,
+html body #h202-index-panel .members-header,
+html[data-persona="cyber"] body #h202-index-panel .members-header,
+html body #h202-index-list,
+html[data-persona="cyber"] body #h202-index-list {
+  background-color:transparent!important;
+  background-image:none!important;
+}

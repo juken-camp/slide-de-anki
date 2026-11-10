@@ -147,8 +147,8 @@
   "licenseStatusCounts": {
     "confirmed": 18,
     "commons_rights_metadata_verified": 179,
-    "source_page_verified": 46,
-    "source_page_review_needed": 13
+    "source_page_verified": 53,
+    "permission_review_required": 6
   },
   "changedMetadataIds": [],
   "changedMetadataCount": 0,
@@ -185,7 +185,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Code_of_Hammurabi_Louvre_Museum.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -200,7 +200,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosetta_Stone,_British_Museum.jpg",
       "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -215,7 +215,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parthenon_on_Acropolis_in_Athens.jpg",
       "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -230,7 +230,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza_Egypt.png",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -245,7 +245,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Bath_of_Mohenjo-daro.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -260,7 +260,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:YoshinogariDwellings.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -275,7 +275,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:NintokuTomb_Aerial_photograph_2007.jpg",
       "license": "国土地理院の空中写真を基にした画像。出典・権利者の表示を条件に二次利用可",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -290,7 +290,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshinogari_Ancient_Ruins_2008.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -305,7 +305,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jomon_Vessel_with_Flame-like_Ornamentation%2C_attributed_provenance_Umataka%2C_Nagaoka-shi%2C_Niigata%2C_Jomon_period%2C_3000-2000_BC_-_Tokyo_National_Museum_-_DSC05620.JPG",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -320,7 +320,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dogu-Jomon.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -335,7 +335,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dotaku_TNM.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -350,7 +350,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Haniwa_-_Warrior_in_Keiko_Armor.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -365,7 +365,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -380,7 +380,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyotomi_hideyoshi.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -395,7 +395,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oda-Nobunaga.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -410,7 +410,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shotoku_Taishi.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -425,7 +425,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Minamoto_no_Yoritomo.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -440,7 +440,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Daigo.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -455,7 +455,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%85%89.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -470,7 +470,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tsunyaoshi.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -485,7 +485,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sankiko01.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -500,7 +500,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -515,7 +515,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:TokugawaYoshimune.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -530,7 +530,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Yoshinobu.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -545,7 +545,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -560,7 +560,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ii_Naosuke.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -575,7 +575,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:ITAGAKI_Taisuke.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -590,7 +590,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:OKUMA_Shigenobu.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -605,7 +605,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saigo_Takamori.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -620,7 +620,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_Shoin.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -635,7 +635,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:It%C5%8D_Hirobumi.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -650,7 +650,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hara_Takashi.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -665,7 +665,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inukai_Tsuyoshi.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -680,7 +680,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eisaku_Sato.jpg",
       "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -695,7 +695,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_Shigeru.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -710,7 +710,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9C%80%E6%BE%84%E5%83%8F_%E4%B8%80%E4%B9%97%E5%AF%BA%E8%94%B5_%E5%B9%B3%E5%AE%89%E6%99%82%E4%BB%A3.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -725,7 +725,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shinran_Shonin.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -740,7 +740,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kaitaishinsho2-0003.jpg",
       "license": "Public domain（PD-Art / PD-Japan：1774年の原作品の複製）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -755,7 +755,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ino_Tadataka_map_%28daizu%2C%2C_Atsumi-hanto%29.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -770,7 +770,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fukuzawa_Yukichi.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -785,7 +785,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Motoori_Norinaga.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -800,7 +800,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshino_Sakuzo.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -815,7 +815,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ganjin_Toshodai-ji.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -830,7 +830,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franciscus_de_Xabier.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -845,7 +845,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -860,7 +860,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martin_Luther.jpg",
       "license": "Public domain (PDM)",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -875,7 +875,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franklin_Delano_Roosevelt%2C_Portrait_1933.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -890,7 +890,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sun_Yat-Sen.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -905,7 +905,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WILSON,_WOODROW_LCCN2016857377.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -920,7 +920,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goseibai_Shikimoku_Toyo_Bunko.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -950,7 +950,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Shirakawa.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -965,7 +965,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%94%B0%E6%B2%BC%E6%84%8F%E6%AC%A1%E3%81%AE%E8%82%96%E5%83%8F%E7%94%BB.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -980,7 +980,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E5%B9%B3%E5%AE%9A%E4%BF%A1.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -995,7 +995,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
       "license": "Public domain",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1010,7 +1010,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iwakura_mission.jpg",
       "license": "Public domain",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1025,7 +1025,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:5jonisshi.jpg",
       "license": "Public domain",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1040,7 +1040,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_1899.jpg",
       "license": "Public domain (PDM)",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1055,7 +1055,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Opening_of_the_Tokyo-Yokohama_Railway_by_Omura_Taiun_(Meiji_Memorial_Picture_Gallery).jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1070,7 +1070,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_Hiroshige_III.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1085,7 +1085,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomioka_Silk_Mill.JPG",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1100,7 +1100,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inside_Tomioka_Silk_Mill.JPG",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1115,7 +1115,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo01.jpg",
       "license": "Public domain (Japanese government law)",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1130,7 +1130,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Ueno_4_July_1868.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1145,7 +1145,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Sekigahara_folding_screen.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1160,7 +1160,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:JapanPunchApril1877.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1175,7 +1175,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oshi_no_ran1.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1190,7 +1190,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%B1%B3%E9%A8%92%E5%8B%95%E5%85%A8%E5%9B%BD%E6%B3%A2%E5%8F%8A%E5%A0%B1%E9%81%93%E8%A8%98%E4%BA%8B.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1205,7 +1205,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
       "license": "US public domain; international rights require review",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1220,7 +1220,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sino_Japanese_war_1894.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1235,7 +1235,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Battle_of_the_Somme,_July-november_1916_Q1621.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1250,7 +1250,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_battle_of_Gettysburg_LCCN2004661437.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1265,7 +1265,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Revolutionary_soldiers_at_Wuchang.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1280,7 +1280,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Storming_the_bastille.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1295,7 +1295,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Namban_Screen_-_Google_Art_Project.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1310,7 +1310,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dejima,_the_Dutch_Trading_Station_at_Nagasaki_handscroll,_about_1800.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1325,7 +1325,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japanese_Red_Seal_Ship_Shuinsen_1634.png",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1340,7 +1340,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:DejimaInNagasakiBay.jpg",
       "license": "Public domain (PDM)",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1355,7 +1355,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1370,7 +1370,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Shimonoseki_Qing.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1385,7 +1385,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Portsmouth.jpg",
       "license": "US public domain; international rights require review",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1400,7 +1400,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Signing_of_Mutual_Cooperation_Treaty_with_Japan,_East_Room_of_the_White_House.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1415,7 +1415,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anglo_Japanese_Alliance_30_January_1902.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1430,7 +1430,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japan%E2%80%93Korea_Annexation_Treaty_1.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1445,7 +1445,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Terracotta_army_xian.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1460,7 +1460,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:King_of_Na_gold_seal_face_intaglio.png",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1475,7 +1475,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shoso-in.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1490,7 +1490,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:ASURA_Kohfukuji.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1505,7 +1505,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Todaiji_Monastery_Kongo_Rikishi_of_Nandaimon_II_(410).jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1520,7 +1520,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesshu_-_View_of_Ama-no-Hashidate.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1535,7 +1535,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kano_Eitoku_002.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1550,7 +1550,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Korin_Fujin_Raijin.jpg",
       "license": "Public domain (PDM)",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1565,7 +1565,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hishikawa_Moronobu_-_Beauty_Looking_Back_-_Google_Art_Project.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1580,7 +1580,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiroshige01_nihonbashi.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1595,7 +1595,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Great_Wave_off_Kanagawa.png",
       "license": "CC0 1.0",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1610,7 +1610,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyu-ji%2C_November_2016.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1625,7 +1625,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Todai-ji.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1640,7 +1640,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Buddha_at_Todaiji%2C_Nara.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1655,7 +1655,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:GENJI-monogatari-emaki-YADORIGI.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1670,7 +1670,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1685,7 +1685,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kinkaku-ji_1.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1700,7 +1700,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ginkakuji.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1715,7 +1715,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hokusai-_Kanagawa.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1730,7 +1730,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:H%C5%8Dj%C5%8D_Yasutoki.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1745,7 +1745,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1760,7 +1760,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1775,7 +1775,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1790,7 +1790,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_of_Korea_(February_1919).jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1805,7 +1805,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Outbreak_of_the_February_26th_Incident.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1820,7 +1820,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_students_protesting_the_Treaty_of_Versailles_(May_4,_1919).jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1835,7 +1835,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sumerian_Cuneiform_Clay_Tablet_(28008146640).jpg",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1850,7 +1850,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ziggurate_of_Ur-_Iraq.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1865,7 +1865,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clevelandart_1964.104.jpg",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1880,7 +1880,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Theatre_of_Dionysus_Acropolis_Athens_Greece.jpg",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1895,7 +1895,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clay_statue,_late_Jomon_period.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1910,7 +1910,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wadokaichin_copper_coin.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1925,7 +1925,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bronze_mirror_excavated_from_the_Akamon-ue_Kofun.jpg",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1940,7 +1940,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gakumon-no-susume.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1955,7 +1955,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:IMTFE_court_chamber.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1970,7 +1970,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:First_Japanese_Congresswomen.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -1985,7 +1985,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo02.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2000,7 +2000,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imperial_Rescript_on_Education.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2015,7 +2015,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heiji_Monogatari_Emaki_-_Sanjo_scroll_part_1.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2030,7 +2030,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rubbing_of_Nara_Yagyu_Hoso_Jizo_Tokusei-Hibun.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2045,7 +2045,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Byodoin-PhoenixHall-M1247.jpg",
       "license": "Public domain（撮影者による権利放棄）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "related_location_photo_1485_1486_diary_exact_leaf_not_verified",
+      "educationalReviewStatus": "1485_1486_diary_exact_leaf_unverified_related_location_photo",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2060,7 +2060,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Siege_of_Hara_castle.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2075,7 +2075,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Nagashima.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2090,7 +2090,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japanesesoldiersshanghai.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2105,7 +2105,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_woman_and_children_of_the_Oura_Bay_internment_camp_in_Henoko.png",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2120,7 +2120,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Instrument_of_surrender_Japan.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2135,7 +2135,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mamoru_Shigemitsu_signs_the_Instrument_of_Surrender,_officially_ending_the_Second_World_War.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2150,7 +2150,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8D%97%E4%BA%AC%E6%A2%9D%E7%B4%84%E4%B8%AD%E8%8B%B1%E6%96%87%E5%8E%9F%E6%9C%AC_%E8%8B%B1%E6%96%87%E7%AC%AC1%E6%A2%9D_Treaty_of_Nanking_EN_Article1.png",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2165,7 +2165,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Gettysburg.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2180,7 +2180,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Armisticetrain.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2195,7 +2195,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:KoreanWarRefugees.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2210,7 +2210,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:English_Bill_of_Rights_of_1689.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2225,7 +2225,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serment_du_Jeu_de_Paume_-_Jacques-Louis_David.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2240,7 +2240,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bodleian_Library_MS._Jap._b.2_Shuinjo.jpg",
       "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2255,7 +2255,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Shimonoseki_Nippon_tenn%C5%8D.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2270,7 +2270,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_signs_San_Francisco_Peace_Treaty.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2285,7 +2285,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_signing_the_US-Japan_Security_1951.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2300,7 +2300,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convention_of_retrocession_of_the_Liatung_Peninsula_8_November_1895.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2315,7 +2315,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyuji_Monastery_Painting_on_the_Tamamushi_Shrine_(Feeding_the_Tigress)_(197).jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2330,7 +2330,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yakushiji_Temple_east_pagoda.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2345,7 +2345,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Byodoin-PhoenixHall-M1247.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2360,7 +2360,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kamakura-daibutsu.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2375,7 +2375,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Engakuji,_shariden.jpg",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2390,7 +2390,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chouju_1st_scroll-01.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2405,7 +2405,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Murasaki_shikibu_diary.JPG",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2420,7 +2420,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kan%C5%8D_Eitoku_-_Rakuch%C5%AB_rakugai_zu_(Uesugi)_-_left_screen.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2435,7 +2435,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesshu_-_Haboku-Sansui.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2450,7 +2450,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heiji_Monogatari_Emaki_-_Warriors.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2465,7 +2465,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimabara-Battle-Map-c17th-century.png",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2480,7 +2480,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joint_Communique_of_Japan_and_China.jpg",
       "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2495,7 +2495,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hokusai_1817_First_Guns_in_Japan.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2510,7 +2510,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tsuyoshi_Inukai_May_15_Incident_Asahi_Shimbun.png",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2540,7 +2540,7 @@
       "sourceUrl": "https://codh.rois.ac.jp/pmjt/book/200020588/",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2555,7 +2555,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-wa03_02869_武家諸法度.pdf",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2576,7 +2576,7 @@
     {
       "id": "law-taiko",
       "chapter": 15,
-      "caption": "豊臣政権の検地帳（実物資料）",
+      "caption": "1589年の太閤検地帳の写し（美濃・牧村）",
       "file": "history202/authentic_images/law-taiko.webp",
       "width": 1400,
       "height": 1088,
@@ -2584,8 +2584,8 @@
       "sha256": "dda93699d87cea102c776ddbdf0b5361d7f0109f1bc50a0e9ecf793730aa5782",
       "sourceUrl": "https://www.pref.gifu.lg.jp/page/350357.html",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "permission_review_required",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2599,14 +2599,14 @@
       "sha256": "8039865251d932d1955d713f0676dfbd6e46aeb875e0ae62f9038afb5e46ec29",
       "sourceUrl": "https://meiji-museum.note.jp/n/n7e78172c70b7",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
+      "licenseStatus": "permission_review_required",
       "educationalReviewStatus": "later_copy_cover_exact_leaf_unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
       "id": "law-keian",
       "chapter": 12,
-      "caption": "慶安期の農政文書（古文書）",
+      "caption": "江戸後期に広まった「慶安御触書」の文書（1649年の原本ではない）",
       "file": "history202/authentic_images/law-keian.webp",
       "width": 1400,
       "height": 1065,
@@ -2614,8 +2614,8 @@
       "sha256": "e5c995175d491fdcadb213d4df88c527f6e6e6a24e3755e86c5639be13c27946",
       "sourceUrl": "https://www.pref.gunma.jp/site/monjyokan/191736.html",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "historical_misidentification_corrected_article_image_unverified",
+      "licenseStatus": "permission_review_required",
+      "educationalReviewStatus": "later_Edo_document_not_verified_1649_bakufu_original",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2629,8 +2629,8 @@
       "sha256": "15685e668e15e2439b035b3596a6f10bc94dcc9340d608085fef15b5b743e2b8",
       "sourceUrl": "https://www.med.nagoya-u.ac.jp/medlib/history/archive/print/1938kokka.html",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "permission_review_required",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2644,8 +2644,8 @@
       "sha256": "1dbb078e17ed9f115e84fa7f3fe9d6c254cf91098c4356f64de1f99ba29ac840",
       "sourceUrl": "https://www.archives.go.jp/learning/quiz_1/",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "source_kind_confirmed_exact_leaf_not_independently_verified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2660,13 +2660,13 @@
       "sourceUrl": "https://www.nier.go.jp/library/rarebooks/seido/373.2-308/",
       "license": "文部科学省ウェブサイト利用規約に従って出典表示して利用",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
       "id": "law-draft-education",
       "chapter": 17,
-      "caption": "1947年の教育基本法草案の史料",
+      "caption": "教育基本法案の提案理由（1947年3月5日起案）",
       "file": "history202/authentic_images/law-draft-education.webp",
       "width": 1400,
       "height": 992,
@@ -2674,8 +2674,8 @@
       "sha256": "0a02b2cd6407f43f160f02dd62cd60a44f6a2f196f4ad4d379c835e14b471594",
       "sourceUrl": "https://www.archives.go.jp/learning/archive_collection_5/collection_5/",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "source_kind_confirmed_exact_leaf_not_independently_verified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2689,8 +2689,8 @@
       "sha256": "797afd101c6bfffb53b4b7777064df20be0bdf5b1978e56ccbf8c4159f87aa6c",
       "sourceUrl": "https://www.archives.go.jp/learning/archive_collection_6/collection_6/",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "source_kind_confirmed_exact_leaf_not_independently_verified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2704,14 +2704,14 @@
       "sha256": "972a05b40905af50fbaba41133e313718f3dc82886c51918775b0968cb7037eb",
       "sourceUrl": "https://www.ndl.go.jp/constitution/shiryo/03/056/056_001r.html",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "permission_review_required",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
       "id": "law-hanseki",
       "chapter": 16,
-      "caption": "版籍奉還の願書（1869年の原文書）",
+      "caption": "吉井藩主・吉井信謹の版籍奉還願い（1869年）",
       "file": "history202/authentic_images/law-hanseki.webp",
       "width": 521,
       "height": 615,
@@ -2719,8 +2719,8 @@
       "sha256": "775612dc93fcaa521656569ce12b2cb09a2b643095752a46a7bccfc830cdeca0",
       "sourceUrl": "https://www.pref.gunma.jp/site/monjyokan/130191.html",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "permission_review_required",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2735,7 +2735,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mizuno_Tadakuni.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2750,7 +2750,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gandhi_during_the_Salt_March.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2765,7 +2765,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ippen_shonin_eden_IV_-_Hukuoka.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2780,7 +2780,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nichiren_Daishonin_Hakii_Portrait.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2795,7 +2795,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keizo_Obuchi_19890107.jpg",
       "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2810,7 +2810,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Terracotta_army_xian.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2825,7 +2825,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyu-ji%2C_November_2016.jpg",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2840,7 +2840,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:GENJI-monogatari-emaki-YADORIGI.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2855,7 +2855,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2870,7 +2870,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Daigo.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2885,7 +2885,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ginkakuji.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2900,7 +2900,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oda-Nobunaga.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2915,7 +2915,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyotomi_hideyoshi.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2930,7 +2930,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2945,7 +2945,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
       "license": "Public domain",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2960,7 +2960,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%B1%B3%E9%A8%92%E5%8B%95%E6%BF%80%E5%8C%96%E3%82%92%E5%A0%B1%E3%81%9A%E3%82%8B%E6%96%B0%E8%81%9E.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2975,7 +2975,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
       "license": "US public domain; international rights require review",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2990,7 +2990,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gishiwajinden.jpg",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3005,7 +3005,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taira_no_Kiyomori.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3020,7 +3020,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kinkaku-ji_1.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3035,7 +3035,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Tenji.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3050,7 +3050,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Todai-ji.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3065,7 +3065,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Kammu.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3080,7 +3080,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Shirakawa.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3095,7 +3095,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Toba.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3110,7 +3110,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eight_Patriarchs_of_the_Shingon_Sect_of_Buddhism,_K%C5%ABkai_(Nara_National_Museum).jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3125,7 +3125,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Soto-Zen-Master-Dogen-Zenji-Portrait.png",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3140,7 +3140,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferdinand_Magellan.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3155,7 +3155,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3170,7 +3170,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rubbing_of_Nara_Yagyu_Hoso_Jizo_Tokusei-Hibun.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3185,7 +3185,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:MorrisonShip.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3200,7 +3200,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3215,7 +3215,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:H%C5%8Dj%C5%8D_Yasutoki.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3230,7 +3230,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Daigo.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3245,7 +3245,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:TokugawaYoshimune.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3260,7 +3260,7 @@
       "sourceUrl": "https://codh.rois.ac.jp/pmjt/book/200020588/",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3274,8 +3274,8 @@
       "sha256": "797afd101c6bfffb53b4b7777064df20be0bdf5b1978e56ccbf8c4159f87aa6c",
       "sourceUrl": "https://www.archives.go.jp/learning/archive_collection_6/collection_6/",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "source_kind_confirmed_exact_leaf_not_independently_verified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3290,7 +3290,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
       "license": "Public domain",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3305,7 +3305,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Instrument_of_surrender_Japan.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3334,23 +3334,23 @@
       "sha256": "1dbb078e17ed9f115e84fa7f3fe9d6c254cf91098c4356f64de1f99ba29ac840",
       "sourceUrl": "https://www.archives.go.jp/learning/quiz_1/",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "source_kind_confirmed_exact_leaf_not_independently_verified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
       "id": "term-cover-ch17-13",
       "chapter": 17,
-      "caption": "1946年の国鉄労働組合のデモ（当時の写真）",
+      "caption": "1946年5月1日の第17回メーデー（当時の写真）",
       "file": "history202/authentic_images/term-cover-ch17-13.webp",
-      "width": 1200,
-      "height": 948,
-      "bytes": 149362,
-      "sha256": "9f72d9322a662facad30cba84feb353fb5235a1b0c1af1cf911b5cf0eeec793c",
-      "sourceUrl": "https://search.showakan.go.jp/search/photo/detail.php?id=90016000",
+      "width": 360,
+      "height": 570,
+      "bytes": 91516,
+      "sha256": "d489362a08122ad67598d39ac29fc6961b4d5f3af3504b4267c0a755ea4640a5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:17th_Labor_Day_in_Japan.jpg",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "related_photo_not_legislation_draft",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "historical_1946_mayday_not_railway_May16",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3365,7 +3365,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Tenmu.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3380,7 +3380,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Toba.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3395,7 +3395,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shinnyod%C5%8D_engi,_vol.3_(part).jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3410,7 +3410,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battlefields_in_the_Russo_Japanese_War.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3425,7 +3425,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
       "license": "US public domain; international rights require review",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3440,7 +3440,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unsorted_cash_coins_from_mixed_rulers_-_Northern_Song_Dynasty_-_Scott_Semans_01.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3455,7 +3455,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mutsu_Munemitsu.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3470,7 +3470,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:21_demands_by_Japan_against_China_1915.png",
       "license": "Public domain（米国で1931年以前に公表・作者1917年没）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3485,7 +3485,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vladivostok_intervention.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3500,7 +3500,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tripartite_Pact_27_September_1940.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3515,7 +3515,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gishiwajinden.jpg",
       "license": "CC0 1.0（Wikimedia Commons掲載の権利表示）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3530,7 +3530,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sui_Yangdi_Tang.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3545,7 +3545,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:TangTaizong.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3560,7 +3560,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3575,7 +3575,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wanli-Emperor.JPG",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3590,7 +3590,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Qianlong.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3605,7 +3605,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_Hiroshige_III.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3620,7 +3620,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3650,7 +3650,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Potsdam_conference_1945-1.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3665,7 +3665,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ichiro_and_Kaoru_Hatoyama_en_route_to_Moscow.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3680,7 +3680,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:DejimaInNagasakiBay.jpg",
       "license": "Public domain (PDM)",
       "licenseStatus": "confirmed",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3695,7 +3695,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3710,7 +3710,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Northern-Territories-of-Japan-Map-%E6%97%A5%E6%9C%AC%E3%81%AE%E5%8C%97%E6%96%B9%E9%A0%98%E5%9C%9F%E3%81%AE%E5%9C%B0%E5%9B%B3.png",
       "license": "CC0",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3725,7 +3725,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convention_of_retrocession_of_the_Liatung_Peninsula_8_November_1895.jpg",
       "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3755,7 +3755,7 @@
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/55623",
       "license": "Public Domain（メトロポリタン美術館 Open Access）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3770,7 +3770,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:China_imperialism_cartoon.jpg",
       "license": "Public domain（1898年刊、作者1899年没。Wikimedia CommonsでPDと記載）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3785,7 +3785,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Une-Partie-De-Peche-Rus-Jpn-Qing-Dispute-Korea-Feb-15-1887.png",
       "license": "Public domain（1887年公開の著作物。Wikimedia CommonsでPDと記載）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3800,7 +3800,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Amity_and_Commerce_between_Japan_and_the_United_States_29_July_1858.jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3815,7 +3815,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Goryokaku(26262233707).jpg",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3830,7 +3830,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-i14_a0575_%E5%BB%83%E8%97%A9%E7%BD%AE%E7%9C%8C%E3%83%8E%E8%A9%94%E5%8B%85%E3%83%8B%E5%9F%BA%E3%82%AD%E6%97%A7%E8%97%A9%E7%9F%A5%E4%BA%8B%E3%83%8E%E7%AE%A1%E4%B8%8B%E4%B8%80%E7%B5%B1%E3%83%98%E3%83%8E%E8%AB%AD%E9%81%94%E6%9B%B8.pdf",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3845,7 +3845,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Senmin_Abolition_Edict,_1871.jpg",
       "license": "出典ページにて確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3860,7 +3860,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seizure_of_the_Zaibatsu_families_assets.JPG",
       "license": "日本ではパブリックドメイン（Commons掲載のPD-Japan-oldphotoに基づく）",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "relevant_1946_zaibatsu_photo_original_1947_law_not_shown",
+      "educationalReviewStatus": "1947_original_leaf_unverified_1946_context_photo",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3896,16 +3896,16 @@
     {
       "id": "verified-labor-laws-context",
       "chapter": 17,
-      "caption": "1946年の労働運動の写真（労働三法の関連資料）",
+      "caption": "1946年5月1日の第17回メーデー（当時の写真）",
       "file": "history202/authentic_images/verified-labor-laws-context.webp",
-      "width": 1200,
-      "height": 948,
-      "bytes": 149362,
-      "sha256": "9f72d9322a662facad30cba84feb353fb5235a1b0c1af1cf911b5cf0eeec793c",
-      "sourceUrl": "https://search.showakan.go.jp/search/photo/detail.php?id=90016000",
+      "width": 360,
+      "height": 570,
+      "bytes": 91516,
+      "sha256": "d489362a08122ad67598d39ac29fc6961b4d5f3af3504b4267c0a755ea4640a5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:17th_Labor_Day_in_Japan.jpg",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "source_page_review_needed",
-      "educationalReviewStatus": "unverified_per_item",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "historical_1946_mayday_not_railway_May16",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3920,7 +3920,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sketch_of_a_kang%C5%8D_or_Ming_Trading_Licence_by_Tenyo_Seikei_(My%C5%8Dchi-in).jpg",
       "license": "出典ページにて確認",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3935,7 +3935,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiroshige,_Asakusa_ricefields_and_torinomachi_festival,_1857.jpg",
       "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3950,7 +3950,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:After_the_capture_of_the_Winter_Palace._Petrograd._Morning_on_26_October_1917.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3965,7 +3965,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshihide_Suga_announcing_new_imperial_era_Reiwa.jpg",
       "license": "CC BY 4.0",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3980,7 +3980,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Number_of_Army_Conscription_in_1873.jpg",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -3995,7 +3995,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-bunko12_00087_%E8%B1%8A%E8%87%A3%E7%A7%80%E5%90%89%E5%88%80%E7%8B%A9%E6%9D%A1%E6%9B%B8.pdf",
       "license": "Public domain",
       "licenseStatus": "source_page_verified",
-      "educationalReviewStatus": "unverified_per_item",
+      "educationalReviewStatus": "unverified",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -4013,5 +4013,8 @@
       "educationalReviewStatus": "document_page_checked_pending_device_review",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     }
-  ]
+  ],
+  "sourceRightsFollowUp": "history202_source_rights_review_20261110.json",
+  "sourceRightsFollowUpChangedCount": 15,
+  "sourceRightsFollowUpPendingCount": 6
 }

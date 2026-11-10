@@ -1,0 +1,93 @@
+name: History 202 - publish verified Konden original pages 9 and 10
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-quality-curation
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image tools
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Download only both visually verified PDF pages
+        env:
+          HISTORY202_SOURCE_MANIFEST: curated_sources_konden_20261110.json
+        run: python history202/curate_original_sources.py
+      - name: Fail safely unless BOTH pages were downloaded and validated
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PIL import Image
+          root=Path('history202')
+          report=json.loads((root/'curation-batch-result.json').read_text(encoding='utf-8'))
+          ids={'verified-konden-743', 'verified-konden-ch15'}
+          assert report['targeted']==2 and report['replaced']==2, f'Not all pages installed: {report}'
+          assert {x['id'] for x in report['results'] if x['status']=='replaced'}==ids, 'Unexpected results'
+          manifest=json.loads((root/'real-materials.json').read_text(encoding='utf-8'))
+          assert len(manifest['items'])==256, 'Historic item count changed'
+          for key in ids:
+              path=root/'authentic_images'/(key+'.webp')
+              assert path.is_file() and path.stat().st_size>1500, f'Missing {path}'
+              with Image.open(path) as im:
+                  im.verify()
+          print('Verified both PDF pages 9 and 10; all 256 IDs retained.')
+          PY
+      - name: Remove obsolete references to the unrelated Ryogige images
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('history202/real-materials.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          keys={'verified-konden-743':9, 'verified-konden-ch15':10}
+          canonical='https://commons.wikimedia.org/wiki/File:NAJDA-137-0106_続日本紀_巻15-16.pdf'
+          for item in d['items']:
+              if item['id'] not in keys:
+                  continue
+              pg=keys[item['id']]
+              for stale in ('sourceId', 'iiifManifest', 'iiifPageIndex', 'licenseNote', 'qualityCropVersion', 'imageProcessing'):
+                  item.pop(stale,None)
+              item['coverageType']='該当史料の本文（後世の刊本）'
+              item['primarySourceUrl']=canonical
+              item['primarySourceCitation']=f'国立公文書館所蔵『続日本紀 巻15-16』（明暦3年・1657年刊）。本文巻第十五、743年5月の詔。PDF第{pg}ページ。'
+              item['attributionUrl']=canonical
+              item['reviewDate']='2026-11-10'
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Commit ONLY both updated images and their two indexes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # The curator also touches a tracked report. Keep it OUT of the commit
+          # and restore its worktree to allow a clean rebase.
+          git restore --worktree -- history202/curation-batch-result.json 2>/dev/null || true
+          git add -- \
+            history202/authentic_images/verified-konden-743.webp \
+            history202/authentic_images/verified-konden-ch15.webp \
+            history202/real-materials.json \
+            history202/local-images.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Replace Konden history images with verified Shoku Nihongi pages 9-10'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No changed data; both current files already match the verified sources.'
+          fi
+      - name: Save a verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-konden-two-page-verification
+          path: history202/curation-batch-result.json
+          if-no-files-found: warn

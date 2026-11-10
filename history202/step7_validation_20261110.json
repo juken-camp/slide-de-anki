@@ -1,0 +1,30 @@
+{
+  "headVerified": "37780e9bef4b1f6e54cba009fa6f6baa2a453d4f",
+  "baseManifestBlob": "a3f03ddf1c88846ebd198f3431b4f2fc084ddc67",
+  "status": "metadata_and_review_workflow_delta_not_full_primary_source_certification",
+  "countTotal": 256,
+  "changedMaterialIds": [
+    "authentic-2026-032",
+    "authentic-2026-continued-056",
+    "term-cover-ch17-04",
+    "verified-antimonopoly-context"
+  ],
+  "changedMaterialCount": 4,
+  "changedFields": 24,
+  "actualImageReplacements": 0,
+  "primarySourcePagesVisuallyValidatedThisTurn": 0,
+  "newReferenceDocumentVolumes": 3,
+  "newDocumentPagesToReview": 209,
+  "notes": [
+    "No generated or substitute historical pictures used.",
+    "Current images unchanged.",
+    "Review workflow is READ ONLY.",
+    "No IDs, chapter anchors, content scripts, chat styles or icons touched."
+  ],
+  "licenseStatusCountAfter": {
+    "confirmed": 16,
+    "source_page_review_needed": 207,
+    "source_page_verified": 28,
+    "permission_review_required": 5
+  }
+}

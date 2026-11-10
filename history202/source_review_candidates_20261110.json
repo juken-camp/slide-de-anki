@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "research candidates / not all images are verified",
-  "lastComparedHead": "95902ee116b1bb392f851d2e5636ec75c8acb293",
+  "lastComparedHead": "37780e9bef4b1f6e54cba009fa6f6baa2a453d4f",
   "items": [
     {
       "term": "墾田永年私財法",
@@ -18,7 +18,14 @@
       "action": "Use contact-sheet workflow to verify the page; never use the first page as a substitute",
       "sourceReuse": "Wikimedia Commons lists PD-scan; review original license details before distribution",
       "researchAdded20261110": "743年（天平15）5月乙丑の日の文面は複数の教育用本文で確認済。ただし国立公文書館所蔵『続日本紀』巻15のPDF該当画像ページは特定できていない。現代の教材画像を無断で採用しない。",
-      "textEvidenceUrl": "https://ee-arts.biz/database/jh119/770/"
+      "textEvidenceUrl": "https://ee-arts.biz/database/jh119/770/",
+      "commonsVerified": {
+        "title": "NAJDA-137-0100 続日本紀15.pdf",
+        "pdfPages": 72,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:NAJDA-137-0100_続日本紀15.pdf",
+        "rights": "Wikimedia Commons: public domain scan of 1657 published book",
+        "reviewStatus": "Original text and physical volume verified; exact page still not visually identified"
+      }
     },
     {
       "term": "山城の国一揆",
@@ -42,7 +49,30 @@
       "review": "original manuscript volumes identified; event passage/page and image reuse conditions require confirmation",
       "action": "Find direct event passage and archive image rights before replacing current modern Byodo-in photo",
       "dateEvidence": "1485年12月11日・1486年2月13日の記述がある（本来の日時であり、原本画像上の日付位置は未確認）",
-      "textEvidenceUrl": "https://ee-arts.biz/database/jh227/470/"
+      "textEvidenceUrl": "https://ee-arts.biz/database/jh227/470/",
+      "commonsVerifiedVolumes": [
+        {
+          "title": "NAJDA-古027-0514イ 大乗院寺社雑事記 第101冊.pdf",
+          "pdfPages": 69,
+          "covers": "文明17年10〜12月（1485年）",
+          "targetDate": "1485-12-11",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:NAJDA-古027-0514イ_大乗院寺社雑事記_第101冊.pdf",
+          "rights": "Public domain: author's 15th-century autograph manuscript (Commons mark)"
+        },
+        {
+          "title": "NAJDA-古027-0514イ 大乗院寺社雑事記 第102冊.pdf",
+          "pdfPages": 68,
+          "covers": "文明18年1〜3月（1486年）",
+          "targetDate": "1486-02-13",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:NAJDA-古027-0514イ_大乗院寺社雑事記_第102冊.pdf",
+          "rights": "Public domain: author's 15th-century autograph manuscript (Commons mark)"
+        }
+      ],
+      "sourceCrosscheck": [
+        "https://www.waseda.jp/inst/admission/assets/uploads/2025/05/16_2025_ippan_nihonshi.pdf",
+        "https://www.niigata-u.ac.jp/wp-content/uploads/2025/08/3_r7mondai.pdf"
+      ],
+      "sourceDateNote": "Use 1486-02-13 as supported by entrance-exam source transcription; the EE-Arts paraphrase inconsistently writes 1486-01-13 although its quoted historical source says 1486-02-13."
     },
     {
       "term": "独占禁止法",
@@ -55,7 +85,15 @@
       "archive": "国立公文書館 御署名原本",
       "review": "original record found, image of relevant page not visually checked",
       "action": "Verify that the document page shows the actual 1947 law, not a later amended version; keep 1946 photo until then",
-      "rightsNote": "日本国の法律本文は著作権法13条の対象外だが所蔵館デジタル画像の二次利用条件は個別確認"
+      "rightsNote": "日本国の法律本文は著作権法13条の対象外だが所蔵館デジタル画像の二次利用条件は個別確認",
+      "verifiedOfficialDetails": {
+        "originalLawNumber": "昭和22年法律第54号",
+        "promulgated": "1947-04-14",
+        "cabinetDocumentArchiveNo": "類03072",
+        "autographedOriginalArchiveNo": "御30250",
+        "officialExhibition": "https://www.archives.go.jp/ayumi/kobetsu/s22_1947_03.html",
+        "note": "Do not use current amended version as 1947 original, and do not confuse 1946 seizure photo with 1947 legal text."
+      }
     },
     {
       "term": "徴兵令",
@@ -81,5 +119,6 @@
       "review": "PDF page 3 visually checked; later copy, not 604 original",
       "action": "Run previous workflow after patch is uploaded"
     }
-  ]
+  ],
+  "researchUpdated": "2026-11-10"
 }

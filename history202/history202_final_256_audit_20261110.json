@@ -147,8 +147,8 @@
   "licenseStatusCounts": {
     "confirmed": 18,
     "commons_rights_metadata_verified": 179,
-    "source_page_verified": 53,
-    "permission_review_required": 6
+    "source_page_verified": 56,
+    "permission_review_required": 3
   },
   "changedMetadataIds": [],
   "changedMetadataCount": 0,
@@ -2576,16 +2576,16 @@
     {
       "id": "law-taiko",
       "chapter": 15,
-      "caption": "1589年の太閤検地帳の写し（美濃・牧村）",
+      "caption": "1592年の太閤検地帳の複製（秀吉清正記念館）",
       "file": "history202/authentic_images/law-taiko.webp",
-      "width": 1400,
-      "height": 1088,
-      "bytes": 142448,
-      "sha256": "dda93699d87cea102c776ddbdf0b5361d7f0109f1bc50a0e9ecf793730aa5782",
-      "sourceUrl": "https://www.pref.gifu.lg.jp/page/350357.html",
+      "width": 1280,
+      "height": 960,
+      "bytes": 242928,
+      "sha256": "2bfe6441a4b5bd7ed053e34e9c9bb966399e9cfaa97e8f11b37c448d4639643b",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%BE%E5%BC%B5%E5%9B%BD%E6%B5%B7%E6%9D%B1%E9%83%A1%E5%86%85%E6%B4%A5%E5%B3%B6%E5%8C%97%E5%8F%A3%E5%BE%A1%E6%A4%9C%E5%9C%B0%E5%B8%B3%EF%BC%88%E7%A7%80%E5%90%89%E6%B8%85%E6%AD%A3%E8%A8%98%E5%BF%B5%E9%A4%A8%EF%BC%89.jpg",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "permission_review_required",
-      "educationalReviewStatus": "unverified",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "1592_taiko_kenchi_register_museum_replica_photo_2012",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2621,16 +2621,16 @@
     {
       "id": "law-mobilization",
       "chapter": 12,
-      "caption": "1938年の国家総動員法の解説文書",
+      "caption": "国家総動員法の成立を報じた1938年の新聞",
       "file": "history202/authentic_images/law-mobilization.webp",
-      "width": 506,
-      "height": 800,
-      "bytes": 48488,
-      "sha256": "15685e668e15e2439b035b3596a6f10bc94dcc9340d608085fef15b5b743e2b8",
-      "sourceUrl": "https://www.med.nagoya-u.ac.jp/medlib/history/archive/print/1938kokka.html",
+      "width": 501,
+      "height": 657,
+      "bytes": 99672,
+      "sha256": "223623fa5fa7cf70b946d11fd032b8c7cf72ec02c1e56426412aed7f94bc0fd1",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Approval_of_National_Mobilization_Law.jpg",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "permission_review_required",
-      "educationalReviewStatus": "unverified",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "1938_contemporary_newspaper_clipping_not_original_law",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -2696,16 +2696,16 @@
     {
       "id": "law-human",
       "chapter": 17,
-      "caption": "1946年の天皇の新年詔書（官報）",
+      "caption": "1946年1月1日の官報号外に載る「人間宣言」の詔書",
       "file": "history202/authentic_images/law-human.webp",
-      "width": 512,
-      "height": 768,
-      "bytes": 38626,
-      "sha256": "972a05b40905af50fbaba41133e313718f3dc82886c51918775b0968cb7037eb",
-      "sourceUrl": "https://www.ndl.go.jp/constitution/shiryo/03/056/056_001r.html",
+      "width": 1280,
+      "height": 821,
+      "bytes": 89644,
+      "sha256": "b6adc9875715c38024b22ce16f611590b3c8bd9e8592517708d88e36fd6f59c3",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:NDL2962196_%E5%AE%98%E5%A0%B1_1946%E5%B9%B401%E6%9C%8801%E6%97%A5.pdf",
       "license": "出典の利用条件を別途確認",
-      "licenseStatus": "permission_review_required",
-      "educationalReviewStatus": "unverified",
+      "licenseStatus": "source_page_verified",
+      "educationalReviewStatus": "1946_january_1_official_gazette_exact_one_page_article",
       "note": "画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。"
     },
     {
@@ -4016,5 +4016,7 @@
   ],
   "sourceRightsFollowUp": "history202_source_rights_review_20261110.json",
   "sourceRightsFollowUpChangedCount": 15,
-  "sourceRightsFollowUpPendingCount": 6
+  "sourceRightsFollowUpPendingCount": 6,
+  "sourceRightsPendingCount": 3,
+  "nextSourcesReport": "history202_next_sources_20261110.json"
 }

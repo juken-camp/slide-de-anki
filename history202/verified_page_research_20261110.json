@@ -1,0 +1,47 @@
+{
+  "baseline_main": "95902ee116b1bb392f851d2e5636ec75c8acb293",
+  "previous_patch": "history202_material_quality_step3_20261110.zip (its real-materials improvements retained)",
+  "local_changes": {
+    "image_replacements": 1,
+    "item_ids": [
+      "period-1879-conscription-cartoon"
+    ],
+    "note": "1879条例の表紙から1873年の徴兵資料の右半分に変更。次のGitHub Actions実行で1873年の官版本文へ更新する。"
+  },
+  "verified_page_workflow_targets": 2,
+  "pdf_sources": [
+    {
+      "id": "law-17article",
+      "file": "NDL1108334 聖徳太子十七条憲法.pdf",
+      "page": 3,
+      "source": "https://commons.wikimedia.org/wiki/File:NDL1108334_聖徳太子十七条憲法.pdf",
+      "license": "Commons PD-scan / PD-Japan; non-Japan jurisdiction review recommended"
+    },
+    {
+      "id": "period-1879-conscription-cartoon",
+      "file": "NDL1350311 徴兵令 - 官版.pdf",
+      "page": 2,
+      "source": "https://commons.wikimedia.org/wiki/File:NDL1350311_徴兵令_-_官版.pdf",
+      "license": "Commons PD-scan / PD-Japan; non-Japan jurisdiction review recommended"
+    }
+  ],
+  "remaining_high_priority": [
+    {
+      "id": "verified-konden-743",
+      "issue": "743年5月27日の『続日本紀』巻15の該当ページ未同定。現在の『令義解』を維持。"
+    },
+    {
+      "id": "verified-konden-ch15",
+      "issue": "同上。重複資料。"
+    },
+    {
+      "id": "authentic-2026-continued-056",
+      "issue": "1485年12月11日/1486年の『大乗院寺社雑事記』該当画像未同定。平等院写真維持。"
+    },
+    {
+      "id": "verified-antimonopoly-context",
+      "issue": "1947年の独占禁止法の法令本文は未特定。1946年写真維持。"
+    }
+  ],
+  "limitations": "No live GitHub write permission; original Commons PDF page image bytes cannot be downloaded into current sandbox. Two page-specific images are installed after manually uploading workflow patch and running the workflow on GitHub. No fully completed all-256 audit is claimed."
+}

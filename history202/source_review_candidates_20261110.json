@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "status": "research candidates / not all images are verified",
+  "lastComparedHead": "95902ee116b1bb392f851d2e5636ec75c8acb293",
+  "items": [
+    {
+      "term": "墾田永年私財法",
+      "imageIds": [
+        "verified-konden-743",
+        "verified-konden-ch15"
+      ],
+      "historicalDate": "743-05-27",
+      "record": "続日本紀 巻十五",
+      "edition": "明暦3年（1657年）の刊本（後印）",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:NAJDA-137-0100_続日本紀15.pdf",
+      "archive": "国立公文書館 137-0100",
+      "review": "volume identified, exact PDF page not visually certified",
+      "action": "Use contact-sheet workflow to verify the page; never use the first page as a substitute",
+      "sourceReuse": "Wikimedia Commons lists PD-scan; review original license details before distribution"
+    },
+    {
+      "term": "山城の国一揆",
+      "imageIds": [
+        "authentic-2026-continued-056"
+      ],
+      "historicalDate": "1485-1486",
+      "record": "大乗院寺社雑事記（尋尊の日記・原本）",
+      "archive": "国立公文書館 古027-0514イ",
+      "sourceUrl": "https://www.digital.archives.go.jp/file/3694662?page=2",
+      "candidateVolumes": [
+        {
+          "volume": 101,
+          "coverage": "文明17年10月〜12月（1485年）"
+        },
+        {
+          "volume": 102,
+          "coverage": "文明18年1月〜3月（1486年）"
+        }
+      ],
+      "review": "original manuscript volumes identified; event passage/page and image reuse conditions require confirmation",
+      "action": "Find direct event passage and archive image rights before replacing current modern Byodo-in photo"
+    },
+    {
+      "term": "独占禁止法",
+      "imageIds": [
+        "verified-antimonopoly-context"
+      ],
+      "historicalDate": "1947-04-14",
+      "record": "私的独占の禁止及び公正取引の確保に関する法律（昭和22年法律第54号）",
+      "sourceUrl": "https://jpsearch.go.jp/item/najda-8ng730250100",
+      "archive": "国立公文書館 御署名原本",
+      "review": "original record found, image of relevant page not visually checked",
+      "action": "Verify that the document page shows the actual 1947 law, not a later amended version; keep 1946 photo until then",
+      "rightsNote": "日本国の法律本文は著作権法13条の対象外だが所蔵館デジタル画像の二次利用条件は個別確認"
+    },
+    {
+      "term": "徴兵令",
+      "imageIds": [
+        "period-1879-conscription-cartoon"
+      ],
+      "historicalDate": "1873",
+      "record": "徴兵令 官版",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:NDL1350311_徴兵令_-_官版.pdf",
+      "page": 2,
+      "review": "PDF page 2 visually checked; stage4 GitHub workflow will fetch and replace if successful",
+      "action": "Run previous workflow after patch is uploaded"
+    },
+    {
+      "term": "十七条の憲法",
+      "imageIds": [
+        "law-17article"
+      ],
+      "historicalDate": "604 (as reported by 日本書紀)",
+      "record": "聖徳太子十七条憲法（林祖洞書 1939年）",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:NDL1108334_聖徳太子十七条憲法.pdf",
+      "page": 3,
+      "review": "PDF page 3 visually checked; later copy, not 604 original",
+      "action": "Run previous workflow after patch is uploaded"
+    }
+  ]
+}

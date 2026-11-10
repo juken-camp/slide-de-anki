@@ -1,0 +1,28 @@
+{
+  "version": 4,
+  "description": "Only documented page-level, visual-confirmed actual historical document scans. Explicit 1-based pdfPage; old images kept on any failure. No text/chats/UI changes.",
+  "items": [
+    {
+      "id": "law-17article",
+      "commonsFile": "NDL1108334 聖徳太子十七条憲法.pdf",
+      "pdfPage": 3,
+      "pageImageVerified": true,
+      "pageEvidence": "PDF第3ページの右端に「一曰以和為貴」と印刷され、第一条が掲載されていることを原画像で確認（2026-11-10）。1939年の書写資料で604年の原本ではない。",
+      "caption": "「和をもって貴しとなす」の第一条（1939年の書写資料）",
+      "explanation": "604年に定められたと『日本書紀』に書かれる十七条の憲法。第一条では、争うより話し合いと協力を大切にする考えを示しています。写真は1939年に林祖洞が書いて出版された資料の第一条で、604年当時の原本ではありません。",
+      "type": "十七条の憲法第一条（1939年の後世の書写資料・実際の本文ページ）",
+      "coverageOf": "十七条の憲法"
+    },
+    {
+      "id": "period-1879-conscription-cartoon",
+      "commonsFile": "NDL1350311 徴兵令 - 官版.pdf",
+      "pdfPage": 2,
+      "pageImageVerified": true,
+      "pageEvidence": "PDF第2ページ左側に「朕惟フニ」以下、全国から兵士を集める方針を示す文章が掲載されていることを原画像で確認（2026-11-10）。1873年陸軍省刊の官版。",
+      "caption": "1873年刊『徴兵令 官版』に載る徴兵の告諭（当時の実物資料）",
+      "explanation": "1873年に徴兵令が出され、政府は武士以外からも兵士を集める制度を始めました。画像は同じ年に陸軍省が刊行した『徴兵令 官版』の告諭を写したものです。政府が全国から兵士を集める方針を示しています。1879年の別の条例の表紙ではありません。",
+      "type": "1873年の徴兵に関する当時の官版（告諭の本文ページ）",
+      "coverageOf": "徴兵令"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "preparedOn": "2026-11-10",
+  "githubMainHeadAtPreparation": "95902ee116b1bb392f851d2e5636ec75c8acb293",
+  "packaging": "cumulative image-only patch for step3+step4+step5; not a full repository",
+  "localWebpReferencesTested": 256,
+  "referenceAndManifestItemIdMatch": true,
+  "invalidOrMissingWebp": 0,
+  "modifiedImageFiles": [
+    "history202/authentic_images/authentic-2026-032.webp",
+    "history202/authentic_images/law-17article.webp",
+    "history202/authentic_images/period-1879-conscription-cartoon.webp",
+    "history202/authentic_images/verified-antimonopoly-context.webp"
+  ],
+  "modifiedImageCount": 4,
+  "metadataEditedImagesFromStep3": 39,
+  "additionalMetadataEditsInStep4": "period-1879-conscription-cartoon (already among 39)",
+  "verifiedPageDownloadsPrepared": 2,
+  "verifiedPageDownloadsExecutedInCurrentTurn": 0,
+  "newArchiveCandidates": 3,
+  "archiveOriginalPagesNewlyInstalled": 0,
+  "sourcePageReviewWorkflow": "history202_konden_page_review.yml",
+  "pageReviewWorkflowWritesAppData": false,
+  "status": "not final 256-item material approval"
+}

@@ -28,7 +28,9 @@ ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / 'authentic_images'
 MANIFEST = ROOT / 'real-materials.json'
 LOCAL = ROOT / 'local-images.json'
-SOURCES = ROOT / 'curated_sources.json'
+# Default is unchanged. A separate workflow can select an independently reviewed PDF-page batch.
+_SOURCE_NAME = os.environ.get('HISTORY202_SOURCE_MANIFEST', 'curated_sources.json')
+SOURCES = Path(_SOURCE_NAME) if Path(_SOURCE_NAME).is_absolute() else ROOT / _SOURCE_NAME
 REPORT = ROOT / 'curation-batch-result.json'
 EXPORT = ROOT / 'curation-export'
 MAX_BYTES = 16_000_000
@@ -92,11 +94,25 @@ def fetch_commons_metadata(source):
     is_pdf=filename.casefold().endswith('.pdf') or mimetype=='application/pdf'
     src=(info.get('thumburl') if is_pdf else (info.get('thumburl') or info.get('url')))
     if not src or not src.startswith('https://'): raise ValueError('Commons did not provide a HTTPS raster thumbnail')
+    preview_page=1 if is_pdf else None
+    if source.get('pdfPage') is not None:
+        if not is_pdf: raise ValueError('pdfPage was given for a non-PDF source')
+        if source.get('pageImageVerified') is not True or not source.get('pageEvidence'):
+            raise ValueError('Non-first PDF page requires a manually documented exact-page visual check')
+        requested_page=source['pdfPage']
+        if type(requested_page) is not int or not 1<=requested_page<=300:
+            raise ValueError('pdfPage must be a positive verified 1-based PDF page number')
+        if not re.search(r'/page\d+-\d+px-', src):
+            raise ValueError('Commons thumbnail URL did not expose a safe PDF page segment')
+        src=re.sub(r'/page\d+-(\d+)px-',
+                   lambda m: f'/page{requested_page}-{m.group(1)}px-', src, count=1)
+        preview_page=requested_page
     canonical=info.get('descriptionurl') or ('https://commons.wikimedia.org/wiki/File:'+urllib.parse.quote(filename))
     expected=source.get('expectedOriginalSha1')
     if expected and info.get('sha1') and info['sha1'].lower()!=expected.lower():
         raise ValueError('original Commons file SHA1 changed since previous manual identification')
     return {'url':src,'full_url':(None if is_pdf else info.get('url')),'page':canonical,'source_mime':mimetype,
+            'preview_page':preview_page,
             'license':license_name,'license_url':license_url,
             'restrictions':restrictions,'sha1':info.get('sha1',''),
             'artist':field(meta,'Artist'),'credit':field(meta,'Credit')}
@@ -173,10 +189,21 @@ def run():
             current['license']=meta['license']
             current['licenseUrl']=meta['license_url']
             current['licenseStatus']='source_page_verified'
-            current['imageSelection']='curated-source-20261109'
+            current['imageSelection']=('verified-pdf-page-20261110' if source.get('pdfPage') is not None
+                                       else 'curated-source-20261109')
             current['localImage']=True
             current['review']=('所蔵情報・資料名を出典で確認。Commons APIのライセンス表示と画像ファイルを照合して保存。'
-                                'PDFの場合は先頭ページのプレビュー。該当本文ページ・正確な内容は目視確認が必要。')
+                                + (f'PDF第{meta["preview_page"]}ページは事前に資料本文を目視確認。'
+                                   + source['pageEvidence']
+                                   if source.get('pdfPage') is not None
+                                   else 'PDFは先頭ページのプレビュー。条文掲載ページの確認が必要。'))
+            if source.get('pdfPage') is not None:
+                current['verifiedPdfPage']=meta['preview_page']
+                current['pageEvidence']=source['pageEvidence']
+                current['pageImageVerified']=True
+                current.pop('qualityCropVersion',None)
+                current.pop('imageProcessing',None)
+                current['educationalReviewStatus']='document_page_checked_pending_device_review'
             local[item_id]='history202/authentic_images/'+item_id+'.webp'
             rel='history202/authentic_images/'+item_id+'.webp'
             changed_paths.append(rel)
@@ -185,6 +212,7 @@ def run():
             atomic_write(staged,data)
             changed_count+=1
             results.append({'id':item_id,'status':'replaced','source':meta['page'],
+                            'pdf_page':meta['preview_page'],'page_evidence':source.get('pageEvidence'),
                             'old_caption':previous_caption,'new_caption':source['caption'],
                             'file':rel,'bytes':len(data),'license':meta['license'],
                             'license_url':meta['license_url'],'commons_sha1':meta['sha1'],
@@ -204,7 +232,7 @@ def run():
     report={'targeted':len(targets),'replaced':changed_count,'retained':len(targets)-changed_count,
             'total_materials':len(items),'local_images_indexed':len(local),
             'changed_image_paths':changed_paths,
-            'note':'Commons PDF thumbnails show first page only. Source identity and reuse conditions are checked, but page-level historical relevance and captions still require manual review. No replacement occurs on failure.',
+            'note':'Default PDF preview is page 1. A manually verified positive pdfPage explicitly fetches that exact Commons PDF page. Metadata and raster validation are checked; all unverified pages keep their old images. Re-check on an actual phone after deployment.',
             'results':results}
     summary=(json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
     atomic_write(REPORT,summary)

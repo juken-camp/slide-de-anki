@@ -22,10 +22,13 @@ html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20!im
 @media(max-width:390px){#group-view .chat-header{grid-template-columns:26px minmax(0,1fr) auto;gap:5px;padding:10px}#group-view .group-heading{gap:7px}#group-view #group-title{font-size:14px}#group-view #sengoku-period-badge{font-size:9px;padding:2px 5px}}
 @media(max-width:340px){#group-view .group-header-actions{gap:3px}#group-view .group-header-actions .chat-reset{width:30px;min-width:30px}}
 /* Original single bubble rows. One avatar/name for the first of consecutive messages. */
-#group-view #group-messages .bubble-row{margin-bottom:14px;align-items:flex-start;gap:8px}
+/* Keep the same 16px gap across every message row, including successive
+   bubbles from one speaker. Negative top margins previously collapsed
+   multi-bubble spacing on iPhone (in some cases to just 3px). */
+#group-view #group-messages .bubble-row{margin-bottom:16px;align-items:flex-start;gap:8px}
 #group-view #group-messages .bubble-row.user{justify-content:flex-end;align-items:flex-end;margin-bottom:16px;gap:6px}
-#group-view #group-messages .bubble-row.continuation{margin-top:-7px;margin-bottom:12px}
-#group-view #group-messages .bubble-row.user.continuation{margin-top:-9px;margin-bottom:12px}
+#group-view #group-messages .bubble-row.continuation{margin-top:0;margin-bottom:16px}
+#group-view #group-messages .bubble-row.user.continuation{margin-top:0;margin-bottom:16px}
 #group-view #group-messages .bubble-avatar{border:0;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;width:33px;height:33px;border-radius:11px;padding:0;cursor:pointer}
 #group-view #group-messages .bubble-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 #group-view #group-messages .bubble-avatar-spacer{width:33px;min-width:33px;height:33px;flex:none}

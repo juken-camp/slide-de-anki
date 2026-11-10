@@ -24,11 +24,18 @@ jobs:
         env:
           HISTORY202_SOURCE_MANIFEST: curated_sources_verified_pages_20261110.json
         run: python history202/curate_original_sources.py
-      - name: Commit successfully downloaded images
+      - name: Commit successfully downloaded images without rebasing temporary reports
         run: |
+          # The image curator overwrites a tracked report. Preserve it as an
+          # artifact, then restore the tracked copy before git pull --rebase.
+          mkdir -p history202/curation-export
+          if [ -f history202/curation-batch-result.json ]; then
+            cp history202/curation-batch-result.json history202/curation-export/latest-curation-report.json
+          fi
+          git restore --worktree -- history202/curation-batch-result.json 2>/dev/null || true
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add history202/authentic_images/ history202/real-materials.json history202/local-images.json
+          git add -- history202/authentic_images/ history202/real-materials.json history202/local-images.json
           if ! git diff --cached --quiet; then
             git commit -m 'Install historically verified document pages'
             git pull --rebase origin main

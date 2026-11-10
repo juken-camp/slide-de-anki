@@ -1,0 +1,212 @@
+{
+  "scope": "31 stories, 202 terms, 256 historical source images",
+  "imageCount": 256,
+  "chapterCount": 31,
+  "termCount": 202,
+  "movedPhotoAnchors": [
+    "doc-reiwa",
+    "doc-heisei",
+    "term-cover-ch02-04",
+    "term-cover-ch02-06",
+    "term-cover-ch02-07",
+    "term-cover-ch02-08",
+    "term-cover-ch02-09",
+    "term-cover-ch02-10",
+    "term-cover-ch02-11",
+    "term-cover-ch02-12",
+    "term-cover-ch02-13",
+    "term-cover-ch02-14",
+    "term-cover-ch02-15",
+    "term-cover-ch03-01",
+    "term-cover-ch03-04",
+    "term-cover-ch03-06",
+    "authentic-2026-013",
+    "authentic-2026-015",
+    "law-gakusei",
+    "period-1879-conscription-cartoon",
+    "term-cover-ch26-04",
+    "term-cover-ch26-05",
+    "term-cover-ch26-06",
+    "term-cover-ch26-07",
+    "term-cover-ch28-01",
+    "authentic-2026-041",
+    "term-cover-ch28-03"
+  ],
+  "movedCount": 27,
+  "previousAnchors": {
+    "doc-reiwa": "h02-003",
+    "doc-heisei": "h02-003",
+    "term-cover-ch02-04": "h02-003",
+    "term-cover-ch02-06": "h02-003",
+    "term-cover-ch02-07": "h02-003",
+    "term-cover-ch02-08": "h02-003",
+    "term-cover-ch02-09": "h02-003",
+    "term-cover-ch02-10": "h02-003",
+    "term-cover-ch02-11": "h02-003",
+    "term-cover-ch02-12": "h02-003",
+    "term-cover-ch02-13": "h02-003",
+    "term-cover-ch02-14": "h02-003",
+    "term-cover-ch02-15": "h02-003",
+    "term-cover-ch03-01": "h03-003",
+    "term-cover-ch03-04": "h03-003",
+    "term-cover-ch03-06": "h03-003",
+    "authentic-2026-013": "h16-003",
+    "authentic-2026-015": "h16-deep-06-3",
+    "law-gakusei": "h16-deep-06-3",
+    "period-1879-conscription-cartoon": "h16-deep-06-3",
+    "term-cover-ch26-04": "h26-010",
+    "term-cover-ch26-05": "h26-010",
+    "term-cover-ch26-06": "h26-003",
+    "term-cover-ch26-07": "h26-010",
+    "term-cover-ch28-01": "h28-001",
+    "authentic-2026-041": "h28-001",
+    "term-cover-ch28-03": "h28-001"
+  },
+  "betterTeachingNotes": [
+    "term-cover-ch02-04",
+    "term-cover-ch02-06",
+    "term-cover-ch02-07",
+    "term-cover-ch02-08",
+    "term-cover-ch02-09",
+    "term-cover-ch02-10",
+    "term-cover-ch02-11",
+    "term-cover-ch02-12",
+    "term-cover-ch02-13",
+    "term-cover-ch02-14",
+    "term-cover-ch02-15"
+  ],
+  "betterTeachingNotesCount": 11,
+  "allPhotoExplanationsImmediatelyVisible": true,
+  "photoGroupsPerChapter": {
+    "1": {
+      "maxAtOneLine": 2,
+      "photos": 10
+    },
+    "2": {
+      "maxAtOneLine": 3,
+      "photos": 23
+    },
+    "3": {
+      "maxAtOneLine": 1,
+      "photos": 8
+    },
+    "4": {
+      "maxAtOneLine": 1,
+      "photos": 6
+    },
+    "5": {
+      "maxAtOneLine": 2,
+      "photos": 6
+    },
+    "6": {
+      "maxAtOneLine": 1,
+      "photos": 7
+    },
+    "7": {
+      "maxAtOneLine": 2,
+      "photos": 6
+    },
+    "8": {
+      "maxAtOneLine": 1,
+      "photos": 6
+    },
+    "9": {
+      "maxAtOneLine": 2,
+      "photos": 6
+    },
+    "10": {
+      "maxAtOneLine": 1,
+      "photos": 10
+    },
+    "11": {
+      "maxAtOneLine": 2,
+      "photos": 7
+    },
+    "12": {
+      "maxAtOneLine": 1,
+      "photos": 7
+    },
+    "13": {
+      "maxAtOneLine": 1,
+      "photos": 4
+    },
+    "14": {
+      "maxAtOneLine": 1,
+      "photos": 4
+    },
+    "15": {
+      "maxAtOneLine": 1,
+      "photos": 6
+    },
+    "16": {
+      "maxAtOneLine": 2,
+      "photos": 14
+    },
+    "17": {
+      "maxAtOneLine": 2,
+      "photos": 14
+    },
+    "18": {
+      "maxAtOneLine": 2,
+      "photos": 8
+    },
+    "19": {
+      "maxAtOneLine": 1,
+      "photos": 7
+    },
+    "20": {
+      "maxAtOneLine": 2,
+      "photos": 7
+    },
+    "21": {
+      "maxAtOneLine": 2,
+      "photos": 8
+    },
+    "22": {
+      "maxAtOneLine": 2,
+      "photos": 5
+    },
+    "23": {
+      "maxAtOneLine": 2,
+      "photos": 7
+    },
+    "24": {
+      "maxAtOneLine": 2,
+      "photos": 8
+    },
+    "25": {
+      "maxAtOneLine": 2,
+      "photos": 8
+    },
+    "26": {
+      "maxAtOneLine": 1,
+      "photos": 8
+    },
+    "27": {
+      "maxAtOneLine": 2,
+      "photos": 27
+    },
+    "28": {
+      "maxAtOneLine": 2,
+      "photos": 3
+    },
+    "29": {
+      "maxAtOneLine": 1,
+      "photos": 5
+    },
+    "30": {
+      "maxAtOneLine": 2,
+      "photos": 7
+    },
+    "31": {
+      "maxAtOneLine": 1,
+      "photos": 4
+    }
+  },
+  "nonGoals": [
+    "Images and licenses remain unchanged",
+    "31 story scripts and lesson texts unchanged",
+    "History source historicity and permissions are not certified by this display repair",
+    "No UI changes to Sengoku or the shared group chat"
+  ]
+}

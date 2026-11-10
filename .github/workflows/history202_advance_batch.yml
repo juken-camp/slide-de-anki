@@ -1,0 +1,51 @@
+name: History 202 verified images and document review - one batch
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-quality-curation
+  cancel-in-progress: false
+jobs:
+  historical-materials:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image and PDF readers
+        run: python -m pip install --disable-pip-version-check Pillow pymupdf
+      - name: Download only reviewed document pages
+        continue-on-error: true
+        env:
+          HISTORY202_SOURCE_MANIFEST: curated_sources_verified_pages_20261110.json
+        run: python history202/curate_original_sources.py
+      - name: Commit successfully downloaded images
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add history202/authentic_images/ history202/real-materials.json history202/local-images.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Install historically verified document pages'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No changes; original images retained'
+          fi
+      - name: Review original document pages (read-only)
+        continue-on-error: true
+        run: python history202/review_primary_documents.py --source all
+      - name: Upload document review sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-step8-all-results
+          path: |
+            history202/source_page_review/
+            history202/curation-export/
+            history202/curation-batch-result.json
+          if-no-files-found: warn

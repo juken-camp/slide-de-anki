@@ -150,31 +150,8 @@
     "source_page_verified": 46,
     "source_page_review_needed": 13
   },
-  "changedMetadataIds": [
-    "authentic-2026-005",
-    "authentic-2026-continued-042",
-    "authentic-2026-continued-044",
-    "authentic-2026-continued-045",
-    "authentic-2026-continued-048",
-    "authentic-2026-continued-056",
-    "authentic-2026-continued-063",
-    "authentic-2026-continued-078",
-    "h01-real-01",
-    "h02-real-03",
-    "h12-real-31",
-    "h27-real-22",
-    "law-goseibai",
-    "period-1882-itagaki-attack",
-    "period-1890-imperial-diet",
-    "term-cover-ch03-01",
-    "term-cover-ch03-06",
-    "term-cover-ch17-04",
-    "term-cover-ch26-03",
-    "term-cover-ch28-03",
-    "verified-antimonopoly-context",
-    "wmc-sinojapanese"
-  ],
-  "changedMetadataCount": 22,
+  "changedMetadataIds": [],
+  "changedMetadataCount": 0,
   "twoPublicDomainReplacements": {
     "period-1882-itagaki-attack": {
       "result": "downloaded_and_rights_checked",

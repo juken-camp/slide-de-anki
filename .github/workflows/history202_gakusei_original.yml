@@ -1,0 +1,116 @@
+name: History 202 - replace Gakusei cover with 1872 original text
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-safe-publish
+  cancel-in-progress: false
+jobs:
+  update-one-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check Pillow
+      - name: Retrieve 1872 document page, verify raster, retain original on failure
+        shell: bash
+        run: |
+          python - <<'PY'
+          import io, json, urllib.request
+          from pathlib import Path
+          from PIL import Image, ImageOps
+          
+          BASE = Path('history202')
+          ITEM_ID = 'law-gakusei'
+          IMAGE = BASE / 'authentic_images' / (ITEM_ID + '.webp')
+          MATERIALS = BASE / 'real-materials.json'
+          MAPPING = BASE / 'local-images.json'
+          ORIGINAL = 'https://www.nier.go.jp/library/rarebooks/seido/373.2-308/main_images/373.2-308_006.jpg'
+          LANDING = 'https://www.nier.go.jp/library/rarebooks/seido/373.2-308/'
+          TERMS = 'https://www.mext.go.jp/b_menu/1351168.htm'
+          
+          manifest = json.loads(MATERIALS.read_text(encoding='utf-8'))
+          indexed = json.loads(MAPPING.read_text(encoding='utf-8'))
+          assert len(manifest['items']) == 256 and len(indexed) == 256, 'Not the expected 256-material data'
+          assert len(set(x['id'] for x in manifest['items'])) == 256, 'Duplicate IDs'
+          assert set(x['id'] for x in manifest['items']) == set(indexed), 'Mapping mismatch'
+          assert indexed.get(ITEM_ID) == IMAGE.as_posix(), 'Unexpected target file: abort'
+          assert IMAGE.is_file(), 'Original image missing: abort'
+          matching = [x for x in manifest['items'] if x['id'] == ITEM_ID]
+          assert len(matching) == 1, 'Document item not found'
+          
+          req = urllib.request.Request(ORIGINAL, headers={
+              'User-Agent': 'JukenCampHistoryEducation/1.0 (+https://github.com/juken-camp/slide-de-anki)',
+              'Accept': 'image/jpeg,image/*;q=0.9',
+          })
+          with urllib.request.urlopen(req, timeout=40) as resp:
+              if resp.status != 200:
+                  raise ValueError('Cannot retrieve original image')
+              data = resp.read(12_000_001)
+          if not 12_000 <= len(data) <= 12_000_000:
+              raise ValueError('Unexpected image byte size')
+          if not data.startswith(bytes.fromhex('ffd8ff')):
+              raise ValueError('Expected an official JPEG, got other content')
+          with Image.open(io.BytesIO(data)) as im:
+              im.verify()
+          with Image.open(io.BytesIO(data)) as im:
+              if im.width < 430 or im.height < 430:
+                  raise ValueError('Source image too small to publish')
+              photo = ImageOps.exif_transpose(im).convert('RGB')
+              photo.thumbnail((1400, 1400), Image.Resampling.LANCZOS)
+          
+          # Only update one already-indexed image, preserving all other bytes on failure.
+          import os, tempfile
+          with tempfile.NamedTemporaryFile(dir=IMAGE.parent, prefix='.gakusei-',suffix='.webp',delete=False) as f:
+              temp = Path(f.name)
+          try:
+              photo.save(temp, format='WEBP', quality=88, method=6)
+              with Image.open(temp) as im:
+                  im.verify()
+              record = matching[0]
+              record.update({
+                  'caption': '1872年の『学制』の太政官布告と本文（当時の実物資料）',
+                  'image': ORIGINAL,
+                  'sourceUrl': LANDING,
+                  'attributionUrl': LANDING,
+                  'credit': '国立教育政策研究所教育図書館所蔵『学制』（1872年）。公開画像をWebPに変換・縮小。',
+                  'type': '1872年『学制』の刊本・太政官布告と本文',
+                  'explanation': '1872年、明治政府は全国に学校を広めるため「学制」を出しました。写真は同じ年に刊行された『学制』の本文と太政官布告が写るページです。表紙だけの画像ではありません。',
+                  'license': '文部科学省ウェブサイト利用規約に従って出典表示して利用',
+                  'licenseUrl': TERMS,
+                  'licenseStatus': 'source_page_verified',
+                  'review': '国立教育政策研究所教育図書館所蔵の1872年『学制』の本文ページ。文部科学省の公開サイト利用規約を確認し、縮小・形式変換を明記。'
+              })
+              new_manifest = json.dumps(manifest, ensure_ascii=False, indent=2) + '\n'
+              with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=MATERIALS.parent,prefix='.gakusei-meta-',suffix='.json',delete=False) as f:
+                  tmp_manifest = Path(f.name)
+                  f.write(new_manifest)
+              try:
+                  json.loads(tmp_manifest.read_text(encoding='utf-8'))
+                  os.replace(temp, IMAGE)
+                  os.replace(tmp_manifest, MATERIALS)
+              finally:
+                  tmp_manifest.unlink(missing_ok=True)
+          finally:
+              temp.unlink(missing_ok=True)
+          print('Changed one material: law-gakusei; preserved IDs, chats and all other images.')
+          PY
+      - name: Commit updated image and the matched document metadata
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- history202/authentic_images/law-gakusei.webp history202/real-materials.json
+          if git diff --cached --quiet; then
+            echo 'No change'
+          else
+            git commit -m 'Use original 1872 Gakusei document page in History 202'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

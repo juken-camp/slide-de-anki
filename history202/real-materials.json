@@ -174,13 +174,17 @@
       "caption": "古墳時代の埴輪・挂甲の武人（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHaniwa_-_Warrior_in_Keiko_Armor.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Haniwa_-_Warrior_in_Keiko_Armor.jpg",
-      "explanation": "埴輪は古墳の周りなどに並べられた土製品で、この画像は武人をかたどったものです。鎧などの姿から、古墳時代の有力者に仕えた人々の服装を想像できます。",
-      "credit": "Wikimedia Commons／東京国立博物館",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
-      "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Haniwa_-_Warrior_in_Keiko_Armor.jpg"
+      "explanation": "6世紀ごろの埴輪「挂甲の武人」です。よろい・かぶと・太刀まで土で表した高さ約130cmの埴輪で、古墳時代の武人の姿がわかります。埴輪そのものは古墳時代の実物ですが、写真は2015年の撮影です。",
+      "credit": "Kakidai撮影（2015年）／東京国立博物館所蔵「埴輪 挂甲の武人」／CC BY-SA 4.0（背景余白をトリミング）",
+      "type": "古墳時代（6世紀）の実物埴輪を撮影した2015年の写真",
+      "license": "CC BY-SA 4.0",
+      "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。 2026-11-10：既存の出典画像の背景余白だけをトリミング。史料内容・人物・文字は無加工。",
+      "licenseStatus": "confirmed",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Haniwa_-_Warrior_in_Keiko_Armor.jpg",
+      "qualityCropVersion": 3,
+      "imageProcessing": "既存の出典画像の無地背景・撮影余白を除去（史料本体は切り抜かず）。",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "artworkEra": "6世紀の埴輪（2015年撮影）"
     },
     {
       "id": "h03-real-32",
@@ -573,12 +577,16 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKaitaishinsho2-0003.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kaitaishinsho2-0003.jpg",
       "explanation": "1774年、杉田玄白らが西洋の解剖学の本を日本語に訳し、『解体新書』として出版しました。人体の仕組みを実際の観察と照らして学ぶ「蘭学」の発展を示す資料です。",
-      "credit": "佐賀大学所蔵／Wikimedia Commons",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
-      "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
-      "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Kaitaishinsho2-0003.jpg"
+      "credit": "佐賀大学地域学歴史文化研究センター所蔵『解体新書』／Wikimedia Commons（原作品はパブリックドメイン・余白のみトリミング）",
+      "type": "1774年刊『解体新書』実物の見開き（後世の写真）",
+      "license": "Public domain（PD-Art / PD-Japan：1774年の原作品の複製）",
+      "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。 2026-11-10：既存の出典画像の背景余白だけをトリミング。史料内容・人物・文字は無加工。",
+      "licenseStatus": "source_page_verified",
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Kaitaishinsho2-0003.jpg",
+      "qualityCropVersion": 3,
+      "imageProcessing": "既存の出典画像の無地背景・撮影余白を除去（史料本体は切り抜かず）。",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Kaitaishinsho2-0003.jpg",
+      "artworkEra": "1774年刊行の書籍実物（現代の撮影）"
     },
     {
       "id": "h09-real-08",
@@ -2726,11 +2734,13 @@
       "credit": "Richard Chambers撮影／CC BY-SA 3.0",
       "explanation": "中国と関わる歴史資料。秦の始皇帝陵の周辺に造られた等身大の兵士像。中国を初めて統一した秦の皇帝の強い力を感じる資料。",
       "type": "考古資料の写真",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "license": "CC BY-SA 3.0",
+      "licenseStatus": "confirmed",
       "coverageOf": "中国",
       "sourceId": "authentic-2026-040",
-      "coverageType": "関連史料"
+      "coverageType": "関連史料",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "review": " 2026-11-10：同一の出典URL・同一の画像バイト列を確認し、既に記録された出典のライセンス情報に合わせた。"
     },
     {
       "id": "term-cover-ch02-04",
@@ -2870,11 +2880,13 @@
       "credit": "秋田県発行・Mbdnoobによるスキャン／パブリックドメイン",
       "explanation": "明治と関わる歴史資料。地租改正では地価をもとに金銭で税を納めるしくみを整えた。地券は土地の所有権などを示す証書。これは1879年に秋田県が発行したもの。",
       "type": "当時の公文書",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "license": "Public domain",
+      "licenseStatus": "confirmed",
       "coverageOf": "明治",
       "sourceId": "authentic-2026-039",
-      "coverageType": "直接の資料"
+      "coverageType": "直接の資料",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
+      "review": " 2026-11-10：同一の出典URL・同一の画像バイト列を確認し、既に記録された出典のライセンス情報に合わせた。"
     },
     {
       "id": "term-cover-ch02-14",
@@ -2902,11 +2914,13 @@
       "credit": "アメリカ海軍の公式記録写真／パブリックドメイン",
       "explanation": "昭和と関わる歴史資料。1941年12月（ハワイ現地時間7日）、日本軍の真珠湾攻撃で燃える米戦艦アリゾナ。太平洋戦争開戦の資料として重要。",
       "type": "当時の写真",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "license": "US public domain; international rights require review",
+      "licenseStatus": "source_page_verified",
       "coverageOf": "昭和",
       "sourceId": "authentic-2026-019",
-      "coverageType": "直接の資料"
+      "coverageType": "直接の資料",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
+      "review": " 2026-11-10：同一の出典URL・同一の画像バイト列を確認し、既に記録された出典のライセンス情報に合わせた。"
     },
     {
       "id": "term-cover-ch03-01",
@@ -3264,11 +3278,13 @@
       "credit": "秋田県発行・Mbdnoobによるスキャン／パブリックドメイン",
       "explanation": "地租改正と関わる歴史資料。地租改正では地価をもとに金銭で税を納めるしくみを整えた。地券は土地の所有権などを示す証書。これは1879年に秋田県が発行したもの。",
       "type": "当時の公文書",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "license": "Public domain",
+      "licenseStatus": "confirmed",
       "coverageOf": "地租改正",
       "sourceId": "authentic-2026-039",
-      "coverageType": "直接の資料"
+      "coverageType": "直接の資料",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
+      "review": " 2026-11-10：同一の出典URL・同一の画像バイト列を確認し、既に記録された出典のライセンス情報に合わせた。"
     },
     {
       "id": "term-cover-ch17-01",
@@ -3328,14 +3344,16 @@
       "image": "https://search.showakan.go.jp/media_files/02/image/large/00/90016000/1682.jpg",
       "sourceUrl": "https://search.showakan.go.jp/search/photo/detail.php?id=90016000",
       "credit": "米国国立公文書館所蔵・昭和館デジタルアーカイブ掲載・SC-247635",
-      "explanation": "労働三法を学ぶための関連資料。1946年に実際に組合活動を行う労働者の写真。労働組合法・労働関係調整法・労働基準法の制定により労働者の権利を保護する制度が整った。",
-      "type": "制定過程の草案",
+      "explanation": "1946年、国鉄の労働組合が活動する様子を写した写真です。労働者が団結し、会社と話し合う権利などが戦後に整えられました。労働組合法（1945年）、労働関係調整法（1946年）、労働基準法（1947年）と区別しましょう。写真は法律の草案ではありません。",
+      "type": "1946年の国鉄労働組合の活動写真（当時の写真）",
       "license": "出典の利用条件を別途確認",
       "licenseStatus": "source_page_review_needed",
       "coverageOf": "労働組合",
       "sourceId": "labor-1946",
       "coverageType": "関連史料",
-      "imageSelection": "direct-related"
+      "imageSelection": "direct-related",
+      "review": " 2026-11-10：「制定過程の草案」は画像と異なるため「当時の写真」に訂正。所蔵写真の二次利用条件は引き続き確認。",
+      "educationalReviewStatus": "related_photo_not_legislation_draft"
     },
     {
       "id": "term-cover-ch18-01",
@@ -3419,11 +3437,13 @@
       "credit": "アメリカ海軍の公式記録写真／パブリックドメイン",
       "explanation": "第二次世界大戦と関わる歴史資料。1941年12月（ハワイ現地時間7日）、日本軍の真珠湾攻撃で燃える米戦艦アリゾナ。太平洋戦争開戦の資料として重要。",
       "type": "当時の写真",
-      "license": "個別の出典ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "license": "US public domain; international rights require review",
+      "licenseStatus": "source_page_verified",
       "coverageOf": "第二次世界大戦",
       "sourceId": "authentic-2026-019",
-      "coverageType": "直接の資料"
+      "coverageType": "直接の資料",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
+      "review": " 2026-11-10：同一の出典URL・同一の画像バイト列を確認し、既に記録された出典のライセンス情報に合わせた。"
     },
     {
       "id": "term-cover-ch23-01",
@@ -3468,16 +3488,21 @@
       "caption": "1915年の二十一か条の要求を描いた風刺画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F21_demands_by_Japan_against_China_1915.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:21_demands_by_Japan_against_China_1915.png",
-      "credit": "Wikimedia Commons",
-      "explanation": "1915年、日本が中国に示した要求を当時の外国の風刺画が描いた資料。孫文の肖像を代用しない。",
-      "type": "1915年の政治風刺画",
-      "license": "個別の資料ページで確認",
-      "licenseStatus": "source_page_review_needed",
+      "credit": "Luther Daniels Bradley画／Chicago Daily News（1915年3月15日）／Library of Congress所蔵資料（Wikimedia Commons経由）。余白のみトリミング",
+      "explanation": "1915年、日本政府は中国に「二十一か条の要求」を出しました。この風刺画では、中国の人物が日本の要求に戸惑う様子が描かれています。1915年3月にアメリカの新聞に掲載された当時の風刺画で、実際の交渉を写した写真ではありません。",
+      "type": "1915年3月の米国の政治風刺画（当時の資料）",
+      "license": "Public domain（米国で1931年以前に公表・作者1917年没）",
+      "licenseStatus": "source_page_verified",
       "coverageOf": "二十一ヶ条の要求",
       "sourceId": "wmc-sunyatsen",
       "coverageType": "関連史料",
-      "review": "関連しない画像の混入を避け、重要語句と画像の内容を対応させた。",
-      "imageSelection": "reviewed-replaced"
+      "review": "関連しない画像の混入を避け、重要語句と画像の内容を対応させた。 2026-11-10：既存の出典画像の背景余白だけをトリミング。史料内容・人物・文字は無加工。",
+      "imageSelection": "reviewed-replaced",
+      "qualityCropVersion": 3,
+      "imageProcessing": "既存の出典画像の無地背景・撮影余白を除去（史料本体は切り抜かず）。",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:21_demands_by_Japan_against_China_1915.png",
+      "sourceDate": "1915-03-15",
+      "artworkEra": "同時代の風刺画（1915年）"
     },
     {
       "id": "term-cover-ch25-06",

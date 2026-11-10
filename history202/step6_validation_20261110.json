@@ -1,0 +1,23 @@
+{
+  "baseHeadAtPackaging": "2fb206491e9edfd4d5676fd0e486c0a9d4a3ebe2",
+  "baseBlobForRealMaterials": "d83afeb4f7e260172ec785a8aabc6a2b221327fc",
+  "newImageCrops": 3,
+  "metadataRecordsUpdated": 9,
+  "workflowsNotYetPresentOnMain": 2,
+  "countMaterialRecords": 256,
+  "imageIdsPreserved": true,
+  "localImagesUnchangedMapping": true,
+  "newHistoricallyIdentifiedDocumentPageImages": 0,
+  "filePaths": [
+    ".github/workflows/history202_konden_page_review.yml",
+    ".github/workflows/history202_verified_pages.yml",
+    "history202/real-materials.json",
+    "history202/authentic_images/term-cover-ch25-05.webp",
+    "history202/authentic_images/h02-real-06.webp",
+    "history202/authentic_images/h09-real-07.webp",
+    "history202/source_review_candidates_20261110.json",
+    "history202/step6_quality_changes_20261110.json",
+    "history202/step6_validation_20261110.json",
+    "history202/STEP6_README_20261110.md"
+  ]
+}

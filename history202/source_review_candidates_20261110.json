@@ -16,7 +16,9 @@
       "archive": "国立公文書館 137-0100",
       "review": "volume identified, exact PDF page not visually certified",
       "action": "Use contact-sheet workflow to verify the page; never use the first page as a substitute",
-      "sourceReuse": "Wikimedia Commons lists PD-scan; review original license details before distribution"
+      "sourceReuse": "Wikimedia Commons lists PD-scan; review original license details before distribution",
+      "researchAdded20261110": "743年（天平15）5月乙丑の日の文面は複数の教育用本文で確認済。ただし国立公文書館所蔵『続日本紀』巻15のPDF該当画像ページは特定できていない。現代の教材画像を無断で採用しない。",
+      "textEvidenceUrl": "https://ee-arts.biz/database/jh119/770/"
     },
     {
       "term": "山城の国一揆",
@@ -38,7 +40,9 @@
         }
       ],
       "review": "original manuscript volumes identified; event passage/page and image reuse conditions require confirmation",
-      "action": "Find direct event passage and archive image rights before replacing current modern Byodo-in photo"
+      "action": "Find direct event passage and archive image rights before replacing current modern Byodo-in photo",
+      "dateEvidence": "1485年12月11日・1486年2月13日の記述がある（本来の日時であり、原本画像上の日付位置は未確認）",
+      "textEvidenceUrl": "https://ee-arts.biz/database/jh227/470/"
     },
     {
       "term": "独占禁止法",

@@ -1,0 +1,85 @@
+{
+  "preparedOn": "2026-11-10",
+  "referenceGitHubCommit": "95902ee116b1bb392f851d2e5636ec75c8acb293",
+  "relationToPrevious": "cumulative stage3+stage4+stage5+stage6, not full repository",
+  "newCroppedAssets": {
+    "term-cover-ch25-05": {
+      "cropBox": [
+        230,
+        0,
+        775,
+        325
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:21_demands_by_Japan_against_China_1915.png",
+      "size": [
+        960,
+        338
+      ],
+      "sha256": "d191e8e051a36183c3745f239fea505867d67dcb22e614046dda66deeea52276",
+      "outputSize": [
+        545,
+        325
+      ],
+      "outputSha256": "d8b5b46dbb4822c158dd090adad0ad724318761315b5c534a6314feab35e2cd9"
+    },
+    "h02-real-06": {
+      "cropBox": [
+        215,
+        34,
+        739,
+        1333
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Haniwa_-_Warrior_in_Keiko_Armor.jpg",
+      "size": [
+        953,
+        1400
+      ],
+      "sha256": "daa4b98ad45851eed95301c00d265b12ba0722b7d000c64a79d66b7e0024b294",
+      "outputSize": [
+        524,
+        1299
+      ],
+      "outputSha256": "966142bebb9d537dc9d3a5f24af37d21647d766843ecf4633e60a2028f1fcbb3"
+    },
+    "h09-real-07": {
+      "cropBox": [
+        122,
+        32,
+        830,
+        602
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Kaitaishinsho2-0003.jpg",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "ee24f1e6541a274d18561a6bc177d6ff86d0f07cb8f4311cfbcf7add1b0f894b",
+      "outputSize": [
+        708,
+        570
+      ],
+      "outputSha256": "2c864132cb59def8222872a92e285a1f5d7dc0dc96bd8ae88c3c40dcb2e8305f"
+    }
+  },
+  "newHistoricalExplanationAndTypeCorrections": [
+    "term-cover-ch25-05",
+    "h02-real-06",
+    "h09-real-07",
+    "term-cover-ch17-13"
+  ],
+  "exactDuplicateLicenseMetadataReconciled": [
+    "term-cover-ch02-13",
+    "term-cover-ch16-01",
+    "term-cover-ch02-15",
+    "term-cover-ch21-04",
+    "term-cover-ch01-04"
+  ],
+  "newOriginalPrimaryDocumentPagesInstalled": 0,
+  "verifiedPdfPagesPreviouslyPreparedButNotExecuted": 2,
+  "historicalSourcePageReviewRemaining": [
+    "743-05-27 続日本紀巻15",
+    "1485-12-11/1486-02-13 大乗院寺社雑事記",
+    "1947-04-14 独占禁止法御署名原本"
+  ],
+  "notes": "License updates are grounded in individual Commons source pages and exact byte-wise duplicate matching. Cropping removes external blank space only."
+}

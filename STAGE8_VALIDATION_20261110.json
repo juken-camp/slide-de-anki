@@ -1,0 +1,46 @@
+{
+  "task": "history202 original primary document source finalization",
+  "basis": {
+    "branch": "main",
+    "headAtValidation": "c801e2c992d88f32ce85326350b3824f7e7ce9b6",
+    "realMaterialsGitBlob": "5a83ede5e9697805b22e424e339beca303635d7e",
+    "currentMaterialIds": 256,
+    "indexedWebpPaths": 256
+  },
+  "includedChanges": {
+    "newWorkflowFiles": 4,
+    "newPythonFiles": 2,
+    "newDocumentation": 1,
+    "validationReport": 1,
+    "appImagesModifiedInZip": 0,
+    "captionsOrReferencesModifiedInZip": 0,
+    "historicalScriptsOrChaptersModified": 0
+  },
+  "reviewVolumes": {
+    "konden": 72,
+    "yamashiro101": 69,
+    "yamashiro102": 68,
+    "pagesTotal": 209
+  },
+  "readyForAutomaticVerifiedPageDownload": [
+    {"id": "law-17article", "page": 3, "material": "1939 書写 十七条の憲法"},
+    {"id": "period-1879-conscription-cartoon", "page": 2, "material": "1873 徴兵令 官版"}
+  ],
+  "needsVisualPageIdentificationBeforePublish": [
+    {"source": "konden", "replaces": ["verified-konden-743", "verified-konden-ch15"]},
+    {"source": "yamashiro101", "replaces": ["authentic-2026-continued-056"]},
+    {"source": "yamashiro102", "replaces": ["authentic-2026-continued-056"]}
+  ],
+  "pendingOriginalWithoutAccessibleImage": ["verified-antimonopoly-context"],
+  "localAutomatedTests": [
+    "Python compiles successfully",
+    "256 IDs and local image references preflight OK",
+    "preview leaves manifest and local index unchanged",
+    "zero-page number is rejected",
+    "publication without explicit confirmation is rejected",
+    "simulated publication changes exactly the two selected material records",
+    "phone image gallery generation succeeds"
+  ],
+  "notExecutedHere": ["GitHub workflows", "remote historical PDF image downloads", "iPhone live rendering"],
+  "scopeNote": "All new workflows/script changes; final historical-document page content remains to be verified by human eye before release."
+}

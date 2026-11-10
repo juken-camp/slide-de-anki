@@ -1,0 +1,294 @@
+name: History 202 - verify final five historical sources
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/history202_final_five.yml'
+permissions:
+  contents: write
+concurrency:
+  group: history202-final-five-source-check
+  cancel-in-progress: false
+jobs:
+  verify-final-five:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Download three rights-cleared historical images and reconcile the last five cards
+        run: |
+          cat > history202/_verify_final_five_tmp.py <<'PY'
+          #!/usr/bin/env python3
+          """Finish the five flagged History 202 cards without claiming unverified manuscript leaves."""
+          from __future__ import annotations
+
+          import collections
+          import hashlib
+          import io
+          import json
+          import sys
+          import urllib.parse
+          import urllib.request
+          from pathlib import Path
+          from PIL import Image, ImageOps
+
+          ROOT = Path('history202')
+          MANIFEST = ROOT/'real-materials.json'
+          LOCAL = ROOT/'local-images.json'
+          REPORT = ROOT/'history202_final_five_20261110.json'
+          DATE = '2026-11-10'
+          KOBE_MANIFEST = 'https://da.lib.kobe-u.ac.jp/files/manifest/1/40000/0100405769.json'
+          KOBE_ITEM = 'https://da.lib.kobe-u.ac.jp/da/sc/0100405769/'
+          KOBE_TERMS = 'https://lib.kobe-u.ac.jp/da/secondaryuse/'
+
+
+          def fetch_limited(url, limit=20_000_000, expect_json=False):
+              req = urllib.request.Request(url, headers={
+                  'User-Agent': 'History202AcademicReview/1.0 (GitHub Action; JUKEN CAMP)',
+                  'Accept': 'application/json' if expect_json else 'image/jpeg,image/png,image/webp,image/*;q=0.8',
+              })
+              with urllib.request.urlopen(req, timeout=50) as resp:
+                  content_type = resp.headers.get('Content-Type', '').lower().split(';')[0].strip()
+                  if expect_json:
+                      assert content_type in ('application/json', 'application/ld+json', 'text/plain'), ('JSON type',content_type)
+                  else:
+                      assert content_type.startswith('image/'), ('Image type', content_type)
+                  data = resp.read(limit+1)
+              assert 1500 < len(data) <= limit, ('bad response length', len(data))
+              return data
+
+
+          def to_webp(raw):
+              with Image.open(io.BytesIO(raw)) as image:
+                  image.load()
+                  image = ImageOps.exif_transpose(image)
+                  assert image.width >= 300 and image.height >= 200
+                  image.thumbnail((1400, 1400), Image.Resampling.LANCZOS)
+                  if image.mode not in ('RGB','RGBA'):
+                      image = image.convert('RGB')
+                  out = io.BytesIO()
+                  image.save(out, format='WEBP',quality=84,method=5)
+                  data=out.getvalue()
+              with Image.open(io.BytesIO(data)) as check:
+                  assert check.format=='WEBP'
+                  check.verify()
+              return data
+
+
+          def download_kobe_page():
+              payload = json.loads(fetch_limited(KOBE_MANIFEST,expect_json=True).decode('utf-8'))
+              assert payload.get('id') == KOBE_MANIFEST
+              assert any('慶安御觸書' in x for x in payload.get('label',{}).get('none',[]))
+              assert any('1837' in json.dumps(x,ensure_ascii=False) for x in payload.get('metadata',[]))
+              assert '事前申請することなく' in json.dumps(payload.get('metadata',[]),ensure_ascii=False)
+              canvases=payload['items']
+              assert len(canvases)>3, 'unexpected Kobe IIIF number of pages'
+              page=2   # opening of the actual 1837 book; exact article leaf not claimed
+              service = canvases[page-1]['items'][0]['items'][0]['body']['service'][0]['id']
+              assert service.startswith('https://da.lib.kobe-u.ac.jp/files/iiif/1/40000/0100405769/')
+              jpeg = service + '/full/1200,/0/default.jpg'
+              # IIIF image service returns resized image so no large historical TIFF is downloaded.
+              raw = fetch_limited(jpeg)
+              return to_webp(raw), jpeg, page
+
+
+          def main():
+              data=json.loads(MANIFEST.read_text(encoding='utf-8'))
+              items=data['items']; local=json.loads(LOCAL.read_text(encoding='utf-8'))
+              byid={x['id']:x for x in items}
+              assert len(items)==len(byid)==len(local)==256
+              assert set(byid)==set(local)
+              for i,path in local.items():
+                  assert path==f'history202/authentic_images/{i}.webp' and Path(path).is_file(), (i,path)
+              from curate_original_sources import download
+              # Stage all inputs; nothing is overwritten if even one source fails metadata/raster validation.
+              images={}; meta={}
+              for id_,filename in [
+                 ('law-bunkoku','Imagawa Yoshimoto.jpg'),
+                 ('law-hanseki','WUL-i14 a0122 版籍奉還諸侯名簿.pdf'),
+              ]:
+                  images[id_],meta[id_] = download({'commonsFile':filename})
+                  if not meta[id_]['license']:
+                      raise ValueError('Commons license missing '+id_)
+                  if not ('public domain' in meta[id_]['license'].casefold() or meta[id_]['license'].casefold() in ('pdm','pd')):
+                      raise ValueError('Commons license not public domain '+id_+': '+meta[id_]['license'])
+                  print('Verified Commons asset:',id_,meta[id_]['page'],meta[id_]['license'],flush=True)
+              images['law-keian'],keian_url,keian_page=download_kobe_page()
+              print('Verified Kobe University IIIF image',keian_url,flush=True)
+
+              modified=[]
+              def update(id_,**kwargs):
+                  obj=byid[id_]
+                  changes={k:v for k,v in kwargs.items() if obj.get(k)!=v}
+                  if changes:
+                      obj.update(changes)
+                      obj['reviewDate']=DATE
+                      modified.append(id_)
+              # In image 1 we use an 1867 Utagawa Yoshiiku print showing YOSHIMOTO,
+              # who expanded the code in 1553, not an Imagawa Ujichika 1526 law document.
+              m=meta['law-bunkoku']
+              update('law-bunkoku',
+                  caption='『今川仮名目録』を追加した今川義元（1867年の錦絵）',
+                  image=m['url'],sourceUrl=m['page'],
+                  credit='歌川芳幾『太平記英勇伝』1867年／東京都立図書館・Wikimedia Commons',
+                  explanation=('1526年、今川氏親が今川氏の領地を治めるための決まり「今川仮名目録」を作りました。'
+                    '土地の争いや家臣の行動などを取り決めました。1553年には息子の今川義元が決まりを追加しました。'
+                    '画像は1867年に描かれた義元の錦絵で、1526年の法律原文や当時の肖像画ではありません。'),
+                  type='1867年の歴史人物を描く錦絵（今川仮名目録の本文ではない）',
+                  license='Public domain（歌川芳幾、1867年の浮世絵）',
+                  licenseStatus='source_page_verified',licenseUrl='https://creativecommons.org/publicdomain/mark/1.0/',
+                  attributionUrl=m['page'],imageSelection='historically_related_PD_art_not_law_original',
+                  educationalReviewStatus='related_1867_portrait_not_original_1526_law',
+                  rightsReviewStatus='previous_unlicensed_museum_photo_replaced',
+                  primarySourceUrl='https://m-archives.meiji.jp/content/detail/MC00000004',
+                  primarySourceCitation='明治大学博物館『今川仮名目録』元亀～天正年間の写本は利用申請が必要なため、今回の画像には用いない。',
+                  review='旧明治大学博物館写真の転載許可を確認できないため除去。代替は歌川芳幾の1867年錦絵。1526年の条文と誤認させない。',
+                  localImage=True)
+
+              # Image 2 is NOT a 1649 nationwide shogunal edict. The library dates the
+              # physical book to 1837 and freely allows credit-bearing reuse.
+              update('law-keian',
+                  caption='『慶安御触書』1837年刊の資料（後世の本）',
+                  image=keian_url,sourceUrl=KOBE_ITEM,
+                  credit='神戸大学附属図書館・住田文庫『慶安御觸書』天保8年（1837年）／国文学研究資料館事業で電子化',
+                  explanation=('「慶安の御触書」は、江戸時代の農民の暮らしや仕事について細かく記した文書です。'
+                     '昔は1649年に江戸幕府が全国へ出した決まりと教えられましたが、当時の全国向け原本は確認されていません。'
+                     '画像は1837年に刊行された『慶安御触書』の実物資料です。1649年に幕府が出した原本ではありません。'),
+                  type='1837年の刊本（1649年の幕府原本ではない）',
+                  license='神戸大学附属図書館：出典・加工表示を条件に二次利用可（事前申請不要）',
+                  licenseStatus='source_page_verified',licenseUrl=KOBE_TERMS,attributionUrl=KOBE_ITEM,
+                  imageSelection='KobeUniversity_1837_book_page2_rights_verified',
+                  educationalReviewStatus='1837_keian_document_not_1649_bakufu_original',
+                  rightsReviewStatus='permission_free_with_attribution',
+                  verifiedPage=keian_page,
+                  pageEvidence='神戸大学IIIFの1837年刊『慶安御觸書』2コマ目。元の1649年幕府原本であるとは扱わない。',
+                  review='神戸大学附属図書館の資料記録（1837年刊）とIIIF二次利用条件を照合。公開画像は出典・加工表示を条件に無申請利用可能。',
+                  localImage=True)
+
+              # Image 3 is actual 1869 history source (daimyo roster) rather than a guess
+              # at the exact January appeal page. Both types are distinguished in teaching.
+              h=meta['law-hanseki']
+              update('law-hanseki',
+                  caption='1869年の『版籍奉還諸侯名簿』（当時の記録）',
+                  image=h['url'],sourceUrl=h['page'],
+                  credit='早稲田大学図書館所蔵、1869年の写本『版籍奉還諸侯名簿』／Wikimedia Commons',
+                  explanation=('1869年、薩摩・長州・土佐・肥前の4藩主が土地と人民を朝廷に返す「版籍奉還」を申し出ました。'
+                      'その後、ほかの藩も続き、旧藩主の多くは知藩事として引き続き地方を治めました。'
+                      '画像は当時の『版籍奉還諸侯名簿』で、薩長土肥の4藩主が最初に提出した願書そのものではありません。'),
+                  type='1869年の写本『版籍奉還諸侯名簿』（四藩主の原願書ではない）',
+                  license='Public domain（1869年の写本・Commons掲載）',
+                  licenseStatus='source_page_verified',licenseUrl='https://creativecommons.org/publicdomain/mark/1.0/',
+                  attributionUrl=h['page'],imageSelection='1869_daimyo_roster_primary_context_PD',
+                  educationalReviewStatus='1869_roster_not_original_four_domain_petition',
+                  rightsReviewStatus='previous_prefecture_image_permission_unknown_replaced',
+                  primarySourceUrl='https://www.archives.go.jp/ayumi/kobetsu/m02_1869_01.html',
+                  primarySourceCitation='国立公文書館「薩長土肥の4藩主が版籍奉還を願い出る」掲載の公文録・明治二年・第五十六巻に原願書がある。',
+                  review='転載条件が確認できない群馬県の願書写真を外し、1869年の別資料に差し替え。四藩主の願書ではなく名簿と明記。',
+                  localImage=True)
+
+              update('authentic-2026-continued-056',
+                  educationalReviewStatus='1485_12_11_and_1486_02_13_article_referenced_exact_leaf_NOT_VERIFIED',
+                  primarySourceUrl='https://www.digital.archives.go.jp/file/3694662?page=2',
+                  sourceRecordTitle='『大乗院寺社雑事記』第101冊（1485年10〜12月）、第102冊（1486年1〜3月）',
+                  primarySourceCitation=('第101冊に1485年12月11日、102冊に1486年2月13日の記録。'
+                    '原本の該当葉を直接見つけてはいないため、現在の平等院写真を関連資料として維持。'),
+                  pageImageVerified=False,
+                  review='両日付と冊の対応は所蔵目録で確認。全文原文の正確なコマ番号は不明のため、無関係なページを原文と偽って使わない。')
+              update('verified-antimonopoly-context',
+                  educationalReviewStatus='1947_04_14_law54_original_found_exact_leaf_NOT_VERIFIED',
+                  primarySourceUrl='https://www.archives.go.jp/ayumi/kobetsu/s22_1947_03.html',
+                  sourceRecordTitle='昭和22年法律第54号 独占禁止法、御署名原本・御30250',
+                  primarySourceCitation=('1947年4月14日公布。国立公文書館では法公布時の閣議書と御署名原本（御30250）が案内されている。'
+                    '現在の1946年財閥資産差押写真は関連史料で、法律条文そのものではない。'),
+                  pageImageVerified=False,
+                  review='御署名原本と閣議書の書誌・所在は確認。法律条文画像の正確なコマは未確認、関連写真のまま維持。')
+
+              # Make all changes only after successful acquisition and validation of 3 images.
+              for id_, payload in images.items():
+                  target=Path(local[id_]);target.write_bytes(payload)
+              MANIFEST.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
+              sizes={};hashes=collections.defaultdict(list)
+              for id_, path in local.items():
+                  content=Path(path).read_bytes()
+                  with Image.open(io.BytesIO(content)) as im:
+                      assert im.format=='WEBP' and im.width>=100 and im.height>=100, id_
+                      im.verify()
+                  hashes[hashlib.sha256(content).hexdigest()].append(id_)
+                  sizes[id_]=len(content)
+              rights=collections.Counter(x.get('licenseStatus','unclassified') for x in items)
+              unresolved=[x['id'] for x in items if x.get('licenseStatus') in ('permission_review_required','source_page_review_needed')]
+              audit={
+                  'date':DATE,'total':len(items),'validWebp':len(sizes),'status':'asset_rights_cleared_five_items_structurally_reviewed_exact_two_leaves_not_found',
+                  'changedItemIds':modified,'changedCount':len(modified),
+                  'replacedImages':list(images),'licenseStatusCounts':dict(rights),
+                  'permissionUnresolved':unresolved,'permissionUnresolvedCount':len(unresolved),
+                  'originalLeafUnverified':['authentic-2026-continued-056','verified-antimonopoly-context'],
+                  'duplicateExtraUses':sum(len(v)-1 for v in hashes.values()),
+                  'sourceUrls':{x['id']:x.get('sourceUrl') for x in items if x['id'] in modified},
+                  'warning':'3件は利用許可の不明な画像を権利の明確な別資料へ変更（今川は関連錦絵）。2件は原文位置を特定できず画像を維持。全256件の史料内容・利用条件を学術的に独立認証したとは言わない。',
+                  'deviceVisualCheck':'pending','fileIDsPreserved':True,'UIAndChatFilesModified':False,
+              }
+              REPORT.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+              # Refresh the existing 256-image audit metadata without invalidating image integrity counts.
+              old_report=ROOT/'history202_final_256_audit_20261110.json'
+              if old_report.exists():
+                  old=json.loads(old_report.read_text(encoding='utf-8'))
+                  old['licenseStatusCounts']=dict(rights)
+                  old['sourceReviewFinalFiveReport']=REPORT.name
+                  old['sourceReviewOriginalLeavesPending']=audit['originalLeafUnverified']
+                  old['extraDuplicateUses']=audit['duplicateExtraUses']
+                  old['distinctHashes']=len(hashes)
+                  for entry in old.get('items',[]):
+                      k=entry.get('id')
+                      if k in modified:
+                          row=byid[k]
+                          for f in ('caption','sourceUrl','license','licenseStatus','educationalReviewStatus'):
+                              entry[f]=row.get(f,'')
+                          entry['bytes']=sizes[k]
+                          entry['sha256']=hashlib.sha256(Path(local[k]).read_bytes()).hexdigest()
+                  old_report.write_text(json.dumps(old,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+              print('IMAGE_REPLACEMENTS',json.dumps(list(images),ensure_ascii=False),flush=True)
+              print('CHANGED',len(modified),json.dumps(modified,ensure_ascii=False),flush=True)
+              print('VALID_WEBP',len(sizes),'PERMISSION_PENDING',len(unresolved),flush=True)
+              print('UNVERIFIED_EXACT_MANUSCRIPT_LEAVES',audit['originalLeafUnverified'],flush=True)
+              print('No other files changed',flush=True)
+
+          if __name__=='__main__':
+              main()
+          PY
+          python history202/_verify_final_five_tmp.py
+      - name: Commit ONLY three inspected images and five-card source records
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- \
+            history202/authentic_images/law-bunkoku.webp \
+            history202/authentic_images/law-keian.webp \
+            history202/authentic_images/law-hanseki.webp \
+            history202/real-materials.json \
+            history202/history202_final_five_20261110.json \
+            history202/history202_final_256_audit_20261110.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Resolve final three image rights cases and document two primary source page gaps'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          else
+            echo 'No changed history source files; nothing to commit.'
+          fi
+      - name: Save five-source verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-five-source-review
+          path: history202/history202_final_five_20261110.json
+          retention-days: 30
+          if-no-files-found: warn

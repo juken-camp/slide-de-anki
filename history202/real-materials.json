@@ -28,7 +28,7 @@
       "type": "考古資料",
       "explanation": "古代エジプトの文字を読み解く手がかりとなった石碑。これが見つかったことでヒエログリフの解読が進んだ。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Rosetta_Stone,_British_Museum.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -40,7 +40,9 @@
       "commonsOriginalDate": "2026-05-14 13:16:16",
       "commonsSourceSha1": "948de29147a9e17ecd651cea65603b4514b2f5a5",
       "commonsUsageTerms": "Creative Commons Attribution 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-003",
@@ -51,9 +53,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parthenon_on_Acropolis_in_Athens.jpg",
       "credit": "acediscovery撮影／CC BY 4.0",
       "type": "遺跡写真",
-      "explanation": "古代ギリシャのアテネの神殿。柱が並ぶ姿や都市国家アテネの文化を思い浮かべよう。",
+      "explanation": "アテネのパルテノン神殿は、古代ギリシャの女神アテナをまつった建物です。写真は現在の遺跡の姿。都市国家アテネの文化と、太い柱が並ぶつくりに注目しましょう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Parthenon_on_Acropolis_in_Athens.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -65,7 +67,9 @@
       "commonsOriginalDate": "2015-03-21 13:14:21",
       "commonsSourceSha1": "f70756b1c1774637f1c67a7bb45cce092205a851",
       "commonsUsageTerms": "Creative Commons Attribution 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h01-real-01",
@@ -74,13 +78,14 @@
       "caption": "エジプト：ギザのピラミッド",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FPyramids_of_Giza_Egypt.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza_Egypt.png",
-      "explanation": "ギザのピラミッドの実景。王の強い力を示す建造物として覚えよう。",
+      "explanation": "エジプトのギザに残るピラミッドは、古代の王たちの墓として造られました。写真は現在の遺跡です。巨大な石を積んで建設できたことから、王の力と当時の技術がわかります。",
       "credit": "Rebeccananonof / CC0",
-      "type": "写真・絵画など（出典ページで種類を確認）",
+      "type": "古代遺跡の現在の写真",
       "license": "個別の出典ページで確認",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza_Egypt.png"
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza_Egypt.png",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h01-real-02",
@@ -89,10 +94,10 @@
       "caption": "インダス：モヘンジョダロの大浴場跡",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGreat_Bath_of_Mohenjo-daro.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Bath_of_Mohenjo-daro.jpg",
-      "explanation": "モヘンジョダロの発掘遺跡。整った都市のしくみを示す。",
+      "explanation": "モヘンジョダロはインダス文明の都市遺跡です。写真の大浴場跡には大きな水槽があります。何に使ったかははっきりしていません。道路や排水設備が整った計画的な都市だったことも特徴です。",
       "credit": "Soban / Wikimedia Commons",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "古代都市遺跡の現在の写真",
+      "license": "CC BY-SA 3.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Great_Bath_of_Mohenjo-daro.jpg",
@@ -105,7 +110,10 @@
       "commonsOriginalDate": "2014-09-29 00:55:30",
       "commonsSourceSha1": "f217e27e57a633f06106ca70d307e6f93d1d9233",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-004",
@@ -118,7 +126,7 @@
       "type": "復元施設写真",
       "explanation": "佐賀県の吉野ヶ里遺跡で復元された建物。写真の建物自体は現代の復元物で、弥生時代から残った建物ではない。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:YoshinogariDwellings.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -130,7 +138,8 @@
       "commonsOriginalDate": "10 October 2005 (original upload date)",
       "commonsSourceSha1": "279637af134f214ea8cd026dcab72d80e0f0efd8",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-005",
@@ -158,7 +167,7 @@
       "type": "復元施設写真",
       "explanation": "吉野ヶ里歴史公園に復元された環濠集落の景観。建物自体は現代の復元物で、弥生時代の発掘品ではない。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Yoshinogari_Ancient_Ruins_2008.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -170,7 +179,8 @@
       "commonsOriginalDate": "2008-09-17",
       "commonsSourceSha1": "b05741b5d35828dfb421ac46943079bc43c4ef86",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h02-real-03",
@@ -181,11 +191,12 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jomon_Vessel_with_Flame-like_Ornamentation%2C_attributed_provenance_Umataka%2C_Nagaoka-shi%2C_Niigata%2C_Jomon_period%2C_3000-2000_BC_-_Tokyo_National_Museum_-_DSC05620.JPG",
       "explanation": "縄文土器は、縄の模様や飾りが特徴の土器です。この画像のような火焔型土器は、炎を思わせる大きな飾りがあります。縄文時代の土器を、弥生時代の薄手の土器と区別しましょう。",
       "credit": "Wikimedia Commons／東京国立博物館展示品",
-      "type": "写真・絵画など（出典ページで種類を確認）",
+      "type": "縄文土器（現存する出土品の写真）",
       "license": "個別の出典ページで確認",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "source_page_review_needed",
-      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Jomon_Vessel_with_Flame-like_Ornamentation%2C_attributed_provenance_Umataka%2C_Nagaoka-shi%2C_Niigata%2C_Jomon_period%2C_3000-2000_BC_-_Tokyo_National_Museum_-_DSC05620.JPG"
+      "attributionUrl": "https://commons.wikimedia.org/wiki/File:Jomon_Vessel_with_Flame-like_Ornamentation%2C_attributed_provenance_Umataka%2C_Nagaoka-shi%2C_Niigata%2C_Jomon_period%2C_3000-2000_BC_-_Tokyo_National_Museum_-_DSC05620.JPG",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h02-real-04",
@@ -196,8 +207,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dogu-Jomon.jpg",
       "explanation": "土偶は縄文時代に土で作られた人の形の像です。祭りや祈りに使ったと考えられていますが、使い方ははっきりしません。弥生時代の銅鐸、古墳時代の埴輪と区別しましょう。",
       "credit": "Bigjap / CC BY-SA 3.0",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "土偶（現存する出土品の写真）",
+      "license": "CC BY-SA 3.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Dogu-Jomon.jpg",
@@ -210,7 +221,10 @@
       "commonsOriginalDate": "2013-02-26 18:45:09",
       "commonsSourceSha1": "2ac9f765afee6d4b3cb62c232cac603164612557",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h02-real-05",
@@ -221,8 +235,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dotaku_TNM.jpg",
       "explanation": "銅鐸は弥生時代の青銅器です。祭りに使われたと考えられ、稲作とのつながりが注目されます。縄文時代の土偶、古墳時代の埴輪とは材質も使われた時代も異なります。",
       "credit": "Wikimedia Commons／東京国立博物館",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "銅鐸（現存する出土品の写真）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Dotaku_TNM.jpg",
@@ -235,7 +249,9 @@
       "commonsOriginalDate": "1935",
       "commonsSourceSha1": "9c6dd050bd416b1032bddc96e94c026835d4eb47",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h02-real-06",
@@ -265,8 +281,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
       "explanation": "藤原道長（966〜1028年）が自分で書いた日記『御堂関白記』。娘を天皇の后にして、天皇の親族として政治を動かす「摂関政治」の時代を伝えます。後世の物語ではなく、本人による記録です。",
       "credit": "藤原道長筆／陽明文庫所蔵／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "平安時代の自筆日記（現存原本の写真）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
@@ -279,7 +295,9 @@
       "commonsOriginalDate": "998–1021",
       "commonsSourceSha1": "db7f5076bd3677e40e80789465702fc398442f2a",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-hideyoshi",
@@ -290,8 +308,8 @@
       "credit": "Wikimedia Commons / Kodaiji holdings",
       "explanation": "豊臣秀吉の肖像です。農民出身から天下統一に近づいた人物として記憶に残しやすくなります。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FToyotomi_hideyoshi.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物肖像画（制作年代は別途確認）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Toyotomi_hideyoshi.jpg",
@@ -304,7 +322,9 @@
       "commonsOriginalDate": "circa 1601 date QS:P571,+1601-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "5aed0ce0607b23c0acf29e2b9b8eaa6b27c0c04e",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-nobunaga",
@@ -315,8 +335,8 @@
       "credit": "Wikimedia Commons / Chokoji-held portrait",
       "explanation": "織田信長の有名な肖像です。戦国の終わりに向けて勢力を広げた人物として印象づけられます。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FOda-Nobunaga.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物肖像画（制作年代は別途確認）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Oda-Nobunaga.jpg",
@@ -329,7 +349,9 @@
       "commonsOriginalDate": "The original was made in 1583",
       "commonsSourceSha1": "192f6a1814c8c60799c472e0f2fb258219a125cb",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-shotoku",
@@ -340,8 +362,8 @@
       "credit": "PHGCOM撮影／ギメ東洋美術館展示・CC BY-SA（Wikimedia Commons）",
       "explanation": "聖徳太子と伝えられる像を写した写真。現代の写真であり、聖徳太子本人が生きていた時代の姿を写したものではない。十七条の憲法・冠位十二階を思い出そう。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FShotoku_Taishi.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "後世の伝承肖像（実際の容貌は不明）",
+      "license": "CC BY-SA 3.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Shotoku_Taishi.jpg",
@@ -354,7 +376,10 @@
       "commonsOriginalDate": "2007",
       "commonsSourceSha1": "7b9f5e9fec2631c24906ed7b7911b7eadeb5d9bb",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-yoritomo",
@@ -365,8 +390,8 @@
       "credit": "Wikimedia Commons / Minamoto no Yoritomo category",
       "explanation": "かつて源頼朝像として広く紹介されてきた肖像画。ただし描かれた人物は源頼朝ではない可能性も指摘され、現在の研究では人物比定に諸説ある。作品そのものは歴史資料だが「本人の確実な肖像」とは断定しない。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMinamoto_no_Yoritomo.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "伝・源頼朝肖像画（人物比定に諸説）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Minamoto_no_Yoritomo.jpg",
@@ -379,7 +404,9 @@
       "commonsOriginalDate": "1179 Kamakura period (1185–1333)",
       "commonsSourceSha1": "ba864cbdf8958e9a683eaefe2ca4ba0490ffc38b",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-036",
@@ -392,7 +419,7 @@
       "type": "肖像画",
       "explanation": "後醍醐天皇の肖像画。建武の新政を行った天皇の姿を伝える歴史資料。撮影写真ではない。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Daigo.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -404,7 +431,8 @@
       "commonsOriginalDate": "Former half of 14th century",
       "commonsSourceSha1": "e84cff00402178402a48d466011e4134a5df7462",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-006",
@@ -417,7 +445,7 @@
       "type": "肖像画",
       "explanation": "江戸幕府3代将軍・徳川家光の肖像。参勤交代の制度化や鎖国体制の整備と結びつけて覚えよう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%85%89.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -429,7 +457,8 @@
       "commonsOriginalDate": "江戸時代",
       "commonsSourceSha1": "a4782da4ae6a1667e579d2396e5b91017e458953",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-007",
@@ -440,9 +469,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tsunyaoshi.jpg",
       "credit": "徳川美術館所蔵の徳川綱吉像／Wikimedia Commons",
       "type": "肖像画",
-      "explanation": "江戸幕府5代将軍・徳川綱吉。生類憐みの令とセットで覚える。",
+      "explanation": "徳川綱吉は江戸幕府の5代将軍です。1680年代から出された「生類憐みの令」で知られます。肖像画と、動物の命を大切にする政策を結びつけて覚えましょう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Tsunyaoshi.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -454,7 +483,8 @@
       "commonsOriginalDate": "17 th century date QS:P,+1650-00-00T00:00:00Z/7",
       "commonsSourceSha1": "3acb009e32d3b44980908611ba3c28b6e808b786",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-008",
@@ -467,7 +497,7 @@
       "type": "歴史絵画",
       "explanation": "大名行列を描いた絵巻の一部。参勤交代は大名に江戸と領地を行き来させ、幕府の支配を強める制度だった。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Sankiko01.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -479,7 +509,8 @@
       "commonsOriginalDate": "2010-12-04",
       "commonsSourceSha1": "30186e35eba681660cfe9d2c31ccd48d3ce6a56e",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h05-real-27",
@@ -490,8 +521,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu.jpg",
       "explanation": "江戸幕府を開いた徳川家康の肖像。肖像画は本人の生前の写真ではなく、江戸時代に描かれたもの。",
       "credit": "狩野探幽に伝わる／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "江戸時代の人物肖像画",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu.jpg",
@@ -504,7 +535,9 @@
       "commonsOriginalDate": "Edo period, 17th c.",
       "commonsSourceSha1": "73ebdbbcaea26f4d3c90c40a3a0e77b0c7334b27",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-yoshimune",
@@ -515,8 +548,8 @@
       "credit": "Wikimedia Commons / public-domain artwork reproduction",
       "explanation": "享保の改革で知られる徳川吉宗の肖像です。改革と人物を結びつけるための実物資料です。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTokugawaYoshimune.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物肖像画（制作年代は別途確認）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:TokugawaYoshimune.jpg",
@@ -529,7 +562,9 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "a83a75b2ea48586cbe672a4420c3c09a0a2adb78",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-yoshinobu",
@@ -540,8 +575,8 @@
       "credit": "Wikimedia Commons / Ibaraki Prefectural Museum of History",
       "explanation": "江戸幕府最後の将軍・徳川慶喜の写真です。写真が残る時代に入ったことも実感できます。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTokugawa_Yoshinobu.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "近代の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Yoshinobu.jpg",
@@ -554,7 +589,9 @@
       "commonsOriginalDate": "1864年から1866年。",
       "commonsSourceSha1": "bba26aae7a15cb07d244f276f4f8d6c710b2fea3",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h06-real-28",
@@ -563,10 +600,10 @@
       "caption": "坂本龍馬（幕末の本物の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSakamoto_Ryoma.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg",
-      "explanation": "幕末に撮影された坂本龍馬の写真。薩長同盟の仲立ちなどの出来事と結びつけよう。",
+      "explanation": "坂本龍馬は幕末に活躍した土佐出身の人物です。1866年の薩長同盟の成立を助けたことで知られます。写真は本人が生きていた時代のもので、幕末が写真の残る時代だったこともわかります。",
       "credit": "幕末の写真／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "幕末に撮影された人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg",
@@ -579,7 +616,9 @@
       "commonsOriginalDate": "before 1867 date QS:P,+1867-00-00T00:00:00Z/7,P1326,+1867-00-00T00:00:00Z/9",
       "commonsSourceSha1": "c307cacf3f21cc2ad03908015381c4637366d08e",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-iinaosuke",
@@ -590,8 +629,8 @@
       "credit": "Wikimedia Commons / Hikone Castle Museum",
       "explanation": "大老として開国を進めた井伊直弼の画像です。安政の大獄や桜田門外の変を学ぶ入口になります。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FIi_Naosuke.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物肖像（制作年代は別途確認）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Ii_Naosuke.jpg",
@@ -604,7 +643,9 @@
       "commonsOriginalDate": "The Edo period. 1860 (Manji 1st year) Edo Period. / 江戸時代。1860年 (万治元年) Edo Period.",
       "commonsSourceSha1": "0f5e7b67bac6022176775a746a0a72312846fe29",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-itagaki",
@@ -613,10 +654,10 @@
       "caption": "板垣退助の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:ITAGAKI_Taisuke.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
-      "explanation": "板垣退助の肖像写真です。自由民権運動の中心人物として覚えるときに役立ちます。",
+      "explanation": "板垣退助は、国民が政治に参加できるよう求める自由民権運動を進めた人物です。1874年の民撰議院設立建白書、1881年の自由党と結びつけて覚えましょう。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FITAGAKI_Taisuke.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物写真（撮影年代は別途確認）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:ITAGAKI_Taisuke.jpg",
@@ -629,7 +670,9 @@
       "commonsOriginalDate": "before 1919 date QS:P,+1919-00-00T00:00:00Z/7,P1326,+1919-00-00T00:00:00Z/9",
       "commonsSourceSha1": "4d2f429aa8ec574583a10e672431dcff695264c8",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-okuma",
@@ -640,8 +683,8 @@
       "credit": "Wikimedia Commons / National Diet Library source",
       "explanation": "大隈重信の肖像写真です。政党政治や早稲田大学ともつながる人物として印象づけられます。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FOKUMA_Shigenobu.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "近代の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:OKUMA_Shigenobu.jpg",
@@ -654,7 +697,9 @@
       "commonsOriginalDate": "before 1922 date QS:P,+1922-00-00T00:00:00Z/7,P1326,+1922-00-00T00:00:00Z/9",
       "commonsSourceSha1": "b15c07e2b71c70d768f8390782c2d9afd94702d5",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-saigo",
@@ -665,8 +710,8 @@
       "credit": "Wikimedia Commons / National Diet Library source",
       "explanation": "西郷隆盛を描いた版画。本人の写真が残されていると断定できず、この資料は没後につくられた肖像版画。実物の姿を完全に再現した写真として覚えないようにしよう。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSaigo_Takamori.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "没後に描かれた人物肖像版画",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Saigo_Takamori.jpg",
@@ -679,7 +724,9 @@
       "commonsOriginalDate": "before 1935 date QS:P,+1935-00-00T00:00:00Z/7,P1326,+1935-00-00T00:00:00Z/9",
       "commonsSourceSha1": "34a256f5eb9984611891a063391e93bee3ae6cf7",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-yoshidashoin",
@@ -688,10 +735,10 @@
       "caption": "吉田松陰像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_Shoin.jpg",
       "credit": "Wikimedia Commons / public-domain portrait",
-      "explanation": "吉田松陰を伝える画像です。幕末の思想家・教育者としての存在感をつかめます。",
+      "explanation": "吉田松陰は幕末に長州で松下村塾を開き、若者たちに学びの大切さを説きました。伊藤博文など後の明治政府で活躍する人物も学びました。肖像は制作年代を原資料で確認する必要があります。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FYoshida_Shoin.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物肖像（制作年代は別途確認）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_Shoin.jpg",
@@ -704,7 +751,9 @@
       "commonsOriginalDate": "before 1859 date QS:P,+1859-00-00T00:00:00Z/7,P1326,+1859-00-00T00:00:00Z/9",
       "commonsSourceSha1": "9b5413cb00e5850cb1f05af3d2548e53d349a7a5",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h07-real-29",
@@ -715,8 +764,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:It%C5%8D_Hirobumi.jpg",
       "explanation": "伊藤博文は1885年に日本で最初の内閣総理大臣になり、1889年の大日本帝国憲法制定にも中心的に関わりました。画像は1900年の本人の写真で、首相就任時の写真ではありません。",
       "credit": "1900年の写真／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "明治時代の人物写真（1900年）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:It%C5%8D_Hirobumi.jpg",
@@ -729,7 +778,9 @@
       "commonsOriginalDate": "Taken in 1900",
       "commonsSourceSha1": "33cc1417de2f9f19359eb8420df65cabd65bfa25",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-hara",
@@ -740,8 +791,8 @@
       "credit": "Wikimedia Commons / National Diet Library source",
       "explanation": "平民宰相として知られる原敬の肖像です。政党内閣の流れを人物で覚える助けになります。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHara_Takashi.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "近代の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Hara_Takashi.jpg",
@@ -754,7 +805,9 @@
       "commonsOriginalDate": "by 1921 date QS:P571,+1921-00-00T00:00:00Z/7,P1326,+1921-00-00T00:00:00Z/9",
       "commonsSourceSha1": "f6ebaad42f179b09dee444d9595f12097c9a28b5",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-inukai",
@@ -765,8 +818,8 @@
       "credit": "Wikimedia Commons / National Diet Library source",
       "explanation": "犬養毅は立憲政友会の政治家で、1931年に首相になりました。翌1932年の五・一五事件で海軍の青年将校らに殺害され、政党内閣が続いていた流れが大きく変わりました。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FInukai_Tsuyoshi.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "近代の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Inukai_Tsuyoshi.jpg",
@@ -779,7 +832,9 @@
       "commonsOriginalDate": "before 1932 date QS:P,+1932-00-00T00:00:00Z/7,P1326,+1932-00-00T00:00:00Z/9",
       "commonsSourceSha1": "621f9339c022576d9f31383e0400491ac9723768",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-sato",
@@ -788,10 +843,10 @@
       "caption": "佐藤栄作の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eisaku_Sato.jpg",
       "credit": "Wikimedia Commons / Cabinet Public Affairs Office",
-      "explanation": "高度経済成長期の首相・佐藤栄作の写真です。沖縄返還と合わせて印象づけられます。",
+      "explanation": "佐藤栄作は戦後の日本の内閣総理大臣です。1972年の沖縄返還は佐藤内閣の時代に実現しました。沖縄がアメリカの施政権の下に置かれていた時期と結びつけて覚えましょう。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEisaku_Sato.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "昭和時代の人物写真",
+      "license": "CC BY 4.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Eisaku_Sato.jpg",
@@ -804,7 +859,10 @@
       "commonsOriginalDate": "between 1964 and",
       "commonsSourceSha1": "bcdccf06b82f780812a27eee258ff13cb85876de",
       "commonsUsageTerms": "Creative Commons Attribution 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-shigeru",
@@ -813,10 +871,10 @@
       "caption": "吉田茂の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_Shigeru.jpg",
       "credit": "Wikimedia Commons / public-domain portrait",
-      "explanation": "戦後日本の再出発を支えた吉田茂の写真です。戦後政治の顔として覚えやすくなります。",
+      "explanation": "吉田茂は第二次世界大戦後の日本の首相です。1951年のサンフランシスコ平和条約の調印に関わりました。日本が独立を回復していく流れと、人物の写真を結びつけましょう。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FYoshida_Shigeru.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "昭和時代の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_Shigeru.jpg",
@@ -829,7 +887,9 @@
       "commonsOriginalDate": "circa 1950 date QS:P,+1950-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "34d24b1c48b2caf5361db81bcbb53d718fc14a0f",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h08-real-33",
@@ -897,8 +957,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ino_Tadataka_map_%28daizu%2C%2C_Atsumi-hanto%29.jpg",
       "explanation": "伊能忠敬は1800年から日本各地を歩いて測量し、地図作りを進めました。画像はその成果をもとに作られた地図の一部です。江戸時代にここまで正確な海岸線を描けた点が重要です。",
       "credit": "伊能忠敬記念館所蔵／Wikimedia Commons",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "江戸時代の測量地図（現存資料）",
+      "license": "CC BY-SA 3.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Ino_Tadataka_map_%28daizu%2C%2C_Atsumi-hanto%29.jpg",
@@ -911,7 +971,10 @@
       "commonsOriginalDate": "2011-05-26 14:23:39",
       "commonsSourceSha1": "c4641537c4100eb221733a692c51fd13eb714e00",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-fukuzawa",
@@ -922,8 +985,8 @@
       "credit": "Wikimedia Commons / National Diet Library source",
       "explanation": "福沢諭吉は1872年から『学問のすゝめ』を刊行し、身分にとらわれず学ぶ大切さを広めました。教育機関の慶應義塾とも関係が深い人物です。画像は本人の肖像写真です。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FFukuzawa_Yukichi.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "明治時代の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Fukuzawa_Yukichi.jpg",
@@ -936,7 +999,9 @@
       "commonsOriginalDate": "before 1901 date QS:P,+1901-00-00T00:00:00Z/7,P1326,+1901-00-00T00:00:00Z/9",
       "commonsSourceSha1": "ec4aa701ab23dc199d3468275ad61198a567b9f4",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-motoori",
@@ -947,8 +1012,8 @@
       "credit": "Wikimedia Commons / Motoori Norinaga Memorial Museum",
       "explanation": "本居宣長の自画像です。国学の代表人物として、学問の流れを人物で覚えやすくなります。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMotoori_Norinaga.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "江戸時代の自画像",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Motoori_Norinaga.jpg",
@@ -961,7 +1026,9 @@
       "commonsOriginalDate": "1790",
       "commonsSourceSha1": "e87fa65c69bb08ad45bf8cf3973eabbe21b341da",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-yoshino",
@@ -970,10 +1037,10 @@
       "caption": "吉野作造の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshino_Sakuzo.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
-      "explanation": "民本主義で知られる吉野作造の肖像です。大正デモクラシーの理解に役立ちます。",
+      "explanation": "吉野作造は大正時代の思想家です。1916年に、政治では人々の幸せや意見を大切にする「民本主義」を説きました。大正デモクラシーを支えた人物として覚えましょう。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FYoshino_Sakuzo.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "大正時代の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Yoshino_Sakuzo.jpg",
@@ -986,7 +1053,9 @@
       "commonsOriginalDate": "before 1933 date QS:P,+1933-00-00T00:00:00Z/7,P1326,+1933-00-00T00:00:00Z/9",
       "commonsSourceSha1": "a2417b90745ad361c1a3d2dc31823d02ca94583a",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-009",
@@ -999,7 +1068,7 @@
       "type": "仏像写真",
       "explanation": "奈良の唐招提寺に伝わる鑑真和上像。仏教を伝えるため中国から何度も渡航を試み、来日した鑑真を覚えよう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Ganjin_Toshodai-ji.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1011,7 +1080,8 @@
       "commonsOriginalDate": "1952-03-30",
       "commonsSourceSha1": "59424ee79c6699533265ea58f6ec7aef5bc31589",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h10-real-30",
@@ -1041,8 +1111,8 @@
       "credit": "Wikimedia Commons / public-domain portrait",
       "explanation": "アメリカ大統領リンカーンの肖像です。南北戦争と奴隷解放のイメージと結びつけやすい資料です。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FAbraham_Lincoln.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "19世紀の人物肖像（媒体は要確認）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln.jpg",
@@ -1055,7 +1125,9 @@
       "commonsOriginalDate": "1865",
       "commonsSourceSha1": "1ece2d25c77bba7a5eef956f80c7627a57759dc6",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-luther",
@@ -1066,12 +1138,13 @@
       "credit": "Wikimedia Commons / public-domain portrait",
       "explanation": "宗教改革で重要なマルティン・ルターの肖像です。免罪符批判から宗教改革へという流れを覚えやすくします。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMartin_Luther.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
+      "type": "宗教改革期の人物肖像画",
       "license": "Public domain (PDM)",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "confirmed",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Martin_Luther.jpg",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-roosevelt",
@@ -1083,7 +1156,7 @@
       "explanation": "世界恐慌への対策「ニューディール政策」を進めたのはフランクリン・ルーズベルト。1905年のポーツマス条約を仲介したセオドア・ルーズベルトとは別人。これは1933年のフランクリン本人の写真。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FFranklin_Delano_Roosevelt%2C_Portrait_1933.jpg&width=720",
       "type": "1933年の人物写真",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Franklin_Delano_Roosevelt%2C_Portrait_1933.jpg",
@@ -1096,7 +1169,8 @@
       "commonsOriginalDate": "1933-12-27",
       "commonsSourceSha1": "0441d22c1058d4dd8dd994b882a5eccf02446a2c",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "wmc-sunyatsen",
@@ -1107,8 +1181,8 @@
       "credit": "Wikimedia Commons / public-domain photo",
       "explanation": "辛亥革命の中心人物・孫文の写真です。中国革命と日本との関わりを学ぶきっかけになります。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSun_Yat-Sen.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "近代の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Sun_Yat-Sen.jpg",
@@ -1121,7 +1195,9 @@
       "commonsOriginalDate": "1923",
       "commonsSourceSha1": "eb2d617ce8c6a2784f54d576cdddb6e291713f91",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-wilson",
@@ -1132,8 +1208,8 @@
       "credit": "Wikimedia Commons / Library of Congress",
       "explanation": "第一次世界大戦後の国際連盟提案で知られるウィルソンの写真です。戦後秩序の話と結びつけやすくなります。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FWILSON%2C_WOODROW_LCCN2016857377.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "20世紀前半の人物写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:WILSON,_WOODROW_LCCN2016857377.jpg",
@@ -1146,7 +1222,9 @@
       "commonsOriginalDate": "between 1905 and 1945 date QS:P,+1950-00-00T00:00:00Z/7,P1319,+1905-00-00T00:00:00Z/9,P1326,+1945-00",
       "commonsSourceSha1": "731a05c4504129b7847393893aacedd9ebf21911",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-037",
@@ -1190,7 +1268,7 @@
       "type": "伝世肖像画",
       "explanation": "白河上皇の肖像画。上皇となった後も政治を動かす院政の始まりを覚えよう。制作年代は不明。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Shirakawa.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1202,7 +1280,8 @@
       "commonsOriginalDate": "Unknown date",
       "commonsSourceSha1": "f31e996557ca18c9a3d799d6527fdabf9739ced2",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-010",
@@ -1215,7 +1294,7 @@
       "type": "肖像画",
       "explanation": "商業を重視した政策を進めた田沼意次。次の松平定信の寛政の改革と対比して整理しよう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:%E7%94%B0%E6%B2%BC%E6%84%8F%E6%AC%A1%E3%81%AE%E8%82%96%E5%83%8F%E7%94%BB.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1227,7 +1306,8 @@
       "commonsOriginalDate": "2024-07-29",
       "commonsSourceSha1": "c58a20dc75f52cc074a604c2cf051ae5130e2f7d",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-011",
@@ -1240,7 +1320,7 @@
       "type": "肖像画",
       "explanation": "寛政の改革を行った松平定信の肖像。倹約や農村の立て直しを目指した政策と結びつけよう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E5%B9%B3%E5%AE%9A%E4%BF%A1.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1252,7 +1332,8 @@
       "commonsOriginalDate": "2013-01-01",
       "commonsSourceSha1": "57b6a07368ae030dcab345a946f082abcc9c455f",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-039",
@@ -1333,7 +1414,7 @@
       "type": "後世の歴史画",
       "explanation": "1872年の鉄道開通を題材に描かれた歴史画。写真ではなく、開通の出来事を表した絵画だ。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Opening_of_the_Tokyo-Yokohama_Railway_by_Omura_Taiun_(Meiji_Memorial_Picture_Gallery).jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1345,7 +1426,8 @@
       "commonsOriginalDate": "1935",
       "commonsSourceSha1": "ae2b16320cecf6acb15a87a07daec578a8b35154",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-034",
@@ -1356,9 +1438,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_Hiroshige_III.jpg",
       "credit": "歌川広重（三代）／明治期の錦絵（Wikimedia Commons・パブリックドメイン）",
       "type": "当時の浮世絵",
-      "explanation": "鉄道開業後の新橋停車場を描いた錦絵。明治に鉄道が社会へ広まった様子を表す。",
+      "explanation": "新橋停車場を描いた錦絵です。日本では1872年に新橋〜横浜間で鉄道が開業しました。これは当時の様子を絵で伝える資料であり、開業式の写真ではありません。",
       "review": "原ファイル名の誤記を修正。Wikimedia Commonsの個別ファイルページの存在を確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_Hiroshige_III.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1370,7 +1452,8 @@
       "commonsOriginalDate": "circa 1875 date QS:P571,+1875-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "6f92d0eaabd7de6fd41ad082c2a7057d0cb117a3",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h16-real-09",
@@ -1379,10 +1462,10 @@
       "caption": "明治の富岡製糸場（当時の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTomioka_Silk_Mill.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomioka_Silk_Mill.JPG",
-      "explanation": "殖産興業を示す明治時代の工場写真。官営模範工場として有名。",
+      "explanation": "富岡製糸場は1872年に操業を始めた官営の模範工場です。明治政府が産業を育てる「殖産興業」を進めた例です。写真に写る建物と、生糸を外国へ輸出したことを結びつけましょう。",
       "credit": "宮内省／明治期の写真（原資料『明治の日本』・Wikimedia Commons）",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "明治時代の工場写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Tomioka_Silk_Mill.JPG",
@@ -1395,7 +1478,9 @@
       "commonsOriginalDate": "Meiji era(1868-1912)",
       "commonsSourceSha1": "a60b56b8f42a2ff8a7163c3579fb09e0888dca62",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h16-real-10",
@@ -1404,10 +1489,10 @@
       "caption": "富岡製糸場内部（当時の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FInside_Tomioka_Silk_Mill.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inside_Tomioka_Silk_Mill.JPG",
-      "explanation": "生糸生産の工場内部の当時の写真。近代工業化と労働の様子がわかる。",
+      "explanation": "富岡製糸場では、繭から生糸をつくる作業が行われました。内部の写真は明治時代の工場の設備や働く人々を考える手がかりです。工場名と「殖産興業」をセットで覚えましょう。",
       "credit": "宮内省／明治期の写真（原資料『明治の日本』・Wikimedia Commons）",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "明治時代の工場内部写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Inside_Tomioka_Silk_Mill.JPG",
@@ -1420,7 +1505,9 @@
       "commonsOriginalDate": "Meiji era(1868-1912)",
       "commonsSourceSha1": "4e7f9c5f19fd8d86a449a114a88302e6daf76270",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h17-real-11",
@@ -1429,15 +1516,16 @@
       "caption": "日本国憲法原本（1946年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FNihon_Kenpo01.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo01.jpg",
-      "explanation": "日本国憲法の原本。1946年公布・1947年施行を区別して覚えよう。",
+      "explanation": "日本国憲法は1946年に公布され、1947年に施行されました。写真は憲法の文書を伝える資料です。国民主権・基本的人権の尊重・平和主義という三つの原則を確認しましょう。",
       "credit": "日本国政府／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
+      "type": "1946年の憲法文書（原本画像）",
       "license": "Public domain (Japanese government law)",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "confirmed",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo01.jpg",
       "coverageOf": "日本国憲法",
-      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo01.jpg"
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo01.jpg",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-016",
@@ -1467,8 +1555,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Sekigahara_folding_screen.jpg",
       "explanation": "1600年の関ヶ原の戦いを描いた屏風。絵が描かれた時代と戦いの年は必ずしも同じではない。",
       "credit": "作者不詳／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "関ヶ原の戦いを描いた屏風絵",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Sekigahara_folding_screen.jpg",
@@ -1481,7 +1569,9 @@
       "commonsOriginalDate": "More than 100 years old",
       "commonsSourceSha1": "893e07d9d74b613cf64d3f893c499f307650bedd",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h18-real-34",
@@ -1490,10 +1580,10 @@
       "caption": "西南戦争を描く1877年の風刺画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FJapanPunchApril1877.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:JapanPunchApril1877.jpg",
-      "explanation": "西郷隆盛らと明治政府の対立を描いた当時の外国人向け風刺画。写真ではなく風刺画。",
+      "explanation": "1877年の西南戦争では、西郷隆盛を中心とする士族が明治政府と戦いました。この資料は当時の風刺画で、実際の戦場写真ではありません。人物の描かれ方にも注目しましょう。",
       "credit": "Japan Punch 1877年／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1877年の西南戦争を題材とする風刺画",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:JapanPunchApril1877.jpg",
@@ -1506,7 +1596,9 @@
       "commonsOriginalDate": "1877",
       "commonsSourceSha1": "3a945f3025a104c557df5caadf0e9680edf2c590",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-017",
@@ -1533,7 +1625,8 @@
       "commonsOriginalDate": "19 th century date QS:P,+1850-00-00T00:00:00Z/7",
       "commonsSourceSha1": "29fb0b5b7477d55df111759f5dea137e0d66f9db",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-018",
@@ -1546,7 +1639,7 @@
       "type": "当時の新聞",
       "explanation": "1918年8月13日の新聞。米騒動が一部の町だけで終わらず、全国に広がったことを伝えている。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:%E7%B1%B3%E9%A8%92%E5%8B%95%E5%85%A8%E5%9B%BD%E6%B3%A2%E5%8F%8A%E5%A0%B1%E9%81%93%E8%A8%98%E4%BA%8B.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1558,7 +1651,8 @@
       "commonsOriginalDate": "1918",
       "commonsSourceSha1": "7b4035d2a9f86ffb82c2058b21a8a6f3b830aeb2",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-019",
@@ -1585,8 +1679,8 @@
       "credit": "Wikimedia Commons / public-domain photograph",
       "explanation": "日清戦争当時の写真資料です。近代日本が対外戦争へ進んだ流れを視覚的に理解できます。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSino_Japanese_war_1894.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "日清戦争を伝える画像（撮影年代と形式の再確認が必要）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Sino_Japanese_war_1894.jpg",
@@ -1599,7 +1693,9 @@
       "commonsOriginalDate": "1894",
       "commonsSourceSha1": "f723ece3067e49f223c830ffa5d60be18ca64cfe",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-020",
@@ -1612,7 +1708,7 @@
       "type": "当時の写真",
       "explanation": "1916年のソンムの戦いで塹壕の泥を取り除く兵士たち。第一次世界大戦は塹壕で長く戦う戦争となった。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:The_Battle_of_the_Somme,_July-november_1916_Q1621.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1624,7 +1720,8 @@
       "commonsOriginalDate": "November 1916 (First World War)",
       "commonsSourceSha1": "3b7e7595c4462957e491978ceb7d889fc765ff14",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h21-real-35",
@@ -1635,8 +1732,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_battle_of_Gettysburg_LCCN2004661437.jpg",
       "explanation": "1863年ゲティスバーグの戦いを描いた当時のスケッチ。アメリカ国内の戦争であることに注目。",
       "credit": "Edwin Forbes／米国議会図書館／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "南北戦争当時の戦場スケッチ",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:The_battle_of_Gettysburg_LCCN2004661437.jpg",
@@ -1649,7 +1746,9 @@
       "commonsOriginalDate": "1863",
       "commonsSourceSha1": "55c1968cc882d2a9f818e3f223d293bffbd170e6",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-021",
@@ -1662,7 +1761,7 @@
       "type": "当時の写真",
       "explanation": "1911年の辛亥革命で、武昌蜂起に参加した革命軍の兵士たち。清の支配が終わり、中華民国成立へ進む転機となった。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Revolutionary_soldiers_at_Wuchang.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1674,7 +1773,8 @@
       "commonsOriginalDate": "1911",
       "commonsSourceSha1": "09812d0c963de5f1c701f1958a3aa297d1e86bfd",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h22-real-36",
@@ -1685,8 +1785,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Storming_the_bastille.jpg",
       "explanation": "1789年7月14日のバスティーユ襲撃を描いた同年の版画。フランス革命を象徴する出来事。",
       "credit": "作者不詳／米国議会図書館／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1789年の事件を題材とする版画",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Storming_the_bastille.jpg",
@@ -1699,7 +1799,9 @@
       "commonsOriginalDate": "1789",
       "commonsSourceSha1": "1cf9345df947ad5a1f5d6a4f080c4039d5ba12d1",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h22-real-37",
@@ -1731,7 +1833,7 @@
       "type": "当時の絵画",
       "explanation": "南蛮貿易を描いた歴史屏風。16〜17世紀にヨーロッパ人が日本へ来航し、貿易した様子を伝える。当時の絵なので肖像と出来事の時期を区別しよう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Namban_Screen_-_Google_Art_Project.jpg",
       "coverageOf": "南蛮貿易",
@@ -1745,7 +1847,8 @@
       "commonsOriginalDate": "1600 date QS:P571,+1600-00-00T00:00:00Z/9",
       "commonsSourceSha1": "a93d69d68b0b2a9f1a2fc0ec4de51b82774c3341",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-023",
@@ -1758,7 +1861,7 @@
       "type": "当時の絵画",
       "explanation": "1800年ごろの出島を描いた絵巻。江戸時代の長崎でオランダとの貿易が続いていたことを確認できる。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Dejima,_the_Dutch_Trading_Station_at_Nagasaki_handscroll,_about_1800.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -1770,7 +1873,8 @@
       "commonsOriginalDate": "circa 1800 date QS:P,+1800-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "4020114688e14716c5677a74a461d84c98909d81",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h23-real-13",
@@ -1779,10 +1883,10 @@
       "caption": "朱印船の当時の絵（1634年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FJapanese_Red_Seal_Ship_Shuinsen_1634.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japanese_Red_Seal_Ship_Shuinsen_1634.png",
-      "explanation": "江戸時代初期の朱印船を描いた史料。幕府の許可証・朱印状で東南アジアと貿易した。",
+      "explanation": "江戸時代の初め、幕府の許可を示す朱印状を持つ船は東南アジアなどへ渡って貿易しました。画像は当時の朱印船を描いた絵です。鎖国が進む前の海外との交流を表しています。",
       "credit": "1634年の絵馬の写し／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "江戸時代の貿易船を描いた絵",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Japanese_Red_Seal_Ship_Shuinsen_1634.png",
@@ -1795,7 +1899,9 @@
       "commonsOriginalDate": "1634",
       "commonsSourceSha1": "ef0739218f2b7907e6e9f232749cac066970e150",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h23-real-14",
@@ -1806,13 +1912,14 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:DejimaInNagasakiBay.jpg",
       "explanation": "長崎の出島を描いた歴史画。幕府が相手や場所を絞って貿易を管理していた様子を示す。建物や船の配置は絵に描かれた時代の姿で、現代の写真ではない。",
       "credit": "1820年ごろの絵画／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
+      "type": "江戸時代の長崎・出島を描いた絵",
       "license": "Public domain (PDM)",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "confirmed",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:DejimaInNagasakiBay.jpg",
       "imageSelection": "anchor-fixed",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h24-real-15",
@@ -1823,8 +1930,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
       "explanation": "1854年の和親条約は下田・箱館の開港などを定めた。この絵は条約の原本そのものではなく、開国期の出来事を描いた後世の版画。",
       "credit": "米国議会図書館／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "開国を描いた版画（制作年代は別途確認）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
@@ -1839,7 +1946,9 @@
       "commonsOriginalDate": "1855",
       "commonsSourceSha1": "44f415eb75ea1143b7269090fb61edb31570aef8",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h24-real-38",
@@ -1848,10 +1957,10 @@
       "caption": "下関条約・清側署名本（1895年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTreaty_of_Shimonoseki_Qing.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Shimonoseki_Qing.jpg",
-      "explanation": "1895年の日清戦争後に結ばれた下関条約の清側の原資料。日本側の署名本と区別。",
+      "explanation": "1895年、日清戦争の講和で下関条約が結ばれました。画像は清側に伝わる条約の署名本です。日本が遼東半島などを得た後、三国干渉を受ける流れまで続けて覚えましょう。",
       "credit": "清国政府／故宮博物院所蔵／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1895年の条約文書（清側署名本）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Shimonoseki_Qing.jpg",
@@ -1864,7 +1973,9 @@
       "commonsOriginalDate": "1895",
       "commonsSourceSha1": "9178ffa34bfc3ba2c0c022b0a88ed8145fa7f623",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-portsmouth",
@@ -1875,12 +1986,13 @@
       "credit": "Wikimedia Commons / P. F. Collier & Son",
       "explanation": "ポーツマス条約の会議場面です。日露戦争の講和という重要な節目を実物資料で確認できます。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTreaty_of_Portsmouth.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
+      "type": "1905年の会議写真",
       "license": "US public domain; international rights require review",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "source_page_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Portsmouth.jpg",
-      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Portsmouth.jpg"
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Portsmouth.jpg",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-securitytreaty",
@@ -1891,8 +2003,8 @@
       "credit": "Wikimedia Commons / official U.S. government photo",
       "explanation": "1960年の新しい日米安全保障条約の調印を記録した写真。1951年の旧日米安全保障条約と年号が異なる。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSigning_of_Mutual_Cooperation_Treaty_with_Japan%2C_East_Room_of_the_White_House.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1960年の調印式写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Signing_of_Mutual_Cooperation_Treaty_with_Japan,_East_Room_of_the_White_House.jpg",
@@ -1905,7 +2017,9 @@
       "commonsOriginalDate": "1960-01-19",
       "commonsSourceSha1": "f25faabd08fcd5a505ab2c62596689ad19170cb0",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-anglojapanese",
@@ -1916,8 +2030,8 @@
       "credit": "Wikimedia Commons / Anglo-Japanese Alliance category",
       "explanation": "日英同盟の条約資料です。日本が列強の一員として扱われるようになった流れを実感できます。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FAnglo_Japanese_Alliance_30_January_1902.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "日英同盟に関する文書（原本・複製の別は要確認）",
+      "license": "CC BY-SA 3.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Anglo_Japanese_Alliance_30_January_1902.jpg",
@@ -1930,7 +2044,10 @@
       "commonsOriginalDate": "2009",
       "commonsSourceSha1": "d8aee746d449007c28b4e1e87eb0cdbfd354a405",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-koreaannex",
@@ -1941,8 +2058,8 @@
       "credit": "Wikimedia Commons / National Archives of Japan via JACAR",
       "explanation": "韓国併合条約の原本画像です。日本と朝鮮の関係悪化を具体的に学ぶ手がかりになります。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FJapan%E2%80%93Korea_Annexation_Treaty_1.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1910年の条約文書（原本として伝わる資料）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Japan%E2%80%93Korea_Annexation_Treaty_1.jpg",
@@ -1955,7 +2072,9 @@
       "commonsOriginalDate": "1910-08-22",
       "commonsSourceSha1": "b46c5c464f6144153702fe65202e6d6a7b4a1801",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-040",
@@ -1982,8 +2101,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:King_of_Na_gold_seal_face_intaglio.png",
       "explanation": "57年、後漢から奴国の王へ贈られたとされる金印の印面。漢・奴国・57年を覚えよう。",
       "credit": "福岡市博物館の史料写真／Wikimedia Commons",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "古代の金印（現存品の写真）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:King_of_Na_gold_seal_face_intaglio.png",
@@ -1996,7 +2115,9 @@
       "commonsOriginalDate": "Eastern Han",
       "commonsSourceSha1": "a57dd4901793b630698984dc81cc2870b7d1eec9",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-024",
@@ -2009,7 +2130,7 @@
       "type": "建築写真",
       "explanation": "正倉院は聖武天皇ゆかりの宝物を伝える建物。天平文化と奈良時代の国際交流を考える資料だ。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Shoso-in.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2021,7 +2142,9 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "5bab96dd9406374337e0394416913ee0b167bc58",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-025",
@@ -2034,7 +2157,7 @@
       "type": "仏像の古写真",
       "explanation": "天平文化を代表する奈良・興福寺の阿修羅像。734年ごろの作品を写した古い資料写真だ。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:ASURA_Kohfukuji.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2046,7 +2169,8 @@
       "commonsOriginalDate": "Published at NOv.5th, 1933",
       "commonsSourceSha1": "2e6b117c285e1bcb852c650886070c8f728b400f",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-026",
@@ -2059,7 +2183,7 @@
       "type": "仏像の古写真",
       "explanation": "運慶・快慶らが関わった金剛力士像は、鎌倉時代の力強い彫刻を代表する。東大寺南大門にある。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Todaiji_Monastery_Kongo_Rikishi_of_Nandaimon_II_(410).jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2071,7 +2195,8 @@
       "commonsOriginalDate": "2012-03-16",
       "commonsSourceSha1": "f446606c0ffba786accc06787f187f7c75b23f5c",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-027",
@@ -2084,7 +2209,7 @@
       "type": "当時の絵画",
       "explanation": "室町時代の水墨画で有名な雪舟の絵。東山文化で発達した日本の水墨画を実物の作品で確かめよう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Sesshu_-_View_of_Ama-no-Hashidate.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2096,7 +2221,8 @@
       "commonsOriginalDate": "c. 1501–1506",
       "commonsSourceSha1": "d0d2519b439301df4c10e8d0a98b9d7abcb9372e",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-028",
@@ -2109,7 +2235,7 @@
       "type": "当時の絵画",
       "explanation": "安土桃山文化を代表する豪華な屏風。金地に大きな獅子を描いた絵は、力強く華やかな時代の雰囲気を表す。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Kano_Eitoku_002.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2121,7 +2247,8 @@
       "commonsOriginalDate": "16 th century date QS:P571,+1550-00-00T00:00:00Z/7",
       "commonsSourceSha1": "8013b56c717b78f101c672f25aa5eef716c340bb",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-029",
@@ -2148,9 +2275,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hishikawa_Moronobu_-_Beauty_Looking_Back_-_Google_Art_Project.jpg",
       "credit": "東京国立博物館所蔵／パブリックドメイン",
       "type": "当時の絵画",
-      "explanation": "江戸の元禄文化を代表する菱川師宣の美人画。振り返る女性の姿が目印。",
+      "explanation": "菱川師宣の『見返り美人図』は、江戸時代の女性を振り返る姿で描いた作品です。浮世絵の発達に関わる元禄文化の資料として、作者名と作品名をセットで覚えましょう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Hishikawa_Moronobu_-_Beauty_Looking_Back_-_Google_Art_Project.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2162,7 +2289,8 @@
       "commonsOriginalDate": "Edo period, 17th century",
       "commonsSourceSha1": "5c4ec96040804fc6d02bea9cd9a5d18baf98c6e3",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-031",
@@ -2175,7 +2303,7 @@
       "type": "当時の浮世絵",
       "explanation": "江戸後期の化政文化を代表する歌川広重の浮世絵。江戸の日本橋のにぎわいを描いている。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Hiroshige01_nihonbashi.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2187,7 +2315,8 @@
       "commonsOriginalDate": "1833/34",
       "commonsSourceSha1": "6f4dd51447f5ae8d1ea25283fabf1fe19a10cc71",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-032",
@@ -2213,10 +2342,10 @@
       "caption": "法隆寺の金堂と五重塔（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHoryu-ji%2C_November_2016.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyu-ji%2C_November_2016.jpg",
-      "explanation": "飛鳥文化の代表的な寺院。中国・朝鮮半島から伝わった技術や仏教との関係に注目。",
+      "explanation": "法隆寺の金堂と五重塔は、奈良県斑鳩町に残る古い木造建築です。飛鳥文化では仏教が広まり、中国や朝鮮半島の影響を受けました。写真は建物の現在の姿です。",
       "credit": "Martin Falbisoner／Wikimedia Commons",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "飛鳥文化の寺院建築（現在の写真）",
+      "license": "CC BY-SA 4.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Horyu-ji%2C_November_2016.jpg",
@@ -2229,7 +2358,10 @@
       "commonsOriginalDate": "2016-11-18 10:01:28",
       "commonsSourceSha1": "229783f349ddb4b07c7e737b6f696f6d1eaa96a1",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h27-real-18",
@@ -2238,10 +2370,10 @@
       "caption": "東大寺大仏殿（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTodai-ji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Todai-ji.jpg",
-      "explanation": "天平文化の代表的建築。聖武天皇が仏教の力で国を守ろうとしたことと結び付く。",
+      "explanation": "東大寺の大仏は、聖武天皇が仏教の力で国を守ろうとした政策と結びつきます。写真の大仏殿は奈良時代そのままの建物ではなく、後世に再建されたものです。",
       "credit": "Felix Filnkössl／CC BY-SA 3.0",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "寺院建築（後世に再建された建物の写真）",
+      "license": "CC BY-SA 3.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Todai-ji.jpg",
@@ -2254,7 +2386,10 @@
       "commonsOriginalDate": "2010-08-18",
       "commonsSourceSha1": "8fe54fb77d076781b4996d8b195272889b42ea5e",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h27-real-19",
@@ -2265,8 +2400,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Buddha_at_Todaiji%2C_Nara.jpg",
       "explanation": "聖武天皇は奈良時代の743年に大仏づくりを命じ、752年に開眼供養が行われました。現在の大仏は長い歴史の中で修理を受けています。東大寺と天平文化を結び付けて覚えましょう。",
       "credit": "Wikimedia Commons",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "古代仏像（現存品の写真）",
+      "license": "CC BY-SA 4.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Great_Buddha_at_Todaiji%2C_Nara.jpg",
@@ -2279,7 +2414,10 @@
       "commonsOriginalDate": "13 August 2011",
       "commonsSourceSha1": "afd69bbe006698998792dff08ca10342b0336116",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h27-real-20",
@@ -2288,10 +2426,10 @@
       "caption": "『源氏物語絵巻』の実物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGENJI-monogatari-emaki-YADORIGI.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:GENJI-monogatari-emaki-YADORIGI.jpg",
-      "explanation": "『源氏物語』に基づく絵巻。平安の国風文化で生まれた文学を後世の絵巻が表している。",
+      "explanation": "『源氏物語』は紫式部が平安時代に書いた物語です。この『源氏物語絵巻』は、その場面を後の時代に絵で表した作品です。文章と絵巻が同じ時代の制作ではない点に注意しましょう。",
       "credit": "徳川美術館所蔵作品／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "古典文学を描く絵巻（現存作品の写真）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:GENJI-monogatari-emaki-YADORIGI.jpg",
@@ -2304,7 +2442,9 @@
       "commonsOriginalDate": "13 th century date QS:P,+1250-00-00T00:00:00Z/7",
       "commonsSourceSha1": "f82823d0680b7837048cfe049086beaa8d52dbff",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h27-real-21",
@@ -2315,8 +2455,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
       "explanation": "13世紀末に元が日本を攻めた元寇について、御家人・竹崎季長の活躍などを描いた絵巻です。1274年の文永の役、1281年の弘安の役を混同しないように、武士の服装や元軍の姿に注目しましょう。",
       "credit": "鎌倉時代の絵巻／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "元寇を題材とする絵巻（現存作品の写真）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
@@ -2329,7 +2469,9 @@
       "commonsOriginalDate": "circa 1293 date QS:P571,+1293-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "a1d532d71b7810c176fc79acf6909015dac4c70c",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h27-real-22",
@@ -2340,8 +2482,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kinkaku-ji_1.jpg",
       "explanation": "室町幕府3代将軍・足利義満が建てた金閣は、北山文化を代表します。金色の建物が目印です。8代将軍・足利義政の銀閣（東山文化）と、建てた人と文化をセットで区別しましょう。",
       "credit": "Felix Filnkössl／CC BY-SA 3.0",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "室町文化の建築（再建後の写真）",
+      "license": "CC BY-SA 3.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Kinkaku-ji_1.jpg",
@@ -2354,7 +2496,10 @@
       "commonsOriginalDate": "2010-08-16",
       "commonsSourceSha1": "358a0a343f7fefb2d59fe6f3350685a5735c1815",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h27-real-23",
@@ -2365,8 +2510,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ginkakuji.jpg",
       "explanation": "室町幕府8代将軍・足利義政が建てた銀閣は、東山文化を代表します。実際の建物は銀色ではありません。3代将軍・足利義満が建てた金閣（北山文化）との違いを確認しましょう。",
       "credit": "Fg2／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "室町文化の建築（現在の写真）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Ginkakuji.jpg",
@@ -2379,7 +2524,9 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "42bdfa6d2e67b3cb57fe27268be974ac2993fd8b",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h27-real-24",
@@ -2388,10 +2535,10 @@
       "caption": "葛飾北斎『神奈川沖浪裏』の実物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHokusai-_Kanagawa.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hokusai-_Kanagawa.jpg",
-      "explanation": "江戸後期の化政文化を代表する浮世絵。葛飾北斎の作品。",
+      "explanation": "葛飾北斎の『神奈川沖浪裏』は、江戸時代後期の浮世絵です。大きな波と富士山が特徴。歌川広重の『東海道五十三次』と並ぶ化政文化の作品として作者を区別しましょう。",
       "credit": "葛飾北斎／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "江戸時代の浮世絵（版画作品の画像）",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Hokusai-_Kanagawa.jpg",
@@ -2404,7 +2551,9 @@
       "commonsOriginalDate": "1831",
       "commonsSourceSha1": "9e3ef546a1284defd5807140963375fe27f0215a",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-041",
@@ -2417,7 +2566,7 @@
       "type": "後世の肖像画",
       "explanation": "鎌倉幕府3代執権の北条泰時の肖像として伝わる図。本人を生前に描いたと確認できるものではない。御成敗式目と一緒に覚えよう。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:H%C5%8Dj%C5%8D_Yasutoki.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2429,7 +2578,8 @@
       "commonsOriginalDate": "1929",
       "commonsSourceSha1": "5040c03fbaee80248f3d3ce21533063eb31e830b",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "h29-real-25",
@@ -2440,8 +2590,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg",
       "explanation": "1776年、北アメリカの13植民地はイギリスからの独立を宣言しました。画像はその独立宣言の文書です。アメリカ独立戦争は1775年に始まっており、戦争開始と宣言は別の年です。",
       "credit": "米国公文書／パブリックドメイン",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1776年の独立宣言を示す文書画像",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg",
@@ -2454,7 +2604,9 @@
       "commonsOriginalDate": "1776-07-04",
       "commonsSourceSha1": "b2667ae80e7e39760bdd3ebbb078d095544539b0",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h29-real-26",
@@ -2465,8 +2617,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg",
       "explanation": "フランス革命が始まった1789年に出された「人権宣言」。自由や平等、国の主権は国民にあるという考えを示しました。1776年のアメリカ独立宣言と年代を区別しましょう。",
       "credit": "Musée Carnavalet／CC0",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1789年の人権宣言を示す図像・文書",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg",
@@ -2479,7 +2631,9 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "2933789708310dbda09b4cf13d32477c2e86c341",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "h30-real-39",
@@ -2488,10 +2642,10 @@
       "caption": "広島の原爆ドーム（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHiroshima_Peace_Memorial.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial.jpg",
-      "explanation": "1945年8月6日の原爆投下の被害を伝える建物。写真は戦後に撮られた現在の姿。",
+      "explanation": "1945年8月6日に広島へ原子爆弾が投下されました。原爆ドームは爆心地近くに残った建物で、写真は戦後の姿です。長崎への投下は同じ年の8月9日でした。",
       "credit": "Hirotsugu Mori／CC BY-SA 3.0",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "被爆した建築の現在の写真",
+      "license": "CC BY-SA 3.0",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial.jpg",
@@ -2504,7 +2658,10 @@
       "commonsOriginalDate": "2006-11-28",
       "commonsSourceSha1": "8c850cc01bfca2636762f7dd62d2efaf95fbf541",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-033",
@@ -2517,7 +2674,7 @@
       "type": "当時の文書",
       "explanation": "1919年2月、朝鮮の独立を求める宣言が満州で出されました。3月1日には朝鮮で三・一独立運動が広がりました。画像は2月の別の宣言で、三・一独立運動当日の宣言文とは異なります。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_of_Korea_(February_1919).jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2529,7 +2686,8 @@
       "commonsOriginalDate": "1919-02",
       "commonsSourceSha1": "16824262d4032c83b1e55405d36f476aa2f10c87",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "wmc-feb26",
@@ -2538,10 +2696,10 @@
       "caption": "二・二六事件の反乱部隊",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Outbreak_of_the_February_26th_Incident.jpg",
       "credit": "Wikimedia Commons / public-domain photo",
-      "explanation": "二・二六事件の写真です。軍部の力が強まる時代の不安定さを実感できる資料です。",
+      "explanation": "二・二六事件は1936年に陸軍の青年将校らが起こした反乱です。写真は当時の反乱部隊を伝えるもの。1932年の五・一五事件と年号や関係者を混同しないようにしましょう。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FOutbreak_of_the_February_26th_Incident.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1936年の事件を伝える写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Outbreak_of_the_February_26th_Incident.jpg",
@@ -2554,7 +2712,9 @@
       "commonsOriginalDate": "1936-02-26",
       "commonsSourceSha1": "a4ddc95a2f90e76f04284ef5a3bd0d7ea9f1c8bb",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "wmc-mayfourth",
@@ -2565,8 +2725,8 @@
       "credit": "Wikimedia Commons / May Fourth Movement category",
       "explanation": "五四運動の学生デモ写真です。ベルサイユ条約への反発から起きた中国の大運動を視覚的に理解できます。",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FBeijing_students_protesting_the_Treaty_of_Versailles_%28May_4%2C_1919%29.jpg&width=720",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "1919年の学生運動を伝える写真",
+      "license": "Public domain",
       "review": "出典ページの内容と利用条件を参照。実機読み込み未確認。",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Beijing_students_protesting_the_Treaty_of_Versailles_(May_4,_1919).jpg",
@@ -2579,7 +2739,9 @@
       "commonsOriginalDate": "Taken on 4 May 1919",
       "commonsSourceSha1": "527d23b0f31c208b6f3814a9c59a068653f7f393",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "authentic-2026-continued-042",
@@ -2605,9 +2767,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ziggurate_of_Ur-_Iraq.jpg",
       "credit": "写真 Hassaan Ahmed／Wikimedia Commons",
       "type": "遺跡",
-      "explanation": "古代メソポタミアの神殿建築。写真は現在の遺跡の姿で、復元・修復された部分もある。",
+      "explanation": "ジッグラトは古代メソポタミアで建てられた階段状の神殿建築です。写真は現在の遺跡で、一部は修復されています。エジプトのピラミッドとは目的も形も違います。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Ziggurate_of_Ur-_Iraq.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2619,7 +2781,9 @@
       "commonsOriginalDate": "2011-03-21 16:47:06",
       "commonsSourceSha1": "607eda6ea944e98c8108e6b7d5f7d64c6c1a9ff6",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-044",
@@ -2662,7 +2826,7 @@
       "type": "実物",
       "explanation": "縄文時代の土偶で、目が眼鏡のように大きい形が特徴。弥生の銅鐸、古墳の埴輪と見分けよう。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Clay_statue,_late_Jomon_period.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2674,7 +2838,9 @@
       "commonsOriginalDate": "2014-04-28",
       "commonsSourceSha1": "7d6810fb3dccba6e1af837443ddae6c2006e4a98",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-047",
@@ -2685,9 +2851,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wadokaichin_copper_coin.jpg",
       "credit": "Wikimedia Commons",
       "type": "実物",
-      "explanation": "奈良時代に発行された貨幣。中心に四角い穴があり、文字が彫られている。",
+      "explanation": "和同開珎は708年に発行された銅銭です。中央に四角い穴があり、四文字が刻まれています。奈良時代の貨幣として有名ですが、日本で最初につくられた貨幣と断定しないようにしましょう。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Wadokaichin_copper_coin.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2699,7 +2865,9 @@
       "commonsOriginalDate": "2008",
       "commonsSourceSha1": "c0f56e332bba3f902ad42b42ee20f0313c14f313",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-048",
@@ -2725,9 +2893,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gakumon-no-susume.jpg",
       "credit": "福沢諭吉・小幡篤次郎／Wikimedia Commons",
       "type": "原資料",
-      "explanation": "福沢諭吉らが書いた『学問のすゝめ』の初版。明治の新しい学びを示す重要資料。",
+      "explanation": "福沢諭吉らが書いた『学問のすゝめ』は1872年から刊行されました。身分にかかわらず学ぶ大切さを説いた本です。画像はその初版の紙面で、人物の肖像写真ではありません。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Gakumon-no-susume.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2739,7 +2907,8 @@
       "commonsOriginalDate": "1872",
       "commonsSourceSha1": "62b6faa4cca1c4daefab092c7bd8e46aa3f01393",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-050",
@@ -2752,7 +2921,7 @@
       "type": "当時の写真",
       "explanation": "1946年から東京で開かれた裁判の法廷。戦争指導者らの責任をめぐり審理が行われた。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:IMTFE_court_chamber.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2764,7 +2933,8 @@
       "commonsOriginalDate": "1946",
       "commonsSourceSha1": "0974f0cf15450a74965d779bc2e6617780752957",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-051",
@@ -2777,7 +2947,7 @@
       "type": "当時の写真",
       "explanation": "戦後初の総選挙（1946年）で39人の女性が衆議院議員に当選。女性の参政権の実現を示す。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:First_Japanese_Congresswomen.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2789,7 +2959,8 @@
       "commonsOriginalDate": "1946",
       "commonsSourceSha1": "aa6357ef8eeb55412f6ed6c84ce142a893a1f9af",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-052",
@@ -2802,7 +2973,7 @@
       "type": "原資料",
       "explanation": "1946年11月3日に公布された日本国憲法の原本2ページ目。天皇の御名御璽と大臣の副署がある。施行は1947年5月3日。公布と施行は別の日付なので区別しよう。",
       "review": "Wikimedia Commons File:Nihon Kenpo02.jpg の作品説明で1946年の原本2ページ目を確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo02.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2814,7 +2985,8 @@
       "commonsOriginalDate": "1946",
       "commonsSourceSha1": "d5e1740bc210347e5b9b135eb53ced98654fac72",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-053",
@@ -2827,7 +2999,7 @@
       "type": "原資料",
       "explanation": "戦前の学校教育に大きな影響を与えた教育勅語。1945年の敗戦後は、教育の基本的な考え方が大きく変わった。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Imperial_Rescript_on_Education.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2839,7 +3011,8 @@
       "commonsOriginalDate": "1890-10-30",
       "commonsSourceSha1": "a622385dfb0ad4093720e5bbf97b4ce2aa81002d",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-054",
@@ -2852,7 +3025,7 @@
       "type": "後世の絵画",
       "explanation": "1159年の平治の乱を、13世紀ごろの絵巻が描いています。実際の戦いから後に作られた作品です。燃える建物や武士の姿から当時の戦いを想像できますが、写真のように事実をそのまま写したものではありません。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Heiji_Monogatari_Emaki_-_Sanjo_scroll_part_1.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2864,7 +3037,8 @@
       "commonsOriginalDate": "Late 13th",
       "commonsSourceSha1": "d545fa9b59d69ccc453b290e23f2d3634d4f10cb",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-055",
@@ -2877,7 +3051,7 @@
       "type": "原資料の拓本",
       "explanation": "1428年の正長の土一揆に関連し、借金の帳消しを示す文字を石に刻んだ資料。これは刻字の拓本。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Rubbing_of_Nara_Yagyu_Hoso_Jizo_Tokusei-Hibun.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -2889,7 +3063,8 @@
       "commonsOriginalDate": "2023-04-25 23:33:14",
       "commonsSourceSha1": "80c892a50433e21472438c933f5d45853298e032",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-056",
@@ -2955,7 +3130,8 @@
       "commonsOriginalDate": "19 th century date QS:P,+1850-00-00T00:00:00Z/7",
       "commonsSourceSha1": "22b88f58868344d72cd58ed9a4e463949ea81655",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-059",
@@ -2982,7 +3158,8 @@
       "commonsOriginalDate": "1937",
       "commonsSourceSha1": "96f7b87d9ab2fc0dbc55bb3dfb22d0106e84f5ca",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-060",
@@ -2995,7 +3172,7 @@
       "type": "当時の写真",
       "explanation": "1945年7月、沖縄の辺野古にある収容施設で暮らす住民。戦闘が終わっても人々の生活が変わったことを示す。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:A_woman_and_children_of_the_Oura_Bay_internment_camp_in_Henoko.png",
       "coverageOf": "第二次世界大戦",
@@ -3009,7 +3186,8 @@
       "commonsOriginalDate": "Taken on 8 July 1945",
       "commonsSourceSha1": "dbeb14aa9a8cd9650b7371023300f20a03730974",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-061",
@@ -3022,7 +3200,7 @@
       "type": "原資料",
       "explanation": "日本の降伏を正式に確認する文書。1945年8月のポツダム宣言受諾と、9月2日の降伏文書署名を区別しよう。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Instrument_of_surrender_Japan.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3034,7 +3212,8 @@
       "commonsOriginalDate": "1945-09-02",
       "commonsSourceSha1": "cd621f3d089f127538ea7e858332b73584df8268",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-062",
@@ -3047,7 +3226,7 @@
       "type": "当時の写真",
       "explanation": "1945年9月2日、戦艦ミズーリ上での調印。第二次世界大戦が正式に終結したことを示す歴史写真。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Mamoru_Shigemitsu_signs_the_Instrument_of_Surrender,_officially_ending_the_Second_World_War.jpg",
       "imageSelection": "anchor-fixed",
@@ -3060,7 +3239,8 @@
       "commonsOriginalDate": "1945-09-02",
       "commonsSourceSha1": "ce99d833e5c2a8761ab4b261564c754e26db36c0",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-063",
@@ -3088,7 +3268,7 @@
       "type": "当時の写真",
       "explanation": "1863年のゲティスバーグで撮られた戦場写真。戦争が多くの犠牲を生んだことを伝える。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Gettysburg.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3100,7 +3280,8 @@
       "commonsOriginalDate": "between 4 July 1863 and 7 July 1863 date QS:P,+1863-07-00T00:00:00Z/10,P1319,+1863-07-04T00:00:00Z/1",
       "commonsSourceSha1": "e8ef289ed76899d648ce73f172743f2a105b917c",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-065",
@@ -3113,7 +3294,7 @@
       "type": "当時の写真",
       "explanation": "1918年11月、休戦協定の舞台となった車両の前で撮影。1919年のベルサイユ条約とは区別しよう。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Armisticetrain.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3125,7 +3306,8 @@
       "commonsOriginalDate": "1918-11-11",
       "commonsSourceSha1": "a216dcb716adc778a76a95ca85c196cceb57e1fb",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-066",
@@ -3138,7 +3320,7 @@
       "type": "当時の写真",
       "explanation": "1950年に始まった朝鮮戦争で、厳しい寒さの中を南に逃れる人々。戦争の被害を具体的に感じる資料。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:KoreanWarRefugees.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3150,7 +3332,8 @@
       "commonsOriginalDate": "1951-01-08",
       "commonsSourceSha1": "bf1e516a33c7a919fdab6125a2b504af0f7ed900",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-067",
@@ -3163,7 +3346,7 @@
       "type": "原資料",
       "explanation": "名誉革命の翌年、王の力を議会が制限する原則を示した文書。王より議会が重要になる転機。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:English_Bill_of_Rights_of_1689.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3175,7 +3358,8 @@
       "commonsOriginalDate": "1689-12",
       "commonsSourceSha1": "ee469dee88acd3d7b8e94e017212b9f12eba841a",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-068",
@@ -3188,7 +3372,7 @@
       "type": "後世の絵画",
       "explanation": "1789年、身分制議会から国民議会へ政治が動く場面を描いたジャック＝ルイ・ダヴィッドの絵。後年制作の絵画として扱う。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Serment_du_Jeu_de_Paume_-_Jacques-Louis_David.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3200,7 +3384,8 @@
       "commonsOriginalDate": "1790s date QS:P571,+1790-00-00T00:00:00Z/8",
       "commonsSourceSha1": "452e76a378d223aaa7b71cb8cb461e8f8841f6c6",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-069",
@@ -3213,7 +3398,7 @@
       "type": "原資料",
       "explanation": "徳川家康がイギリス東インド会社に貿易上の特権を与えた文書。朱印状は幕府の許可を示す文書の一種。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Bodleian_Library_MS._Jap._b.2_Shuinjo.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3225,7 +3410,9 @@
       "commonsOriginalDate": "1613",
       "commonsSourceSha1": "efaaae6cb20482febc5e72b06dacc5a7e501cc49",
       "commonsUsageTerms": "Creative Commons Attribution 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-070",
@@ -3238,7 +3425,7 @@
       "type": "原資料",
       "explanation": "1895年、日清戦争後の講和条約。日本は台湾などを得たが、遼東半島は三国干渉で返還した。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Shimonoseki_Nippon_tenn%C5%8D.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3250,7 +3437,8 @@
       "commonsOriginalDate": "1895",
       "commonsSourceSha1": "31d87eb1a3a08a7d81e65b41b1a918ce8d46c87f",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-071",
@@ -3263,7 +3451,7 @@
       "type": "当時の写真",
       "explanation": "1951年に署名、1952年に発効。日本は主権を回復したが、沖縄は引き続き米国の施政下に置かれた。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_signs_San_Francisco_Peace_Treaty.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3275,7 +3463,8 @@
       "commonsOriginalDate": "Taken on 8 September 1951",
       "commonsSourceSha1": "caca72ac9543ebd35eaf0805c80da9e7c087b271",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-072",
@@ -3288,7 +3477,7 @@
       "type": "当時の写真",
       "explanation": "1951年の日米安全保障条約の調印。1960年の新たな日米安保条約と混同しないようにしよう。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_signing_the_US-Japan_Security_1951.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3300,7 +3489,8 @@
       "commonsOriginalDate": "1951年9月8日 / 8 September 1951",
       "commonsSourceSha1": "5a8a66d273618f7292e987758848a238f4bd5d46",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-073",
@@ -3313,7 +3503,7 @@
       "type": "原資料",
       "explanation": "三国干渉を受け、日本が遼東半島を返還した取り決めの文書。下関条約の後の展開がわかる。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Convention_of_retrocession_of_the_Liatung_Peninsula_8_November_1895.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3325,7 +3515,9 @@
       "commonsOriginalDate": "2009",
       "commonsSourceSha1": "b37335023d3e9a78d3a6b3a3cfe0134441141028",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-074",
@@ -3336,9 +3528,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyuji_Monastery_Painting_on_the_Tamamushi_Shrine_(Feeding_the_Tigress)_(197).jpg",
       "credit": "法隆寺／Wikimedia Commons",
       "type": "実物",
-      "explanation": "飛鳥文化を代表する玉虫厨子の絵。仏教の考えを絵で表現した古代の貴重な文化財。",
+      "explanation": "玉虫厨子は飛鳥時代の仏教美術です。装飾にはお釈迦様の教えを伝える絵が描かれています。写真は現存する文化財の一部で、当時の建物を写した写真ではありません。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Horyuji_Monastery_Painting_on_the_Tamamushi_Shrine_(Feeding_the_Tigress)_(197).jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3350,7 +3542,8 @@
       "commonsOriginalDate": "2012-03-14",
       "commonsSourceSha1": "255fbeb81a61260d93aa49321723579c147f5578",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-075",
@@ -3363,7 +3556,7 @@
       "type": "実物",
       "explanation": "奈良時代の建築が残る薬師寺東塔。東大寺・正倉院と並んで奈良の古代文化を理解する手がかり。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Yakushiji_Temple_east_pagoda.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3375,7 +3568,9 @@
       "commonsOriginalDate": "15 October 2024, 03:38:27",
       "commonsSourceSha1": "d4a4fde65a9967eaaeaf99f0cb558d0a025a87f3",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-076",
@@ -3388,7 +3583,7 @@
       "type": "実物",
       "explanation": "1053年に藤原頼通が建立した平等院鳳凰堂。平安時代の貴族と浄土信仰を代表する建築。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Byodoin-PhoenixHall-M1247.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3400,7 +3595,8 @@
       "commonsOriginalDate": "7 January 2006 (original upload date)",
       "commonsSourceSha1": "79244338bcadab9821fc05efd042f64e4e58b717",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-077",
@@ -3411,9 +3607,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kamakura-daibutsu.jpg",
       "credit": "写真 Hokanomono／Wikimedia Commons",
       "type": "実物",
-      "explanation": "鎌倉時代につくられた大きな阿弥陀如来像。奈良の東大寺大仏とは時代も場所も異なる。",
+      "explanation": "鎌倉の大仏は、鎌倉時代につくられた阿弥陀如来の大きな像です。奈良・東大寺の大仏とは時代も場所も異なります。写真は現在残る実物を撮影したものです。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Kamakura-daibutsu.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3425,7 +3621,9 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "3b9bafff67db85388d4f2c8d26188eb3c34c8a29",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-078",
@@ -3436,7 +3634,7 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Engakuji,_shariden.jpg",
       "credit": "写真 Saigen Jiro／CC0",
       "type": "実物",
-      "explanation": "禅宗建築の代表例。鎌倉文化で広まった武士と禅のつながりを理解しよう。",
+      "explanation": "円覚寺舎利殿は鎌倉の禅宗建築を伝える国宝です。屋根の形や木組みに中国から伝わった建築様式の影響が見られます。写真は現在残る建物を写したものです。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
       "license": "個別の出典ページで確認",
       "licenseStatus": "source_page_review_needed",
@@ -3453,7 +3651,7 @@
       "type": "実物",
       "explanation": "動物たちを人間のように表した絵巻物「鳥獣人物戯画」。平安時代末期から鎌倉時代にかけて制作されたと考えられ、すべてが一度に作られた作品ではない。鎌倉時代の作品とだけ断定しない。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Chouju_1st_scroll-01.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3465,7 +3663,8 @@
       "commonsOriginalDate": "12th century and 13th century",
       "commonsSourceSha1": "085f142b4b3ef7df45f19f0987b7d57424eaf46c",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-080",
@@ -3478,7 +3677,7 @@
       "type": "後世の絵画",
       "explanation": "平安時代の宮廷の生活を後の時代に絵巻として表した作品。紫式部の時代を写真のように撮ったものではない。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Murasaki_shikibu_diary.JPG",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3490,7 +3689,8 @@
       "commonsOriginalDate": "13 th century date QS:P,+1250-00-00T00:00:00Z/7",
       "commonsSourceSha1": "b9bd12ab3d1d02eea3270c8aa972d6ba4408f3c1",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-081",
@@ -3501,9 +3701,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kan%C5%8D_Eitoku_-_Rakuch%C5%AB_rakugai_zu_(Uesugi)_-_left_screen.jpg",
       "credit": "狩野永徳／Wikimedia Commons",
       "type": "実物",
-      "explanation": "戦国末期の京都の町の様子を描いた屏風。桃山文化へつながる華やかな屏風絵の代表例。",
+      "explanation": "狩野永徳の『洛中洛外図屏風』（上杉本）は、戦国時代の京都の町や人々の暮らしを描きました。金色の雲や細かな建物が目印で、当時の都市の様子を考える資料です。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Kan%C5%8D_Eitoku_-_Rakuch%C5%AB_rakugai_zu_(Uesugi)_-_left_screen.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3515,7 +3715,8 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "530afe890cabbb7f66dcf5d7450780db37d2bd27",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-082",
@@ -3526,9 +3727,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesshu_-_Haboku-Sansui.jpg",
       "credit": "東京国立博物館所蔵／Wikimedia Commons",
       "type": "実物",
-      "explanation": "墨の濃淡を生かした水墨画。東山文化の時代に活躍した雪舟の代表作。",
+      "explanation": "雪舟の『破墨山水図』は、墨の濃さとにじみで山や木を表した水墨画です。1495年の作品で、室町時代の東山文化を代表します。作者・技法・時代を結びつけましょう。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Sesshu_-_Haboku-Sansui.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3540,7 +3741,8 @@
       "commonsOriginalDate": "1495 date QS:P571,+1495-00-00T00:00:00Z/9",
       "commonsSourceSha1": "32ddde9a4a53fde286a15cc1ae72ea523e7a5feb",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-083",
@@ -3553,7 +3755,7 @@
       "type": "後世の絵画",
       "explanation": "鎌倉時代に描かれた『平治物語絵巻』の武士たち。平治の乱の当時に撮影した写真ではない。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Heiji_Monogatari_Emaki_-_Warriors.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3565,7 +3767,8 @@
       "commonsOriginalDate": "Late 13th",
       "commonsSourceSha1": "54adf5da096a9b14eae2c177ef64bb6057135465",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-084",
@@ -3576,9 +3779,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimabara-Battle-Map-c17th-century.png",
       "credit": "17世紀の地図／Wikimedia Commons",
       "type": "原資料",
-      "explanation": "島原・天草一揆での原城の戦いを伝える歴史絵図。文字や部隊の配置を読み取る資料。",
+      "explanation": "原城は、1637〜1638年の島原・天草一揆で一揆勢が立てこもった城です。絵図は戦いの配置を伝える資料ですが、描かれた内容の正確さは制作時期とあわせて考える必要があります。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Shimabara-Battle-Map-c17th-century.png",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3590,7 +3793,8 @@
       "commonsOriginalDate": "Circa 17th century",
       "commonsSourceSha1": "b497e0ee26e909a3468393bb0876f9e65c901a74",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-085",
@@ -3601,9 +3805,9 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joint_Communique_of_Japan_and_China.jpg",
       "credit": "外務省外交史料館所蔵／Wikimedia Commons",
       "type": "原資料",
-      "explanation": "田中角栄と周恩来らが署名した文書。1972年に日本と中国が国交を正常化した。",
+      "explanation": "1972年、日本と中国は日中共同声明を発表し、国交を正常化しました。画像はその署名文書の資料です。1978年の日中平和友好条約とは年号と文書の種類が違います。",
       "review": "Wikimedia Commonsのファイル情報またはカテゴリ一覧で作品・資料名を確認。外部配信画像の実機読み込みは未確認。",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Joint_Communique_of_Japan_and_China.jpg",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3615,7 +3819,9 @@
       "commonsOriginalDate": "1972-09-29",
       "commonsSourceSha1": "ebe4b7bc46bcb2aaf6ff2a075d6fdc8db1b47983",
       "commonsUsageTerms": "Creative Commons Attribution 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "authentic-2026-continued-086",
@@ -3647,7 +3853,7 @@
       "type": "当時の新聞資料",
       "explanation": "1932年5月15日、犬養毅首相が殺害された五・一五事件を伝える東京朝日新聞の号外です。紙面には「4月15日」と誤植がありますが、事件は5月15日です。史料の印刷ミスと正しい日付を区別しましょう。",
       "review": "Wikimedia Commons File:Tsuyoshi Inukai May 15 Incident Asahi Shimbun.png の説明で当日号外と誤植を確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Tsuyoshi_Inukai_May_15_Incident_Asahi_Shimbun.png",
       "commonsRightsCheckedAt": "2026-11-10",
@@ -3659,7 +3865,8 @@
       "commonsOriginalDate": "1932-05-15",
       "commonsSourceSha1": "94385d135181f898c36e6259f8f0a462f6e70c4e",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "law-17article",
@@ -3731,9 +3938,9 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/WUL-wa03_02869_%E6%AD%A6%E5%AE%B6%E8%AB%B8%E6%B3%95%E5%BA%A6.pdf/page1-5400px-WUL-wa03_02869_%E6%AD%A6%E5%AE%B6%E8%AB%B8%E6%B3%95%E5%BA%A6.pdf.jpg",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-wa03_02869_武家諸法度.pdf",
       "credit": "早稲田大学図書館所蔵／Wikimedia Commons。",
-      "explanation": "江戸幕府が大名を統制する法度。現存する写本であり、1615年の原本と断定しない。",
+      "explanation": "1615年に出された武家諸法度は、江戸幕府が大名を統制するための決まりです。画像は後世に伝わった写本で、1615年当時の原本そのものとは断定できません。",
       "type": "後世の写本",
-      "license": "出典の利用条件を別途確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "commonsRightsCheckedAt": "2026-11-10",
       "commonsFileTitle": "File:WUL-wa03 02869 武家諸法度.pdf",
@@ -3744,7 +3951,8 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "0e9421297d1e87a00c75811236e10bc9b58c542e",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "law-goseibai",
@@ -3905,7 +4113,7 @@
       "credit": "Wikimedia Commonsに掲載の歴史肖像画。",
       "explanation": "1837年に老中となった水野忠邦は、1841年から天保の改革を進めました。ぜいたくを取り締まり、江戸周辺の土地を幕府のものにしようとしましたが反発を受けました。画像は後世に伝わる水野忠邦の肖像で、改革の法令ではありません。",
       "type": "肖像画",
-      "license": "出典の利用条件を別途確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "commonsRightsCheckedAt": "2026-11-10",
       "commonsFileTitle": "File:Mizuno Tadakuni.jpg",
@@ -3916,7 +4124,8 @@
       "commonsOriginalDate": "天保 年間",
       "commonsSourceSha1": "68168f178243a820d5f652d2d96a647a676ca14b",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "doc-gandhi",
@@ -3926,9 +4135,9 @@
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gandhi_during_the_Salt_March.jpg?width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gandhi_during_the_Salt_March.jpg",
       "credit": "Wikimedia Commons／1930年の記録写真。",
-      "explanation": "ガンディーの非暴力・不服従運動を伝える1930年の写真。",
+      "explanation": "ガンディーはイギリスの支配に対し、暴力を使わずに抗議しました。1930年の「塩の行進」はその代表例です。写真と「非暴力・不服従運動」を結びつけて覚えましょう。",
       "type": "当時の写真",
-      "license": "出典の利用条件を別途確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "commonsRightsCheckedAt": "2026-11-10",
       "commonsFileTitle": "File:Gandhi during the Salt March.jpg",
@@ -3939,7 +4148,8 @@
       "commonsOriginalDate": "1930",
       "commonsSourceSha1": "2873acc96dd1067a4eabd35a80b6093831540ce7",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "doc-ippen",
@@ -3951,7 +4161,7 @@
       "credit": "Wikimedia Commons／1299年制作の絵巻。",
       "explanation": "時宗を広めた一遍（1239〜1289年）の旅や踊り念仏を描いた『一遍聖絵』。一遍の没後、1299年に制作された絵巻です。人物の時代と絵巻の制作年代を区別しましょう。",
       "type": "実物の絵巻",
-      "license": "出典の利用条件を別途確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "commonsRightsCheckedAt": "2026-11-10",
       "commonsFileTitle": "File:Ippen shonin eden IV - Hukuoka.jpg",
@@ -3962,7 +4172,8 @@
       "commonsOriginalDate": "1299年（正安元年）",
       "commonsSourceSha1": "fdc9ff7de5c9a522b2f93761e231fe1d60112047",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "doc-nichiren",
@@ -3974,7 +4185,7 @@
       "credit": "Wikimedia Commons／歴史肖像画。",
       "explanation": "日蓮（1222〜1282年）は、法華経を特に大切にする日蓮宗の教えを広めました。画像は後世に伝わる肖像画で、本人の生前の姿を正確に記録した写真ではありません。",
       "type": "後世の肖像画",
-      "license": "出典の利用条件を別途確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "commonsRightsCheckedAt": "2026-11-10",
       "commonsFileTitle": "File:Nichiren Daishonin Hakii Portrait.jpg",
@@ -3985,7 +4196,8 @@
       "commonsOriginalDate": "15 th century date QS:P,+1450-00-00T00:00:00Z/7",
       "commonsSourceSha1": "ce76bb81e5967276c7b467f4f0e7530190904151",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "doc-reiwa",
@@ -4015,7 +4227,7 @@
       "credit": "Wikimedia Commons／1989年の小渕恵三氏の発表写真。",
       "explanation": "1989年1月7日、当時の小渕恵三官房長官が新元号「平成」を発表しました。平成が始まったのは翌1月8日です。発表日と元号の開始日を区別しましょう。",
       "type": "当時の写真",
-      "license": "出典の利用条件を別途確認",
+      "license": "CC BY 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "commonsRightsCheckedAt": "2026-11-10",
       "commonsFileTitle": "File:Keizo Obuchi 19890107.jpg",
@@ -4026,7 +4238,9 @@
       "commonsOriginalDate": "1989-01-07",
       "commonsSourceSha1": "25cd4a02fb1ad0ba1da2ed0cd54be1aa3e9a3e8f",
       "commonsUsageTerms": "Creative Commons Attribution 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch01-04",
@@ -4055,8 +4269,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyu-ji%2C_November_2016.jpg",
       "credit": "Martin Falbisoner／Wikimedia Commons",
       "explanation": "飛鳥と関わる歴史資料。飛鳥文化の代表的な寺院。中国・朝鮮半島から伝わった技術や仏教との関係に注目。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "飛鳥文化の寺院建築（現在の写真）",
+      "license": "CC BY-SA 4.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "飛鳥",
       "sourceId": "h27-real-17",
@@ -4070,7 +4284,10 @@
       "commonsOriginalDate": "2016-11-18 10:01:28",
       "commonsSourceSha1": "229783f349ddb4b07c7e737b6f696f6d1eaa96a1",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch02-06",
@@ -4081,8 +4298,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:GENJI-monogatari-emaki-YADORIGI.jpg",
       "credit": "徳川美術館所蔵作品／パブリックドメイン",
       "explanation": "平安と関わる歴史資料。『源氏物語』に基づく絵巻。平安の国風文化で生まれた文学を後世の絵巻が表している。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "古典文学を描く絵巻（現存作品の写真）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "平安",
       "sourceId": "h27-real-20",
@@ -4096,7 +4313,9 @@
       "commonsOriginalDate": "13 th century date QS:P,+1250-00-00T00:00:00Z/7",
       "commonsSourceSha1": "f82823d0680b7837048cfe049086beaa8d52dbff",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch02-07",
@@ -4107,8 +4326,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
       "credit": "鎌倉時代の絵巻／パブリックドメイン",
       "explanation": "鎌倉と関わる歴史資料。1274年の元寇を描いた絵巻。武士や元軍の武器・戦い方に注目。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "元寇を題材とする絵巻（現存作品の写真）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "鎌倉",
       "sourceId": "h27-real-21",
@@ -4122,7 +4341,9 @@
       "commonsOriginalDate": "circa 1293 date QS:P571,+1293-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "a1d532d71b7810c176fc79acf6909015dac4c70c",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch02-08",
@@ -4134,7 +4355,7 @@
       "credit": "伝世の肖像画／Wikimedia Commons",
       "explanation": "南北朝と関わる歴史資料。後醍醐天皇の肖像画。建武の新政を行った天皇の姿を伝える歴史資料。撮影写真ではない。",
       "type": "肖像画",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "南北朝",
       "sourceId": "authentic-2026-036",
@@ -4148,7 +4369,8 @@
       "commonsOriginalDate": "Former half of 14th century",
       "commonsSourceSha1": "e84cff00402178402a48d466011e4134a5df7462",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch02-09",
@@ -4158,9 +4380,9 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGinkakuji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ginkakuji.jpg",
       "credit": "Fg2／パブリックドメイン",
-      "explanation": "室町と関わる歴史資料。足利義政の東山文化。金閣と違い銀色ではない。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "explanation": "銀閣は室町幕府8代将軍・足利義政に関係する東山文化の建築です。名前と違って銀色の建物ではありません。足利義満の金閣・北山文化と比べて覚えましょう。",
+      "type": "室町文化の建築（現在の写真）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "室町",
       "sourceId": "h27-real-23",
@@ -4174,7 +4396,9 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "42bdfa6d2e67b3cb57fe27268be974ac2993fd8b",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch02-10",
@@ -4185,8 +4409,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oda-Nobunaga.jpg",
       "credit": "Wikimedia Commons / Chokoji-held portrait",
       "explanation": "戦国と関わる歴史資料。織田信長の有名な肖像です。戦国の終わりに向けて勢力を広げた人物として印象づけられます。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物肖像画（制作年代は別途確認）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "戦国",
       "sourceId": "wmc-nobunaga",
@@ -4200,7 +4424,9 @@
       "commonsOriginalDate": "The original was made in 1583",
       "commonsSourceSha1": "192f6a1814c8c60799c472e0f2fb258219a125cb",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch02-11",
@@ -4211,8 +4437,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyotomi_hideyoshi.jpg",
       "credit": "Wikimedia Commons / Kodaiji holdings",
       "explanation": "安土桃山と関わる歴史資料。豊臣秀吉の肖像です。農民出身から天下統一に近づいた人物として記憶に残しやすくなります。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物肖像画（制作年代は別途確認）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "安土桃山",
       "sourceId": "wmc-hideyoshi",
@@ -4226,7 +4452,9 @@
       "commonsOriginalDate": "circa 1601 date QS:P571,+1601-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "5aed0ce0607b23c0acf29e2b9b8eaa6b27c0c04e",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch02-12",
@@ -4237,8 +4465,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu.jpg",
       "credit": "狩野探幽に伝わる／パブリックドメイン",
       "explanation": "江戸と関わる歴史資料。江戸幕府を開いた徳川家康の肖像。肖像画は本人の生前の写真ではなく、江戸時代に描かれたもの。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "江戸時代の人物肖像画",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "江戸",
       "sourceId": "h05-real-27",
@@ -4252,7 +4480,9 @@
       "commonsOriginalDate": "Edo period, 17th c.",
       "commonsSourceSha1": "73ebdbbcaea26f4d3c90c40a3a0e77b0c7334b27",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch02-13",
@@ -4282,7 +4512,7 @@
       "credit": "高岡新報・1918年8月7日／パブリックドメイン",
       "explanation": "大正と関わる歴史資料。1918年の米騒動を伝える本物の新聞記事。米の値段が上がり、全国各地で抗議が広がった。",
       "type": "当時の新聞",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "大正",
       "sourceId": "authentic-2026-017",
@@ -4296,7 +4526,8 @@
       "commonsOriginalDate": "1918",
       "commonsSourceSha1": "bf5aacc328f0a51c3826c8b101eb26dce2387f0d",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch02-15",
@@ -4342,7 +4573,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTaira_no_Kiyomori.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taira_no_Kiyomori.jpg",
       "credit": "Wikimedia Commons",
-      "explanation": "平安時代末期に武士として力を持ち、日宋貿易を進めた平清盛。",
+      "explanation": "平清盛は平安時代末期に権力を握り、日宋貿易を進めました。画像は後世に描かれたとされる肖像で、清盛が生きていた時代に撮影された写真ではありません。",
       "type": "後世の人物画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -4360,7 +4591,8 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "6dc84a7797f5191a5f0e44730a624b255f255928",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch03-06",
@@ -4370,9 +4602,9 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKinkaku-ji_1.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kinkaku-ji_1.jpg",
       "credit": "Felix Filnkössl／CC BY-SA 3.0",
-      "explanation": "足利義満と関わる歴史資料。足利義満の北山文化。華やかな建築を銀閣と比べよう。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "explanation": "金閣は足利義満に関係する北山文化の建築です。金色の上層部が特徴で、義政の銀閣・東山文化とよく比較されます。現在の金閣は火災後に再建されたものです。",
+      "type": "室町文化の建築（再建後の写真）",
+      "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "足利義満",
       "sourceId": "h27-real-22",
@@ -4386,7 +4618,10 @@
       "commonsOriginalDate": "2010-08-16",
       "commonsSourceSha1": "358a0a343f7fefb2d59fe6f3350685a5735c1815",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch04-01",
@@ -4396,7 +4631,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Tenji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Tenji.jpg",
       "credit": "Wikimedia Commons",
-      "explanation": "中大兄皇子はのちの天智天皇。大化の改新と白村江の戦いの流れで覚える。",
+      "explanation": "中大兄皇子は645年の乙巳の変を経て政治の改革を進め、のちに天智天皇となりました。画像は後世の肖像画で、当時の本人の姿が正確にわかる写真ではありません。",
       "type": "1899年の人物画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -4414,7 +4649,8 @@
       "commonsOriginalDate": "In around 1899",
       "commonsSourceSha1": "c905abed0465f7907d0e964ff2a355aca2c1f6ee",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch04-02",
@@ -4425,8 +4661,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Todai-ji.jpg",
       "credit": "Felix Filnkössl／CC BY-SA 3.0",
       "explanation": "聖武天皇と関わる歴史資料。天平文化の代表的建築。聖武天皇が仏教の力で国を守ろうとしたことと結び付く。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "寺院建築（後世に再建された建物の写真）",
+      "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "聖武天皇",
       "sourceId": "h27-real-18",
@@ -4440,7 +4676,10 @@
       "commonsOriginalDate": "2010-08-18",
       "commonsSourceSha1": "8fe54fb77d076781b4996d8b195272889b42ea5e",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch04-03",
@@ -4450,7 +4689,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Kammu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Kammu.jpg",
       "credit": "Wikimedia Commons",
-      "explanation": "794年に都を平安京へ移した桓武天皇。肖像画は当時に描かれたものではない。",
+      "explanation": "桓武天皇は794年に都を平安京へ移しました。奈良時代から平安時代への変化を示す人物です。画像は後世の肖像で、794年当時に描かれたとは限りません。",
       "type": "16世紀の肖像画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -4468,7 +4707,8 @@
       "commonsOriginalDate": "16世紀",
       "commonsSourceSha1": "341590bc2b992750c5baed3bd8c7ab768fe68b0e",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch04-04",
@@ -4480,7 +4720,7 @@
       "credit": "国立国会図書館蔵の肖像画／パブリックドメイン",
       "explanation": "白河上皇と関わる歴史資料。白河上皇の肖像画。上皇となった後も政治を動かす院政の始まりを覚えよう。制作年代は不明。",
       "type": "伝世肖像画",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "白河上皇",
       "sourceId": "authentic-2026-038",
@@ -4494,7 +4734,8 @@
       "commonsOriginalDate": "Unknown date",
       "commonsSourceSha1": "f31e996557ca18c9a3d799d6527fdabf9739ced2",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch04-05",
@@ -4522,7 +4763,8 @@
       "commonsOriginalDate": "1221 date QS:P571,+1221-00-00T00:00:00Z/9",
       "commonsSourceSha1": "c1d982c2523adf5980fd7cd36d105cbc4dc2755b",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch08-01",
@@ -4532,7 +4774,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEight_Patriarchs_of_the_Shingon_Sect_of_Buddhism%2C_K%C5%ABkai_%28Nara_National_Museum%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eight_Patriarchs_of_the_Shingon_Sect_of_Buddhism,_K%C5%ABkai_(Nara_National_Museum).jpg",
       "credit": "Wikimedia Commons",
-      "explanation": "真言宗を開いた空海の肖像。奈良国立博物館所蔵の鎌倉時代の絵。",
+      "explanation": "空海は平安時代初めに唐で仏教を学び、日本で真言宗を広めました。画像は鎌倉時代に描かれた肖像で、空海が生きていた9世紀の絵ではありません。",
       "type": "鎌倉時代の人物画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -4550,7 +4792,9 @@
       "commonsOriginalDate": "26 March 2010, 23:47:47",
       "commonsSourceSha1": "8de66e5e42ca892dbb2d84774c9a6b8aecf8ab19",
       "commonsUsageTerms": "Creative Commons Attribution 4.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch08-05",
@@ -4560,7 +4804,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSoto-Zen-Master-Dogen-Zenji-Portrait.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Soto-Zen-Master-Dogen-Zenji-Portrait.png",
       "credit": "Wikimedia Commons",
-      "explanation": "宋で禅を学び、曹洞宗を伝えた道元。寺院写真と人物を混同しないための肖像資料。",
+      "explanation": "道元は鎌倉時代に宋で禅を学び、日本で曹洞宗を広めました。栄西の臨済宗と区別しましょう。画像は肖像画であり、実際の撮影写真ではありません。",
       "type": "人物画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -4578,7 +4822,8 @@
       "commonsOriginalDate": "Circa before 1253",
       "commonsSourceSha1": "4cfe20ee52b75632712ee35446b982a43a539910",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch10-01",
@@ -4588,7 +4833,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FFerdinand_Magellan.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferdinand_Magellan.jpg",
       "credit": "Wikimedia Commons",
-      "explanation": "マゼラン率いる艦隊は世界一周を達成したが、マゼラン本人は航海中に亡くなった。",
+      "explanation": "マゼランが率いた船団は16世紀に世界一周を成し遂げました。ただし、マゼラン本人は1521年に航海の途中で亡くなりました。肖像は航海の現場写真ではありません。",
       "type": "後世の肖像画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -4606,7 +4851,8 @@
       "commonsOriginalDate": "circa 1550-1625",
       "commonsSourceSha1": "5ea0f7e275b8bec0b00dfdbc765436ac51e67c99",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch10-10",
@@ -4617,8 +4863,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
       "credit": "米国議会図書館／パブリックドメイン",
       "explanation": "ペリーと関わる歴史資料。ペリー艦隊の下田上陸を扱う19世紀の歴史版画。ペリーの浦賀来航は1853年、日米和親条約は1854年。資料の題名に1853とあっても、描かれた出来事と史料の制作時期を混同しない。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "幕末の開国を描いた版画",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "ペリー",
       "sourceId": "h24-real-15",
@@ -4632,7 +4878,9 @@
       "commonsOriginalDate": "1855",
       "commonsSourceSha1": "44f415eb75ea1143b7269090fb61edb31570aef8",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch12-01",
@@ -4644,7 +4892,7 @@
       "credit": "奈良市柳生の石碑／Wikimedia Commons",
       "explanation": "徳政令と関わる歴史資料。1428年の正長の土一揆に関連し、借金の帳消しを示す文字を石に刻んだ資料。これは刻字の拓本。",
       "type": "原資料の拓本",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "徳政令",
       "sourceId": "authentic-2026-continued-055",
@@ -4658,7 +4906,8 @@
       "commonsOriginalDate": "2023-04-25 23:33:14",
       "commonsSourceSha1": "80c892a50433e21472438c933f5d45853298e032",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch12-04",
@@ -4689,8 +4938,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
       "credit": "藤原道長筆／陽明文庫所蔵／パブリックドメイン",
       "explanation": "摂関政治と関わる歴史資料。藤原道長が自ら書いた日記。天皇の外戚として力を持った人物の当時の書き物。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "平安時代の自筆日記（現存原本の写真）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "摂関政治",
       "sourceId": "h03-real-32",
@@ -4704,7 +4953,9 @@
       "commonsOriginalDate": "998–1021",
       "commonsSourceSha1": "db7f5076bd3677e40e80789465702fc398442f2a",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch13-03",
@@ -4716,7 +4967,7 @@
       "credit": "栗原信充筆・1929年刊行の図版／パブリックドメイン",
       "explanation": "執権政治と関わる歴史資料。鎌倉幕府3代執権の北条泰時の肖像として伝わる図。本人を生前に描いたと確認できるものではない。御成敗式目と一緒に覚えよう。",
       "type": "後世の肖像画",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "執権政治",
       "sourceId": "authentic-2026-041",
@@ -4730,7 +4981,8 @@
       "commonsOriginalDate": "1929",
       "commonsSourceSha1": "5040c03fbaee80248f3d3ce21533063eb31e830b",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch13-04",
@@ -4742,7 +4994,7 @@
       "credit": "伝世の肖像画／Wikimedia Commons",
       "explanation": "建武の新政と関わる歴史資料。後醍醐天皇の肖像画。建武の新政を行った天皇の姿を伝える歴史資料。撮影写真ではない。",
       "type": "肖像画",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "建武の新政",
       "sourceId": "authentic-2026-036",
@@ -4756,7 +5008,8 @@
       "commonsOriginalDate": "Former half of 14th century",
       "commonsSourceSha1": "e84cff00402178402a48d466011e4134a5df7462",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch14-01",
@@ -4767,8 +5020,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:TokugawaYoshimune.jpg",
       "credit": "Wikimedia Commons / public-domain artwork reproduction",
       "explanation": "享保の改革と関わる歴史資料。享保の改革で知られる徳川吉宗の肖像です。改革と人物を結びつけるための実物資料です。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "人物肖像画（制作年代は別途確認）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "享保の改革",
       "sourceId": "wmc-yoshimune",
@@ -4782,7 +5035,9 @@
       "commonsOriginalDate": "",
       "commonsSourceSha1": "a83a75b2ea48586cbe672a4420c3c09a0a2adb78",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch15-01",
@@ -4792,7 +5047,7 @@
       "image": "https://archive.wul.waseda.ac.jp/kosho/wa03/wa03_06821/wa03_06821_0001/wa03_06821_0001_p0068.jpg",
       "sourceUrl": "https://codh.rois.ac.jp/pmjt/book/200020588/",
       "credit": "国文学研究資料館所蔵（鵜飼文庫、96-713-1〜11）／CODH「日本古典籍データセット」",
-      "explanation": "班田収授法の原本ではない。律令国家の土地制度と関係する注釈書の画像。",
+      "explanation": "班田収授法は、6歳以上の人々に口分田を与え、死亡後に国へ返させるしくみです。画像の『令義解』は律令の解説書であり、701年の大宝律令の原本ではありません。",
       "type": "関連史料",
       "license": "CC BY-SA 4.0",
       "licenseStatus": "source_page_verified",
@@ -4850,7 +5105,7 @@
       "credit": "米政府文書／Wikimedia Commons",
       "explanation": "軍隊の解散と関わる歴史資料。日本の降伏を正式に確認する文書。1945年8月のポツダム宣言受諾と、9月2日の降伏文書署名を区別しよう。",
       "type": "原資料",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "軍隊の解散",
       "sourceId": "authentic-2026-continued-061",
@@ -4864,7 +5119,8 @@
       "commonsOriginalDate": "1945-09-02",
       "commonsSourceSha1": "cd621f3d089f127538ea7e858332b73584df8268",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch17-04",
@@ -4930,7 +5186,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Tenmu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Tenmu.jpg",
       "credit": "Wikimedia Commons",
-      "explanation": "672年の壬申の乱で勝利した大海人皇子がのちの天武天皇。",
+      "explanation": "672年の壬申の乱では、大海人皇子が大友皇子の側と戦って勝ち、のちに天武天皇となりました。画像は後世に描かれた肖像で、戦いの場面を直接伝える絵ではありません。",
       "type": "後世の人物画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -4948,7 +5204,8 @@
       "commonsOriginalDate": "1880",
       "commonsSourceSha1": "02f73a5899a5afc6eb4dfb0504bd9006738ba31a",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch18-03",
@@ -4976,7 +5233,8 @@
       "commonsOriginalDate": "1221 date QS:P571,+1221-00-00T00:00:00Z/9",
       "commonsSourceSha1": "c1d982c2523adf5980fd7cd36d105cbc4dc2755b",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch18-04",
@@ -5004,7 +5262,8 @@
       "commonsOriginalDate": "大永4年 (1524)",
       "commonsSourceSha1": "b3654b70401b7e7ac1bf12d0d2087657869ca858",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch20-02",
@@ -5032,7 +5291,8 @@
       "commonsOriginalDate": "1904",
       "commonsSourceSha1": "f025e79fa1b2cd7589644e0c987db4c1b4f85c91",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch21-04",
@@ -5078,7 +5338,9 @@
       "commonsOriginalDate": "2019-01-02",
       "commonsSourceSha1": "8ded8eeb7f30d7cfe944fc2dc7a808d4dae14954",
       "commonsUsageTerms": "Creative Commons Attribution 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch25-01",
@@ -5088,7 +5350,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMutsu_Munemitsu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mutsu_Munemitsu.jpg",
       "credit": "Wikimedia Commons",
-      "explanation": "1894年に日英通商航海条約を結んだ陸奥宗光の写真。条約改正は複数段階で進んだ。",
+      "explanation": "陸奥宗光は1894年に日英通商航海条約を結び、領事裁判権の撤廃につながる条約改正を進めました。関税自主権の完全回復（1911年）とは時期が違います。",
       "type": "明治時代の人物写真",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -5106,7 +5368,8 @@
       "commonsOriginalDate": "before 1897 date QS:P,+1897-00-00T00:00:00Z/7,P1326,+1897-00-00T00:00:00Z/9",
       "commonsSourceSha1": "f5b10c8cc49f1f4ab624704f7516a829246207f5",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch25-05",
@@ -5157,7 +5420,8 @@
       "commonsOriginalDate": "1919",
       "commonsSourceSha1": "4eb1c50c64983756afc7887cf5c2e148fe4ca4c1",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch25-07",
@@ -5185,7 +5449,9 @@
       "commonsOriginalDate": "2009",
       "commonsSourceSha1": "50d72358724838060bd50c8ccdf373e7def7ff59",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch26-03",
@@ -5231,7 +5497,8 @@
       "commonsOriginalDate": "7 th century date QS:P571,+650-00-00T00:00:00Z/7",
       "commonsSourceSha1": "d9d886f5b00e48b193342fea1d2de095e70b8acc",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch26-05",
@@ -5241,7 +5508,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTangTaizong.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:TangTaizong.jpg",
       "credit": "Wikimedia Commons",
-      "explanation": "唐は618年に始まった中国の王朝。日本の遣唐使や律令文化との関わりが重要。",
+      "explanation": "唐は618年に始まった中国の王朝です。太宗の時代に国のしくみを整えました。日本は遣唐使を送り、政治や文化を学びました。肖像画の制作年代は別に確認が必要です。",
       "type": "中国の古典絵画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -5259,7 +5526,8 @@
       "commonsOriginalDate": "Ming dynasty (1368–1644)",
       "commonsSourceSha1": "e8a0dcaf4585fc304d27c4253fffd45ea90a4994",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch26-06",
@@ -5270,8 +5538,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
       "credit": "鎌倉時代の絵巻／パブリックドメイン",
       "explanation": "元と関わる歴史資料。1274年の元寇を描いた絵巻。武士や元軍の武器・戦い方に注目。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "元寇を題材とする絵巻（現存作品の写真）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "元",
       "sourceId": "h27-real-21",
@@ -5285,7 +5553,9 @@
       "commonsOriginalDate": "circa 1293 date QS:P571,+1293-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "a1d532d71b7810c176fc79acf6909015dac4c70c",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch26-07",
@@ -5295,7 +5565,7 @@
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FWanli-Emperor.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wanli-Emperor.JPG",
       "credit": "Wikimedia Commons",
-      "explanation": "明は1368年に始まった中国の王朝。日本とは日明貿易（勘合貿易）が行われた。",
+      "explanation": "明は1368年に成立した中国の王朝です。日本は室町時代に明と勘合貿易を行いました。画像の万暦帝は後の時代の皇帝なので、勘合貿易が始まった頃の皇帝ではありません。",
       "type": "明時代の肖像画",
       "license": "個別の資料ページで確認",
       "licenseStatus": "commons_rights_metadata_verified",
@@ -5313,7 +5583,8 @@
       "commonsOriginalDate": "late Ming Dynasty",
       "commonsSourceSha1": "11bfb31cbfdd10b23819cafb03ad90ef663445de",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch26-08",
@@ -5341,7 +5612,8 @@
       "commonsOriginalDate": "1736",
       "commonsSourceSha1": "1bacb2884dcd6d1391ad5b6c9b1c8e8fc9c9e040",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch27-10",
@@ -5353,7 +5625,7 @@
       "credit": "歌川広重（三代）／明治期の錦絵（Wikimedia Commons・パブリックドメイン）",
       "explanation": "文明開化と関わる歴史資料。鉄道開業後の新橋停車場を描いた錦絵。明治に鉄道が社会へ広まった様子を表す。",
       "type": "当時の浮世絵",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "文明開化",
       "sourceId": "authentic-2026-034",
@@ -5367,7 +5639,8 @@
       "commonsOriginalDate": "circa 1875 date QS:P571,+1875-00-00T00:00:00Z/9,P1480,Q5727902",
       "commonsSourceSha1": "6f92d0eaabd7de6fd41ad082c2a7057d0cb117a3",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch28-01",
@@ -5378,8 +5651,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
       "credit": "藤原道長筆／陽明文庫所蔵／パブリックドメイン",
       "explanation": "摂政と関白と関わる歴史資料。藤原道長が自ら書いた日記。天皇の外戚として力を持った人物の当時の書き物。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "平安時代の自筆日記（現存原本の写真）",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "摂政と関白",
       "sourceId": "h03-real-32",
@@ -5393,7 +5666,9 @@
       "commonsOriginalDate": "998–1021",
       "commonsSourceSha1": "db7f5076bd3677e40e80789465702fc398442f2a",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch28-03",
@@ -5437,7 +5712,8 @@
       "commonsOriginalDate": "Taken on 23 July 1945",
       "commonsSourceSha1": "9fb99cda09c8d7ef5a99acfac1a8723524293836",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch29-02",
@@ -5465,7 +5741,8 @@
       "commonsOriginalDate": "1956年10月7日 / 7 October 1956",
       "commonsSourceSha1": "c6ae5717b74cf274ea73fd2a9519dd3ffaf61102",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "term-cover-ch30-02",
@@ -5476,13 +5753,14 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:DejimaInNagasakiBay.jpg",
       "credit": "1820年ごろの絵画／パブリックドメイン",
       "explanation": "長崎と関わる歴史資料。長崎の出島を描いた歴史画。幕府が相手や場所を絞って貿易を管理していた様子を示す。建物や船の配置は絵に描かれた時代の姿で、現代の写真ではない。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
+      "type": "江戸時代の長崎・出島を描いた絵",
       "license": "Public domain (PDM)",
       "licenseStatus": "confirmed",
       "coverageOf": "長崎",
       "sourceId": "h23-real-14",
       "coverageType": "直接の資料",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch30-03",
@@ -5493,8 +5771,8 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
       "credit": "米国議会図書館／パブリックドメイン",
       "explanation": "下田と関わる歴史資料。ペリー艦隊の下田上陸を扱う19世紀の歴史版画。ペリーの浦賀来航は1853年、日米和親条約は1854年。資料の題名に1853とあっても、描かれた出来事と史料の制作時期を混同しない。",
-      "type": "写真・絵画など（出典ページで種類を確認）",
-      "license": "個別の出典ページで確認",
+      "type": "幕末の開国を描いた版画",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "下田",
       "sourceId": "h24-real-15",
@@ -5508,7 +5786,9 @@
       "commonsOriginalDate": "1855",
       "commonsSourceSha1": "44f415eb75ea1143b7269090fb61edb31570aef8",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）",
+      "typeReviewLevel": "名称・既存説明に基づく暫定分類。原画像の来歴は別途検証。"
     },
     {
       "id": "term-cover-ch30-05",
@@ -5540,7 +5820,7 @@
       "credit": "1895年の外交文書／Wikimedia Commons",
       "explanation": "遼東半島と関わる歴史資料。三国干渉を受け、日本が遼東半島を返還した取り決めの文書。下関条約の後の展開がわかる。",
       "type": "原資料",
-      "license": "個別の出典ページで確認",
+      "license": "CC BY-SA 3.0",
       "licenseStatus": "commons_rights_metadata_verified",
       "coverageOf": "遼東半島",
       "sourceId": "authentic-2026-continued-073",
@@ -5554,7 +5834,9 @@
       "commonsOriginalDate": "2009",
       "commonsSourceSha1": "b37335023d3e9a78d3a6b3a3cfe0134441141028",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "period-1882-itagaki-attack",
@@ -5642,7 +5924,7 @@
       "caption": "1858年の日米修好通商条約の原本",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTreaty_of_Amity_and_Commerce_between_Japan_and_the_United_States_29_July_1858.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Amity_and_Commerce_between_Japan_and_the_United_States_29_July_1858.jpg",
-      "explanation": "1858年に結ばれた日米修好通商条約の原本。1854年の日米和親条約とは異なる。",
+      "explanation": "1858年の日米修好通商条約では、外国に領事裁判権を認めるなど日本に不利な条件がありました。1854年の日米和親条約との違いを、条約名と年号で整理しましょう。",
       "credit": "撮影：World Imaging／外務省外交史料館／CC BY-SA 3.0",
       "type": "1858年の原文書",
       "license": "個別の資料ページで確認",
@@ -5660,7 +5942,9 @@
       "commonsOriginalDate": "2009",
       "commonsSourceSha1": "c3433b840f4149a4b5ab756b144ec35e468543f6",
       "commonsUsageTerms": "Creative Commons Attribution-Share Alike 3.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "verified-hakodate-goryokaku",
@@ -5687,7 +5971,9 @@
       "commonsOriginalDate": "29 March 2018, 11:20:10",
       "commonsSourceSha1": "1192e395dada6bb58afd83d067f7343b563f5935",
       "commonsUsageTerms": "Creative Commons Attribution 2.0",
-      "commonsAttributionRequired": "true"
+      "commonsAttributionRequired": "true",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "verified-conscription-1879",
@@ -5752,7 +6038,8 @@
       "commonsOriginalDate": "1871",
       "commonsSourceSha1": "eb45f03c6b4bba17cc3c6bc1d7e7ec29fab46e3a",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "verified-antimonopoly-context",
@@ -5861,7 +6148,8 @@
       "commonsOriginalDate": "C15",
       "commonsSourceSha1": "27ea89766ccef692765f09f6e888988634cbb135",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     },
     {
       "id": "verified-edo-farmland-context",
@@ -5874,7 +6162,7 @@
       "type": "江戸時代の浮世絵",
       "explanation": "江戸時代には水田を新しく開く新田開発が各地で進められた。この1857年の浮世絵には江戸近郊の田園が描かれている。ただし、この絵が新田開発の作業そのものを描いたわけではない。",
       "review": "Wikimedia Commonsの個別ファイルページ／カテゴリ上で所在と内容を確認。ブラウザ側での外部画像ロードは未実機確認。",
-      "license": "個別の出典ページで確認",
+      "license": "Public domain",
       "licenseStatus": "commons_rights_metadata_verified",
       "attributionUrl": "https://commons.wikimedia.org/wiki/File:Hiroshige,_Asakusa_ricefields_and_torinomachi_festival,_1857.jpg",
       "coverageOf": "新田開発",
@@ -5888,7 +6176,8 @@
       "commonsOriginalDate": "1857",
       "commonsSourceSha1": "2a2655500cb93ce4c05a24e51f980f2f93d837a3",
       "commonsUsageTerms": "Public domain",
-      "commonsAttributionRequired": "false"
+      "commonsAttributionRequired": "false",
+      "rightsEvidenceLevel": "Wikimedia Commons公開メタデータとの機械照合（歴史的な史料内容は未認定）"
     }
   ],
   "description": "実在の歴史資料を基礎にした256件の画像リンク。全202項目の対応を監査し、誤流用を修正。4項目について直接一次史料の画像が未確認。外部画像の全件実機読み込み・権利確認は未完了。",

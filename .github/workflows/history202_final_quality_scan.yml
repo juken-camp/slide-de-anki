@@ -1,0 +1,141 @@
+name: History 202 - final image quality scan and safe crop
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-final-qc
+  cancel-in-progress: false
+jobs:
+  scan-and-crop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check Pillow
+      - name: Validate all 256 and crop verified empty margins only
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, json, os, tempfile
+          from collections import Counter, defaultdict
+          from pathlib import Path
+          from PIL import Image, ImageOps
+
+          root=Path('history202')
+          manifest=json.loads((root/'real-materials.json').read_text('utf-8'))
+          mapping=json.loads((root/'local-images.json').read_text('utf-8'))
+          items=manifest['items']
+          assert len(items)==256 and len({x['id'] for x in items})==256, '256 unique material IDs required'
+          assert len(mapping)==256, '256 local paths required'
+          assert set(mapping)=={x['id'] for x in items}, 'material IDs / path index mismatch'
+          out=Path('history202_final_quality_results');out.mkdir(exist_ok=True)
+          safe_crop_ids={'term-cover-ch25-05','authentic-2026-032'}
+          changed=[];rows=[];hash_groups=defaultdict(list);errors=[]
+
+          for item in items:
+              identity=item['id']; path=Path(mapping[identity])
+              # Treat the current checkout as authoritative. No old ZIP files are used.
+              if path.as_posix()!=f'history202/authentic_images/{identity}.webp':
+                  errors.append(f'{identity}: unexpected mapped path {path}')
+                  continue
+              if not path.is_file():
+                  errors.append(f'{identity}: missing image {path}')
+                  continue
+              raw=path.read_bytes()
+              if not raw.startswith(b'RIFF') or raw[8:12]!=b'WEBP':
+                  errors.append(f'{identity}: not a WebP')
+                  continue
+              try:
+                  with Image.open(path) as view:
+                      view.verify()
+                  with Image.open(path) as view:
+                      im=view.convert('RGB');w,h=im.size
+              except Exception as e:
+                  errors.append(f'{identity}: corrupt WebP ({e})')
+                  continue
+              if identity in safe_crop_ids and w>=450 and h>=200:
+                  # Require near-black bars across five vertical positions. This
+                  # protects the artwork, not just a mathematically dark corner.
+                  sample_ys=[int(h*t) for t in (.22,.35,.5,.65,.78)]
+                  def black_column(x):
+                      return all(max(im.getpixel((x,y)))<19 for y in sample_ys)
+                  left=next((x for x in range(w//3) if not black_column(x)),0)
+                  right=next((x for x in range(w//3) if not black_column(w-1-x)),0)
+                  # Never crop unless both sides have >8% uniform black padding.
+                  if left>=int(w*.08) and right>=int(w*.08) and w-left-right>=int(w*.4):
+                      cropped=im.crop((left,0,w-right,h))
+                      cropped.save(path,format='WEBP',quality=86,method=6)
+                      changed.append({'id':identity,'left_removed':left,'right_removed':right,'old_size':[w,h], 'new_size':list(cropped.size)})
+                      raw=path.read_bytes(); w,h=cropped.size
+              digest=hashlib.sha256(raw).hexdigest()
+              hash_groups[digest].append(identity)
+              license_state=item.get('licenseStatus') or 'unspecified'
+              concerns=[]
+              if license_state in ('source_page_review_needed','permission_review_required','unspecified'):
+                  concerns.append('license_or_source_not_individually_verified')
+              if min(w,h)<450:
+                  concerns.append('small_image')
+              if identity in ('verified-konden-743','verified-konden-ch15'):
+                  concerns.append('wrong_source_for_743_law__replace_with_verified_743_passage')
+              if identity=='authentic-2026-continued-056':
+                  concerns.append('modern_byodoin_photo__prefer_verified_1485_or_1486_diary_page')
+              if identity in ('term-cover-ch17-04','verified-antimonopoly-context'):
+                  concerns.append('1946_photo_is_context_not_1947_law_text')
+              if identity=='law-gakusei':
+                  concerns.append('cover_not_1872_articles')
+              rows.append({
+                  'id':identity,'chapter':item.get('chapter',''),'caption':item.get('caption',''),
+                  'type':item.get('type',''),'width':w,'height':h,'bytes':len(raw),
+                  'license_state':license_state,'image_sha256':digest,
+                  'quality_flags':';'.join(concerns),
+                  'historical_claim_verified':'no_full_page_by_page_historical_review_yet',
+              })
+          for digest,ids in hash_groups.items():
+              if len(ids)>1:
+                  for row in rows:
+                      if row['id'] in ids:
+                          row['same_image_as']=';'.join(x for x in ids if x!=row['id'])
+          for row in rows:
+              row.setdefault('same_image_as','')
+          counts=Counter(row['license_state'] for row in rows)
+          report={
+            'image_files_checked':len(rows),'expected':256,
+            'broken_or_missing':errors,'license_status_counts':dict(counts),
+            'same_image_additional_uses':sum(max(0,len(ids)-1) for ids in hash_groups.values()),
+            'under_450px_short_side':sum(min(r['width'],r['height'])<450 for r in rows),
+            'historical_sources_individually_certified':False,
+            'safe_crops':changed,
+            'note':'A valid raster is not proof of a historically correct original. Full 256-case source verification remains outstanding.'
+          }
+          (out/'audit-summary.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          with (out/'all-256-audit.csv').open('w',newline='',encoding='utf-8-sig') as f:
+              w=csv.DictWriter(f,fieldnames=['id','chapter','caption','type','width','height','bytes','license_state','image_sha256','quality_flags','same_image_as','historical_claim_verified']);w.writeheader();w.writerows(rows)
+          print(json.dumps({k:v for k,v in report.items() if k!='broken_or_missing'},ensure_ascii=False,indent=2))
+          if errors: raise RuntimeError('\n'.join(errors[:30]))
+          PY
+      - name: Commit only successful visual trims
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- history202/authentic_images/term-cover-ch25-05.webp history202/authentic_images/authentic-2026-032.webp
+          if ! git diff --cached --quiet; then
+            git commit -m 'Improve readability of two verified history image displays'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'Originals are already correctly cropped; no change needed'
+          fi
+      - name: Upload complete image audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-quality-all-256
+          path: history202_final_quality_results/
+          if-no-files-found: warn

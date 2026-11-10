@@ -1,0 +1,283 @@
+name: History 202 - finish 256 material images in one batch
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/history202_finish_256.yml'
+permissions:
+  contents: write
+concurrency:
+  group: history202-256-final-materials
+  cancel-in-progress: false
+jobs:
+  final-materials:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install imaging library
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Validate all 256 images, improve rights metadata, replace 4 restricted-source scans
+        run: |
+          python - <<'PY'
+          #!/usr/bin/env python3
+          """History 202: one-batch conservative metadata correction, two verified public-domain
+          illustration replacements, and exhaustive structural/byte audit of the 256 assets.
+          No screen/chat/textbook data are changed; only the intended historical material files.
+          """
+          from __future__ import annotations
+          import collections
+          import datetime
+          import hashlib
+          import io
+          import json
+          import os
+          import sys
+          from pathlib import Path
+          from PIL import Image
+
+          ROOT=Path('history202')
+          MANIFEST=ROOT/'real-materials.json'
+          INDEX=ROOT/'local-images.json'
+          FINAL_REPORT=ROOT/'history202_final_256_audit_20261110.json'
+          NOW='2026-11-10'
+          CC0_URL='https://creativecommons.org/publicdomain/zero/1.0/'
+          PDM_URL='https://creativecommons.org/publicdomain/mark/1.0/'
+
+          def load(path):
+              return json.loads(path.read_text(encoding='utf-8'))
+          def save(path,obj):
+              path.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+          def run():
+              manifest=load(MANIFEST)
+              local=load(INDEX)
+              items=manifest['items']
+              byid={x['id']:x for x in items}
+              assert len(items)==len(byid)==len(local)==256,'Unexpected image manifest/index size'
+              assert set(byid)==set(local),'Manifest/index IDs diverged'
+              expected_paths={i:f'history202/authentic_images/{i}.webp' for i in byid}
+              assert local==expected_paths,'Unexpected local image mapping; refuse to alter'
+              baseline_bytes={i:Path(path).read_bytes() for i,path in local.items()}
+              for id_,blob in baseline_bytes.items():
+                  with Image.open(io.BytesIO(blob)) as im:
+                      assert im.format=='WEBP' and im.width>0 and im.height>0,id_
+                      im.verify()
+
+              changed=set()
+              def change(id_, **fields):
+                  x=byid[id_]
+                  dirty=False
+                  for k,v in fields.items():
+                      if x.get(k)!=v:
+                          x[k]=v;dirty=True
+                  if dirty:
+                      x['reviewDate']=NOW
+                      changed.add(id_)
+
+              # The Commons pages below were individually checked for the stated CC0 rights,
+              # rather than inferring permissions from the historical age of the subject.
+              cc0=(
+                'h01-real-01', 'h02-real-03', 'authentic-2026-continued-042',
+                'authentic-2026-continued-044','authentic-2026-continued-045',
+                'authentic-2026-continued-048','authentic-2026-continued-063',
+                'authentic-2026-continued-078', 'term-cover-ch03-01',
+                'term-cover-ch26-03',
+              )
+              for id_ in cc0:
+                  old=byid[id_]
+                  change(id_,license='CC0 1.0（Wikimedia Commons掲載の権利表示）',
+                         licenseStatus='source_page_verified',licenseUrl=CC0_URL,
+                         attributionUrl=old['sourceUrl'],
+                         review='2026-11-10：Wikimedia Commonsの当該画像ページにあるCC0表示と作品名を確認。画像の利用条件と史料の作成年代・原本性は別問題。')
+              # The source specifies an attribution requirement rather than a CC0 waiver.
+              change('authentic-2026-005',caption='大仙陵古墳の航空写真（2007年撮影）',
+                 license='国土地理院の空中写真を基にした画像。出典・権利者の表示を条件に二次利用可',
+                 licenseStatus='source_page_verified',
+                 licenseUrl='https://commons.wikimedia.org/wiki/File:NintokuTomb_Aerial_photograph_2007.jpg',
+                 attributionUrl='https://commons.wikimedia.org/wiki/File:NintokuTomb_Aerial_photograph_2007.jpg',
+                 credit='国土地理院「国土画像情報（カラー空中写真）」を基に作成／Wikimedia Commons',
+                 review='2026-11-10：Commonsの個別ファイルページに国土地理院の出典明示条件を確認。写真は2007年、古墳の建造当時の記録ではない。')
+              # The Met's page explicitly identifies this exact 1890 print as public domain.
+              change('period-1890-imperial-diet',license='Public Domain（メトロポリタン美術館 Open Access）',
+                 licenseStatus='source_page_verified',licenseUrl='https://www.metmuseum.org/art/collection/search/55623',
+                 attributionUrl='https://www.metmuseum.org/art/collection/search/55623',
+                 review='2026-11-10：メトロポリタン美術館作品番号JP3422。橋本周延作・1890年・貴族院の錦絵。公式作品ページにPublic Domainと表示。')
+
+              # Reuse a separately inspected seventeenth-century manuscript with a
+              # documented CC BY-SA 4.0 source, not the third-party unlicensed scans.
+              base=byid['authentic-2026-037']
+              for id_ in ('law-goseibai','term-cover-ch28-03'):
+                  change(id_,caption='『御成敗式目』の17世紀の写本（1232年の原本ではない）',
+                      image=base['image'],sourceUrl=base['sourceUrl'],credit=base['credit'],
+                      license=base['license'],licenseStatus=base['licenseStatus'],
+                      licenseUrl=base['licenseUrl'],attributionUrl=base['attributionUrl'],
+                      imageSelection='reviewed-source-reused-for-topic-20261110',localImage=True,
+                      review='利用条件が未確認の別サイトの画像を外し、1232年制定の御成敗式目を伝える東洋文庫所蔵の17世紀写本画像（Commons・CC BY-SA 4.0）に変更。同じ史料を章をまたいで使用。',
+                      educationalReviewStatus='later_17th_century_copy_not_1232_original')
+
+              # A few image captions implied more than the illustration itself proves.
+              change('wmc-sinojapanese',caption='日清戦争を伝える当時の図像（写真か挿絵か要確認）',
+                 explanation='1894〜1895年の日清戦争を伝える図像。朝鮮をめぐる対立が戦争につながり、下関条約で清が日本に賠償金などを認めました。写真か挿絵かはまだ確定していないため、実際の戦場写真と断言しない資料です。',
+                 type='日清戦争に関する図像（写真と断定しない）',
+                 review='画像を一覧で点検したが、撮影情報や印刷媒体が確定していないため「写真」という断定を外した。原出典の媒体の照合は今後の課題。')
+              change('authentic-2026-continued-056',
+                 educationalReviewStatus='related_location_photo_1485_1486_diary_exact_leaf_not_verified',
+                 researchSourceUrl='https://www.archives.go.jp/exhibition/digital/rekishitomonogatari/contents/27.html',
+                 researchSourceCitation='国立公文書館『大乗院寺社雑事記』紹介、1485年12月11日・1486年2月13日の記録。写真は1486年に集会のあった平等院の現在の姿で原文ではない。')
+              change('verified-antimonopoly-context',
+                 educationalReviewStatus='relevant_1946_zaibatsu_photo_original_1947_law_not_shown',
+                 researchSourceUrl='https://www.archives.go.jp/ayumi/kobetsu/s22_1947_03.html',
+                 researchSourceCitation='国立公文書館「独占禁止法が制定される」。昭和22年4月14日法律第54号。1946年写真は法令本文ではない。')
+              change('term-cover-ch17-04',
+                 educationalReviewStatus='1946_related_photo_not_1947_law',
+                 review='1946年の財閥資産差し押さえの実際の写真。独占禁止法（1947年）の条文・制定日と混同しない。')
+              for id_ in ('h27-real-22','term-cover-ch03-06'):
+                  change(id_,caption='現在の金閣（1955年に再建された建物）',
+                      explanation='金閣は、足利義満が1397年に建てた山荘の中心となる建物です。1950年に火事で焼け、1955年に再建されました。写真は再建後の姿で、室町時代の建物がそのまま残っているわけではありません。')
+
+              # Replace only when BOTH public-domain images can be checked and downloaded.
+              targets=[
+                dict(id='period-1882-itagaki-attack',
+                 commonsFile='Distress of Itagaki Taisuke by Utagawa Toyonobu 1882.png',
+                 caption='板垣退助が襲われた事件（1882年の錦絵）',
+                 explanation='1882年4月、自由民権運動を進めた板垣退助は岐阜で刃物を持った男に襲われました。板垣は負傷しましたが、命は助かりました。絵は事件の年に歌川豊宣が描いた錦絵で、事件現場を撮影した写真ではありません。',
+                 type='1882年の錦絵（歌川豊宣「板垣君遭難之図」）',
+                 coverageOf='板垣退助・自由民権運動'),
+                dict(id='h12-real-31',
+                 commonsFile='Adachi Ginkō (1889) View of the Issuance of the State Constitution in the State Chamber of the New Imperial Palace.jpg',
+                 caption='1889年の大日本帝国憲法発布式（当時の錦絵）',
+                 explanation='1889年2月11日、大日本帝国憲法が発布されました。この錦絵は、明治天皇が新しい憲法を発布する式典を描いた当時の作品です。絵を描いたのは安達吟光で、式典の写真ではありません。翌1890年に帝国議会が開かれます。',
+                 type='安達吟光が1889年に描いた憲法発布式の錦絵',
+                 coverageOf='大日本帝国憲法・帝国議会'),
+              ]
+              downloads={};results={}
+              offline='--offline' in sys.argv
+              if not offline:
+                  sys.path.insert(0,str(ROOT.resolve()))
+                  from curate_original_sources import download
+                  for target in targets:
+                      try:
+                          data,meta=download(target)
+                          assert meta['license'] and ('public domain' in meta['license'].casefold() or 'pdm' in meta['license'].casefold()),meta['license']
+                          with Image.open(io.BytesIO(data)) as im:
+                              assert im.format=='WEBP' and im.width>=500 and im.height>=200
+                              im.verify()
+                          downloads[target['id']]=(data,meta)
+                          results[target['id']]={'result':'downloaded_and_rights_checked','source':meta['page'],'bytes':len(data)}
+                      except Exception as exc:
+                          results[target['id']]={'result':'failed_kept_original','error':type(exc).__name__+': '+str(exc)[:350]}
+                          print('NOT INSTALLED:',target['id'],str(exc),flush=True)
+                  if len(downloads)!=len(targets):
+                      # Preserve original images AND original manifest. The action fails clearly.
+                      save(ROOT/'history202_final_run_diagnostic.json',{'image_attempts':results,'status':'not_committed_incomplete'})
+                      raise RuntimeError('Both verified public-domain downloads must succeed; no partial update was saved')
+              for target in targets:
+                  id_=target['id']
+                  if id_ not in downloads:continue
+                  data,meta=downloads[id_]
+                  # Both image downloads are ready and validated. Store the exact respective IDs.
+                  Path(local[id_]).write_bytes(data)
+                  change(id_,**{k:target[k] for k in ('caption','explanation','type','coverageOf')},
+                     image=meta['url'],sourceUrl=meta['page'],
+                     credit=('1882年・歌川豊宣／早稲田大学図書館・Wikimedia Commons' if id_=='period-1882-itagaki-attack'
+                             else '1889年・安達吟光／メトロポリタン美術館・Wikimedia Commons'),
+                     license='Public Domain（1882年／1889年の錦絵、Wikimedia Commons PD-Art表示）',
+                     licenseStatus='source_page_verified',licenseUrl=PDM_URL,attributionUrl=meta['page'],
+                     imageSelection='historically-matched-pd-art-20261110',localImage=True,
+                     educationalReviewStatus='contemporary_illustration_not_photograph',
+                     review='2026-11-10：当時の錦絵の作者・作品・制作年・CommonsのPD-Art表示・画像本体を照合。使用許可が不明だった別サイトの画像から切り替え。')
+
+              # Preserve the inspected image bytes while reusing them across topics.
+              reused_bytes=Path(local['authentic-2026-037']).read_bytes()
+              for id_ in ('law-goseibai','term-cover-ch28-03'):
+                  Path(local[id_]).write_bytes(reused_bytes)
+
+              # A never-falsify audit: file readability, visible relationship and source rights
+              # are recorded as separate levels. Do NOT auto-claim all images authenticated.
+              allbytes={i:Path(path).read_bytes() for i,path in local.items()}
+              hashes=collections.defaultdict(list)
+              checked=[]
+              for id_,path in local.items():
+                  blob=allbytes[id_]
+                  digest=hashlib.sha256(blob).hexdigest()
+                  hashes[digest].append(id_)
+                  with Image.open(io.BytesIO(blob)) as im:
+                      assert im.format=='WEBP',id_
+                      w,h=im.size
+                      im.verify()
+                  obj=byid[id_]
+                  checked.append({
+                    'id':id_,'chapter':obj['chapter'],'caption':obj['caption'],
+                    'file':path,'width':w,'height':h,'bytes':len(blob),
+                    'sha256':digest,'sourceUrl':obj.get('sourceUrl',''),
+                    'license':obj.get('license',''),'licenseStatus':obj.get('licenseStatus',''),
+                    'educationalReviewStatus':obj.get('educationalReviewStatus','unverified_per_item'),
+                    'note':'画像の一覧目視は実施。出典の全件原資料照合および各端末表示の実機検査を意味しない。'
+                  })
+              counts=collections.Counter(x.get('licenseStatus','unclassified') for x in items)
+              dupe=[v for v in hashes.values() if len(v)>1]
+              info={
+                'date':NOW,'scope':'History 202 — all 256 displayed historical media assets',
+                'status':'batch_image_integrity_passed_historical_source_review_not_fully_complete',
+                'totalItems':len(items),'imagesReadable':len(checked),
+                'missingImages':0,'distinctHashes':len(hashes),
+                'extraDuplicateUses':sum(len(v)-1 for v in dupe),
+                'duplicateGroups':dupe,'licenseStatusCounts':dict(counts),
+                'changedMetadataIds':sorted(changed),'changedMetadataCount':len(changed),
+                'twoPublicDomainReplacements':results if not offline else 'offline dry-run; replacements not exercised',
+                'sourceQualityNotes':[
+                 '複数の章に同じ資料を使う意図的な重複がある。SHA一致だけで品質不良とは判断できない。',
+                 '山城の国一揆：現代の平等院写真は関連資料。日記の1485年12月11日・1486年2月13日原文画像ではない。',
+                 '独占禁止法：1946年の財閥資産差押写真は関連資料。1947年法律第54号の条文ではない。',
+                 'Commonsにライセンス表示があることと、著作物の出典・史料同一性を一件ずつ裏付けたことは別。',
+                 '実機表示（iOS/Safari/Android）とページ拡大時の文字可読性は未確認。',
+                 '全256件を独立に歴史学的認証済みとは扱わない。'
+                ],
+                'items':checked
+              }
+              save(MANIFEST,manifest)
+              save(FINAL_REPORT,info)
+              print('TOTAL',len(checked),'VISUAL_ASSET_BYTES',sum(len(b) for b in allbytes.values()))
+              print('METADATA_CHANGED',len(changed),'IDS',','.join(sorted(changed)))
+              print('LICENSE_COUNTS',dict(counts))
+              print('IMAGE_REPLACEMENTS',json.dumps(results,ensure_ascii=False))
+              print('DUPLICATES_EXTRA',info['extraDuplicateUses'])
+              return 0
+
+          if __name__=='__main__':sys.exit(run())
+          PY
+      - name: Commit only historically reviewed image assets and source metadata
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- history202/real-materials.json \
+            history202/authentic_images/h12-real-31.webp \
+            history202/authentic_images/period-1882-itagaki-attack.webp \
+            history202/authentic_images/law-goseibai.webp \
+            history202/authentic_images/term-cover-ch28-03.webp \
+            history202/history202_final_256_audit_20261110.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Finish 256 history image quality review and replace four source assets'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          else
+            echo 'No changes to commit; all intended edits are already present.'
+          fi
+      - name: Save the complete 256-image report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-final-256-audit
+          path: |
+            history202/history202_final_256_audit_20261110.json
+            history202/history202_final_run_diagnostic.json
+          if-no-files-found: warn
+          retention-days: 30

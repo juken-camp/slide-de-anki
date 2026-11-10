@@ -1,0 +1,282 @@
+name: History 202 - verify remaining source images batch
+on:
+  push:
+    paths:
+      - '.github/workflows/history202_next_source_batch.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: history202-next-source-batch
+  cancel-in-progress: false
+jobs:
+  source-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Acquire 3 verified historical images and audit all 256
+        run: |
+          cat > /tmp/history202_next_sources.py <<'PYSOURCE'
+          #!/usr/bin/env python3
+          """History 202: 3 verified-source replacements, no UI/chat or ID changes.
+          
+          Built for the existing main branch. Requires the current 256-ID local-image index.
+          Only newly verified Commons media will be committed; errors keep originals.
+          """
+          from __future__ import annotations
+          import collections
+          import hashlib
+          import io
+          import json
+          from pathlib import Path
+          import sys
+          from PIL import Image
+          
+          ROOT = Path('history202')
+          M = ROOT / 'real-materials.json'
+          IDX = ROOT / 'local-images.json'
+          AUDIT = ROOT / 'history202_final_256_audit_20261110.json'
+          PREVIOUS = ROOT / 'history202_source_rights_review_20261110.json'
+          REPORT = ROOT / 'history202_next_sources_20261110.json'
+          DATE = '2026-11-10'
+          
+          SOURCES = [
+              {
+                'id': 'law-taiko',
+                'commonsFile': '尾張国海東郡内津島北口御検地帳（秀吉清正記念館）.jpg',
+                'caption': '1592年の太閤検地帳の複製（秀吉清正記念館）',
+                'explanation': (
+                  '豊臣秀吉は田畑の広さや米のとれ高を全国で調べ、検地帳に記録しました。'
+                  '画像は1592年に尾張国（今の愛知県）で作られた土地の帳面の複製です。'
+                  '2012年に博物館で撮影されたもので、1589年の美濃の検地帳そのものではありません。'
+                  '土地ごとの年貢や管理のしかたが分かる史料です。'
+                ),
+                'type': '1592年の検地帳の複製を写した2012年の写真',
+                'credit': 'KKPCW（撮影者・2012年）／秀吉清正記念館所蔵の複製資料／Wikimedia Commons。画像をWebP形式へ変換・縮小。',
+                'educationalReviewStatus': '1592_taiko_kenchi_register_museum_replica_photo_2012',
+                'sourceContext': 'https://commons.wikimedia.org/wiki/File:尾張国海東郡内津島北口御検地帳（秀吉清正記念館）.jpg',
+                'note': '当時の1592年の帳面をもとにした博物館の複製。1589年の美濃の原本ではない。',
+              },
+              {
+                'id': 'law-mobilization',
+                'commonsFile': 'Approval of National Mobilization Law.jpg',
+                'caption': '国家総動員法の成立を報じた1938年の新聞',
+                'explanation': (
+                  '1938年、日本は戦争のために人や物を政府が広く動員できる国家総動員法を成立させました。'
+                  '人々の仕事や工場の生産など、国民生活の多くに政府の力が及ぶようになりました。'
+                  '画像は法律が成立したことを伝える当時の新聞で、法律の条文そのものではありません。'
+                ),
+                'type': '1938年の新聞記事（法律成立の報道、条文ではない）',
+                'credit': '1938年刊の新聞記事（作者不詳）／Wikimedia Commons。原掲載紙・号数は未特定。',
+                'educationalReviewStatus': '1938_contemporary_newspaper_clipping_not_original_law',
+                'note': '1938年の成立報道を示す新聞資料。法令の公布原本ではない。',
+              },
+              {
+                'id': 'law-human',
+                'commonsFile': 'NDL2962196 官報 1946年01月01日.pdf',
+                'pdfPage': 1,
+                'pageImageVerified': True,
+                'pageEvidence': ('国立国会図書館の1946年1月1日付官報号外。'
+                                 '1ページの詔書「新年ニ當リ誓ヲ新ニシテ…」の本文掲載を確認。'
+                                 '一般に人間宣言と呼ばれるが、その語は詔書の正式名称ではない。'),
+                'caption': '1946年1月1日の官報号外に載る「人間宣言」の詔書',
+                'explanation': (
+                   '1946年1月1日、昭和天皇は新しい年の始まりに詔書を出しました。'
+                   '「天皇は神である」とする考えを否定する内容があり、一般に「人間宣言」と呼ばれます。'
+                   '画像は発表当日に出された官報号外の本文です。「人間宣言」は後からついた呼び名です。'
+                ),
+                'type': '1946年1月1日官報号外・詔書の本文（当時の刊行物）',
+                'credit': '大蔵省印刷局『官報』1946年1月1日号外／国立国会図書館デジタル資料・Wikimedia Commons。PDF第1ページをWebP画像化。',
+                'educationalReviewStatus': '1946_january_1_official_gazette_exact_one_page_article',
+                'note': '国立国会図書館刊行日・官報号外・詔書の本文を照合。1946年の一次資料。',
+              }
+          ]
+          
+          def load(path):
+              return json.loads(path.read_text(encoding='utf-8'))
+          
+          def save(path, data):
+              path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          
+          def main():
+              manifest, local = load(M), load(IDX)
+              items = manifest['items']
+              by = {x['id']: x for x in items}
+              assert len(items) == len(by) == len(local) == 256, '256 ID invariant failed'
+              assert set(by) == set(local), 'index/manifest IDs differ'
+              assert all(local[i] == f'history202/authentic_images/{i}.webp' for i in local), 'unexpected path'
+              assert all(Path(p).is_file() for p in local.values()), 'one or more assets missing'
+              assert all(by[x['id']].get('licenseStatus') in ('permission_review_required','source_page_verified') for x in SOURCES), 'Unexpected prior rights status'
+          
+              sys.path.insert(0, str(ROOT.resolve()))
+              from curate_original_sources import download
+              outcomes = {}
+              ready = {}
+              # Verify all three, including rights metadata, BEFORE writing ANY existing files.
+              for entry in SOURCES:
+                  id_ = entry['id']
+                  expected_title = entry['commonsFile'].replace(' ', '_')
+                  try:
+                      data, meta = download(entry)
+                      assert len(data) > 1500
+                      license_name = (meta.get('license') or '').lower()
+                      assert ('public domain' in license_name or 'cc by-sa' in license_name or license_name in ('pd', 'pdm', 'cc-by-sa'))
+                      page_url = meta.get('page') or ''
+                      assert 'commons.wikimedia.org/wiki/File:' in page_url, page_url
+                      if 'pdfPage' in entry:
+                          assert meta['preview_page'] == entry['pdfPage'], 'wrong PDF page preview'
+                          assert 'page1-' in meta['url'] or 'page1-' in page_url, 'PDF preview URL not page 1'
+                      with Image.open(io.BytesIO(data)) as im:
+                          assert im.format == 'WEBP' and im.width >= 350 and im.height >= 200
+                          im.verify()
+                      ready[id_] = (data, meta)
+                      outcomes[id_] = {'status':'verified_downloaded','source':page_url,'license':meta['license'],'bytes':len(data)}
+                      print(id_, 'DOWNLOADED', len(data),meta['license'],flush=True)
+                  except Exception as exc:
+                      outcomes[id_] = {'status':'failed_original_retained','reason':type(exc).__name__+': '+str(exc)[:260]}
+                      print(id_, 'NOT REPLACED', str(exc),flush=True)
+          
+              if len(ready) != len(SOURCES):
+                  print('Missing one or more source downloads; original source files/manifest unchanged. No partial deployment.',flush=True)
+                  # Don't fail the workflow completely without evidence, but DO fail the required step so it cannot commit.
+                  raise RuntimeError('Three-source batch incomplete: '+json.dumps(outcomes,ensure_ascii=False))
+          
+              changed=[]
+              for entry in SOURCES:
+                  id_ = entry['id']
+                  obj = by[id_]
+                  data, meta = ready[id_]
+                  prior = obj.copy()
+                  license_name = meta['license']
+                  updates = {
+                      'caption':entry['caption'], 'explanation':entry['explanation'],
+                      'type':entry['type'], 'image':meta['url'], 'sourceUrl':meta['page'],
+                      'credit':entry['credit'], 'license':license_name,
+                      'licenseStatus':'source_page_verified',
+                      'licenseUrl':meta.get('license_url') or meta['page'],
+                      'attributionUrl':meta['page'],
+                      'imageSelection':'rights_verified_primary_or_related_20261110',
+                      'localImage':True,'educationalReviewStatus':entry['educationalReviewStatus'],
+                      'rightsReviewStatus':'Wikimedia_Commons_license_checked',
+                      'review':entry['note']+' Wikimedia Commonsのファイルページで出典と利用条件を照合。'
+                               '画像ファイル形式と指定PDFページの対応を検証。',
+                      'reviewDate':DATE,
+                  }
+                  if id_=='law-human':
+                      updates.update(verifiedPdfPage=1,pageImageVerified=True,pageEvidence=entry['pageEvidence'])
+                  else:
+                      for obsolete in ('verifiedPdfPage','pageImageVerified','pageEvidence'):
+                          obj.pop(obsolete,None)
+                  obj.update(updates)
+                  Path(local[id_]).write_bytes(data)
+                  if prior != obj:
+                      changed.append(id_)
+          
+              # FULL physical file integrity check. Fail workflow if anything was damaged.
+              hashes=collections.defaultdict(list)
+              image_metadata={}
+              for id_,filepath in local.items():
+                  data=Path(filepath).read_bytes()
+                  with Image.open(io.BytesIO(data)) as im:
+                      assert im.format=='WEBP' and im.width > 0 and im.height > 0, id_
+                      w,h=im.size
+                      im.verify()
+                  digest=hashlib.sha256(data).hexdigest()
+                  hashes[digest].append(id_)
+                  image_metadata[id_]={'sha256':digest,'width':w,'height':h,'bytes':len(data)}
+              counts=dict(collections.Counter(x.get('licenseStatus','unknown') for x in items))
+              pending=[{'id':x['id'],'caption':x['caption'],'sourceUrl':x.get('sourceUrl','')}
+                       for x in items if x.get('licenseStatus') in ('permission_review_required','source_page_review_needed')]
+              assert len(pending)==3, 'unexpected number of remaining rights issues: '+str(len(pending))
+              duplicates=sum(len(v)-1 for v in hashes.values())
+              report={
+                'date':DATE,
+                'verificationStatus':'3 verified source images installed; 3 permissions and 2 original-leaf identifications remain',
+                'totalItems':len(items),'imagesReadable':len(image_metadata),'missingImages':0,
+                'changedIds':changed,'changedCount':len(changed),
+                'replacements':outcomes,'remainingPermissionCount':len(pending),
+                'remainingPermissions':pending,
+                'remainingExactSourceLeaves':[
+                    {'id':'authentic-2026-continued-056','status':'1485年12月11日・1486年2月13日の『大乗院寺社雑事記』の該当葉未特定。現代平等院の写真は関連画像であると明記して維持。'},
+                    {'id':'verified-antimonopoly-context','status':'1947年4月14日の独占禁止法（法律第54号）の原文画像の葉未特定。1946年の財閥解体写真は関連画像であると明記して維持。'}
+                ],
+                'distinctImageHashes':len(hashes),'extraDuplicateUses':duplicates,
+                'licenseStatusCounts':counts,
+                'historicalContentAll256IndependentlyAuthenticated':False,
+                'deviceImageReadabilityChecked':False,
+                'changedMediaFileSha256':{id_: image_metadata[id_]['sha256'] for id_ in changed},
+                'notes':['Commonsの利用条件を確認した3件だけ差し替え。出典の歴史学的精査や実機表示確認の全件完了は意味しない。','他の253件の画像バイトは変更しない。チャット・画面・画像IDは変更しない。']
+              }
+              save(M,manifest)
+              save(REPORT,report)
+              if PREVIOUS.is_file():
+                  prev=load(PREVIOUS)
+                  prev['licenseStatusCounts']=counts
+                  prev['pendingPermissionCount']=len(pending)
+                  prev['remainingPermissionIds']=[x['id'] for x in pending]
+                  prev['nextSourcesReport']=REPORT.name
+                  if isinstance(prev.get('items'),list):
+                      for rec in prev['items']:
+                          key=rec.get('id')
+                          if key in changed:
+                              t=by[key]
+                              rec.update(caption=t['caption'],sourceUrl=t['sourceUrl'],licenseStatus=t['licenseStatus'],educationalReviewStatus=t['educationalReviewStatus'])
+                              rec.update(image_metadata[key])
+                  save(PREVIOUS,prev)
+              if AUDIT.is_file():
+                  old=load(AUDIT)
+                  old['licenseStatusCounts']=counts
+                  old['sourceRightsPendingCount']=len(pending)
+                  old['nextSourcesReport']=REPORT.name
+                  old['distinctHashes']=len(hashes)
+                  old['extraDuplicateUses']=duplicates
+                  for rec in old.get('items',[]):
+                      key=rec.get('id')
+                      if key in changed:
+                          t=by[key]
+                          rec.update(caption=t['caption'],sourceUrl=t['sourceUrl'],licenseStatus=t['licenseStatus'],educationalReviewStatus=t['educationalReviewStatus'])
+                          rec.update(image_metadata[key])
+                  save(AUDIT,old)
+              print('256 IMAGE FILES VALID; 3 REPLACED; RIGHTS PENDING',len(pending),'DUPLICATE EXTRA',duplicates,flush=True)
+              print('DETAIL REPORT',REPORT,flush=True)
+          
+          if __name__ == '__main__':
+              main()
+          PYSOURCE
+          python /tmp/history202_next_sources.py
+      - name: Commit only the verified 3 media files and their source reports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- \
+            history202/real-materials.json \
+            history202/authentic_images/law-taiko.webp \
+            history202/authentic_images/law-mobilization.webp \
+            history202/authentic_images/law-human.webp \
+            history202/history202_next_sources_20261110.json \
+            history202/history202_source_rights_review_20261110.json \
+            history202/history202_final_256_audit_20261110.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Verify 3 more history sources and reduce unresolved rights to 3'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          else
+            echo 'Nothing to commit; source updates already applied.'
+          fi
+      - name: Save source verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-next-source-verification
+          path: history202/history202_next_sources_20261110.json
+          if-no-files-found: warn

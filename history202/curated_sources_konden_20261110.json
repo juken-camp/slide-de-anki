@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "description": "Verified from the National Archives of Japan 1657 edition of Shoku Nihongi vol. 15 (Commons 44-page PDF). Both specified page images were visually checked on 2026-11-10; image changes are conditional on successful download and validation.",
+  "items": [
+    {
+      "id": "verified-konden-743",
+      "commonsFile": "NAJDA-137-0106 続日本紀 巻15-16.pdf",
+      "pdfPage": 9,
+      "pageImageVerified": true,
+      "pageEvidence": "PDF第9ページ（1から数える）の左ページ最下部に『詔曰如聞墾田依養老七年格』の始まりを目視確認（2026-11-10）。これは743年の勅令の原本ではなく1657年刊『続日本紀』巻第十五の本文ページ。",
+      "caption": "『続日本紀』巻第十五に載る墾田永年私財法の始まり（743年の記録）",
+      "explanation": "743年、聖武天皇の時代に出された墾田永年私財法では、新しく開いた田を、決められた範囲で期限なく自分の土地にできるようになりました。それまでの三世一身法では、期限が来ると国に返す必要がありました。画像は当時の命令が記録された『続日本紀』の後世の刊本です。ページ左下から条文が始まります。",
+      "type": "『続日本紀』巻第十五の本文（1657年刊本・PDF第9ページ）",
+      "coverageOf": "墾田永年私財法"
+    },
+    {
+      "id": "verified-konden-ch15",
+      "commonsFile": "NAJDA-137-0106 続日本紀 巻15-16.pdf",
+      "pdfPage": 10,
+      "pageImageVerified": true,
+      "pageEvidence": "PDF第10ページ（1から数える）の右ページ上部に『自今以後任為私財無論三世一身』の文字を目視確認（2026-11-10）。これは743年の勅令の原本ではなく1657年刊『続日本紀』巻第十五の本文ページ。",
+      "caption": "『続日本紀』の墾田永年私財法「今より私有を認める」の部分",
+      "explanation": "743年の墾田永年私財法では、新しく開いた田を、国の決まりに従って期限なく持てるようにしました。画像は『続日本紀』巻第十五の本文で、右ページ上部に「今からは私有を認め、三世一身の期限にしばられない」という内容が書かれています。土地の私有が広がるきっかけとなり、のちの荘園にも関係します。",
+      "type": "『続日本紀』巻第十五の本文（1657年刊本・PDF第10ページ）",
+      "coverageOf": "墾田永年私財法"
+    }
+  ]
+}

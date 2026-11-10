@@ -1,0 +1,240 @@
+name: History 202 - fix story photo order and explain every image
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/history202_story_photo_repair.yml'
+permissions:
+  contents: write
+concurrency:
+  group: history202-story-photo-repair
+  cancel-in-progress: false
+jobs:
+  story-photo-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fix misplaced photo anchors in 31 stories; show educational explanation for all 256 photos
+        run: |
+          python - <<'PY'
+          #!/usr/bin/env python3
+          """Re-anchor misplaced History 202 photos; show the learning point on all 256 photo cards.
+          
+          The current GitHub checkout is the source of truth. Do not replace chapters, old image files,
+          icon/CSS/chat data, IDs, or latest license/source fixes.
+          """
+          import collections
+          import json
+          from pathlib import Path
+          
+          ROOT = Path('history202')
+          MAT = ROOT / 'real-materials.json'
+          CH = ROOT / 'chapters.json'
+          JS = ROOT / 'room.js'
+          REPORT = ROOT / 'story_photo_context_audit_20261110.json'
+          
+          # All retargeting is manual, checked against the 31 stories. This is not a heuristic
+          # sort based on the chronology of a photo's modern reproduction date.
+          MOVE = {
+              # Ch2: the 13 pictures that were incorrectly attached to the opening explanation
+              'doc-reiwa': 'h02-deep-17-2',
+              'doc-heisei': 'h02-043',
+              'term-cover-ch02-04': 'h02-015',  # Asuka
+              'term-cover-ch02-06': 'h02-020',  # Heian
+              'term-cover-ch02-07': 'h02-023',  # Kamakura
+              'term-cover-ch02-08': 'h02-025',  # Nanbokucho
+              'term-cover-ch02-09': 'h02-029',  # Muromachi
+              'term-cover-ch02-10': 'h02-031',  # Sengoku / Nobunaga
+              'term-cover-ch02-11': 'h02-033',  # Azuchi-Momoyama
+              'term-cover-ch02-12': 'h02-035',  # Edo
+              'term-cover-ch02-13': 'h02-037',  # Meiji
+              'term-cover-ch02-14': 'h02-039',  # Taisho
+              'term-cover-ch02-15': 'h02-041',  # Showa
+              # Ch3: the previous general introduction mixed Himiko, Kiyomori and Yoshimitsu
+              'term-cover-ch03-01': 'h03-005',
+              'term-cover-ch03-04': 'h03-018',
+              'term-cover-ch03-06': 'h03-028',
+              # Ch16: the Restoration's 1868, 1869, and school/conscription sources
+              'authentic-2026-013': 'h16-002',
+              'authentic-2026-014': 'h16-deep-06-2',
+              'authentic-2026-015': 'h16-016',
+              'law-gakusei': 'h16-deep-07-2',
+              'period-1879-conscription-cartoon': 'h16-deep-08-2',
+              # Ch26: Yuan-vs-Qin mismatch, and 3 different dynasties grouped at one recap
+              'term-cover-ch26-04': 'h26-012',
+              'term-cover-ch26-05': 'h26-014',
+              'term-cover-ch26-06': 'h26-016',
+              'term-cover-ch26-07': 'h26-018',
+              # Ch28: 3 pictures dumped before the introduction instead of the corresponding job
+              'term-cover-ch28-01': 'h28-deep-01-2',
+              'authentic-2026-041': 'h28-008',
+              'term-cover-ch28-03': 'h28-008',
+          }
+          
+          # Improve examples in Chapter 2, where eras were represented only by a photograph's name.
+          ERA_TIPS = {
+              'term-cover-ch02-04': '飛鳥時代は、聖徳太子のころに仏教を大切にし、中国や朝鮮半島から建築技術も取り入れた時代です。法隆寺はその代表。写真は現在の建物で、飛鳥時代の写真ではありません。',
+              'term-cover-ch02-06': '平安時代は、紫式部の『源氏物語』など、かな文字を使った日本の文学が発達しました。この絵巻は物語の場面を後の時代に描いたもので、紫式部が描いた絵ではありません。',
+              'term-cover-ch02-07': '鎌倉時代には、元が1274年と1281年に日本へ攻めてきました。これを元寇といいます。『蒙古襲来絵詞』には元軍と戦う武士が描かれています。現場の写真ではありません。',
+              'term-cover-ch02-08': '鎌倉幕府が滅んだ1333年のあと、後醍醐天皇は天皇中心の政治を始めました。しかし争いが起こり、1336年ごろから朝廷が南北に分かれました。これが南北朝時代です。',
+              'term-cover-ch02-09': '室町時代の8代将軍・足利義政は、銀閣に関わる東山文化で知られます。金閣は3代将軍・足利義満の北山文化。2つの建物と将軍の名前を比べて覚えましょう。',
+              'term-cover-ch02-10': '戦国時代の織田信長は全国統一を進めましたが、1582年の本能寺の変で命を落としました。信長が全国統一を完成させたわけではない点が重要です。画像は人物の肖像画です。',
+              'term-cover-ch02-11': '安土桃山時代の豊臣秀吉は、1590年に全国統一を果たしました。太閤検地で田畑を調べ、刀狩で農民から武器を集めました。信長の仕事を引き継いだ人物です。',
+              'term-cover-ch02-12': '江戸時代は、徳川家康が1603年に江戸幕府を開いたことが始まりの目印。徳川家の幕府は約260年続きます。これは当時の姿を伝える肖像画で、写真ではありません。',
+              'term-cover-ch02-13': '明治政府は1873年に地租改正を進め、土地の持ち主が地価をもとに税金をお金で納める仕組みに変えました。写真は1879年発行の地券。土地の持ち主などを示す証書です。',
+              'term-cover-ch02-14': '大正時代の1918年、米の値段が上がり、暮らしに困った人々の抗議が全国に広がりました。これが米騒動。画像は事件を伝える当時の新聞です。',
+              'term-cover-ch02-15': '昭和時代の1941年12月、日本軍はハワイの真珠湾を攻撃し、太平洋戦争が始まりました。画像は攻撃を受けた戦艦アリゾナを写した当時の写真です。',
+          }
+          
+          
+          def main():
+              manifest = json.loads(MAT.read_text(encoding='utf8'))
+              chapters_data = json.loads(CH.read_text(encoding='utf8'))
+              materials = manifest['items']
+              chapters = chapters_data['chapters']
+              by_id = {m['id']: m for m in materials}
+              stories = {c['id']: c for c in chapters}
+              assert len(materials) == len(by_id) == 256, 'Unexpected material IDs'
+              assert len(chapters) == 31 and sum(len(c['entries']) for c in chapters) == 202
+              assert set(MOVE) <= set(by_id)
+              assert set(ERA_TIPS) <= set(by_id)
+              prior = {}; changed = []
+              for mid, new_anchor in MOVE.items():
+                  m = by_id[mid]
+                  c = stories[m['chapter']]
+                  refs = {row['id'] for row in c['messages']}
+                  assert new_anchor in refs, f'Invalid target {mid} -> {new_anchor}'
+                  assert m['after'] in refs, f'Original anchor missing {mid}'
+                  if m['after'] != new_anchor:
+                      prior[mid] = m['after']
+                      m['after'] = new_anchor
+                      changed.append(mid)
+              enriched = []
+              for mid, value in ERA_TIPS.items():
+                  if by_id[mid].get('explanation') != value:
+                      by_id[mid]['explanation'] = value
+                      enriched.append(mid)
+              assert all(m.get('explanation','').strip() for m in materials), 'Photo should explain what it teaches'
+              for m in materials:
+                  assert m['after'] in {x['id'] for x in stories[m['chapter']]['messages']}, f'Anchor not found: {m["id"]}'
+              # Check image order in Chapter 2. Era boundaries may overlap, but the chosen
+              # illustrative cards must follow the story rather than appearing in the intro.
+              ch2 = stories[2]
+              pos = {m['id']: n for n, m in enumerate(ch2['messages'])}
+              era = ['term-cover-ch02-04','term-cover-ch02-06','term-cover-ch02-07',
+                     'term-cover-ch02-08','term-cover-ch02-09','term-cover-ch02-10',
+                     'term-cover-ch02-11','term-cover-ch02-12','term-cover-ch02-13',
+                     'term-cover-ch02-14','term-cover-ch02-15','doc-heisei','doc-reiwa']
+              locations = [pos[by_id[mid]['after']] for mid in era]
+              assert locations == sorted(locations) and len(locations) == len(set(locations)), locations
+              assert not any(m['after'] == 'h02-003' for m in materials if m['chapter'] == 2), 'Intro still has photos'
+          
+              # Display the teaching context on every photo automatically. Clicking still
+              # opens/closes the existing larger explanation panel, without changing chat bubbles.
+              js = JS.read_text(encoding='utf8')
+              prefix = 'h202-real-image-learning-point'
+              if prefix not in js:
+                  old = '  bubble.append(photo,caption);'
+                  assert js.count(old) == 1, 'Photo markup changed upstream; do not overwrite'
+                  new = '''  const studyNote=document.createElement('span');
+            studyNote.className='h202-real-image-learning-point';
+            studyNote.textContent='この資料で覚えること：'+String(m.explanation||'').trim();
+            bubble.append(photo,caption,studyNote);'''
+                  js = js.replace(old, new, 1)
+                  anchor='document.head.append(h202SinglePhotoStyle);'
+                  assert js.count(anchor) == 1, 'Photo theme changed upstream'
+                  css = '''
+          #group-view #group-messages .h202-image-card .h202-real-image-learning-point{
+           display:block!important;
+           width:100%!important;
+           max-width:100%!important;
+           box-sizing:border-box!important;
+           margin:5px 0 12px!important;
+           padding:0!important;
+           font-size:11.5px!important;
+           font-weight:500!important;
+           line-height:1.65!important;
+           letter-spacing:0!important;
+           white-space:normal!important;
+           overflow-wrap:anywhere!important;
+           word-break:normal!important;
+           color:#514339!important;
+          }
+          html[data-persona="cyber"] #group-view #group-messages .h202-image-card .h202-real-image-learning-point{
+           color:#d5e6f3!important;
+          }
+          '''
+                  style = ("\nconst h202StudyPhotoStyle=document.createElement('style');"
+                           "h202StudyPhotoStyle.id='h202-visible-learning-point';"
+                           'h202StudyPhotoStyle.textContent='+json.dumps(css,ensure_ascii=False)+';'
+                           'document.head.append(h202StudyPhotoStyle);')
+                  js = js.replace(anchor, anchor+style, 1)
+          
+              # Assert no other chat/image/file paths touched. Save the manifest and the UI only.
+              MAT.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+              JS.write_text(js,encoding='utf8')
+              clusters = {}
+              for cid, ch in stories.items():
+                  grouped = collections.Counter(m['after'] for m in materials if m['chapter'] == cid)
+                  clusters[str(cid)] = dict(maxAtOneLine=max(grouped.values(), default=0),
+                                            photos=len([m for m in materials if m['chapter']==cid]))
+              report = {
+                'scope':'31 stories, 202 terms, 256 historical source images',
+                'imageCount':len(materials),'chapterCount':len(chapters),'termCount':202,
+                'movedPhotoAnchors':changed,'movedCount':len(changed),'previousAnchors':prior,
+                'betterTeachingNotes':enriched,'betterTeachingNotesCount':len(enriched),
+                'allPhotoExplanationsImmediatelyVisible':True,
+                'photoGroupsPerChapter':clusters,
+                'nonGoals':['Images and licenses remain unchanged','31 story scripts and lesson texts unchanged',
+                            'History source historicity and permissions are not certified by this display repair',
+                            'No UI changes to Sengoku or the shared group chat'],
+              }
+              REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+              print('STORY_CHAPTERS',len(chapters),'TERMS',202,'PHOTO_FILES',len(materials))
+              print('MOVED_ANCHORS',len(changed),'BETTER_EXPLANATIONS',len(enriched))
+              print('MAX_PHOTOS_AT_SAME_ANCHOR',max(x['maxAtOneLine'] for x in clusters.values()))
+              print('CH2_PHOTO_POSITION_ERA',locations)
+              print('No chat text, images or license metadata changed.')
+          
+          if __name__=='__main__': main()
+          PY
+      - name: Validate photo JS syntax and verify no unrelated files are modified
+        run: |
+          node --check history202/room.js
+          git diff --name-only
+          python - <<'PY'
+          import json, subprocess
+          x=json.load(open('history202/story_photo_context_audit_20261110.json'))
+          assert x['imageCount']==256 and x['chapterCount']==31 and x['termCount']==202
+          allowed={'history202/real-materials.json','history202/room.js'}
+          changed=set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())
+          assert changed.issubset(allowed), f'Unexpected edited paths: {changed-allowed}'
+          print('Validated:',x['movedCount'],'photo anchors moved,',x['betterTeachingNotesCount'],'study notes improved')
+          PY
+      - name: Commit only updated photos placement and visible study notes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- history202/room.js history202/real-materials.json history202/story_photo_context_audit_20261110.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Place history pictures in relevant conversations and show all study notes'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          else
+            echo 'All lesson-photo improvements already present; no changes'
+          fi
+      - name: Upload a report of all 31 chapter photo groups
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: history202-story-photo-audit
+          path: history202/story_photo_context_audit_20261110.json
+          if-no-files-found: warn

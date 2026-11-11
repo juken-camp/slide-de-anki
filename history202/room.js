@@ -52,8 +52,13 @@ function profileId(person){const m=String(person?.image||'').match(/^history-ico
 function profileAvailable(person){return Number.isInteger(profileId(person))&&!!hostWindow()?.document?.getElementById('card-list')}
 function openOriginalProfile(person){
  if(!profileAvailable(person))return;
- const host=hostWindow(),list=host.document.getElementById('card-list');
- // Exactly the same original-profile opening route as sengoku-chat/room.js.
+ const host=hostWindow(),id=profileId(person);
+ // Use a direct host function. Clicking an offscreen dummy button caused
+ // synthetic tap effects to appear at screen coordinate (0,0) on iPhones.
+ if(typeof host.himikoOpenHistoricalProfileById==='function' &&
+    host.himikoOpenHistoricalProfileById(id))return;
+ // Backward compatibility for deployments where himiko.html has not updated yet.
+ const list=host.document.getElementById('card-list');
  const probe=host.document.createElement('button');probe.type='button';probe.className='char-card';probe.setAttribute('onclick','openChat('+profileId(person)+')');probe.tabIndex=-1;probe.setAttribute('aria-hidden','true');probe.style.cssText='position:absolute!important;left:-99999px!important;top:-99999px!important;visibility:hidden!important';
  const avatar=host.document.createElement('span');avatar.className='avatar';probe.append(avatar);list.append(probe);
  try{avatar.dispatchEvent(new host.MouseEvent('click',{bubbles:true,cancelable:true}))}finally{probe.remove()}

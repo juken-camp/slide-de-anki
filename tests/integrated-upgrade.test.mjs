@@ -1,0 +1,16 @@
+import {PGlite} from '@electric-sql/pglite';import {readFileSync} from 'node:fs';import assert from 'node:assert/strict';
+process.on('uncaughtException',e=>{console.error(e.message,e.code||'');process.exit(1)});
+const db=new PGlite();await db.exec(`create role anon;create role authenticated;create role service_role;create schema auth;create table auth.users(id uuid primary key,email text,email_confirmed_at timestamptz,is_anonymous boolean default false);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;`);
+const sql=f=>readFileSync(new URL('../shared-chat/'+f,import.meta.url),'utf8');
+await db.exec(sql('001_shared_chat.sql'));await db.exec(sql('002_shared_chat_ai.sql'));
+const uid='00000000-0000-4000-8000-000000000001',room='00000000-0000-4000-8000-000000000002';
+await db.query(`insert into auth.users values($1,'owner@test.test',now(),false);`,[uid]);
+await db.query(`insert into shared_chat_private.rooms(id,name,owner_id,last_seq) values($1,'既存の部屋',$2,1)`,[room,uid]);
+await db.query(`insert into shared_chat_private.messages(room_id,seq,user_id,name,text,client_id) values($1,1,$2,'本人','保持する既存の投稿',gen_random_uuid())`,[room,uid]);
+await db.exec(`create table public.learning_progress(id integer primary key,record text);insert into public.learning_progress values(1,'保持する学習進捗');`);
+await db.exec(sql('install_integrated.sql'));await db.exec(sql('install_integrated.sql'));
+assert.equal((await db.query('select text from shared_chat_private.messages')).rows[0].text,'保持する既存の投稿');
+assert.equal((await db.query('select record from public.learning_progress')).rows[0].record,'保持する学習進捗');
+assert.equal((await db.query('select integrated_enabled from shared_chat_private.settings')).rows[0].integrated_enabled,false);
+assert.equal((await db.query('select last_seq from shared_chat_private.rooms')).rows[0].last_seq,1);
+await db.close();console.log('PASS Phase 1/2 upgrade and rerun preserve existing room, message and independent learning table; sharing remains gated off.');

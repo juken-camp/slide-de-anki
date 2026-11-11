@@ -1,6 +1,6 @@
 'use strict';
 // Isolated pilot API. Uses the end user's JWT; never uses a service-role key.
-const ACTIONS=new Set(['list','create','join','sync','send','read','invite','revoke_invites','approve','remove','hide','leave','ai_toggle','subscribe']);
+const ACTIONS=new Set(['list','create','join','sync','send','read','invite','revoke_invites','approve','remove','hide','leave','ai_toggle','subscribe','rename']);
 module.exports=async function(req,res){
  res.setHeader('Cache-Control','no-store');
  res.setHeader('X-Content-Type-Options','nosniff');
@@ -9,7 +9,7 @@ module.exports=async function(req,res){
  let publicKey=false;
  try{publicKey=key?.startsWith('sb_publishable_')||JSON.parse(Buffer.from(key.split('.')[1],'base64url').toString()).role==='anon';}catch{}
  if(!publicKey||process.env.SHARED_CHAT_ENABLED!=='1'||!url||!key)return res.status(503).json({error:'共有グルチャは準備中です。'});
- if(req.method==='GET')return res.status(200).json({url,key,stage:'shared-ai',aiAvailable:process.env.SHARED_CHAT_AI_ENABLED==='1',pushAvailable:!!(process.env.HIMIKO_VAPID_PUBLIC_KEY&&process.env.HIMIKO_VAPID_PRIVATE_KEY&&process.env.HIMIKO_VAPID_SUBJECT),vapidPublicKey:process.env.HIMIKO_VAPID_PUBLIC_KEY||''});
+ if(req.method==='GET')return res.status(200).json({url,key,stage:'shared-ai',integratedAvailable:process.env.HIMIKO_SHARED_ENABLED==='1',aiAvailable:process.env.SHARED_CHAT_AI_ENABLED==='1',pushAvailable:!!(process.env.HIMIKO_VAPID_PUBLIC_KEY&&process.env.HIMIKO_VAPID_PRIVATE_KEY&&process.env.HIMIKO_VAPID_SUBJECT),vapidPublicKey:process.env.HIMIKO_VAPID_PUBLIC_KEY||''});
  if(req.method!=='POST'){res.setHeader('Allow','GET, POST');return res.status(405).json({error:'POSTで送信してください。'});}
  if(req.headers.origin!==`https://${req.headers.host}` && !(process.env.NODE_ENV!=='production'&&req.headers.origin===`http://${req.headers.host}`))return res.status(403).json({error:'アプリから操作してください。'});
  const auth=req.headers.authorization;
@@ -19,6 +19,7 @@ module.exports=async function(req,res){
   if(Buffer.byteLength(typeof raw==='string'?raw:JSON.stringify(raw||{}))>12000)return res.status(413).json({error:'送信内容が大きすぎます。'});
   const b=typeof raw==='string'?JSON.parse(raw):raw;
   if(!b||!ACTIONS.has(b.action)||!b.payload||typeof b.payload!=='object'||Array.isArray(b.payload))return res.status(400).json({error:'送信内容を確認してください。'});
+  if(b.action==='ai_toggle'&&b.payload.enabled===true&&process.env.SHARED_CHAT_AI_ENABLED!=='1')return res.status(403).json({error:'自動会話は停止中です。'});
   // Fixed path and configured server origin: no user-supplied URL or RPC name.
   const upstream=await fetch(new URL('/rest/v1/rpc/shared_chat_rpc',url),{method:'POST',redirect:'error',headers:{apikey:key,Authorization:auth,'Content-Type':'application/json'},body:JSON.stringify({p_action:b.action,p_payload:b.payload}),signal:AbortSignal.timeout(15000)});
   const data=await upstream.json();

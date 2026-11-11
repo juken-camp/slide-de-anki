@@ -2,7 +2,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test api.test.cjs && node database.test.mjs && node ui.test.mjs"
+    "test": "node --test api.test.cjs && node database.test.mjs && node ui.test.mjs && npm run test:integrated",
+    "test:integrated": "node --test integrated-*.test.*"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3.14",

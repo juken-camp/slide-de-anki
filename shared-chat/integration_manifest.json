@@ -1,0 +1,219 @@
+{
+  "base_main": "179c355850874b92c6e913a8f230a141127e6e22",
+  "supersedes": "himiko_shared_integration.zip",
+  "already_on_main": [
+    "himiko.html",
+    "himiko-presence.js",
+    "api/himiko-chat.js",
+    "history202/room.js",
+    "history202/participants.json",
+    "history-icons-manifest.csv",
+    "history-icons/165.webp",
+    "history-icons/165.png"
+  ],
+  "files": [
+    {
+      "path": ".github/workflows/shared_chat_ai_tick.yml",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "94996139661e46f63390c9e8d942d0cba9a578e9c46de9a7b1f39b3a182643f8",
+      "size": 951
+    },
+    {
+      "path": "api/himiko-chat.js",
+      "status": "modified",
+      "base_blob": "776f26f8718ca917c10b60719ce1a87cd7152761",
+      "sha256": "849981d69ddbdf31a441b1e2df6363d93951402a91a6fff0ee9ab6339d883df2",
+      "size": 412116
+    },
+    {
+      "path": "api/shared-chat-live.js",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "40d78b4d6c5befd35cadc5e3a4817f071b9d69fa36d8f3a94566afb3b14e1683",
+      "size": 2888
+    },
+    {
+      "path": "api/shared-chat-tick.js",
+      "status": "modified",
+      "base_blob": "721abeccad5d6b24648ca36f34db0ac58cfc0a46",
+      "sha256": "d0673f0c1d24b28673c34ed35752632440b59501acb4f034f09fb74b0e96fb38",
+      "size": 8973
+    },
+    {
+      "path": "api/shared-chat.js",
+      "status": "modified",
+      "base_blob": "88f3f6bc610a4b89ec7b64f93aa8a6efc330af6b",
+      "sha256": "41def272fddd4406eced92de30d5bb1171494537c02898bdfebd0cfc4367149d",
+      "size": 4168
+    },
+    {
+      "path": "himiko-activity.js",
+      "status": "modified",
+      "base_blob": "cb317a1ce3044516ffed71a2ce63f58c1fa0ea0a",
+      "sha256": "75946f725761f249c89c2cb1a8eeb8a28342b46085f8386cf973edb30a8641b0",
+      "size": 14589
+    },
+    {
+      "path": "himiko.html",
+      "status": "modified",
+      "base_blob": "9f8ac08657baf8b61e3aa114a73b15a3b1308f6b",
+      "sha256": "3b553bc9b7304e833974f6cb1c24ba897df5f38949ab33cd43f900e78f934feb",
+      "size": 520153
+    },
+    {
+      "path": "lib/himiko-inbox.js",
+      "status": "modified",
+      "base_blob": "dd80e1b2c203a6a56dde1fd04326987a7e739d86",
+      "sha256": "7a11437b476f74a3c85e70c92c70342b92abea9f8ca0f86c60ad7bc0a12b9642",
+      "size": 27123
+    },
+    {
+      "path": "shared-chat.html",
+      "status": "modified",
+      "base_blob": "cb64428b9f4708a3235dac548914ab74542f42a1",
+      "sha256": "f44e52f5866d724a2a7beabc4ba2a14823741d3c4edd812d84371a28fca3b0b3",
+      "size": 136820
+    },
+    {
+      "path": "shared-chat/003_integrated_himiko.sql",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "bc915c37ff82c604947bde08d17080ce68b408b19c59cd5ccd3879bee11deb02",
+      "size": 26144
+    },
+    {
+      "path": "shared-chat/INTEGRATION_README.md",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "2fd23a99e2f01772d2b4f7d934759d8eb6cf8556de5fd19c374ef8c64efd75ea",
+      "size": 10395
+    },
+    {
+      "path": "shared-chat/INTEGRATION_TEST_REPORT.md",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "431f38243c692eee09c9c5ccbc74aea70e19e171720b9d2048e43c57ae654b15",
+      "size": 5157
+    },
+    {
+      "path": "shared-chat/MERGE_REPORT.md",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "842028b6b7e782c7f79008e6d2b8b6e2e82c190cfbfb90252c569793f5505365",
+      "size": 5581
+    },
+    {
+      "path": "shared-chat/enable_integrated.sql",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "787f376b92be3734979fcebb9f8d9ea3ef18558eccaf19b365d6c2086ab6e27e",
+      "size": 183
+    },
+    {
+      "path": "shared-chat/install_integrated.sql",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "36a9c21dad82bf368dd8d3d30eb3df1275cc8e39a0f92afa92aeb324032d1fae",
+      "size": 62868
+    },
+    {
+      "path": "shared-chat/integrated.js",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "4c1c49e39aa119f3b993e1b09d4f25d2b51ced2a949fe07c1e334ed8d01734bd",
+      "size": 20102
+    },
+    {
+      "path": "shared-chat/notify-sw.js",
+      "status": "modified",
+      "base_blob": "b9e193a336035fb2facb824b500d90cb6b165a68",
+      "sha256": "741cc970cb46420f7949c84e4bc89cd8d160bf5a2911459071ec711e5f4f7204",
+      "size": 1204
+    },
+    {
+      "path": "tests/integrated-db.test.mjs",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "5eb8c1171a03c44c79ac69cc47ce1b937126e5c03262e7c13570b984c2bd2514",
+      "size": 6539
+    },
+    {
+      "path": "tests/integrated-handoff.test.mjs",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "0e44d54ab4dc64b53a544ecbf7ff97c1a350c48e9b6cf558a6000f2cdc249657",
+      "size": 9056
+    },
+    {
+      "path": "tests/integrated-live.test.cjs",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "4f41f9c2abcdc5f5768e1bb5b83a6d01b717ef21393d0f8b2a6b9de7b8364379",
+      "size": 2141
+    },
+    {
+      "path": "tests/integrated-native.test.mjs",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "497285fc7e4ecee460c06a37b2c8253efbdc573e34bb875c6a5f2f33e5818462",
+      "size": 5046
+    },
+    {
+      "path": "tests/integrated-reply.test.cjs",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "6bc61fd97405638e8a64198099d768354a6fac04fff3b703049a03b26acf21bb",
+      "size": 2925
+    },
+    {
+      "path": "tests/integrated-ui.test.mjs",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "c64cccf546a456c00045ca760c5707e3a14e6eddb286d5431702cbb43de5520d",
+      "size": 4927
+    },
+    {
+      "path": "tests/integrated-upgrade.test.mjs",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "1f31aece3b5f70f314af82410314b58f3ebcce2d1044b9ad62c5fcd5b0338a16",
+      "size": 2154
+    },
+    {
+      "path": "tests/native-style-baseline.json",
+      "status": "added",
+      "base_blob": null,
+      "sha256": "e119ebfcc1619de314ca9bc73f18b113b1df3b51d0ca43b4050dac48d9e5e3b8",
+      "size": 599
+    },
+    {
+      "path": "tests/package.json",
+      "status": "modified",
+      "base_blob": "fea50b4f9d4dbaaab7b88b957b415b00769155bb",
+      "sha256": "d6d26edbef34ab4350ebdd6078a9d87d899fbd99cd30e487d238fd9189fa2a6b",
+      "size": 320
+    },
+    {
+      "path": "tests/shared-ai.test.cjs",
+      "status": "modified",
+      "base_blob": "3aaeb1a8c6b448f0666710e1fbbca4199b0131dd",
+      "sha256": "30ff0f6d1f0fefb887478b230851e80f6422ff86a51383e59655304ab81cb993",
+      "size": 3703
+    },
+    {
+      "path": "tests/ui.test.mjs",
+      "status": "modified",
+      "base_blob": "b8586eac313dacda31129a359fc8710ed7bddf47",
+      "sha256": "beb8a5ebb74ffde18ef28ded9d954e3ceb6b8d8c2997d36fcad696783eec7db7",
+      "size": 5776
+    },
+    {
+      "path": "vercel.json",
+      "status": "modified",
+      "base_blob": "9fb59f2d094aa30c286734447e601ffbde5c9255",
+      "sha256": "fabe7c479d0586de33daee969f8d3c2bf4139a8933259b15b0aa1cca6284be43",
+      "size": 336
+    }
+  ]
+}

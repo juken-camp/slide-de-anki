@@ -9,6 +9,9 @@
     },
     "api/shared-chat-tick.js": {
       "maxDuration": 60
+    },
+    "api/shared-chat-live.js": {
+      "maxDuration": 60
     }
   }
 }

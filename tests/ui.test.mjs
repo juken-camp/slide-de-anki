@@ -10,9 +10,9 @@ let tail=Promise.resolve();
 global.fetch=async(url,opts)=>{let release;const previous=tail;tail=new Promise(r=>release=r);await previous;try{const uid=opts.headers.Authorization.slice(7).split('.')[1];await db.exec('reset role');await db.query(`select set_config('request.jwt.claim.sub',$1,false)`,[uid]);await db.exec('set role authenticated');const b=JSON.parse(opts.body);const d=(await db.query('select public.shared_chat_rpc($1,$2::jsonb) result',[b.p_action,JSON.stringify(b.p_payload)])).rows[0].result;return {ok:true,status:200,json:async()=>d};}finally{release();}};
 function page(user,fragment=''){
  const dom=new JSDOM(readFileSync(new URL('../shared-chat.html',import.meta.url),'utf8'),{url:'http://localhost/shared-chat.html'+fragment,runScripts:'outside-only',pretendToBeVisual:true});const w=dom.window;let poll;
- w.confirm=()=>true;w.setInterval=fn=>{poll=fn;return 1;};
+ w.confirm=()=>true;w.scrollTo=()=>{};w.setInterval=fn=>{poll=fn;return 1;};
  w.fetch=async(url,opts={})=>{
-  if(String(url).includes('/auth/v1/'))return {ok:true,json:async()=>String(url).endsWith('/verify')?{access_token:'aaa.'+user+'.bbbbbbbbbbbbbbbbbbbbbbbb'}:{}};
+  if(String(url).includes('/auth/v1/'))return {ok:true,json:async()=>String(url).endsWith('/verify')?{access_token:'aaa.'+user+'.bbbbbbbbbbbbbbbbbbbbbbbb',refresh_token:'refresh-'+user+'-test-token',expires_in:3600}:{}};
   let status,data;await handler({method:opts.method||'GET',headers:{origin:'http://localhost',host:'localhost',authorization:opts.headers?.Authorization},body:opts.body},{setHeader(){},status(s){status=s;return this;},json(d){data=d;return this;}});return {ok:status<300,status,json:async()=>data};
  };
  w.eval(readFileSync(new URL('../shared-chat/pilot.js',import.meta.url),'utf8'));
@@ -26,7 +26,7 @@ const owner=page(A);await login(owner,'a@example.test');owner.$('room-name').val
 const member=page(B,new URL(url).hash);await login(member,'b@example.test');member.$('nickname').value='生徒';await click(member,'join');assert.ok(member.$('rooms').textContent.includes('承認待ち'));assert.equal(member.$('rooms').querySelector('button').disabled,true);
 owner.tick();await ready(owner);assert.ok(owner.$('members').textContent.includes('生徒'));button(owner,'承認').click();await ready(owner);
 await click(member,'refresh');const roomButton=member.$('rooms').querySelector('button');assert.equal(roomButton.disabled,false);roomButton.click();await ready(member);assert.equal(member.$('chat').hidden,false,member.$('status').textContent);
-const content='<img src=x onerror="alert(1)"> こんにちは';member.$('text').value=content;await click(member,'send');assert.ok(member.$('messages').textContent.includes(content));assert.equal(member.$('messages').querySelectorAll('img').length,0);
+const content='<img src=x onerror="alert(1)"> こんにちは';member.$('text').value=content;member.$('text').dispatchEvent(new member.w.Event('input',{bubbles:true}));await click(member,'send');assert.ok(member.$('messages').textContent.includes(content),member.$('status').textContent);assert.equal(member.$('messages').querySelectorAll('img').length,0);
 owner.tick();await ready(owner);assert.ok(owner.$('messages').textContent.includes(content));button(owner,'削除').click();await ready(owner);member.tick();await ready(member);assert.ok(member.$('messages').textContent.includes('管理者が削除しました'));
 button(owner,'退出処理').click();await ready(owner);member.tick();await ready(member);assert.equal(member.$('chat').hidden,true);assert.equal(member.$('messages').textContent,'');
 await click(owner,'back');await click(owner,'logout');assert.equal(owner.$('login').hidden,false);assert.equal(owner.$('messages').textContent,'');

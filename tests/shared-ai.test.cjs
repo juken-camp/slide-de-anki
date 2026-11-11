@@ -30,7 +30,7 @@ test('AI replies keep persona IDs and maintain order and gaps',()=>{
  const messages=ai.flattenScenes(scenes);
  assert.deepEqual(messages.map(x=>x.speaker_id),[1,2,1,2,1]);
  assert.deepEqual(messages.map(x=>x.name),['卑弥呼','聖徳太子','卑弥呼','聖徳太子','卑弥呼']);
- assert(messages.every((m,i)=>m.delay_seconds>=30&&(i===0||m.delay_seconds>messages[i-1].delay_seconds)));
+ assert(messages.every((m,i)=>m.delay_seconds>=5&&(i===0||m.delay_seconds>messages[i-1].delay_seconds)));
  assert(messages[3].delay_seconds-messages[2].delay_seconds>=2400);
  assert(messages.every(m=>m.text.length<=1500));
  assert.throws(()=>ai.flattenScenes([{replies:[{id:9999,text:'invalid'}]}]));

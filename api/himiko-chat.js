@@ -3482,7 +3482,7 @@ function requestData(req) {
     const role = index % 2 === 0 ? 'user' : 'assistant';
     if (!message || typeof message !== 'object' || message.role !== role || typeof message.content !== 'string' || !message.content.trim()) throw Object.assign(new Error('会話の内容が正しくありません。'), { status: 400 });
     const content = message.content.trim();
-    const cap = role === 'user' ? (req.himikoAutomatic===true ? 11000 : LIMITS.userChars) : LIMITS.assistantChars;
+    const cap = role === 'user' ? (req.himikoAutomatic===true || req.himikoSharedReply===true ? 11000 : LIMITS.userChars) : LIMITS.assistantChars;
     if (content.length > cap) throw Object.assign(new Error(role === 'user' ? '質問は2,000文字以内で送ってください。' : '会話が長くなっています。新しい会話で質問してください。'), { status: 400 });
     total += content.length;
     return { role, content }; // Drop tools, images, model options, and other fields.

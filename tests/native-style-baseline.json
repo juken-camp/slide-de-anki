@@ -1,0 +1,18 @@
+{
+  "styles": "372c765ad8dff48eeb857409d52ec8c47a0a11483a02601dca3b163f8935f729",
+  "style_blocks": 69,
+  "renderers": {
+    "function rowUser(": {
+      "end": "function rowReplyPart(",
+      "sha256": "d7e2e2e05773cff6eb6cf6a10e55064303cbf1cbcf4d3007596e4a65cf626e19"
+    },
+    "function rowReplyPart(": {
+      "end": "function rowReply(x)",
+      "sha256": "01a4123184361ac10c82ffab0607781d6c51576b9db41267bd0ee97f44e438ff"
+    },
+    "function groupTyping(": {
+      "end": "function groupFollow(",
+      "sha256": "5d9bd59c3a8cce521abfff6b6b34dc302fe5787d3e5d694c47af9b52e2ba5eb5"
+    }
+  }
+}

@@ -228,15 +228,6 @@ function selectExplanation(m,b){const same=state.activeId===m.id;clearExplanatio
 const h202ZoomStyle=document.createElement('style');
 h202ZoomStyle.id='h202-image-zoom-v1';
 h202ZoomStyle.textContent=`
-#group-view #group-messages .group-reply-content.h202-has-image>.h202-real-image-bubble.h202-image-card{position:relative!important}
-#group-view #group-messages .h202-image-card .h202-zoom-hint{
- position:absolute!important;top:6px;right:6px;z-index:1;display:grid!important;
- place-items:center!important;width:26px;height:26px;box-sizing:border-box!important;
- border-radius:8px!important;background:rgba(10,16,24,.72)!important;color:#fff!important;
- box-shadow:0 1px 5px rgba(0,0,0,.18)!important;cursor:zoom-in!important;
- -webkit-tap-highlight-color:transparent!important;
-}
-#group-view #group-messages .h202-image-card .h202-zoom-hint svg{width:17px;height:17px;display:block}
 #h202-photo-modal{position:fixed!important;inset:0!important;z-index:2147483000!important;
  display:flex!important;align-items:center!important;justify-content:center!important;
  width:100%!important;height:100%!important;height:100dvh!important;
@@ -253,12 +244,12 @@ h202ZoomStyle.textContent=`
  box-shadow:0 3px 28px rgba(0,0,0,.32)!important;user-select:none!important;
  -webkit-user-select:none!important;-webkit-user-drag:none!important;touch-action:none!important;cursor:zoom-in!important;}
 #h202-photo-modal .h202-photo-close{position:absolute!important;z-index:2!important;
- right:max(14px,env(safe-area-inset-right))!important;
- top:max(14px,env(safe-area-inset-top))!important;
- display:grid!important;place-items:center!important;width:43px!important;height:43px!important;
- border:1px solid rgba(255,255,255,.25)!important;border-radius:50%!important;
- color:#fff!important;background:rgba(40,45,54,.88)!important;
- font:400 29px/1 sans-serif!important;cursor:pointer!important;}
+ right:calc(env(safe-area-inset-right, 0px) + 8px)!important;
+ top:calc(env(safe-area-inset-top, 0px) + 8px)!important;
+ display:grid!important;place-items:center!important;width:44px!important;height:44px!important;
+ margin:0!important;padding:0!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:50%!important;
+ color:#fff!important;background:rgba(40,45,54,.92)!important;
+ font:400 30px/1 sans-serif!important;cursor:pointer!important;}
 #h202-photo-modal .h202-photo-tools{position:absolute!important;z-index:2!important;
  bottom:max(18px,env(safe-area-inset-bottom))!important;left:50%!important;
  transform:translateX(-50%)!important;display:flex!important;align-items:center!important;
@@ -444,11 +435,6 @@ function addRow(m,when,previous){
   installHistoricalPhoto(photo,m);
   const caption=document.createElement('span');caption.className='h202-real-image-caption';caption.textContent=m.caption;
   bubble.append(photo,caption);
-  // A small overlay shortcut: no extra bubble height, width, padding, or nesting.
-  const hint=document.createElement('span');hint.className='h202-zoom-hint';hint.setAttribute('aria-hidden','true');
-  hint.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg>';
-  hint.addEventListener('click',event=>{event.stopPropagation();openHistoricalPhoto(m,bubble)});
-  bubble.append(hint);
  }
  bubble.setAttribute('aria-label',m.kind==='real-image'?(m.caption+'。1回タップで解説、もう1回で画像を拡大'):(m.speaker+'の発言、タップで解説を表示または閉じる'));
  bubble.addEventListener('click',()=>handleH202BubbleTap(m,bubble));

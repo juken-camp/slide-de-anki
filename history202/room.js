@@ -223,6 +223,178 @@ function renderIndex(){indexList.replaceChildren();for(const ch of state.chapter
 function clearExplanation(){state.activeId=null;explainText.textContent='';explain.classList.remove('has-selected-bubble');inner.querySelectorAll('.h202-bubble[aria-pressed="true"],.h202-image-card[aria-pressed="true"]').forEach(b=>b.setAttribute('aria-pressed','false'));requestShapes()}
 function selectExplanation(m,b){const same=state.activeId===m.id;clearExplanation();if(same)return;state.activeId=m.id;b.setAttribute('aria-pressed','true');explainText.textContent=m.explanation||'';
  explain.classList.add('has-selected-bubble');explain.scrollTop=0;requestShapes()}
+// Image-only modal: mounted outside #group-view, so the chat layout is never resized.
+// Ordinary text bubbles keep their original tap-to-toggle-explanation behavior.
+const h202ZoomStyle=document.createElement('style');
+h202ZoomStyle.id='h202-image-zoom-v1';
+h202ZoomStyle.textContent=`
+#group-view #group-messages .group-reply-content.h202-has-image>.h202-real-image-bubble.h202-image-card{position:relative!important}
+#group-view #group-messages .h202-image-card .h202-zoom-hint{
+ position:absolute!important;top:6px;right:6px;z-index:1;display:grid!important;
+ place-items:center!important;width:26px;height:26px;box-sizing:border-box!important;
+ border-radius:8px!important;background:rgba(10,16,24,.72)!important;color:#fff!important;
+ box-shadow:0 1px 5px rgba(0,0,0,.18)!important;cursor:zoom-in!important;
+ -webkit-tap-highlight-color:transparent!important;
+}
+#group-view #group-messages .h202-image-card .h202-zoom-hint svg{width:17px;height:17px;display:block}
+#h202-photo-modal{position:fixed!important;inset:0!important;z-index:2147483000!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;height:100%!important;height:100dvh!important;
+ margin:0!important;padding:0!important;box-sizing:border-box!important;
+ background:rgba(7,10,17,.94)!important;color:white!important;
+ isolation:isolate!important;overscroll-behavior:contain!important;}
+#h202-photo-modal .h202-photo-stage{position:absolute!important;inset:0!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ overflow:hidden!important;touch-action:none!important;cursor:default!important;}
+#h202-photo-modal .h202-photo-large{display:block!important;
+ max-width:calc(100% - 24px)!important;max-height:calc(100% - 116px)!important;
+ width:auto!important;height:auto!important;min-width:0!important;min-height:0!important;
+ object-fit:contain!important;transform-origin:center center!important;
+ box-shadow:0 3px 28px rgba(0,0,0,.32)!important;user-select:none!important;
+ -webkit-user-select:none!important;-webkit-user-drag:none!important;touch-action:none!important;cursor:zoom-in!important;}
+#h202-photo-modal .h202-photo-close{position:absolute!important;z-index:2!important;
+ right:max(14px,env(safe-area-inset-right))!important;
+ top:max(14px,env(safe-area-inset-top))!important;
+ display:grid!important;place-items:center!important;width:43px!important;height:43px!important;
+ border:1px solid rgba(255,255,255,.25)!important;border-radius:50%!important;
+ color:#fff!important;background:rgba(40,45,54,.88)!important;
+ font:400 29px/1 sans-serif!important;cursor:pointer!important;}
+#h202-photo-modal .h202-photo-tools{position:absolute!important;z-index:2!important;
+ bottom:max(18px,env(safe-area-inset-bottom))!important;left:50%!important;
+ transform:translateX(-50%)!important;display:flex!important;align-items:center!important;
+ gap:3px!important;padding:5px!important;border-radius:30px!important;
+ background:rgba(40,45,54,.88)!important;color:#fff!important;
+ font:600 13px/1.4 sans-serif!important;white-space:nowrap!important;}
+#h202-photo-modal .h202-photo-tools button{display:grid!important;place-items:center!important;
+ flex:none!important;width:36px!important;height:34px!important;padding:0!important;
+ color:#fff!important;border:0!important;border-radius:18px!important;
+ background:transparent!important;font:600 22px/1 sans-serif!important;cursor:pointer!important;}
+#h202-photo-modal .h202-photo-tools .h202-photo-reset{width:58px!important;font:600 13px/1 sans-serif!important;}
+#h202-photo-modal button:focus-visible{outline:2px solid #fff!important;outline-offset:3px!important;}
+@media(prefers-reduced-motion:no-preference){#h202-photo-modal .h202-photo-large{transition:transform 80ms ease-out}}
+`;
+document.head.append(h202ZoomStyle);
+let activePhotoModal=null;
+function openHistoricalPhoto(m,bubble){
+ const original=bubble.querySelector('img');
+ if(!original||!original.complete||!original.naturalWidth)return false;
+ activePhotoModal?.close();
+ const priorFocus=document.activeElement;
+ const modal=document.createElement('div');modal.id='h202-photo-modal';
+ modal.setAttribute('role','dialog');modal.setAttribute('aria-modal','true');
+ modal.setAttribute('aria-label',(m.caption||'歴史資料')+'の拡大画像');
+ const stage=document.createElement('div');stage.className='h202-photo-stage';
+ const image=document.createElement('img');image.className='h202-photo-large';
+ image.alt=m.caption||'歴史資料';image.src=original.currentSrc||original.src;
+ image.draggable=false;stage.append(image);
+ const closeButton=document.createElement('button');closeButton.type='button';
+ closeButton.className='h202-photo-close';closeButton.textContent='×';
+ closeButton.setAttribute('aria-label','画像の拡大を閉じる');
+ const tools=document.createElement('div');tools.className='h202-photo-tools';
+ const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','縮小');
+ const reset=document.createElement('button');reset.type='button';reset.className='h202-photo-reset';reset.textContent='100%';reset.setAttribute('aria-label','拡大率を100％に戻す');
+ const plus=document.createElement('button');plus.type='button';plus.textContent='＋';plus.setAttribute('aria-label','拡大');
+ tools.append(minus,reset,plus);modal.append(stage,closeButton,tools);
+ const view={scale:1,x:0,y:0};const pointers=new Map();
+ let pinch=null,lastTap=null,closed=false;
+ const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+ function draw(){
+  const maxX=Math.max(0,(image.offsetWidth*view.scale-stage.clientWidth)/2);
+  const maxY=Math.max(0,(image.offsetHeight*view.scale-stage.clientHeight)/2);
+  view.x=clamp(view.x,-maxX,maxX);view.y=clamp(view.y,-maxY,maxY);
+  image.style.transform=`translate(${view.x}px,${view.y}px) scale(${view.scale})`;
+  image.style.cursor=view.scale>1.01?'grab':'zoom-in';
+  reset.textContent=Math.round(view.scale*100)+'%';
+  minus.disabled=view.scale<=1.01;plus.disabled=view.scale>=4.99;
+ }
+ function changeScale(value,clientX=stage.clientWidth/2,clientY=stage.clientHeight/2){
+  const next=clamp(value,1,5),ratio=next/view.scale;
+  const px=clientX-stage.clientWidth/2,py=clientY-stage.clientHeight/2;
+  view.x=px-(px-view.x)*ratio;view.y=py-(py-view.y)*ratio;view.scale=next;
+  if(next===1)view.x=view.y=0;
+  draw();
+ }
+ function close(){
+  if(closed)return;closed=true;
+  modal.removeEventListener('keydown',onKey);
+  if(activePhotoModal?.element===modal)activePhotoModal=null;
+  modal.remove();
+  if(priorFocus?.isConnected)priorFocus.focus({preventScroll:true});
+ }
+ function onKey(e){
+  if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();return;}
+  if(e.key==='Tab'){
+   const focusable=[closeButton,minus,reset,plus].filter(btn=>!btn.disabled);
+   const i=focusable.indexOf(document.activeElement);
+   if(e.shiftKey&&i<=0){e.preventDefault();focusable.at(-1).focus();}
+   else if(!e.shiftKey&&i===focusable.length-1){e.preventDefault();focusable[0].focus();}
+  }
+  if(e.key==='+'||e.key==='='){e.preventDefault();changeScale(view.scale*1.3);}
+  if(e.key==='-'){e.preventDefault();changeScale(view.scale/1.3);}
+  if(e.key==='0'){e.preventDefault();changeScale(1);}
+ }
+ modal.addEventListener('keydown',onKey);
+ closeButton.addEventListener('click',close);
+ stage.addEventListener('click',e=>{if(e.target===stage)close()});
+ reset.addEventListener('click',()=>changeScale(1));
+ minus.addEventListener('click',()=>changeScale(view.scale/1.4));
+ plus.addEventListener('click',()=>changeScale(view.scale*1.4));
+ stage.addEventListener('wheel',e=>{e.preventDefault();changeScale(view.scale*Math.exp(-e.deltaY*.002),e.clientX,e.clientY)},{passive:false});
+ function initPinch(){
+  if(pointers.size<2){pinch=null;return}
+  const [a,b]=[...pointers.values()];
+  const cx=(a.x+b.x)/2,cy=(a.y+b.y)/2;
+  pinch={distance:Math.max(1,Math.hypot(a.x-b.x,a.y-b.y)),scale:view.scale,
+   anchorX:(cx-stage.clientWidth/2-view.x)/view.scale,
+   anchorY:(cy-stage.clientHeight/2-view.y)/view.scale};
+ }
+ stage.addEventListener('pointerdown',e=>{
+  if(e.pointerType==='mouse'&&e.button!==0)return;
+  pointers.set(e.pointerId,{x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,moved:false});
+  if(pointers.size>=2)initPinch();
+ });
+ stage.addEventListener('pointermove',e=>{
+  const p=pointers.get(e.pointerId);if(!p)return;
+  const dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+  if(Math.abs(p.startX-e.clientX)+Math.abs(p.startY-e.clientY)>8)p.moved=true;
+  if(pointers.size>=2){
+   if(!pinch)initPinch();
+   const [a,b]=[...pointers.values()];
+   view.scale=clamp(pinch.scale*Math.hypot(a.x-b.x,a.y-b.y)/pinch.distance,1,5);
+   const cx=(a.x+b.x)/2,cy=(a.y+b.y)/2;
+   view.x=cx-stage.clientWidth/2-pinch.anchorX*view.scale;
+   view.y=cy-stage.clientHeight/2-pinch.anchorY*view.scale;
+   draw();return;
+  }
+  if(view.scale>1.01){view.x+=dx;view.y+=dy;draw()}
+ });
+ function finishPointer(e){
+  const p=pointers.get(e.pointerId);if(!p)return;
+  const wasPinching=!!pinch;
+  pointers.delete(e.pointerId);
+  if(pointers.size<2)pinch=null;
+  if(pointers.size===1){const only=[...pointers.values()][0];only.moved=true}
+  if(wasPinching||p.moved||e.type==='pointercancel'||e.pointerType!=='touch')return;
+  const now=performance.now();
+  if(lastTap&&now-lastTap.when<340&&Math.hypot(e.clientX-lastTap.x,e.clientY-lastTap.y)<30){
+   changeScale(view.scale>1.01?1:2.5,e.clientX,e.clientY);lastTap=null;
+  }else lastTap={when:now,x:e.clientX,y:e.clientY};
+ }
+ stage.addEventListener('pointerup',finishPointer);
+ stage.addEventListener('pointercancel',finishPointer);
+ image.addEventListener('dblclick',e=>{e.preventDefault();changeScale(view.scale>1.01?1:2.5,e.clientX,e.clientY)});
+ image.addEventListener('dragstart',e=>e.preventDefault());
+ modal.addEventListener('touchmove',e=>{if(e.cancelable)e.preventDefault()},{passive:false});
+ modal.addEventListener('gesturestart',e=>{if(e.cancelable)e.preventDefault()},{passive:false});
+ document.body.append(modal);
+ activePhotoModal={element:modal,close};
+ image.addEventListener('load',draw,{once:true});draw();closeButton.focus({preventScroll:true});
+ return true;
+}
+function handleH202BubbleTap(m,b){
+ if(m.kind==='real-image'&&state.activeId===m.id&&openHistoricalPhoto(m,b))return;
+ selectExplanation(m,b);
+}
 function timeNode(stamp){const el=document.createElement('span');el.className='history-message-time sengoku-time';if(stamp!=null)el.textContent=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false}).format(stamp);else{el.textContent='00:00';el.classList.add('h202-time-empty');el.setAttribute('aria-hidden','true')}return el}
 // Image recovery: try Commons file path and a smaller thumbnail when the first URL fails.
 // Keep the source page accessible even if all remote image hosts are blocked.
@@ -272,8 +444,14 @@ function addRow(m,when,previous){
   installHistoricalPhoto(photo,m);
   const caption=document.createElement('span');caption.className='h202-real-image-caption';caption.textContent=m.caption;
   bubble.append(photo,caption);
+  // A small overlay shortcut: no extra bubble height, width, padding, or nesting.
+  const hint=document.createElement('span');hint.className='h202-zoom-hint';hint.setAttribute('aria-hidden','true');
+  hint.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg>';
+  hint.addEventListener('click',event=>{event.stopPropagation();openHistoricalPhoto(m,bubble)});
+  bubble.append(hint);
  }
- bubble.setAttribute('aria-label',m.speaker+'の発言、タップで解説を表示または閉じる');bubble.addEventListener('click',()=>selectExplanation(m,bubble));
+ bubble.setAttribute('aria-label',m.kind==='real-image'?(m.caption+'。1回タップで解説、もう1回で画像を拡大'):(m.speaker+'の発言、タップで解説を表示または閉じる'));
+ bubble.addEventListener('click',()=>handleH202BubbleTap(m,bubble));
  const time=timeNode(when);
  if(modern){row.append(bubble,time)}else{
   const container=document.createElement('div');container.className='group-reply-content'+(m.kind==='real-image'?' h202-has-image':'');

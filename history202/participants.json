@@ -152,5 +152,83 @@
   },
   "陸奥宗光": {
     "image": "history-icons/095.webp"
+  },
+  "ガンディー": {
+    "image": "history-icons/046.webp"
+  },
+  "ルソー": {
+    "image": "history-icons/040.webp"
+  },
+  "平塚らいてう": {
+    "image": "history-icons/025.webp"
+  },
+  "杉田玄白": {
+    "image": "history-icons/016.webp"
+  },
+  "吉野作造": {
+    "image": "history-icons/142.webp"
+  },
+  "田中角栄": {
+    "image": "history-icons/053.webp"
+  },
+  "道元": {
+    "image": "history-icons/099.webp"
+  },
+  "ザビエル": {
+    "image": "history-icons/117.webp"
+  },
+  "徳川慶喜": {
+    "image": "history-icons/130.webp"
+  },
+  "運慶": {
+    "image": "history-icons/113.webp"
+  },
+  "天智天皇": {
+    "image": "history-icons/003.webp"
+  },
+  "後醍醐天皇": {
+    "image": "history-icons/059.webp"
+  },
+  "鑑真": {
+    "image": "history-icons/084.webp"
+  },
+  "レーニン": {
+    "image": "history-icons/045.webp"
+  },
+  "井伊直弼": {
+    "image": "history-icons/129.webp"
+  },
+  "日蓮": {
+    "image": "history-icons/100.webp"
+  },
+  "足利義政": {
+    "image": "history-icons/114.webp"
+  },
+  "一遍": {
+    "image": "history-icons/060.webp"
+  },
+  "大隈重信": {
+    "image": "history-icons/133.webp"
+  },
+  "西郷隆盛": {
+    "image": "history-icons/092.webp"
+  },
+  "福沢諭吉": {
+    "image": "history-icons/020.webp"
+  },
+  "近松門左衛門": {
+    "image": "history-icons/015.webp"
+  },
+  "ロック": {
+    "image": "history-icons/090.webp"
+  },
+  "後鳥羽上皇": {
+    "image": "history-icons/111.webp"
+  },
+  "北条時宗": {
+    "image": "history-icons/112.webp"
+  },
+  "葛飾北斎": {
+    "image": "history-icons/126.webp"
   }
 }

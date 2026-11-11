@@ -249,18 +249,15 @@ h202ZoomStyle.textContent=`
  display:grid!important;place-items:center!important;width:44px!important;height:44px!important;
  margin:0!important;padding:0!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:50%!important;
  color:#fff!important;background:rgba(40,45,54,.92)!important;
- font:400 30px/1 sans-serif!important;cursor:pointer!important;}
-#h202-photo-modal .h202-photo-tools{position:absolute!important;z-index:2!important;
- bottom:max(18px,env(safe-area-inset-bottom))!important;left:50%!important;
- transform:translateX(-50%)!important;display:flex!important;align-items:center!important;
- gap:3px!important;padding:5px!important;border-radius:30px!important;
- background:rgba(40,45,54,.88)!important;color:#fff!important;
- font:600 13px/1.4 sans-serif!important;white-space:nowrap!important;}
-#h202-photo-modal .h202-photo-tools button{display:grid!important;place-items:center!important;
- flex:none!important;width:36px!important;height:34px!important;padding:0!important;
- color:#fff!important;border:0!important;border-radius:18px!important;
- background:transparent!important;font:600 22px/1 sans-serif!important;cursor:pointer!important;}
-#h202-photo-modal .h202-photo-tools .h202-photo-reset{width:58px!important;font:600 13px/1 sans-serif!important;}
+ cursor:pointer!important;}
+#h202-photo-modal .h202-photo-close .h202-close-icon{position:relative!important;display:block!important;
+ width:18px!important;height:18px!important;pointer-events:none!important;}
+#h202-photo-modal .h202-photo-close .h202-close-icon::before,
+#h202-photo-modal .h202-photo-close .h202-close-icon::after{content:''!important;position:absolute!important;
+ left:50%!important;top:50%!important;width:18px!important;height:2.4px!important;border-radius:999px!important;
+ background:#fff!important;transform-origin:center center!important;}
+#h202-photo-modal .h202-photo-close .h202-close-icon::before{transform:translate(-50%,-50%) rotate(45deg)!important;}
+#h202-photo-modal .h202-photo-close .h202-close-icon::after{transform:translate(-50%,-50%) rotate(-45deg)!important;}
 #h202-photo-modal button:focus-visible{outline:2px solid #fff!important;outline-offset:3px!important;}
 @media(prefers-reduced-motion:no-preference){#h202-photo-modal .h202-photo-large{transition:transform 80ms ease-out}}
 `;
@@ -279,13 +276,9 @@ function openHistoricalPhoto(m,bubble){
  image.alt=m.caption||'歴史資料';image.src=original.currentSrc||original.src;
  image.draggable=false;stage.append(image);
  const closeButton=document.createElement('button');closeButton.type='button';
- closeButton.className='h202-photo-close';closeButton.textContent='×';
+ closeButton.className='h202-photo-close';closeButton.innerHTML='<span class="h202-close-icon" aria-hidden="true"></span>';
  closeButton.setAttribute('aria-label','画像の拡大を閉じる');
- const tools=document.createElement('div');tools.className='h202-photo-tools';
- const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','縮小');
- const reset=document.createElement('button');reset.type='button';reset.className='h202-photo-reset';reset.textContent='100%';reset.setAttribute('aria-label','拡大率を100％に戻す');
- const plus=document.createElement('button');plus.type='button';plus.textContent='＋';plus.setAttribute('aria-label','拡大');
- tools.append(minus,reset,plus);modal.append(stage,closeButton,tools);
+ modal.append(stage,closeButton);
  const view={scale:1,x:0,y:0};const pointers=new Map();
  let pinch=null,lastTap=null,closed=false;
  const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
@@ -295,8 +288,6 @@ function openHistoricalPhoto(m,bubble){
   view.x=clamp(view.x,-maxX,maxX);view.y=clamp(view.y,-maxY,maxY);
   image.style.transform=`translate(${view.x}px,${view.y}px) scale(${view.scale})`;
   image.style.cursor=view.scale>1.01?'grab':'zoom-in';
-  reset.textContent=Math.round(view.scale*100)+'%';
-  minus.disabled=view.scale<=1.01;plus.disabled=view.scale>=4.99;
  }
  function changeScale(value,clientX=stage.clientWidth/2,clientY=stage.clientHeight/2){
   const next=clamp(value,1,5),ratio=next/view.scale;
@@ -314,12 +305,7 @@ function openHistoricalPhoto(m,bubble){
  }
  function onKey(e){
   if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();return;}
-  if(e.key==='Tab'){
-   const focusable=[closeButton,minus,reset,plus].filter(btn=>!btn.disabled);
-   const i=focusable.indexOf(document.activeElement);
-   if(e.shiftKey&&i<=0){e.preventDefault();focusable.at(-1).focus();}
-   else if(!e.shiftKey&&i===focusable.length-1){e.preventDefault();focusable[0].focus();}
-  }
+  if(e.key==='Tab'){e.preventDefault();closeButton.focus();}
   if(e.key==='+'||e.key==='='){e.preventDefault();changeScale(view.scale*1.3);}
   if(e.key==='-'){e.preventDefault();changeScale(view.scale/1.3);}
   if(e.key==='0'){e.preventDefault();changeScale(1);}
@@ -327,9 +313,6 @@ function openHistoricalPhoto(m,bubble){
  modal.addEventListener('keydown',onKey);
  closeButton.addEventListener('click',close);
  stage.addEventListener('click',e=>{if(e.target===stage)close()});
- reset.addEventListener('click',()=>changeScale(1));
- minus.addEventListener('click',()=>changeScale(view.scale/1.4));
- plus.addEventListener('click',()=>changeScale(view.scale*1.4));
  stage.addEventListener('wheel',e=>{e.preventDefault();changeScale(view.scale*Math.exp(-e.deltaY*.002),e.clientX,e.clientY)},{passive:false});
  function initPinch(){
   if(pointers.size<2){pinch=null;return}

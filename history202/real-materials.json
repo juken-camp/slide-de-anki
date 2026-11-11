@@ -4,7 +4,7 @@
     {
       "id": "authentic-2026-001",
       "chapter": 1,
-      "after": "h01-story-008",
+      "after": "h01-015",
       "caption": "ハンムラビ法典の石碑（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FCode_of_Hammurabi_Louvre_Museum.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Code_of_Hammurabi_Louvre_Museum.jpg",
@@ -20,7 +20,7 @@
     {
       "id": "authentic-2026-002",
       "chapter": 1,
-      "after": "h01-story-016",
+      "after": "h01-deep-02-2",
       "caption": "ロゼッタストーン（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FRosetta_Stone%2C_British_Museum.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosetta_Stone,_British_Museum.jpg",
@@ -47,7 +47,7 @@
     {
       "id": "authentic-2026-003",
       "chapter": 1,
-      "after": "h01-story-039",
+      "after": "h01-deep-05-2",
       "caption": "ギリシャ・パルテノン神殿（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FParthenon_on_Acropolis_in_Athens.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parthenon_on_Acropolis_in_Athens.jpg",
@@ -74,7 +74,7 @@
     {
       "id": "h01-real-01",
       "chapter": 1,
-      "after": "h01-story-016",
+      "after": "h01-018",
       "caption": "エジプト：ギザのピラミッド",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FPyramids_of_Giza_Egypt.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza_Egypt.png",
@@ -92,7 +92,7 @@
     {
       "id": "h01-real-02",
       "chapter": 1,
-      "after": "h01-story-024",
+      "after": "h01-021",
       "caption": "インダス：モヘンジョダロの大浴場跡",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGreat_Bath_of_Mohenjo-daro.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Bath_of_Mohenjo-daro.jpg",
@@ -120,7 +120,7 @@
     {
       "id": "authentic-2026-004",
       "chapter": 2,
-      "after": "h02-story-015",
+      "after": "h02-008",
       "caption": "吉野ヶ里遺跡の復元された弥生時代の建物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FYoshinogariDwellings.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:YoshinogariDwellings.jpg",
@@ -146,7 +146,7 @@
     {
       "id": "authentic-2026-005",
       "chapter": 2,
-      "after": "h02-story-022",
+      "after": "h02-013",
       "caption": "大仙陵古墳の航空写真（2007年撮影）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FNintokuTomb_Aerial_photograph_2007.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:NintokuTomb_Aerial_photograph_2007.jpg",
@@ -163,7 +163,7 @@
     {
       "id": "authentic-2026-035",
       "chapter": 2,
-      "after": "h02-story-015",
+      "after": "h02-deep-02-3",
       "caption": "吉野ヶ里遺跡の環濠集落の復元景観",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FYoshinogari_Ancient_Ruins_2008.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshinogari_Ancient_Ruins_2008.jpg",
@@ -189,7 +189,7 @@
     {
       "id": "h02-real-03",
       "chapter": 2,
-      "after": "h02-story-007",
+      "after": "h02-006",
       "caption": "縄文土器（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FJomon_Vessel_with_Flame-like_Ornamentation%2C_attributed_provenance_Umataka%2C_Nagaoka-shi%2C_Niigata%2C_Jomon_period%2C_3000-2000_BC_-_Tokyo_National_Museum_-_DSC05620.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jomon_Vessel_with_Flame-like_Ornamentation%2C_attributed_provenance_Umataka%2C_Nagaoka-shi%2C_Niigata%2C_Jomon_period%2C_3000-2000_BC_-_Tokyo_National_Museum_-_DSC05620.JPG",
@@ -207,7 +207,7 @@
     {
       "id": "h02-real-04",
       "chapter": 2,
-      "after": "h02-story-007",
+      "after": "h02-deep-01-3",
       "caption": "縄文時代の土偶（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FDogu-Jomon.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dogu-Jomon.jpg",
@@ -235,7 +235,7 @@
     {
       "id": "h02-real-05",
       "chapter": 2,
-      "after": "h02-story-015",
+      "after": "h02-008",
       "caption": "弥生時代の銅鐸（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FDotaku_TNM.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dotaku_TNM.jpg",
@@ -262,7 +262,7 @@
     {
       "id": "h02-real-06",
       "chapter": 2,
-      "after": "h02-story-022",
+      "after": "h02-013",
       "caption": "古墳時代の埴輪・挂甲の武人（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHaniwa_-_Warrior_in_Keiko_Armor.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Haniwa_-_Warrior_in_Keiko_Armor.jpg",
@@ -281,7 +281,7 @@
     {
       "id": "h03-real-32",
       "chapter": 3,
-      "after": "h03-story-022",
+      "after": "h03-deep-03-2",
       "caption": "藤原道長の自筆日記『御堂関白記』",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMichinaga_diary.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
@@ -308,7 +308,7 @@
     {
       "id": "wmc-hideyoshi",
       "chapter": 3,
-      "after": "h03-story-050",
+      "after": "h03-032",
       "caption": "豊臣秀吉像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyotomi_hideyoshi.jpg",
       "credit": "Wikimedia Commons / Kodaiji holdings",
@@ -335,7 +335,7 @@
     {
       "id": "wmc-nobunaga",
       "chapter": 3,
-      "after": "h03-story-043",
+      "after": "h03-030",
       "caption": "織田信長像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oda-Nobunaga.jpg",
       "credit": "Wikimedia Commons / Chokoji-held portrait",
@@ -362,7 +362,7 @@
     {
       "id": "wmc-shotoku",
       "chapter": 3,
-      "after": "h03-story-007",
+      "after": "h03-008",
       "caption": "聖徳太子の伝承像（後世の作品）",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shotoku_Taishi.jpg",
       "credit": "PHGCOM撮影／ギメ東洋美術館展示・CC BY-SA（Wikimedia Commons）",
@@ -390,7 +390,7 @@
     {
       "id": "wmc-yoritomo",
       "chapter": 3,
-      "after": "h03-story-028",
+      "after": "h03-022",
       "caption": "伝・源頼朝像（人物比定に諸説）",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Minamoto_no_Yoritomo.jpg",
       "credit": "Wikimedia Commons / Minamoto no Yoritomo category",
@@ -417,7 +417,7 @@
     {
       "id": "authentic-2026-036",
       "chapter": 4,
-      "after": "h04-story-044",
+      "after": "h04-023",
       "caption": "後醍醐天皇の肖像画（伝世作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Go-Daigo.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Daigo.jpg",
@@ -443,7 +443,7 @@
     {
       "id": "authentic-2026-006",
       "chapter": 5,
-      "after": "h05-story-015",
+      "after": "h05-005",
       "caption": "徳川家光の肖像画（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%85%89.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%85%89.jpg",
@@ -469,7 +469,7 @@
     {
       "id": "authentic-2026-007",
       "chapter": 5,
-      "after": "h05-story-023",
+      "after": "h05-011",
       "caption": "徳川綱吉の肖像画（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTsunyaoshi.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tsunyaoshi.jpg",
@@ -495,7 +495,7 @@
     {
       "id": "authentic-2026-008",
       "chapter": 5,
-      "after": "h05-story-015",
+      "after": "h05-005",
       "caption": "参勤交代を伝える大名行列の絵巻",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSankiko01.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sankiko01.jpg",
@@ -521,7 +521,7 @@
     {
       "id": "h05-real-27",
       "chapter": 5,
-      "after": "h05-story-007",
+      "after": "h05-003",
       "caption": "徳川家康（江戸時代の肖像画）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTokugawa_Ieyasu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu.jpg",
@@ -548,7 +548,7 @@
     {
       "id": "wmc-yoshimune",
       "chapter": 5,
-      "after": "h05-story-030",
+      "after": "h05-015",
       "caption": "徳川吉宗像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:TokugawaYoshimune.jpg",
       "credit": "Wikimedia Commons / public-domain artwork reproduction",
@@ -575,7 +575,7 @@
     {
       "id": "wmc-yoshinobu",
       "chapter": 5,
-      "after": "h05-story-037",
+      "after": "h05-017",
       "caption": "徳川慶喜の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Yoshinobu.jpg",
       "credit": "Wikimedia Commons / Ibaraki Prefectural Museum of History",
@@ -602,7 +602,7 @@
     {
       "id": "h06-real-28",
       "chapter": 6,
-      "after": "h06-story-023",
+      "after": "h06-deep-03-1",
       "caption": "坂本龍馬（幕末の本物の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSakamoto_Ryoma.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg",
@@ -629,7 +629,7 @@
     {
       "id": "wmc-iinaosuke",
       "chapter": 6,
-      "after": "h06-story-007",
+      "after": "h06-003",
       "caption": "井伊直弼像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ii_Naosuke.jpg",
       "credit": "Wikimedia Commons / Hikone Castle Museum",
@@ -656,7 +656,7 @@
     {
       "id": "wmc-itagaki",
       "chapter": 6,
-      "after": "h06-story-039",
+      "after": "h06-015",
       "caption": "板垣退助の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:ITAGAKI_Taisuke.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
@@ -683,7 +683,7 @@
     {
       "id": "wmc-okuma",
       "chapter": 6,
-      "after": "h06-story-046",
+      "after": "h06-018",
       "caption": "大隈重信の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:OKUMA_Shigenobu.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
@@ -710,7 +710,7 @@
     {
       "id": "wmc-saigo",
       "chapter": 6,
-      "after": "h06-story-031",
+      "after": "h06-012",
       "caption": "西郷隆盛の没後に制作された肖像版画",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saigo_Takamori.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
@@ -737,7 +737,7 @@
     {
       "id": "wmc-yoshidashoin",
       "chapter": 6,
-      "after": "h06-story-015",
+      "after": "h06-007",
       "caption": "吉田松陰像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_Shoin.jpg",
       "credit": "Wikimedia Commons / public-domain portrait",
@@ -764,7 +764,7 @@
     {
       "id": "h07-real-29",
       "chapter": 7,
-      "after": "h07-story-007",
+      "after": "h07-003",
       "caption": "伊藤博文（1900年の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FIt%C5%8D_Hirobumi.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:It%C5%8D_Hirobumi.jpg",
@@ -791,7 +791,7 @@
     {
       "id": "wmc-hara",
       "chapter": 7,
-      "after": "h07-story-015",
+      "after": "h07-007",
       "caption": "原敬の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hara_Takashi.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
@@ -818,7 +818,7 @@
     {
       "id": "wmc-inukai",
       "chapter": 7,
-      "after": "h07-story-023",
+      "after": "h07-009",
       "caption": "犬養毅の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inukai_Tsuyoshi.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
@@ -845,7 +845,7 @@
     {
       "id": "wmc-sato",
       "chapter": 7,
-      "after": "h07-story-037",
+      "after": "h07-017",
       "caption": "佐藤栄作の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eisaku_Sato.jpg",
       "credit": "Wikimedia Commons / Cabinet Public Affairs Office",
@@ -873,7 +873,7 @@
     {
       "id": "wmc-shigeru",
       "chapter": 7,
-      "after": "h07-story-030",
+      "after": "h07-015",
       "caption": "吉田茂の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_Shigeru.jpg",
       "credit": "Wikimedia Commons / public-domain portrait",
@@ -900,7 +900,7 @@
     {
       "id": "h08-real-33",
       "chapter": 8,
-      "after": "h08-story-016",
+      "after": "h08-005",
       "caption": "最澄の肖像画（平安時代・11世紀、一乗寺所蔵）",
       "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/%E6%9C%80%E6%BE%84%E5%83%8F_%E4%B8%80%E4%B9%97%E5%AF%BA%E8%94%B5_%E5%B9%B3%E5%AE%89%E6%99%82%E4%BB%A3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9C%80%E6%BE%84%E5%83%8F_%E4%B8%80%E4%B9%97%E5%AF%BA%E8%94%B5_%E5%B9%B3%E5%AE%89%E6%99%82%E4%BB%A3.jpg",
@@ -919,7 +919,7 @@
     {
       "id": "wmc-shinran",
       "chapter": 8,
-      "after": "h08-story-024",
+      "after": "h08-014",
       "caption": "親鸞の肖像画「鏡御影」（鎌倉時代・国宝）",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shinran_Shonin.jpg",
       "credit": "Wikimedia Commons／Shinran Shonin.jpg／Unknown authorUnknown author",
@@ -938,7 +938,7 @@
     {
       "id": "h09-real-07",
       "chapter": 9,
-      "after": "h09-story-015",
+      "after": "h09-007",
       "caption": "『解体新書』（1774年の原資料）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKaitaishinsho2-0003.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kaitaishinsho2-0003.jpg",
@@ -957,7 +957,7 @@
     {
       "id": "h09-real-08",
       "chapter": 9,
-      "after": "h09-story-023",
+      "after": "h09-009",
       "caption": "伊能図（渥美半島付近の実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FIno_Tadataka_map_%28daizu%2C%2C_Atsumi-hanto%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ino_Tadataka_map_%28daizu%2C%2C_Atsumi-hanto%29.jpg",
@@ -985,7 +985,7 @@
     {
       "id": "wmc-fukuzawa",
       "chapter": 9,
-      "after": "h09-story-031",
+      "after": "h09-014",
       "caption": "福沢諭吉の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fukuzawa_Yukichi.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
@@ -1012,7 +1012,7 @@
     {
       "id": "wmc-motoori",
       "chapter": 9,
-      "after": "h09-story-007",
+      "after": "h09-004",
       "caption": "本居宣長の自画像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Motoori_Norinaga.jpg",
       "credit": "Wikimedia Commons / Motoori Norinaga Memorial Museum",
@@ -1039,7 +1039,7 @@
     {
       "id": "wmc-yoshino",
       "chapter": 9,
-      "after": "h09-story-038",
+      "after": "h09-deep-05-2",
       "caption": "吉野作造の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshino_Sakuzo.jpg",
       "credit": "Wikimedia Commons / National Diet Library source",
@@ -1066,7 +1066,7 @@
     {
       "id": "authentic-2026-009",
       "chapter": 10,
-      "after": "h10-story-023",
+      "after": "h10-012",
       "caption": "鑑真和上坐像（実物の仏像）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGanjin_Toshodai-ji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ganjin_Toshodai-ji.jpg",
@@ -1092,7 +1092,7 @@
     {
       "id": "h10-real-30",
       "chapter": 10,
-      "after": "h10-story-031",
+      "after": "h10-014",
       "caption": "17世紀に日本で描かれたフランシスコ・ザビエルの肖像画（神戸市立博物館所蔵）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Franciscus_de_Xabier.jpg/1280px-Franciscus_de_Xabier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franciscus_de_Xabier.jpg",
@@ -1111,7 +1111,7 @@
     {
       "id": "wmc-lincoln",
       "chapter": 10,
-      "after": "h10-story-046",
+      "after": "h10-019",
       "caption": "リンカーンの肖像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln.jpg",
       "credit": "Wikimedia Commons / public-domain portrait",
@@ -1138,7 +1138,7 @@
     {
       "id": "wmc-luther",
       "chapter": 10,
-      "after": "h10-story-015",
+      "after": "h10-009",
       "caption": "マルティン・ルターの肖像",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martin_Luther.jpg",
       "credit": "Wikimedia Commons / public-domain portrait",
@@ -1155,7 +1155,7 @@
     {
       "id": "wmc-roosevelt",
       "chapter": 10,
-      "after": "h10-story-053",
+      "after": "h10-021",
       "caption": "フランクリン・ルーズベルト大統領（1933年の写真）",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franklin_Delano_Roosevelt%2C_Portrait_1933.jpg",
       "credit": "Elias Goldensky／1933年12月27日撮影・米国議会図書館（Wikimedia Commons）",
@@ -1181,7 +1181,7 @@
     {
       "id": "wmc-sunyatsen",
       "chapter": 10,
-      "after": "h10-story-038",
+      "after": "h10-deep-05-2",
       "caption": "孫文の写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sun_Yat-Sen.jpg",
       "credit": "Wikimedia Commons / public-domain photo",
@@ -1208,7 +1208,7 @@
     {
       "id": "wmc-wilson",
       "chapter": 10,
-      "after": "h10-story-058",
+      "after": "h10-022",
       "caption": "ウッドロウ・ウィルソンの写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WILSON,_WOODROW_LCCN2016857377.jpg",
       "credit": "Wikimedia Commons / Library of Congress",
@@ -1235,7 +1235,7 @@
     {
       "id": "authentic-2026-037",
       "chapter": 11,
-      "after": "h11-story-029",
+      "after": "h11-013",
       "caption": "御成敗式目の17世紀の写本",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGoseibai_Shikimoku_Toyo_Bunko.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goseibai_Shikimoku_Toyo_Bunko.jpg",
@@ -1251,7 +1251,7 @@
     {
       "id": "h12-real-31",
       "chapter": 12,
-      "after": "h12-story-032",
+      "after": "h12-014",
       "caption": "1889年の大日本帝国憲法発布式（当時の錦絵）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Adachi_Gink%C5%8D_%281889%29_View_of_the_Issuance_of_the_State_Constitution_in_the_State_Chamber_of_the_New_Imperial_Palace.jpg/1280px-Adachi_Gink%C5%8D_%281889%29_View_of_the_Issuance_of_the_State_Constitution_in_the_State_Chamber_of_the_New_Imperial_Palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adachi_Gink%C5%8D_(1889)_View_of_the_Issuance_of_the_State_Constitution_in_the_State_Chamber_of_the_New_Imperial_Palace.jpg",
@@ -1272,7 +1272,7 @@
     {
       "id": "authentic-2026-038",
       "chapter": 13,
-      "after": "h13-story-015",
+      "after": "h13-005",
       "caption": "白河上皇・白河法皇の肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Shirakawa.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Shirakawa.jpg",
@@ -1298,7 +1298,7 @@
     {
       "id": "authentic-2026-010",
       "chapter": 14,
-      "after": "h14-story-015",
+      "after": "h14-007",
       "caption": "田沼意次の肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F%E7%94%B0%E6%B2%BC%E6%84%8F%E6%AC%A1%E3%81%AE%E8%82%96%E5%83%8F%E7%94%BB.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%94%B0%E6%B2%BC%E6%84%8F%E6%AC%A1%E3%81%AE%E8%82%96%E5%83%8F%E7%94%BB.jpg",
@@ -1324,7 +1324,7 @@
     {
       "id": "authentic-2026-011",
       "chapter": 14,
-      "after": "h14-story-023",
+      "after": "h14-009",
       "caption": "松平定信の肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F%E6%9D%BE%E5%B9%B3%E5%AE%9A%E4%BF%A1.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E5%B9%B3%E5%AE%9A%E4%BF%A1.jpg",
@@ -1350,7 +1350,7 @@
     {
       "id": "authentic-2026-039",
       "chapter": 15,
-      "after": "h15-story-035",
+      "after": "h15-013",
       "caption": "明治時代の地券（地租改正の資料）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FChiken_akita_face.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
@@ -1368,7 +1368,7 @@
     {
       "id": "authentic-2026-012",
       "chapter": 16,
-      "after": "h16-story-015",
+      "after": "h16-012",
       "caption": "岩倉使節団（1872年の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FIwakura_mission.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iwakura_mission.jpg",
@@ -1386,7 +1386,7 @@
     {
       "id": "authentic-2026-013",
       "chapter": 16,
-      "after": "h16-story-007",
+      "after": "h16-002",
       "caption": "五箇条の御誓文を載せた当時の太政官日誌",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F5jonisshi.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:5jonisshi.jpg",
@@ -1402,7 +1402,7 @@
     {
       "id": "authentic-2026-014",
       "chapter": 16,
-      "after": "h16-story-041",
+      "after": "h16-deep-06-2",
       "caption": "1899年の旧新橋駅の写真",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FShimbashi_Station_1899.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_1899.jpg",
@@ -1418,7 +1418,7 @@
     {
       "id": "authentic-2026-015",
       "chapter": 16,
-      "after": "h16-story-023",
+      "after": "h16-016",
       "caption": "新橋〜横浜鉄道開通を描いた絵",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FOpening_of_the_Tokyo-Yokohama_Railway_by_Omura_Taiun_%28Meiji_Memorial_Picture_Gallery%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Opening_of_the_Tokyo-Yokohama_Railway_by_Omura_Taiun_(Meiji_Memorial_Picture_Gallery).jpg",
@@ -1444,7 +1444,7 @@
     {
       "id": "authentic-2026-034",
       "chapter": 16,
-      "after": "h16-story-023",
+      "after": "h16-016",
       "caption": "19世紀後半の新橋停車場・錦絵",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FShimbashi_Station_Hiroshige_III.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_Hiroshige_III.jpg",
@@ -1470,7 +1470,7 @@
     {
       "id": "h16-real-09",
       "chapter": 16,
-      "after": "h16-story-062",
+      "after": "h16-deep-09-2",
       "caption": "明治の富岡製糸場（当時の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTomioka_Silk_Mill.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomioka_Silk_Mill.JPG",
@@ -1497,7 +1497,7 @@
     {
       "id": "h16-real-10",
       "chapter": 16,
-      "after": "h16-story-062",
+      "after": "h16-deep-09-2",
       "caption": "富岡製糸場内部（当時の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FInside_Tomioka_Silk_Mill.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inside_Tomioka_Silk_Mill.JPG",
@@ -1524,7 +1524,7 @@
     {
       "id": "h17-real-11",
       "chapter": 17,
-      "after": "h17-story-049",
+      "after": "h17-009",
       "caption": "日本国憲法原本（1946年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FNihon_Kenpo01.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo01.jpg",
@@ -1542,7 +1542,7 @@
     {
       "id": "authentic-2026-016",
       "chapter": 18,
-      "after": "h18-story-044",
+      "after": "h18-deep-06-2",
       "caption": "戊辰戦争の上野戦争（1868年）を描いた当時の錦絵",
       "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Battle_of_Ueno_4_July_1868.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Ueno_4_July_1868.jpg",
@@ -1561,7 +1561,7 @@
     {
       "id": "h18-real-12",
       "chapter": 18,
-      "after": "h18-story-036",
+      "after": "h18-016",
       "caption": "関ヶ原合戦図屏風（実際の歴史絵画）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FBattle_of_Sekigahara_folding_screen.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Sekigahara_folding_screen.jpg",
@@ -1588,7 +1588,7 @@
     {
       "id": "h18-real-34",
       "chapter": 18,
-      "after": "h18-story-050",
+      "after": "h18-019",
       "caption": "西南戦争を描く1877年の風刺画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FJapanPunchApril1877.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:JapanPunchApril1877.jpg",
@@ -1615,7 +1615,7 @@
     {
       "id": "authentic-2026-017",
       "chapter": 19,
-      "after": "h19-story-038",
+      "after": "h19-014",
       "caption": "大塩平八郎の乱を描いた19世紀の絵",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FOshi_no_ran1.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oshi_no_ran1.jpg",
@@ -1643,7 +1643,7 @@
     {
       "id": "authentic-2026-018",
       "chapter": 19,
-      "after": "h19-story-047",
+      "after": "h19-016",
       "caption": "米騒動が全国に広がったことを伝える新聞",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F%E7%B1%B3%E9%A8%92%E5%8B%95%E5%85%A8%E5%9B%BD%E6%B3%A2%E5%8F%8A%E5%A0%B1%E9%81%93%E8%A8%98%E4%BA%8B.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%B1%B3%E9%A8%92%E5%8B%95%E5%85%A8%E5%9B%BD%E6%B3%A2%E5%8F%8A%E5%A0%B1%E9%81%93%E8%A8%98%E4%BA%8B.jpg",
@@ -1669,7 +1669,7 @@
     {
       "id": "authentic-2026-019",
       "chapter": 20,
-      "after": "h20-story-031",
+      "after": "h20-012",
       "caption": "真珠湾攻撃で燃える戦艦アリゾナ（1941年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FUSS_Arizona_%28BB-39%29_burning_at_Pearl_Harbor_1941.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
@@ -1685,7 +1685,7 @@
     {
       "id": "wmc-sinojapanese",
       "chapter": 20,
-      "after": "h20-story-007",
+      "after": "h20-003",
       "caption": "日清戦争を伝える当時の図像（写真か挿絵か要確認）",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sino_Japanese_war_1894.jpg",
       "credit": "Wikimedia Commons / public-domain photograph",
@@ -1713,7 +1713,7 @@
     {
       "id": "authentic-2026-020",
       "chapter": 21,
-      "after": "h21-story-023",
+      "after": "h21-007",
       "caption": "第一次世界大戦の塹壕（1916年の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FThe_Battle_of_the_Somme%2C_July-november_1916_Q1621.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Battle_of_the_Somme,_July-november_1916_Q1621.jpg",
@@ -1739,7 +1739,7 @@
     {
       "id": "h21-real-35",
       "chapter": 21,
-      "after": "h21-story-015",
+      "after": "h21-005",
       "caption": "アメリカ南北戦争の当時の戦場スケッチ",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FThe_battle_of_Gettysburg_LCCN2004661437.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_battle_of_Gettysburg_LCCN2004661437.jpg",
@@ -1766,7 +1766,7 @@
     {
       "id": "authentic-2026-021",
       "chapter": 22,
-      "after": "h22-story-024",
+      "after": "h22-010",
       "caption": "辛亥革命の武昌蜂起の革命軍（1911年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FRevolutionary_soldiers_at_Wuchang.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Revolutionary_soldiers_at_Wuchang.jpg",
@@ -1792,7 +1792,7 @@
     {
       "id": "h22-real-36",
       "chapter": 22,
-      "after": "h22-story-016",
+      "after": "h22-005",
       "caption": "1789年バスティーユ襲撃の当時の版画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FStorming_the_bastille.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Storming_the_bastille.jpg",
@@ -1819,7 +1819,7 @@
     {
       "id": "h22-real-37",
       "chapter": 22,
-      "after": "h22-story-031",
+      "after": "h22-014",
       "caption": "1917年、冬宮占拠後のペトログラード（ロシア革命当時の写真）",
       "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/After_the_capture_of_the_Winter_Palace._Petrograd._Morning_on_26_October_1917.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:After_the_capture_of_the_Winter_Palace._Petrograd._Morning_on_26_October_1917.jpg",
@@ -1838,7 +1838,7 @@
     {
       "id": "authentic-2026-022",
       "chapter": 23,
-      "after": "h23-story-022",
+      "after": "h23-011",
       "caption": "南蛮貿易の様子を描いた南蛮屏風",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FNamban_Screen_-_Google_Art_Project.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Namban_Screen_-_Google_Art_Project.jpg",
@@ -1866,7 +1866,7 @@
     {
       "id": "authentic-2026-023",
       "chapter": 23,
-      "after": "h23-story-029",
+      "after": "h23-deep-04-3",
       "caption": "長崎・出島の約1800年の絵巻",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FDejima%2C_the_Dutch_Trading_Station_at_Nagasaki_handscroll%2C_about_1800.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dejima,_the_Dutch_Trading_Station_at_Nagasaki_handscroll,_about_1800.jpg",
@@ -1892,7 +1892,7 @@
     {
       "id": "h23-real-13",
       "chapter": 23,
-      "after": "h23-story-029",
+      "after": "h23-deep-04-2",
       "caption": "朱印船の当時の絵（1634年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FJapanese_Red_Seal_Ship_Shuinsen_1634.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japanese_Red_Seal_Ship_Shuinsen_1634.png",
@@ -1919,7 +1919,7 @@
     {
       "id": "h23-real-14",
       "chapter": 23,
-      "after": "h23-story-022",
+      "after": "h23-011",
       "caption": "長崎・出島を描いた1820年ごろの絵",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FDejimaInNagasakiBay.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:DejimaInNagasakiBay.jpg",
@@ -1937,7 +1937,7 @@
     {
       "id": "h24-real-15",
       "chapter": 24,
-      "after": "h24-story-007",
+      "after": "h24-003",
       "caption": "日米和親条約の頃の開国を描いた版画（関連作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F1853_shimoda_01.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
@@ -1966,7 +1966,7 @@
     {
       "id": "h24-real-38",
       "chapter": 24,
-      "after": "h24-story-023",
+      "after": "h24-012",
       "caption": "下関条約・清側署名本（1895年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTreaty_of_Shimonoseki_Qing.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Shimonoseki_Qing.jpg",
@@ -1993,7 +1993,7 @@
     {
       "id": "wmc-portsmouth",
       "chapter": 24,
-      "after": "h24-story-030",
+      "after": "h24-014",
       "caption": "ポーツマス条約の会議写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Portsmouth.jpg",
       "credit": "Wikimedia Commons / P. F. Collier & Son",
@@ -2010,7 +2010,7 @@
     {
       "id": "wmc-securitytreaty",
       "chapter": 24,
-      "after": "h24-story-042",
+      "after": "h24-deep-06-3",
       "caption": "1960年の新日米安全保障条約の調印写真",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Signing_of_Mutual_Cooperation_Treaty_with_Japan,_East_Room_of_the_White_House.jpg",
       "credit": "Wikimedia Commons / official U.S. government photo",
@@ -2037,7 +2037,7 @@
     {
       "id": "wmc-anglojapanese",
       "chapter": 25,
-      "after": "h25-story-023",
+      "after": "h25-012",
       "caption": "日英同盟の資料",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anglo_Japanese_Alliance_30_January_1902.jpg",
       "credit": "Wikimedia Commons / Anglo-Japanese Alliance category",
@@ -2065,7 +2065,7 @@
     {
       "id": "wmc-koreaannex",
       "chapter": 25,
-      "after": "h25-story-030",
+      "after": "h25-014",
       "caption": "韓国併合条約の原本",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japan%E2%80%93Korea_Annexation_Treaty_1.jpg",
       "credit": "Wikimedia Commons / National Archives of Japan via JACAR",
@@ -2092,7 +2092,7 @@
     {
       "id": "authentic-2026-040",
       "chapter": 26,
-      "after": "h26-story-007",
+      "after": "h26-001",
       "caption": "秦の兵馬俑（実物の発掘展示）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTerracotta_army_xian.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Terracotta_army_xian.jpg",
@@ -2108,7 +2108,7 @@
     {
       "id": "h26-real-16",
       "chapter": 26,
-      "after": "h26-story-014",
+      "after": "h26-006",
       "caption": "金印「漢委奴国王」の印面資料",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKing_of_Na_gold_seal_face_intaglio.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:King_of_Na_gold_seal_face_intaglio.png",
@@ -2135,7 +2135,7 @@
     {
       "id": "authentic-2026-024",
       "chapter": 27,
-      "after": "h27-story-014",
+      "after": "h27-005",
       "caption": "奈良・正倉院の実物写真",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FShoso-in.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shoso-in.jpg",
@@ -2162,7 +2162,7 @@
     {
       "id": "authentic-2026-025",
       "chapter": 27,
-      "after": "h27-story-014",
+      "after": "h27-deep-02-2",
       "caption": "興福寺の阿修羅像（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FASURA_Kohfukuji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:ASURA_Kohfukuji.jpg",
@@ -2188,7 +2188,7 @@
     {
       "id": "authentic-2026-026",
       "chapter": 27,
-      "after": "h27-story-028",
+      "after": "h27-009",
       "caption": "東大寺南大門の金剛力士像（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTodaiji_Monastery_Kongo_Rikishi_of_Nandaimon_II_%28410%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Todaiji_Monastery_Kongo_Rikishi_of_Nandaimon_II_(410).jpg",
@@ -2214,7 +2214,7 @@
     {
       "id": "authentic-2026-027",
       "chapter": 27,
-      "after": "h27-story-042",
+      "after": "h27-deep-06-2",
       "caption": "雪舟『天橋立図』（実物作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSesshu_-_View_of_Ama-no-Hashidate.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesshu_-_View_of_Ama-no-Hashidate.jpg",
@@ -2240,7 +2240,7 @@
     {
       "id": "authentic-2026-028",
       "chapter": 27,
-      "after": "h27-story-049",
+      "after": "h27-016",
       "caption": "狩野永徳『唐獅子図屏風』（実物作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKano_Eitoku_002.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kano_Eitoku_002.jpg",
@@ -2266,7 +2266,7 @@
     {
       "id": "authentic-2026-029",
       "chapter": 27,
-      "after": "h27-story-057",
+      "after": "h27-deep-08-2",
       "caption": "尾形光琳『風神雷神図屏風』（実物作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKorin_Fujin_Raijin.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Korin_Fujin_Raijin.jpg",
@@ -2282,7 +2282,7 @@
     {
       "id": "authentic-2026-030",
       "chapter": 27,
-      "after": "h27-story-057",
+      "after": "h27-018",
       "caption": "菱川師宣『見返り美人図』（実物作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHishikawa_Moronobu_-_Beauty_Looking_Back_-_Google_Art_Project.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hishikawa_Moronobu_-_Beauty_Looking_Back_-_Google_Art_Project.jpg",
@@ -2308,7 +2308,7 @@
     {
       "id": "authentic-2026-031",
       "chapter": 27,
-      "after": "h27-story-064",
+      "after": "h27-019",
       "caption": "歌川広重『東海道五十三次 日本橋』（実物作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHiroshige01_nihonbashi.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiroshige01_nihonbashi.jpg",
@@ -2334,7 +2334,7 @@
     {
       "id": "authentic-2026-032",
       "chapter": 27,
-      "after": "h27-story-064",
+      "after": "h27-deep-09-2",
       "caption": "葛飾北斎『神奈川沖浪裏』（1830年ごろの実物浮世絵を複製した画像）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FThe_Great_Wave_off_Kanagawa.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Great_Wave_off_Kanagawa.png",
@@ -2351,7 +2351,7 @@
     {
       "id": "h27-real-17",
       "chapter": 27,
-      "after": "h27-story-007",
+      "after": "h27-003",
       "caption": "法隆寺の金堂と五重塔（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHoryu-ji%2C_November_2016.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyu-ji%2C_November_2016.jpg",
@@ -2379,7 +2379,7 @@
     {
       "id": "h27-real-18",
       "chapter": 27,
-      "after": "h27-story-014",
+      "after": "h27-deep-02-3",
       "caption": "東大寺大仏殿（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTodai-ji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Todai-ji.jpg",
@@ -2407,7 +2407,7 @@
     {
       "id": "h27-real-19",
       "chapter": 27,
-      "after": "h27-story-014",
+      "after": "h27-deep-02-2",
       "caption": "東大寺の大仏（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGreat_Buddha_at_Todaiji%2C_Nara.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Buddha_at_Todaiji%2C_Nara.jpg",
@@ -2435,7 +2435,7 @@
     {
       "id": "h27-real-20",
       "chapter": 27,
-      "after": "h27-story-021",
+      "after": "h27-deep-03-2",
       "caption": "『源氏物語絵巻』の実物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGENJI-monogatari-emaki-YADORIGI.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:GENJI-monogatari-emaki-YADORIGI.jpg",
@@ -2462,7 +2462,7 @@
     {
       "id": "h27-real-21",
       "chapter": 27,
-      "after": "h27-story-028",
+      "after": "h27-deep-04-2",
       "caption": "『蒙古襲来絵詞』の実物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FM%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
@@ -2489,7 +2489,7 @@
     {
       "id": "h27-real-22",
       "chapter": 27,
-      "after": "h27-story-035",
+      "after": "h27-011",
       "caption": "現在の金閣（1955年に再建された建物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKinkaku-ji_1.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kinkaku-ji_1.jpg",
@@ -2518,7 +2518,7 @@
     {
       "id": "h27-real-23",
       "chapter": 27,
-      "after": "h27-story-042",
+      "after": "h27-012",
       "caption": "銀閣（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGinkakuji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ginkakuji.jpg",
@@ -2545,7 +2545,7 @@
     {
       "id": "h27-real-24",
       "chapter": 27,
-      "after": "h27-story-064",
+      "after": "h27-deep-09-3",
       "caption": "葛飾北斎『神奈川沖浪裏』の実物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHokusai-_Kanagawa.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hokusai-_Kanagawa.jpg",
@@ -2572,7 +2572,7 @@
     {
       "id": "authentic-2026-041",
       "chapter": 28,
-      "after": "h28-story-013",
+      "after": "h28-008",
       "caption": "北条泰時の肖像画（後世に伝わる図）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FH%C5%8Dj%C5%8D_Yasutoki.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:H%C5%8Dj%C5%8D_Yasutoki.jpg",
@@ -2598,7 +2598,7 @@
     {
       "id": "h29-real-25",
       "chapter": 29,
-      "after": "h29-story-027",
+      "after": "h29-003",
       "caption": "アメリカ独立宣言（1776年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FUnited_States_Declaration_of_Independence.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg",
@@ -2625,7 +2625,7 @@
     {
       "id": "h29-real-26",
       "chapter": 29,
-      "after": "h29-story-035",
+      "after": "h29-005",
       "caption": "フランス人権宣言（1789年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FDeclaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg",
@@ -2652,7 +2652,7 @@
     {
       "id": "h30-real-39",
       "chapter": 30,
-      "after": "h30-story-046",
+      "after": "h30-020",
       "caption": "広島の原爆ドーム（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHiroshima_Peace_Memorial.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial.jpg",
@@ -2680,7 +2680,7 @@
     {
       "id": "authentic-2026-033",
       "chapter": 31,
-      "after": "h31-story-007",
+      "after": "h31-003",
       "caption": "1919年2月の朝鮮独立宣言資料",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FDeclaration_of_Independence_of_Korea_%28February_1919%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_of_Korea_(February_1919).jpg",
@@ -2706,7 +2706,7 @@
     {
       "id": "wmc-feb26",
       "chapter": 31,
-      "after": "h31-story-027",
+      "after": "h31-012",
       "caption": "二・二六事件の反乱部隊",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Outbreak_of_the_February_26th_Incident.jpg",
       "credit": "Wikimedia Commons / public-domain photo",
@@ -2733,7 +2733,7 @@
     {
       "id": "wmc-mayfourth",
       "chapter": 31,
-      "after": "h31-story-015",
+      "after": "h31-005",
       "caption": "五四運動の学生デモ",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_students_protesting_the_Treaty_of_Versailles_(May_4,_1919).jpg",
       "credit": "Wikimedia Commons / May Fourth Movement category",
@@ -2760,7 +2760,7 @@
     {
       "id": "authentic-2026-continued-042",
       "chapter": 1,
-      "after": "h01-story-008",
+      "after": "h01-013",
       "caption": "メソポタミアのくさび形文字の粘土板（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSumerian_Cuneiform_Clay_Tablet_%2828008146640%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sumerian_Cuneiform_Clay_Tablet_(28008146640).jpg",
@@ -2777,7 +2777,7 @@
     {
       "id": "authentic-2026-continued-043",
       "chapter": 1,
-      "after": "h01-story-008",
+      "after": "h01-013",
       "caption": "ウルのジッグラト遺跡",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FZiggurate_of_Ur-_Iraq.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ziggurate_of_Ur-_Iraq.jpg",
@@ -2804,7 +2804,7 @@
     {
       "id": "authentic-2026-continued-044",
       "chapter": 1,
-      "after": "h01-story-024",
+      "after": "h01-021",
       "caption": "インダス文明の動物模様の印章（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FClevelandart_1964.104.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clevelandart_1964.104.jpg",
@@ -2821,7 +2821,7 @@
     {
       "id": "authentic-2026-continued-045",
       "chapter": 1,
-      "after": "h01-story-039",
+      "after": "h01-031",
       "caption": "古代ギリシャの劇場の遺跡",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTheatre_of_Dionysus_Acropolis_Athens_Greece.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Theatre_of_Dionysus_Acropolis_Athens_Greece.jpg",
@@ -2838,7 +2838,7 @@
     {
       "id": "authentic-2026-continued-046",
       "chapter": 2,
-      "after": "h02-story-007",
+      "after": "h02-006",
       "caption": "遮光器土偶（縄文時代の実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FClay_statue%2C_late_Jomon_period.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clay_statue,_late_Jomon_period.jpg",
@@ -2865,7 +2865,7 @@
     {
       "id": "authentic-2026-continued-047",
       "chapter": 2,
-      "after": "h02-story-038",
+      "after": "h02-017",
       "caption": "和同開珎の銅銭（奈良時代の実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FWadokaichin_copper_coin.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wadokaichin_copper_coin.jpg",
@@ -2892,7 +2892,7 @@
     {
       "id": "authentic-2026-continued-048",
       "chapter": 2,
-      "after": "h02-story-022",
+      "after": "h02-013",
       "caption": "古墳から出た三角縁神獣鏡（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FBronze_mirror_excavated_from_the_Akamon-ue_Kofun.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bronze_mirror_excavated_from_the_Akamon-ue_Kofun.jpg",
@@ -2909,7 +2909,7 @@
     {
       "id": "authentic-2026-continued-049",
       "chapter": 9,
-      "after": "h09-story-031",
+      "after": "h09-014",
       "caption": "『学問のすゝめ』初版本の第1ページ（1872年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGakumon-no-susume.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gakumon-no-susume.jpg",
@@ -2935,7 +2935,7 @@
     {
       "id": "authentic-2026-continued-050",
       "chapter": 17,
-      "after": "h17-story-007",
+      "after": "h17-005",
       "caption": "極東国際軍事裁判（東京裁判）の法廷写真",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FIMTFE_court_chamber.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:IMTFE_court_chamber.jpg",
@@ -2961,7 +2961,7 @@
     {
       "id": "authentic-2026-continued-051",
       "chapter": 17,
-      "after": "h17-story-063",
+      "after": "h17-014",
       "caption": "1946年、初めて選ばれた女性の国会議員",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FFirst_Japanese_Congresswomen.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:First_Japanese_Congresswomen.jpg",
@@ -2987,7 +2987,7 @@
     {
       "id": "authentic-2026-continued-052",
       "chapter": 17,
-      "after": "h17-story-049",
+      "after": "h17-009",
       "caption": "日本国憲法原本の大臣副署（1946年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FNihon_Kenpo02.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nihon_Kenpo02.jpg",
@@ -3013,7 +3013,7 @@
     {
       "id": "authentic-2026-continued-053",
       "chapter": 17,
-      "after": "h17-story-068",
+      "after": "h17-021",
       "caption": "1890年の教育勅語の書面",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FImperial_Rescript_on_Education.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imperial_Rescript_on_Education.jpg",
@@ -3039,7 +3039,7 @@
     {
       "id": "authentic-2026-continued-054",
       "chapter": 18,
-      "after": "h18-story-015",
+      "after": "h18-005",
       "caption": "平治物語絵巻・三条殿への夜討ち",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHeiji_Monogatari_Emaki_-_Sanjo_scroll_part_1.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heiji_Monogatari_Emaki_-_Sanjo_scroll_part_1.jpg",
@@ -3065,7 +3065,7 @@
     {
       "id": "authentic-2026-continued-055",
       "chapter": 19,
-      "after": "h19-story-007",
+      "after": "h19-deep-01-1",
       "caption": "正長の土一揆を伝える柳生の徳政碑文（拓本）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FRubbing_of_Nara_Yagyu_Hoso_Jizo_Tokusei-Hibun.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rubbing_of_Nara_Yagyu_Hoso_Jizo_Tokusei-Hibun.jpg",
@@ -3091,7 +3091,7 @@
     {
       "id": "authentic-2026-continued-056",
       "chapter": 19,
-      "after": "h19-story-015",
+      "after": "h19-005",
       "caption": "山城の国一揆の話し合いが行われた平等院（現在の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FByodoin-PhoenixHall-M1247.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Byodoin-PhoenixHall-M1247.jpg",
@@ -3117,7 +3117,7 @@
     {
       "id": "authentic-2026-continued-057",
       "chapter": 19,
-      "after": "h19-story-030",
+      "after": "h19-012",
       "caption": "島原・天草一揆で原城を攻める様子を描いた17世紀の絵図",
       "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Siege_of_Hara_castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Siege_of_Hara_castle.jpg",
@@ -3136,7 +3136,7 @@
     {
       "id": "authentic-2026-continued-058",
       "chapter": 19,
-      "after": "h19-story-022",
+      "after": "h19-010",
       "caption": "長島一向一揆の戦いを描いた錦絵",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FBattle_of_Nagashima.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Nagashima.jpg",
@@ -3164,7 +3164,7 @@
     {
       "id": "authentic-2026-continued-059",
       "chapter": 20,
-      "after": "h20-story-023",
+      "after": "h20-010",
       "caption": "1937年上海で戦う日本軍の写真（日中戦争）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FJapanesesoldiersshanghai.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japanesesoldiersshanghai.jpg",
@@ -3192,7 +3192,7 @@
     {
       "id": "authentic-2026-continued-060",
       "chapter": 21,
-      "after": "h21-story-030",
+      "after": "h21-deep-04-2",
       "caption": "沖縄戦のあと、収容施設で暮らす住民（1945年7月の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FA_woman_and_children_of_the_Oura_Bay_internment_camp_in_Henoko.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_woman_and_children_of_the_Oura_Bay_internment_camp_in_Henoko.png",
@@ -3222,7 +3222,7 @@
     {
       "id": "authentic-2026-continued-061",
       "chapter": 20,
-      "after": "h20-story-031",
+      "after": "h20-013",
       "caption": "日本の降伏文書（1945年9月2日）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FInstrument_of_surrender_Japan.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Instrument_of_surrender_Japan.jpg",
@@ -3248,7 +3248,7 @@
     {
       "id": "authentic-2026-continued-062",
       "chapter": 20,
-      "after": "h20-story-031",
+      "after": "h20-012",
       "caption": "重光葵が降伏文書に署名する場面",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMamoru_Shigemitsu_signs_the_Instrument_of_Surrender%2C_officially_ending_the_Second_World_War.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mamoru_Shigemitsu_signs_the_Instrument_of_Surrender,_officially_ending_the_Second_World_War.jpg",
@@ -3275,7 +3275,7 @@
     {
       "id": "authentic-2026-continued-063",
       "chapter": 21,
-      "after": "h21-story-007",
+      "after": "h21-deep-01-1",
       "caption": "アヘン戦争後に結ばれた南京条約の原本",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F%E5%8D%97%E4%BA%AC%E6%A2%9D%E7%B4%84%E4%B8%AD%E8%8B%B1%E6%96%87%E5%8E%9F%E6%9C%AC_%E8%8B%B1%E6%96%87%E7%AC%AC1%E6%A2%9D_Treaty_of_Nanking_EN_Article1.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8D%97%E4%BA%AC%E6%A2%9D%E7%B4%84%E4%B8%AD%E8%8B%B1%E6%96%87%E5%8E%9F%E6%9C%AC_%E8%8B%B1%E6%96%87%E7%AC%AC1%E6%A2%9D_Treaty_of_Nanking_EN_Article1.png",
@@ -3292,7 +3292,7 @@
     {
       "id": "authentic-2026-continued-064",
       "chapter": 21,
-      "after": "h21-story-015",
+      "after": "h21-005",
       "caption": "アメリカ南北戦争・ゲティスバーグの戦場写真",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FBattle_of_Gettysburg.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Gettysburg.jpg",
@@ -3318,7 +3318,7 @@
     {
       "id": "authentic-2026-continued-065",
       "chapter": 21,
-      "after": "h21-story-023",
+      "after": "h21-007",
       "caption": "第一次世界大戦の休戦協定後の鉄道車両",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FArmisticetrain.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Armisticetrain.jpg",
@@ -3344,7 +3344,7 @@
     {
       "id": "authentic-2026-continued-066",
       "chapter": 21,
-      "after": "h21-story-036",
+      "after": "h21-014",
       "caption": "朝鮮戦争の避難民（1951年1月）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKoreanWarRefugees.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:KoreanWarRefugees.jpg",
@@ -3370,7 +3370,7 @@
     {
       "id": "authentic-2026-continued-067",
       "chapter": 22,
-      "after": "h22-story-007",
+      "after": "h22-deep-01-1",
       "caption": "イギリスの権利章典（1689年の文書）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEnglish_Bill_of_Rights_of_1689.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:English_Bill_of_Rights_of_1689.jpg",
@@ -3396,7 +3396,7 @@
     {
       "id": "authentic-2026-continued-068",
       "chapter": 22,
-      "after": "h22-story-016",
+      "after": "h22-005",
       "caption": "テニスコートの誓いを描いた歴史画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSerment_du_Jeu_de_Paume_-_Jacques-Louis_David.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serment_du_Jeu_de_Paume_-_Jacques-Louis_David.jpg",
@@ -3422,7 +3422,7 @@
     {
       "id": "authentic-2026-continued-069",
       "chapter": 23,
-      "after": "h23-story-029",
+      "after": "h23-013",
       "caption": "徳川家康の朱印状（1613年の原資料）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FBodleian_Library_MS._Jap._b.2_Shuinjo.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bodleian_Library_MS._Jap._b.2_Shuinjo.jpg",
@@ -3449,7 +3449,7 @@
     {
       "id": "authentic-2026-continued-070",
       "chapter": 24,
-      "after": "h24-story-023",
+      "after": "h24-012",
       "caption": "下関条約の日本側批准本（1895年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTreaty_of_Shimonoseki_Nippon_tenn%C5%8D.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Shimonoseki_Nippon_tenn%C5%8D.jpg",
@@ -3475,7 +3475,7 @@
     {
       "id": "authentic-2026-continued-071",
       "chapter": 24,
-      "after": "h24-story-035",
+      "after": "h24-016",
       "caption": "吉田茂が平和条約に署名（1951年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FYoshida_signs_San_Francisco_Peace_Treaty.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_signs_San_Francisco_Peace_Treaty.jpg",
@@ -3501,7 +3501,7 @@
     {
       "id": "authentic-2026-continued-072",
       "chapter": 24,
-      "after": "h24-story-042",
+      "after": "h24-017",
       "caption": "吉田茂が日米安全保障条約に署名（1951年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FYoshida_signing_the_US-Japan_Security_1951.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshida_signing_the_US-Japan_Security_1951.jpg",
@@ -3527,7 +3527,7 @@
     {
       "id": "authentic-2026-continued-073",
       "chapter": 25,
-      "after": "h25-story-015",
+      "after": "h25-007",
       "caption": "遼東半島還付条約（1895年の原資料）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FConvention_of_retrocession_of_the_Liatung_Peninsula_8_November_1895.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convention_of_retrocession_of_the_Liatung_Peninsula_8_November_1895.jpg",
@@ -3554,7 +3554,7 @@
     {
       "id": "authentic-2026-continued-074",
       "chapter": 27,
-      "after": "h27-story-007",
+      "after": "h27-003",
       "caption": "法隆寺の玉虫厨子の絵画（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHoryuji_Monastery_Painting_on_the_Tamamushi_Shrine_%28Feeding_the_Tigress%29_%28197%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyuji_Monastery_Painting_on_the_Tamamushi_Shrine_(Feeding_the_Tigress)_(197).jpg",
@@ -3580,7 +3580,7 @@
     {
       "id": "authentic-2026-continued-075",
       "chapter": 27,
-      "after": "h27-story-014",
+      "after": "h27-deep-02-4",
       "caption": "奈良時代の薬師寺東塔（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FYakushiji_Temple_east_pagoda.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yakushiji_Temple_east_pagoda.jpg",
@@ -3607,7 +3607,7 @@
     {
       "id": "authentic-2026-continued-076",
       "chapter": 27,
-      "after": "h27-story-021",
+      "after": "h27-007",
       "caption": "平等院鳳凰堂（実物の建築）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FByodoin-PhoenixHall-M1247.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Byodoin-PhoenixHall-M1247.jpg",
@@ -3633,7 +3633,7 @@
     {
       "id": "authentic-2026-continued-077",
       "chapter": 27,
-      "after": "h27-story-028",
+      "after": "h27-deep-04-2",
       "caption": "鎌倉の大仏（実物の仏像）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKamakura-daibutsu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kamakura-daibutsu.jpg",
@@ -3660,7 +3660,7 @@
     {
       "id": "authentic-2026-continued-078",
       "chapter": 27,
-      "after": "h27-story-028",
+      "after": "h27-deep-04-3",
       "caption": "円覚寺舎利殿（実物の建築）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEngakuji%2C_shariden.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Engakuji,_shariden.jpg",
@@ -3677,7 +3677,7 @@
     {
       "id": "authentic-2026-continued-079",
       "chapter": 27,
-      "after": "h27-story-028",
+      "after": "h27-deep-04-4",
       "caption": "鳥獣人物戯画（動物を人のように描く絵巻）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FChouju_1st_scroll-01.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chouju_1st_scroll-01.jpg",
@@ -3703,7 +3703,7 @@
     {
       "id": "authentic-2026-continued-080",
       "chapter": 27,
-      "after": "h27-story-021",
+      "after": "h27-007",
       "caption": "『紫式部日記絵巻』の一場面（後世の絵巻）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMurasaki_shikibu_diary.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Murasaki_shikibu_diary.JPG",
@@ -3729,7 +3729,7 @@
     {
       "id": "authentic-2026-continued-081",
       "chapter": 27,
-      "after": "h27-story-049",
+      "after": "h27-016",
       "caption": "狩野永徳『洛中洛外図屏風』（上杉本）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKan%C5%8D_Eitoku_-_Rakuch%C5%AB_rakugai_zu_%28Uesugi%29_-_left_screen.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kan%C5%8D_Eitoku_-_Rakuch%C5%AB_rakugai_zu_(Uesugi)_-_left_screen.jpg",
@@ -3755,7 +3755,7 @@
     {
       "id": "authentic-2026-continued-082",
       "chapter": 27,
-      "after": "h27-story-042",
+      "after": "h27-012",
       "caption": "雪舟『破墨山水図』（1495年の実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSesshu_-_Haboku-Sansui.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesshu_-_Haboku-Sansui.jpg",
@@ -3781,7 +3781,7 @@
     {
       "id": "authentic-2026-continued-083",
       "chapter": 18,
-      "after": "h18-story-015",
+      "after": "h18-005",
       "caption": "平治物語絵巻・武士の姿",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHeiji_Monogatari_Emaki_-_Warriors.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heiji_Monogatari_Emaki_-_Warriors.jpg",
@@ -3807,7 +3807,7 @@
     {
       "id": "authentic-2026-continued-084",
       "chapter": 19,
-      "after": "h19-story-030",
+      "after": "h19-deep-04-3",
       "caption": "原城を描いた江戸時代の戦闘絵図",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FShimabara-Battle-Map-c17th-century.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimabara-Battle-Map-c17th-century.png",
@@ -3833,7 +3833,7 @@
     {
       "id": "authentic-2026-continued-085",
       "chapter": 29,
-      "after": "h29-story-020",
+      "after": "h29-014",
       "caption": "1972年の日中共同声明の署名原本",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FJoint_Communique_of_Japan_and_China.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joint_Communique_of_Japan_and_China.jpg",
@@ -3860,7 +3860,7 @@
     {
       "id": "authentic-2026-continued-086",
       "chapter": 30,
-      "after": "h30-story-007",
+      "after": "h30-deep-01-1",
       "caption": "葛飾北斎が1817年に描いた鉄砲伝来のイメージ画（後世の作品）",
       "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Hokusai_1817_First_Guns_in_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hokusai_1817_First_Guns_in_Japan.jpg",
@@ -3879,7 +3879,7 @@
     {
       "id": "authentic-2026-continued-087",
       "chapter": 31,
-      "after": "h31-story-022",
+      "after": "h31-010",
       "caption": "五・一五事件を伝える1932年の新聞号外",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTsuyoshi_Inukai_May_15_Incident_Asahi_Shimbun.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tsuyoshi_Inukai_May_15_Incident_Asahi_Shimbun.png",
@@ -3905,7 +3905,7 @@
     {
       "id": "law-17article",
       "chapter": 11,
-      "after": "h11-story-007",
+      "after": "h11-003",
       "caption": "「和をもって貴しとなす」の第一条（1939年の書写資料）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/NDL1108334_%E8%81%96%E5%BE%B3%E5%A4%AA%E5%AD%90%E5%8D%81%E4%B8%83%E6%9D%A1%E6%86%B2%E6%B3%95.pdf/page3-1280px-NDL1108334_%E8%81%96%E5%BE%B3%E5%A4%AA%E5%AD%90%E5%8D%81%E4%B8%83%E6%9D%A1%E6%86%B2%E6%B3%95.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:NDL1108334_%E8%81%96%E5%BE%B3%E5%A4%AA%E5%AD%90%E5%8D%81%E4%B8%83%E6%9D%A1%E6%86%B2%E6%B3%95.pdf",
@@ -3927,7 +3927,7 @@
     {
       "id": "law-ryogige",
       "chapter": 11,
-      "after": "h11-story-014",
+      "after": "h11-008",
       "caption": "『令義解』の後世の伝本（律令制度の資料）",
       "image": "https://archive.wul.waseda.ac.jp/kosho/wa03/wa03_06821/wa03_06821_0001/wa03_06821_0001_p0068.jpg",
       "sourceUrl": "https://codh.rois.ac.jp/pmjt/book/200020588/",
@@ -3947,7 +3947,7 @@
     {
       "id": "law-katanagari",
       "chapter": 11,
-      "after": "h11-story-035",
+      "after": "h11-017",
       "caption": "豊臣秀吉の刀狩条書（1588年・実際の文書の一部）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/WUL-bunko12_00087_%E8%B1%8A%E8%87%A3%E7%A7%80%E5%90%89%E5%88%80%E7%8B%A9%E6%9D%A1%E6%9B%B8.pdf/page1-1280px-WUL-bunko12_00087_%E8%B1%8A%E8%87%A3%E7%A7%80%E5%90%89%E5%88%80%E7%8B%A9%E6%9D%A1%E6%9B%B8.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-bunko12_00087_%E8%B1%8A%E8%87%A3%E7%A7%80%E5%90%89%E5%88%80%E7%8B%A9%E6%9D%A1%E6%9B%B8.pdf",
@@ -3967,7 +3967,7 @@
     {
       "id": "law-buke",
       "chapter": 11,
-      "after": "h11-story-042",
+      "after": "h11-019",
       "caption": "『武家諸法度』の古い写本",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/WUL-wa03_02869_%E6%AD%A6%E5%AE%B6%E8%AB%B8%E6%B3%95%E5%BA%A6.pdf/page1-5400px-WUL-wa03_02869_%E6%AD%A6%E5%AE%B6%E8%AB%B8%E6%B3%95%E5%BA%A6.pdf.jpg",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-wa03_02869_武家諸法度.pdf",
@@ -3991,7 +3991,7 @@
     {
       "id": "law-goseibai",
       "chapter": 11,
-      "after": "h11-story-029",
+      "after": "h11-013",
       "caption": "『御成敗式目』の17世紀の写本（1232年の原本ではない）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGoseibai_Shikimoku_Toyo_Bunko.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goseibai_Shikimoku_Toyo_Bunko.jpg",
@@ -4011,7 +4011,7 @@
     {
       "id": "law-taiko",
       "chapter": 15,
-      "after": "h15-story-020",
+      "after": "h15-007",
       "caption": "1592年の太閤検地帳の複製（秀吉清正記念館）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/%E5%B0%BE%E5%BC%B5%E5%9B%BD%E6%B5%B7%E6%9D%B1%E9%83%A1%E5%86%85%E6%B4%A5%E5%B3%B6%E5%8C%97%E5%8F%A3%E5%BE%A1%E6%A4%9C%E5%9C%B0%E5%B8%B3%EF%BC%88%E7%A7%80%E5%90%89%E6%B8%85%E6%AD%A3%E8%A8%98%E5%BF%B5%E9%A4%A8%EF%BC%89.jpg/1280px-%E5%B0%BE%E5%BC%B5%E5%9B%BD%E6%B5%B7%E6%9D%B1%E9%83%A1%E5%86%85%E6%B4%A5%E5%B3%B6%E5%8C%97%E5%8F%A3%E5%BE%A1%E6%A4%9C%E5%9C%B0%E5%B8%B3%EF%BC%88%E7%A7%80%E5%90%89%E6%B8%85%E6%AD%A3%E8%A8%98%E5%BF%B5%E9%A4%A8%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%BE%E5%BC%B5%E5%9B%BD%E6%B5%B7%E6%9D%B1%E9%83%A1%E5%86%85%E6%B4%A5%E5%B3%B6%E5%8C%97%E5%8F%A3%E5%BE%A1%E6%A4%9C%E5%9C%B0%E5%B8%B3%EF%BC%88%E7%A7%80%E5%90%89%E6%B8%85%E6%AD%A3%E8%A8%98%E5%BF%B5%E9%A4%A8%EF%BC%89.jpg",
@@ -4033,7 +4033,7 @@
     {
       "id": "law-bunkoku",
       "chapter": 12,
-      "after": "h12-story-014",
+      "after": "h12-005",
       "caption": "『今川仮名目録』を追加した今川義元（1867年の錦絵）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Imagawa_Yoshimoto.jpg/1280px-Imagawa_Yoshimoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imagawa_Yoshimoto.jpg",
@@ -4057,7 +4057,7 @@
     {
       "id": "law-keian",
       "chapter": 12,
-      "after": "h12-story-021",
+      "after": "h12-007",
       "caption": "『慶安御触書』1837年刊の資料（後世の本）",
       "image": "https://da.lib.kobe-u.ac.jp/files/iiif/1/40000/0100405769/876952.tiff/full/1200,/0/default.jpg",
       "sourceUrl": "https://da.lib.kobe-u.ac.jp/da/sc/0100405769/",
@@ -4084,7 +4084,7 @@
     {
       "id": "law-mobilization",
       "chapter": 12,
-      "after": "h12-story-045",
+      "after": "h12-017",
       "caption": "国家総動員法の成立を報じた1938年の新聞",
       "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Approval_of_National_Mobilization_Law.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Approval_of_National_Mobilization_Law.jpg",
@@ -4106,7 +4106,7 @@
     {
       "id": "law-security",
       "chapter": 12,
-      "after": "h12-story-040",
+      "after": "h12-016",
       "caption": "治安維持法の条文（当時の印刷物）",
       "image": "https://www.archives.go.jp/learning/quiz_1/img/pic_3_1.png",
       "sourceUrl": "https://www.archives.go.jp/learning/quiz_1/",
@@ -4126,7 +4126,7 @@
     {
       "id": "law-gakusei",
       "chapter": 16,
-      "after": "h16-story-048",
+      "after": "h16-deep-07-2",
       "caption": "1872年の『学制』の太政官布告と本文（当時の実物資料）",
       "image": "https://www.nier.go.jp/library/rarebooks/seido/373.2-308/main_images/373.2-308_006.jpg",
       "sourceUrl": "https://www.nier.go.jp/library/rarebooks/seido/373.2-308/",
@@ -4144,7 +4144,7 @@
     {
       "id": "law-draft-education",
       "chapter": 17,
-      "after": "h17-story-068",
+      "after": "h17-deep-10-3",
       "caption": "教育基本法案の提案理由（1947年3月5日起案）",
       "image": "https://www.archives.go.jp/learning/archive_collection_5/collection_5/img/pic_5.jpg",
       "sourceUrl": "https://www.archives.go.jp/learning/archive_collection_5/collection_5/",
@@ -4165,7 +4165,7 @@
     {
       "id": "law-farmland",
       "chapter": 17,
-      "after": "h17-story-041",
+      "after": "h17-019",
       "caption": "戦後の農地改革を伝える当時のポスター",
       "image": "https://www.archives.go.jp/learning/archive_collection_6/collection_6/img/pic_4.jpg",
       "sourceUrl": "https://www.archives.go.jp/learning/archive_collection_6/collection_6/",
@@ -4185,7 +4185,7 @@
     {
       "id": "law-human",
       "chapter": 17,
-      "after": "h17-story-015",
+      "after": "h17-007",
       "caption": "1946年1月1日の官報号外に載る「人間宣言」の詔書",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/NDL2962196_%E5%AE%98%E5%A0%B1_1946%E5%B9%B401%E6%9C%8801%E6%97%A5.pdf/page1-1280px-NDL2962196_%E5%AE%98%E5%A0%B1_1946%E5%B9%B401%E6%9C%8801%E6%97%A5.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:NDL2962196_%E5%AE%98%E5%A0%B1_1946%E5%B9%B401%E6%9C%8801%E6%97%A5.pdf",
@@ -4210,7 +4210,7 @@
     {
       "id": "law-hanseki",
       "chapter": 16,
-      "after": "h16-story-036",
+      "after": "h16-003",
       "caption": "1869年の『版籍奉還諸侯名簿』（当時の記録）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/WUL-i14_a0122_%E7%89%88%E7%B1%8D%E5%A5%89%E9%82%84%E8%AB%B8%E4%BE%AF%E5%90%8D%E7%B0%BF.pdf/page1-1280px-WUL-i14_a0122_%E7%89%88%E7%B1%8D%E5%A5%89%E9%82%84%E8%AB%B8%E4%BE%AF%E5%90%8D%E7%B0%BF.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-i14_a0122_%E7%89%88%E7%B1%8D%E5%A5%89%E9%82%84%E8%AB%B8%E4%BE%AF%E5%90%8D%E7%B0%BF.pdf",
@@ -4236,7 +4236,7 @@
     {
       "id": "law-newdeal",
       "chapter": 14,
-      "after": "h14-story-031",
+      "after": "h14-014",
       "caption": "水野忠邦の肖像画（後世の作品）",
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mizuno_Tadakuni.jpg?width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mizuno_Tadakuni.jpg",
@@ -4260,7 +4260,7 @@
     {
       "id": "doc-gandhi",
       "chapter": 10,
-      "after": "h10-story-064",
+      "after": "h10-024",
       "caption": "1930年の塩の行進に参加したガンディーの写真",
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gandhi_during_the_Salt_March.jpg?width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gandhi_during_the_Salt_March.jpg",
@@ -4284,7 +4284,7 @@
     {
       "id": "doc-ippen",
       "chapter": 8,
-      "after": "h08-story-042",
+      "after": "h08-020",
       "caption": "『一遍聖絵』の実物（後世に伝わる絵巻）",
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ippen_shonin_eden_IV_-_Hukuoka.jpg?width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ippen_shonin_eden_IV_-_Hukuoka.jpg",
@@ -4308,7 +4308,7 @@
     {
       "id": "doc-nichiren",
       "chapter": 8,
-      "after": "h08-story-031",
+      "after": "h08-016",
       "caption": "日蓮の歴史肖像画",
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nichiren_Daishonin_Hakii_Portrait.jpg?width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nichiren_Daishonin_Hakii_Portrait.jpg",
@@ -4332,7 +4332,7 @@
     {
       "id": "doc-reiwa",
       "chapter": 2,
-      "after": "h02-story-128",
+      "after": "h02-deep-17-2",
       "caption": "2019年4月1日、菅官房長官が新元号「令和」を発表した写真",
       "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Yoshihide_Suga_announcing_new_imperial_era_Reiwa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoshihide_Suga_announcing_new_imperial_era_Reiwa.jpg",
@@ -4350,7 +4350,7 @@
     {
       "id": "doc-heisei",
       "chapter": 2,
-      "after": "h02-story-114",
+      "after": "h02-043",
       "caption": "1989年の新元号「平成」の発表写真",
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Keizo_Obuchi_19890107.jpg?width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keizo_Obuchi_19890107.jpg",
@@ -4375,7 +4375,7 @@
     {
       "id": "term-cover-ch01-04",
       "chapter": 1,
-      "after": "h01-story-032",
+      "after": "h01-003",
       "caption": "秦の兵馬俑（実物の発掘展示）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTerracotta_army_xian.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Terracotta_army_xian.jpg",
@@ -4393,7 +4393,7 @@
     {
       "id": "term-cover-ch02-04",
       "chapter": 2,
-      "after": "h02-story-030",
+      "after": "h02-015",
       "caption": "法隆寺の金堂と五重塔（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHoryu-ji%2C_November_2016.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horyu-ji%2C_November_2016.jpg",
@@ -4422,7 +4422,7 @@
     {
       "id": "term-cover-ch02-06",
       "chapter": 2,
-      "after": "h02-story-045",
+      "after": "h02-020",
       "caption": "『源氏物語絵巻』の実物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGENJI-monogatari-emaki-YADORIGI.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:GENJI-monogatari-emaki-YADORIGI.jpg",
@@ -4450,7 +4450,7 @@
     {
       "id": "term-cover-ch02-07",
       "chapter": 2,
-      "after": "h02-story-053",
+      "after": "h02-023",
       "caption": "『蒙古襲来絵詞』の実物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FM%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
@@ -4478,7 +4478,7 @@
     {
       "id": "term-cover-ch02-08",
       "chapter": 2,
-      "after": "h02-story-060",
+      "after": "h02-025",
       "caption": "後醍醐天皇の肖像画（伝世作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Go-Daigo.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Daigo.jpg",
@@ -4505,7 +4505,7 @@
     {
       "id": "term-cover-ch02-09",
       "chapter": 2,
-      "after": "h02-story-068",
+      "after": "h02-029",
       "caption": "銀閣（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGinkakuji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ginkakuji.jpg",
@@ -4533,7 +4533,7 @@
     {
       "id": "term-cover-ch02-10",
       "chapter": 2,
-      "after": "h02-story-076",
+      "after": "h02-031",
       "caption": "織田信長像",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FOda-Nobunaga.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oda-Nobunaga.jpg",
@@ -4561,7 +4561,7 @@
     {
       "id": "term-cover-ch02-11",
       "chapter": 2,
-      "after": "h02-story-084",
+      "after": "h02-033",
       "caption": "豊臣秀吉像",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FToyotomi_hideyoshi.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyotomi_hideyoshi.jpg",
@@ -4589,7 +4589,7 @@
     {
       "id": "term-cover-ch02-12",
       "chapter": 2,
-      "after": "h02-story-092",
+      "after": "h02-035",
       "caption": "徳川家康（江戸時代の肖像画）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTokugawa_Ieyasu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu.jpg",
@@ -4617,7 +4617,7 @@
     {
       "id": "term-cover-ch02-13",
       "chapter": 2,
-      "after": "h02-story-099",
+      "after": "h02-037",
       "caption": "1879年秋田県発行の地券（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FChiken_akita_face.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
@@ -4635,7 +4635,7 @@
     {
       "id": "term-cover-ch02-14",
       "chapter": 2,
-      "after": "h02-story-107",
+      "after": "h02-039",
       "caption": "米騒動の激化を報じた1918年の新聞",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F%E7%B1%B3%E9%A8%92%E5%8B%95%E6%BF%80%E5%8C%96%E3%82%92%E5%A0%B1%E3%81%9A%E3%82%8B%E6%96%B0%E8%81%9E.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%B1%B3%E9%A8%92%E5%8B%95%E6%BF%80%E5%8C%96%E3%82%92%E5%A0%B1%E3%81%9A%E3%82%8B%E6%96%B0%E8%81%9E.jpg",
@@ -4662,7 +4662,7 @@
     {
       "id": "term-cover-ch02-15",
       "chapter": 2,
-      "after": "h02-story-114",
+      "after": "h02-041",
       "caption": "真珠湾攻撃で燃える戦艦アリゾナ（1941年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FUSS_Arizona_%28BB-39%29_burning_at_Pearl_Harbor_1941.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
@@ -4680,7 +4680,7 @@
     {
       "id": "term-cover-ch03-01",
       "chapter": 3,
-      "after": "h03-story-007",
+      "after": "h03-005",
       "caption": "『魏志倭人伝』の文字（卑弥呼について記した史料）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGishiwajinden.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gishiwajinden.jpg",
@@ -4701,7 +4701,7 @@
     {
       "id": "term-cover-ch03-04",
       "chapter": 3,
-      "after": "h03-story-028",
+      "after": "h03-018",
       "caption": "平清盛を描いた伝承肖像（後世の絵）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTaira_no_Kiyomori.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taira_no_Kiyomori.jpg",
@@ -4730,7 +4730,7 @@
     {
       "id": "term-cover-ch03-06",
       "chapter": 3,
-      "after": "h03-story-043",
+      "after": "h03-028",
       "caption": "現在の金閣（1955年に再建された建物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FKinkaku-ji_1.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kinkaku-ji_1.jpg",
@@ -4760,7 +4760,7 @@
     {
       "id": "term-cover-ch04-01",
       "chapter": 4,
-      "after": "h04-story-007",
+      "after": "h04-004",
       "caption": "天智天皇の肖像（後世の作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Tenji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Tenji.jpg",
@@ -4789,7 +4789,7 @@
     {
       "id": "term-cover-ch04-02",
       "chapter": 4,
-      "after": "h04-story-015",
+      "after": "h04-006",
       "caption": "東大寺大仏殿（実物写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTodai-ji.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Todai-ji.jpg",
@@ -4818,7 +4818,7 @@
     {
       "id": "term-cover-ch04-03",
       "chapter": 4,
-      "after": "h04-story-023",
+      "after": "h04-009",
       "caption": "桓武天皇の肖像（後世の作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Kammu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Kammu.jpg",
@@ -4847,7 +4847,7 @@
     {
       "id": "term-cover-ch04-04",
       "chapter": 4,
-      "after": "h04-story-030",
+      "after": "h04-017",
       "caption": "白河上皇・白河法皇の肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Shirakawa.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Shirakawa.jpg",
@@ -4874,7 +4874,7 @@
     {
       "id": "term-cover-ch04-05",
       "chapter": 4,
-      "after": "h04-story-038",
+      "after": "h04-021",
       "caption": "後鳥羽上皇の肖像（1221年ごろの絵）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Go-Toba.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Toba.jpg",
@@ -4903,7 +4903,7 @@
     {
       "id": "term-cover-ch08-01",
       "chapter": 8,
-      "after": "h08-story-007",
+      "after": "h08-003",
       "caption": "真言八祖像の空海像（鎌倉時代の絵）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEight_Patriarchs_of_the_Shingon_Sect_of_Buddhism%2C_K%C5%ABkai_%28Nara_National_Museum%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eight_Patriarchs_of_the_Shingon_Sect_of_Buddhism,_K%C5%ABkai_(Nara_National_Museum).jpg",
@@ -4933,7 +4933,7 @@
     {
       "id": "term-cover-ch08-05",
       "chapter": 8,
-      "after": "h08-story-035",
+      "after": "h08-add-01-3",
       "caption": "道元の肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSoto-Zen-Master-Dogen-Zenji-Portrait.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Soto-Zen-Master-Dogen-Zenji-Portrait.png",
@@ -4962,7 +4962,7 @@
     {
       "id": "term-cover-ch10-01",
       "chapter": 10,
-      "after": "h10-story-007",
+      "after": "h10-003",
       "caption": "マゼランを描いた肖像画（16〜17世紀）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FFerdinand_Magellan.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferdinand_Magellan.jpg",
@@ -4991,7 +4991,7 @@
     {
       "id": "term-cover-ch10-10",
       "chapter": 10,
-      "after": "h10-story-071",
+      "after": "h10-016",
       "caption": "ペリー艦隊の下田上陸を描いた版画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F1853_shimoda_01.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
@@ -5019,7 +5019,7 @@
     {
       "id": "term-cover-ch12-01",
       "chapter": 12,
-      "after": "h12-story-007",
+      "after": "h12-003",
       "caption": "正長の土一揆を伝える柳生の徳政碑文（拓本）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FRubbing_of_Nara_Yagyu_Hoso_Jizo_Tokusei-Hibun.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rubbing_of_Nara_Yagyu_Hoso_Jizo_Tokusei-Hibun.jpg",
@@ -5046,7 +5046,7 @@
     {
       "id": "term-cover-ch12-04",
       "chapter": 12,
-      "after": "h12-story-025",
+      "after": "h12-012",
       "caption": "1837年に来航したモリソン号を描いた絵（1825年の命令の関連資料）",
       "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/MorrisonShip.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:MorrisonShip.jpg",
@@ -5066,7 +5066,7 @@
     {
       "id": "term-cover-ch13-01",
       "chapter": 13,
-      "after": "h13-story-007",
+      "after": "h13-003",
       "caption": "藤原道長の自筆日記『御堂関白記』",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMichinaga_diary.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
@@ -5094,7 +5094,7 @@
     {
       "id": "term-cover-ch13-03",
       "chapter": 13,
-      "after": "h13-story-023",
+      "after": "h13-007",
       "caption": "北条泰時の肖像画（後世に伝わる図）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FH%C5%8Dj%C5%8D_Yasutoki.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:H%C5%8Dj%C5%8D_Yasutoki.jpg",
@@ -5121,7 +5121,7 @@
     {
       "id": "term-cover-ch13-04",
       "chapter": 13,
-      "after": "h13-story-031",
+      "after": "h13-013",
       "caption": "後醍醐天皇の肖像画（伝世作品）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Go-Daigo.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Daigo.jpg",
@@ -5148,7 +5148,7 @@
     {
       "id": "term-cover-ch14-01",
       "chapter": 14,
-      "after": "h14-story-007",
+      "after": "h14-003",
       "caption": "徳川吉宗像",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTokugawaYoshimune.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:TokugawaYoshimune.jpg",
@@ -5176,7 +5176,7 @@
     {
       "id": "term-cover-ch15-01",
       "chapter": 15,
-      "after": "h15-story-007",
+      "after": "h15-003",
       "caption": "『令義解』の律令条文（班田収授制度に関する関連史料）",
       "image": "https://archive.wul.waseda.ac.jp/kosho/wa03/wa03_06821/wa03_06821_0001/wa03_06821_0001_p0068.jpg",
       "sourceUrl": "https://codh.rois.ac.jp/pmjt/book/200020588/",
@@ -5198,7 +5198,7 @@
     {
       "id": "term-cover-ch15-06",
       "chapter": 15,
-      "after": "h15-story-042",
+      "after": "h15-018",
       "caption": "戦後の農地改革を伝える当時のポスター",
       "image": "https://www.archives.go.jp/learning/archive_collection_6/collection_6/img/pic_4.jpg",
       "sourceUrl": "https://www.archives.go.jp/learning/archive_collection_6/collection_6/",
@@ -5221,7 +5221,7 @@
     {
       "id": "term-cover-ch16-01",
       "chapter": 16,
-      "after": "h16-story-007",
+      "after": "h16-020",
       "caption": "1879年秋田県発行の地券（実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FChiken_akita_face.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
@@ -5239,7 +5239,7 @@
     {
       "id": "term-cover-ch17-01",
       "chapter": 17,
-      "after": "h17-story-007",
+      "after": "h17-005",
       "caption": "日本の降伏文書（1945年9月2日）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FInstrument_of_surrender_Japan.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Instrument_of_surrender_Japan.jpg",
@@ -5266,7 +5266,7 @@
     {
       "id": "term-cover-ch17-04",
       "chapter": 17,
-      "after": "h17-story-027",
+      "after": "h17-017",
       "caption": "財閥の資産が差し押さえられる様子（1946年の実際の写真）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSeizure_of_the_Zaibatsu_families_assets.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seizure_of_the_Zaibatsu_families_assets.JPG",
@@ -5288,7 +5288,7 @@
     {
       "id": "term-cover-ch17-08",
       "chapter": 17,
-      "after": "h17-story-055",
+      "after": "h17-016",
       "caption": "治安維持法の条文（当時の印刷物）",
       "image": "https://www.archives.go.jp/learning/quiz_1/img/pic_3_1.png",
       "sourceUrl": "https://www.archives.go.jp/learning/quiz_1/",
@@ -5311,7 +5311,7 @@
     {
       "id": "term-cover-ch17-13",
       "chapter": 17,
-      "after": "h17-story-082",
+      "after": "h17-024",
       "caption": "1946年5月1日の第17回メーデー（当時の写真）",
       "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/17th_Labor_Day_in_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:17th_Labor_Day_in_Japan.jpg",
@@ -5336,7 +5336,7 @@
     {
       "id": "term-cover-ch18-01",
       "chapter": 18,
-      "after": "h18-story-007",
+      "after": "h18-003",
       "caption": "壬申の乱で勝利した天武天皇の肖像（後世の絵）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Tenmu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Tenmu.jpg",
@@ -5365,7 +5365,7 @@
     {
       "id": "term-cover-ch18-03",
       "chapter": 18,
-      "after": "h18-story-023",
+      "after": "h18-009",
       "caption": "承久の乱を起こした後鳥羽上皇の肖像",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Go-Toba.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Toba.jpg",
@@ -5394,7 +5394,7 @@
     {
       "id": "term-cover-ch18-04",
       "chapter": 18,
-      "after": "h18-story-029",
+      "after": "h18-011",
       "caption": "応仁の乱を描いた『真如堂縁起絵巻』（1524年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FShinnyod%C5%8D_engi%2C_vol.3_%28part%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shinnyod%C5%8D_engi,_vol.3_(part).jpg",
@@ -5423,7 +5423,7 @@
     {
       "id": "term-cover-ch20-02",
       "chapter": 20,
-      "after": "h20-story-015",
+      "after": "h20-005",
       "caption": "日露戦争を伝える1904年の戦場写真",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FBattlefields_in_the_Russo_Japanese_War.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Battlefields_in_the_Russo_Japanese_War.jpg",
@@ -5452,7 +5452,7 @@
     {
       "id": "term-cover-ch21-04",
       "chapter": 21,
-      "after": "h21-story-030",
+      "after": "h21-012",
       "caption": "真珠湾攻撃で燃える戦艦アリゾナ（1941年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FUSS_Arizona_%28BB-39%29_burning_at_Pearl_Harbor_1941.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:USS_Arizona_(BB-39)_burning_at_Pearl_Harbor_1941.jpg",
@@ -5470,7 +5470,7 @@
     {
       "id": "term-cover-ch23-01",
       "chapter": 23,
-      "after": "h23-story-007",
+      "after": "h23-003",
       "caption": "宋の銅銭（貿易で広まった銭の関連実物）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FUnsorted_cash_coins_from_mixed_rulers_-_Northern_Song_Dynasty_-_Scott_Semans_01.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unsorted_cash_coins_from_mixed_rulers_-_Northern_Song_Dynasty_-_Scott_Semans_01.jpg",
@@ -5500,7 +5500,7 @@
     {
       "id": "term-cover-ch25-01",
       "chapter": 25,
-      "after": "h25-story-007",
+      "after": "h25-003",
       "caption": "条約改正に取り組んだ外相・陸奥宗光の写真",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMutsu_Munemitsu.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mutsu_Munemitsu.jpg",
@@ -5529,7 +5529,7 @@
     {
       "id": "term-cover-ch25-05",
       "chapter": 25,
-      "after": "h25-story-036",
+      "after": "h25-016",
       "caption": "1915年の二十一か条の要求を描いた風刺画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F21_demands_by_Japan_against_China_1915.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:21_demands_by_Japan_against_China_1915.png",
@@ -5552,7 +5552,7 @@
     {
       "id": "term-cover-ch25-06",
       "chapter": 25,
-      "after": "h25-story-044",
+      "after": "h25-017",
       "caption": "1919年のシベリア出兵を描いた日本の画報",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FVladivostok_intervention.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vladivostok_intervention.jpg",
@@ -5581,7 +5581,7 @@
     {
       "id": "term-cover-ch25-07",
       "chapter": 25,
-      "after": "h25-story-051",
+      "after": "h25-019",
       "caption": "日独伊三国同盟の調印文書（1940年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTripartite_Pact_27_September_1940.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tripartite_Pact_27_September_1940.jpg",
@@ -5611,7 +5611,7 @@
     {
       "id": "term-cover-ch26-03",
       "chapter": 26,
-      "after": "h26-story-022",
+      "after": "h26-007",
       "caption": "『魏志倭人伝』の本文（魏と倭の関係）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGishiwajinden.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gishiwajinden.jpg",
@@ -5632,7 +5632,7 @@
     {
       "id": "term-cover-ch26-04",
       "chapter": 26,
-      "after": "h26-story-029",
+      "after": "h26-012",
       "caption": "隋の煬帝を描いた古い肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSui_Yangdi_Tang.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sui_Yangdi_Tang.jpg",
@@ -5661,7 +5661,7 @@
     {
       "id": "term-cover-ch26-05",
       "chapter": 26,
-      "after": "h26-story-037",
+      "after": "h26-014",
       "caption": "唐の太宗を描いた肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTangTaizong.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:TangTaizong.jpg",
@@ -5690,7 +5690,7 @@
     {
       "id": "term-cover-ch26-06",
       "chapter": 26,
-      "after": "h26-story-045",
+      "after": "h26-016",
       "caption": "『蒙古襲来絵詞』の実物",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FM%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C5%8Dko_Sh%C5%ABrai_Ekotoba.jpg",
@@ -5718,7 +5718,7 @@
     {
       "id": "term-cover-ch26-07",
       "chapter": 26,
-      "after": "h26-story-051",
+      "after": "h26-018",
       "caption": "明の万暦帝を描いた宮廷肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FWanli-Emperor.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wanli-Emperor.JPG",
@@ -5747,7 +5747,7 @@
     {
       "id": "term-cover-ch26-08",
       "chapter": 26,
-      "after": "h26-story-057",
+      "after": "h26-019",
       "caption": "清の乾隆帝を描いた肖像画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FEmperor_Qianlong.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emperor_Qianlong.jpg",
@@ -5776,7 +5776,7 @@
     {
       "id": "term-cover-ch27-10",
       "chapter": 27,
-      "after": "h27-story-072",
+      "after": "h27-024",
       "caption": "19世紀後半の新橋停車場・錦絵",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FShimbashi_Station_Hiroshige_III.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shimbashi_Station_Hiroshige_III.jpg",
@@ -5803,7 +5803,7 @@
     {
       "id": "term-cover-ch28-01",
       "chapter": 28,
-      "after": "h28-story-007",
+      "after": "h28-deep-01-2",
       "caption": "藤原道長の自筆日記『御堂関白記』",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FMichinaga_diary.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michinaga_diary.jpg",
@@ -5831,7 +5831,7 @@
     {
       "id": "term-cover-ch28-03",
       "chapter": 28,
-      "after": "h28-story-021",
+      "after": "h28-deep-03-2",
       "caption": "『御成敗式目』の17世紀の写本（守護と地頭に関連する武士の法）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FGoseibai_Shikimoku_Toyo_Bunko.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goseibai_Shikimoku_Toyo_Bunko.jpg",
@@ -5854,7 +5854,7 @@
     {
       "id": "term-cover-ch29-01",
       "chapter": 29,
-      "after": "h29-story-007",
+      "after": "h29-007",
       "caption": "1945年7月のポツダム会談の写真（宣言の関連資料）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FPotsdam_conference_1945-1.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Potsdam_conference_1945-1.jpg",
@@ -5883,7 +5883,7 @@
     {
       "id": "term-cover-ch29-02",
       "chapter": 29,
-      "after": "h29-story-013",
+      "after": "h29-009",
       "caption": "1956年の日ソ共同宣言調印へ向かう鳩山一郎首相",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FIchiro_and_Kaoru_Hatoyama_en_route_to_Moscow.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ichiro_and_Kaoru_Hatoyama_en_route_to_Moscow.jpg",
@@ -5912,7 +5912,7 @@
     {
       "id": "term-cover-ch30-02",
       "chapter": 30,
-      "after": "h30-story-015",
+      "after": "h30-005",
       "caption": "長崎・出島を描いた1820年ごろの絵",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FDejimaInNagasakiBay.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:DejimaInNagasakiBay.jpg",
@@ -5930,7 +5930,7 @@
     {
       "id": "term-cover-ch30-03",
       "chapter": 30,
-      "after": "h30-story-023",
+      "after": "h30-007",
       "caption": "ペリー艦隊の下田上陸を描いた版画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2F1853_shimoda_01.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:1853_shimoda_01.jpg",
@@ -5958,7 +5958,7 @@
     {
       "id": "term-cover-ch30-05",
       "chapter": 30,
-      "after": "h30-story-035",
+      "after": "h30-016",
       "caption": "北方領土の位置を示す地図（択捉島・国後島・色丹島・歯舞群島）",
       "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Northern-Territories-of-Japan-Map-%E6%97%A5%E6%9C%AC%E3%81%AE%E5%8C%97%E6%96%B9%E9%A0%98%E5%9C%9F%E3%81%AE%E5%9C%B0%E5%9B%B3.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Northern-Territories-of-Japan-Map-%E6%97%A5%E6%9C%AC%E3%81%AE%E5%8C%97%E6%96%B9%E9%A0%98%E5%9C%9F%E3%81%AE%E5%9C%B0%E5%9B%B3.png",
@@ -5978,7 +5978,7 @@
     {
       "id": "term-cover-ch30-06",
       "chapter": 30,
-      "after": "h30-story-041",
+      "after": "h30-018",
       "caption": "遼東半島還付条約（1895年の原資料）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FConvention_of_retrocession_of_the_Liatung_Peninsula_8_November_1895.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Convention_of_retrocession_of_the_Liatung_Peninsula_8_November_1895.jpg",
@@ -6006,7 +6006,7 @@
     {
       "id": "period-1882-itagaki-attack",
       "chapter": 6,
-      "after": "h06-story-039",
+      "after": "h06-deep-05-2",
       "caption": "板垣退助が襲われた事件（1882年の錦絵）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Distress_of_Itagaki_Taisuke_by_Utagawa_Toyonobu_1882.png/1280px-Distress_of_Itagaki_Taisuke_by_Utagawa_Toyonobu_1882.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Distress_of_Itagaki_Taisuke_by_Utagawa_Toyonobu_1882.png",
@@ -6027,7 +6027,7 @@
     {
       "id": "period-1890-imperial-diet",
       "chapter": 7,
-      "after": "h07-story-007",
+      "after": "h07-003",
       "caption": "帝国議会の貴族院（1890年の錦絵）",
       "image": "https://images.metmuseum.org/CRDImages/as/original/DP147741.jpg",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/55623",
@@ -6044,7 +6044,7 @@
     {
       "id": "period-1879-conscription-cartoon",
       "chapter": 16,
-      "after": "h16-story-055",
+      "after": "h16-deep-08-2",
       "caption": "1873年刊『徴兵令 官版』に載る徴兵の告諭（当時の実物資料）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/NDL1350311_%E5%BE%B4%E5%85%B5%E4%BB%A4_-_%E5%AE%98%E7%89%88.pdf/page2-1280px-NDL1350311_%E5%BE%B4%E5%85%B5%E4%BB%A4_-_%E5%AE%98%E7%89%88.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:NDL1350311_%E5%BE%B4%E5%85%B5%E4%BB%A4_-_%E5%AE%98%E7%89%88.pdf",
@@ -6067,7 +6067,7 @@
     {
       "id": "period-1898-china-carving",
       "chapter": 25,
-      "after": "h25-story-015",
+      "after": "h25-007",
       "caption": "中国を列強が分け合う1898年のフランスの風刺画",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FChina_imperialism_cartoon.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:China_imperialism_cartoon.jpg",
@@ -6082,7 +6082,7 @@
     {
       "id": "period-1887-korea-fishing",
       "chapter": 20,
-      "after": "h20-story-007",
+      "after": "h20-003",
       "caption": "ジョルジュ・ビゴー『魚釣り遊び』（1887年の風刺画）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FUne-Partie-De-Peche-Rus-Jpn-Qing-Dispute-Korea-Feb-15-1887.png&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Une-Partie-De-Peche-Rus-Jpn-Qing-Dispute-Korea-Feb-15-1887.png",
@@ -6097,7 +6097,7 @@
     {
       "id": "verified-1858-treaty",
       "chapter": 24,
-      "after": "h24-story-015",
+      "after": "h24-007",
       "caption": "1858年の日米修好通商条約の原本",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FTreaty_of_Amity_and_Commerce_between_Japan_and_the_United_States_29_July_1858.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Treaty_of_Amity_and_Commerce_between_Japan_and_the_United_States_29_July_1858.jpg",
@@ -6126,7 +6126,7 @@
     {
       "id": "verified-hakodate-goryokaku",
       "chapter": 30,
-      "after": "h30-story-030",
+      "after": "h30-007",
       "caption": "北海道函館市・五稜郭の航空写真",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FAerial_view_of_Goryokaku%2826262233707%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Goryokaku(26262233707).jpg",
@@ -6155,7 +6155,7 @@
     {
       "id": "verified-conscription-1879",
       "chapter": 16,
-      "after": "h16-story-055",
+      "after": "h16-018",
       "caption": "1873年の徴兵に関する当時の記録（風刺画ではない）",
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Number_of_Army_Conscription_in_1873.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Number_of_Army_Conscription_in_1873.jpg",
@@ -6174,7 +6174,7 @@
     {
       "id": "verified-haihan-context",
       "chapter": 16,
-      "after": "h16-story-029",
+      "after": "h16-005",
       "caption": "廃藩置県を知らせる1871年の文書（旧藩知事の通達）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/WUL-i14_a0575_%E5%BB%83%E8%97%A9%E7%BD%AE%E7%9C%8C%E3%83%8E%E8%A9%94%E5%8B%85%E3%83%8B%E5%9F%BA%E3%82%AD%E6%97%A7%E8%97%A9%E7%9F%A5%E4%BA%8B%E3%83%8E%E7%AE%A1%E4%B8%8B%E4%B8%80%E7%B5%B1%E3%83%98%E3%83%8E%E8%AB%AD%E9%81%94%E6%9B%B8.pdf/page1-1280px-WUL-i14_a0575_%E5%BB%83%E8%97%A9%E7%BD%AE%E7%9C%8C%E3%83%8E%E8%A9%94%E5%8B%85%E3%83%8B%E5%9F%BA%E3%82%AD%E6%97%A7%E8%97%A9%E7%9F%A5%E4%BA%8B%E3%83%8E%E7%AE%A1%E4%B8%8B%E4%B8%80%E7%B5%B1%E3%83%98%E3%83%8E%E8%AB%AD%E9%81%94%E6%9B%B8.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:WUL-i14_a0575_%E5%BB%83%E8%97%A9%E7%BD%AE%E7%9C%8C%E3%83%8E%E8%A9%94%E5%8B%85%E3%83%8B%E5%9F%BA%E3%82%AD%E6%97%A7%E8%97%A9%E7%9F%A5%E4%BA%8B%E3%83%8E%E7%AE%A1%E4%B8%8B%E4%B8%80%E7%B5%B1%E3%83%98%E3%83%8E%E8%AB%AD%E9%81%94%E6%9B%B8.pdf",
@@ -6194,7 +6194,7 @@
     {
       "id": "verified-emancipation-context",
       "chapter": 16,
-      "after": "h16-story-023",
+      "after": "h16-014",
       "caption": "1871年の解放令（身分呼称廃止）の本文",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSenmin_Abolition_Edict%2C_1871.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Senmin_Abolition_Edict,_1871.jpg",
@@ -6221,7 +6221,7 @@
     {
       "id": "verified-antimonopoly-context",
       "chapter": 17,
-      "after": "h17-story-034",
+      "after": "h17-017",
       "caption": "1946年の財閥解体に関する写真（1947年の独占禁止法の関連資料）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSeizure_of_the_Zaibatsu_families_assets.JPG&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seizure_of_the_Zaibatsu_families_assets.JPG",
@@ -6248,7 +6248,7 @@
     {
       "id": "verified-konden-743",
       "chapter": 11,
-      "after": "h11-story-022",
+      "after": "h11-010",
       "caption": "『続日本紀』巻第十五に載る墾田永年私財法の始まり（743年の記録）",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/NAJDA-137-0106_%E7%B6%9A%E6%97%A5%E6%9C%AC%E7%B4%80_%E5%B7%BB15-16.pdf/page9-1280px-NAJDA-137-0106_%E7%B6%9A%E6%97%A5%E6%9C%AC%E7%B4%80_%E5%B7%BB15-16.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:NAJDA-137-0106_%E7%B6%9A%E6%97%A5%E6%9C%AC%E7%B4%80_%E5%B7%BB15-16.pdf",
@@ -6275,7 +6275,7 @@
     {
       "id": "verified-konden-ch15",
       "chapter": 15,
-      "after": "h15-story-015",
+      "after": "h15-005",
       "caption": "『続日本紀』の墾田永年私財法「今より私有を認める」の部分",
       "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/NAJDA-137-0106_%E7%B6%9A%E6%97%A5%E6%9C%AC%E7%B4%80_%E5%B7%BB15-16.pdf/page10-1280px-NAJDA-137-0106_%E7%B6%9A%E6%97%A5%E6%9C%AC%E7%B4%80_%E5%B7%BB15-16.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:NAJDA-137-0106_%E7%B6%9A%E6%97%A5%E6%9C%AC%E7%B4%80_%E5%B7%BB15-16.pdf",
@@ -6302,7 +6302,7 @@
     {
       "id": "verified-labor-laws-context",
       "chapter": 17,
-      "after": "h17-story-089",
+      "after": "h17-024",
       "caption": "1946年5月1日の第17回メーデー（当時の写真）",
       "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/17th_Labor_Day_in_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:17th_Labor_Day_in_Japan.jpg",
@@ -6327,7 +6327,7 @@
     {
       "id": "verified-kango-document-1468",
       "chapter": 23,
-      "after": "h23-story-014",
+      "after": "h23-005",
       "caption": "1468年の勘合札を描き写した図（『戊子入明記』）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FSketch_of_a_kang%C5%8D_or_Ming_Trading_Licence_by_Tenyo_Seikei_%28My%C5%8Dchi-in%29.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sketch_of_a_kang%C5%8D_or_Ming_Trading_Licence_by_Tenyo_Seikei_(My%C5%8Dchi-in).jpg",
@@ -6355,7 +6355,7 @@
     {
       "id": "verified-edo-farmland-context",
       "chapter": 15,
-      "after": "h15-story-027",
+      "after": "h15-011",
       "caption": "江戸時代の田園を描いた歌川広重の浮世絵（1857年）",
       "image": "https://commons.wikimedia.org/w/index.php?title=Special%3ARedirect%2Ffile%2FHiroshige%2C_Asakusa_ricefields_and_torinomachi_festival%2C_1857.jpg&width=720",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiroshige,_Asakusa_ricefields_and_torinomachi_festival,_1857.jpg",

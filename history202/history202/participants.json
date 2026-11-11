@@ -1,0 +1,234 @@
+{
+  "受験生": {
+    "role": "modern",
+    "icon": "🎓"
+  },
+  "AI先生": {
+    "image": "history-icons/000.webp"
+  },
+  "卑弥呼": {
+    "image": "history-icons/001.webp"
+  },
+  "聖徳太子": {
+    "image": "history-icons/002.webp"
+  },
+  "中大兄皇子": {
+    "image": "history-icons/003.webp"
+  },
+  "聖武天皇": {
+    "image": "history-icons/004.webp"
+  },
+  "藤原道長": {
+    "image": "history-icons/005.webp"
+  },
+  "紫式部": {
+    "image": "history-icons/006.webp"
+  },
+  "源頼朝": {
+    "image": "history-icons/007.webp"
+  },
+  "足利義満": {
+    "image": "history-icons/010.webp"
+  },
+  "織田信長": {
+    "image": "history-icons/012.webp"
+  },
+  "豊臣秀吉": {
+    "image": "history-icons/013.webp"
+  },
+  "徳川家康": {
+    "image": "history-icons/014.webp"
+  },
+  "坂本龍馬": {
+    "image": "history-icons/018.webp"
+  },
+  "始皇帝": {
+    "image": "history-icons/033.webp"
+  },
+  "平清盛": {
+    "image": "history-icons/072.webp"
+  },
+  "ハンムラビ王": {
+    "image": "history-icons/080.webp"
+  },
+  "ソクラテス": {
+    "image": "history-icons/082.webp"
+  },
+  "桓武天皇": {
+    "image": "history-icons/096.webp"
+  },
+  "徳川家光": {
+    "image": "history-icons/119.webp"
+  },
+  "空海": {
+    "image": "history-icons/062.webp"
+  },
+  "最澄": {
+    "image": "history-icons/058.webp"
+  },
+  "伊能忠敬": {
+    "image": "history-icons/125.webp"
+  },
+  "マゼラン": {
+    "image": "history-icons/088.webp"
+  },
+  "吉田松陰": {
+    "icon": "📚"
+  },
+  "白河上皇": {
+    "image": "history-icons/110.webp"
+  },
+  "徳川綱吉": {
+    "image": "history-icons/101.webp"
+  },
+  "板垣退助": {
+    "image": "history-icons/094.webp"
+  },
+  "伊藤博文": {
+    "image": "history-icons/021.webp"
+  },
+  "親鸞": {
+    "image": "history-icons/098.webp"
+  },
+  "本居宣長": {
+    "image": "history-icons/017.webp"
+  },
+  "ルター": {
+    "image": "history-icons/038.webp"
+  },
+  "北条泰時": {
+    "image": "history-icons/086.webp"
+  },
+  "徳川吉宗": {
+    "image": "history-icons/120.webp"
+  },
+  "大久保利通": {
+    "image": "history-icons/093.webp"
+  },
+  "孫文": {
+    "image": "history-icons/147.webp"
+  },
+  "ペリー": {
+    "image": "history-icons/128.webp"
+  },
+  "小村寿太郎": {
+    "image": "history-icons/134.webp"
+  },
+  "雪舟": {
+    "image": "history-icons/011.webp"
+  },
+  "田沼意次": {
+    "image": "history-icons/121.webp"
+  },
+  "松平定信": {
+    "image": "history-icons/122.webp"
+  },
+  "水野忠邦": {
+    "image": "history-icons/123.webp"
+  },
+  "吉田茂": {
+    "image": "history-icons/027.webp"
+  },
+  "マッカーサー": {
+    "image": "history-icons/143.webp"
+  },
+  "原敬": {
+    "image": "history-icons/141.webp"
+  },
+  "佐藤栄作": {
+    "image": "history-icons/144.webp"
+  },
+  "大塩平八郎": {
+    "image": "history-icons/124.webp"
+  },
+  "リンカーン": {
+    "image": "history-icons/043.webp"
+  },
+  "ウィルソン": {
+    "image": "history-icons/148.webp"
+  },
+  "ルーズベルト": {
+    "image": "history-icons/051.webp"
+  },
+  "陸奥宗光": {
+    "image": "history-icons/095.webp"
+  },
+  "天智天皇": {
+    "image": "history-icons/003.webp"
+  },
+  "後鳥羽上皇": {
+    "image": "history-icons/111.webp"
+  },
+  "後醍醐天皇": {
+    "image": "history-icons/059.webp"
+  },
+  "徳川慶喜": {
+    "image": "history-icons/130.webp"
+  },
+  "井伊直弼": {
+    "image": "history-icons/129.webp"
+  },
+  "西郷隆盛": {
+    "image": "history-icons/092.webp"
+  },
+  "大隈重信": {
+    "image": "history-icons/133.webp"
+  },
+  "道元": {
+    "image": "history-icons/099.webp"
+  },
+  "日蓮": {
+    "image": "history-icons/100.webp"
+  },
+  "一遍": {
+    "image": "history-icons/060.webp"
+  },
+  "杉田玄白": {
+    "image": "history-icons/016.webp"
+  },
+  "福沢諭吉": {
+    "image": "history-icons/020.webp"
+  },
+  "吉野作造": {
+    "image": "history-icons/142.webp"
+  },
+  "鑑真": {
+    "image": "history-icons/084.webp"
+  },
+  "ザビエル": {
+    "image": "history-icons/117.webp"
+  },
+  "ガンディー": {
+    "image": "history-icons/046.webp"
+  },
+  "平塚らいてう": {
+    "image": "history-icons/025.webp"
+  },
+  "ロック": {
+    "image": "history-icons/090.webp"
+  },
+  "ルソー": {
+    "image": "history-icons/040.webp"
+  },
+  "レーニン": {
+    "image": "history-icons/045.webp"
+  },
+  "北条時宗": {
+    "image": "history-icons/112.webp"
+  },
+  "運慶": {
+    "image": "history-icons/113.webp"
+  },
+  "足利義政": {
+    "image": "history-icons/114.webp"
+  },
+  "近松門左衛門": {
+    "image": "history-icons/015.webp"
+  },
+  "葛飾北斎": {
+    "image": "history-icons/126.webp"
+  },
+  "田中角栄": {
+    "image": "history-icons/053.webp"
+  }
+}

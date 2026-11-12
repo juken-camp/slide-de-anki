@@ -81,7 +81,7 @@ function config(){
 async function rpc(action,payload={}){
   const {url,key}=config();
   const response=await fetch(url+'/rest/v1/rpc/shared_chat_ai_rpc',{method:'POST',redirect:'error',
-    headers:{apikey:key,Authorization:'Bearer '+key,'Content-Type':'application/json'},
+    headers:{apikey:key,...(key.startsWith('sb_secret_')?{}:{Authorization:'Bearer '+key}),'Content-Type':'application/json'},
     body:JSON.stringify({p_action:action,p_payload:payload}),signal:AbortSignal.timeout(18000)});
   if(!response.ok)throw Error('db_rpc_failed_'+response.status);
   const body=await response.json();

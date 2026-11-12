@@ -104,7 +104,7 @@
   if(invite||!hasOwner){nick=field('shared-nickname','グルチャで使う名前','text',24,roomArea);nick.value=localStorage.getItem('himiko-shared-name-v1')||'受験生';}
   function name(){const n=nick?.value.trim()||'';if(!n)throw Error('名前を入力してください。');localStorage.setItem('himiko-shared-name-v1',n);return n;}
   if(invite)button('このグルチャへ参加申請',async()=>{await rpc('join',{token:invite,nickname:name()});invite='';sessionStorage.removeItem('himiko-pending-invite');await manage();status('参加申請しました。管理者の承認をお待ちください。');},roomArea);
-  if(!hasOwner)button('自分の共有グルチャを作る',async()=>{const r=await rpc('create',{name:'異次元グルチャ',nickname:name()});if(config.aiAvailable)await rpc('ai_toggle',{room_id:r.room_id,enabled:true});await enter(r.room_id);await manage();},roomArea);
+  if(!hasOwner)button('自分の共有グルチャを作る',async()=>{const r=await rpc('create',{name:'みんなで異次元グルチャ',nickname:name()});if(config.aiAvailable)await rpc('ai_toggle',{room_id:r.room_id,enabled:true});await enter(r.room_id);await manage();},roomArea);
   for(const r of rooms){const b=button(r.name+(r.status==='pending'?'（承認待ち）':''),()=>enter(r.id),roomArea);b.disabled=r.status!=='active';}
   if(inRoom)button('自分だけのグルチャに戻る',()=>{local();dialog.close();},roomArea);
   const account=section('アカウント');

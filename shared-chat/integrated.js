@@ -1,7 +1,8 @@
 /* Shared rooms rendered by the original Himiko bubble and background code. */
 (()=>{'use strict';
- const $=id=>document.getElementById(id),SESSION='nekopon-shared-chat-session-v1',ROOM='himiko-shared-room-v1';
+ const $=id=>document.getElementById(id),SESSION='nekopon-shared-chat-session-v1',ROOM='himiko-shared-room-v1',ENTRY_CACHE='himiko-shared-entry-v1';
  let config,session=null,view=null,room='',refreshing=null,syncing=false,waking=false,generation=0,signature='',pollTimer;
+ let ready,opening=null;
  let pendingSend=null,entryUnread=null,otpEmail='',otpAt=0,invite=new URLSearchParams(location.hash.slice(1)).get('invite')||'';
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  if(!/^[a-f0-9]{64}$/.test(invite))invite='';
@@ -18,7 +19,7 @@
   refreshing=(async()=>{
    try{const d=await jsonFetch(config.url+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{apikey:config.key,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:used})});
     if(session?.refreshToken===used)store(d);return session?.accessToken;
-   }catch(e){if([400,401,403].includes(e.status)&&session?.refreshToken===used){session=null;localStorage.removeItem(SESSION);}throw e;}
+   }catch(e){if([400,401,403].includes(e.status)&&session?.refreshToken===used){session=null;localStorage.removeItem(SESSION);updateEntryCount(null);}throw e;}
   })();try{return await refreshing;}finally{refreshing=null;}
  }
  async function rpc(action,payload={}){
@@ -30,9 +31,10 @@
   const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');
   const title=entry?.querySelector('.char-name,.shared-entry-title');
   if(!title)return;
-  if(!data?.room){title.textContent='みんなでグルチャ';return;}
+  if(!data?.room){title.textContent='みんなでグルチャ';try{localStorage.removeItem(ENTRY_CACHE);}catch{}return;}
   const count=(data.cast||[]).length+(data.members||[]).filter(m=>m.status==='active').length;
   title.textContent='みんなでグルチャ ('+count+')';
+  try{localStorage.setItem(ENTRY_CACHE,JSON.stringify({roomId:data.room.id,count}));}catch{}
  }
  async function refreshEntryCount(){
   if(!session?.refreshToken)return;
@@ -138,12 +140,15 @@
  }
  async function openShared(){
   try{
+   await ready;
+   if(!config?.integratedAvailable)throw Error('グルチャに接続できませんでした。時間をおいてもう一度お試しください。');
    if(!session?.refreshToken||invite){await manage();return;}
-   const d=await rpc('list');
-   const active=(d.rooms||[]).find(r=>r.status==='active');
+   let cached;try{cached=JSON.parse(localStorage.getItem(ENTRY_CACHE)||'null');}catch{}
+   if(cached?.roomId){try{await enter(cached.roomId);return;}catch(e){if(![400,403,404].includes(e.status))throw e;localStorage.removeItem(ENTRY_CACHE);}}
+   const d=await rpc('list');const active=(d.rooms||[]).find(r=>r.status==='active');
    if(active){await enter(active.id);return;}
    await manage();
-  }catch(e){try{await manage();status(e.message);}catch(err){status(err.message||e.message);}}
+  }catch(e){if(!config?.integratedAvailable){alert(e.message);return;}try{await manage();status(e.message);}catch(err){alert(err.message||e.message);}}
  }
  function paint(){
   if(!view||!window.himikoSharedActive||$('group-view').hidden)return;
@@ -178,17 +183,17 @@
   const cast=new Set(view.cast||[]);const activePeople=(view.members||[]).filter(m=>m.status==='active');
   target.replaceChildren();target.dataset.sharedRoster='1';
   const search=document.createElement('input');search.type='search';search.placeholder='偉人を検索';search.setAttribute('aria-label','偉人を検索');search.value=memberFilter;search.className='shared-roster-search';target.append(search);
-  const leftTitle=document.createElement('h3');leftTitle.className='membership-section-title';leftTitle.textContent='🚪 招待できる偉人';target.append(leftTitle);
-  const left=document.createElement('div');left.style.cssText='display:contents';target.append(left);
   const activeTitle=document.createElement('h3');activeTitle.className='membership-section-title';activeTitle.textContent='👋 '+(cast.size+activePeople.length)+'人が参加中です';target.append(activeTitle);
   const active=document.createElement('div');active.style.cssText='display:contents';target.append(active);
+  const leftTitle=document.createElement('h3');leftTitle.className='membership-section-title';leftTitle.textContent='🚪 招待できる偉人';target.append(leftTitle);
+  const left=document.createElement('div');left.style.cssText='display:contents';target.append(left);
   for(const m of activePeople){const row=document.createElement('div');row.className='char-card member-card';row.innerHTML=`<span class="card-inner"><span class="avatar self-avatar">👤</span><span class="card-info"><span class="member-name">${esc(m.name)}${m.user_id===view.self_id?'（あなた）':''}</span></span></span>`;if(m.user_id===view.self_id&&ownAvatar)row.querySelector('.avatar')?.replaceWith(ownAvatar);active.append(row);}
   for(const person of host().people()){
    const row=cards.get(person.id);if(!row)continue;
    const isActive=cast.has(person.id);row.dataset.left=String(!isActive);row.dataset.sharedSearch=String(person.name||'').toLocaleLowerCase();
    const label=document.createElement('span');label.className='shared-cast-label';label.textContent=isActive?'退会':'招待';row.querySelector('.card-inner')?.append(label);
    row.setAttribute('aria-label',person.name+'を'+(isActive?'退会':'招待'));
-   row.onclick=async e=>{if(e.target.closest('.avatar'))return;e.preventDefault();e.stopPropagation();if(row.disabled)return;row.disabled=true;try{await rpc(isActive?'cast_remove':'cast_add',{room_id:room,persona_id:person.id});await sync();}catch(err){$('group-member-error').textContent=err.message;$('group-member-error').hidden=false;}finally{row.disabled=false;}};
+   row.onclick=async e=>{if(e.target.closest('.avatar'))return;e.preventDefault();e.stopPropagation();if(row.disabled||!confirm(person.name+'を'+(isActive?'退会させますか？':'招待しますか？')))return;row.disabled=true;try{await rpc(isActive?'cast_remove':'cast_add',{room_id:room,persona_id:person.id});await sync();}catch(err){$('group-member-error').textContent=err.message;$('group-member-error').hidden=false;}finally{row.disabled=false;}};
    (isActive?active:left).append(row);
   }
   function filter(){memberFilter=search.value.trim().toLocaleLowerCase();for(const row of target.querySelectorAll('[data-shared-search]'))row.style.display=!memberFilter||row.dataset.sharedSearch.includes(memberFilter)?'':'none';}
@@ -221,10 +226,17 @@
  const oldClose=window.closeGroupChat;window.closeGroupChat=()=>{const shared=window.himikoSharedActive;oldClose();if(shared)local();};
  const oldRename=window.renameGroupChat;window.renameGroupChat=()=>{if(window.himikoSharedActive){void manage();return;}oldRename();};
  document.addEventListener('visibilitychange',()=>{if(!document.hidden){void sync();void wake();}});
- window.addEventListener('storage',e=>{if(e.key===SESSION){try{session=JSON.parse(e.newValue||'null');}catch{}if(!session&&window.himikoSharedActive)local();}});
+ window.addEventListener('storage',e=>{if(e.key===SESSION){try{session=JSON.parse(e.newValue||'null');}catch{}updateEntryCount(null);if(!session&&window.himikoSharedActive)local();else if(session)void refreshEntryCount();}});
  async function init(){
+  const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');
+  if(entry){
+   const title=entry.querySelector('.char-name,.shared-entry-title'),caption=entry.querySelector('.shared-entry-caption');
+   let cached;try{cached=JSON.parse(localStorage.getItem(ENTRY_CACHE)||'null');}catch{}
+   if(title)title.textContent='みんなでグルチャ'+(session?.refreshToken&&Number.isInteger(cached?.count)&&cached.count>=0?' ('+cached.count+')':'');
+   entry.onclick=e=>{e.preventDefault();if(opening)return;const prior=caption?.textContent;if(caption)caption.textContent='開いています…';entry.setAttribute('aria-busy','true');opening=openShared().finally(()=>{opening=null;entry.removeAttribute('aria-busy');if(caption)caption.textContent=prior;});};
+   entry.removeAttribute('target');entry.setAttribute('aria-label','みんなでグルチャ');
+  }
   try{config=await jsonFetch('/api/shared-chat');if(!config.integratedAvailable)return;ensureStyles();
-   const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');if(entry){entry.onclick=e=>{e.preventDefault();void openShared();};entry.removeAttribute('target');entry.setAttribute('aria-label','みんなでグルチャ');const title=entry.querySelector('.char-name,.shared-entry-title');if(title)title.textContent='みんなでグルチャ';}
    const manageButton=$('group-members-direct').cloneNode(true);manageButton.id='group-share';manageButton.className='char-card';manageButton.style.cssText='display:none;max-width:700px;min-height:48px;margin:0 auto 12px;color:inherit;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;animation:none';manageButton.textContent='グループの設定';manageButton.setAttribute('aria-label','グルチャに招待・参加');manageButton.onclick=()=>void manage();
    // Add the new control inside the existing member panel, never in the chat header.
    $('group-member-list').parentElement.insertBefore(manageButton,$('group-member-list'));
@@ -237,5 +249,5 @@
    let polls=0;pollTimer=setInterval(()=>{polls++;if(window.himikoSharedActive&&(!$('group-view').hidden||polls%10===0))void sync();},1000);setInterval(()=>{if(window.himikoSharedActive)void wake();},20000);
   }catch(e){/* Local chat continues when sharing is unavailable. */}
  }
- void init();
+ ready=init();
 })();

@@ -32,8 +32,23 @@
  function button(label,fn,parent){const b=document.createElement('button');b.type='button';b.className='suggestion-btn';b.textContent=label;b.onclick=()=>run(fn);parent.append(b);return b;}
  function field(id,label,type='text',max=200){const l=document.createElement('label');l.textContent=label;const i=document.createElement('input');i.id=id;i.type=type;i.maxLength=max;i.autocomplete=type==='email'?'email':'off';i.style.cssText='display:block;box-sizing:border-box;width:100%;font:inherit;padding:12px;margin:8px 0 16px;border:1px solid #bfa38b;border-radius:12px;background:transparent;color:inherit';l.append(i);dialog.append(l);return i;}
  function openDialog(){
-  if(!dialog){dialog=document.createElement('dialog');dialog.setAttribute('aria-label','グルチャへの招待・参加');dialog.style.cssText='box-sizing:border-box;width:min(94vw,480px);max-height:85dvh;overflow:auto;border:1px solid #bc8d59;border-radius:18px;padding:20px;font-family:inherit;background:var(--bg,#fff8f0);color:var(--text,#473325)';document.body.append(dialog);}
-  dialog.replaceChildren();const title=document.createElement('h2');title.textContent='家族・友達と一緒に';title.style.fontSize='18px';dialog.append(title);button('閉じる',()=>dialog.close(),dialog);const s=document.createElement('p');s.id='shared-status';s.role='status';s.style.whiteSpace='pre-wrap';dialog.append(s);if(!dialog.open)dialog.showModal();
+  if(!dialog){
+   const style=document.createElement('style');style.textContent=`
+    .shared-dialog{box-sizing:border-box;width:min(92vw,480px);max-height:80dvh;overflow:auto;border:1px solid #bc8d59;border-radius:18px;padding:20px;font-family:inherit;background:#fff8f0;color:#473325;box-shadow:0 12px 36px #0005}
+    .shared-dialog::backdrop{background:rgba(0,0,0,.55)}
+    .shared-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+    .shared-dialog-header h2{font-size:18px;line-height:1.4;margin:0}
+    .shared-dialog .suggestion-btn{display:block;max-width:100%;height:auto;margin:8px 0;white-space:normal;text-align:left}
+    .shared-dialog-header .suggestion-btn{flex:none;margin:0}
+    .shared-dialog label{display:block;line-height:1.5}
+    .shared-dialog input{background:transparent}
+    .shared-dialog #shared-status:empty{display:none}
+    html[data-persona="cyber"] .shared-dialog{background:#101b35;color:#e0eaff;border-color:#39637f}
+    html[data-persona="cyber"] .shared-dialog input{background:#0a1127!important;border-color:#39637f!important;color:#e0eaff!important}
+   `;document.head.append(style);
+   dialog=document.createElement('dialog');dialog.className='shared-dialog';dialog.setAttribute('aria-label','グルチャへの招待・参加');document.body.append(dialog);
+  }
+  dialog.replaceChildren();const header=document.createElement('div');header.className='shared-dialog-header';const title=document.createElement('h2');title.textContent='家族・友達と一緒に';header.append(title);button('閉じる',()=>dialog.close(),header);dialog.append(header);const s=document.createElement('p');s.id='shared-status';s.role='status';s.style.whiteSpace='pre-wrap';dialog.append(s);if(!dialog.open)dialog.showModal();
  }
  async function manage(){
   if(!config?.integratedAvailable)return;
@@ -138,7 +153,10 @@
    const manageButton=$('group-members-direct').cloneNode(true);manageButton.id='group-share';manageButton.textContent='招待';manageButton.setAttribute('aria-label','グルチャに招待・参加');manageButton.onclick=()=>void manage();
    // Add the new control inside the existing member panel, never in the chat header.
    $('group-member-list').parentElement.insertBefore(manageButton,$('group-member-list'));
-   if(invite){await manage();}else if(room&&session?.refreshToken){try{await enter(room);}catch(e){if([401,403].includes(e.status)){local();}else{status(e.message);}}}
+   // Always open the original personal chat first; a shared room is entered explicitly.
+   // The room and its messages remain on the server and are accessible from the menu.
+   if(room){local();}
+   if(invite){await manage();}
    let polls=0;pollTimer=setInterval(()=>{polls++;if(window.himikoSharedActive&&(!$('group-view').hidden||polls%10===0))void sync();},1000);setInterval(()=>{if(window.himikoSharedActive)void wake();},20000);
   }catch(e){/* Local chat continues when sharing is unavailable. */}
  }

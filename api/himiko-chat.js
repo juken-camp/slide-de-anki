@@ -3586,13 +3586,13 @@ function groupFiguresFor(plan){
  const available=GROUP_FIGURES.filter(p=>!(plan.absentIds||[]).includes(p.id));return plan.automatic?available.filter(p=>!p.isExplainer&&p.learning.mode!=='explainer'):available;
 }
 function buildGroupSchema(plan){
- const speaker={type:'object',properties:{name:plan.automatic?{type:'string'}:{type:'string',enum:groupFiguresFor(plan).map(p=>p.name)},text:{type:'string'},...(plan.automatic?{event:{type:'string',enum:['','leave','join','invite','away','return']},target:{type:'string'}}:{})},required:plan.automatic?['name','text','event','target']:['name','text'],additionalProperties:false};
+ const speaker={type:'object',properties:{name:{type:'string'},text:{type:'string'},...(plan.automatic?{event:{type:'string',enum:['','leave','join','invite','away','return']},target:{type:'string'}}:{})},required:plan.automatic?['name','text','event','target']:['name','text'],additionalProperties:false};
  const slots=Object.fromEntries(Array.from({length:plan.figures},(_,i)=>['speaker'+(i+1),speaker]));
  return {type:'object',properties:{
   topicContext:{type:'object',properties:{period:{type:'string'},region:{type:'string'}},required:['period','region'],additionalProperties:false},
   historicalReplies:plan.automatic?{type:'array',items:speaker,minItems:1}:{type:'object',properties:slots,required:Object.keys(slots),additionalProperties:false},
   teacherSupplement:{type:plan.teacher?'string':'null'},
-  studentQuestion:{type:'object',properties:{asker:plan.automatic?{type:'string'}:{type:'string',enum:['',...groupFiguresFor(plan).map(p=>p.name),AI_SENSEI.name]},question:{type:'string'},answerExamples:{type:'array',items:{type:'string'}}},required:['asker','question','answerExamples'],additionalProperties:false},
+  studentQuestion:{type:'object',properties:{asker:{type:'string'},question:{type:'string'},answerExamples:{type:'array',items:{type:'string'}}},required:['asker','question','answerExamples'],additionalProperties:false},
   suggestions:{type:'array',items:{type:'string'}}
  },required:['topicContext','historicalReplies','teacherSupplement','studentQuestion','suggestions'],additionalProperties:false};
 }

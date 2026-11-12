@@ -85,7 +85,7 @@
    let previous=null;const rows=[];
    for(const m of view.messages||[]){const at=Date.parse(m.sent_at);rows.push(host().date(at,previous));previous=at;if(m.seq===entryUnread)rows.push('<div id="group-unread-divider" role="separator" aria-label="ここから未読メッセージ">ここから未読メッセージ</div>');
     let html=m.hidden?`<div class="group-system-event"><span>管理者が発言を削除しました</span></div>`:m.kind==='system'?`<div class="group-system-event"><span><time>${esc(host().clock(at))}</time><span class="group-event-label">${esc(m.text)}</span></span></div>`:m.kind==='ai'?host().rowAI(m):host().rowHuman(m,m.user_id===view.self_id);
-    const t=document.createElement('template');t.innerHTML=html;const row=t.content.querySelector('.bubble-row');if(row){row.dataset.sharedSeq=m.seq;row.dataset.sharedUser=m.user_id||'';const bubble=row.querySelector('.bubble');if(bubble)bubble.id='shared-message-'+room+'-'+m.seq;const time=row.querySelector('.history-message-time');if(time)time.innerHTML=(Number(m.read_count)>0?'既読 '+Number(m.read_count)+'<br>':'')+esc(host().clock(at));}
+    const t=document.createElement('template');t.innerHTML=html;const row=t.content.querySelector('.bubble-row');if(row){row.dataset.sharedSeq=m.seq;row.dataset.sharedUser=m.user_id||'';const bubble=row.querySelector('.bubble');if(bubble)bubble.id='shared-message-'+room+'-'+m.seq;const time=row.querySelector('.history-message-time');if(time)time.innerHTML=(m.user_id===view.self_id&&Number(m.read_count)>0?'既読 '+Number(m.read_count)+'<br>':'')+esc(host().clock(at));}
     rows.push(t.innerHTML);
    }
    box.innerHTML=rows.join('');signature=sig;host().refreshSearch?.();if(follow)scroller.scrollTop=scroller.scrollHeight;else scroller.scrollTop=top;

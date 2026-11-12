@@ -5,13 +5,13 @@
 <script>if(window.parent!==window)document.documentElement.classList.add("nekopon-embedded");</script>
   <meta charset="UTF-8"><script>try{document.documentElement.dataset.persona=localStorage.getItem('nekopon-character-theme-v1')==='cyber'?'cyber':'neko'}catch(_){}</script><style>html,body{background:#fff8f0}html[data-persona="cyber"],html[data-persona="cyber"] body{background:#080d20}
 /* Shared room entry: use the original group card geometry; image slot stays empty. */
-#list-view .shared-chat-join-entry{display:block;margin:10px 0 0;text-decoration:none;cursor:pointer;animation:none}
+#list-view .shared-chat-join-entry{position:relative;display:block;margin:10px 0 0;text-decoration:none;cursor:pointer;animation:none}
 #list-view .shared-chat-join-entry .card-inner{gap:10px}
 #list-view .shared-chat-join-entry .shared-entry-placeholder{flex:none;width:50px;height:50px;border-radius:15px;border:0;background:none;overflow:hidden}
 #list-view .shared-chat-join-entry .shared-entry-placeholder img{display:block;width:100%;height:100%;object-fit:cover;border-radius:14px}
 #list-view .shared-chat-join-entry .card-info{flex:1;min-width:0}
 #list-view .shared-entry-title{font-size:16px;font-weight:900;line-height:1.4;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#1e293b}
-#list-view .shared-entry-caption{font-size:12px;font-weight:700;line-height:1.6;margin-top:4px;color:#a07960}
+#list-view .shared-entry-caption{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;font-weight:700;line-height:1.6;margin-top:4px;color:#a07960}
 #list-view .shared-chat-join-entry:focus-visible{outline:2px solid #bc8d59;outline-offset:3px}
 #list-view .shared-chat-join-entry:active{transform:scale(.99)}
 html[data-persona="cyber"] #list-view .shared-entry-placeholder{border-color:#446e89;background:rgba(30,112,150,.08)}
@@ -1826,8 +1826,8 @@ html[data-persona="cyber"] #list-view .presence-guide{color:#a9c6df}
 </style>
 <style id="chat-card-corner-controls">
 #list-view .char-card{position:relative;overflow:visible}
-#list-view #card-list .personal-unread,#list-view #group-unread{position:absolute;top:-3px;right:-2px;z-index:2;box-sizing:border-box;min-width:22px;height:22px;padding:0 5px;border-radius:12px;font-family:inherit;font-size:12px;font-weight:700;line-height:1;background:#e05e62;color:#fff;pointer-events:none;box-shadow:0 0 0 2px #fff8f0}
-html[data-persona="cyber"] #list-view #card-list .personal-unread,html[data-persona="cyber"] #list-view #group-unread{box-shadow:0 0 0 2px #101b32}
+#list-view #card-list .personal-unread,#list-view #group-unread,#list-view #shared-group-unread{position:absolute;top:-3px;right:-2px;z-index:2;box-sizing:border-box;min-width:22px;height:22px;padding:0 5px;border-radius:12px;font-family:inherit;font-size:12px;font-weight:700;line-height:1;background:#e05e62;color:#fff;pointer-events:none;box-shadow:0 0 0 2px #fff8f0}
+html[data-persona="cyber"] #list-view #card-list .personal-unread,html[data-persona="cyber"] #list-view #group-unread,html[data-persona="cyber"] #list-view #shared-group-unread{box-shadow:0 0 0 2px #101b32}
 #list-view .group-chat-placeholder .card-name-row{padding-right:12px}
 </style>
 <style id="chat-back-no-flash">
@@ -2012,6 +2012,7 @@ html[data-persona="cyber"] #sengoku-panel{background:#0f1430}
       </div>
     </div>
     <a class="shared-chat-join-entry char-card" href="/shared-chat.html?v=20261109-embeddedicons-v1" target="_top" rel="noopener" data-shared-entry aria-label="みんなでグルチャを開く">
+      <span id="shared-group-unread" class="group-unread" hidden></span>
       <div class="card-inner">
         <!-- Locally stored icon -->
         <span class="avatar shared-entry-placeholder" aria-hidden="true"><img src="/icons/shared-chat.webp?v=20261109-threechat-icons-v2" alt="" width="256" height="256" decoding="async"></span>
@@ -3874,7 +3875,7 @@ box.addEventListener('scroll',()=>{if(!down&&Date.now()>userUntil)return;userUnt
 })();
 </script>
 <script src="history202/launcher.js?v=20261109-grid-bg-v1" defer></script>
-<script src="/shared-chat/integrated.js?v=20261112-10"></script>
+<script src="/shared-chat/integrated.js?v=20261112-11"></script>
 </body>
 </html>
 

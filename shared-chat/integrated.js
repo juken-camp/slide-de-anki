@@ -2,7 +2,7 @@
 (()=>{'use strict';
  const $=id=>document.getElementById(id),SESSION='nekopon-shared-chat-session-v1',ROOM='himiko-shared-room-v1',ENTRY_CACHE='himiko-shared-entry-v1';
  let config,session=null,view=null,room='',refreshing=null,syncing=false,waking=false,generation=0,signature='',pollTimer;
- let ready,opening=null;
+ let ready,opening=null,sharedCaption='家族や友達と一緒に、みんなで異次元グルチャ！',savedIcons=null;
  let pendingSend=null,entryUnread=null,otpEmail='',otpAt=0,invite=new URLSearchParams(location.hash.slice(1)).get('invite')||'';
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  if(!/^[a-f0-9]{64}$/.test(invite))invite='';
@@ -31,10 +31,21 @@
   const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');
   const title=entry?.querySelector('.char-name,.shared-entry-title');
   if(!title)return;
-  if(!data?.room){title.textContent='みんなでグルチャ';try{localStorage.removeItem(ENTRY_CACHE);}catch{}return;}
+  const caption=entry.querySelector('.shared-entry-caption'),badge=$('shared-group-unread');
+  if(!data?.room){title.textContent='みんなでグルチャ';sharedCaption='家族や友達と一緒に、みんなで異次元グルチャ！';if(caption&&!opening)caption.textContent=sharedCaption;if(badge)badge.hidden=true;try{localStorage.removeItem(ENTRY_CACHE);}catch{}if(window.parent&&window.parent!==window)window.parent.postMessage({type:'himiko-shared-unread',count:0},location.origin);return;}
   const count=(data.cast||[]).length+(data.members||[]).filter(m=>m.status==='active').length;
   title.textContent='みんなでグルチャ ('+count+')';
+  const last=(data.messages||[]).filter(m=>!m.hidden&&typeof m.text==='string'&&m.text.trim()).at(-1);
+  sharedCaption=last?'💬 '+last.text.replace(/\s+/g,' ').trim():'家族や友達と一緒に、みんなで異次元グルチャ！';
+  if(caption&&!opening)caption.textContent=sharedCaption;
+  const unread=Math.max(0,Number(data.unread_count)||0);if(badge){badge.textContent=unread?String(unread):'';badge.hidden=!unread;}
+  if(window.parent&&window.parent!==window)window.parent.postMessage({type:'himiko-shared-unread',count:unread},location.origin);
   try{localStorage.setItem(ENTRY_CACHE,JSON.stringify({roomId:data.room.id,count}));}catch{}
+ }
+ function sharedIcons(on){
+  const imgs=[$('group-header-avatar')?.querySelector('img'),document.querySelector('#group-members .group-members-avatar img')].filter(Boolean);
+  if(on){if(!savedIcons)savedIcons=imgs.map(img=>({img,src:img.getAttribute('src'),alt:img.getAttribute('alt')}));for(const img of imgs){img.src='/icons/shared-chat.webp?v=20261109-threechat-icons-v2';img.alt='みんなでグルチャ';}}
+  else if(savedIcons){for(const {img,src,alt} of savedIcons){if(src===null)img.removeAttribute('src');else img.setAttribute('src',src);if(alt===null)img.removeAttribute('alt');else img.setAttribute('alt',alt);}savedIcons=null;}
  }
  async function refreshEntryCount(){
   if(!session?.refreshToken)return;
@@ -133,10 +144,10 @@
    button('参加状況を更新',manage,account);
    button('ログアウト',async()=>{const access=await token();await jsonFetch(config.url+'/auth/v1/logout',{method:'POST',headers:{apikey:config.key,Authorization:'Bearer '+access}});session=null;localStorage.removeItem(SESSION);updateEntryCount(null);local();await manage();},account);
  }
- function local(){generation++;room='';view=null;signature='';pendingSend=null;$('group-input').value='';if($('group-share'))$('group-share').style.display='none';host().clearQuote();localStorage.removeItem(ROOM);host().deactivate();}
+ function local(){generation++;room='';view=null;signature='';pendingSend=null;sharedIcons(false);$('group-input').value='';if($('group-share'))$('group-share').style.display='none';host().clearQuote();localStorage.removeItem(ROOM);host().deactivate();}
  async function enter(id){
   const current=++generation;const data=await rpc('sync',{room_id:id});if(current!==generation)return;
-  if(room!==id){$('group-input').value='';host().clearQuote();}room=id;view=data;updateEntryCount(data);signature='';entryUnread=data.messages.find(m=>m.seq>data.last_read_seq&&m.user_id!==data.self_id)?.seq||null;pendingSend=null;localStorage.setItem(ROOM,id);host().activate();if($('group-share'))$('group-share').style.display='block';window.openGroupChat();paint();const divider=$('group-unread-divider');if(divider?.scrollIntoView)divider.scrollIntoView({block:'center'});else $('group-messages').scrollTop=$('group-messages').scrollHeight;dialog?.close();void wake();
+  if(room!==id){$('group-input').value='';host().clearQuote();}room=id;view=data;updateEntryCount(data);signature='';entryUnread=data.messages.find(m=>m.seq>data.last_read_seq&&m.user_id!==data.self_id)?.seq||null;pendingSend=null;localStorage.setItem(ROOM,id);host().activate();sharedIcons(true);if($('group-share'))$('group-share').style.display='block';window.openGroupChat();paint();const divider=$('group-unread-divider');if(divider?.scrollIntoView)divider.scrollIntoView({block:'center'});else $('group-messages').scrollTop=$('group-messages').scrollHeight;dialog?.close();void wake();
  }
  async function openShared(){
   try{
@@ -202,7 +213,7 @@
  async function sync(){
   if(!room||!session||syncing||document.hidden)return;syncing=true;const id=room,current=generation;
   try{const history=view?.messages||[];const d=await rpc('sync',{room_id:id,...(history.length>100?{from_seq:history[0].seq}:{})});if(id!==room||current!==generation)return;view=d;updateEntryCount(d);paint();
-   const scroll=$('group-messages');if(!$('group-view').hidden&&scroll.scrollHeight-scroll.scrollTop-scroll.clientHeight<80){const seq=d.messages.at(-1)?.seq||0;if(seq>d.last_read_seq)await rpc('read',{room_id:id,seq});}
+   const scroll=$('group-messages');if(!$('group-view').hidden&&scroll.scrollHeight-scroll.scrollTop-scroll.clientHeight<80){const seq=d.messages.at(-1)?.seq||0;if(seq>d.last_read_seq){await rpc('read',{room_id:id,seq});if(id===room&&current===generation){d.last_read_seq=seq;d.unread_count=0;updateEntryCount(d);}}}
   }catch(e){if(id===room&&[401,403].includes(e.status)){local();status('参加状態を確認するため、招待・参加を開いてください。');}else if(id===room){$('group-status').textContent=e.message;$('group-status').hidden=false;}}finally{syncing=false;}
  }
  async function wake(){if(waking||!room||!view?.room.ai_enabled||!view?.cast?.length||document.hidden)return;waking=true;const id=room;
@@ -233,7 +244,7 @@
    const title=entry.querySelector('.char-name,.shared-entry-title'),caption=entry.querySelector('.shared-entry-caption');
    let cached;try{cached=JSON.parse(localStorage.getItem(ENTRY_CACHE)||'null');}catch{}
    if(title)title.textContent='みんなでグルチャ'+(session?.refreshToken&&Number.isInteger(cached?.count)&&cached.count>=0?' ('+cached.count+')':'');
-   entry.onclick=e=>{e.preventDefault();if(opening)return;const prior=caption?.textContent;if(caption)caption.textContent='開いています…';entry.setAttribute('aria-busy','true');opening=openShared().finally(()=>{opening=null;entry.removeAttribute('aria-busy');if(caption)caption.textContent=prior;});};
+   entry.onclick=e=>{e.preventDefault();if(opening)return;if(caption)caption.textContent='開いています…';entry.setAttribute('aria-busy','true');opening=openShared().finally(()=>{opening=null;entry.removeAttribute('aria-busy');if(caption)caption.textContent=sharedCaption;});};
    entry.removeAttribute('target');entry.setAttribute('aria-label','みんなでグルチャ');
   }
   try{config=await jsonFetch('/api/shared-chat');if(!config.integratedAvailable)return;ensureStyles();
@@ -246,7 +257,7 @@
    void refreshEntryCount();
    if(invite){await manage();}
    else if(/^[a-f0-9-]{36}$/i.test(requestedRoom||'')&&session?.refreshToken){try{await enter(requestedRoom);}catch(e){status(e.message);}}
-   let polls=0;pollTimer=setInterval(()=>{polls++;if(window.himikoSharedActive&&(!$('group-view').hidden||polls%10===0))void sync();},1000);setInterval(()=>{if(window.himikoSharedActive)void wake();},20000);
+   let polls=0;pollTimer=setInterval(()=>{polls++;if(window.himikoSharedActive&&(!$('group-view').hidden||polls%10===0))void sync();else if(!document.hidden&&polls%15===0)void refreshEntryCount();},1000);setInterval(()=>{if(window.himikoSharedActive)void wake();},20000);
   }catch(e){/* Local chat continues when sharing is unavailable. */}
  }
  ready=init();

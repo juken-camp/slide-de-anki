@@ -1,6 +1,6 @@
 /* Runs in the host app, using its existing studyHistory; no student names are sent. */
 (()=>{
- const KEY='himiko-inbox-token-v1',OPT='himiko-auto-enabled-v1';let token=localStorage.getItem(KEY),enabled=localStorage.getItem(OPT)==='1',unread=0,inflight=false,reg,chatOpen=false,chatActiveUntil=0;
+ const KEY='himiko-inbox-token-v1',OPT='himiko-auto-enabled-v1';let token=localStorage.getItem(KEY),enabled=localStorage.getItem(OPT)==='1',unread=0,sharedUnread=0,inflight=false,reg,chatOpen=false,chatActiveUntil=0;
  if(!/^[a-f0-9]{64}$/.test(token||'')){token=Array.from(crypto.getRandomValues(new Uint8Array(32)),x=>x.toString(16).padStart(2,'0')).join('');localStorage.setItem(KEY,token)}
  const frame=()=>document.getElementById('himikoFrame')||document.querySelector('iframe[src*="himiko"]');
  function send(d){frame()?.contentWindow?.postMessage(d,location.origin)}
@@ -22,7 +22,23 @@
   const d=await r.json();if(r.ok)return d;if(r.status!==409||attempt===3)throw Error((document.documentElement?.dataset.persona==='cyber'&&d.error==='自動会話のサーバー設定がまだ完了していません')?'自動会話のサーバー設定がまだ完了していないぜ':(d.error||'接続できませんでした'));await new Promise(resolve=>setTimeout(resolve,300*(attempt+1)));
  }};const pending=requestQueue.catch(()=>{}).then(run);requestQueue=pending;return pending}
 
- async function badge(n){unread=n;send({type:'himiko-inbox-count',count:n});try{if(n&&navigator.setAppBadge)await navigator.setAppBadge(n);else if(navigator.clearAppBadge)await navigator.clearAppBadge();reg?.active?.postMessage({type:'himiko-badge',count:n})}catch{}}
+ async function badge(n){unread=n;send({type:'himiko-inbox-count',count:n});const total=unread+sharedUnread;try{if(total&&navigator.setAppBadge)await navigator.setAppBadge(total);else if(navigator.clearAppBadge)await navigator.clearAppBadge();reg?.active?.postMessage({type:'himiko-badge',count:total})}catch{}}
+ let sharedPolling=false;
+ async function refreshSharedUnread(){
+  if(sharedPolling||document.hidden)return;
+  let session;try{session=JSON.parse(localStorage.getItem('nekopon-shared-chat-session-v1')||'null');}catch{}
+  if(!session?.refreshToken){sharedUnread=0;void badge(unread);return;}
+  // The chat screen refreshes expired credentials; this background check never
+  // consumes a refresh token concurrently with it.
+  if(!session.accessToken||Date.now()>=session.tokenExpiresAt-90000)return;
+  sharedPolling=true;
+  try{
+   const rpc=async(action,payload={})=>{const r=await fetch('/api/shared-chat',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+session.accessToken},body:JSON.stringify({action,payload}),cache:'no-store',signal:AbortSignal.timeout(10000)});if(!r.ok)throw Error('shared_unavailable');return r.json();};
+   const list=await rpc('list'),room=(list.rooms||[]).find(r=>r.status==='active');
+   const data=room?await rpc('sync',{room_id:room.id}):null;
+   sharedUnread=Math.max(0,Math.min(9999,Number(data?.unread_count)||0));void badge(unread);
+  }catch{}finally{sharedPolling=false;}
+ }
  let control,status,deliveryPollTimer;
  function state(d){clearTimeout(deliveryPollTimer);if(d.enabled&&d.typing?.[0]?.at){const wait=Math.max(250,d.typing[0].at-Date.now()+200);deliveryPollTimer=setTimeout(()=>{if(enabled&&!document.hidden)api('poll').then(state).catch(()=>{});},wait);}enabled=d.enabled;localStorage.setItem(OPT,enabled?'1':'0');if(control)control.checked=enabled;refreshButtons();const trial=d.deliveryMode==='test';const device=panel.querySelector('[data-device-code]');if(d.deviceCode)device.textContent=d.deviceCode;panel.querySelector('[data-device-mode]').textContent=trial?'テスト運用':'通常運用';panel.querySelector('[data-device-mode-note]').hidden=!trial;badge(d.unread||0);send({type:'himiko-inbox-data',data:d});}
  async function sync(){if(!enabled||inflight)return;inflight=true;try{state(await api('sync',{snapshot:stats()}));if(chatOpen&&Date.now()<chatActiveUntil)await api('presence',{active:true});if(status)status.textContent='';}catch(e){if(status)status.textContent=e.message}finally{inflight=false}}
@@ -45,11 +61,13 @@
  control.onchange=async()=>{control.disabled=true;try{const d=await api('settings',{enabled:control.checked,snapshot:stats()});state(d);status.textContent=enabled?'学習した内容の概要を使って、ときどき会話が届きます。設定の名前は送信しません。':'';if(!enabled){panel.querySelector('#himiko-push-toggle').checked=false;const sub=await reg?.pushManager.getSubscription();await sub?.unsubscribe();}}catch(e){control.checked=enabled;status.textContent=e.message}finally{control.disabled=false;refreshButtons()}};
  panel.querySelector('#himiko-push-toggle').onchange=async function(){this.disabled=true;try{if(!enabled)throw Error('先に「偉人のおしゃべり」で「おしゃべりOK」を選んでください');if(!('serviceWorker'in navigator)||!('PushManager'in window))throw Error('ホーム画面に追加したアプリから設定してください');const permission=this.checked?Notification.requestPermission():Promise.resolve('default');reg=await navigator.serviceWorker.register('/himiko-push-sw.js',{scope:'/'});await navigator.serviceWorker.ready;if(!this.checked){const sub=await reg.pushManager.getSubscription();await api('subscribe',{subscription:null});await sub?.unsubscribe();return}const cfg=await api('poll');if(!cfg.publicKey)throw Error('通知のサーバー設定が必要です');if(await permission!=='granted')throw Error('通知が許可されていません');const b64=cfg.publicKey.replace(/-/g,'+').replace(/_/g,'/');const key=Uint8Array.from(atob(b64+'='.repeat((4-b64.length%4)%4)),x=>x.charCodeAt(0));const sub=await reg.pushManager.getSubscription()||await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:key});await api('subscribe',{subscription:sub.toJSON()});status.textContent='件数だけにしたい場合は、iPhoneの通知設定でバナー等をオフ、バッジをオンにしてください。';}catch(e){this.checked=false;status.textContent=e.message}finally{this.disabled=false;refreshButtons()}};
  function open(){try{if(typeof showScreen==='function')showScreen('himiko');const f=frame();const go=()=>send({type:'himiko-open-group'});if(f?.contentDocument?.readyState==='complete')go();else f?.addEventListener('load',go,{once:true})}catch{}}
+ window.addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==frame()?.contentWindow||e.data?.type!=='himiko-shared-unread')return;sharedUnread=Math.max(0,Math.min(9999,Number(e.data.count)||0));void badge(unread);});
  window.addEventListener('message',async e=>{if(e.origin!==location.origin||e.source!==frame()?.contentWindow)return;const m=e.data;if(!m||typeof m!=='object')return;if(m.type==='himiko-inbox-ready'){sync();send({type:'himiko-inbox-count',count:unread});if(new URL(location.href).searchParams.has('himikoGroup'))open();}if(m.type==='himiko-chat-busy'){chatActiveUntil=Date.now()+120000;if(enabled)api('presence',{active:true}).catch(()=>{});}if(m.type==='himiko-chat-activity'){chatActiveUntil=Date.now()+120000;const d=new Date(Date.now()+9*3600000).toISOString().slice(0,10);let v={};try{v=JSON.parse(localStorage.getItem('himiko-chat-count-v1')||'{}')}catch{}localStorage.setItem('himiko-chat-count-v1',JSON.stringify({[d]:Math.min(100,(Number(v[d])||0)+1)}));sync();}if(!enabled)return;if(m.type==='himiko-chat-state'){chatOpen=m.open===true;if(!chatOpen){chatActiveUntil=0;api('presence',{active:false}).catch(()=>{});}}try{if(m.type==='himiko-inbox-action'&&['read','interrupt','reset','presence','poll','shared_mode'].includes(m.action)){const extra={};for(const k of ['keys','batchId','seen','active','context','enabled'])if(m[k]!==undefined)extra[k]=m[k];const d=await api(m.action,extra);state(d);}}catch(e){send({type:'himiko-inbox-error',error:e.message,action:m.action,keys:m.keys})}});
  navigator.serviceWorker?.addEventListener('message',e=>{if(e.data?.type==='himiko-open-group')open();if(e.data?.type==='himiko-inbox-refresh')sync()});
  navigator.serviceWorker?.getRegistration('/').then(async r=>{if(r?.active?.scriptURL.endsWith('/himiko-push-sw.js')){reg=r;panel.querySelector('#himiko-push-toggle').checked=!!await r.pushManager.getSubscription();refreshButtons()}}).catch(()=>{});
  // Poll only the visible question page frequently enough to catch short typing windows.
  setInterval(()=>{const f=frame();if(enabled&&!document.hidden&&f?.getClientRects().length&&!inflight){inflight=true;api('poll').then(state).catch(()=>{}).finally(()=>{inflight=false});}},5000);
- setInterval(sync,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync()});window.addEventListener('pageshow',sync);sync();
+ setInterval(sync,60000);setInterval(refreshSharedUnread,30000);document.addEventListener('visibilitychange',()=>{if(!document.hidden){sync();void refreshSharedUnread();}});window.addEventListener('pageshow',()=>{sync();void refreshSharedUnread();});window.addEventListener('storage',e=>{if(e.key==='nekopon-shared-chat-session-v1')void refreshSharedUnread();});sync();void refreshSharedUnread();
  if(new URL(location.href).searchParams.has('himikoGroup'))open();
 })();
+

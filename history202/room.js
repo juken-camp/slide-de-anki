@@ -86,11 +86,16 @@ function visibleMessages(ch,index){return ch.messages.map((m,i)=>({m,time:schedu
 
 function replaceFakeCards(chapters,realMaterials){
  const items=Array.isArray(realMaterials?.items)?realMaterials.items:[];
+ const seenMaterials=new Set();
  for(const ch of chapters){
   // Previous 202 word cards / 16 hand-drawn cards were not genuine historical sources.
   ch.messages=ch.messages.filter(m=>!(m.kind==='image'&&/history202\/(?:term_cards|materials)\//.test(m.image||''))&&!/^h\d+-(?:termimg-|img-)/.test(m.id||''));
   const additions=items.filter(it=>Number(it.chapter)===Number(ch.id));
   for(const item of additions){
+   // Identical source at the same dialogue position is shown once; keep the manifest intact.
+   const key=JSON.stringify([item.chapter,item.after,item._originalImage||item.image||item.imageUrl]);
+   if(seenMaterials.has(key))continue;
+   seenMaterials.add(key);
    const imageUrl=item.image||item.imageUrl;
    // Authentic materials also come from public museums, libraries and archival collections.
    // Permit only the explicit asset hosts used in the source manifest.
@@ -465,7 +470,7 @@ async function load(){try{const responses=await Promise.all(['history202/chapter
  for(const response of responses)if(!response.ok)throw Error('読み込みに失敗しました: '+response.status);
  const [script,people,config]=await Promise.all(responses.map(r=>r.json()));
  let localImages={};try{const localResponse=await fetch('history202/local-images.json',{cache:'no-store'});if(localResponse.ok)localImages=await localResponse.json()}catch(e){console.warn('local image index unavailable',e)}
- let realMaterials={items:[]};try{const r=await fetch('history202/real-materials.json',{cache:'no-store'});if(!r.ok)throw Error('資料データ HTTP '+r.status);realMaterials=await r.json();for(const material of realMaterials.items||[]){const local=localImages[material.id];if(typeof local==='string'&&/^history202\/authentic_images\/[a-zA-Z0-9_-]+\.webp$/.test(local)){material.image=local;material.localImage=true}}if(!Array.isArray(realMaterials.items)||realMaterials.items.length<157)throw Error('歴史資料データが不足しています')}catch(e){state.materialLoadError='歴史資料画像データを読み込めませんでした。画像の設定ファイルを確認してください。';console.warn('real materials unavailable',e)}
+ let realMaterials={items:[]};try{const r=await fetch('history202/real-materials.json',{cache:'no-store'});if(!r.ok)throw Error('資料データ HTTP '+r.status);realMaterials=await r.json();for(const material of realMaterials.items||[]){material._originalImage=material.image||material.imageUrl;const local=localImages[material.id];if(typeof local==='string'&&/^history202\/authentic_images\/[a-zA-Z0-9_-]+\.webp$/.test(local)){material.image=local;material.localImage=true}}if(!Array.isArray(realMaterials.items)||realMaterials.items.length<157)throw Error('歴史資料データが不足しています')}catch(e){state.materialLoadError='歴史資料画像データを読み込めませんでした。画像の設定ファイルを確認してください。';console.warn('real materials unavailable',e)}
  if(!Array.isArray(script.chapters)||script.chapters.length!==31||script.chapters.reduce((n,c)=>n+(c.entries?.length||0),0)!==202)throw Error('重要事項が31話・202項目ではありません');
  const ids=new Set();for(const ch of script.chapters){if(!Array.isArray(ch.messages)||!ch.messages.length)throw Error('空の話があります');for(const m of ch.messages){if(!m.id||!m.text||!m.speaker||ids.has(m.id))throw Error('会話IDの重複または不足があります');ids.add(m.id)}}
  state.chapters=replaceFakeCards(script.chapters,realMaterials);state.people=people;state.config=config;
@@ -492,3 +497,4 @@ load();
 setInterval(()=>{if(document.hidden||state.config.mode!=='broadcast'||isPreview||!state.chapters.length||state.search)return;const ch=chapterAt(state.selected-1),shown=visibleMessages(ch,state.selected-1);if(shown.length!==inner.querySelectorAll('.h202-bubble').length){const nearBottom=box.scrollHeight-box.scrollTop-box.clientHeight<90;render();if(nearBottom)box.scrollTop=box.scrollHeight}},10000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&state.config.mode==='broadcast'&&!isPreview&&state.chapters.length)render()});
 })();
+

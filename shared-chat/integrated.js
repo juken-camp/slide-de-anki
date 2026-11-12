@@ -48,8 +48,8 @@
   else if(savedIcons){for(const {img,src,alt} of savedIcons){if(src===null)img.removeAttribute('src');else img.setAttribute('src',src);if(alt===null)img.removeAttribute('alt');else img.setAttribute('alt',alt);}savedIcons=null;}
  }
  async function refreshEntryCount(){
-  if(!session?.refreshToken)return;
-  try{const d=await rpc('list');const active=(d.rooms||[]).find(r=>r.status==='active');if(active)updateEntryCount(await rpc('sync',{room_id:active.id}));else updateEntryCount(null);}catch{}
+  if(!session?.refreshToken||document.hidden)return;
+  try{const d=await rpc('list');const active=(d.rooms||[]).find(r=>r.status==='active');if(active){const background=await rpc('sync',{room_id:active.id});updateEntryCount(background);await wake(background);}else updateEntryCount(null);}catch{}
  }
  let dialog;
  function status(t){const el=$('shared-status');if(el)el.textContent=t;}
@@ -216,7 +216,7 @@
    const scroll=$('group-messages');if(!$('group-view').hidden&&scroll.scrollHeight-scroll.scrollTop-scroll.clientHeight<80){const seq=d.messages.at(-1)?.seq||0;if(seq>d.last_read_seq){await rpc('read',{room_id:id,seq});if(id===room&&current===generation){d.last_read_seq=seq;d.unread_count=0;updateEntryCount(d);}}}
   }catch(e){if(id===room&&[401,403].includes(e.status)){local();status('参加状態を確認するため、招待・参加を開いてください。');}else if(id===room){$('group-status').textContent=e.message;$('group-status').hidden=false;}}finally{syncing=false;}
  }
- async function wake(){if(waking||!room||!view?.room.ai_enabled||!view?.cast?.length||document.hidden)return;waking=true;const id=room;
+ async function wake(data=view){const id=data?.room?.id;if(waking||!session?.refreshToken||!id||!data.room.ai_enabled||!data?.cast?.length||document.hidden)return;waking=true;
   try{await jsonFetch('/api/shared-chat-live',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+await token()},body:JSON.stringify({room_id:id})});}
   catch(e){if(id===room){$('group-status').textContent=e.message;$('group-status').hidden=false;}}finally{waking=false;}
  }
@@ -236,7 +236,7 @@
  const oldStrip=window.toggleGroupParticipants;window.toggleGroupParticipants=()=>{oldStrip();if(!window.himikoSharedActive||$('group-participant-strip').hidden)return;const allowed=new Set(view?.cast||[]);for(const node of $('group-participant-icons').querySelectorAll('[data-id]'))if(!allowed.has(Number(node.dataset.id)))node.remove();for(const m of view?.members||[]){if(m.status!=='active'||m.user_id===view.self_id)continue;const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',m.name);b.innerHTML='<span class="avatar self-avatar">👤</span>';b.onclick=()=>void manage();$('group-participant-icons').append(b);}};
  const oldClose=window.closeGroupChat;window.closeGroupChat=()=>{const shared=window.himikoSharedActive;oldClose();if(shared)local();};
  const oldRename=window.renameGroupChat;window.renameGroupChat=()=>{if(window.himikoSharedActive){void manage();return;}oldRename();};
- document.addEventListener('visibilitychange',()=>{if(!document.hidden){void sync();void wake();}});
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden){if(window.himikoSharedActive){void sync();void wake();}else void refreshEntryCount();}});
  window.addEventListener('storage',e=>{if(e.key===SESSION){try{session=JSON.parse(e.newValue||'null');}catch{}updateEntryCount(null);if(!session&&window.himikoSharedActive)local();else if(session)void refreshEntryCount();}});
  async function init(){
   const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');
@@ -262,3 +262,4 @@
  }
  ready=init();
 })();
+

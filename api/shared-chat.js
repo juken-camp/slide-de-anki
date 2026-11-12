@@ -1,6 +1,6 @@
 'use strict';
 // Isolated pilot API. Uses the end user's JWT; never uses a service-role key.
-const ACTIONS=new Set(['list','create','join','sync','send','read','invite','revoke_invites','approve','remove','hide','leave','ai_toggle','subscribe','rename','transfer_owner','cast_add','cast_remove']);
+const ACTIONS=new Set(['list','create','join','sync','send','read','invite','revoke_invites','approve','remove','hide','leave','ai_toggle','subscribe','rename','transfer_owner','cancel_join','cast_add','cast_remove']);
 module.exports=async function(req,res){
  res.setHeader('Cache-Control','no-store');
  res.setHeader('X-Content-Type-Options','nosniff');

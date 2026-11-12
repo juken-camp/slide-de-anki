@@ -112,7 +112,7 @@
   function name(){const n=nick?.value.trim()||'';if(!n)throw Error('名前を入力してください。');localStorage.setItem('himiko-shared-name-v1',n);return n;}
   if(invite)button('このグルチャへ参加申請',async()=>{await rpc('join',{token:invite,nickname:name()});invite='';sessionStorage.removeItem('himiko-pending-invite');await manage();status('参加申請しました。管理者の承認をお待ちください。');},roomArea);
   if(!hasGroup)button('グループを作る',async()=>{const r=await rpc('create',{name:'みんなでグルチャ',nickname:name()});await enter(r.room_id);await manage();},roomArea);
-  for(const r of (inRoom?[]:rooms)){const b=button(r.name+(r.status==='pending'?'（承認待ち）':''),()=>enter(r.id),roomArea);b.disabled=r.status!=='active';}
+  for(const r of (inRoom?[]:rooms)){const b=button(r.name+(r.status==='pending'?'（承認待ち）':''),()=>enter(r.id),roomArea);b.disabled=r.status!=='active';if(r.status==='pending')button('参加申請を取り消す',async()=>{if(!confirm('参加申請を取り消しますか？'))return;await rpc('cancel_join',{room_id:r.id});await manage();status('参加申請を取り消しました。');},roomArea);}
   if(inRoom)button('異次元グルチャを開く',()=>{local();dialog.close();},roomArea);
   const account=section('アカウント');
   button('一覧を更新',manage,account);

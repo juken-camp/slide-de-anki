@@ -29,26 +29,31 @@
  let dialog;
  function status(t){const el=$('shared-status');if(el)el.textContent=t;}
  async function run(fn){try{await fn();}catch(e){status(e.message);}}
- function button(label,fn,parent){const b=document.createElement('button');b.type='button';b.className='suggestion-btn';b.textContent=label;b.onclick=()=>run(fn);parent.append(b);return b;}
- function field(id,label,type='text',max=200){const l=document.createElement('label');l.textContent=label;const i=document.createElement('input');i.id=id;i.type=type;i.maxLength=max;i.autocomplete=type==='email'?'email':'off';i.style.cssText='display:block;box-sizing:border-box;width:100%;font:inherit;padding:12px;margin:8px 0 16px;border:1px solid #bfa38b;border-radius:12px;background:transparent;color:inherit';l.append(i);dialog.append(l);return i;}
+ function button(label,fn,parent){const b=document.createElement('button');b.type='button';b.className='char-card shared-action';b.textContent=label;b.onclick=()=>run(fn);parent.append(b);return b;}
+ function field(id,label,type='text',max=200){const l=document.createElement('label');l.className='shared-field';l.textContent=label;const i=document.createElement('input');i.id=id;i.type=type;i.maxLength=max;i.autocomplete=type==='email'?'email':'off';l.append(i);dialog.append(l);return i;}
  function openDialog(){
   if(!dialog){
    const style=document.createElement('style');style.textContent=`
-    .shared-dialog{box-sizing:border-box;width:min(92vw,480px);max-height:80dvh;overflow:auto;border:1px solid #bc8d59;border-radius:18px;padding:20px;font-family:inherit;background:#fff8f0;color:#473325;box-shadow:0 12px 36px #0005}
-    .shared-dialog::backdrop{background:rgba(0,0,0,.55)}
+    .shared-dialog{position:fixed;inset:auto 0 0;box-sizing:border-box;width:100%;max-width:700px;max-height:calc(100dvh - 18px);margin:0 auto;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;border:0;border-radius:24px 24px 0 0;padding:20px 20px calc(26px + env(safe-area-inset-bottom,0px));font-family:inherit;background:#fff8f0;color:#60412f;box-shadow:0 -14px 34px rgba(0,0,0,.16)}
+    .shared-dialog::backdrop{background:rgba(0,0,0,.45)}
     .shared-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
-    .shared-dialog-header h2{font-size:18px;line-height:1.4;margin:0}
-    .shared-dialog .suggestion-btn{display:block;max-width:100%;height:auto;margin:8px 0;white-space:normal;text-align:left}
-    .shared-dialog-header .suggestion-btn{flex:none;margin:0}
-    .shared-dialog label{display:block;line-height:1.5}
-    .shared-dialog input{background:transparent}
+    .shared-dialog-header h2{font-size:16px;font-weight:900;line-height:1.4;margin:0;outline:none}
+    .shared-dialog .shared-close{display:grid;place-items:center;flex:none;width:42px;height:42px;min-width:42px;padding:0;border:0;border-radius:12px;background:#f1e3d5;color:#805037;font-family:inherit;font-size:24px;font-weight:700;line-height:1;cursor:pointer}
+    .shared-dialog .shared-action{display:block;min-height:48px;margin:9px 0;padding:12px 15px;color:inherit;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;white-space:normal;overflow-wrap:anywhere;animation:none}
+    .shared-dialog .shared-action:disabled{opacity:.5;cursor:default}
+    .shared-dialog .shared-field{display:block;margin:14px 0;font-size:14px;font-weight:700;line-height:1.5}
+    .shared-dialog .shared-field input{display:block;box-sizing:border-box;width:100%;min-width:0;margin-top:8px;border:1px solid #d8b894;border-radius:13px;padding:11px 12px;background:#fffdf8;color:#60412f;font-family:inherit;font-size:16px;font-weight:400;line-height:1.5}
+    .shared-dialog h3{margin:20px 0 10px;font-size:14px;line-height:1.5}
+    .shared-dialog #shared-status{white-space:pre-wrap;font-size:13px;line-height:1.6}
     .shared-dialog #shared-status:empty{display:none}
-    html[data-persona="cyber"] .shared-dialog{background:#101b35;color:#e0eaff;border-color:#39637f}
-    html[data-persona="cyber"] .shared-dialog input{background:#0a1127!important;border-color:#39637f!important;color:#e0eaff!important}
+    html[data-persona="cyber"] .shared-dialog{background:#111b35;color:#dceaff;box-shadow:0 -14px 34px rgba(0,0,0,.30)}
+    html[data-persona="cyber"] .shared-dialog .shared-close{background:#10233d;color:#c5edff}
+    html[data-persona="cyber"] .shared-dialog .shared-field input{background:#0a1127;border-color:#315576;color:#e0eaff}
+    #group-members #group-share{display:block;max-width:700px;min-height:48px;margin:0 auto 12px;color:inherit;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;animation:none}
    `;document.head.append(style);
    dialog=document.createElement('dialog');dialog.className='shared-dialog';dialog.setAttribute('aria-label','グルチャへの招待・参加');document.body.append(dialog);
   }
-  dialog.replaceChildren();const header=document.createElement('div');header.className='shared-dialog-header';const title=document.createElement('h2');title.textContent='家族・友達と一緒に';header.append(title);button('閉じる',()=>dialog.close(),header);dialog.append(header);const s=document.createElement('p');s.id='shared-status';s.role='status';s.style.whiteSpace='pre-wrap';dialog.append(s);if(!dialog.open)dialog.showModal();
+  dialog.replaceChildren();const header=document.createElement('div');header.className='shared-dialog-header';const title=document.createElement('h2');title.tabIndex=-1;title.textContent='家族・友達と一緒に';header.append(title);const close=document.createElement('button');close.type='button';close.className='shared-close';close.textContent='×';close.setAttribute('aria-label','閉じる');close.onclick=()=>dialog.close();header.append(close);dialog.append(header);const s=document.createElement('p');s.id='shared-status';s.role='status';dialog.append(s);if(!dialog.open){dialog.showModal();title.focus({preventScroll:true});}
  }
  async function manage(){
   if(!config?.integratedAvailable)return;
@@ -115,9 +120,9 @@
   if(!$('group-members').hidden)paintMembers();
  }
  function paintMembers(){
-  const target=$('group-member-list');target.querySelector('[data-shared-people]')?.remove();const section=document.createElement('div');section.dataset.sharedPeople='1';
-  for(const m of view?.members||[]){if(m.status!=='active')continue;const row=document.createElement('div');row.className='char-card member-card';row.innerHTML=`<span class="card-inner"><span class="avatar self-avatar">👤</span><span class="card-info"><span class="member-name">${esc(m.name)}${m.user_id===view.self_id?'（あなた）':''}</span></span></span>`;section.append(row);}
-  target.querySelector('[data-self]')?.remove();target.append(section);
+  const target=$('group-member-list');const oldSection=target.querySelector('[data-shared-people]');const originalSelf=target.querySelector('[data-self]');const ownAvatar=(originalSelf||oldSection?.querySelector('[data-shared-self]'))?.querySelector('.avatar')?.cloneNode(true);const section=document.createElement('div');section.dataset.sharedPeople='1';section.style.cssText='display:contents';
+  for(const m of view?.members||[]){if(m.status!=='active')continue;const row=document.createElement('div');row.className='char-card member-card';row.innerHTML=`<span class="card-inner"><span class="avatar self-avatar">👤</span><span class="card-info"><span class="member-name">${esc(m.name)}${m.user_id===view.self_id?'（あなた）':''}</span></span></span>`;if(m.user_id===view.self_id){row.dataset.sharedSelf='1';if(ownAvatar)row.querySelector('.avatar')?.replaceWith(ownAvatar);}section.append(row);}
+  if(originalSelf)originalSelf.replaceWith(section);else if(oldSection)oldSection.replaceWith(section);else target.append(section);
   const headings=target.querySelectorAll('.membership-section-title');if(headings.length)headings[headings.length-1].textContent='👋 '+(host().people().length+(view.members||[]).filter(m=>m.status==='active').length)+'人が参加中です';
  }
  async function sync(){
@@ -150,13 +155,14 @@
  async function init(){
   try{config=await jsonFetch('/api/shared-chat');if(!config.integratedAvailable)return;
    const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');if(entry){entry.onclick=e=>{e.preventDefault();void manage();};entry.removeAttribute('target');entry.setAttribute('aria-label','家族・友達を招待');const title=entry.querySelector('.char-name,.shared-entry-title');if(title)title.textContent='家族・友達を招待';}
-   const manageButton=$('group-members-direct').cloneNode(true);manageButton.id='group-share';manageButton.textContent='招待';manageButton.setAttribute('aria-label','グルチャに招待・参加');manageButton.onclick=()=>void manage();
+   const manageButton=$('group-members-direct').cloneNode(true);manageButton.id='group-share';manageButton.className='char-card';manageButton.style.cssText='display:block;max-width:700px;min-height:48px;margin:0 auto 12px;color:inherit;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;animation:none';manageButton.textContent='家族・友達を招待';manageButton.setAttribute('aria-label','グルチャに招待・参加');manageButton.onclick=()=>void manage();
    // Add the new control inside the existing member panel, never in the chat header.
    $('group-member-list').parentElement.insertBefore(manageButton,$('group-member-list'));
    // Always open the original personal chat first; a shared room is entered explicitly.
    // The room and its messages remain on the server and are accessible from the menu.
    if(room){local();}
    if(invite){await manage();}
+   else if(/^[a-f0-9-]{36}$/i.test(requestedRoom||'')&&session?.refreshToken){try{await enter(requestedRoom);}catch(e){status(e.message);}}
    let polls=0;pollTimer=setInterval(()=>{polls++;if(window.himikoSharedActive&&(!$('group-view').hidden||polls%10===0))void sync();},1000);setInterval(()=>{if(window.himikoSharedActive)void wake();},20000);
   }catch(e){/* Local chat continues when sharing is unavailable. */}
  }

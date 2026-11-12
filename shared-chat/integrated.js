@@ -244,7 +244,7 @@
    const title=entry.querySelector('.char-name,.shared-entry-title'),caption=entry.querySelector('.shared-entry-caption');
    let cached;try{cached=JSON.parse(localStorage.getItem(ENTRY_CACHE)||'null');}catch{}
    if(title)title.textContent='みんなでグルチャ'+(session?.refreshToken&&Number.isInteger(cached?.count)&&cached.count>=0?' ('+cached.count+')':'');
-   entry.onclick=e=>{e.preventDefault();if(opening)return;if(caption)caption.textContent='開いています…';entry.setAttribute('aria-busy','true');opening=openShared().finally(()=>{opening=null;entry.removeAttribute('aria-busy');if(caption)caption.textContent=sharedCaption;});};
+   entry.onclick=e=>{e.preventDefault();if(opening)return;entry.setAttribute('aria-busy','true');opening=openShared().finally(()=>{opening=null;entry.removeAttribute('aria-busy');if(caption)caption.textContent=sharedCaption;});};
    entry.removeAttribute('target');entry.setAttribute('aria-label','みんなでグルチャ');
   }
   try{config=await jsonFetch('/api/shared-chat');if(!config.integratedAvailable)return;ensureStyles();

@@ -26,6 +26,18 @@
   try{return await post();}catch(e){if(e.status!==401||!session?.refreshToken)throw e;await token(true);return post();}
  }
  const host=()=>window.himikoSharedHost;
+ function updateEntryCount(data){
+  const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');
+  const title=entry?.querySelector('.char-name,.shared-entry-title');
+  if(!title)return;
+  if(!data?.room){title.textContent='みんなでグルチャ';return;}
+  const count=(data.cast||[]).length+(data.members||[]).filter(m=>m.status==='active').length;
+  title.textContent='みんなでグルチャ ('+count+')';
+ }
+ async function refreshEntryCount(){
+  if(!session?.refreshToken)return;
+  try{const d=await rpc('list');const active=(d.rooms||[]).find(r=>r.status==='active');if(active)updateEntryCount(await rpc('sync',{room_id:active.id}));else updateEntryCount(null);}catch{}
+ }
  let dialog;
  function status(t){const el=$('shared-status');if(el)el.textContent=t;}
  async function run(fn){try{await fn();}catch(e){status(e.message);}}
@@ -85,6 +97,7 @@
   const rooms=d.rooms||[],hasGroup=rooms.length>0,inRoom=!!(view&&room);
   if(inRoom){
    const heading=document.createElement('p');heading.className='shared-room-name';heading.textContent=view.room.name;dialog.append(heading);
+   button('チャットに戻る',()=>dialog.close(),dialog);
    if(view.room.owner){
     const linkResult=document.createElement('div');
     button('招待リンクを作る',async()=>{const d=await rpc('invite',{room_id:room});linkResult.replaceChildren();const i=field('shared-invite-link','招待リンク','text',500,linkResult);i.readOnly=true;i.value=location.origin+location.pathname+'#invite='+d.token;button('リンクをコピー',()=>navigator.clipboard.writeText(i.value).then(()=>status('コピーしました。')),linkResult);},dialog);
@@ -97,7 +110,7 @@
     button('招待リンクを無効にする',async()=>{await rpc('revoke_invites',{room_id:room});status('以前の招待リンクを無効にしました。');},settings);
     for(const m of view.members||[]){if(m.user_id===view.self_id||!['active','pending'].includes(m.status))continue;const row=document.createElement('p');row.textContent=m.name+(m.status==='pending'?'（承認待ち）':'');settings.append(row);button(m.status==='pending'?'承認':'退出してもらう',async()=>{await rpc(m.status==='pending'?'approve':'remove',{room_id:room,user_id:m.user_id});await sync();await manage();},settings);if(m.status==='active')button(m.name+'に管理者を引き継ぐ',async()=>{if(!confirm(m.name+'さんに管理者を引き継ぎますか？'))return;await rpc('transfer_owner',{room_id:room,user_id:m.user_id});await sync();await manage();},settings);}
    }
-   button('このグルチャから退出',async()=>{if(!confirm('このグルチャから退出しますか？'))return;await rpc('leave',{room_id:room});local();await manage();},settings);
+   button('このグルチャから退出',async()=>{if(!confirm('このグルチャから退出しますか？'))return;await rpc('leave',{room_id:room});updateEntryCount(null);local();await manage();},settings);
    button('以前の会話を読む',async()=>{const id=room;const older=await rpc('sync',{room_id:id,before_seq:view.messages[0]?.seq||0});if(room!==id)return;view.messages=[...new Map([...older.messages,...view.messages].map(m=>[m.seq,m])).values()].sort((a,b)=>a.seq-b.seq).slice(-500);signature='';paint();dialog.close();$('group-messages').scrollTop=0;},settings);
    if(config.pushAvailable&&'serviceWorker' in navigator&&'PushManager' in window)button(view.notifications_enabled?'通知を止める':'新しい発言を通知する',async()=>{
     if(view.notifications_enabled){await rpc('subscribe',{room_id:room,subscription:null});await sync();await manage();return;}
@@ -115,13 +128,22 @@
   for(const r of (inRoom?[]:rooms)){const b=button(r.name+(r.status==='pending'?'（承認待ち）':''),()=>enter(r.id),roomArea);b.disabled=r.status!=='active';if(r.status==='pending')button('参加申請を取り消す',async()=>{if(!confirm('参加申請を取り消しますか？'))return;await rpc('cancel_join',{room_id:r.id});await manage();status('参加申請を取り消しました。');},roomArea);}
   if(inRoom)button('異次元グルチャを開く',()=>{local();dialog.close();},roomArea);
   const account=section('アカウント');
-  button('一覧を更新',manage,account);
-  button('ログアウト',async()=>{const access=await token();await jsonFetch(config.url+'/auth/v1/logout',{method:'POST',headers:{apikey:config.key,Authorization:'Bearer '+access}});session=null;localStorage.removeItem(SESSION);local();await manage();},account);
+   button('参加状況を更新',manage,account);
+   button('ログアウト',async()=>{const access=await token();await jsonFetch(config.url+'/auth/v1/logout',{method:'POST',headers:{apikey:config.key,Authorization:'Bearer '+access}});session=null;localStorage.removeItem(SESSION);updateEntryCount(null);local();await manage();},account);
  }
  function local(){generation++;room='';view=null;signature='';pendingSend=null;$('group-input').value='';if($('group-share'))$('group-share').style.display='none';host().clearQuote();localStorage.removeItem(ROOM);host().deactivate();}
  async function enter(id){
   const current=++generation;const data=await rpc('sync',{room_id:id});if(current!==generation)return;
-  if(room!==id){$('group-input').value='';host().clearQuote();}room=id;view=data;signature='';entryUnread=data.messages.find(m=>m.seq>data.last_read_seq&&m.user_id!==data.self_id)?.seq||null;pendingSend=null;localStorage.setItem(ROOM,id);host().activate();if($('group-share'))$('group-share').style.display='block';window.openGroupChat();paint();const divider=$('group-unread-divider');if(divider?.scrollIntoView)divider.scrollIntoView({block:'center'});else $('group-messages').scrollTop=$('group-messages').scrollHeight;dialog?.close();void wake();
+  if(room!==id){$('group-input').value='';host().clearQuote();}room=id;view=data;updateEntryCount(data);signature='';entryUnread=data.messages.find(m=>m.seq>data.last_read_seq&&m.user_id!==data.self_id)?.seq||null;pendingSend=null;localStorage.setItem(ROOM,id);host().activate();if($('group-share'))$('group-share').style.display='block';window.openGroupChat();paint();const divider=$('group-unread-divider');if(divider?.scrollIntoView)divider.scrollIntoView({block:'center'});else $('group-messages').scrollTop=$('group-messages').scrollHeight;dialog?.close();void wake();
+ }
+ async function openShared(){
+  try{
+   if(!session?.refreshToken||invite){await manage();return;}
+   const d=await rpc('list');
+   const active=(d.rooms||[]).find(r=>r.status==='active');
+   if(active){await enter(active.id);return;}
+   await manage();
+  }catch(e){try{await manage();status(e.message);}catch(err){status(err.message||e.message);}}
  }
  function paint(){
   if(!view||!window.himikoSharedActive||$('group-view').hidden)return;
@@ -174,7 +196,7 @@
  }
  async function sync(){
   if(!room||!session||syncing||document.hidden)return;syncing=true;const id=room,current=generation;
-  try{const history=view?.messages||[];const d=await rpc('sync',{room_id:id,...(history.length>100?{from_seq:history[0].seq}:{})});if(id!==room||current!==generation)return;view=d;paint();
+  try{const history=view?.messages||[];const d=await rpc('sync',{room_id:id,...(history.length>100?{from_seq:history[0].seq}:{})});if(id!==room||current!==generation)return;view=d;updateEntryCount(d);paint();
    const scroll=$('group-messages');if(!$('group-view').hidden&&scroll.scrollHeight-scroll.scrollTop-scroll.clientHeight<80){const seq=d.messages.at(-1)?.seq||0;if(seq>d.last_read_seq)await rpc('read',{room_id:id,seq});}
   }catch(e){if(id===room&&[401,403].includes(e.status)){local();status('参加状態を確認するため、招待・参加を開いてください。');}else if(id===room){$('group-status').textContent=e.message;$('group-status').hidden=false;}}finally{syncing=false;}
  }
@@ -202,13 +224,14 @@
  window.addEventListener('storage',e=>{if(e.key===SESSION){try{session=JSON.parse(e.newValue||'null');}catch{}if(!session&&window.himikoSharedActive)local();}});
  async function init(){
   try{config=await jsonFetch('/api/shared-chat');if(!config.integratedAvailable)return;ensureStyles();
-   const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');if(entry){entry.onclick=e=>{e.preventDefault();void manage();};entry.removeAttribute('target');entry.setAttribute('aria-label','みんなでグルチャ');const title=entry.querySelector('.char-name,.shared-entry-title');if(title)title.textContent='みんなでグルチャ';}
+   const entry=document.querySelector('[data-shared-entry]')||document.querySelector('.shared-chat-join-entry');if(entry){entry.onclick=e=>{e.preventDefault();void openShared();};entry.removeAttribute('target');entry.setAttribute('aria-label','みんなでグルチャ');const title=entry.querySelector('.char-name,.shared-entry-title');if(title)title.textContent='みんなでグルチャ';}
    const manageButton=$('group-members-direct').cloneNode(true);manageButton.id='group-share';manageButton.className='char-card';manageButton.style.cssText='display:none;max-width:700px;min-height:48px;margin:0 auto 12px;color:inherit;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;animation:none';manageButton.textContent='グループの設定';manageButton.setAttribute('aria-label','グルチャに招待・参加');manageButton.onclick=()=>void manage();
    // Add the new control inside the existing member panel, never in the chat header.
    $('group-member-list').parentElement.insertBefore(manageButton,$('group-member-list'));
    // Always open the original personal chat first; a shared room is entered explicitly.
    // The room and its messages remain on the server and are accessible from the menu.
    if(room){local();}
+   void refreshEntryCount();
    if(invite){await manage();}
    else if(/^[a-f0-9-]{36}$/i.test(requestedRoom||'')&&session?.refreshToken){try{await enter(requestedRoom);}catch(e){status(e.message);}}
    let polls=0;pollTimer=setInterval(()=>{polls++;if(window.himikoSharedActive&&(!$('group-view').hidden||polls%10===0))void sync();},1000);setInterval(()=>{if(window.himikoSharedActive)void wake();},20000);

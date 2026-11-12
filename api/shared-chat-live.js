@@ -24,11 +24,8 @@ module.exports=async function(req,res){
   const job=claimed.job;
   if(job.room_id!==id)throw Error('wrong_room');
   try{
-   const history=require('../lib/himiko-shared-topic-history');
-   const previous=await history.read(id,job.recent||[]);
-   const {messages,scenes}=await getScenes(job,previous);
+   const {messages}=await getScenes(job);
    const result=await rpc('stage',{room_id:id,claim_id:job.claim_id,messages});
-   if(result.staged)await history.save(id,previous,scenes);
    return res.status(200).json({generated:!!result.staged});
   }catch(e){await rpc('fail',{room_id:id,claim_id:job.claim_id}).catch(()=>{});throw e;}
  }catch(e){return res.status(503).json({error:'会話を準備できませんでした。しばらくしてから再試行します。'});}

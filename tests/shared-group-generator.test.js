@@ -1,0 +1,6 @@
+'use strict';const assert=require('node:assert/strict');const {generate}=require('../lib/shared-group-generator');
+(async()=>{let calls=0;const shouldNotCall=()=>{calls++;throw Error('unexpected fetch')};let r=await generate({cast:[],recent:[]},{fetcher:shouldNotCall,apiKey:''});assert.equal(calls,0);assert.deepEqual(r.messages,[]);
+const request=async(url,opts)=>{calls++;const b=JSON.parse(opts.body);assert.equal(url,'https://api.anthropic.com/v1/messages');assert.deepEqual(b.output_config.format.schema.properties.messages.items.properties.speaker_id.enum,[0]);return {ok:true,json:async()=>({stop_reason:'end_turn',usage:{input_tokens:10,output_tokens:10},content:[{type:'text',text:JSON.stringify({messages:[{speaker_id:0,text:'こんにちは'}]})}]})}};
+r=await generate({cast:[0],recent:[]},{fetcher:request,apiKey:'test-key'});assert.equal(calls,1);assert.equal(r.messages.length,1);assert.equal(r.messages[0].name,'AI先生');
+await assert.rejects(()=>generate({cast:[0],recent:[]},{apiKey:'test',fetcher:async()=>({ok:true,json:async()=>({content:[{type:'text',text:JSON.stringify({messages:[{speaker_id:1,text:'not invited'}]})}]})})}),/invalid_speaker/);
+console.log('OK: zero cast makes no API call; one AI teacher can reply; nonmembers are rejected');})().catch(e=>{console.error(e);process.exitCode=1});

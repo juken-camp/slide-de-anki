@@ -39,5 +39,10 @@ jobs:
               print('Scheduler completed:', {k:result.get(k) for k in ('published','generated','notified')})
           except Exception as error:
               print('Scheduler failed:', phase, type(error).__name__, getattr(error, 'code', ''), file=sys.stderr)
+              if hasattr(error, 'read'):
+                  try:
+                      print('Server error:', json.loads(error.read(2048)).get('error', 'unknown'), file=sys.stderr)
+                  except Exception:
+                      pass
               sys.exit(1)
           PY

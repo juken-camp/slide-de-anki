@@ -12,6 +12,9 @@
     },
     "api/shared-chat-live.js": {
       "maxDuration": 60
+    },
+    "api/shared-chat-scheduler.js": {
+      "maxDuration": 60
     }
   }
 }

@@ -1,0 +1,37 @@
+name: Shared chat scheduler
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  id-token: write
+concurrency:
+  group: shared-chat-scheduler
+  cancel-in-progress: false
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Advance shared chat
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request
+          audience = 'nekopon-shared-chat-scheduler'
+          try:
+              request = urllib.request.Request(
+                  os.environ['ACTIONS_ID_TOKEN_REQUEST_URL'] + '&audience=' + audience,
+                  headers={'Authorization': 'Bearer ' + os.environ['ACTIONS_ID_TOKEN_REQUEST_TOKEN']})
+              with urllib.request.urlopen(request, timeout=15) as response:
+                  token = json.load(response)['value']
+              request = urllib.request.Request(
+                  'https://slide-de-anki.vercel.app/api/shared-chat-scheduler',
+                  data=b'{}', method='POST',
+                  headers={'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json'})
+              with urllib.request.urlopen(request, timeout=90) as response:
+                  result = json.load(response)
+              print('Scheduler completed:', {k:result.get(k) for k in ('published','generated','notified')})
+          except Exception as error:
+              print('Scheduler failed:', type(error).__name__, file=sys.stderr)
+              sys.exit(1)
+          PY

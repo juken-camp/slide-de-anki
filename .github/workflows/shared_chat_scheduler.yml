@@ -4,7 +4,7 @@ on:
     - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
-  contents: read
+  id-token: write
 concurrency:
   group: shared-chat-scheduler
   cancel-in-progress: false
@@ -14,19 +14,24 @@ jobs:
     timeout-minutes: 3
     steps:
       - name: Advance shared chat
-        env:
-          TICK_URL: ${{ secrets.SHARED_CHAT_TICK_URL }}
-          TICK_SECRET: ${{ secrets.SHARED_CHAT_TICK_SECRET }}
         run: |
-          set -eu
-          case "$TICK_URL" in
-            https://*/api/shared-chat-tick) ;;
-            *) echo "Missing or invalid scheduler URL"; exit 1 ;;
-          esac
-          if [ "${#TICK_SECRET}" -lt 24 ]; then
-            echo "Scheduler secret is missing or too short"; exit 1
-          fi
-          curl --fail-with-body --silent --show-error --max-time 90 \
-            -X POST -H "Authorization: Bearer $TICK_SECRET" \
-            -H 'Content-Type: application/json' \
-            --data '{}' "$TICK_URL"
+          python3 - <<'PY'
+          import json, os, sys, urllib.request
+          audience = 'nekopon-shared-chat-scheduler'
+          try:
+              request = urllib.request.Request(
+                  os.environ['ACTIONS_ID_TOKEN_REQUEST_URL'] + '&audience=' + audience,
+                  headers={'Authorization': 'Bearer ' + os.environ['ACTIONS_ID_TOKEN_REQUEST_TOKEN']})
+              with urllib.request.urlopen(request, timeout=15) as response:
+                  token = json.load(response)['value']
+              request = urllib.request.Request(
+                  'https://slide-de-anki.vercel.app/api/shared-chat-scheduler',
+                  data=b'{}', method='POST',
+                  headers={'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json'})
+              with urllib.request.urlopen(request, timeout=90) as response:
+                  result = json.load(response)
+              print('Scheduler completed:', {k:result.get(k) for k in ('published','generated','notified')})
+          except Exception as error:
+              print('Scheduler failed:', type(error).__name__, file=sys.stderr)
+              sys.exit(1)
+          PY

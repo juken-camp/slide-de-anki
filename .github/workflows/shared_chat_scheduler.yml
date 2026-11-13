@@ -22,12 +22,14 @@ jobs:
           python3 - <<'PY'
           import json, os, sys, urllib.request
           audience = 'nekopon-shared-chat-scheduler'
+          phase = 'github_identity'
           try:
               request = urllib.request.Request(
                   os.environ['ACTIONS_ID_TOKEN_REQUEST_URL'] + '&audience=' + audience,
                   headers={'Authorization': 'Bearer ' + os.environ['ACTIONS_ID_TOKEN_REQUEST_TOKEN']})
               with urllib.request.urlopen(request, timeout=15) as response:
                   token = json.load(response)['value']
+              phase = 'application'
               request = urllib.request.Request(
                   'https://slide-de-anki.vercel.app/api/shared-chat-scheduler',
                   data=b'{}', method='POST',
@@ -36,6 +38,6 @@ jobs:
                   result = json.load(response)
               print('Scheduler completed:', {k:result.get(k) for k in ('published','generated','notified')})
           except Exception as error:
-              print('Scheduler failed:', type(error).__name__, file=sys.stderr)
+              print('Scheduler failed:', phase, type(error).__name__, getattr(error, 'code', ''), file=sys.stderr)
               sys.exit(1)
           PY

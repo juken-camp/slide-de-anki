@@ -101,7 +101,7 @@ async function handler(req,res){
       console.warn('[shared-ai] generation unsuccessful:',error.message.replace(/[^a-z_0-9]/gi,''));
       return res.status(503).json({error:'Generation unavailable; will retry'});
     }
-  }catch(error){console.warn('[shared-ai] scheduler unavailable');return res.status(503).json({error:'Scheduler unavailable'});}
+  }catch(error){console.warn('[shared-ai] scheduler unavailable:',String(error?.message||'unknown').replace(/[^a-z_0-9]/gi,''));return res.status(503).json({error:'Scheduler unavailable'});}
 }
 module.exports=handler;
 module.exports.flattenScenes=flattenScenes;

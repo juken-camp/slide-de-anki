@@ -1,0 +1,32 @@
+name: Shared chat scheduler
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: shared-chat-scheduler
+  cancel-in-progress: false
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Advance shared chat
+        env:
+          TICK_URL: ${{ secrets.SHARED_CHAT_TICK_URL }}
+          TICK_SECRET: ${{ secrets.SHARED_CHAT_TICK_SECRET }}
+        run: |
+          set -eu
+          case "$TICK_URL" in
+            https://*/api/shared-chat-tick) ;;
+            *) echo "Missing or invalid scheduler URL"; exit 1 ;;
+          esac
+          if [ "${#TICK_SECRET}" -lt 24 ]; then
+            echo "Scheduler secret is missing or too short"; exit 1
+          fi
+          curl --fail-with-body --silent --show-error --max-time 90 \
+            -X POST -H "Authorization: Bearer $TICK_SECRET" \
+            -H 'Content-Type: application/json' \
+            --data '{}' "$TICK_URL"

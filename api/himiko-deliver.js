@@ -23,6 +23,8 @@ module.exports=async function(req,res){
  ]);
  if(outcomes[1].status==='rejected'||sharedResponse.statusCode>=400)
   console.warn('[shared-ai] shared delivery wake failed');
+ else if(process.env.SHARED_CHAT_AI_ENABLED==='1')
+  console.info('[shared-ai] shared delivery wake completed');
  if(outcomes[0].status==='rejected')return res.status(503).json({error:'Inbox unavailable'});
  for(const [key,value] of Object.entries(personalResponse.headers))res.setHeader(key,value);
  if(personalResponse.body===undefined)return res.status(personalResponse.statusCode).end();

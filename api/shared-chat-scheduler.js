@@ -10,7 +10,7 @@ async function verifyToken(value,fetcher=fetch,now=Math.floor(Date.now()/1000)){
  try{
   const h=JSON.parse(Buffer.from(parts[0],'base64url'));const p=JSON.parse(Buffer.from(parts[1],'base64url'));
   if(h.alg!=='RS256'||typeof h.kid!=='string'||h.kid.length>200)return false;
-  if(p.iss!=='https://token.actions.githubusercontent.com'||p.aud!==AUD||p.repository_id!=='1421787329'||p.repository!=='juken-camp/slide-de-anki'||p.workflow_ref!==WORKFLOW||p.ref!=='refs/heads/main'||!['schedule','workflow_dispatch'].includes(p.event_name)||!Number.isInteger(p.exp)||!Number.isInteger(p.iat)||p.exp<=now||p.iat>now+30||p.iat<now-900||p.exp>p.iat+1200||!Number.isInteger(p.nbf)||p.nbf>now+30)return false;
+  if(p.iss!=='https://token.actions.githubusercontent.com'||p.aud!==AUD||p.repository_id!=='1421787329'||p.repository!=='juken-camp/slide-de-anki'||p.workflow_ref!==WORKFLOW||p.ref!=='refs/heads/main'||!['schedule','workflow_dispatch','push'].includes(p.event_name)||!Number.isInteger(p.exp)||!Number.isInteger(p.iat)||p.exp<=now||p.iat>now+30||p.iat<now-900||p.exp>p.iat+1200||!Number.isInteger(p.nbf)||p.nbf>now+30)return false;
   const response=await fetcher(JWKS,{signal:AbortSignal.timeout(5000),redirect:'error'});if(!response.ok)return false;
   const data=await response.json();if(!Array.isArray(data.keys))return false;
   const key=data.keys.find(k=>k.kid===h.kid&&k.kty==='RSA'&&k.use==='sig'&&k.alg==='RS256');if(!key)return false;

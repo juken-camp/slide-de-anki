@@ -47,4 +47,4 @@ jobs:
               sys.exit(1)
           PY
 
-# Scheduler diagnostics are intentionally limited to non-sensitive error categories.
+# Scheduler diagnostics contain only non-sensitive error categories.

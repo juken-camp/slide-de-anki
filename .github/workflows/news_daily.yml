@@ -1,8 +1,6 @@
 name: 今日のニュース
 on:
-  schedule:
-    # JST 06:17, 07:17, 08:17. Completed editions are skipped.
-    - cron: '17 21,22,23 * * *'
+  # Automatic updates paused; restore the schedule to resume.
   workflow_dispatch:
 permissions:
   contents: write
@@ -11,6 +9,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   generate:
+    if: ${{ false }} # Paused, including manual runs; change to true to resume.
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:

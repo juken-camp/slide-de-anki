@@ -5675,7 +5675,10 @@ function renderCatalog() {
     $('catalogSubjects').append(b);
   }
 
+  // News is paused; keep the entry implementation for a future restart.
+  if (false) {
   const newsButton=document.createElement('button');newsButton.type='button';newsButton.dataset.subject='news';newsButton.textContent='📰 ニュース';newsButton.classList.toggle('active',newsDemoMode&&!catalogIsCollections);newsButton.setAttribute('aria-pressed',String(newsDemoMode&&!catalogIsCollections));newsButton.onclick=()=>{newsDemoMode=true;catalogIsCollections=false;newsTool='';newsField='';newsQuery='';newsHistoryOpen=false;$('catalogSearch').value='';if(newsSelectedDate&&newsSelectedDate!==newsToday()){newsSelectedDate=null;newsLoadedDate=null;newsDates=null;}renderCatalog();};$('catalogSubjects').append(newsButton);
+  }
   if(newsDemoMode&&!catalogIsCollections){renderNewsDemo();return;}
   if(catalogIsCollections) [...$('catalogSubjects').querySelectorAll('[data-subject]')].forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
   if(subjectFocus) [...$('catalogSubjects').children].find(b=>b.dataset.subject===subjectFocus)?.focus({preventScroll:true});

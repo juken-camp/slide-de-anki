@@ -8,6 +8,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   backfill:
+    if: ${{ false }} # Paused; change to true to resume manual backfill.
     runs-on: ubuntu-latest
     timeout-minutes: 20
     strategy:
